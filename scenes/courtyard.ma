@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: courtyard.ma
-//Last modified: Tue, Nov 06, 2018 02:31:46 PM
+//Last modified: Tue, Nov 06, 2018 03:19:19 PM
 //Codeset: 1252
 file -rdi 1 -ns "bridge_v1_latest" -rfn "bridge_v1_latestRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/bridge_v1_latest.ma";
@@ -8,12 +8,16 @@ file -rdi 1 -ns "garden_wall_v1_latest" -rfn "garden_wall_v1_latestRN" -op "v=0;
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/garden_wall_v1_latest.ma";
 file -rdi 1 -ns "bonzai_v1_latest" -rfn "bonzai_v1_latestRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/bonzai_v1_latest.ma";
+file -rdi 1 -ns "bonzai_variation2_v1_latest" -rfn "bonzai_variation2_v1_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/bonzai_variation2_v1_latest.ma";
 file -r -ns "bridge_v1_latest" -dr 1 -rfn "bridge_v1_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/bridge_v1_latest.ma";
 file -r -ns "garden_wall_v1_latest" -dr 1 -rfn "garden_wall_v1_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/garden_wall_v1_latest.ma";
 file -r -ns "bonzai_v1_latest" -dr 1 -rfn "bonzai_v1_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/bonzai_v1_latest.ma";
+file -r -ns "bonzai_variation2_v1_latest" -dr 1 -rfn "bonzai_variation2_v1_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/bonzai_variation2_v1_latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
@@ -26,13 +30,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "9FDF47E9-4E53-79EA-814B-C09759F89006";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 51.207746590667071 14.26289251186302 7.7636063632646177 ;
-	setAttr ".r" -type "double3" -8.7383527295977554 83.000000000001137 6.5245175542024192e-15 ;
+	setAttr ".t" -type "double3" 41.24325183190097 11.141999657483058 1.2593225898260574 ;
+	setAttr ".r" -type "double3" -9.3383527295987054 88.200000000000188 5.0628427564466499e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "4CCB8436-4A37-7FAF-0D8B-BAA314FE2B07";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 53.081548118405806;
+	setAttr ".coi" 51.750125951918427;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -58,13 +62,13 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "7D6DF7CF-41FE-F1A8-4AC1-22BA71F950C1";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0 0 1000.1 ;
+	setAttr ".t" -type "double3" -9.3168313461410364 1.917404050163499 1000.1 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "31D4D3CC-4BC2-04DF-F70D-88BAE12A8C40";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 30;
+	setAttr ".ow" 101.52969841680707;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
@@ -89,19 +93,19 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "EA5C609C-4161-CA62-A940-9BACCC6570BF";
+	rename -uid "7C290938-430C-5671-F09C-219F02B47E33";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "5CC9AFC3-4B06-42B0-D346-22AC3AB3BABA";
+	rename -uid "7C761A37-4702-7D58-E538-C9A3DF7842B9";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "38E5E6FB-4C36-10B2-5D7E-899DBE3F990D";
+	rename -uid "05FCE45C-4353-1D59-2C98-3289922C9D4A";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "3798DE72-4B35-102B-37A1-5686548EACFA";
+	rename -uid "2004CB5E-4540-2555-F39D-D49351443EBB";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "04BF18E3-419B-A32A-0FE7-9C8C1F056E5B";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "C6469E5C-434A-00DC-71FE-29B3144FCF7E";
+	rename -uid "1CAB6D8D-42D1-10B0-1B49-C198134F975E";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "AAF22C40-4983-0DF1-B38E-4197E827ADC0";
 	setAttr ".g" yes;
@@ -138,12 +142,17 @@ createNode reference -n "bridge_v1_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"bridge_v1_latestRN"
 		"bridge_v1_latestRN" 0
-		"bridge_v1_latestRN" 139
-		2 "|bridge_v1_latest:turntable" "translate" " -type \"double3\" 0 -0.79694830622759127 0"
+		"bridge_v1_latestRN" 143
+		2 "|bridge_v1_latest:turntable" "translate" " -type \"double3\" 10.12548666466090275 -0.79694830622759127 0"
 		
 		2 "|bridge_v1_latest:turntable" "translateX" " -av"
 		2 "|bridge_v1_latest:turntable" "translateY" " -av"
 		2 "|bridge_v1_latest:turntable" "translateZ" " -av"
+		2 "|bridge_v1_latest:turntable" "scale" " -type \"double3\" 8.56995346685472903 0.75829018065251463 8.56995346685472903"
+		
+		2 "|bridge_v1_latest:turntable" "scaleX" " -av"
+		2 "|bridge_v1_latest:turntable" "scaleY" " -av"
+		2 "|bridge_v1_latest:turntable" "scaleZ" " -av"
 		2 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank|bridge_v1_latest:plankShape" 
 		"instObjGroups.objectGroups" " -s 2"
 		2 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank1|bridge_v1_latest:plank1Shape" 
@@ -189,72 +198,36 @@ createNode reference -n "bridge_v1_latestRN";
 		2 "|bridge_v1_latest:turntable|bridge_v1_latest:railing1|bridge_v1_latest:railing1Shape" 
 		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "bridge_v1_latest:groupParts10" "groupId" " 50"
-		3 "bridge_v1_latest:groupId49.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank|bridge_v1_latest:plankShape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "bridge_v1_latest:groupId11.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank1|bridge_v1_latest:plank1Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank|bridge_v1_latest:plankShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank1|bridge_v1_latest:plank1Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank|bridge_v1_latest:plankShape.instObjGroups.objectGroups[0]" 
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank1|bridge_v1_latest:plank1Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId45.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank18|bridge_v1_latest:plank18Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "bridge_v1_latest:groupId33.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank12|bridge_v1_latest:plank12Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank18|bridge_v1_latest:plank18Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank12|bridge_v1_latest:plank12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank18|bridge_v1_latest:plank18Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId43.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank17|bridge_v1_latest:plank17Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank17|bridge_v1_latest:plank17Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank17|bridge_v1_latest:plank17Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId21.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank6|bridge_v1_latest:plank6Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank6|bridge_v1_latest:plank6Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank6|bridge_v1_latest:plank6Shape.instObjGroups.objectGroups[0]" 
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank12|bridge_v1_latest:plank12Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "bridge_v1_latest:groupId31.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "bridge_v1_latest:groupId60.groupId" "bridge_v1_latest:groupParts10.groupId" 
-		""
-		3 "bridge_v1_latest:groupId47.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId39.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank15|bridge_v1_latest:plank15Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank15|bridge_v1_latest:plank15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank15|bridge_v1_latest:plank15Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId45.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId37.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank14|bridge_v1_latest:plank14Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank14|bridge_v1_latest:plank14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank14|bridge_v1_latest:plank14Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId15.message" ":initialShadingGroup.groupNodes" 
-		"-na"
 		3 "bridge_v1_latest:groupId43.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "bridge_v1_latest:groupId41.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId13.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank2|bridge_v1_latest:plank2Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "bridge_v1_latest:groupId27.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank9|bridge_v1_latest:plank9Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank2|bridge_v1_latest:plank2Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank9|bridge_v1_latest:plank9Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank2|bridge_v1_latest:plank2Shape.instObjGroups.objectGroups[0]" 
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank9|bridge_v1_latest:plank9Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId17.message" ":initialShadingGroup.groupNodes" 
+		3 "bridge_v1_latest:groupId60.groupId" "bridge_v1_latest:groupParts10.groupId" 
+		""
+		3 "bridge_v1_latest:groupId13.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId49.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "bridge_v1_latest:groupId35.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "bridge_v1_latest:groupId17.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank4|bridge_v1_latest:plank4Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank4|bridge_v1_latest:plank4Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank4|bridge_v1_latest:plank4Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "bridge_v1_latest:polySplitRing32.output" "|bridge_v1_latest:turntable|bridge_v1_latest:railing1|bridge_v1_latest:railing1Shape.inMesh" 
 		""
 		3 "bridge_v1_latest:groupId60.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:railing1|bridge_v1_latest:railing1Shape.instObjGroups.objectGroups[6].objectGroupId" 
@@ -263,68 +236,6 @@ createNode reference -n "bridge_v1_latestRN";
 		""
 		3 "|bridge_v1_latest:turntable|bridge_v1_latest:railing1|bridge_v1_latest:railing1Shape.instObjGroups.objectGroups[6]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId29.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId33.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId39.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId25.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank8|bridge_v1_latest:plank8Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank8|bridge_v1_latest:plank8Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank8|bridge_v1_latest:plank8Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId19.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank5|bridge_v1_latest:plank5Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank5|bridge_v1_latest:plank5Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank5|bridge_v1_latest:plank5Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId33.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank12|bridge_v1_latest:plank12Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank12|bridge_v1_latest:plank12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank12|bridge_v1_latest:plank12Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId25.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId19.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId21.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId23.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId49.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId29.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank10|bridge_v1_latest:plank10Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank10|bridge_v1_latest:plank10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank10|bridge_v1_latest:plank10Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId27.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId37.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId13.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId47.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank19|bridge_v1_latest:plank19Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank19|bridge_v1_latest:plank19Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank19|bridge_v1_latest:plank19Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId15.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank3|bridge_v1_latest:plank3Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank3|bridge_v1_latest:plank3Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank3|bridge_v1_latest:plank3Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId11.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId60.message" ":initialShadingGroup.groupNodes" 
-		"-na"
 		3 "bridge_v1_latest:groupId41.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank16|bridge_v1_latest:plank16Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank16|bridge_v1_latest:plank16Shape.instObjGroups.objectGroups[0].objectGrpColor" 
@@ -337,29 +248,127 @@ createNode reference -n "bridge_v1_latestRN";
 		""
 		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank13|bridge_v1_latest:plank13Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId27.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank9|bridge_v1_latest:plank9Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "bridge_v1_latest:groupId39.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank15|bridge_v1_latest:plank15Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank9|bridge_v1_latest:plank9Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank15|bridge_v1_latest:plank15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank9|bridge_v1_latest:plank9Shape.instObjGroups.objectGroups[0]" 
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank15|bridge_v1_latest:plank15Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId47.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId21.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId60.message" ":initialShadingGroup.groupNodes" 
+		"-na"
 		3 "bridge_v1_latest:groupId23.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank7|bridge_v1_latest:plank7Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank7|bridge_v1_latest:plank7Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
 		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank7|bridge_v1_latest:plank7Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId11.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank1|bridge_v1_latest:plank1Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "bridge_v1_latest:groupId45.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank18|bridge_v1_latest:plank18Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank1|bridge_v1_latest:plank1Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank18|bridge_v1_latest:plank18Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank1|bridge_v1_latest:plank1Shape.instObjGroups.objectGroups[0]" 
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank18|bridge_v1_latest:plank18Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId49.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank|bridge_v1_latest:plankShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank|bridge_v1_latest:plankShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank|bridge_v1_latest:plankShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId29.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank10|bridge_v1_latest:plank10Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank10|bridge_v1_latest:plank10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank10|bridge_v1_latest:plank10Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "bridge_v1_latest:groupId31.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank11|bridge_v1_latest:plank11Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank11|bridge_v1_latest:plank11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
 		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank11|bridge_v1_latest:plank11Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId37.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId25.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank8|bridge_v1_latest:plank8Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank8|bridge_v1_latest:plank8Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank8|bridge_v1_latest:plank8Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId41.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId19.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank5|bridge_v1_latest:plank5Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank5|bridge_v1_latest:plank5Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank5|bridge_v1_latest:plank5Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId15.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank3|bridge_v1_latest:plank3Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank3|bridge_v1_latest:plank3Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank3|bridge_v1_latest:plank3Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId27.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId17.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId23.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId17.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank4|bridge_v1_latest:plank4Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank4|bridge_v1_latest:plank4Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank4|bridge_v1_latest:plank4Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId25.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId45.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId33.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId39.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId13.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank2|bridge_v1_latest:plank2Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank2|bridge_v1_latest:plank2Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank2|bridge_v1_latest:plank2Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId19.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId21.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank6|bridge_v1_latest:plank6Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank6|bridge_v1_latest:plank6Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank6|bridge_v1_latest:plank6Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId29.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId15.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId11.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId37.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank14|bridge_v1_latest:plank14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank14|bridge_v1_latest:plank14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank14|bridge_v1_latest:plank14Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId43.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank17|bridge_v1_latest:plank17Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank17|bridge_v1_latest:plank17Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank17|bridge_v1_latest:plank17Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId47.groupId" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank19|bridge_v1_latest:plank19Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank19|bridge_v1_latest:plank19Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:planks|bridge_v1_latest:plank19|bridge_v1_latest:plank19Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "bridge_v1_latestRN" "|bridge_v1_latest:turntable|bridge_v1_latest:bridge|bridge_v1_latest:bridge_base|bridge_v1_latest:polySurface1|bridge_v1_latest:polySurfaceShape3.instObjGroups" 
 		"bridge_v1_latestRN.placeHolderList[1]" ""
@@ -425,14 +434,14 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 0\n            -height 629\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
 		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1419\n            -height 568\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1444\n            -height 683\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n"
 		+ "            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n"
 		+ "            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
 		+ "\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n"
@@ -455,11 +464,13 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n"
 		+ "                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n"
 		+ "                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n"
-		+ "                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n"
-		+ "                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n"
-		+ "                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1419\\n    -height 568\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1419\\n    -height 568\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph InputOutput1\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph InputOutput1\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n"
+		+ "                -orientation \"horiz\" \n                -mergeConnections 1\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n"
+		+ "                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
+		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n"
+		+ "\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1444\\n    -height 683\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1444\\n    -height 683\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -484,12 +495,50 @@ createNode reference -n "bonzai_v1_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"bonzai_v1_latestRN"
 		"bonzai_v1_latestRN" 0
-		"bonzai_v1_latestRN" 2
-		2 "|bonzai_v1_latest:Bonzai_Controller" "translate" " -type \"double3\" -30.43629774587994419 -1.85060933856854426 16.11043713351743278"
+		"bonzai_v1_latestRN" 3
+		2 "|bonzai_v1_latest:Bonzai_Controller" "translate" " -type \"double3\" -23.07729063863438057 -1.85060933856854426 12.57874939545805404"
 		
-		2 "|bonzai_v1_latest:Bonzai_Controller" "rotate" " -type \"double3\" 0 -90 0";
+		2 "|bonzai_v1_latest:Bonzai_Controller" "rotate" " -type \"double3\" 0 -90 0"
+		
+		2 "|bonzai_v1_latest:Bonzai_Controller" "scale" " -type \"double3\" 9.01353649015784342 9.01353649015784342 9.01353649015784342";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode reference -n "bonzai_variation2_v1_latestRN";
+	rename -uid "40FEE4CA-4C27-BA5E-10F6-2BAD1B14F06C";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"bonzai_variation2_v1_latestRN"
+		"bonzai_variation2_v1_latestRN" 0
+		"bonzai_variation2_v1_latestRN" 3
+		2 "|bonzai_variation2_v1_latest:Bonzai_var2_Controller" "translate" " -type \"double3\" -23.84196757113184262 -1.72981150272354811 -15.01961755916797614"
+		
+		2 "|bonzai_variation2_v1_latest:Bonzai_var2_Controller" "rotate" " -type \"double3\" 0 -180 0"
+		
+		2 "|bonzai_variation2_v1_latest:Bonzai_var2_Controller" "scale" " -type \"double3\" 8.61412201526205834 8.61412201526205834 8.61412201526205834";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "724F9ADB-4AE6-D4BA-8E09-CD985FF71383";
+	setAttr ".pee" yes;
+	setAttr -s 2 ".tgi";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" 0 -17.460316766506807 ;
+	setAttr ".tgi[0].vh" -type "double2" 73.015870114483008 0 ;
+	setAttr -s 5 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -921.4285888671875;
+	setAttr ".tgi[0].ni[0].y" 188.57142639160156;
+	setAttr ".tgi[0].ni[0].nvs" 1922;
+	setAttr ".tgi[0].ni[1].x" 74.285713195800781;
+	setAttr ".tgi[0].ni[1].y" 174.28572082519531;
+	setAttr ".tgi[0].ni[1].nvs" 1922;
+	setAttr ".tgi[0].ni[2].x" -307.14285278320313;
+	setAttr ".tgi[0].ni[2].y" 197.14285278320313;
+	setAttr ".tgi[0].ni[2].nvs" 1922;
+	setAttr ".tgi[0].ni[3].x" -614.28570556640625;
+	setAttr ".tgi[0].ni[3].y" 95.714286804199219;
+	setAttr ".tgi[0].ni[3].nvs" 1922;
+	setAttr ".tgi[0].ni[4].x" 381.42855834960938;
+	setAttr ".tgi[0].ni[4].y" -75.714286804199219;
+	setAttr ".tgi[0].ni[4].nvs" 1922;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -507,11 +556,11 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
-	setAttr -s 4 ".r";
+	setAttr -s 5 ".r";
 select -ne :initialShadingGroup;
-	setAttr -s 1101 ".dsm";
+	setAttr -s 1770 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 868 ".gn";
+	setAttr -s 1736 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
