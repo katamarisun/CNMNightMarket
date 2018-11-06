@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: bomb.ma
-//Last modified: Mon, Nov 05, 2018 11:58:12 PM
+//Last modified: Tue, Nov 06, 2018 10:53:47 AM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -14,8 +14,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2E7B1398-4F05-C907-491C-AC9581BA655B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -12.58660573277354 19.336068976324412 -32.794691062233085 ;
-	setAttr ".r" -type "double3" -23.138352729695765 -158.99999999991675 0 ;
+	setAttr ".t" -type "double3" -21.25725580602267 16.747225416383984 -29.191473104481567 ;
+	setAttr ".r" -type "double3" -18.938352729695719 -143.79999999991674 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6ED8EF9B-41BC-E4BD-17BE-13B599151706";
 	setAttr -k off ".v" no;
@@ -627,7 +627,8 @@ createNode mesh -n "pSphereShape1" -p "pSphere1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-	setAttr ".dr" 1;
+	setAttr ".dr" 3;
+	setAttr ".dsm" 2;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "pPlane1";
 	rename -uid "08F607A2-4614-E34B-280F-A6A7C2BDDC50";
