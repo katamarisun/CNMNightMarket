@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: courtyard.ma
-//Last modified: Tue, Nov 06, 2018 04:18:07 PM
+//Last modified: Tue, Nov 06, 2018 04:33:49 PM
 //Codeset: 1252
 file -rdi 1 -ns "bridge_v1_latest" -rfn "bridge_v1_latestRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/bridge_v1_latest.ma";
@@ -36,13 +36,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "9FDF47E9-4E53-79EA-814B-C09759F89006";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 41.414470880860868 22.385124465620564 1.1517951334448069 ;
-	setAttr ".r" -type "double3" -20.138352729596551 87.399999999999523 0 ;
+	setAttr ".t" -type "double3" 52.880957168152534 28.470989653447162 31.291672648478695 ;
+	setAttr ".r" -type "double3" -18.938352729598837 62.200000000001424 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "4CCB8436-4A37-7FAF-0D8B-BAA314FE2B07";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 54.481633017615891;
+	setAttr ".coi" 74.806485602741006;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -98,21 +98,6 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "persp1";
-	rename -uid "FA18AF43-4A8E-5118-B3C2-8CBCB7217AAC";
-	setAttr ".t" -type "double3" 33.693930328249159 11.470275374991145 25.36569943663989 ;
-	setAttr ".r" -type "double3" -11.138352729602683 60.600000000000229 -1.6197445314082038e-15 ;
-createNode camera -n "perspShape2" -p "persp1";
-	rename -uid "B8E1DF76-4724-30B5-BEB2-3294A7C059E8";
-	setAttr -k off ".v";
-	setAttr ".rnd" no;
-	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 44.821869662030146;
-	setAttr ".imn" -type "string" "persp1";
-	setAttr ".den" -type "string" "persp1_depth";
-	setAttr ".man" -type "string" "persp1_mask";
-	setAttr ".hc" -type "string" "viewSet -p %camera";
-	setAttr ".ai_translator" -type "string" "perspective";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "04140A9A-4FF2-174E-311B-089540F93625";
 	setAttr -s 2 ".lnk";
@@ -3773,14 +3758,11 @@ createNode reference -n "bamboo_v1_latestRN";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "B52AA6AD-4BC3-EBFE-5EC3-4094C7966916";
+	rename -uid "BF47AF3B-42E8-AE35-4757-EE827C03A99E";
 	setAttr ".pee" yes;
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -19.40623085731951 -670.41443544125275 ;
 	setAttr ".tgi[0].vh" -type "double2" 1097.8776753630909 153.18341542979283 ;
-	setAttr ".tgi[0].ni[0].x" -55.714286804199219;
-	setAttr ".tgi[0].ni[0].y" 397.14285278320313;
-	setAttr ".tgi[0].ni[0].nvs" 1922;
 select -ne :time1;
 	setAttr ".o" 10;
 	setAttr ".unw" 10;
@@ -4246,7 +4228,5 @@ relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defau
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
-connectAttr "perspShape2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
-		;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 // End of courtyard.ma
