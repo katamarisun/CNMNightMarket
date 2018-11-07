@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: StockPot_v1_latest.ma
-//Last modified: Sat, Oct 27, 2018 01:39:05 PM
+//Last modified: Sat, Oct 27, 2018 01:41:04 PM
 //Codeset: UTF-8
 requires maya "2017";
 currentUnit -l centimeter -a degree -t film;
@@ -13,13 +13,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "6280B87A-B746-D210-7560-69BCBF542D99";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.803017244031373 3.6034581443655824 9.5665218556937734 ;
+	setAttr ".t" -type "double3" 1.0951653187159145 1.8258165482223037 5.3770167783801988 ;
 	setAttr ".r" -type "double3" -7.5383527294452719 369.39999999969598 -1.0074512302653388e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "BCD81423-A449-A32B-26EB-72A9C481F0AA";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 10.158500770274914;
+	setAttr ".coi" 5.7131543741643549;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
