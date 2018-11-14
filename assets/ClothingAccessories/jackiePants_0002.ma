@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: jackiePants_latest.ma
-//Last modified: Wed, Nov 14, 2018 02:23:51 AM
+//Name: jackiePants_0002.ma
+//Last modified: Wed, Nov 14, 2018 02:24:05 AM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "rmanDisplayChannel" -nodeType "d_openexr" -nodeType "rmanGlobals"
@@ -48982,7 +48982,7 @@ createNode checker -n "defaultPolygonTexture";
 createNode lambert -n "defaultPolygonShader";
 	rename -uid "6827C500-499B-3DDB-F5BF-1FAD200FF1D0";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "020ED8F9-46C7-407D-94E4-6B9130BED58E";
+	rename -uid "96564772-41A8-BEBC-AFCE-999BEE250B6B";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -1799.3577068185448 -912.98162998242208 ;
 	setAttr ".tgi[0].vh" -type "double2" 1826.8772427845879 1453.45779898202 ;
@@ -49083,4 +49083,4 @@ connectAttr ":PxrPathTracer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "defaultPolygonTexture.msg" ":defaultTextureList1.tx" -na;
 connectAttr "jackiePants_0004:jackiePantsShape.iog" ":initialShadingGroup.dsm" -na
 		;
-// End of jackiePants_latest.ma
+// End of jackiePants_0002.ma
