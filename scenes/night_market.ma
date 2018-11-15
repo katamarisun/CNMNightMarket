@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: night_market.ma
-//Last modified: Thu, Nov 15, 2018 02:02:45 PM
+//Last modified: Thu, Nov 15, 2018 02:18:27 PM
 //Codeset: 1252
 file -rdi 1 -ns "Jackies_stall" -rfn "Jackies_stallRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Jackies_stall_latest.ma";
@@ -77,13 +77,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "09D964B2-4FC7-CDD7-3974-5E96DC55E752";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 50.571224197199747 7.2026013718233486 22.091776706949204 ;
-	setAttr ".r" -type "double3" -2.1383527287290045 -294.19999999995537 0 ;
+	setAttr ".t" -type "double3" 56.098348992311529 16.652320383205026 0.67188446485943842 ;
+	setAttr ".r" -type "double3" -12.338352728730769 -268.60000000003356 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6E303CB9-4188-4EE1-ACBA-B5A69DBE3AD8";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 54.763737545074314;
+	setAttr ".coi" 46.735674255030681;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -1421,12 +1421,21 @@ createNode reference -n "Barbatus_stall_latestRN";
 		"Barbatus_stall_latestRN" 0
 		"Barbatus_stall_latest:StockPot_latestRN" 0
 		"Barbatus_stall_latest:Firecrackers_latestRN" 0
-		"Barbatus_stall_latestRN" 3
+		"Barbatus_stall_latestRN" 7
 		2 "|Barbatus_stall_latest:Barbatus" "visibility" " 1"
-		2 "|Barbatus_stall_latest:Barbatus" "translate" " -type \"double3\" 2.38735470143953066 -0.60597337513208949 14.08358983310164092"
+		2 "|Barbatus_stall_latest:Barbatus" "translate" " -type \"double3\" 2.38735470143953066 -0.10552632282581964 14.08358983310164092"
+		
+		2 "|Barbatus_stall_latest:Barbatus" "rotate" " -type \"double3\" 0 -3.70896338196900377 0"
 		
 		2 "|Barbatus_stall_latest:Barbatus" "scale" " -type \"double3\" 0.79939858266294805 0.79939858266294805 0.79939858266294805"
 		
+		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:BarbatusGrp|Barbatus_stall_latest:Sign" 
+		"translate" " -type \"double3\" 9.17129207868578256 2.24239093900075348 -0.53342233981240783"
+		
+		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:table_latest_Table" 
+		"translate" " -type \"double3\" 4.13557837127527517 0 -0.38734281781149404"
+		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:table_latest_Table" 
+		"rotate" " -type \"double3\" 0 3.16681692237153278 0"
 		"Barbatus_stall_latest:GrillRN" 1
 		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:BarbatusGrp|Barbatus_stall_latest:Grill:Grill" 
 		"translate" " -type \"double3\" -2.07717869845086422 4.30635752282485562 -3.43432807591673539";
