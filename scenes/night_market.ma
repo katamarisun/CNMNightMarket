@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: night_market.ma
-//Last modified: Thu, Nov 15, 2018 01:29:29 PM
+//Last modified: Thu, Nov 15, 2018 02:02:45 PM
 //Codeset: 1252
 file -rdi 1 -ns "Jackies_stall" -rfn "Jackies_stallRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Jackies_stall_latest.ma";
@@ -30,14 +30,8 @@ file -rdi 1 -ns "Barbatus_stall_latest" -rfn "Barbatus_stall_latestRN" -op "v=0;
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Barbatus_stall_latest.ma";
 file -rdi 2 -ns "Grill" -rfn "Barbatus_stall_latest:GrillRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Grill_latest.ma";
-file -rdi 2 -ns "table_latest" -rfn "Barbatus_stall_latest:table_latestRN" 
-		-op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/table_latest.ma";
 file -rdi 2 -ns "StockPot_latest" -rfn "Barbatus_stall_latest:StockPot_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/StockPot_latest.ma";
-file -rdi 2 -ns "tent_latest" -rfn "Barbatus_stall_latest:tent_latestRN" -op
-		 "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/tent_latest.ma";
-file -rdi 3 -ns "table_latest" -rfn "Barbatus_stall_latest:tent_latest:table_latestRN"
-		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/table_latest.ma";
 file -rdi 2 -ns "Firecrackers_latest" -rfn "Barbatus_stall_latest:Firecrackers_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Firecrackers_latest.ma";
 file -rdi 1 -ns "SFalley_latest" -rfn "SFalley_latestRN" -op "v=0;" -typ "mayaAscii"
@@ -45,18 +39,18 @@ file -rdi 1 -ns "SFalley_latest" -rfn "SFalley_latestRN" -op "v=0;" -typ "mayaAs
 file -rdi 1 -ns "Tea_Pose" -rfn "Tea_PoseRN" -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Tea_Pose_Stall_Latest.ma";
 file -rdi 2 -ns "bobacup_latest" -rfn "Tea_Pose:bobacup_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/bobacup_latest.ma";
-file -rdi 2 -ns "LuckyCat_latest" -dr 1 -rfn "Tea_Pose:LuckyCat_latestRN" -op
-		 "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/LuckyCat_latest.ma";
-file -rdi 2 -ns "table_latest" -dr 1 -rfn "Tea_Pose:tent_latest_table_latestRN"
-		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/table_latest.ma";
+file -rdi 2 -ns "straw_latest" -dr 1 -rfn "Tea_Pose:straw_latestRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/straw_latest.ma";
+file -rdi 2 -ns "StockPot_latest" -dr 1 -rfn "Tea_Pose:StockPot_latestRN" -op
+		 "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/StockPot_latest.ma";
 file -rdi 1 -ns "Tea_Pose_Stall_Latest" -rfn "Tea_Pose_Stall_LatestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Tea_Pose_Stall_Latest.ma";
 file -rdi 2 -ns "bobacup_latest" -rfn "Tea_Pose_Stall_Latest:bobacup_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/bobacup_latest.ma";
-file -rdi 2 -ns "LuckyCat_latest" -rfn "Tea_Pose_Stall_Latest:LuckyCat_latestRN"
-		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/LuckyCat_latest.ma";
-file -rdi 2 -ns "table_latest" -rfn "Tea_Pose_Stall_Latest:tent_latest_table_latestRN"
-		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/table_latest.ma";
+file -rdi 2 -ns "straw_latest" -rfn "Tea_Pose_Stall_Latest:straw_latestRN" 
+		-op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/straw_latest.ma";
+file -rdi 2 -ns "StockPot_latest" -rfn "Tea_Pose_Stall_Latest:StockPot_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/StockPot_latest.ma";
 file -r -ns "Jackies_stall" -dr 1 -rfn "Jackies_stallRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Jackies_stall_latest.ma";
 file -r -ns "Barbatus_stall_latest" -dr 1 -rfn "Barbatus_stall_latestRN" -op "v=0;"
@@ -83,13 +77,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "09D964B2-4FC7-CDD7-3974-5E96DC55E752";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 58.775787486576206 11.669761064187487 31.689426820911379 ;
-	setAttr ".r" -type "double3" -4.5383527286840399 -293.39999999999964 -2.0021223557173683e-15 ;
+	setAttr ".t" -type "double3" 50.571224197199747 7.2026013718233486 22.091776706949204 ;
+	setAttr ".r" -type "double3" -2.1383527287290045 -294.19999999995537 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6E303CB9-4188-4EE1-ACBA-B5A69DBE3AD8";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 64.170828766495561;
+	setAttr ".coi" 54.763737545074314;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -146,22 +140,22 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "ABE5ADD5-409A-4F18-4FE5-18B553501823";
+	rename -uid "4385463E-486F-FE55-AFC1-E2964E84BCE2";
 	setAttr -s 17 ".lnk";
 	setAttr -s 17 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "A278AF25-4553-2ADE-4901-7385CDAF3F0E";
+	rename -uid "BB051BBC-4DF0-6239-3DC4-DE947E96F491";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 2 0 1 ;
 	setAttr -s 2 ".bspr";
 	setAttr -s 2 ".obsv";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "F0E4717D-4D6F-F20A-F020-86AC2F21C156";
+	rename -uid "B5C3938D-458B-58CD-3A51-5CA64F5D5E81";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B1D4B30B-4D88-83BE-2A7D-34BD546FCFFF";
+	rename -uid "82BEE9BE-48B4-05A4-F4D0-AEAF0203C9BC";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "A500E801-42FB-95E5-6CDB-79BB61C24A2E";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "05C8DC27-49D0-89D0-192A-29B3E7D8B584";
+	rename -uid "57B440A0-4BCF-3B25-5654-37B7B3C75E98";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "AF14DBFB-43D1-683A-C71F-2C81BDDADE28";
 	setAttr ".g" yes;
@@ -1414,16 +1408,7 @@ createNode reference -n "Barbatus_stall_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Barbatus_stall_latestRN"
 		"Barbatus_stall_latest:GrillRN" 0
-		"Barbatus_stall_latest:tent_latest:table_latestRN" 0
 		"Barbatus_stall_latest:table_latestRN" 0
-		"Barbatus_stall_latest:tent_latestRN" 0
-		"Barbatus_stall_latestRN" 0
-		"Barbatus_stall_latest:StockPot_latestRN" 0
-		"Barbatus_stall_latest:Firecrackers_latestRN" 0
-		"Barbatus_stall_latest:GrillRN" 1
-		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:BarbatusGrp|Barbatus_stall_latest:Grill:Grill" 
-		"translate" " -type \"double3\" 4.07669539787970425 5.10488383108551957 1.74641974374939934"
-		
 		"Barbatus_stall_latest:tent_latest:table_latestRN" 1
 		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:BarbatusGrp|Barbatus_stall_latest:tent_latest:table_latest:Table" 
 		"translate" " -type \"double3\" 4.74067837440971029 0.13664773208077285 -0.29527503268966271"
@@ -1433,11 +1418,18 @@ createNode reference -n "Barbatus_stall_latestRN";
 		"translate" " -type \"double3\" 0 0.48643028800748317 0"
 		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:BarbatusGrp|Barbatus_stall_latest:tent_latest:Tent|Barbatus_stall_latest:tent_latest:TentGrp|Barbatus_stall_latest:tent_latest:tent_top_Mesh" 
 		"scale" " -type \"double3\" 1 0.98215920199810436 1"
+		"Barbatus_stall_latestRN" 0
+		"Barbatus_stall_latest:StockPot_latestRN" 0
+		"Barbatus_stall_latest:Firecrackers_latestRN" 0
 		"Barbatus_stall_latestRN" 3
 		2 "|Barbatus_stall_latest:Barbatus" "visibility" " 1"
 		2 "|Barbatus_stall_latest:Barbatus" "translate" " -type \"double3\" 2.38735470143953066 -0.60597337513208949 14.08358983310164092"
 		
-		2 "|Barbatus_stall_latest:Barbatus" "scale" " -type \"double3\" 0.79939858266294805 0.79939858266294805 0.79939858266294805";
+		2 "|Barbatus_stall_latest:Barbatus" "scale" " -type \"double3\" 0.79939858266294805 0.79939858266294805 0.79939858266294805"
+		
+		"Barbatus_stall_latest:GrillRN" 1
+		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:BarbatusGrp|Barbatus_stall_latest:Grill:Grill" 
+		"translate" " -type \"double3\" -2.07717869845086422 4.30635752282485562 -3.43432807591673539";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "SFalley_latestRN";
@@ -1458,13 +1450,16 @@ createNode reference -n "SFalley_latestRN";
 lockNode -l 1 ;
 createNode reference -n "Tea_PoseRN";
 	rename -uid "A49B0FB7-4D40-E6E2-D1DA-3DB75363EA41";
+	setAttr -s 2 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Tea_PoseRN"
 		"Tea_PoseRN" 0
 		"Tea_Pose:bobacup_latestRN" 0
 		"Tea_Pose:tent_latestRN" 0
 		"Tea_Pose:tent_latest:table_latestRN" 0
-		"Tea_PoseRN" 5
+		"Tea_PoseRN" 7
 		2 "|Tea_Pose:Tea_Pose" "translate" " -type \"double3\" 57.93853243976614209 1.58718863038225333 -16.10494990810057558"
 		
 		2 "|Tea_Pose:Tea_Pose" "rotate" " -type \"double3\" 0 180 0"
@@ -1472,16 +1467,25 @@ createNode reference -n "Tea_PoseRN";
 		
 		2 "Tea_Pose:file1" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Graphics/pngs/TeaPose.png\""
 		
-		2 "Tea_Pose:file1" "colorSpace" " -type \"string\" \"sRGB\"";
+		2 "Tea_Pose:file1" "colorSpace" " -type \"string\" \"sRGB\""
+		5 2 "Tea_PoseRN" "Tea_Pose:PxrLayerSurface1SG.dagSetMembers" "Tea_PoseRN.placeHolderList[1]" 
+		""
+		5 2 "Tea_PoseRN" "Tea_Pose:PxrSurface3SG.dagSetMembers" "Tea_PoseRN.placeHolderList[2]" 
+		"";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "Tea_Pose_Stall_LatestRN";
 	rename -uid "AD65BE6B-4CFE-A675-DCEF-CE932C21DE6F";
+	setAttr -s 6 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Tea_Pose_Stall_LatestRN"
-		"Tea_Pose_Stall_LatestRN" 0
 		"Tea_Pose_Stall_Latest:bobacup_latestRN" 0
-		"Tea_Pose_Stall_Latest:LuckyCat_latestRN" 0
 		"Tea_Pose_Stall_Latest:tent_latestRN" 2
 		2 "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:tent_latest:Tent|Tea_Pose_Stall_Latest:tent_latest:TentGrp|Tea_Pose_Stall_Latest:tent_latest:tent_top_Mesh" 
 		"translate" " -type \"double3\" 0 0.42311217090030778 0"
@@ -1489,14 +1493,82 @@ createNode reference -n "Tea_Pose_Stall_LatestRN";
 		"scale" " -type \"double3\" 1 0.97311090559312874 1"
 		"Tea_Pose_Stall_Latest:tent_latest:table_latestRN" 0
 		"Tea_Pose_Stall_Latest:tent_latest_table_latestRN" 0
-		"Tea_Pose_Stall_LatestRN" 4
+		"Tea_Pose_Stall_LatestRN" 0
+		"Tea_Pose_Stall_Latest:StockPot_latestRN" 0
+		"Tea_Pose_Stall_Latest:straw_latestRN" 0
+		"Tea_Pose_Stall_Latest:LuckyCat_latestRN" 0
+		"Tea_Pose_Stall_LatestRN" 10
 		2 "|Tea_Pose_Stall_Latest:Tea_Pose" "translate" " -type \"double3\" 2.09443984801565097 1.15522862036610885 -14.6244460059152992"
 		
 		2 "|Tea_Pose_Stall_Latest:Tea_Pose" "scale" " -type \"double3\" 11.52547576150026387 11.52547576150026387 11.52547576150026387"
 		
 		2 "Tea_Pose_Stall_Latest:file1" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Graphics/pngs/TeaPose.png\""
 		
-		2 "Tea_Pose_Stall_Latest:file1" "colorSpace" " -type \"string\" \"sRGB\"";
+		2 "Tea_Pose_Stall_Latest:file1" "colorSpace" " -type \"string\" \"sRGB\""
+		
+		3 "Tea_Pose_Stall_Latest:groupId4.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "Tea_Pose_Stall_Latest:groupId1.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "Tea_Pose_Stall_Latest:groupId3.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "Tea_Pose_Stall_Latest:groupId5.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "Tea_Pose_Stall_Latest:groupId2.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "Tea_Pose_Stall_Latest:groupId6.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		"Tea_Pose_Stall_Latest:bobacup_latestRN" 25
+		2 "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:Cupw_Straw|Tea_Pose_Stall_Latest:bobacup_latest:BobaCont|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape" 
+		"instObjGroups" " -s 8"
+		3 "Tea_Pose_Stall_Latest:groupId5.groupId" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont5|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont5|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont5|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Tea_Pose_Stall_Latest:groupId4.groupId" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont4|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont4|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont4|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Tea_Pose_Stall_Latest:groupId2.groupId" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont2|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont2|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont2|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Tea_Pose_Stall_Latest:groupId3.groupId" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont3|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont3|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont3|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Tea_Pose_Stall_Latest:groupId6.groupId" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont6|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont6|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont6|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "Tea_Pose_Stall_Latest:groupId1.groupId" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont1|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont1|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont1|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 1 "Tea_Pose_Stall_LatestRN" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont4|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups" 
+		"Tea_Pose_Stall_LatestRN.placeHolderList[1]" ""
+		5 1 "Tea_Pose_Stall_LatestRN" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont5|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups" 
+		"Tea_Pose_Stall_LatestRN.placeHolderList[2]" ""
+		5 3 "Tea_Pose_Stall_LatestRN" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont6|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups" 
+		"Tea_Pose_Stall_LatestRN.placeHolderList[3]" ""
+		5 3 "Tea_Pose_Stall_LatestRN" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont3|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups" 
+		"Tea_Pose_Stall_LatestRN.placeHolderList[4]" ""
+		5 3 "Tea_Pose_Stall_LatestRN" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont2|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups" 
+		"Tea_Pose_Stall_LatestRN.placeHolderList[5]" ""
+		5 3 "Tea_Pose_Stall_LatestRN" "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:BobaStack|Tea_Pose_Stall_Latest:BobaCont1|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape.instObjGroups" 
+		"Tea_Pose_Stall_LatestRN.placeHolderList[6]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
@@ -1602,6 +1674,132 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[31].x" 40;
 	setAttr ".tgi[0].ni[31].y" 355.71429443359375;
 	setAttr ".tgi[0].ni[31].nvs" 1922;
+createNode groupId -n "Tea_Pose:groupId8";
+	rename -uid "40DA8EC0-46E2-E69C-A1B8-9B87A21C0D66";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId9";
+	rename -uid "A65D19AB-4329-BABA-7AD9-8AA6A4BBEAB7";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId10";
+	rename -uid "3CD0BB7D-4667-5C58-70D0-B1B03A32F88F";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId11";
+	rename -uid "9D00F649-4AAF-2785-8C77-E99BC43C78B1";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId12";
+	rename -uid "25C6B7C7-4F3C-855D-F823-6BAB4DCB990F";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId13";
+	rename -uid "BB163573-48F3-2719-A06E-A69358CF54BF";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId14";
+	rename -uid "7BA29B53-4338-CFBB-AFDB-5AB1063FA522";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId8";
+	rename -uid "82BBDBC7-45D5-5056-504E-2E91D9EBD2BE";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId9";
+	rename -uid "B456E6EF-4E62-DC81-69CF-1BB6DA148E00";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId10";
+	rename -uid "48F9B8F7-416F-8948-D276-AEB5B852CFEF";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId11";
+	rename -uid "D0DCC988-4806-D2A3-609E-F6B17DF9D094";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId12";
+	rename -uid "6EC80057-479A-C38D-EB95-B2B9AD1A7E4B";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId13";
+	rename -uid "9FD5CD0B-4AFF-3D8E-5166-DBBFDD41651A";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId14";
+	rename -uid "5789A8C4-416E-2FC4-94CB-07B60FDFB355";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId15";
+	rename -uid "9FC76478-427C-845D-34B2-73A60D3FB578";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId16";
+	rename -uid "352C323E-46F1-11D6-BAAB-EF83BB32209C";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId17";
+	rename -uid "662E106D-41FB-64FA-6A4C-98AABD4D5C38";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId18";
+	rename -uid "FC539B6F-4B40-2C1A-4BB1-4E88E6CA14AB";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId19";
+	rename -uid "7CA0A164-4451-086D-B942-078BAFFAE696";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId20";
+	rename -uid "C2958BA6-4C92-E640-2A67-9F870594620F";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId21";
+	rename -uid "01589227-4320-9B74-1398-02A4F5AE4E93";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId15";
+	rename -uid "68946CB1-4052-1DAD-36ED-AC97226DE8D9";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId16";
+	rename -uid "9AD1E6B7-458F-E22F-C4BA-31AFB386F766";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId17";
+	rename -uid "6596E1E0-417B-26BC-EBA8-A58679C9E318";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId18";
+	rename -uid "DC42233E-4AC9-FACC-E314-B89D480271F1";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId19";
+	rename -uid "0C6F6774-4BD2-37A8-6496-EEACE6DC78F8";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId20";
+	rename -uid "33001330-43CE-5EB4-3516-7AABF4712C9D";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId21";
+	rename -uid "7201FFAE-4E7F-8B1D-E70B-05B2269ADD34";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId29";
+	rename -uid "DB0D44F8-4A17-5411-36B4-00BBA3DAE62C";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId30";
+	rename -uid "C0A29833-4D58-FFA5-29E8-0F8D17DC6478";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId31";
+	rename -uid "54D36651-4974-73A8-4541-CFA5DF3F8940";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId32";
+	rename -uid "3FAAE511-4247-71AF-2E58-DBAB3B2D2F90";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId33";
+	rename -uid "D8967F2A-4B25-B379-97E2-0492D86D5A77";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId34";
+	rename -uid "F9B6FA6E-4D0C-CEE3-6790-CDA857F58FB4";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose:groupId35";
+	rename -uid "BCF82169-456A-F49F-4045-FBA0B0774CC0";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId29";
+	rename -uid "1C5FF97E-4BA6-7F52-11AE-9D897130D95D";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId30";
+	rename -uid "FA048877-42DF-47BC-A7EC-EF91F03B5F0F";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId31";
+	rename -uid "23B2FEF1-4A2C-A56C-C689-5A8CE1F2DF25";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId32";
+	rename -uid "1880855D-4AD9-A10F-3F1B-95A9762494A6";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId33";
+	rename -uid "3DB329BD-44C9-CB68-E85A-20A9742508DF";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId34";
+	rename -uid "47C2C413-49EE-1121-790D-E8A66529F1D7";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId35";
+	rename -uid "37754E29-4320-4287-A72B-538E4F6D336F";
+	setAttr ".ihi" 0;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -1621,13 +1819,13 @@ select -ne :postProcessList1;
 select -ne :defaultRenderUtilityList1;
 	setAttr -s 5 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 58 ".r";
+	setAttr -s 64 ".r";
 select -ne :defaultTextureList1;
 	setAttr -s 9 ".tx";
 select -ne :initialShadingGroup;
-	setAttr -s 124 ".dsm";
+	setAttr -s 147 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 13 ".gn";
+	setAttr -s 74 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
@@ -1637,6 +1835,12 @@ select -ne :defaultResolution;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+connectAttr "Tea_Pose_Stall_LatestRN.phl[1]" "Tea_PoseRN.phl[1]";
+connectAttr "Tea_Pose_Stall_LatestRN.phl[2]" "Tea_PoseRN.phl[2]";
+connectAttr "Tea_Pose_Stall_LatestRN.phl[3]" ":initialShadingGroup.dsm" -na;
+connectAttr "Tea_Pose_Stall_LatestRN.phl[4]" ":initialShadingGroup.dsm" -na;
+connectAttr "Tea_Pose_Stall_LatestRN.phl[5]" ":initialShadingGroup.dsm" -na;
+connectAttr "Tea_Pose_Stall_LatestRN.phl[6]" ":initialShadingGroup.dsm" -na;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -1654,4 +1858,46 @@ connectAttr ":rmanGlobals.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanDefaultDisplay.msg" ":defaultRenderingList1.r" -na;
 connectAttr "d_openexr.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":PxrPathTracer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "Tea_Pose:groupId8.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId9.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId10.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId11.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId12.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId13.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId14.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId8.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId9.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId10.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId11.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId12.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId13.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId14.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId15.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId16.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId17.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId18.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId19.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId20.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId21.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId15.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId16.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId17.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId18.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId19.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId20.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId21.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId29.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId30.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId31.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId32.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId33.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId34.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose:groupId35.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId29.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId30.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId31.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId32.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId33.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId34.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId35.msg" ":initialShadingGroup.gn" -na;
 // End of night_market.ma
