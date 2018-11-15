@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: LuckyCat_v3_latest.ma
-//Last modified: Wed, Nov 14, 2018 10:27:59 PM
+//Name: LuckyCat_latest.ma
+//Last modified: Wed, Nov 14, 2018 10:28:22 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -16,8 +16,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "3EFA08F7-47A1-0082-B556-508B8BCEA830";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -9.2101836757848261 8.2358154717630931 -1.0268127606368456 ;
-	setAttr ".r" -type "double3" -37.538352729726213 -99.799999999989524 0 ;
+	setAttr ".t" -type "double3" -11.124315135945979 4.7291121859156267 0.32266042768492609 ;
+	setAttr ".r" -type "double3" -16.538352729725538 -90.599999999987801 -1.526666247102488e-13 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "848BF41D-44E5-7607-5D0E-4DADA0354F86";
 	setAttr -k off ".v" no;
@@ -2919,7 +2919,7 @@ createNode polyTweakUV -n "polyTweakUV2";
 		 -0.057867546 -0.083286807 -0.058603965 -0.16743925 -0.059340362 -0.25159168 -0.059585843
 		 -0.27964249;
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "2273AD9A-42B5-2215-5F71-D9A7AAFA7A53";
+	rename -uid "BD01F43D-4705-61DB-5937-3F9E76E5F34A";
 	setAttr ".pee" yes;
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -53.17460106163437 -503.9682339423556 ;
@@ -3118,4 +3118,4 @@ connectAttr "RightArmShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId3.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId4.msg" ":initialShadingGroup.gn" -na;
-// End of LuckyCat_v3_latest.ma
+// End of LuckyCat_latest.ma
