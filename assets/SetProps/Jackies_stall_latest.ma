@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Jackies_stall_latest.ma
-//Last modified: Thu, Nov 15, 2018 11:15:51 AM
+//Last modified: Thu, Nov 15, 2018 11:28:52 AM
 //Codeset: 1252
 file -rdi 1 -ns "tent_latest" -rfn "tent_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/tent_latest.ma";
@@ -16,10 +16,14 @@ file -rdi 1 -ns "mooncakebox_latest1" -rfn "mooncakebox_latestRN1" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/mooncakebox_latest.ma";
 file -rdi 1 -ns "mooncake_latest1" -rfn "mooncake_latestRN1" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/mooncake_latest.ma";
-file -rdi 1 -ns "LanternBulbWithTail_latest" -rfn "LanternBulbWithTail_latestRN"
+file -rdi 1 -ns "LanternBulbWithTail_latest" -dr 1 -rfn "LanternBulbWithTail_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/LanternBulbWithTail_latest.ma";
 file -rdi 1 -ns "table_latest" -rfn "table_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/table_latest.ma";
+file -rdi 1 -ns "LanternSphereWithTail_latest" -rfn "LanternSphereWithTail_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/LanternSphereWithTail_latest.ma";
+file -rdi 1 -ns "LanternSphereWithTail_latest1" -rfn "LanternSphereWithTail_latestRN1"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/LanternSphereWithTail_latest.ma";
 file -r -ns "tent_latest" -dr 1 -rfn "tent_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/tent_latest.ma";
 file -r -ns "jackieIphone_latest" -dr 1 -rfn "jackieIphone_latestRN" -op "v=0;" 
@@ -36,6 +40,10 @@ file -r -ns "LanternBulbWithTail_latest" -dr 1 -rfn "LanternBulbWithTail_latestR
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/LanternBulbWithTail_latest.ma";
 file -r -ns "table_latest" -dr 1 -rfn "table_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/table_latest.ma";
+file -r -ns "LanternSphereWithTail_latest" -dr 1 -rfn "LanternSphereWithTail_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/LanternSphereWithTail_latest.ma";
+file -r -ns "LanternSphereWithTail_latest1" -dr 1 -rfn "LanternSphereWithTail_latestRN1"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/LanternSphereWithTail_latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
 requires -nodeType "PxrVisualizer" -nodeType "PxrDefault" -nodeType "rmanDisplayChannel"
@@ -53,13 +61,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "9301B0DE-40AC-0A42-A7F3-148BD5CCB412";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 69.592276185480401 26.177540670920891 6.015574973720053 ;
-	setAttr ".r" -type "double3" -19.538352729635424 -635.39999999987867 1.6898372574004407e-14 ;
+	setAttr ".t" -type "double3" 44.317795172807863 11.568994778300805 11.108500813046501 ;
+	setAttr ".r" -type "double3" -9.3383527295342628 -640.19999999982474 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "1CF9ABF6-4105-99DB-5764-FCAB76D9B5BC";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 72.114678516091502;
+	setAttr ".coi" 44.8218696620198;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -1025,21 +1033,21 @@ createNode transform -n "mooncake_Controller3" -p "Jackies_Stall";
 createNode transform -n "Lantern_Bulbw_Tail1" -p "Jackies_Stall";
 	rename -uid "FD5A5DBA-4D2B-034A-AB85-CD937AFA53F0";
 	setAttr ".t" -type "double3" 8.7384589112041979 8.5826988088900276 5.365557927849979 ;
-createNode transform -n "MCBox3";
-	rename -uid "7865C8A6-4784-94F9-7B13-8C86436CC4F0";
-	setAttr ".t" -type "double3" 6.4850075655391102 3.9661428591786079 4.3830801325665032 ;
-	setAttr ".r" -type "double3" 0 -2.0617339997895323 0 ;
-	setAttr ".s" -type "double3" 1.7436148817966255 1.7436148817966257 1.7436148817966255 ;
-createNode transform -n "MCBox4";
-	rename -uid "F63B4AA7-4297-7E44-ED36-3DBEEBB78D21";
-	setAttr ".t" -type "double3" 6.4053734421439774 4.5909958570519906 4.3830801325665032 ;
-	setAttr ".r" -type "double3" 0 13.433003167775219 0 ;
-	setAttr ".s" -type "double3" 1.7436148817966255 1.7436148817966255 1.7436148817966253 ;
-createNode transform -n "MCBox5";
+createNode transform -n "MCBox5" -p "Jackies_Stall";
 	rename -uid "8706652C-4824-9EDE-6C8E-E69C50DD621F";
 	setAttr ".t" -type "double3" 6.3797568696825753 5.1997109452384533 4.3830801325665032 ;
 	setAttr ".r" -type "double3" 0 7.697100891843113 0 ;
 	setAttr ".s" -type "double3" 1.7436148817966257 1.7436148817966253 1.7436148817966253 ;
+createNode transform -n "MCBox4" -p "Jackies_Stall";
+	rename -uid "F63B4AA7-4297-7E44-ED36-3DBEEBB78D21";
+	setAttr ".t" -type "double3" 6.4053734421439774 4.5909958570519906 4.3830801325665032 ;
+	setAttr ".r" -type "double3" 0 13.433003167775219 0 ;
+	setAttr ".s" -type "double3" 1.7436148817966255 1.7436148817966255 1.7436148817966253 ;
+createNode transform -n "MCBox3" -p "Jackies_Stall";
+	rename -uid "7865C8A6-4784-94F9-7B13-8C86436CC4F0";
+	setAttr ".t" -type "double3" 6.4850075655391102 3.9661428591786079 4.3830801325665032 ;
+	setAttr ".r" -type "double3" 0 -2.0617339997895323 0 ;
+	setAttr ".s" -type "double3" 1.7436148817966255 1.7436148817966257 1.7436148817966255 ;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "C1528F62-4E69-55D2-35EE-FF8C5418C251";
 	setAttr -s 6 ".lnk";
@@ -2947,22 +2955,22 @@ createNode reference -n "mooncakebox_latestRN1";
 		"mooncakebox_latestRN1" 23
 		0 "|mooncakebox_latest1:MCBox" "|Jackies_Stall" "-s -r "
 		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:MCBoxShape" 
-		"|MCBox3" "-s -r -add "
+		"|Jackies_Stall|MCBox3" "-s -r -add "
 		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:MCBoxShape" 
-		"|MCBox4" "-s -r -add "
+		"|Jackies_Stall|MCBox4" "-s -r -add "
 		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:MCBoxShape" 
-		"|MCBox5" "-s -r -add "
-		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:box" "|MCBox3" 
+		"|Jackies_Stall|MCBox5" "-s -r -add "
+		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:box" "|Jackies_Stall|MCBox3" 
 		"-s -r -add "
-		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:box" "|MCBox4" 
+		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:box" "|Jackies_Stall|MCBox4" 
 		"-s -r -add "
-		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:box" "|MCBox5" 
+		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:box" "|Jackies_Stall|MCBox5" 
 		"-s -r -add "
-		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:Lid" "|MCBox3" 
+		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:Lid" "|Jackies_Stall|MCBox3" 
 		"-s -r -add "
-		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:Lid" "|MCBox4" 
+		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:Lid" "|Jackies_Stall|MCBox4" 
 		"-s -r -add "
-		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:Lid" "|MCBox5" 
+		0 "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:Lid" "|Jackies_Stall|MCBox5" 
 		"-s -r -add "
 		2 "|Jackies_Stall|mooncakebox_latest1:MCBox" "translate" " -type \"double3\" 4.42091625347916128 4.66919854072745455 -4.58396388797974286"
 		
@@ -2976,19 +2984,19 @@ createNode reference -n "mooncakebox_latestRN1";
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "mooncakebox_latestRN1" "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:box|mooncakebox_latest1:boxShape.instObjGroups" 
 		"mooncakebox_latestRN1.placeHolderList[1]" ":initialShadingGroup.dsm"
-		5 3 "mooncakebox_latestRN1" "|MCBox3|mooncakebox_latest1:box|mooncakebox_latest1:boxShape.instObjGroups" 
+		5 3 "mooncakebox_latestRN1" "|Jackies_Stall|MCBox5|mooncakebox_latest1:box|mooncakebox_latest1:boxShape.instObjGroups" 
 		"mooncakebox_latestRN1.placeHolderList[2]" ""
-		5 3 "mooncakebox_latestRN1" "|MCBox4|mooncakebox_latest1:box|mooncakebox_latest1:boxShape.instObjGroups" 
+		5 3 "mooncakebox_latestRN1" "|Jackies_Stall|MCBox4|mooncakebox_latest1:box|mooncakebox_latest1:boxShape.instObjGroups" 
 		"mooncakebox_latestRN1.placeHolderList[3]" ""
-		5 3 "mooncakebox_latestRN1" "|MCBox5|mooncakebox_latest1:box|mooncakebox_latest1:boxShape.instObjGroups" 
+		5 3 "mooncakebox_latestRN1" "|Jackies_Stall|MCBox3|mooncakebox_latest1:box|mooncakebox_latest1:boxShape.instObjGroups" 
 		"mooncakebox_latestRN1.placeHolderList[4]" ""
 		5 3 "mooncakebox_latestRN1" "|Jackies_Stall|mooncakebox_latest1:MCBox|mooncakebox_latest1:Lid|mooncakebox_latest1:cover|mooncakebox_latest1:coverShape.instObjGroups" 
 		"mooncakebox_latestRN1.placeHolderList[5]" ":initialShadingGroup.dsm"
-		5 3 "mooncakebox_latestRN1" "|MCBox3|mooncakebox_latest1:Lid|mooncakebox_latest1:cover|mooncakebox_latest1:coverShape.instObjGroups" 
+		5 3 "mooncakebox_latestRN1" "|Jackies_Stall|MCBox5|mooncakebox_latest1:Lid|mooncakebox_latest1:cover|mooncakebox_latest1:coverShape.instObjGroups" 
 		"mooncakebox_latestRN1.placeHolderList[6]" ""
-		5 3 "mooncakebox_latestRN1" "|MCBox4|mooncakebox_latest1:Lid|mooncakebox_latest1:cover|mooncakebox_latest1:coverShape.instObjGroups" 
+		5 3 "mooncakebox_latestRN1" "|Jackies_Stall|MCBox4|mooncakebox_latest1:Lid|mooncakebox_latest1:cover|mooncakebox_latest1:coverShape.instObjGroups" 
 		"mooncakebox_latestRN1.placeHolderList[7]" ""
-		5 3 "mooncakebox_latestRN1" "|MCBox5|mooncakebox_latest1:Lid|mooncakebox_latest1:cover|mooncakebox_latest1:coverShape.instObjGroups" 
+		5 3 "mooncakebox_latestRN1" "|Jackies_Stall|MCBox3|mooncakebox_latest1:Lid|mooncakebox_latest1:cover|mooncakebox_latest1:coverShape.instObjGroups" 
 		"mooncakebox_latestRN1.placeHolderList[8]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -3075,31 +3083,20 @@ lockNode -l 1 ;
 createNode reference -n "LanternBulbWithTail_latestRN";
 	rename -uid "C2F5A1B5-4492-72B4-89FB-92AD59DB599A";
 	setAttr -s 22 ".phl";
-	setAttr ".phl[1]" 0;
-	setAttr ".phl[2]" 0;
-	setAttr ".phl[3]" 0;
-	setAttr ".phl[4]" 0;
-	setAttr ".phl[5]" 0;
-	setAttr ".phl[6]" 0;
-	setAttr ".phl[7]" 0;
-	setAttr ".phl[8]" 0;
-	setAttr ".phl[9]" 0;
-	setAttr ".phl[10]" 0;
-	setAttr ".phl[11]" 0;
-	setAttr ".phl[12]" 0;
-	setAttr ".phl[13]" 0;
-	setAttr ".phl[14]" 0;
-	setAttr ".phl[15]" 0;
-	setAttr ".phl[16]" 0;
-	setAttr ".phl[17]" 0;
-	setAttr ".phl[18]" 0;
-	setAttr ".phl[19]" 0;
-	setAttr ".phl[20]" 0;
-	setAttr ".phl[21]" 0;
-	setAttr ".phl[22]" 0;
+	setAttr ".phl[1]" -type "TdataCompound" ;
+	setAttr ".phl[2]" -type "TdataCompound" ;
+	setAttr ".phl[3]" -type "TdataCompound" ;
+	setAttr ".phl[4]" -type "TdataCompound" ;
+	setAttr ".phl[5]" -type "TdataCompound" ;
+	setAttr ".phl[6]" -type "TdataCompound" ;
+	setAttr ".phl[7]" -type "TdataCompound" ;
+	setAttr ".phl[8]" -type "TdataCompound" ;
+	setAttr ".phl[9]" -type "TdataCompound" ;
+	setAttr ".phl[10]" -type "TdataCompound" ;
+	setAttr ".phl[11]" -type "TdataCompound" ;
+	setAttr ".phl[12]" -type "TdataCompound" ;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"LanternBulbWithTail_latestRN"
-		"LanternBulbWithTail_latestRN" 0
 		"LanternBulbWithTail_latestRN" 41
 		0 "|LanternBulbWithTail_latest:Lantern_Bulbw_Tail" "|Jackies_Stall" "-s -r "
 		
@@ -3116,13 +3113,9 @@ createNode reference -n "LanternBulbWithTail_latestRN";
 		" -av"
 		2 "|Jackies_Stall|LanternBulbWithTail_latest:Lantern_Bulbw_Tail" "translateZ" 
 		" -av"
-		3 "|Jackies_Stall|Lantern_Bulbw_Tail1|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pTorus1|LanternBulbWithTail_latest:pTorusShape1.instObjGroups" 
+		3 "|Jackies_Stall|Lantern_Bulbw_Tail1|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pSphere1|LanternBulbWithTail_latest:pSphereShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackies_Stall|LanternBulbWithTail_latest:Lantern_Bulbw_Tail|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pTorus1|LanternBulbWithTail_latest:pTorusShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackies_Stall|Lantern_Bulbw_Tail1|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pCylinder4|LanternBulbWithTail_latest:pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackies_Stall|LanternBulbWithTail_latest:Lantern_Bulbw_Tail|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pCylinder4|LanternBulbWithTail_latest:pCylinderShape4.instObjGroups" 
+		3 "|Jackies_Stall|LanternBulbWithTail_latest:Lantern_Bulbw_Tail|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pSphere1|LanternBulbWithTail_latest:pSphereShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Jackies_Stall|Lantern_Bulbw_Tail1|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pCylinder1|LanternBulbWithTail_latest:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -3132,13 +3125,17 @@ createNode reference -n "LanternBulbWithTail_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Jackies_Stall|LanternBulbWithTail_latest:Lantern_Bulbw_Tail|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pCylinder2|LanternBulbWithTail_latest:pCylinderShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Jackies_Stall|Lantern_Bulbw_Tail1|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pTorus1|LanternBulbWithTail_latest:pTorusShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Jackies_Stall|LanternBulbWithTail_latest:Lantern_Bulbw_Tail|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pTorus1|LanternBulbWithTail_latest:pTorusShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Jackies_Stall|Lantern_Bulbw_Tail1|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pCylinder3|LanternBulbWithTail_latest:pCylinderShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Jackies_Stall|LanternBulbWithTail_latest:Lantern_Bulbw_Tail|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pCylinder3|LanternBulbWithTail_latest:pCylinderShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackies_Stall|Lantern_Bulbw_Tail1|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pSphere1|LanternBulbWithTail_latest:pSphereShape1.instObjGroups" 
+		3 "|Jackies_Stall|Lantern_Bulbw_Tail1|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pCylinder4|LanternBulbWithTail_latest:pCylinderShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackies_Stall|LanternBulbWithTail_latest:Lantern_Bulbw_Tail|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pSphere1|LanternBulbWithTail_latest:pSphereShape1.instObjGroups" 
+		3 "|Jackies_Stall|LanternBulbWithTail_latest:Lantern_Bulbw_Tail|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pCylinder4|LanternBulbWithTail_latest:pCylinderShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "LanternBulbWithTail_latestRN" "|Jackies_Stall|Lantern_Bulbw_Tail1|LanternBulbWithTail_latest:Bulbw_TailGrp|LanternBulbWithTail_latest:pSphere1|LanternBulbWithTail_latest:pSphereShape1.instObjGroups" 
 		"LanternBulbWithTail_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
@@ -3183,7 +3180,8 @@ createNode reference -n "LanternBulbWithTail_latestRN";
 		5 4 "LanternBulbWithTail_latestRN" "|Jackies_Stall|LanternBulbWithTail_latest:Lantern_Bulbw_Tail.rotateY" 
 		"LanternBulbWithTail_latestRN.placeHolderList[21]" ""
 		5 4 "LanternBulbWithTail_latestRN" "|Jackies_Stall|LanternBulbWithTail_latest:Lantern_Bulbw_Tail.rotateZ" 
-		"LanternBulbWithTail_latestRN.placeHolderList[22]" "";
+		"LanternBulbWithTail_latestRN.placeHolderList[22]" ""
+		"LanternBulbWithTail_latestRN" 0;
 lockNode -l 1 ;
 createNode renderLayerManager -n "Ping30s_V7_Latest_renderLayerManager";
 	rename -uid "565F2035-468B-BCF0-E7F1-39A0D449B75B";
@@ -3317,6 +3315,39 @@ createNode reference -n "table_latestRN";
 		2 "|Jackies_Stall|table_latest:Table" "scale" " -type \"double3\" 7.35863283996509132 6.8860262423976133 8.39571621713354155";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode reference -n "LanternSphereWithTail_latestRN";
+	rename -uid "2DD13361-40B7-5FAC-0B1F-5381C3F20CC8";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"LanternSphereWithTail_latestRN"
+		"LanternSphereWithTail_latestRN" 0
+		"LanternSphereWithTail_latestRN" 4
+		0 "|LanternSphereWithTail_latest:LanternSpherew_Tail" "|Jackies_Stall" "-s -r "
+		
+		2 "|Jackies_Stall|LanternSphereWithTail_latest:LanternSpherew_Tail" "translate" 
+		" -type \"double3\" 8.01867562334643935 8.39785635885391457 -5.13470950496853629"
+		
+		2 "|Jackies_Stall|LanternSphereWithTail_latest:LanternSpherew_Tail" "rotate" 
+		" -type \"double3\" 0 -81.33338612462419803 0"
+		2 "|Jackies_Stall|LanternSphereWithTail_latest:LanternSpherew_Tail" "scale" 
+		" -type \"double3\" 0.87127674074956674 0.87127674074956674 0.87127674074956674";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "LanternSphereWithTail_latestRN1";
+	rename -uid "448573DC-44A8-5A9C-55D7-47A36FA92D35";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"LanternSphereWithTail_latestRN1"
+		"LanternSphereWithTail_latestRN1" 0
+		"LanternSphereWithTail_latestRN1" 4
+		0 "|LanternSphereWithTail_latest1:LanternSpherew_Tail" "|Jackies_Stall" "-s -r "
+		
+		2 "|Jackies_Stall|LanternSphereWithTail_latest1:LanternSpherew_Tail" "translate" 
+		" -type \"double3\" 8.34616834325501777 8.26492799392550914 5.28947377471680014"
+		2 "|Jackies_Stall|LanternSphereWithTail_latest1:LanternSpherew_Tail" "rotate" 
+		" -type \"double3\" 0 -22.10366801684101645 0"
+		2 "|Jackies_Stall|LanternSphereWithTail_latest1:LanternSpherew_Tail" "scale" 
+		" -type \"double3\" 0.9151885798874535 0.9151885798874535 0.9151885798874535";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -3334,9 +3365,9 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
-	setAttr -s 22 ".r";
+	setAttr -s 24 ".r";
 select -ne :initialShadingGroup;
-	setAttr -s 44 ".dsm";
+	setAttr -s 60 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -3428,6 +3459,52 @@ connectAttr "mooncake_latestRN1.phl[4]" ":initialShadingGroup.dsm" -na;
 connectAttr "mooncake_latestRN1.phl[5]" "mooncake_latestRN1.phl[6]";
 connectAttr "mooncake_latestRN1.phl[7]" "mooncake_latestRN1.phl[8]";
 connectAttr "mooncake_latestRN1.phl[9]" "mooncake_latestRN1.phl[10]";
+relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+connectAttr "layerManager.dli[0]" "defaultLayer.id";
+connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
+connectAttr ":rmanDefaultDisplay.msg" ":rmanGlobals.displays[0]";
+connectAttr ":PxrPathTracer.msg" ":rmanGlobals.ri_integrator";
+connectAttr "d_openexr.msg" ":rmanDefaultDisplay.displayType";
+connectAttr "Ci.msg" ":rmanDefaultDisplay.displayChannels[0]";
+connectAttr "a.msg" ":rmanDefaultDisplay.displayChannels[1]";
+connectAttr "sharedReferenceNode.sr" "tent_latestRN.sr";
+connectAttr "Lantern_Bulbw_Tail_translateX.o" "LanternBulbWithTail_latestRN.phl[13]"
+		;
+connectAttr "Lantern_Bulbw_Tail_translateY.o" "LanternBulbWithTail_latestRN.phl[14]"
+		;
+connectAttr "Lantern_Bulbw_Tail_translateZ.o" "LanternBulbWithTail_latestRN.phl[15]"
+		;
+connectAttr "Lantern_Bulbw_Tail_scaleX.o" "LanternBulbWithTail_latestRN.phl[16]"
+		;
+connectAttr "Lantern_Bulbw_Tail_scaleY.o" "LanternBulbWithTail_latestRN.phl[17]"
+		;
+connectAttr "Lantern_Bulbw_Tail_scaleZ.o" "LanternBulbWithTail_latestRN.phl[18]"
+		;
+connectAttr "Lantern_Bulbw_Tail_visibility.o" "LanternBulbWithTail_latestRN.phl[19]"
+		;
+connectAttr "Lantern_Bulbw_Tail_rotateX.o" "LanternBulbWithTail_latestRN.phl[20]"
+		;
+connectAttr "Lantern_Bulbw_Tail_rotateY.o" "LanternBulbWithTail_latestRN.phl[21]"
+		;
+connectAttr "Lantern_Bulbw_Tail_rotateZ.o" "LanternBulbWithTail_latestRN.phl[22]"
+		;
+connectAttr "sharedReferenceNode.sr" "LanternBulbWithTail_latestRN.sr";
+connectAttr "Ping30s_V7_Latest_renderLayerManager.rlmi[0]" "Ping30s_V7_Latest_defaultRenderLayer.rlid"
+		;
+connectAttr "tent_latest_renderLayerManager.rlmi[0]" "tent_latest_defaultRenderLayer.rlid"
+		;
+connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr ":rmanGlobals.msg" ":defaultRenderingList1.r" -na;
+connectAttr ":rmanDefaultDisplay.msg" ":defaultRenderingList1.r" -na;
+connectAttr "d_openexr.msg" ":defaultRenderingList1.r" -na;
+connectAttr ":PxrPathTracer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "Ping30s_V7_Latest_defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "tent_latest_defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "tent_latest_d_openexr.msg" ":defaultRenderingList1.r" -na;
 connectAttr "LanternBulbWithTail_latestRN.phl[1]" ":initialShadingGroup.dsm" -na
 		;
 connectAttr "LanternBulbWithTail_latestRN.phl[2]" ":initialShadingGroup.dsm" -na
@@ -3452,51 +3529,6 @@ connectAttr "LanternBulbWithTail_latestRN.phl[11]" ":initialShadingGroup.dsm" -n
 		;
 connectAttr "LanternBulbWithTail_latestRN.phl[12]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "Lantern_Bulbw_Tail_translateX.o" "LanternBulbWithTail_latestRN.phl[13]"
-		;
-connectAttr "Lantern_Bulbw_Tail_translateY.o" "LanternBulbWithTail_latestRN.phl[14]"
-		;
-connectAttr "Lantern_Bulbw_Tail_translateZ.o" "LanternBulbWithTail_latestRN.phl[15]"
-		;
-connectAttr "Lantern_Bulbw_Tail_scaleX.o" "LanternBulbWithTail_latestRN.phl[16]"
-		;
-connectAttr "Lantern_Bulbw_Tail_scaleY.o" "LanternBulbWithTail_latestRN.phl[17]"
-		;
-connectAttr "Lantern_Bulbw_Tail_scaleZ.o" "LanternBulbWithTail_latestRN.phl[18]"
-		;
-connectAttr "Lantern_Bulbw_Tail_visibility.o" "LanternBulbWithTail_latestRN.phl[19]"
-		;
-connectAttr "Lantern_Bulbw_Tail_rotateX.o" "LanternBulbWithTail_latestRN.phl[20]"
-		;
-connectAttr "Lantern_Bulbw_Tail_rotateY.o" "LanternBulbWithTail_latestRN.phl[21]"
-		;
-connectAttr "Lantern_Bulbw_Tail_rotateZ.o" "LanternBulbWithTail_latestRN.phl[22]"
-		;
-relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
-connectAttr "layerManager.dli[0]" "defaultLayer.id";
-connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
-connectAttr ":rmanDefaultDisplay.msg" ":rmanGlobals.displays[0]";
-connectAttr ":PxrPathTracer.msg" ":rmanGlobals.ri_integrator";
-connectAttr "d_openexr.msg" ":rmanDefaultDisplay.displayType";
-connectAttr "Ci.msg" ":rmanDefaultDisplay.displayChannels[0]";
-connectAttr "a.msg" ":rmanDefaultDisplay.displayChannels[1]";
-connectAttr "sharedReferenceNode.sr" "tent_latestRN.sr";
-connectAttr "Ping30s_V7_Latest_renderLayerManager.rlmi[0]" "Ping30s_V7_Latest_defaultRenderLayer.rlid"
-		;
-connectAttr "tent_latest_renderLayerManager.rlmi[0]" "tent_latest_defaultRenderLayer.rlid"
-		;
-connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr ":rmanGlobals.msg" ":defaultRenderingList1.r" -na;
-connectAttr ":rmanDefaultDisplay.msg" ":defaultRenderingList1.r" -na;
-connectAttr "d_openexr.msg" ":defaultRenderingList1.r" -na;
-connectAttr ":PxrPathTracer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "Ping30s_V7_Latest_defaultRenderLayer.msg" ":defaultRenderingList1.r"
-		 -na;
-connectAttr "tent_latest_defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "tent_latest_d_openexr.msg" ":defaultRenderingList1.r" -na;
 connectAttr "tent_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
 connectAttr "tent_latestRN.phl[2]" ":initialShadingGroup.dsm" -na;
 connectAttr "tent_latestRN.phl[3]" ":initialShadingGroup.dsm" -na;
