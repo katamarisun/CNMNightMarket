@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: LanternSphereWithTail_v1_latest.ma
-//Last modified: Wed, Nov 14, 2018 10:48:10 PM
+//Name: LanternSphereWithTail_latest.ma
+//Last modified: Wed, Nov 14, 2018 10:48:16 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -2063,4 +2063,4 @@ connectAttr "pTorusShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pasted__pCylinderShape3.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCylinderShape2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCylinderShape3.iog" ":initialShadingGroup.dsm" -na;
-// End of LanternSphereWithTail_v1_latest.ma
+// End of LanternSphereWithTail_latest.ma

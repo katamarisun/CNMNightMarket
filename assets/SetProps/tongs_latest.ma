@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: tongs_v1_latest.ma
-//Last modified: Wed, Nov 14, 2018 10:49:51 PM
+//Name: tongs_latest.ma
+//Last modified: Wed, Nov 14, 2018 10:49:59 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -820,4 +820,4 @@ connectAttr "d_openexr.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":PxrPathTracer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pCubeShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCubeShape2.iog" ":initialShadingGroup.dsm" -na;
-// End of tongs_v1_latest.ma
+// End of tongs_latest.ma

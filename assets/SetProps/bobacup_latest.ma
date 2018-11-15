@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: bobacup_v1_latest.ma
-//Last modified: Wed, Nov 14, 2018 10:34:13 PM
+//Name: bobacup_latest.ma
+//Last modified: Wed, Nov 14, 2018 10:34:31 PM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -1196,4 +1196,4 @@ connectAttr "StrawShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "CUPShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId16.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId17.msg" ":initialShadingGroup.gn" -na;
-// End of bobacup_v1_latest.ma
+// End of bobacup_latest.ma

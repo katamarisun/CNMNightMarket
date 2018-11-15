@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: Firecrackers_v1_latest.ma
-//Last modified: Wed, Nov 14, 2018 10:36:31 PM
+//Name: Firecrackers_latest.ma
+//Last modified: Wed, Nov 14, 2018 10:36:39 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -6225,4 +6225,4 @@ connectAttr "tassleStringShape2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "topStringShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "topStringShape2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "topStringShape3.iog" ":initialShadingGroup.dsm" -na;
-// End of Firecrackers_v1_latest.ma
+// End of Firecrackers_latest.ma
