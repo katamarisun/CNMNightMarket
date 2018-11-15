@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: reedBundle_v1_latest.ma
-//Last modified: Wed, Nov 14, 2018 11:03:26 PM
+//Name: reedBundle_latest.ma
+//Last modified: Wed, Nov 14, 2018 11:03:34 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -5432,4 +5432,4 @@ connectAttr ":rmanGlobals.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanDefaultDisplay.msg" ":defaultRenderingList1.r" -na;
 connectAttr "d_openexr.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":PxrPathTracer.msg" ":defaultRenderingList1.r" -na;
-// End of reedBundle_v1_latest.ma
+// End of reedBundle_latest.ma

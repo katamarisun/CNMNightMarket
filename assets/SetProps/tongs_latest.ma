@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: tongs_latest.ma
-//Last modified: Wed, Nov 14, 2018 10:49:59 PM
+//Last modified: Wed, Nov 14, 2018 10:59:43 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";

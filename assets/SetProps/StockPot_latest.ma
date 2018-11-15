@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: StockPot_v1_latest.ma
-//Last modified: Wed, Nov 14, 2018 11:02:11 PM
+//Name: StockPot_latest.ma
+//Last modified: Wed, Nov 14, 2018 11:02:19 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -2248,4 +2248,4 @@ connectAttr "PotBottomShape.ciog.cog[1]" ":initialShadingGroup.dsm" -na;
 connectAttr "PotBottomShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId21.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId22.msg" ":initialShadingGroup.gn" -na;
-// End of StockPot_v1_latest.ma
+// End of StockPot_latest.ma
