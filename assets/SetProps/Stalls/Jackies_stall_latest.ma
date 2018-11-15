@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Jackies_stall_latest.ma
-//Last modified: Thu, Nov 15, 2018 12:00:08 PM
+//Last modified: Thu, Nov 15, 2018 01:18:04 PM
 //Codeset: 1252
 file -rdi 1 -ns "tent_latest" -rfn "tent_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/tent_latest.ma";
@@ -46,10 +46,10 @@ file -r -ns "LanternSphereWithTail_latest1" -dr 1 -rfn "LanternSphereWithTail_la
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/LanternSphereWithTail_latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
-requires -nodeType "PxrVisualizer" -nodeType "PxrDefault" -nodeType "rmanDisplayChannel"
-		 -nodeType "d_openexr" -nodeType "PxrCamera" -nodeType "OmnidirectionalStereo" -nodeType "rmanGlobals"
-		 -nodeType "PxrOcclusion" -nodeType "PxrDirectLighting" -nodeType "PxrVCM" -nodeType "PxrPathTracer"
-		 -nodeType "rmanDisplay" "RenderMan_for_Maya.py" "1.0";
+requires -nodeType "PxrVisualizer" -nodeType "PxrSurface" -nodeType "PxrDefault"
+		 -nodeType "rmanDisplayChannel" -nodeType "d_openexr" -nodeType "PxrCamera" -nodeType "OmnidirectionalStereo"
+		 -nodeType "rmanGlobals" -nodeType "PxrOcclusion" -nodeType "PxrDirectLighting" -nodeType "PxrVCM"
+		 -nodeType "PxrPathTracer" -nodeType "rmanDisplay" "RenderMan_for_Maya.py" "1.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
@@ -61,13 +61,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "9301B0DE-40AC-0A42-A7F3-148BD5CCB412";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 44.271451616591946 9.0888194393066168 -6.7188140669833114 ;
-	setAttr ".r" -type "double3" -8.7383527295258769 -616.19999999981928 0 ;
+	setAttr ".t" -type "double3" 30.52583979327995 9.984848900079589 4.7686714519146856 ;
+	setAttr ".r" -type "double3" -14.738352729523992 -631.80000000015673 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "1CF9ABF6-4105-99DB-5764-FCAB76D9B5BC";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 44.821869662016113;
+	setAttr ".coi" 30.288192265960074;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -1058,20 +1058,41 @@ createNode transform -n "MCBox3" -p "Jackies_Stall";
 	setAttr ".t" -type "double3" 6.4850075655391102 3.9661428591786079 4.3830801325665032 ;
 	setAttr ".r" -type "double3" 0 -2.0617339997895323 0 ;
 	setAttr ".s" -type "double3" 1.7436148817966255 1.7436148817966257 1.7436148817966255 ;
+createNode transform -n "JackiesSign" -p "JackiesStall";
+	rename -uid "2671251B-446A-A7DD-CD9A-5788E00098CA";
+	setAttr ".t" -type "double3" 0.67247041795461338 0.080556449923958648 0 ;
+	setAttr ".r" -type "double3" 0 0 3.4994692088272878 ;
+	setAttr ".s" -type "double3" 0.010691621460801428 0.28303904885729347 0.71667762321103845 ;
+createNode mesh -n "JackiesSignShape" -p "JackiesSign";
+	rename -uid "45967479-4D32-FC5F-B2F1-6482B34F27E7";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.0035767555236816406 0.49634307622909546 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 18 ".pt[0:17]" -type "float3"  0 -0.04031869 0 0 8.9525476e-18 
+		0 0 0.04031869 0 0 -0.04031869 0 0 -8.9525476e-18 0 0 0.04031869 0 0 -0.04031869 
+		0 0 -8.9525476e-18 0 0 0.04031869 0 0 -0.04031869 0 0 -8.9525476e-18 0 0 0.04031869 
+		0 0 -0.04031869 0 0 8.9525476e-18 0 0 0.04031869 0 0 -0.04031869 0 0 8.9525476e-18 
+		0 0 0.04031869 0;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "5A094D16-4174-E660-F244-BF86F6E861BD";
-	setAttr -s 6 ".lnk";
-	setAttr -s 6 ".slnk";
+	rename -uid "CEFAA3D4-43A7-D655-7239-D28B9C535BEA";
+	setAttr -s 7 ".lnk";
+	setAttr -s 7 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "6EE0F2B5-4DDC-F85E-39B1-88A95021353A";
+	rename -uid "F3C4289B-4630-291D-4642-6C9EF0899529";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "10DF52AA-4FAD-BE07-26A5-28A68C7EF325";
+	rename -uid "9907DD83-4040-517F-A5BA-C2B03D0CD549";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "3F493A55-4103-5CC4-3D2B-12BDE8E82A13";
+	rename -uid "B310F23A-487F-4347-4179-0BA3EFC477E4";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "99CDDDAD-4DE1-0D71-FB14-7D8C72B70CFC";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "ECF61611-47FB-81A0-5393-1DB915824DE1";
+	rename -uid "0BA7524E-4E3D-CCD7-00D7-4C845FAFAF26";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "59E94DD7-4CDA-0420-654F-6F9B289767F2";
 	setAttr ".g" yes;
@@ -1304,9 +1325,9 @@ createNode reference -n "tent_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Jackies_Stall|tent_latest:Table|tent_latest:TableGrp|tent_latest:tehn_le2_Mesh|tent_latest:tehn_le2_MeshShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackies_Stall|tent_latest:Tent|tent_latest:TentGrp|tent_latest:tent_top_Mesh|tent_latest:tent_top_MeshShape.instObjGroups" 
+		3 "|JackiesStall|Jackies_Stall|tent_latest:Tent|tent_latest:TentGrp|tent_latest:tent_top_Mesh|tent_latest:tent_top_MeshShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackies_Stall|tent_latest:Tent|tent_latest:TentGrp|tent_latest:tent_top_Mesh|tent_latest:tent_top_MeshShape.instObjGroups" 
+		3 "|JackiesStall|Jackies_Stall|tent_latest:Tent|tent_latest:TentGrp|tent_latest:tent_top_Mesh|tent_latest:tent_top_MeshShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "tent_latestRN" "|Jackies_Stall|tent_latest:Table|tent_latest:TableGrp|tent_latest:tehn_le2_Mesh|tent_latest:tehn_le2_MeshShape.instObjGroups" 
 		"tent_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
@@ -1324,6 +1345,8 @@ createNode reference -n "tent_latestRN";
 		
 		2 "|JackiesStall|Jackies_Stall|tent_latest:Tent|tent_latest:TentGrp|tent_latest:tent_top_Mesh" 
 		"visibility" " 1"
+		3 "|JackiesStall|Jackies_Stall|tent_latest:Tent|tent_latest:TentGrp|tent_latest:tent_top_Mesh|tent_latest:tent_top_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|JackiesStall|Jackies_Stall|tent_latest:Tent|tent_latest:TentGrp|tent_latest:tent_pole_Mesh|tent_latest:tent_pole_MeshShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|JackiesStall|Jackies_Stall|tent_latest:Tent|tent_latest:TentGrp|tent_latest:tent_pole_Mesh1|tent_latest:tent_pole_MeshShape.instObjGroups" 
@@ -1331,8 +1354,6 @@ createNode reference -n "tent_latestRN";
 		3 "|JackiesStall|Jackies_Stall|tent_latest:Tent|tent_latest:TentGrp|tent_latest:tent_pole_Mesh2|tent_latest:tent_pole_MeshShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|JackiesStall|Jackies_Stall|tent_latest:Tent|tent_latest:TentGrp|tent_latest:tent_pole_Mesh3|tent_latest:tent_pole_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|JackiesStall|Jackies_Stall|tent_latest:Tent|tent_latest:TentGrp|tent_latest:tent_top_Mesh|tent_latest:tent_top_MeshShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "tent_latestRN" "|JackiesStall|Jackies_Stall|tent_latest:Tent|tent_latest:TentGrp|tent_latest:tent_top_Mesh|tent_latest:tent_top_MeshShape.instObjGroups" 
 		"tent_latestRN.placeHolderList[5]" ":initialShadingGroup.dsm"
@@ -1360,7 +1381,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
 		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
-		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
+		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
 		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1514\n            -height 827\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
@@ -1385,14 +1406,14 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n"
 		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
 		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
-		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
-		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
-		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
-		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n"
-		+ "\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1514\\n    -height 827\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1514\\n    -height 827\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n"
+		+ "                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n"
+		+ "            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n"
+		+ "            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n"
+		+ "\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1514\\n    -height 827\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1514\\n    -height 827\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -1402,466 +1423,412 @@ createNode script -n "sceneConfigurationScriptNode";
 createNode reference -n "jackieIphone_latestRN";
 	rename -uid "1B7C3193-400F-64F4-5CD0-C4B8B8B84A23";
 	setAttr -s 112 ".phl";
-	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
-	setAttr ".phl[4]" 0;
 	setAttr ".phl[5]" 0;
-	setAttr ".phl[6]" 0;
 	setAttr ".phl[7]" 0;
-	setAttr ".phl[8]" 0;
 	setAttr ".phl[9]" 0;
-	setAttr ".phl[10]" 0;
 	setAttr ".phl[11]" 0;
-	setAttr ".phl[12]" 0;
 	setAttr ".phl[13]" 0;
-	setAttr ".phl[14]" 0;
 	setAttr ".phl[15]" 0;
-	setAttr ".phl[16]" 0;
 	setAttr ".phl[17]" 0;
-	setAttr ".phl[18]" 0;
 	setAttr ".phl[19]" 0;
-	setAttr ".phl[20]" 0;
 	setAttr ".phl[21]" 0;
-	setAttr ".phl[22]" 0;
 	setAttr ".phl[23]" 0;
-	setAttr ".phl[24]" 0;
 	setAttr ".phl[25]" 0;
-	setAttr ".phl[26]" 0;
 	setAttr ".phl[27]" 0;
-	setAttr ".phl[28]" 0;
 	setAttr ".phl[29]" 0;
-	setAttr ".phl[30]" 0;
 	setAttr ".phl[31]" 0;
-	setAttr ".phl[32]" 0;
 	setAttr ".phl[33]" 0;
-	setAttr ".phl[34]" 0;
 	setAttr ".phl[35]" 0;
-	setAttr ".phl[36]" 0;
 	setAttr ".phl[37]" 0;
-	setAttr ".phl[38]" 0;
 	setAttr ".phl[39]" 0;
-	setAttr ".phl[40]" 0;
 	setAttr ".phl[41]" 0;
-	setAttr ".phl[42]" 0;
 	setAttr ".phl[43]" 0;
-	setAttr ".phl[44]" 0;
 	setAttr ".phl[45]" 0;
-	setAttr ".phl[46]" 0;
 	setAttr ".phl[47]" 0;
-	setAttr ".phl[48]" 0;
 	setAttr ".phl[49]" 0;
-	setAttr ".phl[50]" 0;
 	setAttr ".phl[51]" 0;
-	setAttr ".phl[52]" 0;
 	setAttr ".phl[53]" 0;
-	setAttr ".phl[54]" 0;
 	setAttr ".phl[55]" 0;
-	setAttr ".phl[56]" 0;
 	setAttr ".phl[57]" 0;
-	setAttr ".phl[58]" 0;
 	setAttr ".phl[59]" 0;
-	setAttr ".phl[60]" 0;
 	setAttr ".phl[61]" 0;
-	setAttr ".phl[62]" 0;
 	setAttr ".phl[63]" 0;
-	setAttr ".phl[64]" 0;
 	setAttr ".phl[65]" 0;
-	setAttr ".phl[66]" 0;
 	setAttr ".phl[67]" 0;
-	setAttr ".phl[68]" 0;
 	setAttr ".phl[69]" 0;
-	setAttr ".phl[70]" 0;
 	setAttr ".phl[71]" 0;
-	setAttr ".phl[72]" 0;
 	setAttr ".phl[73]" 0;
-	setAttr ".phl[74]" 0;
 	setAttr ".phl[75]" 0;
-	setAttr ".phl[76]" 0;
 	setAttr ".phl[77]" 0;
-	setAttr ".phl[78]" 0;
 	setAttr ".phl[79]" 0;
-	setAttr ".phl[80]" 0;
 	setAttr ".phl[81]" 0;
-	setAttr ".phl[82]" 0;
 	setAttr ".phl[83]" 0;
-	setAttr ".phl[84]" 0;
 	setAttr ".phl[85]" 0;
-	setAttr ".phl[86]" 0;
 	setAttr ".phl[87]" 0;
-	setAttr ".phl[88]" 0;
 	setAttr ".phl[89]" 0;
-	setAttr ".phl[90]" 0;
 	setAttr ".phl[91]" 0;
-	setAttr ".phl[92]" 0;
 	setAttr ".phl[93]" 0;
-	setAttr ".phl[94]" 0;
 	setAttr ".phl[95]" 0;
-	setAttr ".phl[96]" 0;
 	setAttr ".phl[97]" 0;
-	setAttr ".phl[98]" 0;
 	setAttr ".phl[99]" 0;
-	setAttr ".phl[100]" 0;
 	setAttr ".phl[101]" 0;
-	setAttr ".phl[102]" 0;
 	setAttr ".phl[103]" 0;
-	setAttr ".phl[104]" 0;
 	setAttr ".phl[105]" 0;
-	setAttr ".phl[106]" 0;
 	setAttr ".phl[107]" 0;
-	setAttr ".phl[108]" 0;
 	setAttr ".phl[109]" 0;
-	setAttr ".phl[110]" 0;
 	setAttr ".phl[111]" 0;
-	setAttr ".phl[112]" 0;
+	setAttr ".phl[113]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"jackieIphone_latestRN"
-		"jackieIphone_latestRN" 0
-		"jackieIphone_latestRN" 118
-		0 "|jackieIphone_latest:Phone" "|JackiesStall|Jackies_Stall" "-s -r "
-		2 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone" "translate" " -type \"double3\" 4.20975575460756257 3.98212762690479405 1.7613885444135764"
-		
-		2 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone" "rotate" " -type \"double3\" -90.69055391612384653 -38.99353718588805151 -0.23493900559094782"
-		
-		2 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone" "scale" " -type \"double3\" 0.26845407870751153 0.26845407870751148 0.26845407870751153"
-		
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing11.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing37.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing16.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polyExtrudeFace1.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing42.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing33.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing44.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing31.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing24.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing39.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polyExtrudeFace5.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing46.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing5.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing41.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing10.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing22.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing28.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing45.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing23.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polyExtrudeFace6.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing43.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing29.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polyExtrudeFace7.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing7.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing36.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing27.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing17.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing8.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing9.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing18.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing1.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing38.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing13.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing19.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing30.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing26.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing40.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polyExtrudeFace8.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing32.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing21.manipMatrix" ""
+		"jackieIphone_latestRN" 113
 		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polyExtrudeFace4.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
-		"jackieIphone_latest:polyExtrudeEdge1.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing34.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing4.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing6.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing35.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing25.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polyExtrudeFace3.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polyExtrudeFace2.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing14.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing12.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing20.manipMatrix" ""
 		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing3.manipMatrix" ""
 		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
-		"jackieIphone_latest:polySplitRing2.manipMatrix" ""
-		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing15.manipMatrix" ""
-		5 3 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.instObjGroups" 
-		"jackieIphone_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing22.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polyExtrudeFace8.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing19.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing42.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing13.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing1.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing5.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing11.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing27.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing18.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing9.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing35.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing31.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing7.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polyExtrudeFace5.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polyExtrudeFace7.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing26.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing33.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polyExtrudeEdge1.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing28.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing10.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing16.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing30.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing43.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing37.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polyExtrudeFace2.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing4.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing25.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing20.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polyExtrudeFace1.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polyExtrudeFace6.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing44.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing40.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polyExtrudeFace3.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing36.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing2.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing29.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing24.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing34.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing17.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing12.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing6.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing8.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing38.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing39.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing32.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing45.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing21.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing23.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing14.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing41.manipMatrix" ""
+		3 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
+		"jackieIphone_latest:polySplitRing46.manipMatrix" ""
 		5 3 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.instObjGroups" 
 		"jackieIphone_latestRN.placeHolderList[2]" ":initialShadingGroup.dsm"
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing1.manipMatrix" "jackieIphone_latestRN.placeHolderList[3]" 
-		"jackieIphone_latestRN.placeHolderList[4]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[4]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polyExtrudeFace1.manipMatrix" "jackieIphone_latestRN.placeHolderList[5]" 
-		"jackieIphone_latestRN.placeHolderList[6]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[6]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing2.manipMatrix" "jackieIphone_latestRN.placeHolderList[7]" 
-		"jackieIphone_latestRN.placeHolderList[8]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[8]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing3.manipMatrix" "jackieIphone_latestRN.placeHolderList[9]" 
-		"jackieIphone_latestRN.placeHolderList[10]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[10]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing4.manipMatrix" "jackieIphone_latestRN.placeHolderList[11]" 
-		"jackieIphone_latestRN.placeHolderList[12]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[12]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing5.manipMatrix" "jackieIphone_latestRN.placeHolderList[13]" 
-		"jackieIphone_latestRN.placeHolderList[14]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[14]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing6.manipMatrix" "jackieIphone_latestRN.placeHolderList[15]" 
-		"jackieIphone_latestRN.placeHolderList[16]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[16]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing7.manipMatrix" "jackieIphone_latestRN.placeHolderList[17]" 
-		"jackieIphone_latestRN.placeHolderList[18]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[18]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing8.manipMatrix" "jackieIphone_latestRN.placeHolderList[19]" 
-		"jackieIphone_latestRN.placeHolderList[20]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[20]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing9.manipMatrix" "jackieIphone_latestRN.placeHolderList[21]" 
-		"jackieIphone_latestRN.placeHolderList[22]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[22]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing10.manipMatrix" "jackieIphone_latestRN.placeHolderList[23]" 
-		"jackieIphone_latestRN.placeHolderList[24]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[24]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing11.manipMatrix" "jackieIphone_latestRN.placeHolderList[25]" 
-		"jackieIphone_latestRN.placeHolderList[26]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[26]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing12.manipMatrix" "jackieIphone_latestRN.placeHolderList[27]" 
-		"jackieIphone_latestRN.placeHolderList[28]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[28]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polyExtrudeFace2.manipMatrix" "jackieIphone_latestRN.placeHolderList[29]" 
-		"jackieIphone_latestRN.placeHolderList[30]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[30]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing13.manipMatrix" "jackieIphone_latestRN.placeHolderList[31]" 
-		"jackieIphone_latestRN.placeHolderList[32]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[32]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing14.manipMatrix" "jackieIphone_latestRN.placeHolderList[33]" 
-		"jackieIphone_latestRN.placeHolderList[34]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[34]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing15.manipMatrix" "jackieIphone_latestRN.placeHolderList[35]" 
-		"jackieIphone_latestRN.placeHolderList[36]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[36]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing16.manipMatrix" "jackieIphone_latestRN.placeHolderList[37]" 
-		"jackieIphone_latestRN.placeHolderList[38]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[38]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing17.manipMatrix" "jackieIphone_latestRN.placeHolderList[39]" 
-		"jackieIphone_latestRN.placeHolderList[40]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[40]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing18.manipMatrix" "jackieIphone_latestRN.placeHolderList[41]" 
-		"jackieIphone_latestRN.placeHolderList[42]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[42]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing19.manipMatrix" "jackieIphone_latestRN.placeHolderList[43]" 
-		"jackieIphone_latestRN.placeHolderList[44]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[44]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing20.manipMatrix" "jackieIphone_latestRN.placeHolderList[45]" 
-		"jackieIphone_latestRN.placeHolderList[46]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[46]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polyExtrudeFace3.manipMatrix" "jackieIphone_latestRN.placeHolderList[47]" 
-		"jackieIphone_latestRN.placeHolderList[48]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[48]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polyExtrudeFace4.manipMatrix" "jackieIphone_latestRN.placeHolderList[49]" 
-		"jackieIphone_latestRN.placeHolderList[50]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[50]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing21.manipMatrix" "jackieIphone_latestRN.placeHolderList[51]" 
-		"jackieIphone_latestRN.placeHolderList[52]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[52]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing22.manipMatrix" "jackieIphone_latestRN.placeHolderList[53]" 
-		"jackieIphone_latestRN.placeHolderList[54]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[54]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing23.manipMatrix" "jackieIphone_latestRN.placeHolderList[55]" 
-		"jackieIphone_latestRN.placeHolderList[56]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[56]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing24.manipMatrix" "jackieIphone_latestRN.placeHolderList[57]" 
-		"jackieIphone_latestRN.placeHolderList[58]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[58]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing25.manipMatrix" "jackieIphone_latestRN.placeHolderList[59]" 
-		"jackieIphone_latestRN.placeHolderList[60]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[60]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing26.manipMatrix" "jackieIphone_latestRN.placeHolderList[61]" 
-		"jackieIphone_latestRN.placeHolderList[62]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[62]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polyExtrudeFace5.manipMatrix" "jackieIphone_latestRN.placeHolderList[63]" 
-		"jackieIphone_latestRN.placeHolderList[64]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[64]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing27.manipMatrix" "jackieIphone_latestRN.placeHolderList[65]" 
-		"jackieIphone_latestRN.placeHolderList[66]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[66]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing28.manipMatrix" "jackieIphone_latestRN.placeHolderList[67]" 
-		"jackieIphone_latestRN.placeHolderList[68]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[68]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing29.manipMatrix" "jackieIphone_latestRN.placeHolderList[69]" 
-		"jackieIphone_latestRN.placeHolderList[70]" "jackieIphone_latest:polySplitRing32.mp"
+		"jackieIphone_latestRN.placeHolderList[70]" "jackieIphone_latest:polySplitRing42.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing30.manipMatrix" "jackieIphone_latestRN.placeHolderList[71]" 
-		"jackieIphone_latestRN.placeHolderList[72]" "jackieIphone_latest:polySplitRing32.mp"
+		"jackieIphone_latestRN.placeHolderList[72]" "jackieIphone_latest:polySplitRing42.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing31.manipMatrix" "jackieIphone_latestRN.placeHolderList[73]" 
-		"jackieIphone_latestRN.placeHolderList[74]" "jackieIphone_latest:polySplitRing32.mp"
+		"jackieIphone_latestRN.placeHolderList[74]" "jackieIphone_latest:polySplitRing42.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing32.manipMatrix" "jackieIphone_latestRN.placeHolderList[75]" 
-		"jackieIphone_latestRN.placeHolderList[76]" "jackieIphone_latest:polySplitRing32.mp"
+		"jackieIphone_latestRN.placeHolderList[76]" "jackieIphone_latest:polySplitRing42.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polyExtrudeEdge1.manipMatrix" "jackieIphone_latestRN.placeHolderList[77]" 
-		"jackieIphone_latestRN.placeHolderList[78]" "jackieIphone_latest:polySplitRing32.mp"
+		"jackieIphone_latestRN.placeHolderList[78]" "jackieIphone_latest:polySplitRing42.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing33.manipMatrix" "jackieIphone_latestRN.placeHolderList[79]" 
-		"jackieIphone_latestRN.placeHolderList[80]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[80]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing34.manipMatrix" "jackieIphone_latestRN.placeHolderList[81]" 
-		"jackieIphone_latestRN.placeHolderList[82]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[82]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polyExtrudeFace6.manipMatrix" "jackieIphone_latestRN.placeHolderList[83]" 
-		"jackieIphone_latestRN.placeHolderList[84]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[84]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing35.manipMatrix" "jackieIphone_latestRN.placeHolderList[85]" 
-		"jackieIphone_latestRN.placeHolderList[86]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[86]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing36.manipMatrix" "jackieIphone_latestRN.placeHolderList[87]" 
-		"jackieIphone_latestRN.placeHolderList[88]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[88]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing37.manipMatrix" "jackieIphone_latestRN.placeHolderList[89]" 
-		"jackieIphone_latestRN.placeHolderList[90]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[90]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing38.manipMatrix" "jackieIphone_latestRN.placeHolderList[91]" 
-		"jackieIphone_latestRN.placeHolderList[92]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[92]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.worldMatrix" 
 		"jackieIphone_latest:polyExtrudeFace7.manipMatrix" "jackieIphone_latestRN.placeHolderList[93]" 
-		"jackieIphone_latestRN.placeHolderList[94]" "jackieIphone_latest:polyExtrudeFace7.mp"
+		"jackieIphone_latestRN.placeHolderList[94]" "jackieIphone_latest:polySplitRing11.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polyExtrudeFace8.manipMatrix" "jackieIphone_latestRN.placeHolderList[95]" 
-		"jackieIphone_latestRN.placeHolderList[96]" "jackieIphone_latest:polySplitRing32.mp"
+		"jackieIphone_latestRN.placeHolderList[96]" "jackieIphone_latest:polySplitRing42.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing39.manipMatrix" "jackieIphone_latestRN.placeHolderList[97]" 
-		"jackieIphone_latestRN.placeHolderList[98]" "jackieIphone_latest:polySplitRing32.mp"
+		"jackieIphone_latestRN.placeHolderList[98]" "jackieIphone_latest:polySplitRing42.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing40.manipMatrix" "jackieIphone_latestRN.placeHolderList[99]" 
-		"jackieIphone_latestRN.placeHolderList[100]" "jackieIphone_latest:polySplitRing32.mp"
+		"jackieIphone_latestRN.placeHolderList[100]" "jackieIphone_latest:polySplitRing42.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing41.manipMatrix" "jackieIphone_latestRN.placeHolderList[101]" 
-		"jackieIphone_latestRN.placeHolderList[102]" "jackieIphone_latest:polySplitRing32.mp"
+		"jackieIphone_latestRN.placeHolderList[102]" "jackieIphone_latest:polySplitRing42.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing42.manipMatrix" "jackieIphone_latestRN.placeHolderList[103]" 
-		"jackieIphone_latestRN.placeHolderList[104]" "jackieIphone_latest:polySplitRing32.mp"
+		"jackieIphone_latestRN.placeHolderList[104]" "jackieIphone_latest:polySplitRing42.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing43.manipMatrix" "jackieIphone_latestRN.placeHolderList[105]" 
-		"jackieIphone_latestRN.placeHolderList[106]" "jackieIphone_latest:polySplitRing32.mp"
+		"jackieIphone_latestRN.placeHolderList[106]" "jackieIphone_latest:polySplitRing42.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing44.manipMatrix" "jackieIphone_latestRN.placeHolderList[107]" 
-		"jackieIphone_latestRN.placeHolderList[108]" "jackieIphone_latest:polySplitRing32.mp"
+		"jackieIphone_latestRN.placeHolderList[108]" "jackieIphone_latest:polySplitRing42.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing45.manipMatrix" "jackieIphone_latestRN.placeHolderList[109]" 
-		"jackieIphone_latestRN.placeHolderList[110]" "jackieIphone_latest:polySplitRing32.mp"
+		"jackieIphone_latestRN.placeHolderList[110]" "jackieIphone_latest:polySplitRing42.mp"
 		
 		5 0 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneGrp|jackieIphone_latest:Case|jackieIphone_latest:CaseShape.worldMatrix" 
 		"jackieIphone_latest:polySplitRing46.manipMatrix" "jackieIphone_latestRN.placeHolderList[111]" 
-		"jackieIphone_latestRN.placeHolderList[112]" "jackieIphone_latest:polySplitRing32.mp";
+		"jackieIphone_latestRN.placeHolderList[112]" "jackieIphone_latest:polySplitRing42.mp"
+		
+		"jackieIphone_latestRN" 5
+		0 "|jackieIphone_latest:Phone" "|JackiesStall|Jackies_Stall" "-s -r "
+		2 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone" "translate" " -type \"double3\" 4.20975575460756257 0.62729418947549487 1.7613885444135764"
+		
+		2 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone" "rotate" " -type \"double3\" -90.69055391612384653 -38.99353718588805151 -0.23493900559094782"
+		
+		2 "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone" "scale" " -type \"double3\" 0.16825569731719756 0.1682556973171975 0.16825569731719756"
+		
+		5 3 "jackieIphone_latestRN" "|JackiesStall|Jackies_Stall|jackieIphone_latest:Phone|jackieIphone_latest:PhoneShape.instObjGroups" 
+		"jackieIphone_latestRN.placeHolderList[113]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode RenderMan -s -n "renderManRISGlobals";
@@ -2443,7 +2410,6 @@ createNode RenderMan -s -n "renderManRISGlobals";
 	setAttr -k on ".rman__riopt__Integrator_normalCheck" 0;
 	setAttr ".rman__riopt__Integrator_matCap" -type "string" "";
 	setAttr ".rman__EnvLight" -type "string" "";
-	setAttr -s 3 ".p";
 	setAttr ".nt" -type "string" "settings:job";
 createNode OmnidirectionalStereo -s -n "OmnidirectionalStereo";
 	rename -uid "219E5FD9-BC44-8735-CBF1-02AD75890EC7";
@@ -2837,14 +2803,6 @@ createNode reference -n "mooncakebox_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"mooncakebox_latestRN"
 		"mooncakebox_latestRN" 14
-		3 "|Jackies_Stall|group1|mooncakebox_latest:MCBox|mooncakebox_latest:box|mooncakebox_latest:boxShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackies_Stall|group1|mooncakebox_latest:MCBox|mooncakebox_latest:Lid|mooncakebox_latest:cover|mooncakebox_latest:coverShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackies_Stall|group1|mooncakebox_latest:MCBox|mooncakebox_latest:box|mooncakebox_latest:boxShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackies_Stall|group1|mooncakebox_latest:MCBox|mooncakebox_latest:Lid|mooncakebox_latest:cover|mooncakebox_latest:coverShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Jackies_Stall|mooncakebox_latest:MCBox|mooncakebox_latest:box|mooncakebox_latest:boxShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Jackies_Stall|mooncakebox_latest:MCBox|mooncakebox_latest:Lid|mooncakebox_latest:cover|mooncakebox_latest:coverShape.instObjGroups" 
@@ -2864,6 +2822,14 @@ createNode reference -n "mooncakebox_latestRN";
 		3 "|Jackies_Stall|mooncakebox_latest:MCBox|mooncakebox_latest:Lid|mooncakebox_latest:cover|mooncakebox_latest:coverShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Jackies_Stall|mooncakebox_latest:MCBox|mooncakebox_latest:box|mooncakebox_latest:boxShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|JackiesStall|Jackies_Stall|mooncakebox_latest:MCBox|mooncakebox_latest:Lid|mooncakebox_latest:cover|mooncakebox_latest:coverShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|JackiesStall|Jackies_Stall|mooncakebox_latest:MCBox|mooncakebox_latest:box|mooncakebox_latest:boxShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|JackiesStall|Jackies_Stall|mooncakebox_latest:MCBox|mooncakebox_latest:Lid|mooncakebox_latest:cover|mooncakebox_latest:coverShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|JackiesStall|Jackies_Stall|mooncakebox_latest:MCBox|mooncakebox_latest:box|mooncakebox_latest:boxShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		"mooncakebox_latestRN" 10
 		0 "|mooncakebox_latest:MCBox" "|JackiesStall|Jackies_Stall" "-s -r "
@@ -2879,9 +2845,9 @@ createNode reference -n "mooncakebox_latestRN";
 		2 "|JackiesStall|Jackies_Stall|mooncakebox_latest:MCBox|mooncakebox_latest:Lid" 
 		"rotate" " -type \"double3\" 58.57381488725619789 -0.15183997714584666 27.01718738754911442"
 		
-		3 "|JackiesStall|Jackies_Stall|mooncakebox_latest:MCBox|mooncakebox_latest:Lid|mooncakebox_latest:cover|mooncakebox_latest:coverShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|JackiesStall|Jackies_Stall|mooncakebox_latest:MCBox|mooncakebox_latest:box|mooncakebox_latest:boxShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|JackiesStall|Jackies_Stall|mooncakebox_latest:MCBox|mooncakebox_latest:Lid|mooncakebox_latest:cover|mooncakebox_latest:coverShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "mooncakebox_latestRN" "|JackiesStall|Jackies_Stall|mooncakebox_latest:MCBox|mooncakebox_latest:box|mooncakebox_latest:boxShape.instObjGroups" 
 		"mooncakebox_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
@@ -2921,7 +2887,7 @@ createNode reference -n "mooncake_latestRN";
 		2 "|JackiesStall|Jackies_Stall|mooncake_latest:mooncake_Controller" "translate" 
 		" -type \"double3\" 5.97662635852968727 3.99293990879660399 0.94061891482133153"
 		2 "|JackiesStall|Jackies_Stall|mooncake_latest:mooncake_Controller" "scale" 
-		" -type \"double3\" 0.18875556161870835 0.18875556161870835 0.18875556161870835"
+		" -type \"double3\" 0.28018792277384658 0.28018792277384658 0.28018792277384658"
 		2 "|JackiesStall|Jackies_Stall|mooncake_latest:mooncake_Controller" "rotatePivot" 
 		" -type \"double3\" 0 0.095175792215632424 0"
 		2 "|JackiesStall|Jackies_Stall|mooncake_latest:mooncake_Controller" "scalePivot" 
@@ -2930,14 +2896,14 @@ createNode reference -n "mooncake_latestRN";
 		" -type \"double3\" 0 -0.40905195821161205 0"
 		3 "|JackiesStall|Jackies_Stall|mooncake_latest:mooncake_Controller|mooncake_latest:mooncake|mooncake_latest:mooncakeShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|JackiesStall|Jackies_Stall|mooncake_latest:mooncake_Controller|mooncake_latest:mooncake|mooncake_latest:mooncakeShape.worldMatrix" 
-		"mooncake_latest:polyCylProj1.manipMatrix" ""
 		3 "|JackiesStall|Jackies_Stall|mooncake_latest:mooncake_Controller.parentMatrix" 
 		"|JackiesStall|Jackies_Stall|mooncake_latest:mooncake_Controller|mooncake_latest:mooncake|mooncake_latest:mooncake_parentConstraint1.target[0].targetParentMatrix" 
 		""
 		3 "|JackiesStall|Jackies_Stall|mooncake_latest:mooncake_Controller|mooncake_latest:mooncake.parentInverseMatrix" 
 		"|JackiesStall|Jackies_Stall|mooncake_latest:mooncake_Controller|mooncake_latest:mooncake|mooncake_latest:mooncake_parentConstraint1.constraintParentInverseMatrix" 
 		""
+		3 "|JackiesStall|Jackies_Stall|mooncake_latest:mooncake_Controller|mooncake_latest:mooncake|mooncake_latest:mooncakeShape.worldMatrix" 
+		"mooncake_latest:polyCylProj1.manipMatrix" ""
 		5 3 "mooncake_latestRN" "|JackiesStall|Jackies_Stall|mooncake_latest:mooncake_Controller|mooncake_latest:mooncake|mooncake_latest:mooncakeShape.instObjGroups" 
 		"mooncake_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
 		5 0 "mooncake_latestRN" "|JackiesStall|Jackies_Stall|mooncake_latest:mooncake_Controller|mooncake_latest:mooncake.parentInverseMatrix" 
@@ -3061,8 +3027,6 @@ createNode reference -n "mooncake_latestRN1";
 		" -type \"double3\" 0 0.50422775042724455 0"
 		2 "|JackiesStall|Jackies_Stall|mooncake_latest1:mooncake_Controller" "scalePivotTranslate" 
 		" -type \"double3\" 0 -0.35148455076549745 0"
-		3 "|JackiesStall|Jackies_Stall|mooncake_latest1:mooncake_Controller|mooncake_latest1:mooncake|mooncake_latest1:mooncakeShape.worldMatrix" 
-		"mooncake_latest1:polyCylProj1.manipMatrix" ""
 		3 "|JackiesStall|Jackies_Stall|mooncake_latest1:mooncake_Controller|mooncake_latest1:mooncake|mooncake_latest1:mooncakeShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|JackiesStall|Jackies_Stall|mooncake_Controller1|mooncake_latest1:mooncake|mooncake_latest1:mooncakeShape.instObjGroups" 
@@ -3077,6 +3041,8 @@ createNode reference -n "mooncake_latestRN1";
 		3 "|JackiesStall|Jackies_Stall|mooncake_latest1:mooncake_Controller.parentMatrix" 
 		"|JackiesStall|Jackies_Stall|mooncake_Controller1|mooncake_latest1:mooncake|mooncake_latest1:mooncake_parentConstraint1.target[0].targetParentMatrix" 
 		""
+		3 "|JackiesStall|Jackies_Stall|mooncake_latest1:mooncake_Controller|mooncake_latest1:mooncake|mooncake_latest1:mooncakeShape.worldMatrix" 
+		"mooncake_latest1:polyCylProj1.manipMatrix" ""
 		5 3 "mooncake_latestRN1" "|JackiesStall|Jackies_Stall|mooncake_Controller1|mooncake_latest1:mooncake|mooncake_latest1:mooncakeShape.instObjGroups" 
 		"mooncake_latestRN1.placeHolderList[1]" ":initialShadingGroup.dsm"
 		5 3 "mooncake_latestRN1" "|JackiesStall|Jackies_Stall|mooncake_Controller2|mooncake_latest1:mooncake|mooncake_latest1:mooncakeShape.instObjGroups" 
@@ -3357,6 +3323,312 @@ lockNode -l 1 ;
 createNode makeNurbCircle -n "makeNurbCircle1";
 	rename -uid "C97EAC7B-4309-DADF-30B4-E3891CCBE568";
 	setAttr ".nr" -type "double3" 0 1 0 ;
+createNode polyCube -n "polyCube1";
+	rename -uid "A92CDCDC-4AF6-55EA-E847-8796CCDB7991";
+	setAttr ".ax" -type "double3" 1 0 0 ;
+	setAttr ".sw" 2;
+	setAttr ".sh" 2;
+	setAttr ".sd" 2;
+	setAttr ".cuv" 4;
+createNode polyDelEdge -n "polyDelEdge1";
+	rename -uid "47483CFE-453F-EB78-4BA1-6ABE3225A6F8";
+	setAttr ".ics" -type "componentList" 4 "e[2:3]" "e[10:11]" "e[40:41]" "e[44:45]";
+	setAttr ".cv" yes;
+createNode shadingEngine -n "PxrSurface1SG";
+	rename -uid "6C2F716B-4D4B-C0DB-5E9D-2688E5BA73E3";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo1";
+	rename -uid "7E5CAF9A-4496-19AA-1D1E-B0BA35F76984";
+createNode file -n "file1";
+	rename -uid "FE45FAB6-4D18-F5A1-FC9E-469BF21549DE";
+	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Graphics/pngs/Mooncakes.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "place2dTexture1";
+	rename -uid "FD2E0D9A-485B-1792-6968-1CA3BC548758";
+createNode PxrSurface -n "MoonCakeSign";
+	rename -uid "9C1C6886-4DA0-0CB4-5236-0BA8AA2069A6";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".inputMaterial" 0;
+	setAttr ".diffuseGain" 1;
+	setAttr ".diffuseColor" -type "float3" 0 0 0 ;
+	setAttr ".diffuseRoughness" 0;
+	setAttr ".diffuseExponent" 1;
+	setAttr ".diffuseBumpNormal" -type "float3" 0 0 0 ;
+	setAttr ".diffuseDoubleSided" no;
+	setAttr ".diffuseBackUseDiffuseColor" yes;
+	setAttr ".diffuseBackColor" -type "float3" 0.18000001 0.18000001 0.18000001 ;
+	setAttr ".diffuseTransmitGain" 0;
+	setAttr ".diffuseTransmitColor" -type "float3" 0.18000001 0.18000001 0.18000001 ;
+	setAttr ".specularFresnelMode" 0;
+	setAttr ".specularFaceColor" -type "float3" 0 0 0 ;
+	setAttr ".specularEdgeColor" -type "float3" 0 0 0 ;
+	setAttr ".specularFresnelShape" 5;
+	setAttr ".specularIor" -type "float3" 1.5 1.5 1.5 ;
+	setAttr ".specularExtinctionCoeff" -type "float3" 0 0 0 ;
+	setAttr ".specularRoughness" 0.20000000298023224;
+	setAttr ".specularModelType" 0;
+	setAttr ".specularAnisotropy" 0;
+	setAttr ".specularAnisotropyDirection" -type "float3" 0 0 0 ;
+	setAttr ".specularBumpNormal" -type "float3" 0 0 0 ;
+	setAttr ".specularDoubleSided" no;
+	setAttr ".roughSpecularFresnelMode" 0;
+	setAttr ".roughSpecularFaceColor" -type "float3" 0 0 0 ;
+	setAttr ".roughSpecularEdgeColor" -type "float3" 0 0 0 ;
+	setAttr ".roughSpecularFresnelShape" 5;
+	setAttr ".roughSpecularIor" -type "float3" 1.5 1.5 1.5 ;
+	setAttr ".roughSpecularExtinctionCoeff" -type "float3" 0 0 0 ;
+	setAttr ".roughSpecularRoughness" 0.60000002384185791;
+	setAttr ".roughSpecularModelType" 0;
+	setAttr ".roughSpecularAnisotropy" 0;
+	setAttr ".roughSpecularAnisotropyDirection" -type "float3" 0 0 0 ;
+	setAttr ".roughSpecularBumpNormal" -type "float3" 0 0 0 ;
+	setAttr ".roughSpecularDoubleSided" no;
+	setAttr ".clearcoatFresnelMode" 0;
+	setAttr ".clearcoatFaceColor" -type "float3" 0 0 0 ;
+	setAttr ".clearcoatEdgeColor" -type "float3" 0 0 0 ;
+	setAttr ".clearcoatFresnelShape" 5;
+	setAttr ".clearcoatIor" -type "float3" 1.5 1.5 1.5 ;
+	setAttr ".clearcoatExtinctionCoeff" -type "float3" 0 0 0 ;
+	setAttr ".clearcoatThickness" 0;
+	setAttr ".clearcoatAbsorptionTint" -type "float3" 0 0 0 ;
+	setAttr ".clearcoatRoughness" 0;
+	setAttr ".clearcoatModelType" 0;
+	setAttr ".clearcoatAnisotropy" 0;
+	setAttr ".clearcoatAnisotropyDirection" -type "float3" 0 0 0 ;
+	setAttr ".clearcoatBumpNormal" -type "float3" 0 0 0 ;
+	setAttr ".clearcoatDoubleSided" no;
+	setAttr ".specularEnergyCompensation" 0;
+	setAttr ".clearcoatEnergyCompensation" 0;
+	setAttr ".iridescenceFaceGain" 0;
+	setAttr ".iridescenceEdgeGain" 0;
+	setAttr ".iridescenceFresnelShape" 5;
+	setAttr ".iridescenceMode" 0;
+	setAttr ".iridescencePrimaryColor" -type "float3" 1 0 0 ;
+	setAttr ".iridescenceSecondaryColor" -type "float3" 0 0 1 ;
+	setAttr ".iridescenceRoughness" 0.20000000298023224;
+	setAttr ".iridescenceAnisotropy" 0;
+	setAttr ".iridescenceAnisotropyDirection" -type "float3" 0 0 0 ;
+	setAttr ".iridescenceCurve" 1;
+	setAttr ".iridescenceScale" 1;
+	setAttr ".iridescenceFlip" no;
+	setAttr ".iridescenceThickness" 800;
+	setAttr ".iridescenceDoubleSided" no;
+	setAttr ".fuzzGain" 0;
+	setAttr ".fuzzColor" -type "float3" 1 1 1 ;
+	setAttr ".fuzzConeAngle" 8;
+	setAttr ".fuzzBumpNormal" -type "float3" 0 0 0 ;
+	setAttr ".fuzzDoubleSided" no;
+	setAttr ".subsurfaceType" 0;
+	setAttr ".subsurfaceGain" 0;
+	setAttr ".subsurfaceColor" -type "float3" 0.82999998 0.79100001 0.75300002 ;
+	setAttr ".subsurfaceDmfp" 10;
+	setAttr ".subsurfaceDmfpColor" -type "float3" 0.85100001 0.55699998 0.39500001 ;
+	setAttr ".shortSubsurfaceGain" 0;
+	setAttr ".shortSubsurfaceColor" -type "float3" 0.89999998 0.89999998 0.89999998 ;
+	setAttr ".shortSubsurfaceDmfp" 5;
+	setAttr ".longSubsurfaceGain" 0;
+	setAttr ".longSubsurfaceColor" -type "float3" 0.80000001 0 0 ;
+	setAttr ".longSubsurfaceDmfp" 20;
+	setAttr ".subsurfaceDirectionality" 0;
+	setAttr ".subsurfaceBleed" 0;
+	setAttr ".subsurfaceDiffuseBlend" 0;
+	setAttr ".subsurfaceResolveSelfIntersections" no;
+	setAttr ".subsurfaceIor" 1.3999999761581421;
+	setAttr ".subsurfacePostTint" -type "float3" 1 1 1 ;
+	setAttr ".subsurfaceDiffuseSwitch" 1;
+	setAttr ".subsurfaceDoubleSided" no;
+	setAttr ".subsurfaceTransmitGain" 0;
+	setAttr ".considerBackside" yes;
+	setAttr ".continuationRayMode" 0;
+	setAttr ".maxContinuationHits" 2;
+	setAttr ".followTopology" 0;
+	setAttr ".subsurfaceSubset" -type "string" "";
+	setAttr ".singlescatterGain" 0;
+	setAttr ".singlescatterColor" -type "float3" 0.82999998 0.79100001 0.75300002 ;
+	setAttr ".singlescatterMfp" 10;
+	setAttr ".singlescatterMfpColor" -type "float3" 0.85100001 0.55699998 0.39500001 ;
+	setAttr ".singlescatterDirectionality" 0;
+	setAttr ".singlescatterIor" 1.2999999523162842;
+	setAttr ".singlescatterBlur" 0;
+	setAttr ".singlescatterDirectGain" 0;
+	setAttr ".singlescatterDirectGainTint" -type "float3" 1 1 1 ;
+	setAttr ".singlescatterDoubleSided" no;
+	setAttr ".singlescatterConsiderBackside" yes;
+	setAttr ".singlescatterContinuationRayMode" 0;
+	setAttr ".singlescatterMaxContinuationHits" 2;
+	setAttr ".singlescatterDirectGainMode" 0;
+	setAttr ".singlescatterSubset" -type "string" "";
+	setAttr ".irradianceTint" -type "float3" 1 1 1 ;
+	setAttr ".irradianceRoughness" 0;
+	setAttr ".unitLength" 0.10000000149011612;
+	setAttr ".refractionGain" 0;
+	setAttr ".reflectionGain" 0;
+	setAttr ".refractionColor" -type "float3" 1 1 1 ;
+	setAttr ".glassRoughness" 0.10000000149011612;
+	setAttr ".glassAnisotropy" 0;
+	setAttr ".glassAnisotropyDirection" -type "float3" 0 0 0 ;
+	setAttr ".glassIor" 1.5;
+	setAttr ".mwWalkable" no;
+	setAttr ".mwIor" -1;
+	setAttr ".thinGlass" no;
+	setAttr ".ignoreFresnel" no;
+	setAttr ".ignoreAccumOpacity" no;
+	setAttr ".blocksVolumes" no;
+	setAttr ".ssAlbedo" -type "float3" 0 0 0 ;
+	setAttr ".extinction" -type "float3" 0 0 0 ;
+	setAttr ".g" 0;
+	setAttr ".multiScatter" no;
+	setAttr ".enableOverlappingVolumes" no;
+	setAttr ".glowGain" 0;
+	setAttr ".glowColor" -type "float3" 1 1 1 ;
+	setAttr ".bumpNormal" -type "float3" 0 0 0 ;
+	setAttr ".shadowColor" -type "float3" 0 0 0 ;
+	setAttr ".shadowMode" 0;
+	setAttr ".presence" 1;
+	setAttr ".presenceCached" 1;
+	setAttr ".mwStartable" no;
+	setAttr ".roughnessMollificationClamp" 32;
+	setAttr ".utilityPattern[0]"  0;
+createNode file -n "file2";
+	rename -uid "B753F92A-4DB7-41F7-6E2F-65AEA60409F3";
+	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Graphics/pngs/Mooncakes.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "place2dTexture2";
+	rename -uid "5962AB82-4B9F-8525-65CF-D897972FF388";
+createNode polyTweakUV -n "polyTweakUV1";
+	rename -uid "A6C8393B-4F27-BC4D-E091-648604F8D2E3";
+	setAttr ".uopa" yes;
+	setAttr -s 29 ".uvtk[0:28]" -type "float2" -2.42980146 0.91795123 -2.55480146
+		 0.49634281 -2.67980146 0.074734658 -1.40061235 0.66795135 -1.52561235 0.24634314
+		 -1.65061235 -0.17526534 -0.88601786 0.54295135 -1.011017799 0.12134306 -1.1360178
+		 -0.30026534 -0.37142318 0.41795146 -0.49642318 -0.0036570076 -0.62142318 -0.42526534
+		 0.65776598 0.16795143 0.53276598 -0.25365695 0.40776598 -0.67526531 1.17236054 0.042951345
+		 1.047360539 -0.37865663 0.92236054 -0.80026531 1.68695498 -0.082048558 1.56195498
+		 -0.50365686 1.43695498 -0.92526519 -2.92980146 -0.76848227 -2.80480146 -0.34687376
+		 -1.90061235 -1.018482208 -1.77561235 -0.5968737 -2.17980146 1.76116753 -2.30480146
+		 1.33955979 -1.15061235 1.51116848 -1.27561235 1.089559793;
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "D13D4F9A-44A1-F45B-055E-D08EE27327BF";
+	setAttr ".pee" yes;
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -53.17460106163437 -388.88887343583343 ;
+	setAttr ".tgi[0].vh" -type "double2" 292.85713122004603 96.825392977901402 ;
+	setAttr -s 37 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" 382.85714721679688;
+	setAttr ".tgi[0].ni[0].y" 95.714286804199219;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" -1510;
+	setAttr ".tgi[0].ni[1].y" 838.5714111328125;
+	setAttr ".tgi[0].ni[1].nvs" 1922;
+	setAttr ".tgi[0].ni[2].x" -1495.7142333984375;
+	setAttr ".tgi[0].ni[2].y" 798.5714111328125;
+	setAttr ".tgi[0].ni[2].nvs" 1922;
+	setAttr ".tgi[0].ni[3].x" -1188.5714111328125;
+	setAttr ".tgi[0].ni[3].y" 874.28570556640625;
+	setAttr ".tgi[0].ni[3].nvs" 1922;
+	setAttr ".tgi[0].ni[4].x" 1327.142822265625;
+	setAttr ".tgi[0].ni[4].y" 692.85711669921875;
+	setAttr ".tgi[0].ni[4].nvs" 1922;
+	setAttr ".tgi[0].ni[5].x" -881.4285888671875;
+	setAttr ".tgi[0].ni[5].y" 897.14288330078125;
+	setAttr ".tgi[0].ni[5].nvs" 1922;
+	setAttr ".tgi[0].ni[6].x" 1327.142822265625;
+	setAttr ".tgi[0].ni[6].y" 58.571430206298828;
+	setAttr ".tgi[0].ni[6].nvs" 1922;
+	setAttr ".tgi[0].ni[7].x" -574.28570556640625;
+	setAttr ".tgi[0].ni[7].y" 680;
+	setAttr ".tgi[0].ni[7].nvs" 1922;
+	setAttr ".tgi[0].ni[8].x" 1327.142822265625;
+	setAttr ".tgi[0].ni[8].y" -117.14286041259766;
+	setAttr ".tgi[0].ni[8].nvs" 1922;
+	setAttr ".tgi[0].ni[9].x" 1327.142822265625;
+	setAttr ".tgi[0].ni[9].y" 1021.4285888671875;
+	setAttr ".tgi[0].ni[9].nvs" 1922;
+	setAttr ".tgi[0].ni[10].x" 347.14285278320313;
+	setAttr ".tgi[0].ni[10].y" 124.28571319580078;
+	setAttr ".tgi[0].ni[10].nvs" 1922;
+	setAttr ".tgi[0].ni[11].x" 1327.142822265625;
+	setAttr ".tgi[0].ni[11].y" -292.85714721679688;
+	setAttr ".tgi[0].ni[11].nvs" 1922;
+	setAttr ".tgi[0].ni[12].x" 1327.142822265625;
+	setAttr ".tgi[0].ni[12].y" 1197.142822265625;
+	setAttr ".tgi[0].ni[12].nvs" 1922;
+	setAttr ".tgi[0].ni[13].x" 1005.7142944335938;
+	setAttr ".tgi[0].ni[13].y" -868.5714111328125;
+	setAttr ".tgi[0].ni[13].nvs" 1922;
+	setAttr ".tgi[0].ni[14].x" 1327.142822265625;
+	setAttr ".tgi[0].ni[14].y" -708.5714111328125;
+	setAttr ".tgi[0].ni[14].nvs" 1922;
+	setAttr ".tgi[0].ni[15].x" 1327.142822265625;
+	setAttr ".tgi[0].ni[15].y" 845.71429443359375;
+	setAttr ".tgi[0].ni[15].nvs" 1922;
+	setAttr ".tgi[0].ni[16].x" 1005.7142944335938;
+	setAttr ".tgi[0].ni[16].y" 127.14286041259766;
+	setAttr ".tgi[0].ni[16].nvs" 1922;
+	setAttr ".tgi[0].ni[17].x" 1005.7142944335938;
+	setAttr ".tgi[0].ni[17].y" -1078.5714111328125;
+	setAttr ".tgi[0].ni[17].nvs" 1922;
+	setAttr ".tgi[0].ni[18].x" 1005.7142944335938;
+	setAttr ".tgi[0].ni[18].y" 887.14288330078125;
+	setAttr ".tgi[0].ni[18].nvs" 1922;
+	setAttr ".tgi[0].ni[19].x" 654.28570556640625;
+	setAttr ".tgi[0].ni[19].y" 478.57144165039063;
+	setAttr ".tgi[0].ni[19].nvs" 1922;
+	setAttr ".tgi[0].ni[20].x" 1005.7142944335938;
+	setAttr ".tgi[0].ni[20].y" 1154.2857666015625;
+	setAttr ".tgi[0].ni[20].nvs" 1922;
+	setAttr ".tgi[0].ni[21].x" 1005.7142944335938;
+	setAttr ".tgi[0].ni[21].y" -487.14285278320313;
+	setAttr ".tgi[0].ni[21].nvs" 1922;
+	setAttr ".tgi[0].ni[22].x" 1005.7142944335938;
+	setAttr ".tgi[0].ni[22].y" -334.28570556640625;
+	setAttr ".tgi[0].ni[22].nvs" 1922;
+	setAttr ".tgi[0].ni[23].x" 1005.7142944335938;
+	setAttr ".tgi[0].ni[23].y" 302.85714721679688;
+	setAttr ".tgi[0].ni[23].nvs" 1922;
+	setAttr ".tgi[0].ni[24].x" 1327.142822265625;
+	setAttr ".tgi[0].ni[24].y" -942.85711669921875;
+	setAttr ".tgi[0].ni[24].nvs" 1922;
+	setAttr ".tgi[0].ni[25].x" 1327.142822265625;
+	setAttr ".tgi[0].ni[25].y" 517.14288330078125;
+	setAttr ".tgi[0].ni[25].nvs" 1922;
+	setAttr ".tgi[0].ni[26].x" 1005.7142944335938;
+	setAttr ".tgi[0].ni[26].y" 478.57144165039063;
+	setAttr ".tgi[0].ni[26].nvs" 1922;
+	setAttr ".tgi[0].ni[27].x" -267.14285278320313;
+	setAttr ".tgi[0].ni[27].y" 408.57144165039063;
+	setAttr ".tgi[0].ni[27].nvs" 1922;
+	setAttr ".tgi[0].ni[28].x" 654.28570556640625;
+	setAttr ".tgi[0].ni[28].y" 711.4285888671875;
+	setAttr ".tgi[0].ni[28].nvs" 1922;
+	setAttr ".tgi[0].ni[29].x" 40;
+	setAttr ".tgi[0].ni[29].y" 204.28572082519531;
+	setAttr ".tgi[0].ni[29].nvs" 1922;
+	setAttr ".tgi[0].ni[30].x" 1327.142822265625;
+	setAttr ".tgi[0].ni[30].y" 211.42857360839844;
+	setAttr ".tgi[0].ni[30].nvs" 1922;
+	setAttr ".tgi[0].ni[31].x" 1327.142822265625;
+	setAttr ".tgi[0].ni[31].y" 364.28570556640625;
+	setAttr ".tgi[0].ni[31].nvs" 1922;
+	setAttr ".tgi[0].ni[32].x" 1005.7142944335938;
+	setAttr ".tgi[0].ni[32].y" 654.28570556640625;
+	setAttr ".tgi[0].ni[32].nvs" 1922;
+	setAttr ".tgi[0].ni[33].x" 61.428569793701172;
+	setAttr ".tgi[0].ni[33].y" -75.714286804199219;
+	setAttr ".tgi[0].ni[33].nvs" 1923;
+	setAttr ".tgi[0].ni[34].x" -245.71427917480469;
+	setAttr ".tgi[0].ni[34].y" -98.571426391601563;
+	setAttr ".tgi[0].ni[34].nvs" 1923;
+	setAttr ".tgi[0].ni[35].x" -258.57144165039063;
+	setAttr ".tgi[0].ni[35].y" 118.57142639160156;
+	setAttr ".tgi[0].ni[35].nvs" 1923;
+	setAttr ".tgi[0].ni[36].x" -565.71429443359375;
+	setAttr ".tgi[0].ni[36].y" 95.714286804199219;
+	setAttr ".tgi[0].ni[36].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -3367,16 +3639,20 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
-	setAttr -s 6 ".st";
+	setAttr -s 7 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
 	setAttr -s 8 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
+select -ne :defaultRenderUtilityList1;
+	setAttr -s 2 ".u";
 select -ne :defaultRenderingList1;
 	setAttr -s 24 ".r";
+select -ne :defaultTextureList1;
+	setAttr -s 2 ".tx";
 select -ne :initialShadingGroup;
-	setAttr -s 60 ".dsm";
+	setAttr -s 62 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -3390,8 +3666,45 @@ connectAttr "tent_latestRN.phl[6]" ":initialShadingGroup.dsm" -na;
 connectAttr "tent_latestRN.phl[7]" ":initialShadingGroup.dsm" -na;
 connectAttr "tent_latestRN.phl[8]" ":initialShadingGroup.dsm" -na;
 connectAttr "tent_latestRN.phl[9]" ":initialShadingGroup.dsm" -na;
-connectAttr "jackieIphone_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
-connectAttr "jackieIphone_latestRN.phl[2]" ":initialShadingGroup.dsm" -na;
+connectAttr "jackieIphone_latestRN.phl[113]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncakebox_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncakebox_latestRN.phl[2]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncake_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncake_latestRN.phl[2]" "mooncake_latestRN.phl[3]";
+connectAttr "mooncake_latestRN.phl[4]" "mooncake_latestRN.phl[5]";
+connectAttr "mooncake_latestRN.phl[6]" "mooncake_latestRN.phl[7]";
+connectAttr "mooncakebox_latestRN1.phl[1]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncakebox_latestRN1.phl[2]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncakebox_latestRN1.phl[3]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncakebox_latestRN1.phl[4]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncakebox_latestRN1.phl[5]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncakebox_latestRN1.phl[6]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncakebox_latestRN1.phl[7]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncakebox_latestRN1.phl[8]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncake_latestRN1.phl[1]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncake_latestRN1.phl[2]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncake_latestRN1.phl[3]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncake_latestRN1.phl[4]" ":initialShadingGroup.dsm" -na;
+connectAttr "mooncake_latestRN1.phl[5]" "mooncake_latestRN1.phl[6]";
+connectAttr "mooncake_latestRN1.phl[7]" "mooncake_latestRN1.phl[8]";
+connectAttr "mooncake_latestRN1.phl[9]" "mooncake_latestRN1.phl[10]";
+connectAttr "makeNurbCircle1.oc" "JackiesStallShape.cr";
+connectAttr "polyTweakUV1.out" "JackiesSignShape.i";
+connectAttr "polyTweakUV1.uvtk[0]" "JackiesSignShape.uvst[0].uvtw";
+relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "PxrSurface1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "PxrSurface1SG.message" ":defaultLightSet.message";
+connectAttr "layerManager.dli[0]" "defaultLayer.id";
+connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
+connectAttr ":rmanDefaultDisplay.msg" ":rmanGlobals.displays[0]";
+connectAttr ":PxrPathTracer.msg" ":rmanGlobals.ri_integrator";
+connectAttr "d_openexr.msg" ":rmanDefaultDisplay.displayType";
+connectAttr "Ci.msg" ":rmanDefaultDisplay.displayChannels[0]";
+connectAttr "a.msg" ":rmanDefaultDisplay.displayChannels[1]";
+connectAttr "sharedReferenceNode.sr" "tent_latestRN.sr";
 connectAttr "jackieIphone_latestRN.phl[3]" "jackieIphone_latestRN.phl[4]";
 connectAttr "jackieIphone_latestRN.phl[5]" "jackieIphone_latestRN.phl[6]";
 connectAttr "jackieIphone_latestRN.phl[7]" "jackieIphone_latestRN.phl[8]";
@@ -3447,40 +3760,6 @@ connectAttr "jackieIphone_latestRN.phl[105]" "jackieIphone_latestRN.phl[106]";
 connectAttr "jackieIphone_latestRN.phl[107]" "jackieIphone_latestRN.phl[108]";
 connectAttr "jackieIphone_latestRN.phl[109]" "jackieIphone_latestRN.phl[110]";
 connectAttr "jackieIphone_latestRN.phl[111]" "jackieIphone_latestRN.phl[112]";
-connectAttr "mooncakebox_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncakebox_latestRN.phl[2]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncake_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncake_latestRN.phl[2]" "mooncake_latestRN.phl[3]";
-connectAttr "mooncake_latestRN.phl[4]" "mooncake_latestRN.phl[5]";
-connectAttr "mooncake_latestRN.phl[6]" "mooncake_latestRN.phl[7]";
-connectAttr "mooncakebox_latestRN1.phl[1]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncakebox_latestRN1.phl[2]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncakebox_latestRN1.phl[3]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncakebox_latestRN1.phl[4]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncakebox_latestRN1.phl[5]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncakebox_latestRN1.phl[6]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncakebox_latestRN1.phl[7]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncakebox_latestRN1.phl[8]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncake_latestRN1.phl[1]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncake_latestRN1.phl[2]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncake_latestRN1.phl[3]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncake_latestRN1.phl[4]" ":initialShadingGroup.dsm" -na;
-connectAttr "mooncake_latestRN1.phl[5]" "mooncake_latestRN1.phl[6]";
-connectAttr "mooncake_latestRN1.phl[7]" "mooncake_latestRN1.phl[8]";
-connectAttr "mooncake_latestRN1.phl[9]" "mooncake_latestRN1.phl[10]";
-connectAttr "makeNurbCircle1.oc" "JackiesStallShape.cr";
-relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
-connectAttr "layerManager.dli[0]" "defaultLayer.id";
-connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
-connectAttr ":rmanDefaultDisplay.msg" ":rmanGlobals.displays[0]";
-connectAttr ":PxrPathTracer.msg" ":rmanGlobals.ri_integrator";
-connectAttr "d_openexr.msg" ":rmanDefaultDisplay.displayType";
-connectAttr "Ci.msg" ":rmanDefaultDisplay.displayChannels[0]";
-connectAttr "a.msg" ":rmanDefaultDisplay.displayChannels[1]";
-connectAttr "sharedReferenceNode.sr" "tent_latestRN.sr";
 connectAttr "Lantern_Bulbw_Tail_translateX.o" "LanternBulbWithTail_latestRN.phl[13]"
 		;
 connectAttr "Lantern_Bulbw_Tail_translateY.o" "LanternBulbWithTail_latestRN.phl[14]"
@@ -3506,6 +3785,67 @@ connectAttr "Ping30s_V7_Latest_renderLayerManager.rlmi[0]" "Ping30s_V7_Latest_de
 		;
 connectAttr "tent_latest_renderLayerManager.rlmi[0]" "tent_latest_defaultRenderLayer.rlid"
 		;
+connectAttr "polyCube1.out" "polyDelEdge1.ip";
+connectAttr "MoonCakeSign.oc" "PxrSurface1SG.ss";
+connectAttr "JackiesSignShape.iog" "PxrSurface1SG.dsm" -na;
+connectAttr "PxrSurface1SG.msg" "materialInfo1.sg";
+connectAttr "MoonCakeSign.msg" "materialInfo1.m";
+connectAttr "file2.msg" "materialInfo1.t" -na;
+connectAttr "place2dTexture1.c" "file1.c";
+connectAttr "place2dTexture1.tf" "file1.tf";
+connectAttr "place2dTexture1.rf" "file1.rf";
+connectAttr "place2dTexture1.mu" "file1.mu";
+connectAttr "place2dTexture1.mv" "file1.mv";
+connectAttr "place2dTexture1.s" "file1.s";
+connectAttr "place2dTexture1.wu" "file1.wu";
+connectAttr "place2dTexture1.wv" "file1.wv";
+connectAttr "place2dTexture1.re" "file1.re";
+connectAttr "place2dTexture1.of" "file1.of";
+connectAttr "place2dTexture1.r" "file1.ro";
+connectAttr "place2dTexture1.n" "file1.n";
+connectAttr "place2dTexture1.vt1" "file1.vt1";
+connectAttr "place2dTexture1.vt2" "file1.vt2";
+connectAttr "place2dTexture1.vt3" "file1.vt3";
+connectAttr "place2dTexture1.vc1" "file1.vc1";
+connectAttr "place2dTexture1.o" "file1.uv";
+connectAttr "place2dTexture1.ofs" "file1.fs";
+connectAttr "file2.oc" "MoonCakeSign.diffuseColor";
+connectAttr ":defaultColorMgtGlobals.cme" "file2.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file2.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file2.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file2.ws";
+connectAttr "place2dTexture2.c" "file2.c";
+connectAttr "place2dTexture2.tf" "file2.tf";
+connectAttr "place2dTexture2.rf" "file2.rf";
+connectAttr "place2dTexture2.mu" "file2.mu";
+connectAttr "place2dTexture2.mv" "file2.mv";
+connectAttr "place2dTexture2.s" "file2.s";
+connectAttr "place2dTexture2.wu" "file2.wu";
+connectAttr "place2dTexture2.wv" "file2.wv";
+connectAttr "place2dTexture2.re" "file2.re";
+connectAttr "place2dTexture2.of" "file2.of";
+connectAttr "place2dTexture2.r" "file2.ro";
+connectAttr "place2dTexture2.n" "file2.n";
+connectAttr "place2dTexture2.vt1" "file2.vt1";
+connectAttr "place2dTexture2.vt2" "file2.vt2";
+connectAttr "place2dTexture2.vt3" "file2.vt3";
+connectAttr "place2dTexture2.vc1" "file2.vc1";
+connectAttr "place2dTexture2.o" "file2.uv";
+connectAttr "place2dTexture2.ofs" "file2.fs";
+connectAttr "polyDelEdge1.out" "polyTweakUV1.ip";
+connectAttr "PxrSurface1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "file2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[33].dn"
+		;
+connectAttr "place2dTexture2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[34].dn"
+		;
+connectAttr "file1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[35].dn"
+		;
+connectAttr "place2dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[36].dn"
+		;
+connectAttr "PxrSurface1SG.pa" ":renderPartition.st" -na;
+connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanGlobals.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanDefaultDisplay.msg" ":defaultRenderingList1.r" -na;
@@ -3515,6 +3855,9 @@ connectAttr "Ping30s_V7_Latest_defaultRenderLayer.msg" ":defaultRenderingList1.r
 		 -na;
 connectAttr "tent_latest_defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "tent_latest_d_openexr.msg" ":defaultRenderingList1.r" -na;
+connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
+connectAttr "jackieIphone_latestRN.phl[2]" ":initialShadingGroup.dsm" -na;
 connectAttr "LanternBulbWithTail_latestRN.phl[1]" ":initialShadingGroup.dsm" -na
 		;
 connectAttr "LanternBulbWithTail_latestRN.phl[2]" ":initialShadingGroup.dsm" -na
