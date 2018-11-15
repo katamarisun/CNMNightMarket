@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: bridge_v1_latest.ma
-//Last modified: Thu, Nov 15, 2018 03:04:44 AM
+//Name: bridge_latest.ma
+//Last modified: Thu, Nov 15, 2018 03:04:51 AM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -30103,7 +30103,7 @@ createNode polyTweakUV -n "polyTweakUV2";
 		 0.40252584 -0.62638867 0.40252632 -0.62638867 0.3643105 -0.63211066 0.36431018 -0.63211066
 		 0.36297622 -0.62638867 0.36297655;
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "C0D5725F-482B-2B79-A740-3E94262DD795";
+	rename -uid "38BE6AA8-438A-93F9-C16F-AF87F4E5464B";
 	setAttr ".pee" yes;
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -53.17460106163437 -503.9682339423556 ;
@@ -30471,4 +30471,4 @@ connectAttr "groupId45.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId47.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId49.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId50.msg" ":initialShadingGroup.gn" -na;
-// End of bridge_v1_latest.ma
+// End of bridge_latest.ma

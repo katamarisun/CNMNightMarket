@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: SaucePan_v1_latest.ma
-//Last modified: Thu, Nov 15, 2018 03:00:42 AM
+//Name: SFalley_latest.ma
+//Last modified: Thu, Nov 15, 2018 03:00:33 AM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -16,13 +16,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "036FCAD4-4142-FD71-0C27-E0AEEDBC089D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 126.28054670991101 57.703357981268468 206.02760986021428 ;
+	setAttr ".t" -type "double3" 111.139796770758 50.408413143393176 176.31221496848931 ;
 	setAttr ".r" -type "double3" -12.338352729749605 -692.99999999993508 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6D1C9B68-684A-0F85-5830-158BBDC8DC62";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 232.8796713369461;
+	setAttr ".coi" 198.74078994814312;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -13038,4 +13038,4 @@ connectAttr "pCubeShape4.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pCylinder4Shape.ciog.cog[1]" ":initialShadingGroup.dsm" -na;
 connectAttr "pCylinder4Shape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId6.msg" ":initialShadingGroup.gn" -na;
-// End of SaucePan_v1_latest.ma
+// End of SFalley_latest.ma
