@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Buns_stall_latest.ma
-//Last modified: Fri, Nov 16, 2018 02:58:26 PM
+//Last modified: Fri, Nov 16, 2018 03:11:46 PM
 //Codeset: 1252
 file -rdi 1 -ns "dumpling_case_latest" -rfn "dumpling_case_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/dumpling_case_latest.ma";
@@ -21,13 +21,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "70EAC88E-4D79-C2BD-3817-70A974F49DD3";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 5.9917939306580061 11.103771709767503 10.768196566214668 ;
-	setAttr ".r" -type "double3" -35.738352728793927 -1038.5999999993967 -2.1200558225730114e-15 ;
+	setAttr ".t" -type "double3" 22.124754971571729 24.903801279246739 47.992837169695825 ;
+	setAttr ".r" -type "double3" -21.338352728794227 -1056.1999999993952 8.6904231772114472e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "AE433CC0-4E0E-4F2E-B1D8-E4BFA7A9339C";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 13.246939829229936;
+	setAttr ".coi" 55.171739109478622;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -2516,19 +2516,19 @@ parent -s -nc -r -add "|tent_latest_Tent|tent_latest_TentGrp|tent_latest_tent_po
 parent -s -nc -r -add "|tent_latest_Tent|tent_latest_TentGrp|tent_latest_tent_pole_Mesh|tent_latest_tent_pole_MeshShape" "tent_latest_tent_pole_Mesh2" ;
 parent -s -nc -r -add "|tent_latest_Tent|tent_latest_TentGrp|tent_latest_tent_pole_Mesh|tent_latest_tent_pole_MeshShape" "tent_latest_tent_pole_Mesh3" ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "5B091347-4745-19CD-8039-E59EE4DE72C4";
+	rename -uid "A630998B-4953-CAB9-9696-A3A00E9F0A9D";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "D9E0F92B-42F1-ED3D-4241-28A7A2820FDE";
+	rename -uid "B7A03964-4B40-744A-C33B-C9909A1DDAA1";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "C71AC008-40EB-269F-3522-4AB259EBFFCC";
+	rename -uid "F1C1561A-4BBF-F336-F878-B582461C79C0";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B90F4F1E-45B4-2867-9619-BDBAA0756241";
+	rename -uid "03AE7502-4E47-E131-8C4D-CDB8535D6086";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "738973F1-4268-2CD3-49D6-C6AC5801DE94";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "D1A71095-4C23-D52F-E499-1EBAF87F3FA7";
+	rename -uid "21035A60-41BF-1A5B-A11B-EA8C8668535A";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "0C33BFE2-4BF9-B57E-BAA9-B2806F489CFA";
 	setAttr ".g" yes;
@@ -2779,7 +2779,7 @@ createNode script -n "tent_latest_uiConfigurationScriptNode";
 		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 0\n            -height 433\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
 		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
@@ -2810,8 +2810,8 @@ createNode script -n "tent_latest_uiConfigurationScriptNode";
 		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
 		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
 		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n"
-		+ "                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n"
+		+ "                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
 		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1514\\n    -height 827\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1514\\n    -height 827\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
@@ -2938,11 +2938,485 @@ createNode makeNurbCircle -n "makeNurbCircle1";
 	setAttr ".nr" -type "double3" 0 1 0 ;
 createNode reference -n "dumpling_case_latestRN";
 	rename -uid "FAE84D18-4A99-4234-B895-D888F55B1852";
+	setAttr -s 90 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".phl[66]" 0;
+	setAttr ".phl[67]" 0;
+	setAttr ".phl[68]" 0;
+	setAttr ".phl[69]" 0;
+	setAttr ".phl[70]" 0;
+	setAttr ".phl[71]" 0;
+	setAttr ".phl[72]" 0;
+	setAttr ".phl[73]" 0;
+	setAttr ".phl[74]" 0;
+	setAttr ".phl[75]" 0;
+	setAttr ".phl[76]" 0;
+	setAttr ".phl[77]" 0;
+	setAttr ".phl[78]" 0;
+	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".phl[84]" 0;
+	setAttr ".phl[85]" 0;
+	setAttr ".phl[86]" 0;
+	setAttr ".phl[87]" 0;
+	setAttr ".phl[88]" 0;
+	setAttr ".phl[89]" 0;
+	setAttr ".phl[90]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"dumpling_case_latestRN"
 		"dumpling_case_latestRN" 0
-		"dumpling_case_latestRN" 1
-		2 "|dumpling_case_latest:DumplingBox" "translate" " -type \"double3\" 3.34054318711662956 6.99513986386683495 5.70246073867462222";
+		"dumpling_case_latestRN" 170
+		0 "|dumpling_case_latest:DumplingBox" "|tent_latest_Tent" "-s -r "
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox" "translate" " -type \"double3\" 0.7452444766379489 1.4992960303562628 1.18126669311931831"
+		
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox" "scale" " -type \"double3\" 0.20715034215103964 0.21433396036880223 0.20715034215103964"
+		
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox" "rotatePivot" " -type \"double3\" 0 -0.30742594657213923 0"
+		
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox" "scalePivot" " -type \"double3\" 0 -1.43433147991645638 0"
+		
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox" "scalePivotTranslate" 
+		" -type \"double3\" 0 1.1269055333443172 0"
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape" 
+		"instObjGroups" " -s 8"
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape" 
+		"instObjGroups" " -s 4"
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:159]\""
+		
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:159]\""
+		
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:159]\""
+		
+		2 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:159]\""
+		
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "dumpling_case_latest:groupId56.groupId" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "dumpling_case_latest:groupId61.groupId" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "dumpling_case_latest:groupId66.groupId" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "dumpling_case_latest:groupId71.groupId" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "dumpling_case_latest:groupId76.groupId" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "dumpling_case_latest:groupId81.groupId" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "dumpling_case_latest:groupId86.groupId" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "dumpling_case_latest:groupId91.groupId" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "dumpling_case_latest:groupId3.groupId" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "dumpling_case_latest:groupId25.groupId" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "dumpling_case_latest:groupId37.groupId" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "dumpling_case_latest:groupId49.groupId" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.worldMatrix" 
+		"dumpling_case_latest:polyAutoProj1.manipMatrix" ""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.worldMatrix" 
+		"dumpling_case_latest:polyCylProj1.manipMatrix" ""
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board1|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board2|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board3|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board4|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board5|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board6|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board7|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board1|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board2|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board3|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board4|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board5|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board6|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board7|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board1|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board2|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board3|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board4|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board5|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board6|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board7|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board1|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board2|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board3|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board4|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board5|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board6|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board7|dumpling_case_latest:BoardShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.worldMatrix" 
+		"dumpling_case_latest:polyCylProj2.manipMatrix" ""
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		"dumpling_case_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
+		5 0 "dumpling_case_latestRN" "dumpling_case_latest:groupId56.groupId" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		"dumpling_case_latestRN.placeHolderList[2]" "dumpling_case_latestRN.placeHolderList[3]" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.iog.og[2].gid"
+		
+		5 4 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		"dumpling_case_latestRN.placeHolderList[4]" ""
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		"dumpling_case_latestRN.placeHolderList[5]" ":initialShadingGroup.dsm"
+		5 0 "dumpling_case_latestRN" "dumpling_case_latest:groupId61.groupId" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		"dumpling_case_latestRN.placeHolderList[6]" "dumpling_case_latestRN.placeHolderList[7]" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.iog.og[2].gid"
+		
+		5 4 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		"dumpling_case_latestRN.placeHolderList[8]" ""
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		"dumpling_case_latestRN.placeHolderList[9]" ":initialShadingGroup.dsm"
+		5 0 "dumpling_case_latestRN" "dumpling_case_latest:groupId66.groupId" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		"dumpling_case_latestRN.placeHolderList[10]" "dumpling_case_latestRN.placeHolderList[11]" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.iog.og[2].gid"
+		
+		5 4 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		"dumpling_case_latestRN.placeHolderList[12]" ""
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		"dumpling_case_latestRN.placeHolderList[13]" ":initialShadingGroup.dsm"
+		5 0 "dumpling_case_latestRN" "dumpling_case_latest:groupId71.groupId" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		"dumpling_case_latestRN.placeHolderList[14]" "dumpling_case_latestRN.placeHolderList[15]" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.iog.og[2].gid"
+		
+		5 4 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		"dumpling_case_latestRN.placeHolderList[16]" ""
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		"dumpling_case_latestRN.placeHolderList[17]" ":initialShadingGroup.dsm"
+		5 0 "dumpling_case_latestRN" "dumpling_case_latest:groupId76.groupId" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		"dumpling_case_latestRN.placeHolderList[18]" "dumpling_case_latestRN.placeHolderList[19]" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.iog.og[2].gid"
+		
+		5 4 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		"dumpling_case_latestRN.placeHolderList[20]" ""
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		"dumpling_case_latestRN.placeHolderList[21]" ":initialShadingGroup.dsm"
+		5 0 "dumpling_case_latestRN" "dumpling_case_latest:groupId81.groupId" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		"dumpling_case_latestRN.placeHolderList[22]" "dumpling_case_latestRN.placeHolderList[23]" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.iog.og[2].gid"
+		
+		5 4 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		"dumpling_case_latestRN.placeHolderList[24]" ""
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		"dumpling_case_latestRN.placeHolderList[25]" ":initialShadingGroup.dsm"
+		5 0 "dumpling_case_latestRN" "dumpling_case_latest:groupId86.groupId" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		"dumpling_case_latestRN.placeHolderList[26]" "dumpling_case_latestRN.placeHolderList[27]" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.iog.og[2].gid"
+		
+		5 4 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		"dumpling_case_latestRN.placeHolderList[28]" ""
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
+		"dumpling_case_latestRN.placeHolderList[29]" ":initialShadingGroup.dsm"
+		5 0 "dumpling_case_latestRN" "dumpling_case_latest:groupId91.groupId" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGroupId" 
+		"dumpling_case_latestRN.placeHolderList[30]" "dumpling_case_latestRN.placeHolderList[31]" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.iog.og[2].gid"
+		
+		5 4 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2].objectGrpColor" 
+		"dumpling_case_latestRN.placeHolderList[32]" ""
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[33]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[34]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[35]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[36]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0]" 
+		"dumpling_case_latestRN.placeHolderList[37]" ":initialShadingGroup.dsm"
+		5 0 "dumpling_case_latestRN" "dumpling_case_latest:groupId3.groupId" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"dumpling_case_latestRN.placeHolderList[38]" "dumpling_case_latestRN.placeHolderList[39]" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.iog.og[0].gid"
+		
+		5 4 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"dumpling_case_latestRN.placeHolderList[40]" ""
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0]" 
+		"dumpling_case_latestRN.placeHolderList[41]" ":initialShadingGroup.dsm"
+		5 0 "dumpling_case_latestRN" "dumpling_case_latest:groupId25.groupId" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"dumpling_case_latestRN.placeHolderList[42]" "dumpling_case_latestRN.placeHolderList[43]" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.iog.og[0].gid"
+		
+		5 4 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"dumpling_case_latestRN.placeHolderList[44]" ""
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0]" 
+		"dumpling_case_latestRN.placeHolderList[45]" ":initialShadingGroup.dsm"
+		5 0 "dumpling_case_latestRN" "dumpling_case_latest:groupId37.groupId" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"dumpling_case_latestRN.placeHolderList[46]" "dumpling_case_latestRN.placeHolderList[47]" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.iog.og[0].gid"
+		
+		5 4 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"dumpling_case_latestRN.placeHolderList[48]" ""
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0]" 
+		"dumpling_case_latestRN.placeHolderList[49]" ":initialShadingGroup.dsm"
+		5 0 "dumpling_case_latestRN" "dumpling_case_latest:groupId49.groupId" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGroupId" 
+		"dumpling_case_latestRN.placeHolderList[50]" "dumpling_case_latestRN.placeHolderList[51]" 
+		"|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.iog.og[0].gid"
+		
+		5 4 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Outside|dumpling_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"dumpling_case_latestRN.placeHolderList[52]" ""
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[53]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board1|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[54]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board2|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[55]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board3|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[56]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board4|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[57]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board5|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[58]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board6|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[59]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Boards|dumpling_case_latest:Board7|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[60]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[61]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board1|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[62]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board2|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[63]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board3|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[64]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board4|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[65]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board5|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[66]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board6|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[67]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Boards|dumpling_case_latest:Board7|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[68]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[69]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board1|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[70]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board2|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[71]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board3|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[72]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board4|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[73]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board5|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[74]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board6|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[75]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Boards|dumpling_case_latest:Board7|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[76]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[77]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board1|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[78]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board2|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[79]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board3|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[80]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board4|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[81]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board5|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[82]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board6|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[83]" ":initialShadingGroup.dsm"
+		5 3 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board7|dumpling_case_latest:BoardShape.instObjGroups" 
+		"dumpling_case_latestRN.placeHolderList[84]" ":initialShadingGroup.dsm"
+		5 0 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.worldMatrix" 
+		"dumpling_case_latest:polyCylProj1.manipMatrix" "dumpling_case_latestRN.placeHolderList[85]" 
+		"dumpling_case_latestRN.placeHolderList[86]" "dumpling_case_latest:polyAutoProj1.mp"
+		
+		5 0 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.worldMatrix" 
+		"dumpling_case_latest:polyAutoProj1.manipMatrix" "dumpling_case_latestRN.placeHolderList[87]" 
+		"dumpling_case_latestRN.placeHolderList[88]" "dumpling_case_latest:polyAutoProj1.mp"
+		
+		5 0 "dumpling_case_latestRN" "|tent_latest_Tent|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.worldMatrix" 
+		"dumpling_case_latest:polyCylProj2.manipMatrix" "dumpling_case_latestRN.placeHolderList[89]" 
+		"dumpling_case_latestRN.placeHolderList[90]" "dumpling_case_latest:polyCylProj2.mp";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
@@ -3018,7 +3492,7 @@ select -ne :initialShadingGroup;
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 58 ".dsm";
+	setAttr -s 57 ".dsm";
 	setAttr -k on ".mwc";
 	setAttr -cb on ".an";
 	setAttr -cb on ".il";
@@ -3090,6 +3564,81 @@ select -ne :hardwareRenderGlobals;
 	setAttr -k on ".hwcc";
 	setAttr -k on ".hwdp";
 	setAttr -k on ".hwql";
+connectAttr "dumpling_case_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[2]" "dumpling_case_latestRN.phl[3]";
+connectAttr ":initialShadingGroup.mwc" "dumpling_case_latestRN.phl[4]";
+connectAttr "dumpling_case_latestRN.phl[5]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[6]" "dumpling_case_latestRN.phl[7]";
+connectAttr ":initialShadingGroup.mwc" "dumpling_case_latestRN.phl[8]";
+connectAttr "dumpling_case_latestRN.phl[9]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[10]" "dumpling_case_latestRN.phl[11]";
+connectAttr ":initialShadingGroup.mwc" "dumpling_case_latestRN.phl[12]";
+connectAttr "dumpling_case_latestRN.phl[13]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[14]" "dumpling_case_latestRN.phl[15]";
+connectAttr ":initialShadingGroup.mwc" "dumpling_case_latestRN.phl[16]";
+connectAttr "dumpling_case_latestRN.phl[17]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[18]" "dumpling_case_latestRN.phl[19]";
+connectAttr ":initialShadingGroup.mwc" "dumpling_case_latestRN.phl[20]";
+connectAttr "dumpling_case_latestRN.phl[21]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[22]" "dumpling_case_latestRN.phl[23]";
+connectAttr ":initialShadingGroup.mwc" "dumpling_case_latestRN.phl[24]";
+connectAttr "dumpling_case_latestRN.phl[25]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[26]" "dumpling_case_latestRN.phl[27]";
+connectAttr ":initialShadingGroup.mwc" "dumpling_case_latestRN.phl[28]";
+connectAttr "dumpling_case_latestRN.phl[29]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[30]" "dumpling_case_latestRN.phl[31]";
+connectAttr ":initialShadingGroup.mwc" "dumpling_case_latestRN.phl[32]";
+connectAttr "dumpling_case_latestRN.phl[33]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[34]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[35]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[36]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[37]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[38]" "dumpling_case_latestRN.phl[39]";
+connectAttr ":initialShadingGroup.mwc" "dumpling_case_latestRN.phl[40]";
+connectAttr "dumpling_case_latestRN.phl[41]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[42]" "dumpling_case_latestRN.phl[43]";
+connectAttr ":initialShadingGroup.mwc" "dumpling_case_latestRN.phl[44]";
+connectAttr "dumpling_case_latestRN.phl[45]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[46]" "dumpling_case_latestRN.phl[47]";
+connectAttr ":initialShadingGroup.mwc" "dumpling_case_latestRN.phl[48]";
+connectAttr "dumpling_case_latestRN.phl[49]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[50]" "dumpling_case_latestRN.phl[51]";
+connectAttr ":initialShadingGroup.mwc" "dumpling_case_latestRN.phl[52]";
+connectAttr "dumpling_case_latestRN.phl[53]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[54]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[55]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[56]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[57]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[58]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[59]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[60]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[61]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[62]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[63]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[64]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[65]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[66]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[67]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[68]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[69]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[70]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[71]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[72]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[73]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[74]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[75]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[76]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[77]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[78]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[79]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[80]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[81]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[82]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[83]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[84]" ":initialShadingGroup.dsm" -na;
+connectAttr "dumpling_case_latestRN.phl[85]" "dumpling_case_latestRN.phl[86]";
+connectAttr "dumpling_case_latestRN.phl[87]" "dumpling_case_latestRN.phl[88]";
+connectAttr "dumpling_case_latestRN.phl[89]" "dumpling_case_latestRN.phl[90]";
 connectAttr "tent_latest_transformGeometry6.og" "tent_latest_TentShape.cr";
 connectAttr "polySplitRing19.out" "tent_latest_tent_top_MeshShape.i";
 connectAttr "makeNurbCircle1.oc" "|tent_latest_Tent|Counter|CounterShape.cr";
