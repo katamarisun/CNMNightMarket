@@ -1,11 +1,12 @@
 //Maya ASCII 2018 scene
 //Name: toy_rack_latest.ma
-//Last modified: Thu, Nov 15, 2018 07:56:39 PM
+//Last modified: Fri, Nov 16, 2018 12:34:49 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
 requires -nodeType "rmanDisplayChannel" -nodeType "d_openexr" -nodeType "rmanGlobals"
 		 -nodeType "PxrPathTracer" -nodeType "rmanDisplay" "RenderMan_for_Maya.py" "1.0";
+requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2018";
@@ -16,13 +17,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "F9E7DAD0-47A8-BB35-B13B-EF9192C03650";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 84.635052357156439 41.524432035025264 -28.583785863585234 ;
-	setAttr ".r" -type "double3" -18.938352729513539 112.19999999999391 0 ;
+	setAttr ".t" -type "double3" 72.495069512882594 75.616338302208078 0.82938082629108312 ;
+	setAttr ".r" -type "double3" -38.738352729513757 89.399999999991124 3.0372615077903739e-13 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "08A41766-4263-C10D-C1F9-3DAB3116979C";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 99.01769387888956;
+	setAttr ".coi" 99.017693878911842;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -208,15 +209,19 @@ createNode mesh -n "LeftStand1Shape" -p "LeftStand1";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCylinder1" -p "ToyRackGrp";
-	rename -uid "60B80456-42B8-8AC4-A7CD-80BDE2BEE1F3";
-	setAttr ".t" -type "double3" 0 19.979298837390147 3.2507427481473714 ;
-	setAttr ".r" -type "double3" 90 0 0 ;
-	setAttr ".s" -type "double3" 0.18056524980897559 0.80441571538709522 0.18056524980897559 ;
-createNode mesh -n "pCylinderShape1" -p "pCylinder1";
+createNode transform -n "HorizontalRungs" -p "ToyRackGrp";
+	rename -uid "8FA21F2D-400E-CB01-7BD1-20B40DC3D0D6";
+	setAttr ".t" -type "double3" 0 4.216998662749579 3.2991625801409956 ;
+	setAttr ".s" -type "double3" 1 0.5750205887405041 1.3180041832003804 ;
+createNode transform -n "pCylinder17" -p "HorizontalRungs";
+	rename -uid "148EF847-449B-32C5-7C2F-CCA14DCC57E7";
+	setAttr ".t" -type "double3" 0 -5.1845374195411331 -0.036737236960850073 ;
+	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode mesh -n "pCylinderShape1" -p "pCylinder17";
 	rename -uid "C9FB1711-4D7E-F3A0-33AC-C8A0683C8AB3";
 	setAttr -k off ".v";
-	setAttr -s 9 ".iog";
+	setAttr -s 17 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -224,54 +229,96 @@ createNode mesh -n "pCylinderShape1" -p "pCylinder1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-createNode transform -n "pCylinder2" -p "ToyRackGrp";
-	rename -uid "24A5D37E-4F50-B4A4-7EB1-E782430D0A31";
-	setAttr ".t" -type "double3" 0 17.479298837390147 3.2507427481473714 ;
-	setAttr ".r" -type "double3" 90 0 0 ;
-	setAttr ".s" -type "double3" 0.18056524980897559 0.80441571538709522 0.18056524980897559 ;
-createNode transform -n "pCylinder3" -p "ToyRackGrp";
-	rename -uid "AFBC8C9D-422B-1344-3025-91996034C81E";
-	setAttr ".t" -type "double3" 0 14.979298837390147 3.2507427481473714 ;
+createNode transform -n "pCylinder18" -p "HorizontalRungs";
+	rename -uid "FAEB3F6F-4BD7-8602-36E7-CBB86486A56D";
+	setAttr ".t" -type "double3" 0 -0.83686700746793363 -0.036737236960850073 ;
 	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
-	setAttr ".s" -type "double3" 0.18056524980897559 0.80441571538709522 0.18056524980897559 ;
-createNode transform -n "pCylinder4" -p "ToyRackGrp";
-	rename -uid "EE0C20DA-472B-5DDA-D78A-E18978C6FB2C";
-	setAttr ".t" -type "double3" 0 12.479298837390147 3.2507427481473714 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder19" -p "HorizontalRungs";
+	rename -uid "0ABC04FF-4B52-262C-2915-148890837505";
+	setAttr ".t" -type "double3" 0 3.5108034046052659 -0.036737236960850073 ;
 	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
-	setAttr ".s" -type "double3" 0.18056524980897559 0.80441571538709522 0.18056524980897559 ;
-createNode transform -n "pCylinder5" -p "ToyRackGrp";
-	rename -uid "58CEFE37-4808-A9FA-B122-02B75C3CD625";
-	setAttr ".t" -type "double3" 0 9.9792988373901466 3.2507427481473714 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder20" -p "HorizontalRungs";
+	rename -uid "944292C7-41F1-30AE-39A0-518F70B9A694";
+	setAttr ".t" -type "double3" 0 7.8584738166784636 -0.036737236960850073 ;
 	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
-	setAttr ".s" -type "double3" 0.18056524980897559 0.80441571538709522 0.18056524980897559 ;
-createNode transform -n "pCylinder6" -p "ToyRackGrp";
-	rename -uid "AA479F2E-4B94-5D28-9587-68BD82A943C3";
-	setAttr ".t" -type "double3" 0 7.4792988373901457 3.2507427481473714 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder21" -p "HorizontalRungs";
+	rename -uid "120EC727-4BAC-7E9F-1288-F88D1BBC1765";
+	setAttr ".t" -type "double3" 0 12.206144228751663 -0.036737236960850073 ;
 	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
-	setAttr ".s" -type "double3" 0.18056524980897559 0.80441571538709522 0.18056524980897559 ;
-createNode transform -n "pCylinder7" -p "ToyRackGrp";
-	rename -uid "7F3A94B1-4005-200B-EF16-B4A28E943CB6";
-	setAttr ".t" -type "double3" 0 4.9792988373901448 3.2507427481473714 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder22" -p "HorizontalRungs";
+	rename -uid "20BD06F1-4DC1-A4E9-4AB4-36A0F63B2E01";
+	setAttr ".t" -type "double3" 0 16.553814640824857 -0.036737236960850073 ;
 	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
-	setAttr ".s" -type "double3" 0.18056524980897559 0.80441571538709522 0.18056524980897559 ;
-createNode transform -n "pCylinder8" -p "ToyRackGrp";
-	rename -uid "DD259ADE-4D55-B881-AF64-37AC7CF19612";
-	setAttr ".t" -type "double3" 0 2.4792988373901439 3.2507427481473714 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder23" -p "HorizontalRungs";
+	rename -uid "AD82F3F9-4263-61C5-4A39-BC9E94FCB867";
+	setAttr ".t" -type "double3" 0 20.901485052898057 -0.036737236960850073 ;
 	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
-	setAttr ".s" -type "double3" 0.18056524980897559 0.80441571538709522 0.18056524980897559 ;
-createNode transform -n "pCylinder9" -p "ToyRackGrp";
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder24" -p "HorizontalRungs";
+	rename -uid "A2FF3BFB-42D8-71C2-289A-32B96AAF55D7";
+	setAttr ".t" -type "double3" 0 25.249155464971249 -0.036737236960850073 ;
+	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder9" -p "HorizontalRungs";
 	rename -uid "D0192EB0-4240-9681-B822-36B66F092D7B";
-	setAttr ".t" -type "double3" 0 -0.020701162609856993 3.2507427481473714 ;
+	setAttr ".t" -type "double3" 0 -7.3696488583851902 -0.036737236960850073 ;
 	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
-	setAttr ".s" -type "double3" 0.18056524980897559 0.80441571538709522 0.18056524980897559 ;
-createNode transform -n "pCylinder10" -p "ToyRackGrp";
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder8" -p "HorizontalRungs";
+	rename -uid "DD259ADE-4D55-B881-AF64-37AC7CF19612";
+	setAttr ".t" -type "double3" 0 -3.0219784463119916 -0.036737236960850073 ;
+	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder7" -p "HorizontalRungs";
+	rename -uid "7F3A94B1-4005-200B-EF16-B4A28E943CB6";
+	setAttr ".t" -type "double3" 0 1.3256919657612078 -0.036737236960850073 ;
+	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder6" -p "HorizontalRungs";
+	rename -uid "AA479F2E-4B94-5D28-9587-68BD82A943C3";
+	setAttr ".t" -type "double3" 0 5.6733623778344073 -0.036737236960850073 ;
+	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder5" -p "HorizontalRungs";
+	rename -uid "58CEFE37-4808-A9FA-B122-02B75C3CD625";
+	setAttr ".t" -type "double3" 0 10.021032789907604 -0.036737236960850073 ;
+	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder4" -p "HorizontalRungs";
+	rename -uid "EE0C20DA-472B-5DDA-D78A-E18978C6FB2C";
+	setAttr ".t" -type "double3" 0 14.368703201980804 -0.036737236960850073 ;
+	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder3" -p "HorizontalRungs";
+	rename -uid "AFBC8C9D-422B-1344-3025-91996034C81E";
+	setAttr ".t" -type "double3" 0 18.716373614054 -0.036737236960850073 ;
+	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder2" -p "HorizontalRungs";
+	rename -uid "24A5D37E-4F50-B4A4-7EB1-E782430D0A31";
+	setAttr ".t" -type "double3" 0 23.064044026127199 -0.036737236960850073 ;
+	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "pCylinder1" -p "HorizontalRungs";
+	rename -uid "60B80456-42B8-8AC4-A7CD-80BDE2BEE1F3";
+	setAttr ".t" -type "double3" 0 27.411714438200399 -0.036737236960850073 ;
+	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 0.61032865118364898 0.31401527761723552 ;
+createNode transform -n "VerticalRungs" -p "ToyRackGrp";
+	rename -uid "97ED030A-4AAF-1AAB-594E-C5939902312E";
+createNode transform -n "pCylinder10" -p "VerticalRungs";
 	rename -uid "9CEA792C-485C-DDD6-596E-47AC32DE1B20";
 	setAttr ".t" -type "double3" 0.0099591948710409106 9.9977027017429805 5.6639880920805279 ;
-	setAttr ".s" -type "double3" 0.18056524980897559 2.5389375893897097 0.18056524980897559 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 2.5389375893897097 0.18056524980897556 ;
 createNode mesh -n "pCylinderShape10" -p "pCylinder10";
 	rename -uid "DBC712F1-4864-06CD-F90C-E1882AED95D7";
 	setAttr -k off ".v";
-	setAttr -s 9 ".iog";
+	setAttr -s 6 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -371,53 +418,61 @@ createNode mesh -n "pCylinderShape10" -p "pCylinder10";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "pCylinder11" -p "ToyRackGrp";
+createNode transform -n "pCylinder11" -p "VerticalRungs";
 	rename -uid "FEDFBA33-426F-561B-3587-C4B6311A18DE";
 	setAttr ".t" -type "double3" 0.0099591948710409106 9.9977027017429805 4.6639880920805279 ;
-	setAttr ".s" -type "double3" 0.18056524980897559 2.5389375893897097 0.18056524980897559 ;
-createNode transform -n "pCylinder12" -p "ToyRackGrp";
+	setAttr ".s" -type "double3" 0.18056524980897559 2.5389375893897097 0.18056524980897556 ;
+createNode transform -n "pCylinder12" -p "VerticalRungs";
 	rename -uid "A2AB76DC-4A48-3258-6D9E-5E8D2A195845";
 	setAttr ".t" -type "double3" 0.0099591948710409106 9.9977027017429805 3.6639880920805279 ;
-	setAttr ".s" -type "double3" 0.18056524980897559 2.5389375893897097 0.18056524980897556 ;
-createNode transform -n "pCylinder13" -p "ToyRackGrp";
+	setAttr ".s" -type "double3" 0.18056524980897559 2.5389375893897097 0.18056524980897554 ;
+createNode transform -n "pCylinder13" -p "VerticalRungs";
 	rename -uid "B3CE0DFF-40AC-C454-6E49-85B4B27DEB2C";
 	setAttr ".t" -type "double3" 0.0099591948710409106 9.9977027017429805 2.6639880920805279 ;
 	setAttr ".s" -type "double3" 0.18056524980897559 2.5389375893897097 0.18056524980897554 ;
-createNode transform -n "pCylinder14" -p "ToyRackGrp";
+createNode transform -n "pCylinder14" -p "VerticalRungs";
 	rename -uid "E937CBA7-403D-53C5-826E-D48D6C687E57";
 	setAttr ".t" -type "double3" 0.0099591948710409106 9.9977027017429805 1.6639880920805283 ;
 	setAttr ".s" -type "double3" 0.18056524980897559 2.5389375893897097 0.18056524980897551 ;
-createNode transform -n "pCylinder15" -p "ToyRackGrp";
+createNode transform -n "pCylinder15" -p "VerticalRungs";
 	rename -uid "A0DD378D-450B-3412-E678-C39CFB2CA7B6";
-	setAttr ".t" -type "double3" 0.0099591948710409106 9.9977027017429805 0.66398809208052889 ;
-	setAttr ".s" -type "double3" 0.18056524980897559 2.5389375893897097 0.18056524980897548 ;
-parent -s -nc -r -add "|ToyRack|ToyRackGrp|pCylinder1|pCylinderShape1" "pCylinder2" ;
-parent -s -nc -r -add "|ToyRack|ToyRackGrp|pCylinder1|pCylinderShape1" "pCylinder3" ;
-parent -s -nc -r -add "|ToyRack|ToyRackGrp|pCylinder1|pCylinderShape1" "pCylinder4" ;
-parent -s -nc -r -add "|ToyRack|ToyRackGrp|pCylinder1|pCylinderShape1" "pCylinder5" ;
-parent -s -nc -r -add "|ToyRack|ToyRackGrp|pCylinder1|pCylinderShape1" "pCylinder6" ;
-parent -s -nc -r -add "|ToyRack|ToyRackGrp|pCylinder1|pCylinderShape1" "pCylinder7" ;
-parent -s -nc -r -add "|ToyRack|ToyRackGrp|pCylinder1|pCylinderShape1" "pCylinder8" ;
-parent -s -nc -r -add "|ToyRack|ToyRackGrp|pCylinder1|pCylinderShape1" "pCylinder9" ;
-parent -s -nc -r -add "|ToyRack|ToyRackGrp|pCylinder10|pCylinderShape10" "pCylinder11" ;
-parent -s -nc -r -add "|ToyRack|ToyRackGrp|pCylinder10|pCylinderShape10" "pCylinder12" ;
-parent -s -nc -r -add "|ToyRack|ToyRackGrp|pCylinder10|pCylinderShape10" "pCylinder13" ;
-parent -s -nc -r -add "|ToyRack|ToyRackGrp|pCylinder10|pCylinderShape10" "pCylinder14" ;
-parent -s -nc -r -add "|ToyRack|ToyRackGrp|pCylinder10|pCylinderShape10" "pCylinder15" ;
+	setAttr ".t" -type "double3" 0.0099591948710409106 9.9977027017429805 0.66398809208052878 ;
+	setAttr ".s" -type "double3" 0.18056524980897559 2.5389375893897097 0.18056524980897545 ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder1" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder2" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder3" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder4" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder5" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder6" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder7" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder8" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder9" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder18" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder19" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder20" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder21" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder22" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder23" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1" "pCylinder24" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|VerticalRungs|pCylinder10|pCylinderShape10" "pCylinder11" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|VerticalRungs|pCylinder10|pCylinderShape10" "pCylinder12" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|VerticalRungs|pCylinder10|pCylinderShape10" "pCylinder13" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|VerticalRungs|pCylinder10|pCylinderShape10" "pCylinder14" ;
+parent -s -nc -r -add "|ToyRack|ToyRackGrp|VerticalRungs|pCylinder10|pCylinderShape10" "pCylinder15" ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "72EBB5A7-418D-89AA-2F88-599FE75844C0";
+	rename -uid "5D7C5F2F-4F28-2BDF-1428-998063129292";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "4F02BACD-4B00-68D4-294D-098A543CE17B";
+	rename -uid "92C8BDD5-459B-4A32-F9C8-3EBE1E6E14CA";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "F739CD46-48C1-D125-2DDA-9886498A7C24";
+	rename -uid "61DF47BA-4F3F-15EE-BB31-78A529088BB8";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "1F622982-44EC-8CDD-ED0C-C592D058FB04";
+	rename -uid "145C7C48-4ED6-7903-D310-CA9B9DE1A237";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "64DD3A07-41AF-AF22-3E85-6E94A68446A9";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "D1A86969-4ED6-C478-A94B-4DBA7D9FD6D0";
+	rename -uid "408E8A52-48EC-8603-7D23-B1A4A500C2DD";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "95922A0A-4E0C-A1C5-A1B6-DF89D1876322";
 	setAttr ".g" yes;
@@ -625,7 +680,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 0\n            -height 433\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
 		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
@@ -677,6 +732,109 @@ createNode polyCylinder -n "polyCylinder2";
 createNode makeNurbCircle -n "makeNurbCircle1";
 	rename -uid "0AF7AE8B-4332-D389-1EFD-94A84CDDA6C1";
 	setAttr ".nr" -type "double3" 0 1 0 ;
+createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "698042BE-43A3-E849-1A28-849E6DDFCAFC";
+	setAttr ".pee" yes;
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -44.444442678380966 -556.34918424187606 ;
+	setAttr ".tgi[0].vh" -type "double2" 865.07933070420097 44.444442678380966 ;
+	setAttr -s 32 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -1655.7142333984375;
+	setAttr ".tgi[0].ni[0].y" 1198.5714111328125;
+	setAttr ".tgi[0].ni[0].nvs" 1922;
+	setAttr ".tgi[0].ni[1].x" 1488.5714111328125;
+	setAttr ".tgi[0].ni[1].y" -42.857143402099609;
+	setAttr ".tgi[0].ni[1].nvs" 1922;
+	setAttr ".tgi[0].ni[2].x" 1167.142822265625;
+	setAttr ".tgi[0].ni[2].y" -781.4285888671875;
+	setAttr ".tgi[0].ni[2].nvs" 1922;
+	setAttr ".tgi[0].ni[3].x" 1488.5714111328125;
+	setAttr ".tgi[0].ni[3].y" 885.71429443359375;
+	setAttr ".tgi[0].ni[3].nvs" 1922;
+	setAttr ".tgi[0].ni[4].x" 1167.142822265625;
+	setAttr ".tgi[0].ni[4].y" 1047.142822265625;
+	setAttr ".tgi[0].ni[4].nvs" 1922;
+	setAttr ".tgi[0].ni[5].x" 1167.142822265625;
+	setAttr ".tgi[0].ni[5].y" -281.42855834960938;
+	setAttr ".tgi[0].ni[5].nvs" 1922;
+	setAttr ".tgi[0].ni[6].x" 1488.5714111328125;
+	setAttr ".tgi[0].ni[6].y" 732.85711669921875;
+	setAttr ".tgi[0].ni[6].nvs" 1922;
+	setAttr ".tgi[0].ni[7].x" 1488.5714111328125;
+	setAttr ".tgi[0].ni[7].y" 1038.5714111328125;
+	setAttr ".tgi[0].ni[7].nvs" 1922;
+	setAttr ".tgi[0].ni[8].x" 1167.142822265625;
+	setAttr ".tgi[0].ni[8].y" 871.4285888671875;
+	setAttr ".tgi[0].ni[8].nvs" 1922;
+	setAttr ".tgi[0].ni[9].x" 1488.5714111328125;
+	setAttr ".tgi[0].ni[9].y" 1214.2857666015625;
+	setAttr ".tgi[0].ni[9].nvs" 1922;
+	setAttr ".tgi[0].ni[10].x" 1488.5714111328125;
+	setAttr ".tgi[0].ni[10].y" 557.14288330078125;
+	setAttr ".tgi[0].ni[10].nvs" 1922;
+	setAttr ".tgi[0].ni[11].x" -105.71428680419922;
+	setAttr ".tgi[0].ni[11].y" 667.14288330078125;
+	setAttr ".tgi[0].ni[11].nvs" 1922;
+	setAttr ".tgi[0].ni[12].x" 1167.142822265625;
+	setAttr ".tgi[0].ni[12].y" 695.71429443359375;
+	setAttr ".tgi[0].ni[12].nvs" 1922;
+	setAttr ".tgi[0].ni[13].x" 1488.5714111328125;
+	setAttr ".tgi[0].ni[13].y" 381.42855834960938;
+	setAttr ".tgi[0].ni[13].nvs" 1922;
+	setAttr ".tgi[0].ni[14].x" 201.42857360839844;
+	setAttr ".tgi[0].ni[14].y" 607.14288330078125;
+	setAttr ".tgi[0].ni[14].nvs" 1922;
+	setAttr ".tgi[0].ni[15].x" 1167.142822265625;
+	setAttr ".tgi[0].ni[15].y" 138.57142639160156;
+	setAttr ".tgi[0].ni[15].nvs" 1922;
+	setAttr ".tgi[0].ni[16].x" 1167.142822265625;
+	setAttr ".tgi[0].ni[16].y" -128.57142639160156;
+	setAttr ".tgi[0].ni[16].nvs" 1922;
+	setAttr ".tgi[0].ni[17].x" 1167.142822265625;
+	setAttr ".tgi[0].ni[17].y" -514.28570556640625;
+	setAttr ".tgi[0].ni[17].nvs" 1922;
+	setAttr ".tgi[0].ni[18].x" 1167.142822265625;
+	setAttr ".tgi[0].ni[18].y" 1200;
+	setAttr ".tgi[0].ni[18].nvs" 1922;
+	setAttr ".tgi[0].ni[19].x" -412.85714721679688;
+	setAttr ".tgi[0].ni[19].y" 677.14288330078125;
+	setAttr ".tgi[0].ni[19].nvs" 1922;
+	setAttr ".tgi[0].ni[20].x" 1488.5714111328125;
+	setAttr ".tgi[0].ni[20].y" -195.71427917480469;
+	setAttr ".tgi[0].ni[20].nvs" 1922;
+	setAttr ".tgi[0].ni[21].x" 1488.5714111328125;
+	setAttr ".tgi[0].ni[21].y" -392.85714721679688;
+	setAttr ".tgi[0].ni[21].nvs" 1922;
+	setAttr ".tgi[0].ni[22].x" 508.57144165039063;
+	setAttr ".tgi[0].ni[22].y" 511.42855834960938;
+	setAttr ".tgi[0].ni[22].nvs" 1922;
+	setAttr ".tgi[0].ni[23].x" 1488.5714111328125;
+	setAttr ".tgi[0].ni[23].y" -750;
+	setAttr ".tgi[0].ni[23].nvs" 1922;
+	setAttr ".tgi[0].ni[24].x" 1167.142822265625;
+	setAttr ".tgi[0].ni[24].y" 462.85714721679688;
+	setAttr ".tgi[0].ni[24].nvs" 1922;
+	setAttr ".tgi[0].ni[25].x" 815.71429443359375;
+	setAttr ".tgi[0].ni[25].y" 737.14288330078125;
+	setAttr ".tgi[0].ni[25].nvs" 1922;
+	setAttr ".tgi[0].ni[26].x" -1334.2857666015625;
+	setAttr ".tgi[0].ni[26].y" 1077.142822265625;
+	setAttr ".tgi[0].ni[26].nvs" 1922;
+	setAttr ".tgi[0].ni[27].x" -1641.4285888671875;
+	setAttr ".tgi[0].ni[27].y" 1045.7142333984375;
+	setAttr ".tgi[0].ni[27].nvs" 1922;
+	setAttr ".tgi[0].ni[28].x" -1027.142822265625;
+	setAttr ".tgi[0].ni[28].y" 910;
+	setAttr ".tgi[0].ni[28].nvs" 1922;
+	setAttr ".tgi[0].ni[29].x" 1488.5714111328125;
+	setAttr ".tgi[0].ni[29].y" -925.71429443359375;
+	setAttr ".tgi[0].ni[29].nvs" 1922;
+	setAttr ".tgi[0].ni[30].x" 1488.5714111328125;
+	setAttr ".tgi[0].ni[30].y" -1101.4285888671875;
+	setAttr ".tgi[0].ni[30].nvs" 1922;
+	setAttr ".tgi[0].ni[31].x" -720;
+	setAttr ".tgi[0].ni[31].y" 830;
+	setAttr ".tgi[0].ni[31].nvs" 1922;
 select -ne :time1;
 	setAttr -av -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -722,7 +880,7 @@ select -ne :initialShadingGroup;
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 17 ".dsm";
+	setAttr -s 26 ".dsm";
 	setAttr -k on ".mwc";
 	setAttr -cb on ".an";
 	setAttr -cb on ".il";
@@ -793,11 +951,9 @@ select -ne :hardwareRenderGlobals;
 	setAttr -k on ".hwcc";
 	setAttr -k on ".hwdp";
 	setAttr -k on ".hwql";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "makeNurbCircle1.oc" "ToyRackShape.cr";
 connectAttr "polyCylinder1.out" "LeftStandShape.i";
-connectAttr "polyCylinder2.out" "|ToyRack|ToyRackGrp|pCylinder1|pCylinderShape1.i"
+connectAttr "polyCylinder2.out" "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1.i"
 		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
@@ -817,34 +973,50 @@ connectAttr "d_openexr.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":PxrPathTracer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "LeftStandShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "LeftStand1Shape.iog" ":initialShadingGroup.dsm" -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder1|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder1|pCylinderShape1.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder2|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder2|pCylinderShape1.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder3|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder3|pCylinderShape1.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder4|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder4|pCylinderShape1.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder5|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder5|pCylinderShape1.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder6|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder6|pCylinderShape1.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder7|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder7|pCylinderShape1.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder8|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder8|pCylinderShape1.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder9|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder9|pCylinderShape1.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder10|pCylinderShape10.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|VerticalRungs|pCylinder10|pCylinderShape10.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder11|pCylinderShape10.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|VerticalRungs|pCylinder11|pCylinderShape10.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder12|pCylinderShape10.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|VerticalRungs|pCylinder12|pCylinderShape10.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder13|pCylinderShape10.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|VerticalRungs|pCylinder13|pCylinderShape10.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder14|pCylinderShape10.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|VerticalRungs|pCylinder14|pCylinderShape10.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|ToyRack|ToyRackGrp|pCylinder15|pCylinderShape10.iog" ":initialShadingGroup.dsm"
+connectAttr "|ToyRack|ToyRackGrp|VerticalRungs|pCylinder15|pCylinderShape10.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder18|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder19|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder20|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder21|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder22|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder23|pCylinderShape1.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder24|pCylinderShape1.iog" ":initialShadingGroup.dsm"
 		 -na;
 // End of toy_rack_latest.ma
