@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: Ring_toss-1bottle1ring_v1_latest.ma
-//Last modified: Thu, Nov 15, 2018 07:37:18 PM
+//Name: Ring_toss-bottles_1ring_latest.ma
+//Last modified: Thu, Nov 15, 2018 07:36:34 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -16,8 +16,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "DFBBDBB5-2F47-50F9-C343-FAA26B932EE0";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -9.5186358327299061 9.4799477371478176 -1.0824353930262571 ;
-	setAttr ".r" -type "double3" -40.538352729116582 1342.1999999992656 0 ;
+	setAttr ".t" -type "double3" -3.4521255840082619 5.773159399097433 -11.237144118243783 ;
+	setAttr ".r" -type "double3" -21.338352729117371 1277.7999999992705 0 ;
 	setAttr ".rp" -type "double3" 9.7144514654701197e-17 2.2204460492503131e-16 0 ;
 	setAttr ".rpt" -type "double3" 6.1711226524541477e-17 -4.3180610396711815e-17 -3.8902291186734053e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -79,16 +79,16 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 createNode transform -n "RingToss";
 	rename -uid "27372ACB-40D5-C6F2-C7E8-378EB1279A9A";
-	setAttr ".t" -type "double3" 0 0 0.064394348423111536 ;
-	setAttr ".s" -type "double3" 1.0398315272391561 1.0398315272391561 1.0398315272391561 ;
+	setAttr ".t" -type "double3" 0 0 0.87233942456863467 ;
+	setAttr ".s" -type "double3" 1.8668188392237459 1.8668188392237459 1.8668188392237459 ;
 createNode nurbsCurve -n "RingTossShape" -p "RingToss";
 	rename -uid "EAA42475-4C44-6F84-23E0-B0A853F116C2";
 	setAttr -k off ".v";
 	setAttr ".tw" yes;
 createNode transform -n "RingTossGrp" -p "RingToss";
 	rename -uid "1D96EDD6-4221-1123-BB91-51B91FFFE5FC";
-	setAttr ".t" -type "double3" 0 0 -0.061927674566748504 ;
-	setAttr ".s" -type "double3" 0.96169424931275915 0.96169424931275915 0.96169424931275915 ;
+	setAttr ".t" -type "double3" 0 0 -0.46728659805649264 ;
+	setAttr ".s" -type "double3" 0.5356706173030783 0.5356706173030783 0.5356706173030783 ;
 createNode transform -n "pTorus3" -p "RingTossGrp";
 	rename -uid "1A9DE429-471C-DF26-C61B-3BA48E1CA78E";
 	setAttr ".t" -type "double3" 0.78953320228542934 -7.1300459314471709e-08 -0.18056338005770189 ;
@@ -101,6 +101,7 @@ createNode mesh -n "pTorus3Shape" -p "pTorus3";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr -s 2 ".ciog[0].cog";
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 297 ".uvst[0].uvsp";
 	setAttr ".uvst[0].uvsp[0:249]" -type "float2" 0 0.71179825 0 0.69999993 0.050000001
@@ -765,6 +766,7 @@ createNode transform -n "pCylinder5" -p "Ring_Toss_Bottles";
 createNode mesh -n "pCylinderShape5" -p "pCylinder5";
 	rename -uid "791BA2A0-4AE8-F06F-E7FC-C0A33349D6D1";
 	setAttr -k off ".v";
+	setAttr -s 9 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".pv" -type "double2" 0.49999998509883881 0.84374997019767761 ;
@@ -778,6 +780,7 @@ createNode mesh -n "polySurfaceShape1" -p "pCylinder5";
 	rename -uid "7C8333E7-4E88-4AAC-B839-38B26393CDAF";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
+	setAttr -s 9 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".pv" -type "double2" 0.49999998509883881 0.84374997019767761 ;
@@ -967,7 +970,7 @@ createNode mesh -n "polySurfaceShape1" -p "pCylinder5";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -s 111 ".pt";
+	setAttr -s 120 ".pt";
 	setAttr ".pt[440]" -type "float3" 7.4505806e-09 0 0 ;
 	setAttr ".pt[441]" -type "float3" -7.4505806e-09 0 0 ;
 	setAttr ".pt[443]" -type "float3" 1.8626451e-09 0 0 ;
@@ -2669,23 +2672,63 @@ createNode mesh -n "polySurfaceShape1" -p "pCylinder5";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
+createNode transform -n "pCylinder6" -p "Ring_Toss_Bottles";
+	rename -uid "41BA7DDD-46E7-2903-8097-2AB5AD4448B9";
+	setAttr ".t" -type "double3" -0.49956344859074564 0.73732282757673095 0.57321973433710716 ;
+	setAttr ".s" -type "double3" 0.1432567098532084 1 0.1432567098532084 ;
+createNode transform -n "pCylinder7" -p "Ring_Toss_Bottles";
+	rename -uid "39B56ABB-44F4-DCD6-226A-8DBBA54AC947";
+	setAttr ".t" -type "double3" -1.1096670099271702 0.73732282757673095 1.2207317873036723 ;
+	setAttr ".s" -type "double3" 0.1432567098532084 1 0.1432567098532084 ;
+createNode transform -n "pCylinder8" -p "Ring_Toss_Bottles";
+	rename -uid "AF577F22-4BED-2EB1-03DC-90B638E117B2";
+	setAttr ".t" -type "double3" 0.00043655140925435987 0.73732282757673095 0.57321973433710716 ;
+	setAttr ".s" -type "double3" 0.1432567098532084 1 0.1432567098532084 ;
+createNode transform -n "pCylinder9" -p "Ring_Toss_Bottles";
+	rename -uid "A0FF2A81-4A79-EB47-9A7D-4FA21913A01D";
+	setAttr ".t" -type "double3" 0.50043655140925436 0.73732282757673095 0.57321973433710716 ;
+	setAttr ".s" -type "double3" 0.1432567098532084 1 0.14325670985320843 ;
+createNode transform -n "pCylinder10" -p "Ring_Toss_Bottles";
+	rename -uid "B7C2F369-4021-5515-87AF-519912B440CB";
+	setAttr ".t" -type "double3" -0.55966700992717011 0.73732282757673095 1.2207317873036723 ;
+	setAttr ".s" -type "double3" 0.1432567098532084 1 0.1432567098532084 ;
+createNode transform -n "pCylinder11" -p "Ring_Toss_Bottles";
+	rename -uid "EA3ADDCB-4C98-59B0-838E-4EAB1DD98132";
+	setAttr ".t" -type "double3" -0.0096670099271700671 0.73732282757673095 1.2207317873036723 ;
+	setAttr ".s" -type "double3" 0.1432567098532084 1 0.1432567098532084 ;
+createNode transform -n "pCylinder12" -p "Ring_Toss_Bottles";
+	rename -uid "1930D5EF-4FC5-11BA-EE4E-679C6251CD79";
+	setAttr ".t" -type "double3" 0.54033299007282998 0.73732282757673095 1.2207317873036723 ;
+	setAttr ".s" -type "double3" 0.1432567098532084 1 0.1432567098532084 ;
+createNode transform -n "pCylinder13" -p "Ring_Toss_Bottles";
+	rename -uid "B26AC063-43AF-095A-FA8C-C99548432552";
+	setAttr ".t" -type "double3" 1.0903329900728302 0.73732282757673095 1.2207317873036723 ;
+	setAttr ".s" -type "double3" 0.1432567098532084 1 0.1432567098532084 ;
+parent -s -nc -r -add "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder5|pCylinderShape5" "pCylinder6" ;
+parent -s -nc -r -add "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder5|pCylinderShape5" "pCylinder7" ;
+parent -s -nc -r -add "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder5|pCylinderShape5" "pCylinder8" ;
+parent -s -nc -r -add "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder5|pCylinderShape5" "pCylinder9" ;
+parent -s -nc -r -add "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder5|pCylinderShape5" "pCylinder10" ;
+parent -s -nc -r -add "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder5|pCylinderShape5" "pCylinder11" ;
+parent -s -nc -r -add "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder5|pCylinderShape5" "pCylinder12" ;
+parent -s -nc -r -add "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder5|pCylinderShape5" "pCylinder13" ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "C063B6C1-4A19-9412-BBA6-D0A551F61B60";
+	rename -uid "12F2520D-44D3-F209-A337-C0BBAB2C4D66";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "36D0AD4C-4695-C227-205F-FEB7DD463971";
+	rename -uid "0B95B34A-4F95-45C6-CD16-2C93F205D08F";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "6B75CD44-4D42-A805-E044-D6A46F446504";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "174A503B-4A5C-9C9E-B4CE-4B855606F1BC";
+	rename -uid "3FDA2493-4FAA-D98B-9D28-5A845C2992F1";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "30306A8F-2D4A-F140-81DC-DD92E0C6E351";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "7CF4D6DA-4D26-FC4D-05A8-8797B4ACB685";
+	rename -uid "E65913A4-411B-8CEF-52D1-6FB08AA1E35A";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "FD4C678A-4A4C-459A-8666-FB958A2C5D46";
+	rename -uid "09BC445B-4F02-9D69-5208-FE83EBF71695";
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "A2992489-E944-BDF0-CE18-269B6050EF2C";
 	setAttr ".b" -type "string" (
@@ -2962,7 +3005,7 @@ select -ne :postProcessList1;
 select -ne :defaultRenderingList1;
 	setAttr -s 5 ".r";
 select -ne :initialShadingGroup;
-	setAttr -s 3 ".dsm";
+	setAttr -s 11 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -2971,9 +3014,12 @@ select -ne :defaultResolution;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "makeNurbCircle1.oc" "RingTossShape.cr";
 connectAttr "groupId6.id" "pTorus3Shape.ciog.cog[1].cgid";
-connectAttr "polySplitRing1.out" "pCylinderShape5.i";
+connectAttr "polySplitRing1.out" "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder5|pCylinderShape5.i"
+		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -2986,14 +3032,32 @@ connectAttr "d_openexr.msg" ":rmanDefaultDisplay.displayType";
 connectAttr "Ci.msg" ":rmanDefaultDisplay.displayChannels[0]";
 connectAttr "a.msg" ":rmanDefaultDisplay.displayChannels[1]";
 connectAttr "polySurfaceShape1.o" "polySplitRing1.ip";
-connectAttr "pCylinderShape5.wm" "polySplitRing1.mp";
+connectAttr "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder5|pCylinderShape5.wm" "polySplitRing1.mp"
+		;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanGlobals.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanDefaultDisplay.msg" ":defaultRenderingList1.r" -na;
 connectAttr "d_openexr.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":PxrPathTracer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "pCylinderShape5.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder5|pCylinderShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
 connectAttr "pTorus3Shape.ciog.cog[1]" ":initialShadingGroup.dsm" -na;
 connectAttr "pTorus3Shape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder6|pCylinderShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder7|pCylinderShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder8|pCylinderShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder9|pCylinderShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder10|pCylinderShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder11|pCylinderShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder12|pCylinderShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "|RingToss|RingTossGrp|Ring_Toss_Bottles|pCylinder13|pCylinderShape5.iog" ":initialShadingGroup.dsm"
+		 -na;
 connectAttr "groupId6.msg" ":initialShadingGroup.gn" -na;
-// End of Ring_toss-1bottle1ring_v1_latest.ma
+// End of Ring_toss-bottles_1ring_latest.ma
