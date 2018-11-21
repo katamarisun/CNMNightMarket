@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Jackie_latest.ma
-//Last modified: Fri, Nov 16, 2018 03:40:50 AM
+//Last modified: Tue, Nov 20, 2018 06:08:57 AM
 //Codeset: 1252
 file -rdi 1 -ns "teeth_v1_latest" -rfn "teeth_v1_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma";
@@ -12,6 +12,8 @@ file -rdi 1 -ns "Jacies_shoe_latest" -rfn "Jacies_shoe_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/Jacies_shoe_latest.ma";
 file -rdi 1 -ns "Jacies_shoe_latest1" -rfn "Jacies_shoe_latestRN1" -typ "mayaAscii"
 		 "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/Jacies_shoe_latest.ma";
+file -rdi 1 -ns "jackieHair_latest" -rfn "jackieHair_latestRN" -op "v=0;" -typ
+		 "mayaAscii" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/jackieHair_latest.ma";
 file -r -ns "teeth_v1_latest" -dr 1 -rfn "teeth_v1_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma";
 file -r -ns "jackieHoodie_latest1" -dr 1 -rfn "jackieHoodie_latestRN" -op "v=0;"
@@ -22,12 +24,13 @@ file -r -ns "Jacies_shoe_latest" -dr 1 -rfn "Jacies_shoe_latestRN" -op "v=0;" -t
 		 "mayaAscii" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/Jacies_shoe_latest.ma";
 file -r -ns "Jacies_shoe_latest1" -dr 1 -rfn "Jacies_shoe_latestRN1" -typ "mayaAscii"
 		 "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/Jacies_shoe_latest.ma";
+file -r -ns "jackieHair_latest" -dr 1 -rfn "jackieHair_latestRN" -op "v=0;" -typ
+		 "mayaAscii" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/jackieHair_latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
 requires -nodeType "PxrNormalMap" -nodeType "PxrSurface" -nodeType "rmanDisplayChannel"
 		 -nodeType "PxrEnvDayLight" -nodeType "d_openexr" -nodeType "rmanGlobals" -nodeType "PxrPathTracer"
 		 -nodeType "rmanDisplay" "RenderMan_for_Maya.py" "1.0";
-requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2018";
@@ -38,13 +41,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "BA3FAA52-4FDA-0ED2-0460-EBACF1374B49";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.3157369944615887 5.4987553044354778 8.2302659756581402 ;
-	setAttr ".r" -type "double3" -0.93835272950825821 -2.2000000000001574 0 ;
+	setAttr ".t" -type "double3" -0.52491541326214408 7.1047952570237589 5.9543870093896487 ;
+	setAttr ".r" -type "double3" -7.5383527294872676 -730.99999999985494 -2.0250525957645341e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "899F93F5-4660-0706-8C2E-1286961DC47A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 8.3571688987360755;
+	setAttr ".coi" 5.9721406010949689;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -69,13 +72,13 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "3FCE0089-442E-9E16-BB2D-C19B35CC5E06";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.18117702710584394 6.1571059012190474 1000.1 ;
+	setAttr ".t" -type "double3" -0.033700173548405266 3.5392986096819152 1000.1 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "15E943B0-4F1B-4676-0A73-AA92C97B7566";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 11.414807695644756;
+	setAttr ".ow" 12.240653122565469;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
@@ -84,14 +87,14 @@ createNode camera -s -n "frontShape" -p "front";
 createNode transform -s -n "side";
 	rename -uid "C6559CB2-4184-1669-21C3-2897CD6A1D1A";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1000.1 6.3152257040130841 0.0030706256522795572 ;
+	setAttr ".t" -type "double3" 1000.1 3.550829614671061 0.36652095868391521 ;
 	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 createNode camera -s -n "sideShape" -p "side";
 	rename -uid "21EA4DEB-4C1D-F93B-A14D-9AA567CB9F04";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 1.9865042367045662;
+	setAttr ".ow" 11.477542672998968;
 	setAttr ".imn" -type "string" "side";
 	setAttr ".den" -type "string" "side_depth";
 	setAttr ".man" -type "string" "side_mask";
@@ -258,8 +261,8 @@ createNode nurbsCurve -n "jackieBodyShape" -p "jackieBody";
 		;
 createNode transform -n "Jackie_latest:Group9688" -p "jackieBody";
 	rename -uid "1CC99EB2-4E5D-1795-6BA9-5DB549CC6AA7";
-	setAttr ".rp" -type "double3" 0 3.4356188035359061 0 ;
-	setAttr ".sp" -type "double3" 0 3.4356188035359061 0 ;
+	setAttr ".rp" -type "double3" 0 3.4356188035359074 0 ;
+	setAttr ".sp" -type "double3" 0 3.4356188035359074 0 ;
 createNode mesh -n "Jackie_latest:Group9688Shape" -p "Jackie_latest:Group9688";
 	rename -uid "1A9B4F69-4D32-C140-CFD8-F988208498CB";
 	setAttr -k off ".v";
@@ -17871,19 +17874,19 @@ createNode rmanDisplayChannel -n "a5";
 	setAttr ".remapSmoothness" 0;
 	setAttr -l on ".name" -type "string" "a";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "32E591DB-4C41-B74D-C34B-D797E6DF3E3B";
-	setAttr -s 21 ".lnk";
-	setAttr -s 21 ".slnk";
+	rename -uid "CB64E1CD-46F4-A53F-D66C-919223287F65";
+	setAttr -s 39 ".lnk";
+	setAttr -s 39 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "51FE76DB-4F6E-54EE-B06B-318966B51BC5";
+	rename -uid "1A200CF0-406E-FFC0-A1C1-7BB42A67331D";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "294F4633-4FFF-F34B-C60B-F3A059B925D9";
+	rename -uid "39C0936D-4678-AD3D-38B2-EE9C246D2C6A";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "3F9091F8-4959-6872-1047-EA8E8992C09C";
+	rename -uid "581ADBF2-4C98-DB07-432A-B480D5574E3B";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "366B4F51-49DE-2FE9-93D3-9BA4B6278754";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "94F551C7-4F2B-3C86-B88F-11A54C439FBF";
+	rename -uid "E6E116CB-45EB-DEB1-7528-3EB07C0C480E";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "CE0F7FAC-4FFE-0694-38FF-4ABC4C28240E";
 	setAttr ".g" yes;
@@ -17891,33 +17894,164 @@ createNode reference -n "teeth_v1_latestRN";
 	rename -uid "C4A1172E-4CF7-1A59-35CC-18B0B8E3F317";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"teeth_v1_latestRN"
-		"teeth_v1_latestRN" 4
-		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1|teeth_v1_latest:pCubeShape1" 
-		"aiTranslator" " -type \"string\" \"polymesh\""
-		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3|teeth_v1_latest:pCubeShape3" 
-		"aiTranslator" " -type \"string\" \"polymesh\""
-		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5" 
-		"aiTranslator" " -type \"string\" \"polymesh\""
-		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
-		"aiTranslator" " -type \"string\" \"polymesh\""
-		"teeth_v1_latestRN" 10
+		"teeth_v1_latestRN" 0
+		"teeth_v1_latestRN" 77
 		2 "|teeth_v1_latest:Teeth" "visibility" " 1"
-		2 "|teeth_v1_latest:Teeth" "translate" " -type \"double3\" -0.89080903933778566 5.92983007874522539 -6.61266948029331036"
-		
-		2 "|teeth_v1_latest:Teeth" "rotate" " -type \"double3\" 0 -179.85573881181559841 0"
-		
+		2 "|teeth_v1_latest:Teeth" "translate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth" "rotate" " -type \"double3\" 0 0 0"
 		2 "|teeth_v1_latest:Teeth" "scale" " -type \"double3\" 1 1 1"
-		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" "translate" " -type \"double3\" 0.8173726780815973 0.27499264926715927 5.99338531840218014"
+		2 "|teeth_v1_latest:Teeth" "rotatePivot" " -type \"double3\" -0.0045242696155203266 6.19001058650272906 0.041781710122307025"
+		
+		2 "|teeth_v1_latest:Teeth" "scalePivot" " -type \"double3\" -0.0045242696155203266 6.19001058650272906 0.041781710122307025"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" "visibility" " 1"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" "translate" " -type \"double3\" 0.85853065415325502 0.24561526353741842 6.42559991082645787"
 		
 		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" "rotate" " -type \"double3\" 0.76715028290844423 0 0"
 		
 		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" "scale" " -type \"double3\" 0.030605657841804787 0.030605657841804787 0.030605657841804787"
 		
-		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" "translate" " -type \"double3\" 0.80521450134208883 0.26580615027530047 6.00860027388850337"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" "rotatePivot" " -type \"double3\" -0.85713999628042725 5.82354373531630465 -6.46248586343947728"
 		
-		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" "rotate" " -type \"double3\" 1.85295424159939959 180 180"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" "rotatePivotTranslate" 
+		" -type \"double3\" 0 0.086003570428341045 0.078550101430036309"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" "scalePivot" " -type \"double3\" -28.00593278245589346 190.27670522284350341 -211.15330690955670434"
 		
-		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" "scale" " -type \"double3\" 0.032336123923482299 0.032336123923482299 -0.032336123923482299";
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" "scalePivotTranslate" 
+		" -type \"double3\" 27.14879278617546632 -184.45316148752721119 204.69082104611723594"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1|teeth_v1_latest:pCubeShape1" 
+		"aiTranslator" " -type \"string\" \"polymesh\""
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
+		"rotate" " -type \"double3\" 0 -5.95887430432263532 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
+		"scale" " -type \"double3\" 0.99999999999999967 1.45638427770627654 0.56803875542812066"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3|teeth_v1_latest:pCubeShape3" 
+		"aiTranslator" " -type \"string\" \"polymesh\""
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
+		"scale" " -type \"double3\" 0.90175843369556541 1.45638427770627654 -0.56803875542812043"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
+		"translate" " -type \"double3\" -2.65683371528119183 0 6.5275604180748914"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
+		"rotate" " -type \"double3\" 0 -86.37133346446121607 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5" 
+		"aiTranslator" " -type \"string\" \"polymesh\""
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
+		"scale" " -type \"double3\" 0.90175843369556541 1.45638427770627654 -0.95568051360206874"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
+		"translate" " -type \"double3\" -2.73668776395887736 0 5.40430622619354839"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
+		"scale" " -type \"double3\" 0.9017584336955643 1.45638427770627654 -0.95568051360206741"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
+		"scale" " -type \"double3\" 0.90175843369556508 1.45638427770627654 -0.9556805136020684"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
+		"scale" " -type \"double3\" 0.90175843369556596 1.45638427770627654 -0.95568051360206918"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums" 
+		"rotatePivot" " -type \"double3\" 0 -0.010167027137036657 -0.024175630883831907"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums" 
+		"scalePivot" " -type \"double3\" 0 -0.010167027137036657 -0.024175630883831907"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"aiTranslator" " -type \"string\" \"polymesh\""
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" "translate" " -type \"double3\" 0.84513768956348945 0.30511719714360258 6.42714290651708886"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" "rotate" " -type \"double3\" -178.1470457584005942 0 0"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" "scale" " -type \"double3\" 0.032336123923482299 0.032336123923482292 -0.032336123923482292"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" "rotatePivot" " -type \"double3\" -0.83162720216163188 -5.73010877043133871 6.5894501719076537"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" "rotatePivotTranslate" 
+		" -type \"double3\" 0 11.67028796103858923 -12.99017444908945684"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" "scalePivot" " -type \"double3\" -25.7182092736139758 -177.20456490056224652 -203.77984038842774339"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" "scalePivotTranslate" 
+		" -type \"double3\" 24.88658207145234158 171.47445613013090338 210.36929056033537222";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode script -n "uiConfigurationScriptNode";
@@ -17926,17 +18060,17 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n"
 		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
 		+ "            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n"
-		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 556\n            -height 325\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 556\n            -height 324\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 556\n            -height 324\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1415\n            -height 598\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1119\n            -height 694\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n"
 		+ "            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n"
 		+ "            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
 		+ "\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n"
@@ -17959,13 +18093,13 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n"
 		+ "                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n"
 		+ "                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n"
-		+ "                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n"
-		+ "                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"straight\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n"
-		+ "                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n"
-		+ "            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n"
-		+ "            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1415\\n    -height 598\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1415\\n    -height 598\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n"
+		+ "            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n"
+		+ "            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n"
+		+ "                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1119\\n    -height 694\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1119\\n    -height 694\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -18273,12 +18407,10 @@ createNode reference -n "jackieHoodie_latestRN";
 	rename -uid "607600A6-4F32-D5B3-2FBD-1088B17BC818";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"jackieHoodie_latestRN"
-		"jackieHoodie_latestRN" 2
-		2 "|jackieHoodie_latest1:jackieHoodieController|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape" 
-		"aiTranslator" " -type \"string\" \"polymesh\""
+		"jackieHoodie_latestRN" 1
 		2 "jackieHoodie_latest1:PxrSurface1" "diffuseColor" " -type \"float3\" 0 0.015967041000000001 0.098999999000000005"
 		
-		"jackieHoodie_latestRN" 6
+		"jackieHoodie_latestRN" 11
 		2 "|jackieHoodie_latest1:jackieHoodieController" "visibility" " -av 1"
 		2 "|jackieHoodie_latest1:jackieHoodieController" "translate" " -type \"double3\" 0 2.30332033826314886 0"
 		
@@ -18286,7 +18418,17 @@ createNode reference -n "jackieHoodie_latestRN";
 		2 "|jackieHoodie_latest1:jackieHoodieController" "translateY" " -av"
 		2 "|jackieHoodie_latest1:jackieHoodieController" "translateZ" " -av"
 		2 "|jackieHoodie_latest1:jackieHoodieController|jackieHoodie_latest1:jackieHoodie" 
-		"visibility" " 1";
+		"visibility" " 1"
+		2 "|jackieHoodie_latest1:jackieHoodieController|jackieHoodie_latest1:jackieHoodie" 
+		"rotatePivot" " -type \"double3\" 0 -2.39700103031324785 0"
+		2 "|jackieHoodie_latest1:jackieHoodieController|jackieHoodie_latest1:jackieHoodie" 
+		"scalePivot" " -type \"double3\" 0 -2.39700103031324785 0"
+		2 "|jackieHoodie_latest1:jackieHoodieController|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape" 
+		"dispResolution" " 1"
+		2 "|jackieHoodie_latest1:jackieHoodieController|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape" 
+		"displaySmoothMesh" " 0"
+		2 "|jackieHoodie_latest1:jackieHoodieController|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape" 
+		"aiTranslator" " -type \"string\" \"polymesh\"";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode PxrSurface -n "jackieSkin";
@@ -18452,7 +18594,7 @@ createNode PxrNormalMap -n "jackieSkinNormal";
 	setAttr ".nds" 0;
 	setAttr ".bumpScale" 1;
 	setAttr ".inputRGB" -type "float3" 0 0 0 ;
-	setAttr ".filename" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackie_normalmap.tif";
+	setAttr ".filename" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackie_normalmap.tif";
 	setAttr ".bumpOverlay" -type "float3" 0 0 0 ;
 	setAttr ".invertBump" no;
 	setAttr ".orientation" 2;
@@ -19911,7 +20053,8 @@ createNode reference -n "Jacies_shoe_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Jacies_shoe_latestRN"
 		"Jacies_shoe_latestRN" 0
-		"Jacies_shoe_latestRN" 6
+		"Jacies_shoe_latestRN" 7
+		2 "|Jacies_shoe_latest:Jackie_Shoe" "visibility" " 1"
 		2 "|Jacies_shoe_latest:Jackie_Shoe" "translate" " -type \"double3\" -0.43608961049797312 0.12226608719321985 0.038415881328915935"
 		
 		2 "|Jacies_shoe_latest:Jackie_Shoe" "scale" " -type \"double3\" 0.32874933599701922 0.32874933599701922 0.32874933599701922"
@@ -19933,7 +20076,8 @@ createNode reference -n "Jacies_shoe_latestRN1";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Jacies_shoe_latestRN1"
 		"Jacies_shoe_latestRN1" 0
-		"Jacies_shoe_latestRN1" 74
+		"Jacies_shoe_latestRN1" 75
+		2 "|Jacies_shoe_latest1:Jackie_Shoe" "visibility" " 1"
 		2 "|Jacies_shoe_latest1:Jackie_Shoe" "translate" " -type \"double3\" 0.43212534406579828 0.122 0.038"
 		
 		2 "|Jacies_shoe_latest1:Jackie_Shoe" "scale" " -type \"double3\" -0.329 0.329 0.329"
@@ -20125,7 +20269,8 @@ createNode reference -n "Jacies_shoe_latestRN1";
 lockNode -l 1 ;
 createNode file -n "file1";
 	rename -uid "84AC26D1-40C9-EF2C-15A3-E7978D9D695A";
-	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_BaseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_DiffuseColor.png";
+	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture1";
 	rename -uid "46A57C2A-4249-582A-425B-70A24883D1C9";
@@ -20136,35 +20281,375 @@ createNode file -n "file2";
 createNode place2dTexture -n "place2dTexture2";
 	rename -uid "73D36C23-41A5-54B9-DDA5-F1831C1C9FA4";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "7D649438-4138-DCA4-8F10-C2A6F2010C44";
+	rename -uid "E9C019BA-45FA-6BA0-2D66-C0AE0255A778";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -429.2384631493951 -549.55933932818994 ;
-	setAttr ".tgi[0].vh" -type "double2" 583.27450551943855 108.50539878900314 ;
+	setAttr ".tgi[0].vl" -type "double2" -351.17073288784979 -729.51009600532836 ;
+	setAttr ".tgi[0].vh" -type "double2" 730.2501677723393 25.607568941639606 ;
 	setAttr -s 8 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" 336.23428344726563;
-	setAttr ".tgi[0].ni[0].y" 11.289612770080566;
-	setAttr ".tgi[0].ni[0].nvs" 2235;
-	setAttr ".tgi[0].ni[1].x" 597.356201171875;
-	setAttr ".tgi[0].ni[1].y" -71.260673522949219;
-	setAttr ".tgi[0].ni[1].nvs" 1931;
-	setAttr ".tgi[0].ni[2].x" 120.19261932373047;
-	setAttr ".tgi[0].ni[2].y" 240.62760925292969;
-	setAttr ".tgi[0].ni[2].nvs" 18808;
-	setAttr ".tgi[0].ni[3].x" 47.142856597900391;
-	setAttr ".tgi[0].ni[3].y" -25.714284896850586;
-	setAttr ".tgi[0].ni[3].nvs" 18305;
-	setAttr ".tgi[0].ni[4].x" -260;
-	setAttr ".tgi[0].ni[4].y" -400;
+	setAttr ".tgi[0].ni[0].x" 11.047366142272949;
+	setAttr ".tgi[0].ni[0].y" -367.0208740234375;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" 3.8282678127288818;
+	setAttr ".tgi[0].ni[1].y" -541.15789794921875;
+	setAttr ".tgi[0].ni[1].nvs" 18305;
+	setAttr ".tgi[0].ni[2].x" -260;
+	setAttr ".tgi[0].ni[2].y" -225.71427917480469;
+	setAttr ".tgi[0].ni[2].nvs" 1923;
+	setAttr ".tgi[0].ni[3].x" 120.19261932373047;
+	setAttr ".tgi[0].ni[3].y" 240.62760925292969;
+	setAttr ".tgi[0].ni[3].nvs" 18808;
+	setAttr ".tgi[0].ni[4].x" -14.941387176513672;
+	setAttr ".tgi[0].ni[4].y" -145.10435485839844;
 	setAttr ".tgi[0].ni[4].nvs" 1923;
-	setAttr ".tgi[0].ni[5].x" 47.142856597900391;
-	setAttr ".tgi[0].ni[5].y" -202.85714721679688;
+	setAttr ".tgi[0].ni[5].x" -260;
+	setAttr ".tgi[0].ni[5].y" -400;
 	setAttr ".tgi[0].ni[5].nvs" 1923;
-	setAttr ".tgi[0].ni[6].x" -260;
-	setAttr ".tgi[0].ni[6].y" -225.71427917480469;
-	setAttr ".tgi[0].ni[6].nvs" 1923;
-	setAttr ".tgi[0].ni[7].x" 47.142856597900391;
-	setAttr ".tgi[0].ni[7].y" -378.57144165039063;
-	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[6].x" 336.23428344726563;
+	setAttr ".tgi[0].ni[6].y" 11.289612770080566;
+	setAttr ".tgi[0].ni[6].nvs" 2235;
+	setAttr ".tgi[0].ni[7].x" 597.356201171875;
+	setAttr ".tgi[0].ni[7].y" -71.260673522949219;
+	setAttr ".tgi[0].ni[7].nvs" 1931;
+createNode reference -n "jackieHair_latestRN";
+	rename -uid "F27A02F3-44EA-4BB2-7226-3186BA28C2CF";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"jackieHair_latestRN"
+		"jackieHair_latestRN" 0
+		"jackieHair_latestRN" 117
+		2 "|jackieHair_latest:jackieHair" "visibility" " 1"
+		2 "|jackieHair_latest:jackieHair" "rotatePivot" " -type \"double3\" 0 6.9350655283241025 0"
+		
+		2 "|jackieHair_latest:jackieHair" "scalePivot" " -type \"double3\" 0 6.9350655283241025 0"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface6" 
+		"rotatePivot" " -type \"double3\" 0 6.4946604072903007 -0.57707349053613166"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface6" 
+		"scalePivot" " -type \"double3\" 0 6.4946604072903007 -0.57707349053613166"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface8" 
+		"rotatePivot" " -type \"double3\" 0.24502612978839022 6.4946604072903007 -0.49318269838735451"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface8" 
+		"scalePivot" " -type \"double3\" 0.24502612978839022 6.4946604072903007 -0.49318269838735451"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface9" 
+		"rotatePivot" " -type \"double3\" 0.24502612978839022 6.4946604072903007 -0.49318269838735451"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface9" 
+		"scalePivot" " -type \"double3\" 0.24502612978839022 6.4946604072903007 -0.49318269838735451"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface10" 
+		"rotatePivot" " -type \"double3\" 0.3833701645163044 6.52077453955557385 -0.32251783516884119"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface10" 
+		"scalePivot" " -type \"double3\" 0.3833701645163044 6.52077453955557385 -0.32251783516884119"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface11" 
+		"rotatePivot" " -type \"double3\" 0.3833701645163044 6.52077453955557385 -0.32251783516884119"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface11" 
+		"scalePivot" " -type \"double3\" 0.3833701645163044 6.52077453955557385 -0.32251783516884119"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface12" 
+		"rotatePivot" " -type \"double3\" 0.16599367939063558 6.9252203012624598 -0.071602379316412473"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface12" 
+		"scalePivot" " -type \"double3\" 0.16599367939063558 6.9252203012624598 -0.071602379316412473"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface13" 
+		"rotatePivot" " -type \"double3\" 0.16599367939063558 6.9252203012624598 -0.071602379316412473"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmiddle|jackieHair_latest:polySurface13" 
+		"scalePivot" " -type \"double3\" 0.16599367939063558 6.9252203012624598 -0.071602379316412473"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop" 
+		"rotatePivot" " -type \"double3\" 0 6.38727188110351563 0"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop" 
+		"scalePivot" " -type \"double3\" 0 6.38727188110351563 0"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface14" 
+		"rotatePivot" " -type \"double3\" 0 6.97276738518635586 -0.045420641326840316"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface14" 
+		"scalePivot" " -type \"double3\" 0 6.97276738518635586 -0.045420641326840316"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface16" 
+		"rotatePivot" " -type \"double3\" 0.14604062827874226 6.95784530699389947 -0.045420641326840316"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface16" 
+		"scalePivot" " -type \"double3\" 0.14604062827874226 6.95784530699389947 -0.045420641326840316"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface17" 
+		"rotatePivot" " -type \"double3\" 0.14604062827874226 6.95784530699389947 -0.045420641326840316"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface17" 
+		"scalePivot" " -type \"double3\" 0.14604062827874226 6.95784530699389947 -0.045420641326840316"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18" 
+		"rotatePivot" " -type \"double3\" 0.15944841362606282 6.95784530699389947 -0.020527535562085086"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18" 
+		"scalePivot" " -type \"double3\" 0.15944841362606282 6.95784530699389947 -0.020527535562085086"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface19" 
+		"rotatePivot" " -type \"double3\" 0.15944841362606282 6.95784530699389947 -0.020527535562085086"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface19" 
+		"scalePivot" " -type \"double3\" 0.15944841362606282 6.95784530699389947 -0.020527535562085086"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface20" 
+		"rotatePivot" " -type \"double3\" 0.20258795063086091 6.92449512336572504 -0.033698851640897268"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface20" 
+		"scalePivot" " -type \"double3\" 0.20258795063086091 6.92449512336572504 -0.033698851640897268"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface21" 
+		"rotatePivot" " -type \"double3\" 0.20258795063086091 6.92449512336572504 -0.033698851640897268"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface21" 
+		"scalePivot" " -type \"double3\" 0.20258795063086091 6.92449512336572504 -0.033698851640897268"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface38" 
+		"rotatePivot" " -type \"double3\" 0.11050596713789235 6.95784530699389947 0.028109722473097454"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface38" 
+		"scalePivot" " -type \"double3\" 0.11050596713789235 6.95784530699389947 0.028109722473097454"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface39" 
+		"rotatePivot" " -type \"double3\" 0.14604062827874226 6.95310647407734717 -0.065026222679073598"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface39" 
+		"scalePivot" " -type \"double3\" 0.14604062827874226 6.95310647407734717 -0.065026222679073598"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface46" 
+		"rotatePivot" " -type \"double3\" -0.42166339202233283 6.56086826324462891 0.025595438852397859"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface46" 
+		"scalePivot" " -type \"double3\" -0.42166339202233283 6.56086826324462891 0.025595438852397859"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface47" 
+		"rotatePivot" " -type \"double3\" 0.18053523448140243 6.92449512336572504 -0.033698851640897268"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface47" 
+		"scalePivot" " -type \"double3\" 0.18053523448140243 6.92449512336572504 -0.033698851640897268"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface22" 
+		"rotatePivot" " -type \"double3\" 0 6.80930868653227872 0.20662285163686084"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface22" 
+		"scalePivot" " -type \"double3\" 0 6.80930868653227872 0.20662285163686084"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface23" 
+		"rotatePivot" " -type \"double3\" 0.15672671326190235 6.80930868653227872 0.17139813230912421"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface23" 
+		"scalePivot" " -type \"double3\" 0.15672671326190235 6.80930868653227872 0.17139813230912421"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface24" 
+		"rotatePivot" " -type \"double3\" 0.15672671326190235 6.80930868653227872 0.17139813230912421"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface24" 
+		"scalePivot" " -type \"double3\" 0.15672671326190235 6.80930868653227872 0.17139813230912421"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface25" 
+		"rotatePivot" " -type \"double3\" 0.2425431084068882 6.80930868653227872 0.089192199681601247"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface25" 
+		"scalePivot" " -type \"double3\" 0.2425431084068882 6.80930868653227872 0.089192199681601247"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface26" 
+		"rotatePivot" " -type \"double3\" 0.2425431084068882 6.80930868653227872 0.089192199681601247"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface26" 
+		"scalePivot" " -type \"double3\" 0.2425431084068882 6.80930868653227872 0.089192199681601247"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface27" 
+		"rotatePivot" " -type \"double3\" 0.31227936159382508 6.80930868653227872 -0.014780404265093833"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface27" 
+		"scalePivot" " -type \"double3\" 0.31227936159382508 6.80930868653227872 -0.014780404265093833"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface28" 
+		"rotatePivot" " -type \"double3\" 0.31227936159382508 6.80930868653227872 -0.014780404265093833"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface28" 
+		"scalePivot" " -type \"double3\" 0.31227936159382508 6.80930868653227872 -0.014780404265093833"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface29" 
+		"rotatePivot" " -type \"double3\" 0.15672671326190235 6.79582737684911198 0.14415376853955025"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface29" 
+		"scalePivot" " -type \"double3\" 0.15672671326190235 6.79582737684911198 0.14415376853955025"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface31" 
+		"rotatePivot" " -type \"double3\" 0.15672671326190235 6.79582737684911198 0.14415376853955025"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface31" 
+		"scalePivot" " -type \"double3\" 0.15672671326190235 6.79582737684911198 0.14415376853955025"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface32" 
+		"rotatePivot" " -type \"double3\" 0.2425431084068882 6.79582737684911198 0.061947835912027294"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface32" 
+		"scalePivot" " -type \"double3\" 0.2425431084068882 6.79582737684911198 0.061947835912027294"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface33" 
+		"rotatePivot" " -type \"double3\" 0.2425431084068882 6.79582737684911198 0.061947835912027294"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface33" 
+		"scalePivot" " -type \"double3\" 0.2425431084068882 6.79582737684911198 0.061947835912027294"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface34" 
+		"rotatePivot" " -type \"double3\" 0.066020023025743946 6.79582737684911198 0.17954218879372616"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface34" 
+		"scalePivot" " -type \"double3\" 0.066020023025743946 6.79582737684911198 0.17954218879372616"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface35" 
+		"rotatePivot" " -type \"double3\" 0.21065508008256173 6.79821381777636091 0.12492708405965397"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface35" 
+		"scalePivot" " -type \"double3\" 0.21065508008256173 6.79821381777636091 0.12492708405965397"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface36" 
+		"rotatePivot" " -type \"double3\" 0.28396064580926811 6.80930868653227872 -0.014780404265093861"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface36" 
+		"scalePivot" " -type \"double3\" 0.28396064580926811 6.80930868653227872 -0.014780404265093861"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface37" 
+		"rotatePivot" " -type \"double3\" 0.29645420493590557 6.80930868653227872 -0.014780404265093833"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:polySurface37" 
+		"scalePivot" " -type \"double3\" 0.29645420493590557 6.80930868653227872 -0.014780404265093833"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface1" 
+		"rotatePivot" " -type \"double3\" 0.20584883750712829 6.21317360178709688 -0.48064630283777787"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface1" 
+		"scalePivot" " -type \"double3\" 0.20584883750712829 6.21317360178709688 -0.48064630283777787"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface2" 
+		"rotatePivot" " -type \"double3\" 0.20584883750712829 6.21317360178709688 -0.48064630283777787"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface2" 
+		"scalePivot" " -type \"double3\" 0.20584883750712829 6.21317360178709688 -0.48064630283777787"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface3" 
+		"rotatePivot" " -type \"double3\" 0.32242153807977719 6.21317360178709688 -0.3067358540562195"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface3" 
+		"scalePivot" " -type \"double3\" 0.32242153807977719 6.21317360178709688 -0.3067358540562195"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface4" 
+		"rotatePivot" " -type \"double3\" 0.32242153807977719 6.21317360178709688 -0.3067358540562195"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface4" 
+		"scalePivot" " -type \"double3\" 0.32242153807977719 6.21317360178709688 -0.3067358540562195"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface7" 
+		"rotatePivot" " -type \"double3\" 0 6.21317360178709688 -0.48692479100347208"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface7" 
+		"scalePivot" " -type \"double3\" 0 6.21317360178709688 -0.48692479100347208"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface40" 
+		"rotatePivot" " -type \"double3\" 0.099992758324652209 6.21317360178709688 -0.50657341540733125"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface40" 
+		"scalePivot" " -type \"double3\" 0.099992758324652209 6.21317360178709688 -0.50657341540733125"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface41" 
+		"rotatePivot" " -type \"double3\" 0.28701162712306999 6.21317360178709688 -0.44274746276730431"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface41" 
+		"scalePivot" " -type \"double3\" 0.28701162712306999 6.21317360178709688 -0.44274746276730431"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface42" 
+		"rotatePivot" " -type \"double3\" 0.27853276735043603 6.21317360178709688 -0.39483457217876089"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface42" 
+		"scalePivot" " -type \"double3\" 0.27853276735043603 6.21317360178709688 -0.39483457217876089"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface43" 
+		"rotatePivot" " -type \"double3\" 0.34058979198648193 6.21317360178709688 -0.25240439431161665"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface43" 
+		"scalePivot" " -type \"double3\" 0.34058979198648193 6.21317360178709688 -0.25240439431161665"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface44" 
+		"rotatePivot" " -type \"double3\" 0.29589482722251609 6.18202297543360224 -0.27203341249096125"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface44" 
+		"scalePivot" " -type \"double3\" 0.29589482722251609 6.18202297543360224 -0.27203341249096125"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface45" 
+		"rotatePivot" " -type \"double3\" 0.34594136837173256 6.21317360178709688 -0.24798764955183766"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface45" 
+		"scalePivot" " -type \"double3\" 0.34594136837173256 6.21317360178709688 -0.24798764955183766"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2" 
+		"rotatePivot" " -type \"double3\" 0 6.22247670225174421 -0.16935000546251244"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2" 
+		"scalePivot" " -type \"double3\" 0 6.22247670225174421 -0.16935000546251244"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface1" 
+		"rotatePivot" " -type \"double3\" 0.20584883750712829 6.10325160410746559 -0.41949675760010263"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface1" 
+		"scalePivot" " -type \"double3\" 0.20584883750712829 6.10325160410746559 -0.41949675760010263"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface2" 
+		"rotatePivot" " -type \"double3\" 0.20584883750712829 6.10325160410746559 -0.41949675760010263"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface2" 
+		"scalePivot" " -type \"double3\" 0.20584883750712829 6.10325160410746559 -0.41949675760010263"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface3" 
+		"rotatePivot" " -type \"double3\" 0.32242153807977719 6.13440223046096023 -0.24558630881854426"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface3" 
+		"scalePivot" " -type \"double3\" 0.32242153807977719 6.13440223046096023 -0.24558630881854426"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface4" 
+		"rotatePivot" " -type \"double3\" 0.32242153807977719 6.10325160410746559 -0.24558630881854426"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface4" 
+		"scalePivot" " -type \"double3\" 0.32242153807977719 6.10325160410746559 -0.24558630881854426"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface7" 
+		"rotatePivot" " -type \"double3\" 0 6.10325160410746559 -0.42577524576579684"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface7" 
+		"scalePivot" " -type \"double3\" 0 6.10325160410746559 -0.42577524576579684"
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface40" 
+		"rotatePivot" " -type \"double3\" 0.099992758324652209 6.10325160410746559 -0.44542387016965601"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface40" 
+		"scalePivot" " -type \"double3\" 0.099992758324652209 6.10325160410746559 -0.44542387016965601"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface41" 
+		"rotatePivot" " -type \"double3\" 0.28701162712306999 6.10325160410746559 -0.38159791752962907"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface41" 
+		"scalePivot" " -type \"double3\" 0.28701162712306999 6.10325160410746559 -0.38159791752962907"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface42" 
+		"rotatePivot" " -type \"double3\" 0.27853276735043603 6.10325160410746559 -0.33368502694108565"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface42" 
+		"scalePivot" " -type \"double3\" 0.27853276735043603 6.10325160410746559 -0.33368502694108565"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface43" 
+		"rotatePivot" " -type \"double3\" 0.34058979198648193 6.10325160410746559 -0.19125484907394141"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface43" 
+		"scalePivot" " -type \"double3\" 0.34058979198648193 6.10325160410746559 -0.19125484907394141"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface44" 
+		"rotatePivot" " -type \"double3\" 0.29589482722251609 6.13440223046096023 -0.21088386725328601"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface44" 
+		"scalePivot" " -type \"double3\" 0.29589482722251609 6.13440223046096023 -0.21088386725328601"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface45" 
+		"rotatePivot" " -type \"double3\" 0.34594136837173256 6.13440223046096023 -0.18683810431416242"
+		
+		2 "|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface45" 
+		"scalePivot" " -type \"double3\" 0.34594136837173256 6.13440223046096023 -0.18683810431416242";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -20175,21 +20660,21 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
-	setAttr -s 21 ".st";
+	setAttr -s 27 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 25 ".s";
+	setAttr -s 31 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 25 ".u";
+	setAttr -s 43 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 16 ".r";
+	setAttr -s 18 ".r";
 select -ne :lightList1;
 select -ne :defaultTextureList1;
-	setAttr -s 37 ".tx";
+	setAttr -s 57 ".tx";
 select -ne :initialShadingGroup;
-	setAttr -s 37 ".dsm";
+	setAttr -s 36 ".dsm";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
@@ -20320,21 +20805,21 @@ connectAttr "place2dTexture2.vt3" "file2.vt3";
 connectAttr "place2dTexture2.vc1" "file2.vc1";
 connectAttr "place2dTexture2.o" "file2.uv";
 connectAttr "place2dTexture2.ofs" "file2.fs";
-connectAttr "jackieSkin.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "file2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
-connectAttr "PxrSurface1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "jackieSkinNormal.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
-connectAttr "PxrEnvDayLightShape.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+connectAttr "place2dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "jackieSkinNormal.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr "PxrEnvDayLightShape.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
-connectAttr "place2dTexture2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+connectAttr "file1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
 		;
-connectAttr "file1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+connectAttr "place2dTexture2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
 		;
-connectAttr "place2dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+connectAttr "jackieSkin.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
 		;
-connectAttr "file2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+connectAttr "PxrSurface1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
 		;
 connectAttr "jackie_lowest:defaultMat.pa" ":renderPartition.st" -na;
 connectAttr "jackieHoodie_latest:jackieHoodie_latest:defaultMat.pa" ":renderPartition.st"
