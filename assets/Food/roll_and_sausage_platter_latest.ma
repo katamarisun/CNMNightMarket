@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: roll_and_sausage_platter_latest.ma
-//Last modified: Sat, Nov 24, 2018 03:47:24 PM
+//Last modified: Sat, Nov 24, 2018 09:13:27 PM
 //Codeset: 1252
 file -rdi 1 -ns "platter_latest" -rfn "platter_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/platter_latest.ma";
@@ -32,13 +32,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "EB5F0DB9-47FB-6D6C-B217-E5B4DEBC44BA";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 14.321486009751375 30.232183984652437 1.4547234994689766 ;
-	setAttr ".r" -type "double3" -64.538352729568857 -275.79999999997534 3.147309737382405e-14 ;
+	setAttr ".t" -type "double3" 0.81522028571011074 7.8200968220434754 5.0812903999411247 ;
+	setAttr ".r" -type "double3" -57.93835272958345 -350.19999999996747 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "EB7CD3BB-4EED-5AD0-14BD-0DB3E0FE0ED4";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 33.484416233066192;
+	setAttr ".coi" 9.1502650513451069;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -154,19 +154,19 @@ createNode transform -n "SausageOnAStick4" -p "Sausage";
 	setAttr ".t" -type "double3" 1.8391702180628888 1.1472962052980713 -2.5136175613221536 ;
 	setAttr ".r" -type "double3" 90.000000000000369 82.054742300463417 90.000000000000369 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "4E256D8E-4FEB-5504-8763-858CF5E877DB";
-	setAttr -s 4 ".lnk";
-	setAttr -s 4 ".slnk";
+	rename -uid "C87CD6BF-4F7E-5F30-CC35-6ABD345E9553";
+	setAttr -s 7 ".lnk";
+	setAttr -s 7 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "5BF424F5-4B09-45B2-1D8F-3786F70BB344";
+	rename -uid "2D51FE76-4672-861F-D8AB-92818EA41C02";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "D7DD7307-4938-B574-3595-DFA9078190E4";
+	rename -uid "1E6D207E-45B5-D4A1-DBD7-17B7C0F3E99B";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "36E60D72-496A-8891-B113-75823366D4F5";
+	rename -uid "6770BE52-42D7-814D-773E-98BC67A7A8D2";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "FB862C39-49FE-9955-EFF9-459F0521B979";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "71F5B0F0-422F-572E-A81D-D8B1C8E4FE1B";
+	rename -uid "C98EA45A-4C67-76D9-E2BE-49AF7D084810";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "99ACA7B9-4F53-6C37-3073-A4BF2E475FC7";
 	setAttr ".g" yes;
@@ -369,8 +369,7 @@ createNode reference -n "platter_latestRN";
 lockNode -l 1 ;
 createNode reference -n "meat_roll_on_a_stick_latestRN";
 	rename -uid "1318B35B-4F09-207E-39D3-919E0C4EE9C5";
-	setAttr -s 75 ".phl";
-	setAttr ".phl[5]" 0;
+	setAttr -s 83 ".phl";
 	setAttr ".phl[6]" 0;
 	setAttr ".phl[7]" 0;
 	setAttr ".phl[8]" 0;
@@ -445,6 +444,15 @@ createNode reference -n "meat_roll_on_a_stick_latestRN";
 	setAttr ".phl[77]" 0;
 	setAttr ".phl[78]" 0;
 	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".phl[84]" 0;
+	setAttr ".phl[85]" 0;
+	setAttr ".phl[86]" 0;
+	setAttr ".phl[87]" 0;
+	setAttr ".phl[88]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"meat_roll_on_a_stick_latestRN"
 		"meat_roll_on_a_stick_latest:skewer_latestRN" 12
@@ -458,10 +466,10 @@ createNode reference -n "meat_roll_on_a_stick_latestRN";
 		3 "" ":initialShadingGroup.dagSetMembers" "-na"
 		3 "" ":initialShadingGroup.dagSetMembers" "-na"
 		3 "" ":initialShadingGroup.dagSetMembers" "-na"
-		3 "|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		3 "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		5 3 "meat_roll_on_a_stick_latestRN" "|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[5]" ":initialShadingGroup.dsm"
+		5 3 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[6]" ":initialShadingGroup.dsm"
 		"meat_roll_on_a_stick_latestRN" 70
 		3 "" "meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "" "meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
@@ -543,22 +551,30 @@ createNode reference -n "meat_roll_on_a_stick_latestRN";
 		0 "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh" 
 		"|RollnSasuage|MeatRoll|meat_roll_latest5" "-s -r -add "
 		3 "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		5 3 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[6]" ":initialShadingGroup.dsm"
-		5 3 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[7]" ":initialShadingGroup.dsm"
-		5 3 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[8]" ":initialShadingGroup.dsm"
-		5 3 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[9]" ":initialShadingGroup.dsm"
-		"meat_roll_on_a_stick_latestRN" 107
+		"meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[7]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[8]" "meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[9]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[10]" "meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[11]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[12]" "meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[13]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[14]" "meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		
+		"meat_roll_on_a_stick_latestRN" 111
 		0 "|meat_roll_on_a_stick_latest:meat_roll_latest" "|RollnSasuage|MeatRoll" 
 		"-s -r "
 		0 "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:meat_roll_latestShape" 
@@ -632,6 +648,40 @@ createNode reference -n "meat_roll_on_a_stick_latestRN";
 		" -type \"double3\" 0 90 0"
 		2 "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest" "scale" 
 		" -type \"double3\" 1.20517075357584447 1.20517075357584447 1.20517075357584447"
+		3 "meat_roll_on_a_stick_latest:Carrots.message" "meat_roll_on_a_stick_latest:materialInfo1.texture" 
+		"-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "meat_roll_on_a_stick_latest:MeatRolls.message" "meat_roll_on_a_stick_latest:materialInfo2.texture" 
+		"-na"
 		3 "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:pCylinder1|meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
 		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:pCylinder1|meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
@@ -672,175 +722,152 @@ createNode reference -n "meat_roll_on_a_stick_latestRN";
 		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:pCylinder4|meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
 		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "-na"
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:pCylinder3|meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[10]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[11]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:pCylinder2|meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[12]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[13]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:pCylinder4|meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[14]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[15]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:pCylinder1|meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[16]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[17]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:pCylinder1|meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[18]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[19]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:pCylinder2|meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[20]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[21]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:pCylinder3|meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[22]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[23]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:pCylinder4|meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[24]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[25]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:pCylinder1|meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[26]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[27]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:pCylinder2|meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[28]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[29]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:pCylinder3|meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[30]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[31]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:pCylinder4|meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[32]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[33]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:pCylinder1|meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[34]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[35]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:pCylinder2|meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[36]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[37]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:pCylinder3|meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[38]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[39]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:pCylinder4|meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[40]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[41]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
-		
-		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:pCylinder1|meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[42]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[43]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[15]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[16]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:pCylinder2|meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[44]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[45]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[17]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[18]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:pCylinder2|meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[19]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[20]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:pCylinder2|meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[21]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[22]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:pCylinder2|meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[23]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[24]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:pCylinder3|meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[25]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[26]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:pCylinder3|meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[46]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[47]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[27]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[28]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:pCylinder3|meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[29]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[30]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:pCylinder1|meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[31]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[32]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:pCylinder1|meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[33]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[34]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:pCylinder1|meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[35]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[36]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:pCylinder1|meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[37]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[38]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:pCylinder4|meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[39]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[40]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:pCylinder4|meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[48]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[49]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[41]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[42]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
 		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:pCylinder4|meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[43]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[44]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:pCylinder4|meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[45]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[46]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:pCylinder4|meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[47]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[48]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "meat_roll_on_a_stick_latest:file2.message" 
+		"meat_roll_on_a_stick_latest:materialInfo1.texture" "meat_roll_on_a_stick_latestRN.placeHolderList[49]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[50]" ""
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[50]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[51]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[51]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[52]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[52]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[53]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[53]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[54]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_on_a_stick_latest:meat_roll_latest|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[54]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[55]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[55]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[56]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[56]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[57]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[57]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[58]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[58]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[59]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[59]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[60]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[60]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[61]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[61]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[62]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[62]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[63]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[63]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[64]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[64]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[65]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[65]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[66]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[66]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[67]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[67]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[68]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[68]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[69]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[69]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[70]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[70]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[71]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[71]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[72]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest4|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[72]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[73]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[73]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[74]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[74]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[75]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[75]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[76]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[76]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[77]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[77]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[78]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
 		
 		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest5|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[78]" 
-		"meat_roll_on_a_stick_latestRN.placeHolderList[79]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm";
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[79]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[80]" "meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:pCylinder3|meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[81]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[82]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest2|meat_roll_on_a_stick_latest:pCylinder1|meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[83]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[84]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "|RollnSasuage|MeatRoll|meat_roll_latest1|meat_roll_on_a_stick_latest:pCylinder3|meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "meat_roll_on_a_stick_latestRN.placeHolderList[85]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[86]" "meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "meat_roll_on_a_stick_latestRN" "meat_roll_on_a_stick_latest:file1.message" 
+		"meat_roll_on_a_stick_latest:materialInfo2.texture" "meat_roll_on_a_stick_latestRN.placeHolderList[87]" 
+		"meat_roll_on_a_stick_latestRN.placeHolderList[88]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode script -n "uiConfigurationScriptNode";
@@ -859,34 +886,37 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1646\n            -height 874\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 740\n            -height 813\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
 		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n"
-		+ "            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n"
-		+ "                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n"
-		+ "                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n"
-		+ "                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n"
-		+ "                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n"
-		+ "                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n"
-		+ "                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n"
-		+ "                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n"
-		+ "                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n"
-		+ "                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n"
-		+ "                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n"
-		+ "                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n"
-		+ "                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n"
-		+ "                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1646\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1646\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n"
+		+ "            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n"
+		+ "            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n"
+		+ "                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n"
+		+ "                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n"
+		+ "                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n"
+		+ "                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n"
+		+ "                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n"
+		+ "                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n"
+		+ "                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n"
+		+ "                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n"
+		+ "                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n"
+		+ "            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n"
+		+ "            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n"
+		+ "                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n"
+		+ "\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 740\\n    -height 813\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 740\\n    -height 813\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -895,7 +925,7 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".st" 6;
 createNode reference -n "sausage_on_a_stick_latestRN";
 	rename -uid "342ADB15-4984-EB42-3803-CCA40C101B77";
-	setAttr -s 44 ".phl";
+	setAttr -s 88 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -940,6 +970,50 @@ createNode reference -n "sausage_on_a_stick_latestRN";
 	setAttr ".phl[42]" 0;
 	setAttr ".phl[43]" 0;
 	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".phl[66]" 0;
+	setAttr ".phl[67]" 0;
+	setAttr ".phl[68]" 0;
+	setAttr ".phl[69]" 0;
+	setAttr ".phl[70]" 0;
+	setAttr ".phl[71]" 0;
+	setAttr ".phl[72]" 0;
+	setAttr ".phl[73]" 0;
+	setAttr ".phl[74]" 0;
+	setAttr ".phl[75]" 0;
+	setAttr ".phl[76]" 0;
+	setAttr ".phl[77]" 0;
+	setAttr ".phl[78]" 0;
+	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".phl[84]" 0;
+	setAttr ".phl[85]" 0;
+	setAttr ".phl[86]" 0;
+	setAttr ".phl[87]" 0;
+	setAttr ".phl[88]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"sausage_on_a_stick_latestRN"
 		"sausage_on_a_stick_latest:skewer_latestRN" 0
@@ -954,21 +1028,29 @@ createNode reference -n "sausage_on_a_stick_latestRN";
 		0 "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:skewer_latest:stick_Mesh" 
 		"|RollnSasuage|Sausage|SausageOnAStick4" "-s -r -add "
 		3 "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:skewer_latest:stick_Mesh|sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:skewer_latest:stick_Mesh|sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:skewer_latest:stick_Mesh|sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:skewer_latest:stick_Mesh|sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:skewer_latest:stick_Mesh|sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:skewer_latest:stick_Mesh|sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[2]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:skewer_latest:stick_Mesh|sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[3]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:skewer_latest:stick_Mesh|sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[4]" ":initialShadingGroup.dsm"
+		"sausage_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:skewer_latest:stick_Mesh|sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"sausage_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[1]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[2]" "sausage_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:skewer_latest:stick_Mesh|sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"sausage_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[3]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[4]" "sausage_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:skewer_latest:stick_Mesh|sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"sausage_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[5]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[6]" "sausage_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:skewer_latest:stick_Mesh|sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"sausage_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[7]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[8]" "sausage_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		
 		"sausage_on_a_stick_latestRN" 119
 		0 "|sausage_on_a_stick_latest:SausageOnAStick" "|RollnSasuage|Sausage" "-s -r "
 		
@@ -1050,168 +1132,251 @@ createNode reference -n "sausage_on_a_stick_latestRN";
 		2 "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick" "rotate" 
 		" -type \"double3\" 0 90 0"
 		3 "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[5]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[6]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[7]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[8]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[9]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[10]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[11]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[12]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[13]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[14]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[15]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[16]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[17]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[18]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[19]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[20]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[21]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[22]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[23]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[24]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[25]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[26]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[27]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[28]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[29]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[30]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[31]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[32]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[33]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[34]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[35]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[36]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[37]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[38]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[39]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[40]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[41]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[42]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[43]" ":initialShadingGroup.dsm"
-		5 3 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
-		"sausage_on_a_stick_latestRN.placeHolderList[44]" ":initialShadingGroup.dsm";
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[9]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[10]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[11]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[12]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[13]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[14]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[15]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[16]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[17]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[18]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[19]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[20]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[21]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[22]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|sausage_on_a_stick_latest:SausageOnAStick|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[23]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[24]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[25]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[26]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[27]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[28]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[29]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[30]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[31]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[32]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[33]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[34]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[35]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[36]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[37]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[38]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[39]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[40]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[41]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[42]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[43]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[44]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[45]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[46]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[47]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[48]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[49]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[50]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[51]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[52]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[53]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[54]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick3|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[55]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[56]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[57]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[58]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[59]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[60]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[61]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[62]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[63]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[64]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[65]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[66]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[67]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[68]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[69]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[70]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[71]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[72]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[73]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[74]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[75]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[76]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[77]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[78]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[79]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[80]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[81]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[82]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[83]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[84]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[85]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[86]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm"
+		
+		5 0 "sausage_on_a_stick_latestRN" "|RollnSasuage|Sausage|SausageOnAStick1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		"sausage_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "sausage_on_a_stick_latestRN.placeHolderList[87]" 
+		"sausage_on_a_stick_latestRN.placeHolderList[88]" "sausage_on_a_stick_latest:PxrSurface1SG.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 select -ne :time1;
+	setAttr -av -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
 select -ne :hardwareRenderingGlobals;
@@ -1221,180 +1386,281 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
-	setAttr -s 4 ".st";
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
+	setAttr -s 7 ".st";
+	setAttr -cb on ".an";
+	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 select -ne :defaultShaderList1;
-	setAttr -s 4 ".s";
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
+	setAttr -s 5 ".s";
 select -ne :postProcessList1;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 	setAttr -s 2 ".p";
+select -ne :defaultRenderUtilityList1;
+	setAttr -s 2 ".u";
 select -ne :defaultRenderingList1;
 	setAttr -s 20 ".r";
+select -ne :defaultTextureList1;
+	setAttr -s 2 ".tx";
 select -ne :initialShadingGroup;
-	setAttr -s 50 ".dsm";
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -av -k on ".nds";
+	setAttr -cb on ".bnm";
+	setAttr -s 2 ".dsm";
+	setAttr -k on ".mwc";
+	setAttr -cb on ".an";
+	setAttr -cb on ".il";
+	setAttr -cb on ".vo";
+	setAttr -cb on ".eo";
+	setAttr -cb on ".fo";
+	setAttr -cb on ".epo";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
+	setAttr -k on ".mwc";
+	setAttr -cb on ".an";
+	setAttr -cb on ".il";
+	setAttr -cb on ".vo";
+	setAttr -cb on ".eo";
+	setAttr -cb on ".fo";
+	setAttr -cb on ".epo";
 	setAttr ".ro" yes;
 select -ne :defaultResolution;
-	setAttr ".pa" 1;
+	setAttr -av -k on ".cch";
+	setAttr -k on ".ihi";
+	setAttr -av -k on ".nds";
+	setAttr -k on ".bnm";
+	setAttr -av ".w";
+	setAttr -av ".h";
+	setAttr -av ".pa" 1;
+	setAttr -av ".al";
+	setAttr -av ".dar";
+	setAttr -av -k on ".ldar";
+	setAttr -k on ".dpi";
+	setAttr -av -k on ".off";
+	setAttr -av -k on ".fld";
+	setAttr -av -k on ".zsl";
+	setAttr -k on ".isu";
+	setAttr -k on ".pdu";
 select -ne :hardwareRenderGlobals;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[6]" ":initialShadingGroup.dsm" -na
+	setAttr -k off ".fbfm";
+	setAttr -k off -cb on ".ehql";
+	setAttr -k off -cb on ".eams";
+	setAttr -k off ".eeaa";
+	setAttr -k off ".engm";
+	setAttr -k off ".mes";
+	setAttr -k off ".emb";
+	setAttr -av -k off ".mbbf";
+	setAttr -k off ".mbs";
+	setAttr -k off ".trm";
+	setAttr -k off -cb on ".tshc";
+	setAttr -k off ".enpt";
+	setAttr -k off ".clmt";
+	setAttr -k off -cb on ".tcov";
+	setAttr -k off -cb on ".lith";
+	setAttr -k off -cb on ".sobc";
+	setAttr -k off -cb on ".cuth";
+	setAttr -k off -cb on ".hgcd";
+	setAttr -k off -cb on ".hgci";
+	setAttr -k off -cb on ".mgcs";
+	setAttr -k off ".twa";
+	setAttr -k off ".twz";
+	setAttr -k on ".hwcc";
+	setAttr -k on ".hwdp";
+	setAttr -k on ".hwql";
+connectAttr "meat_roll_on_a_stick_latestRN.phl[7]" "meat_roll_on_a_stick_latestRN.phl[8]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[7]" ":initialShadingGroup.dsm" -na
+connectAttr "meat_roll_on_a_stick_latestRN.phl[9]" "meat_roll_on_a_stick_latestRN.phl[10]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[8]" ":initialShadingGroup.dsm" -na
+connectAttr "meat_roll_on_a_stick_latestRN.phl[11]" "meat_roll_on_a_stick_latestRN.phl[12]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[9]" ":initialShadingGroup.dsm" -na
+connectAttr "meat_roll_on_a_stick_latestRN.phl[13]" "meat_roll_on_a_stick_latestRN.phl[14]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[10]" "meat_roll_on_a_stick_latestRN.phl[11]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[15]" "meat_roll_on_a_stick_latestRN.phl[16]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[12]" "meat_roll_on_a_stick_latestRN.phl[13]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[17]" "meat_roll_on_a_stick_latestRN.phl[18]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[14]" "meat_roll_on_a_stick_latestRN.phl[15]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[19]" "meat_roll_on_a_stick_latestRN.phl[20]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[16]" "meat_roll_on_a_stick_latestRN.phl[17]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[21]" "meat_roll_on_a_stick_latestRN.phl[22]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[18]" "meat_roll_on_a_stick_latestRN.phl[19]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[23]" "meat_roll_on_a_stick_latestRN.phl[24]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[20]" "meat_roll_on_a_stick_latestRN.phl[21]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[25]" "meat_roll_on_a_stick_latestRN.phl[26]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[22]" "meat_roll_on_a_stick_latestRN.phl[23]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[27]" "meat_roll_on_a_stick_latestRN.phl[28]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[24]" "meat_roll_on_a_stick_latestRN.phl[25]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[29]" "meat_roll_on_a_stick_latestRN.phl[30]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[26]" "meat_roll_on_a_stick_latestRN.phl[27]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[31]" "meat_roll_on_a_stick_latestRN.phl[32]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[28]" "meat_roll_on_a_stick_latestRN.phl[29]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[33]" "meat_roll_on_a_stick_latestRN.phl[34]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[30]" "meat_roll_on_a_stick_latestRN.phl[31]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[35]" "meat_roll_on_a_stick_latestRN.phl[36]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[32]" "meat_roll_on_a_stick_latestRN.phl[33]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[37]" "meat_roll_on_a_stick_latestRN.phl[38]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[34]" "meat_roll_on_a_stick_latestRN.phl[35]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[39]" "meat_roll_on_a_stick_latestRN.phl[40]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[36]" "meat_roll_on_a_stick_latestRN.phl[37]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[41]" "meat_roll_on_a_stick_latestRN.phl[42]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[38]" "meat_roll_on_a_stick_latestRN.phl[39]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[43]" "meat_roll_on_a_stick_latestRN.phl[44]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[40]" "meat_roll_on_a_stick_latestRN.phl[41]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[45]" "meat_roll_on_a_stick_latestRN.phl[46]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[42]" "meat_roll_on_a_stick_latestRN.phl[43]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[47]" "meat_roll_on_a_stick_latestRN.phl[48]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[44]" "meat_roll_on_a_stick_latestRN.phl[45]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[49]" "meat_roll_on_a_stick_latestRN.phl[50]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[46]" "meat_roll_on_a_stick_latestRN.phl[47]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[51]" "meat_roll_on_a_stick_latestRN.phl[52]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[48]" "meat_roll_on_a_stick_latestRN.phl[49]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[53]" "meat_roll_on_a_stick_latestRN.phl[54]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[50]" "meat_roll_on_a_stick_latestRN.phl[51]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[55]" "meat_roll_on_a_stick_latestRN.phl[56]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[52]" "meat_roll_on_a_stick_latestRN.phl[53]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[57]" "meat_roll_on_a_stick_latestRN.phl[58]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[54]" "meat_roll_on_a_stick_latestRN.phl[55]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[59]" "meat_roll_on_a_stick_latestRN.phl[60]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[56]" "meat_roll_on_a_stick_latestRN.phl[57]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[61]" "meat_roll_on_a_stick_latestRN.phl[62]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[58]" "meat_roll_on_a_stick_latestRN.phl[59]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[63]" "meat_roll_on_a_stick_latestRN.phl[64]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[60]" "meat_roll_on_a_stick_latestRN.phl[61]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[65]" "meat_roll_on_a_stick_latestRN.phl[66]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[62]" "meat_roll_on_a_stick_latestRN.phl[63]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[67]" "meat_roll_on_a_stick_latestRN.phl[68]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[64]" "meat_roll_on_a_stick_latestRN.phl[65]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[69]" "meat_roll_on_a_stick_latestRN.phl[70]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[66]" "meat_roll_on_a_stick_latestRN.phl[67]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[71]" "meat_roll_on_a_stick_latestRN.phl[72]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[68]" "meat_roll_on_a_stick_latestRN.phl[69]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[73]" "meat_roll_on_a_stick_latestRN.phl[74]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[70]" "meat_roll_on_a_stick_latestRN.phl[71]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[75]" "meat_roll_on_a_stick_latestRN.phl[76]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[72]" "meat_roll_on_a_stick_latestRN.phl[73]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[77]" "meat_roll_on_a_stick_latestRN.phl[78]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[74]" "meat_roll_on_a_stick_latestRN.phl[75]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[79]" "meat_roll_on_a_stick_latestRN.phl[80]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[76]" "meat_roll_on_a_stick_latestRN.phl[77]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[81]" "meat_roll_on_a_stick_latestRN.phl[82]"
 		;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[78]" "meat_roll_on_a_stick_latestRN.phl[79]"
+connectAttr "meat_roll_on_a_stick_latestRN.phl[83]" "meat_roll_on_a_stick_latestRN.phl[84]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
-connectAttr "sausage_on_a_stick_latestRN.phl[2]" ":initialShadingGroup.dsm" -na;
-connectAttr "sausage_on_a_stick_latestRN.phl[3]" ":initialShadingGroup.dsm" -na;
-connectAttr "sausage_on_a_stick_latestRN.phl[4]" ":initialShadingGroup.dsm" -na;
-connectAttr "sausage_on_a_stick_latestRN.phl[5]" ":initialShadingGroup.dsm" -na;
-connectAttr "sausage_on_a_stick_latestRN.phl[6]" ":initialShadingGroup.dsm" -na;
-connectAttr "sausage_on_a_stick_latestRN.phl[7]" ":initialShadingGroup.dsm" -na;
-connectAttr "sausage_on_a_stick_latestRN.phl[8]" ":initialShadingGroup.dsm" -na;
-connectAttr "sausage_on_a_stick_latestRN.phl[9]" ":initialShadingGroup.dsm" -na;
-connectAttr "sausage_on_a_stick_latestRN.phl[10]" ":initialShadingGroup.dsm" -na
+connectAttr "meat_roll_on_a_stick_latestRN.phl[85]" "meat_roll_on_a_stick_latestRN.phl[86]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[11]" ":initialShadingGroup.dsm" -na
+connectAttr "meat_roll_on_a_stick_latestRN.phl[87]" "meat_roll_on_a_stick_latestRN.phl[88]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[12]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[1]" "sausage_on_a_stick_latestRN.phl[2]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[13]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[3]" "sausage_on_a_stick_latestRN.phl[4]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[14]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[5]" "sausage_on_a_stick_latestRN.phl[6]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[15]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[7]" "sausage_on_a_stick_latestRN.phl[8]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[16]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[9]" "sausage_on_a_stick_latestRN.phl[10]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[17]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[11]" "sausage_on_a_stick_latestRN.phl[12]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[18]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[13]" "sausage_on_a_stick_latestRN.phl[14]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[19]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[15]" "sausage_on_a_stick_latestRN.phl[16]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[20]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[17]" "sausage_on_a_stick_latestRN.phl[18]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[21]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[19]" "sausage_on_a_stick_latestRN.phl[20]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[22]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[21]" "sausage_on_a_stick_latestRN.phl[22]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[23]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[23]" "sausage_on_a_stick_latestRN.phl[24]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[24]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[25]" "sausage_on_a_stick_latestRN.phl[26]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[25]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[27]" "sausage_on_a_stick_latestRN.phl[28]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[26]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[29]" "sausage_on_a_stick_latestRN.phl[30]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[27]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[31]" "sausage_on_a_stick_latestRN.phl[32]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[28]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[33]" "sausage_on_a_stick_latestRN.phl[34]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[29]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[35]" "sausage_on_a_stick_latestRN.phl[36]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[30]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[37]" "sausage_on_a_stick_latestRN.phl[38]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[31]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[39]" "sausage_on_a_stick_latestRN.phl[40]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[32]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[41]" "sausage_on_a_stick_latestRN.phl[42]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[33]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[43]" "sausage_on_a_stick_latestRN.phl[44]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[34]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[45]" "sausage_on_a_stick_latestRN.phl[46]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[35]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[47]" "sausage_on_a_stick_latestRN.phl[48]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[36]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[49]" "sausage_on_a_stick_latestRN.phl[50]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[37]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[51]" "sausage_on_a_stick_latestRN.phl[52]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[38]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[53]" "sausage_on_a_stick_latestRN.phl[54]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[39]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[55]" "sausage_on_a_stick_latestRN.phl[56]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[40]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[57]" "sausage_on_a_stick_latestRN.phl[58]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[41]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[59]" "sausage_on_a_stick_latestRN.phl[60]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[42]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[61]" "sausage_on_a_stick_latestRN.phl[62]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[43]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[63]" "sausage_on_a_stick_latestRN.phl[64]"
 		;
-connectAttr "sausage_on_a_stick_latestRN.phl[44]" ":initialShadingGroup.dsm" -na
+connectAttr "sausage_on_a_stick_latestRN.phl[65]" "sausage_on_a_stick_latestRN.phl[66]"
+		;
+connectAttr "sausage_on_a_stick_latestRN.phl[67]" "sausage_on_a_stick_latestRN.phl[68]"
+		;
+connectAttr "sausage_on_a_stick_latestRN.phl[69]" "sausage_on_a_stick_latestRN.phl[70]"
+		;
+connectAttr "sausage_on_a_stick_latestRN.phl[71]" "sausage_on_a_stick_latestRN.phl[72]"
+		;
+connectAttr "sausage_on_a_stick_latestRN.phl[73]" "sausage_on_a_stick_latestRN.phl[74]"
+		;
+connectAttr "sausage_on_a_stick_latestRN.phl[75]" "sausage_on_a_stick_latestRN.phl[76]"
+		;
+connectAttr "sausage_on_a_stick_latestRN.phl[77]" "sausage_on_a_stick_latestRN.phl[78]"
+		;
+connectAttr "sausage_on_a_stick_latestRN.phl[79]" "sausage_on_a_stick_latestRN.phl[80]"
+		;
+connectAttr "sausage_on_a_stick_latestRN.phl[81]" "sausage_on_a_stick_latestRN.phl[82]"
+		;
+connectAttr "sausage_on_a_stick_latestRN.phl[83]" "sausage_on_a_stick_latestRN.phl[84]"
+		;
+connectAttr "sausage_on_a_stick_latestRN.phl[85]" "sausage_on_a_stick_latestRN.phl[86]"
+		;
+connectAttr "sausage_on_a_stick_latestRN.phl[87]" "sausage_on_a_stick_latestRN.phl[88]"
 		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
@@ -1412,6 +1678,6 @@ connectAttr ":rmanGlobals.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanDefaultDisplay.msg" ":defaultRenderingList1.r" -na;
 connectAttr "d_openexr.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":PxrPathTracer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "meat_roll_on_a_stick_latestRN.phl[5]" ":initialShadingGroup.dsm" -na
+connectAttr "meat_roll_on_a_stick_latestRN.phl[6]" ":initialShadingGroup.dsm" -na
 		;
 // End of roll_and_sausage_platter_latest.ma

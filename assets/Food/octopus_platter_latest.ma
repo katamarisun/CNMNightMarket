@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: octopus_platter_latest.ma
-//Last modified: Sat, Nov 24, 2018 03:46:07 PM
+//Last modified: Sat, Nov 24, 2018 09:41:21 PM
 //Codeset: 1252
 file -rdi 1 -ns "platter_latest" -rfn "platter_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/platter_latest.ma";
@@ -8,9 +8,15 @@ file -rdi 1 -ns "octopus_on_a_stick_latest" -rfn "octopus_on_a_stick_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/octopus_on_a_stick_latest.ma";
 file -rdi 2 -ns "skewer_latest" -rfn "octopus_on_a_stick_latest:skewer_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/skewer_latest.ma";
+file -rdi 1 -ns "octopus_on_a_stick_latest1" -rfn "octopus_on_a_stick_latestRN1"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/octopus_on_a_stick_latest.ma";
+file -rdi 2 -ns "skewer_latest" -rfn "octopus_on_a_stick_latest1:skewer_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/skewer_latest.ma";
 file -r -ns "platter_latest" -dr 1 -rfn "platter_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/platter_latest.ma";
 file -r -ns "octopus_on_a_stick_latest" -dr 1 -rfn "octopus_on_a_stick_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/octopus_on_a_stick_latest.ma";
+file -r -ns "octopus_on_a_stick_latest1" -dr 1 -rfn "octopus_on_a_stick_latestRN1"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/octopus_on_a_stick_latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -26,13 +32,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "BAC2DD79-4C0A-DBEB-8333-07A691782DB2";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 20.579971975734658 15.227082569798533 -1.446927656832417 ;
-	setAttr ".r" -type "double3" -40.538352729595431 -270.19999999999328 0 ;
+	setAttr ".t" -type "double3" 11.385417705416243 4.101964350906405 3.3488750539370837 ;
+	setAttr ".r" -type "double3" -26.738352729459734 -278.59999999996899 -1.0634792445145829e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "D7C2176C-4069-5853-75E4-59B55B644EAC";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 25.014711321136808;
+	setAttr ".coi" 11.586967349777327;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -107,40 +113,47 @@ createNode nurbsCurve -n "OctopusShape" -p "Octopus";
 		1.6862499972099443 3.2983965134322306e-16 -5.3866902942606849
 		-2.1227152380135466 2.3323185416899963e-16 -3.8089652352234897
 		;
-createNode transform -n "Octopus_on_a_stick5" -p "Octopus";
-	rename -uid "A013C419-4A2E-C05F-61DA-2E97AD1C9B12";
-	setAttr ".t" -type "double3" 1.777671456054422 1.0586831823739014 0.97730627752705712 ;
-	setAttr ".r" -type "double3" 278.76679336256706 -94.066391878160104 -272.49245026175328 ;
-	setAttr ".s" -type "double3" -1.1154682025801785 1.1154682025801785 1.1154682025801785 ;
-createNode transform -n "Octopus_on_a_stick4" -p "Octopus";
-	rename -uid "ECDA0F79-425F-CE06-398E-C08653380484";
-	setAttr ".t" -type "double3" 1.6187704994186849 0.65716556991879294 -0.97490130767088656 ;
-	setAttr ".r" -type "double3" 3.4677286258970699 90 0 ;
-	setAttr ".s" -type "double3" 1.1154682025801785 1.1154682025801779 1.1154682025801779 ;
 createNode transform -n "Octopus_on_a_stick2" -p "Octopus";
 	rename -uid "D9A3F7E1-46CA-A543-36F3-4DA91AF26363";
-	setAttr ".t" -type "double3" 1.2401311847234953 0.37304018179767851 -2.188021336792394 ;
-	setAttr ".r" -type "double3" -41.89826802227558 -75.577608547558313 41.990254713385134 ;
-	setAttr ".s" -type "double3" 1.1154682025801785 1.1154682025801783 1.1154682025801783 ;
-createNode transform -n "Octopus_on_a_stick1" -p "Octopus";
-	rename -uid "01BA36C2-4852-5E12-F10B-C58D7D6C3634";
-	setAttr ".t" -type "double3" 1.6011938375225743 0.27520433406917888 0.15088458393719259 ;
-	setAttr ".r" -type "double3" -20.213379423505785 -99.279111749923601 21.356877063503273 ;
-	setAttr ".s" -type "double3" 1.1154682025801785 1.1154682025801785 1.1154682025801785 ;
+	setAttr ".t" -type "double3" 1.2401311847234953 0.19316612351150209 -2.6883478052194278 ;
+	setAttr ".r" -type "double3" 19.851803540115693 -87.446459070847396 -20.505909399694527 ;
+	setAttr ".s" -type "double3" 1.1154682025801785 1.1154682025801783 1.1154682025801785 ;
+	setAttr ".rp" -type "double3" 4.9536739269670106e-16 0.14226484463514091 4.9536739269670106e-16 ;
+	setAttr ".rpt" -type "double3" 0.0016690354255648775 -2.6075554459161127e-05 0.0021524196202138829 ;
+	setAttr ".sp" -type "double3" 4.4408920985006262e-16 0.12753823399543754 4.4408920985006262e-16 ;
+	setAttr ".spt" -type "double3" 5.1278182846638472e-17 0.014726610639703368 5.1278182846638472e-17 ;
+createNode transform -n "Octopus_on_a_stick3" -p "Octopus";
+	rename -uid "E99F2BEA-4477-486D-EBD1-31BCEBB21976";
+	setAttr ".t" -type "double3" 1.362370939761484 0.26951020831199912 1.4402114610155459 ;
+	setAttr ".r" -type "double3" 155.85924652608708 -82.482389168149027 -157.41807330497215 ;
+	setAttr ".s" -type "double3" 1.1154682025801788 1.1154682025801785 1.1154682025801788 ;
+	setAttr ".rp" -type "double3" 3.0814879110195774e-33 0.15628683809268218 -3.0814879110195774e-33 ;
+	setAttr ".rpt" -type "double3" 0.0037442438444762818 -0.00026880862811888573 0.0083624685970125744 ;
+	setAttr ".sp" -type "double3" 0 0.14010873436927795 0 ;
+	setAttr ".spt" -type "double3" 3.0814879110195774e-33 0.016178103723404214 -3.0814879110195774e-33 ;
+createNode transform -n "Octopus_on_a_stick4" -p "Octopus";
+	rename -uid "0D4FCFDE-4426-C086-31B7-A981E836169B";
+	setAttr ".t" -type "double3" 1.362370939761484 0.085919259753213711 -1.5750575851320474 ;
+	setAttr ".r" -type "double3" 0 268.04334742705004 0 ;
+	setAttr ".s" -type "double3" 1.1154682025801788 1.1154682025801785 1.1154682025801788 ;
+	setAttr ".rp" -type "double3" -2.4768369634835058e-16 0.15628683809268223 0 ;
+	setAttr ".rpt" -type "double3" 2.561404579679003e-16 0 -2.4753928298290767e-16 ;
+	setAttr ".sp" -type "double3" -2.2204460492503131e-16 0.14010873436927801 0 ;
+	setAttr ".spt" -type "double3" -2.563909142331927e-17 0.016178103723404214 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "F4F63530-4154-7EAA-0E2A-D3B32BE66F8B";
-	setAttr -s 2 ".lnk";
-	setAttr -s 2 ".slnk";
+	rename -uid "623B93F6-4537-47DC-08CC-8AB895D2829F";
+	setAttr -s 11 ".lnk";
+	setAttr -s 11 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "7F3497DC-403D-A70C-3C27-91BE33F05720";
+	rename -uid "BD9DCFB0-4B8A-3773-02A3-0199289B8986";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "71306061-40A6-76F1-2EE0-D1AB416FE9FF";
+	rename -uid "F1B6653C-415B-38C2-B8D5-028D7610F764";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B98C9266-4DC9-3328-6D4A-4FA4289E2C46";
+	rename -uid "209C46C4-43C1-3D3C-0120-7DB1C0DDB085";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "CE026510-4270-9FE5-B3FC-9FAF0B2D64F8";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "A927BA0D-4DC4-1852-4E17-6B9FE5D2D991";
+	rename -uid "AA47DBB9-4D07-7133-A1E3-43BB06B9EFDD";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "013FC1A9-48BD-C4A7-71F7-89A257C8AEFF";
 	setAttr ".g" yes;
@@ -344,203 +357,60 @@ createNode reference -n "platter_latestRN";
 lockNode -l 1 ;
 createNode reference -n "octopus_on_a_stick_latestRN";
 	rename -uid "90BA3F52-4D81-CA00-B17E-B09CFE9DDAEA";
-	setAttr -s 108 ".phl";
-	setAttr ".phl[1]" 0;
-	setAttr ".phl[2]" 0;
-	setAttr ".phl[3]" 0;
-	setAttr ".phl[4]" 0;
-	setAttr ".phl[5]" 0;
+	setAttr ".fn[0]" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/octopus_on_a_stick_latest.ma";
+	setAttr -s 60 ".phl";
 	setAttr ".phl[6]" 0;
-	setAttr ".phl[7]" 0;
-	setAttr ".phl[8]" 0;
-	setAttr ".phl[9]" 0;
-	setAttr ".phl[10]" 0;
-	setAttr ".phl[11]" 0;
-	setAttr ".phl[12]" 0;
-	setAttr ".phl[13]" 0;
-	setAttr ".phl[14]" 0;
-	setAttr ".phl[15]" 0;
-	setAttr ".phl[16]" 0;
-	setAttr ".phl[17]" 0;
-	setAttr ".phl[18]" 0;
-	setAttr ".phl[19]" 0;
-	setAttr ".phl[20]" 0;
-	setAttr ".phl[21]" 0;
 	setAttr ".phl[22]" 0;
-	setAttr ".phl[23]" 0;
-	setAttr ".phl[24]" 0;
-	setAttr ".phl[25]" 0;
-	setAttr ".phl[26]" 0;
-	setAttr ".phl[27]" 0;
-	setAttr ".phl[28]" 0;
-	setAttr ".phl[29]" 0;
-	setAttr ".phl[30]" 0;
-	setAttr ".phl[31]" 0;
-	setAttr ".phl[32]" 0;
-	setAttr ".phl[33]" 0;
-	setAttr ".phl[34]" 0;
-	setAttr ".phl[35]" 0;
-	setAttr ".phl[36]" 0;
-	setAttr ".phl[37]" 0;
 	setAttr ".phl[38]" 0;
-	setAttr ".phl[39]" 0;
-	setAttr ".phl[40]" 0;
-	setAttr ".phl[41]" 0;
-	setAttr ".phl[42]" 0;
-	setAttr ".phl[43]" 0;
-	setAttr ".phl[44]" 0;
-	setAttr ".phl[45]" 0;
-	setAttr ".phl[46]" 0;
-	setAttr ".phl[47]" 0;
-	setAttr ".phl[48]" 0;
-	setAttr ".phl[49]" 0;
-	setAttr ".phl[50]" 0;
-	setAttr ".phl[51]" 0;
-	setAttr ".phl[52]" 0;
 	setAttr ".phl[53]" 0;
 	setAttr ".phl[54]" 0;
-	setAttr ".phl[55]" 0;
-	setAttr ".phl[56]" 0;
 	setAttr ".phl[57]" 0;
-	setAttr ".phl[58]" 0;
-	setAttr ".phl[59]" 0;
 	setAttr ".phl[60]" 0;
-	setAttr ".phl[61]" 0;
-	setAttr ".phl[62]" 0;
 	setAttr ".phl[63]" 0;
-	setAttr ".phl[64]" 0;
-	setAttr ".phl[65]" 0;
 	setAttr ".phl[66]" 0;
-	setAttr ".phl[67]" 0;
-	setAttr ".phl[68]" 0;
-	setAttr ".phl[69]" 0;
 	setAttr ".phl[70]" 0;
-	setAttr ".phl[71]" 0;
-	setAttr ".phl[72]" 0;
-	setAttr ".phl[73]" 0;
-	setAttr ".phl[74]" 0;
-	setAttr ".phl[75]" 0;
-	setAttr ".phl[76]" 0;
-	setAttr ".phl[77]" 0;
-	setAttr ".phl[78]" 0;
-	setAttr ".phl[79]" 0;
-	setAttr ".phl[80]" 0;
-	setAttr ".phl[81]" 0;
-	setAttr ".phl[82]" 0;
-	setAttr ".phl[83]" 0;
-	setAttr ".phl[84]" 0;
-	setAttr ".phl[85]" 0;
 	setAttr ".phl[86]" 0;
-	setAttr ".phl[87]" 0;
-	setAttr ".phl[88]" 0;
-	setAttr ".phl[89]" 0;
-	setAttr ".phl[90]" 0;
-	setAttr ".phl[91]" 0;
-	setAttr ".phl[92]" 0;
-	setAttr ".phl[93]" 0;
-	setAttr ".phl[94]" 0;
-	setAttr ".phl[95]" 0;
-	setAttr ".phl[96]" 0;
-	setAttr ".phl[97]" 0;
-	setAttr ".phl[98]" 0;
-	setAttr ".phl[99]" 0;
-	setAttr ".phl[100]" 0;
 	setAttr ".phl[101]" 0;
-	setAttr ".phl[102]" 0;
 	setAttr ".phl[103]" 0;
-	setAttr ".phl[104]" 0;
 	setAttr ".phl[105]" 0;
-	setAttr ".phl[106]" 0;
 	setAttr ".phl[107]" 0;
-	setAttr ".phl[108]" 0;
+	setAttr ".phl[109]" 0;
+	setAttr ".phl[110]" 0;
+	setAttr ".phl[111]" 0;
+	setAttr ".phl[112]" 0;
+	setAttr ".phl[113]" 0;
+	setAttr ".phl[114]" 0;
+	setAttr ".phl[115]" 0;
+	setAttr ".phl[116]" 0;
+	setAttr ".phl[117]" 0;
+	setAttr ".phl[118]" 0;
+	setAttr ".phl[119]" 0;
+	setAttr ".phl[120]" 0;
+	setAttr ".phl[121]" 0;
+	setAttr ".phl[122]" 0;
+	setAttr ".phl[123]" 0;
+	setAttr ".phl[124]" 0;
+	setAttr ".phl[125]" 0;
+	setAttr ".phl[126]" 0;
+	setAttr ".phl[127]" 0;
+	setAttr ".phl[128]" 0;
+	setAttr ".phl[129]" 0;
+	setAttr ".phl[130]" 0;
+	setAttr ".phl[131]" 0;
+	setAttr ".phl[132]" 0;
+	setAttr ".phl[133]" 0;
+	setAttr ".phl[134]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"octopus_on_a_stick_latestRN"
-		"octopus_on_a_stick_latest:skewer_latestRN" 1
+		"octopus_on_a_stick_latest:skewer_latestRN" 4
 		3 "" ":initialShadingGroup.dagSetMembers" "-na"
-		"octopus_on_a_stick_latestRN" 12
-		3 ".instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" "-na"
-		
-		3 ":initialShadingGroup.memberWireframeColor" ".instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 ".instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" "-na"
-		
-		3 ":initialShadingGroup.memberWireframeColor" ".instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 ".instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" "-na"
-		
-		3 ":initialShadingGroup.memberWireframeColor" ".instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 ".instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" "-na"
-		
-		3 ":initialShadingGroup.memberWireframeColor" ".instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 ".instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" "-na"
-		
-		3 ":initialShadingGroup.memberWireframeColor" ".instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 ".instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" "-na"
-		
-		3 ":initialShadingGroup.memberWireframeColor" ".instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		"octopus_on_a_stick_latest:skewer_latestRN" 12
-		0 "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:skewer_latest:stick_Mesh" 
-		"|Octopus|Octopus_on_a_stick1" "-s -r "
-		0 "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:skewer_latest:stick_Mesh" 
-		"|Octopus|Octopus_on_a_stick2" "-s -r -add "
-		0 "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:skewer_latest:stick_Mesh" 
-		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
-		0 "|octopus_on_a_stick_latest:skewer_latest:stick_Mesh" "|Octopus|Octopus_on_a_stick5" 
-		"-s -r -add "
-		3 "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"octopus_on_a_stick_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"octopus_on_a_stick_latestRN.placeHolderList[2]" ":initialShadingGroup.dsm"
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"octopus_on_a_stick_latestRN.placeHolderList[3]" ":initialShadingGroup.dsm"
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"octopus_on_a_stick_latestRN.placeHolderList[4]" ":initialShadingGroup.dsm"
-		"octopus_on_a_stick_latestRN" 256
-		0 "|octopus_on_a_stick_latest:Octopus_on_a_stick" "|Octopus" "-s -r "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:Octopus_on_a_stickShape" 
-		"|Octopus|Octopus_on_a_stick1" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:Octopus_on_a_stickShape" 
-		"|Octopus|Octopus_on_a_stick2" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:Octopus_on_a_stickShape" 
-		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:Octopus_on_a_stickShape" 
-		"|Octopus|Octopus_on_a_stick5" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10" 
-		"|Octopus|Octopus_on_a_stick1" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10" 
-		"|Octopus|Octopus_on_a_stick2" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10" 
-		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10" 
-		"|Octopus|Octopus_on_a_stick5" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11" 
-		"|Octopus|Octopus_on_a_stick1" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11" 
-		"|Octopus|Octopus_on_a_stick2" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11" 
-		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11" 
-		"|Octopus|Octopus_on_a_stick5" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12" 
-		"|Octopus|Octopus_on_a_stick1" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12" 
-		"|Octopus|Octopus_on_a_stick2" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12" 
-		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12" 
-		"|Octopus|Octopus_on_a_stick5" "-s -r -add "
+		"octopus_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
+		"octopus_on_a_stick_latestRN" 121
 		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder13" 
 		"|Octopus|Octopus_on_a_stick1" "-s -r -add "
 		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder13" 
@@ -549,107 +419,6 @@ createNode reference -n "octopus_on_a_stick_latestRN";
 		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
 		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder13" 
 		"|Octopus|Octopus_on_a_stick5" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14" 
-		"|Octopus|Octopus_on_a_stick1" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14" 
-		"|Octopus|Octopus_on_a_stick2" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14" 
-		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14" 
-		"|Octopus|Octopus_on_a_stick5" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15" 
-		"|Octopus|Octopus_on_a_stick1" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15" 
-		"|Octopus|Octopus_on_a_stick2" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15" 
-		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
-		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15" 
-		"|Octopus|Octopus_on_a_stick5" "-s -r -add "
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick" "translate" " -type \"double3\" 1.62575028694063506 0.28480658702576389 2.25845958923033052"
-		
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick" "rotate" " -type \"double3\" 0 -90 0"
-		
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape" 
-		"instObjGroups" " -s 5"
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape" 
-		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
-		"instObjGroups" " -s 5"
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
-		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
-		"instObjGroups.objectGroups" " -s 4"
-		2 "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
-		"instObjGroups" " -s 5"
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
-		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
-		2 "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
-		"instObjGroups.objectGroups" " -s 4"
-		2 "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
-		
 		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder13|octopus_on_a_stick_latest:pCylinder13Shape" 
 		"instObjGroups" " -s 5"
 		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder13|octopus_on_a_stick_latest:pCylinder13Shape" 
@@ -677,45 +446,30 @@ createNode reference -n "octopus_on_a_stick_latestRN";
 		2 "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder13|octopus_on_a_stick_latest:pCylinder13Shape" 
 		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
 		
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
-		"instObjGroups" " -s 5"
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
-		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		3 ".instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" "-na"
 		
-		2 "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		3 ":initialShadingGroup.memberWireframeColor" ".instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 ".instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" "-na"
 		
-		2 "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		3 ":initialShadingGroup.memberWireframeColor" ".instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 ".instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" "-na"
 		
-		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		3 ":initialShadingGroup.memberWireframeColor" ".instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 ".instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" "-na"
 		
-		2 "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
-		"instObjGroups.objectGroups" " -s 5"
-		2 "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		3 ":initialShadingGroup.memberWireframeColor" ".instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 ".instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" "-na"
 		
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape" 
-		"instObjGroups" " -s 5"
-		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape" 
-		"instObjGroups.objectGroups" " -s 2"
-		2 "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape" 
-		"instObjGroups.objectGroups" " -s 2"
+		3 ":initialShadingGroup.memberWireframeColor" ".instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 ".instObjGroups.objectGroups[0]" ":initialShadingGroup.dagSetMembers" "-na"
+		
+		3 ":initialShadingGroup.memberWireframeColor" ".instObjGroups.objectGroups[0].objectGrpColor" 
+		""
 		3 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.worldMatrix" 
 		"octopus_on_a_stick_latest:polyCylProj1.manipMatrix" ""
 		3 "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder13|octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0]" 
@@ -856,105 +610,21 @@ createNode reference -n "octopus_on_a_stick_latestRN";
 		""
 		3 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.worldMatrix" 
 		"octopus_on_a_stick_latest:polyCylProj2.manipMatrix" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[5]" ":initialShadingGroup.dsm"
 		5 0 "octopus_on_a_stick_latestRN" "octopus_on_a_stick_latest:groupId36.groupId" 
 		"|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3].objectGroupId" 
 		"octopus_on_a_stick_latestRN.placeHolderList[6]" "octopus_on_a_stick_latestRN.placeHolderList[7]" 
 		"|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.iog.og[3].gid"
 		
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[8]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[9]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[10]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[11]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[12]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[13]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[14]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[15]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[16]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[17]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[18]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[19]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[20]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[21]" ":initialShadingGroup.dsm"
 		5 0 "octopus_on_a_stick_latestRN" "octopus_on_a_stick_latest:groupId11.groupId" 
 		"|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3].objectGroupId" 
 		"octopus_on_a_stick_latestRN.placeHolderList[22]" "octopus_on_a_stick_latestRN.placeHolderList[23]" 
 		"|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.iog.og[3].gid"
 		
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[24]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[25]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[26]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[27]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[28]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[29]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[30]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[31]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[32]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[33]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[34]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[35]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[36]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[37]" ":initialShadingGroup.dsm"
 		5 0 "octopus_on_a_stick_latestRN" "octopus_on_a_stick_latest:groupId16.groupId" 
 		"|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3].objectGroupId" 
 		"octopus_on_a_stick_latestRN.placeHolderList[38]" "octopus_on_a_stick_latestRN.placeHolderList[39]" 
 		"|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.iog.og[3].gid"
 		
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[40]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[41]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[42]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[43]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[44]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[45]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[46]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[47]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[48]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[49]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[50]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[51]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[52]" ""
 		5 3 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder13|octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[3]" 
 		"octopus_on_a_stick_latestRN.placeHolderList[53]" ":initialShadingGroup.dsm"
 		5 0 "octopus_on_a_stick_latestRN" "octopus_on_a_stick_latest:groupId21.groupId" 
@@ -988,72 +658,16 @@ createNode reference -n "octopus_on_a_stick_latestRN";
 		"octopus_on_a_stick_latestRN.placeHolderList[67]" ""
 		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder13|octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		"octopus_on_a_stick_latestRN.placeHolderList[68]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[69]" ":initialShadingGroup.dsm"
 		5 0 "octopus_on_a_stick_latestRN" "octopus_on_a_stick_latest:groupId26.groupId" 
 		"|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3].objectGroupId" 
 		"octopus_on_a_stick_latestRN.placeHolderList[70]" "octopus_on_a_stick_latestRN.placeHolderList[71]" 
 		"|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.iog.og[3].gid"
 		
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[72]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[73]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[74]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[75]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[76]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[77]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[78]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[79]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[80]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[81]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[82]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[83]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[84]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[85]" ":initialShadingGroup.dsm"
 		5 0 "octopus_on_a_stick_latestRN" "octopus_on_a_stick_latest:groupId37.groupId" 
 		"|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3].objectGroupId" 
 		"octopus_on_a_stick_latestRN.placeHolderList[86]" "octopus_on_a_stick_latestRN.placeHolderList[87]" 
 		"|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.iog.og[3].gid"
 		
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[88]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[89]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[90]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick5|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[91]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[92]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[93]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[94]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[95]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[96]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[97]" ""
-		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[98]" ":initialShadingGroup.dsm"
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"octopus_on_a_stick_latestRN.placeHolderList[99]" ""
-		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick1|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"octopus_on_a_stick_latestRN.placeHolderList[100]" ""
 		5 0 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.worldMatrix" 
 		"octopus_on_a_stick_latest:polyCylProj1.manipMatrix" "octopus_on_a_stick_latestRN.placeHolderList[101]" 
 		"octopus_on_a_stick_latestRN.placeHolderList[102]" "octopus_on_a_stick_latest:polyCylProj2.mp"
@@ -1068,7 +682,128 @@ createNode reference -n "octopus_on_a_stick_latestRN";
 		
 		5 0 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.worldMatrix" 
 		"octopus_on_a_stick_latest:polyAutoProj1.manipMatrix" "octopus_on_a_stick_latestRN.placeHolderList[107]" 
-		"octopus_on_a_stick_latestRN.placeHolderList[108]" "octopus_on_a_stick_latest:polyCylProj2.mp";
+		"octopus_on_a_stick_latestRN.placeHolderList[108]" "octopus_on_a_stick_latest:polyCylProj2.mp"
+		
+		"octopus_on_a_stick_latest:skewer_latestRN" 3
+		0 "|octopus_on_a_stick_latest:skewer_latest:stick_Mesh" "|Octopus|Octopus_on_a_stick2" 
+		"-s -r "
+		3 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
+		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_on_a_stick_latestRN.placeHolderList[109]" "octopus_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		
+		"octopus_on_a_stick_latestRN" 53
+		0 "|octopus_on_a_stick_latest:Octopus_on_a_stick" "|Octopus" "-s -r "
+		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:Octopus_on_a_stickShape" 
+		"|Octopus|Octopus_on_a_stick2" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10" 
+		"|Octopus|Octopus_on_a_stick2" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11" 
+		"|Octopus|Octopus_on_a_stick2" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12" 
+		"|Octopus|Octopus_on_a_stick2" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14" 
+		"|Octopus|Octopus_on_a_stick2" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15" 
+		"|Octopus|Octopus_on_a_stick2" "-s -r -add "
+		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick" "translate" " -type \"double3\" 1.62575028694063506 0.37047393577326271 2.86414432520459439"
+		
+		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick" "rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		
+		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick" "rotatePivot" " -type \"double3\" 0 0.15628683809268223 0.017777317047470102"
+		
+		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick" "rotatePivotTranslate" 
+		" -type \"double3\" -0.017777317047470598 0 -0.017777317047469602"
+		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick" "scalePivot" " -type \"double3\" 0 0.14010873436927801 0.015937089920043945"
+		
+		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick" "scalePivotTranslate" 
+		" -type \"double3\" 0 0.016178103723404214 0.0018402271274261576"
+		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape" 
+		"instObjGroups" " -s 2"
+		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
+		"instObjGroups" " -s 2"
+		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
+		"instObjGroups.objectGroups" " -s 4"
+		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape" 
+		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
+		"instObjGroups" " -s 2"
+		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
+		"instObjGroups.objectGroups" " -s 4"
+		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape" 
+		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
+		"instObjGroups" " -s 2"
+		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
+		"instObjGroups.objectGroups" " -s 4"
+		2 "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape" 
+		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape" 
+		"instObjGroups" " -s 2"
+		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
+		"octopus_on_a_stick_latestRN.placeHolderList[110]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_on_a_stick_latestRN.placeHolderList[111]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_on_a_stick_latestRN.placeHolderList[112]" ""
+		5 3 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3]" 
+		"octopus_on_a_stick_latestRN.placeHolderList[113]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder10|octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		"octopus_on_a_stick_latestRN.placeHolderList[114]" ""
+		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
+		"octopus_on_a_stick_latestRN.placeHolderList[115]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_on_a_stick_latestRN.placeHolderList[116]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_on_a_stick_latestRN.placeHolderList[117]" ""
+		5 3 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3]" 
+		"octopus_on_a_stick_latestRN.placeHolderList[118]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder11|octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		"octopus_on_a_stick_latestRN.placeHolderList[119]" ""
+		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		"octopus_on_a_stick_latestRN.placeHolderList[120]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_on_a_stick_latestRN.placeHolderList[121]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_on_a_stick_latestRN.placeHolderList[122]" ""
+		5 3 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3]" 
+		"octopus_on_a_stick_latestRN.placeHolderList[123]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder12|octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		"octopus_on_a_stick_latestRN.placeHolderList[124]" ""
+		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
+		"octopus_on_a_stick_latestRN.placeHolderList[125]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_on_a_stick_latestRN.placeHolderList[126]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_on_a_stick_latestRN.placeHolderList[127]" ""
+		5 3 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3]" 
+		"octopus_on_a_stick_latestRN.placeHolderList[128]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder14|octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		"octopus_on_a_stick_latestRN.placeHolderList[129]" ""
+		5 3 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
+		"octopus_on_a_stick_latestRN.placeHolderList[130]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_on_a_stick_latestRN.placeHolderList[131]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|Octopus_on_a_stick2|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_on_a_stick_latestRN.placeHolderList[132]" ""
+		5 3 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3]" 
+		"octopus_on_a_stick_latestRN.placeHolderList[133]" ""
+		5 4 "octopus_on_a_stick_latestRN" "|Octopus|octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_on_a_stick_latest:pCylinder15|octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		"octopus_on_a_stick_latestRN.placeHolderList[134]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode groupId -n "groupId1";
@@ -1197,34 +932,37 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1646\n            -height 874\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1180\n            -height 874\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
 		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n"
-		+ "            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n"
-		+ "                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n"
-		+ "                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n"
-		+ "                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n"
-		+ "                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n"
-		+ "                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n"
-		+ "                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n"
-		+ "                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n"
-		+ "                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n"
-		+ "                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n"
-		+ "                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n"
-		+ "                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n"
-		+ "                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n"
-		+ "                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1646\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1646\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n"
+		+ "            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n"
+		+ "            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n"
+		+ "                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n"
+		+ "                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n"
+		+ "                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n"
+		+ "                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n"
+		+ "                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n"
+		+ "                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n"
+		+ "                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n"
+		+ "                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n"
+		+ "                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n"
+		+ "            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n"
+		+ "            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n"
+		+ "                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n"
+		+ "\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -1319,7 +1057,303 @@ createNode groupParts -n "groupParts9";
 	rename -uid "D31081E5-4875-F7ED-0BBC-2EB77B363644";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[0:1337]";
+createNode reference -n "sharedReferenceNode";
+	rename -uid "07AB87F1-4ADB-0BDB-029D-F4A0293C2B75";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"sharedReferenceNode";
+createNode reference -n "octopus_on_a_stick_latestRN1";
+	rename -uid "C2BC78B3-4D85-09A3-26D7-60BD380A647A";
+	setAttr -s 61 ".phl";
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"octopus_on_a_stick_latestRN1"
+		"octopus_on_a_stick_latestRN1" 0
+		"octopus_on_a_stick_latest1:skewer_latestRN" 2
+		3 "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:skewer_latest:stick_Mesh|octopus_on_a_stick_latest1:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_on_a_stick_latest1:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:skewer_latest:stick_Mesh|octopus_on_a_stick_latest1:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_on_a_stick_latest1:skewer_latest:PxrSurface1SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[5]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[6]" "octopus_on_a_stick_latest1:skewer_latest:PxrSurface1SG.dsm"
+		
+		"octopus_on_a_stick_latestRN1" 77
+		0 "|octopus_on_a_stick_latest1:Octopus_on_a_stick" "|Octopus" "-s -r "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:Octopus_on_a_stickShape" 
+		"|Octopus|Octopus_on_a_stick3" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:Octopus_on_a_stickShape" 
+		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder10" 
+		"|Octopus|Octopus_on_a_stick3" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder10" 
+		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder11" 
+		"|Octopus|Octopus_on_a_stick3" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder11" 
+		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder12" 
+		"|Octopus|Octopus_on_a_stick3" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder12" 
+		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder14" 
+		"|Octopus|Octopus_on_a_stick3" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder14" 
+		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder15" 
+		"|Octopus|Octopus_on_a_stick3" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder15" 
+		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder17" 
+		"|Octopus|Octopus_on_a_stick3" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder17" 
+		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder18" 
+		"|Octopus|Octopus_on_a_stick3" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder18" 
+		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder19" 
+		"|Octopus|Octopus_on_a_stick3" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder19" 
+		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder20" 
+		"|Octopus|Octopus_on_a_stick3" "-s -r -add "
+		0 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder20" 
+		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
+		2 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick" "translate" " -type \"double3\" 1.36237093976148227 0.1282893672980934 -0.1168074157123844"
+		
+		2 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick" "rotate" " -type \"double3\" 0 -88.61192083822790266 0"
+		
+		2 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick" "rotatePivot" 
+		" -type \"double3\" 0 0.15628683809268215 0.017777317047470351"
+		2 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick" "rotatePivotTranslate" 
+		" -type \"double3\" -0.017772100319571906 0 -0.017346676086399403"
+		2 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick" "scalePivot" " -type \"double3\" 0 0.14010873436927795 0.015937089920044167"
+		
+		2 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick" "scalePivotTranslate" 
+		" -type \"double3\" 0 0.016178103723404214 0.0018402271274261827"
+		2 "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder10|octopus_on_a_stick_latest1:pCylinder10Shape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		3 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder11|octopus_on_a_stick_latest1:pCylinder11Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder11|octopus_on_a_stick_latest1:pCylinder11Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder12|octopus_on_a_stick_latest1:pCylinder12Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder12|octopus_on_a_stick_latest1:pCylinder12Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder14|octopus_on_a_stick_latest1:pCylinder14Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder14|octopus_on_a_stick_latest1:pCylinder14Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder15|octopus_on_a_stick_latest1:pCylinder15Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder15|octopus_on_a_stick_latest1:pCylinder15Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder17|octopus_on_a_stick_latest1:pCylinder17Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder17|octopus_on_a_stick_latest1:pCylinder17Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder18|octopus_on_a_stick_latest1:pCylinder18Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder18|octopus_on_a_stick_latest1:pCylinder18Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder19|octopus_on_a_stick_latest1:pCylinder19Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder19|octopus_on_a_stick_latest1:pCylinder19Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder20|octopus_on_a_stick_latest1:pCylinder20Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder20|octopus_on_a_stick_latest1:pCylinder20Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder10|octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder10|octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder10|octopus_on_a_stick_latest1:pCylinder10ShapeOrig.worldMesh" 
+		"|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder10|octopus_on_a_stick_latest1:pCylinder10Shape.inMesh" 
+		""
+		3 "octopus_on_a_stick_latest1:Octopus.message" "octopus_on_a_stick_latest1:materialInfo4.texture" 
+		"-na"
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder10|octopus_on_a_stick_latest1:pCylinder10ShapeOrig.worldMesh" 
+		"|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder10|octopus_on_a_stick_latest1:pCylinder10Shape.inMesh" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[11]" "octopus_on_a_stick_latestRN1.placeHolderList[12]" 
+		"|octopus_on_a_stick_latest1:pCylinder10|octopus_on_a_stick_latest1:pCylinder10Shape.i"
+		
+		5 3 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder10|octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[13]" ":initialShadingGroup.dsm"
+		5 3 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest1:pCylinder10|octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[14]" ""
+		5 3 "octopus_on_a_stick_latestRN1" "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder10|octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[15]" ":initialShadingGroup.dsm"
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder15|octopus_on_a_stick_latest1:pCylinder15Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[16]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[17]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder14|octopus_on_a_stick_latest1:pCylinder14Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[18]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[19]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder19|octopus_on_a_stick_latest1:pCylinder19Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[20]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[21]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder12|octopus_on_a_stick_latest1:pCylinder12Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[22]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[23]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder20|octopus_on_a_stick_latest1:pCylinder20Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[24]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[25]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder17|octopus_on_a_stick_latest1:pCylinder17Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[26]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[27]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder11|octopus_on_a_stick_latest1:pCylinder11Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[28]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[29]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_on_a_stick_latest1:pCylinder18|octopus_on_a_stick_latest1:pCylinder18Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[30]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[31]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder11|octopus_on_a_stick_latest1:pCylinder11Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[32]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[33]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder12|octopus_on_a_stick_latest1:pCylinder12Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[34]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[35]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder14|octopus_on_a_stick_latest1:pCylinder14Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[36]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[37]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder15|octopus_on_a_stick_latest1:pCylinder15Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[38]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[39]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder17|octopus_on_a_stick_latest1:pCylinder17Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[40]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[41]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder18|octopus_on_a_stick_latest1:pCylinder18Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[42]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[43]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder19|octopus_on_a_stick_latest1:pCylinder19Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[44]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[45]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:pCylinder20|octopus_on_a_stick_latest1:pCylinder20Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[46]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[47]" "octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest1:pCylinder11|octopus_on_a_stick_latest1:pCylinder11Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[48]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[49]" ""
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest1:pCylinder12|octopus_on_a_stick_latest1:pCylinder12Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[50]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[51]" ""
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest1:pCylinder14|octopus_on_a_stick_latest1:pCylinder14Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[52]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[53]" ""
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest1:pCylinder15|octopus_on_a_stick_latest1:pCylinder15Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[54]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[55]" ""
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest1:pCylinder17|octopus_on_a_stick_latest1:pCylinder17Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[56]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[57]" ""
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest1:pCylinder18|octopus_on_a_stick_latest1:pCylinder18Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[58]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[59]" ""
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest1:pCylinder19|octopus_on_a_stick_latest1:pCylinder19Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[60]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[61]" ""
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest1:pCylinder20|octopus_on_a_stick_latest1:pCylinder20Shape.instObjGroups" 
+		"octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[62]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[63]" ""
+		5 0 "octopus_on_a_stick_latestRN1" "octopus_on_a_stick_latest1:file1.message" 
+		"octopus_on_a_stick_latest1:materialInfo4.texture" "octopus_on_a_stick_latestRN1.placeHolderList[64]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[65]" ""
+		"octopus_on_a_stick_latest1:skewer_latestRN" 5
+		0 "|octopus_on_a_stick_latest1:skewer_latest:stick_Mesh" "|Octopus|Octopus_on_a_stick3" 
+		"-s -r "
+		0 "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:skewer_latest:stick_Mesh" 
+		"|Octopus|Octopus_on_a_stick4" "-s -r -add "
+		3 "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:skewer_latest:stick_Mesh|octopus_on_a_stick_latest1:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_on_a_stick_latest1:skewer_latest:PxrSurface1SG.dagSetMembers" "-na"
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick3|octopus_on_a_stick_latest1:skewer_latest:stick_Mesh|octopus_on_a_stick_latest1:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_on_a_stick_latest1:skewer_latest:PxrSurface1SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[7]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[8]" "octopus_on_a_stick_latest1:skewer_latest:PxrSurface1SG.dsm"
+		
+		5 0 "octopus_on_a_stick_latestRN1" "|Octopus|Octopus_on_a_stick4|octopus_on_a_stick_latest1:skewer_latest:stick_Mesh|octopus_on_a_stick_latest1:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_on_a_stick_latest1:skewer_latest:PxrSurface1SG.dagSetMembers" "octopus_on_a_stick_latestRN1.placeHolderList[9]" 
+		"octopus_on_a_stick_latestRN1.placeHolderList[10]" "";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
+	setAttr -av -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
 select -ne :hardwareRenderingGlobals;
@@ -1329,160 +1363,211 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
-	setAttr -s 2 ".st";
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
+	setAttr -s 11 ".st";
+	setAttr -cb on ".an";
+	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 select -ne :defaultShaderList1;
-	setAttr -s 4 ".s";
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
+	setAttr -s 5 ".s";
 select -ne :postProcessList1;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 	setAttr -s 2 ".p";
+select -ne :defaultRenderUtilityList1;
+	setAttr -s 4 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 13 ".r";
+	setAttr -s 17 ".r";
+select -ne :defaultTextureList1;
+	setAttr -s 8 ".tx";
 select -ne :initialShadingGroup;
-	setAttr -s 35 ".dsm";
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -av -k on ".nds";
+	setAttr -cb on ".bnm";
+	setAttr -s 19 ".dsm";
+	setAttr -k on ".mwc";
+	setAttr -cb on ".an";
+	setAttr -cb on ".il";
+	setAttr -cb on ".vo";
+	setAttr -cb on ".eo";
+	setAttr -cb on ".fo";
+	setAttr -cb on ".epo";
 	setAttr ".ro" yes;
-	setAttr -s 60 ".gn";
+	setAttr -s 54 ".gn";
 select -ne :initialParticleSE;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
+	setAttr -k on ".mwc";
+	setAttr -cb on ".an";
+	setAttr -cb on ".il";
+	setAttr -cb on ".vo";
+	setAttr -cb on ".eo";
+	setAttr -cb on ".fo";
+	setAttr -cb on ".epo";
 	setAttr ".ro" yes;
 select -ne :defaultResolution;
-	setAttr ".pa" 1;
+	setAttr -av -k on ".cch";
+	setAttr -k on ".ihi";
+	setAttr -av -k on ".nds";
+	setAttr -k on ".bnm";
+	setAttr -av ".w";
+	setAttr -av ".h";
+	setAttr -av ".pa" 1;
+	setAttr -av ".al";
+	setAttr -av ".dar";
+	setAttr -av -k on ".ldar";
+	setAttr -k on ".dpi";
+	setAttr -av -k on ".off";
+	setAttr -av -k on ".fld";
+	setAttr -av -k on ".zsl";
+	setAttr -k on ".isu";
+	setAttr -k on ".pdu";
 select -ne :hardwareRenderGlobals;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-connectAttr "octopus_on_a_stick_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
-connectAttr "octopus_on_a_stick_latestRN.phl[2]" ":initialShadingGroup.dsm" -na;
-connectAttr "octopus_on_a_stick_latestRN.phl[3]" ":initialShadingGroup.dsm" -na;
-connectAttr "octopus_on_a_stick_latestRN.phl[4]" ":initialShadingGroup.dsm" -na;
-connectAttr "octopus_on_a_stick_latestRN.phl[5]" ":initialShadingGroup.dsm" -na;
-connectAttr "octopus_on_a_stick_latestRN.phl[6]" "octopus_on_a_stick_latestRN.phl[7]"
+	setAttr -k off ".fbfm";
+	setAttr -k off -cb on ".ehql";
+	setAttr -k off -cb on ".eams";
+	setAttr -k off ".eeaa";
+	setAttr -k off ".engm";
+	setAttr -k off ".mes";
+	setAttr -k off ".emb";
+	setAttr -av -k off ".mbbf";
+	setAttr -k off ".mbs";
+	setAttr -k off ".trm";
+	setAttr -k off -cb on ".tshc";
+	setAttr -k off ".enpt";
+	setAttr -k off ".clmt";
+	setAttr -k off -cb on ".tcov";
+	setAttr -k off -cb on ".lith";
+	setAttr -k off -cb on ".sobc";
+	setAttr -k off -cb on ".cuth";
+	setAttr -k off -cb on ".hgcd";
+	setAttr -k off -cb on ".hgci";
+	setAttr -k off -cb on ".mgcs";
+	setAttr -k off ".twa";
+	setAttr -k off ".twz";
+	setAttr -k on ".hwcc";
+	setAttr -k on ".hwdp";
+	setAttr -k on ".hwql";
+connectAttr "octopus_on_a_stick_latestRN.phl[109]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[8]";
-connectAttr "octopus_on_a_stick_latestRN.phl[9]" ":initialShadingGroup.dsm" -na;
-connectAttr "groupId34.id" "octopus_on_a_stick_latestRN.phl[10]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[11]";
-connectAttr "octopus_on_a_stick_latestRN.phl[12]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN.phl[110]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "groupId33.id" "octopus_on_a_stick_latestRN.phl[13]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[14]";
-connectAttr "octopus_on_a_stick_latestRN.phl[15]" ":initialShadingGroup.dsm" -na
+connectAttr "groupId32.id" "octopus_on_a_stick_latestRN.phl[111]";
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[112]";
+connectAttr "octopus_on_a_stick_latestRN.phl[113]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "groupId32.id" "octopus_on_a_stick_latestRN.phl[16]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[17]";
-connectAttr "octopus_on_a_stick_latestRN.phl[18]" ":initialShadingGroup.dsm" -na
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[114]";
+connectAttr "octopus_on_a_stick_latestRN.phl[115]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "groupId31.id" "octopus_on_a_stick_latestRN.phl[19]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[20]";
-connectAttr "octopus_on_a_stick_latestRN.phl[21]" ":initialShadingGroup.dsm" -na
+connectAttr "groupId36.id" "octopus_on_a_stick_latestRN.phl[116]";
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[117]";
+connectAttr "octopus_on_a_stick_latestRN.phl[118]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "octopus_on_a_stick_latestRN.phl[22]" "octopus_on_a_stick_latestRN.phl[23]"
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[119]";
+connectAttr "octopus_on_a_stick_latestRN.phl[120]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[24]";
-connectAttr "octopus_on_a_stick_latestRN.phl[25]" ":initialShadingGroup.dsm" -na
+connectAttr "groupId40.id" "octopus_on_a_stick_latestRN.phl[121]";
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[122]";
+connectAttr "octopus_on_a_stick_latestRN.phl[123]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "groupId38.id" "octopus_on_a_stick_latestRN.phl[26]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[27]";
-connectAttr "octopus_on_a_stick_latestRN.phl[28]" ":initialShadingGroup.dsm" -na
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[124]";
+connectAttr "octopus_on_a_stick_latestRN.phl[125]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "groupId37.id" "octopus_on_a_stick_latestRN.phl[29]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[30]";
-connectAttr "octopus_on_a_stick_latestRN.phl[31]" ":initialShadingGroup.dsm" -na
+connectAttr "groupId48.id" "octopus_on_a_stick_latestRN.phl[126]";
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[127]";
+connectAttr "octopus_on_a_stick_latestRN.phl[128]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "groupId36.id" "octopus_on_a_stick_latestRN.phl[32]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[33]";
-connectAttr "octopus_on_a_stick_latestRN.phl[34]" ":initialShadingGroup.dsm" -na
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[129]";
+connectAttr "octopus_on_a_stick_latestRN.phl[130]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "groupId35.id" "octopus_on_a_stick_latestRN.phl[35]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[36]";
-connectAttr "octopus_on_a_stick_latestRN.phl[37]" ":initialShadingGroup.dsm" -na
+connectAttr "groupId52.id" "octopus_on_a_stick_latestRN.phl[131]";
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[132]";
+connectAttr "octopus_on_a_stick_latestRN.phl[133]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "octopus_on_a_stick_latestRN.phl[38]" "octopus_on_a_stick_latestRN.phl[39]"
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[134]";
+connectAttr "octopus_on_a_stick_latestRN1.phl[11]" "octopus_on_a_stick_latestRN1.phl[12]"
 		;
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[40]";
-connectAttr "octopus_on_a_stick_latestRN.phl[41]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[13]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "groupId42.id" "octopus_on_a_stick_latestRN.phl[42]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[43]";
-connectAttr "octopus_on_a_stick_latestRN.phl[44]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[14]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "groupId41.id" "octopus_on_a_stick_latestRN.phl[45]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[46]";
-connectAttr "octopus_on_a_stick_latestRN.phl[47]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[15]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "groupId40.id" "octopus_on_a_stick_latestRN.phl[48]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[49]";
-connectAttr "octopus_on_a_stick_latestRN.phl[50]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[16]" "octopus_on_a_stick_latestRN1.phl[17]"
 		;
-connectAttr "groupId39.id" "octopus_on_a_stick_latestRN.phl[51]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[52]";
-connectAttr "octopus_on_a_stick_latestRN.phl[53]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[18]" "octopus_on_a_stick_latestRN1.phl[19]"
 		;
-connectAttr "octopus_on_a_stick_latestRN.phl[54]" "octopus_on_a_stick_latestRN.phl[55]"
+connectAttr "octopus_on_a_stick_latestRN1.phl[20]" "octopus_on_a_stick_latestRN1.phl[21]"
 		;
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[56]";
-connectAttr "octopus_on_a_stick_latestRN.phl[57]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[22]" "octopus_on_a_stick_latestRN1.phl[23]"
 		;
-connectAttr "groupId46.id" "octopus_on_a_stick_latestRN.phl[58]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[59]";
-connectAttr "octopus_on_a_stick_latestRN.phl[60]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[24]" "octopus_on_a_stick_latestRN1.phl[25]"
 		;
-connectAttr "groupId45.id" "octopus_on_a_stick_latestRN.phl[61]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[62]";
-connectAttr "octopus_on_a_stick_latestRN.phl[63]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[26]" "octopus_on_a_stick_latestRN1.phl[27]"
 		;
-connectAttr "groupId44.id" "octopus_on_a_stick_latestRN.phl[64]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[65]";
-connectAttr "octopus_on_a_stick_latestRN.phl[66]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[28]" "octopus_on_a_stick_latestRN1.phl[29]"
 		;
-connectAttr "groupId43.id" "octopus_on_a_stick_latestRN.phl[67]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[68]";
-connectAttr "octopus_on_a_stick_latestRN.phl[69]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[30]" "octopus_on_a_stick_latestRN1.phl[31]"
 		;
-connectAttr "octopus_on_a_stick_latestRN.phl[70]" "octopus_on_a_stick_latestRN.phl[71]"
+connectAttr "octopus_on_a_stick_latestRN1.phl[32]" "octopus_on_a_stick_latestRN1.phl[33]"
 		;
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[72]";
-connectAttr "octopus_on_a_stick_latestRN.phl[73]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[34]" "octopus_on_a_stick_latestRN1.phl[35]"
 		;
-connectAttr "groupId50.id" "octopus_on_a_stick_latestRN.phl[74]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[75]";
-connectAttr "octopus_on_a_stick_latestRN.phl[76]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[36]" "octopus_on_a_stick_latestRN1.phl[37]"
 		;
-connectAttr "groupId49.id" "octopus_on_a_stick_latestRN.phl[77]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[78]";
-connectAttr "octopus_on_a_stick_latestRN.phl[79]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[38]" "octopus_on_a_stick_latestRN1.phl[39]"
 		;
-connectAttr "groupId48.id" "octopus_on_a_stick_latestRN.phl[80]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[81]";
-connectAttr "octopus_on_a_stick_latestRN.phl[82]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[40]" "octopus_on_a_stick_latestRN1.phl[41]"
 		;
-connectAttr "groupId47.id" "octopus_on_a_stick_latestRN.phl[83]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[84]";
-connectAttr "octopus_on_a_stick_latestRN.phl[85]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[42]" "octopus_on_a_stick_latestRN1.phl[43]"
 		;
-connectAttr "octopus_on_a_stick_latestRN.phl[86]" "octopus_on_a_stick_latestRN.phl[87]"
+connectAttr "octopus_on_a_stick_latestRN1.phl[44]" "octopus_on_a_stick_latestRN1.phl[45]"
 		;
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[88]";
-connectAttr "octopus_on_a_stick_latestRN.phl[89]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[46]" "octopus_on_a_stick_latestRN1.phl[47]"
 		;
-connectAttr "groupId54.id" "octopus_on_a_stick_latestRN.phl[90]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[91]";
-connectAttr "octopus_on_a_stick_latestRN.phl[92]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[48]" "octopus_on_a_stick_latestRN1.phl[49]"
 		;
-connectAttr "groupId53.id" "octopus_on_a_stick_latestRN.phl[93]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[94]";
-connectAttr "octopus_on_a_stick_latestRN.phl[95]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[50]" "octopus_on_a_stick_latestRN1.phl[51]"
 		;
-connectAttr "groupId52.id" "octopus_on_a_stick_latestRN.phl[96]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[97]";
-connectAttr "octopus_on_a_stick_latestRN.phl[98]" ":initialShadingGroup.dsm" -na
+connectAttr "octopus_on_a_stick_latestRN1.phl[52]" "octopus_on_a_stick_latestRN1.phl[53]"
 		;
-connectAttr "groupId51.id" "octopus_on_a_stick_latestRN.phl[99]";
-connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[100]";
-connectAttr "octopus_on_a_stick_latestRN.phl[101]" "octopus_on_a_stick_latestRN.phl[102]"
+connectAttr "octopus_on_a_stick_latestRN1.phl[54]" "octopus_on_a_stick_latestRN1.phl[55]"
 		;
-connectAttr "octopus_on_a_stick_latestRN.phl[103]" "octopus_on_a_stick_latestRN.phl[104]"
+connectAttr "octopus_on_a_stick_latestRN1.phl[56]" "octopus_on_a_stick_latestRN1.phl[57]"
 		;
-connectAttr "octopus_on_a_stick_latestRN.phl[105]" "octopus_on_a_stick_latestRN.phl[106]"
+connectAttr "octopus_on_a_stick_latestRN1.phl[58]" "octopus_on_a_stick_latestRN1.phl[59]"
 		;
-connectAttr "octopus_on_a_stick_latestRN.phl[107]" "octopus_on_a_stick_latestRN.phl[108]"
+connectAttr "octopus_on_a_stick_latestRN1.phl[60]" "octopus_on_a_stick_latestRN1.phl[61]"
+		;
+connectAttr "octopus_on_a_stick_latestRN1.phl[62]" "octopus_on_a_stick_latestRN1.phl[63]"
+		;
+connectAttr "octopus_on_a_stick_latestRN1.phl[64]" "octopus_on_a_stick_latestRN1.phl[65]"
+		;
+connectAttr "octopus_on_a_stick_latestRN1.phl[7]" "octopus_on_a_stick_latestRN1.phl[8]"
+		;
+connectAttr "octopus_on_a_stick_latestRN1.phl[9]" "octopus_on_a_stick_latestRN1.phl[10]"
 		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
@@ -1495,6 +1580,36 @@ connectAttr ":PxrPathTracer.msg" ":rmanGlobals.ri_integrator";
 connectAttr "d_openexr.msg" ":rmanDefaultDisplay.displayType";
 connectAttr "Ci.msg" ":rmanDefaultDisplay.displayChannels[0]";
 connectAttr "a.msg" ":rmanDefaultDisplay.displayChannels[1]";
+connectAttr "octopus_on_a_stick_latestRN.phl[6]" "octopus_on_a_stick_latestRN.phl[7]"
+		;
+connectAttr "octopus_on_a_stick_latestRN.phl[22]" "octopus_on_a_stick_latestRN.phl[23]"
+		;
+connectAttr "octopus_on_a_stick_latestRN.phl[38]" "octopus_on_a_stick_latestRN.phl[39]"
+		;
+connectAttr "octopus_on_a_stick_latestRN.phl[54]" "octopus_on_a_stick_latestRN.phl[55]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[56]";
+connectAttr "groupId46.id" "octopus_on_a_stick_latestRN.phl[58]";
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[59]";
+connectAttr "groupId45.id" "octopus_on_a_stick_latestRN.phl[61]";
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[62]";
+connectAttr "groupId44.id" "octopus_on_a_stick_latestRN.phl[64]";
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[65]";
+connectAttr "groupId43.id" "octopus_on_a_stick_latestRN.phl[67]";
+connectAttr ":initialShadingGroup.mwc" "octopus_on_a_stick_latestRN.phl[68]";
+connectAttr "octopus_on_a_stick_latestRN.phl[70]" "octopus_on_a_stick_latestRN.phl[71]"
+		;
+connectAttr "octopus_on_a_stick_latestRN.phl[86]" "octopus_on_a_stick_latestRN.phl[87]"
+		;
+connectAttr "octopus_on_a_stick_latestRN.phl[101]" "octopus_on_a_stick_latestRN.phl[102]"
+		;
+connectAttr "octopus_on_a_stick_latestRN.phl[103]" "octopus_on_a_stick_latestRN.phl[104]"
+		;
+connectAttr "octopus_on_a_stick_latestRN.phl[105]" "octopus_on_a_stick_latestRN.phl[106]"
+		;
+connectAttr "octopus_on_a_stick_latestRN.phl[107]" "octopus_on_a_stick_latestRN.phl[108]"
+		;
+connectAttr "sharedReferenceNode.sr" "octopus_on_a_stick_latestRN.sr";
 connectAttr "groupId6.id" "groupParts1.gi";
 connectAttr "groupParts1.og" "groupParts2.ig";
 connectAttr "groupId12.id" "groupParts2.gi";
@@ -1511,11 +1626,23 @@ connectAttr "groupParts7.og" "groupParts8.ig";
 connectAttr "groupId53.id" "groupParts8.gi";
 connectAttr "groupParts8.og" "groupParts9.ig";
 connectAttr "groupId54.id" "groupParts9.gi";
+connectAttr "octopus_on_a_stick_latestRN1.phl[5]" "octopus_on_a_stick_latestRN1.phl[6]"
+		;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanGlobals.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanDefaultDisplay.msg" ":defaultRenderingList1.r" -na;
 connectAttr "d_openexr.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":PxrPathTracer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "octopus_on_a_stick_latestRN.phl[53]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "octopus_on_a_stick_latestRN.phl[57]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "octopus_on_a_stick_latestRN.phl[60]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "octopus_on_a_stick_latestRN.phl[63]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "octopus_on_a_stick_latestRN.phl[66]" ":initialShadingGroup.dsm" -na
+		;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId3.msg" ":initialShadingGroup.gn" -na;
