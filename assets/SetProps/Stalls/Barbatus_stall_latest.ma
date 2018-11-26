@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Barbatus_stall_latest.ma
-//Last modified: Sat, Nov 24, 2018 09:49:10 PM
+//Last modified: Sun, Nov 25, 2018 03:34:49 PM
 //Codeset: 1252
 file -rdi 1 -ns "Grill" -rfn "Barbatus_stall_latest_GrillRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Grill_latest.ma";
@@ -66,6 +66,16 @@ file -rdi 3 -ns "skewer_latest" -rfn "lotus_belly_platter_latest:porkbelly_on_a_
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/skewer_latest.ma";
 file -rdi 1 -ns "chair_latest" -rfn "chair_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/chair_latest.ma";
+file -rdi 1 -ns "plate_latest" -rfn "plate_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/plate_latest.ma";
+file -rdi 1 -ns "togo_box_latest" -rfn "togo_box_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/togo_box_latest.ma";
+file -rdi 1 -ns "chopstick_box_latest" -rfn "chopstick_box_latestRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/chopstick_box_latest.ma";
+file -rdi 2 -ns "chopstick_wrapper_latest" -rfn "chopstick_box_latest:chopstick_wrapper_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/chopstick_wrapper_latest.ma";
+file -rdi 3 -ns "chopstick_pair_latest" -rfn "chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/chopstick_pair_latest.ma";
 file -r -ns "Grill" -dr 1 -rfn "Barbatus_stall_latest_GrillRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Grill_latest.ma";
 file -r -ns "StockPot_latest" -dr 1 -rfn "Barbatus_stall_latest_StockPot_latestRN"
@@ -84,10 +94,18 @@ file -r -ns "lotus_belly_platter_latest" -dr 1 -rfn "lotus_belly_platter_latestR
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/lotus_belly_platter_latest.ma";
 file -r -ns "chair_latest" -dr 1 -rfn "chair_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/chair_latest.ma";
+file -r -ns "plate_latest" -dr 1 -rfn "plate_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/plate_latest.ma";
+file -r -ns "togo_box_latest" -dr 1 -rfn "togo_box_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/togo_box_latest.ma";
+file -r -ns "chopstick_box_latest" -dr 1 -rfn "chopstick_box_latestRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/chopstick_box_latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
-requires -nodeType "PxrSurface" -nodeType "rmanDisplayChannel" -nodeType "d_openexr"
-		 -nodeType "rmanGlobals" -nodeType "PxrPathTracer" -nodeType "rmanDisplay" "RenderMan_for_Maya.py" "1.0";
+requires -nodeType "PxrVisualizer" -nodeType "PxrSurface" -nodeType "PxrDefault"
+		 -nodeType "rmanDisplayChannel" -nodeType "d_openexr" -nodeType "PxrCamera" -nodeType "OmnidirectionalStereo"
+		 -nodeType "rmanGlobals" -nodeType "PxrOcclusion" -nodeType "PxrDirectLighting" -nodeType "PxrVCM"
+		 -nodeType "PxrPathTracer" -nodeType "rmanDisplay" "RenderMan_for_Maya.py" "1.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2018";
@@ -98,13 +116,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "79E41AF7-4D96-DD40-7C16-6EA4641B8363";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 10.576861605644066 6.7494165036843956 19.997827389987478 ;
-	setAttr ".r" -type "double3" -23.738352729648454 62.599999999996491 -3.4556238253750987e-15 ;
+	setAttr ".t" -type "double3" 27.781227383289611 8.4897474424083654 45.157332337211265 ;
+	setAttr ".r" -type "double3" -8.1383527296449962 38.999999999989242 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "87B3DB01-420F-E5CB-33B5-30B073AD1943";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 16.359455523393883;
+	setAttr ".coi" 55.431334175895145;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -6545,30 +6563,173 @@ createNode greasePlaneRenderShape -n "greasePencilPerspArtDrawPlaneShape" -p "gr
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".de" 2;
+createNode transform -n "TogoBoxes";
+	rename -uid "55F8769D-4310-2C0E-8E99-44BF98EC3C4E";
+	setAttr ".t" -type "double3" 0.64519971357324657 0 0.18432423011121735 ;
+	setAttr ".r" -type "double3" 0 74.390720472446006 0 ;
+	setAttr ".rp" -type "double3" 2.950820920125746 4.0595648324144404 9.3589952113646682 ;
+	setAttr ".sp" -type "double3" 2.950820920125746 4.0595648324144404 9.3589952113646682 ;
+createNode transform -n "ToGo1" -p "TogoBoxes";
+	rename -uid "8092ABC6-4D01-227F-82BB-86B3381D67C8";
+	setAttr ".t" -type "double3" 2.950820920125746 5.8469364251061577 9.6750169341695518 ;
+	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
+	setAttr ".rp" -type "double3" 0 -1.9717143926978431 0 ;
+	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
+createNode transform -n "ToGo2" -p "TogoBoxes";
+	rename -uid "0BB3C716-4EC2-EE1F-CB95-C7AE76BFB10A";
+	setAttr ".t" -type "double3" 2.950820920125746 4.2227102278407616 9.6750169341695518 ;
+	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
+	setAttr ".rp" -type "double3" 0 -0.29748819543244653 0 ;
+	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
+	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
+createNode transform -n "ToGo3" -p "TogoBoxes";
+	rename -uid "24ED3BB1-4E2B-FB42-7AE0-39AC35661921";
+	setAttr ".t" -type "double3" 2.950820920125746 4.2727102278407623 9.6750169341695518 ;
+	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
+	setAttr ".rp" -type "double3" 0 -0.29748819543244648 0 ;
+	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
+	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
+createNode transform -n "ToGo4" -p "TogoBoxes";
+	rename -uid "460237CC-44F5-983C-8CBE-198255D14D58";
+	setAttr ".t" -type "double3" 2.950820920125746 4.322710227840763 9.6750169341695518 ;
+	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
+	setAttr ".rp" -type "double3" 0 -0.29748819543244642 0 ;
+	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
+	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
+createNode transform -n "ToGo5" -p "TogoBoxes";
+	rename -uid "AB361443-4836-DCB5-DC02-98A109A0AC20";
+	setAttr ".t" -type "double3" 2.950820920125746 4.3727102278407637 9.6750169341695518 ;
+	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
+	setAttr ".rp" -type "double3" 0 -0.29748819543244637 0 ;
+	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
+	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
+createNode transform -n "ToGo6" -p "TogoBoxes";
+	rename -uid "F50E5BF1-49B3-199D-47E8-F49AB40CA833";
+	setAttr ".t" -type "double3" 2.950820920125746 4.4227102278407644 9.6750169341695518 ;
+	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
+	setAttr ".rp" -type "double3" 0 -0.29748819543244631 0 ;
+	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
+	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
+createNode transform -n "PlateStacks";
+	rename -uid "2B8D249F-44E1-2881-2700-89BAFB32A7EE";
+createNode transform -n "Plates" -p "PlateStacks";
+	rename -uid "2BF0E6F9-48BF-2DFC-3114-9A8CD411F105";
+createNode transform -n "Plate1" -p "Plates";
+	rename -uid "A0FB6E97-4FCB-CA3B-8FE3-7EA498DD5A77";
+	setAttr ".t" -type "double3" 2.386595275079606 3.8882174543018335 1.9513787628889891 ;
+	setAttr ".rp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+	setAttr ".sp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+createNode transform -n "Plate2" -p "Plates";
+	rename -uid "A23CE873-41ED-E6C5-F94A-C3B751910F23";
+	setAttr ".t" -type "double3" 2.3865952750796056 3.9382174543018333 1.9513787628889894 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 1 1 ;
+	setAttr ".rp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+	setAttr ".sp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+createNode transform -n "Plate3" -p "Plates";
+	rename -uid "E8C8E70E-4BC2-CB81-F227-C0BFB0AA798B";
+	setAttr ".t" -type "double3" 2.3865952750796051 3.9882174543018332 1.9513787628889896 ;
+	setAttr ".s" -type "double3" 0.99999999999999978 1 1 ;
+	setAttr ".rp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+	setAttr ".sp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+createNode transform -n "Plate4" -p "Plates";
+	rename -uid "8789DAB2-4A01-2443-804C-2BABCA838A1A";
+	setAttr ".t" -type "double3" 2.3865952750796047 4.038217454301833 1.9513787628889898 ;
+	setAttr ".s" -type "double3" 0.99999999999999967 1 1 ;
+	setAttr ".rp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+	setAttr ".sp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+createNode transform -n "Plate5" -p "Plates";
+	rename -uid "6ED43446-4588-E373-1675-819CBC3EF7F5";
+	setAttr ".t" -type "double3" 2.3865952750796042 4.0882174543018328 1.95137876288899 ;
+	setAttr ".s" -type "double3" 0.99999999999999956 1 1 ;
+	setAttr ".rp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+	setAttr ".sp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+createNode transform -n "Plate6" -p "Plates";
+	rename -uid "399644C5-4B41-4466-9F34-FF9E1791BE91";
+	setAttr ".t" -type "double3" 2.3865952750796038 4.1382174543018326 1.9513787628889903 ;
+	setAttr ".s" -type "double3" 0.99999999999999944 1 1 ;
+	setAttr ".rp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+	setAttr ".sp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+createNode transform -n "Plate7" -p "Plates";
+	rename -uid "996DF586-4EE4-B2F3-0350-1B8E59B420E1";
+	setAttr ".t" -type "double3" 2.3865952750796033 4.1882174543018325 1.9513787628889905 ;
+	setAttr ".s" -type "double3" 0.99999999999999933 1 1 ;
+	setAttr ".rp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+	setAttr ".sp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+createNode transform -n "Plate8" -p "Plates";
+	rename -uid "813552C5-443A-1552-3865-93B79FD7D619";
+	setAttr ".t" -type "double3" 2.3865952750796029 4.2382174543018323 1.9513787628889907 ;
+	setAttr ".s" -type "double3" 0.99999999999999922 1 1 ;
+	setAttr ".rp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+	setAttr ".sp" -type "double3" 0 -6.4234405578088679e-32 8.6785813507753655e-16 ;
+createNode transform -n "Stack2" -p "PlateStacks";
+	rename -uid "76C6359F-4E8F-EE18-6DF5-26B249AAA9E8";
+	setAttr ".t" -type "double3" -0.87780719414494257 0 0.22700957608530992 ;
+	setAttr ".rp" -type "double3" 2.081807104486014 4.3251606117778412 0.57034725889541238 ;
+	setAttr ".sp" -type "double3" 2.081807104486014 4.3251606117778412 0.57034725889541238 ;
+createNode transform -n "Plates1" -p "Stack2";
+	rename -uid "0115941A-4613-36A2-3588-30A6DFADCAAB";
+	setAttr ".t" -type "double3" -0.30478817059359109 0 -1.3810315039935783 ;
+	setAttr ".rp" -type "double3" 2.3865952750796051 4.1262003711338036 1.9513787628889907 ;
+	setAttr ".sp" -type "double3" 2.3865952750796051 4.1262003711338036 1.9513787628889907 ;
+createNode transform -n "Plates2" -p "Stack2";
+	rename -uid "A294C3B9-489D-B558-6B12-D0AC716218B0";
+	setAttr ".t" -type "double3" -0.30478817059359109 0.39792048128807611 -1.3810315039935783 ;
+	setAttr ".rp" -type "double3" 2.3865952750796051 4.1262003711338036 1.9513787628889907 ;
+	setAttr ".sp" -type "double3" 2.3865952750796051 4.1262003711338036 1.9513787628889907 ;
+createNode fosterParent -n "chopstick_box_latestRNfosterParent1";
+	rename -uid "0FB83B06-45E5-21AF-11E3-479E8860674A";
+createNode transform -n "chopstick_box_latest:transform1" -p "chopstick_box_latestRNfosterParent1";
+	rename -uid "2898CD22-4AB8-64E4-AC8A-9D8B874DE9D2";
+createNode transform -n "chopstick_box_latest:transform2" -p "chopstick_box_latestRNfosterParent1";
+	rename -uid "C9860D22-466F-6EA3-13E4-C8B0ADF9C8C4";
+createNode transform -n "chopstick_box_latest:transform3" -p "chopstick_box_latestRNfosterParent1";
+	rename -uid "091A605E-4B81-408F-05AB-4791BB101D4C";
+createNode fosterParent -n "fosterParent1" -p "chopstick_box_latestRNfosterParent1";
+	rename -uid "432B0688-40F6-74AF-7F84-7D8BB34380E6";
+createNode fosterParent -n "fosterParent2" -p "chopstick_box_latestRNfosterParent1";
+	rename -uid "23EE8020-4BB2-9A2D-13FB-EC9618FE5011";
+createNode fosterParent -n "fosterParent3" -p "chopstick_box_latestRNfosterParent1";
+	rename -uid "04F62473-4BDF-2868-63D9-89A502B34F3C";
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_Tent1Shape" "Barbatus_stall_latest_Tent2" ;
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp" "Barbatus_stall_latest_Tent2" ;
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh|Barbatus_stall_latest_tent_latest_tent_pole_MeshShape" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh1" ;
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh|Barbatus_stall_latest_tent_latest_tent_pole_MeshShape" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh2" ;
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh|Barbatus_stall_latest_tent_latest_tent_pole_MeshShape" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh3" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate1" "Plates1" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate1" "Plates2" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate2" "Plates1" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate2" "Plates2" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate3" "Plates1" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate3" "Plates2" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate4" "Plates1" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate4" "Plates2" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate5" "Plates1" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate5" "Plates2" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate6" "Plates1" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate6" "Plates2" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate7" "Plates1" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate7" "Plates2" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate8" "Plates1" ;
+parent -s -nc -r -add "|PlateStacks|Plates|Plate8" "Plates2" ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "9CAA7C3F-4E84-16E5-E8A6-02BB19218ADF";
-	setAttr -s 38 ".lnk";
-	setAttr -s 38 ".slnk";
+	rename -uid "1CBC8C47-4F0B-EBF5-B2DD-8EA5643F6C84";
+	setAttr -s 51 ".lnk";
+	setAttr -s 51 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "E626C48E-4FD8-D3BE-88E4-E599638A80FB";
+	rename -uid "374EBA6E-408E-730D-B625-5B9F57E55AEE";
 	setAttr -s 2 ".bsdt";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 -1 ;
 	setAttr ".bsdt[1].bscd" -type "Int32Array" 1 1 ;
 	setAttr ".bsdt[1].bsdn" -type "string" "Barbatus_stall_latest";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "54D3B336-4A97-5C53-98DD-E583F4025F79";
+	rename -uid "A84D52FF-49CA-6993-F53A-A59CFE1BC0D4";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "E742A888-464E-1E94-C730-0081E51D0CFB";
+	rename -uid "05FAE975-4367-F756-E493-40AD7B490ABA";
 	setAttr -s 3 ".dli[1:2]"  1 2;
 createNode displayLayer -n "defaultLayer";
 	rename -uid "A45481F6-4C0D-B5AF-A126-7890A3B66A98";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "CC3E5EC1-4BE4-08BC-D114-CBA988CA5DC6";
+	rename -uid "50354DFF-4D04-D732-9D76-01A9D7E401CF";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "968DF0DD-4434-9E07-5BE6-D3A601AFC471";
 	setAttr ".g" yes;
@@ -6866,13 +7027,13 @@ createNode script -n "Barbatus_stall_latest_tent_latest_uiConfigurationScriptNod
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n"
 		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
 		+ "            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n"
-		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 820\n            -height 415\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 819\n            -height 414\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 820\n            -height 414\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 0\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 0\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
@@ -6880,31 +7041,31 @@ createNode script -n "Barbatus_stall_latest_tent_latest_uiConfigurationScriptNod
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
 		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n"
-		+ "            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n"
-		+ "            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n"
-		+ "                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n"
-		+ "                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n"
-		+ "                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n"
-		+ "                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n"
-		+ "                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n"
-		+ "                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n"
-		+ "                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n"
-		+ "                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n"
-		+ "                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n"
-		+ "            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n"
-		+ "            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n"
-		+ "                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n"
-		+ "\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n"
+		+ "            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n"
+		+ "                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n"
+		+ "                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n"
+		+ "                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n"
+		+ "                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n"
+		+ "                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n"
+		+ "                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n"
+		+ "            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n"
+		+ "                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n"
+		+ "\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n"
+		+ "\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n"
+		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
+		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
+		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
+		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
+		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
+		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n"
+		+ "\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
 		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 0\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 0\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
@@ -6915,7 +7076,9 @@ createNode script -n "Barbatus_stall_latest_tent_latest_sceneConfigurationScript
 	setAttr ".st" 6;
 createNode reference -n "Barbatus_stall_latest_GrillRN";
 	rename -uid "29D4FB21-47A1-65E2-E483-BDAD969B5A8C";
-	setAttr ".fn[0]" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Grill.ma";
+	setAttr -s 2 ".fn";
+	setAttr ".fn[0]" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Grill_latest.ma";
+	setAttr ".fn[1]" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Grill.ma";
 	setAttr -s 103 ".phl";
 	setAttr ".phl[10]" 0;
 	setAttr ".phl[11]" 0;
@@ -6938,91 +7101,97 @@ createNode reference -n "Barbatus_stall_latest_GrillRN";
 	setAttr ".phl[28]" 0;
 	setAttr ".phl[29]" 0;
 	setAttr ".phl[30]" 0;
-	setAttr ".phl[31]" 0;
-	setAttr ".phl[32]" 0;
-	setAttr ".phl[33]" 0;
-	setAttr ".phl[34]" 0;
-	setAttr ".phl[35]" 0;
-	setAttr ".phl[36]" 0;
-	setAttr ".phl[37]" 0;
-	setAttr ".phl[38]" 0;
-	setAttr ".phl[39]" 0;
-	setAttr ".phl[40]" 0;
-	setAttr ".phl[41]" 0;
-	setAttr ".phl[42]" 0;
-	setAttr ".phl[43]" 0;
-	setAttr ".phl[44]" 0;
-	setAttr ".phl[45]" 0;
-	setAttr ".phl[46]" 0;
-	setAttr ".phl[47]" 0;
-	setAttr ".phl[48]" 0;
-	setAttr ".phl[49]" 0;
-	setAttr ".phl[50]" 0;
-	setAttr ".phl[51]" 0;
-	setAttr ".phl[52]" 0;
-	setAttr ".phl[53]" 0;
-	setAttr ".phl[54]" 0;
-	setAttr ".phl[55]" 0;
-	setAttr ".phl[56]" 0;
-	setAttr ".phl[57]" 0;
-	setAttr ".phl[58]" 0;
-	setAttr ".phl[59]" 0;
-	setAttr ".phl[60]" 0;
-	setAttr ".phl[61]" 0;
-	setAttr ".phl[62]" 0;
-	setAttr ".phl[63]" 0;
-	setAttr ".phl[64]" 0;
-	setAttr ".phl[65]" 0;
-	setAttr ".phl[66]" 0;
-	setAttr ".phl[67]" 0;
-	setAttr ".phl[68]" 0;
-	setAttr ".phl[69]" 0;
-	setAttr ".phl[70]" 0;
-	setAttr ".phl[71]" 0;
-	setAttr ".phl[72]" 0;
-	setAttr ".phl[73]" 0;
-	setAttr ".phl[74]" 0;
-	setAttr ".phl[75]" 0;
-	setAttr ".phl[76]" 0;
-	setAttr ".phl[77]" 0;
-	setAttr ".phl[78]" 0;
-	setAttr ".phl[79]" 0;
-	setAttr ".phl[80]" 0;
-	setAttr ".phl[81]" 0;
-	setAttr ".phl[82]" 0;
-	setAttr ".phl[83]" 0;
-	setAttr ".phl[84]" 0;
-	setAttr ".phl[85]" 0;
-	setAttr ".phl[86]" 0;
-	setAttr ".phl[87]" 0;
-	setAttr ".phl[88]" 0;
-	setAttr ".phl[89]" 0;
-	setAttr ".phl[90]" 0;
-	setAttr ".phl[91]" 0;
-	setAttr ".phl[92]" 0;
-	setAttr ".phl[93]" 0;
-	setAttr ".phl[94]" 0;
-	setAttr ".phl[95]" 0;
-	setAttr ".phl[96]" 0;
-	setAttr ".phl[97]" 0;
-	setAttr ".phl[98]" 0;
-	setAttr ".phl[99]" 0;
-	setAttr ".phl[100]" 0;
-	setAttr ".phl[101]" 0;
-	setAttr ".phl[102]" 0;
-	setAttr ".phl[103]" 0;
-	setAttr ".phl[104]" 0;
-	setAttr ".phl[105]" 0;
-	setAttr ".phl[106]" 0;
-	setAttr ".phl[107]" 0;
-	setAttr ".phl[108]" 0;
-	setAttr ".phl[109]" 0;
-	setAttr ".phl[110]" 0;
 	setAttr ".phl[111]" 0;
-	setAttr ".phl[112]" 0;
+	setAttr ".phl[113]" 0;
+	setAttr ".phl[114]" 0;
+	setAttr ".phl[115]" 0;
+	setAttr ".phl[116]" 0;
+	setAttr ".phl[117]" 0;
+	setAttr ".phl[118]" 0;
+	setAttr ".phl[119]" 0;
+	setAttr ".phl[120]" 0;
+	setAttr ".phl[121]" 0;
+	setAttr ".phl[122]" 0;
+	setAttr ".phl[123]" 0;
+	setAttr ".phl[124]" 0;
+	setAttr ".phl[125]" 0;
+	setAttr ".phl[126]" 0;
+	setAttr ".phl[127]" 0;
+	setAttr ".phl[128]" 0;
+	setAttr ".phl[129]" 0;
+	setAttr ".phl[130]" 0;
+	setAttr ".phl[131]" 0;
+	setAttr ".phl[132]" 0;
+	setAttr ".phl[133]" 0;
+	setAttr ".phl[134]" 0;
+	setAttr ".phl[135]" 0;
+	setAttr ".phl[136]" 0;
+	setAttr ".phl[137]" 0;
+	setAttr ".phl[138]" 0;
+	setAttr ".phl[139]" 0;
+	setAttr ".phl[140]" 0;
+	setAttr ".phl[141]" 0;
+	setAttr ".phl[142]" 0;
+	setAttr ".phl[143]" 0;
+	setAttr ".phl[144]" 0;
+	setAttr ".phl[145]" 0;
+	setAttr ".phl[146]" 0;
+	setAttr ".phl[147]" 0;
+	setAttr ".phl[148]" 0;
+	setAttr ".phl[149]" 0;
+	setAttr ".phl[150]" 0;
+	setAttr ".phl[151]" 0;
+	setAttr ".phl[152]" 0;
+	setAttr ".phl[153]" 0;
+	setAttr ".phl[154]" 0;
+	setAttr ".phl[155]" 0;
+	setAttr ".phl[156]" 0;
+	setAttr ".phl[157]" 0;
+	setAttr ".phl[158]" 0;
+	setAttr ".phl[159]" 0;
+	setAttr ".phl[160]" 0;
+	setAttr ".phl[161]" 0;
+	setAttr ".phl[162]" 0;
+	setAttr ".phl[163]" 0;
+	setAttr ".phl[164]" 0;
+	setAttr ".phl[165]" 0;
+	setAttr ".phl[166]" 0;
+	setAttr ".phl[167]" 0;
+	setAttr ".phl[168]" 0;
+	setAttr ".phl[169]" 0;
+	setAttr ".phl[170]" 0;
+	setAttr ".phl[171]" 0;
+	setAttr ".phl[172]" 0;
+	setAttr ".phl[173]" 0;
+	setAttr ".phl[174]" 0;
+	setAttr ".phl[175]" 0;
+	setAttr ".phl[176]" 0;
+	setAttr ".phl[177]" 0;
+	setAttr ".phl[178]" 0;
+	setAttr ".phl[179]" 0;
+	setAttr ".phl[180]" 0;
+	setAttr ".phl[181]" 0;
+	setAttr ".phl[182]" 0;
+	setAttr ".phl[183]" 0;
+	setAttr ".phl[184]" 0;
+	setAttr ".phl[185]" 0;
+	setAttr ".phl[186]" 0;
+	setAttr ".phl[187]" 0;
+	setAttr ".phl[188]" 0;
+	setAttr ".phl[189]" 0;
+	setAttr ".phl[190]" 0;
+	setAttr ".phl[191]" 0;
+	setAttr ".phl[192]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Barbatus_stall_latest_GrillRN"
-		"Barbatus_stall_latest_GrillRN" 0
+		"Barbatus_stall_latest_GrillRN" 3
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillBody|Grill:GrillBodyShape.instObjGroups" 
+		"Grill:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillBody|Grill:GrillBodyShape.worldMatrix" 
+		"Grill:polySplitRing1.manipMatrix" ""
+		5 0 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillBody|Grill:GrillBodyShape.worldMatrix" 
+		"Grill:polySplitRing1.manipMatrix" "Barbatus_stall_latest_GrillRN.placeHolderList[111]" 
+		"Barbatus_stall_latest_GrillRN.placeHolderList[112]" "Grill:polySplitRing1.mp"
 		"GrillRN" 42
 		3 "|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder8|Grill:pCylinderShape8.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -7108,7 +7277,7 @@ createNode reference -n "Barbatus_stall_latest_GrillRN";
 		"Barbatus_stall_latest_GrillRN.placeHolderList[29]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder8|Grill:pCylinderShape8.instObjGroups" 
 		"Barbatus_stall_latest_GrillRN.placeHolderList[30]" ":initialShadingGroup.dsm"
-		"Barbatus_stall_latest_GrillRN" 166
+		"Barbatus_stall_latest_GrillRN" 163
 		0 "|Grill:Grill" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp" 
 		"-s -r "
 		2 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill" 
@@ -7119,6 +7288,44 @@ createNode reference -n "Barbatus_stall_latest_GrillRN";
 		2 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill" 
 		"scale" " -type \"double3\" 6.01596753055878697 2.94622118661339938 3.76106608523476948"
 		
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillTop|Grill:GrillTopShape.instObjGroups" 
+		"Grill:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder1|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder7|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder6|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder5|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder4|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder3|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder2|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder29|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder30|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder31|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder32|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder33|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder34|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder35|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder36|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder37|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder38|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder39|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent5|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent4|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
@@ -7142,48 +7349,6 @@ createNode reference -n "Barbatus_stall_latest_GrillRN";
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent1|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Master_Vent|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder29|Grill:pCylinderShape29.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder30|Grill:pCylinderShape29.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder31|Grill:pCylinderShape29.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder32|Grill:pCylinderShape29.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder33|Grill:pCylinderShape29.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder34|Grill:pCylinderShape29.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder35|Grill:pCylinderShape29.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder36|Grill:pCylinderShape29.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder37|Grill:pCylinderShape29.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder38|Grill:pCylinderShape29.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder39|Grill:pCylinderShape29.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder1|Grill:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder7|Grill:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder6|Grill:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder5|Grill:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder4|Grill:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder3|Grill:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder2|Grill:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillBody|Grill:GrillBodyShape.worldMatrix" 
-		"Grill:polySplitRing1.manipMatrix" ""
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillBody|Grill:GrillBodyShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillTop|Grill:GrillTopShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent5|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -7282,168 +7447,165 @@ createNode reference -n "Barbatus_stall_latest_GrillRN";
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Master_Vent|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillBody|Grill:GrillBodyShape.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[31]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[113]" ""
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillTop|Grill:GrillTopShape.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[32]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[114]" "Grill:PxrSurface1SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder2|Grill:pCylinderShape1.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[33]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[115]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder3|Grill:pCylinderShape1.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[34]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[116]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder4|Grill:pCylinderShape1.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[35]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[117]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder5|Grill:pCylinderShape1.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[36]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[118]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder6|Grill:pCylinderShape1.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[37]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[119]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder7|Grill:pCylinderShape1.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[38]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[120]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder1|Grill:pCylinderShape1.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[39]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[121]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder29|Grill:pCylinderShape29.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[40]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[122]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder30|Grill:pCylinderShape29.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[41]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[123]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder31|Grill:pCylinderShape29.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[42]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[124]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder32|Grill:pCylinderShape29.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[43]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[125]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder33|Grill:pCylinderShape29.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[44]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[126]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder34|Grill:pCylinderShape29.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[45]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[127]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder35|Grill:pCylinderShape29.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[46]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[128]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder36|Grill:pCylinderShape29.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[47]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[129]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder37|Grill:pCylinderShape29.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[48]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[130]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder38|Grill:pCylinderShape29.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[49]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[131]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder39|Grill:pCylinderShape29.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[50]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[132]" "Grill:PxrSurface3SG.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Master_Vent|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[51]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[133]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Master_Vent|Grill:pCube3|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[52]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[134]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Master_Vent|Grill:pCube5|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[53]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[135]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Master_Vent|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[54]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[136]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent1|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[55]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[137]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent1|Grill:pCube3|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[56]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[138]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent1|Grill:pCube5|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[57]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[139]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent1|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[58]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[140]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent2|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[59]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[141]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent2|Grill:pCube3|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[60]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[142]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent2|Grill:pCube5|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[61]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[143]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent2|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[62]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[144]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent3|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[63]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[145]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent3|Grill:pCube3|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[64]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[146]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent3|Grill:pCube5|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[65]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[147]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent3|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[66]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[148]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent4|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[67]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[149]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent4|Grill:pCube3|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[68]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[150]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent4|Grill:pCube5|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[69]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[151]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent4|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[70]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[152]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent5|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[71]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[153]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent5|Grill:pCube3|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[72]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[154]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent5|Grill:pCube5|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[73]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[155]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent5|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[74]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[156]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent3|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[75]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[157]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent3|Grill:pCube3|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[76]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[158]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent3|Grill:pCube5|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[77]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[159]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent3|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[78]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[160]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent4|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[79]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[161]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent4|Grill:pCube3|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[80]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[162]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent4|Grill:pCube5|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[81]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[163]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent4|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[82]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[164]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent5|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[83]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[165]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent5|Grill:pCube3|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[84]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[166]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent5|Grill:pCube5|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[85]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[167]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent5|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[86]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[168]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent3|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[87]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[169]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent3|Grill:pCube3|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[88]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[170]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent3|Grill:pCube5|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[89]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[171]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent3|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[90]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[172]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent4|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[91]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[173]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent4|Grill:pCube3|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[92]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[174]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent4|Grill:pCube5|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[93]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[175]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent4|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[94]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[176]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent5|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[95]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[177]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent5|Grill:pCube3|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[96]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[178]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent5|Grill:pCube5|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[97]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[179]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent5|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[98]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[180]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Master_Vent|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[99]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[181]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent1|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[100]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[182]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent2|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[101]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[183]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent3|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[102]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[184]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent4|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[103]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[185]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent5|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[104]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[186]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent3|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[105]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[187]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent4|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[106]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[188]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent5|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[107]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[189]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent3|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[108]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[190]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent4|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[109]" ":initialShadingGroup.dsm"
+		"Barbatus_stall_latest_GrillRN.placeHolderList[191]" ":initialShadingGroup.dsm"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent5|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[110]" ":initialShadingGroup.dsm"
-		5 0 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillBody|Grill:GrillBodyShape.worldMatrix" 
-		"Grill:polySplitRing1.manipMatrix" "Barbatus_stall_latest_GrillRN.placeHolderList[111]" 
-		"Barbatus_stall_latest_GrillRN.placeHolderList[112]" "Grill:polySplitRing1.mp";
+		"Barbatus_stall_latest_GrillRN.placeHolderList[192]" ":initialShadingGroup.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "Barbatus_stall_latest_sharedReferenceNode";
@@ -7470,14 +7632,6 @@ createNode reference -n "Barbatus_stall_latest_StockPot_latestRN";
 		2 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan" 
 		"scale" " -type \"double3\" 2.16853472872829167 2.16853472872829167 2.16853472872829167"
 		
-		3 "StockPot_latest:groupId21.message" ":initialShadingGroup.groupNodes" "-na"
-		
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "StockPot_latest:groupId22.groupId" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.compInstObjGroups.compObjectGroups[1].compObjectGroupId" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.compInstObjGroups.compObjectGroups[1]" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "StockPot_latest:groupId21.groupId" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:Lid|StockPot_latest:LidShape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:Lid|StockPot_latest:LidShape.instObjGroups.objectGroups[0].objectGrpColor" 
@@ -7486,6 +7640,14 @@ createNode reference -n "Barbatus_stall_latest_StockPot_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "StockPot_latest:groupId22.message" ":initialShadingGroup.groupNodes" "-na"
 		
+		3 "StockPot_latest:groupId21.message" ":initialShadingGroup.groupNodes" "-na"
+		
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "StockPot_latest:groupId22.groupId" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.compInstObjGroups.compObjectGroups[1].compObjectGroupId" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.compInstObjGroups.compObjectGroups[1]" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "Barbatus_stall_latest_StockPot_latestRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:Lid|StockPot_latest:LidShape.instObjGroups" 
 		"Barbatus_stall_latest_StockPot_latestRN.placeHolderList[1]" ""
 		5 3 "Barbatus_stall_latest_StockPot_latestRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.instObjGroups" 
@@ -8706,9 +8868,9 @@ createNode reference -n "rack_latestRN";
 		+ " 5.07135249999999971 9.3734093000000005 0.20390868000000001 4.9986347999999996 9.3734093000000005 3.15115139999999982 4.92591760000000001 9.3734093000000005 3.15115139999999982 4.92591760000000001 9.434248 3.15115139999999982 4.92591760000000001 10.156835 3.15115139999999982 4.92591760000000001 10.217672 3.363626 4.9986347999999996 10.217672 3.70604939999999994 5.07135249999999971 10.217672 3.70604939999999994 5.07135249999999971 10.156835 3.70604939999999994 5.07135249999999971 9.434248 3.70604939999999994 5.07135249999999971 9.3734093000000005 3.363626 4.9986347999999996 9.3734093000000005 0.15174007 4.927639 9.3734093000000005 0.20390868000000001 4.927639 9.3734093000000005 1.0278875999999999 4.927639 9.3734093000000005 3.16952420000000012 4.92671629999999983 9.3734093000000005 3.20389629999999981 4.92671629999999983 9.3734093000000005 3.20389629999999981 4.92671629999999983 9.434248 3.20389629999999981 4.92671629999999983 10.156835 3.20389629999999981 4.92671629999999983 10.217672 3.16952420000000012 4.92"
 		+ "671629999999983 10.217672 1.0278875999999999 4.927639 10.217672 0.20390868000000001 4.927639 10.217672 0.15174007 4.927639 10.217672 0.15174007 4.927639 10.156833 0.15174007 4.927639 9.434248 0.15174007 5.07006219999999974 9.3734093000000005 0.20390868000000001 5.07006219999999974 9.3734093000000005 1.0278875999999999 5.07006219999999974 9.3734093000000005 3.69222310000000009 5.07076309999999975 9.3734093000000005 3.72659489999999982 5.07076309999999975 9.3734093000000005 3.72659489999999982 5.07076309999999975 9.434248 3.72659489999999982 5.07076309999999975 10.156835 3.72659489999999982 5.07076309999999975 10.217672 3.69222310000000009 5.07076309999999975 10.217672 1.0278875999999999 5.07006219999999974 10.217672 0.20390868000000001 5.07006219999999974 10.217672 0.15174007 5.07006219999999974 10.217672 0.15174007 5.07006219999999974 10.156833 0.15174007 5.07006219999999974 9.434248"
 		)
-		3 "|Barbatus_stall_latest_Barbatus|Foods|rack_latest:Shelves|rack_latest:Shelf1|rack_latest:Shelf1Shape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|rack_latest:Shelves|rack_latest:pCube1|rack_latest:pCubeShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|rack_latest:Shelves|rack_latest:Shelf1|rack_latest:Shelf1Shape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|rack_latest:Shelves|rack_latest:Shelf2|rack_latest:Shelf2Shape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -11807,114 +11969,114 @@ createNode reference -n "octopus_platter_latestRN";
 	setAttr ".phl[128]" 0;
 	setAttr ".phl[130]" 0;
 	setAttr ".phl[132]" 0;
-	setAttr ".phl[244]" 0;
-	setAttr ".phl[256]" 0;
-	setAttr ".phl[258]" 0;
-	setAttr ".phl[260]" 0;
-	setAttr ".phl[262]" 0;
-	setAttr ".phl[264]" 0;
-	setAttr ".phl[268]" 0;
-	setAttr ".phl[280]" 0;
-	setAttr ".phl[282]" 0;
-	setAttr ".phl[284]" 0;
-	setAttr ".phl[286]" 0;
-	setAttr ".phl[288]" 0;
-	setAttr ".phl[292]" 0;
-	setAttr ".phl[304]" 0;
-	setAttr ".phl[306]" 0;
-	setAttr ".phl[308]" 0;
-	setAttr ".phl[310]" 0;
-	setAttr ".phl[312]" 0;
-	setAttr ".phl[314]" 0;
-	setAttr ".phl[315]" 0;
-	setAttr ".phl[316]" 0;
-	setAttr ".phl[317]" 0;
-	setAttr ".phl[318]" 0;
-	setAttr ".phl[319]" 0;
-	setAttr ".phl[320]" 0;
-	setAttr ".phl[321]" 0;
-	setAttr ".phl[322]" 0;
-	setAttr ".phl[323]" 0;
-	setAttr ".phl[324]" 0;
-	setAttr ".phl[325]" 0;
-	setAttr ".phl[326]" 0;
-	setAttr ".phl[327]" 0;
-	setAttr ".phl[328]" 0;
-	setAttr ".phl[329]" 0;
-	setAttr ".phl[330]" 0;
-	setAttr ".phl[331]" 0;
-	setAttr ".phl[332]" 0;
-	setAttr ".phl[333]" 0;
-	setAttr ".phl[334]" 0;
-	setAttr ".phl[335]" 0;
-	setAttr ".phl[336]" 0;
-	setAttr ".phl[337]" 0;
-	setAttr ".phl[338]" 0;
-	setAttr ".phl[339]" 0;
-	setAttr ".phl[340]" 0;
-	setAttr ".phl[341]" 0;
-	setAttr ".phl[342]" 0;
-	setAttr ".phl[343]" 0;
-	setAttr ".phl[344]" 0;
-	setAttr ".phl[345]" 0;
-	setAttr ".phl[346]" 0;
-	setAttr ".phl[347]" 0;
-	setAttr ".phl[348]" 0;
-	setAttr ".phl[349]" 0;
-	setAttr ".phl[350]" 0;
-	setAttr ".phl[351]" 0;
-	setAttr ".phl[352]" 0;
-	setAttr ".phl[353]" 0;
-	setAttr ".phl[354]" 0;
-	setAttr ".phl[355]" 0;
-	setAttr ".phl[356]" 0;
-	setAttr ".phl[357]" 0;
-	setAttr ".phl[358]" 0;
-	setAttr ".phl[359]" 0;
-	setAttr ".phl[360]" 0;
-	setAttr ".phl[361]" 0;
-	setAttr ".phl[362]" 0;
-	setAttr ".phl[363]" 0;
-	setAttr ".phl[364]" 0;
-	setAttr ".phl[365]" 0;
-	setAttr ".phl[366]" 0;
-	setAttr ".phl[367]" 0;
-	setAttr ".phl[368]" 0;
-	setAttr ".phl[369]" 0;
-	setAttr ".phl[370]" 0;
-	setAttr ".phl[371]" 0;
-	setAttr ".phl[372]" 0;
-	setAttr ".phl[373]" 0;
-	setAttr ".phl[374]" 0;
-	setAttr ".phl[375]" 0;
-	setAttr ".phl[376]" 0;
-	setAttr ".phl[377]" 0;
-	setAttr ".phl[378]" 0;
-	setAttr ".phl[379]" 0;
-	setAttr ".phl[380]" 0;
-	setAttr ".phl[381]" 0;
-	setAttr ".phl[382]" 0;
-	setAttr ".phl[383]" 0;
-	setAttr ".phl[384]" 0;
-	setAttr ".phl[385]" 0;
-	setAttr ".phl[386]" 0;
-	setAttr ".phl[387]" 0;
-	setAttr ".phl[388]" 0;
-	setAttr ".phl[389]" 0;
-	setAttr ".phl[390]" 0;
-	setAttr ".phl[391]" 0;
-	setAttr ".phl[392]" 0;
-	setAttr ".phl[393]" 0;
-	setAttr ".phl[394]" 0;
-	setAttr ".phl[395]" 0;
-	setAttr ".phl[396]" 0;
-	setAttr ".phl[397]" 0;
-	setAttr ".phl[398]" 0;
-	setAttr ".phl[399]" 0;
-	setAttr ".phl[400]" 0;
-	setAttr ".phl[401]" 0;
-	setAttr ".phl[402]" 0;
-	setAttr ".phl[403]" 0;
+	setAttr ".phl[493]" 0;
+	setAttr ".phl[495]" 0;
+	setAttr ".phl[497]" 0;
+	setAttr ".phl[499]" 0;
+	setAttr ".phl[501]" 0;
+	setAttr ".phl[506]" 0;
+	setAttr ".phl[518]" 0;
+	setAttr ".phl[520]" 0;
+	setAttr ".phl[522]" 0;
+	setAttr ".phl[524]" 0;
+	setAttr ".phl[526]" 0;
+	setAttr ".phl[531]" 0;
+	setAttr ".phl[543]" 0;
+	setAttr ".phl[545]" 0;
+	setAttr ".phl[547]" 0;
+	setAttr ".phl[549]" 0;
+	setAttr ".phl[551]" 0;
+	setAttr ".phl[553]" 0;
+	setAttr ".phl[554]" 0;
+	setAttr ".phl[555]" 0;
+	setAttr ".phl[556]" 0;
+	setAttr ".phl[557]" 0;
+	setAttr ".phl[558]" 0;
+	setAttr ".phl[559]" 0;
+	setAttr ".phl[560]" 0;
+	setAttr ".phl[561]" 0;
+	setAttr ".phl[562]" 0;
+	setAttr ".phl[563]" 0;
+	setAttr ".phl[564]" 0;
+	setAttr ".phl[565]" 0;
+	setAttr ".phl[566]" 0;
+	setAttr ".phl[567]" 0;
+	setAttr ".phl[568]" 0;
+	setAttr ".phl[569]" 0;
+	setAttr ".phl[570]" 0;
+	setAttr ".phl[571]" 0;
+	setAttr ".phl[572]" 0;
+	setAttr ".phl[573]" 0;
+	setAttr ".phl[574]" 0;
+	setAttr ".phl[575]" 0;
+	setAttr ".phl[576]" 0;
+	setAttr ".phl[577]" 0;
+	setAttr ".phl[578]" 0;
+	setAttr ".phl[579]" 0;
+	setAttr ".phl[580]" 0;
+	setAttr ".phl[581]" 0;
+	setAttr ".phl[582]" 0;
+	setAttr ".phl[583]" 0;
+	setAttr ".phl[584]" 0;
+	setAttr ".phl[585]" 0;
+	setAttr ".phl[586]" 0;
+	setAttr ".phl[587]" 0;
+	setAttr ".phl[588]" 0;
+	setAttr ".phl[589]" 0;
+	setAttr ".phl[590]" 0;
+	setAttr ".phl[591]" 0;
+	setAttr ".phl[592]" 0;
+	setAttr ".phl[593]" 0;
+	setAttr ".phl[594]" 0;
+	setAttr ".phl[595]" 0;
+	setAttr ".phl[596]" 0;
+	setAttr ".phl[597]" 0;
+	setAttr ".phl[598]" 0;
+	setAttr ".phl[599]" 0;
+	setAttr ".phl[600]" 0;
+	setAttr ".phl[601]" 0;
+	setAttr ".phl[602]" 0;
+	setAttr ".phl[603]" 0;
+	setAttr ".phl[604]" 0;
+	setAttr ".phl[605]" 0;
+	setAttr ".phl[606]" 0;
+	setAttr ".phl[607]" 0;
+	setAttr ".phl[608]" 0;
+	setAttr ".phl[609]" 0;
+	setAttr ".phl[610]" 0;
+	setAttr ".phl[611]" 0;
+	setAttr ".phl[612]" 0;
+	setAttr ".phl[613]" 0;
+	setAttr ".phl[614]" 0;
+	setAttr ".phl[615]" 0;
+	setAttr ".phl[616]" 0;
+	setAttr ".phl[617]" 0;
+	setAttr ".phl[618]" 0;
+	setAttr ".phl[619]" 0;
+	setAttr ".phl[620]" 0;
+	setAttr ".phl[621]" 0;
+	setAttr ".phl[622]" 0;
+	setAttr ".phl[623]" 0;
+	setAttr ".phl[624]" 0;
+	setAttr ".phl[625]" 0;
+	setAttr ".phl[626]" 0;
+	setAttr ".phl[627]" 0;
+	setAttr ".phl[628]" 0;
+	setAttr ".phl[629]" 0;
+	setAttr ".phl[630]" 0;
+	setAttr ".phl[631]" 0;
+	setAttr ".phl[632]" 0;
+	setAttr ".phl[633]" 0;
+	setAttr ".phl[634]" 0;
+	setAttr ".phl[635]" 0;
+	setAttr ".phl[636]" 0;
+	setAttr ".phl[637]" 0;
+	setAttr ".phl[638]" 0;
+	setAttr ".phl[639]" 0;
+	setAttr ".phl[640]" 0;
+	setAttr ".phl[641]" 0;
+	setAttr ".phl[642]" 0;
+	setAttr ".phl[643]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"octopus_platter_latestRN"
 		"octopus_platter_latest:octopus_on_a_stick_latestRN1" 0
@@ -11989,12 +12151,6 @@ createNode reference -n "octopus_platter_latestRN";
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId40.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "octopus_platter_latest:groupId48.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
@@ -12006,6 +12162,24 @@ createNode reference -n "octopus_platter_latestRN";
 		3 "octopus_platter_latest:groupId52.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId40.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId52.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId40.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -12013,36 +12187,6 @@ createNode reference -n "octopus_platter_latestRN";
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId36.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId40.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId48.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId52.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId40.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "octopus_platter_latest:groupId48.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
@@ -12055,11 +12199,29 @@ createNode reference -n "octopus_platter_latestRN";
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId48.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId40.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "octopus_platter_latest:groupId52.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId36.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -12154,50 +12316,50 @@ createNode reference -n "octopus_platter_latestRN";
 		"octopus_platter_latestRN.placeHolderList[133]" "octopus_platter_latest:octopus_on_a_stick_latest:polyCylProj2.mp"
 		
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[256]" 
-		"octopus_platter_latestRN.placeHolderList[257]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[493]" 
+		"octopus_platter_latestRN.placeHolderList[494]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[258]" 
-		"octopus_platter_latestRN.placeHolderList[259]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[495]" 
+		"octopus_platter_latestRN.placeHolderList[496]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[260]" 
-		"octopus_platter_latestRN.placeHolderList[261]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[497]" 
+		"octopus_platter_latestRN.placeHolderList[498]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[262]" 
-		"octopus_platter_latestRN.placeHolderList[263]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[499]" 
+		"octopus_platter_latestRN.placeHolderList[500]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[264]" 
-		"octopus_platter_latestRN.placeHolderList[265]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[501]" 
+		"octopus_platter_latestRN.placeHolderList[502]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[280]" 
-		"octopus_platter_latestRN.placeHolderList[281]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[518]" 
+		"octopus_platter_latestRN.placeHolderList[519]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[282]" 
-		"octopus_platter_latestRN.placeHolderList[283]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[520]" 
+		"octopus_platter_latestRN.placeHolderList[521]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[284]" 
-		"octopus_platter_latestRN.placeHolderList[285]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[522]" 
+		"octopus_platter_latestRN.placeHolderList[523]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[286]" 
-		"octopus_platter_latestRN.placeHolderList[287]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[524]" 
+		"octopus_platter_latestRN.placeHolderList[525]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[288]" 
-		"octopus_platter_latestRN.placeHolderList[289]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[526]" 
+		"octopus_platter_latestRN.placeHolderList[527]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[304]" 
-		"octopus_platter_latestRN.placeHolderList[305]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[543]" 
+		"octopus_platter_latestRN.placeHolderList[544]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[306]" 
-		"octopus_platter_latestRN.placeHolderList[307]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[545]" 
+		"octopus_platter_latestRN.placeHolderList[546]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[308]" 
-		"octopus_platter_latestRN.placeHolderList[309]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[547]" 
+		"octopus_platter_latestRN.placeHolderList[548]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[310]" 
-		"octopus_platter_latestRN.placeHolderList[311]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[549]" 
+		"octopus_platter_latestRN.placeHolderList[550]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[312]" 
-		"octopus_platter_latestRN.placeHolderList[313]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[551]" 
+		"octopus_platter_latestRN.placeHolderList[552]" ""
 		"octopus_platter_latestRN" 14
 		2 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5" 
 		"translate" " -type \"double3\" 1.54629263306614217 6.1383292528860256 18.49972742891526423"
@@ -12233,7 +12395,7 @@ createNode reference -n "octopus_platter_latestRN";
 		"scalePivot" " -type \"double3\" 0 0 0"
 		2 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latestRN" 6
+		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latestRN" 5
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
@@ -12242,18 +12404,16 @@ createNode reference -n "octopus_platter_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[244]" "octopus_platter_latestRN.placeHolderList[245]" 
+		"octopus_platter_latestRN.placeHolderList[506]" "octopus_platter_latestRN.placeHolderList[507]" 
 		":initialShadingGroup.dsm"
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[268]" "octopus_platter_latestRN.placeHolderList[269]" 
-		":initialShadingGroup.dsm"
-		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[292]" "octopus_platter_latestRN.placeHolderList[293]" 
+		"octopus_platter_latestRN.placeHolderList[531]" "octopus_platter_latestRN.placeHolderList[532]" 
 		":initialShadingGroup.dsm"
 		"octopus_platter_latest:platter_latestRN" 0
-		"octopus_platter_latest:octopus_on_a_stick_latest1:skewer_latestRN" 0
+		"octopus_platter_latest:octopus_on_a_stick_latest1:skewer_latestRN" 1
+		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest1:skewer_latest:PxrSurface1SG.dagSetMembers" 
+		"octopus_platter_latestRN.placeHolderList[402]" ":initialShadingGroup.dsm"
 		"octopus_platter_latest:octopus_on_a_stick_latestRN1" 57
 		2 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick" 
 		"translate" " -type \"double3\" 1.54908390928980322 5.63329380001262958 18.51418564715752169"
@@ -12342,89 +12502,89 @@ createNode reference -n "octopus_platter_latestRN";
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[347]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[589]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder19|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder19Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[349]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[591]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder18|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder18Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[351]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[593]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder17|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder17Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[353]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[595]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[355]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[597]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[357]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[599]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[359]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[601]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[361]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[603]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[363]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[605]" ":initialShadingGroup.dsm"
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[365]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[607]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder19|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder19Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[367]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[609]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder18|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder18Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[369]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[611]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder17|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder17Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[371]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[613]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[373]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[615]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[375]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[617]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[377]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[619]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[379]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[621]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[381]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[623]" ":initialShadingGroup.dsm"
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[383]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[625]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder19|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder19Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[385]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[627]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder18|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder18Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[387]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[629]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder17|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder17Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[389]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[631]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[391]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[633]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[393]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[635]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[395]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[637]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[397]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[639]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[399]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[641]" ":initialShadingGroup.dsm"
 		"octopus_platter_latest:octopus_on_a_stick_latestRN" 90
 		2 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick" 
 		"translate" " -type \"double3\" 1.43063070141244197 5.52705381336368617 19.53628402098958006"
 		
 		2 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick" 
-		"rotate" " -type \"double3\" -27.99868547355391257 -94.88155170986418341 30.69041914363105406"
+		"rotate" " -type \"double3\" -27.99868547355391613 -94.88155170986418341 30.69041914363105406"
 		
 		2 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick" 
 		"scale" " -type \"double3\" 0.8741911988961425 0.8741911988961425 0.8741911988961425"
@@ -12455,15 +12615,15 @@ createNode reference -n "octopus_platter_latestRN";
 		"instObjGroups" " -s 2"
 		2 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape" 
 		"instObjGroups.objectGroups" " -s 4"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId40.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "octopus_platter_latest:groupId52.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3].objectGrpColor" 
 		""
 		3 "octopus_platter_latest:octopus_on_a_stick_latest:Octopus.message" "octopus_platter_latest:octopus_on_a_stick_latest:materialInfo4.texture" 
 		"-na"
@@ -12477,25 +12637,15 @@ createNode reference -n "octopus_platter_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId52.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "octopus_platter_latest:groupId40.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId32.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3].objectGrpColor" 
 		""
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -12507,137 +12657,147 @@ createNode reference -n "octopus_platter_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3].objectGrpColor" 
 		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId32.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		""
 		5 3 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3]" 
-		"octopus_platter_latestRN.placeHolderList[316]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[558]" ":initialShadingGroup.dsm"
 		5 4 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_platter_latestRN.placeHolderList[317]" ""
+		"octopus_platter_latestRN.placeHolderList[559]" ""
 		5 3 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3]" 
-		"octopus_platter_latestRN.placeHolderList[318]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[560]" ":initialShadingGroup.dsm"
 		5 4 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_platter_latestRN.placeHolderList[319]" ""
+		"octopus_platter_latestRN.placeHolderList[561]" ""
 		5 3 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3]" 
-		"octopus_platter_latestRN.placeHolderList[320]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[562]" ":initialShadingGroup.dsm"
 		5 4 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_platter_latestRN.placeHolderList[321]" ""
+		"octopus_platter_latestRN.placeHolderList[563]" ""
 		5 3 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3]" 
-		"octopus_platter_latestRN.placeHolderList[322]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[564]" ":initialShadingGroup.dsm"
 		5 4 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_platter_latestRN.placeHolderList[323]" ""
+		"octopus_platter_latestRN.placeHolderList[565]" ""
 		5 3 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3]" 
-		"octopus_platter_latestRN.placeHolderList[324]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[566]" ":initialShadingGroup.dsm"
 		5 4 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_platter_latestRN.placeHolderList[325]" ""
+		"octopus_platter_latestRN.placeHolderList[567]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[326]" 
-		"octopus_platter_latestRN.placeHolderList[327]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[568]" 
+		"octopus_platter_latestRN.placeHolderList[569]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[328]" 
-		"octopus_platter_latestRN.placeHolderList[329]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[570]" 
+		"octopus_platter_latestRN.placeHolderList[571]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[330]" 
-		"octopus_platter_latestRN.placeHolderList[331]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[572]" 
+		"octopus_platter_latestRN.placeHolderList[573]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[332]" 
-		"octopus_platter_latestRN.placeHolderList[333]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[574]" 
+		"octopus_platter_latestRN.placeHolderList[575]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[334]" 
-		"octopus_platter_latestRN.placeHolderList[335]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[576]" 
+		"octopus_platter_latestRN.placeHolderList[577]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[336]" 
-		"octopus_platter_latestRN.placeHolderList[337]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[578]" 
+		"octopus_platter_latestRN.placeHolderList[579]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[338]" 
-		"octopus_platter_latestRN.placeHolderList[339]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[580]" 
+		"octopus_platter_latestRN.placeHolderList[581]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[340]" 
-		"octopus_platter_latestRN.placeHolderList[341]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[582]" 
+		"octopus_platter_latestRN.placeHolderList[583]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[342]" 
-		"octopus_platter_latestRN.placeHolderList[343]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[584]" 
+		"octopus_platter_latestRN.placeHolderList[585]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[344]" 
-		"octopus_platter_latestRN.placeHolderList[345]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[586]" 
+		"octopus_platter_latestRN.placeHolderList[587]" ""
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[346]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[588]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[348]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[590]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[350]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[592]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[352]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[594]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[354]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[596]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[356]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[598]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[358]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[600]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[360]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[602]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[362]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[604]" ":initialShadingGroup.dsm"
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[364]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[606]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[366]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[608]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[368]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[610]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[370]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[612]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[372]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[614]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[374]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[616]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[376]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[618]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[378]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[620]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[380]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[622]" ":initialShadingGroup.dsm"
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[382]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[624]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[384]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[626]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[386]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[628]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[388]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[630]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[390]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[632]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[392]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[634]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[394]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[636]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[396]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[638]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[398]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[640]" ":initialShadingGroup.dsm"
 		5 0 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:file1.message" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:materialInfo4.texture" "octopus_platter_latestRN.placeHolderList[400]" 
-		"octopus_platter_latestRN.placeHolderList[401]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:materialInfo4.texture" "octopus_platter_latestRN.placeHolderList[642]" 
+		"octopus_platter_latestRN.placeHolderList[643]" ""
 		"octopus_platter_latestRN" 47
 		0 "|octopus_platter_latest:Octopus" "|Barbatus_stall_latest_Barbatus|Foods" 
 		"-s -r "
@@ -12693,59 +12853,63 @@ createNode reference -n "octopus_platter_latestRN";
 		2 "octopus_platter_latest:groupParts7" "groupId" " 1517"
 		2 "octopus_platter_latest:groupParts8" "groupId" " 1518"
 		2 "octopus_platter_latest:groupParts9" "groupId" " 1519"
-		3 "octopus_platter_latest:groupId39.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId54.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId41.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId37.message" ":initialShadingGroup.groupNodes" 
-		"-na"
 		3 "octopus_platter_latest:groupId35.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "octopus_platter_latest:groupId40.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId50.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId31.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId34.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId42.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId36.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId54.groupId" "octopus_platter_latest:groupParts9.groupId" 
-		""
-		3 "octopus_platter_latest:groupId49.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId47.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId38.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId48.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId52.groupId" "octopus_platter_latest:groupParts7.groupId" 
-		""
-		3 "octopus_platter_latest:groupId33.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId51.groupId" "octopus_platter_latest:groupParts6.groupId" 
-		""
 		3 "octopus_platter_latest:groupId53.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId52.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "octopus_platter_latest:groupId51.message" ":initialShadingGroup.groupNodes" 
 		"-na"
+		3 "octopus_platter_latest:groupId54.groupId" "octopus_platter_latest:groupParts9.groupId" 
+		""
+		3 "octopus_platter_latest:groupId40.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId51.groupId" "octopus_platter_latest:groupParts6.groupId" 
+		""
+		3 "octopus_platter_latest:groupId34.message" ":initialShadingGroup.groupNodes" 
+		"-na"
 		3 "octopus_platter_latest:groupId32.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId50.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId39.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId42.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId31.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId48.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId41.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId38.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId47.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId52.groupId" "octopus_platter_latest:groupParts7.groupId" 
+		""
+		3 "octopus_platter_latest:groupId54.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "octopus_platter_latest:groupId53.groupId" "octopus_platter_latest:groupParts8.groupId" 
 		""
-		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latestRN" 2
+		3 "octopus_platter_latest:groupId52.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId37.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId36.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId33.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId49.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latestRN" 3
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[403]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[555]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
+		"octopus_platter_latestRN.placeHolderList[556]" "octopus_platter_latestRN.placeHolderList[557]" 
+		":initialShadingGroup.dsm"
 		"octopus_platter_latest:platter_latestRN" 10
 		2 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter" 
 		"scale" " -type \"double3\" 1 1 1"
@@ -12796,12 +12960,8 @@ createNode reference -n "octopus_platter_latestRN";
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter|octopus_platter_latest:platter_latest:PlatterShape.instObjGroups" 
 		"octopus_platter_latest:platter_latest:steel_SG.dagSetMembers" "-na"
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter|octopus_platter_latest:platter_latest:PlatterShape.instObjGroups" 
-		"octopus_platter_latest:platter_latest:steel_SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[314]" 
-		"octopus_platter_latestRN.placeHolderList[315]" "octopus_platter_latest:platter_latest:steel_SG.dsm"
-		
-		"octopus_platter_latest:octopus_on_a_stick_latest1:skewer_latestRN" 1
-		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest1:skewer_latest:PxrSurface1SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[402]" ":initialShadingGroup.dsm";
+		"octopus_platter_latest:platter_latest:steel_SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[553]" 
+		"octopus_platter_latestRN.placeHolderList[554]" "octopus_platter_latest:platter_latest:steel_SG.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode groupId -n "octopus_platter_latest:groupId55";
@@ -12898,7 +13058,7 @@ createNode transformGeometry -n "transformGeometry1";
 		 3.1432390381131869e-16 0 -2.566649453786702 0 4.3327663236380669 4.7043630387307305 18.05786414003974 1;
 createNode reference -n "strip_platter_latestRN";
 	rename -uid "69939A54-4820-C94D-0B88-CCA3834144E5";
-	setAttr -s 83 ".phl";
+	setAttr -s 100 ".phl";
 	setAttr ".phl[18]" 0;
 	setAttr ".phl[20]" 0;
 	setAttr ".phl[22]" 0;
@@ -12949,6 +13109,23 @@ createNode reference -n "strip_platter_latestRN";
 	setAttr ".phl[98]" 0;
 	setAttr ".phl[99]" 0;
 	setAttr ".phl[100]" 0;
+	setAttr ".phl[101]" 0;
+	setAttr ".phl[102]" 0;
+	setAttr ".phl[103]" 0;
+	setAttr ".phl[104]" 0;
+	setAttr ".phl[105]" 0;
+	setAttr ".phl[106]" 0;
+	setAttr ".phl[107]" 0;
+	setAttr ".phl[108]" 0;
+	setAttr ".phl[109]" 0;
+	setAttr ".phl[110]" 0;
+	setAttr ".phl[111]" 0;
+	setAttr ".phl[112]" 0;
+	setAttr ".phl[113]" 0;
+	setAttr ".phl[114]" 0;
+	setAttr ".phl[115]" 0;
+	setAttr ".phl[116]" 0;
+	setAttr ".phl[117]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"strip_platter_latestRN"
 		"strip_platter_latestRN" 0
@@ -13180,32 +13357,41 @@ createNode reference -n "strip_platter_latestRN";
 		"strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
 		"strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "-na"
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip1|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[92]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "strip_platter_latestRN.placeHolderList[100]" 
+		"strip_platter_latestRN.placeHolderList[101]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
 		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip2|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[93]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip8|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "strip_platter_latestRN.placeHolderList[102]" 
+		"strip_platter_latestRN.placeHolderList[103]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
 		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip3|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[94]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip7|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "strip_platter_latestRN.placeHolderList[104]" 
+		"strip_platter_latestRN.placeHolderList[105]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
 		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip4|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[95]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip6|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "strip_platter_latestRN.placeHolderList[106]" 
+		"strip_platter_latestRN.placeHolderList[107]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
 		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip5|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[96]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip5|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "strip_platter_latestRN.placeHolderList[108]" 
+		"strip_platter_latestRN.placeHolderList[109]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
 		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip6|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[97]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip4|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "strip_platter_latestRN.placeHolderList[110]" 
+		"strip_platter_latestRN.placeHolderList[111]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
 		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip7|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[98]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip3|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "strip_platter_latestRN.placeHolderList[112]" 
+		"strip_platter_latestRN.placeHolderList[113]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
 		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip8|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[99]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip2|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "strip_platter_latestRN.placeHolderList[114]" 
+		"strip_platter_latestRN.placeHolderList[115]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
 		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[100]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip1|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dagSetMembers" "strip_platter_latestRN.placeHolderList[116]" 
+		"strip_platter_latestRN.placeHolderList[117]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
 		
 		"strip_platter_latest:strip_on_a_stick_latest:skewer_latestRN" 16
 		3 "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip2|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
@@ -13231,28 +13417,38 @@ createNode reference -n "strip_platter_latestRN";
 		"-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip1|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip1|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[84]" ":initialShadingGroup.dsm"
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip2|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[85]" "strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
-		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip3|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[86]" "strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
-		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip4|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[87]" "strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
-		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip5|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[88]" "strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
-		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip6|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[89]" "strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
-		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip7|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[90]" "strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
-		
-		5 3 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip8|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"strip_platter_latestRN.placeHolderList[91]" "strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm";
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip5|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
+		"strip_platter_latestRN.placeHolderList[84]" "strip_platter_latestRN.placeHolderList[85]" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip6|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
+		"strip_platter_latestRN.placeHolderList[86]" "strip_platter_latestRN.placeHolderList[87]" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip7|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
+		"strip_platter_latestRN.placeHolderList[88]" "strip_platter_latestRN.placeHolderList[89]" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip8|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
+		"strip_platter_latestRN.placeHolderList[90]" "strip_platter_latestRN.placeHolderList[91]" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip4|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
+		"strip_platter_latestRN.placeHolderList[92]" "strip_platter_latestRN.placeHolderList[93]" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip1|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
+		"strip_platter_latestRN.placeHolderList[94]" "strip_platter_latestRN.placeHolderList[95]" 
+		":initialShadingGroup.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip2|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
+		"strip_platter_latestRN.placeHolderList[96]" "strip_platter_latestRN.placeHolderList[97]" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm"
+		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip3|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
+		"strip_platter_latestRN.placeHolderList[98]" "strip_platter_latestRN.placeHolderList[99]" 
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode groupId -n "octopus_platter_latest:groupId79";
@@ -13522,8 +13718,8 @@ createNode reference -n "lotus_belly_platter_latestRN";
 		
 		"lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latestRN" 0
 		"lotus_belly_platter_latestRN" 0
-		"lotus_belly_platter_latest:porkbelly_on_a_stick_latestRN" 0
 		"lotus_belly_platter_latest:platter_latestRN" 0
+		"lotus_belly_platter_latest:porkbelly_on_a_stick_latestRN" 0
 		"lotus_belly_platter_latest:lotus_on_a_stick_latestRN" 90
 		2 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape" 
 		"instObjGroups" " -s 7"
@@ -13571,46 +13767,6 @@ createNode reference -n "lotus_belly_platter_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[2].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId13.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId16.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId19.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId7.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId4.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId1.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2].objectGrpColor" 
-		""
 		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "lotus_belly_platter_latest:groupId15.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGroupId" 
@@ -13650,6 +13806,46 @@ createNode reference -n "lotus_belly_platter_latestRN";
 		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[2]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId13.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId16.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId19.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId7.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId4.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId1.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2].objectGrpColor" 
 		""
 		5 3 "lotus_belly_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2]" 
 		"lotus_belly_platter_latestRN.placeHolderList[102]" ":initialShadingGroup.dsm"
@@ -13831,57 +14027,43 @@ createNode reference -n "lotus_belly_platter_latestRN";
 		2 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly" 
 		"scale" " -type \"double3\" 1.99424783862317967 1.99424783862317967 1.99424783862317967"
 		
-		3 "lotus_belly_platter_latest:groupId5.message" ":initialShadingGroup.groupNodes" 
+		3 "lotus_belly_platter_latest:groupId9.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "lotus_belly_platter_latest:groupId7.message" ":initialShadingGroup.groupNodes" 
+		3 "lotus_belly_platter_latest:groupId6.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "lotus_belly_platter_latest:groupId17.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId4.message" ":initialShadingGroup.groupNodes" 
+		3 "lotus_belly_platter_latest:groupId3.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "lotus_belly_platter_latest:groupId19.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "lotus_belly_platter_latest:groupId8.message" ":initialShadingGroup.groupNodes" 
+		3 "lotus_belly_platter_latest:groupId21.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "lotus_belly_platter_latest:groupId9.message" ":initialShadingGroup.groupNodes" 
+		3 "lotus_belly_platter_latest:groupId14.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId4.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "lotus_belly_platter_latest:groupId2.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId13.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId17.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId7.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId8.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId1.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId16.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "lotus_belly_platter_latest:groupId18.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "lotus_belly_platter_latest:groupId20.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "lotus_belly_platter_latest:groupId13.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId16.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId14.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId21.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId1.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId6.message" ":initialShadingGroup.groupNodes" 
-		"-na"
 		3 "lotus_belly_platter_latest:groupId15.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "lotus_belly_platter_latest:groupId3.message" ":initialShadingGroup.groupNodes" 
+		3 "lotus_belly_platter_latest:groupId5.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		"lotus_belly_platter_latest:porkbelly_on_a_stick_latestRN" 70
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
@@ -13896,19 +14078,33 @@ createNode reference -n "lotus_belly_platter_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -13924,19 +14120,19 @@ createNode reference -n "lotus_belly_platter_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 0 "lotus_belly_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
 		"lotus_belly_platter_latest:porkbelly_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
@@ -14435,12 +14631,1375 @@ createNode layeredTexture -n "greasePencilTexture1";
 	setAttr ".cs[0].bm" 1;
 createNode file -n "greasePencilFile1";
 	rename -uid "2CCCF6B8-47B6-30DA-1764-92B2218200BC";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/3dPaintTextures\\Barbatus_stall_latest\\persp_1.png";
+	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/3dPaintTextures/Barbatus_stall_latest/persp_1.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "greasePencilPlace2dTexture1";
 	rename -uid "63EFAF73-4F8D-BF3C-EE22-A787B3726C8A";
 createNode multiplyDivide -n "greasePencilAlphaMultiplier1";
 	rename -uid "4D10D4C7-420B-7BFE-FEE5-A78FCE320FCD";
+createNode reference -n "plate_latestRN";
+	rename -uid "3919F0EB-4E7E-0FEB-3883-D0A843D0E92D";
+	setAttr -s 50 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"plate_latestRN"
+		"plate_latestRN" 0
+		"plate_latestRN" 51
+		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate1" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate2" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate3" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate4" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate5" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate6" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate7" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate8" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate1" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate2" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate3" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate4" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate5" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate6" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate7" 
+		"-s -r -add "
+		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate8" 
+		"-s -r -add "
+		2 "|plate_latest:Plate" "translate" " -type \"double3\" 2.386595275079606 3.8382174543018337 1.95137876288898915"
+		
+		3 "|plate_latest:Plate|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|PlateStacks|Plates|Plate1|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|PlateStacks|Plates|Plate2|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|PlateStacks|Plates|Plate3|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|PlateStacks|Plates|Plate4|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|PlateStacks|Plates|Plate5|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|PlateStacks|Plates|Plate6|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|PlateStacks|Plates|Plate7|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|PlateStacks|Plates|Plate8|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
+		5 0 "plate_latestRN" "|plate_latest:Plate|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[1]" "plate_latestRN.placeHolderList[2]" 
+		"plate_latest:PxrSurface1SG.dsm"
+		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate1|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[3]" "plate_latestRN.placeHolderList[4]" 
+		"plate_latest:PxrSurface1SG.dsm"
+		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate2|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[5]" "plate_latestRN.placeHolderList[6]" 
+		"plate_latest:PxrSurface1SG.dsm"
+		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate3|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[7]" "plate_latestRN.placeHolderList[8]" 
+		"plate_latest:PxrSurface1SG.dsm"
+		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate4|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[9]" "plate_latestRN.placeHolderList[10]" 
+		"plate_latest:PxrSurface1SG.dsm"
+		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate5|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[11]" "plate_latestRN.placeHolderList[12]" 
+		"plate_latest:PxrSurface1SG.dsm"
+		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate6|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[13]" "plate_latestRN.placeHolderList[14]" 
+		"plate_latest:PxrSurface1SG.dsm"
+		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate7|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[15]" "plate_latestRN.placeHolderList[16]" 
+		"plate_latest:PxrSurface1SG.dsm"
+		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate8|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[17]" "plate_latestRN.placeHolderList[18]" 
+		"plate_latest:PxrSurface1SG.dsm"
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate1|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[19]" "plate_latestRN.placeHolderList[20]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate2|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[21]" "plate_latestRN.placeHolderList[22]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate3|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[23]" "plate_latestRN.placeHolderList[24]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate4|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[25]" "plate_latestRN.placeHolderList[26]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate5|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[27]" "plate_latestRN.placeHolderList[28]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate6|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[29]" "plate_latestRN.placeHolderList[30]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate7|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[31]" "plate_latestRN.placeHolderList[32]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate8|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[33]" "plate_latestRN.placeHolderList[34]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate1|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[35]" "plate_latestRN.placeHolderList[36]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate2|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[37]" "plate_latestRN.placeHolderList[38]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate3|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[39]" "plate_latestRN.placeHolderList[40]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate4|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[41]" "plate_latestRN.placeHolderList[42]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate5|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[43]" "plate_latestRN.placeHolderList[44]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate6|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[45]" "plate_latestRN.placeHolderList[46]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate7|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[47]" "plate_latestRN.placeHolderList[48]" 
+		""
+		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate8|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[49]" "plate_latestRN.placeHolderList[50]" 
+		"";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "togo_box_latestRN";
+	rename -uid "8B0254A0-438C-E61C-CB73-828AB844D782";
+	setAttr -s 28 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"togo_box_latestRN"
+		"togo_box_latestRN" 18
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		"togo_box_latestRN" 49
+		0 "|togo_box_latest:ToGo" "|TogoBoxes" "-s -r "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" "|TogoBoxes|ToGo1" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" "|TogoBoxes|ToGo2" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" "|TogoBoxes|ToGo3" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" "|TogoBoxes|ToGo4" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" "|TogoBoxes|ToGo5" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" "|TogoBoxes|ToGo6" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" "|TogoBoxes|ToGo1" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" "|TogoBoxes|ToGo2" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" "|TogoBoxes|ToGo3" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" "|TogoBoxes|ToGo4" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" "|TogoBoxes|ToGo5" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" "|TogoBoxes|ToGo6" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" "|TogoBoxes|ToGo1" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" "|TogoBoxes|ToGo2" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" "|TogoBoxes|ToGo3" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" "|TogoBoxes|ToGo4" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" "|TogoBoxes|ToGo5" 
+		"-s -r -add "
+		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" "|TogoBoxes|ToGo6" 
+		"-s -r -add "
+		2 "|TogoBoxes|togo_box_latest:ToGo" "translate" " -type \"double3\" 2.95082092012574604 5.79693642510615792 9.67501693416955177"
+		
+		2 "|TogoBoxes|togo_box_latest:ToGo" "scale" " -type \"double3\" 0.15087793472228075 0.15087793472228075 0.15087793472228075"
+		
+		3 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|TogoBoxes|ToGo1|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|TogoBoxes|ToGo2|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|TogoBoxes|ToGo3|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|TogoBoxes|ToGo4|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|TogoBoxes|ToGo5|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|TogoBoxes|ToGo6|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|TogoBoxes|ToGo1|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|TogoBoxes|ToGo2|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|TogoBoxes|ToGo3|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|TogoBoxes|ToGo4|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|TogoBoxes|ToGo5|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|TogoBoxes|ToGo6|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
+		5 0 "togo_box_latestRN" "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[1]" 
+		"togo_box_latestRN.placeHolderList[2]" "togo_box_latest:PxrSurface1SG.dsm"
+		5 0 "togo_box_latestRN" "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[3]" 
+		"togo_box_latestRN.placeHolderList[4]" "togo_box_latest:PxrSurface1SG.dsm"
+		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo1|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[5]" 
+		"togo_box_latestRN.placeHolderList[6]" "togo_box_latest:PxrSurface1SG.dsm"
+		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo1|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[7]" 
+		"togo_box_latestRN.placeHolderList[8]" "togo_box_latest:PxrSurface1SG.dsm"
+		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo2|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[9]" 
+		"togo_box_latestRN.placeHolderList[10]" "togo_box_latest:PxrSurface1SG.dsm"
+		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo2|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[11]" 
+		"togo_box_latestRN.placeHolderList[12]" "togo_box_latest:PxrSurface1SG.dsm"
+		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo3|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[13]" 
+		"togo_box_latestRN.placeHolderList[14]" "togo_box_latest:PxrSurface1SG.dsm"
+		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo3|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[15]" 
+		"togo_box_latestRN.placeHolderList[16]" "togo_box_latest:PxrSurface1SG.dsm"
+		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo4|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[17]" 
+		"togo_box_latestRN.placeHolderList[18]" "togo_box_latest:PxrSurface1SG.dsm"
+		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo4|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[19]" 
+		"togo_box_latestRN.placeHolderList[20]" "togo_box_latest:PxrSurface1SG.dsm"
+		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo5|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[21]" 
+		"togo_box_latestRN.placeHolderList[22]" "togo_box_latest:PxrSurface1SG.dsm"
+		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo5|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[23]" 
+		"togo_box_latestRN.placeHolderList[24]" "togo_box_latest:PxrSurface1SG.dsm"
+		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo6|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[25]" 
+		"togo_box_latestRN.placeHolderList[26]" "togo_box_latest:PxrSurface1SG.dsm"
+		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo6|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[27]" 
+		"togo_box_latestRN.placeHolderList[28]" "togo_box_latest:PxrSurface1SG.dsm";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "chopstick_box_latestRN";
+	rename -uid "ECA9DBAC-4F8A-1164-A99B-8B8FDA95C545";
+	setAttr -s 3 ".fs";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"chopstick_box_latestRN"
+		"chopstick_box_latestRN" 0
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latestRN" 0
+		
+		"chopstick_box_latest:chopstick_wrapper_latestRN" 0
+		"chopstick_box_latestRN" 9
+		0 "|chopstick_box_latestRNfosterParent1|fosterParent3" "|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|chopstick_box_latestRNfosterParent1|fosterParent2" "|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|chopstick_box_latestRNfosterParent1|fosterParent1" "|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|chopstick_box_latestRNfosterParent1|chopstick_box_latest:transform3" 
+		"|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|chopstick_box_latestRNfosterParent1|chopstick_box_latest:transform2" 
+		"|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|chopstick_box_latestRNfosterParent1|chopstick_box_latest:transform1" 
+		"|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		2 "|chopstick_box_latest:ChopSticks" "translate" " -type \"double3\" 6.76343824284085038 4.48224474267807071 1.04988803618487347"
+		
+		2 "|chopstick_box_latest:ChopSticks" "rotate" " -type \"double3\" 0 41.50082668248126794 0"
+		
+		2 "|chopstick_box_latest:ChopSticks" "scale" " -type \"double3\" 0.18437895573292779 0.18437895573292779 0.18437895573292779"
+		
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latestRN" 3
+		
+		0 "|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture1" 
+		"|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform1" 
+		"-s -r "
+		0 "|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture2" 
+		"|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform2" 
+		"-s -r "
+		0 "|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks" 
+		"|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3" 
+		"-s -r ";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode RenderMan -s -n "renderManGlobals";
+	rename -uid "013FBCAD-44F9-B68F-8FC5-F0BC68B0766F";
+createNode OmnidirectionalStereo -s -n "OmnidirectionalStereo";
+	rename -uid "B1617677-4037-5A68-57F5-F08D819CB0F6";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".interpupilaryDistance" 0.063500002026557922;
+lockNode -l 1 ;
+createNode PxrCamera -s -n "PxrCamera";
+	rename -uid "1BBA793B-476D-6D88-B559-08AEC18D4FDA";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".fov" 90;
+	setAttr ".fovEnd" 0;
+	setAttr ".fStop" 16;
+	setAttr ".focalLength" 0;
+	setAttr ".focalDistance" 1;
+	setAttr ".tilt" 0;
+	setAttr ".roll" 0;
+	setAttr ".focus1" -type "float3" 0 0 0 ;
+	setAttr ".focus2" -type "float3" 0 0 0 ;
+	setAttr ".focus3" -type "float3" 0 0 0 ;
+	setAttr ".shiftX" 0;
+	setAttr ".shiftY" 0;
+	setAttr ".radial1" 0;
+	setAttr ".radial2" 0;
+	setAttr ".assymX" 0;
+	setAttr ".assymY" 0;
+	setAttr ".squeeze" 1;
+	setAttr ".transverse" -type "float3" 1 1 1 ;
+	setAttr ".axial" -type "float3" 0 0 0 ;
+	setAttr ".natural" 0;
+	setAttr ".optical" 0;
+	setAttr ".sweep" -type "string" "down";
+	setAttr ".duration" 1;
+	setAttr ".detail" 0;
+lockNode -l 1 ;
+createNode PxrDebugShadingContext -s -n "PxrDebugShadingContext";
+	rename -uid "B4AF677E-4E92-5B88-A150-3399CC25D376";
+lockNode -l 1 ;
+createNode PxrDefault -s -n "PxrDefault";
+	rename -uid "14669275-4AF3-AF3C-A21F-248EA901EF6B";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+lockNode -l 1 ;
+createNode PxrDirectLighting -s -n "PxrDirectLighting";
+	rename -uid "7D6EC718-41EC-E4E2-082F-87A87C80D548";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".numLightSamples" 4;
+	setAttr ".numBxdfSamples" 4;
+lockNode -l 1 ;
+createNode PxrOcclusion -s -n "PxrOcclusion";
+	rename -uid "103AB2CD-4DDC-6090-8C3D-7383CE52CE4C";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".numSamples" 4;
+	setAttr ".distribution" 1;
+	setAttr ".cosineSpread" 1;
+	setAttr ".falloff" 0;
+	setAttr ".maxDistance" 0;
+	setAttr ".useAlbedo" no;
+lockNode -l 1 ;
+createNode PxrVCM -s -n "PxrVCM";
+	rename -uid "FED61019-4290-2042-9887-D0BA3E6A4D9D";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".connectPaths" yes;
+	setAttr ".mergePaths" yes;
+	setAttr ".numLightSamples" 1;
+	setAttr ".numBxdfSamples" 1;
+	setAttr ".maxPathLength" 10;
+	setAttr ".specularCurvatureFilter" 1;
+	setAttr ".rouletteDepth" 4;
+	setAttr ".rouletteThreshold" 0.20000000298023224;
+	setAttr ".clampDepth" 2;
+	setAttr ".clampLuminance" 10;
+	setAttr ".mergeRadius" 5;
+	setAttr ".timeRadius" 1;
+	setAttr ".photonGuiding" 0;
+	setAttr ".photonGuidingBBoxMin" -type "float3" 1e+30 1e+30 1e+30 ;
+	setAttr ".photonGuidingBBoxMax" -type "float3" -1e+30 -1e+30 -1e+30 ;
+lockNode -l 1 ;
+createNode PxrValidateBxdf -s -n "PxrValidateBxdf";
+	rename -uid "1AAC12D0-4280-7BF8-AC8B-E9B8768A6985";
+lockNode -l 1 ;
+createNode PxrVisualizer -s -n "PxrVisualizer";
+	rename -uid "F9EE1353-4E25-94BC-BA61-53BEAB21F746";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".style" -type "string" "shaded";
+	setAttr ".wireframe" yes;
+	setAttr ".normalCheck" no;
+	setAttr ".matCap" -type "string" "";
+	setAttr ".wireframeColor" -type "float3" 0 0 0 ;
+	setAttr ".wireframeOpacity" 0.5;
+	setAttr ".wireframeWidth" 1;
+lockNode -l 1 ;
+createNode RenderMan -s -n "rmanFinalGlobals";
+	rename -uid "9B85C0F6-4CD8-BB49-D04A-FA92513F59D2";
+	addAttr -ci true -h true -sn "t" -ln "isTemplate" -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___class" -ln "rman__torattr___class" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___task" -ln "rman__torattr___task" -dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___phase" -ln "rman__torattr___phase" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___computeBehavior" -ln "rman__torattr___computeBehavior" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___passLayer" -ln "rman__torattr___passLayer" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___camera" -ln "rman__torattr___camera" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___crew" -ln "rman__torattr___crew" -dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___flavor" -ln "rman__torattr___flavor" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___cameraFlavor" -ln "rman__torattr___cameraFlavor" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___lightcrew" -ln "rman__torattr___lightcrew" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___depthOfField" -ln "rman__torattr___depthOfField" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt___CropWindow" -ln "rman__riopt___CropWindow" 
+		-at "compound" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt___CropWindowX" -ln "rman__riopt___CropWindowX" 
+		-at "float2" -p "rman__riopt___CropWindow" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt___CropWindowX0" -ln "rman__riopt___CropWindowX0" 
+		-dv -1 -at "float" -p "rman__riopt___CropWindowX";
+	addAttr -ci true -k true -sn "rman__riopt___CropWindowX1" -ln "rman__riopt___CropWindowX1" 
+		-dv -1 -at "float" -p "rman__riopt___CropWindowX";
+	addAttr -ci true -k true -sn "rman__riopt___CropWindowY" -ln "rman__riopt___CropWindowY" 
+		-at "float2" -p "rman__riopt___CropWindow" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt___CropWindowY0" -ln "rman__riopt___CropWindowY0" 
+		-dv -1 -at "float" -p "rman__riopt___CropWindowY";
+	addAttr -ci true -k true -sn "rman__riopt___CropWindowY1" -ln "rman__riopt___CropWindowY1" 
+		-dv -1 -at "float" -p "rman__riopt___CropWindowY";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "d" -ln "display" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "c" -ln "channel" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "rif" -ln "rif" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "p" -ln "passes" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "sh" -ln "shared" -at "message";
+	addAttr -ci true -m -sn "rman__displayfilters" -ln "rman__displayfilters" -dt "string";
+	addAttr -ci true -m -sn "rman__samplefilters" -ln "rman__samplefilters" -dt "string";
+	setAttr ".t" 1;
+	setAttr ".rman__torattr___class" -type "string" "Final";
+	setAttr ".rman__torattr___task" -type "string" "render";
+	setAttr ".rman__torattr___phase" -type "string" "/Job/Frames/Images";
+	setAttr -k on ".rman__torattr___computeBehavior" 1;
+	setAttr ".rman__torattr___passLayer" -type "string" "";
+	setAttr ".rman__torattr___camera" -type "string" "";
+	setAttr ".rman__torattr___crew" -type "string" "";
+	setAttr ".rman__torattr___flavor" -type "string" "";
+	setAttr ".rman__torattr___cameraFlavor" -type "string" "";
+	setAttr ".rman__torattr___lightcrew" -type "string" "";
+	setAttr -k on ".rman__torattr___depthOfField" 1;
+	setAttr -k on ".rman__riopt___CropWindowX" -type "float2" 0 1 ;
+	setAttr -k on ".rman__riopt___CropWindowY" -type "float2" 0 1 ;
+	setAttr ".nt" -type "string" "pass:render";
+createNode RenderMan -s -n "rmanFinalOutputGlobals0";
+	rename -uid "1784B86C-4286-A7BE-C4C4-2CBED71DAA8F";
+	addAttr -ci true -h true -sn "t" -ln "isTemplate" -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___class" -ln "rman__torattr___class" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___task" -ln "rman__torattr___task" -dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___computeBehavior" -ln "rman__torattr___computeBehavior" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___primaryDisplay" -ln "rman__torattr___primaryDisplay" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___dspyID" -ln "rman__torattr___dspyID" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___dspyGetChannelsFromCamera" -ln "rman__torattr___dspyGetChannelsFromCamera" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Display_name" -ln "rman__riopt__Display_name" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Display_type" -ln "rman__riopt__Display_type" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Display_mode" -ln "rman__riopt__Display_mode" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Display_filter" -ln "rman__riopt__Display_filter" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Display_filterwidth" -ln "rman__riopt__Display_filterwidth" 
+		-at "float2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_filterwidth0" -ln "rman__riopt__Display_filterwidth0" 
+		-dv -1 -at "float" -p "rman__riopt__Display_filterwidth";
+	addAttr -ci true -k true -sn "rman__riopt__Display_filterwidth1" -ln "rman__riopt__Display_filterwidth1" 
+		-dv -1 -at "float" -p "rman__riopt__Display_filterwidth";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantize" -ln "rman__riopt__Display_quantize" 
+		-at "compound" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeX" -ln "rman__riopt__Display_quantizeX" 
+		-at "long2" -p "rman__riopt__Display_quantize" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeX0" -ln "rman__riopt__Display_quantizeX0" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeX";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeX1" -ln "rman__riopt__Display_quantizeX1" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeX";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeY" -ln "rman__riopt__Display_quantizeY" 
+		-at "long2" -p "rman__riopt__Display_quantize" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeY0" -ln "rman__riopt__Display_quantizeY0" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeY";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeY1" -ln "rman__riopt__Display_quantizeY1" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeY";
+	addAttr -ci true -k true -sn "rman__riopt__Display_dither" -ln "rman__riopt__Display_dither" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Display_exposure" -ln "rman__riopt__Display_exposure" 
+		-at "float2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_exposure0" -ln "rman__riopt__Display_exposure0" 
+		-dv -1 -at "float" -p "rman__riopt__Display_exposure";
+	addAttr -ci true -k true -sn "rman__riopt__Display_exposure1" -ln "rman__riopt__Display_exposure1" 
+		-dv -1 -at "float" -p "rman__riopt__Display_exposure";
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap" -ln "rman__riopt__Display_remap" 
+		-at "float3" -nc 3;
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap0" -ln "rman__riopt__Display_remap0" 
+		-dv -1 -at "float" -p "rman__riopt__Display_remap";
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap1" -ln "rman__riopt__Display_remap1" 
+		-dv -1 -at "float" -p "rman__riopt__Display_remap";
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap2" -ln "rman__riopt__Display_remap2" 
+		-dv -1 -at "float" -p "rman__riopt__Display_remap";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "d" -ln "display" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "c" -ln "channel" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "rif" -ln "rif" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "p" -ln "passes" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "sh" -ln "shared" -at "message";
+	addAttr -ci true -m -sn "rman__displayfilters" -ln "rman__displayfilters" -dt "string";
+	addAttr -ci true -m -sn "rman__samplefilters" -ln "rman__samplefilters" -dt "string";
+	setAttr ".t" 1;
+	setAttr ".rman__torattr___class" -type "string" "Primary";
+	setAttr ".rman__torattr___task" -type "string" "display";
+	setAttr -k on ".rman__torattr___computeBehavior" 1;
+	setAttr -k on ".rman__torattr___primaryDisplay" 1;
+	setAttr ".rman__torattr___dspyID" -type "string" "";
+	setAttr -k on ".rman__torattr___dspyGetChannelsFromCamera" 1;
+	setAttr ".rman__riopt__Display_name" -type "string" "[passinfo this filename]";
+	setAttr ".rman__riopt__Display_type" -type "string" "openexr";
+	setAttr ".rman__riopt__Display_mode" -type "string" "rgba";
+	setAttr ".rman__riopt__Display_filter" -type "string" "gaussian";
+	setAttr -k on ".rman__riopt__Display_filterwidth" -type "float2" 2 2 ;
+	setAttr -k on ".rman__riopt__Display_quantizeX" -type "long2" 0 0 ;
+	setAttr -k on ".rman__riopt__Display_quantizeY" -type "long2" 0 0 ;
+	setAttr -k on ".rman__riopt__Display_dither" 0;
+	setAttr -k on ".rman__riopt__Display_exposure" -type "float2" 1 1 ;
+	setAttr -k on ".rman__riopt__Display_remap" -type "float3" 0 0 0 ;
+	setAttr ".nt" -type "string" "settings:display";
+createNode RenderMan -s -n "rmanRerenderRISGlobals";
+	rename -uid "99A1C836-446C-307B-0095-D8B23C933A5C";
+	addAttr -ci true -h true -sn "t" -ln "isTemplate" -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___class" -ln "rman__torattr___class" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___task" -ln "rman__torattr___task" -dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___phase" -ln "rman__torattr___phase" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_maxsamples" -ln "rman__riopt__Hider_maxsamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_darkfalloff" -ln "rman__riopt__Hider_darkfalloff" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt___PixelVariance" -ln "rman__riopt___PixelVariance" 
+		-dv -1 -at "float";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "d" -ln "display" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "c" -ln "channel" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "rif" -ln "rif" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "p" -ln "passes" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "sh" -ln "shared" -at "message";
+	addAttr -ci true -m -sn "rman__displayfilters" -ln "rman__displayfilters" -dt "string";
+	addAttr -ci true -m -sn "rman__samplefilters" -ln "rman__samplefilters" -dt "string";
+	setAttr ".t" 1;
+	setAttr ".rman__torattr___class" -type "string" "RerenderRIS";
+	setAttr ".rman__torattr___task" -type "string" "render";
+	setAttr ".rman__torattr___phase" -type "string" "/Job/Frames/Images";
+	setAttr -k on ".rman__riopt__Hider_maxsamples" 64;
+	setAttr -k on ".rman__riopt__Hider_darkfalloff" 0.02500000037252903;
+	setAttr -k on ".rman__riopt___PixelVariance" 0.05000000074505806;
+	setAttr ".nt" -type "string" "pass:render";
+createNode RenderMan -s -n "rmanRerenderRISOutputGlobals0";
+	rename -uid "5EE1CC18-416E-9B9B-701F-A09D3CF736CE";
+	addAttr -ci true -h true -sn "t" -ln "isTemplate" -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___class" -ln "rman__torattr___class" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___task" -ln "rman__torattr___task" -dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___computeBehavior" -ln "rman__torattr___computeBehavior" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___primaryDisplay" -ln "rman__torattr___primaryDisplay" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___dspyID" -ln "rman__torattr___dspyID" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___dspyGetChannelsFromCamera" -ln "rman__torattr___dspyGetChannelsFromCamera" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Display_name" -ln "rman__riopt__Display_name" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Display_type" -ln "rman__riopt__Display_type" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Display_mode" -ln "rman__riopt__Display_mode" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Display_filter" -ln "rman__riopt__Display_filter" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Display_filterwidth" -ln "rman__riopt__Display_filterwidth" 
+		-at "float2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_filterwidth0" -ln "rman__riopt__Display_filterwidth0" 
+		-dv -1 -at "float" -p "rman__riopt__Display_filterwidth";
+	addAttr -ci true -k true -sn "rman__riopt__Display_filterwidth1" -ln "rman__riopt__Display_filterwidth1" 
+		-dv -1 -at "float" -p "rman__riopt__Display_filterwidth";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantize" -ln "rman__riopt__Display_quantize" 
+		-at "compound" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeX" -ln "rman__riopt__Display_quantizeX" 
+		-at "long2" -p "rman__riopt__Display_quantize" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeX0" -ln "rman__riopt__Display_quantizeX0" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeX";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeX1" -ln "rman__riopt__Display_quantizeX1" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeX";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeY" -ln "rman__riopt__Display_quantizeY" 
+		-at "long2" -p "rman__riopt__Display_quantize" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeY0" -ln "rman__riopt__Display_quantizeY0" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeY";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeY1" -ln "rman__riopt__Display_quantizeY1" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeY";
+	addAttr -ci true -k true -sn "rman__riopt__Display_dither" -ln "rman__riopt__Display_dither" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Display_exposure" -ln "rman__riopt__Display_exposure" 
+		-at "float2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_exposure0" -ln "rman__riopt__Display_exposure0" 
+		-dv -1 -at "float" -p "rman__riopt__Display_exposure";
+	addAttr -ci true -k true -sn "rman__riopt__Display_exposure1" -ln "rman__riopt__Display_exposure1" 
+		-dv -1 -at "float" -p "rman__riopt__Display_exposure";
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap" -ln "rman__riopt__Display_remap" 
+		-at "float3" -nc 3;
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap0" -ln "rman__riopt__Display_remap0" 
+		-dv -1 -at "float" -p "rman__riopt__Display_remap";
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap1" -ln "rman__riopt__Display_remap1" 
+		-dv -1 -at "float" -p "rman__riopt__Display_remap";
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap2" -ln "rman__riopt__Display_remap2" 
+		-dv -1 -at "float" -p "rman__riopt__Display_remap";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "d" -ln "display" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "c" -ln "channel" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "rif" -ln "rif" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "p" -ln "passes" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "sh" -ln "shared" -at "message";
+	addAttr -ci true -m -sn "rman__displayfilters" -ln "rman__displayfilters" -dt "string";
+	addAttr -ci true -m -sn "rman__samplefilters" -ln "rman__samplefilters" -dt "string";
+	setAttr ".t" 1;
+	setAttr ".rman__torattr___class" -type "string" "PrimaryRerender";
+	setAttr ".rman__torattr___task" -type "string" "display";
+	setAttr -k on ".rman__torattr___computeBehavior" 1;
+	setAttr -k on ".rman__torattr___primaryDisplay" 1;
+	setAttr ".rman__torattr___dspyID" -type "string" "";
+	setAttr -k on ".rman__torattr___dspyGetChannelsFromCamera" 1;
+	setAttr ".rman__riopt__Display_name" -type "string" "[passinfo this filename]";
+	setAttr ".rman__riopt__Display_type" -type "string" "openexr";
+	setAttr ".rman__riopt__Display_mode" -type "string" "rgba";
+	setAttr ".rman__riopt__Display_filter" -type "string" "gaussian";
+	setAttr -k on ".rman__riopt__Display_filterwidth" -type "float2" 2 2 ;
+	setAttr -k on ".rman__riopt__Display_quantizeX" -type "long2" 0 0 ;
+	setAttr -k on ".rman__riopt__Display_quantizeY" -type "long2" 0 0 ;
+	setAttr -k on ".rman__riopt__Display_dither" 0;
+	setAttr -k on ".rman__riopt__Display_exposure" -type "float2" 1 1 ;
+	setAttr -k on ".rman__riopt__Display_remap" -type "float3" 0 0 0 ;
+	setAttr ".nt" -type "string" "settings:display";
+createNode RenderMan -s -n "rmanBakeGlobals";
+	rename -uid "DFA2432D-433A-FF56-713F-18B4CE2ADDBB";
+	addAttr -ci true -h true -sn "t" -ln "isTemplate" -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___class" -ln "rman__torattr___class" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___task" -ln "rman__torattr___task" -dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Hider_name" -ln "rman__riopt__Hider_name" 
+		-dt "string";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "d" -ln "display" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "c" -ln "channel" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "rif" -ln "rif" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "p" -ln "passes" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "sh" -ln "shared" -at "message";
+	addAttr -ci true -m -sn "rman__displayfilters" -ln "rman__displayfilters" -dt "string";
+	addAttr -ci true -m -sn "rman__samplefilters" -ln "rman__samplefilters" -dt "string";
+	setAttr ".t" 1;
+	setAttr ".rman__torattr___class" -type "string" "Bake";
+	setAttr ".rman__torattr___task" -type "string" "render";
+	setAttr ".rman__riopt__Hider_name" -type "string" "bake";
+	setAttr ".nt" -type "string" "pass:render";
+createNode RenderMan -s -n "renderManRISGlobals";
+	rename -uid "E3F6A68A-4D3F-846E-9648-5DB7BA0EEE09";
+	addAttr -ci true -h true -sn "rman__torattr___class" -ln "rman__torattr___class" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___task" -ln "rman__torattr___task" -dt "string";
+	addAttr -ci true -k true -sn "rman__toropt___renderDataCleanupJob" -ln "rman__toropt___renderDataCleanupJob" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___shaderCleanupJob" -ln "rman__toropt___shaderCleanupJob" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___textureCleanupJob" -ln "rman__toropt___textureCleanupJob" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___ribCleanupJob" -ln "rman__toropt___ribCleanupJob" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___ribFlatten" -ln "rman__toropt___ribFlatten" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___renderDataCleanupFrame" -ln "rman__toropt___renderDataCleanupFrame" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___textureCleanupFrame" -ln "rman__toropt___textureCleanupFrame" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___ribCleanupFrame" -ln "rman__toropt___ribCleanupFrame" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__toropt___primaryCamera" -ln "rman__toropt___primaryCamera" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__toropt___enableRenderLayers" -ln "rman__toropt___enableRenderLayers" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__toropt___renderLayer" -ln "rman__toropt___renderLayer" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__toropt___motionBlurType" -ln "rman__toropt___motionBlurType" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__toropt___shutterAngle" -ln "rman__toropt___shutterAngle" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__toropt___shutterTiming" -ln "rman__toropt___shutterTiming" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__toropt___cacheCrew" -ln "rman__toropt___cacheCrew" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__toropt___renumber" -ln "rman__toropt___renumber" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___renumberStart" -ln "rman__toropt___renumberStart" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___renumberBy" -ln "rman__toropt___renumberBy" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___lazyRibGen" -ln "rman__toropt___lazyRibGen" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___lazyRender" -ln "rman__toropt___lazyRender" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___bakeMode" -ln "rman__toropt___bakeMode" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___furChunkSize" -ln "rman__toropt___furChunkSize" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___enableRifs" -ln "rman__torattr___enableRifs" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___nativeShadingSupport" -ln "rman__toropt___nativeShadingSupport" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___motionSamples" -ln "rman__torattr___motionSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___referenceFrame" -ln "rman__torattr___referenceFrame" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___motionBlur" -ln "rman__torattr___motionBlur" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___mapResolution" -ln "rman__torattr___mapResolution" 
+		-at "long2" -nc 2;
+	addAttr -ci true -k true -sn "rman__torattr___mapResolution0" -ln "rman__torattr___mapResolution0" 
+		-dv -1 -at "long" -p "rman__torattr___mapResolution";
+	addAttr -ci true -k true -sn "rman__torattr___mapResolution1" -ln "rman__torattr___mapResolution1" 
+		-dv -1 -at "long" -p "rman__torattr___mapResolution";
+	addAttr -ci true -k true -sn "rman__torattr___depthOfField" -ln "rman__torattr___depthOfField" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___cameraBlur" -ln "rman__torattr___cameraBlur" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___frontPlane" -ln "rman__torattr___frontPlane" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___backPlane" -ln "rman__torattr___backPlane" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___passCommand" -ln "rman__torattr___passCommand" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___crop" -ln "rman__torattr___crop" -dv 
+		-1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___passExtFormat" -ln "rman__torattr___passExtFormat" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___passNameFormat" -ln "rman__torattr___passNameFormat" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___previewPass" -ln "rman__torattr___previewPass" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___defaultDisplacementShader" -ln "rman__torattr___defaultDisplacementShader" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___defaultAtmosphereShader" -ln "rman__torattr___defaultAtmosphereShader" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___defaultInteriorShader" -ln "rman__torattr___defaultInteriorShader" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___outputSurfaceShaders" -ln "rman__torattr___outputSurfaceShaders" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___outputDisplacementShaders" -ln "rman__torattr___outputDisplacementShaders" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___outputLightShaders" -ln "rman__torattr___outputLightShaders" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___outputVolumeShaders" -ln "rman__torattr___outputVolumeShaders" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___outputImagerShaders" -ln "rman__torattr___outputImagerShaders" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__toropt___preFrameScript" -ln "rman__toropt___preFrameScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__toropt___postFrameScript" -ln "rman__toropt___postFrameScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___preRenderScript" -ln "rman__torattr___preRenderScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___postRenderScript" -ln "rman__torattr___postRenderScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___defaultRiOptionsScript" -ln "rman__torattr___defaultRiOptionsScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___defaultRiAttributesScript" -ln "rman__torattr___defaultRiAttributesScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___renderBeginScript" -ln "rman__torattr___renderBeginScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___transformBeginScript" -ln "rman__torattr___transformBeginScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___transformEndScript" -ln "rman__torattr___transformEndScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___postTransformScript" -ln "rman__torattr___postTransformScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___preShapeScript" -ln "rman__torattr___preShapeScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___postShapeScript" -ln "rman__torattr___postShapeScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___cacheShapeScript" -ln "rman__torattr___cacheShapeScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___bakeChannels" -ln "rman__torattr___bakeChannels" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___bakeCrew" -ln "rman__torattr___bakeCrew" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___bakeOutputFile" -ln "rman__torattr___bakeOutputFile" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___customShadingGroup" -ln "rman__torattr___customShadingGroup" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___shaderBindingStrength" -ln "rman__torattr___shaderBindingStrength" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___computeBehavior" -ln "rman__torattr___computeBehavior" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___enableObjectInstancing" -ln "rman__torattr___enableObjectInstancing" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___impliedSSBakeMode" -ln "rman__torattr___impliedSSBakeMode" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__toropt___JOBSTYLE" -ln "rman__toropt___JOBSTYLE" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___deformationBlurStyle" -ln "rman__torattr___deformationBlurStyle" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___deformationBlurScale" -ln "rman__torattr___deformationBlurScale" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__torattr___enableMfcProcPrim" -ln "rman__torattr___enableMfcProcPrim" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___linearizeColors" -ln "rman__torattr___linearizeColors" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___rayTracing" -ln "rman__torattr___rayTracing" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___referenceCamera" -ln "rman__torattr___referenceCamera" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__toropt___enableRIS" -ln "rman__toropt___enableRIS" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___denoise" -ln "rman__torattr___denoise" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___denoiseFilter" -ln "rman__torattr___denoiseFilter" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___defaultSurfaceShader" -ln "rman__torattr___defaultSurfaceShader" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___outputShadowAOV" -ln "rman__torattr___outputShadowAOV" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___enableImagePlaneFilter" -ln "rman__torattr___enableImagePlaneFilter" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__trace_maxdepth" -ln "rman__riopt__trace_maxdepth" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt___PixelVariance" -ln "rman__riopt___PixelVariance" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__riopt__bucket_order" -ln "rman__riopt__bucket_order" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__limits_bucketsize" -ln "rman__riopt__limits_bucketsize" 
+		-at "long2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__limits_bucketsize0" -ln "rman__riopt__limits_bucketsize0" 
+		-dv -1 -at "long" -p "rman__riopt__limits_bucketsize";
+	addAttr -ci true -k true -sn "rman__riopt__limits_bucketsize1" -ln "rman__riopt__limits_bucketsize1" 
+		-dv -1 -at "long" -p "rman__riopt__limits_bucketsize";
+	addAttr -ci true -k true -sn "rman__riopt__trace_decimationrate" -ln "rman__riopt__trace_decimationrate" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__limits_threads" -ln "rman__riopt__limits_threads" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Camera_shutteropening" -ln "rman__riopt__Camera_shutteropening" 
+		-at "float2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Camera_shutteropening0" -ln "rman__riopt__Camera_shutteropening0" 
+		-dv -1 -at "float" -p "rman__riopt__Camera_shutteropening";
+	addAttr -ci true -k true -sn "rman__riopt__Camera_shutteropening1" -ln "rman__riopt__Camera_shutteropening1" 
+		-dv -1 -at "float" -p "rman__riopt__Camera_shutteropening";
+	addAttr -ci true -k true -sn "rman__riopt__Format_resolution" -ln "rman__riopt__Format_resolution" 
+		-at "long2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Format_resolution0" -ln "rman__riopt__Format_resolution0" 
+		-dv -1 -at "long" -p "rman__riopt__Format_resolution";
+	addAttr -ci true -k true -sn "rman__riopt__Format_resolution1" -ln "rman__riopt__Format_resolution1" 
+		-dv -1 -at "long" -p "rman__riopt__Format_resolution";
+	addAttr -ci true -k true -sn "rman__riopt__Format_pixelaspectratio" -ln "rman__riopt__Format_pixelaspectratio" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__hair_minwidth" -ln "rman__riopt__hair_minwidth" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__riopt__rib_compression" -ln "rman__riopt__rib_compression" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__rib_format" -ln "rman__riopt__rib_format" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__rib_precision" -ln "rman__riopt__rib_precision" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__user_iesIgnoreWatts" -ln "rman__riopt__user_iesIgnoreWatts" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__statistics_level" -ln "rman__riopt__statistics_level" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__statistics_filename" -ln "rman__riopt__statistics_filename" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__statistics_xmlfilename" -ln "rman__riopt__statistics_xmlfilename" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Projection_name" -ln "rman__riopt__Projection_name" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Projection2_name" -ln "rman__riopt__Projection2_name" 
+		-dt "string";
+	addAttr -ci true -uac -k true -sn "rman__riopt__limits_zthreshold" -ln "rman__riopt__limits_zthreshold" 
+		-at "float3" -nc 3;
+	addAttr -ci true -k true -sn "rman__riopt__limits_zthresholdr" -ln "rman__riopt__limits_zthresholdR" 
+		-dv -1 -at "float" -p "rman__riopt__limits_zthreshold";
+	addAttr -ci true -k true -sn "rman__riopt__limits_zthresholdg" -ln "rman__riopt__limits_zthresholdG" 
+		-dv -1 -at "float" -p "rman__riopt__limits_zthreshold";
+	addAttr -ci true -k true -sn "rman__riopt__limits_zthresholdb" -ln "rman__riopt__limits_zthresholdB" 
+		-dv -1 -at "float" -p "rman__riopt__limits_zthreshold";
+	addAttr -ci true -uac -k true -sn "rman__riopt__limits_othreshold" -ln "rman__riopt__limits_othreshold" 
+		-at "float3" -nc 3;
+	addAttr -ci true -k true -sn "rman__riopt__limits_othresholdr" -ln "rman__riopt__limits_othresholdR" 
+		-dv -1 -at "float" -p "rman__riopt__limits_othreshold";
+	addAttr -ci true -k true -sn "rman__riopt__limits_othresholdg" -ln "rman__riopt__limits_othresholdG" 
+		-dv -1 -at "float" -p "rman__riopt__limits_othreshold";
+	addAttr -ci true -k true -sn "rman__riopt__limits_othresholdb" -ln "rman__riopt__limits_othresholdB" 
+		-dv -1 -at "float" -p "rman__riopt__limits_othreshold";
+	addAttr -ci true -k true -sn "rman__riopt__limits_texturememory" -ln "rman__riopt__limits_texturememory" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__limits_geocachememory" -ln "rman__riopt__limits_geocachememory" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__limits_proceduralmemory" -ln "rman__riopt__limits_proceduralmemory" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__limits_deepshadowtiles" -ln "rman__riopt__limits_deepshadowtiles" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__limits_deepshadowmemory" -ln "rman__riopt__limits_deepshadowmemory" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__limits_brickmemory" -ln "rman__riopt__limits_brickmemory" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__user_sceneUnits" -ln "rman__riopt__user_sceneUnits" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_diffuse2" -ln "rman__riopt__lpe_diffuse2" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_diffuse3" -ln "rman__riopt__lpe_diffuse3" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular2" -ln "rman__riopt__lpe_specular2" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular3" -ln "rman__riopt__lpe_specular3" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular4" -ln "rman__riopt__lpe_specular4" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular5" -ln "rman__riopt__lpe_specular5" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular6" -ln "rman__riopt__lpe_specular6" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular7" -ln "rman__riopt__lpe_specular7" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular8" -ln "rman__riopt__lpe_specular8" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Hider_name" -ln "rman__riopt__Hider_name" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_minsamples" -ln "rman__riopt__Hider_minsamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_minextrasamples" -ln "rman__riopt__Hider_minextrasamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_maxsamples" -ln "rman__riopt__Hider_maxsamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_darkfalloff" -ln "rman__riopt__Hider_darkfalloff" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__limits_opacitycachememory" -ln "rman__riopt__limits_opacitycachememory" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_name" -ln "rman__riopt__Integrator_name" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riattr__trace_maxdiffusedepth" -ln "rman__riattr__trace_maxdiffusedepth" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riattr__trace_maxspeculardepth" -ln "rman__riattr__trace_maxspeculardepth" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riattr__trace_samplemotion" -ln "rman__riattr__trace_samplemotion" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riattr__dice_referencecamera" -ln "rman__riattr__dice_referencecamera" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riattr__dice_minlength" -ln "rman__riattr__dice_minlength" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riattr__procedural_reentrant" -ln "rman__riattr__procedural_reentrant" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riattr__dice_micropolygonlength" -ln "rman__riattr__dice_micropolygonlength" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riattr__dice_watertight" -ln "rman__riattr__dice_watertight" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riattr__trace_autobias" -ln "rman__riattr__trace_autobias" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riattr__trace_bias" -ln "rman__riattr__trace_bias" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__riattr__displacementbound_coordinatesystem" 
+		-ln "rman__riattr__displacementbound_coordinatesystem" -dt "string";
+	addAttr -ci true -k true -sn "rman__riattr__displacementbound_sphere" -ln "rman__riattr__displacementbound_sphere" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riattr__trace_displacements" -ln "rman__riattr__trace_displacements" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Projection_fov" -ln "rman__riopt__Projection_fov" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Projection_hsweep" -ln "rman__riopt__Projection_hsweep" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Projection_vsweep" -ln "rman__riopt__Projection_vsweep" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Projection_minor" -ln "rman__riopt__Projection_minor" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_adaptall" -ln "rman__riopt__Hider_adaptall" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_incremental" -ln "rman__riopt__Hider_incremental" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Hider_pixelfiltermode" -ln "rman__riopt__Hider_pixelfiltermode" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_mergePaths" -ln "rman__riopt__Integrator_mergePaths" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_mergeRadiusScale" -ln "rman__riopt__Integrator_mergeRadiusScale" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_timeRadius" -ln "rman__riopt__Integrator_timeRadius" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_reduceRadius" -ln "rman__riopt__Integrator_reduceRadius" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_connectPaths" -ln "rman__riopt__Integrator_connectPaths" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_maxPathLength" -ln "rman__riopt__Integrator_maxPathLength" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_sampleMode" -ln "rman__riopt__Integrator_sampleMode" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numLightSamples" -ln "rman__riopt__Integrator_numLightSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numBxdfSamples" -ln "rman__riopt__Integrator_numBxdfSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numIndirectSamples" -ln "rman__riopt__Integrator_numIndirectSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numDiffuseSamples" -ln "rman__riopt__Integrator_numDiffuseSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numSpecularSamples" -ln "rman__riopt__Integrator_numSpecularSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numSubsurfaceSamples" -ln "rman__riopt__Integrator_numSubsurfaceSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numRefractionSamples" -ln "rman__riopt__Integrator_numRefractionSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_rouletteDepth" -ln "rman__riopt__Integrator_rouletteDepth" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_rouletteThreshold" -ln "rman__riopt__Integrator_rouletteThreshold" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_imagePlaneSubset" -ln "rman__riopt__Integrator_imagePlaneSubset" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_clampDepth" -ln "rman__riopt__Integrator_clampDepth" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_clampLuminance" -ln "rman__riopt__Integrator_clampLuminance" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_allowCaustics" -ln "rman__riopt__Integrator_allowCaustics" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_distribution" -ln "rman__riopt__Integrator_distribution" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numSamples" -ln "rman__riopt__Integrator_numSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_distance" -ln "rman__riopt__Integrator_distance" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_gamma" -ln "rman__riopt__Integrator_gamma" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_useAlbedo" -ln "rman__riopt__Integrator_useAlbedo" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_viewchannel" -ln "rman__riopt__Integrator_viewchannel" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_wireframe" -ln "rman__riopt__Integrator_wireframe" 
+		-dv -1 -at "long";
+	addAttr -ci true -uac -k true -sn "rman__riopt__Integrator_wireframeColor" -ln "rman__riopt__Integrator_wireframeColor" 
+		-at "float3" -nc 3;
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_wireframeColorr" -ln "rman__riopt__Integrator_wireframeColorR" 
+		-dv -1 -at "float" -p "rman__riopt__Integrator_wireframeColor";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_wireframeColorg" -ln "rman__riopt__Integrator_wireframeColorG" 
+		-dv -1 -at "float" -p "rman__riopt__Integrator_wireframeColor";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_wireframeColorb" -ln "rman__riopt__Integrator_wireframeColorB" 
+		-dv -1 -at "float" -p "rman__riopt__Integrator_wireframeColor";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_wireframeOpacity" -ln "rman__riopt__Integrator_wireframeOpacity" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_wireframeWidth" -ln "rman__riopt__Integrator_wireframeWidth" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_style" -ln "rman__riopt__Integrator_style" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_normalCheck" -ln "rman__riopt__Integrator_normalCheck" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_matCap" -ln "rman__riopt__Integrator_matCap" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__EnvLight" -ln "rman__EnvLight" -dt "string";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "d" -ln "display" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "c" -ln "channel" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "rif" -ln "rif" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "p" -ln "passes" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "sh" -ln "shared" -at "message";
+	addAttr -ci true -m -sn "rman__displayfilters" -ln "rman__displayfilters" -dt "string";
+	addAttr -ci true -m -sn "rman__samplefilters" -ln "rman__samplefilters" -dt "string";
+	setAttr ".rman__torattr___class" -type "string" "RISJob";
+	setAttr ".rman__torattr___task" -type "string" "job";
+	setAttr -k on ".rman__toropt___renderDataCleanupJob" 0;
+	setAttr -k on ".rman__toropt___shaderCleanupJob" 0;
+	setAttr -k on ".rman__toropt___textureCleanupJob" 0;
+	setAttr -k on ".rman__toropt___ribCleanupJob" 0;
+	setAttr -k on ".rman__toropt___ribFlatten" 0;
+	setAttr -k on ".rman__toropt___renderDataCleanupFrame" 0;
+	setAttr -k on ".rman__toropt___textureCleanupFrame" 0;
+	setAttr -k on ".rman__toropt___ribCleanupFrame" 0;
+	setAttr ".rman__toropt___primaryCamera" -type "string" "";
+	setAttr -k on ".rman__toropt___enableRenderLayers" 0;
+	setAttr ".rman__toropt___renderLayer" -type "string" "";
+	setAttr ".rman__toropt___motionBlurType" -type "string" "frame";
+	setAttr -k on ".rman__toropt___shutterAngle" 180;
+	setAttr ".rman__toropt___shutterTiming" -type "string" "frameOpen";
+	setAttr ".rman__toropt___cacheCrew" -type "string" "";
+	setAttr -k on ".rman__toropt___renumber" 0;
+	setAttr -k on ".rman__toropt___renumberStart" 1;
+	setAttr -k on ".rman__toropt___renumberBy" 1;
+	setAttr -k on ".rman__toropt___lazyRibGen" 0;
+	setAttr -k on ".rman__toropt___lazyRender" 0;
+	setAttr -k on ".rman__toropt___bakeMode" 0;
+	setAttr -k on ".rman__toropt___furChunkSize" 10000;
+	setAttr -k on ".rman__torattr___enableRifs" 1;
+	setAttr -k on ".rman__toropt___nativeShadingSupport" 0;
+	setAttr -k on ".rman__torattr___motionSamples" 2;
+	setAttr -k on ".rman__torattr___referenceFrame" 0;
+	setAttr -k on ".rman__torattr___motionBlur" 0;
+	setAttr -k on ".rman__torattr___mapResolution" -type "long2" 0 0 ;
+	setAttr -k on ".rman__torattr___depthOfField" 0;
+	setAttr -k on ".rman__torattr___cameraBlur" 0;
+	setAttr -k on ".rman__torattr___frontPlane" 0;
+	setAttr -k on ".rman__torattr___backPlane" 0;
+	setAttr ".rman__torattr___passCommand" -type "string" "";
+	setAttr -k on ".rman__torattr___crop" 0;
+	setAttr ".rman__torattr___passExtFormat" -type "string" "";
+	setAttr ".rman__torattr___passNameFormat" -type "string" "";
+	setAttr -k on ".rman__torattr___previewPass" 0;
+	setAttr ".rman__torattr___defaultDisplacementShader" -type "string" "";
+	setAttr ".rman__torattr___defaultAtmosphereShader" -type "string" "";
+	setAttr ".rman__torattr___defaultInteriorShader" -type "string" "";
+	setAttr -k on ".rman__torattr___outputSurfaceShaders" 1;
+	setAttr -k on ".rman__torattr___outputDisplacementShaders" 1;
+	setAttr -k on ".rman__torattr___outputLightShaders" 1;
+	setAttr -k on ".rman__torattr___outputVolumeShaders" 1;
+	setAttr -k on ".rman__torattr___outputImagerShaders" 1;
+	setAttr ".rman__toropt___preFrameScript" -type "string" "";
+	setAttr ".rman__toropt___postFrameScript" -type "string" "";
+	setAttr ".rman__torattr___preRenderScript" -type "string" "";
+	setAttr ".rman__torattr___postRenderScript" -type "string" "";
+	setAttr ".rman__torattr___defaultRiOptionsScript" -type "string" "";
+	setAttr ".rman__torattr___defaultRiAttributesScript" -type "string" "";
+	setAttr ".rman__torattr___renderBeginScript" -type "string" "rmanTimeStampScript";
+	setAttr ".rman__torattr___transformBeginScript" -type "string" "";
+	setAttr ".rman__torattr___transformEndScript" -type "string" "";
+	setAttr ".rman__torattr___postTransformScript" -type "string" "";
+	setAttr ".rman__torattr___preShapeScript" -type "string" "";
+	setAttr ".rman__torattr___postShapeScript" -type "string" "";
+	setAttr ".rman__torattr___cacheShapeScript" -type "string" "";
+	setAttr ".rman__torattr___bakeChannels" -type "string" "";
+	setAttr ".rman__torattr___bakeCrew" -type "string" "";
+	setAttr ".rman__torattr___bakeOutputFile" -type "string" "";
+	setAttr ".rman__torattr___customShadingGroup" -type "string" "";
+	setAttr -k on ".rman__torattr___shaderBindingStrength" 1;
+	setAttr -k on ".rman__torattr___computeBehavior" 1;
+	setAttr -k on ".rman__torattr___enableObjectInstancing" 1;
+	setAttr ".rman__torattr___impliedSSBakeMode" -type "string" "SSDiffuse";
+	setAttr ".rman__toropt___JOBSTYLE" -type "string" "";
+	setAttr ".rman__torattr___deformationBlurStyle" -type "string" "none";
+	setAttr -k on ".rman__torattr___deformationBlurScale" 1;
+	setAttr -k on ".rman__torattr___enableMfcProcPrim" 0;
+	setAttr -k on ".rman__torattr___linearizeColors" 0;
+	setAttr -k on ".rman__torattr___rayTracing" 1;
+	setAttr ".rman__torattr___referenceCamera" -type "string" "";
+	setAttr -k on ".rman__toropt___enableRIS" 1;
+	setAttr -k on ".rman__torattr___denoise" 0;
+	setAttr ".rman__torattr___denoiseFilter" -type "string" "default.filter.json";
+	setAttr ".rman__torattr___defaultSurfaceShader" -type "string" "PxrDiffuse";
+	setAttr -k on ".rman__torattr___outputShadowAOV" 0;
+	setAttr -k on ".rman__torattr___enableImagePlaneFilter" 1;
+	setAttr -k on ".rman__riopt__trace_maxdepth" 10;
+	setAttr -k on ".rman__riopt___PixelVariance" 0.0099999997764825821;
+	setAttr ".rman__riopt__bucket_order" -type "string" "spiral";
+	setAttr -k on ".rman__riopt__limits_bucketsize" -type "long2" 16 16 ;
+	setAttr -k on ".rman__riopt__trace_decimationrate" 1;
+	setAttr -k on ".rman__riopt__limits_threads" 0;
+	setAttr -k on ".rman__riopt__Camera_shutteropening" -type "float2" 0 1 ;
+	setAttr -k on ".rman__riopt__Format_resolution" -type "long2" 960 540 ;
+	setAttr -k on ".rman__riopt__Format_pixelaspectratio" 1;
+	setAttr -k on ".rman__riopt__hair_minwidth" 0.5;
+	setAttr ".rman__riopt__rib_compression" -type "string" "none";
+	setAttr ".rman__riopt__rib_format" -type "string" "binary";
+	setAttr -k on ".rman__riopt__rib_precision" 6;
+	setAttr -k on ".rman__riopt__user_iesIgnoreWatts" 1;
+	setAttr -k on ".rman__riopt__statistics_level" 1;
+	setAttr ".rman__riopt__statistics_filename" -type "string" "stdout";
+	setAttr ".rman__riopt__statistics_xmlfilename" -type "string" "[AssetRef -cls rmanstat]";
+	setAttr ".rman__riopt__Projection_name" -type "string" "";
+	setAttr ".rman__riopt__Projection2_name" -type "string" "";
+	setAttr -k on ".rman__riopt__limits_zthreshold" -type "float3" 0.99599999 0.99599999 
+		0.99599999 ;
+	setAttr -k on ".rman__riopt__limits_othreshold" -type "float3" 0.99599999 0.99599999 
+		0.99599999 ;
+	setAttr -k on ".rman__riopt__limits_texturememory" 4194304;
+	setAttr -k on ".rman__riopt__limits_geocachememory" 2097152;
+	setAttr -k on ".rman__riopt__limits_proceduralmemory" 0;
+	setAttr -k on ".rman__riopt__limits_deepshadowtiles" 1000;
+	setAttr -k on ".rman__riopt__limits_deepshadowmemory" 102400;
+	setAttr -k on ".rman__riopt__limits_brickmemory" 10240;
+	setAttr -k on ".rman__riopt__user_sceneUnits" 1;
+	setAttr ".rman__riopt__lpe_diffuse2" -type "string" "Diffuse";
+	setAttr ".rman__riopt__lpe_diffuse3" -type "string" "Subsurface";
+	setAttr ".rman__riopt__lpe_specular2" -type "string" "Specular";
+	setAttr ".rman__riopt__lpe_specular3" -type "string" "RoughSpecular";
+	setAttr ".rman__riopt__lpe_specular4" -type "string" "Clearcoat";
+	setAttr ".rman__riopt__lpe_specular5" -type "string" "Iridescence";
+	setAttr ".rman__riopt__lpe_specular6" -type "string" "Fuzz";
+	setAttr ".rman__riopt__lpe_specular7" -type "string" "SingleScatter";
+	setAttr ".rman__riopt__lpe_specular8" -type "string" "Glass";
+	setAttr ".rman__riopt__Hider_name" -type "string" "raytrace";
+	setAttr -k on ".rman__riopt__Hider_minsamples" 0;
+	setAttr -k on ".rman__riopt__Hider_minextrasamples" 0;
+	setAttr -k on ".rman__riopt__Hider_maxsamples" 128;
+	setAttr -k on ".rman__riopt__Hider_darkfalloff" 0.02500000037252903;
+	setAttr -k on ".rman__riopt__limits_opacitycachememory" 4194304;
+	setAttr ".rman__riopt__Integrator_name" -type "string" "PxrPathTracer";
+	setAttr -k on ".rman__riattr__trace_maxdiffusedepth" 1;
+	setAttr -k on ".rman__riattr__trace_maxspeculardepth" 4;
+	setAttr -k on ".rman__riattr__trace_samplemotion" 1;
+	setAttr ".rman__riattr__dice_referencecamera" -type "string" "worldcamera";
+	setAttr -k on ".rman__riattr__procedural_reentrant" 1;
+	setAttr -k on ".rman__riattr__dice_micropolygonlength" 1;
+	setAttr -k on ".rman__riattr__dice_watertight" 0;
+	setAttr -k on ".rman__riattr__trace_autobias" 1;
+	setAttr -k on ".rman__riattr__trace_bias" 0.0010000000474974513;
+	setAttr ".rman__riattr__displacementbound_coordinatesystem" -type "string" "shader";
+	setAttr -k on ".rman__riattr__displacementbound_sphere" 0;
+	setAttr -k on ".rman__riattr__trace_displacements" 1;
+	setAttr -k on ".rman__riopt__Projection_fov" 0;
+	setAttr -k on ".rman__riopt__Projection_hsweep" 360;
+	setAttr -k on ".rman__riopt__Projection_vsweep" 180;
+	setAttr -k on ".rman__riopt__Projection_minor" 0.25;
+	setAttr -k on ".rman__riopt__Hider_adaptall" 0;
+	setAttr -k on ".rman__riopt__Hider_incremental" 1;
+	setAttr ".rman__riopt__Hider_pixelfiltermode" -type "string" "weighted";
+	setAttr -k on ".rman__riopt__Integrator_mergePaths" 1;
+	setAttr -k on ".rman__riopt__Integrator_mergeRadiusScale" 5;
+	setAttr -k on ".rman__riopt__Integrator_timeRadius" 1;
+	setAttr -k on ".rman__riopt__Integrator_reduceRadius" 1;
+	setAttr -k on ".rman__riopt__Integrator_connectPaths" 1;
+	setAttr -k on ".rman__riopt__Integrator_maxPathLength" 10;
+	setAttr ".rman__riopt__Integrator_sampleMode" -type "string" "bxdf";
+	setAttr -k on ".rman__riopt__Integrator_numLightSamples" 2;
+	setAttr -k on ".rman__riopt__Integrator_numBxdfSamples" 2;
+	setAttr -k on ".rman__riopt__Integrator_numIndirectSamples" 2;
+	setAttr -k on ".rman__riopt__Integrator_numDiffuseSamples" 1;
+	setAttr -k on ".rman__riopt__Integrator_numSpecularSamples" 1;
+	setAttr -k on ".rman__riopt__Integrator_numSubsurfaceSamples" 1;
+	setAttr -k on ".rman__riopt__Integrator_numRefractionSamples" 1;
+	setAttr -k on ".rman__riopt__Integrator_rouletteDepth" 4;
+	setAttr -k on ".rman__riopt__Integrator_rouletteThreshold" 0.20000000298023224;
+	setAttr ".rman__riopt__Integrator_imagePlaneSubset" -type "string" "rman__imageplane";
+	setAttr -k on ".rman__riopt__Integrator_clampDepth" 2;
+	setAttr -k on ".rman__riopt__Integrator_clampLuminance" 10;
+	setAttr -k on ".rman__riopt__Integrator_allowCaustics" 0;
+	setAttr ".rman__riopt__Integrator_distribution" -type "string" "cosine";
+	setAttr -k on ".rman__riopt__Integrator_numSamples" 4;
+	setAttr -k on ".rman__riopt__Integrator_distance" 10;
+	setAttr -k on ".rman__riopt__Integrator_gamma" 1;
+	setAttr -k on ".rman__riopt__Integrator_useAlbedo" 0;
+	setAttr ".rman__riopt__Integrator_viewchannel" -type "string" "Nn";
+	setAttr -k on ".rman__riopt__Integrator_wireframe" 1;
+	setAttr -k on ".rman__riopt__Integrator_wireframeColor" -type "float3" 0 0 0 ;
+	setAttr -k on ".rman__riopt__Integrator_wireframeOpacity" 0.5;
+	setAttr -k on ".rman__riopt__Integrator_wireframeWidth" 1;
+	setAttr ".rman__riopt__Integrator_style" -type "string" "shaded";
+	setAttr -k on ".rman__riopt__Integrator_normalCheck" 0;
+	setAttr ".rman__riopt__Integrator_matCap" -type "string" "";
+	setAttr ".rman__EnvLight" -type "string" "";
+	setAttr -s 3 ".p";
+	setAttr ".nt" -type "string" "settings:job";
 select -ne :time1;
 	setAttr -av -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -14459,7 +16018,7 @@ select -ne :renderPartition;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 38 ".st";
+	setAttr -s 51 ".st";
 	setAttr -cb on ".an";
 	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
@@ -14472,7 +16031,7 @@ select -ne :defaultShaderList1;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 17 ".s";
+	setAttr -s 27 ".s";
 select -ne :postProcessList1;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -14480,17 +16039,17 @@ select -ne :postProcessList1;
 	setAttr -cb on ".bnm";
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 14 ".u";
+	setAttr -s 16 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 98 ".r";
+	setAttr -s 108 ".r";
 select -ne :defaultTextureList1;
-	setAttr -s 20 ".tx";
+	setAttr -s 24 ".tx";
 select -ne :initialShadingGroup;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 71 ".dsm";
+	setAttr -s 61 ".dsm";
 	setAttr -k on ".mwc";
 	setAttr -cb on ".an";
 	setAttr -cb on ".il";
@@ -14564,168 +16123,166 @@ select -ne :hardwareRenderGlobals;
 	setAttr -k on ".hwcc";
 	setAttr -k on ".hwdp";
 	setAttr -k on ".hwql";
-connectAttr "Barbatus_stall_latest_GrillRN.phl[31]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[113]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[32]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[114]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[33]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[115]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[34]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[116]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[35]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[117]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[36]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[118]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[37]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[119]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[38]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[120]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[39]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[121]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[40]" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[41]" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[42]" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[43]" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[44]" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[45]" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[46]" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[47]" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[48]" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[49]" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[50]" ":initialShadingGroup.dsm" -na
-		;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[51]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[122]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "Barbatus_stall_latest_GrillRN.phl[123]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "Barbatus_stall_latest_GrillRN.phl[124]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "Barbatus_stall_latest_GrillRN.phl[125]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "Barbatus_stall_latest_GrillRN.phl[126]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "Barbatus_stall_latest_GrillRN.phl[127]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "Barbatus_stall_latest_GrillRN.phl[128]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "Barbatus_stall_latest_GrillRN.phl[129]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "Barbatus_stall_latest_GrillRN.phl[130]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "Barbatus_stall_latest_GrillRN.phl[131]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "Barbatus_stall_latest_GrillRN.phl[132]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "Barbatus_stall_latest_GrillRN.phl[133]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[52]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[134]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[53]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[135]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[54]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[136]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[55]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[137]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[56]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[138]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[57]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[139]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[58]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[140]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[59]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[141]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[60]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[142]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[61]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[143]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[62]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[144]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[63]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[145]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[64]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[146]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[65]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[147]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[66]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[148]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[67]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[149]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[68]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[150]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[69]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[151]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[70]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[152]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[71]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[153]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[72]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[154]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[73]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[155]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[74]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[156]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[75]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[157]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[76]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[158]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[77]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[159]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[78]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[160]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[79]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[161]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[80]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[162]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[81]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[163]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[82]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[164]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[83]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[165]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[84]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[166]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[85]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[167]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[86]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[168]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[87]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[169]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[88]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[170]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[89]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[171]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[90]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[172]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[91]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[173]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[92]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[174]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[93]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[175]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[94]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[176]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[95]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[177]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[96]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[178]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[97]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[179]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[98]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[180]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[99]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[181]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[100]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[182]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[101]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[183]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[102]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[184]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[103]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[185]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[104]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[186]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[105]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[187]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[106]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[188]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[107]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[189]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[108]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[190]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[109]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[191]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[110]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
+connectAttr "Barbatus_stall_latest_GrillRN.phl[192]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "Barbatus_stall_latest_GrillRN.phl[111]" "Barbatus_stall_latest_GrillRN.phl[112]"
-		;
 connectAttr "Barbatus_stall_latest_StockPot_latestRN.phl[1]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
 connectAttr "Barbatus_stall_latest_StockPot_latestRN.phl[2]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
@@ -15238,113 +16795,115 @@ connectAttr "roll_and_sausage_platter_latestRN.phl[165]" "roll_and_sausage_platt
 		;
 connectAttr "roll_and_sausage_platter_latestRN.phl[167]" "roll_and_sausage_platter_latestRN.phl[168]"
 		;
-connectAttr "octopus_platter_latestRN.phl[316]" ":initialShadingGroup.dsm" -na;
-connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[317]";
-connectAttr "octopus_platter_latestRN.phl[318]" ":initialShadingGroup.dsm" -na;
-connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[319]";
-connectAttr "octopus_platter_latestRN.phl[320]" ":initialShadingGroup.dsm" -na;
-connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[321]";
-connectAttr "octopus_platter_latestRN.phl[322]" ":initialShadingGroup.dsm" -na;
-connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[323]";
-connectAttr "octopus_platter_latestRN.phl[324]" ":initialShadingGroup.dsm" -na;
-connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[325]";
-connectAttr "octopus_platter_latestRN.phl[326]" "octopus_platter_latestRN.phl[327]"
+connectAttr "octopus_platter_latestRN.phl[558]" ":initialShadingGroup.dsm" -na;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[559]";
+connectAttr "octopus_platter_latestRN.phl[560]" ":initialShadingGroup.dsm" -na;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[561]";
+connectAttr "octopus_platter_latestRN.phl[562]" ":initialShadingGroup.dsm" -na;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[563]";
+connectAttr "octopus_platter_latestRN.phl[564]" ":initialShadingGroup.dsm" -na;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[565]";
+connectAttr "octopus_platter_latestRN.phl[566]" ":initialShadingGroup.dsm" -na;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[567]";
+connectAttr "octopus_platter_latestRN.phl[568]" "octopus_platter_latestRN.phl[569]"
 		;
-connectAttr "octopus_platter_latestRN.phl[328]" "octopus_platter_latestRN.phl[329]"
+connectAttr "octopus_platter_latestRN.phl[570]" "octopus_platter_latestRN.phl[571]"
 		;
-connectAttr "octopus_platter_latestRN.phl[330]" "octopus_platter_latestRN.phl[331]"
+connectAttr "octopus_platter_latestRN.phl[572]" "octopus_platter_latestRN.phl[573]"
 		;
-connectAttr "octopus_platter_latestRN.phl[332]" "octopus_platter_latestRN.phl[333]"
+connectAttr "octopus_platter_latestRN.phl[574]" "octopus_platter_latestRN.phl[575]"
 		;
-connectAttr "octopus_platter_latestRN.phl[334]" "octopus_platter_latestRN.phl[335]"
+connectAttr "octopus_platter_latestRN.phl[576]" "octopus_platter_latestRN.phl[577]"
 		;
-connectAttr "octopus_platter_latestRN.phl[336]" "octopus_platter_latestRN.phl[337]"
+connectAttr "octopus_platter_latestRN.phl[578]" "octopus_platter_latestRN.phl[579]"
 		;
-connectAttr "octopus_platter_latestRN.phl[338]" "octopus_platter_latestRN.phl[339]"
+connectAttr "octopus_platter_latestRN.phl[580]" "octopus_platter_latestRN.phl[581]"
 		;
-connectAttr "octopus_platter_latestRN.phl[340]" "octopus_platter_latestRN.phl[341]"
+connectAttr "octopus_platter_latestRN.phl[582]" "octopus_platter_latestRN.phl[583]"
 		;
-connectAttr "octopus_platter_latestRN.phl[342]" "octopus_platter_latestRN.phl[343]"
+connectAttr "octopus_platter_latestRN.phl[584]" "octopus_platter_latestRN.phl[585]"
 		;
-connectAttr "octopus_platter_latestRN.phl[344]" "octopus_platter_latestRN.phl[345]"
+connectAttr "octopus_platter_latestRN.phl[586]" "octopus_platter_latestRN.phl[587]"
 		;
-connectAttr "octopus_platter_latestRN.phl[347]" "octopus_platter_latestRN.phl[346]"
+connectAttr "octopus_platter_latestRN.phl[589]" "octopus_platter_latestRN.phl[588]"
 		;
-connectAttr "octopus_platter_latestRN.phl[349]" "octopus_platter_latestRN.phl[348]"
+connectAttr "octopus_platter_latestRN.phl[591]" "octopus_platter_latestRN.phl[590]"
 		;
-connectAttr "octopus_platter_latestRN.phl[351]" "octopus_platter_latestRN.phl[350]"
+connectAttr "octopus_platter_latestRN.phl[593]" "octopus_platter_latestRN.phl[592]"
 		;
-connectAttr "octopus_platter_latestRN.phl[353]" "octopus_platter_latestRN.phl[352]"
+connectAttr "octopus_platter_latestRN.phl[595]" "octopus_platter_latestRN.phl[594]"
 		;
-connectAttr "octopus_platter_latestRN.phl[355]" "octopus_platter_latestRN.phl[354]"
+connectAttr "octopus_platter_latestRN.phl[597]" "octopus_platter_latestRN.phl[596]"
 		;
-connectAttr "octopus_platter_latestRN.phl[357]" "octopus_platter_latestRN.phl[356]"
+connectAttr "octopus_platter_latestRN.phl[599]" "octopus_platter_latestRN.phl[598]"
 		;
-connectAttr "octopus_platter_latestRN.phl[359]" "octopus_platter_latestRN.phl[358]"
+connectAttr "octopus_platter_latestRN.phl[601]" "octopus_platter_latestRN.phl[600]"
 		;
-connectAttr "octopus_platter_latestRN.phl[361]" "octopus_platter_latestRN.phl[360]"
+connectAttr "octopus_platter_latestRN.phl[603]" "octopus_platter_latestRN.phl[602]"
 		;
-connectAttr "octopus_platter_latestRN.phl[363]" "octopus_platter_latestRN.phl[362]"
+connectAttr "octopus_platter_latestRN.phl[605]" "octopus_platter_latestRN.phl[604]"
 		;
-connectAttr "octopus_platter_latestRN.phl[365]" "octopus_platter_latestRN.phl[364]"
+connectAttr "octopus_platter_latestRN.phl[607]" "octopus_platter_latestRN.phl[606]"
 		;
-connectAttr "octopus_platter_latestRN.phl[367]" "octopus_platter_latestRN.phl[366]"
+connectAttr "octopus_platter_latestRN.phl[609]" "octopus_platter_latestRN.phl[608]"
 		;
-connectAttr "octopus_platter_latestRN.phl[369]" "octopus_platter_latestRN.phl[368]"
+connectAttr "octopus_platter_latestRN.phl[611]" "octopus_platter_latestRN.phl[610]"
 		;
-connectAttr "octopus_platter_latestRN.phl[371]" "octopus_platter_latestRN.phl[370]"
+connectAttr "octopus_platter_latestRN.phl[613]" "octopus_platter_latestRN.phl[612]"
 		;
-connectAttr "octopus_platter_latestRN.phl[373]" "octopus_platter_latestRN.phl[372]"
+connectAttr "octopus_platter_latestRN.phl[615]" "octopus_platter_latestRN.phl[614]"
 		;
-connectAttr "octopus_platter_latestRN.phl[375]" "octopus_platter_latestRN.phl[374]"
+connectAttr "octopus_platter_latestRN.phl[617]" "octopus_platter_latestRN.phl[616]"
 		;
-connectAttr "octopus_platter_latestRN.phl[377]" "octopus_platter_latestRN.phl[376]"
+connectAttr "octopus_platter_latestRN.phl[619]" "octopus_platter_latestRN.phl[618]"
 		;
-connectAttr "octopus_platter_latestRN.phl[379]" "octopus_platter_latestRN.phl[378]"
+connectAttr "octopus_platter_latestRN.phl[621]" "octopus_platter_latestRN.phl[620]"
 		;
-connectAttr "octopus_platter_latestRN.phl[381]" "octopus_platter_latestRN.phl[380]"
+connectAttr "octopus_platter_latestRN.phl[623]" "octopus_platter_latestRN.phl[622]"
 		;
-connectAttr "octopus_platter_latestRN.phl[383]" "octopus_platter_latestRN.phl[382]"
+connectAttr "octopus_platter_latestRN.phl[625]" "octopus_platter_latestRN.phl[624]"
 		;
-connectAttr "octopus_platter_latestRN.phl[385]" "octopus_platter_latestRN.phl[384]"
+connectAttr "octopus_platter_latestRN.phl[627]" "octopus_platter_latestRN.phl[626]"
 		;
-connectAttr "octopus_platter_latestRN.phl[387]" "octopus_platter_latestRN.phl[386]"
+connectAttr "octopus_platter_latestRN.phl[629]" "octopus_platter_latestRN.phl[628]"
 		;
-connectAttr "octopus_platter_latestRN.phl[389]" "octopus_platter_latestRN.phl[388]"
+connectAttr "octopus_platter_latestRN.phl[631]" "octopus_platter_latestRN.phl[630]"
 		;
-connectAttr "octopus_platter_latestRN.phl[391]" "octopus_platter_latestRN.phl[390]"
+connectAttr "octopus_platter_latestRN.phl[633]" "octopus_platter_latestRN.phl[632]"
 		;
-connectAttr "octopus_platter_latestRN.phl[393]" "octopus_platter_latestRN.phl[392]"
+connectAttr "octopus_platter_latestRN.phl[635]" "octopus_platter_latestRN.phl[634]"
 		;
-connectAttr "octopus_platter_latestRN.phl[395]" "octopus_platter_latestRN.phl[394]"
+connectAttr "octopus_platter_latestRN.phl[637]" "octopus_platter_latestRN.phl[636]"
 		;
-connectAttr "octopus_platter_latestRN.phl[397]" "octopus_platter_latestRN.phl[396]"
+connectAttr "octopus_platter_latestRN.phl[639]" "octopus_platter_latestRN.phl[638]"
 		;
-connectAttr "octopus_platter_latestRN.phl[399]" "octopus_platter_latestRN.phl[398]"
+connectAttr "octopus_platter_latestRN.phl[641]" "octopus_platter_latestRN.phl[640]"
 		;
-connectAttr "octopus_platter_latestRN.phl[400]" "octopus_platter_latestRN.phl[401]"
+connectAttr "octopus_platter_latestRN.phl[642]" "octopus_platter_latestRN.phl[643]"
 		;
-connectAttr "octopus_platter_latestRN.phl[314]" "octopus_platter_latestRN.phl[315]"
+connectAttr "octopus_platter_latestRN.phl[555]" "octopus_platter_latestRN.phl[402]"
 		;
-connectAttr "octopus_platter_latestRN.phl[403]" "octopus_platter_latestRN.phl[402]"
+connectAttr "octopus_platter_latestRN.phl[556]" "octopus_platter_latestRN.phl[557]"
 		;
-connectAttr "strip_platter_latestRN.phl[92]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[93]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[94]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[95]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[96]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[97]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[98]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[99]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[100]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[84]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[85]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[86]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[87]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[88]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[89]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[90]" ":initialShadingGroup.dsm" -na;
-connectAttr "strip_platter_latestRN.phl[91]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[553]" "octopus_platter_latestRN.phl[554]"
+		;
+connectAttr "strip_platter_latestRN.phl[100]" "strip_platter_latestRN.phl[101]";
+connectAttr "strip_platter_latestRN.phl[102]" "strip_platter_latestRN.phl[103]";
+connectAttr "strip_platter_latestRN.phl[104]" "strip_platter_latestRN.phl[105]";
+connectAttr "strip_platter_latestRN.phl[106]" "strip_platter_latestRN.phl[107]";
+connectAttr "strip_platter_latestRN.phl[108]" "strip_platter_latestRN.phl[109]";
+connectAttr "strip_platter_latestRN.phl[110]" "strip_platter_latestRN.phl[111]";
+connectAttr "strip_platter_latestRN.phl[112]" "strip_platter_latestRN.phl[113]";
+connectAttr "strip_platter_latestRN.phl[114]" "strip_platter_latestRN.phl[115]";
+connectAttr "strip_platter_latestRN.phl[116]" "strip_platter_latestRN.phl[117]";
+connectAttr "strip_platter_latestRN.phl[84]" "strip_platter_latestRN.phl[85]";
+connectAttr "strip_platter_latestRN.phl[86]" "strip_platter_latestRN.phl[87]";
+connectAttr "strip_platter_latestRN.phl[88]" "strip_platter_latestRN.phl[89]";
+connectAttr "strip_platter_latestRN.phl[90]" "strip_platter_latestRN.phl[91]";
+connectAttr "strip_platter_latestRN.phl[92]" "strip_platter_latestRN.phl[93]";
+connectAttr "strip_platter_latestRN.phl[94]" "strip_platter_latestRN.phl[95]";
+connectAttr "strip_platter_latestRN.phl[96]" "strip_platter_latestRN.phl[97]";
+connectAttr "strip_platter_latestRN.phl[98]" "strip_platter_latestRN.phl[99]";
 connectAttr "lotus_belly_platter_latestRN.phl[102]" ":initialShadingGroup.dsm" -na
 		;
 connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[103]";
@@ -15490,6 +17049,45 @@ connectAttr "lotus_belly_platter_latestRN.phl[228]" "lotus_belly_platter_latestR
 		;
 connectAttr "lotus_belly_platter_latestRN.phl[230]" "lotus_belly_platter_latestRN.phl[231]"
 		;
+connectAttr "plate_latestRN.phl[1]" "plate_latestRN.phl[2]";
+connectAttr "plate_latestRN.phl[3]" "plate_latestRN.phl[4]";
+connectAttr "plate_latestRN.phl[5]" "plate_latestRN.phl[6]";
+connectAttr "plate_latestRN.phl[7]" "plate_latestRN.phl[8]";
+connectAttr "plate_latestRN.phl[9]" "plate_latestRN.phl[10]";
+connectAttr "plate_latestRN.phl[11]" "plate_latestRN.phl[12]";
+connectAttr "plate_latestRN.phl[13]" "plate_latestRN.phl[14]";
+connectAttr "plate_latestRN.phl[15]" "plate_latestRN.phl[16]";
+connectAttr "plate_latestRN.phl[17]" "plate_latestRN.phl[18]";
+connectAttr "plate_latestRN.phl[19]" "plate_latestRN.phl[20]";
+connectAttr "plate_latestRN.phl[21]" "plate_latestRN.phl[22]";
+connectAttr "plate_latestRN.phl[23]" "plate_latestRN.phl[24]";
+connectAttr "plate_latestRN.phl[25]" "plate_latestRN.phl[26]";
+connectAttr "plate_latestRN.phl[27]" "plate_latestRN.phl[28]";
+connectAttr "plate_latestRN.phl[29]" "plate_latestRN.phl[30]";
+connectAttr "plate_latestRN.phl[31]" "plate_latestRN.phl[32]";
+connectAttr "plate_latestRN.phl[33]" "plate_latestRN.phl[34]";
+connectAttr "plate_latestRN.phl[35]" "plate_latestRN.phl[36]";
+connectAttr "plate_latestRN.phl[37]" "plate_latestRN.phl[38]";
+connectAttr "plate_latestRN.phl[39]" "plate_latestRN.phl[40]";
+connectAttr "plate_latestRN.phl[41]" "plate_latestRN.phl[42]";
+connectAttr "plate_latestRN.phl[43]" "plate_latestRN.phl[44]";
+connectAttr "plate_latestRN.phl[45]" "plate_latestRN.phl[46]";
+connectAttr "plate_latestRN.phl[47]" "plate_latestRN.phl[48]";
+connectAttr "plate_latestRN.phl[49]" "plate_latestRN.phl[50]";
+connectAttr "togo_box_latestRN.phl[1]" "togo_box_latestRN.phl[2]";
+connectAttr "togo_box_latestRN.phl[3]" "togo_box_latestRN.phl[4]";
+connectAttr "togo_box_latestRN.phl[5]" "togo_box_latestRN.phl[6]";
+connectAttr "togo_box_latestRN.phl[7]" "togo_box_latestRN.phl[8]";
+connectAttr "togo_box_latestRN.phl[9]" "togo_box_latestRN.phl[10]";
+connectAttr "togo_box_latestRN.phl[11]" "togo_box_latestRN.phl[12]";
+connectAttr "togo_box_latestRN.phl[13]" "togo_box_latestRN.phl[14]";
+connectAttr "togo_box_latestRN.phl[15]" "togo_box_latestRN.phl[16]";
+connectAttr "togo_box_latestRN.phl[17]" "togo_box_latestRN.phl[18]";
+connectAttr "togo_box_latestRN.phl[19]" "togo_box_latestRN.phl[20]";
+connectAttr "togo_box_latestRN.phl[21]" "togo_box_latestRN.phl[22]";
+connectAttr "togo_box_latestRN.phl[23]" "togo_box_latestRN.phl[24]";
+connectAttr "togo_box_latestRN.phl[25]" "togo_box_latestRN.phl[26]";
+connectAttr "togo_box_latestRN.phl[27]" "togo_box_latestRN.phl[28]";
 connectAttr "greasePlaneShape1.msg" ":perspShape.ip" -na;
 connectAttr "greasePencilPerspRenderPlane.msg" "greasePlaneShape1.rpl";
 connectAttr "greasePencilPerspArtDrawPlane.msg" "greasePlaneShape1.spl";
@@ -15534,6 +17132,8 @@ connectAttr "a.msg" ":rmanDefaultDisplay.displayChannels[1]";
 connectAttr "Barbatus_stall_latest_renderLayerManager.rlmi[0]" "Barbatus_stall_latest_defaultRenderLayer.rlid"
 		;
 connectAttr "Barbatus_stall_latest_tent_latest_renderLayerManager.rlmi[0]" "Barbatus_stall_latest_tent_latest_defaultRenderLayer.rlid"
+		;
+connectAttr "Barbatus_stall_latest_GrillRN.phl[111]" "Barbatus_stall_latest_GrillRN.phl[112]"
 		;
 connectAttr "Barbatus_stall_latest_sharedReferenceNode.sr" "Barbatus_stall_latest_GrillRN.sr"
 		;
@@ -15912,41 +17512,39 @@ connectAttr "octopus_platter_latestRN.phl[130]" "octopus_platter_latestRN.phl[13
 		;
 connectAttr "octopus_platter_latestRN.phl[132]" "octopus_platter_latestRN.phl[133]"
 		;
-connectAttr "octopus_platter_latestRN.phl[244]" "octopus_platter_latestRN.phl[245]"
+connectAttr "octopus_platter_latestRN.phl[493]" "octopus_platter_latestRN.phl[494]"
 		;
-connectAttr "octopus_platter_latestRN.phl[256]" "octopus_platter_latestRN.phl[257]"
+connectAttr "octopus_platter_latestRN.phl[495]" "octopus_platter_latestRN.phl[496]"
 		;
-connectAttr "octopus_platter_latestRN.phl[258]" "octopus_platter_latestRN.phl[259]"
+connectAttr "octopus_platter_latestRN.phl[497]" "octopus_platter_latestRN.phl[498]"
 		;
-connectAttr "octopus_platter_latestRN.phl[260]" "octopus_platter_latestRN.phl[261]"
+connectAttr "octopus_platter_latestRN.phl[499]" "octopus_platter_latestRN.phl[500]"
 		;
-connectAttr "octopus_platter_latestRN.phl[262]" "octopus_platter_latestRN.phl[263]"
+connectAttr "octopus_platter_latestRN.phl[501]" "octopus_platter_latestRN.phl[502]"
 		;
-connectAttr "octopus_platter_latestRN.phl[264]" "octopus_platter_latestRN.phl[265]"
+connectAttr "octopus_platter_latestRN.phl[506]" "octopus_platter_latestRN.phl[507]"
 		;
-connectAttr "octopus_platter_latestRN.phl[268]" "octopus_platter_latestRN.phl[269]"
+connectAttr "octopus_platter_latestRN.phl[518]" "octopus_platter_latestRN.phl[519]"
 		;
-connectAttr "octopus_platter_latestRN.phl[280]" "octopus_platter_latestRN.phl[281]"
+connectAttr "octopus_platter_latestRN.phl[520]" "octopus_platter_latestRN.phl[521]"
 		;
-connectAttr "octopus_platter_latestRN.phl[282]" "octopus_platter_latestRN.phl[283]"
+connectAttr "octopus_platter_latestRN.phl[522]" "octopus_platter_latestRN.phl[523]"
 		;
-connectAttr "octopus_platter_latestRN.phl[284]" "octopus_platter_latestRN.phl[285]"
+connectAttr "octopus_platter_latestRN.phl[524]" "octopus_platter_latestRN.phl[525]"
 		;
-connectAttr "octopus_platter_latestRN.phl[286]" "octopus_platter_latestRN.phl[287]"
+connectAttr "octopus_platter_latestRN.phl[526]" "octopus_platter_latestRN.phl[527]"
 		;
-connectAttr "octopus_platter_latestRN.phl[288]" "octopus_platter_latestRN.phl[289]"
+connectAttr "octopus_platter_latestRN.phl[531]" "octopus_platter_latestRN.phl[532]"
 		;
-connectAttr "octopus_platter_latestRN.phl[292]" "octopus_platter_latestRN.phl[293]"
+connectAttr "octopus_platter_latestRN.phl[543]" "octopus_platter_latestRN.phl[544]"
 		;
-connectAttr "octopus_platter_latestRN.phl[304]" "octopus_platter_latestRN.phl[305]"
+connectAttr "octopus_platter_latestRN.phl[545]" "octopus_platter_latestRN.phl[546]"
 		;
-connectAttr "octopus_platter_latestRN.phl[306]" "octopus_platter_latestRN.phl[307]"
+connectAttr "octopus_platter_latestRN.phl[547]" "octopus_platter_latestRN.phl[548]"
 		;
-connectAttr "octopus_platter_latestRN.phl[308]" "octopus_platter_latestRN.phl[309]"
+connectAttr "octopus_platter_latestRN.phl[549]" "octopus_platter_latestRN.phl[550]"
 		;
-connectAttr "octopus_platter_latestRN.phl[310]" "octopus_platter_latestRN.phl[311]"
-		;
-connectAttr "octopus_platter_latestRN.phl[312]" "octopus_platter_latestRN.phl[313]"
+connectAttr "octopus_platter_latestRN.phl[551]" "octopus_platter_latestRN.phl[552]"
 		;
 connectAttr "Barbatus_stall_latest_sharedReferenceNode.sr" "octopus_platter_latestRN.sr"
 		;
@@ -16097,6 +17695,11 @@ connectAttr ":defaultColorMgtGlobals.cfp" "greasePencilFile1.cmcp";
 connectAttr ":defaultColorMgtGlobals.wsn" "greasePencilFile1.ws";
 connectAttr "greasePencilFile1.oa" "greasePencilAlphaMultiplier1.i1x";
 connectAttr "greasePencilSequence1.k[0].fal" "greasePencilAlphaMultiplier1.i2x";
+connectAttr "chopstick_box_latestRNfosterParent1.msg" "chopstick_box_latestRN.fp"
+		;
+connectAttr "fosterParent1.msg" "chopstick_box_latestRN.fs" -na;
+connectAttr "fosterParent2.msg" "chopstick_box_latestRN.fs" -na;
+connectAttr "fosterParent3.msg" "chopstick_box_latestRN.fs" -na;
 connectAttr "Barbatus_stall_latest_PxrSurface1SG.pa" ":renderPartition.st" -na;
 connectAttr "Barbatus_stall_latest_PxrSurface2SG.pa" ":renderPartition.st" -na;
 connectAttr "MenuGrp.pa" ":renderPartition.st" -na;
