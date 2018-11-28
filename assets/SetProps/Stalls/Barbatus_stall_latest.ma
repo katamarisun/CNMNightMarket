@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Barbatus_stall_latest.ma
-//Last modified: Sun, Nov 25, 2018 03:34:49 PM
+//Last modified: Mon, Nov 26, 2018 06:05:09 PM
 //Codeset: 1252
 file -rdi 1 -ns "Grill" -rfn "Barbatus_stall_latest_GrillRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Grill_latest.ma";
@@ -116,13 +116,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "79E41AF7-4D96-DD40-7C16-6EA4641B8363";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 27.781227383289611 8.4897474424083654 45.157332337211265 ;
+	setAttr ".t" -type "double3" 34.718010826004708 10.066032517568845 53.723546486122828 ;
 	setAttr ".r" -type "double3" -8.1383527296449962 38.999999999989242 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "87B3DB01-420F-E5CB-33B5-30B073AD1943";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 55.431334175895145;
+	setAttr ".coi" 66.566129369984452;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -6532,86 +6532,10 @@ createNode transform -n "Foods" -p "Barbatus_stall_latest_Barbatus";
 	setAttr ".rp" -type "double3" 2.9200083270110841 4.7266024629862589 8.5252916338659777 ;
 	setAttr ".sp" -type "double3" 3.5103454364566127 5.6821781062768242 15.06271262287375 ;
 	setAttr ".spt" -type "double3" -0.59033710944552831 -0.95557564329056499 -6.5374209890077726 ;
-createNode transform -n "greasePencilPerspRenderPlane";
-	rename -uid "360B9A52-4456-616D-CC96-C9A826D66869";
-createNode greasePlaneRenderShape -n "greasePencilPerspRenderPlaneShape" -p "greasePencilPerspRenderPlane";
-	rename -uid "C3FA4139-41AF-1E59-2E35-AD96C9E55F9C";
-	setAttr -k off ".v";
-	setAttr ".ovdt" 2;
-	setAttr ".ove" yes;
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr ".de" 2;
-createNode transform -n "greasePencilPerspArtDrawPlane";
-	rename -uid "F2664C8D-4D3C-544B-2EF1-64A111569BC2";
-	setAttr ".v" no;
-createNode greasePlaneRenderShape -n "greasePencilPerspArtDrawPlaneShape" -p "greasePencilPerspArtDrawPlane";
-	rename -uid "658B72E0-4AAB-6AFD-836F-8EA9F42FB02C";
-	setAttr -k off ".v";
-	setAttr ".ovdt" 2;
-	setAttr ".ove" yes;
-	setAttr ".vir" yes;
-	setAttr ".vif" yes;
-	setAttr ".uvst[0].uvsn" -type "string" "map1";
-	setAttr ".cuvs" -type "string" "map1";
-	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr ".de" 2;
-createNode transform -n "TogoBoxes";
-	rename -uid "55F8769D-4310-2C0E-8E99-44BF98EC3C4E";
-	setAttr ".t" -type "double3" 0.64519971357324657 0 0.18432423011121735 ;
-	setAttr ".r" -type "double3" 0 74.390720472446006 0 ;
-	setAttr ".rp" -type "double3" 2.950820920125746 4.0595648324144404 9.3589952113646682 ;
-	setAttr ".sp" -type "double3" 2.950820920125746 4.0595648324144404 9.3589952113646682 ;
-createNode transform -n "ToGo1" -p "TogoBoxes";
-	rename -uid "8092ABC6-4D01-227F-82BB-86B3381D67C8";
-	setAttr ".t" -type "double3" 2.950820920125746 5.8469364251061577 9.6750169341695518 ;
-	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
-	setAttr ".rp" -type "double3" 0 -1.9717143926978431 0 ;
-	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
-createNode transform -n "ToGo2" -p "TogoBoxes";
-	rename -uid "0BB3C716-4EC2-EE1F-CB95-C7AE76BFB10A";
-	setAttr ".t" -type "double3" 2.950820920125746 4.2227102278407616 9.6750169341695518 ;
-	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
-	setAttr ".rp" -type "double3" 0 -0.29748819543244653 0 ;
-	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
-	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
-createNode transform -n "ToGo3" -p "TogoBoxes";
-	rename -uid "24ED3BB1-4E2B-FB42-7AE0-39AC35661921";
-	setAttr ".t" -type "double3" 2.950820920125746 4.2727102278407623 9.6750169341695518 ;
-	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
-	setAttr ".rp" -type "double3" 0 -0.29748819543244648 0 ;
-	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
-	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
-createNode transform -n "ToGo4" -p "TogoBoxes";
-	rename -uid "460237CC-44F5-983C-8CBE-198255D14D58";
-	setAttr ".t" -type "double3" 2.950820920125746 4.322710227840763 9.6750169341695518 ;
-	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
-	setAttr ".rp" -type "double3" 0 -0.29748819543244642 0 ;
-	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
-	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
-createNode transform -n "ToGo5" -p "TogoBoxes";
-	rename -uid "AB361443-4836-DCB5-DC02-98A109A0AC20";
-	setAttr ".t" -type "double3" 2.950820920125746 4.3727102278407637 9.6750169341695518 ;
-	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
-	setAttr ".rp" -type "double3" 0 -0.29748819543244637 0 ;
-	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
-	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
-createNode transform -n "ToGo6" -p "TogoBoxes";
-	rename -uid "F50E5BF1-49B3-199D-47E8-F49AB40CA833";
-	setAttr ".t" -type "double3" 2.950820920125746 4.4227102278407644 9.6750169341695518 ;
-	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
-	setAttr ".rp" -type "double3" 0 -0.29748819543244631 0 ;
-	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
-	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
-createNode transform -n "PlateStacks";
+createNode transform -n "PlateStacks" -p "Barbatus_stall_latest_Barbatus";
 	rename -uid "2B8D249F-44E1-2881-2700-89BAFB32A7EE";
+	setAttr ".t" -type "double3" -0.029058608938777888 -0.12367892245674673 -7.4553686512528774 ;
+	setAttr ".s" -type "double3" 1.0737458890342249 1.0737458890342249 0.73058934395146058 ;
 createNode transform -n "Plates" -p "PlateStacks";
 	rename -uid "2BF0E6F9-48BF-2DFC-3114-9A8CD411F105";
 createNode transform -n "Plate1" -p "Plates";
@@ -6676,60 +6600,160 @@ createNode transform -n "Plates2" -p "Stack2";
 	setAttr ".t" -type "double3" -0.30478817059359109 0.39792048128807611 -1.3810315039935783 ;
 	setAttr ".rp" -type "double3" 2.3865952750796051 4.1262003711338036 1.9513787628889907 ;
 	setAttr ".sp" -type "double3" 2.3865952750796051 4.1262003711338036 1.9513787628889907 ;
+createNode transform -n "TogoBoxes" -p "Barbatus_stall_latest_Barbatus";
+	rename -uid "55F8769D-4310-2C0E-8E99-44BF98EC3C4E";
+	setAttr ".t" -type "double3" -6.698953328661001 -0.12367892245674673 -0.24662026976631868 ;
+	setAttr ".r" -type "double3" 0 67.676764157406126 0 ;
+	setAttr ".s" -type "double3" 0.76065088332843711 1.0737458890342249 1.031310581284596 ;
+	setAttr ".sh" -type "double3" 0 0.2045451915270976 0 ;
+	setAttr ".rp" -type "double3" 4.2188210263457231 4.358941050072918 9.6520307916722459 ;
+	setAttr ".rpt" -type "double3" 6.3122860656930397 0 -9.8885316832917223 ;
+	setAttr ".sp" -type "double3" 2.950820920125746 4.0595648324144404 9.3589952113646682 ;
+	setAttr ".spt" -type "double3" 1.2680001062199773 0.29937621765847738 0.2930355803075777 ;
+createNode transform -n "ToGo1" -p "TogoBoxes";
+	rename -uid "8092ABC6-4D01-227F-82BB-86B3381D67C8";
+	setAttr ".t" -type "double3" 2.950820920125746 5.8469364251061577 9.6750169341695518 ;
+	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
+	setAttr ".rp" -type "double3" 0 -1.9717143926978431 0 ;
+	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
+createNode transform -n "ToGo2" -p "TogoBoxes";
+	rename -uid "0BB3C716-4EC2-EE1F-CB95-C7AE76BFB10A";
+	setAttr ".t" -type "double3" 2.950820920125746 4.2227102278407616 9.6750169341695518 ;
+	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
+	setAttr ".rp" -type "double3" 0 -0.29748819543244653 0 ;
+	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
+	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
+createNode transform -n "ToGo3" -p "TogoBoxes";
+	rename -uid "24ED3BB1-4E2B-FB42-7AE0-39AC35661921";
+	setAttr ".t" -type "double3" 2.950820920125746 4.2727102278407623 9.6750169341695518 ;
+	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
+	setAttr ".rp" -type "double3" 0 -0.29748819543244648 0 ;
+	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
+	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
+createNode transform -n "ToGo4" -p "TogoBoxes";
+	rename -uid "460237CC-44F5-983C-8CBE-198255D14D58";
+	setAttr ".t" -type "double3" 2.950820920125746 4.322710227840763 9.6750169341695518 ;
+	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
+	setAttr ".rp" -type "double3" 0 -0.29748819543244642 0 ;
+	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
+	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
+createNode transform -n "ToGo5" -p "TogoBoxes";
+	rename -uid "AB361443-4836-DCB5-DC02-98A109A0AC20";
+	setAttr ".t" -type "double3" 2.950820920125746 4.3727102278407637 9.6750169341695518 ;
+	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
+	setAttr ".rp" -type "double3" 0 -0.29748819543244637 0 ;
+	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
+	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
+createNode transform -n "ToGo6" -p "TogoBoxes";
+	rename -uid "F50E5BF1-49B3-199D-47E8-F49AB40CA833";
+	setAttr ".t" -type "double3" 2.950820920125746 4.4227102278407644 9.6750169341695518 ;
+	setAttr ".s" -type "double3" 0.15087793472228075 0.15087793472228075 0.15087793472228075 ;
+	setAttr ".rp" -type "double3" 0 -0.29748819543244631 0 ;
+	setAttr ".sp" -type "double3" 0 -1.9717143926978431 0 ;
+	setAttr ".spt" -type "double3" 0 1.6742261972653965 0 ;
+createNode transform -n "greasePencilPerspRenderPlane";
+	rename -uid "360B9A52-4456-616D-CC96-C9A826D66869";
+createNode greasePlaneRenderShape -n "greasePencilPerspRenderPlaneShape" -p "greasePencilPerspRenderPlane";
+	rename -uid "C3FA4139-41AF-1E59-2E35-AD96C9E55F9C";
+	setAttr -k off ".v";
+	setAttr ".ovdt" 2;
+	setAttr ".ove" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".de" 2;
+createNode transform -n "greasePencilPerspArtDrawPlane";
+	rename -uid "F2664C8D-4D3C-544B-2EF1-64A111569BC2";
+	setAttr ".v" no;
+createNode greasePlaneRenderShape -n "greasePencilPerspArtDrawPlaneShape" -p "greasePencilPerspArtDrawPlane";
+	rename -uid "658B72E0-4AAB-6AFD-836F-8EA9F42FB02C";
+	setAttr -k off ".v";
+	setAttr ".ovdt" 2;
+	setAttr ".ove" yes;
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".de" 2;
 createNode fosterParent -n "chopstick_box_latestRNfosterParent1";
-	rename -uid "0FB83B06-45E5-21AF-11E3-479E8860674A";
+	rename -uid "6E2F768E-4E00-F656-98AA-CD974590A920";
+createNode transform -n "chopstick_box_latest:transform6" -p "chopstick_box_latestRNfosterParent1";
+	rename -uid "5C67728F-449A-B2BA-9936-1BAD4507DF22";
+createNode transform -n "chopstick_box_latest:transform5" -p "chopstick_box_latestRNfosterParent1";
+	rename -uid "E973018E-4D23-23B1-7AB1-FD855AB1EA7E";
+createNode transform -n "chopstick_box_latest:transform4" -p "chopstick_box_latestRNfosterParent1";
+	rename -uid "C0E86371-4A1D-62D3-A3F8-62842F373B4E";
 createNode transform -n "chopstick_box_latest:transform1" -p "chopstick_box_latestRNfosterParent1";
 	rename -uid "2898CD22-4AB8-64E4-AC8A-9D8B874DE9D2";
+createNode transform -n "transform1" -p "chopstick_box_latest:transform1";
+	rename -uid "83CAE278-4DF6-2024-B5AA-CDBD836923A4";
 createNode transform -n "chopstick_box_latest:transform2" -p "chopstick_box_latestRNfosterParent1";
 	rename -uid "C9860D22-466F-6EA3-13E4-C8B0ADF9C8C4";
+createNode transform -n "transform2" -p "chopstick_box_latest:transform2";
+	rename -uid "3E9B101A-49E8-CDFA-3245-D8B23EDEBFDA";
 createNode transform -n "chopstick_box_latest:transform3" -p "chopstick_box_latestRNfosterParent1";
 	rename -uid "091A605E-4B81-408F-05AB-4791BB101D4C";
+createNode transform -n "transform3" -p "chopstick_box_latest:transform3";
+	rename -uid "E4DD17B0-4B0C-F5AD-5411-16A7329F81E3";
 createNode fosterParent -n "fosterParent1" -p "chopstick_box_latestRNfosterParent1";
-	rename -uid "432B0688-40F6-74AF-7F84-7D8BB34380E6";
+	rename -uid "1381B532-4FDB-E8F4-5A02-9C846B2CE5FA";
 createNode fosterParent -n "fosterParent2" -p "chopstick_box_latestRNfosterParent1";
-	rename -uid "23EE8020-4BB2-9A2D-13FB-EC9618FE5011";
+	rename -uid "A8CDF188-40B6-372E-21AB-579AFAB62D95";
 createNode fosterParent -n "fosterParent3" -p "chopstick_box_latestRNfosterParent1";
-	rename -uid "04F62473-4BDF-2868-63D9-89A502B34F3C";
+	rename -uid "E765643A-44FE-5D1F-1B71-E295A007C17E";
+createNode fosterParent -n "fosterParent4" -p "chopstick_box_latestRNfosterParent1";
+	rename -uid "B41BAC2C-4EFF-F83D-FCAB-A7A6590950FD";
+createNode fosterParent -n "fosterParent5" -p "chopstick_box_latestRNfosterParent1";
+	rename -uid "2BB34488-45FA-8128-7F76-8ABEA3EEF875";
+createNode fosterParent -n "fosterParent6" -p "chopstick_box_latestRNfosterParent1";
+	rename -uid "DF177D78-4475-DFC4-2E18-E8A5BA749ACD";
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_Tent1Shape" "Barbatus_stall_latest_Tent2" ;
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp" "Barbatus_stall_latest_Tent2" ;
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh|Barbatus_stall_latest_tent_latest_tent_pole_MeshShape" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh1" ;
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh|Barbatus_stall_latest_tent_latest_tent_pole_MeshShape" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh2" ;
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh|Barbatus_stall_latest_tent_latest_tent_pole_MeshShape" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh3" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate1" "Plates1" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate1" "Plates2" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate2" "Plates1" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate2" "Plates2" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate3" "Plates1" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate3" "Plates2" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate4" "Plates1" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate4" "Plates2" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate5" "Plates1" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate5" "Plates2" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate6" "Plates1" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate6" "Plates2" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate7" "Plates1" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate7" "Plates2" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate8" "Plates1" ;
-parent -s -nc -r -add "|PlateStacks|Plates|Plate8" "Plates2" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate1" "Plates1" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate1" "Plates2" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate2" "Plates1" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate2" "Plates2" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate3" "Plates1" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate3" "Plates2" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate4" "Plates1" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate4" "Plates2" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate5" "Plates1" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate5" "Plates2" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate6" "Plates1" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate6" "Plates2" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate7" "Plates1" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate7" "Plates2" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate8" "Plates1" ;
+parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate8" "Plates2" ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "1CBC8C47-4F0B-EBF5-B2DD-8EA5643F6C84";
+	rename -uid "FD289F50-443D-A42B-FD82-58891BFB8C3C";
 	setAttr -s 51 ".lnk";
 	setAttr -s 51 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "374EBA6E-408E-730D-B625-5B9F57E55AEE";
+	rename -uid "1077EB3F-47D5-4CD6-0E2F-24ACC9919621";
 	setAttr -s 2 ".bsdt";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 -1 ;
 	setAttr ".bsdt[1].bscd" -type "Int32Array" 1 1 ;
 	setAttr ".bsdt[1].bsdn" -type "string" "Barbatus_stall_latest";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "A84D52FF-49CA-6993-F53A-A59CFE1BC0D4";
+	rename -uid "D0D6583B-4A33-F2F3-531E-2D8605E5ACB2";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "05FAE975-4367-F756-E493-40AD7B490ABA";
+	rename -uid "1CFB06FE-4935-B72A-30D1-39A6492526EE";
 	setAttr -s 3 ".dli[1:2]"  1 2;
 createNode displayLayer -n "defaultLayer";
 	rename -uid "A45481F6-4C0D-B5AF-A126-7890A3B66A98";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "50354DFF-4D04-D732-9D76-01A9D7E401CF";
+	rename -uid "8B7D5E2A-4DBD-CA0E-074C-C099AA29B58E";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "968DF0DD-4434-9E07-5BE6-D3A601AFC471";
 	setAttr ".g" yes;
@@ -7037,7 +7061,7 @@ createNode script -n "Barbatus_stall_latest_tent_latest_uiConfigurationScriptNod
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 0\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 0\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1180\n            -height 874\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1180\n            -height 863\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
 		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n"
@@ -7060,14 +7084,13 @@ createNode script -n "Barbatus_stall_latest_tent_latest_uiConfigurationScriptNod
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n"
 		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
 		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
-		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
-		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
-		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
-		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n"
-		+ "\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 0\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 0\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n"
+		+ "                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n"
+		+ "            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n"
+		+ "            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 0\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 863\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 0\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 863\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "Barbatus_stall_latest_tent_latest_sceneConfigurationScriptNode";
@@ -7288,44 +7311,6 @@ createNode reference -n "Barbatus_stall_latest_GrillRN";
 		2 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill" 
 		"scale" " -type \"double3\" 6.01596753055878697 2.94622118661339938 3.76106608523476948"
 		
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillTop|Grill:GrillTopShape.instObjGroups" 
-		"Grill:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder1|Grill:pCylinderShape1.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder7|Grill:pCylinderShape1.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder6|Grill:pCylinderShape1.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder5|Grill:pCylinderShape1.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder4|Grill:pCylinderShape1.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder3|Grill:pCylinderShape1.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder2|Grill:pCylinderShape1.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder29|Grill:pCylinderShape29.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder30|Grill:pCylinderShape29.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder31|Grill:pCylinderShape29.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder32|Grill:pCylinderShape29.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder33|Grill:pCylinderShape29.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder34|Grill:pCylinderShape29.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder35|Grill:pCylinderShape29.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder36|Grill:pCylinderShape29.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder37|Grill:pCylinderShape29.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder38|Grill:pCylinderShape29.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder39|Grill:pCylinderShape29.instObjGroups" 
-		"Grill:PxrSurface3SG.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent5|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent4|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
@@ -7446,6 +7431,44 @@ createNode reference -n "Barbatus_stall_latest_GrillRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Master_Vent|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder1|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder7|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder6|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder5|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder4|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder3|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder2|Grill:pCylinderShape1.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder29|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder30|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder31|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder32|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder33|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder34|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder35|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder36|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder37|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder38|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder39|Grill:pCylinderShape29.instObjGroups" 
+		"Grill:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillTop|Grill:GrillTopShape.instObjGroups" 
+		"Grill:PxrSurface1SG.dagSetMembers" "-na"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillBody|Grill:GrillBodyShape.instObjGroups" 
 		"Barbatus_stall_latest_GrillRN.placeHolderList[113]" ""
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillTop|Grill:GrillTopShape.instObjGroups" 
@@ -7638,16 +7661,16 @@ createNode reference -n "Barbatus_stall_latest_StockPot_latestRN";
 		""
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:Lid|StockPot_latest:LidShape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "StockPot_latest:groupId22.message" ":initialShadingGroup.groupNodes" "-na"
-		
-		3 "StockPot_latest:groupId21.message" ":initialShadingGroup.groupNodes" "-na"
-		
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "StockPot_latest:groupId22.groupId" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.compInstObjGroups.compObjectGroups[1].compObjectGroupId" 
 		""
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.compInstObjGroups.compObjectGroups[1]" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "StockPot_latest:groupId21.message" ":initialShadingGroup.groupNodes" "-na"
+		
+		3 "StockPot_latest:groupId22.message" ":initialShadingGroup.groupNodes" "-na"
+		
 		5 3 "Barbatus_stall_latest_StockPot_latestRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:Lid|StockPot_latest:LidShape.instObjGroups" 
 		"Barbatus_stall_latest_StockPot_latestRN.placeHolderList[1]" ""
 		5 3 "Barbatus_stall_latest_StockPot_latestRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.instObjGroups" 
@@ -8868,13 +8891,13 @@ createNode reference -n "rack_latestRN";
 		+ " 5.07135249999999971 9.3734093000000005 0.20390868000000001 4.9986347999999996 9.3734093000000005 3.15115139999999982 4.92591760000000001 9.3734093000000005 3.15115139999999982 4.92591760000000001 9.434248 3.15115139999999982 4.92591760000000001 10.156835 3.15115139999999982 4.92591760000000001 10.217672 3.363626 4.9986347999999996 10.217672 3.70604939999999994 5.07135249999999971 10.217672 3.70604939999999994 5.07135249999999971 10.156835 3.70604939999999994 5.07135249999999971 9.434248 3.70604939999999994 5.07135249999999971 9.3734093000000005 3.363626 4.9986347999999996 9.3734093000000005 0.15174007 4.927639 9.3734093000000005 0.20390868000000001 4.927639 9.3734093000000005 1.0278875999999999 4.927639 9.3734093000000005 3.16952420000000012 4.92671629999999983 9.3734093000000005 3.20389629999999981 4.92671629999999983 9.3734093000000005 3.20389629999999981 4.92671629999999983 9.434248 3.20389629999999981 4.92671629999999983 10.156835 3.20389629999999981 4.92671629999999983 10.217672 3.16952420000000012 4.92"
 		+ "671629999999983 10.217672 1.0278875999999999 4.927639 10.217672 0.20390868000000001 4.927639 10.217672 0.15174007 4.927639 10.217672 0.15174007 4.927639 10.156833 0.15174007 4.927639 9.434248 0.15174007 5.07006219999999974 9.3734093000000005 0.20390868000000001 5.07006219999999974 9.3734093000000005 1.0278875999999999 5.07006219999999974 9.3734093000000005 3.69222310000000009 5.07076309999999975 9.3734093000000005 3.72659489999999982 5.07076309999999975 9.3734093000000005 3.72659489999999982 5.07076309999999975 9.434248 3.72659489999999982 5.07076309999999975 10.156835 3.72659489999999982 5.07076309999999975 10.217672 3.69222310000000009 5.07076309999999975 10.217672 1.0278875999999999 5.07006219999999974 10.217672 0.20390868000000001 5.07006219999999974 10.217672 0.15174007 5.07006219999999974 10.217672 0.15174007 5.07006219999999974 10.156833 0.15174007 5.07006219999999974 9.434248"
 		)
-		3 "|Barbatus_stall_latest_Barbatus|Foods|rack_latest:Shelves|rack_latest:pCube1|rack_latest:pCubeShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|rack_latest:Shelves|rack_latest:Shelf1|rack_latest:Shelf1Shape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|rack_latest:Shelves|rack_latest:pCube2|rack_latest:pCubeShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|rack_latest:Shelves|rack_latest:Shelf2|rack_latest:Shelf2Shape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|rack_latest:Shelves|rack_latest:pCube2|rack_latest:pCubeShape2.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|rack_latest:Shelves|rack_latest:Shelf1|rack_latest:Shelf1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|rack_latest:Shelves|rack_latest:pCube1|rack_latest:pCubeShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "rack_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|rack_latest:Shelves|rack_latest:pCube1|rack_latest:pCubeShape1.instObjGroups" 
 		"rack_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
@@ -11204,6 +11227,8 @@ createNode reference -n "roll_and_sausage_platter_latestRN";
 		
 		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latestRN" 
 		8
+		3 "|Barbatus_stall_latest_Barbatus|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
 		"-na"
@@ -11213,8 +11238,6 @@ createNode reference -n "roll_and_sausage_platter_latestRN";
 		3 "|Barbatus_stall_latest_Barbatus|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
 		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		5 0 "roll_and_sausage_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
 		"roll_and_sausage_platter_latestRN.placeHolderList[3]" "roll_and_sausage_platter_latestRN.placeHolderList[4]" 
@@ -11969,12 +11992,6 @@ createNode reference -n "octopus_platter_latestRN";
 	setAttr ".phl[128]" 0;
 	setAttr ".phl[130]" 0;
 	setAttr ".phl[132]" 0;
-	setAttr ".phl[493]" 0;
-	setAttr ".phl[495]" 0;
-	setAttr ".phl[497]" 0;
-	setAttr ".phl[499]" 0;
-	setAttr ".phl[501]" 0;
-	setAttr ".phl[506]" 0;
 	setAttr ".phl[518]" 0;
 	setAttr ".phl[520]" 0;
 	setAttr ".phl[522]" 0;
@@ -11986,31 +12003,12 @@ createNode reference -n "octopus_platter_latestRN";
 	setAttr ".phl[547]" 0;
 	setAttr ".phl[549]" 0;
 	setAttr ".phl[551]" 0;
-	setAttr ".phl[553]" 0;
-	setAttr ".phl[554]" 0;
-	setAttr ".phl[555]" 0;
 	setAttr ".phl[556]" 0;
-	setAttr ".phl[557]" 0;
-	setAttr ".phl[558]" 0;
-	setAttr ".phl[559]" 0;
-	setAttr ".phl[560]" 0;
-	setAttr ".phl[561]" 0;
-	setAttr ".phl[562]" 0;
-	setAttr ".phl[563]" 0;
-	setAttr ".phl[564]" 0;
-	setAttr ".phl[565]" 0;
-	setAttr ".phl[566]" 0;
-	setAttr ".phl[567]" 0;
 	setAttr ".phl[568]" 0;
-	setAttr ".phl[569]" 0;
 	setAttr ".phl[570]" 0;
-	setAttr ".phl[571]" 0;
 	setAttr ".phl[572]" 0;
-	setAttr ".phl[573]" 0;
 	setAttr ".phl[574]" 0;
-	setAttr ".phl[575]" 0;
 	setAttr ".phl[576]" 0;
-	setAttr ".phl[577]" 0;
 	setAttr ".phl[578]" 0;
 	setAttr ".phl[579]" 0;
 	setAttr ".phl[580]" 0;
@@ -12077,6 +12075,31 @@ createNode reference -n "octopus_platter_latestRN";
 	setAttr ".phl[641]" 0;
 	setAttr ".phl[642]" 0;
 	setAttr ".phl[643]" 0;
+	setAttr ".phl[644]" 0;
+	setAttr ".phl[645]" 0;
+	setAttr ".phl[646]" 0;
+	setAttr ".phl[647]" 0;
+	setAttr ".phl[648]" 0;
+	setAttr ".phl[649]" 0;
+	setAttr ".phl[650]" 0;
+	setAttr ".phl[651]" 0;
+	setAttr ".phl[652]" 0;
+	setAttr ".phl[653]" 0;
+	setAttr ".phl[654]" 0;
+	setAttr ".phl[655]" 0;
+	setAttr ".phl[656]" 0;
+	setAttr ".phl[657]" 0;
+	setAttr ".phl[658]" 0;
+	setAttr ".phl[659]" 0;
+	setAttr ".phl[660]" 0;
+	setAttr ".phl[661]" 0;
+	setAttr ".phl[662]" 0;
+	setAttr ".phl[663]" 0;
+	setAttr ".phl[664]" 0;
+	setAttr ".phl[665]" 0;
+	setAttr ".phl[666]" 0;
+	setAttr ".phl[667]" 0;
+	setAttr ".phl[668]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"octopus_platter_latestRN"
 		"octopus_platter_latest:octopus_on_a_stick_latestRN1" 0
@@ -12139,36 +12162,6 @@ createNode reference -n "octopus_platter_latestRN";
 		""
 		3 "octopus_platter_latest:octopus_on_a_stick_latest:groupId16.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3].objectGroupId" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId32.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId36.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId48.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId52.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId40.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "octopus_platter_latest:groupId52.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
@@ -12216,6 +12209,36 @@ createNode reference -n "octopus_platter_latestRN";
 		3 "octopus_platter_latest:groupId52.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId36.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId32.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId52.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId48.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId40.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -12316,21 +12339,6 @@ createNode reference -n "octopus_platter_latestRN";
 		"octopus_platter_latestRN.placeHolderList[133]" "octopus_platter_latest:octopus_on_a_stick_latest:polyCylProj2.mp"
 		
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[493]" 
-		"octopus_platter_latestRN.placeHolderList[494]" ""
-		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[495]" 
-		"octopus_platter_latestRN.placeHolderList[496]" ""
-		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[497]" 
-		"octopus_platter_latestRN.placeHolderList[498]" ""
-		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[499]" 
-		"octopus_platter_latestRN.placeHolderList[500]" ""
-		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[501]" 
-		"octopus_platter_latestRN.placeHolderList[502]" ""
-		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups" 
 		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[518]" 
 		"octopus_platter_latestRN.placeHolderList[519]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups" 
@@ -12360,6 +12368,21 @@ createNode reference -n "octopus_platter_latestRN";
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups" 
 		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[551]" 
 		"octopus_platter_latestRN.placeHolderList[552]" ""
+		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[568]" 
+		"octopus_platter_latestRN.placeHolderList[569]" ""
+		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[570]" 
+		"octopus_platter_latestRN.placeHolderList[571]" ""
+		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[572]" 
+		"octopus_platter_latestRN.placeHolderList[573]" ""
+		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[574]" 
+		"octopus_platter_latestRN.placeHolderList[575]" ""
+		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[576]" 
+		"octopus_platter_latestRN.placeHolderList[577]" ""
 		"octopus_platter_latestRN" 14
 		2 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5" 
 		"translate" " -type \"double3\" 1.54629263306614217 6.1383292528860256 18.49972742891526423"
@@ -12404,11 +12427,11 @@ createNode reference -n "octopus_platter_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[506]" "octopus_platter_latestRN.placeHolderList[507]" 
+		"octopus_platter_latestRN.placeHolderList[531]" "octopus_platter_latestRN.placeHolderList[532]" 
 		":initialShadingGroup.dsm"
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[531]" "octopus_platter_latestRN.placeHolderList[532]" 
+		"octopus_platter_latestRN.placeHolderList[556]" "octopus_platter_latestRN.placeHolderList[557]" 
 		":initialShadingGroup.dsm"
 		"octopus_platter_latest:platter_latestRN" 0
 		"octopus_platter_latest:octopus_on_a_stick_latest1:skewer_latestRN" 1
@@ -12423,6 +12446,12 @@ createNode reference -n "octopus_platter_latestRN";
 		2 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick" 
 		"scale" " -type \"double3\" 0.88152612825636256 0.88152612825636256 0.88152612825636256"
 		
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20Shape.instObjGroups" 
 		"octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
 		
@@ -12495,90 +12524,84 @@ createNode reference -n "octopus_platter_latestRN";
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11Shape.instObjGroups" 
 		"octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dagSetMembers" "-na"
 		
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[589]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[614]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder19|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder19Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[591]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[616]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder18|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder18Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[593]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[618]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder17|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder17Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[595]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[620]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[597]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[622]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[599]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[624]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[601]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[626]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[603]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[628]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest1:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[605]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[630]" ":initialShadingGroup.dsm"
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[607]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[632]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder19|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder19Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[609]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[634]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder18|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder18Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[611]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[636]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder17|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder17Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[613]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[638]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[615]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[640]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[617]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[642]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[619]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[644]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[621]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[646]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[623]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[648]" ":initialShadingGroup.dsm"
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder20Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[625]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[650]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder19|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder19Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[627]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[652]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder18|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder18Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[629]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[654]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder17|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder17Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[631]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[656]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[633]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[658]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[635]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[660]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[637]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[662]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[639]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[664]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick3|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest1:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[641]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[666]" ":initialShadingGroup.dsm"
 		"octopus_platter_latest:octopus_on_a_stick_latestRN" 90
 		2 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick" 
 		"translate" " -type \"double3\" 1.43063070141244197 5.52705381336368617 19.53628402098958006"
@@ -12615,28 +12638,6 @@ createNode reference -n "octopus_platter_latestRN";
 		"instObjGroups" " -s 2"
 		2 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape" 
 		"instObjGroups.objectGroups" " -s 4"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId52.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		""
-		3 "octopus_platter_latest:octopus_on_a_stick_latest:Octopus.message" "octopus_platter_latest:octopus_on_a_stick_latest:materialInfo4.texture" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "octopus_platter_latest:groupId48.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		""
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "octopus_platter_latest:groupId40.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
@@ -12657,6 +12658,18 @@ createNode reference -n "octopus_platter_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3].objectGrpColor" 
 		""
+		3 "octopus_platter_latest:octopus_on_a_stick_latest:Octopus.message" "octopus_platter_latest:octopus_on_a_stick_latest:materialInfo4.texture" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId48.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		""
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "octopus_platter_latest:groupId32.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
@@ -12667,137 +12680,147 @@ createNode reference -n "octopus_platter_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3].objectGrpColor" 
 		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId52.groupId" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		""
 		5 3 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3]" 
-		"octopus_platter_latestRN.placeHolderList[558]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[583]" ":initialShadingGroup.dsm"
 		5 4 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_platter_latestRN.placeHolderList[559]" ""
+		"octopus_platter_latestRN.placeHolderList[584]" ""
 		5 3 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3]" 
-		"octopus_platter_latestRN.placeHolderList[560]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[585]" ":initialShadingGroup.dsm"
 		5 4 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_platter_latestRN.placeHolderList[561]" ""
+		"octopus_platter_latestRN.placeHolderList[586]" ""
 		5 3 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3]" 
-		"octopus_platter_latestRN.placeHolderList[562]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[587]" ":initialShadingGroup.dsm"
 		5 4 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_platter_latestRN.placeHolderList[563]" ""
+		"octopus_platter_latestRN.placeHolderList[588]" ""
 		5 3 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3]" 
-		"octopus_platter_latestRN.placeHolderList[564]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[589]" ":initialShadingGroup.dsm"
 		5 4 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_platter_latestRN.placeHolderList[565]" ""
+		"octopus_platter_latestRN.placeHolderList[590]" ""
 		5 3 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3]" 
-		"octopus_platter_latestRN.placeHolderList[566]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[591]" ":initialShadingGroup.dsm"
 		5 4 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3].objectGrpColor" 
-		"octopus_platter_latestRN.placeHolderList[567]" ""
+		"octopus_platter_latestRN.placeHolderList[592]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[568]" 
-		"octopus_platter_latestRN.placeHolderList[569]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[593]" 
+		"octopus_platter_latestRN.placeHolderList[594]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[570]" 
-		"octopus_platter_latestRN.placeHolderList[571]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[595]" 
+		"octopus_platter_latestRN.placeHolderList[596]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[572]" 
-		"octopus_platter_latestRN.placeHolderList[573]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[597]" 
+		"octopus_platter_latestRN.placeHolderList[598]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[574]" 
-		"octopus_platter_latestRN.placeHolderList[575]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[599]" 
+		"octopus_platter_latestRN.placeHolderList[600]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[576]" 
-		"octopus_platter_latestRN.placeHolderList[577]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[601]" 
+		"octopus_platter_latestRN.placeHolderList[602]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[578]" 
-		"octopus_platter_latestRN.placeHolderList[579]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[603]" 
+		"octopus_platter_latestRN.placeHolderList[604]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[580]" 
-		"octopus_platter_latestRN.placeHolderList[581]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[605]" 
+		"octopus_platter_latestRN.placeHolderList[606]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[582]" 
-		"octopus_platter_latestRN.placeHolderList[583]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[607]" 
+		"octopus_platter_latestRN.placeHolderList[608]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[584]" 
-		"octopus_platter_latestRN.placeHolderList[585]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[609]" 
+		"octopus_platter_latestRN.placeHolderList[610]" ""
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[586]" 
-		"octopus_platter_latestRN.placeHolderList[587]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[611]" 
+		"octopus_platter_latestRN.placeHolderList[612]" ""
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[588]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[613]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[590]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[615]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[592]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[617]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[594]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[619]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[596]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[621]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[598]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[623]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[600]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[625]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[602]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[627]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[604]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[629]" ":initialShadingGroup.dsm"
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[606]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[631]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[608]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[633]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[610]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[635]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[612]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[637]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[614]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[639]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[616]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[641]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[618]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[643]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[620]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[645]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[622]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[647]" ":initialShadingGroup.dsm"
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[624]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[649]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[626]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[651]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[628]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[653]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[630]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[655]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[632]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[657]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[634]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[659]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[636]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[661]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[638]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
+		"octopus_platter_latestRN.placeHolderList[663]" "octopus_platter_latest:octopus_on_a_stick_latest1:PxrSurface2SG.dsm"
 		
 		5 2 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[640]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[665]" ":initialShadingGroup.dsm"
 		5 0 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:file1.message" 
-		"octopus_platter_latest:octopus_on_a_stick_latest:materialInfo4.texture" "octopus_platter_latestRN.placeHolderList[642]" 
-		"octopus_platter_latestRN.placeHolderList[643]" ""
+		"octopus_platter_latest:octopus_on_a_stick_latest:materialInfo4.texture" "octopus_platter_latestRN.placeHolderList[667]" 
+		"octopus_platter_latestRN.placeHolderList[668]" ""
 		"octopus_platter_latestRN" 47
 		0 "|octopus_platter_latest:Octopus" "|Barbatus_stall_latest_Barbatus|Foods" 
 		"-s -r "
@@ -12853,62 +12876,62 @@ createNode reference -n "octopus_platter_latestRN";
 		2 "octopus_platter_latest:groupParts7" "groupId" " 1517"
 		2 "octopus_platter_latest:groupParts8" "groupId" " 1518"
 		2 "octopus_platter_latest:groupParts9" "groupId" " 1519"
-		3 "octopus_platter_latest:groupId35.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId53.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId51.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId54.groupId" "octopus_platter_latest:groupParts9.groupId" 
-		""
-		3 "octopus_platter_latest:groupId40.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId51.groupId" "octopus_platter_latest:groupParts6.groupId" 
-		""
-		3 "octopus_platter_latest:groupId34.message" ":initialShadingGroup.groupNodes" 
-		"-na"
 		3 "octopus_platter_latest:groupId32.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "octopus_platter_latest:groupId50.message" ":initialShadingGroup.groupNodes" 
+		3 "octopus_platter_latest:groupId33.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId31.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId52.groupId" "octopus_platter_latest:groupParts7.groupId" 
+		""
+		3 "octopus_platter_latest:groupId35.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "octopus_platter_latest:groupId39.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "octopus_platter_latest:groupId42.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "octopus_platter_latest:groupId31.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId48.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId41.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId38.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId47.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId52.groupId" "octopus_platter_latest:groupParts7.groupId" 
-		""
-		3 "octopus_platter_latest:groupId54.message" ":initialShadingGroup.groupNodes" 
+		3 "octopus_platter_latest:groupId37.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "octopus_platter_latest:groupId53.groupId" "octopus_platter_latest:groupParts8.groupId" 
 		""
-		3 "octopus_platter_latest:groupId52.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "octopus_platter_latest:groupId37.message" ":initialShadingGroup.groupNodes" 
+		3 "octopus_platter_latest:groupId50.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "octopus_platter_latest:groupId36.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "octopus_platter_latest:groupId33.message" ":initialShadingGroup.groupNodes" 
-		"-na"
+		3 "octopus_platter_latest:groupId51.groupId" "octopus_platter_latest:groupParts6.groupId" 
+		""
 		3 "octopus_platter_latest:groupId49.message" ":initialShadingGroup.groupNodes" 
 		"-na"
+		3 "octopus_platter_latest:groupId48.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId52.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId38.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId54.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId34.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId40.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId47.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId51.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId53.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId41.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "octopus_platter_latest:groupId54.groupId" "octopus_platter_latest:groupParts9.groupId" 
+		""
 		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latestRN" 3
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 1 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		"octopus_platter_latestRN.placeHolderList[555]" ":initialShadingGroup.dsm"
+		"octopus_platter_latestRN.placeHolderList[580]" ":initialShadingGroup.dsm"
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
-		"octopus_platter_latestRN.placeHolderList[556]" "octopus_platter_latestRN.placeHolderList[557]" 
+		"octopus_platter_latestRN.placeHolderList[581]" "octopus_platter_latestRN.placeHolderList[582]" 
 		":initialShadingGroup.dsm"
 		"octopus_platter_latest:platter_latestRN" 10
 		2 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter" 
@@ -12960,8 +12983,8 @@ createNode reference -n "octopus_platter_latestRN";
 		3 "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter|octopus_platter_latest:platter_latest:PlatterShape.instObjGroups" 
 		"octopus_platter_latest:platter_latest:steel_SG.dagSetMembers" "-na"
 		5 0 "octopus_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter|octopus_platter_latest:platter_latest:PlatterShape.instObjGroups" 
-		"octopus_platter_latest:platter_latest:steel_SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[553]" 
-		"octopus_platter_latestRN.placeHolderList[554]" "octopus_platter_latest:platter_latest:steel_SG.dsm";
+		"octopus_platter_latest:platter_latest:steel_SG.dagSetMembers" "octopus_platter_latestRN.placeHolderList[578]" 
+		"octopus_platter_latestRN.placeHolderList[579]" "octopus_platter_latest:platter_latest:steel_SG.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode groupId -n "octopus_platter_latest:groupId55";
@@ -13394,6 +13417,8 @@ createNode reference -n "strip_platter_latestRN";
 		"strip_platter_latestRN.placeHolderList[117]" "strip_platter_latest:strip_on_a_stick_latest:PxrSurface1SG.dsm"
 		
 		"strip_platter_latest:strip_on_a_stick_latest:skewer_latestRN" 16
+		3 "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip1|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip2|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
 		"-na"
@@ -13415,8 +13440,6 @@ createNode reference -n "strip_platter_latestRN";
 		3 "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip8|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
 		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip1|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		5 0 "strip_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip5|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
 		"strip_platter_latest:strip_on_a_stick_latest:skewer_latest:PxrSurface1SG.dagSetMembers" 
 		"strip_platter_latestRN.placeHolderList[84]" "strip_platter_latestRN.placeHolderList[85]" 
@@ -13718,8 +13741,8 @@ createNode reference -n "lotus_belly_platter_latestRN";
 		
 		"lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latestRN" 0
 		"lotus_belly_platter_latestRN" 0
-		"lotus_belly_platter_latest:platter_latestRN" 0
 		"lotus_belly_platter_latest:porkbelly_on_a_stick_latestRN" 0
+		"lotus_belly_platter_latest:platter_latestRN" 0
 		"lotus_belly_platter_latest:lotus_on_a_stick_latestRN" 90
 		2 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape" 
 		"instObjGroups" " -s 7"
@@ -13727,45 +13750,45 @@ createNode reference -n "lotus_belly_platter_latestRN";
 		"instObjGroups" " -s 7"
 		2 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape" 
 		"instObjGroups" " -s 7"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId14.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "lotus_belly_platter_latest:groupId13.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId17.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "lotus_belly_platter_latest:groupId16.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId20.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "lotus_belly_platter_latest:groupId19.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId8.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "lotus_belly_platter_latest:groupId7.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId5.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "lotus_belly_platter_latest:groupId4.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId2.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "lotus_belly_platter_latest:groupId1.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[2]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[2].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2].objectGrpColor" 
 		""
 		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -13807,45 +13830,45 @@ createNode reference -n "lotus_belly_platter_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[2].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId13.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "lotus_belly_platter_latest:groupId14.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId16.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "lotus_belly_platter_latest:groupId17.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId19.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "lotus_belly_platter_latest:groupId20.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId7.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "lotus_belly_platter_latest:groupId8.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId4.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "lotus_belly_platter_latest:groupId5.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "lotus_belly_platter_latest:groupId1.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		3 "lotus_belly_platter_latest:groupId2.groupId" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2]" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[2]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2].objectGrpColor" 
+		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[2].objectGrpColor" 
 		""
 		5 3 "lotus_belly_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2]" 
 		"lotus_belly_platter_latestRN.placeHolderList[102]" ":initialShadingGroup.dsm"
@@ -14027,56 +14050,56 @@ createNode reference -n "lotus_belly_platter_latestRN";
 		2 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly" 
 		"scale" " -type \"double3\" 1.99424783862317967 1.99424783862317967 1.99424783862317967"
 		
-		3 "lotus_belly_platter_latest:groupId9.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId6.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId3.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId19.message" ":initialShadingGroup.groupNodes" 
+		3 "lotus_belly_platter_latest:groupId4.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "lotus_belly_platter_latest:groupId21.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "lotus_belly_platter_latest:groupId14.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId4.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId2.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId13.message" ":initialShadingGroup.groupNodes" 
-		"-na"
 		3 "lotus_belly_platter_latest:groupId17.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId7.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId8.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "lotus_belly_platter_latest:groupId1.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "lotus_belly_platter_latest:groupId16.message" ":initialShadingGroup.groupNodes" 
 		"-na"
+		3 "lotus_belly_platter_latest:groupId3.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId8.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId14.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId13.message" ":initialShadingGroup.groupNodes" 
+		"-na"
 		3 "lotus_belly_platter_latest:groupId18.message" ":initialShadingGroup.groupNodes" 
 		"-na"
-		3 "lotus_belly_platter_latest:groupId20.message" ":initialShadingGroup.groupNodes" 
+		3 "lotus_belly_platter_latest:groupId6.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "lotus_belly_platter_latest:groupId15.message" ":initialShadingGroup.groupNodes" 
 		"-na"
+		3 "lotus_belly_platter_latest:groupId1.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId7.message" ":initialShadingGroup.groupNodes" 
+		"-na"
 		3 "lotus_belly_platter_latest:groupId5.message" ":initialShadingGroup.groupNodes" 
 		"-na"
+		3 "lotus_belly_platter_latest:groupId19.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId9.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId20.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "lotus_belly_platter_latest:groupId2.message" ":initialShadingGroup.groupNodes" 
+		"-na"
 		"lotus_belly_platter_latest:porkbelly_on_a_stick_latestRN" 70
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -14092,33 +14115,19 @@ createNode reference -n "lotus_belly_platter_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -14133,6 +14142,20 @@ createNode reference -n "lotus_belly_platter_latestRN";
 		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 0 "lotus_belly_platter_latestRN" "|Barbatus_stall_latest_Barbatus|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
 		"lotus_belly_platter_latest:porkbelly_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
@@ -14693,132 +14716,141 @@ createNode reference -n "plate_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"plate_latestRN"
 		"plate_latestRN" 0
-		"plate_latestRN" 51
-		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate1" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate2" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate3" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate4" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate5" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate6" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate7" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:PlateShape" "|PlateStacks|Plates|Plate8" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate1" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate2" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate3" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate4" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate5" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate6" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate7" 
-		"-s -r -add "
-		0 "|plate_latest:Plate|plate_latest:pCylinder1" "|PlateStacks|Plates|Plate8" 
-		"-s -r -add "
-		2 "|plate_latest:Plate" "translate" " -type \"double3\" 2.386595275079606 3.8382174543018337 1.95137876288898915"
+		"plate_latestRN" 56
+		0 "|plate_latest:Plate" "|Barbatus_stall_latest_Barbatus" "-s -r "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:PlateShape" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate1" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:PlateShape" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate2" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:PlateShape" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate3" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:PlateShape" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate4" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:PlateShape" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate5" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:PlateShape" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate6" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:PlateShape" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate7" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:PlateShape" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate8" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:pCylinder1" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate1" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:pCylinder1" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate2" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:pCylinder1" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate3" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:pCylinder1" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate4" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:pCylinder1" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate5" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:pCylinder1" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate6" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:pCylinder1" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate7" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:pCylinder1" 
+		"|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate8" "-s -r -add "
+		2 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate" "translate" " -type \"double3\" 2.53353825646645392 3.9975912903192552 -6.02971212107299781"
 		
-		3 "|plate_latest:Plate|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		2 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate" "scale" " -type \"double3\" 1.07374588903422485 1.07374588903422485 0.73058934395146058"
+		
+		2 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate" "rotatePivot" " -type \"double3\" 0 0 0"
+		
+		2 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate" "scalePivot" " -type \"double3\" 0 0 0"
+		
+		2 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate" "scalePivotTranslate" 
+		" -type \"double3\" 0 0 0"
+		3 "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|PlateStacks|Plates|Plate1|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate1|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|PlateStacks|Plates|Plate2|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate2|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|PlateStacks|Plates|Plate3|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate3|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|PlateStacks|Plates|Plate4|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate4|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|PlateStacks|Plates|Plate5|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate5|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|PlateStacks|Plates|Plate6|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate6|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|PlateStacks|Plates|Plate7|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate7|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|PlateStacks|Plates|Plate8|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate8|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "-na"
-		5 0 "plate_latestRN" "|plate_latest:Plate|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|plate_latest:Plate|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[1]" "plate_latestRN.placeHolderList[2]" 
 		"plate_latest:PxrSurface1SG.dsm"
-		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate1|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate1|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[3]" "plate_latestRN.placeHolderList[4]" 
 		"plate_latest:PxrSurface1SG.dsm"
-		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate2|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate2|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[5]" "plate_latestRN.placeHolderList[6]" 
 		"plate_latest:PxrSurface1SG.dsm"
-		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate3|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate3|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[7]" "plate_latestRN.placeHolderList[8]" 
 		"plate_latest:PxrSurface1SG.dsm"
-		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate4|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate4|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[9]" "plate_latestRN.placeHolderList[10]" 
 		"plate_latest:PxrSurface1SG.dsm"
-		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate5|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate5|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[11]" "plate_latestRN.placeHolderList[12]" 
 		"plate_latest:PxrSurface1SG.dsm"
-		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate6|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate6|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[13]" "plate_latestRN.placeHolderList[14]" 
 		"plate_latest:PxrSurface1SG.dsm"
-		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate7|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate7|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[15]" "plate_latestRN.placeHolderList[16]" 
 		"plate_latest:PxrSurface1SG.dsm"
-		5 0 "plate_latestRN" "|PlateStacks|Plates|Plate8|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Plates|Plate8|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[17]" "plate_latestRN.placeHolderList[18]" 
 		"plate_latest:PxrSurface1SG.dsm"
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate1|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates1|Plate1|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[19]" "plate_latestRN.placeHolderList[20]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate2|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates1|Plate2|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[21]" "plate_latestRN.placeHolderList[22]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate3|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates1|Plate3|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[23]" "plate_latestRN.placeHolderList[24]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate4|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates1|Plate4|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[25]" "plate_latestRN.placeHolderList[26]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate5|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates1|Plate5|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[27]" "plate_latestRN.placeHolderList[28]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate6|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates1|Plate6|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[29]" "plate_latestRN.placeHolderList[30]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate7|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates1|Plate7|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[31]" "plate_latestRN.placeHolderList[32]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates1|Plate8|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates1|Plate8|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[33]" "plate_latestRN.placeHolderList[34]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate1|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates2|Plate1|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[35]" "plate_latestRN.placeHolderList[36]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate2|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates2|Plate2|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[37]" "plate_latestRN.placeHolderList[38]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate3|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates2|Plate3|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[39]" "plate_latestRN.placeHolderList[40]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate4|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates2|Plate4|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[41]" "plate_latestRN.placeHolderList[42]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate5|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates2|Plate5|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[43]" "plate_latestRN.placeHolderList[44]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate6|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates2|Plate6|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[45]" "plate_latestRN.placeHolderList[46]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate7|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates2|Plate7|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[47]" "plate_latestRN.placeHolderList[48]" 
 		""
-		5 0 "plate_latestRN" "|PlateStacks|Stack2|Plates2|Plate8|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
+		5 0 "plate_latestRN" "|Barbatus_stall_latest_Barbatus|PlateStacks|Stack2|Plates2|Plate8|plate_latest:pCylinder1|plate_latest:pCylinderShape1.instObjGroups" 
 		"plate_latest:PxrSurface1SG.dagSetMembers" "plate_latestRN.placeHolderList[49]" "plate_latestRN.placeHolderList[50]" 
 		"";
 	setAttr ".ptag" -type "string" "";
@@ -14876,161 +14908,472 @@ createNode reference -n "togo_box_latestRN";
 		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "" "togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
 		"togo_box_latestRN" 49
-		0 "|togo_box_latest:ToGo" "|TogoBoxes" "-s -r "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" "|TogoBoxes|ToGo1" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" "|TogoBoxes|ToGo2" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" "|TogoBoxes|ToGo3" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" "|TogoBoxes|ToGo4" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" "|TogoBoxes|ToGo5" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" "|TogoBoxes|ToGo6" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" "|TogoBoxes|ToGo1" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" "|TogoBoxes|ToGo2" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" "|TogoBoxes|ToGo3" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" "|TogoBoxes|ToGo4" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" "|TogoBoxes|ToGo5" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" "|TogoBoxes|ToGo6" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" "|TogoBoxes|ToGo1" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" "|TogoBoxes|ToGo2" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" "|TogoBoxes|ToGo3" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" "|TogoBoxes|ToGo4" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" "|TogoBoxes|ToGo5" 
-		"-s -r -add "
-		0 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" "|TogoBoxes|ToGo6" 
-		"-s -r -add "
-		2 "|TogoBoxes|togo_box_latest:ToGo" "translate" " -type \"double3\" 2.95082092012574604 5.79693642510615792 9.67501693416955177"
+		0 "|togo_box_latest:ToGo" "|Barbatus_stall_latest_Barbatus|TogoBoxes" "-s -r "
 		
-		2 "|TogoBoxes|togo_box_latest:ToGo" "scale" " -type \"double3\" 0.15087793472228075 0.15087793472228075 0.15087793472228075"
-		
-		3 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo1" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo2" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo3" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo4" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo5" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:ToGoShape" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo6" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo1" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo2" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo3" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo4" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo5" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo6" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo1" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo2" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo3" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo4" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo5" "-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open" 
+		"|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo6" "-s -r -add "
+		2 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo" "translate" 
+		" -type \"double3\" 2.95082092012574604 5.79693642510615792 9.67501693416955177"
+		2 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo" "scale" 
+		" -type \"double3\" 0.15087793472228075 0.15087793472228075 0.15087793472228075"
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|TogoBoxes|ToGo1|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo1|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|TogoBoxes|ToGo2|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo2|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|TogoBoxes|ToGo3|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo3|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|TogoBoxes|ToGo4|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo4|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|TogoBoxes|ToGo5|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo5|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|TogoBoxes|ToGo6|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo6|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|TogoBoxes|ToGo1|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo1|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|TogoBoxes|ToGo2|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo2|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|TogoBoxes|ToGo3|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo3|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|TogoBoxes|ToGo4|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo4|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|TogoBoxes|ToGo5|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo5|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|TogoBoxes|ToGo6|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo6|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "-na"
-		5 0 "togo_box_latestRN" "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[1]" 
 		"togo_box_latestRN.placeHolderList[2]" "togo_box_latest:PxrSurface1SG.dsm"
-		5 0 "togo_box_latestRN" "|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|togo_box_latest:ToGo|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[3]" 
 		"togo_box_latestRN.placeHolderList[4]" "togo_box_latest:PxrSurface1SG.dsm"
-		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo1|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo1|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[5]" 
 		"togo_box_latestRN.placeHolderList[6]" "togo_box_latest:PxrSurface1SG.dsm"
-		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo1|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo1|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[7]" 
 		"togo_box_latestRN.placeHolderList[8]" "togo_box_latest:PxrSurface1SG.dsm"
-		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo2|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo2|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[9]" 
 		"togo_box_latestRN.placeHolderList[10]" "togo_box_latest:PxrSurface1SG.dsm"
-		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo2|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo2|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[11]" 
 		"togo_box_latestRN.placeHolderList[12]" "togo_box_latest:PxrSurface1SG.dsm"
-		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo3|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo3|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[13]" 
 		"togo_box_latestRN.placeHolderList[14]" "togo_box_latest:PxrSurface1SG.dsm"
-		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo3|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo3|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[15]" 
 		"togo_box_latestRN.placeHolderList[16]" "togo_box_latest:PxrSurface1SG.dsm"
-		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo4|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo4|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[17]" 
 		"togo_box_latestRN.placeHolderList[18]" "togo_box_latest:PxrSurface1SG.dsm"
-		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo4|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo4|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[19]" 
 		"togo_box_latestRN.placeHolderList[20]" "togo_box_latest:PxrSurface1SG.dsm"
-		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo5|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo5|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[21]" 
 		"togo_box_latestRN.placeHolderList[22]" "togo_box_latest:PxrSurface1SG.dsm"
-		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo5|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo5|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[23]" 
 		"togo_box_latestRN.placeHolderList[24]" "togo_box_latest:PxrSurface1SG.dsm"
-		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo6|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo6|togo_box_latest:Bottom|togo_box_latest:BottomShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[25]" 
 		"togo_box_latestRN.placeHolderList[26]" "togo_box_latest:PxrSurface1SG.dsm"
-		5 0 "togo_box_latestRN" "|TogoBoxes|ToGo6|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
+		5 0 "togo_box_latestRN" "|Barbatus_stall_latest_Barbatus|TogoBoxes|ToGo6|togo_box_latest:Open|togo_box_latest:Top|togo_box_latest:TopShape.instObjGroups" 
 		"togo_box_latest:PxrSurface1SG.dagSetMembers" "togo_box_latestRN.placeHolderList[27]" 
 		"togo_box_latestRN.placeHolderList[28]" "togo_box_latest:PxrSurface1SG.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "chopstick_box_latestRN";
 	rename -uid "ECA9DBAC-4F8A-1164-A99B-8B8FDA95C545";
-	setAttr -s 3 ".fs";
+	setAttr -s 6 ".fs";
+	setAttr -s 54 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"chopstick_box_latestRN"
 		"chopstick_box_latestRN" 0
 		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latestRN" 0
 		
 		"chopstick_box_latest:chopstick_wrapper_latestRN" 0
-		"chopstick_box_latestRN" 9
-		0 "|chopstick_box_latestRNfosterParent1|fosterParent3" "|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"chopstick_box_latestRN" 21
+		0 "|chopstick_box_latest:ChopSticks" "|Barbatus_stall_latest_Barbatus" "-s -r "
+		
+		0 "|chopstick_box_latestRNfosterParent1|fosterParent6" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
 		"-s -r "
-		0 "|chopstick_box_latestRNfosterParent1|fosterParent2" "|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		0 "|chopstick_box_latestRNfosterParent1|fosterParent5" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
 		"-s -r "
-		0 "|chopstick_box_latestRNfosterParent1|fosterParent1" "|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		0 "|chopstick_box_latestRNfosterParent1|fosterParent4" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|chopstick_box_latestRNfosterParent1|fosterParent3" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|chopstick_box_latestRNfosterParent1|fosterParent2" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|chopstick_box_latestRNfosterParent1|fosterParent1" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
 		"-s -r "
 		0 "|chopstick_box_latestRNfosterParent1|chopstick_box_latest:transform3" 
-		"|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
 		"-s -r "
 		0 "|chopstick_box_latestRNfosterParent1|chopstick_box_latest:transform2" 
-		"|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
 		"-s -r "
 		0 "|chopstick_box_latestRNfosterParent1|chopstick_box_latest:transform1" 
-		"|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
 		"-s -r "
-		2 "|chopstick_box_latest:ChopSticks" "translate" " -type \"double3\" 6.76343824284085038 4.48224474267807071 1.04988803618487347"
-		
-		2 "|chopstick_box_latest:ChopSticks" "rotate" " -type \"double3\" 0 41.50082668248126794 0"
-		
-		2 "|chopstick_box_latest:ChopSticks" "scale" " -type \"double3\" 0.18437895573292779 0.18437895573292779 0.18437895573292779"
-		
-		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latestRN" 3
-		
-		0 "|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture1" 
-		"|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform1" 
+		0 "|chopstick_box_latestRNfosterParent1|chopstick_box_latest:transform4" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
 		"-s -r "
-		0 "|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture2" 
-		"|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform2" 
+		0 "|chopstick_box_latestRNfosterParent1|chopstick_box_latest:transform5" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
 		"-s -r "
-		0 "|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks" 
-		"|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3" 
-		"-s -r ";
+		0 "|chopstick_box_latestRNfosterParent1|chopstick_box_latest:transform6" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		2 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks" "translate" 
+		" -type \"double3\" 3.80265084061495884 4.48379098712262625 -7.43226503220411772"
+		
+		2 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks" "rotate" 
+		" -type \"double3\" 0 31.04772988913802934 0"
+		2 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks" "scale" 
+		" -type \"double3\" 0.17306747466678205 0.19797614574265454 0.15409270989426177"
+		2 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks" "shear" 
+		" -type \"double3\" 0 0.39170302136349822 0"
+		2 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks" "rotatePivot" 
+		" -type \"double3\" -0.69610896361288865 -0.046414996520311447 -0.099089815375313361"
+		
+		2 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks" "rotatePivotTranslate" 
+		" -type \"double3\" 0.048620228400713672 0 0.37321536782648757"
+		2 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks" "scalePivot" 
+		" -type \"double3\" -3.79791283607482955 -0.2344474196434021 -0.64305323362350286"
+		
+		2 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks" "scalePivotTranslate" 
+		" -type \"double3\" 3.10180387246194078 0.18803242312309065 0.5439634182481895"
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latestRN" 49
+		
+		0 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform6" 
+		"-s -r "
+		0 "|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|transform3" 
+		"-s -r -add "
+		0 "|transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3" 
+		"-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform2|transform2|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture2" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform5" 
+		"-s -r "
+		0 "|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture2" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform2|transform2" 
+		"-s -r -add "
+		0 "|transform2|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture2" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform2" 
+		"-s -r -add "
+		0 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform1|transform1|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture1" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform4" 
+		"-s -r "
+		0 "|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture1" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform1|transform1" 
+		"-s -r -add "
+		0 "|transform1|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture1" 
+		"|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform1" 
+		"-s -r -add "
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform6|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks2|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform6|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks2|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform5|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture2.worldInverseMatrix" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:wood2.placementMatrix" 
+		""
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform6|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks2|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform6|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks2|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform4|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture1.worldInverseMatrix" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:wood1.placementMatrix" 
+		""
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform4|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture1.worldInverseMatrix" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:wood1.placementMatrix" 
+		"chopstick_box_latestRN.placeHolderList[1]" "chopstick_box_latestRN.placeHolderList[2]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:wood1.pm"
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform5|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture2.worldInverseMatrix" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:wood2.placementMatrix" 
+		"chopstick_box_latestRN.placeHolderList[3]" "chopstick_box_latestRN.placeHolderList[4]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:wood2.pm"
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform6|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[5]" "chopstick_box_latestRN.placeHolderList[6]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform6|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[7]" "chopstick_box_latestRN.placeHolderList[8]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[9]" "chopstick_box_latestRN.placeHolderList[10]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks2|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[11]" "chopstick_box_latestRN.placeHolderList[12]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[13]" "chopstick_box_latestRN.placeHolderList[14]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks2|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[15]" "chopstick_box_latestRN.placeHolderList[16]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[17]" "chopstick_box_latestRN.placeHolderList[18]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[19]" "chopstick_box_latestRN.placeHolderList[20]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:RightChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[21]" "chopstick_box_latestRN.placeHolderList[22]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface4SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform6|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[23]" "chopstick_box_latestRN.placeHolderList[24]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform6|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[25]" "chopstick_box_latestRN.placeHolderList[26]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[27]" "chopstick_box_latestRN.placeHolderList[28]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks2|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[29]" "chopstick_box_latestRN.placeHolderList[30]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[31]" "chopstick_box_latestRN.placeHolderList[32]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks2|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[33]" "chopstick_box_latestRN.placeHolderList[34]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[35]" "chopstick_box_latestRN.placeHolderList[36]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[37]" "chopstick_box_latestRN.placeHolderList[38]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:transform3|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChop|chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:LeftChopShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dagSetMembers" 
+		"chopstick_box_latestRN.placeHolderList[39]" "chopstick_box_latestRN.placeHolderList[40]" 
+		"chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:PxrSurface5SG.dsm"
+		
+		"chopstick_box_latest:chopstick_wrapper_latestRN" 14
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "-na"
+		
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks2|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "-na"
+		
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks3|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "-na"
+		
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:chopstick_wrapper_latest:WrappedChopsticks|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "-na"
+		
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "-na"
+		
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks2|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "-na"
+		
+		3 "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:chopstick_wrapper_latest:WrappedChopsticks|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "-na"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:chopstick_wrapper_latest:WrappedChopsticks|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "chopstick_box_latestRN.placeHolderList[41]" 
+		"chopstick_box_latestRN.placeHolderList[42]" "chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "chopstick_box_latestRN.placeHolderList[43]" 
+		"chopstick_box_latestRN.placeHolderList[44]" "chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks2|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "chopstick_box_latestRN.placeHolderList[45]" 
+		"chopstick_box_latestRN.placeHolderList[46]" "chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:chopstick_wrapper_latest:WrappedChopsticks|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "chopstick_box_latestRN.placeHolderList[47]" 
+		"chopstick_box_latestRN.placeHolderList[48]" "chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks1|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "chopstick_box_latestRN.placeHolderList[49]" 
+		"chopstick_box_latestRN.placeHolderList[50]" "chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne1|chopstick_box_latest:WrappedChopsticks2|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "chopstick_box_latestRN.placeHolderList[51]" 
+		"chopstick_box_latestRN.placeHolderList[52]" "chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dsm"
+		
+		5 0 "chopstick_box_latestRN" "|Barbatus_stall_latest_Barbatus|chopstick_box_latest:ChopSticks|chopstick_box_latest:ChopSitckGrpOne|chopstick_box_latest:WrappedChopsticks3|chopstick_box_latest:chopstick_wrapper_latest:Wrapper|chopstick_box_latest:chopstick_wrapper_latest:WrapperShape.instObjGroups" 
+		"chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dagSetMembers" "chopstick_box_latestRN.placeHolderList[53]" 
+		"chopstick_box_latestRN.placeHolderList[54]" "chopstick_box_latest:chopstick_wrapper_latest:PxrSurface1SG.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode RenderMan -s -n "renderManGlobals";
@@ -16795,97 +17138,97 @@ connectAttr "roll_and_sausage_platter_latestRN.phl[165]" "roll_and_sausage_platt
 		;
 connectAttr "roll_and_sausage_platter_latestRN.phl[167]" "roll_and_sausage_platter_latestRN.phl[168]"
 		;
-connectAttr "octopus_platter_latestRN.phl[558]" ":initialShadingGroup.dsm" -na;
-connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[559]";
-connectAttr "octopus_platter_latestRN.phl[560]" ":initialShadingGroup.dsm" -na;
-connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[561]";
-connectAttr "octopus_platter_latestRN.phl[562]" ":initialShadingGroup.dsm" -na;
-connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[563]";
-connectAttr "octopus_platter_latestRN.phl[564]" ":initialShadingGroup.dsm" -na;
-connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[565]";
-connectAttr "octopus_platter_latestRN.phl[566]" ":initialShadingGroup.dsm" -na;
-connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[567]";
-connectAttr "octopus_platter_latestRN.phl[568]" "octopus_platter_latestRN.phl[569]"
+connectAttr "octopus_platter_latestRN.phl[583]" ":initialShadingGroup.dsm" -na;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[584]";
+connectAttr "octopus_platter_latestRN.phl[585]" ":initialShadingGroup.dsm" -na;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[586]";
+connectAttr "octopus_platter_latestRN.phl[587]" ":initialShadingGroup.dsm" -na;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[588]";
+connectAttr "octopus_platter_latestRN.phl[589]" ":initialShadingGroup.dsm" -na;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[590]";
+connectAttr "octopus_platter_latestRN.phl[591]" ":initialShadingGroup.dsm" -na;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[592]";
+connectAttr "octopus_platter_latestRN.phl[593]" "octopus_platter_latestRN.phl[594]"
 		;
-connectAttr "octopus_platter_latestRN.phl[570]" "octopus_platter_latestRN.phl[571]"
+connectAttr "octopus_platter_latestRN.phl[595]" "octopus_platter_latestRN.phl[596]"
 		;
-connectAttr "octopus_platter_latestRN.phl[572]" "octopus_platter_latestRN.phl[573]"
+connectAttr "octopus_platter_latestRN.phl[597]" "octopus_platter_latestRN.phl[598]"
 		;
-connectAttr "octopus_platter_latestRN.phl[574]" "octopus_platter_latestRN.phl[575]"
+connectAttr "octopus_platter_latestRN.phl[599]" "octopus_platter_latestRN.phl[600]"
 		;
-connectAttr "octopus_platter_latestRN.phl[576]" "octopus_platter_latestRN.phl[577]"
+connectAttr "octopus_platter_latestRN.phl[601]" "octopus_platter_latestRN.phl[602]"
+		;
+connectAttr "octopus_platter_latestRN.phl[603]" "octopus_platter_latestRN.phl[604]"
+		;
+connectAttr "octopus_platter_latestRN.phl[605]" "octopus_platter_latestRN.phl[606]"
+		;
+connectAttr "octopus_platter_latestRN.phl[607]" "octopus_platter_latestRN.phl[608]"
+		;
+connectAttr "octopus_platter_latestRN.phl[609]" "octopus_platter_latestRN.phl[610]"
+		;
+connectAttr "octopus_platter_latestRN.phl[611]" "octopus_platter_latestRN.phl[612]"
+		;
+connectAttr "octopus_platter_latestRN.phl[614]" "octopus_platter_latestRN.phl[613]"
+		;
+connectAttr "octopus_platter_latestRN.phl[616]" "octopus_platter_latestRN.phl[615]"
+		;
+connectAttr "octopus_platter_latestRN.phl[618]" "octopus_platter_latestRN.phl[617]"
+		;
+connectAttr "octopus_platter_latestRN.phl[620]" "octopus_platter_latestRN.phl[619]"
+		;
+connectAttr "octopus_platter_latestRN.phl[622]" "octopus_platter_latestRN.phl[621]"
+		;
+connectAttr "octopus_platter_latestRN.phl[624]" "octopus_platter_latestRN.phl[623]"
+		;
+connectAttr "octopus_platter_latestRN.phl[626]" "octopus_platter_latestRN.phl[625]"
+		;
+connectAttr "octopus_platter_latestRN.phl[628]" "octopus_platter_latestRN.phl[627]"
+		;
+connectAttr "octopus_platter_latestRN.phl[630]" "octopus_platter_latestRN.phl[629]"
+		;
+connectAttr "octopus_platter_latestRN.phl[632]" "octopus_platter_latestRN.phl[631]"
+		;
+connectAttr "octopus_platter_latestRN.phl[634]" "octopus_platter_latestRN.phl[633]"
+		;
+connectAttr "octopus_platter_latestRN.phl[636]" "octopus_platter_latestRN.phl[635]"
+		;
+connectAttr "octopus_platter_latestRN.phl[638]" "octopus_platter_latestRN.phl[637]"
+		;
+connectAttr "octopus_platter_latestRN.phl[640]" "octopus_platter_latestRN.phl[639]"
+		;
+connectAttr "octopus_platter_latestRN.phl[642]" "octopus_platter_latestRN.phl[641]"
+		;
+connectAttr "octopus_platter_latestRN.phl[644]" "octopus_platter_latestRN.phl[643]"
+		;
+connectAttr "octopus_platter_latestRN.phl[646]" "octopus_platter_latestRN.phl[645]"
+		;
+connectAttr "octopus_platter_latestRN.phl[648]" "octopus_platter_latestRN.phl[647]"
+		;
+connectAttr "octopus_platter_latestRN.phl[650]" "octopus_platter_latestRN.phl[649]"
+		;
+connectAttr "octopus_platter_latestRN.phl[652]" "octopus_platter_latestRN.phl[651]"
+		;
+connectAttr "octopus_platter_latestRN.phl[654]" "octopus_platter_latestRN.phl[653]"
+		;
+connectAttr "octopus_platter_latestRN.phl[656]" "octopus_platter_latestRN.phl[655]"
+		;
+connectAttr "octopus_platter_latestRN.phl[658]" "octopus_platter_latestRN.phl[657]"
+		;
+connectAttr "octopus_platter_latestRN.phl[660]" "octopus_platter_latestRN.phl[659]"
+		;
+connectAttr "octopus_platter_latestRN.phl[662]" "octopus_platter_latestRN.phl[661]"
+		;
+connectAttr "octopus_platter_latestRN.phl[664]" "octopus_platter_latestRN.phl[663]"
+		;
+connectAttr "octopus_platter_latestRN.phl[666]" "octopus_platter_latestRN.phl[665]"
+		;
+connectAttr "octopus_platter_latestRN.phl[667]" "octopus_platter_latestRN.phl[668]"
+		;
+connectAttr "octopus_platter_latestRN.phl[580]" "octopus_platter_latestRN.phl[402]"
+		;
+connectAttr "octopus_platter_latestRN.phl[581]" "octopus_platter_latestRN.phl[582]"
 		;
 connectAttr "octopus_platter_latestRN.phl[578]" "octopus_platter_latestRN.phl[579]"
-		;
-connectAttr "octopus_platter_latestRN.phl[580]" "octopus_platter_latestRN.phl[581]"
-		;
-connectAttr "octopus_platter_latestRN.phl[582]" "octopus_platter_latestRN.phl[583]"
-		;
-connectAttr "octopus_platter_latestRN.phl[584]" "octopus_platter_latestRN.phl[585]"
-		;
-connectAttr "octopus_platter_latestRN.phl[586]" "octopus_platter_latestRN.phl[587]"
-		;
-connectAttr "octopus_platter_latestRN.phl[589]" "octopus_platter_latestRN.phl[588]"
-		;
-connectAttr "octopus_platter_latestRN.phl[591]" "octopus_platter_latestRN.phl[590]"
-		;
-connectAttr "octopus_platter_latestRN.phl[593]" "octopus_platter_latestRN.phl[592]"
-		;
-connectAttr "octopus_platter_latestRN.phl[595]" "octopus_platter_latestRN.phl[594]"
-		;
-connectAttr "octopus_platter_latestRN.phl[597]" "octopus_platter_latestRN.phl[596]"
-		;
-connectAttr "octopus_platter_latestRN.phl[599]" "octopus_platter_latestRN.phl[598]"
-		;
-connectAttr "octopus_platter_latestRN.phl[601]" "octopus_platter_latestRN.phl[600]"
-		;
-connectAttr "octopus_platter_latestRN.phl[603]" "octopus_platter_latestRN.phl[602]"
-		;
-connectAttr "octopus_platter_latestRN.phl[605]" "octopus_platter_latestRN.phl[604]"
-		;
-connectAttr "octopus_platter_latestRN.phl[607]" "octopus_platter_latestRN.phl[606]"
-		;
-connectAttr "octopus_platter_latestRN.phl[609]" "octopus_platter_latestRN.phl[608]"
-		;
-connectAttr "octopus_platter_latestRN.phl[611]" "octopus_platter_latestRN.phl[610]"
-		;
-connectAttr "octopus_platter_latestRN.phl[613]" "octopus_platter_latestRN.phl[612]"
-		;
-connectAttr "octopus_platter_latestRN.phl[615]" "octopus_platter_latestRN.phl[614]"
-		;
-connectAttr "octopus_platter_latestRN.phl[617]" "octopus_platter_latestRN.phl[616]"
-		;
-connectAttr "octopus_platter_latestRN.phl[619]" "octopus_platter_latestRN.phl[618]"
-		;
-connectAttr "octopus_platter_latestRN.phl[621]" "octopus_platter_latestRN.phl[620]"
-		;
-connectAttr "octopus_platter_latestRN.phl[623]" "octopus_platter_latestRN.phl[622]"
-		;
-connectAttr "octopus_platter_latestRN.phl[625]" "octopus_platter_latestRN.phl[624]"
-		;
-connectAttr "octopus_platter_latestRN.phl[627]" "octopus_platter_latestRN.phl[626]"
-		;
-connectAttr "octopus_platter_latestRN.phl[629]" "octopus_platter_latestRN.phl[628]"
-		;
-connectAttr "octopus_platter_latestRN.phl[631]" "octopus_platter_latestRN.phl[630]"
-		;
-connectAttr "octopus_platter_latestRN.phl[633]" "octopus_platter_latestRN.phl[632]"
-		;
-connectAttr "octopus_platter_latestRN.phl[635]" "octopus_platter_latestRN.phl[634]"
-		;
-connectAttr "octopus_platter_latestRN.phl[637]" "octopus_platter_latestRN.phl[636]"
-		;
-connectAttr "octopus_platter_latestRN.phl[639]" "octopus_platter_latestRN.phl[638]"
-		;
-connectAttr "octopus_platter_latestRN.phl[641]" "octopus_platter_latestRN.phl[640]"
-		;
-connectAttr "octopus_platter_latestRN.phl[642]" "octopus_platter_latestRN.phl[643]"
-		;
-connectAttr "octopus_platter_latestRN.phl[555]" "octopus_platter_latestRN.phl[402]"
-		;
-connectAttr "octopus_platter_latestRN.phl[556]" "octopus_platter_latestRN.phl[557]"
-		;
-connectAttr "octopus_platter_latestRN.phl[553]" "octopus_platter_latestRN.phl[554]"
 		;
 connectAttr "strip_platter_latestRN.phl[100]" "strip_platter_latestRN.phl[101]";
 connectAttr "strip_platter_latestRN.phl[102]" "strip_platter_latestRN.phl[103]";
@@ -17088,6 +17431,33 @@ connectAttr "togo_box_latestRN.phl[21]" "togo_box_latestRN.phl[22]";
 connectAttr "togo_box_latestRN.phl[23]" "togo_box_latestRN.phl[24]";
 connectAttr "togo_box_latestRN.phl[25]" "togo_box_latestRN.phl[26]";
 connectAttr "togo_box_latestRN.phl[27]" "togo_box_latestRN.phl[28]";
+connectAttr "chopstick_box_latestRN.phl[1]" "chopstick_box_latestRN.phl[2]";
+connectAttr "chopstick_box_latestRN.phl[3]" "chopstick_box_latestRN.phl[4]";
+connectAttr "chopstick_box_latestRN.phl[5]" "chopstick_box_latestRN.phl[6]";
+connectAttr "chopstick_box_latestRN.phl[7]" "chopstick_box_latestRN.phl[8]";
+connectAttr "chopstick_box_latestRN.phl[9]" "chopstick_box_latestRN.phl[10]";
+connectAttr "chopstick_box_latestRN.phl[11]" "chopstick_box_latestRN.phl[12]";
+connectAttr "chopstick_box_latestRN.phl[13]" "chopstick_box_latestRN.phl[14]";
+connectAttr "chopstick_box_latestRN.phl[15]" "chopstick_box_latestRN.phl[16]";
+connectAttr "chopstick_box_latestRN.phl[17]" "chopstick_box_latestRN.phl[18]";
+connectAttr "chopstick_box_latestRN.phl[19]" "chopstick_box_latestRN.phl[20]";
+connectAttr "chopstick_box_latestRN.phl[21]" "chopstick_box_latestRN.phl[22]";
+connectAttr "chopstick_box_latestRN.phl[23]" "chopstick_box_latestRN.phl[24]";
+connectAttr "chopstick_box_latestRN.phl[25]" "chopstick_box_latestRN.phl[26]";
+connectAttr "chopstick_box_latestRN.phl[27]" "chopstick_box_latestRN.phl[28]";
+connectAttr "chopstick_box_latestRN.phl[29]" "chopstick_box_latestRN.phl[30]";
+connectAttr "chopstick_box_latestRN.phl[31]" "chopstick_box_latestRN.phl[32]";
+connectAttr "chopstick_box_latestRN.phl[33]" "chopstick_box_latestRN.phl[34]";
+connectAttr "chopstick_box_latestRN.phl[35]" "chopstick_box_latestRN.phl[36]";
+connectAttr "chopstick_box_latestRN.phl[37]" "chopstick_box_latestRN.phl[38]";
+connectAttr "chopstick_box_latestRN.phl[39]" "chopstick_box_latestRN.phl[40]";
+connectAttr "chopstick_box_latestRN.phl[41]" "chopstick_box_latestRN.phl[42]";
+connectAttr "chopstick_box_latestRN.phl[43]" "chopstick_box_latestRN.phl[44]";
+connectAttr "chopstick_box_latestRN.phl[45]" "chopstick_box_latestRN.phl[46]";
+connectAttr "chopstick_box_latestRN.phl[47]" "chopstick_box_latestRN.phl[48]";
+connectAttr "chopstick_box_latestRN.phl[49]" "chopstick_box_latestRN.phl[50]";
+connectAttr "chopstick_box_latestRN.phl[51]" "chopstick_box_latestRN.phl[52]";
+connectAttr "chopstick_box_latestRN.phl[53]" "chopstick_box_latestRN.phl[54]";
 connectAttr "greasePlaneShape1.msg" ":perspShape.ip" -na;
 connectAttr "greasePencilPerspRenderPlane.msg" "greasePlaneShape1.rpl";
 connectAttr "greasePencilPerspArtDrawPlane.msg" "greasePlaneShape1.spl";
@@ -17512,18 +17882,6 @@ connectAttr "octopus_platter_latestRN.phl[130]" "octopus_platter_latestRN.phl[13
 		;
 connectAttr "octopus_platter_latestRN.phl[132]" "octopus_platter_latestRN.phl[133]"
 		;
-connectAttr "octopus_platter_latestRN.phl[493]" "octopus_platter_latestRN.phl[494]"
-		;
-connectAttr "octopus_platter_latestRN.phl[495]" "octopus_platter_latestRN.phl[496]"
-		;
-connectAttr "octopus_platter_latestRN.phl[497]" "octopus_platter_latestRN.phl[498]"
-		;
-connectAttr "octopus_platter_latestRN.phl[499]" "octopus_platter_latestRN.phl[500]"
-		;
-connectAttr "octopus_platter_latestRN.phl[501]" "octopus_platter_latestRN.phl[502]"
-		;
-connectAttr "octopus_platter_latestRN.phl[506]" "octopus_platter_latestRN.phl[507]"
-		;
 connectAttr "octopus_platter_latestRN.phl[518]" "octopus_platter_latestRN.phl[519]"
 		;
 connectAttr "octopus_platter_latestRN.phl[520]" "octopus_platter_latestRN.phl[521]"
@@ -17545,6 +17903,18 @@ connectAttr "octopus_platter_latestRN.phl[547]" "octopus_platter_latestRN.phl[54
 connectAttr "octopus_platter_latestRN.phl[549]" "octopus_platter_latestRN.phl[550]"
 		;
 connectAttr "octopus_platter_latestRN.phl[551]" "octopus_platter_latestRN.phl[552]"
+		;
+connectAttr "octopus_platter_latestRN.phl[556]" "octopus_platter_latestRN.phl[557]"
+		;
+connectAttr "octopus_platter_latestRN.phl[568]" "octopus_platter_latestRN.phl[569]"
+		;
+connectAttr "octopus_platter_latestRN.phl[570]" "octopus_platter_latestRN.phl[571]"
+		;
+connectAttr "octopus_platter_latestRN.phl[572]" "octopus_platter_latestRN.phl[573]"
+		;
+connectAttr "octopus_platter_latestRN.phl[574]" "octopus_platter_latestRN.phl[575]"
+		;
+connectAttr "octopus_platter_latestRN.phl[576]" "octopus_platter_latestRN.phl[577]"
 		;
 connectAttr "Barbatus_stall_latest_sharedReferenceNode.sr" "octopus_platter_latestRN.sr"
 		;
@@ -17700,6 +18070,9 @@ connectAttr "chopstick_box_latestRNfosterParent1.msg" "chopstick_box_latestRN.fp
 connectAttr "fosterParent1.msg" "chopstick_box_latestRN.fs" -na;
 connectAttr "fosterParent2.msg" "chopstick_box_latestRN.fs" -na;
 connectAttr "fosterParent3.msg" "chopstick_box_latestRN.fs" -na;
+connectAttr "fosterParent4.msg" "chopstick_box_latestRN.fs" -na;
+connectAttr "fosterParent5.msg" "chopstick_box_latestRN.fs" -na;
+connectAttr "fosterParent6.msg" "chopstick_box_latestRN.fs" -na;
 connectAttr "Barbatus_stall_latest_PxrSurface1SG.pa" ":renderPartition.st" -na;
 connectAttr "Barbatus_stall_latest_PxrSurface2SG.pa" ":renderPartition.st" -na;
 connectAttr "MenuGrp.pa" ":renderPartition.st" -na;
