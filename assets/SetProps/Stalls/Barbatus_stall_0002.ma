@@ -1,24 +1,89 @@
 //Maya ASCII 2018 scene
 //Name: Barbatus_stall_0002.ma
-//Last modified: Sat, Nov 24, 2018 10:44:51 AM
+//Last modified: Sat, Nov 24, 2018 04:11:34 PM
 //Codeset: 1252
 file -rdi 1 -ns "Grill" -rfn "Barbatus_stall_latest_GrillRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Grill_latest.ma";
 file -rdi 1 -ns "StockPot_latest" -rfn "Barbatus_stall_latest_StockPot_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/StockPot_latest.ma";
-file -rdi 1 -ns "Firecrackers_latest" -rfn "Barbatus_stall_latest_Firecrackers_latestRN"
-		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Firecrackers_latest.ma";
+file -rdi 1 -ns "rack_latest" -rfn "rack_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/rack_latest.ma";
+file -rdi 1 -ns "tofu_fishball_platter_latest" -rfn "tofu_fishball_platter_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/tofu_fishball_platter_latest.ma";
+file -rdi 2 -ns "platter_latest" -rfn "tofu_fishball_platter_latest:platter_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/platter_latest.ma";
+file -rdi 2 -ns "fishball_on_a_stick_latest" -rfn "tofu_fishball_platter_latest:fishball_on_a_stick_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/fishball_on_a_stick_latest.ma";
+file -rdi 3 -ns "skewer_latest" -rfn "tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/skewer_latest.ma";
+file -rdi 2 -ns "tofu_on_a_stick_latest" -rfn "tofu_fishball_platter_latest:tofu_on_a_stick_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/tofu_on_a_stick_latest.ma";
+file -rdi 3 -ns "skewer_latest" -rfn "tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/skewer_latest.ma";
+file -rdi 1 -ns "roll_and_sausage_platter_latest" -rfn "roll_and_sausage_platter_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/roll_and_sausage_platter_latest.ma";
+file -rdi 2 -ns "platter_latest" -rfn "roll_and_sausage_platter_latest:platter_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/platter_latest.ma";
+file -rdi 2 -ns "meat_roll_on_a_stick_latest" -rfn "roll_and_sausage_platter_latest:meat_roll_on_a_stick_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/meat_roll_on_a_stick_latest.ma";
+file -rdi 3 -ns "skewer_latest" -rfn "roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/skewer_latest.ma";
+file -rdi 2 -ns "sausage_on_a_stick_latest" -rfn "roll_and_sausage_platter_latest:sausage_on_a_stick_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/sausage_on_a_stick_latest.ma";
+file -rdi 3 -ns "skewer_latest" -rfn "roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/skewer_latest.ma";
+file -rdi 1 -ns "octopus_platter_latest" -rfn "octopus_platter_latestRN" -op
+		 "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/octopus_platter_latest.ma";
+file -rdi 2 -ns "platter_latest" -rfn "octopus_platter_latest:platter_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/platter_latest.ma";
+file -rdi 2 -ns "octopus_on_a_stick_latest" -rfn "octopus_platter_latest:octopus_on_a_stick_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/octopus_on_a_stick_latest.ma";
+file -rdi 3 -ns "skewer_latest" -rfn "octopus_platter_latest:octopus_on_a_stick_latest:skewer_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/skewer_latest.ma";
+file -rdi 1 -ns "strip_platter_latest" -rfn "strip_platter_latestRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/strip_platter_latest.ma";
+file -rdi 2 -ns "platter_latest" -rfn "strip_platter_latest:platter_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/platter_latest.ma";
+file -rdi 2 -ns "strip_on_a_stick_latest" -rfn "strip_platter_latest:strip_on_a_stick_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/strip_on_a_stick_latest.ma";
+file -rdi 3 -ns "skewer_latest" -rfn "strip_platter_latest:strip_on_a_stick_latest:skewer_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/skewer_latest.ma";
+file -rdi 1 -ns "lotus_belly_platter_latest" -rfn "lotus_belly_platter_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/lotus_belly_platter_latest.ma";
+file -rdi 2 -ns "platter_latest" -rfn "lotus_belly_platter_latest:platter_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/platter_latest.ma";
+file -rdi 2 -ns "lotus_on_a_stick_latest" -rfn "lotus_belly_platter_latest:lotus_on_a_stick_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/lotus_on_a_stick_latest.ma";
+file -rdi 3 -ns "skewer_latest" -rfn "lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/skewer_latest.ma";
+file -rdi 2 -ns "porkbelly_on_a_stick_latest" -rfn "lotus_belly_platter_latest:porkbelly_on_a_stick_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/porkbelly_on_a_stick_latest.ma";
+file -rdi 3 -ns "skewer_latest" -rfn "lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/skewer_latest.ma";
+file -rdi 1 -ns "chair_latest" -rfn "chair_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/chair_latest.ma";
 file -r -ns "Grill" -dr 1 -rfn "Barbatus_stall_latest_GrillRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Grill_latest.ma";
 file -r -ns "StockPot_latest" -dr 1 -rfn "Barbatus_stall_latest_StockPot_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/StockPot_latest.ma";
-file -r -ns "Firecrackers_latest" -dr 1 -rfn "Barbatus_stall_latest_Firecrackers_latestRN"
-		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Firecrackers_latest.ma";
+file -r -ns "rack_latest" -dr 1 -rfn "rack_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/rack_latest.ma";
+file -r -ns "tofu_fishball_platter_latest" -dr 1 -rfn "tofu_fishball_platter_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/tofu_fishball_platter_latest.ma";
+file -r -ns "roll_and_sausage_platter_latest" -dr 1 -rfn "roll_and_sausage_platter_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/roll_and_sausage_platter_latest.ma";
+file -r -ns "octopus_platter_latest" -dr 1 -rfn "octopus_platter_latestRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/octopus_platter_latest.ma";
+file -r -ns "strip_platter_latest" -dr 1 -rfn "strip_platter_latestRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/strip_platter_latest.ma";
+file -r -ns "lotus_belly_platter_latest" -dr 1 -rfn "lotus_belly_platter_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/lotus_belly_platter_latest.ma";
+file -r -ns "chair_latest" -dr 1 -rfn "chair_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/chair_latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
 requires -nodeType "PxrSurface" -nodeType "rmanDisplayChannel" -nodeType "d_openexr"
 		 -nodeType "rmanGlobals" -nodeType "PxrPathTracer" -nodeType "rmanDisplay" "RenderMan_for_Maya.py" "1.0";
-requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2018";
@@ -29,13 +94,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "79E41AF7-4D96-DD40-7C16-6EA4641B8363";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 63.479996136961972 17.44250614388266 47.279193537419083 ;
-	setAttr ".r" -type "double3" -14.138352729605437 55.800000000001234 1.4146276187784449e-15 ;
+	setAttr ".t" -type "double3" 19.973349760616024 20.862544950232945 -37.691052596807083 ;
+	setAttr ".r" -type "double3" -21.938352729602151 149.79999999998768 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "87B3DB01-420F-E5CB-33B5-30B073AD1943";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 80.312739739765533;
+	setAttr ".coi" 53.353507721471495;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -59,13 +124,13 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "23850CB2-4F47-93BF-2197-0DAE456FF440";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0 0 1000.1 ;
+	setAttr ".t" -type "double3" 1.3165961530948214 4.7688010588229126 1000.1 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "5B93DE7A-4084-916B-80D8-6189EF09B297";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 30;
+	setAttr ".ow" 13.600102855090167;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
@@ -124,11 +189,9 @@ createNode transform -n "Barbatus_stall_latest_Sign" -p "Barbatus_stall_latest_B
 createNode mesh -n "Barbatus_stall_latest_SignShape" -p "Barbatus_stall_latest_Sign";
 	rename -uid "988FBE7E-4F60-62E9-21B2-C09D8ECCB14B";
 	setAttr -k off ".v";
-	setAttr -s 2 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".pv" -type "double2" 0.16070468709958297 0.88923024417648833 ;
-	setAttr -s 2 ".uvst";
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -155,7 +218,6 @@ createNode transform -n "Barbatus_stall_latest_table_latest_top_Mesh" -p "|Barba
 createNode mesh -n "Barbatus_stall_latest_table_latest_top_MeshShape" -p "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_top_Mesh";
 	rename -uid "A7421E85-48EF-751F-722E-CD8154CCDF1F";
 	setAttr -k off ".v";
-	setAttr -s 2 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -397,7 +459,6 @@ createNode transform -n "Barbatus_stall_latest_table_latest_left_Mesh" -p "|Barb
 createNode mesh -n "Barbatus_stall_latest_table_latest_left_MeshShape" -p "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_left_Mesh";
 	rename -uid "3CB030FE-4E26-46A5-1DD0-6480D95823C5";
 	setAttr -k off ".v";
-	setAttr -s 2 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -1111,7 +1172,6 @@ createNode transform -n "Barbatus_stall_latest_table_latest_right_Mesh" -p "|Bar
 createNode mesh -n "Barbatus_stall_latest_table_latest_right_MeshShape" -p "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_right_Mesh";
 	rename -uid "8FE0107B-4222-FDDF-ED9C-78B0D714ADAF";
 	setAttr -k off ".v";
-	setAttr -s 2 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -1842,7 +1902,7 @@ createNode transform -n "Barbatus_stall_latest_tent_latest_tent_top_Mesh" -p "|B
 createNode mesh -n "Barbatus_stall_latest_tent_latest_tent_top_MeshShape" -p "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_top_Mesh";
 	rename -uid "1E8EF842-44AC-EE0F-997E-58A11A73DA7C";
 	setAttr -k off ".v";
-	setAttr -s 3 ".iog";
+	setAttr -s 2 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".pv" -type "double2" 0.38701041555032134 0.38868816196918488 ;
@@ -2365,7 +2425,7 @@ createNode transform -n "Barbatus_stall_latest_tent_latest_tent_pole_Mesh" -p "|
 createNode mesh -n "Barbatus_stall_latest_tent_latest_tent_pole_MeshShape" -p "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh";
 	rename -uid "59DF0D17-46A3-D50F-4167-F6A9833139EC";
 	setAttr -k off ".v";
-	setAttr -s 9 ".iog";
+	setAttr -s 8 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -2989,7 +3049,6 @@ createNode transform -n "Barbatus_stall_latest_table_latest_top_Mesh" -p "|Barba
 createNode mesh -n "Barbatus_stall_latest_table_latest_top_MeshShape" -p "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table1|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_top_Mesh";
 	rename -uid "73DB33D8-44E1-8A83-F86F-B49B1B29E928";
 	setAttr -k off ".v";
-	setAttr -s 3 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -3231,7 +3290,6 @@ createNode transform -n "Barbatus_stall_latest_table_latest_left_Mesh" -p "|Barb
 createNode mesh -n "Barbatus_stall_latest_table_latest_left_MeshShape" -p "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table1|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_left_Mesh";
 	rename -uid "F6209623-47AD-5DF5-D93A-679CA8D0C1EC";
 	setAttr -k off ".v";
-	setAttr -s 3 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -3945,7 +4003,6 @@ createNode transform -n "Barbatus_stall_latest_table_latest_right_Mesh" -p "|Bar
 createNode mesh -n "Barbatus_stall_latest_table_latest_right_MeshShape" -p "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table1|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_right_Mesh";
 	rename -uid "4B728D21-4465-F6F2-E80A-EC9D14B2CEE6";
 	setAttr -k off ".v";
-	setAttr -s 3 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -4661,7 +4718,7 @@ createNode mesh -n "Barbatus_stall_latest_table_latest_right_MeshShape" -p "|Bar
 	setAttr ".dsm" 2;
 createNode transform -n "Barbatus_stall_latest_table_latest_Table2" -p "Barbatus_stall_latest_BarbatusGrp";
 	rename -uid "24E8F550-493F-7AC9-1F60-EC9336081024";
-	setAttr ".t" -type "double3" 4.9288795320532151 2.2204460492503131e-16 14.989152310117605 ;
+	setAttr ".t" -type "double3" 4.0788214649329211 2.2204460492503131e-16 14.989152310117605 ;
 	setAttr ".s" -type "double3" 7.9052958798722983 7.9941811324464043 11.126696847076676 ;
 createNode nurbsCurve -n "Barbatus_stall_latest_table_latest_Table2Shape" -p "Barbatus_stall_latest_table_latest_Table2";
 	rename -uid "90FA7E71-4A1B-1735-93A5-FDB8D3577C2C";
@@ -4694,7 +4751,6 @@ createNode transform -n "Barbatus_stall_latest_table_latest_top_Mesh" -p "|Barba
 createNode mesh -n "Barbatus_stall_latest_table_latest_top_MeshShape" -p "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table2|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_top_Mesh";
 	rename -uid "2A830062-4ECE-6C12-D3E2-36A5749B52CA";
 	setAttr -k off ".v";
-	setAttr -s 2 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -4936,7 +4992,6 @@ createNode transform -n "Barbatus_stall_latest_table_latest_left_Mesh" -p "|Barb
 createNode mesh -n "Barbatus_stall_latest_table_latest_left_MeshShape" -p "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table2|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_left_Mesh";
 	rename -uid "F86F4829-45D8-BB60-3830-A3BBDFF26A9A";
 	setAttr -k off ".v";
-	setAttr -s 2 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -5650,7 +5705,6 @@ createNode transform -n "Barbatus_stall_latest_table_latest_right_Mesh" -p "|Bar
 createNode mesh -n "Barbatus_stall_latest_table_latest_right_MeshShape" -p "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table2|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_right_Mesh";
 	rename -uid "3AD4018A-41F6-A3B1-E415-F4913287547A";
 	setAttr -k off ".v";
-	setAttr -s 2 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -6364,38 +6418,108 @@ createNode mesh -n "Barbatus_stall_latest_table_latest_right_MeshShape" -p "|Bar
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 3;
 	setAttr ".dsm" 2;
-createNode transform -n "Barbatus_stall_latest_table_latest_Table3";
-	rename -uid "DDCF2650-4126-500C-72D4-C887EB1D10C5";
-	setAttr ".t" -type "double3" -14.670687758209233 -1.4210854715202004e-14 14.407027107121927 ;
-	setAttr ".r" -type "double3" 0 13.967833973475821 0 ;
-	setAttr ".s" -type "double3" 7.7813104772141255 7.8688016676306285 9.7897870116482828 ;
+createNode transform -n "Barbatus_stall_latest_Sign1" -p "Barbatus_stall_latest_BarbatusGrp";
+	rename -uid "2A76E84C-43EC-B7DA-E5D9-F691D4713959";
+	setAttr ".t" -type "double3" 8.2273693072642224 2.2423909390007535 17.405138101941443 ;
+	setAttr ".r" -type "double3" 0 0 2.1434501820013137 ;
+	setAttr ".s" -type "double3" 0.10445534558259537 4.2097836162027447 4.3143355030940587 ;
+createNode mesh -n "Barbatus_stall_latest_Sign1Shape" -p "Barbatus_stall_latest_Sign1";
+	rename -uid "42670CC0-483C-C16A-31AE-8492350735D4";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.16070468709958297 0.88923024417648833 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr -s 42 ".uvst[0].uvsp[0:41]" -type "float2" 0.084537506 0.76515752
+		 0.075248599 0.88058066 0.075248599 0.7804867 0.0030166507 1.0023398399 0.0030166507
+		 0.5 0.24513042 1.0095849037 0.50535643 1.0023398399 0.50535643 0.5 0.50535643 -0.0023397803
+		 0.07088244 0.97905254 0.07088244 0.88923025 1.0076961517 -0.0023397803 2.012375832
+		 1.0023398399 2.012375832 0.5 0.25052702 0.7994079 2.51471591 1.0023398399 2.51471567
+		 0.50000024 2.51471567 -0.0023397803 3.017055511 1.0023398399 3.017055511 0.5 3.017055511
+		 -0.0023396015 0.053657293 0.81811166 0.053657293 0.91384816 0.24513042 0.81811166
+		 0.24513042 0.91384816 0.084537506 0.92946827 0.084537506 0.84731299 0.24884833 0.92946839
+		 0.24884833 0.84731299 0.27543634 0.88058054 0.0030166507 -0.0023397803 0.27543634
+		 0.98067456 0.053657293 1.0095849037 0.27543634 0.7804867 0.075248599 0.98067445 0.24884835
+		 0.76515752 1.0076961517 0.5 0.07088244 0.7994079 1.0076961517 1.0023398399 0.25052702
+		 0.88923025 2.012375832 -0.0023397803 0.25052702 0.97905254;
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 18 ".vt[0:17]"  -0.5 0.5 0.5 -0.5 -1.110223e-16 0.5 -0.5 -0.5 0.5
+		 0.5 0.5 0.5 0.5 1.110223e-16 0.5 0.5 -0.5 0.5 0.5 0.5 0 0.5 1.110223e-16 0 0.5 -0.5 0
+		 0.5 0.5 -0.5 0.5 1.110223e-16 -0.5 0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 -1.110223e-16 -0.5
+		 -0.5 -0.5 -0.5 -0.5 0.5 0 -0.5 -1.110223e-16 0 -0.5 -0.5 0;
+	setAttr -s 32 ".ed[0:31]"  0 1 0 1 2 0 3 4 0 4 5 0 6 7 1 7 8 1 9 10 0
+		 10 11 0 12 13 0 13 14 0 15 16 1 16 17 1 2 5 0 0 3 0 1 4 1 3 6 0 4 7 1 5 8 0 6 9 0
+		 7 10 1 8 11 0 11 14 0 9 12 0 10 13 1 12 15 0 13 16 1 14 17 0 15 0 0 16 1 1 17 2 0
+		 17 8 1 15 6 1;
+	setAttr -s 16 -ch 64 ".fc[0:15]" -type "polyFaces" 
+		f 4 14 -3 -14 0
+		mu 0 4 1 29 31 34
+		f 4 -4 -15 1 12
+		mu 0 4 33 29 1 2
+		f 4 2 16 -5 -16
+		mu 0 4 3 4 7 6
+		f 4 3 17 -6 -17
+		mu 0 4 4 30 8 7
+		f 4 4 19 -7 -19
+		mu 0 4 6 7 36 38
+		f 4 5 20 -8 -20
+		mu 0 4 7 8 11 36
+		f 4 23 -9 -23 6
+		mu 0 4 10 39 41 9
+		f 4 -10 -24 7 21
+		mu 0 4 14 39 10 37
+		f 4 8 25 -11 -25
+		mu 0 4 12 13 16 15
+		f 4 9 26 -12 -26
+		mu 0 4 13 40 17 16
+		f 4 10 28 -1 -28
+		mu 0 4 15 16 19 18
+		f 4 11 29 -2 -29
+		mu 0 4 16 17 20 19
+		f 4 -27 -22 -21 -31
+		mu 0 4 22 21 23 24
+		f 4 -13 -30 30 -18
+		mu 0 4 5 32 22 24
+		f 4 31 18 22 24
+		mu 0 4 26 28 27 25
+		f 4 13 15 -32 27
+		mu 0 4 0 35 28 26;
+	setAttr ".cd" -type "dataPolyComponent" Index_Data Edge 0 ;
+	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
+	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
+	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+	setAttr ".dr" 1;
+createNode transform -n "Foods";
+	rename -uid "5E665457-426E-0136-5834-488E711AE124";
+	setAttr ".rp" -type "double3" 3.5103454364566127 5.6821781062768242 15.06271262287375 ;
+	setAttr ".sp" -type "double3" 3.5103454364566127 5.6821781062768242 15.06271262287375 ;
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_Tent1Shape" "Barbatus_stall_latest_Tent2" ;
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp" "Barbatus_stall_latest_Tent2" ;
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh|Barbatus_stall_latest_tent_latest_tent_pole_MeshShape" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh1" ;
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh|Barbatus_stall_latest_tent_latest_tent_pole_MeshShape" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh2" ;
 parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh|Barbatus_stall_latest_tent_latest_tent_pole_MeshShape" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh3" ;
-parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table1|Barbatus_stall_latest_table_latest_Table1Shape" "Barbatus_stall_latest_table_latest_Table3" ;
-parent -s -nc -r -add "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table1|Barbatus_stall_latest_table_latest_Table_Grp" "Barbatus_stall_latest_table_latest_Table3" ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "2C534BBB-4725-558B-5477-3B8B8E7123B2";
-	setAttr -s 4 ".lnk";
-	setAttr -s 4 ".slnk";
+	rename -uid "57426F47-4A60-A952-A4E5-738F99C6157D";
+	setAttr -s 9 ".lnk";
+	setAttr -s 9 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "AB5C5123-409A-7F6C-1967-378ED5C0A907";
+	rename -uid "C42F153B-4685-1EC6-0900-C1A74FCC1113";
 	setAttr -s 2 ".bsdt";
-	setAttr ".bsdt[0].bscd" -type "Int32Array" 2 0 -1 ;
+	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 -1 ;
 	setAttr ".bsdt[1].bscd" -type "Int32Array" 1 1 ;
 	setAttr ".bsdt[1].bsdn" -type "string" "Barbatus_stall_latest";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "14208A87-4FE3-4C86-AC92-E59B70631312";
+	rename -uid "3EA80A43-4AB0-818F-2108-1CB52C230C41";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "DE30672D-4689-B2B4-086C-A6A5FE09F451";
+	rename -uid "13675B2D-4574-C676-DD84-9A906CC83A35";
 	setAttr -s 3 ".dli[1:2]"  1 2;
-	setAttr -s 3 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "A45481F6-4C0D-B5AF-A126-7890A3B66A98";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "0C00C575-496A-C91A-093A-0EBB03CBE66B";
+	rename -uid "88913768-4C85-7D83-7C92-8DB34EDE8327";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "968DF0DD-4434-9E07-5BE6-D3A601AFC471";
 	setAttr ".g" yes;
@@ -6693,16 +6817,16 @@ createNode script -n "Barbatus_stall_latest_tent_latest_uiConfigurationScriptNod
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n"
 		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
 		+ "            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n"
-		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 820\n            -height 415\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 0\n            -height 883\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 819\n            -height 414\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 820\n            -height 414\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
-		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
-		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
+		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
+		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 0\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 0\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
 		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1646\n            -height 874\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
 		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
@@ -6718,19 +6842,19 @@ createNode script -n "Barbatus_stall_latest_tent_latest_uiConfigurationScriptNod
 		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n"
 		+ "                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n"
 		+ "                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n"
-		+ "                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n"
-		+ "                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n"
-		+ "                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n"
-		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n"
-		+ "                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1646\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1646\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n"
+		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n"
+		+ "                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n"
+		+ "                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n"
+		+ "                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n"
+		+ "                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n"
+		+ "                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 0\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1646\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 0\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 0\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1646\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "Barbatus_stall_latest_tent_latest_sceneConfigurationScriptNode";
@@ -6846,6 +6970,7 @@ createNode reference -n "Barbatus_stall_latest_GrillRN";
 	setAttr ".phl[112]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Barbatus_stall_latest_GrillRN"
+		"Barbatus_stall_latest_GrillRN" 0
 		"GrillRN" 42
 		3 "|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder8|Grill:pCylinderShape8.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -6942,42 +7067,32 @@ createNode reference -n "Barbatus_stall_latest_GrillRN";
 		2 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill" 
 		"scale" " -type \"double3\" 6.01596753055878697 2.94622118661339938 3.76106608523476948"
 		
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder29|Grill:pCylinderShape29.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent5|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder30|Grill:pCylinderShape29.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent4|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder31|Grill:pCylinderShape29.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent3|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder32|Grill:pCylinderShape29.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent5|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder33|Grill:pCylinderShape29.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent4|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder34|Grill:pCylinderShape29.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent3|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder35|Grill:pCylinderShape29.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent5|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder36|Grill:pCylinderShape29.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent4|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder37|Grill:pCylinderShape29.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent3|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder38|Grill:pCylinderShape29.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent2|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder39|Grill:pCylinderShape29.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent1|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder1|Grill:pCylinderShape1.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Master_Vent|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder7|Grill:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder6|Grill:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder5|Grill:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder4|Grill:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder3|Grill:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder2|Grill:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillBody|Grill:GrillBodyShape.worldMatrix" 
+		"Grill:polySplitRing1.manipMatrix" ""
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillBody|Grill:GrillBodyShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent5|Grill:pCube6|Grill:pCubeShape3.instObjGroups" 
@@ -7076,32 +7191,42 @@ createNode reference -n "Barbatus_stall_latest_GrillRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Master_Vent|Grill:pCube4|Grill:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent5|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder1|Grill:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent4|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder7|Grill:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents1|Grill:Vent3|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder6|Grill:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent5|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder5|Grill:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent4|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder4|Grill:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Front_Vents|Grill:Left_Side_Vents2|Grill:Vent3|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder3|Grill:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent5|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:pCylinder2|Grill:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent4|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder29|Grill:pCylinderShape29.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Left_Side_Vents|Grill:Vent3|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder30|Grill:pCylinderShape29.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent2|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder31|Grill:pCylinderShape29.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Vent1|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder32|Grill:pCylinderShape29.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Master_Vent|Grill:pCube7|Grill:pCubeShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder33|Grill:pCylinderShape29.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillBody|Grill:GrillBodyShape.worldMatrix" 
-		"Grill:polySplitRing1.manipMatrix" ""
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder34|Grill:pCylinderShape29.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder35|Grill:pCylinderShape29.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder36|Grill:pCylinderShape29.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder37|Grill:pCylinderShape29.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder38|Grill:pCylinderShape29.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:Grill_Peices|Grill:group2|Grill:pCylinder39|Grill:pCylinderShape29.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillTop|Grill:GrillTopShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "Barbatus_stall_latest_GrillRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Grill:Grill|Grill:GrillGrp|Grill:GrillBody|Grill:GrillBodyShape.instObjGroups" 
@@ -7280,12 +7405,18 @@ createNode reference -n "Barbatus_stall_latest_StockPot_latestRN";
 	setAttr ".phl[2]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Barbatus_stall_latest_StockPot_latestRN"
+		"Barbatus_stall_latest_StockPot_latestRN" 0
 		"StockPot_latestRN" 0
-		"Barbatus_stall_latest_StockPot_latestRN" 12
+		"Barbatus_stall_latest_StockPot_latestRN" 14
 		0 "|StockPot_latest:Pan" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp" 
 		"-s -r "
 		2 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan" 
-		"translate" " -type \"double3\" 5.40316959678643993 4.53204005640203089 -4.62766073305890657"
+		"translate" " -type \"double3\" -9.36747321424191171 4.31257933059816168 -4.10729028172838007"
+		
+		2 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan" 
+		"rotate" " -type \"double3\" 0 11.94090958511359624 0"
+		2 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan" 
+		"scale" " -type \"double3\" 2.16853472872829167 2.16853472872829167 2.16853472872829167"
 		
 		3 "StockPot_latest:groupId21.groupId" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:Lid|StockPot_latest:LidShape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
@@ -7295,14 +7426,14 @@ createNode reference -n "Barbatus_stall_latest_StockPot_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "StockPot_latest:groupId21.message" ":initialShadingGroup.groupNodes" "-na"
 		
-		3 "StockPot_latest:groupId22.message" ":initialShadingGroup.groupNodes" "-na"
-		
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "StockPot_latest:groupId22.groupId" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.compInstObjGroups.compObjectGroups[1].compObjectGroupId" 
 		""
 		3 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.compInstObjGroups.compObjectGroups[1]" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "StockPot_latest:groupId22.message" ":initialShadingGroup.groupNodes" "-na"
+		
 		5 3 "Barbatus_stall_latest_StockPot_latestRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:Lid|StockPot_latest:LidShape.instObjGroups" 
 		"Barbatus_stall_latest_StockPot_latestRN.placeHolderList[1]" ""
 		5 3 "Barbatus_stall_latest_StockPot_latestRN" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|StockPot_latest:Pan|StockPot_latest:PanGrp|StockPot_latest:PotBottom|StockPot_latest:PotBottomShape.instObjGroups" 
@@ -7465,35 +7596,6 @@ createNode materialInfo -n "Barbatus_stall_latest_materialInfo1";
 	rename -uid "907618F0-4E6C-5316-FF35-8394E0D6457F";
 createNode lambert -n "Barbatus_stall_latest_lambert2";
 	rename -uid "9373FBC4-4628-2CA1-58B7-B5BA98AFE677";
-createNode reference -n "Barbatus_stall_latest_Firecrackers_latestRN";
-	rename -uid "2752EE38-45E0-DB13-85E1-80A100789805";
-	setAttr -s 2 ".phl";
-	setAttr ".phl[1]" 0;
-	setAttr ".phl[2]" 0;
-	setAttr ".ed" -type "dataReferenceEdits" 
-		"Barbatus_stall_latest_Firecrackers_latestRN"
-		"Firecrackers_latestRN" 0
-		"Barbatus_stall_latest_Firecrackers_latestRN" 8
-		0 "|Firecrackers_latest:ChineeseFireCrackers" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp" 
-		"-s -r "
-		2 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Firecrackers_latest:ChineeseFireCrackers" 
-		"translate" " -type \"double3\" 8.85070063610650948 9.52885922408332142 -7.322071694850667"
-		
-		2 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Firecrackers_latest:ChineeseFireCrackers" 
-		"rotate" " -type \"double3\" 0 -60.59103481002335201 0"
-		2 "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Firecrackers_latest:ChineeseFireCrackers" 
-		"scale" " -type \"double3\" 2.45765350649371106 2.45765350649371106 2.45765350649371106"
-		
-		3 "Firecrackers_latest:layerManager.displayLayerId[2]" "Firecrackers_latest:firecrackerv2image.identification" 
-		""
-		3 "Firecrackers_latest:layerManager.displayLayerId[1]" "Firecrackers_latest:firecrackerImage.identification" 
-		""
-		5 4 "Barbatus_stall_latest_Firecrackers_latestRN" "Firecrackers_latest:firecrackerImage.identification" 
-		"Barbatus_stall_latest_Firecrackers_latestRN.placeHolderList[1]" ""
-		5 4 "Barbatus_stall_latest_Firecrackers_latestRN" "Firecrackers_latest:firecrackerv2image.identification" 
-		"Barbatus_stall_latest_Firecrackers_latestRN.placeHolderList[2]" "";
-	setAttr ".ptag" -type "string" "";
-lockNode -l 1 ;
 createNode polyCube -n "Barbatus_stall_latest_polyCube1";
 	rename -uid "C660C6B7-4CE8-46BD-AABE-C29D560C5F9E";
 	setAttr ".ax" -type "double3" 1 0 0 ;
@@ -8464,6 +8566,4562 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[136].x" 1464.2857666015625;
 	setAttr ".tgi[0].ni[136].y" 12848.5712890625;
 	setAttr ".tgi[0].ni[136].nvs" 1922;
+createNode reference -n "rack_latestRN";
+	rename -uid "F8098DD0-4F34-BF28-64BD-0EBC35DA17A0";
+	setAttr -s 4 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"rack_latestRN"
+		"rack_latestRN" 0
+		"rack_latestRN" 32
+		0 "|rack_latest:Shelves" "|Foods" "-s -r "
+		2 "|Foods|rack_latest:Shelves" "translate" " -type \"double3\" 0 0.026362367020252186 0"
+		
+		2 "|Foods|rack_latest:Shelves" "scale" " -type \"double3\" 1 1 1.21501852567743973"
+		
+		2 "|Foods|rack_latest:Shelves" "rotatePivot" " -type \"double3\" 3.51034543645661312 4.49414154029201374 15.06271262287374846"
+		
+		2 "|Foods|rack_latest:Shelves" "scalePivot" " -type \"double3\" 3.51034543645661312 4.49414154029201374 15.06271262287374846"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:pCube1" "translate" " -type \"double3\" 0 0 0"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:pCube1" "scale" " -type \"double3\" 1 1 1"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:pCube1" "rotatePivot" " -type \"double3\" 1.02788754246459879 4.99863491807028382 20.40889242698709438"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:pCube1" "scalePivot" " -type \"double3\" 1.02788754246459879 4.99863491807028382 20.40889242698709438"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:pCube1|rack_latest:pCubeShape1" 
+		"pt[0:81]" (" -s 82 -type \"float3\" 0.15174007 4.92591760000000001 19.986759 0.15174007 4.9986347999999996 19.986759 0.15174007 5.07135249999999971 19.986759 1.0278875999999999 4.92591760000000001 19.986759 1.0278875999999999 4.9986347999999996 19.986759 1.0278875999999999 5.07135249999999971 19.986759 3.185523 4.92591760000000001 19.986759 3.39799790000000002 4.9986347999999996 19.986759 3.74042180000000002 5.07135249999999971 19.986759 3.185523 4.92591760000000001 20.0476 3.39799790000000002 4.9986347999999996 20.0476 3.74042180000000002 5.07135249999999971 20.0476 3.185523 4.92591760000000001 20.770185 3.39799790000000002 4.9986347999999996 20.770185 3.74042180000000002 5.07135249999999971 20.770185 3.185523 4.92591760000000001 20.831024 3.39799790000000002 4.9986347999999996 20.831024 3.74042180000000002 5.07135249999999971 20.831024 1.0278875999999999 4.92591760000000001 20.831024 1.0278875999999999 4.9986347999999996 20.831024 1.0278875999999999 5.07135249999999971 20.831024 0.15174007 4.92591760000000001 20.831024 0"
+		+ ".15174007 4.9986347999999996 20.831024 0.15174007 5.07135249999999971 20.831024 0.15174007 4.92591760000000001 20.770185 0.15174007 4.9986347999999996 20.770185 0.15174007 5.07135249999999971 20.770185 0.15174007 4.92591760000000001 20.0476 0.15174007 4.9986347999999996 20.0476 0.15174007 5.07135249999999971 20.0476 1.0278875999999999 5.07135249999999971 20.770185 1.0278875999999999 5.07135249999999971 20.0476 1.0278875999999999 4.92591760000000001 20.770185 1.0278875999999999 4.92591760000000001 20.0476 0.20390868000000001 4.92591760000000001 19.986759 0.20390868000000001 4.92591760000000001 20.0476 0.20390868000000001 4.92591760000000001 20.770185 0.20390868000000001 4.92591760000000001 20.831024 0.20390868000000001 4.9986347999999996 20.831024 0.20390868000000001 5.07135249999999971 20.831024 0.20390868000000001 5.07135249999999971 20.770185 0.20390868000000001 5.07135249999999971 20.0476 0.20390868000000001 5.07135249999999971 19.986759 0.20390868000000001 4.9986347999999996 19.986759 3.15115139999999982 "
+		+ "4.92591760000000001 19.986759 3.15115139999999982 4.92591760000000001 20.0476 3.15115139999999982 4.92591760000000001 20.770185 3.15115139999999982 4.92591760000000001 20.831024 3.363626 4.9986347999999996 20.831024 3.70604939999999994 5.07135249999999971 20.831024 3.70604939999999994 5.07135249999999971 20.770185 3.70604939999999994 5.07135249999999971 20.0476 3.70604939999999994 5.07135249999999971 19.986759 3.363626 4.9986347999999996 19.986759 0.15174007 4.927639 19.986759 0.20390868000000001 4.927639 19.986759 1.0278875999999999 4.927639 19.986759 3.16952420000000012 4.92671629999999983 19.986759 3.20389629999999981 4.92671629999999983 19.986759 3.20389629999999981 4.92671629999999983 20.0476 3.20389629999999981 4.92671629999999983 20.770185 3.20389629999999981 4.92671629999999983 20.831024 3.16952420000000012 4.92671629999999983 20.831024 1.0278875999999999 4.927639 20.831024 0.20390868000000001 4.927639 20.831024 0.15174007 4.927639 20.831024 0.15174007 4.927639 20.770185 0.15174007 4.927639 20.0476 0."
+		+ "15174007 5.07006219999999974 19.986759 0.20390868000000001 5.07006219999999974 19.986759 1.0278875999999999 5.07006219999999974 19.986759 3.69222310000000009 5.07076309999999975 19.986759 3.72659489999999982 5.07076309999999975 19.986759 3.72659489999999982 5.07076309999999975 20.0476 3.72659489999999982 5.07076309999999975 20.770185 3.72659489999999982 5.07076309999999975 20.831024 3.69222310000000009 5.07076309999999975 20.831024 1.0278875999999999 5.07006219999999974 20.831024 0.20390868000000001 5.07006219999999974 20.831024 0.15174007 5.07006219999999974 20.831024 0.15174007 5.07006219999999974 20.770185 0.15174007 5.07006219999999974 20.0476"
+		)
+		2 "|Foods|rack_latest:Shelves|rack_latest:Shelf1" "translate" " -type \"double3\" 0 0 0"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:Shelf1" "scale" " -type \"double3\" 1 1 1"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:Shelf1" "rotatePivot" " -type \"double3\" 1.2463082166219499 5.25559799490087798 15.06271262287374668"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:Shelf1" "scalePivot" " -type \"double3\" 1.2463082166219499 5.25559799490087798 15.06271262287374668"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:Shelf1|rack_latest:Shelf1Shape" 
+		"pt[0:109]" (" -s 110 -type \"float3\" 0.30487250999999999 5.17568729999999988 19.86068 0.30487250999999999 5.19036339999999985 19.86068 0.30487250999999999 5.33550880000000038 19.86068 1.24630820000000009 5.17568729999999988 19.86068 1.24630820000000009 5.19036339999999985 19.86068 1.24630820000000009 5.33550880000000038 19.86068 2.18774410000000019 5.17568729999999988 19.86068 2.18774410000000019 5.19036339999999985 19.86068 2.18774410000000019 5.33550880000000038 19.86068 2.18774410000000019 5.17568729999999988 15.062713 2.18774410000000019 5.19036339999999985 15.062713 2.18774410000000019 5.33550880000000038 15.062713 2.18774410000000019 5.17568729999999988 10.264746 2.18774410000000019 5.19036339999999985 10.264746 2.18774410000000019 5.33550880000000038 10.264746 1.24630820000000009 5.17568729999999988 10.264746 1.24630820000000009 5.19036339999999985 10.264746 1.24630820000000009 5.33550880000000038 10.264746 0.30487250999999999 5.17568729999999988 10.264746 0.30487250999999999 5.19036339999999985 10.264746 0.30487250"
+		+ "999999999 5.33550880000000038 10.264746 0.30487250999999999 5.17568729999999988 15.062713 0.30487250999999999 5.19036339999999985 15.062713 0.30487250999999999 5.33550880000000038 15.062713 1.24630820000000009 5.33550880000000038 15.062713 1.24630820000000009 5.17568729999999988 15.062713 1.24630820000000009 5.31657120000000027 19.86068 2.18774410000000019 5.31657120000000027 19.86068 2.18774410000000019 5.31657120000000027 15.062713 2.18774410000000019 5.31657120000000027 10.264746 1.24630820000000009 5.31657120000000027 10.264746 0.30487250999999999 5.31657120000000027 10.264746 0.30487250999999999 5.31657120000000027 15.062713 0.30487250999999999 5.31657120000000027 19.86068 1.24630820000000009 5.17568729999999988 19.78994 2.18774410000000019 5.17568729999999988 19.78994 2.18774410000000019 5.19036339999999985 19.78994 2.18774410000000019 5.31657120000000027 19.78994 2.18774410000000019 5.33550880000000038 19.78994 1.24630820000000009 5.33550880000000038 19.78994 0.30487250999999999 5.33550880000000038 19."
+		+ "78994 0.30487250999999999 5.31657120000000027 19.78994 0.30487250999999999 5.19036339999999985 19.78994 0.30487250999999999 5.17568729999999988 19.78994 1.24630820000000009 5.17568729999999988 10.386573 2.18774410000000019 5.17568729999999988 10.386573 2.18774410000000019 5.19036339999999985 10.386573 2.18774410000000019 5.31657120000000027 10.386573 2.18774410000000019 5.33550880000000038 10.386573 1.24630820000000009 5.33550880000000038 10.386573 0.30487250999999999 5.33550880000000038 10.386573 0.30487250999999999 5.31657120000000027 10.386573 0.30487250999999999 5.19036339999999985 10.386573 0.30487250999999999 5.17568729999999988 10.386573 1.24630820000000009 5.17568729999999988 17.674437 2.18774410000000019 5.17568729999999988 17.674437 2.18774410000000019 5.19036339999999985 17.674437 2.18774410000000019 5.31657120000000027 17.674437 2.18774410000000019 5.33550880000000038 17.674437 1.24630820000000009 5.33550880000000038 17.674437 0.30487250999999999 5.33550880000000038 17.674437 0.30487250999999999 5"
+		+ ".31657120000000027 17.674437 0.30487250999999999 5.19036339999999985 17.674437 0.30487250999999999 5.17568729999999988 17.674437 1.24630820000000009 5.17568729999999988 12.630498 2.18774410000000019 5.17568729999999988 12.630498 2.18774410000000019 5.19036339999999985 12.630498 2.18774410000000019 5.31657120000000027 12.630498 2.18774410000000019 5.33550880000000038 12.630498 1.24630820000000009 5.33550880000000038 12.630498 0.30487250999999999 5.33550880000000038 12.630498 0.30487250999999999 5.31657120000000027 12.630498 0.30487250999999999 5.19036339999999985 12.630498 0.30487250999999999 5.17568729999999988 12.630498 2.17429210000000017 5.17568729999999988 19.86068 2.17429210000000017 5.17568729999999988 19.78994 2.17429210000000017 5.17568729999999988 17.674437 2.17429210000000017 5.17568729999999988 15.062713 2.17429210000000017 5.17568729999999988 12.630498 2.17429210000000017 5.17568729999999988 10.386573 2.17429210000000017 5.17568729999999988 10.264746 2.17429210000000017 5.19036339999999985 10.2647"
+		+ "46 2.17429210000000017 5.31657120000000027 10.264746 2.17429210000000017 5.33550880000000038 10.264746 2.17429210000000017 5.33550880000000038 10.386573 2.17429210000000017 5.33550880000000038 12.630498 2.17429210000000017 5.33550880000000038 15.062713 2.17429210000000017 5.33550880000000038 17.674437 2.17429210000000017 5.33550880000000038 19.78994 2.17429210000000017 5.33550880000000038 19.86068 2.17429210000000017 5.31657120000000027 19.86068 2.17429210000000017 5.19036339999999985 19.86068 0.32771611 5.17568729999999988 19.86068 0.32771611 5.17568729999999988 19.78994 0.32771611 5.17568729999999988 17.674437 0.32771611 5.17568729999999988 15.062713 0.32771611 5.17568729999999988 12.630498 0.32771611 5.17568729999999988 10.386573 0.32771611 5.17568729999999988 10.264746 0.32771611 5.19036339999999985 10.264746 0.32771611 5.31657120000000027 10.264746 0.32771611 5.33550880000000038 10.264746 0.32771611 5.33550880000000038 10.386573 0.32771611 5.33550880000000038 12.630498 0.32771611 5.33550880000000038 15.0"
+		+ "62713 0.32771611 5.33550880000000038 17.674437 0.32771611 5.33550880000000038 19.78994 0.32771611 5.33550880000000038 19.86068 0.32771611 5.31657120000000027 19.86068 0.32771611 5.19036339999999985 19.86068"
+		)
+		2 "|Foods|rack_latest:Shelves|rack_latest:Shelf2" "translate" " -type \"double3\" 0 0 0"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:Shelf2" "rotatePivot" " -type \"double3\" 3.95487115714636372 4.66454882967985185 15.06271262287374668"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:Shelf2" "scalePivot" " -type \"double3\" 3.95487115714636372 4.66454882967985185 15.06271262287374668"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:Shelf2|rack_latest:Shelf2Shape" 
+		"pt[0:109]" (" -s 110 -type \"float3\" 3.02563309999999985 4.58463759999999976 19.86068 3.02563309999999985 4.59931469999999987 19.86068 3.02563309999999985 4.74445959999999989 19.86068 3.95487119999999992 4.58463759999999976 19.86068 3.95487119999999992 4.59931469999999987 19.86068 3.95487119999999992 4.74445959999999989 19.86068 4.884109 4.58463759999999976 19.86068 4.884109 4.59931469999999987 19.86068 4.884109 4.74445959999999989 19.86068 4.884109 4.58463759999999976 15.062713 4.884109 4.59931469999999987 15.062713 4.884109 4.74445959999999989 15.062713 4.884109 4.58463759999999976 10.264746 4.884109 4.59931469999999987 10.264746 4.884109 4.74445959999999989 10.264746 3.95487119999999992 4.58463759999999976 10.264746 3.95487119999999992 4.59931469999999987 10.264746 3.95487119999999992 4.74445959999999989 10.264746 3.02563309999999985 4.58463759999999976 10.264746 3.02563309999999985 4.59931469999999987 10.264746 3.02563309999999985 4.74445959999999989 10.264746 3.02563309999999985 4.58463759999999976 15.062713 3.0256330"
+		+ "9999999985 4.59931469999999987 15.062713 3.02563309999999985 4.74445959999999989 15.062713 3.95487119999999992 4.74445959999999989 15.062713 3.95487119999999992 4.58463759999999976 15.062713 3.95487119999999992 4.72552250000000029 19.86068 4.884109 4.72552250000000029 19.86068 4.884109 4.72552250000000029 15.062713 4.884109 4.72552250000000029 10.264746 3.95487119999999992 4.72552250000000029 10.264746 3.02563309999999985 4.72552250000000029 10.264746 3.02563309999999985 4.72552250000000029 15.062713 3.02563309999999985 4.72552250000000029 19.86068 3.95487119999999992 4.58463759999999976 19.78994 4.884109 4.58463759999999976 19.78994 4.884109 4.59931469999999987 19.78994 4.884109 4.72552250000000029 19.78994 4.884109 4.74445959999999989 19.78994 3.95487119999999992 4.74445959999999989 19.78994 3.02563309999999985 4.74445959999999989 19.78994 3.02563309999999985 4.72552250000000029 19.78994 3.02563309999999985 4.59931469999999987 19.78994 3.02563309999999985 4.58463759999999976 19.78994 3.95487119999999992 4.5"
+		+ "8463759999999976 10.386573 4.884109 4.58463759999999976 10.386573 4.884109 4.59931469999999987 10.386573 4.884109 4.72552250000000029 10.386573 4.884109 4.74445959999999989 10.386573 3.95487119999999992 4.74445959999999989 10.386573 3.02563309999999985 4.74445959999999989 10.386573 3.02563309999999985 4.72552250000000029 10.386573 3.02563309999999985 4.59931469999999987 10.386573 3.02563309999999985 4.58463759999999976 10.386573 3.95487119999999992 4.58463759999999976 17.674437 4.884109 4.58463759999999976 17.674437 4.884109 4.59931469999999987 17.674437 4.884109 4.72552250000000029 17.674437 4.884109 4.74445959999999989 17.674437 3.95487119999999992 4.74445959999999989 17.674437 3.02563309999999985 4.74445959999999989 17.674437 3.02563309999999985 4.72552250000000029 17.674437 3.02563309999999985 4.59931469999999987 17.674437 3.02563309999999985 4.58463759999999976 17.674437 3.95487119999999992 4.58463759999999976 12.630498 4.884109 4.58463759999999976 12.630498 4.884109 4.59931469999999987 12.630498 4.88410"
+		+ "9 4.72552250000000029 12.630498 4.884109 4.74445959999999989 12.630498 3.95487119999999992 4.74445959999999989 12.630498 3.02563309999999985 4.74445959999999989 12.630498 3.02563309999999985 4.72552250000000029 12.630498 3.02563309999999985 4.59931469999999987 12.630498 3.02563309999999985 4.58463759999999976 12.630498 4.87083150000000042 4.58463759999999976 19.86068 4.87083150000000042 4.58463759999999976 19.78994 4.87083150000000042 4.58463759999999976 17.674437 4.87083150000000042 4.58463759999999976 15.062713 4.87083150000000042 4.58463759999999976 12.630498 4.87083150000000042 4.58463759999999976 10.386573 4.87083150000000042 4.58463759999999976 10.264746 4.87083150000000042 4.59931469999999987 10.264746 4.87083150000000042 4.72552250000000029 10.264746 4.87083150000000042 4.74445959999999989 10.264746 4.87083150000000042 4.74445959999999989 10.386573 4.87083150000000042 4.74445959999999989 12.630498 4.87083150000000042 4.74445959999999989 15.062713 4.87083150000000042 4.74445959999999989 17.674437 4.870"
+		+ "83150000000042 4.74445959999999989 19.78994 4.87083150000000042 4.74445959999999989 19.86068 4.87083150000000042 4.72552250000000029 19.86068 4.87083150000000042 4.59931469999999987 19.86068 3.04818079999999991 4.58463759999999976 19.86068 3.04818079999999991 4.58463759999999976 19.78994 3.04818079999999991 4.58463759999999976 17.674437 3.04818079999999991 4.58463759999999976 15.062713 3.04818079999999991 4.58463759999999976 12.630498 3.04818079999999991 4.58463759999999976 10.386573 3.04818079999999991 4.58463759999999976 10.264746 3.04818079999999991 4.59931469999999987 10.264746 3.04818079999999991 4.72552250000000029 10.264746 3.04818079999999991 4.74445959999999989 10.264746 3.04818079999999991 4.74445959999999989 10.386573 3.04818079999999991 4.74445959999999989 12.630498 3.04818079999999991 4.74445959999999989 15.062713 3.04818079999999991 4.74445959999999989 17.674437 3.04818079999999991 4.74445959999999989 19.78994 3.04818079999999991 4.74445959999999989 19.86068 3.04818079999999991 4.725522500000000"
+		+ "29 19.86068 3.04818079999999991 4.59931469999999987 19.86068")
+		2 "|Foods|rack_latest:Shelves|rack_latest:pCube2" "translate" " -type \"double3\" 0 0 0"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:pCube2" "scale" " -type \"double3\" 1 1 1"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:pCube2" "rotatePivot" " -type \"double3\" 1.02788754246459879 4.99863491807028382 9.79554076333603874"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:pCube2" "scalePivot" " -type \"double3\" 1.02788754246459879 4.99863491807028382 9.79554076333603874"
+		
+		2 "|Foods|rack_latest:Shelves|rack_latest:pCube2|rack_latest:pCubeShape2" 
+		"pt[0:81]" (" -s 82 -type \"float3\" 0.15174007 4.92591760000000001 9.3734093000000005 0.15174007 4.9986347999999996 9.3734093000000005 0.15174007 5.07135249999999971 9.3734093000000005 1.0278875999999999 4.92591760000000001 9.3734093000000005 1.0278875999999999 4.9986347999999996 9.3734093000000005 1.0278875999999999 5.07135249999999971 9.3734093000000005 3.185523 4.92591760000000001 9.3734093000000005 3.39799790000000002 4.9986347999999996 9.3734093000000005 3.74042180000000002 5.07135249999999971 9.3734093000000005 3.185523 4.92591760000000001 9.434248 3.39799790000000002 4.9986347999999996 9.434248 3.74042180000000002 5.07135249999999971 9.434248 3.185523 4.92591760000000001 10.156835 3.39799790000000002 4.9986347999999996 10.156835 3.74042180000000002 5.07135249999999971 10.156835 3.185523 4.92591760000000001 10.217672 3.39799790000000002 4.9986347999999996 10.217672 3.74042180000000002 5.07135249999999971 10.217672 1.0278875999999999 4.92591760000000001 10.217672 1.0278875999999999 4.9986347999999996 10.217672 1.02788"
+		+ "75999999999 5.07135249999999971 10.217672 0.15174007 4.92591760000000001 10.217672 0.15174007 4.9986347999999996 10.217672 0.15174007 5.07135249999999971 10.217672 0.15174007 4.92591760000000001 10.156833 0.15174007 4.9986347999999996 10.156833 0.15174007 5.07135249999999971 10.156833 0.15174007 4.92591760000000001 9.434248 0.15174007 4.9986347999999996 9.434248 0.15174007 5.07135249999999971 9.434248 1.0278875999999999 5.07135249999999971 10.156833 1.0278875999999999 5.07135249999999971 9.434248 1.0278875999999999 4.92591760000000001 10.156833 1.0278875999999999 4.92591760000000001 9.434248 0.20390868000000001 4.92591760000000001 9.3734093000000005 0.20390868000000001 4.92591760000000001 9.434248 0.20390868000000001 4.92591760000000001 10.156833 0.20390868000000001 4.92591760000000001 10.217672 0.20390868000000001 4.9986347999999996 10.217672 0.20390868000000001 5.07135249999999971 10.217672 0.20390868000000001 5.07135249999999971 10.156833 0.20390868000000001 5.07135249999999971 9.434248 0.20390868000000001"
+		+ " 5.07135249999999971 9.3734093000000005 0.20390868000000001 4.9986347999999996 9.3734093000000005 3.15115139999999982 4.92591760000000001 9.3734093000000005 3.15115139999999982 4.92591760000000001 9.434248 3.15115139999999982 4.92591760000000001 10.156835 3.15115139999999982 4.92591760000000001 10.217672 3.363626 4.9986347999999996 10.217672 3.70604939999999994 5.07135249999999971 10.217672 3.70604939999999994 5.07135249999999971 10.156835 3.70604939999999994 5.07135249999999971 9.434248 3.70604939999999994 5.07135249999999971 9.3734093000000005 3.363626 4.9986347999999996 9.3734093000000005 0.15174007 4.927639 9.3734093000000005 0.20390868000000001 4.927639 9.3734093000000005 1.0278875999999999 4.927639 9.3734093000000005 3.16952420000000012 4.92671629999999983 9.3734093000000005 3.20389629999999981 4.92671629999999983 9.3734093000000005 3.20389629999999981 4.92671629999999983 9.434248 3.20389629999999981 4.92671629999999983 10.156835 3.20389629999999981 4.92671629999999983 10.217672 3.16952420000000012 4.92"
+		+ "671629999999983 10.217672 1.0278875999999999 4.927639 10.217672 0.20390868000000001 4.927639 10.217672 0.15174007 4.927639 10.217672 0.15174007 4.927639 10.156833 0.15174007 4.927639 9.434248 0.15174007 5.07006219999999974 9.3734093000000005 0.20390868000000001 5.07006219999999974 9.3734093000000005 1.0278875999999999 5.07006219999999974 9.3734093000000005 3.69222310000000009 5.07076309999999975 9.3734093000000005 3.72659489999999982 5.07076309999999975 9.3734093000000005 3.72659489999999982 5.07076309999999975 9.434248 3.72659489999999982 5.07076309999999975 10.156835 3.72659489999999982 5.07076309999999975 10.217672 3.69222310000000009 5.07076309999999975 10.217672 1.0278875999999999 5.07006219999999974 10.217672 0.20390868000000001 5.07006219999999974 10.217672 0.15174007 5.07006219999999974 10.217672 0.15174007 5.07006219999999974 10.156833 0.15174007 5.07006219999999974 9.434248"
+		)
+		3 "|Foods|rack_latest:Shelves|rack_latest:Shelf2|rack_latest:Shelf2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|rack_latest:Shelves|rack_latest:pCube2|rack_latest:pCubeShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|rack_latest:Shelves|rack_latest:Shelf1|rack_latest:Shelf1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|rack_latest:Shelves|rack_latest:pCube1|rack_latest:pCubeShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "rack_latestRN" "|Foods|rack_latest:Shelves|rack_latest:pCube1|rack_latest:pCubeShape1.instObjGroups" 
+		"rack_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
+		5 3 "rack_latestRN" "|Foods|rack_latest:Shelves|rack_latest:Shelf1|rack_latest:Shelf1Shape.instObjGroups" 
+		"rack_latestRN.placeHolderList[2]" ":initialShadingGroup.dsm"
+		5 3 "rack_latestRN" "|Foods|rack_latest:Shelves|rack_latest:Shelf2|rack_latest:Shelf2Shape.instObjGroups" 
+		"rack_latestRN.placeHolderList[3]" ":initialShadingGroup.dsm"
+		5 3 "rack_latestRN" "|Foods|rack_latest:Shelves|rack_latest:pCube2|rack_latest:pCubeShape2.instObjGroups" 
+		"rack_latestRN.placeHolderList[4]" ":initialShadingGroup.dsm";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "tofu_fishball_platter_latestRN";
+	rename -uid "07F5003E-419D-F7E7-B14A-649C99467578";
+	setAttr -s 169 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".phl[66]" 0;
+	setAttr ".phl[67]" 0;
+	setAttr ".phl[68]" 0;
+	setAttr ".phl[69]" 0;
+	setAttr ".phl[70]" 0;
+	setAttr ".phl[71]" 0;
+	setAttr ".phl[72]" 0;
+	setAttr ".phl[73]" 0;
+	setAttr ".phl[74]" 0;
+	setAttr ".phl[75]" 0;
+	setAttr ".phl[76]" 0;
+	setAttr ".phl[77]" 0;
+	setAttr ".phl[78]" 0;
+	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".phl[84]" 0;
+	setAttr ".phl[85]" 0;
+	setAttr ".phl[86]" 0;
+	setAttr ".phl[87]" 0;
+	setAttr ".phl[88]" 0;
+	setAttr ".phl[89]" 0;
+	setAttr ".phl[90]" 0;
+	setAttr ".phl[91]" 0;
+	setAttr ".phl[92]" 0;
+	setAttr ".phl[93]" 0;
+	setAttr ".phl[94]" 0;
+	setAttr ".phl[95]" 0;
+	setAttr ".phl[96]" 0;
+	setAttr ".phl[97]" 0;
+	setAttr ".phl[98]" 0;
+	setAttr ".phl[99]" 0;
+	setAttr ".phl[100]" 0;
+	setAttr ".phl[101]" 0;
+	setAttr ".phl[102]" 0;
+	setAttr ".phl[103]" 0;
+	setAttr ".phl[104]" 0;
+	setAttr ".phl[105]" 0;
+	setAttr ".phl[106]" 0;
+	setAttr ".phl[107]" 0;
+	setAttr ".phl[108]" 0;
+	setAttr ".phl[109]" 0;
+	setAttr ".phl[110]" 0;
+	setAttr ".phl[111]" 0;
+	setAttr ".phl[112]" 0;
+	setAttr ".phl[113]" 0;
+	setAttr ".phl[114]" 0;
+	setAttr ".phl[115]" 0;
+	setAttr ".phl[116]" 0;
+	setAttr ".phl[117]" 0;
+	setAttr ".phl[118]" 0;
+	setAttr ".phl[119]" 0;
+	setAttr ".phl[120]" 0;
+	setAttr ".phl[121]" 0;
+	setAttr ".phl[122]" 0;
+	setAttr ".phl[123]" 0;
+	setAttr ".phl[124]" 0;
+	setAttr ".phl[125]" 0;
+	setAttr ".phl[126]" 0;
+	setAttr ".phl[127]" 0;
+	setAttr ".phl[128]" 0;
+	setAttr ".phl[129]" 0;
+	setAttr ".phl[130]" 0;
+	setAttr ".phl[131]" 0;
+	setAttr ".phl[132]" 0;
+	setAttr ".phl[133]" 0;
+	setAttr ".phl[134]" 0;
+	setAttr ".phl[135]" 0;
+	setAttr ".phl[136]" 0;
+	setAttr ".phl[137]" 0;
+	setAttr ".phl[138]" 0;
+	setAttr ".phl[139]" 0;
+	setAttr ".phl[140]" 0;
+	setAttr ".phl[141]" 0;
+	setAttr ".phl[142]" 0;
+	setAttr ".phl[143]" 0;
+	setAttr ".phl[144]" 0;
+	setAttr ".phl[145]" 0;
+	setAttr ".phl[146]" 0;
+	setAttr ".phl[147]" 0;
+	setAttr ".phl[148]" 0;
+	setAttr ".phl[149]" 0;
+	setAttr ".phl[150]" 0;
+	setAttr ".phl[151]" 0;
+	setAttr ".phl[152]" 0;
+	setAttr ".phl[153]" 0;
+	setAttr ".phl[154]" 0;
+	setAttr ".phl[155]" 0;
+	setAttr ".phl[156]" 0;
+	setAttr ".phl[157]" 0;
+	setAttr ".phl[158]" 0;
+	setAttr ".phl[159]" 0;
+	setAttr ".phl[160]" 0;
+	setAttr ".phl[161]" 0;
+	setAttr ".phl[162]" 0;
+	setAttr ".phl[163]" 0;
+	setAttr ".phl[164]" 0;
+	setAttr ".phl[165]" 0;
+	setAttr ".phl[166]" 0;
+	setAttr ".phl[167]" 0;
+	setAttr ".phl[168]" 0;
+	setAttr ".phl[169]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"tofu_fishball_platter_latestRN"
+		"tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latestRN" 0
+		"tofu_fishball_platter_latest:platter_latestRN" 0
+		"tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latestRN" 0
+		
+		"tofu_fishball_platter_latestRN" 0
+		"tofu_fishball_platter_latest:fishball_on_a_stick_latestRN" 0
+		"tofu_fishball_platter_latest:tofu_on_a_stick_latestRN" 0
+		"tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latestRN" 22
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[85]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[86]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[87]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[88]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[89]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[90]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[91]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[92]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[93]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[94]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[95]" ":initialShadingGroup.dsm"
+		"tofu_fishball_platter_latest:platter_latestRN" 12
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:platter_latest:Platter" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:platter_latest:Platter" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:platter_latest:Platter" 
+		"rotatePivot" " -type \"double3\" 4.32614118118407109 4.70436303873073047 18.05786414003974016"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:platter_latest:Platter" 
+		"scalePivot" " -type \"double3\" 4.32614118118407198 4.70436303873073047 18.05786414003974016"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:platter_latest:Platter" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:platter_latest:Platter|tofu_fishball_platter_latest:platter_latest:PlatterShape" 
+		"pnts" " -s 574"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:platter_latest:Platter|tofu_fishball_platter_latest:platter_latest:PlatterShape" 
+		"pt[0:165]" (" -type \"float3\" 4.32614140000000003 4.78158330000000031 15.633734 2.51566309999999982 4.78158330000000031 18.057863 4.32614140000000003 4.78158330000000031 20.481995 6.13661909999999988 4.78158330000000031 18.057863 4.32614140000000003 4.78158330000000031 18.057863 6.13661909999999988 4.78158330000000031 16.241577 5.23147059999999975 4.78158330000000031 15.633734 5.68404440000000033 4.78158330000000031 15.71517 6.0153521999999997 4.78158330000000031 15.937654 2.51566309999999982 4.78158330000000031 16.241577 2.63693020000000011 4.78158330000000031 15.937654 2.9682379000000001 4.78158330000000031 15.71517 3.36903290000000011 4.78158330000000031 15.643051 3.42081169999999979 4.78158330000000031 20.481995 2.9682379000000001 4.78158330000000031 20.400558 2.63693020000000011 4.78158330000000031 20.178074 2.51566309999999982 4.78158330000000031 19.874151 6.13661909999999988 4.78158330000000031 19.874151 6.0153521999999997 4.78158330000000031 20.178074 5.68404440000000033 4.78158330000000031 20.400558 5.231470599999"
+		+ "99975 4.78158330000000031 20.481995 4.32614140000000003 4.62714240000000032 18.057863 4.32614140000000003 4.62714240000000032 16.256487 5.173069 4.62714240000000032 16.256489 5.18892380000000042 4.62714240000000032 18.057863 3.44301630000000003 4.62714240000000032 18.057863 3.44301630000000003 4.62714240000000032 16.256489 5.59673689999999979 4.62714240000000032 16.256489 5.59673789999999993 4.62714240000000032 18.057863 3.05554389999999998 4.62714240000000032 16.256489 3.05554389999999998 4.62714240000000032 18.057863 3.05554460000000017 4.62714240000000032 19.85924 3.443017 4.62714240000000032 19.85924 4.32614140000000003 4.62714240000000032 19.85924 5.20478060000000031 4.62714240000000032 19.85924 5.59673789999999993 4.62714240000000032 19.85924 6.18878940000000011 4.35138990000000003 16.122271 6.18878940000000011 4.35138990000000003 18.057863 6.07100110000000015 4.35138990000000003 15.84268 5.76764109999999963 4.35138990000000003 15.649734 5.32805160000000022 4.35138990000000003 15.574819 4.32614140000000"
+		+ "003 4.35138990000000003 15.574819 2.46349330000000011 4.35138990000000003 18.057863 2.46349330000000011 4.35138990000000003 16.122271 3.32423139999999995 4.35138990000000003 15.574819 2.88464119999999991 4.35138990000000003 15.649734 2.58128070000000021 4.35138990000000003 15.84268 4.32614140000000003 4.35138990000000003 20.540909 3.32423139999999995 4.35138990000000003 20.540909 2.46349330000000011 4.35138990000000003 19.993458 2.58128070000000021 4.35138990000000003 20.273048 2.88464119999999991 4.35138990000000003 20.465996 6.18878940000000011 4.35138990000000003 19.993458 5.32805160000000022 4.35138990000000003 20.540909 5.76764109999999963 4.35138990000000003 20.465996 6.07100110000000015 4.35138990000000003 20.273048 6.18878940000000011 4.26385259999999988 16.122271 6.18878940000000011 4.26385259999999988 18.057863 6.07100110000000015 4.26385259999999988 15.84268 5.76764109999999963 4.26385259999999988 15.649734 5.32805160000000022 4.26385259999999988 15.574819 4.32614140000000003 4.26385259999999988 15"
+		+ ".574819 2.46349330000000011 4.26385259999999988 18.057863 2.46349330000000011 4.26385259999999988 16.122271 3.32423139999999995 4.26385259999999988 15.574819 2.88464119999999991 4.26385259999999988 15.649734 2.58128070000000021 4.26385259999999988 15.84268 4.32614140000000003 4.26385259999999988 20.540909 3.32423139999999995 4.26385259999999988 20.540909 2.46349330000000011 4.26385259999999988 19.993458 2.58128070000000021 4.26385259999999988 20.273048 2.88464119999999991 4.26385259999999988 20.465996 6.18878940000000011 4.26385259999999988 19.993458 5.32805160000000022 4.26385259999999988 20.540909 5.76764109999999963 4.26385259999999988 20.465996 6.07100110000000015 4.26385259999999988 20.273048 6.228982 4.39591219999999971 18.057863 6.23756690000000003 4.35960820000000027 18.057863 6.26015380000000032 4.33670709999999993 18.057863 6.228982 4.39729930000000024 16.146297 6.237184 4.36026139999999973 16.143032 6.25855060000000041 4.33746190000000009 16.134525 6.10163260000000029 4.39657120000000035 15.827134 "
+		+ "6.10901259999999979 4.36019749999999995 15.82346 6.12823579999999968 4.33795980000000014 15.813885 5.75398449999999961 4.39656450000000021 15.593674 5.760345 4.35988090000000028 15.589324 5.77700089999999999 4.33694220000000019 15.577929 5.27871130000000033 4.39685819999999961 15.508154 5.28330330000000004 4.35955050000000011 15.503281 5.29543880000000033 4.33565090000000009 15.490404 4.32614140000000003 4.39471909999999966 15.508154 4.32614140000000003 4.35841510000000021 15.502783 4.32614140000000003 4.33388419999999996 15.488412 2.42330069999999997 4.39729930000000024 16.146297 2.41539379999999992 4.36040120000000009 16.14315 2.39479879999999978 4.3379645 16.134949 2.42330069999999997 4.39591219999999971 18.057863 2.41471530000000012 4.35960820000000027 18.057863 2.39212870000000022 4.33670709999999993 18.057863 3.291256 4.39680669999999996 15.522966 3.28853559999999989 4.35954330000000034 15.517708 3.2866645000000001 4.3356028000000002 15.502849 2.89829779999999992 4.39656450000000021 15.593674 2.89193750"
+		+ "000000005 4.35988090000000028 15.589324 2.87528130000000015 4.33694220000000019 15.577929 2.55064959999999985 4.39657120000000035 15.827134 2.54326989999999986 4.36019749999999995 15.82346 2.52404640000000002 4.33795980000000014 15.813885 3.37357089999999982 4.39685819999999961 20.607574 3.368979 4.35955050000000011 20.612448 3.35684350000000009 4.33565090000000009 20.625324 4.32614140000000003 4.39471909999999966 20.607574 4.32614140000000003 4.35841510000000021 20.612946 4.32614140000000003 4.33388419999999996 20.627316 2.42330069999999997 4.39729930000000024 19.969429 2.41509820000000008 4.36026139999999973 19.972696 2.39373160000000018 4.33746190000000009 19.981203 2.55064959999999985 4.39657120000000035 20.288593 2.54326989999999986 4.36019749999999995 20.292269 2.52404640000000002 4.33795980000000014 20.301844 2.89829779999999992 4.39656450000000021 20.522053 2.89193750000000005 4.35988090000000028 20.526405 2.87528130000000015 4.33694220000000019 20.5378 6.228982 4.39729930000000024 19.969429 6.2368883"
+		+ "9999999978 4.36040120000000009 19.972578 6.2574835000000002 4.3379645 19.98078 5.27871130000000033 4.39685819999999961 20.607574 5.28338380000000019 4.35947510000000005 20.612534 5.295732 4.33537529999999993 20.625635 5.75398449999999961 4.39656450000000021 20.522053 5.760345 4.35988090000000028 20.526405 5.77700089999999999 4.33694220000000019 20.5378 6.10163260000000029 4.39657120000000035 20.288593 6.10901259999999979 4.36019749999999995 20.292269 6.12823579999999968 4.33795980000000014 20.301844 4.32614140000000003 4.78158330000000031 16.241577 3.37543749999999987 4.78158330000000031 16.241577 3.39487290000000019 4.78158330000000031 18.057863 5.23147059999999975 4.78158330000000031 16.241577 5.23147059999999975 4.78158330000000031 18.057863 5.23147059999999975 4.78158330000000031 19.874151 4.32614140000000003 4.78158330000000031 19.874151 3.41430759999999989 4.78158330000000031 19.874151 3.41755990000000009 4.78158330000000031 20.178074 4.32614140000000003 4.78158330000000031 20.178074 5.23147059999999975"
+		+ " 4.78158330000000031 20.178074 5.23147059999999975 4.78158330000000031 15.937654 4.32614140000000003 4.78158330000000031 15.937654 3.3721852000000001 4.78158330000000031 15.937654 6.05078029999999956 4.62714240000000032 18.057863 6.08856529999999996 4.61216449999999956 18.057863 6.11432739999999963 4.57199760000000044 18.057863 6.05255320000000019 4.62714240000000032 16.223011 6.08869270000000018 4.6132578999999998 16.215212 6.11299089999999978 4.57595729999999978 16.201038 5.94700909999999983 4.62714240000000032 15.968324 5.97776409999999991 4.61545040000000029 15.952637 5.9977741 4.5829854000000001 15.935646 5.67507930000000016 4.62714240000000032 15.795102 5.69304749999999959 4.61645359999999982 15.771931 5.70631549999999965 4.58616210000000013 15.752183 5.27278040000000026 4.62714240000000032 15.726882 5.2785605999999996 4.61649609999999999 15.701408 5.28539229999999982 4.58635329999999986 15.68054 2.60312510000000019 4.62714240000000032 16.223328"
+		)
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:platter_latest:Platter|tofu_fishball_platter_latest:platter_latest:PlatterShape" 
+		"pt[166:331]" (" 2.56451319999999994 4.61325309999999966 16.215296 2.5392910999999998 4.57595729999999978 16.201038 2.60150190000000014 4.62714240000000032 18.057863 2.56371690000000019 4.61216449999999956 18.057863 2.537955 4.57199760000000044 18.057863 4.32614140000000003 4.62714240000000032 15.726659 4.32614140000000003 4.61633539999999964 15.701284 4.32614140000000003 4.58577540000000017 15.680281 3.37944010000000006 4.62714240000000032 15.726552 3.37370539999999997 4.61649609999999999 15.701323 3.36689 4.58635329999999986 15.68054 2.97764279999999992 4.62714240000000032 15.795638 2.9593493999999998 4.61645410000000034 15.772071 2.945967 4.58616210000000013 15.752183 2.709022 4.62714240000000032 15.969847 2.67550990000000022 4.61545130000000015 15.95304 2.65450860000000022 4.5829854000000001 15.935646 3.37950179999999989 4.62714240000000032 20.388845 3.3737216000000001 4.61649609999999999 20.41432 3.36689 4.58635329999999986 20.435188 4.32614140000000003 4.62714240000000032 20.389071 4.32614140000000003 4.616335399999999"
+		+ "64 20.414444 4.32614140000000003 4.58577540000000017 20.435448 2.59972860000000017 4.62714240000000032 19.892717 2.5635895999999998 4.6132578999999998 19.900518 2.5392910999999998 4.57595729999999978 19.914692 2.70527320000000016 4.62714240000000032 20.147404 2.67451859999999986 4.61545040000000029 20.16309 2.65450860000000022 4.5829854000000001 20.180082 2.97720289999999999 4.62714240000000032 20.320627 2.95923449999999999 4.61645359999999982 20.343798 2.945967 4.58616210000000013 20.363544 6.0491571000000004 4.62714240000000032 19.892403 6.087769 4.61325309999999966 19.900433 6.11299089999999978 4.57595729999999978 19.914692 5.27284240000000004 4.62714240000000032 20.389177 5.27857690000000002 4.61649609999999999 20.414406 5.28539229999999982 4.58635329999999986 20.435188 5.67463970000000018 4.62714240000000032 20.320091 5.6929331000000003 4.61645410000000034 20.343657 5.70631549999999965 4.58616210000000013 20.363544 5.9432602000000001 4.62714240000000032 20.145882 5.97677230000000037 4.61545130000000015 2"
+		+ "0.162687 5.9977741 4.5829854000000001 20.180082 6.41482729999999979 4.24658729999999984 18.057863 6.4114981000000002 4.26066590000000023 18.057863 6.40273860000000017 4.269547 18.057863 6.41482729999999979 4.24603079999999977 16.072294 6.41177080000000021 4.26034880000000005 16.073513 6.40380859999999963 4.269043 16.076683 6.27503969999999978 4.24634789999999995 15.740774 6.27217629999999993 4.26044269999999958 15.7422 6.26471610000000023 4.26906490000000005 15.745915 5.89343829999999969 4.24629879999999993 15.498274 5.89097069999999956 4.260551 15.499964 5.88451 4.26945730000000001 15.504382 5.37174650000000042 4.24651580000000006 15.409443 5.36986640000000026 4.26086329999999958 15.411438 5.36489629999999984 4.270298 15.41671 4.32614140000000003 4.2470498000000001 15.409443 4.32614140000000003 4.26112839999999959 15.411525 4.32614140000000003 4.27064179999999993 15.417098 2.23745539999999998 4.24603079999999977 16.072294 2.24063010000000018 4.26040460000000021 16.073559 2.24890020000000002 4.269243699999999"
+		+ "64 16.076853 2.23745539999999998 4.24658729999999984 18.057863 2.24078489999999997 4.26066590000000023 18.057863 2.24954369999999981 4.269547 18.057863 3.28053589999999984 4.24675850000000032 15.409443 3.28067989999999998 4.26085620000000009 15.411642 3.28106240000000016 4.27001670000000022 15.417467 2.75884390000000002 4.24629879999999993 15.498274 2.76131150000000014 4.260551 15.499964 2.76777220000000002 4.26945730000000001 15.504382 2.37724260000000021 4.24634789999999995 15.740774 2.38010639999999984 4.26044269999999958 15.7422 2.387567 4.26906490000000005 15.745915 3.28053589999999984 4.24651580000000006 20.706287 3.28241609999999984 4.26086329999999958 20.70429 3.28738589999999986 4.270298 20.699018 4.32614140000000003 4.2470498000000001 20.706287 4.32614140000000003 4.26112839999999959 20.704203 4.32614140000000003 4.27064179999999993 20.698631 2.23745539999999998 4.24603079999999977 20.043434 2.24051210000000012 4.26034880000000005 20.042215 2.24847410000000014 4.269043 20.039045 2.37724260000000021 "
+		+ "4.24634789999999995 20.374954 2.38010639999999984 4.26044269999999958 20.373528 2.387567 4.26906490000000005 20.369812 2.75884390000000002 4.24629879999999993 20.617455 2.76131150000000014 4.260551 20.615765 2.76777220000000002 4.26945730000000001 20.611347 6.41482729999999979 4.24603079999999977 20.043434 6.41165260000000004 4.26040460000000021 20.04217 6.40338180000000001 4.26924369999999964 20.038876 5.37174650000000042 4.24651580000000006 20.706287 5.36992980000000042 4.26080319999999979 20.704357 5.36512849999999997 4.27007959999999986 20.699265 5.89343829999999969 4.24629879999999993 20.617455 5.89097069999999956 4.260551 20.615765 5.88451 4.26945730000000001 20.611347 6.27503969999999978 4.24634789999999995 20.374954 6.27217629999999993 4.26044269999999958 20.373528 6.26471610000000023 4.26906490000000005 20.369812 6.41482729999999979 4.08464190000000027 18.057863 6.410502 4.07056280000000026 18.057863 6.40006070000000005 4.0647316 18.057863 6.40006070000000005 4.0647316 16.073673 6.410502 4.0705628000"
+		+ "0000026 16.072699 6.41482729999999979 4.08464190000000027 16.072294 6.26193950000000044 4.0647316 15.746101 6.27120259999999963 4.07056280000000026 15.742334 6.27503969999999978 4.08464190000000027 15.740774 5.88608219999999971 4.0647316 15.507252 5.891284 4.07056280000000026 15.500904 5.89343829999999969 4.08464190000000027 15.498274 5.36990359999999978 4.0647316 15.419358 5.37120680000000039 4.07056280000000026 15.412348 5.37174650000000042 4.08464190000000027 15.409443 4.32614140000000003 4.0647316 15.419358 4.32614140000000003 4.07056280000000026 15.412348 4.32614140000000003 4.08464190000000027 15.409443 2.23745539999999998 4.08464190000000027 16.072294 2.24178049999999995 4.07056280000000026 16.072699 2.25222159999999993 4.0647316 16.073673 2.25222159999999993 4.0647316 18.057863 2.24178049999999995 4.07056280000000026 18.057863 2.23745539999999998 4.08464190000000027 18.057863 3.28237889999999988 4.0647316 15.419358 3.28107570000000015 4.07056280000000026 15.412348 3.28053589999999984 4.084641900000000"
+		+ "27 15.409443 2.76620080000000002 4.0647316 15.507252 2.76099849999999991 4.07056280000000026 15.500904 2.75884390000000002 4.08464190000000027 15.498274 2.39034270000000015 4.0647316 15.746101 2.38107939999999996 4.07056280000000026 15.742334 2.37724260000000021 4.08464190000000027 15.740774 3.28053589999999984 4.08464190000000027 20.706287 3.28107570000000015 4.07056280000000026 20.703381 3.28237889999999988 4.0647316 20.696369 4.32614140000000003 4.0647316 20.696369 4.32614140000000003 4.07056280000000026 20.703381 4.32614140000000003 4.08464190000000027 20.706287 2.25222159999999993 4.0647316 20.042057 2.24178049999999995 4.07056280000000026 20.043028 2.23745539999999998 4.08464190000000027 20.043434 2.39034270000000015 4.0647316 20.369627 2.38107939999999996 4.07056280000000026 20.373394 2.37724260000000021 4.08464190000000027 20.374954 2.76620080000000002 4.0647316 20.608477 2.76099849999999991 4.07056280000000026 20.614826 2.75884390000000002 4.08464190000000027 20.617455 6.41482729999999979 4.084641900"
+		+ "00000027 20.043434 6.410502 4.07056280000000026 20.043028 6.40006070000000005 4.0647316 20.042057 5.36990359999999978 4.0647316 20.696369 5.37120680000000039 4.07056280000000026 20.703381 5.37174650000000042 4.08464190000000027 20.706287 5.88608219999999971 4.0647316 20.608477 5.891284 4.07056280000000026 20.614826 5.89343829999999969 4.08464190000000027 20.617455 6.26193950000000044 4.0647316 20.369627 6.27120259999999963 4.07056280000000026 20.373394 6.27503969999999978 4.08464190000000027 20.374954 6.18878940000000011 4.10455180000000031 16.122271 6.19743919999999981 4.07639460000000042 16.121466"
+		)
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:platter_latest:Platter|tofu_fishball_platter_latest:platter_latest:PlatterShape" 
+		"pt[332:497]" (" 6.21832130000000038 4.0647316 16.119518 6.18878940000000011 4.10455180000000031 18.057863 6.19743919999999981 4.07639460000000042 18.057863 6.21832130000000038 4.0647316 18.057863 6.07100110000000015 4.10455180000000031 15.84268 6.07867669999999993 4.07639460000000042 15.839561 6.09720710000000032 4.0647316 15.832033 5.76764109999999963 4.10455180000000031 15.649734 5.77195310000000017 4.07639460000000042 15.644476 5.78236289999999986 4.0647316 15.631782 5.32805160000000022 4.10455180000000031 15.574819 5.32913160000000019 4.07639460000000042 15.569008 5.33173989999999964 4.0647316 15.554985 4.32614140000000003 4.10455180000000031 15.574819 4.32614140000000003 4.07639460000000042 15.569008 4.32614140000000003 4.0647316 15.554985 2.46349330000000011 4.10455180000000031 18.057863 2.45484230000000014 4.07639460000000042 18.057863 2.43396040000000013 4.0647316 18.057863 2.46349330000000011 4.10455180000000031 16.122271 2.45484230000000014 4.07639460000000042 16.121466 2.43396040000000013 4.0647316 16.119518 3.32"
+		+ "423139999999995 4.10455180000000031 15.574819 3.32315059999999995 4.07639460000000042 15.569008 3.32054209999999994 4.0647316 15.554985 2.88464119999999991 4.10455180000000031 15.649734 2.88032939999999993 4.07639460000000042 15.644476 2.86991949999999996 4.0647316 15.631782 2.58128070000000021 4.10455180000000031 15.84268 2.573606 4.07639460000000042 15.839561 2.55507559999999989 4.0647316 15.832033 4.32614140000000003 4.10455180000000031 20.540909 4.32614140000000003 4.07639460000000042 20.546719 4.32614140000000003 4.0647316 20.560741 3.32423139999999995 4.10455180000000031 20.540909 3.32315059999999995 4.07639460000000042 20.546719 3.32054209999999994 4.0647316 20.560741 2.46349330000000011 4.10455180000000031 19.993458 2.45484230000000014 4.07639460000000042 19.994263 2.43396040000000013 4.0647316 19.996208 2.58128070000000021 4.10455180000000031 20.273048 2.573606 4.07639460000000042 20.276167 2.55507559999999989 4.0647316 20.283695 2.88464119999999991 4.10455180000000031 20.465996 2.88032939999999993 4"
+		+ ".07639460000000042 20.471252 2.86991949999999996 4.0647316 20.483946 6.18878940000000011 4.10455180000000031 19.993458 6.19743919999999981 4.07639460000000042 19.994263 6.21832130000000038 4.0647316 19.996208 5.32805160000000022 4.10455180000000031 20.540909 5.32913160000000019 4.07639460000000042 20.546719 5.33173989999999964 4.0647316 20.560741 5.76764109999999963 4.10455180000000031 20.465996 5.77195310000000017 4.07639460000000042 20.471252 5.78236289999999986 4.0647316 20.483946 6.07100110000000015 4.10455180000000031 20.273048 6.07867669999999993 4.07639460000000042 20.276167 6.09720710000000032 4.0647316 20.283695 4.32614140000000003 4.65758320000000037 15.635201 4.32614140000000003 4.62975169999999991 15.632527 4.32614140000000003 4.60666659999999961 15.624336 3.360661 4.65785070000000001 15.646072 3.35757109999999992 4.62987090000000023 15.643761 3.35264680000000004 4.60683349999999958 15.635901 2.51787850000000013 4.65583230000000015 18.057863 2.51562980000000014 4.62805649999999957 18.057863 2.5080"
+		+ "6379999999995 4.60204460000000015 18.057863 2.51786179999999993 4.65679649999999956 19.873957 2.51569939999999992 4.62869829999999993 19.876482 2.50858969999999992 4.603467 19.883749 4.32614140000000003 4.65758320000000037 20.480528 4.32614140000000003 4.62975169999999991 20.4832 4.32614140000000003 4.60666659999999961 20.49139 5.23118350000000021 4.65779779999999999 20.48053 5.23222490000000029 4.62989430000000013 20.483192 5.235281 4.60697319999999966 20.491327 6.13440370000000001 4.65583230000000015 18.057863 6.13665250000000029 4.62805649999999957 18.057863 6.14421890000000026 4.60204460000000015 18.057863 6.13442039999999977 4.65679649999999956 16.241772 6.13658329999999985 4.62869829999999993 16.239246 6.14369250000000022 4.603467 16.231979 5.23118350000000021 4.65779779999999999 15.635198 5.23222490000000029 4.62989430000000013 15.632538 5.235281 4.60697319999999966 15.624401 2.51786179999999993 4.65679649999999956 16.241772 2.51569939999999992 4.62869829999999993 16.239246 2.50858969999999992 4.603467"
+		+ " 16.231979 3.42109890000000005 4.65779779999999999 20.48053 3.42005749999999997 4.62989430000000013 20.483192 3.417001 4.60697319999999966 20.491327 6.13442039999999977 4.65679649999999956 19.873957 6.13658329999999985 4.62869829999999993 19.876482 6.14369250000000022 4.603467 19.883749 5.68291660000000043 4.65791559999999993 15.716482 5.6843553 4.62990190000000013 15.713882 5.68890619999999991 4.60688109999999984 15.705988 6.01340059999999976 4.6580275999999996 15.938413 6.01518249999999988 4.62965919999999986 15.935861 6.02109809999999968 4.60587069999999965 15.928318 2.63888170000000022 4.6580275999999996 15.938413 2.63709969999999982 4.62965919999999986 15.935861 2.6311846000000001 4.60587069999999965 15.928318 2.96936560000000016 4.65791559999999993 15.716482 2.967927 4.62990190000000013 15.713882 2.96337630000000019 4.60688109999999984 15.705988 2.96936560000000016 4.65791559999999993 20.399246 2.967927 4.62990190000000013 20.401846 2.96337630000000019 4.60688109999999984 20.40974 2.63888170000000022 4."
+		+ "6580275999999996 20.177317 2.63709969999999982 4.62965919999999986 20.179869 2.6311846000000001 4.60587069999999965 20.187408 6.01340059999999976 4.6580275999999996 20.177317 6.01518249999999988 4.62965919999999986 20.179869 6.02109809999999968 4.60587069999999965 20.187408 5.68291660000000043 4.65791559999999993 20.399246 5.6843553 4.62990190000000013 20.401846 5.68890619999999991 4.60688109999999984 20.40974 6.136312 4.76414589999999993 18.057863 6.13632869999999997 4.76511 19.874126 6.01511140000000033 4.76634120000000028 20.17798 5.68390459999999997 4.76622919999999972 20.400394 5.23143479999999972 4.76611229999999964 20.481812 4.32614140000000003 4.76589729999999978 20.48181 3.42084739999999998 4.76611229999999964 20.481812 2.96837779999999984 4.76622919999999972 20.400394 2.63717129999999988 4.76634120000000028 20.17798 2.51595350000000018 4.76511 19.874126 2.51597019999999993 4.76414589999999993 18.057863 2.51595350000000018 4.76511 16.241602 2.63717129999999988 4.76634120000000028 15.937748 2.96837779"
+		+ "999999984 4.76622919999999972 15.715332 3.36798859999999989 4.7661547999999998 15.643428 4.32614140000000003 4.76589729999999978 15.63392 5.23143479999999972 4.76611229999999964 15.633917 5.68390459999999997 4.76622919999999972 15.715332 6.01511140000000033 4.76634120000000028 15.937748 6.13632869999999997 4.76511 16.241602 4.32614140000000003 4.62714240000000032 18.880396 3.44301650000000015 4.62714240000000032 18.880396 3.0555441000000001 4.62714240000000032 18.880396 2.60070710000000016 4.62714240000000032 18.880394 2.56366039999999984 4.61265229999999971 18.880388 2.538547 4.57375139999999991 18.880312 2.46349330000000011 4.35138990000000003 18.880396 2.46349330000000011 4.26385259999999988 18.880396 2.46349330000000011 4.10455180000000031 18.880396 2.45484230000000014 4.07639460000000042 18.880396 2.43396040000000013 4.0647316 18.880396 2.25222159999999993 4.0647316 18.880396 2.24178049999999995 4.07056280000000026 18.880396 2.23745539999999998 4.08464190000000027 18.880396 2.23745539999999998 4.24635650"
+		+ "000000009 18.880394 2.24067190000000016 4.26053429999999977 18.880394 2.24909969999999992 4.26933770000000035 18.880394 2.39281420000000011 4.3370299000000001 18.880392 2.41487980000000002 4.35988859999999967 18.880394 2.42330069999999997 4.39650919999999967 18.880386 2.50830049999999982 4.602685 18.880384 2.51566119999999982 4.62834690000000037 18.880394 2.51787090000000013 4.65626910000000027 18.88039 2.51596259999999994 4.76458259999999978 18.88039 2.51566309999999982 4.78158330000000031 18.880396 3.40367359999999985 4.78158330000000031 18.88031 4.32614140000000003 4.78158330000000031 18.880396 5.23147059999999975 4.78158330000000031 18.880396"
+		)
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:platter_latest:Platter|tofu_fishball_platter_latest:platter_latest:PlatterShape" 
+		"pt[498:573]" (" 6.13661909999999988 4.78158330000000031 18.880396 6.13632009999999983 4.76458259999999978 18.88039 6.13441130000000001 4.65626910000000027 18.88039 6.136621 4.62834690000000037 18.880394 6.14398149999999976 4.602685 18.880384 6.228982 4.39650919999999967 18.880386 6.23727560000000025 4.35994860000000006 18.880394 6.25901170000000029 4.337245 18.880386 6.40300609999999981 4.26942060000000012 18.880394 6.411562 4.26055769999999967 18.880396 6.41482729999999979 4.24635650000000009 18.880394 6.41482729999999979 4.08464190000000027 18.880396 6.410502 4.07056280000000026 18.880396 6.40006070000000005 4.0647316 18.880396 6.21832130000000038 4.0647316 18.880396 6.19743919999999981 4.07639460000000042 18.880396 6.18878940000000011 4.10455180000000031 18.880396 6.18878940000000011 4.26385259999999988 18.880396 6.18878940000000011 4.35138990000000003 18.880396 6.11373570000000033 4.57375139999999991 18.880312 6.0882101000000004 4.61265039999999971 18.880388 6.05005259999999989 4.62714240000000032 18.880394 5.5967378999"
+		+ "9999993 4.62714240000000032 18.880396 5.19616369999999961 4.62714240000000032 18.880339 4.32614140000000003 4.62714240000000032 17.236795 3.44301630000000003 4.62714240000000032 17.236795 3.05554389999999998 4.62714240000000032 17.236795 2.60222819999999988 4.62714240000000032 17.236797 2.56407169999999995 4.61264939999999957 17.236803 2.53854559999999996 4.57374860000000005 17.236879 2.46349330000000011 4.35138990000000003 17.236797 2.46349330000000011 4.26385259999999988 17.236797 2.46349330000000011 4.10455180000000031 17.236797 2.45484230000000014 4.076395 17.236797 2.43396040000000013 4.0647316 17.236797 2.25222159999999993 4.0647316 17.236795 2.24178049999999995 4.07056280000000026 17.236797 2.23745539999999998 4.08464190000000027 17.236795 2.23745539999999998 4.24635739999999995 17.236797 2.240721 4.26055769999999967 17.236797 2.24927739999999998 4.26942160000000026 17.236797 2.39326859999999986 4.33724449999999973 17.236807 2.4150062000000001 4.35994819999999983 17.236799 2.42330069999999997 4.3965076"
+		+ "9999999991 17.236807 2.50830030000000015 4.602684 17.236807 2.51566119999999982 4.62834639999999986 17.236799 2.51787090000000013 4.65626810000000013 17.236801 2.51596259999999994 4.76458169999999992 17.236801 2.51566309999999982 4.78158330000000031 17.236797 3.38608809999999982 4.78158330000000031 17.236881 4.32614140000000003 4.78158330000000031 17.236795 5.23147059999999975 4.78158330000000031 17.236797 6.13661860000000026 4.78158330000000031 17.236795 6.13632009999999983 4.76458169999999992 17.236801 6.13441130000000001 4.65626810000000013 17.236801 6.136621 4.62834639999999986 17.236799 6.1439819 4.602684 17.236807 6.228982 4.39650769999999991 17.236805 6.23740290000000019 4.35988859999999967 17.236799 6.2594694999999998 4.33702949999999987 17.236799 6.40318159999999992 4.26933809999999969 17.236797 6.41161060000000038 4.26053429999999977 17.236797 6.41482729999999979 4.24635739999999995 17.236797 6.41482729999999979 4.08464190000000027 17.236795 6.410502 4.07056280000000026 17.236795 6.40006070000000005"
+		+ " 4.0647316 17.236795 6.21832130000000038 4.0647316 17.236797 6.19743919999999981 4.07639460000000042 17.236797 6.18878940000000011 4.10455180000000031 17.236797 6.18878940000000011 4.26385259999999988 17.236797 6.18878940000000011 4.35138990000000003 17.236797 6.11373660000000019 4.57374860000000005 17.236879 6.08862210000000026 4.61265229999999971 17.236803 6.05157379999999989 4.62714240000000032 17.236797 5.59673740000000031 4.62714240000000032 17.236795 5.18169780000000024 4.62714240000000032 17.236855"
+		)
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:platter_latest:Platter|tofu_fishball_platter_latest:platter_latest:PlatterShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:platter_latest:Platter|tofu_fishball_platter_latest:platter_latest:PlatterShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
+		"tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latestRN" 22
+		
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[2]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[3]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[4]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[5]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[6]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[7]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[8]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[9]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[10]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[11]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_Mesh|tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[12]" ":initialShadingGroup.dsm"
+		"tofu_fishball_platter_latestRN" 175
+		0 "|tofu_fishball_platter_latest:Tofu_Fishball_Platter" "|Foods" "-s -r "
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter" "translate" 
+		" -type \"double3\" 0 0 0.89367304828807193"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter" "rotate" " -type \"double3\" 0 0 0"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter" "scale" " -type \"double3\" 1.04389657460583218 1.04389657460583218 1.04389657460583218"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter" "rotatePivot" 
+		" -type \"double3\" 4.33276632363806691 4.70436303873073047 18.05786414003974016"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter" "scalePivot" 
+		" -type \"double3\" 4.33276632363806691 4.70436303873073047 18.05786414003974016"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus" 
+		"rotatePivot" " -type \"double3\" 5.02824156149316703 4.70436303873073047 18.09020461823325121"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus" 
+		"scalePivot" " -type \"double3\" 5.02824156149316703 4.70436303873073047 18.09020461823325121"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11" 
+		"translate" " -type \"double3\" 4.25473077610432071 5.50613281293232149 18.57667481386272001"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10" 
+		"translate" " -type \"double3\" 4.25473077610432071 5.50324469158960206 18.91608587734652502"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10" 
+		"rotate" " -type \"double3\" 180 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9" 
+		"translate" " -type \"double3\" 4.25473077610432071 5.50613281293232149 19.25549694083033003"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8" 
+		"translate" " -type \"double3\" 4.2547307761043216 5.17100258166497095 18.43548085859202246"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8" 
+		"rotate" " -type \"double3\" -90.00000000000002842 -2.92382907277591153 90.00000000000005684"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8" 
+		"scale" " -type \"double3\" 0.48137561601826068 0.49908842228360517 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8" 
+		"shear" " -type \"double3\" -0.0035696499205181693 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7" 
+		"translate" " -type \"double3\" 4.2547307761043216 5.17100258166497095 18.77489192207582747"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7" 
+		"rotate" " -type \"double3\" -90.00000000000002842 -2.92382907277591153 90.00000000000005684"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7" 
+		"scale" " -type \"double3\" 0.48137561601826068 0.49908842228360517 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7" 
+		"shear" " -type \"double3\" -0.0035696499205181693 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6" 
+		"translate" " -type \"double3\" 4.25473077610432071 5.23216415998365481 19.11711710217039695"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6" 
+		"rotate" " -type \"double3\" -89.99999999999988631 -2.92382907277638004 -89.9999999999992184"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6" 
+		"scale" " -type \"double3\" 0.48137561601826073 0.49908842228360517 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6" 
+		"shear" " -type \"double3\" -0.0035696499205184057 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5" 
+		"translate" " -type \"double3\" 4.25473077610432071 5.17100258166497095 19.45371404904343748"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5" 
+		"rotate" " -type \"double3\" -90.00000000000002842 -2.92382907277591153 90.00000000000005684"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5" 
+		"scale" " -type \"double3\" 0.48137561601826068 0.49908842228360517 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5" 
+		"shear" " -type \"double3\" -0.0035696499205181693 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4" 
+		"translate" " -type \"double3\" 4.2547307761043216 4.89220013345603544 18.23726375037891501"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3" 
+		"translate" " -type \"double3\" 4.25473077610432071 4.89220013345603544 18.57667481386272001"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2" 
+		"translate" " -type \"double3\" 4.25473077610432071 4.89220013345603544 18.91608587734652502"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2" 
+		"rotate" " -type \"double3\" 180 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1" 
+		"translate" " -type \"double3\" 4.25473077610432071 4.89220013345603544 19.25549694083033003"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs" 
+		"rotatePivot" " -type \"double3\" 5.02824156149316703 4.70436303873073047 18.22313696688121354"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs" 
+		"scalePivot" " -type \"double3\" 5.02824156149316703 4.70436303873073047 18.22313696688121354"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1" 
+		"translate" " -type \"double3\" 4.3325462715571339 4.92251858632765149 16.84151858446865191"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2" 
+		"translate" " -type \"double3\" 4.33254627155713301 4.92251858632765149 17.16595563044581851"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3" 
+		"translate" " -type \"double3\" 4.33254627155713301 4.92251858632765149 17.49039267642298157"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4" 
+		"translate" " -type \"double3\" 4.24372793835740225 4.92251858632765149 17.81016509183114849"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4" 
+		"rotate" " -type \"double3\" 0 267.57500272181471246 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4" 
+		"scale" " -type \"double3\" 0.49902666420842923 0.48133174003137708 0.44830865294048561"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4" 
+		"shear" " -type \"double3\" 0 -0.010146735703213361 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5" 
+		"translate" " -type \"double3\" 4.3325462715571339 5.18535366854775948 16.6324646770381932"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6" 
+		"translate" " -type \"double3\" 4.33254627155713301 5.18535366854775948 16.95690172301535625"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7" 
+		"translate" " -type \"double3\" 4.33254627155713301 5.18535366854775948 17.28133876899252286"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8" 
+		"translate" " -type \"double3\" 4.33254627155713301 5.18535366854775948 17.60577581496968591"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9" 
+		"translate" " -type \"double3\" 4.3325462715571339 5.44952746083837347 16.81677431065355677"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9" 
+		"rotate" " -type \"double3\" 0 -88.73719747645289146 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9" 
+		"scale" " -type \"double3\" 0.49910481323186984 0.48133174003137708 0.4482384574975678"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9" 
+		"shear" " -type \"double3\" 0 0.0052901095236647074 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10" 
+		"translate" " -type \"double3\" 4.33254627155713301 5.44952746083837347 17.14121135663072337"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11" 
+		"translate" " -type \"double3\" 4.33254627155713301 5.44952746083837347 17.46564840260788642"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11" 
+		"rotate" " -type \"double3\" 0 -87.49596051854966561 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11" 
+		"scale" " -type \"double3\" 0.49901956547521031 0.48133174003137708 0.44831503029269221"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11" 
+		"shear" " -type \"double3\" 0 0.010476338702041491 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		3 "tofu_fishball_platter_latest:makeNurbCircle1.outputCurve" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofu_Fishball_PlatterShape.create" 
+		""
+		5 4 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofu_Fishball_PlatterShape.create" 
+		"tofu_fishball_platter_latestRN.placeHolderList[168]" ""
+		5 3 "tofu_fishball_platter_latestRN" "tofu_fishball_platter_latest:makeNurbCircle1.outputCurve" 
+		"tofu_fishball_platter_latestRN.placeHolderList[169]" "tofu_fishball_platter_latest:Tofu_Fishball_PlatterShape.cr"
+		
+		"tofu_fishball_platter_latest:fishball_on_a_stick_latestRN" 152
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs" 
+		"translate" " -type \"double3\" 4.3325462715571339 4.92251858632765149 16.5170815384914853"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latestRN" 
+		"fileNames[0]" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/skewer_latest.ma\""
+		
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[13]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[14]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[15]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[16]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[17]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[18]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[19]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[20]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[21]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[22]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[23]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball4Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[24]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[25]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[26]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[27]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[28]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[29]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[30]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[31]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[32]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[33]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[34]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[35]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball3Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[36]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[37]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[38]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[39]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[40]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[41]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[42]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[43]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[44]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[45]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[46]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[47]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball2Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[48]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[49]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[50]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[51]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[52]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[53]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[54]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[55]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[56]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[57]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[58]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[59]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball1Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[60]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[61]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[62]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[63]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[64]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[65]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[66]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[67]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[68]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[69]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[70]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[71]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballShape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[72]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs1|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[73]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs2|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[74]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs3|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[75]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs4|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[76]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[77]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs6|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[78]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs7|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[79]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs8|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[80]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs9|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[81]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs10|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[82]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:Fishballs11|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[83]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishballs|tofu_fishball_platter_latest:fishball_on_a_stick_latest:FishballsGrp|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5|tofu_fishball_platter_latest:fishball_on_a_stick_latest:Fishball5Shape.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[84]" ":initialShadingGroup.dsm"
+		"tofu_fishball_platter_latest:tofu_on_a_stick_latestRN" 152
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick" 
+		"translate" " -type \"double3\" 4.25473077610432071 4.89220013345603544 19.59490800431413504"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick" 
+		"scale" " -type \"double3\" 0.49913391688794695 0.48133174003137708 0.44821232146980805"
+		
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latestRN" "fileNames[0]" 
+		" -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Food/skewer_latest.ma{1}\""
+		
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[96]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[97]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[98]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[99]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[100]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[101]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[102]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[103]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[104]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[105]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[106]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape3.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[107]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[108]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[109]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[110]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[111]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[112]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[113]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[114]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[115]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[116]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[117]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[118]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape5.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[119]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[120]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[121]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[122]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[123]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[124]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[125]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[126]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[127]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[128]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[129]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[130]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape6.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[131]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[132]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[133]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[134]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[135]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[136]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[137]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[138]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[139]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[140]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[141]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[142]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape7.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[143]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[144]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[145]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[146]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[147]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[148]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[149]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[150]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[151]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[152]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[153]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[154]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape8.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[155]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick11|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[156]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick10|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[157]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[158]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick8|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[159]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick7|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[160]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick6|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[161]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick5|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[162]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick4|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[163]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick3|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[164]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick2|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[165]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick1|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[166]" ":initialShadingGroup.dsm"
+		5 3 "tofu_fishball_platter_latestRN" "|Foods|tofu_fishball_platter_latest:Tofu_Fishball_Platter|tofu_fishball_platter_latest:Tofus|tofu_fishball_platter_latest:tofu_on_a_stick_latest:tofu_on_a_stick|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCube9|tofu_fishball_platter_latest:tofu_on_a_stick_latest:pCubeShape9.instObjGroups" 
+		"tofu_fishball_platter_latestRN.placeHolderList[167]" ":initialShadingGroup.dsm";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "roll_and_sausage_platter_latestRN";
+	rename -uid "D5DA3979-4A79-23B4-A824-C7BC88D11524";
+	setAttr -s 119 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".phl[66]" 0;
+	setAttr ".phl[67]" 0;
+	setAttr ".phl[68]" 0;
+	setAttr ".phl[69]" 0;
+	setAttr ".phl[70]" 0;
+	setAttr ".phl[71]" 0;
+	setAttr ".phl[72]" 0;
+	setAttr ".phl[73]" 0;
+	setAttr ".phl[74]" 0;
+	setAttr ".phl[75]" 0;
+	setAttr ".phl[76]" 0;
+	setAttr ".phl[77]" 0;
+	setAttr ".phl[78]" 0;
+	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".phl[84]" 0;
+	setAttr ".phl[85]" 0;
+	setAttr ".phl[86]" 0;
+	setAttr ".phl[87]" 0;
+	setAttr ".phl[88]" 0;
+	setAttr ".phl[89]" 0;
+	setAttr ".phl[90]" 0;
+	setAttr ".phl[91]" 0;
+	setAttr ".phl[92]" 0;
+	setAttr ".phl[93]" 0;
+	setAttr ".phl[94]" 0;
+	setAttr ".phl[95]" 0;
+	setAttr ".phl[96]" 0;
+	setAttr ".phl[97]" 0;
+	setAttr ".phl[98]" 0;
+	setAttr ".phl[99]" 0;
+	setAttr ".phl[100]" 0;
+	setAttr ".phl[101]" 0;
+	setAttr ".phl[102]" 0;
+	setAttr ".phl[103]" 0;
+	setAttr ".phl[104]" 0;
+	setAttr ".phl[105]" 0;
+	setAttr ".phl[106]" 0;
+	setAttr ".phl[107]" 0;
+	setAttr ".phl[108]" 0;
+	setAttr ".phl[109]" 0;
+	setAttr ".phl[110]" 0;
+	setAttr ".phl[111]" 0;
+	setAttr ".phl[112]" 0;
+	setAttr ".phl[113]" 0;
+	setAttr ".phl[114]" 0;
+	setAttr ".phl[115]" 0;
+	setAttr ".phl[116]" 0;
+	setAttr ".phl[117]" 0;
+	setAttr ".phl[118]" 0;
+	setAttr ".phl[119]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"roll_and_sausage_platter_latestRN"
+		"roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latestRN" 0
+		
+		"roll_and_sausage_platter_latest:platter_latestRN" 0
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latestRN" 
+		0
+		"roll_and_sausage_platter_latestRN" 0
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latestRN" 0
+		"roll_and_sausage_platter_latest:sausage_on_a_stick_latestRN" 0
+		"roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latestRN" 8
+		
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[76]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[77]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[78]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[79]" ":initialShadingGroup.dsm"
+		
+		"roll_and_sausage_platter_latest:platter_latestRN" 10
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:platter_latest:Platter" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:platter_latest:Platter" 
+		"rotatePivot" " -type \"double3\" 4.2519239195669174 4.65469221814244882 13.62182603112686863"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:platter_latest:Platter" 
+		"scalePivot" " -type \"double3\" 4.2519239195669174 4.65469221814244882 13.62182603112686863"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:platter_latest:Platter|roll_and_sausage_platter_latest:platter_latest:PlatterShape" 
+		"pnts" " -s 574"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:platter_latest:Platter|roll_and_sausage_platter_latest:platter_latest:PlatterShape" 
+		"pt[0:165]" (" -type \"float3\" 4.251924 4.73159219999999969 15.123366 5.13117119999999982 4.73159219999999969 13.621826 4.251924 4.73159219999999969 12.120285 3.37267640000000002 4.73159219999999969 13.621826 4.251924 4.73159219999999969 13.621826 3.37267640000000002 4.73159219999999969 14.74686 3.81225630000000004 4.73159219999999969 15.123366 3.59246640000000017 4.73159219999999969 15.072925 3.43156909999999993 4.73159219999999969 14.935114 5.13117119999999982 4.73159219999999969 14.74686 5.072279 4.73159219999999969 14.935114 4.91138120000000011 4.73159219999999969 15.072925 4.71673770000000037 4.73159219999999969 15.117596 4.69159170000000003 4.73159219999999969 12.120285 4.91138120000000011 4.73159219999999969 12.170728 5.072279 4.73159219999999969 12.308538 5.13117119999999982 4.73159219999999969 12.496793 3.37267640000000002 4.73159219999999969 12.496793 3.43156909999999993 4.73159219999999969 12.308538 3.59246640000000017 4.73159219999999969 12.170728 3.81225630000000004 4.73159219999999969 12.120285 4.251924 4.5777"
+		+ "922000000002 13.621826 4.251924 4.5777922000000002 14.737625 3.84061859999999999 4.5777922000000002 14.737623 3.83291860000000018 4.5777922000000002 13.621826 4.68080810000000014 4.5777922000000002 13.621826 4.68080810000000014 4.5777922000000002 14.737623 3.63486669999999989 4.5777922000000002 14.737623 3.63486619999999983 4.5777922000000002 13.621826 4.86898180000000025 4.5777922000000002 14.737623 4.86898180000000025 4.5777922000000002 13.621826 4.86898140000000001 4.5777922000000002 12.506029 4.68080810000000014 4.5777922000000002 12.506027 4.251924 4.5777922000000002 12.506027 3.825218 4.5777922000000002 12.506027 3.63486619999999983 4.5777922000000002 12.506029 3.34734009999999982 4.303185 14.82076 3.34734009999999982 4.303185 13.621826 3.40454319999999999 4.303185 14.993942 3.55186840000000004 4.303185 15.113456 3.76535220000000015 4.303185 15.15986 4.251924 4.303185 15.15986 5.15650750000000002 4.303185 13.621826 5.15650750000000002 4.303185 14.82076 4.7384953000000003 4.303185 15.15986 4.951979599999"
+		+ "99959 4.303185 15.113456 5.09930470000000025 4.303185 14.993942 4.251924 4.303185 12.083793 4.7384953000000003 4.303185 12.083793 5.15650750000000002 4.303185 12.422893 5.09930470000000025 4.303185 12.24971 4.95197959999999959 4.303185 12.130197 3.34734009999999982 4.303185 12.422893 3.76535220000000015 4.303185 12.083793 3.55186840000000004 4.303185 12.130197 3.40454319999999999 4.303185 12.24971 3.34734009999999982 4.21601149999999958 14.82076 3.34734009999999982 4.21601149999999958 13.621826 3.40454319999999999 4.21601149999999958 14.993942 3.55186840000000004 4.21601149999999958 15.113456 3.76535220000000015 4.21601149999999958 15.15986 4.251924 4.21601149999999958 15.15986 5.15650750000000002 4.21601149999999958 13.621826 5.15650750000000002 4.21601149999999958 14.82076 4.7384953000000003 4.21601149999999958 15.15986 4.95197959999999959 4.21601149999999958 15.113456 5.09930470000000025 4.21601149999999958 14.993942 4.251924 4.21601149999999958 12.083793 4.7384953000000003 4.21601149999999958 12.083793 5."
+		+ "15650750000000002 4.21601149999999958 12.422893 5.09930470000000025 4.21601149999999958 12.24971 4.95197959999999959 4.21601149999999958 12.130197 3.34734009999999982 4.21601149999999958 12.422893 3.76535220000000015 4.21601149999999958 12.083793 3.55186840000000004 4.21601149999999958 12.130197 3.40454319999999999 4.21601149999999958 12.24971 3.32782130000000009 4.34752229999999962 13.621826 3.32365129999999986 4.31136889999999973 13.621826 3.31268260000000003 4.28856280000000023 13.621826 3.32782130000000009 4.34890370000000015 14.805877 3.32383780000000018 4.31201930000000022 14.807899 3.31346080000000009 4.28931470000000026 14.813169 3.38966749999999983 4.34817889999999974 15.003572 3.38608339999999997 4.31195590000000006 15.005848 3.37674740000000018 4.28981070000000031 15.011778 3.55850029999999995 4.34817169999999997 15.14818 3.5554117999999999 4.31164069999999988 15.150875 3.54732279999999989 4.28879739999999998 15.157932 3.789314 4.348464 15.201153 3.78708409999999995 4.31131170000000008 15.204171 3."
+		+ "78119039999999984 4.28751130000000025 15.212147 4.251924 4.346334 15.201153 4.251924 4.31018110000000032 15.204479 4.251924 4.28575179999999989 15.213381 5.17602679999999982 4.34890370000000015 14.805877 5.17986629999999959 4.31215860000000006 14.807826 5.18986850000000022 4.28981540000000017 14.812906 5.17602679999999982 4.34752229999999962 13.621826 5.18019630000000042 4.31136889999999973 13.621826 5.19116540000000004 4.28856280000000023 13.621826 4.75450939999999989 4.34841350000000038 15.191978 4.75583080000000002 4.31130459999999971 15.195234 4.75673909999999989 4.28746320000000036 15.204439 4.94534729999999989 4.34817169999999997 15.14818 4.94843630000000001 4.31164069999999988 15.150875 4.9565248000000004 4.28879739999999998 15.157932 5.11418060000000008 4.34817889999999974 15.003572 5.117764 4.31195590000000006 15.005848 5.12710050000000006 4.28981070000000031 15.011778 4.71453379999999989 4.348464 12.0425 4.716764 4.31131170000000008 12.03948 4.72265720000000044 4.28751130000000025 12.031506 4.251924"
+		+ " 4.346334 12.0425 4.251924 4.31018110000000032 12.039171 4.251924 4.28575179999999989 12.030272 5.17602679999999982 4.34890370000000015 12.437776 5.18000979999999966 4.31201930000000022 12.435752 5.19038679999999975 4.28931470000000026 12.430482 5.11418060000000008 4.34817889999999974 12.240081 5.117764 4.31195590000000006 12.237804 5.12710050000000006 4.28981070000000031 12.231874 4.94534729999999989 4.34817169999999997 12.095472 4.94843630000000001 4.31164069999999988 12.092777 4.9565248000000004 4.28879739999999998 12.08572 3.32782130000000009 4.34890370000000015 12.437776 3.32398129999999981 4.31215860000000006 12.435826 3.31397910000000007 4.28981540000000017 12.430746 3.789314 4.348464 12.0425 3.787045 4.3112364000000003 12.039428 3.78104810000000002 4.28723670000000023 12.031313 3.55850029999999995 4.34817169999999997 12.095472 3.5554117999999999 4.31164069999999988 12.092777 3.54732279999999989 4.28879739999999998 12.08572 3.38966749999999983 4.34817889999999974 12.240081 3.38608339999999997 4.3119559"
+		+ "0000000006 12.237804 3.37674740000000018 4.28981070000000031 12.231874 4.251924 4.73159219999999969 14.74686 4.71362729999999974 4.73159219999999969 14.74686 4.70418830000000021 4.73159219999999969 13.621826 3.81225630000000004 4.73159219999999969 14.74686 3.81225630000000004 4.73159219999999969 13.621826 3.81225630000000004 4.73159219999999969 12.496793 4.251924 4.73159219999999969 12.496792 4.69475029999999993 4.73159219999999969 12.496793 4.69317049999999991 4.73159219999999969 12.308538 4.251924 4.73159219999999969 12.308538 3.81225630000000004 4.73159219999999969 12.308538 3.81225630000000004 4.73159219999999969 14.935114 4.251924 4.73159219999999969 14.935114 4.71520660000000014 4.73159219999999969 14.935114 3.41436340000000005 4.5777922000000002 13.621826 3.39601370000000014 4.56287670000000034 13.621826 3.38350220000000013 4.52287630000000007 13.621826 3.41350219999999993 4.5777922000000002 14.75836 3.39595149999999979 4.56396529999999956 14.763191 3.3841515000000002 4.52681969999999989 14.771971 3.46"
+		+ "475929999999988 4.5777922000000002 14.916117 3.44982360000000021 4.56614879999999967 14.925834 3.4401054000000002 4.53381870000000031 14.936357 3.59682009999999996 4.5777922000000002 15.023413 3.58809420000000001 4.5671482000000001 15.037766 3.58165069999999996 4.53698210000000035 15.049997 3.79219440000000008 4.5777922000000002 15.065668 3.78938720000000018 4.56719019999999976 15.081448 3.78606959999999981 4.53717229999999994 15.094374 5.088696 4.5777922000000002 14.758163"
+		)
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:platter_latest:Platter|roll_and_sausage_platter_latest:platter_latest:PlatterShape" 
+		"pt[166:331]" (" 5.10744760000000042 4.5639605999999997 14.763139 5.11969660000000015 4.52681969999999989 14.771971 5.08948420000000024 4.5777922000000002 13.621826 5.10783430000000038 4.56287670000000034 13.621826 5.12034560000000027 4.52287630000000007 13.621826 4.251924 4.5777922000000002 15.065807 4.251924 4.56703 15.081525 4.251924 4.53659730000000039 15.094536 4.7116832999999998 4.5777922000000002 15.065874 4.71446849999999973 4.56719019999999976 15.081501 4.7177781999999997 4.53717229999999994 15.094374 4.90681410000000007 4.5777922000000002 15.023081 4.91569810000000018 4.5671482000000001 15.037678 4.92219729999999966 4.53698210000000035 15.049997 5.03726770000000013 4.5777922000000002 14.915174 5.05354260000000011 4.56614970000000042 14.925584 5.06374260000000032 4.53381870000000031 14.936357 4.71165370000000028 4.5777922000000002 12.177983 4.71446080000000034 4.56719019999999976 12.162205 4.7177781999999997 4.53717229999999994 12.149279 4.251924 4.5777922000000002 12.177844 4.251924 4.56703 12.162127 4.251924 4.536"
+		+ "59730000000039 12.149117 5.09034540000000035 4.5777922000000002 12.485292 5.10789630000000017 4.56396529999999956 12.480461 5.11969660000000015 4.52681969999999989 12.471682 5.03908820000000013 4.5777922000000002 12.327535 5.05402470000000026 4.56614879999999967 12.317819 5.06374260000000032 4.53381870000000031 12.307295 4.90702770000000044 4.5777922000000002 12.22024 4.91575339999999983 4.5671482000000001 12.205887 4.92219729999999966 4.53698210000000035 12.193654 3.41515160000000018 4.5777922000000002 12.485488 3.39640019999999998 4.5639605999999997 12.480514 3.3841515000000002 4.52681969999999989 12.471682 3.79216430000000004 4.5777922000000002 12.177778 3.78937910000000011 4.56719019999999976 12.16215 3.78606959999999981 4.53717229999999994 12.149279 3.59703369999999989 4.5777922000000002 12.220572 3.58814980000000006 4.5671482000000001 12.205974 3.58165069999999996 4.53698210000000035 12.193654 3.46658020000000011 4.5777922000000002 12.328479 3.450305 4.56614970000000042 12.318069 3.4401054000000002 4.53"
+		+ "381870000000031 12.307295 3.23756619999999984 4.19881729999999997 13.621826 3.23918339999999993 4.21283769999999969 13.621826 3.24343709999999996 4.22168160000000015 13.621826 3.23756619999999984 4.19826320000000042 14.851716 3.23905060000000011 4.21252159999999964 14.850961 3.24291779999999985 4.22118 14.848997 3.30545309999999981 4.19857929999999957 15.057064 3.30684380000000022 4.21261550000000007 15.056181 3.310467 4.22120139999999999 15.053879 3.49077580000000021 4.19853020000000043 15.207273 3.49197390000000008 4.21272330000000039 15.206226 3.49511189999999994 4.22159239999999958 15.203488 3.744132 4.19874620000000043 15.262297 3.74504519999999985 4.2130346000000003 15.26106 3.74745870000000014 4.22242979999999957 15.257793 4.251924 4.19927790000000023 15.262297 4.251924 4.21329829999999994 15.261005 4.251924 4.22277210000000025 15.257554 5.26628160000000012 4.19826320000000042 14.851716 5.26474 4.21257730000000041 14.850933 5.26072309999999987 4.22137980000000024 14.848892 5.26628160000000012 4.1988172"
+		+ "9999999997 13.621826 5.26466459999999969 4.21283769999999969 13.621826 5.26041079999999983 4.22168160000000015 13.621826 4.759716 4.198988 15.262297 4.75964550000000042 4.213027 15.260933 4.75946 4.22214940000000016 15.257326 5.013072 4.19853020000000043 15.207273 5.01187369999999976 4.21272330000000039 15.206226 5.00873610000000014 4.22159239999999958 15.203488 5.19839479999999998 4.19857929999999957 15.057064 5.19700380000000006 4.21261550000000007 15.056181 5.19338079999999991 4.22120139999999999 15.053879 4.759716 4.19874620000000043 11.981358 4.75880240000000043 4.2130346000000003 11.982592 4.75638909999999981 4.22242979999999957 11.985857 4.251924 4.19927790000000023 11.981358 4.251924 4.21329829999999994 11.982647 4.251924 4.22277210000000025 11.986098 5.26628160000000012 4.19826320000000042 12.391936 5.26479720000000029 4.21252159999999964 12.392692 5.26093010000000039 4.22118 12.394654 5.19839479999999998 4.19857929999999957 12.186588 5.19700380000000006 4.21261550000000007 12.187471 5.19338079999999"
+		+ "991 4.22120139999999999 12.189773 5.013072 4.19853020000000043 12.03638 5.01187369999999976 4.21272330000000039 12.037426 5.00873610000000014 4.22159239999999958 12.040164 3.23756619999999984 4.19826320000000042 12.391936 3.23910810000000016 4.21257730000000041 12.392719 3.24312449999999997 4.22137980000000024 12.394759 3.744132 4.19874620000000043 11.981358 3.74501440000000008 4.21297449999999962 11.982551 3.74734619999999996 4.22221280000000032 11.985706 3.49077580000000021 4.19853020000000043 12.03638 3.49197390000000008 4.21272330000000039 12.037426 3.49511189999999994 4.22159239999999958 12.040164 3.30545309999999981 4.19857929999999957 12.186588 3.30684380000000022 4.21261550000000007 12.187471 3.310467 4.22120139999999999 12.189773 3.23756619999999984 4.03754469999999976 13.621826 3.23966690000000002 4.02352430000000005 13.621826 3.24473710000000004 4.01771689999999992 13.621826 3.24473710000000004 4.01771689999999992 14.850863 3.23966690000000002 4.02352430000000005 14.851465 3.23756619999999984 4.037"
+		+ "54469999999976 14.851716 3.31181530000000013 4.01771689999999992 15.053764 3.30731680000000017 4.02352430000000005 15.056098 3.30545309999999981 4.03754469999999976 15.057064 3.49434850000000008 4.01771689999999992 15.201711 3.491822 4.02352430000000005 15.205643 3.49077580000000021 4.03754469999999976 15.207273 3.74502710000000016 4.01771689999999992 15.256153 3.74439410000000006 4.02352430000000005 15.260496 3.744132 4.03754469999999976 15.262297 4.251924 4.01771689999999992 15.256153 4.251924 4.02352430000000005 15.260496 4.251924 4.03754469999999976 15.262297 5.26628160000000012 4.03754469999999976 14.851716 5.26418110000000006 4.02352430000000005 14.851465 5.25911050000000024 4.01771689999999992 14.850863 5.25911050000000024 4.01771689999999992 13.621826 5.26418110000000006 4.02352430000000005 13.621826 5.26628160000000012 4.03754469999999976 13.621826 4.75882049999999968 4.01771689999999992 15.256153 4.75945380000000018 4.02352430000000005 15.260496 4.759716 4.03754469999999976 15.262297 5.0094995000000"
+		+ "0044 4.01771689999999992 15.201711 5.01202579999999998 4.02352430000000005 15.205643 5.013072 4.03754469999999976 15.207273 5.19203230000000016 4.01771689999999992 15.053764 5.19653079999999967 4.02352430000000005 15.056098 5.19839479999999998 4.03754469999999976 15.057064 4.759716 4.03754469999999976 11.981358 4.75945380000000018 4.02352430000000005 11.983156 4.75882049999999968 4.01771689999999992 11.987498 4.251924 4.01771689999999992 11.987498 4.251924 4.02352430000000005 11.983156 4.251924 4.03754469999999976 11.981358 5.25911050000000024 4.01771689999999992 12.39279 5.26418110000000006 4.02352430000000005 12.392187 5.26628160000000012 4.03754469999999976 12.391936 5.19203230000000016 4.01771689999999992 12.189888 5.19653079999999967 4.02352430000000005 12.187554 5.19839479999999998 4.03754469999999976 12.186588 5.00949950000000044 4.01771689999999992 12.041941 5.01202579999999998 4.02352430000000005 12.03801 5.013072 4.03754469999999976 12.03638 3.23756619999999984 4.03754469999999976 12.391936 3.239666"
+		+ "90000000002 4.02352430000000005 12.392187 3.24473710000000004 4.01771689999999992 12.39279 3.74502710000000016 4.01771689999999992 11.987498 3.74439410000000006 4.02352430000000005 11.983156 3.744132 4.03754469999999976 11.981358 3.49434850000000008 4.01771689999999992 12.041941 3.491822 4.02352430000000005 12.03801 3.49077580000000021 4.03754469999999976 12.03638 3.31181530000000013 4.01771689999999992 12.189888 3.30731680000000017 4.02352430000000005 12.187554 3.30545309999999981 4.03754469999999976 12.186588 3.34734009999999982 4.05737210000000026 14.82076 3.34313990000000016 4.02933170000000018 14.821259"
+		)
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:platter_latest:Platter|roll_and_sausage_platter_latest:platter_latest:PlatterShape" 
+		"pt[332:497]" (" 3.33299829999999986 4.01771689999999992 14.822464 3.34734009999999982 4.05737210000000026 13.621826 3.34313990000000016 4.02933170000000018 13.621826 3.33299829999999986 4.01771689999999992 13.621826 3.40454319999999999 4.05737210000000026 14.993942 3.400816 4.02933170000000018 14.995873 3.39181659999999985 4.01771689999999992 15.000538 3.55186840000000004 4.05737210000000026 15.113456 3.54977419999999988 4.02933170000000018 15.116713 3.544719 4.01771689999999992 15.124576 3.76535220000000015 4.05737210000000026 15.15986 3.76482770000000011 4.02933170000000018 15.163458 3.763561 4.01771689999999992 15.172144 4.251924 4.05737210000000026 15.15986 4.251924 4.02933170000000018 15.163458 4.251924 4.01771689999999992 15.172144 5.15650750000000002 4.05737210000000026 13.621826 5.16070890000000038 4.02933170000000018 13.621826 5.17084980000000005 4.01771689999999992 13.621826 5.15650750000000002 4.05737210000000026 14.82076 5.16070890000000038 4.02933170000000018 14.821259 5.17084980000000005 4.01771689999999992 14"
+		+ ".822464 4.7384953000000003 4.05737210000000026 15.15986 4.73902029999999996 4.02933170000000018 15.163458 4.7402867999999998 4.01771689999999992 15.172144 4.95197959999999959 4.05737210000000026 15.113456 4.9540734000000004 4.02933170000000018 15.116713 4.95912929999999985 4.01771689999999992 15.124576 5.09930470000000025 4.05737210000000026 14.993942 5.10303210000000007 4.02933170000000018 14.995873 5.112031 4.01771689999999992 15.000538 4.251924 4.05737210000000026 12.083793 4.251924 4.02933170000000018 12.080193 4.251924 4.01771689999999992 12.071508 4.7384953000000003 4.05737210000000026 12.083793 4.73902029999999996 4.02933170000000018 12.080193 4.7402867999999998 4.01771689999999992 12.071508 5.15650750000000002 4.05737210000000026 12.422893 5.16070890000000038 4.02933170000000018 12.422394 5.17084980000000005 4.01771689999999992 12.421188 5.09930470000000025 4.05737210000000026 12.24971 5.10303210000000007 4.02933170000000018 12.247778 5.112031 4.01771689999999992 12.243114 4.95197959999999959 4.057372"
+		+ "10000000026 12.130197 4.9540734000000004 4.02933170000000018 12.12694 4.95912929999999985 4.01771689999999992 12.119076 3.34734009999999982 4.05737210000000026 12.422893 3.34313990000000016 4.02933170000000018 12.422394 3.33299829999999986 4.01771689999999992 12.421188 3.76535220000000015 4.05737210000000026 12.083793 3.76482770000000011 4.02933170000000018 12.080193 3.763561 4.01771689999999992 12.071508 3.55186840000000004 4.05737210000000026 12.130197 3.54977419999999988 4.02933170000000018 12.12694 3.544719 4.01771689999999992 12.119076 3.40454319999999999 4.05737210000000026 12.24971 3.400816 4.02933170000000018 12.247778 3.39181659999999985 4.01771689999999992 12.243114 4.251924 4.60810660000000016 15.122458 4.251924 4.58039050000000003 15.124114 4.251924 4.55740169999999978 15.129188 4.72080330000000004 4.60837319999999995 15.115724 4.72230430000000023 4.58050919999999984 15.117156 4.72469569999999983 4.55756759999999961 15.122024 5.13009550000000036 4.60636280000000031 13.621826 5.13118789999999958 4."
+		+ "57870240000000006 13.621826 5.13486189999999976 4.55279870000000031 13.621826 5.13010409999999961 4.60732319999999973 12.496913 5.1311536000000002 4.57934190000000019 12.495348 5.13460640000000001 4.55421540000000036 12.490848 4.251924 4.60810660000000016 12.121194 4.251924 4.58039050000000003 12.119538 4.251924 4.55740169999999978 12.114465 3.81239559999999988 4.60832070000000016 12.121193 3.81188990000000016 4.58053259999999973 12.119545 3.81040549999999989 4.55770680000000006 12.114505 3.37375239999999987 4.60636280000000031 13.621826 3.37266019999999989 4.57870240000000006 13.621826 3.36898609999999987 4.55279870000000031 13.621826 3.373744 4.60732319999999973 14.746738 3.37269430000000003 4.57934190000000019 14.748303 3.36924169999999989 4.55421540000000036 14.752805 3.81239559999999988 4.60832070000000016 15.122459 3.81188990000000016 4.58053259999999973 15.124107 3.81040549999999989 4.55770680000000006 15.129147 5.13010409999999961 4.60732319999999973 14.746738 5.1311536000000002 4.57934190000000019 14"
+		+ ".748303 5.13460640000000001 4.55421540000000036 14.752805 4.691452 4.60832070000000016 12.121193 4.691958 4.58053259999999973 12.119545 4.69344230000000007 4.55770680000000006 12.114505 3.373744 4.60732319999999973 12.496913 3.37269430000000003 4.57934190000000019 12.495348 3.36924169999999989 4.55421540000000036 12.490848 3.59301419999999982 4.60843749999999996 15.072111 3.59231539999999994 4.58054019999999973 15.073722 3.59010549999999995 4.55761530000000015 15.078611 3.43251660000000003 4.60854910000000029 14.934644 3.43165109999999984 4.58029840000000021 14.936225 3.42877859999999979 4.55660919999999958 14.940897 5.071331 4.60854910000000029 14.934644 5.072197 4.58029840000000021 14.936225 5.07506940000000029 4.55660919999999958 14.940897 4.9108337999999998 4.60843749999999996 15.072111 4.91153239999999958 4.58054019999999973 15.073722 4.91374210000000033 4.55761530000000015 15.078611 4.9108337999999998 4.60843749999999996 12.17154 4.91153239999999958 4.58054019999999973 12.16993 4.91374210000000033 4.557"
+		+ "61530000000015 12.165041 5.071331 4.60854910000000029 12.309009 5.072197 4.58029840000000021 12.307427 5.07506940000000029 4.55660919999999958 12.302755 3.43251660000000003 4.60854910000000029 12.309009 3.43165109999999984 4.58029840000000021 12.307427 3.42877859999999979 4.55660919999999958 12.302755 3.59301419999999982 4.60843749999999996 12.17154 3.59231539999999994 4.58054019999999973 12.16993 3.59010549999999995 4.55761530000000015 12.165041 3.37282560000000009 4.71422670000000021 13.621826 3.37281729999999991 4.71518660000000001 12.496808 3.43168590000000018 4.716413 12.308598 3.59253450000000019 4.71630139999999987 12.170829 3.81227369999999999 4.71618509999999969 12.120399 4.251924 4.715971 12.120401 4.69157410000000041 4.71618509999999969 12.120399 4.9113131000000001 4.71630139999999987 12.170829 5.07216220000000018 4.716413 12.308598 5.13103059999999989 4.71518660000000001 12.496808 5.13102250000000026 4.71422670000000021 13.621826 5.13103059999999989 4.71518660000000001 14.746844 5.0721622000000001"
+		+ "8 4.716413 14.935055 4.9113131000000001 4.71630139999999987 15.072823 4.7172445999999999 4.71622710000000023 15.117362 4.251924 4.715971 15.123251 3.81227369999999999 4.71618509999999969 15.123253 3.59253450000000019 4.71630139999999987 15.072823 3.43168590000000018 4.716413 14.935055 3.37281729999999991 4.71518660000000001 14.746844 4.251924 4.5777922000000002 13.112339 4.68080810000000014 4.5777922000000002 13.112339 4.86898140000000001 4.5777922000000002 13.112339 5.08987049999999996 4.5777922000000002 13.112339 5.107862 4.5633625999999996 13.112342 5.12005809999999961 4.52462289999999978 13.112389 5.15650750000000002 4.303185 13.112338 5.15650750000000002 4.21601149999999958 13.112338 5.15650750000000002 4.05737210000000026 13.112338 5.16070890000000038 4.02933170000000018 13.112339 5.17084980000000005 4.01771689999999992 13.112339 5.25911050000000024 4.01771689999999992 13.112339 5.26418110000000006 4.02352430000000005 13.112339 5.26628160000000012 4.03754469999999976 13.112339 5.26628160000000012 4.1985"
+		+ "8789999999971 13.112339 5.2647195 4.21270659999999975 13.112339 5.2606263000000002 4.22147369999999977 13.112339 5.19083209999999973 4.28888460000000027 13.11234 5.18011619999999962 4.31164840000000016 13.11234 5.17602679999999982 4.34811689999999995 13.112345 5.134747 4.55343680000000006 13.112345 5.13117219999999996 4.5789913999999996 13.11234 5.13009930000000036 4.60679770000000044 13.112342 5.13102579999999975 4.71466160000000034 13.112342 5.13117119999999982 4.73159219999999969 13.112339 4.69991489999999956 4.73159219999999969 13.112391 4.251924 4.73159219999999969 13.112339 3.81225630000000004 4.73159219999999969 13.112339"
+		)
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:platter_latest:Platter|roll_and_sausage_platter_latest:platter_latest:PlatterShape" 
+		"pt[498:573]" (" 3.37267640000000002 4.73159219999999969 13.112339 3.372822 4.71466160000000034 13.112342 3.37374879999999999 4.60679770000000044 13.112342 3.37267539999999988 4.5789913999999996 13.11234 3.369101 4.55343680000000006 13.112345 3.32782130000000009 4.34811640000000033 13.112345 3.32379340000000001 4.31170849999999994 13.112341 3.3132372000000001 4.28909919999999989 13.112344 3.24330760000000007 4.2215562000000002 13.112339 3.239152 4.21272990000000025 13.112339 3.23756619999999984 4.19858789999999971 13.112339 3.23756619999999984 4.03754469999999976 13.112339 3.23966690000000002 4.02352430000000005 13.112339 3.24473710000000004 4.01771689999999992 13.112339 3.33299829999999986 4.01771689999999992 13.112339 3.34313990000000016 4.02933170000000018 13.112339 3.34734009999999982 4.05737210000000026 13.112338 3.34734009999999982 4.21601149999999958 13.112338 3.34734009999999982 4.303185 13.112338 3.38378949999999978 4.52462289999999978 13.112389 3.39618609999999999 4.5633606999999996 13.112343 3.41471720000000012 4."
+		+ "5777922000000002 13.112339 3.63486619999999983 4.5777922000000002 13.112339 3.82940270000000016 4.5777922000000002 13.112373 4.251924 4.5777922000000002 14.130406 4.68080810000000014 4.5777922000000002 14.130406 4.86898180000000025 4.5777922000000002 14.130406 5.0891314000000003 4.5777922000000002 14.130406 5.10766220000000004 4.56335970000000035 14.130403 5.12005849999999985 4.52462009999999992 14.130356 5.15650750000000002 4.303185 14.130407 5.15650750000000002 4.21601149999999958 14.130407 5.15650750000000002 4.05737210000000026 14.130407 5.16070890000000038 4.02933219999999981 14.130407 5.17084980000000005 4.01771689999999992 14.130407 5.25911050000000024 4.01771689999999992 14.130406 5.26418110000000006 4.02352430000000005 14.130407 5.26628160000000012 4.03754469999999976 14.130406 5.26628160000000012 4.19858840000000022 14.130405 5.26469559999999959 4.21272990000000025 14.130406 5.26054 4.22155669999999983 14.130406 5.19061139999999988 4.28909830000000003 14.130401 5.18005509999999969 4.3117074999999998"
+		+ " 14.130405 5.17602679999999982 4.34811540000000019 14.130401 5.134747 4.5534353000000003 14.1304 5.13117219999999996 4.5789913999999996 14.130405 5.13009930000000036 4.6067967000000003 14.130404 5.13102579999999975 4.7146606000000002 14.130404 5.13117119999999982 4.73159219999999969 14.130406 4.70845510000000012 4.73159219999999969 14.130354 4.251924 4.73159219999999969 14.130406 3.81225630000000004 4.73159219999999969 14.130406 3.37267660000000014 4.73159219999999969 14.130406 3.372822 4.7146606000000002 14.130404 3.37374879999999999 4.6067967000000003 14.130404 3.37267539999999988 4.5789913999999996 14.130405 3.36910059999999989 4.5534353000000003 14.1304 3.32782130000000009 4.34811540000000019 14.130401 3.32373139999999978 4.31164840000000016 14.130405 3.313015 4.28888420000000004 14.130405 3.24322180000000015 4.22147369999999977 14.130405 3.2391283999999998 4.21270659999999975 14.130406 3.23756619999999984 4.19858840000000022 14.130405 3.23756619999999984 4.03754469999999976 14.130406 3.23966690000000002 "
+		+ "4.02352430000000005 14.130406 3.24473710000000004 4.01771689999999992 14.130406 3.33299829999999986 4.01771689999999992 14.130407 3.34313990000000016 4.02933170000000018 14.130407 3.34734009999999982 4.05737210000000026 14.130407 3.34734009999999982 4.21601149999999958 14.130407 3.34734009999999982 4.303185 14.130407 3.38378909999999999 4.52462009999999992 14.130356 3.39598559999999994 4.56336209999999998 14.130403 3.41397810000000002 4.5777922000000002 14.130406 3.63486649999999978 4.5777922000000002 14.130406 3.83642819999999984 4.5777922000000002 14.130371"
+		)
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:platter_latest:Platter|roll_and_sausage_platter_latest:platter_latest:PlatterShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:platter_latest:Platter|roll_and_sausage_platter_latest:platter_latest:PlatterShape.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
+		
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latestRN" 
+		8
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[2]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[3]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[4]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[5]" ":initialShadingGroup.dsm"
+		
+		"roll_and_sausage_platter_latestRN" 55
+		0 "|roll_and_sausage_platter_latest:RollnSasuage" "|Foods" "-s -r "
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage" "translate" " -type \"double3\" -2.96168495978407842 0.70469308698377908 3.74001626993839764"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage" "scale" " -type \"double3\" 1.10875399388106355 1.10875399388106355 1.10875399388106355"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage" "rotatePivot" " -type \"double3\" 4.30365852797169346 4.65469221814244882 13.62182603112686863"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage" "scalePivot" " -type \"double3\" 4.30365852797169346 4.65469221814244882 13.62182603112686863"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll" 
+		"rotatePivot" " -type \"double3\" 3.48782571760513571 4.65469221814244882 13.62182603112686863"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll" 
+		"scalePivot" " -type \"double3\" 3.48782571760513571 4.65469221814244882 13.62182603112686863"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1" 
+		"translate" " -type \"double3\" 4.3434952928334063 4.87113499068272127 14.10964181714809662"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1" 
+		"rotate" " -type \"double3\" 0 89.99999999999998579 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1" 
+		"scale" " -type \"double3\" 0.58825335977843085 0.58825335977843085 0.58825335977843085"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2" 
+		"translate" " -type \"double3\" 4.34049222493522979 4.84006977003968419 13.39327694913080791"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2" 
+		"rotate" " -type \"double3\" 84.78222536596921088 73.98805792562350803 85.68612905977994387"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2" 
+		"scale" " -type \"double3\" 0.58825335977843096 0.58825335977843085 0.58825335977843085"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4" 
+		"translate" " -type \"double3\" 4.34264078113149576 5.16644535255384518 14.49425473742106796"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4" 
+		"rotate" " -type \"double3\" 106.46643743965913131 79.32244060771982674 102.29795313590639694"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4" 
+		"scale" " -type \"double3\" 0.58825335977843107 0.58825335977843074 0.58825335977843107"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5" 
+		"translate" " -type \"double3\" 4.25539843734663226 5.16385824331996801 13.71958152034227929"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5" 
+		"rotate" " -type \"double3\" -3.53239599060428189 86.79296160429329632 -0.33746361696947619"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5" 
+		"scale" " -type \"double3\" 0.58825335977843107 0.58825335977843074 0.58825335977843118"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage" 
+		"rotatePivot" " -type \"double3\" 3.48782571760513571 4.65469221814244882 13.62182603112686863"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage" 
+		"scalePivot" " -type \"double3\" 3.48782571760513571 4.65469221814244882 13.62182603112686863"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1" 
+		"translate" " -type \"double3\" 4.38553922149646436 4.95556403601248618 12.15077522580676295"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1" 
+		"rotate" " -type \"double3\" 105.52874725138173062 76.60053008464279856 104.63120583925736184"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1" 
+		"scale" " -type \"double3\" 0.48810789511198555 0.48810789511198555 0.48810789511198549"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2" 
+		"translate" " -type \"double3\" 4.38553922149646347 5.12387565067133721 12.62880583854439998"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2" 
+		"rotate" " -type \"double3\" 90 86.00473516306283273 90"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2" 
+		"scale" " -type \"double3\" 0.48810789511198555 0.48810789511198555 0.48810789511198549"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3" 
+		"translate" " -type \"double3\" 4.38553922149646347 5.11402378540218816 12.07904600704032205"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3" 
+		"scale" " -type \"double3\" 0.48810789511198549 0.48810789511198549 0.48810789511198549"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4" 
+		"translate" " -type \"double3\" 4.38553922149646347 5.21469655398045884 12.39490945415339063"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4" 
+		"scale" " -type \"double3\" 0.48810789511198555 0.48810789511198555 0.48810789511198549"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latestRN" 82
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest" 
+		"translate" " -type \"double3\" 4.3434952928334063 4.87113499068272127 14.98423389680220019"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest" 
+		"rotate" " -type \"double3\" 0 89.99999999999998579 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest" 
+		"scale" " -type \"double3\" 0.58825335977843085 0.58825335977843085 0.58825335977843085"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:left" 
+		"translate" " -type \"double3\" -484.66888018389158788 4.65469221814244882 13.62182603112686863"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:left" 
+		"scale" " -type \"double3\" 0.48810789511198549 0.48810789511198549 0.48810789511198549"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:left" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:left" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:left" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"-na"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[6]" "roll_and_sausage_platter_latestRN.placeHolderList[7]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[8]" "roll_and_sausage_platter_latestRN.placeHolderList[9]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[10]" "roll_and_sausage_platter_latestRN.placeHolderList[11]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[12]" "roll_and_sausage_platter_latestRN.placeHolderList[13]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[14]" "roll_and_sausage_platter_latestRN.placeHolderList[15]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[16]" "roll_and_sausage_platter_latestRN.placeHolderList[17]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[18]" "roll_and_sausage_platter_latestRN.placeHolderList[19]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[20]" "roll_and_sausage_platter_latestRN.placeHolderList[21]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[22]" "roll_and_sausage_platter_latestRN.placeHolderList[23]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[24]" "roll_and_sausage_platter_latestRN.placeHolderList[25]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[26]" "roll_and_sausage_platter_latestRN.placeHolderList[27]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[28]" "roll_and_sausage_platter_latestRN.placeHolderList[29]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[30]" "roll_and_sausage_platter_latestRN.placeHolderList[31]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[32]" "roll_and_sausage_platter_latestRN.placeHolderList[33]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[34]" "roll_and_sausage_platter_latestRN.placeHolderList[35]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[36]" "roll_and_sausage_platter_latestRN.placeHolderList[37]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[38]" "roll_and_sausage_platter_latestRN.placeHolderList[39]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[40]" "roll_and_sausage_platter_latestRN.placeHolderList[41]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[42]" "roll_and_sausage_platter_latestRN.placeHolderList[43]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[44]" "roll_and_sausage_platter_latestRN.placeHolderList[45]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[46]" "roll_and_sausage_platter_latestRN.placeHolderList[47]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[48]" "roll_and_sausage_platter_latestRN.placeHolderList[49]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[50]" "roll_and_sausage_platter_latestRN.placeHolderList[51]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[52]" "roll_and_sausage_platter_latestRN.placeHolderList[53]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[54]" "roll_and_sausage_platter_latestRN.placeHolderList[55]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[56]" "roll_and_sausage_platter_latestRN.placeHolderList[57]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[58]" "roll_and_sausage_platter_latestRN.placeHolderList[59]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[60]" "roll_and_sausage_platter_latestRN.placeHolderList[61]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[62]" "roll_and_sausage_platter_latestRN.placeHolderList[63]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[64]" "roll_and_sausage_platter_latestRN.placeHolderList[65]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[66]" "roll_and_sausage_platter_latestRN.placeHolderList[67]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest4|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[68]" "roll_and_sausage_platter_latestRN.placeHolderList[69]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[70]" "roll_and_sausage_platter_latestRN.placeHolderList[71]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[72]" "roll_and_sausage_platter_latestRN.placeHolderList[73]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		5 0 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:MeatRoll|roll_and_sausage_platter_latest:meat_roll_latest5|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[74]" "roll_and_sausage_platter_latestRN.placeHolderList[75]" 
+		"roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dsm"
+		"roll_and_sausage_platter_latest:sausage_on_a_stick_latestRN" 87
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick" 
+		"translate" " -type \"double3\" 4.38553922149646436 4.96393731663056403 12.69553827257368184"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick" 
+		"rotate" " -type \"double3\" 0 89.99999999999998579 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick" 
+		"scale" " -type \"double3\" 0.48810789511198549 0.48810789511198549 0.48810789511198549"
+		
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[80]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[81]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[82]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[83]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape1.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[84]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[85]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[86]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[87]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[88]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape2.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[89]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[90]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[91]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[92]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[93]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape4.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[94]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[95]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[96]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[97]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[98]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder5|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape5.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[99]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[100]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[101]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[102]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[103]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder6|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape6.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[104]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[105]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[106]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[107]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[108]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder7|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape7.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[109]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[110]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[111]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[112]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[113]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder8|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape8.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[114]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick1|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[115]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick2|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[116]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick3|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[117]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:SausageOnAStick4|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[118]" ":initialShadingGroup.dsm"
+		
+		5 3 "roll_and_sausage_platter_latestRN" "|Foods|roll_and_sausage_platter_latest:RollnSasuage|roll_and_sausage_platter_latest:Sausage|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:SausageOnAStick|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinder9|roll_and_sausage_platter_latest:sausage_on_a_stick_latest:Cucumber_v1_latest_pCylinderShape9.instObjGroups" 
+		"roll_and_sausage_platter_latestRN.placeHolderList[119]" ":initialShadingGroup.dsm";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "octopus_platter_latestRN";
+	rename -uid "95192779-4CC2-76B7-1501-7F803F9EF21D";
+	setAttr -s 133 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".phl[66]" 0;
+	setAttr ".phl[67]" 0;
+	setAttr ".phl[68]" 0;
+	setAttr ".phl[69]" 0;
+	setAttr ".phl[70]" 0;
+	setAttr ".phl[71]" 0;
+	setAttr ".phl[72]" 0;
+	setAttr ".phl[73]" 0;
+	setAttr ".phl[74]" 0;
+	setAttr ".phl[75]" 0;
+	setAttr ".phl[76]" 0;
+	setAttr ".phl[77]" 0;
+	setAttr ".phl[78]" 0;
+	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".phl[84]" 0;
+	setAttr ".phl[85]" 0;
+	setAttr ".phl[86]" 0;
+	setAttr ".phl[87]" 0;
+	setAttr ".phl[88]" 0;
+	setAttr ".phl[89]" 0;
+	setAttr ".phl[90]" 0;
+	setAttr ".phl[91]" 0;
+	setAttr ".phl[92]" 0;
+	setAttr ".phl[93]" 0;
+	setAttr ".phl[94]" 0;
+	setAttr ".phl[95]" 0;
+	setAttr ".phl[96]" 0;
+	setAttr ".phl[97]" 0;
+	setAttr ".phl[98]" 0;
+	setAttr ".phl[99]" 0;
+	setAttr ".phl[100]" 0;
+	setAttr ".phl[101]" 0;
+	setAttr ".phl[102]" 0;
+	setAttr ".phl[103]" 0;
+	setAttr ".phl[104]" 0;
+	setAttr ".phl[105]" 0;
+	setAttr ".phl[106]" 0;
+	setAttr ".phl[107]" 0;
+	setAttr ".phl[108]" 0;
+	setAttr ".phl[109]" 0;
+	setAttr ".phl[110]" 0;
+	setAttr ".phl[111]" 0;
+	setAttr ".phl[112]" 0;
+	setAttr ".phl[113]" 0;
+	setAttr ".phl[114]" 0;
+	setAttr ".phl[115]" 0;
+	setAttr ".phl[116]" 0;
+	setAttr ".phl[117]" 0;
+	setAttr ".phl[118]" 0;
+	setAttr ".phl[119]" 0;
+	setAttr ".phl[120]" 0;
+	setAttr ".phl[121]" 0;
+	setAttr ".phl[122]" 0;
+	setAttr ".phl[123]" 0;
+	setAttr ".phl[124]" 0;
+	setAttr ".phl[125]" 0;
+	setAttr ".phl[126]" 0;
+	setAttr ".phl[127]" 0;
+	setAttr ".phl[128]" 0;
+	setAttr ".phl[129]" 0;
+	setAttr ".phl[130]" 0;
+	setAttr ".phl[131]" 0;
+	setAttr ".phl[132]" 0;
+	setAttr ".phl[133]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"octopus_platter_latestRN"
+		"octopus_platter_latest:octopus_on_a_stick_latestRN" 0
+		"octopus_platter_latestRN" 0
+		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latestRN" 0
+		"octopus_platter_latest:platter_latestRN" 0
+		"octopus_platter_latest:octopus_on_a_stick_latestRN" 219
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick" 
+		"translate" " -type \"double3\" 1.4527203958600412 5.66167833734489268 19.28882339414109737"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick" 
+		"rotate" " -type \"double3\" 0 -89.99999999999998579 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick" 
+		"scale" " -type \"double3\" 0.68704615595420215 0.68704615595420215 0.68704615595420215"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape" 
+		"instObjGroups" " -s 5"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape" 
+		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape" 
+		"instObjGroups" " -s 5"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape" 
+		"instObjGroups.objectGroups" " -s 3"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape" 
+		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape" 
+		"instObjGroups" " -s 5"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape" 
+		"instObjGroups.objectGroups" " -s 3"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape" 
+		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape" 
+		"instObjGroups" " -s 5"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape" 
+		"instObjGroups.objectGroups" " -s 3"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape" 
+		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape" 
+		"instObjGroups" " -s 5"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape" 
+		"instObjGroups.objectGroups" " -s 4"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape" 
+		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:1337]\""
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape" 
+		"instObjGroups" " -s 5"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape" 
+		"instObjGroups.objectGroups" " -s 2"
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId46.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId45.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId44.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId43.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[3]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:octopus_on_a_stick_latest:groupId21.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId34.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId33.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId32.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId31.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:octopus_on_a_stick_latest:groupId36.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.worldMatrix" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:polyCylProj2.manipMatrix" ""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId42.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId41.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId40.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId39.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:octopus_on_a_stick_latest:groupId16.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.worldMatrix" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:polySphProj1.manipMatrix" ""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId50.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId49.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId48.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId47.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:octopus_on_a_stick_latest:groupId26.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.worldMatrix" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:polyCylProj1.manipMatrix" ""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId54.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId53.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId52.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId51.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:octopus_on_a_stick_latest:groupId37.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId38.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId37.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId36.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:groupId35.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "octopus_platter_latest:octopus_on_a_stick_latest:groupId11.groupId" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		""
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.worldMatrix" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:polyAutoProj1.manipMatrix" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[6]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId34.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[7]" "octopus_platter_latestRN.placeHolderList[8]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[9]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[10]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId33.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[11]" "octopus_platter_latestRN.placeHolderList[12]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[13]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[14]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId32.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[15]" "octopus_platter_latestRN.placeHolderList[16]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[17]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[18]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId31.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[19]" "octopus_platter_latestRN.placeHolderList[20]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[21]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3]" 
+		"octopus_platter_latestRN.placeHolderList[22]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:groupId36.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[23]" "octopus_platter_latestRN.placeHolderList[24]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.iog.og[3].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder10Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[25]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[26]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId38.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[27]" "octopus_platter_latestRN.placeHolderList[28]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[29]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[30]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId37.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[31]" "octopus_platter_latestRN.placeHolderList[32]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[33]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[34]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId36.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[35]" "octopus_platter_latestRN.placeHolderList[36]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[37]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[38]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId35.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[39]" "octopus_platter_latestRN.placeHolderList[40]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[41]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3]" 
+		"octopus_platter_latestRN.placeHolderList[42]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:groupId11.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[43]" "octopus_platter_latestRN.placeHolderList[44]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.iog.og[3].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder11Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[45]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[46]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId42.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[47]" "octopus_platter_latestRN.placeHolderList[48]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[49]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[50]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId41.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[51]" "octopus_platter_latestRN.placeHolderList[52]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[53]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[54]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId40.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[55]" "octopus_platter_latestRN.placeHolderList[56]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[57]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[58]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId39.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[59]" "octopus_platter_latestRN.placeHolderList[60]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[61]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3]" 
+		"octopus_platter_latestRN.placeHolderList[62]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:groupId16.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[63]" "octopus_platter_latestRN.placeHolderList[64]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.iog.og[3].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder12Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[65]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[66]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId46.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[67]" "octopus_platter_latestRN.placeHolderList[68]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[69]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[70]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId45.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[71]" "octopus_platter_latestRN.placeHolderList[72]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[73]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[74]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId44.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[75]" "octopus_platter_latestRN.placeHolderList[76]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[77]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[78]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId43.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[79]" "octopus_platter_latestRN.placeHolderList[80]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[81]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[3]" 
+		"octopus_platter_latestRN.placeHolderList[82]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:groupId21.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[83]" "octopus_platter_latestRN.placeHolderList[84]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.iog.og[3].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder13Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[85]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[86]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId50.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[87]" "octopus_platter_latestRN.placeHolderList[88]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[89]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[90]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId49.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[91]" "octopus_platter_latestRN.placeHolderList[92]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[93]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[94]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId48.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[95]" "octopus_platter_latestRN.placeHolderList[96]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[97]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[98]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId47.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[99]" "octopus_platter_latestRN.placeHolderList[100]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[101]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3]" 
+		"octopus_platter_latestRN.placeHolderList[102]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:groupId26.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[103]" "octopus_platter_latestRN.placeHolderList[104]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.iog.og[3].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder14Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[105]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[106]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId54.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[107]" "octopus_platter_latestRN.placeHolderList[108]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[109]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[110]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId53.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[111]" "octopus_platter_latestRN.placeHolderList[112]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[113]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[114]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId52.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[115]" "octopus_platter_latestRN.placeHolderList[116]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[117]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0]" 
+		"octopus_platter_latestRN.placeHolderList[118]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:groupId51.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[119]" "octopus_platter_latestRN.placeHolderList[120]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.iog.og[0].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[121]" ""
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3]" 
+		"octopus_platter_latestRN.placeHolderList[122]" ":initialShadingGroup.dsm"
+		5 0 "octopus_platter_latestRN" "octopus_platter_latest:octopus_on_a_stick_latest:groupId37.groupId" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3].objectGroupId" 
+		"octopus_platter_latestRN.placeHolderList[123]" "octopus_platter_latestRN.placeHolderList[124]" 
+		"|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.iog.og[3].gid"
+		
+		5 4 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.instObjGroups.objectGroups[3].objectGrpColor" 
+		"octopus_platter_latestRN.placeHolderList[125]" ""
+		5 0 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.worldMatrix" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:polyCylProj1.manipMatrix" "octopus_platter_latestRN.placeHolderList[126]" 
+		"octopus_platter_latestRN.placeHolderList[127]" "octopus_platter_latest:octopus_on_a_stick_latest:polyCylProj1.mp"
+		
+		5 0 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.worldMatrix" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:polyCylProj2.manipMatrix" "octopus_platter_latestRN.placeHolderList[128]" 
+		"octopus_platter_latestRN.placeHolderList[129]" "octopus_platter_latest:octopus_on_a_stick_latest:polyCylProj1.mp"
+		
+		5 0 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.worldMatrix" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:polySphProj1.manipMatrix" "octopus_platter_latestRN.placeHolderList[130]" 
+		"octopus_platter_latestRN.placeHolderList[131]" "octopus_platter_latest:octopus_on_a_stick_latest:polyCylProj1.mp"
+		
+		5 0 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:octopus_on_a_stick_latest:Octopus_on_a_stick|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15|octopus_platter_latest:octopus_on_a_stick_latest:pCylinder15Shape.worldMatrix" 
+		"octopus_platter_latest:octopus_on_a_stick_latest:polyAutoProj1.manipMatrix" "octopus_platter_latestRN.placeHolderList[132]" 
+		"octopus_platter_latestRN.placeHolderList[133]" "octopus_platter_latest:octopus_on_a_stick_latest:polyCylProj1.mp"
+		
+		"octopus_platter_latestRN" 30
+		0 "|octopus_platter_latest:Octopus" "|Foods" "-s -r "
+		2 "|Foods|octopus_platter_latest:Octopus" "translate" " -type \"double3\" -0.038247669128039355 -0.10006563542694738 -6.12617330180080977"
+		
+		2 "|Foods|octopus_platter_latest:Octopus" "rotate" " -type \"double3\" 0 5.10101572587870322 0"
+		
+		2 "|Foods|octopus_platter_latest:Octopus" "scale" " -type \"double3\" 0.92939877992956577 0.92939877992956577 0.92939877992956577"
+		
+		2 "|Foods|octopus_platter_latest:Octopus" "rotatePivot" " -type \"double3\" 1.48998375601744026 5.48625848193899923 17.89777883045971052"
+		
+		2 "|Foods|octopus_platter_latest:Octopus" "scalePivot" " -type \"double3\" 1.48998375601744026 5.48625848193899923 17.89777883045971052"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5" 
+		"translate" " -type \"double3\" 1.54629263306614217 6.1383292528860256 18.49972742891526423"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5" 
+		"rotate" " -type \"double3\" 81.23320663743274395 85.93360812183989594 87.50754973824652438"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5" 
+		"scale" " -type \"double3\" 0.68704615595420204 0.68704615595420215 -0.68704615595420204"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4" 
+		"translate" " -type \"double3\" 1.44842136144987998 5.89102401231789496 17.29731151608831397"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4" 
+		"rotate" " -type \"double3\" 3.46772862589706943 90 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4" 
+		"scale" " -type \"double3\" 0.68704615595420215 0.68704615595420171 0.68704615595420171"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2" 
+		"translate" " -type \"double3\" 1.21520746521085665 5.71602372520430801 16.55011903602380841"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2" 
+		"rotate" " -type \"double3\" -41.89826802227559455 -75.57760854755831303 41.99025471338513427"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2" 
+		"scale" " -type \"double3\" 0.68704615595420215 0.68704615595420193 0.68704615595420204"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1" 
+		"translate" " -type \"double3\" 1.43759543385974631 5.65576405761279322 17.99071260763687263"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1" 
+		"rotate" " -type \"double3\" 159.78662057649424355 -80.72088825007639912 -158.6431229364967237"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1" 
+		"scale" " -type \"double3\" 0.68704615595420215 0.68704615595420204 0.68704615595420215"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1" 
+		"rotatePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1" 
+		"scalePivot" " -type \"double3\" 0 0 0"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"octopus_platter_latest:octopus_on_a_stick_latest:skewer_latestRN" 8
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick5|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_platter_latestRN.placeHolderList[2]" ":initialShadingGroup.dsm"
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick4|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_platter_latestRN.placeHolderList[3]" ":initialShadingGroup.dsm"
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick2|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_platter_latestRN.placeHolderList[4]" ":initialShadingGroup.dsm"
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:Octopus_on_a_stick1|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_Mesh|octopus_platter_latest:octopus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"octopus_platter_latestRN.placeHolderList[5]" ":initialShadingGroup.dsm"
+		"octopus_platter_latest:platter_latestRN" 10
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter" 
+		"rotatePivot" " -type \"double3\" 1.41556686547740695 5.48625848193899923 17.89777883045971052"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter" 
+		"scalePivot" " -type \"double3\" 1.41556686547740695 5.48625848193899923 17.89777883045971052"
+		
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter|octopus_platter_latest:platter_latest:PlatterShape" 
+		"pnts" " -s 574"
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter|octopus_platter_latest:platter_latest:PlatterShape" 
+		"pt[0:165]" (" -type \"float3\" 1.4155667999999999 5.5596684999999999 19.697933 2.499414 5.5596684999999999 17.897779 1.4155667999999999 5.5596684999999999 16.097624 0.33171975999999997 5.5596684999999999 17.897779 1.4155667999999999 5.5596684999999999 17.897779 0.33171975999999997 5.5596684999999999 19.24655 0.87358910000000001 5.5596684999999999 19.697933 0.60265451999999997 5.5596684999999999 19.637459 0.40431643 5.5596684999999999 19.472242 2.499414 5.5596684999999999 19.24655 2.42681740000000001 5.5596684999999999 19.472242 2.22847939999999989 5.5596684999999999 19.637459 1.98854229999999998 5.5596684999999999 19.691015 1.95754469999999992 5.5596684999999999 16.097624 2.22847939999999989 5.5596684999999999 16.158098 2.42681740000000001 5.5596684999999999 16.323317 2.499414 5.5596684999999999 16.549007 0.33171975999999997 5.5596684999999999 16.549007 0.40431643 5.5596684999999999 16.323317 0.60265451999999997 5.5596684999999999 16.158098 0.87358910000000001 5.5596684999999999 16.097624 1.4155667999999999 5.41284849999999"
+		+ "995 17.897779 1.4155667999999999 5.41284849999999995 19.235479 0.90855145000000004 5.41284849999999995 19.235477 0.89905970999999996 5.41284849999999995 17.897779 1.94425179999999997 5.41284849999999995 17.897779 1.94425179999999997 5.41284849999999995 19.235477 0.65492134999999996 5.41284849999999995 19.235477 0.65492094000000001 5.41284849999999995 17.897779 2.17621330000000013 5.41284849999999995 19.235477 2.17621330000000013 5.41284849999999995 17.897779 2.17621280000000006 5.41284849999999995 16.560081 1.94425150000000002 5.41284849999999995 16.56008 1.4155667999999999 5.41284849999999995 16.56008 0.88956714000000003 5.41284849999999995 16.56008 0.65492094000000001 5.41284849999999995 16.560081 0.30048787999999998 5.15070340000000026 19.335146 0.30048787999999998 5.15070340000000026 17.897779 0.37100184000000003 5.15070340000000026 19.54277 0.55260914999999999 5.15070340000000026 19.686052 0.81577080000000002 5.15070340000000026 19.741684 1.4155667999999999 5.15070340000000026 19.741684 2.530646099999999"
+		+ "79 5.15070340000000026 17.897779 2.53064609999999979 5.15070340000000026 19.335146 2.01536269999999984 5.15070340000000026 19.741684 2.27852439999999978 5.15070340000000026 19.686052 2.46013210000000004 5.15070340000000026 19.54277 1.4155667999999999 5.15070340000000026 16.053875 2.01536269999999984 5.15070340000000026 16.053875 2.53064609999999979 5.15070340000000026 16.460411 2.46013210000000004 5.15070340000000026 16.252787 2.27852439999999978 5.15070340000000026 16.109505 0.30048787999999998 5.15070340000000026 16.460411 0.81577080000000002 5.15070340000000026 16.053875 0.55260914999999999 5.15070340000000026 16.109505 0.37100184000000003 5.15070340000000026 16.252787 0.30048787999999998 5.06748629999999967 19.335146 0.30048787999999998 5.06748629999999967 17.897779 0.37100184000000003 5.06748629999999967 19.54277 0.55260914999999999 5.06748629999999967 19.686052 0.81577080000000002 5.06748629999999967 19.741684 1.4155667999999999 5.06748629999999967 19.741684 2.53064609999999979 5.06748629999999967 17.89"
+		+ "7779 2.53064609999999979 5.06748629999999967 19.335146 2.01536269999999984 5.06748629999999967 19.741684 2.27852439999999978 5.06748629999999967 19.686052 2.46013210000000004 5.06748629999999967 19.54277 1.4155667999999999 5.06748629999999967 16.053875 2.01536269999999984 5.06748629999999967 16.053875 2.53064609999999979 5.06748629999999967 16.460411 2.46013210000000004 5.06748629999999967 16.252787 2.27852439999999978 5.06748629999999967 16.109505 0.30048787999999998 5.06748629999999967 16.460411 0.81577080000000002 5.06748629999999967 16.053875 0.55260914999999999 5.06748629999999967 16.109505 0.37100184000000003 5.06748629999999967 16.252787 0.27642643 5.19302889999999984 17.897779 0.27128672999999998 5.15851639999999989 17.897779 0.25776528999999998 5.13674549999999996 17.897779 0.27642643 5.19434739999999984 19.317303 0.27151619999999999 5.15913719999999998 19.319729 0.25872481000000003 5.13746309999999973 19.326048 0.35266447000000001 5.1936555000000002 19.554316 0.34824656999999998 5.15907669999999996 "
+		+ "19.557043 0.33673805000000001 5.13793659999999974 19.564154 0.56078470000000002 5.19364880000000007 19.727682 0.55697715000000003 5.15877579999999991 19.730913 0.54700588999999999 5.13696860000000033 19.739374 0.84530817999999996 5.19392779999999998 19.791189 0.84255933999999999 5.15846159999999987 19.794807 0.83529425000000002 5.13574169999999963 19.804369 1.4155667999999999 5.19189450000000008 19.791189 1.4155667999999999 5.15738249999999976 19.795177 1.4155667999999999 5.13406179999999956 19.805849 2.55470730000000001 5.19434739999999984 19.317303 2.55944059999999984 5.15926979999999968 19.319641 2.57177020000000001 5.13794090000000025 19.325731 2.55470730000000001 5.19302889999999984 17.897779 2.55984709999999982 5.15851639999999989 17.897779 2.57336849999999995 5.13674549999999996 17.897779 2.03510359999999979 5.19387910000000019 19.78019 2.036732 5.15845440000000011 19.784094 2.037852 5.13569549999999975 19.795128 2.270349 5.19364880000000007 19.727682 2.27415659999999997 5.15877579999999991 19.730913 2"
+		+ ".28412769999999998 5.13696860000000033 19.739374 2.47846939999999982 5.1936555000000002 19.554316 2.482887 5.15907669999999996 19.557043 2.4943957000000001 5.13793659999999974 19.564154 1.98582550000000002 5.19392779999999998 16.004368 1.98857449999999991 5.15846159999999987 16.00075 1.99583939999999993 5.13574169999999963 15.991188 1.4155667999999999 5.19189450000000008 16.004368 1.4155667999999999 5.15738249999999976 16.00038 1.4155667999999999 5.13406179999999956 15.989708 2.55470730000000001 5.19434739999999984 16.478252 2.55961730000000021 5.15913719999999998 16.475828 2.57240890000000011 5.13746309999999973 16.469511 2.47846939999999982 5.1936555000000002 16.241243 2.482887 5.15907669999999996 16.238514 2.4943957000000001 5.13793659999999974 16.231405 2.270349 5.19364880000000007 16.067875 2.27415659999999997 5.15877579999999991 16.064646 2.28412769999999998 5.13696860000000033 16.056183 0.27642643 5.19434739999999984 16.478252 0.27169323000000001 5.15926979999999968 16.475916 0.25936376999999999 5.1379"
+		+ "4090000000025 16.469826 0.84530817999999996 5.19392779999999998 16.004368 0.84251118000000003 5.15839 16.000687 0.83511882999999998 5.13547949999999975 15.990957 0.56078470000000002 5.19364880000000007 16.067875 0.55697715000000003 5.15877579999999991 16.064646 0.54700588999999999 5.13696860000000033 16.056183 0.35266447000000001 5.1936555000000002 16.241243 0.34824656999999998 5.15907669999999996 16.238514 0.33673805000000001 5.13793659999999974 16.231405 1.4155667999999999 5.5596684999999999 19.24655 1.98470809999999998 5.5596684999999999 19.24655 1.97307290000000002 5.5596684999999999 17.897779 0.87358910000000001 5.5596684999999999 19.24655 0.87358910000000001 5.5596684999999999 17.897779 0.87358910000000001 5.5596684999999999 16.549007 1.4155667999999999 5.5596684999999999 16.549006 1.96143829999999997 5.5596684999999999 16.549007 1.95949130000000005 5.5596684999999999 16.323317 1.4155667999999999 5.5596684999999999 16.323317 0.87358910000000001 5.5596684999999999 16.323317 0.87358910000000001 5.55966849"
+		+ "99999999 19.472242 1.4155667999999999 5.5596684999999999 19.472242 1.9866549 5.5596684999999999 19.472242 0.38310724000000002 5.41284849999999995 17.897779 0.36048722 5.39861009999999997 17.897779 0.34506458000000001 5.360425 17.897779 0.38204568999999999 5.41284849999999995 19.260338 0.36041081000000003 5.39964910000000042 19.266129 0.34586476999999999 5.36418909999999993 19.276657 0.44523013 5.41284849999999995 19.449469 0.42681867000000001 5.40173340000000035 19.461117 0.41483951000000002 5.37087059999999994 19.473736 0.60802149999999999 5.41284849999999995 19.578102 0.59726477 5.40268709999999963 19.595308 0.58932209000000002 5.37389039999999962 19.609974 0.84885871000000002 5.41284849999999995 19.628761 0.84539836999999995 5.40272760000000041 19.647678 0.84130870999999996 5.37407210000000024 19.663176 2.44705489999999992 5.41284849999999995 19.260101"
+		)
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter|octopus_platter_latest:platter_latest:PlatterShape" 
+		"pt[166:331]" (" 2.47016979999999986 5.39964439999999968 19.266068 2.48526910000000001 5.36418909999999993 19.276657 2.44802670000000022 5.41284849999999995 17.897779 2.4706465999999998 5.39861009999999997 17.897779 2.4860692000000002 5.360425 17.897779 1.4155667999999999 5.41284849999999995 19.628927 1.4155667999999999 5.402575 19.647772 1.4155667999999999 5.37352279999999993 19.663368 1.982312 5.41284849999999995 19.629007 1.985745 5.40272760000000041 19.647743 1.989825 5.37407210000000024 19.663176 2.22284889999999979 5.41284849999999995 19.577703 2.2338003999999998 5.40268749999999986 19.595205 2.2418117999999998 5.37389039999999962 19.609974 2.38365939999999998 5.41284849999999995 19.448338 2.40372129999999995 5.4017343999999996 19.460817 2.41629460000000007 5.37087059999999994 19.473736 1.982275 5.41284849999999995 16.166796 1.98573529999999998 5.40272760000000041 16.147879 1.989825 5.37407210000000024 16.132383 1.4155667999999999 5.41284849999999995 16.16663 1.4155667999999999 5.402575 16.147787 1.4155667999999999 5.3"
+		+ "7352279999999993 16.132189 2.44908789999999987 5.41284849999999995 16.535221 2.47072290000000017 5.39964910000000042 16.529428 2.48526910000000001 5.36418909999999993 16.518902 2.38590340000000012 5.41284849999999995 16.34609 2.4043152000000001 5.40173340000000035 16.334442 2.41629460000000007 5.37087059999999994 16.321823 2.22311209999999981 5.41284849999999995 16.217457 2.23386910000000016 5.40268709999999963 16.200251 2.2418117999999998 5.37389039999999962 16.185583 0.38407891999999999 5.41284849999999995 16.535454 0.36096388000000001 5.39964439999999968 16.529491 0.34586476999999999 5.36418909999999993 16.518902 0.84882188000000003 5.41284849999999995 16.16655 0.84538871000000004 5.40272760000000041 16.147816 0.84130870999999996 5.37407210000000024 16.132383 0.60828470999999995 5.41284849999999995 16.217854 0.59733343000000005 5.40268749999999986 16.200354 0.58932209000000002 5.37389039999999962 16.185583 0.44747448000000001 5.41284849999999995 16.347221 0.42741245 5.4017343999999996 16.33474 0.4148395100"
+		+ "0000002 5.37087059999999994 16.321823 0.16516971999999999 5.05107260000000036 17.897779 0.1671629 5.06445650000000036 17.897779 0.17240654999999999 5.07289929999999956 17.897779 0.16516971999999999 5.05054379999999981 19.372259 0.16699958000000001 5.0641550999999998 19.371355 0.17176616 5.07242010000000043 19.369001 0.24885356 5.05084510000000009 19.618446 0.25056803 5.06424469999999971 19.617386 0.25503432999999998 5.07244109999999981 19.614628 0.47730046999999998 5.05079839999999969 19.798527 0.47877758999999998 5.06434729999999966 19.797272 0.48264539000000001 5.07281449999999978 19.793991 0.78961252999999998 5.05100489999999969 19.864492 0.79073817000000002 5.06464430000000032 19.86301 0.79371332999999999 5.07361359999999983 19.859095 1.4155667999999999 5.05151220000000034 19.864492 1.4155667999999999 5.06489610000000035 19.862946 1.4155667999999999 5.07394030000000029 19.858807 2.66596410000000006 5.05054379999999981 19.372259 2.66406350000000014 5.064208 19.371319 2.65911220000000004 5.07261130000000016"
+		+ " 19.368876 2.66596410000000006 5.05107260000000036 17.897779 2.66397089999999981 5.06445650000000036 17.897779 2.65872719999999996 5.07289929999999956 17.897779 2.04152129999999987 5.05123570000000033 19.864492 2.04143480000000022 5.06463769999999958 19.862858 2.04120590000000002 5.07334569999999996 19.858534 2.35383319999999996 5.05079839999999969 19.798527 2.35235620000000001 5.06434729999999966 19.797272 2.34848830000000008 5.07281449999999978 19.793991 2.58228020000000003 5.05084510000000009 19.618446 2.58056589999999986 5.06424469999999971 19.617386 2.57609939999999993 5.07244109999999981 19.614628 2.04152129999999987 5.05100489999999969 15.931067 2.04039569999999992 5.06464430000000032 15.932547 2.03742029999999996 5.07361359999999983 15.936462 1.4155667999999999 5.05151220000000034 15.931067 1.4155667999999999 5.06489610000000035 15.932611 1.4155667999999999 5.07394030000000029 15.936749 2.66596410000000006 5.05054379999999981 16.423298 2.664134 5.0641550999999998 16.424202 2.65936759999999994 5.072420"
+		+ "10000000043 16.426558 2.58228020000000003 5.05084510000000009 16.177111 2.58056589999999986 5.06424469999999971 16.178169 2.57609939999999993 5.07244109999999981 16.180931 2.35383319999999996 5.05079839999999969 15.997031 2.35235620000000001 5.06434729999999966 15.998285 2.34848830000000008 5.07281449999999978 16.001568 0.16516971999999999 5.05054379999999981 16.423298 0.16707026999999999 5.064208 16.424238 0.17202139 5.07261130000000016 16.426682 0.78961252999999998 5.05100489999999969 15.931067 0.79070014 5.06458709999999979 15.932498 0.79357456999999998 5.07340619999999998 15.936281 0.47730046999999998 5.05079839999999969 15.997031 0.47877758999999998 5.06434729999999966 15.998285 0.48264539000000001 5.07281449999999978 16.001568 0.24885356 5.05084510000000009 16.177111 0.25056803 5.06424469999999971 16.178169 0.25503432999999998 5.07244109999999981 16.180931 0.16516971999999999 4.89711859999999977 17.897779 0.16775882 4.88373469999999976 17.897779 0.17400943999999999 4.878191 17.897779 0.17400943999999999"
+		+ " 4.878191 19.371235 0.16775882 4.88373469999999976 19.37196 0.16516971999999999 4.89711859999999977 19.372259 0.25669621999999997 4.878191 19.614491 0.25115084999999998 4.88373469999999976 19.617287 0.24885356 4.89711859999999977 19.618446 0.48170435 4.878191 19.791859 0.47859036999999999 4.88373469999999976 19.796574 0.47730046999999998 4.89711859999999977 19.798527 0.79071581000000002 4.878191 19.857128 0.78993564999999999 4.88373469999999976 19.862335 0.78961252999999998 4.89711859999999977 19.864492 1.4155667999999999 4.878191 19.857128 1.4155667999999999 4.88373469999999976 19.862335 1.4155667999999999 4.89711859999999977 19.864492 2.66596410000000006 4.89711859999999977 19.372259 2.66337489999999999 4.88373469999999976 19.37196 2.65712429999999999 4.878191 19.371235 2.65712429999999999 4.878191 17.897779 2.66337489999999999 4.88373469999999976 17.897779 2.66596410000000006 4.89711859999999977 17.897779 2.04041790000000001 4.878191 19.857128 2.04119830000000002 4.88373469999999976 19.862335 2.04152129999"
+		+ "999987 4.89711859999999977 19.864492 2.34942960000000012 4.878191 19.791859 2.35254340000000006 4.88373469999999976 19.796574 2.35383319999999996 4.89711859999999977 19.798527 2.57443759999999999 4.878191 19.614491 2.5799827999999998 4.88373469999999976 19.617287 2.58228020000000003 4.89711859999999977 19.618446 2.04152129999999987 4.89711859999999977 15.931067 2.04119830000000002 4.88373469999999976 15.933224 2.04041790000000001 4.878191 15.93843 1.4155667999999999 4.878191 15.93843 1.4155667999999999 4.88373469999999976 15.933224 1.4155667999999999 4.89711859999999977 15.931067 2.65712429999999999 4.878191 16.42432 2.66337489999999999 4.88373469999999976 16.423597 2.66596410000000006 4.89711859999999977 16.423298 2.57443759999999999 4.878191 16.181068 2.5799827999999998 4.88373469999999976 16.17827 2.58228020000000003 4.89711859999999977 16.177111 2.34942960000000012 4.878191 16.003698 2.35254340000000006 4.88373469999999976 15.998985 2.35383319999999996 4.89711859999999977 15.997031 0.16516971999999999 4.8"
+		+ "9711859999999977 16.423298 0.16775882 4.88373469999999976 16.423597 0.17400943999999999 4.878191 16.42432 0.79071581000000002 4.878191 15.93843 0.78993564999999999 4.88373469999999976 15.933224 0.78961252999999998 4.89711859999999977 15.931067 0.48170435 4.878191 16.003698 0.47859036999999999 4.88373469999999976 15.998985 0.47730046999999998 4.89711859999999977 15.997031 0.25669621999999997 4.878191 16.181068 0.25115084999999998 4.88373469999999976 16.17827 0.24885356 4.89711859999999977 16.177111 0.30048787999999998 4.9160465999999996 19.335146 0.29530978000000002 4.88927840000000025 19.335745"
+		)
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter|octopus_platter_latest:platter_latest:PlatterShape" 
+		"pt[332:497]" (" 0.28280854 4.878191 19.337189 0.30048787999999998 4.9160465999999996 17.897779 0.29530978000000002 4.88927840000000025 17.897779 0.28280854 4.878191 17.897779 0.37100184000000003 4.9160465999999996 19.54277 0.36640697999999999 4.88927840000000025 19.545086 0.35531395999999998 4.878191 19.550678 0.55260914999999999 4.9160465999999996 19.686052 0.55002797000000003 4.88927840000000025 19.689957 0.54379593999999998 4.878191 19.699383 0.81577080000000002 4.9160465999999996 19.741684 0.81512397999999997 4.88927840000000025 19.745998 0.81356251000000002 4.878191 19.756413 1.4155667999999999 4.9160465999999996 19.741684 1.4155667999999999 4.88927840000000025 19.745998 1.4155667999999999 4.878191 19.756413 2.53064609999999979 4.9160465999999996 17.897779 2.53582479999999988 4.88927840000000025 17.897779 2.5483258000000002 4.878191 17.897779 2.53064609999999979 4.9160465999999996 19.335146 2.53582479999999988 4.88927840000000025 19.335745 2.5483258000000002 4.878191 19.337189 2.01536269999999984 4.9160465999999996 19."
+		+ "741684 2.01600979999999996 4.88927840000000025 19.745998 2.01757140000000001 4.878191 19.756413 2.27852439999999978 4.9160465999999996 19.686052 2.28110549999999979 4.88927840000000025 19.689957 2.28733779999999998 4.878191 19.699383 2.46013210000000004 4.9160465999999996 19.54277 2.46472639999999998 4.88927840000000025 19.545086 2.4758195999999999 4.878191 19.550678 1.4155667999999999 4.9160465999999996 16.053875 1.4155667999999999 4.88927840000000025 16.049559 1.4155667999999999 4.878191 16.039145 2.01536269999999984 4.9160465999999996 16.053875 2.01600979999999996 4.88927840000000025 16.049559 2.01757140000000001 4.878191 16.039145 2.53064609999999979 4.9160465999999996 16.460411 2.53582479999999988 4.88927840000000025 16.459812 2.5483258000000002 4.878191 16.458366 2.46013210000000004 4.9160465999999996 16.252787 2.46472639999999998 4.88927840000000025 16.250471 2.4758195999999999 4.878191 16.244879 2.27852439999999978 4.9160465999999996 16.109505 2.28110549999999979 4.88927840000000025 16.1056 2.28733779"
+		+ "999999998 4.878191 16.096174 0.30048787999999998 4.9160465999999996 16.460411 0.29530978000000002 4.88927840000000025 16.459812 0.28280854 4.878191 16.458366 0.81577080000000002 4.9160465999999996 16.053875 0.81512397999999997 4.88927840000000025 16.049559 0.81356251000000002 4.878191 16.039145 0.55260914999999999 4.9160465999999996 16.109505 0.55002797000000003 4.88927840000000025 16.1056 0.54379593999999998 4.878191 16.096174 0.37100184000000003 4.9160465999999996 16.252787 0.36640697999999999 4.88927840000000025 16.250471 0.35531395999999998 4.878191 16.244879 1.4155667999999999 5.44178720000000027 19.696844 1.4155667999999999 5.415329 19.69883 1.4155667999999999 5.393383 19.704912 1.993554 5.44204139999999992 19.68877 1.995404 5.415442 19.690487 1.99835180000000001 5.39354129999999987 19.696323 2.49808789999999981 5.44012259999999959 17.897779 2.49943420000000005 5.4137177000000003 17.897779 2.50396349999999979 5.388989 17.897779 2.49809789999999987 5.44103910000000024 16.549152 2.49939229999999979 5.4143"
+		+ "2809999999964 16.547277 2.50364830000000005 5.39034179999999985 16.54188 1.4155667999999999 5.44178720000000027 16.098713 1.4155667999999999 5.415329 16.096727 1.4155667999999999 5.393383 16.090645 0.87376094000000004 5.44199129999999975 16.098711 0.87313746999999997 5.41546440000000029 16.096735 0.87130784999999999 5.39367440000000009 16.090693 0.33304590000000001 5.44012259999999959 17.897779 0.33169955000000001 5.4137177000000003 17.897779 0.32717025 5.388989 17.897779 0.33303582999999998 5.44103910000000024 19.246405 0.33174133 5.41432809999999964 19.248281 0.32748532000000002 5.39034179999999985 19.253677 0.87376094000000004 5.44199129999999975 19.696846 0.87313746999999997 5.41546440000000029 19.698822 0.87130784999999999 5.39367440000000009 19.704865 2.49809789999999987 5.44103910000000024 19.246405 2.49939229999999979 5.41432809999999964 19.248281 2.50364830000000005 5.39034179999999985 19.253677 1.95737270000000008 5.44199129999999975 16.098711 1.95799619999999996 5.41546440000000029 16.096735 1.9598"
+		+ "2590000000001 5.39367440000000009 16.090693 0.33303582999999998 5.44103910000000024 16.549152 0.33174133 5.41432809999999964 16.547277 0.32748532000000002 5.39034179999999985 16.54188 0.60332965999999999 5.44210290000000008 19.636486 0.60246836999999998 5.41547160000000005 19.638416 0.59974426000000003 5.39358710000000041 19.644278 0.40548474000000001 5.44220970000000026 19.47168 0.40441769 5.4152408000000003 19.473574 0.40087664000000001 5.39262680000000039 19.479176 2.42564920000000006 5.44220970000000026 19.47168 2.42671590000000004 5.4152408000000003 19.473574 2.43025709999999995 5.39262680000000039 19.479176 2.22780420000000001 5.44210290000000008 19.636486 2.22866540000000013 5.41547160000000005 19.638416 2.23138950000000014 5.39358710000000041 19.644278 2.22780420000000001 5.44210290000000008 16.159073 2.22866540000000013 5.41547160000000005 16.157143 2.23138950000000014 5.39358710000000041 16.151279 2.42564920000000006 5.44220970000000026 16.323877 2.42671590000000004 5.4152408000000003 16.321983 2.43"
+		+ "025709999999995 5.39262680000000039 16.316383 0.40548474000000001 5.44220970000000026 16.323877 0.40441769 5.4152408000000003 16.321983 0.40087664000000001 5.39262680000000039 16.316383 0.60332965999999999 5.44210290000000008 16.159073 0.60246836999999998 5.41547160000000005 16.157143 0.59974426000000003 5.39358710000000041 16.151279 0.33190352000000001 5.54309130000000039 17.897779 0.33189343999999998 5.54400780000000015 16.549026 0.40446054999999997 5.54517840000000017 16.323385 0.60273838000000002 5.54507159999999999 16.158218 0.87361056000000004 5.54496050000000018 16.097761 1.4155667999999999 5.54475639999999981 16.097761 1.95752309999999996 5.54496050000000018 16.097761 2.22839549999999997 5.54507159999999999 16.158218 2.42667339999999987 5.54517840000000017 16.323385 2.49924040000000014 5.54400780000000015 16.549026 2.49923040000000007 5.54309130000000039 17.897779 2.49924040000000014 5.54400780000000015 19.246531 2.42667339999999987 5.54517840000000017 19.472172 2.22839549999999997 5.54507159999999999"
+		+ " 19.637339 1.98916720000000002 5.54500059999999984 19.690735 1.4155667999999999 5.54475639999999981 19.697796 0.87361056000000004 5.54496050000000018 19.697798 0.60273838000000002 5.54507159999999999 19.637339 0.40446054999999997 5.54517840000000017 19.472172 0.33189343999999998 5.54400780000000015 19.246531 1.4155667999999999 5.41284849999999995 17.286968 1.94425179999999997 5.41284849999999995 17.286968 2.176213 5.41284849999999995 17.286968 2.44850229999999991 5.41284849999999995 17.286968 2.47068069999999995 5.39907360000000036 17.286972 2.48571490000000006 5.36209250000000015 17.287029 2.53064609999999979 5.15070340000000026 17.286968 2.53064609999999979 5.06748629999999967 17.286968 2.53064609999999979 4.9160465999999996 17.286968 2.53582479999999988 4.88927840000000025 17.286968 2.5483258000000002 4.878191 17.286968 2.65712429999999999 4.878191 17.286968 2.66337489999999999 4.88373469999999976 17.286968 2.66596410000000006 4.89711859999999977 17.286968 2.66596410000000006 5.05085329999999999 17.28697 2"
+		+ ".66403869999999987 5.06433149999999976 17.286968 2.65899319999999983 5.07270049999999983 17.28697 2.572958 5.13705210000000001 17.286972 2.55974820000000003 5.158783 17.28697 2.55470730000000001 5.19359639999999967 17.286976 2.5038216000000002 5.38959790000000005 17.286976 2.49941520000000006 5.41399339999999984 17.28697 2.49809269999999994 5.44053749999999958 17.286972 2.49923470000000014 5.5435061000000001 17.286972 2.499414 5.5596684999999999 17.286968 1.96780460000000001 5.5596684999999999 17.287031 1.4155667999999999 5.5596684999999999 17.286968 0.87358910000000001 5.5596684999999999 17.286968"
+		)
+		2 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter|octopus_platter_latest:platter_latest:PlatterShape" 
+		"pt[498:573]" (" 0.33171975999999997 5.5596684999999999 17.286968 0.33189892999999998 5.5435061000000001 17.286972 0.33304130999999998 5.44053749999999958 17.286972 0.33171844 5.41399339999999984 17.28697 0.32731205000000002 5.38959790000000005 17.286976 0.27642643 5.19359639999999967 17.286976 0.27146136999999998 5.15884020000000021 17.286972 0.25844896000000001 5.13725710000000024 17.286976 0.17224658000000001 5.07277969999999989 17.286968 0.16712439000000001 5.06435350000000017 17.286968 0.16516971999999999 5.05085329999999999 17.28697 0.16516971999999999 4.89711859999999977 17.286968 0.16775882 4.88373469999999976 17.286968 0.17400943999999999 4.878191 17.286968 0.28280854 4.878191 17.286968 0.29530978000000002 4.88927840000000025 17.286968 0.30048787999999998 4.9160465999999996 17.286968 0.30048787999999998 5.06748629999999967 17.286968 0.30048787999999998 5.15070340000000026 17.286968 0.34541905000000001 5.36209250000000015 17.287029 0.36069994999999999 5.39907170000000036 17.286972 0.38354294999999999 5.41284849999999"
+		+ "995 17.286968 0.65492094000000001 5.41284849999999995 17.286968 0.89472556000000003 5.41284849999999995 17.28701 1.4155667999999999 5.41284849999999995 18.507502 1.94425179999999997 5.41284849999999995 18.507502 2.17621330000000013 5.41284849999999995 18.507502 2.4475918000000001 5.41284849999999995 18.507504 2.47043420000000014 5.39907070000000022 18.507496 2.48571540000000013 5.36208919999999978 18.507442 2.53064609999999979 5.15070340000000026 18.507502 2.53064609999999979 5.06748629999999967 18.507502 2.53064609999999979 4.9160465999999996 18.507502 2.53582479999999988 4.88927840000000025 18.507502 2.5483258000000002 4.878191 18.507502 2.65712429999999999 4.878191 18.507502 2.66337489999999999 4.88373469999999976 18.507502 2.66596410000000006 4.89711859999999977 18.507502 2.66596410000000006 5.05085419999999985 18.507502 2.66400930000000002 5.06435390000000041 18.507502 2.65888690000000016 5.07278010000000013 18.507504 2.57268570000000008 5.1372561000000001 18.507494 2.55967279999999997 5.1588396999999997"
+		+ " 18.5075 2.55470730000000001 5.19359540000000042 18.507496 2.50382179999999988 5.38959689999999991 18.507494 2.49941520000000006 5.41399339999999984 18.5075 2.49809269999999994 5.440537 18.5075 2.49923470000000014 5.54350569999999987 18.5075 2.499414 5.5596684999999999 18.507502 1.9783322000000001 5.5596684999999999 18.507441 1.4155667999999999 5.5596684999999999 18.507502 0.87358910000000001 5.5596684999999999 18.507502 0.33171975999999997 5.5596684999999999 18.507502 0.33189892999999998 5.54350569999999987 18.5075 0.33304130999999998 5.440537 18.5075 0.33171844 5.41399339999999984 18.5075 0.32731192999999997 5.38959689999999991 18.507494 0.27642643 5.19359540000000042 18.507496 0.27138507000000001 5.158783 18.5075 0.25817501999999998 5.13705210000000001 18.5075 0.17214119 5.07270049999999983 18.507502 0.1670953 5.064332 18.507502 0.16516971999999999 5.05085419999999985 18.507502 0.16516971999999999 4.89711859999999977 18.507502 0.16775882 4.88373469999999976 18.507502 0.17400943999999999 4.878191 18.507502 "
+		+ "0.28280854 4.878191 18.507502 0.29530978000000002 4.88927840000000025 18.507502 0.30048787999999998 4.9160465999999996 18.507502 0.30048787999999998 5.06748629999999967 18.507502 0.30048787999999998 5.15070340000000026 18.507502 0.34541844999999999 5.36208919999999978 18.507442 0.36045318999999998 5.39907309999999985 18.507496 0.38263219999999998 5.41284849999999995 18.507502 0.65492110999999997 5.41284849999999995 18.507502 0.90338576000000004 5.41284849999999995 18.50746"
+		)
+		3 "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter|octopus_platter_latest:platter_latest:PlatterShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "octopus_platter_latestRN" "|Foods|octopus_platter_latest:Octopus|octopus_platter_latest:platter_latest:Platter|octopus_platter_latest:platter_latest:PlatterShape.instObjGroups" 
+		"octopus_platter_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode groupId -n "octopus_platter_latest:groupId55";
+	rename -uid "D01F05E6-4958-1F29-88E6-7FB042841DD2";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId56";
+	rename -uid "F7391A72-4202-6E75-85EE-25B0104A1A2A";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId57";
+	rename -uid "22DF9ED5-478B-6D06-5F35-E8911E87E863";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId58";
+	rename -uid "2EA6FF8C-42B7-07D4-9D7C-28BA8199E650";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId59";
+	rename -uid "A8BBFDF6-4987-D67E-80F5-679ECB1FB598";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId60";
+	rename -uid "A8469087-41CB-378A-0B6D-14B0F303E3F7";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId61";
+	rename -uid "FC8764FF-4EBD-A6AA-5205-B7B9C7780594";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId62";
+	rename -uid "E16E2716-485A-99F2-C73F-A2BDBB54D6C7";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId63";
+	rename -uid "A9181F9D-47E1-8E61-EAE8-06834B1C9612";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId64";
+	rename -uid "1074F834-46E5-E3E0-8B94-79AB90F18388";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId65";
+	rename -uid "6D6FD4B9-47E4-C443-B586-A28895E08211";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId66";
+	rename -uid "AA4D0298-4565-5A17-492E-9F9D5AF13BEC";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId67";
+	rename -uid "C0A0E117-4C84-9CC3-12E8-1DAA7B4120B4";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId68";
+	rename -uid "D3391099-4934-9F2E-5A05-E4AC6641F7FA";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId69";
+	rename -uid "7BD51AFD-4404-0FDC-EF2C-C7A54F6016B8";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId70";
+	rename -uid "FE638391-45AD-E970-5275-C1A0C1A951A7";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId71";
+	rename -uid "C4E3798F-4FDB-AA85-28F2-F5B32BDF559A";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId72";
+	rename -uid "301F3AA1-4FE8-6EBA-2D5E-1AAFC28EBCD4";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId73";
+	rename -uid "98365CAF-4CF4-E8F0-288B-BD9D33947ED0";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId74";
+	rename -uid "8D6B3467-4F60-B37A-09EA-1B96433EF2D0";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId75";
+	rename -uid "A024D3BC-494D-C0A1-379A-B8B57755828C";
+	setAttr ".ihi" 0;
+createNode groupParts -n "octopus_platter_latest:groupParts10";
+	rename -uid "0B1E8AD4-4087-7005-6C41-E6A48E48CE0F";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:1337]";
+createNode groupId -n "octopus_platter_latest:groupId76";
+	rename -uid "DCCC59F3-4FB0-5937-97D4-D29225D1B990";
+	setAttr ".ihi" 0;
+createNode groupParts -n "octopus_platter_latest:groupParts11";
+	rename -uid "2CEDAAF0-45D0-7A96-5910-77ABE8D9772C";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:1337]";
+createNode groupId -n "octopus_platter_latest:groupId77";
+	rename -uid "9B74A687-450B-8748-BCC1-53821968C72D";
+	setAttr ".ihi" 0;
+createNode groupParts -n "octopus_platter_latest:groupParts12";
+	rename -uid "350C65DE-420B-7AA7-F3AF-5089F072CC52";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:1337]";
+createNode groupId -n "octopus_platter_latest:groupId78";
+	rename -uid "27BE235E-422B-4AB6-8A12-EA8DA47B3B38";
+	setAttr ".ihi" 0;
+createNode groupParts -n "octopus_platter_latest:groupParts13";
+	rename -uid "9F1AACDA-4AC3-B9D3-555A-46A1CBBCF2DD";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:1337]";
+createNode transformGeometry -n "transformGeometry1";
+	rename -uid "C63595C4-440A-B1C2-F153-D6A75D516CAD";
+	setAttr ".txf" -type "matrix" -2.3571259406774319 0 -2.886646738437811e-16 0 0 2.566649453786702 0 0
+		 3.1432390381131869e-16 0 -2.566649453786702 0 4.3327663236380669 4.7043630387307305 18.05786414003974 1;
+createNode reference -n "strip_platter_latestRN";
+	rename -uid "69939A54-4820-C94D-0B88-CCA3834144E5";
+	setAttr -s 83 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".phl[66]" 0;
+	setAttr ".phl[67]" 0;
+	setAttr ".phl[68]" 0;
+	setAttr ".phl[69]" 0;
+	setAttr ".phl[70]" 0;
+	setAttr ".phl[71]" 0;
+	setAttr ".phl[72]" 0;
+	setAttr ".phl[73]" 0;
+	setAttr ".phl[74]" 0;
+	setAttr ".phl[75]" 0;
+	setAttr ".phl[76]" 0;
+	setAttr ".phl[77]" 0;
+	setAttr ".phl[78]" 0;
+	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"strip_platter_latestRN"
+		"strip_platter_latestRN" 0
+		"strip_platter_latest:platter_latestRN" 0
+		"strip_platter_latest:strip_on_a_stick_latestRN" 0
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latestRN" 0
+		"strip_platter_latestRN" 3
+		0 "|strip_platter_latest:Strips1" "|Foods" "-s -r "
+		2 "|Foods|strip_platter_latest:Strips1" "translate" " -type \"double3\" 2.06403396346692514 4.79075218205075704 10.29983150969042427"
+		
+		2 "|Foods|strip_platter_latest:Strips1" "scale" " -type \"double3\" 0.64915102583662854 0.64915102583662854 0.64915102583662854"
+		
+		"strip_platter_latest:strip_on_a_stick_latestRN" 84
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing30.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip1|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip2|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip3|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip4|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip5|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip6|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip7|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip8|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing31.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing27.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing16.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing8.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing19.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing21.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing11.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing25.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing4.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing34.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing29.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing32.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing20.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing9.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing15.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing14.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing7.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing24.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing13.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing28.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing17.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing10.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing23.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing22.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing12.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing5.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing26.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing2.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing6.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing18.manipMatrix" ""
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing33.manipMatrix" ""
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip1|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[9]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip2|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[10]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip3|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[11]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip4|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[12]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip5|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[13]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip6|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[14]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip7|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[15]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip8|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[16]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[17]" ":initialShadingGroup.dsm"
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing2.manipMatrix" "strip_platter_latestRN.placeHolderList[18]" 
+		"strip_platter_latestRN.placeHolderList[19]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.manipMatrix" "strip_platter_latestRN.placeHolderList[20]" 
+		"strip_platter_latestRN.placeHolderList[21]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing4.manipMatrix" "strip_platter_latestRN.placeHolderList[22]" 
+		"strip_platter_latestRN.placeHolderList[23]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing5.manipMatrix" "strip_platter_latestRN.placeHolderList[24]" 
+		"strip_platter_latestRN.placeHolderList[25]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing6.manipMatrix" "strip_platter_latestRN.placeHolderList[26]" 
+		"strip_platter_latestRN.placeHolderList[27]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing7.manipMatrix" "strip_platter_latestRN.placeHolderList[28]" 
+		"strip_platter_latestRN.placeHolderList[29]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing8.manipMatrix" "strip_platter_latestRN.placeHolderList[30]" 
+		"strip_platter_latestRN.placeHolderList[31]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing9.manipMatrix" "strip_platter_latestRN.placeHolderList[32]" 
+		"strip_platter_latestRN.placeHolderList[33]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing10.manipMatrix" "strip_platter_latestRN.placeHolderList[34]" 
+		"strip_platter_latestRN.placeHolderList[35]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing11.manipMatrix" "strip_platter_latestRN.placeHolderList[36]" 
+		"strip_platter_latestRN.placeHolderList[37]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing12.manipMatrix" "strip_platter_latestRN.placeHolderList[38]" 
+		"strip_platter_latestRN.placeHolderList[39]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing13.manipMatrix" "strip_platter_latestRN.placeHolderList[40]" 
+		"strip_platter_latestRN.placeHolderList[41]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing14.manipMatrix" "strip_platter_latestRN.placeHolderList[42]" 
+		"strip_platter_latestRN.placeHolderList[43]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing15.manipMatrix" "strip_platter_latestRN.placeHolderList[44]" 
+		"strip_platter_latestRN.placeHolderList[45]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing16.manipMatrix" "strip_platter_latestRN.placeHolderList[46]" 
+		"strip_platter_latestRN.placeHolderList[47]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing17.manipMatrix" "strip_platter_latestRN.placeHolderList[48]" 
+		"strip_platter_latestRN.placeHolderList[49]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing18.manipMatrix" "strip_platter_latestRN.placeHolderList[50]" 
+		"strip_platter_latestRN.placeHolderList[51]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing19.manipMatrix" "strip_platter_latestRN.placeHolderList[52]" 
+		"strip_platter_latestRN.placeHolderList[53]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing20.manipMatrix" "strip_platter_latestRN.placeHolderList[54]" 
+		"strip_platter_latestRN.placeHolderList[55]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing21.manipMatrix" "strip_platter_latestRN.placeHolderList[56]" 
+		"strip_platter_latestRN.placeHolderList[57]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing22.manipMatrix" "strip_platter_latestRN.placeHolderList[58]" 
+		"strip_platter_latestRN.placeHolderList[59]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing23.manipMatrix" "strip_platter_latestRN.placeHolderList[60]" 
+		"strip_platter_latestRN.placeHolderList[61]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing24.manipMatrix" "strip_platter_latestRN.placeHolderList[62]" 
+		"strip_platter_latestRN.placeHolderList[63]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing25.manipMatrix" "strip_platter_latestRN.placeHolderList[64]" 
+		"strip_platter_latestRN.placeHolderList[65]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing26.manipMatrix" "strip_platter_latestRN.placeHolderList[66]" 
+		"strip_platter_latestRN.placeHolderList[67]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing27.manipMatrix" "strip_platter_latestRN.placeHolderList[68]" 
+		"strip_platter_latestRN.placeHolderList[69]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing28.manipMatrix" "strip_platter_latestRN.placeHolderList[70]" 
+		"strip_platter_latestRN.placeHolderList[71]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing29.manipMatrix" "strip_platter_latestRN.placeHolderList[72]" 
+		"strip_platter_latestRN.placeHolderList[73]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing30.manipMatrix" "strip_platter_latestRN.placeHolderList[74]" 
+		"strip_platter_latestRN.placeHolderList[75]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing31.manipMatrix" "strip_platter_latestRN.placeHolderList[76]" 
+		"strip_platter_latestRN.placeHolderList[77]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing32.manipMatrix" "strip_platter_latestRN.placeHolderList[78]" 
+		"strip_platter_latestRN.placeHolderList[79]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing33.manipMatrix" "strip_platter_latestRN.placeHolderList[80]" 
+		"strip_platter_latestRN.placeHolderList[81]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		5 0 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:strip_on_a_stick_latest:Strip|strip_platter_latest:strip_on_a_stick_latest:pCube1|strip_platter_latest:strip_on_a_stick_latest:pCubeShape1.worldMatrix" 
+		"strip_platter_latest:strip_on_a_stick_latest:polySplitRing34.manipMatrix" "strip_platter_latestRN.placeHolderList[82]" 
+		"strip_platter_latestRN.placeHolderList[83]" "strip_platter_latest:strip_on_a_stick_latest:polySplitRing3.mp"
+		
+		"strip_platter_latest:strip_on_a_stick_latest:skewer_latestRN" 16
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip1|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip2|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip3|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip4|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip5|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip6|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip7|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip8|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip1|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip2|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[2]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip3|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[3]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:Strip4|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[4]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip5|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[5]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip6|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[6]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip7|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[7]" ":initialShadingGroup.dsm"
+		5 3 "strip_platter_latestRN" "|Foods|strip_platter_latest:Strips1|strip_platter_latest:Strips|strip_platter_latest:group1|strip_platter_latest:Strip8|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_Mesh|strip_platter_latest:strip_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"strip_platter_latestRN.placeHolderList[8]" ":initialShadingGroup.dsm";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode groupId -n "octopus_platter_latest:groupId79";
+	rename -uid "2B001C63-45C7-351B-62DD-EC83F6638ADB";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId80";
+	rename -uid "FF7BBF52-4C8B-A49F-E7B0-20A738D88B03";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId81";
+	rename -uid "63D2E7C8-4AFF-3130-745E-2D9C77F6C9F6";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId82";
+	rename -uid "078E73AC-40DA-AC0F-B8C1-47A049F089CB";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId83";
+	rename -uid "F57FE462-4FD5-05F2-606A-2CB0D8DACD3B";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId84";
+	rename -uid "4048BD5A-4DE5-25B6-F254-4A9F3D78BE5D";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId85";
+	rename -uid "323E335E-4431-4987-15C9-F3954DAD7C4C";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId86";
+	rename -uid "395A999B-4102-3BF8-23C6-F8829DD58E6F";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId87";
+	rename -uid "72FFB40B-4FCB-539B-6E88-859C53F53DAC";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId88";
+	rename -uid "E51396CA-4297-4D71-D490-D0BF92A61935";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId89";
+	rename -uid "7315B4F9-47C1-A6BF-3A18-A5BB0C4FBADF";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId90";
+	rename -uid "E9C8E951-4666-DF9E-6A0D-02A9297B7A57";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId91";
+	rename -uid "CD92F728-49C2-14C6-D708-A180958BBF6F";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId92";
+	rename -uid "4FD9CB34-4CF7-6AC9-FBFF-4790C5A4E608";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId93";
+	rename -uid "7CB66B59-4DB8-64DB-B0B6-B7AEFA706D27";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId94";
+	rename -uid "4BE323C4-4F01-98A1-084B-699CDC295238";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId95";
+	rename -uid "10BC10AF-481A-7A1C-F5EC-91B42EF874ED";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId96";
+	rename -uid "41C6AE8E-43EC-CDEB-11AA-DEB6FD0072CB";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId97";
+	rename -uid "ABC39EE4-4CAF-EA11-BCC7-C4A41DD56796";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId98";
+	rename -uid "2394D9A8-4208-FBF4-29BF-7BA883476ED4";
+	setAttr ".ihi" 0;
+createNode groupId -n "octopus_platter_latest:groupId99";
+	rename -uid "2410DEFD-44AC-6FBC-78D5-529F7DA84DFC";
+	setAttr ".ihi" 0;
+createNode groupParts -n "octopus_platter_latest:groupParts14";
+	rename -uid "58BB5CDE-46D2-57E4-E83E-5C85A88C531F";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:1337]";
+createNode groupId -n "octopus_platter_latest:groupId100";
+	rename -uid "2197573B-485C-BEB1-A3EB-498D32AF36E4";
+	setAttr ".ihi" 0;
+createNode groupParts -n "octopus_platter_latest:groupParts15";
+	rename -uid "0B6BFCD4-4FB9-3CEC-4CBA-71A3F81E9B4C";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:1337]";
+createNode groupId -n "octopus_platter_latest:groupId101";
+	rename -uid "D071AB08-427A-EA99-903B-EEB7A0359916";
+	setAttr ".ihi" 0;
+createNode groupParts -n "octopus_platter_latest:groupParts16";
+	rename -uid "692D9B34-4CB6-BCF2-0B67-C68135D8BBD8";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:1337]";
+createNode groupId -n "octopus_platter_latest:groupId102";
+	rename -uid "0279F69F-4155-2317-1760-B6862BDC17E2";
+	setAttr ".ihi" 0;
+createNode groupParts -n "octopus_platter_latest:groupParts17";
+	rename -uid "DA4B6C1D-46E0-A2FC-EE7D-F09A2CBE6194";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:1337]";
+createNode reference -n "lotus_belly_platter_latestRN";
+	rename -uid "0DB5BDAB-4CC5-9EEE-9D22-2BAE3BAC9C96";
+	setAttr -s 131 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".phl[66]" 0;
+	setAttr ".phl[67]" 0;
+	setAttr ".phl[68]" 0;
+	setAttr ".phl[69]" 0;
+	setAttr ".phl[70]" 0;
+	setAttr ".phl[71]" 0;
+	setAttr ".phl[72]" 0;
+	setAttr ".phl[73]" 0;
+	setAttr ".phl[74]" 0;
+	setAttr ".phl[75]" 0;
+	setAttr ".phl[76]" 0;
+	setAttr ".phl[77]" 0;
+	setAttr ".phl[78]" 0;
+	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".phl[84]" 0;
+	setAttr ".phl[85]" 0;
+	setAttr ".phl[86]" 0;
+	setAttr ".phl[87]" 0;
+	setAttr ".phl[88]" 0;
+	setAttr ".phl[89]" 0;
+	setAttr ".phl[90]" 0;
+	setAttr ".phl[91]" 0;
+	setAttr ".phl[92]" 0;
+	setAttr ".phl[93]" 0;
+	setAttr ".phl[94]" 0;
+	setAttr ".phl[95]" 0;
+	setAttr ".phl[96]" 0;
+	setAttr ".phl[97]" 0;
+	setAttr ".phl[98]" 0;
+	setAttr ".phl[99]" 0;
+	setAttr ".phl[100]" 0;
+	setAttr ".phl[101]" 0;
+	setAttr ".phl[102]" 0;
+	setAttr ".phl[103]" 0;
+	setAttr ".phl[104]" 0;
+	setAttr ".phl[105]" 0;
+	setAttr ".phl[106]" 0;
+	setAttr ".phl[107]" 0;
+	setAttr ".phl[108]" 0;
+	setAttr ".phl[109]" 0;
+	setAttr ".phl[110]" 0;
+	setAttr ".phl[111]" 0;
+	setAttr ".phl[112]" 0;
+	setAttr ".phl[113]" 0;
+	setAttr ".phl[114]" 0;
+	setAttr ".phl[115]" 0;
+	setAttr ".phl[116]" 0;
+	setAttr ".phl[117]" 0;
+	setAttr ".phl[118]" 0;
+	setAttr ".phl[119]" 0;
+	setAttr ".phl[120]" 0;
+	setAttr ".phl[121]" 0;
+	setAttr ".phl[122]" 0;
+	setAttr ".phl[123]" 0;
+	setAttr ".phl[124]" 0;
+	setAttr ".phl[125]" 0;
+	setAttr ".phl[126]" 0;
+	setAttr ".phl[127]" 0;
+	setAttr ".phl[128]" 0;
+	setAttr ".phl[129]" 0;
+	setAttr ".phl[130]" 0;
+	setAttr ".phl[131]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"lotus_belly_platter_latestRN"
+		"lotus_belly_platter_latest:lotus_on_a_stick_latestRN" 0
+		"lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latestRN" 0
+		
+		"lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latestRN" 0
+		"lotus_belly_platter_latestRN" 0
+		"lotus_belly_platter_latest:porkbelly_on_a_stick_latestRN" 0
+		"lotus_belly_platter_latest:platter_latestRN" 0
+		"lotus_belly_platter_latest:lotus_on_a_stick_latestRN" 141
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape" 
+		"instObjGroups" " -s 7"
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:727]\""
+		
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:727]\""
+		
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:727]\""
+		
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape" 
+		"instObjGroups.objectGroups[2].objectGrpCompList" " -type \"componentList\" 1 \"f[0:727]\""
+		
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape" 
+		"instObjGroups" " -s 7"
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:727]\""
+		
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:727]\""
+		
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:727]\""
+		
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape" 
+		"instObjGroups.objectGroups[2].objectGrpCompList" " -type \"componentList\" 1 \"f[0:727]\""
+		
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape" 
+		"instObjGroups" " -s 7"
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:727]\""
+		
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:727]\""
+		
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:727]\""
+		
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape" 
+		"instObjGroups.objectGroups[2].objectGrpCompList" " -type \"componentList\" 1 \"f[0:727]\""
+		
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId14.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId17.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId20.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId8.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId5.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId2.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[2]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:lotus_on_a_stick_latest:groupId21.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId15.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId18.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId21.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId9.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId6.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId3.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[2]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:lotus_on_a_stick_latest:groupId27.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId13.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId16.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId19.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId7.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId4.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:groupId1.groupId" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "lotus_belly_platter_latest:lotus_on_a_stick_latest:groupId24.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[7]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId13.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[8]" "lotus_belly_platter_latestRN.placeHolderList[9]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[10]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[11]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId16.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[12]" "lotus_belly_platter_latestRN.placeHolderList[13]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[14]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[15]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId19.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[16]" "lotus_belly_platter_latestRN.placeHolderList[17]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[18]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[19]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId7.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[20]" "lotus_belly_platter_latestRN.placeHolderList[21]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[22]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[23]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId4.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[24]" "lotus_belly_platter_latestRN.placeHolderList[25]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[26]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[27]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId1.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[28]" "lotus_belly_platter_latestRN.placeHolderList[29]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[30]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2]" 
+		"lotus_belly_platter_latestRN.placeHolderList[31]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:lotus_on_a_stick_latest:groupId24.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[32]" "lotus_belly_platter_latestRN.placeHolderList[33]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.iog.og[2].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder20Shape.instObjGroups.objectGroups[2].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[34]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[35]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId14.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[36]" "lotus_belly_platter_latestRN.placeHolderList[37]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[38]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[39]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId17.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[40]" "lotus_belly_platter_latestRN.placeHolderList[41]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[42]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[43]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId20.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[44]" "lotus_belly_platter_latestRN.placeHolderList[45]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[46]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[47]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId8.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[48]" "lotus_belly_platter_latestRN.placeHolderList[49]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[50]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[51]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId5.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[52]" "lotus_belly_platter_latestRN.placeHolderList[53]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[54]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[55]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId2.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[56]" "lotus_belly_platter_latestRN.placeHolderList[57]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[58]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[2]" 
+		"lotus_belly_platter_latestRN.placeHolderList[59]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:lotus_on_a_stick_latest:groupId21.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[2].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[60]" "lotus_belly_platter_latestRN.placeHolderList[61]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.iog.og[2].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder21Shape.instObjGroups.objectGroups[2].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[62]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[63]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId15.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[64]" "lotus_belly_platter_latestRN.placeHolderList[65]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[66]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[67]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId18.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[68]" "lotus_belly_platter_latestRN.placeHolderList[69]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[70]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[71]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId21.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[72]" "lotus_belly_platter_latestRN.placeHolderList[73]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[74]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[75]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId9.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[76]" "lotus_belly_platter_latestRN.placeHolderList[77]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[78]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[79]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId6.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[80]" "lotus_belly_platter_latestRN.placeHolderList[81]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[82]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0]" 
+		"lotus_belly_platter_latestRN.placeHolderList[83]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:groupId3.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[84]" "lotus_belly_platter_latestRN.placeHolderList[85]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.iog.og[0].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[86]" ""
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[2]" 
+		"lotus_belly_platter_latestRN.placeHolderList[87]" ":initialShadingGroup.dsm"
+		5 0 "lotus_belly_platter_latestRN" "lotus_belly_platter_latest:lotus_on_a_stick_latest:groupId27.groupId" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[2].objectGroupId" 
+		"lotus_belly_platter_latestRN.placeHolderList[88]" "lotus_belly_platter_latestRN.placeHolderList[89]" 
+		"|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.iog.og[2].gid"
+		
+		5 4 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest:lotus_on_a_stick_latest|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22|lotus_belly_platter_latest:lotus_on_a_stick_latest:pCylinder22Shape.instObjGroups.objectGroups[2].objectGrpColor" 
+		"lotus_belly_platter_latestRN.placeHolderList[90]" ""
+		"lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latestRN" 12
+		
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[91]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[92]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[93]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[94]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[95]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[96]" ":initialShadingGroup.dsm"
+		"lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latestRN" 12
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest4|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest5|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[2]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:group1|lotus_belly_platter_latest:lotus_on_a_stick_latest6|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[3]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest3|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[4]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest2|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[5]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:Lotus|lotus_belly_platter_latest:lotus_on_a_stick_latest1|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_Mesh|lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latest:stick_MeshShape.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[6]" ":initialShadingGroup.dsm"
+		"lotus_belly_platter_latestRN" 3
+		0 "|lotus_belly_platter_latest:Lotus_belly" "|Foods" "-s -r "
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly" "translate" " -type \"double3\" 4.19205471475206792 4.74105264757614808 14.38148486243624724"
+		
+		2 "|Foods|lotus_belly_platter_latest:Lotus_belly" "scale" " -type \"double3\" 1.99424783862317967 1.99424783862317967 1.99424783862317967"
+		
+		"lotus_belly_platter_latest:porkbelly_on_a_stick_latestRN" 70
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[97]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[98]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[99]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[100]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[101]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[102]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[103]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[104]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[105]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[106]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[107]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[108]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[109]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape2.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[110]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[111]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[112]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[113]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[114]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[115]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[116]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[117]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[118]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[119]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[120]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[121]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[122]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[123]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape4.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[124]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick4|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[125]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[126]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group2|lotus_belly_platter_latest:Belly_on_a_stick6|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[127]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[128]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick2|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[129]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:Belly_on_a_stick1|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[130]" ":initialShadingGroup.dsm"
+		5 3 "lotus_belly_platter_latestRN" "|Foods|lotus_belly_platter_latest:Lotus_belly|lotus_belly_platter_latest:PorkBelly|lotus_belly_platter_latest:group3|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:Belly_on_a_stick|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinder5|lotus_belly_platter_latest:porkbelly_on_a_stick_latest:pCylinderShape5.instObjGroups" 
+		"lotus_belly_platter_latestRN.placeHolderList[131]" ":initialShadingGroup.dsm";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode shadingEngine -n "MenuGrp";
+	rename -uid "D06E14C2-4DE3-01C3-7D14-BBB651D75252";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo1";
+	rename -uid "A8481778-4392-A9F6-7BD3-5F8B5F6DC8F6";
+createNode PxrSurface -n "BarbMenu";
+	rename -uid "47FB2AF7-4477-FE78-44CA-72999C72CEA7";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".inputMaterial" 0;
+	setAttr ".diffuseGain" 1;
+	setAttr ".diffuseColor" -type "float3" 0 0 0 ;
+	setAttr ".diffuseRoughness" 0;
+	setAttr ".diffuseExponent" 1;
+	setAttr ".diffuseBumpNormal" -type "float3" 0 0 0 ;
+	setAttr ".diffuseDoubleSided" no;
+	setAttr ".diffuseBackUseDiffuseColor" yes;
+	setAttr ".diffuseBackColor" -type "float3" 0.18000001 0.18000001 0.18000001 ;
+	setAttr ".diffuseTransmitGain" 0;
+	setAttr ".diffuseTransmitColor" -type "float3" 0.18000001 0.18000001 0.18000001 ;
+	setAttr ".specularFresnelMode" 0;
+	setAttr ".specularFaceColor" -type "float3" 0 0 0 ;
+	setAttr ".specularEdgeColor" -type "float3" 0 0 0 ;
+	setAttr ".specularFresnelShape" 5;
+	setAttr ".specularIor" -type "float3" 1.5 1.5 1.5 ;
+	setAttr ".specularExtinctionCoeff" -type "float3" 0 0 0 ;
+	setAttr ".specularRoughness" 0.20000000298023224;
+	setAttr ".specularModelType" 0;
+	setAttr ".specularAnisotropy" 0;
+	setAttr ".specularAnisotropyDirection" -type "float3" 0 0 0 ;
+	setAttr ".specularBumpNormal" -type "float3" 0 0 0 ;
+	setAttr ".specularDoubleSided" no;
+	setAttr ".roughSpecularFresnelMode" 0;
+	setAttr ".roughSpecularFaceColor" -type "float3" 0 0 0 ;
+	setAttr ".roughSpecularEdgeColor" -type "float3" 0 0 0 ;
+	setAttr ".roughSpecularFresnelShape" 5;
+	setAttr ".roughSpecularIor" -type "float3" 1.5 1.5 1.5 ;
+	setAttr ".roughSpecularExtinctionCoeff" -type "float3" 0 0 0 ;
+	setAttr ".roughSpecularRoughness" 0.60000002384185791;
+	setAttr ".roughSpecularModelType" 0;
+	setAttr ".roughSpecularAnisotropy" 0;
+	setAttr ".roughSpecularAnisotropyDirection" -type "float3" 0 0 0 ;
+	setAttr ".roughSpecularBumpNormal" -type "float3" 0 0 0 ;
+	setAttr ".roughSpecularDoubleSided" no;
+	setAttr ".clearcoatFresnelMode" 0;
+	setAttr ".clearcoatFaceColor" -type "float3" 0 0 0 ;
+	setAttr ".clearcoatEdgeColor" -type "float3" 0 0 0 ;
+	setAttr ".clearcoatFresnelShape" 5;
+	setAttr ".clearcoatIor" -type "float3" 1.5 1.5 1.5 ;
+	setAttr ".clearcoatExtinctionCoeff" -type "float3" 0 0 0 ;
+	setAttr ".clearcoatThickness" 0;
+	setAttr ".clearcoatAbsorptionTint" -type "float3" 0 0 0 ;
+	setAttr ".clearcoatRoughness" 0;
+	setAttr ".clearcoatModelType" 0;
+	setAttr ".clearcoatAnisotropy" 0;
+	setAttr ".clearcoatAnisotropyDirection" -type "float3" 0 0 0 ;
+	setAttr ".clearcoatBumpNormal" -type "float3" 0 0 0 ;
+	setAttr ".clearcoatDoubleSided" no;
+	setAttr ".specularEnergyCompensation" 0;
+	setAttr ".clearcoatEnergyCompensation" 0;
+	setAttr ".iridescenceFaceGain" 0;
+	setAttr ".iridescenceEdgeGain" 0;
+	setAttr ".iridescenceFresnelShape" 5;
+	setAttr ".iridescenceMode" 0;
+	setAttr ".iridescencePrimaryColor" -type "float3" 1 0 0 ;
+	setAttr ".iridescenceSecondaryColor" -type "float3" 0 0 1 ;
+	setAttr ".iridescenceRoughness" 0.20000000298023224;
+	setAttr ".iridescenceAnisotropy" 0;
+	setAttr ".iridescenceAnisotropyDirection" -type "float3" 0 0 0 ;
+	setAttr ".iridescenceCurve" 1;
+	setAttr ".iridescenceScale" 1;
+	setAttr ".iridescenceFlip" no;
+	setAttr ".iridescenceThickness" 800;
+	setAttr ".iridescenceDoubleSided" no;
+	setAttr ".fuzzGain" 0;
+	setAttr ".fuzzColor" -type "float3" 1 1 1 ;
+	setAttr ".fuzzConeAngle" 8;
+	setAttr ".fuzzBumpNormal" -type "float3" 0 0 0 ;
+	setAttr ".fuzzDoubleSided" no;
+	setAttr ".subsurfaceType" 0;
+	setAttr ".subsurfaceGain" 0;
+	setAttr ".subsurfaceColor" -type "float3" 0.82999998 0.79100001 0.75300002 ;
+	setAttr ".subsurfaceDmfp" 10;
+	setAttr ".subsurfaceDmfpColor" -type "float3" 0.85100001 0.55699998 0.39500001 ;
+	setAttr ".shortSubsurfaceGain" 0;
+	setAttr ".shortSubsurfaceColor" -type "float3" 0.89999998 0.89999998 0.89999998 ;
+	setAttr ".shortSubsurfaceDmfp" 5;
+	setAttr ".longSubsurfaceGain" 0;
+	setAttr ".longSubsurfaceColor" -type "float3" 0.80000001 0 0 ;
+	setAttr ".longSubsurfaceDmfp" 20;
+	setAttr ".subsurfaceDirectionality" 0;
+	setAttr ".subsurfaceBleed" 0;
+	setAttr ".subsurfaceDiffuseBlend" 0;
+	setAttr ".subsurfaceResolveSelfIntersections" no;
+	setAttr ".subsurfaceIor" 1.3999999761581421;
+	setAttr ".subsurfacePostTint" -type "float3" 1 1 1 ;
+	setAttr ".subsurfaceDiffuseSwitch" 1;
+	setAttr ".subsurfaceDoubleSided" no;
+	setAttr ".subsurfaceTransmitGain" 0;
+	setAttr ".considerBackside" yes;
+	setAttr ".continuationRayMode" 0;
+	setAttr ".maxContinuationHits" 2;
+	setAttr ".followTopology" 0;
+	setAttr ".subsurfaceSubset" -type "string" "";
+	setAttr ".singlescatterGain" 0;
+	setAttr ".singlescatterColor" -type "float3" 0.82999998 0.79100001 0.75300002 ;
+	setAttr ".singlescatterMfp" 10;
+	setAttr ".singlescatterMfpColor" -type "float3" 0.85100001 0.55699998 0.39500001 ;
+	setAttr ".singlescatterDirectionality" 0;
+	setAttr ".singlescatterIor" 1.2999999523162842;
+	setAttr ".singlescatterBlur" 0;
+	setAttr ".singlescatterDirectGain" 0;
+	setAttr ".singlescatterDirectGainTint" -type "float3" 1 1 1 ;
+	setAttr ".singlescatterDoubleSided" no;
+	setAttr ".singlescatterConsiderBackside" yes;
+	setAttr ".singlescatterContinuationRayMode" 0;
+	setAttr ".singlescatterMaxContinuationHits" 2;
+	setAttr ".singlescatterDirectGainMode" 0;
+	setAttr ".singlescatterSubset" -type "string" "";
+	setAttr ".irradianceTint" -type "float3" 1 1 1 ;
+	setAttr ".irradianceRoughness" 0;
+	setAttr ".unitLength" 0.10000000149011612;
+	setAttr ".refractionGain" 0;
+	setAttr ".reflectionGain" 0;
+	setAttr ".refractionColor" -type "float3" 1 1 1 ;
+	setAttr ".glassRoughness" 0.10000000149011612;
+	setAttr ".glassAnisotropy" 0;
+	setAttr ".glassAnisotropyDirection" -type "float3" 0 0 0 ;
+	setAttr ".glassIor" 1.5;
+	setAttr ".mwWalkable" no;
+	setAttr ".mwIor" -1;
+	setAttr ".thinGlass" no;
+	setAttr ".ignoreFresnel" no;
+	setAttr ".ignoreAccumOpacity" no;
+	setAttr ".blocksVolumes" no;
+	setAttr ".ssAlbedo" -type "float3" 0 0 0 ;
+	setAttr ".extinction" -type "float3" 0 0 0 ;
+	setAttr ".g" 0;
+	setAttr ".multiScatter" no;
+	setAttr ".enableOverlappingVolumes" no;
+	setAttr ".glowGain" 0;
+	setAttr ".glowColor" -type "float3" 1 1 1 ;
+	setAttr ".bumpNormal" -type "float3" 0 0 0 ;
+	setAttr ".shadowColor" -type "float3" 0 0 0 ;
+	setAttr ".shadowMode" 0;
+	setAttr ".presence" 1;
+	setAttr ".presenceCached" 1;
+	setAttr ".mwStartable" no;
+	setAttr ".roughnessMollificationClamp" 32;
+	setAttr ".utilityPattern[0]"  0;
+createNode file -n "file1";
+	rename -uid "5CFF2C44-4A85-48AD-7F39-689E0E06027D";
+	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Graphics/menus/menu_Barbatus.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "place2dTexture1";
+	rename -uid "3E13CEA8-4FBF-D3E4-C264-6394607046FA";
+createNode reference -n "chair_latestRN";
+	rename -uid "CAC73FD4-42A5-89B4-63F4-768E922F51F3";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"chair_latestRN"
+		"chair_latestRN" 0
+		"chair_latestRN" 3
+		2 "|chair_latest:nurbsCircle1" "translate" " -type \"double3\" -1.93807107429556247 -0.1024683419578971 3.985838349842175"
+		
+		2 "|chair_latest:nurbsCircle1" "rotate" " -type \"double3\" 0 17.34738000872069819 0"
+		
+		2 "|chair_latest:nurbsCircle1" "scale" " -type \"double3\" 1.29937280107422692 1.29937280107422692 1.29937280107422692";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -8474,20 +13132,22 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
-	setAttr -s 4 ".st";
+	setAttr -s 9 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 6 ".s";
+	setAttr -s 8 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
+	setAttr -s 2 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 21 ".r";
+	setAttr -s 94 ".r";
 select -ne :defaultTextureList1;
+	setAttr -s 2 ".tx";
 select -ne :initialShadingGroup;
-	setAttr -s 41 ".dsm";
+	setAttr -s 378 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 5 ".gn";
+	setAttr -s 150 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultResolution;
@@ -8661,9 +13321,894 @@ connectAttr "Barbatus_stall_latest_StockPot_latestRN.phl[1]" "Barbatus_stall_lat
 		 -na;
 connectAttr "Barbatus_stall_latest_StockPot_latestRN.phl[2]" "Barbatus_stall_latest_PxrSurface1SG.dsm"
 		 -na;
-connectAttr "layerManager.dli[1]" "Barbatus_stall_latest_Firecrackers_latestRN.phl[1]"
+connectAttr "rack_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
+connectAttr "rack_latestRN.phl[2]" ":initialShadingGroup.dsm" -na;
+connectAttr "rack_latestRN.phl[3]" ":initialShadingGroup.dsm" -na;
+connectAttr "rack_latestRN.phl[4]" ":initialShadingGroup.dsm" -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[85]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[86]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[87]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[88]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[89]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[90]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[91]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[92]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[93]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[94]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[95]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[1]" ":initialShadingGroup.dsm" -na
 		;
-connectAttr "layerManager.dli[2]" "Barbatus_stall_latest_Firecrackers_latestRN.phl[2]"
+connectAttr "tofu_fishball_platter_latestRN.phl[2]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tofu_fishball_platter_latestRN.phl[3]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tofu_fishball_platter_latestRN.phl[4]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tofu_fishball_platter_latestRN.phl[5]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tofu_fishball_platter_latestRN.phl[6]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tofu_fishball_platter_latestRN.phl[7]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tofu_fishball_platter_latestRN.phl[8]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tofu_fishball_platter_latestRN.phl[9]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "tofu_fishball_platter_latestRN.phl[10]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[11]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[12]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "transformGeometry1.og" "tofu_fishball_platter_latestRN.phl[168]";
+connectAttr "tofu_fishball_platter_latestRN.phl[169]" "transformGeometry1.ig";
+connectAttr "tofu_fishball_platter_latestRN.phl[13]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[14]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[15]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[16]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[17]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[18]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[19]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[20]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[21]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[22]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[23]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[24]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[25]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[26]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[27]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[28]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[29]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[30]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[31]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[32]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[33]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[34]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[35]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[36]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[37]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[38]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[39]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[40]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[41]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[42]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[43]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[44]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[45]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[46]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[47]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[48]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[49]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[50]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[51]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[52]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[53]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[54]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[55]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[56]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[57]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[58]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[59]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[60]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[61]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[62]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[63]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[64]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[65]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[66]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[67]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[68]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[69]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[70]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[71]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[72]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[73]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[74]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[75]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[76]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[77]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[78]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[79]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[80]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[81]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[82]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[83]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[84]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[96]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[97]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[98]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[99]" ":initialShadingGroup.dsm" 
+		-na;
+connectAttr "tofu_fishball_platter_latestRN.phl[100]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[101]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[102]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[103]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[104]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[105]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[106]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[107]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[108]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[109]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[110]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[111]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[112]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[113]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[114]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[115]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[116]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[117]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[118]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[119]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[120]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[121]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[122]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[123]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[124]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[125]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[126]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[127]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[128]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[129]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[130]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[131]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[132]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[133]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[134]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[135]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[136]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[137]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[138]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[139]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[140]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[141]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[142]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[143]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[144]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[145]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[146]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[147]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[148]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[149]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[150]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[151]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[152]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[153]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[154]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[155]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[156]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[157]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[158]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[159]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[160]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[161]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[162]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[163]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[164]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[165]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[166]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "tofu_fishball_platter_latestRN.phl[167]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[76]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[77]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[78]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[79]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[1]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[2]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[3]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[4]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[5]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[6]" "roll_and_sausage_platter_latestRN.phl[7]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[8]" "roll_and_sausage_platter_latestRN.phl[9]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[10]" "roll_and_sausage_platter_latestRN.phl[11]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[12]" "roll_and_sausage_platter_latestRN.phl[13]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[14]" "roll_and_sausage_platter_latestRN.phl[15]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[16]" "roll_and_sausage_platter_latestRN.phl[17]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[18]" "roll_and_sausage_platter_latestRN.phl[19]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[20]" "roll_and_sausage_platter_latestRN.phl[21]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[22]" "roll_and_sausage_platter_latestRN.phl[23]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[24]" "roll_and_sausage_platter_latestRN.phl[25]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[26]" "roll_and_sausage_platter_latestRN.phl[27]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[28]" "roll_and_sausage_platter_latestRN.phl[29]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[30]" "roll_and_sausage_platter_latestRN.phl[31]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[32]" "roll_and_sausage_platter_latestRN.phl[33]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[34]" "roll_and_sausage_platter_latestRN.phl[35]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[36]" "roll_and_sausage_platter_latestRN.phl[37]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[38]" "roll_and_sausage_platter_latestRN.phl[39]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[40]" "roll_and_sausage_platter_latestRN.phl[41]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[42]" "roll_and_sausage_platter_latestRN.phl[43]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[44]" "roll_and_sausage_platter_latestRN.phl[45]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[46]" "roll_and_sausage_platter_latestRN.phl[47]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[48]" "roll_and_sausage_platter_latestRN.phl[49]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[50]" "roll_and_sausage_platter_latestRN.phl[51]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[52]" "roll_and_sausage_platter_latestRN.phl[53]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[54]" "roll_and_sausage_platter_latestRN.phl[55]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[56]" "roll_and_sausage_platter_latestRN.phl[57]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[58]" "roll_and_sausage_platter_latestRN.phl[59]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[60]" "roll_and_sausage_platter_latestRN.phl[61]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[62]" "roll_and_sausage_platter_latestRN.phl[63]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[64]" "roll_and_sausage_platter_latestRN.phl[65]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[66]" "roll_and_sausage_platter_latestRN.phl[67]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[68]" "roll_and_sausage_platter_latestRN.phl[69]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[70]" "roll_and_sausage_platter_latestRN.phl[71]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[72]" "roll_and_sausage_platter_latestRN.phl[73]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[74]" "roll_and_sausage_platter_latestRN.phl[75]"
+		;
+connectAttr "roll_and_sausage_platter_latestRN.phl[80]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[81]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[82]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[83]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[84]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[85]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[86]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[87]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[88]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[89]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[90]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[91]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[92]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[93]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[94]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[95]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[96]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[97]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[98]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[99]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[100]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[101]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[102]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[103]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[104]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[105]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[106]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[107]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[108]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[109]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[110]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[111]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[112]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[113]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[114]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[115]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[116]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[117]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[118]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "roll_and_sausage_platter_latestRN.phl[119]" ":initialShadingGroup.dsm"
+		 -na;
+connectAttr "octopus_platter_latestRN.phl[6]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[7]" "octopus_platter_latestRN.phl[8]";
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[9]";
+connectAttr "octopus_platter_latestRN.phl[10]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[11]" "octopus_platter_latestRN.phl[12]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[13]";
+connectAttr "octopus_platter_latestRN.phl[14]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[15]" "octopus_platter_latestRN.phl[16]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[17]";
+connectAttr "octopus_platter_latestRN.phl[18]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[19]" "octopus_platter_latestRN.phl[20]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[21]";
+connectAttr "octopus_platter_latestRN.phl[22]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[23]" "octopus_platter_latestRN.phl[24]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[25]";
+connectAttr "octopus_platter_latestRN.phl[26]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[27]" "octopus_platter_latestRN.phl[28]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[29]";
+connectAttr "octopus_platter_latestRN.phl[30]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[31]" "octopus_platter_latestRN.phl[32]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[33]";
+connectAttr "octopus_platter_latestRN.phl[34]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[35]" "octopus_platter_latestRN.phl[36]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[37]";
+connectAttr "octopus_platter_latestRN.phl[38]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[39]" "octopus_platter_latestRN.phl[40]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[41]";
+connectAttr "octopus_platter_latestRN.phl[42]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[43]" "octopus_platter_latestRN.phl[44]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[45]";
+connectAttr "octopus_platter_latestRN.phl[46]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[47]" "octopus_platter_latestRN.phl[48]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[49]";
+connectAttr "octopus_platter_latestRN.phl[50]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[51]" "octopus_platter_latestRN.phl[52]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[53]";
+connectAttr "octopus_platter_latestRN.phl[54]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[55]" "octopus_platter_latestRN.phl[56]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[57]";
+connectAttr "octopus_platter_latestRN.phl[58]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[59]" "octopus_platter_latestRN.phl[60]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[61]";
+connectAttr "octopus_platter_latestRN.phl[62]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[63]" "octopus_platter_latestRN.phl[64]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[65]";
+connectAttr "octopus_platter_latestRN.phl[66]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[67]" "octopus_platter_latestRN.phl[68]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[69]";
+connectAttr "octopus_platter_latestRN.phl[70]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[71]" "octopus_platter_latestRN.phl[72]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[73]";
+connectAttr "octopus_platter_latestRN.phl[74]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[75]" "octopus_platter_latestRN.phl[76]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[77]";
+connectAttr "octopus_platter_latestRN.phl[78]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[79]" "octopus_platter_latestRN.phl[80]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[81]";
+connectAttr "octopus_platter_latestRN.phl[82]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[83]" "octopus_platter_latestRN.phl[84]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[85]";
+connectAttr "octopus_platter_latestRN.phl[86]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[87]" "octopus_platter_latestRN.phl[88]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[89]";
+connectAttr "octopus_platter_latestRN.phl[90]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[91]" "octopus_platter_latestRN.phl[92]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[93]";
+connectAttr "octopus_platter_latestRN.phl[94]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[95]" "octopus_platter_latestRN.phl[96]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[97]";
+connectAttr "octopus_platter_latestRN.phl[98]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[99]" "octopus_platter_latestRN.phl[100]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[101]";
+connectAttr "octopus_platter_latestRN.phl[102]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[103]" "octopus_platter_latestRN.phl[104]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[105]";
+connectAttr "octopus_platter_latestRN.phl[106]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[107]" "octopus_platter_latestRN.phl[108]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[109]";
+connectAttr "octopus_platter_latestRN.phl[110]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[111]" "octopus_platter_latestRN.phl[112]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[113]";
+connectAttr "octopus_platter_latestRN.phl[114]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[115]" "octopus_platter_latestRN.phl[116]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[117]";
+connectAttr "octopus_platter_latestRN.phl[118]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[119]" "octopus_platter_latestRN.phl[120]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[121]";
+connectAttr "octopus_platter_latestRN.phl[122]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[123]" "octopus_platter_latestRN.phl[124]"
+		;
+connectAttr ":initialShadingGroup.mwc" "octopus_platter_latestRN.phl[125]";
+connectAttr "octopus_platter_latestRN.phl[126]" "octopus_platter_latestRN.phl[127]"
+		;
+connectAttr "octopus_platter_latestRN.phl[128]" "octopus_platter_latestRN.phl[129]"
+		;
+connectAttr "octopus_platter_latestRN.phl[130]" "octopus_platter_latestRN.phl[131]"
+		;
+connectAttr "octopus_platter_latestRN.phl[132]" "octopus_platter_latestRN.phl[133]"
+		;
+connectAttr "octopus_platter_latestRN.phl[2]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[3]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[4]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[5]" ":initialShadingGroup.dsm" -na;
+connectAttr "octopus_platter_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[9]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[10]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[11]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[12]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[13]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[14]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[15]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[16]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[17]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[18]" "strip_platter_latestRN.phl[19]";
+connectAttr "strip_platter_latestRN.phl[20]" "strip_platter_latestRN.phl[21]";
+connectAttr "strip_platter_latestRN.phl[22]" "strip_platter_latestRN.phl[23]";
+connectAttr "strip_platter_latestRN.phl[24]" "strip_platter_latestRN.phl[25]";
+connectAttr "strip_platter_latestRN.phl[26]" "strip_platter_latestRN.phl[27]";
+connectAttr "strip_platter_latestRN.phl[28]" "strip_platter_latestRN.phl[29]";
+connectAttr "strip_platter_latestRN.phl[30]" "strip_platter_latestRN.phl[31]";
+connectAttr "strip_platter_latestRN.phl[32]" "strip_platter_latestRN.phl[33]";
+connectAttr "strip_platter_latestRN.phl[34]" "strip_platter_latestRN.phl[35]";
+connectAttr "strip_platter_latestRN.phl[36]" "strip_platter_latestRN.phl[37]";
+connectAttr "strip_platter_latestRN.phl[38]" "strip_platter_latestRN.phl[39]";
+connectAttr "strip_platter_latestRN.phl[40]" "strip_platter_latestRN.phl[41]";
+connectAttr "strip_platter_latestRN.phl[42]" "strip_platter_latestRN.phl[43]";
+connectAttr "strip_platter_latestRN.phl[44]" "strip_platter_latestRN.phl[45]";
+connectAttr "strip_platter_latestRN.phl[46]" "strip_platter_latestRN.phl[47]";
+connectAttr "strip_platter_latestRN.phl[48]" "strip_platter_latestRN.phl[49]";
+connectAttr "strip_platter_latestRN.phl[50]" "strip_platter_latestRN.phl[51]";
+connectAttr "strip_platter_latestRN.phl[52]" "strip_platter_latestRN.phl[53]";
+connectAttr "strip_platter_latestRN.phl[54]" "strip_platter_latestRN.phl[55]";
+connectAttr "strip_platter_latestRN.phl[56]" "strip_platter_latestRN.phl[57]";
+connectAttr "strip_platter_latestRN.phl[58]" "strip_platter_latestRN.phl[59]";
+connectAttr "strip_platter_latestRN.phl[60]" "strip_platter_latestRN.phl[61]";
+connectAttr "strip_platter_latestRN.phl[62]" "strip_platter_latestRN.phl[63]";
+connectAttr "strip_platter_latestRN.phl[64]" "strip_platter_latestRN.phl[65]";
+connectAttr "strip_platter_latestRN.phl[66]" "strip_platter_latestRN.phl[67]";
+connectAttr "strip_platter_latestRN.phl[68]" "strip_platter_latestRN.phl[69]";
+connectAttr "strip_platter_latestRN.phl[70]" "strip_platter_latestRN.phl[71]";
+connectAttr "strip_platter_latestRN.phl[72]" "strip_platter_latestRN.phl[73]";
+connectAttr "strip_platter_latestRN.phl[74]" "strip_platter_latestRN.phl[75]";
+connectAttr "strip_platter_latestRN.phl[76]" "strip_platter_latestRN.phl[77]";
+connectAttr "strip_platter_latestRN.phl[78]" "strip_platter_latestRN.phl[79]";
+connectAttr "strip_platter_latestRN.phl[80]" "strip_platter_latestRN.phl[81]";
+connectAttr "strip_platter_latestRN.phl[82]" "strip_platter_latestRN.phl[83]";
+connectAttr "strip_platter_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[2]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[3]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[4]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[5]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[6]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[7]" ":initialShadingGroup.dsm" -na;
+connectAttr "strip_platter_latestRN.phl[8]" ":initialShadingGroup.dsm" -na;
+connectAttr "lotus_belly_platter_latestRN.phl[7]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[8]" "lotus_belly_platter_latestRN.phl[9]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[10]";
+connectAttr "lotus_belly_platter_latestRN.phl[11]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[12]" "lotus_belly_platter_latestRN.phl[13]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[14]";
+connectAttr "lotus_belly_platter_latestRN.phl[15]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[16]" "lotus_belly_platter_latestRN.phl[17]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[18]";
+connectAttr "lotus_belly_platter_latestRN.phl[19]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[20]" "lotus_belly_platter_latestRN.phl[21]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[22]";
+connectAttr "lotus_belly_platter_latestRN.phl[23]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[24]" "lotus_belly_platter_latestRN.phl[25]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[26]";
+connectAttr "lotus_belly_platter_latestRN.phl[27]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[28]" "lotus_belly_platter_latestRN.phl[29]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[30]";
+connectAttr "lotus_belly_platter_latestRN.phl[31]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[32]" "lotus_belly_platter_latestRN.phl[33]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[34]";
+connectAttr "lotus_belly_platter_latestRN.phl[35]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[36]" "lotus_belly_platter_latestRN.phl[37]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[38]";
+connectAttr "lotus_belly_platter_latestRN.phl[39]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[40]" "lotus_belly_platter_latestRN.phl[41]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[42]";
+connectAttr "lotus_belly_platter_latestRN.phl[43]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[44]" "lotus_belly_platter_latestRN.phl[45]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[46]";
+connectAttr "lotus_belly_platter_latestRN.phl[47]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[48]" "lotus_belly_platter_latestRN.phl[49]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[50]";
+connectAttr "lotus_belly_platter_latestRN.phl[51]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[52]" "lotus_belly_platter_latestRN.phl[53]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[54]";
+connectAttr "lotus_belly_platter_latestRN.phl[55]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[56]" "lotus_belly_platter_latestRN.phl[57]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[58]";
+connectAttr "lotus_belly_platter_latestRN.phl[59]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[60]" "lotus_belly_platter_latestRN.phl[61]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[62]";
+connectAttr "lotus_belly_platter_latestRN.phl[63]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[64]" "lotus_belly_platter_latestRN.phl[65]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[66]";
+connectAttr "lotus_belly_platter_latestRN.phl[67]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[68]" "lotus_belly_platter_latestRN.phl[69]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[70]";
+connectAttr "lotus_belly_platter_latestRN.phl[71]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[72]" "lotus_belly_platter_latestRN.phl[73]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[74]";
+connectAttr "lotus_belly_platter_latestRN.phl[75]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[76]" "lotus_belly_platter_latestRN.phl[77]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[78]";
+connectAttr "lotus_belly_platter_latestRN.phl[79]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[80]" "lotus_belly_platter_latestRN.phl[81]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[82]";
+connectAttr "lotus_belly_platter_latestRN.phl[83]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[84]" "lotus_belly_platter_latestRN.phl[85]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[86]";
+connectAttr "lotus_belly_platter_latestRN.phl[87]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[88]" "lotus_belly_platter_latestRN.phl[89]"
+		;
+connectAttr ":initialShadingGroup.mwc" "lotus_belly_platter_latestRN.phl[90]";
+connectAttr "lotus_belly_platter_latestRN.phl[91]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[92]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[93]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[94]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[95]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[96]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[1]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[2]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[3]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[4]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[5]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[6]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[97]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[98]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[99]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[100]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[101]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[102]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[103]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[104]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[105]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[106]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[107]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[108]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[109]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[110]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[111]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[112]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[113]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[114]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[115]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[116]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[117]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[118]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[119]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[120]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[121]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[122]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[123]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[124]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[125]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[126]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[127]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[128]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[129]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[130]" ":initialShadingGroup.dsm" -na
+		;
+connectAttr "lotus_belly_platter_latestRN.phl[131]" ":initialShadingGroup.dsm" -na
 		;
 connectAttr "Barbatus_stall_latest_polyTweakUV3.out" "Barbatus_stall_latest_SignShape.i"
 		;
@@ -8673,16 +14218,18 @@ connectAttr "Barbatus_stall_latest_table_latest_makeNurbCircle1.oc" "Barbatus_st
 		;
 connectAttr "Barbatus_stall_latest_tent_latest_transformGeometry6.og" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_Tent1Shape.cr"
 		;
-connectAttr "Barbatus_stall_latest_table_latest_makeNurbCircle2.oc" "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table1|Barbatus_stall_latest_table_latest_Table1Shape.cr"
+connectAttr "Barbatus_stall_latest_table_latest_makeNurbCircle2.oc" "Barbatus_stall_latest_table_latest_Table1Shape.cr"
 		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Barbatus_stall_latest_PxrSurface1SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Barbatus_stall_latest_PxrSurface2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "MenuGrp.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "Barbatus_stall_latest_PxrSurface1SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "Barbatus_stall_latest_PxrSurface2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "MenuGrp.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr ":rmanDefaultDisplay.msg" ":rmanGlobals.displays[0]";
@@ -8894,7 +14441,7 @@ connectAttr "Barbatus_stall_latest_table_latest_Table1.msg" "hyperShadePrimaryNo
 		;
 connectAttr "Barbatus_stall_latest_Tent2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[63].dn"
 		;
-connectAttr "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table1|Barbatus_stall_latest_table_latest_Table1Shape.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[64].dn"
+connectAttr "Barbatus_stall_latest_table_latest_Table1Shape.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[64].dn"
 		;
 connectAttr "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table1|Barbatus_stall_latest_table_latest_Table_Grp.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[65].dn"
 		;
@@ -8919,8 +14466,6 @@ connectAttr "Barbatus_stall_latest_tent_latest_transformGeometry2.msg" "hyperSha
 connectAttr "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table2|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_left_Mesh|Barbatus_stall_latest_table_latest_left_MeshShape.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[75].dn"
 		;
 connectAttr "Barbatus_stall_latest_tent_latest_Ci.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[76].dn"
-		;
-connectAttr "Barbatus_stall_latest_Firecrackers_latestRN.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[77].dn"
 		;
 connectAttr "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_table_latest_Table2|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_right_Mesh.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[78].dn"
 		;
@@ -8971,8 +14516,6 @@ connectAttr "Barbatus_stall_latest_PxrSurface2.msg" "hyperShadePrimaryNodeEditor
 connectAttr "Barbatus_stall_latest_file1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[101].dn"
 		;
 connectAttr "Barbatus_stall_latest_materialInfo2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[102].dn"
-		;
-connectAttr "Barbatus_stall_latest_table_latest_Table3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[103].dn"
 		;
 connectAttr "Barbatus_stall_latest_defaultRenderLayer.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[104].dn"
 		;
@@ -9040,12 +14583,72 @@ connectAttr "Barbatus_stall_latest_polyMapCut1.msg" "hyperShadePrimaryNodeEditor
 		;
 connectAttr "Barbatus_stall_latest_polyMapCut5.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[136].dn"
 		;
+connectAttr "Barbatus_stall_latest_sharedReferenceNode.sr" "tofu_fishball_platter_latestRN.sr"
+		;
+connectAttr "octopus_platter_latest:groupId75.id" "octopus_platter_latest:groupParts10.gi"
+		;
+connectAttr "octopus_platter_latest:groupParts10.og" "octopus_platter_latest:groupParts11.ig"
+		;
+connectAttr "octopus_platter_latest:groupId76.id" "octopus_platter_latest:groupParts11.gi"
+		;
+connectAttr "octopus_platter_latest:groupParts11.og" "octopus_platter_latest:groupParts12.ig"
+		;
+connectAttr "octopus_platter_latest:groupId77.id" "octopus_platter_latest:groupParts12.gi"
+		;
+connectAttr "octopus_platter_latest:groupParts12.og" "octopus_platter_latest:groupParts13.ig"
+		;
+connectAttr "octopus_platter_latest:groupId78.id" "octopus_platter_latest:groupParts13.gi"
+		;
+connectAttr "octopus_platter_latest:groupId99.id" "octopus_platter_latest:groupParts14.gi"
+		;
+connectAttr "octopus_platter_latest:groupParts14.og" "octopus_platter_latest:groupParts15.ig"
+		;
+connectAttr "octopus_platter_latest:groupId100.id" "octopus_platter_latest:groupParts15.gi"
+		;
+connectAttr "octopus_platter_latest:groupParts15.og" "octopus_platter_latest:groupParts16.ig"
+		;
+connectAttr "octopus_platter_latest:groupId101.id" "octopus_platter_latest:groupParts16.gi"
+		;
+connectAttr "octopus_platter_latest:groupParts16.og" "octopus_platter_latest:groupParts17.ig"
+		;
+connectAttr "octopus_platter_latest:groupId102.id" "octopus_platter_latest:groupParts17.gi"
+		;
+connectAttr "BarbMenu.oc" "MenuGrp.ss";
+connectAttr "Barbatus_stall_latest_Sign1Shape.iog" "MenuGrp.dsm" -na;
+connectAttr "MenuGrp.msg" "materialInfo1.sg";
+connectAttr "BarbMenu.msg" "materialInfo1.m";
+connectAttr "file1.msg" "materialInfo1.t" -na;
+connectAttr "file1.oc" "BarbMenu.diffuseColor";
+connectAttr ":defaultColorMgtGlobals.cme" "file1.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file1.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file1.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file1.ws";
+connectAttr "place2dTexture1.c" "file1.c";
+connectAttr "place2dTexture1.tf" "file1.tf";
+connectAttr "place2dTexture1.rf" "file1.rf";
+connectAttr "place2dTexture1.mu" "file1.mu";
+connectAttr "place2dTexture1.mv" "file1.mv";
+connectAttr "place2dTexture1.s" "file1.s";
+connectAttr "place2dTexture1.wu" "file1.wu";
+connectAttr "place2dTexture1.wv" "file1.wv";
+connectAttr "place2dTexture1.re" "file1.re";
+connectAttr "place2dTexture1.of" "file1.of";
+connectAttr "place2dTexture1.r" "file1.ro";
+connectAttr "place2dTexture1.n" "file1.n";
+connectAttr "place2dTexture1.vt1" "file1.vt1";
+connectAttr "place2dTexture1.vt2" "file1.vt2";
+connectAttr "place2dTexture1.vt3" "file1.vt3";
+connectAttr "place2dTexture1.vc1" "file1.vc1";
+connectAttr "place2dTexture1.o" "file1.uv";
+connectAttr "place2dTexture1.ofs" "file1.fs";
 connectAttr "Barbatus_stall_latest_PxrSurface1SG.pa" ":renderPartition.st" -na;
 connectAttr "Barbatus_stall_latest_PxrSurface2SG.pa" ":renderPartition.st" -na;
+connectAttr "MenuGrp.pa" ":renderPartition.st" -na;
 connectAttr "Barbatus_stall_latest_PxrSurface1.msg" ":defaultShaderList1.s" -na;
 connectAttr "Barbatus_stall_latest_PxrSurface2.msg" ":defaultShaderList1.s" -na;
 connectAttr "Barbatus_stall_latest_place2dTexture1.msg" ":defaultRenderUtilityList1.u"
 		 -na;
+connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanGlobals.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanDefaultDisplay.msg" ":defaultRenderingList1.r" -na;
@@ -9072,6 +14675,7 @@ connectAttr "Barbatus_stall_latest_table_latest_defaultRenderLayer1.msg" ":defau
 connectAttr "Barbatus_stall_latest_table_latest_d_openexr1.msg" ":defaultRenderingList1.r"
 		 -na;
 connectAttr "Barbatus_stall_latest_file1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_top_Mesh|Barbatus_stall_latest_tent_latest_tent_top_MeshShape.iog" ":initialShadingGroup.dsm"
 		 -na;
 connectAttr "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent1|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh|Barbatus_stall_latest_tent_latest_tent_pole_MeshShape.iog" ":initialShadingGroup.dsm"
@@ -9110,10 +14714,100 @@ connectAttr "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|B
 		 -na;
 connectAttr "|Barbatus_stall_latest_Barbatus|Barbatus_stall_latest_BarbatusGrp|Barbatus_stall_latest_Tent2|Barbatus_stall_latest_tent_latest_TentGrp|Barbatus_stall_latest_tent_latest_tent_pole_Mesh3|Barbatus_stall_latest_tent_latest_tent_pole_MeshShape.iog" ":initialShadingGroup.dsm"
 		 -na;
-connectAttr "|Barbatus_stall_latest_table_latest_Table3|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_top_Mesh|Barbatus_stall_latest_table_latest_top_MeshShape.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|Barbatus_stall_latest_table_latest_Table3|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_left_Mesh|Barbatus_stall_latest_table_latest_left_MeshShape.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|Barbatus_stall_latest_table_latest_Table3|Barbatus_stall_latest_table_latest_Table_Grp|Barbatus_stall_latest_table_latest_right_Mesh|Barbatus_stall_latest_table_latest_right_MeshShape.iog" ":initialShadingGroup.dsm"
-		 -na;
+connectAttr "octopus_platter_latest:groupId55.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId56.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId57.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId58.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId59.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId60.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId61.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId62.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId63.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId64.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId65.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId66.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId67.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId68.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId69.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId70.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId71.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId72.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId73.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId74.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId75.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId76.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId77.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId78.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId79.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId80.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId81.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId82.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId83.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId84.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId85.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId86.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId87.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId88.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId89.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId90.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId91.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId92.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId93.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId94.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId95.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId96.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId97.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId98.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId99.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId100.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId101.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "octopus_platter_latest:groupId102.msg" ":initialShadingGroup.gn" -na
+		;
 // End of Barbatus_stall_0002.ma
