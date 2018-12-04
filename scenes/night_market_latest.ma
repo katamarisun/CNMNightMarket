@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: night_market_latest.ma
-//Last modified: Mon, Nov 26, 2018 06:04:01 PM
+//Last modified: Sun, Dec 02, 2018 01:51:09 PM
 //Codeset: 1252
 file -rdi 1 -ns "Jackies_stall" -rfn "night_market_0001_Jackies_stallRN" -op
 		 "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Jackies_stall_latest.ma";
@@ -146,6 +146,8 @@ file -rdi 2 -ns "simple_case_latest" -rfn "Buns_stall_latest:simple_case_latestR
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/simple_case_latest.ma";
 file -rdi 2 -ns "portable_stove_latest" -rfn "Buns_stall_latest:portable_stove_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/portable_stove_latest.ma";
+file -rdi 1 -ns "night_market_lampost_latest" -rfn "night_market_lampost_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_lampost_latest.ma";
 file -r -ns "Jackies_stall" -dr 1 -rfn "night_market_0001_Jackies_stallRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Jackies_stall_latest.ma";
 file -r -ns "Barbatus_stall_latest" -dr 1 -rfn "night_market_0001_Barbatus_stall_latestRN"
@@ -160,6 +162,8 @@ file -r -ns "Game_Stand_latest" -dr 1 -rfn "night_market_0001_Game_Stand_latestR
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Game_Stand_latest.ma";
 file -r -ns "Buns_stall_latest" -dr 1 -rfn "night_market_0001_Buns_stall_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Buns_stall_latest.ma";
+file -r -ns "night_market_lampost_latest" -dr 1 -rfn "night_market_lampost_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_lampost_latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
 requires -nodeType "PxrVisualizer" -nodeType "PxrDefault" -nodeType "rmanDisplayChannel"
@@ -167,7 +171,6 @@ requires -nodeType "PxrVisualizer" -nodeType "PxrDefault" -nodeType "rmanDisplay
 		 -nodeType "PxrOcclusion" -nodeType "PxrDirectLighting" -nodeType "PxrVCM" -nodeType "PxrPathTracer"
 		 -nodeType "rmanDisplay" "RenderMan_for_Maya.py" "1.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
-requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2018";
@@ -178,13 +181,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "37B2F14F-4E7C-CC6F-0DEE-3CB1ADEB9EF9";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 44.701234574089064 33.525925930566828 44.701234574089106 ;
-	setAttr ".r" -type "double3" -27.938352729602379 44.999999999999972 -5.172681101354183e-14 ;
+	setAttr ".t" -type "double3" 45.172309204781186 64.984092886818615 140.69526954985301 ;
+	setAttr ".r" -type "double3" -23.738352729602742 17.800000000000082 4.1755809474375917e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "710BE662-4B3C-34B1-9DCE-CEBDCA7350FF";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 71.556889636130109;
+	setAttr ".coi" 161.42685253984379;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -254,40 +257,69 @@ createNode camera -n "night_market_0001_persp1Shape" -p "night_market_0001_persp
 	setAttr ".dgm" no;
 	setAttr ".ai_translator" -type "string" "perspective";
 createNode fosterParent -n "night_market_0001_Barbatus_stall_latestRNfosterParent1";
-	rename -uid "64421C96-476D-EBA9-C2C9-C2A7C1119BE5";
-createNode transform -n "Barbatus_stall_latest:chopstick_box_latest:transform6" 
+	rename -uid "AE9075B5-407D-1A8A-B4D1-A6B1D57DE7F2";
+createNode transform -n "Barbatus_stall_latest:chopstick_box_latest:transform12" 
+		-p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "F8A9C21C-4271-F0E5-2C4F-0FBD1A31F88E";
+createNode transform -n "Barbatus_stall_latest:chopstick_box_latest:transform11" 
+		-p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "A0168352-4F06-DF91-BD3C-04A50064110C";
+createNode transform -n "Barbatus_stall_latest:chopstick_box_latest:transform10" 
+		-p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "18D6DA31-4C78-82BC-EBE1-D29E656CC389";
+createNode transform -n "Barbatus_stall_latest:chopstick_box_latest:transform9" 
 		-p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
 	rename -uid "A0175EDD-4599-77FA-B328-2CA93577A52C";
-createNode transform -n "Barbatus_stall_latest:chopstick_box_latest:transform5" 
+createNode transform -n "Barbatus_stall_latest:chopstick_box_latest:transform8" 
 		-p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
 	rename -uid "FFA210BD-412D-ABDC-4128-92BDAA3AF071";
-createNode transform -n "Barbatus_stall_latest:chopstick_box_latest:transform4" 
+createNode transform -n "Barbatus_stall_latest:chopstick_box_latest:transform7" 
 		-p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
 	rename -uid "63A87BAD-44F5-171F-9AF5-419C4229781D";
 createNode fosterParent -n "fosterParent1" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
-	rename -uid "C244476F-4512-47B7-F6AA-3FB65C8E37B7";
+	rename -uid "A43BCC85-41D8-6AFC-37CD-69B4DDCEBB85";
 createNode fosterParent -n "fosterParent2" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
-	rename -uid "84883212-4451-DC41-3EA4-AD964A83DBEF";
+	rename -uid "9F5F9F77-4670-9539-62A2-B692EE3B809D";
 createNode fosterParent -n "fosterParent3" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
-	rename -uid "08446132-4971-AF0D-E146-11BB86CCAC51";
-createNode transform -n "Barbatus_stall_latest:transform3" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
-	rename -uid "E4E03E36-4685-7C39-BEAA-A59DD7A8DE89";
+	rename -uid "22710411-4A64-5321-0807-E3AA5B89576F";
 createNode fosterParent -n "fosterParent4" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
-	rename -uid "5AEE90DF-4DB8-B5CC-0C79-9D9244CB16A1";
-createNode transform -n "Barbatus_stall_latest:transform2" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
-	rename -uid "13AAFBC8-4BA2-A55B-CA5E-A5AA5DD0E81E";
+	rename -uid "BE394097-4E1B-FCA2-9C67-53AD32970E0A";
 createNode fosterParent -n "fosterParent5" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
-	rename -uid "051E24EF-4EA3-AFC9-EC74-858DE0744C0B";
-createNode transform -n "Barbatus_stall_latest:transform1" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
-	rename -uid "AFC43603-473C-B9CB-515F-80A323D1A33F";
+	rename -uid "F8EB6A8D-4005-FAF5-CDF4-7A9A3AD87916";
 createNode fosterParent -n "fosterParent6" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
-	rename -uid "C9CC9BEF-4E6E-3872-3093-8CB50CB81FC4";
+	rename -uid "2DFADBED-41FD-2E44-60B2-B68D555A5D80";
+createNode transform -n "Barbatus_stall_latest:transform1" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "E4E03E36-4685-7C39-BEAA-A59DD7A8DE89";
+createNode fosterParent -n "fosterParent7" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "4D7E2F05-42B2-D2CA-D108-ACBCC0835D34";
+createNode fosterParent -n "fosterParent8" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "251A8E05-4608-3E0F-22D9-788176832581";
+createNode transform -n "Barbatus_stall_latest:transform1" -p "fosterParent8";
+	rename -uid "13AAFBC8-4BA2-A55B-CA5E-A5AA5DD0E81E";
+createNode fosterParent -n "fosterParent9" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "D5904766-4C6B-A26B-3D48-A38BCF8512BA";
+createNode transform -n "Barbatus_stall_latest:transform4" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "AFC43603-473C-B9CB-515F-80A323D1A33F";
+createNode fosterParent -n "fosterParent10" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "F443E94A-4500-C557-84F6-0AAC9B64BED3";
+createNode transform -n "Barbatus_stall_latest:transform7" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "A19911C8-432C-DB03-0FAE-0E8D05C59AB2";
+createNode fosterParent -n "fosterParent11" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "2FCD58C3-45D1-1955-C061-4BBDF4B2EC98";
+createNode transform -n "Barbatus_stall_latest:transform6" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "DFD46757-4080-1EDA-5EA9-6FAE9097B2FF";
+createNode fosterParent -n "fosterParent12" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "DDCD29D7-4D39-C4CC-E072-28AE78949530";
+createNode transform -n "Barbatus_stall_latest:transform5" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "1E094DEB-41C6-268B-A8FA-A3927361C9C7";
+createNode fosterParent -n "fosterParent13" -p "night_market_0001_Barbatus_stall_latestRNfosterParent1";
+	rename -uid "EF26476D-4209-34F7-D81E-2E9B9A45C0A0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "94B05C81-48B1-73D4-DE06-AEAF9D39679B";
-	setAttr -s 117 ".lnk";
-	setAttr -s 117 ".slnk";
+	rename -uid "05ED0678-47D5-F082-24FB-71B26177722E";
+	setAttr -s 119 ".lnk";
+	setAttr -s 119 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "E727EB11-41A4-D0D0-6421-67913ECD39D7";
+	rename -uid "4FCE836A-47AD-4D72-78FE-B18FAEAF2C97";
 	setAttr -s 2 ".bsdt";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 4 0 1 2 -1 ;
 	setAttr ".bsdt[1].bscd" -type "Int32Array" 4 3 4 5 6 ;
@@ -295,15 +327,15 @@ createNode shapeEditorManager -n "shapeEditorManager";
 	setAttr -s 3 ".bspr";
 	setAttr -s 3 ".obsv";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "2A3BFCEF-4218-1A8C-F5E3-F2A4432C1F8C";
+	rename -uid "29CD3DF5-416F-C005-CBE3-93B824F4C99B";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "CBDA1116-427F-79C0-F31F-8C982EA8D35B";
+	rename -uid "E98B3B99-4AD4-6DEB-0135-D3A6E6C8F7D9";
 	setAttr -s 7 ".dli[1:6]"  1 2 3 4 5 6;
 	setAttr -s 7 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "2BB6724E-412A-AD76-AD85-8CA9D2C0EA56";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "C91C580A-487C-29DB-A347-9C81EC469312";
+	rename -uid "E03D8D23-4768-9B9C-2A72-E8877B577DF2";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "50BCBDA0-4A1C-FC5D-24F7-40BDA6522F8C";
 	setAttr ".g" yes;
@@ -511,7 +543,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1180\n            -height 863\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1180\n            -height 874\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
 		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n"
@@ -526,19 +558,19 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n"
 		+ "                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n"
 		+ "                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n"
-		+ "                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n"
-		+ "                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n"
-		+ "                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n"
-		+ "                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n"
-		+ "                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 863\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 863\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n"
+		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n"
+		+ "                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n"
+		+ "                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n"
+		+ "                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n"
+		+ "                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n"
+		+ "                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -605,6 +637,7 @@ createNode reference -n "night_market_0001_Jackies_stallRN";
 		"Jackies_stall:mooncakebox_latestRN" 0
 		"Jackies_stallRN" 0
 		"Jackies_stall:tent_latestRN" 0
+		"night_market_0001_Jackies_stallRN" 0
 		"Jackies_stall:LanternSphereWithTail_latestRN" 0
 		"Jackies_stall:mooncake_latestRN1" 0
 		"Jackies_stall:table_latestRN" 0
@@ -1603,7 +1636,7 @@ createNode reference -n "night_market_0001_sharedReferenceNode";
 		"night_market_0001_sharedReferenceNode";
 createNode reference -n "night_market_0001_Barbatus_stall_latestRN";
 	rename -uid "D0505ACA-47C2-D0FF-5B93-8D930B86FF4F";
-	setAttr -s 6 ".fs";
+	setAttr -s 13 ".fs";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"night_market_0001_Barbatus_stall_latestRN"
 		"Barbatus_stall_latest:GrillRN" 1
@@ -1642,99 +1675,6 @@ createNode reference -n "night_market_0001_Barbatus_stall_latestRN";
 		"Barbatus_stall_latest:Barbatus_stall_latest_StockPot_latestRN" 0
 		"Barbatus_stall_latest:roll_and_sausage_platter_latestRN" 0
 		"Barbatus_stall_latest:chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latestRN" 
-		0
-		"Barbatus_stall_latest:octopus_platter_latest:octopus_on_a_stick_latest:skewer_latestRN" 
-		0
-		"Barbatus_stall_latest:roll_and_sausage_platter_latest:platter_latestRN" 0
-		
-		"Barbatus_stall_latest:strip_platter_latestRN" 0
-		"Barbatus_stall_latest:tent_latestRN" 2
-		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:BarbatusGrp|Barbatus_stall_latest:tent_latest:Tent|Barbatus_stall_latest:tent_latest:TentGrp|Barbatus_stall_latest:tent_latest:tent_top_Mesh" 
-		"translate" " -type \"double3\" 0 0.48643028800748317 0"
-		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:BarbatusGrp|Barbatus_stall_latest:tent_latest:Tent|Barbatus_stall_latest:tent_latest:TentGrp|Barbatus_stall_latest:tent_latest:tent_top_Mesh" 
-		"scale" " -type \"double3\" 1 0.98215920199810436 1"
-		"Barbatus_stall_latest:tofu_fishball_platter_latest:fishball_on_a_stick_latestRN" 
-		0
-		"Barbatus_stall_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latestRN" 
-		0
-		"Barbatus_stall_latest:lotus_belly_platter_latest:platter_latestRN" 0
-		"Barbatus_stall_latest:strip_platter_latest:strip_on_a_stick_latest:skewer_latestRN" 
-		0
-		"Barbatus_stall_latest:chopstick_box_latestRN" 0
-		"Barbatus_stall_latest:roll_and_sausage_platter_latest:sausage_on_a_stick_latestRN" 
-		0
-		"Barbatus_stall_latest:strip_platter_latest:strip_on_a_stick_latestRN" 0
-		"Barbatus_stall_latest:octopus_platter_latest:octopus_on_a_stick_latestRN1" 0
-		
-		"Barbatus_stall_latest:lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latestRN" 
-		0
-		"Barbatus_stall_latest:plate_latestRN" 0
-		"Barbatus_stall_latest:octopus_platter_latest:platter_latestRN" 0
-		"Barbatus_stall_latest:tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latestRN" 
-		0
-		"Barbatus_stall_latest:table_latestRN" 0
-		"Barbatus_stall_latest:tent_latest:table_latestRN" 1
-		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:BarbatusGrp|Barbatus_stall_latest:tent_latest:table_latest:Table" 
-		"translate" " -type \"double3\" 4.74067837440971029 0.13664773208077285 -0.29527503268966271"
-		
-		"Barbatus_stall_latest:strip_platter_latest:platter_latestRN" 0
-		"Barbatus_stall_latest:tofu_fishball_platter_latest:tofu_on_a_stick_latestRN" 
-		0
-		"Barbatus_stall_latest:tofu_fishball_platter_latestRN" 0
-		"Barbatus_stall_latest:chopstick_box_latest:chopstick_wrapper_latestRN" 0
-		
-		"Barbatus_stall_latest:Barbatus_stall_latest_GrillRN" 0
-		"Barbatus_stall_latest:octopus_platter_latestRN" 0
-		"Barbatus_stall_latest:octopus_platter_latest:octopus_on_a_stick_latest1:skewer_latestRN" 
-		0
-		"Barbatus_stall_latest:chair_latestRN" 0
-		"Barbatus_stall_latest:StockPot_latestRN" 0
-		"Barbatus_stall_latest:Firecrackers_latestRN" 0
-		"Barbatus_stall_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latestRN" 
-		0
-		"Barbatus_stall_latest:tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latestRN" 
-		0
-		"night_market_0001_Barbatus_stall_latestRN" 7
-		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent6" 
-		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform4|Barbatus_stall_latest:chopstick_box_latest:transform1" 
-		"-s -r "
-		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:transform1" 
-		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform4|Barbatus_stall_latest:chopstick_box_latest:transform1" 
-		"-s -r "
-		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent5" 
-		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform5|Barbatus_stall_latest:chopstick_box_latest:transform2" 
-		"-s -r "
-		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:transform2" 
-		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform5|Barbatus_stall_latest:chopstick_box_latest:transform2" 
-		"-s -r "
-		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent4" 
-		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform6|Barbatus_stall_latest:chopstick_box_latest:transform3" 
-		"-s -r "
-		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:transform3" 
-		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform6|Barbatus_stall_latest:chopstick_box_latest:transform3" 
-		"-s -r "
-		2 "|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus" "translate" " -type \"double3\" 0 0 20.48454391726432533"
-		
-		"Barbatus_stall_latest:chopstick_box_latestRN" 6
-		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent3" 
-		"|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
-		"-s -r "
-		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent2" 
-		"|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
-		"-s -r "
-		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent1" 
-		"|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
-		"-s -r "
-		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:chopstick_box_latest:transform4" 
-		"|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
-		"-s -r "
-		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:chopstick_box_latest:transform5" 
-		"|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
-		"-s -r "
-		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:chopstick_box_latest:transform6" 
-		"|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
-		"-s -r "
-		"Barbatus_stall_latest:chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latestRN" 
 		6
 		0 "|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1|Barbatus_stall_latest:chopstick_box_latest:transform3|Barbatus_stall_latest:transform3|Barbatus_stall_latest:chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks" 
 		"|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1|Barbatus_stall_latest:chopstick_box_latest:transform6" 
@@ -1753,20 +1693,176 @@ createNode reference -n "night_market_0001_Barbatus_stall_latestRN";
 		"-s -r "
 		0 "|Barbatus_stall_latest:chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture1" 
 		"|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1|Barbatus_stall_latest:chopstick_box_latest:transform1|Barbatus_stall_latest:transform1" 
-		"-s -r -add ";
+		"-s -r -add "
+		"Barbatus_stall_latest:octopus_platter_latest:octopus_on_a_stick_latest:skewer_latestRN" 
+		0
+		"Barbatus_stall_latest:roll_and_sausage_platter_latest:platter_latestRN" 0
+		
+		"Barbatus_stall_latest:strip_platter_latestRN" 0
+		"Barbatus_stall_latest:tent_latestRN" 2
+		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:BarbatusGrp|Barbatus_stall_latest:tent_latest:Tent|Barbatus_stall_latest:tent_latest:TentGrp|Barbatus_stall_latest:tent_latest:tent_top_Mesh" 
+		"translate" " -type \"double3\" 0 0.48643028800748317 0"
+		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:BarbatusGrp|Barbatus_stall_latest:tent_latest:Tent|Barbatus_stall_latest:tent_latest:TentGrp|Barbatus_stall_latest:tent_latest:tent_top_Mesh" 
+		"scale" " -type \"double3\" 1 0.98215920199810436 1"
+		"Barbatus_stall_latest:tofu_fishball_platter_latest:fishball_on_a_stick_latestRN" 
+		0
+		"Barbatus_stall_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latestRN" 
+		0
+		"Barbatus_stall_latest:lotus_belly_platter_latest:platter_latestRN" 0
+		"Barbatus_stall_latest:strip_platter_latest:strip_on_a_stick_latest:skewer_latestRN" 
+		0
+		"Barbatus_stall_latest:chopstick_box_latestRN" 3
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent3" 
+		"|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent2" 
+		"|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent1" 
+		"|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		"Barbatus_stall_latest:roll_and_sausage_platter_latest:sausage_on_a_stick_latestRN" 
+		0
+		"Barbatus_stall_latest:strip_platter_latest:strip_on_a_stick_latestRN" 0
+		"Barbatus_stall_latest:octopus_platter_latest:octopus_on_a_stick_latestRN1" 0
+		
+		"Barbatus_stall_latest:lotus_belly_platter_latest:lotus_on_a_stick_latest:skewer_latestRN" 
+		0
+		"night_market_0001_Barbatus_stall_latestRN" 0
+		"Barbatus_stall_latest:plate_latestRN" 0
+		"Barbatus_stall_latest:tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latestRN" 
+		0
+		"Barbatus_stall_latest:octopus_platter_latest:platter_latestRN" 0
+		"Barbatus_stall_latest:tent_latest:table_latestRN" 1
+		2 "|Barbatus_stall_latest:Barbatus|Barbatus_stall_latest:BarbatusGrp|Barbatus_stall_latest:tent_latest:table_latest:Table" 
+		"translate" " -type \"double3\" 4.74067837440971029 0.13664773208077285 -0.29527503268966271"
+		
+		"Barbatus_stall_latest:table_latestRN" 0
+		"Barbatus_stall_latest:strip_platter_latest:platter_latestRN" 0
+		"Barbatus_stall_latest:tofu_fishball_platter_latest:tofu_on_a_stick_latestRN" 
+		0
+		"Barbatus_stall_latest:tofu_fishball_platter_latestRN" 0
+		"Barbatus_stall_latest:Barbatus_stall_latest_GrillRN" 0
+		"Barbatus_stall_latest:chopstick_box_latest:chopstick_wrapper_latestRN" 0
+		
+		"Barbatus_stall_latest:octopus_platter_latestRN" 0
+		"Barbatus_stall_latest:octopus_platter_latest:octopus_on_a_stick_latest1:skewer_latestRN" 
+		0
+		"Barbatus_stall_latest:chair_latestRN" 0
+		"Barbatus_stall_latest:StockPot_latestRN" 0
+		"Barbatus_stall_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latestRN" 
+		0
+		"Barbatus_stall_latest:Firecrackers_latestRN" 0
+		"Barbatus_stall_latest:tofu_fishball_platter_latest:fishball_on_a_stick_latest:skewer_latestRN" 
+		0
+		"Barbatus_stall_latest:strip_platter_latest:strip_on_a_stick_latestRN" 2
+		2 "|Barbatus_stall_latest:strip_platter_latest:strip_on_a_stick_latest:PxrDomeLight" 
+		"translate" " -type \"double3\" -14.68022983053719344 0 0"
+		2 "|Barbatus_stall_latest:strip_platter_latest:strip_on_a_stick_latest:PxrDomeLight" 
+		"scale" " -type \"double3\" 1.38791286963188343 1.38791286963188343 1.38791286963188343"
+		
+		"night_market_0001_Barbatus_stall_latestRN" 13
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent13" 
+		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform8|Barbatus_stall_latest:chopstick_box_latest:transform6" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:transform5" 
+		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform8|Barbatus_stall_latest:chopstick_box_latest:transform6" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent12" 
+		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform9|Barbatus_stall_latest:chopstick_box_latest:transform5" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:transform6" 
+		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform9|Barbatus_stall_latest:chopstick_box_latest:transform5" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent11" 
+		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform10|Barbatus_stall_latest:chopstick_box_latest:transform4" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:transform7" 
+		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform10|Barbatus_stall_latest:chopstick_box_latest:transform4" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent10" 
+		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform11|Barbatus_stall_latest:chopstick_box_latest:transform1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:transform4" 
+		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform11|Barbatus_stall_latest:chopstick_box_latest:transform1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent9" 
+		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform12|Barbatus_stall_latest:chopstick_box_latest:transform2" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent8|Barbatus_stall_latest:transform1" 
+		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform12|Barbatus_stall_latest:chopstick_box_latest:transform2" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent7" 
+		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform13|Barbatus_stall_latest:chopstick_box_latest:transform3" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:transform1" 
+		"|Barbatus_stall_latest:chopstick_box_latestRNfosterParent1|Barbatus_stall_latest:transform13|Barbatus_stall_latest:chopstick_box_latest:transform3" 
+		"-s -r "
+		2 "|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus" "translate" " -type \"double3\" 0 0 20.48454391726432533"
+		
+		"Barbatus_stall_latest:chopstick_box_latestRN" 12
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent6" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent5" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent4" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent3" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent2" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|fosterParent1" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:chopstick_box_latest:transform7" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:chopstick_box_latest:transform8" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:chopstick_box_latest:transform9" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:chopstick_box_latest:transform10" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:chopstick_box_latest:transform11" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		0 "|night_market_0001_Barbatus_stall_latestRNfosterParent1|Barbatus_stall_latest:chopstick_box_latest:transform12" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1" 
+		"-s -r "
+		"Barbatus_stall_latest:chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latestRN" 
+		3
+		0 "|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1|Barbatus_stall_latest:chopstick_box_latest:transform3|Barbatus_stall_latest:transform3|Barbatus_stall_latest:chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:ChopSticks" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1|Barbatus_stall_latest:chopstick_box_latest:transform6|Barbatus_stall_latest:transform5" 
+		"-s -r "
+		0 "|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1|Barbatus_stall_latest:chopstick_box_latest:transform2|Barbatus_stall_latest:transform2|Barbatus_stall_latest:chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture2" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1|Barbatus_stall_latest:chopstick_box_latest:transform5|Barbatus_stall_latest:transform6" 
+		"-s -r "
+		0 "|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1|Barbatus_stall_latest:chopstick_box_latest:transform1|Barbatus_stall_latest:transform1|Barbatus_stall_latest:chopstick_box_latest:chopstick_wrapper_latest:chopstick_pair_latest:place3dTexture1" 
+		"|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:chopstick_box_latest:ChopSticks|Barbatus_stall_latest:chopstick_box_latest:ChopSitckGrpOne|Barbatus_stall_latest:chopstick_box_latest:WrappedChopsticks1|Barbatus_stall_latest:chopstick_box_latest:transform4|Barbatus_stall_latest:transform7" 
+		"-s -r ";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "night_market_0001_SFalley_latestRN";
 	rename -uid "BBF30141-49D4-C64D-D307-81834EDD40DA";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"night_market_0001_SFalley_latestRN"
+		"night_market_0001_SFalley_latestRN" 0
 		"SFalley_latestRN" 1
 		2 "|SFalley_latest:AlleyGrp|SFalley_latest:pCylinder3|SFalley_latest:pCylinder3Shape" 
 		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		"night_market_0001_SFalley_latestRN" 4
-		2 "|SFalley_latest:Alley" "translate" " -type \"double3\" 2.91920346711877698 0 0"
+		2 "|SFalley_latest:Alley" "translate" " -type \"double3\" -11.76102636341841645 0 0"
 		
-		2 "|SFalley_latest:Alley" "scale" " -type \"double3\" 1 1 1"
+		2 "|SFalley_latest:Alley" "scale" " -type \"double3\" 1.38791286963188343 1.38791286963188343 1.38791286963188343"
+		
 		2 "|SFalley_latest:Alley|SFalley_latest:AlleyGrp" "translate" " -type \"double3\" 0 0 0"
 		
 		2 "|SFalley_latest:Alley|SFalley_latest:AlleyGrp" "scale" " -type \"double3\" 1 1 1";
@@ -1816,6 +1912,7 @@ createNode reference -n "night_market_0001_Tea_Pose_Stall_LatestRN";
 		"-na"
 		"Tea_Pose_Stall_Latest:StockPot_latestRN" 0
 		"Tea_Pose_Stall_Latest:straw_latestRN" 0
+		"night_market_0001_Tea_Pose_Stall_LatestRN" 0
 		"Tea_Pose_Stall_Latest:LuckyCat_latestRN" 0
 		"Tea_Pose_Stall_Latest:bobacup_latestRN" 11
 		2 "|Tea_Pose_Stall_Latest:Tea_Pose|Tea_Pose_Stall_Latest:Cupw_Straw|Tea_Pose_Stall_Latest:bobacup_latest:BobaCont|Tea_Pose_Stall_Latest:bobacup_latest:Boba|Tea_Pose_Stall_Latest:bobacup_latest:CUP|Tea_Pose_Stall_Latest:bobacup_latest:CUPShape" 
@@ -1941,6 +2038,7 @@ createNode reference -n "night_market_0001_Souveneir_Stall_latestRN";
 		"Souveneir_Stall_latestRN" 0
 		"Souveneir_Stall_latest:table_cloth2_latestRN" 0
 		"Souveneir_Stall_latest:table_latestRN1" 0
+		"night_market_0001_Souveneir_Stall_latestRN" 0
 		"Souveneir_Stall_latest:table_latestRN2" 0
 		"Souveneir_Stall_latest:table_latestRN" 0
 		"night_market_0001_Souveneir_Stall_latestRN" 4
@@ -1994,6 +2092,7 @@ createNode reference -n "night_market_0001_Game_Stand_latestRN";
 		"Game_Stand_latest:table_latestRN" 0
 		"Game_Stand_latestRN" 0
 		"Game_Stand_latest:toy_rack_latestRN" 0
+		"night_market_0001_Game_Stand_latestRN" 0
 		"Game_Stand_latest:Bear_latestRN" 0
 		"Game_Stand_latest:table_latestRN1" 0
 		"night_market_0001_Game_Stand_latestRN" 3
@@ -2004,13 +2103,13 @@ createNode reference -n "night_market_0001_Game_Stand_latestRN";
 		2 "|Game_Stand_latest:SouveneirStall" "scale" " -type \"double3\" 12.93833965057551438 12.93833965057551438 12.93833965057551438"
 		
 		"Game_Stand_latest:Bear_latestRN" 12
-		3 "Game_Stand_latest:Bear_latest:layerManager.displayLayerId[6]" "Game_Stand_latest:Bear_latest:BearRig1:layer2.identification" 
-		""
 		3 "Game_Stand_latest:Bear_latest:layerManager.displayLayerId[2]" "Game_Stand_latest:Bear_latest:layer2.identification" 
 		""
 		3 "Game_Stand_latest:Bear_latest:layerManager.displayLayerId[3]" "Game_Stand_latest:Bear_latest:BearRig:layer1.identification" 
 		""
 		3 "Game_Stand_latest:Bear_latest:layerManager.displayLayerId[5]" "Game_Stand_latest:Bear_latest:BearRig1:layer1.identification" 
+		""
+		3 "Game_Stand_latest:Bear_latest:layerManager.displayLayerId[6]" "Game_Stand_latest:Bear_latest:BearRig1:layer2.identification" 
 		""
 		3 "Game_Stand_latest:Bear_latest:layerManager.displayLayerId[1]" "Game_Stand_latest:Bear_latest:layer1.identification" 
 		""
@@ -2088,6 +2187,7 @@ createNode reference -n "night_market_0001_Buns_stall_latestRN";
 	setAttr ".fn[0]" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Buns_stall_latest.ma";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"night_market_0001_Buns_stall_latestRN"
+		"night_market_0001_Buns_stall_latestRN" 0
 		"Buns_stall_latest:simple_case_latestRN" 0
 		"Buns_stall_latest:portable_stove_latestRN" 0
 		"Buns_stall_latest:dumpling_case_latestRN" 0
@@ -2441,6 +2541,153 @@ createNode groupId -n "Buns_stall_latest:groupId129";
 createNode groupId -n "Buns_stall_latest:groupId130";
 	rename -uid "CF44498A-492D-F7BF-23CD-8582CE2471F9";
 	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId190";
+	rename -uid "0DC3C6A5-4FFA-875D-D137-799BBD64A381";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId191";
+	rename -uid "18D1C970-4896-3F09-618A-5A8326EC55BE";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId192";
+	rename -uid "E4EDCAD5-4AB0-350E-5E51-038747390267";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId193";
+	rename -uid "07A9C0FD-4D4E-877F-1167-C18542682513";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId194";
+	rename -uid "F1572FD5-4DEA-B49D-7FB5-0BB008893031";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId195";
+	rename -uid "A6405DFF-427C-6DA2-2942-938C9411F2F1";
+	setAttr ".ihi" 0;
+createNode groupId -n "Tea_Pose_Stall_Latest:groupId196";
+	rename -uid "E356060F-4703-968D-FA27-D2BD81A9EA9F";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId131";
+	rename -uid "3E0E1A99-4CD5-594F-F906-AD8B0AA76B3C";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Buns_stall_latest:groupParts51";
+	rename -uid "EC79005D-47D1-2670-47FF-3397F120BFF4";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:143]";
+createNode groupId -n "Buns_stall_latest:groupId132";
+	rename -uid "3D431E65-4C2B-A13D-D565-14982DE1E92F";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Buns_stall_latest:groupParts52";
+	rename -uid "DCB75145-428B-87B6-82BD-71851B3F5E40";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:159]";
+createNode groupId -n "Buns_stall_latest:groupId133";
+	rename -uid "BF546BBE-4A5D-8156-4DD4-7FA8F4222D6D";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId134";
+	rename -uid "275F5888-4F3C-8A61-FCE4-97BE34615321";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId135";
+	rename -uid "4699E27E-4C67-E510-A0CA-A5A1DF1B7D37";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId136";
+	rename -uid "6344DA2F-45BA-54DA-FB6D-539D716A9881";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Buns_stall_latest:groupParts53";
+	rename -uid "FA008CD0-41B9-7076-BD0E-2BA368552FC8";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:143]";
+createNode groupId -n "Buns_stall_latest:groupId137";
+	rename -uid "8939309F-48C0-84F8-878B-A0BE205315A5";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Buns_stall_latest:groupParts54";
+	rename -uid "A6D16183-4659-8B4C-63CB-249ACE298EC0";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:159]";
+createNode groupId -n "Buns_stall_latest:groupId138";
+	rename -uid "704EF7F1-42D0-D971-322E-1A8EE2A9435A";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId139";
+	rename -uid "A41564AE-48DE-5ECC-C3AC-4DA27C38DDAC";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId140";
+	rename -uid "5A7C3995-426F-42CC-3B2F-CDA33073B869";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId141";
+	rename -uid "2A14233C-45FD-36AA-BF27-37A5B14B3D28";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Buns_stall_latest:groupParts55";
+	rename -uid "195A0107-4269-222F-221D-F9A36B03AF30";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:143]";
+createNode groupId -n "Buns_stall_latest:groupId142";
+	rename -uid "A0254A23-4DA4-3D6A-B29A-E0946BAEE431";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Buns_stall_latest:groupParts56";
+	rename -uid "D917452D-4FA9-F747-E8AB-2D8B0603AC4D";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:159]";
+createNode groupId -n "Buns_stall_latest:groupId143";
+	rename -uid "DF5FD8EC-441A-FA29-7F7D-739BF2F541A6";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId144";
+	rename -uid "C8A5AFF9-4379-04E2-F5FE-F88259C1D327";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId145";
+	rename -uid "A8E44CDD-4535-D59D-8EAA-C8B98EB08745";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId146";
+	rename -uid "5CCC116F-43AF-C4C7-2744-E5A5358A0551";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Buns_stall_latest:groupParts57";
+	rename -uid "8ABA41CC-450A-8C3D-411B-8CAF03D2C5EE";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:143]";
+createNode groupId -n "Buns_stall_latest:groupId147";
+	rename -uid "A82F369D-41E6-DFB3-5364-49A9250DA6D3";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Buns_stall_latest:groupParts58";
+	rename -uid "C2E90FBB-4C42-8DB4-642C-77B3D3A1DA9F";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:159]";
+createNode groupId -n "Buns_stall_latest:groupId148";
+	rename -uid "F031E1CD-4311-4EC9-5683-5191270AC68A";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId149";
+	rename -uid "5D211D20-4416-2D65-F0D6-229999AC0A02";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId150";
+	rename -uid "8149722B-46CE-804B-DACD-58970DEA0C41";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId151";
+	rename -uid "04CE56F1-4E53-81E1-70B4-97A2AF2A9050";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Buns_stall_latest:groupParts59";
+	rename -uid "905D0AE8-4B56-EF96-CB13-3AB1690DC32B";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:143]";
+createNode groupId -n "Buns_stall_latest:groupId152";
+	rename -uid "5C572052-46FF-F2A9-D076-DF9F9AABB31D";
+	setAttr ".ihi" 0;
+createNode groupParts -n "Buns_stall_latest:groupParts60";
+	rename -uid "63A71B7C-4445-1FD1-48AC-F99916E5C48F";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:159]";
+createNode groupId -n "Buns_stall_latest:groupId153";
+	rename -uid "0E31D409-411E-5D01-76D0-CB98EC40ED7D";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId154";
+	rename -uid "5AA5FB8E-44D1-E605-16D0-93AD9869D936";
+	setAttr ".ihi" 0;
+createNode groupId -n "Buns_stall_latest:groupId155";
+	rename -uid "3D4B8FB0-4ABE-1532-DAA0-09B037567119";
+	setAttr ".ihi" 0;
+createNode reference -n "night_market_lampost_latestRN";
+	rename -uid "1514CE66-4840-F2E3-355F-A787CC2738A8";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"night_market_lampost_latestRN"
+		"night_market_lampost_latestRN" 0
+		"night_market_lampost_latestRN" 2
+		2 "|night_market_lampost_latest:Lampost" "translate" " -type \"double3\" -21.69306296790528066 -0.18584097252355392 -59.52662760259775609"
+		
+		2 "|night_market_lampost_latest:Lampost" "scale" " -type \"double3\" 3.36888975918543165 3.36888975918543165 3.36888975918543165";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -2451,28 +2698,30 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
-	setAttr -s 117 ".st";
+	setAttr -s 119 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 96 ".s";
+	setAttr -s 98 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 69 ".u";
+	setAttr -s 78 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 193 ".r";
+	setAttr -s 196 ".r";
+select -ne :lightList1;
+	setAttr -s 2 ".l";
 select -ne :defaultTextureList1;
-	setAttr -s 71 ".tx";
+	setAttr -s 82 ".tx";
 select -ne :initialShadingGroup;
-	setAttr -s 305 ".dsm";
+	setAttr -s 342 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 345 ".gn";
+	setAttr -s 388 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
 select -ne :defaultLightSet;
-	setAttr -s 3 ".dsm";
+	setAttr -s 5 ".dsm";
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
@@ -2531,6 +2780,20 @@ connectAttr "fosterParent5.msg" "night_market_0001_Barbatus_stall_latestRN.fs" -
 		;
 connectAttr "fosterParent6.msg" "night_market_0001_Barbatus_stall_latestRN.fs" -na
 		;
+connectAttr "fosterParent7.msg" "night_market_0001_Barbatus_stall_latestRN.fs" -na
+		;
+connectAttr "fosterParent8.msg" "night_market_0001_Barbatus_stall_latestRN.fs" -na
+		;
+connectAttr "fosterParent9.msg" "night_market_0001_Barbatus_stall_latestRN.fs" -na
+		;
+connectAttr "fosterParent10.msg" "night_market_0001_Barbatus_stall_latestRN.fs" 
+		-na;
+connectAttr "fosterParent11.msg" "night_market_0001_Barbatus_stall_latestRN.fs" 
+		-na;
+connectAttr "fosterParent12.msg" "night_market_0001_Barbatus_stall_latestRN.fs" 
+		-na;
+connectAttr "fosterParent13.msg" "night_market_0001_Barbatus_stall_latestRN.fs" 
+		-na;
 connectAttr "night_market_0001_sharedReferenceNode.sr" "night_market_0001_Buns_stall_latestRN.sr"
 		;
 connectAttr "Buns_stall_latest:groupId81.id" "Buns_stall_latest:groupParts31.gi"
@@ -2604,6 +2867,42 @@ connectAttr "Buns_stall_latest:groupId126.id" "Buns_stall_latest:groupParts49.gi
 connectAttr "Buns_stall_latest:groupParts48.og" "Buns_stall_latest:groupParts50.ig"
 		;
 connectAttr "Buns_stall_latest:groupId127.id" "Buns_stall_latest:groupParts50.gi"
+		;
+connectAttr "Buns_stall_latest:groupId131.id" "Buns_stall_latest:groupParts51.gi"
+		;
+connectAttr "Buns_stall_latest:groupId132.id" "Buns_stall_latest:groupParts52.gi"
+		;
+connectAttr "Buns_stall_latest:groupParts51.og" "Buns_stall_latest:groupParts53.ig"
+		;
+connectAttr "Buns_stall_latest:groupId136.id" "Buns_stall_latest:groupParts53.gi"
+		;
+connectAttr "Buns_stall_latest:groupParts52.og" "Buns_stall_latest:groupParts54.ig"
+		;
+connectAttr "Buns_stall_latest:groupId137.id" "Buns_stall_latest:groupParts54.gi"
+		;
+connectAttr "Buns_stall_latest:groupParts53.og" "Buns_stall_latest:groupParts55.ig"
+		;
+connectAttr "Buns_stall_latest:groupId141.id" "Buns_stall_latest:groupParts55.gi"
+		;
+connectAttr "Buns_stall_latest:groupParts54.og" "Buns_stall_latest:groupParts56.ig"
+		;
+connectAttr "Buns_stall_latest:groupId142.id" "Buns_stall_latest:groupParts56.gi"
+		;
+connectAttr "Buns_stall_latest:groupParts55.og" "Buns_stall_latest:groupParts57.ig"
+		;
+connectAttr "Buns_stall_latest:groupId146.id" "Buns_stall_latest:groupParts57.gi"
+		;
+connectAttr "Buns_stall_latest:groupParts56.og" "Buns_stall_latest:groupParts58.ig"
+		;
+connectAttr "Buns_stall_latest:groupId147.id" "Buns_stall_latest:groupParts58.gi"
+		;
+connectAttr "Buns_stall_latest:groupParts57.og" "Buns_stall_latest:groupParts59.ig"
+		;
+connectAttr "Buns_stall_latest:groupId151.id" "Buns_stall_latest:groupParts59.gi"
+		;
+connectAttr "Buns_stall_latest:groupParts58.og" "Buns_stall_latest:groupParts60.ig"
+		;
+connectAttr "Buns_stall_latest:groupId152.id" "Buns_stall_latest:groupParts60.gi"
 		;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanGlobals.msg" ":defaultRenderingList1.r" -na;
@@ -2768,4 +3067,43 @@ connectAttr "Buns_stall_latest:groupId127.msg" ":initialShadingGroup.gn" -na;
 connectAttr "Buns_stall_latest:groupId128.msg" ":initialShadingGroup.gn" -na;
 connectAttr "Buns_stall_latest:groupId129.msg" ":initialShadingGroup.gn" -na;
 connectAttr "Buns_stall_latest:groupId130.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Tea_Pose_Stall_Latest:groupId190.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "Tea_Pose_Stall_Latest:groupId191.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "Tea_Pose_Stall_Latest:groupId192.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "Tea_Pose_Stall_Latest:groupId193.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "Tea_Pose_Stall_Latest:groupId194.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "Tea_Pose_Stall_Latest:groupId195.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "Tea_Pose_Stall_Latest:groupId196.msg" ":initialShadingGroup.gn" -na
+		;
+connectAttr "Buns_stall_latest:groupId131.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId132.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId133.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId134.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId135.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId136.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId137.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId138.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId139.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId140.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId141.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId142.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId143.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId144.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId145.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId146.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId147.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId148.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId149.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId150.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId151.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId152.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId153.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId154.msg" ":initialShadingGroup.gn" -na;
+connectAttr "Buns_stall_latest:groupId155.msg" ":initialShadingGroup.gn" -na;
 // End of night_market_latest.ma
