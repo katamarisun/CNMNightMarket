@@ -1,0 +1,71 @@
+OpenShadingLanguage 1.00
+# Compiled by oslc 1.8.2.pixar1697a56
+# options: 
+shader light_dir_intensity
+param	float	key_x	0		%meta{int,lockgoem,0} %meta{int,slider,1}  %read{0,0} %write{2147483647,-1}
+param	float	key_y	0		%meta{int,lockgeom,0} %meta{int,slider,1}  %read{0,0} %write{2147483647,-1}
+param	float	key_z	0		%meta{int,lockgeom,0} %meta{int,slider,1}  %read{0,0} %write{2147483647,-1}
+param	float	rim_x	0		%meta{int,lockgoem,0} %meta{int,slider,1}  %read{5,5} %write{2147483647,-1}
+param	float	rim_y	0		%meta{int,lockgeom,0} %meta{int,slider,1}  %read{5,5} %write{2147483647,-1}
+param	float	rim_z	0		%meta{int,lockgeom,0} %meta{int,slider,1}  %read{5,5} %write{2147483647,-1}
+param	float	key_threshold	0		%meta{int,lockgeom,0} %meta{int,slider,1}  %read{13,13} %write{2147483647,-1}
+param	float	rim_threshold	0		%meta{int,lockgeom,0} %meta{int,slider,1}  %read{10,10} %write{2147483647,-1}
+param	color	key_shadow	0 0 0		%meta{int,lockgeom,0}  %read{15,15} %write{2147483647,-1}
+param	color	key_light	0 0 0		%meta{int,lockgeom,0}  %read{16,16} %write{2147483647,-1}
+param	color	rim	0 0 0		%meta{int,lockgeom,0}  %read{12,12} %write{2147483647,-1}
+oparam	color	resultRGB	0 0 0		%read{2147483647,-1} %write{12,16}
+global	point	P	%read{1,6} %write{2147483647,-1}
+global	normal	N	%read{4,9} %write{2147483647,-1}
+local	point	key_pos	%read{1,1} %write{0,0}
+local	vector	key_dir	%read{4,4} %write{3,3}
+local	float	key_intensity	%read{13,13} %write{4,4}
+local	point	rim_pos	%read{6,6} %write{5,5}
+local	vector	rim_dir	%read{9,9} %write{8,8}
+local	float	rim_intensity	%read{10,10} %write{9,9}
+temp	vector	$tmp1	%read{3,3} %write{2,2}
+temp	vector	$tmp2	%read{2,2} %write{1,1}
+temp	vector	$tmp3	%read{8,8} %write{7,7}
+temp	vector	$tmp4	%read{7,7} %write{6,6}
+temp	int	$tmp5	%read{11,11} %write{10,10}
+temp	int	$tmp6	%read{14,14} %write{13,13}
+code ___main___
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:17
+# 	vector key_dir = normalize(vector(key_pos - P));
+	point		key_pos key_x key_y key_z 	%filename{"C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl"} %line{17} %argrw{"wrrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:18
+# 	float key_intensity = dot(key_dir, N);
+	sub		$tmp2 key_pos P 	%line{18} %argrw{"wrr"}
+	assign		$tmp1 $tmp2 	%argrw{"wr"}
+	normalize	key_dir $tmp1 	%argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:19
+# 
+	dot		key_intensity key_dir N 	%line{19} %argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:21
+# 	vector rim_dir = normalize(vector(rim_pos - P));
+	point		rim_pos rim_x rim_y rim_z 	%line{21} %argrw{"wrrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:22
+# 	float rim_intensity = dot(rim_dir, N);
+	sub		$tmp4 rim_pos P 	%line{22} %argrw{"wrr"}
+	assign		$tmp3 $tmp4 	%argrw{"wr"}
+	normalize	rim_dir $tmp3 	%argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:23
+# 
+	dot		rim_intensity rim_dir N 	%line{23} %argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:25
+# 		resultRGB = rim;
+	ge		$tmp5 rim_intensity rim_threshold 	%line{25} %argrw{"wrr"}
+	if		$tmp5 13 17 	%argrw{"r"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:26
+# 	} else {
+	assign		resultRGB rim 	%line{26} %argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:28
+# 			resultRGB = key_shadow;
+	le		$tmp6 key_intensity key_threshold 	%line{28} %argrw{"wrr"}
+	if		$tmp6 16 17 	%argrw{"r"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:29
+# 		} else {
+	assign		resultRGB key_shadow 	%line{29} %argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:31
+# 		}
+	assign		resultRGB key_light 	%line{31} %argrw{"wr"}
+	end
