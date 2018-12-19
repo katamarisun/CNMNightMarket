@@ -7,6 +7,9 @@ shader light_dir_intensity(
 	float rim_z = 0 [[int lockgeom=0, int slider=1]],
 	float key_threshold = 0 [[int lockgeom=0, int slider=1]],
 	float rim_threshold = 0 [[int lockgeom=0, int slider=1]],
+	float rim_cutoff = 0 [[int lockgeom=0, int slider=1]],
+	float rim_1 = 0 [[int lockgeom=0, int slider=1]],
+	float rim_2 = 0 [[int lockgeom=0, int slider=1]],
 	color key_shadow = color(0) [[int lockgeom=0]],
 	color key_light = color(0) [[int lockgeom=0]],
 	color rim = color(0) [[int lockgeom=0]],
@@ -21,7 +24,18 @@ shader light_dir_intensity(
 	vector rim_dir = normalize(vector(rim_pos - P));
 	float rim_intensity = dot(rim_dir, N);
 
-	if (rim_intensity >= rim_threshold) {
+	float facing_angle = dot( I, N);
+	float ratio = 0.0;
+	if (facing_angle < 0 ) {
+		ratio = -pow(-facing_angle, rim_1);
+	} else {
+		ratio = pow(facing_angle, rim_1);
+	}
+	ratio = smoothstep( rim_2, 1, ratio);
+	ratio = abs(ratio);
+	ratio = clamp(ratio, 0, 1);
+
+	if ( rim_intensity >= rim_threshold && ratio <= rim_cutoff ) {
 		resultRGB = rim;
 	} else {
 		if (key_intensity <= key_threshold) {
