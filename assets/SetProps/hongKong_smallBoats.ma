@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: hongKong_smallBoats.ma
-//Last modified: Tue, Dec 18, 2018 08:31:53 PM
+//Last modified: Tue, Dec 18, 2018 08:40:05 PM
 //Codeset: UTF-8
 requires maya "2018";
 requires -nodeType "rmanDisplayChannel" -nodeType "d_openexr" -nodeType "rmanGlobals"
@@ -15,13 +15,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "6D0F37F8-8743-4EE5-A1E9-6D80FE3403E9";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.6112834799717759 4.9892530812845912 7.2910242319294687 ;
-	setAttr ".r" -type "double3" -24.938352729788996 10.999999999999806 -4.0501051915310566e-16 ;
+	setAttr ".t" -type "double3" 1.7859362900125006 3.9199012175236856 8.1895350472309598 ;
+	setAttr ".r" -type "double3" -15.938352729786864 10.999999999992497 2.0250525957654782e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "CCDA7125-B24E-7706-9809-A9BF60D13F19";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 8.1797529143841121;
+	setAttr ".coi" 8.6655400943036902;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
