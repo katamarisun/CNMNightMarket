@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Game_Stand_latest.ma
-//Last modified: Thu, Dec 27, 2018 09:07:17 PM
+//Last modified: Sun, Dec 30, 2018 06:07:00 AM
 //Codeset: 1252
 file -rdi 1 -ns "table_latest" -rfn "table_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/table_latest.ma";
@@ -50,8 +50,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "8A156E9D-4179-6B38-3521-9888E7E340B4";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 22.900649177938682 11.155023039435765 11.51054632394988 ;
-	setAttr ".r" -type "double3" -23.13835272925116 62.999999999966327 0 ;
+	setAttr ".t" -type "double3" 18.520827068759811 10.886094565209216 17.820591526418131 ;
+	setAttr ".r" -type "double3" -22.538352729251251 45.799999999966339 4.5621254828142059e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "9D854303-41E7-46D5-2F0E-63B8EE0D330D";
 	setAttr -k off ".v" no;
@@ -165,20 +165,20 @@ createNode transform -n "ToyRack1" -p "ToysRight";
 	setAttr ".t" -type "double3" 0.016217778910942858 0.0083185296348993326 0.016907722123933627 ;
 	setAttr ".s" -type "double3" 0.12514336158464232 0.092357960304253556 0.12514336158464232 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "C8CA7719-4F03-5B62-62BF-6EBF3CCA842E";
-	setAttr -s 39 ".lnk";
-	setAttr -s 39 ".slnk";
+	rename -uid "A2F018FC-4879-6ED9-1E22-1BAC2199F696";
+	setAttr -s 41 ".lnk";
+	setAttr -s 41 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "75948F0B-4AC6-4318-BF0C-35935E43DCB4";
+	rename -uid "370E3698-40E6-8BED-F352-FCB283B9D8F9";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "405CDBD2-446D-5321-1B87-76BD2DCBD16C";
+	rename -uid "5E3D828C-4127-FE3D-B88C-8A8C39F738CC";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "ED6CC497-4875-8B07-F7C7-17BFD042E243";
+	rename -uid "BC68089E-41ED-8791-3AD9-E0BB01109AC7";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "349B90C7-454F-F319-79C6-59857AC97141";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "C15F670D-493D-0222-6317-BB88EB7E8C42";
+	rename -uid "2CD4F58D-4673-000B-3E07-BC9A4BB159E0";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "A2190F46-4684-D980-EBC3-F1B7552EAD69";
 	setAttr ".g" yes;
@@ -381,13 +381,13 @@ createNode script -n "tent_latest_uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n"
 		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
 		+ "            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n"
-		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 587\n            -height 415\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 586\n            -height 414\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 587\n            -height 414\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
@@ -438,9 +438,9 @@ createNode reference -n "table_latestRN";
 		0 "|table_latest:Table" "|GameStand_Latest|SouveneirStallGrp" "-s -r "
 		2 "|GameStand_Latest|SouveneirStallGrp|table_latest:Table" "translate" " -type \"double3\" 0.23088195083363233 0 0"
 		
-		3 "|GameStand_Latest|SouveneirStallGrp|table_latest:Table|table_latest:Table_Grp|table_latest:top_Mesh|table_latest:top_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|GameStand_Latest|SouveneirStallGrp|table_latest:Table|table_latest:Table_Grp|table_latest:left_Mesh|table_latest:left_MeshShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|GameStand_Latest|SouveneirStallGrp|table_latest:Table|table_latest:Table_Grp|table_latest:top_Mesh|table_latest:top_MeshShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|GameStand_Latest|SouveneirStallGrp|table_latest:Table|table_latest:Table_Grp|table_latest:right_Mesh|table_latest:right_MeshShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -511,8 +511,6 @@ createNode reference -n "Ring_toss_bottles_1ring_latestRN";
 		
 		2 "|GameStand_Latest|Ring_toss_bottles_1ring_latest:RingToss" "scale" " -type \"double3\" 0.1242577837655181 0.1242577837655181 0.1242577837655181"
 		
-		3 "|GameStand_Latest|Ring_toss_bottles_1ring_latest:RingToss|Ring_toss_bottles_1ring_latest:RingTossGrp|Ring_toss_bottles_1ring_latest:Ring_Toss_Bottles|Ring_toss_bottles_1ring_latest:pCylinder5|Ring_toss_bottles_1ring_latest:pCylinderShape5.worldMatrix" 
-		"Ring_toss_bottles_1ring_latest:polySplitRing1.manipMatrix" ""
 		3 "|GameStand_Latest|Ring_toss_bottles_1ring_latest:RingToss|Ring_toss_bottles_1ring_latest:RingTossGrp|Ring_toss_bottles_1ring_latest:Ring_Toss_Bottles|Ring_toss_bottles_1ring_latest:pCylinder5|Ring_toss_bottles_1ring_latest:pCylinderShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|GameStand_Latest|Ring_toss_bottles_1ring_latest:RingToss|Ring_toss_bottles_1ring_latest:RingTossGrp|Ring_toss_bottles_1ring_latest:Ring_Toss_Bottles|Ring_toss_bottles_1ring_latest:pCylinder6|Ring_toss_bottles_1ring_latest:pCylinderShape5.instObjGroups" 
@@ -531,6 +529,8 @@ createNode reference -n "Ring_toss_bottles_1ring_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|GameStand_Latest|Ring_toss_bottles_1ring_latest:RingToss|Ring_toss_bottles_1ring_latest:RingTossGrp|Ring_toss_bottles_1ring_latest:Ring_Toss_Bottles|Ring_toss_bottles_1ring_latest:pCylinder13|Ring_toss_bottles_1ring_latest:pCylinderShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|GameStand_Latest|Ring_toss_bottles_1ring_latest:RingToss|Ring_toss_bottles_1ring_latest:RingTossGrp|Ring_toss_bottles_1ring_latest:Ring_Toss_Bottles|Ring_toss_bottles_1ring_latest:pCylinder5|Ring_toss_bottles_1ring_latest:pCylinderShape5.worldMatrix" 
+		"Ring_toss_bottles_1ring_latest:polySplitRing1.manipMatrix" ""
 		5 3 "Ring_toss_bottles_1ring_latestRN" "|GameStand_Latest|Ring_toss_bottles_1ring_latest:RingToss|Ring_toss_bottles_1ring_latest:RingTossGrp|Ring_toss_bottles_1ring_latest:Ring_Toss_Bottles|Ring_toss_bottles_1ring_latest:pCylinder5|Ring_toss_bottles_1ring_latest:pCylinderShape5.instObjGroups" 
 		"Ring_toss_bottles_1ring_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
 		5 3 "Ring_toss_bottles_1ring_latestRN" "|GameStand_Latest|Ring_toss_bottles_1ring_latest:RingToss|Ring_toss_bottles_1ring_latest:RingTossGrp|Ring_toss_bottles_1ring_latest:Ring_Toss_Bottles|Ring_toss_bottles_1ring_latest:pCylinder6|Ring_toss_bottles_1ring_latest:pCylinderShape5.instObjGroups" 
@@ -781,10 +781,6 @@ createNode reference -n "Bear_latestRN";
 		2 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape" 
 		"instObjGroups.objectGroups[5].objectGrpCompList" " -type \"componentList\" 2 \"f[0:39]\" \"f[360:379]\""
 		
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[12]" 
-		"Bear_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[21]" 
-		"Bear_latest:PxrSurface4SG.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[1]" 
 		"Bear_latest:unwrapChekcerShaderSG.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[3]" 
@@ -795,6 +791,44 @@ createNode reference -n "Bear_latestRN";
 		"Bear_latest:unwrapChekcerShaderSG.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[19]" 
 		"Bear_latest:unwrapChekcerShaderSG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[5]" 
+		"Bear_latest:PxrSurface6SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[10]" 
+		"Bear_latest:PxrSurface6SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[12]" 
+		"Bear_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[21]" 
+		"Bear_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Right_Eye|Bear_latest:Right_EyeShape.instObjGroups.objectGroups[5]" 
+		"Bear_latest:PxrSurface8SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[5]" 
+		"Bear_latest:PxrSurface8SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[6]" 
+		"Bear_latest:PxrSurface5SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[13]" 
+		"Bear_latest:PxrSurface5SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[18]" 
+		"Bear_latest:PxrSurface5SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[0]" 
+		"Bear_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[2]" 
+		"Bear_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[9]" 
+		"Bear_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[20]" 
+		"Bear_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Right_Eye|Bear_latest:Right_EyeShape.instObjGroups.objectGroups[0]" 
+		"Bear_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Right_Eye|Bear_latest:Right_EyeShape.instObjGroups.objectGroups[1]" 
+		"Bear_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Right_Eye|Bear_latest:Right_EyeShape.compInstObjGroups.compObjectGroups[0]" 
+		"Bear_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[0]" 
+		"Bear_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[1]" 
+		"Bear_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.compInstObjGroups.compObjectGroups[1]" 
+		"Bear_latest:PxrSurface7SG.dagSetMembers" "-na"
 		3 "Bear_latest:PxrSurface7SG.memberWireframeColor" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Right_Eye|Bear_latest:Right_EyeShape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
 		3 "Bear_latest:groupId175.groupId" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Right_Eye|Bear_latest:Right_EyeShape.instObjGroups.objectGroups[0].objectGroupId" 
@@ -809,32 +843,6 @@ createNode reference -n "Bear_latestRN";
 		""
 		3 "Bear_latest:groupId149.groupId" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Right_Eye|Bear_latest:Right_EyeShape.compInstObjGroups.compObjectGroups[0].compObjectGroupId" 
 		""
-		3 "Bear_latest:groupId155.groupId" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "Bear_latest:PxrSurface7SG.memberWireframeColor" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "Bear_latest:groupId156.groupId" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[1].objectGroupId" 
-		""
-		3 "Bear_latest:PxrSurface7SG.memberWireframeColor" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[1].objectGrpColor" 
-		""
-		3 "Bear_latest:groupId157.groupId" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[5].objectGroupId" 
-		""
-		3 "Bear_latest:PxrSurface8SG.memberWireframeColor" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[5].objectGrpColor" 
-		""
-		3 "Bear_latest:groupId158.groupId" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.compInstObjGroups.compObjectGroups[1].compObjectGroupId" 
-		""
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Right_Eye|Bear_latest:Right_EyeShape.instObjGroups.objectGroups[5]" 
-		"Bear_latest:PxrSurface8SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[5]" 
-		"Bear_latest:PxrSurface8SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[0]" 
-		"Bear_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[2]" 
-		"Bear_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[9]" 
-		"Bear_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[20]" 
-		"Bear_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "Bear_latest:groupId159.groupId" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 "Bear_latest:PxrSurface1SG.memberWireframeColor" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[0].objectGrpColor" 
@@ -899,28 +907,20 @@ createNode reference -n "Bear_latestRN";
 		""
 		3 "Bear_latest:PxrSurface4SG.memberWireframeColor" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[21].objectGrpColor" 
 		""
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Right_Eye|Bear_latest:Right_EyeShape.instObjGroups.objectGroups[0]" 
-		"Bear_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Right_Eye|Bear_latest:Right_EyeShape.instObjGroups.objectGroups[1]" 
-		"Bear_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Right_Eye|Bear_latest:Right_EyeShape.compInstObjGroups.compObjectGroups[0]" 
-		"Bear_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[0]" 
-		"Bear_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[1]" 
-		"Bear_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.compInstObjGroups.compObjectGroups[1]" 
-		"Bear_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[5]" 
-		"Bear_latest:PxrSurface6SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[10]" 
-		"Bear_latest:PxrSurface6SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[6]" 
-		"Bear_latest:PxrSurface5SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[13]" 
-		"Bear_latest:PxrSurface5SG.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[18]" 
-		"Bear_latest:PxrSurface5SG.dagSetMembers" "-na"
+		3 "Bear_latest:groupId155.groupId" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 "Bear_latest:PxrSurface7SG.memberWireframeColor" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "Bear_latest:groupId156.groupId" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[1].objectGroupId" 
+		""
+		3 "Bear_latest:PxrSurface7SG.memberWireframeColor" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[1].objectGrpColor" 
+		""
+		3 "Bear_latest:groupId157.groupId" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[5].objectGroupId" 
+		""
+		3 "Bear_latest:PxrSurface8SG.memberWireframeColor" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.instObjGroups.objectGroups[5].objectGrpColor" 
+		""
+		3 "Bear_latest:groupId158.groupId" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye|Bear_latest:Left_EyeShape.compInstObjGroups.compObjectGroups[1].compObjectGroupId" 
+		""
 		5 0 "Bear_latestRN" "Bear_latest:groupId159.groupId" "|GameStand_Latest|ToysLeft|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.instObjGroups.objectGroups[0].objectGroupId" 
 		"Bear_latestRN.placeHolderList[1]" "Bear_latestRN.placeHolderList[2]" "|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1|Bear_latest:Bear.iog.og[0].gid"
 		
@@ -2208,9 +2208,9 @@ createNode reference -n "toy_rack_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ToysLeft|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder15|toy_rack_latest:pCylinderShape10.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|GameStand_Latest|ToysLeft|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ToysLeft|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|GameStand_Latest|ToysLeft|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ToysLeft|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder1|toy_rack_latest:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -2384,7 +2384,6 @@ createNode reference -n "tent_Souveneir_latestRN";
 	rename -uid "B83DAE41-4D68-4E49-8555-228082A94C9E";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"tent_Souveneir_latestRN"
-		"tent_Souveneir_latestRN" 0
 		"tent_Souveneir_latestRN" 5
 		0 "|tent_Souveneir_latest:tent_Jackie" "|GameStand_Latest" "-s -r "
 		2 "|GameStand_Latest|tent_Souveneir_latest:tent_Jackie" "translate" " -type \"double3\" 9.5812581599014104e-05 -0.0031097178215331732 0"
@@ -2394,7 +2393,12 @@ createNode reference -n "tent_Souveneir_latestRN";
 		2 "|GameStand_Latest|tent_Souveneir_latest:tent_Jackie|tent_Souveneir_latest:temp_tent_Mesh|tent_Souveneir_latest:polySurface5" 
 		"rotatePivot" " -type \"double3\" -0.0084336739512566213 0.45939130107248866 0"
 		2 "|GameStand_Latest|tent_Souveneir_latest:tent_Jackie|tent_Souveneir_latest:temp_tent_Mesh|tent_Souveneir_latest:polySurface5" 
-		"scalePivot" " -type \"double3\" -0.0084336739512566213 0.45939130107248866 0";
+		"scalePivot" " -type \"double3\" -0.0084336739512566213 0.45939130107248866 0"
+		"tent_Souveneir_latestRN" 3
+		0 "|tent_Souveneir_latest:tent_Souveneir" "|GameStand_Latest" "-s -r "
+		2 "|GameStand_Latest|tent_Souveneir_latest:tent_Souveneir" "translate" " -type \"double3\" 0 -0.00016422591146309033 0"
+		
+		2 "|GameStand_Latest|tent_Souveneir_latest:tent_Souveneir" "scale" " -type \"double3\" 0.047383784266970007 0.047383784266970007 0.047383784266970007";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 select -ne :time1;
@@ -2415,7 +2419,7 @@ select -ne :renderPartition;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 39 ".st";
+	setAttr -s 41 ".st";
 	setAttr -cb on ".an";
 	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
@@ -2428,7 +2432,7 @@ select -ne :defaultShaderList1;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 48 ".s";
+	setAttr -s 50 ".s";
 select -ne :postProcessList1;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -2436,17 +2440,17 @@ select -ne :postProcessList1;
 	setAttr -cb on ".bnm";
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 49 ".u";
+	setAttr -s 53 ".u";
 select -ne :defaultRenderingList1;
 	setAttr -s 24 ".r";
 select -ne :defaultTextureList1;
-	setAttr -s 41 ".tx";
+	setAttr -s 46 ".tx";
 select -ne :initialShadingGroup;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 85 ".dsm";
+	setAttr -s 80 ".dsm";
 	setAttr -k on ".mwc";
 	setAttr -cb on ".an";
 	setAttr -cb on ".il";
@@ -2455,7 +2459,7 @@ select -ne :initialShadingGroup;
 	setAttr -cb on ".fo";
 	setAttr -cb on ".epo";
 	setAttr ".ro" yes;
-	setAttr -s 19 ".gn";
+	setAttr -s 14 ".gn";
 select -ne :initialParticleSE;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
