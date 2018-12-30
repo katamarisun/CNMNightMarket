@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: ping_displacement_v2_latest.ma
-//Last modified: Thu, Dec 27, 2018 05:57:35 PM
+//Last modified: Sat, Dec 29, 2018 12:10:35 PM
 //Codeset: UTF-8
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -18,13 +18,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "DBD27C47-D942-B146-0321-BFA9B10D7262";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.17188982997290159 1.6260986549076264 -7.1240060422926064 ;
-	setAttr ".r" -type "double3" -21.938352729428264 181.4000000000247 0 ;
+	setAttr ".t" -type "double3" -0.075222347436018328 1.10091470869501 -7.3151926892804999 ;
+	setAttr ".r" -type "double3" -17.738352729428271 180.60000000002469 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "6BC9B45E-4248-DF5B-2B0A-9899377F6DEE";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 7.6181970872541633;
+	setAttr ".coi" 7.6181970872541864;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -42494,22 +42494,22 @@ createNode rmanDisplayChannel -n "a1";
 	setAttr ".remapSmoothness" 0;
 	setAttr -l on ".name" -type "string" "a";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "E047CB1D-E446-78CC-D3A6-BE9237EEE5C2";
+	rename -uid "445DC7FC-534E-C52C-3786-19A7BAD67317";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "DC5D88C8-4347-FAC1-477D-43943E2DFC50";
+	rename -uid "B9EF5635-A24A-ECB9-FAE2-7DAC2B3694F7";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "0EEBD2CA-BF4C-3E3C-792E-7FBE61639DD6";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "756156E8-BA4F-002C-136E-DE88DDA40C11";
+	rename -uid "4A6C7CA5-5248-4507-9155-C288BAB09F98";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "96FDEF6C-EA44-4A62-773C-A6877AA35ED1";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "57237459-1245-BC84-D64F-1FA35FBCE834";
+	rename -uid "A6AC9F3D-B840-99C5-A4A5-D0AE16E9AA1A";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "B3F12F08-3E41-2648-E315-A0B6C0300D71";
+	rename -uid "4FD6D95F-D84F-CB93-53BF-C88D742FE5E1";
 createNode d_openexr -n "d_openexr2";
 	rename -uid "BFE45FDF-D349-4CEF-B3F4-478130C1F1BF";
 	setAttr ".cch" no;
@@ -42838,33 +42838,51 @@ createNode file -n "file1";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture1";
 	rename -uid "F8BAA807-FF49-4833-27AD-F7908515A7CE";
+createNode blendColors -n "blendColors1";
+	rename -uid "15F1F0B5-D542-DF15-4306-038D3005AE25";
+	setAttr ".b" 1;
+createNode file -n "file2";
+	rename -uid "8D8BA7BD-904B-F42B-5D4D-3FB8723CC801";
+	setAttr ".ftn" -type "string" "/Users/ashnachoudhury/Art_Animation/CNM190/CNMNightMarket//sourceimages/PingUVMaps/ping30Maps/PingColor/Ping30LP_SP_lambert3_BaseColor.png";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "place2dTexture2";
+	rename -uid "C40202CE-6343-78BD-116D-FA81EBFA6D07";
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "C16FB9B8-3E4C-F230-4747-E2AE78725CC2";
+	rename -uid "67EE6E1F-B54E-C811-1A0A-0AB68D0628E6";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -842.9595700758241 -96.696265649787847 ;
-	setAttr ".tgi[0].vh" -type "double2" 76.610267337815529 676.69426304375384 ;
-	setAttr -s 7 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" 101.42857360839844;
-	setAttr ".tgi[0].ni[0].y" 412.85714721679688;
-	setAttr ".tgi[0].ni[0].nvs" 1923;
-	setAttr ".tgi[0].ni[1].x" -242.91026306152344;
-	setAttr ".tgi[0].ni[1].y" 267.14285278320312;
-	setAttr ".tgi[0].ni[1].nvs" 2387;
-	setAttr ".tgi[0].ni[2].x" -567.14288330078125;
-	setAttr ".tgi[0].ni[2].y" 164.28572082519531;
+	setAttr ".tgi[0].vl" -type "double2" -1142.7428650355607 -522.79500649933948 ;
+	setAttr ".tgi[0].vh" -type "double2" 301.26542918991618 691.66668272911147 ;
+	setAttr -s 10 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -461.42855834960938;
+	setAttr ".tgi[0].ni[0].y" 572.85711669921875;
+	setAttr ".tgi[0].ni[0].nvs" 2066;
+	setAttr ".tgi[0].ni[1].x" -1157.142822265625;
+	setAttr ".tgi[0].ni[1].y" 198.57142639160156;
+	setAttr ".tgi[0].ni[1].nvs" 1923;
+	setAttr ".tgi[0].ni[2].x" 207.14285278320312;
+	setAttr ".tgi[0].ni[2].y" 421.42855834960938;
 	setAttr ".tgi[0].ni[2].nvs" 1923;
-	setAttr ".tgi[0].ni[3].x" -567.14288330078125;
-	setAttr ".tgi[0].ni[3].y" 574.28570556640625;
-	setAttr ".tgi[0].ni[3].nvs" 2066;
-	setAttr ".tgi[0].ni[4].x" -874.28570556640625;
-	setAttr ".tgi[0].ni[4].y" 142.85714721679688;
-	setAttr ".tgi[0].ni[4].nvs" 1923;
-	setAttr ".tgi[0].ni[5].x" -874.28570556640625;
-	setAttr ".tgi[0].ni[5].y" 374.28570556640625;
-	setAttr ".tgi[0].ni[5].nvs" 18305;
-	setAttr ".tgi[0].ni[6].x" -247.14285278320312;
-	setAttr ".tgi[0].ni[6].y" 514.28570556640625;
-	setAttr ".tgi[0].ni[6].nvs" 2066;
+	setAttr ".tgi[0].ni[3].x" -141.42857360839844;
+	setAttr ".tgi[0].ni[3].y" 274.28570556640625;
+	setAttr ".tgi[0].ni[3].nvs" 2387;
+	setAttr ".tgi[0].ni[4].x" -850;
+	setAttr ".tgi[0].ni[4].y" 388.57144165039062;
+	setAttr ".tgi[0].ni[4].nvs" 18305;
+	setAttr ".tgi[0].ni[5].x" -141.42857360839844;
+	setAttr ".tgi[0].ni[5].y" 521.4285888671875;
+	setAttr ".tgi[0].ni[5].nvs" 2066;
+	setAttr ".tgi[0].ni[6].x" -1157.142822265625;
+	setAttr ".tgi[0].ni[6].y" 32.857143402099609;
+	setAttr ".tgi[0].ni[6].nvs" 1923;
+	setAttr ".tgi[0].ni[7].x" -461.42855834960938;
+	setAttr ".tgi[0].ni[7].y" 162.85714721679688;
+	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[8].x" -850;
+	setAttr ".tgi[0].ni[8].y" 52.857143402099609;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
+	setAttr ".tgi[0].ni[9].x" -850;
+	setAttr ".tgi[0].ni[9].y" 218.57142639160156;
+	setAttr ".tgi[0].ni[9].nvs" 1923;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -42882,10 +42900,11 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
+	setAttr -s 3 ".u";
 select -ne :defaultRenderingList1;
 	setAttr -s 5 ".r";
 select -ne :defaultTextureList1;
-	setAttr -s 3 ".tx";
+	setAttr -s 4 ".tx";
 select -ne :initialShadingGroup;
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
@@ -42910,7 +42929,7 @@ relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":default
 relationship "shadowLink" ":lightLinker1" "PxrSurface1SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
-connectAttr "file1.oc" "PingGMA_Body.diffuseColor";
+connectAttr "blendColors1.op" "PingGMA_Body.diffuseColor";
 connectAttr "PingGMA_Body.oc" "PxrSurface1SG.ss";
 connectAttr "ping_uv_latest:Group2Shape.iog" "PxrSurface1SG.dsm" -na;
 connectAttr "PxrDisplace1.oc" "PxrSurface1SG.ds";
@@ -42941,24 +42960,56 @@ connectAttr "place2dTexture1.vt3" "file1.vt3";
 connectAttr "place2dTexture1.vc1" "file1.vc1";
 connectAttr "place2dTexture1.o" "file1.uv";
 connectAttr "place2dTexture1.ofs" "file1.fs";
-connectAttr "PxrSurface1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "file1.oc" "blendColors1.c1";
+connectAttr "file2.oc" "blendColors1.c2";
+connectAttr ":defaultColorMgtGlobals.cme" "file2.cme";
+connectAttr ":defaultColorMgtGlobals.cfe" "file2.cmcf";
+connectAttr ":defaultColorMgtGlobals.cfp" "file2.cmcp";
+connectAttr ":defaultColorMgtGlobals.wsn" "file2.ws";
+connectAttr "place2dTexture2.c" "file2.c";
+connectAttr "place2dTexture2.tf" "file2.tf";
+connectAttr "place2dTexture2.rf" "file2.rf";
+connectAttr "place2dTexture2.mu" "file2.mu";
+connectAttr "place2dTexture2.mv" "file2.mv";
+connectAttr "place2dTexture2.s" "file2.s";
+connectAttr "place2dTexture2.wu" "file2.wu";
+connectAttr "place2dTexture2.wv" "file2.wv";
+connectAttr "place2dTexture2.re" "file2.re";
+connectAttr "place2dTexture2.of" "file2.of";
+connectAttr "place2dTexture2.r" "file2.ro";
+connectAttr "place2dTexture2.n" "file2.n";
+connectAttr "place2dTexture2.vt1" "file2.vt1";
+connectAttr "place2dTexture2.vt2" "file2.vt2";
+connectAttr "place2dTexture2.vt3" "file2.vt3";
+connectAttr "place2dTexture2.vc1" "file2.vc1";
+connectAttr "place2dTexture2.o" "file2.uv";
+connectAttr "place2dTexture2.ofs" "file2.fs";
+connectAttr "PxrDispTransform1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
-connectAttr "PingGMA_Body.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "place2dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
-connectAttr "file1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+connectAttr "PxrSurface1SG.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "PxrDispTransform1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr "PingGMA_Body.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
-connectAttr "place2dTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+connectAttr "PxrTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
 		;
-connectAttr "PxrTexture1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+connectAttr "PxrDisplace1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
 		;
-connectAttr "PxrDisplace1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+connectAttr "place2dTexture2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "blendColors1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "file2.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "file1.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
 		;
 connectAttr "PxrSurface1SG.pa" ":renderPartition.st" -na;
 connectAttr "PingGMA_Body.msg" ":defaultShaderList1.s" -na;
 connectAttr "PxrDisplace1.msg" ":defaultShaderList1.s" -na;
 connectAttr "place2dTexture1.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "blendColors1.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "place2dTexture2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr ":rmanGlobals.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanDefaultDisplay.msg" ":defaultRenderingList1.r" -na;
 connectAttr "d_openexr.msg" ":defaultRenderingList1.r" -na;
@@ -42967,4 +43018,5 @@ connectAttr ":PxrPathTracer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "PxrTexture1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "PxrDispTransform1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
+connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
 // End of ping_displacement_v2_latest.ma
