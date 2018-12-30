@@ -1,0 +1,94 @@
+OpenShadingLanguage 1.00
+# Compiled by oslc 1.8.2.pixar1697a56
+# options: 
+shader light_dir_intensity
+param	point	key_pos	0 0 0		%meta{int,lockgeom,0} %meta{int,slider,1}  %read{0,0} %write{2147483647,-1}
+param	point	rim_pos	0 0 0		%meta{int,lockgeom,0} %meta{int,slider,1}  %read{4,4} %write{2147483647,-1}
+param	float	key_size	0		%meta{int,lockgeom,0} %meta{int,slider,1}  %read{20,20} %write{2147483647,-1}
+param	float	rim_size	0		%meta{int,lockgeom,0} %meta{int,slider,1}  %read{9,9} %write{2147483647,-1}
+param	float	rim_cutoff	0		%meta{int,lockgeom,0} %meta{int,slider,1}  %read{13,13} %write{2147483647,-1}
+param	color	key_shadow	0 0 0		%meta{int,lockgeom,0}  %read{23,23} %write{2147483647,-1}
+param	color	key_light	0 0 0		%meta{int,lockgeom,0}  %read{25,25} %write{2147483647,-1}
+param	color	rim	0 0 0		%meta{int,lockgeom,0}  %read{18,18} %write{2147483647,-1}
+oparam	color	overlayColor	0 0 0		%read{2147483647,-1} %write{18,25}
+oparam	float	rimMask	0		%read{2147483647,-1} %write{19,19}
+oparam	float	keyMask	0		%read{2147483647,-1} %write{24,26}
+global	point	P	%read{0,4} %write{2147483647,-1}
+global	vector	I	%read{8,8} %write{2147483647,-1}
+global	normal	N	%read{3,8} %write{2147483647,-1}
+local	vector	key_dir	%read{3,3} %write{2,2}
+local	float	key_intensity	%read{21,21} %write{3,3}
+local	vector	rim_dir	%read{7,7} %write{6,6}
+local	float	rim_intensity	%read{10,10} %write{7,7}
+local	float	facing_angle	%read{14,14} %write{8,8}
+temp	vector	$tmp1	%read{2,2} %write{1,1}
+temp	vector	$tmp2	%read{1,1} %write{0,0}
+temp	vector	$tmp3	%read{6,6} %write{5,5}
+temp	vector	$tmp4	%read{5,5} %write{4,4}
+const	int	$const1	1		%read{19,26} %write{2147483647,-1}
+temp	float	$tmp5	%read{10,10} %write{9,9}
+const	float	$const2	1		%read{9,20} %write{2147483647,-1}
+temp	int	$tmp6	%read{11,11} %write{10,10}
+temp	int	$tmp7	%read{12,17} %write{11,16}
+const	int	$const3	0		%read{11,24} %write{2147483647,-1}
+temp	float	$tmp8	%read{14,14} %write{13,13}
+const	float	$const5	30		%read{13,13} %write{2147483647,-1}
+temp	int	$tmp9	%read{15,15} %write{14,14}
+temp	int	$tmp10	%read{16,16} %write{15,15}
+temp	float	$tmp11	%read{21,21} %write{20,20}
+temp	int	$tmp12	%read{22,22} %write{21,21}
+code ___main___
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:16
+# 	float key_intensity = dot(key_dir, N);
+	sub		$tmp2 key_pos P 	%filename{"C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl"} %line{16} %argrw{"wrr"}
+	assign		$tmp1 $tmp2 	%argrw{"wr"}
+	normalize	key_dir $tmp1 	%argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:17
+# 
+	dot		key_intensity key_dir N 	%line{17} %argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:19
+# 	float rim_intensity = dot(rim_dir, N);
+	sub		$tmp4 rim_pos P 	%line{19} %argrw{"wrr"}
+	assign		$tmp3 $tmp4 	%argrw{"wr"}
+	normalize	rim_dir $tmp3 	%argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:20
+# 
+	dot		rim_intensity rim_dir N 	%line{20} %argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:22
+# 
+	dot		facing_angle I N 	%line{22} %argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:24
+# 		overlayColor = rim;
+	sub		$tmp5 $const2 rim_size 	%line{24} %argrw{"wrr"}
+	ge		$tmp6 rim_intensity $tmp5 	%argrw{"wrr"}
+	neq		$tmp7 $tmp6 $const3 	%argrw{"wrr"}
+	if		$tmp7 17 17 	%argrw{"r"}
+	mul		$tmp8 $const5 rim_cutoff 	%argrw{"wrr"}
+	le		$tmp9 facing_angle $tmp8 	%argrw{"wrr"}
+	neq		$tmp10 $tmp9 $const3 	%argrw{"wrr"}
+	assign		$tmp7 $tmp10 	%argrw{"wr"}
+	if		$tmp7 20 27 	%argrw{"r"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:25
+# 		rimMask = 1;
+	assign		overlayColor rim 	%line{25} %argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:26
+# 	} else {
+	assign		rimMask $const1 	%line{26} %argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:28
+# 			overlayColor = key_shadow;
+	sub		$tmp11 $const2 key_size 	%line{28} %argrw{"wrr"}
+	le		$tmp12 key_intensity $tmp11 	%argrw{"wrr"}
+	if		$tmp12 25 27 	%argrw{"r"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:29
+# 			keyMask = 0;
+	assign		overlayColor key_shadow 	%line{29} %argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:30
+# 		} else {
+	assign		keyMask $const3 	%line{30} %argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:32
+# 			keyMask = 1;
+	assign		overlayColor key_light 	%line{32} %argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL\\light_dir_intensity.osl:33
+# 		}
+	assign		keyMask $const1 	%line{33} %argrw{"wr"}
+	end
