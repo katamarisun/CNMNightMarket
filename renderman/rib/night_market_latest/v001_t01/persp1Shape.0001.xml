@@ -159,8 +159,8 @@
 </xsl:stylesheet>
 
 
-<rm:statsDoc xmlns:rm="http://renderman.pixar.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://renderman.pixar.com http://renderman.pixar.com/schema/rmStats_1.1.xsd" rmanHtmlDir="C:/Program Files/Pixar/RenderManProServer-22.1/etc/statsview/">
+<rm:statsDoc xmlns:rm="http://renderman.pixar.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://renderman.pixar.com http://renderman.pixar.com/schema/rmStats_1.1.xsd" rmanHtmlDir="C:/Program Files/Pixar/RenderManProServer-22.2/etc/statsview/">
     <statsview>
 	<version>2</version>
-	<rmanHtmlDir>C:/Program Files/Pixar/RenderManProServer-22.1/etc/statsview/</rmanHtmlDir>
+	<rmanHtmlDir>C:/Program Files/Pixar/RenderManProServer-22.2/etc/statsview/</rmanHtmlDir>
     </statsview>
