@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: cook2_tshirt.ma
-//Last modified: Mon, Jan 07, 2019 10:48:13 PM
+//Name: cook2_apparel.ma
+//Last modified: Mon, Jan 07, 2019 10:48:37 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "rmanDisplayChannel" -nodeType "d_openexr" -nodeType "rmanGlobals"
@@ -14878,4 +14878,4 @@ connectAttr ":PxrPathTracer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "outputCloth2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "apronShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId4.msg" ":initialShadingGroup.gn" -na;
-// End of cook2_tshirt.ma
+// End of cook2_apparel.ma
