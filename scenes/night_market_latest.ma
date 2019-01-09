@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: night_market_latest.ma
-//Last modified: Tue, Jan 08, 2019 03:59:39 PM
+//Last modified: Tue, Jan 08, 2019 05:05:25 PM
 //Codeset: 1252
 file -rdi 1 -ns "nm_building1_latest" -rfn "nm_building1_latestRN1" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/nm_building1_latest.ma";
@@ -94,6 +94,14 @@ file -rdi 2 -ns "mooncakebox_latest" -rfn "Jackies_stall_latest:mooncakebox_late
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Jackeis_Props/mooncakebox_latest.ma";
 file -rdi 2 -ns "mooncakebox_latest1" -rfn "Jackies_stall_latest:mooncakebox_latestRN1"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Jackeis_Props/mooncakebox_latest.ma";
+file -rdi 1 -ns "nm_building4_latest" -rfn "nm_building4_latestRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/nm_building4_latest.ma";
+file -rdi 1 -ns "Tea_Pose_Stall_Latest" -rfn "Tea_Pose_Stall_LatestRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Tea_Pose_Stall_Latest.ma";
+file -rdi 2 -ns "teaposeWorker_riggest_latest" -rfn "Tea_Pose_Stall_Latest:teaposeWorker_riggest_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Characters/BG_Chars/teaposeWorker_riggest_latest.ma";
+file -rdi 2 -ns "tent_TeaPose_latest" -rfn "Tea_Pose_Stall_Latest:tent_TeaPose_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Tents/tent_TeaPose_latest.ma";
 file -r -ns "nm_building1_latest" -dr 1 -rfn "nm_building1_latestRN1" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/nm_building1_latest.ma";
 file -r -ns "nm_building2_latest" -dr 1 -rfn "nm_building2_latestRN1" -op "v=0;"
@@ -104,6 +112,10 @@ file -r -ns "Barbatus_stall_latest" -dr 1 -rfn "Barbatus_stall_latestRN" -op "v=
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Barbatus_stall_latest.ma";
 file -r -ns "Jackies_stall_latest" -dr 1 -rfn "Jackies_stall_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Jackies_stall_latest.ma";
+file -r -ns "nm_building4_latest" -dr 1 -rfn "nm_building4_latestRN" -op "v=0;" 
+		-typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/nm_building4_latest.ma";
+file -r -ns "Tea_Pose_Stall_Latest" -dr 1 -rfn "Tea_Pose_Stall_LatestRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Tea_Pose_Stall_Latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
 requires -nodeType "PxrVisualizer" -nodeType "PxrNormalMap" -nodeType "PxrSurface"
@@ -122,14 +134,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "063184F2-4E0A-3314-C033-DC9849465121";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.4229720824128194 11.532692591323759 39.816491110916971 ;
-	setAttr ".r" -type "double3" -8.1383527296110927 23.800000000001145 0 ;
+	setAttr ".t" -type "double3" 9.4354483352518841 10.111615931238957 -85.234381009728708 ;
+	setAttr ".r" -type "double3" -8.13835272961329 156.5999999999988 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "26D23A1E-4DE9-BF48-04F8-BE8D98718524";
 	setAttr -k off ".v" no;
 	setAttr ".ovr" 1.3;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 56.964679396815711;
+	setAttr ".coi" 58.328201063063922;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -194,7 +206,7 @@ createNode transform -n "Street";
 	setAttr ".s" -type "double3" 0.047636845404349294 0.047636845404349294 0.047636845404349294 ;
 createNode transform -n "Left_Sidewalk1" -p "|Street";
 	rename -uid "F0461532-489F-3CF7-599A-77953E45871A";
-	setAttr ".t" -type "double3" 151.48533872729985 0 0 ;
+	setAttr ".t" -type "double3" 400.50401938437017 0 0 ;
 	setAttr ".s" -type "double3" 0.84960025162298702 1 1 ;
 	setAttr ".rp" -type "double3" 540.06759405874413 -10.075852155685425 0.0001220703125 ;
 	setAttr ".sp" -type "double3" 540.06759405874413 -10.075852155685425 0.0001220703125 ;
@@ -3913,7 +3925,7 @@ createNode mesh -n "polySurfaceShape1" -p "Left_Sidewalk1";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "Left_Sidewalk" -p "|Street";
 	rename -uid "0D179D61-4523-5A1F-2821-B99546049E2F";
-	setAttr ".t" -type "double3" -165.83538444786029 0 0 ;
+	setAttr ".t" -type "double3" -460.55442749275556 0 0 ;
 	setAttr ".s" -type "double3" 0.91129757946378853 1 1 ;
 	setAttr ".rp" -type "double3" -466.06665890529098 -10.075852155685425 0 ;
 	setAttr ".sp" -type "double3" -466.06665890529098 -10.075852155685425 0 ;
@@ -5878,7 +5890,8 @@ createNode mesh -n "Left_SidewalkShape" -p "Left_Sidewalk";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "Street" -p "|Street";
 	rename -uid "E185EF53-4CD4-0636-83B7-98BBF65DF977";
-	setAttr ".s" -type "double3" 2.9039727817157961 1 1 ;
+	setAttr ".t" -type "double3" -9.0485293751204274 0 0 ;
+	setAttr ".s" -type "double3" 3.3023442336396696 1 1 ;
 	setAttr ".rp" -type "double3" 40.662918090820313 -24.814626693725589 0 ;
 	setAttr ".sp" -type "double3" 40.662918090820313 -24.814626693725589 0 ;
 createNode mesh -n "StreetShape" -p "|Street|Street";
@@ -7591,20 +7604,20 @@ createNode rmanDisplayChannel -n "a";
 	setAttr ".remapSmoothness" 0;
 	setAttr -l on ".name" -type "string" "a";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "C73F7263-4C07-4A6E-74A0-8DB39A2D4C11";
-	setAttr -s 93 ".lnk";
-	setAttr -s 93 ".slnk";
+	rename -uid "FDA363DA-4B74-6859-CB08-32AFA51014F2";
+	setAttr -s 128 ".lnk";
+	setAttr -s 128 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "04510595-4643-B4AC-AC48-3083B7963E42";
+	rename -uid "2B4997BC-49C5-16A0-E8BE-7A9AEA95C062";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "B5E3CC97-4FE9-9871-8F34-EC959C09BB3A";
+	rename -uid "74F06607-4C3A-2C28-04F4-9096C3AF41AE";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "3C4DF826-48FF-6C42-F7FA-4B8E0D92E3E0";
+	rename -uid "9BC9D452-4CA0-E59F-0174-749723BBEB7C";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "31836786-4502-1CAF-2ACD-419EE6A08BA0";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "E768307B-4AF0-1C16-761E-6C97007E99A9";
+	rename -uid "3A6E79B9-4F15-202A-6F29-52842B6D05DD";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "3E3016C2-4491-1F40-5266-FEA6B90F7C2F";
 	setAttr ".g" yes;
@@ -12256,7 +12269,7 @@ createNode reference -n "nm_building1_latestRN1";
 		"nm_building1_latestRN1"
 		"nm_building1_latestRN1" 0
 		"nm_building1_latestRN1" 2
-		2 "|nm_building1_latest:Build1Cntrl" "translate" " -type \"double3\" -63.58863594199203817 -1.9478346196433094 0"
+		2 "|nm_building1_latest:Build1Cntrl" "translate" " -type \"double3\" -67.19165203562127431 -1.9478346196433094 0"
 		
 		2 "|nm_building1_latest:Build1Cntrl" "scale" " -type \"double3\" 1.69885331240620219 1.69885331240620219 1.69885331240620219";
 	setAttr ".ptag" -type "string" "";
@@ -12268,7 +12281,7 @@ createNode reference -n "nm_building2_latestRN1";
 		"nm_building2_latest:balcony_latestRN" 0
 		"nm_building2_latestRN1" 0
 		"nm_building2_latestRN1" 2
-		2 "|nm_building2_latest:Building2_Ctrl" "translate" " -type \"double3\" 63.13944049339711029 1061.98598257481262408 0"
+		2 "|nm_building2_latest:Building2_Ctrl" "translate" " -type \"double3\" 72.73772541621451637 1061.98598257481262408 0"
 		
 		2 "|nm_building2_latest:Building2_Ctrl" "scale" " -type \"double3\" 0.26868610109066887 0.26868610109066887 0.26868610109066887";
 	setAttr ".ptag" -type "string" "";
@@ -12280,7 +12293,7 @@ createNode reference -n "nm_building3_latestRN1";
 		"nm_building3_latest:balcony_latestRN" 0
 		"nm_building3_latestRN1" 0
 		"nm_building3_latestRN1" 2
-		2 "|nm_building3_latest:Building2_Ctrl" "translate" " -type \"double3\" -134.04265999198705117 -22.14880208604903089 -37.78422731425622061"
+		2 "|nm_building3_latest:Building2_Ctrl" "translate" " -type \"double3\" -137.64567608561625889 -22.14880208604903089 -65.04155036033033355"
 		
 		2 "|nm_building3_latest:Building2_Ctrl" "scale" " -type \"double3\" 0.050345679868624899 0.050345679868624899 0.050345679868624899";
 	setAttr ".ptag" -type "string" "";
@@ -12336,20 +12349,21 @@ createNode reference -n "Barbatus_stall_latestRN";
 		0
 		"Barbatus_stall_latest:chair_latestRN" 0
 		"Barbatus_stall_latestRN" 1
-		2 "|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus" "translate" " -type \"double3\" -59.2486228681519691 -96.63224254740839569 22.10655839602717876"
-		
-		"Barbatus_stall_latest:tent_Barbatus_latestRN" 1
-		2 "|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:tent_Barbatus_latest:tent_Barbatus" 
-		"translate" " -type \"double3\" 31.62797829320321696 -2.08283123014184834 -23.85505903956316232"
+		2 "|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus" "translate" " -type \"double3\" -55.06187374126473344 -97.36257134703683391 22.10655839602717876"
 		
 		"Barbatus_stall_latest:cook1_rigged_latestRN" 3
 		2 "|Barbatus_stall_latest:cook1_rigged_latest:Cook1|Barbatus_stall_latest:cook1_rigged_latest:Master" 
-		"translate" " -type \"double3\" -43.50992921638633959 0 5.3340422405202581"
-		2 "|Barbatus_stall_latest:cook1_rigged_latest:Cook1|Barbatus_stall_latest:cook1_rigged_latest:ikHandle3" 
-		"translate" " -type \"double3\" -45.17839595089320426 -0.99203441634331568 6.35174973456299163"
+		"translate" " -type \"double3\" -38.98846161647239228 -0.86647064581846012 5.3340422405202581"
 		
 		2 "|Barbatus_stall_latest:cook1_rigged_latest:Cook1|Barbatus_stall_latest:cook1_rigged_latest:ikHandle3" 
-		"rotate" " -type \"double3\" 90.57580668067457452 4.01345121366868796 72.09038629986022784";
+		"translate" " -type \"double3\" -40.65692835097926405 -1.85850506216177447 6.35174973456299607"
+		
+		2 "|Barbatus_stall_latest:cook1_rigged_latest:Cook1|Barbatus_stall_latest:cook1_rigged_latest:ikHandle3" 
+		"rotate" " -type \"double3\" 90.57580668067464558 4.0134512136686773 72.09038629985919044"
+		
+		"Barbatus_stall_latest:tent_Barbatus_latestRN" 1
+		2 "|Barbatus_stall_latest:Barbatus_stall_latest_Barbatus|Barbatus_stall_latest:tent_Barbatus_latest:tent_Barbatus" 
+		"translate" " -type \"double3\" 31.62797829320321696 -2.08283123014184834 -23.85505903956316232";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "Jackies_stall_latestRN";
@@ -12366,9 +12380,47 @@ createNode reference -n "Jackies_stall_latestRN";
 		"Jackies_stall_latest:LanternSphereWithTail_latestRN1" 0
 		"Jackies_stall_latest:tent_Jackie_latestRN" 0
 		"Jackies_stall_latestRN" 2
-		2 "|Jackies_stall_latest:JackiesStall" "translate" " -type \"double3\" -32.40450948971054146 0 -20.97752351807043425"
+		2 "|Jackies_stall_latest:JackiesStall" "translate" " -type \"double3\" -27.39444159960423164 -0.7303287996284249 -20.97752351807043425"
 		
 		2 "|Jackies_stall_latest:JackiesStall" "scale" " -type \"double3\" 2.09262657330234259 2.09262657330234259 2.09262657330234259";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "nm_building4_latestRN";
+	rename -uid "BBA17869-49FC-1AC6-840C-30ACF7699563";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"nm_building4_latestRN"
+		"nm_building4_latestRN" 0
+		"nm_building4_latestRN" 3
+		2 "|nm_building4_latest:Build1Cntrl" "translate" " -type \"double3\" 70.80547828752830242 -1.27895768228773399 -64.49388709494894556"
+		
+		2 "|nm_building4_latest:Build1Cntrl" "rotate" " -type \"double3\" 0 180 0"
+		
+		2 "|nm_building4_latest:Build1Cntrl" "scale" " -type \"double3\" 1.65944723938323113 1.65944723938323113 1.65944723938323113";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "Tea_Pose_Stall_LatestRN";
+	rename -uid "247830CB-4745-C446-0E49-F2B399F4DE4F";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Tea_Pose_Stall_LatestRN"
+		"Tea_Pose_Stall_Latest:teaposeWorker_riggest_latestRN" 0
+		"Tea_Pose_Stall_LatestRN" 0
+		"Tea_Pose_Stall_Latest:tent_TeaPose_latestRN" 0
+		"Tea_Pose_Stall_Latest:teaposeWorker_riggest_latestRN" 4
+		2 "|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:TeaPose|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:Master" 
+		"translate" " -type \"double3\" -25.49858138768826876 0 -38.52201529734679042"
+		2 "|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:TeaPose|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:Master" 
+		"rotate" " -type \"double3\" 0 90 0"
+		2 "|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:TeaPose|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:Master|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:ItsAMess|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:Joints_and_Mesh|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:Spine" 
+		"translate" " -type \"double3\" -0.051890987340520667 -0.39493197004085978 -0.66091628759002674"
+		
+		2 "|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:TeaPose|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:Master|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:ItsAMess|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:Joints_and_Mesh|Tea_Pose_Stall_Latest:teaposeWorker_riggest_latest:Spine" 
+		"rotate" " -type \"double3\" 1.74414937651658963 -16.50164578237499668 85.76261320485613737"
+		
+		"Tea_Pose_Stall_LatestRN" 3
+		2 "|Tea_Pose_Stall_Latest:Tea_Pose" "translate" " -type \"double3\" -24.17268251817067437 0 -38.48961897212212335"
+		
+		2 "|Tea_Pose_Stall_Latest:Tea_Pose" "rotate" " -type \"double3\" 0 90 0"
+		2 "|Tea_Pose_Stall_Latest:Tea_Pose" "scale" " -type \"double3\" 1 1 1";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 select -ne :time1;
@@ -12390,7 +12442,7 @@ select -ne :renderPartition;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 93 ".st";
+	setAttr -s 128 ".st";
 	setAttr -cb on ".an";
 	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
@@ -12403,7 +12455,7 @@ select -ne :defaultShaderList1;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 66 ".s";
+	setAttr -s 73 ".s";
 select -ne :postProcessList1;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -12411,17 +12463,17 @@ select -ne :postProcessList1;
 	setAttr -cb on ".bnm";
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 96 ".u";
+	setAttr -s 111 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 149 ".r";
+	setAttr -s 161 ".r";
 select -ne :defaultTextureList1;
-	setAttr -s 124 ".tx";
+	setAttr -s 147 ".tx";
 select -ne :initialShadingGroup;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 311 ".dsm";
+	setAttr -s 341 ".dsm";
 	setAttr -k on ".mwc";
 	setAttr -cb on ".an";
 	setAttr -cb on ".il";
@@ -12430,7 +12482,7 @@ select -ne :initialShadingGroup;
 	setAttr -cb on ".fo";
 	setAttr -cb on ".epo";
 	setAttr ".ro" yes;
-	setAttr -s 419 ".gn";
+	setAttr -s 455 ".gn";
 select -ne :initialParticleSE;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -12496,7 +12548,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr -k on ".hwdp";
 	setAttr -k on ".hwql";
 select -ne :ikSystem;
-	setAttr -s 2 ".sol";
+	setAttr -s 4 ".sol";
 connectAttr ":rmanDefaultDisplay.msg" ":rmanGlobals.displays[0]";
 connectAttr ":PxrPathTracer.msg" ":rmanGlobals.ri_integrator";
 connectAttr "d_openexr.msg" ":rmanDefaultDisplay.displayType";
