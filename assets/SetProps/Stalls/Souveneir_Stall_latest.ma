@@ -1,24 +1,20 @@
 //Maya ASCII 2018 scene
 //Name: Souveneir_Stall_latest.ma
-//Last modified: Sun, Dec 30, 2018 06:07:38 AM
+//Last modified: Wed, Jan 09, 2019 08:42:47 AM
 //Codeset: 1252
-file -rdi 1 -ns "table_cloth2_latest" -rfn "table_cloth2_latestRN" -op "v=0;"
-		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/table_cloth2_latest.ma";
-file -rdi 1 -ns "table_latest1" -rfn "table_latestRN1" -op "v=0;" -typ "mayaAscii"
-		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/table_latest.ma";
 file -rdi 1 -ns "tent_Souveneir_latest" -rfn "tent_Souveneir_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Tents/tent_Souveneir_latest.ma";
-file -r -ns "table_cloth2_latest" -dr 1 -rfn "table_cloth2_latestRN" -op "v=0;" 
-		-typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/table_cloth2_latest.ma";
-file -r -ns "table_latest1" -dr 1 -rfn "table_latestRN1" -op "v=0;" -typ "mayaAscii"
-		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/table_latest.ma";
+file -rdi 1 -ns "table_latest" -rfn "table_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/table_latest.ma";
 file -r -ns "tent_Souveneir_latest" -dr 1 -rfn "tent_Souveneir_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Tents/tent_Souveneir_latest.ma";
+file -r -ns "table_latest" -dr 1 -rfn "table_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/table_latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
 requires -nodeType "rmanDisplayChannel" -nodeType "d_openexr" -nodeType "rmanGlobals"
 		 -nodeType "PxrPathTracer" -nodeType "rmanDisplay" "RenderMan_for_Maya.py" "1.0";
-currentUnit -l foot -a degree -t film;
+currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2018";
 fileInfo "version" "2018";
@@ -28,17 +24,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "8A156E9D-4179-6B38-3521-9888E7E340B4";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 17.451088891710491 5.8071834263290807 10.726487608830539 ;
-	setAttr ".r" -type "double3" -15.338352729605297 58.200000000003037 -1.5089285992509033e-15 ;
+	setAttr ".t" -type "double3" 9.5775854761598449 5.5347466078629832 16.099633838144769 ;
+	setAttr ".r" -type "double3" -15.338352729606415 31.800000000003632 9.3557536960516048e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "9D854303-41E7-46D5-2F0E-63B8EE0D330D";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".ncp" 0.0032808398950131233;
-	setAttr ".fcp" 328.08398950131232;
-	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 21.297158465742374;
-	setAttr ".ow" 0.32808398950131235;
+	setAttr ".coi" 20.460165934826122;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -46,17 +38,14 @@ createNode camera -s -n "perspShape" -p "persp";
 createNode transform -s -n "top";
 	rename -uid "8865A234-4C6E-389D-755E-B7878E26555D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0 32.811679790026247 0 ;
+	setAttr ".t" -type "double3" 0 1000.1 0 ;
 	setAttr ".r" -type "double3" -89.999999999999986 0 0 ;
 createNode camera -s -n "topShape" -p "top";
 	rename -uid "4A7A0E9F-470B-0CEA-4BD4-0A8F7C2C235D";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
-	setAttr ".ncp" 0.0032808398950131233;
-	setAttr ".fcp" 328.08398950131232;
-	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 32.811679790026247;
-	setAttr ".ow" 0.98425196850393704;
+	setAttr ".coi" 1000.1;
+	setAttr ".ow" 30;
 	setAttr ".imn" -type "string" "top";
 	setAttr ".den" -type "string" "top_depth";
 	setAttr ".man" -type "string" "top_mask";
@@ -65,16 +54,13 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "BF892F7E-4656-6251-BFEE-89A41A69C434";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0 0 32.811679790026247 ;
+	setAttr ".t" -type "double3" 0 0 1000.1 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "4AEC44BE-4B54-648C-8205-BABEBB0CB73F";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
-	setAttr ".ncp" 0.0032808398950131233;
-	setAttr ".fcp" 328.08398950131232;
-	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 32.811679790026247;
-	setAttr ".ow" 0.98425196850393704;
+	setAttr ".coi" 1000.1;
+	setAttr ".ow" 16.926516153975911;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
@@ -83,17 +69,14 @@ createNode camera -s -n "frontShape" -p "front";
 createNode transform -s -n "side";
 	rename -uid "1B64380E-47A3-8D3F-3150-3B8C8FAF168D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 32.811679790026247 0.21851369385360123 -0.081307420968781963 ;
+	setAttr ".t" -type "double3" 1000.1 6.6602973886577654 -2.4782501911284744 ;
 	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 createNode camera -s -n "sideShape" -p "side";
 	rename -uid "4FD834A6-4392-711E-6B0B-E6B341477979";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
-	setAttr ".ncp" 0.0032808398950131233;
-	setAttr ".fcp" 328.08398950131232;
-	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 32.811679790026247;
-	setAttr ".ow" 1.1058944237913424;
+	setAttr ".coi" 1000.1;
+	setAttr ".ow" 33.707662037160119;
 	setAttr ".imn" -type "string" "side";
 	setAttr ".den" -type "string" "side_depth";
 	setAttr ".man" -type "string" "side_mask";
@@ -101,8 +84,8 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 createNode transform -n "SouveneirStall";
 	rename -uid "920A67EA-48FE-D863-681C-9D88BBABAEC4";
-	setAttr ".rp" -type "double3" 0 3.0103681649060943 2.4139806755828105e-15 ;
-	setAttr ".sp" -type "double3" 0 3.0103681649060943 2.4139806755828105e-15 ;
+	setAttr ".rp" -type "double3" 0 0.011467718212234967 -2.2204460492503131e-15 ;
+	setAttr ".sp" -type "double3" 0 0.011467718212234967 -2.2204460492503131e-15 ;
 createNode nurbsCurve -n "SouveneirStallShape" -p "SouveneirStall";
 	rename -uid "C7950576-46B3-D695-7666-F995C03F9272";
 	setAttr -k off ".v";
@@ -110,36 +93,36 @@ createNode nurbsCurve -n "SouveneirStallShape" -p "SouveneirStall";
 		3 8 2 no 3
 		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
 		11
-		5.6794093849991052 0.049812722403777827 -5.6794093849991061
-		4.9181189527806711e-16 0.049812722403777973 -8.0318977785347716
-		-5.6794093849991052 0.049812722403777827 -5.6794093849991043
-		-8.0318977785347734 0.049812722403777474 -4.1637499916610449e-16
-		-5.6794093849991052 0.049812722403777127 5.6794093849991052
-		-8.0456069374224676e-16 0.049812722403776981 8.0318977785347752
-		5.6794093849991052 0.049812722403777127 5.6794093849991043
-		8.0318977785347734 0.049812722403777474 1.0953070641737701e-15
-		5.6794093849991052 0.049812722403777827 -5.6794093849991061
-		4.9181189527806711e-16 0.049812722403777973 -8.0318977785347716
-		-5.6794093849991052 0.049812722403777827 -5.6794093849991043
+		5.2299784710512869 0.022935436424469768 -5.2299784710512913
+		4.5289315309881058e-16 0.022935436424469935 -7.3963064846800366
+		-5.2299784710512869 0.022935436424469768 -5.2299784710512895
+		-7.3963064846800339 0.022935436424469435 -3.1271071762896331e-15
+		-5.2299784710512869 0.022935436424469158 5.2299784710512842
+		-7.4089307913602734e-16 0.022935436424468991 7.3963064846800322
+		5.2299784710512869 0.022935436424469158 5.2299784710512824
+		7.3963064846800339 0.022935436424469435 -1.7350496381899775e-15
+		5.2299784710512869 0.022935436424469768 -5.2299784710512913
+		4.5289315309881058e-16 0.022935436424469935 -7.3963064846800366
+		-5.2299784710512869 0.022935436424469768 -5.2299784710512895
 		;
 createNode transform -n "SouveneirStallGrp" -p "SouveneirStall";
 	rename -uid "930BDC9D-4090-4298-212D-32815CF604D9";
-	setAttr ".rp" -type "double3" 0 -0.68263894748820853 0 ;
-	setAttr ".sp" -type "double3" 0 -0.68263894748820853 0 ;
+	setAttr ".rp" -type "double3" 0 -0.65155485031883331 -2.74368134203397e-15 ;
+	setAttr ".sp" -type "double3" 0 -0.65155485031883331 -2.74368134203397e-15 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "64F0825A-41F7-4FE4-09BC-798D978E43EA";
-	setAttr -s 4 ".lnk";
-	setAttr -s 4 ".slnk";
+	rename -uid "F755072C-404E-1894-2678-A99D2CDB24FB";
+	setAttr -s 10 ".lnk";
+	setAttr -s 10 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "07BBF24C-4914-B68C-EEE1-2894A64C21AE";
+	rename -uid "FAE3A2A2-4C55-AC39-AE2A-168A42A95102";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "0695CB1C-43E0-81A4-1BCC-319F5206B7F3";
+	rename -uid "3CE14B79-41EC-46C7-7236-48B57BBCBB23";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "7034B64B-4559-C137-8947-7D942F19FC6D";
+	rename -uid "03C3FC99-4E3A-DC53-93D6-3396945E1A8B";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "349B90C7-454F-F319-79C6-59857AC97141";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "AD6AC85E-468E-D0C5-3285-3BAF891C153F";
+	rename -uid "5223A3EB-4F38-D074-6A2F-18ADA0CF2352";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "A2190F46-4684-D980-EBC3-F1B7552EAD69";
 	setAttr ".g" yes;
@@ -352,7 +335,7 @@ createNode script -n "tent_latest_uiConfigurationScriptNode";
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1180\n            -height 874\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1319\n            -height 713\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
 		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n"
@@ -376,168 +359,16 @@ createNode script -n "tent_latest_uiConfigurationScriptNode";
 		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
 		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
 		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n"
-		+ "                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1180\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"straight\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n"
+		+ "                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 713\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 713\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "tent_latest_sceneConfigurationScriptNode";
 	rename -uid "6FE95CAB-4F08-1F17-5537-5C9C55BA8422";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
-createNode reference -n "table_cloth2_latestRN";
-	rename -uid "14EEC377-4903-6DE1-5F0A-2C8DC8FB06F1";
-	setAttr ".phl[1]" 0;
-	setAttr ".ed" -type "dataReferenceEdits" 
-		"table_cloth2_latestRN"
-		"table_cloth2_latestRN" 0
-		"table_cloth2_latestRN" 22
-		0 "|table_cloth2_latest:tablecloth2_Mesh" "|SouveneirStall|SouveneirStallGrp" 
-		"-s -r "
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh" 
-		"rotatePivot" " -type \"double3\" 5.60408249797078906 -0.34603891827093758 0"
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh" 
-		"scalePivot" " -type \"double3\" 5.60408249797078906 -0.34603891827093758 0"
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"pnts" " -s 1681"
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"pt[0:165]" (" -type \"float3\" 4.46101 -0.30153054000000001 -3.57658789999999982 4.19360730000000004 -0.20559156000000001 -3.60806680000000002 3.965045 -0.030662706000000001 -3.62619710000000017 3.746711 0.098095274999999996 -3.50829410000000008 3.68963859999999988 0.17735740999999999 -3.2785852000000002 3.626699 0.24707876000000001 -3.06317830000000013 3.42414310000000022 0.27611583000000001 -3.2221179000000002 3.21453360000000021 0.29278623999999998 -3.35055760000000014 2.95359280000000002 0.29643851999999998 -3.21787689999999982 2.65562869999999984 0.29813990000000001 -3.26734949999999991 2.35231589999999979 0.29900845999999998 -3.27940269999999989 2.04817649999999984 0.29913485000000001 -3.24997449999999999 1.74653670000000005 0.29838948999999998 -3.29006620000000005 1.45637379999999994 0.29641910999999999 -3.24921559999999987 1.29610760000000003 0.29386863000000002 -3.0350988000000001 1.19567819999999991 0.24920796000000001 -3.16776679999999988 1.35632109999999995 0.18747178 -3.36984990000000018 1.2660518999999999 0.08"
-		+ "0404065999999996 -3.58188530000000016 1.05707179999999989 -0.098666452000000002 -3.647783 0.83942395000000003 -0.28834717999999998 -3.64938330000000022 0.54428798 -0.30098286000000002 -3.73130460000000008 4.47935960000000044 -0.13072389000000001 -3.16827959999999997 4.40103009999999983 0.084571660000000007 -3.31290439999999986 4.26211879999999965 0.29581954999999999 -3.43699339999999998 4.04143950000000007 0.48341969000000001 -3.49429940000000006 3.81098459999999983 0.61308514999999997 -3.39064960000000015 3.7367916000000001 0.68982273000000005 -3.15769980000000006 3.49200989999999978 0.7338903 -3.22098059999999986 3.24577669999999996 0.75236583000000001 -3.31836989999999998 2.96023559999999986 0.75803065000000003 -3.23500679999999985 2.65836240000000013 0.75984222000000001 -3.269696 2.35351819999999989 0.76053894 -3.27073310000000017 2.04819150000000016 0.76074958000000004 -3.26032449999999985 1.74457630000000008 0.76029592999999995 -3.2851319000000001 1.44897279999999995 0.75730145000000004 -3.249011 1.2310"
-		+ "7239999999996 0.75453711000000001 -3.0738205999999999 1.22533439999999993 0.69490415000000005 -3.277106 1.11084580000000011 0.58670551000000004 -3.474463 0.88988018000000002 0.39410481000000003 -3.49174210000000018 0.72071284000000002 0.17226942000000001 -3.42432550000000013 0.57459629000000001 -0.051455307999999998 -3.34035940000000009 0.38625404000000002 -0.25878512999999997 -3.30855109999999986 4.15196230000000011 0.063079051999999997 -2.9238982 4.24219369999999962 0.31306680999999997 -2.98759269999999999 4.30633160000000004 0.56332028000000001 -3.098377 4.26783420000000024 0.80643438999999995 -3.24879909999999983 4.07790850000000038 1.01939990000000003 -3.36169669999999998 3.82758120000000002 1.13469590000000009 -3.26553180000000021 3.57070830000000017 1.19400119999999998 -3.23808570000000007 3.276541 1.21692960000000006 -3.27436570000000016 2.97006460000000017 1.2232978000000001 -3.25859049999999995 2.66250229999999988 1.2251223 -3.2657712000000001 2.35519979999999984 1.22582879999999994 -3.2672097999999"
-		+ "9983 2.04787849999999993 1.22617229999999999 -3.26561879999999993 1.74050440000000006 1.22614629999999991 -3.26947780000000021 1.4359883 1.22203719999999993 -3.25703049999999994 1.15473040000000005 1.21030560000000009 -3.17332269999999994 0.99929422000000001 1.12014480000000005 -3.3583782000000002 0.77344232999999996 0.91177147999999997 -3.32220080000000006 0.59085697000000004 0.67224497000000005 -3.24755050000000001 0.45318940000000002 0.42788962000000003 -3.146184 0.38772422000000001 0.1780185 -3.02834680000000001 0.39391881000000001 -0.076146520999999995 -2.92799660000000017 3.7178163999999998 0.20809913999999999 -2.78275989999999984 3.78319859999999997 0.46373545999999999 -2.85035090000000002 3.866591 0.72783010999999997 -2.91498370000000007 3.96219469999999996 0.99839990999999995 -2.97467920000000019 4.06225110000000011 1.30712279999999992 -3.01283570000000012 4.00115540000000003 1.64545980000000003 -3.14260459999999986 3.64111230000000008 1.62237919999999991 -3.14026210000000017 3.302597 1.6319264 -3.12"
-		+ "155650000000007 2.97261309999999979 1.6399051 -3.11148910000000001 2.66453790000000001 1.639338 -3.11028979999999988 2.35676430000000003 1.6390203000000001 -3.10989549999999992 2.04897570000000018 1.63877089999999992 -3.10992980000000019 1.74112280000000008 1.63891009999999993 -3.11023380000000005 1.41338230000000009 1.63692009999999999 -3.1162342999999999 1.08977790000000008 1.6209403 -3.13927079999999981 0.77584368000000004 1.49410080000000001 -3.09849810000000003 0.69501168000000002 1.12802960000000008 -2.973026 0.71541935000000001 0.83304089000000003 -2.89772939999999979 0.77788365000000004 0.55138463000000004 -2.87612509999999988 0.84336376000000002 0.27944734999999998 -2.87804510000000002 0.90744513000000004 0.01452299 -2.88138560000000021 4.08993529999999961 0.24214633999999999 -2.5070298000000002 4.10721019999999992 0.51012670999999998 -2.54376630000000015 4.11538029999999999 0.78662043999999998 -2.57218789999999986 4.118381 1.07178970000000007 -2.59722259999999983 4.08819719999999975 1.35633350000000"
-		+ "008 -2.61930230000000019 3.99301579999999978 1.62336740000000002 -2.65837840000000014 3.63487649999999984 1.5926 -2.66611239999999983 3.28056029999999987 1.59181879999999998 -2.64332410000000007 2.97188950000000007 1.59181879999999998 -2.64312220000000009 2.66414589999999984 1.59182209999999991 -2.64287949999999983 2.3564626999999998 1.59182209999999991 -2.64284249999999998 2.04879470000000019 1.59181879999999998 -2.64298870000000008 1.74085519999999994 1.59181879999999998 -2.643234 1.43037820000000004 1.59182869999999999 -2.64338020000000018 1.0770499 1.5948100999999999 -2.65748980000000001 0.80945491999999997 1.50457160000000001 -2.64060240000000013 0.87832469000000002 1.18820370000000008 -2.60495639999999984 0.94627804000000004 0.90020853000000001 -2.5912693 0.99489063 0.61422264999999998 -2.56947230000000015 1.02848659999999992 0.33587515000000001 -2.54695420000000006 1.0543423999999999 0.066598482000000001 -2.52406050000000004 4.18460039999999989 0.26603389 -2.13514140000000019 4.15947629999999968 0.5347"
-		+ "4659000000002 -2.1487324000000001 4.12994050000000001 0.81156450999999996 -2.16258410000000012 4.09872770000000042 1.09739159999999991 -2.17584869999999997 4.07645320000000044 1.39213729999999991 -2.19129160000000001 3.9397774000000001 1.63209819999999994 -2.20542650000000018 3.61494369999999998 1.59228239999999999 -2.21359830000000013 3.28089949999999986 1.59182540000000006 -2.19941709999999979 2.9725716000000002 1.59182540000000006 -2.19920869999999979 2.66467739999999997 1.59182540000000006 -2.19889810000000008 2.35637970000000019 1.59182540000000006 -2.1989228999999999 2.04821039999999988 1.59182540000000006 -2.19900679999999982 1.7402257000000001 1.59182540000000006 -2.199451 1.43026539999999991 1.59182209999999991 -2.19960639999999996 1.09082250000000003 1.5970203999999999 -2.20660379999999989 0.82320457999999996 1.53287939999999989 -2.19628170000000011 0.83164238999999995 1.205963 -2.182719 0.80394661000000001 0.90919833999999999 -2.17658519999999989 0.77781177000000001 0.62219482999999998 -2.1752243 0"
-		+ ".75709850000000001 0.34345525999999998 -2.17510320000000013 0.73945439000000002 0.072804540000000001 -2.17495679999999991 3.98432949999999986 0.27053528999999998 -1.73587519999999995 4.001687 0.54094933999999995 -1.73839830000000006 4.026197 0.81931639000000001 -1.7412787999999999 4.04838089999999973 1.10658239999999997 -1.746595 4.0560603000000004 1.39272379999999996 -1.75390650000000003 3.93037819999999982 1.6305326 -1.76048460000000007 3.60834959999999993 1.5919778 -1.76373139999999995 3.28088880000000005 1.59182869999999999 -1.75880039999999993 2.97324659999999996 1.59182540000000006 -1.75869769999999992 2.66518260000000007 1.59182540000000006 -1.75878169999999989 2.35624790000000006 1.59182540000000006 -1.758822 2.04742619999999986 1.59182540000000006 -1.75884069999999992 1.73981089999999994 1.59182540000000006 -1.75882509999999992 1.430974 1.59182209999999991 -1.7586447999999999 1.0942984 1.59855330000000007 -1.76017679999999999 0.82252239999999999 1.53100309999999995 -1.75861069999999997 0.854157920000"
-		+ "00001 1.19598810000000011 -1.746822 0.84662126999999998 0.90904284000000002 -1.74591460000000009 0.84507160999999997 0.62135874999999996 -1.74462819999999996 0.84691161000000004 0.34203905000000001 -1.74552010000000002 0.85631429999999997 0.070879519000000002 -1.7477012999999999 4.0790734000000004 0.27191257000000002 -1.30484139999999993 4.0753636000000002 0.54298133000000004 -1.30601569999999989 4.06885619999999992 0.82144874000000001 -1.30788339999999992 4.06680539999999979 1.10690960000000005 -1.31174550000000001 4.06970830000000028 1.39635679999999995 -1.31588729999999998 3.94402240000000015 1.62715290000000001 -1.31714569999999997 3.60811590000000004 1.59204910000000011 -1.32015670000000007 3.28079009999999993 1.59182540000000006 -1.31906269999999992 2.97297879999999992 1.59182540000000006 -1.31908150000000002 2.66503189999999979 1.59182540000000006 -1.3193611999999999 2.35616469999999989 1.59182540000000006 -1.31945749999999995 2.04747149999999989 1.59182540000000006 -1.31928350000000005 1.7401576999999"
-		+ "9992 1.59182540000000006 -1.31892929999999997 1.4313473000000001 1.59182209999999991 -1.31903480000000006 1.09083010000000002 1.59763929999999998 -1.317907 0.82481450000000001 1.531402 -1.32039569999999995 0.85028194999999995 1.19420560000000009 -1.31302560000000001 0.84992783999999999 0.90628498999999996 -1.31144079999999996 0.85404462000000003 0.62004298000000002 -1.3099928999999999"
-		)
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"pt[166:331]" (" 0.86013728 0.34076541999999999 -1.30989040000000001 0.86567925999999995 0.069061458000000006 -1.31018560000000006 4.07622339999999994 0.27352326999999999 -0.86862123000000002 4.07026290000000035 0.54464066 -0.86991072000000003 4.06654930000000014 0.82261216999999998 -0.87170976 4.06428670000000025 1.10599589999999992 -0.87429809999999997 4.05544610000000016 1.37159110000000006 -0.87543839000000001 3.94603940000000009 1.62933050000000001 -0.87881290999999995 3.60794620000000021 1.59212360000000008 -0.88063997000000005 3.28088069999999998 1.59182540000000006 -0.87945598000000003 2.97316 1.59182540000000006 -0.87934118999999999 2.66506959999999982 1.59182540000000006 -0.87953990999999998 2.35613470000000014 1.59182540000000006 -0.87964874999999998 2.04736969999999996 1.59182540000000006 -0.87947470000000005 1.740011 1.59182540000000006 -0.87922608999999996 1.4311780999999999 1.59182209999999991 -0.87935668 1.08657680000000001 1.59574020000000005 -0.87871343000000002 0.81405806999999997 1.51006470000000004 -0.87"
-		+ "959898000000003 0.84293406999999998 1.19506439999999992 -0.87665336999999999 0.84357095000000004 0.90396458000000002 -0.87524270999999998 0.84237587000000003 0.61897027000000004 -0.87408673999999997 0.83762937999999998 0.3403312 -0.87359589000000004 0.82755160000000005 0.068789250999999996 -0.87343115000000004 4.043498 0.27508852 -0.43194758999999999 4.05137060000000027 0.54624808000000002 -0.43337381000000003 4.05694680000000041 0.82390850999999998 -0.43479066999999999 4.05906150000000032 1.10770689999999994 -0.43630078 4.06152729999999984 1.397063 -0.43824901999999999 3.9305441000000001 1.63106440000000008 -0.44076272999999999 3.60584619999999978 1.59192589999999989 -0.44120395000000001 3.28102040000000006 1.59182540000000006 -0.43980572000000001 2.97331069999999986 1.59182540000000006 -0.43967834 2.66512990000000016 1.59182540000000006 -0.43973111999999998 2.35610439999999999 1.59182540000000006 -0.43979019000000003 2.04725650000000003 1.59182540000000006 -0.43969384 1.73984859999999997 1.59182540000000006"
-		+ " -0.43955401 1.43093650000000006 1.59182209999999991 -0.43980258999999999 1.08758369999999993 1.59736379999999989 -0.440626 0.82608508999999997 1.530465 -0.44045821000000002 0.84428734000000005 1.19486669999999995 -0.43864050999999998 0.84384643999999998 0.90313171999999997 -0.43813094000000002 0.84431385999999997 0.61867868999999998 -0.43738207000000001 0.84667384999999995 0.34040248000000001 -0.43666740999999998 0.85347521000000004 0.068854055999999997 -0.43613606999999999 4.07094860000000036 0.27684175999999999 0.0045240851999999998 4.06662079999999992 0.54805636000000002 0.0032501328 4.06136509999999973 0.82589829000000003 0.0021222187000000002 4.05964569999999991 1.11034809999999995 0.00094458914999999996 4.06153489999999984 1.39977869999999993 -0.00042257941000000001 3.92897939999999979 1.63024440000000004 -0.00095391081 3.60483960000000003 1.5918641 -0.0012149158000000001 3.28104659999999981 1.59182540000000006 -0.00028896971999999997 2.97328070000000011 1.59182540000000006 -6.2144026999999994e-05 2.66"
-		+ "511850000000017 1.59182540000000006 -5.5929624e-05 2.35608940000000011 1.59182540000000006 -8.0787226999999998e-05 2.047215 1.59182540000000006 -2.4857611000000001e-05 1.73977319999999991 1.59182540000000006 0.00010875203999999999 1.4308497 1.59182209999999991 -0.00011807364 1.08876750000000011 1.59750649999999994 -0.0013640614000000001 0.82512735999999998 1.52987530000000005 -0.001109271 0.84395564000000001 1.19635120000000006 -0.0015504933999999999 0.84429860000000001 0.90394848999999999 -0.0011714149000000001 0.84424239000000001 0.61936897000000002 -0.0004505442 0.84272283000000003 0.34119000999999999 0.00046608024000000003 0.83764057999999997 0.069654523999999995 0.0014603846000000001 4.05646750000000011 0.27775568 0.43988960999999999 4.054594 0.54894423000000003 0.43927433999999999 4.05641129999999972 0.82709085999999998 0.43869331 4.05664870000000022 1.11248370000000008 0.43811229000000002 4.05751560000000033 1.40115309999999993 0.43791342 3.92857220000000007 1.6296157 0.43875235000000001 3.604628299999"
-		+ "9999 1.59185470000000007 0.43866845999999998 3.28105780000000014 1.59182540000000006 0.43918734999999998 2.973258 1.59182540000000006 0.43957268999999999 2.66512990000000016 1.59182540000000006 0.43965036000000002 2.3561122000000001 1.59182540000000006 0.43961613999999999 2.0472302 1.59182540000000006 0.43965036000000002 1.73975429999999998 1.59182540000000006 0.43975911000000001 1.430612 1.59182209999999991 0.439495 1.09017359999999996 1.59800889999999995 0.43771768 0.82537990999999999 1.530977 0.43888289000000003 0.85064375000000003 1.18798659999999989 0.43466329999999997 0.84601408 0.905572 0.43569487000000001 0.84607071 0.62120973999999995 0.43644678999999997 0.84899247 0.34292054 0.43756229000000002 0.85676693999999998 0.071401304999999998 0.43903202000000002 4.04258580000000034 0.27719822999999999 0.87541044000000001 4.05144980000000032 0.54830259000000003 0.87521165999999995 4.05572510000000008 0.82652371999999996 0.87498164 4.05744409999999966 1.11099609999999993 0.87509977999999999 4.060739 1.4000738"
-		+ "9999999998 0.87695473000000002 3.92835 1.62996570000000007 0.87841820999999998 3.60409690000000005 1.59181879999999998 0.87885009999999997 3.281548 1.59182540000000006 0.87893098999999997 2.97378210000000021 1.59182540000000006 0.87904285999999998 2.66518260000000007 1.59182540000000006 0.8794592 2.35613470000000014 1.59182540000000006 0.87945598000000003 2.04730919999999994 1.59182540000000006 0.87941879000000001 1.73985229999999991 1.59182540000000006 0.87943119000000003 1.43065379999999998 1.59182209999999991 0.87901490999999998 1.0914254000000001 1.59843 0.87743020000000005 0.82252597999999999 1.52783690000000005 0.87774401999999996 0.84462309000000002 1.20173060000000009 0.87252074000000002 0.84432149000000001 0.90930211999999999 0.87256127999999999 0.84166353999999999 0.62416517999999999 0.87301481000000003 0.83374619000000005 0.34554878 0.87426077999999996 0.81952864000000003 0.074211008999999994 0.87598217 4.0914735999999996 0.27628111999999999 1.31133520000000003 4.08052870000000034 0.547242939999999"
-		+ "96 1.31105279999999991 4.06856629999999964 0.82545763000000005 1.31110220000000011 4.06183240000000012 1.11001740000000004 1.3124943 4.05834150000000005 1.39054940000000005 1.31433679999999997 3.92909260000000016 1.6298686 1.31859349999999997 3.60441350000000016 1.59187729999999994 1.31967809999999997 3.280236 1.59182540000000006 1.31876149999999992 2.97286960000000011 1.59182540000000006 1.3189976000000001 2.66519780000000006 1.59182540000000006 1.31928979999999996 2.35617229999999989 1.59182540000000006 1.3193611999999999 2.04742619999999986 1.59182540000000006 1.31928660000000009 1.74004460000000005 1.59182540000000006 1.3191967 1.43085740000000006 1.59182209999999991 1.31848490000000007 1.09202869999999996 1.597996 1.31806240000000008 0.82431697999999998 1.53231230000000007 1.31653060000000011 0.85074574000000003 1.197093 1.3075135 0.85169231999999995 0.91387152999999999 1.30880930000000006 0.85953771999999995 0.62753879999999995 1.308486 0.87256378000000001 0.34833258 1.3092874000000001 0.889691409999999"
-		+ "96 0.077127672999999994 1.309791 4.015358 0.27519547999999999 1.743034 4.01726530000000004 0.54585265999999999 1.74327049999999995 4.03478569999999959 0.82394087000000005 1.74525320000000006 4.05192849999999982 1.10998189999999997 1.74840039999999997 4.062006 1.4005147 1.7538319 3.93032549999999992 1.628449 1.75952120000000001 3.60526560000000007 1.59195829999999994 1.7630633 3.28060529999999995 1.59182540000000006 1.75836830000000011 2.97323510000000013 1.59182540000000006 1.7588436999999999 2.66537880000000005 1.59182540000000006 1.75887170000000004 2.35634569999999988 1.59182540000000006 1.7588781 2.04738089999999984 1.59182540000000006 1.7588995999999999 1.739645 1.59182540000000006 1.75892150000000003 1.43042720000000001 1.59182209999999991 1.7582066999999999 1.09197630000000001 1.59729910000000008 1.761227 0.82035833999999996 1.53051709999999996 1.75558109999999989 0.85753942000000005 1.20832230000000007 1.74527140000000003 0.85263478999999998 0.91744292000000005 1.74334190000000011 0.85600513 0.6292693"
-		+ "6 1.74239410000000006 0.85579382999999998 0.34969366000000002 1.74286969999999997 0.85517186000000001 0.078725375 1.74379240000000002 4.0542997999999999 0.27070056999999997 2.1634481000000001 4.052177 0.54005820000000004 2.16905329999999985 4.04586220000000019 0.81736540999999996 2.17589239999999995 4.04702710000000021 1.10414539999999994 2.18166539999999998 4.06106329999999982 1.394986 2.19263720000000006 3.9409459 1.629243 2.20543580000000006 3.61021230000000015 1.59251570000000009 2.21219989999999989 3.28035280000000018 1.59182540000000006 2.19857170000000002 2.972636 1.59182540000000006 2.19893839999999985 2.66558219999999979 1.59182540000000006 2.19850019999999979 2.35675670000000004 1.59182540000000006 2.19840670000000005 2.0482781000000001 1.59182540000000006 2.19854690000000019 1.74013140000000011 1.59182540000000006 2.19896650000000005 1.4297527000000001 1.59182209999999991 2.19837 1.0844239 1.59538080000000004 2.21163439999999989 0.82302392000000002 1.53229309999999996 2.19222330000000021 0.81220323"
-		+ "000000005 1.20852650000000006 2.18209410000000004")
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"pt[332:497]" (" 0.77020770000000005 0.91439002999999996 2.17025880000000004 0.73032677000000001 0.62793421999999999 2.16345430000000016 0.70136809 0.34919459000000003 2.15812209999999993 0.67807996000000004 0.078705914000000002 2.15413260000000006 4.3151875000000004 0.25576719999999997 2.530225 4.28139930000000035 0.52450264000000002 2.55144409999999988 4.24228760000000005 0.80173528000000005 2.57346820000000021 4.1965817999999997 1.08880690000000002 2.59421159999999995 4.12100120000000025 1.3831408999999999 2.62286019999999986 3.96571970000000018 1.644711 2.655582 3.63429240000000009 1.59499180000000007 2.66978809999999989 3.3064764000000002 1.59205540000000001 2.66491029999999984 2.98499079999999983 1.59225 2.66020870000000009 2.66959379999999991 1.59236669999999991 2.65768890000000013 2.35635709999999987 1.5923699 2.65674419999999989 2.04235910000000009 1.59234710000000002 2.65731619999999991 1.72410069999999993 1.59228550000000002 2.65947820000000013 1.39647340000000009 1.59204910000000011 2.66409560000000001 1.06185269"
-		+ "999999998 1.59217209999999998 2.66866659999999989 0.80656326 1.47363219999999995 2.650775 0.88649458000000003 1.17845880000000003 2.60739559999999981 0.96466905000000003 0.88907015 2.5647335 1.01172029999999991 0.60540777000000001 2.52230480000000012 1.0446489000000001 0.33018114999999998 2.481035 1.07513480000000006 0.064135558999999995 2.43838860000000013 3.82941319999999985 0.19748241999999999 2.6688000999999999 3.811373 0.46022895000000003 2.74302789999999996 3.84064460000000008 0.72613198000000001 2.83927990000000019 3.92967339999999998 0.99278367000000001 2.93760729999999981 4.05503129999999956 1.2955760999999999 3.00897930000000002 4.07896419999999971 1.59272959999999997 3.16809940000000001 3.65026660000000014 1.61163940000000006 3.15524789999999999 3.30692120000000012 1.62537029999999993 3.13616349999999988 2.98876480000000022 1.63029310000000005 3.1285324000000001 2.67120360000000012 1.63320650000000001 3.122122 2.35584470000000001 1.63336529999999991 3.12252930000000006 2.04152969999999989 1.6332907"
-		+ "9999999993 3.12354229999999999 1.725654 1.63121990000000006 3.12649679999999996 1.40120109999999998 1.62561019999999989 3.13644930000000022 1.0212097 1.63020560000000003 3.1616363999999999 0.77889757999999998 1.37120210000000009 3.08336280000000018 0.70738160999999999 1.07540989999999992 2.95643689999999992 0.75404095999999998 0.78744685999999997 2.87597889999999978 0.83738035 0.51070355999999995 2.847368 0.92153817000000005 0.24287230000000001 2.829601 1.002216 -0.018189087999999999 2.8097707999999999 3.95229410000000003 0.038459121999999998 2.95909639999999996 4.081841 0.28033203000000001 2.99832510000000019 4.198607 0.52687490000000003 3.0777698 4.228478 0.77414364000000002 3.22224259999999996 4.07069249999999982 0.99308825000000001 3.3553579 3.8106 1.110131 3.28653359999999983 3.57994890000000021 1.16912879999999997 3.22646759999999988 3.28279610000000011 1.19556679999999993 3.27749420000000002 2.97457720000000014 1.20656570000000007 3.26341560000000008 2.666065 1.2122014000000001 3.26498510000000008 2.35"
-		+ "722060000000022 1.21392879999999992 3.26835630000000021 2.04861380000000004 1.2116667000000001 3.25993589999999989 1.7417978999999999 1.20536350000000003 3.26989460000000021 1.44000339999999993 1.18848240000000005 3.26851460000000005 1.1824827 1.14569159999999992 3.17004470000000005 1.00006689999999998 1.04044840000000005 3.32205489999999992 0.75581312 0.84563445999999998 3.3028493000000001 0.56942373999999996 0.61476058 3.2166526000000002 0.47050946999999999 0.36721963000000002 3.09566119999999989 0.46089551000000001 0.11071802 2.98050209999999982 0.49662541999999998 -0.13874474000000001 2.88200069999999986 4.36728380000000005 -0.16992070000000001 3.12769010000000014 4.34868189999999988 0.051681373000000003 3.278172 4.253376 0.26884355999999998 3.41978880000000007 4.04131169999999962 0.45717299 3.49520710000000001 3.80033779999999988 0.58492314999999995 3.40142850000000019 3.75363680000000022 0.66460973000000001 3.165657 3.507724 0.70668428999999999 3.20598839999999985 3.24803879999999978 0.72936957999999996"
-		+ " 3.31840089999999988 2.96018310000000007 0.74088394999999996 3.23638629999999994 2.6594707999999998 0.74559593000000002 3.266315 2.35657570000000005 0.74754363000000001 3.282758 2.0588801000000001 0.74607557000000002 3.22974940000000021 1.76605870000000009 0.73776626999999995 3.2882798000000002 1.47486279999999992 0.72167592999999997 3.28003329999999993 1.28843930000000007 0.70031947000000005 3.08933189999999991 1.30476759999999992 0.64500325999999997 3.31264950000000002 1.083101 0.49850222 3.4188938000000002 0.84890217000000001 0.32247469000000001 3.45783040000000019 0.63835364999999999 0.12070597 3.42543789999999992 0.45068604000000001 -0.085450693999999994 3.3660717 0.48010454000000002 -0.30088886999999997 3.27755330000000011 4.490406 -0.30166664999999998 3.53926059999999998 4.21746540000000003 -0.22534715999999999 3.61353560000000007 3.98002389999999995 -0.057045586000000002 3.63441850000000022 3.75239250000000002 0.067243412000000002 3.51299550000000016 3.70205710000000021 0.14750042999999999 3.279533100"
-		+ "00000009 3.66451759999999993 0.22030375999999999 3.05524249999999986 3.46826169999999978 0.24573060999999999 3.22573469999999984 3.21098950000000016 0.26830240999999999 3.34380219999999984 2.95012039999999987 0.27910056999999999 3.20997190000000021 2.6583812 0.28319037000000002 3.28066369999999985 2.35343549999999979 0.28504083000000002 3.299124 2.07058240000000016 0.28426307000000001 3.20060680000000009 1.79804469999999994 0.27606072999999998 3.30721519999999991 1.50623810000000002 0.25922828999999997 3.30456759999999994 1.349233 0.23862042 3.08946230000000011 1.57579359999999991 0.25037461999999999 3.23314550000000001 1.36518490000000003 0.11379346 3.33336209999999999 1.205507 -0.020201581 3.50807050000000009 0.98417555999999995 -0.18187255999999999 3.59623740000000014 0.71550250000000004 -0.25578097 3.69527939999999999 0.7230162 -0.30220135999999997 3.67431209999999986 0.58122819999999997 -0.30147222000000001 3.73223349999999998 0.85934937 -0.25253373000000001 3.63570830000000011 1.0998178999999999 -0.0978"
-		+ "59516999999993 3.56495430000000013 1.28994349999999991 0.046596634999999997 3.42269710000000016 1.44577969999999989 0.18345972999999999 3.24884919999999999 1.49558719999999989 0.24788894 3.126065 1.40865109999999993 0.24800237 3.20631479999999991 1.65176630000000002 0.26963757999999999 3.3435659000000002 1.9227768999999999 0.27975199000000001 3.233012 2.21210690000000021 0.28425333000000003 3.25039360000000022 2.50712249999999992 0.28415289999999999 3.29881309999999983 2.79882359999999997 0.28105149000000001 3.22903779999999996 3.08065839999999991 0.27313110000000002 3.27691670000000013 3.35948869999999999 0.25697604000000002 3.31391120000000017 3.52461050000000009 0.23555791000000001 3.10804029999999987 3.73512529999999998 0.18250695 3.16114229999999985 3.69861130000000005 0.11073096 3.40173630000000005 3.85728220000000022 0.0093475160999999998 3.58778290000000011 4.1058798000000003 -0.13512160000000001 3.64477539999999989 4.33768840000000022 -0.30092129000000001 3.57158780000000009 0.61019814000000006 -0.30"
-		+ "087593000000001 3.47478940000000014 0.60579813000000005 -0.21918325 3.49423720000000015 0.39053321000000002 -0.20250313 3.32391289999999984 0.81267071000000002 -0.030241392999999998 3.5021545999999999 0.54241782000000005 0.017984116000000001 3.3993964000000001 1.02699720000000005 0.15538840000000001 3.50490430000000019 0.74187106000000003 0.22218014 3.44477730000000015 1.2365953999999999 0.30780053000000002 3.39260079999999986 0.96659529 0.41236645 3.4475674999999999 1.44315529999999992 0.44970629000000001 3.28111459999999999 1.1934724000000001 0.57120824000000003 3.36206009999999988 1.33419789999999994 0.46826922999999998 3.07838870000000009 1.357535 0.69216579 3.20367069999999998 1.49341149999999989 0.48952203999999999 3.2874346000000001 1.40744069999999999 0.71067047000000005 3.16893219999999998 1.78151250000000005 0.50582302000000001 3.29801149999999987 1.62027779999999999 0.73149538000000003 3.31697769999999981 2.06487819999999989 0.51431698000000003 3.21400189999999997 1.90904610000000008 0.742157579999"
-		+ "99998 3.24218150000000005 2.35595370000000015 0.51522433999999995 3.29107929999999982 2.20863440000000022 0.74660378999999999 3.25709889999999991 2.65931629999999997 0.51325399000000005 3.27356720000000001 2.50985570000000013 0.74682415000000002 3.28312470000000012 2.95545150000000012 0.50904106999999998 3.22244429999999982 2.80929349999999989 0.74371308000000003 3.23876639999999982 3.230896 0.49745217000000003 3.33103470000000002 3.10356619999999994 0.73501813000000005 3.281189 3.48795719999999987 0.47486415999999998 3.21572950000000013 3.39648530000000015 0.71812414999999996 3.29004139999999978 3.7154221999999999 0.44182479000000002 3.10691240000000013 3.61772630000000017 0.69463849 3.11918879999999987 3.73297619999999997 0.36634463 3.34226730000000005 3.75750489999999981 0.62693935999999995 3.28650829999999994 3.88599590000000017 0.26739501999999998 3.53171040000000014 3.91200640000000011 0.53137951999999999 3.47465590000000013 4.13501169999999973 0.11277263999999999 3.55328679999999997 4.16024159999999998"
-		+ " 0.36895019000000001 3.47058219999999995")
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"pt[498:663]" (" 4.27464289999999991 -0.084449313999999998 3.43963410000000014 4.31106280000000019 0.16231714 3.35123470000000001 4.40818259999999995 -0.28389441999999998 3.32462450000000009 4.36784169999999961 -0.056854377999999997 3.20081520000000008 0.42895477999999998 -0.2310314 3.0737397999999998 0.40329140000000002 0.015965125 3.17375760000000007 0.47660967999999998 -0.015985355 2.93168469999999992 0.50699353000000003 0.25465566000000001 3.28346969999999994 0.45729144999999999 0.23755422000000001 3.03644729999999985 0.68586873999999998 0.4753308 3.36167190000000016 0.50970048000000001 0.49016370999999997 3.15857909999999986 0.91138494000000003 0.67647088 3.38736889999999979 0.65504401999999995 0.72914915999999996 3.26632429999999996 1.15269080000000002 0.84092878999999998 3.33178039999999998 0.87649995000000003 0.94432801 3.32065030000000005 1.23629049999999996 0.92546689999999998 3.12989620000000013 1.124422 1.10536060000000003 3.28134129999999979 1.45970280000000008 0.9531461 3.27080180000000009 1.32256710000000011 1"
-		+ ".1744273999999999 3.19342280000000001 1.753557 0.96959609000000002 3.27759389999999984 1.59052780000000005 1.19918680000000011 3.27175549999999982 2.05426880000000001 0.97736095999999995 3.24627659999999985 1.8950473000000001 1.20869840000000006 3.25703049999999994 2.35788419999999999 0.97929573000000003 3.27292680000000002 2.202919 1.21286260000000001 3.25979280000000005 2.66280360000000016 0.97753268000000004 3.26427030000000018 2.51146959999999986 1.21303760000000005 3.26443169999999983 2.966856 0.97226650000000003 3.25070760000000014 2.8202269000000002 1.20955720000000011 3.25718569999999996 3.26583390000000007 0.96056735999999998 3.29710439999999982 3.12888650000000013 1.20132229999999995 3.26799250000000008 3.542485 0.93597012999999996 3.21106580000000008 3.43391160000000006 1.18377690000000002 3.26000090000000009 3.77975269999999997 0.88404375000000002 3.22476239999999992 3.72507020000000022 1.150057 3.19302559999999991 3.92549970000000004 0.79397373999999998 3.41789340000000008 3.9318976000000001 1.07"
-		+ "039939999999989 3.3570449 4.174983 0.62569487000000001 3.39070509999999992 4.17273240000000012 0.89179878999999995 3.29912090000000013 4.29664230000000025 0.40784562000000002 3.2490635000000001 4.233036 0.65312773000000002 3.14347509999999986 4.2831564000000002 0.17582126000000001 3.10010459999999988 4.14424469999999978 0.40457246000000002 3.02916410000000003 4.18874739999999957 -0.061628003000000001 2.99663469999999998 4.02058319999999991 0.15926430999999999 2.9713731000000001 0.74553943 -0.079584949000000002 2.824595 0.66853750000000001 0.17965184000000001 2.86214570000000013 0.96002768999999999 0.11075042 2.81782770000000005 0.59979223999999998 0.44515628000000002 2.92172980000000004 0.87708419999999998 0.37475111999999999 2.834852 0.57804977999999996 0.71556394999999995 3.02279730000000013 0.79179918999999999 0.64566427000000004 2.854589 0.65756625000000002 0.97970723999999998 3.1473122 0.72211915000000004 0.92663682000000003 2.908011 0.85015386000000004 1.22240009999999999 3.23877550000000003 0.722054839"
-		+ "99999998 1.2161649000000001 3.01596760000000019 1.11705119999999991 1.36298680000000005 3.22210570000000018 0.80100954000000002 1.55004910000000007 3.17854239999999999 1.41686990000000002 1.42891619999999997 3.25595260000000009 1.23222209999999999 1.6170156 3.15079259999999994 1.73170890000000011 1.44406370000000006 3.25925829999999994 1.56321249999999989 1.6260216999999999 3.13218310000000022 2.04395389999999999 1.44887640000000006 3.25877980000000012 1.88194989999999995 1.63016019999999995 3.12578539999999983 2.35628910000000014 1.45028259999999998 3.25943519999999998 2.19756889999999983 1.63233460000000008 3.12426609999999982 2.66917179999999998 1.45047060000000005 3.26190880000000005 2.512887 1.63105129999999998 3.12328740000000016 2.982883 1.443542 3.26151420000000014 2.828804 1.6301277999999999 3.12638209999999983 3.29922249999999995 1.43254919999999997 3.26331309999999997 3.14761690000000005 1.62637520000000002 3.13171409999999995 3.615592 1.39804839999999997 3.24767159999999988 3.45274729999999996 1.5"
-		+ "98025 3.15920349999999983 3.91317130000000013 1.33942640000000002 3.28273029999999988 3.82750559999999984 1.611863 3.1551642000000002 4.14270639999999979 1.1474415 3.19763039999999998 4.07890369999999969 1.40106559999999991 3.07021329999999981 4.11388730000000002 0.88702846000000002 3.05403089999999988 3.98793769999999981 1.12998369999999992 2.97932459999999999 3.98470639999999987 0.63196576000000004 2.998735 3.88166739999999999 0.86112522999999996 2.891571 3.85445860000000007 0.38338446999999998 2.945888 3.81942989999999982 0.59404575999999998 2.790767 3.73964190000000007 0.14127818 2.8687794000000002 3.81630419999999981 0.32928996999999999 2.70260930000000021 1.16278740000000003 0.035027187000000001 2.6432370999999999 1.11165259999999999 0.29933256000000003 2.68874840000000015 1.05963180000000001 0.19545372 2.46039679999999983 1.04833249999999989 0.57145780000000002 2.7335354999999999 1.02936120000000009 0.46530717999999999 2.50191259999999982 0.97158723999999996 0.85066735999999998 2.77629349999999997 0.99"
-		+ "108249000000004 0.74406952000000004 2.54361080000000017 0.89066445999999999 1.13750850000000003 2.81819439999999988 0.93105417000000001 1.03009090000000003 2.586838 0.82713318000000002 1.44940770000000008 2.88271519999999981 0.83939743 1.32248720000000008 2.6276484 1.06020819999999993 1.59141090000000007 2.89833549999999995 0.87713319000000001 1.60267889999999991 2.6657175999999998 1.38888379999999989 1.59492030000000007 2.89432070000000019 1.23065760000000002 1.59180940000000004 2.66580150000000016 1.719663 1.59702359999999999 2.88727620000000007 1.55976310000000007 1.59220779999999995 2.662946 2.03995369999999987 1.597675 2.88499930000000004 1.88306210000000007 1.59231780000000001 2.65909 2.3558028000000002 1.59782709999999994 2.884788 2.19910359999999994 1.59234070000000005 2.65751790000000021 2.67107939999999999 1.59769120000000009 2.88617370000000006 2.512506 1.59235360000000004 2.65753340000000016 2.98854970000000009 1.5964465000000001 2.889349 2.82630440000000016 1.59229529999999997 2.65906520000000013"
-		+ " 3.31197330000000001 1.59470639999999997 2.895231 3.14378240000000009 1.59214630000000001 2.66250469999999995 3.64783839999999993 1.59632989999999997 2.90466140000000017 3.46866129999999995 1.592357 2.66806980000000005 3.99696659999999993 1.61413160000000011 2.89621569999999995 3.79554560000000007 1.6034953999999999 2.66944340000000002 4.06634519999999977 1.336808 2.84096690000000018 4.05564210000000003 1.55629069999999992 2.6329956000000001 4.00969119999999979 1.05023880000000003 2.74125359999999985 4.16236780000000017 1.23876929999999996 2.60536959999999995 4.02066609999999969 0.76719873999999999 2.68653250000000021 4.21801949999999959 0.94578969000000002 2.58474110000000001 4.05528349999999982 0.49257159 2.66156650000000017 4.25954389999999972 0.66297001 2.56300930000000005 4.09311340000000001 0.22586158000000001 2.64854119999999993 4.29641580000000012 0.38932148 2.5414547999999999 0.84773725 0.066348961999999997 2.32339740000000017 0.83565003000000004 0.33592053999999999 2.34687849999999987 0.690996410000"
-		+ "00001 0.21226995000000001 2.15618009999999982 0.83072597000000004 0.61341893999999997 2.364975 0.71633935000000004 0.48610302999999999 2.16113020000000011 0.82798886000000005 0.89913589000000005 2.38152069999999982 0.74968630000000003 0.76792466999999998 2.16692209999999985 0.83048867999999998 1.19461729999999999 2.39999010000000013 0.79325807000000004 1.05757590000000001 2.17564679999999999 0.81545316999999995 1.48722719999999997 2.428632 0.82195699 1.35407140000000004 2.19061109999999992 1.07348679999999996 1.59416190000000002 2.44312720000000017 0.92147796999999998 1.62972260000000002 2.2039099000000002 1.4295 1.59182209999999991 2.42049719999999979 1.2466733000000001 1.59220460000000008 2.21294570000000013 1.74076870000000006 1.59182869999999999 2.42042590000000013 1.58512849999999994 1.59182540000000006 2.19910309999999987 2.0489001 1.59182869999999999 2.42003149999999989 1.89404449999999991 1.59182540000000006 2.198873 2.35689640000000011 1.59182869999999999 2.41979480000000002 2.202229 1.59182540000000"
-		+ "006 2.19859649999999984 2.66496040000000001 1.59182869999999999 2.41994139999999991 2.51102829999999999 1.59182540000000006 2.19857790000000008 2.97226260000000009 1.59182869999999999 2.42060919999999991 2.8194013 1.59182540000000006 2.19882350000000004 3.28813429999999984 1.59182869999999999 2.43727349999999987 3.12630389999999991 1.59182540000000006 2.1991776999999999 3.62065940000000008 1.59329019999999999 2.4449386999999998 3.43538189999999988 1.59181879999999998 2.19842579999999987 3.94059919999999986 1.62690010000000007 2.43229220000000002 3.77007460000000005 1.59889020000000004 2.21146039999999999 4.05204149999999963 1.3778033999999999 2.406142 4.07502410000000026 1.55525679999999999 2.20085860000000011 4.11663960000000007 1.0979426000000001 2.3914076999999998 4.05301810000000007 1.2519686000000001 2.187212 4.17464350000000017 0.81485397000000004 2.36619279999999987 4.04687260000000038 0.96181828000000003 2.178633 4.21359680000000036 0.53789991000000004 2.342541 4.05183409999999977 0.67897593999999994 "
-		+ "2.17186570000000012")
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"pt[664:829]" (" 4.238646 0.2678487 2.32187179999999982 4.05782509999999963 0.40513959999999999 2.16434289999999985 0.73774247999999998 0.079033232999999994 1.94073629999999997 0.75566208000000001 0.35002744000000002 1.94549020000000006 0.85215967999999997 0.21258754999999999 1.74248739999999991 0.78220772999999999 0.62824214 1.95178830000000003 0.85449319999999995 0.48705584000000002 1.742419 0.81004684999999998 0.91529095000000005 1.95842540000000009 0.85343742 0.77005707999999995 1.74261160000000004 0.83089590000000002 1.21162459999999994 1.968151 0.85122085000000003 1.06204469999999995 1.74540509999999993 0.81991345000000004 1.52709819999999996 1.97576989999999997 0.84112823000000003 1.35541960000000006 1.7499944999999999 1.09032440000000008 1.59796329999999998 1.98864909999999995 0.92361552000000002 1.63063 1.75912019999999991 1.42956379999999994 1.59182209999999991 1.97871850000000005 1.25333889999999992 1.59238919999999995 1.7627463000000001 1.73942259999999993 1.59182540000000006 1.97900450000000006 1.585505600000000"
-		+ "07 1.59182540000000006 1.75877560000000011 2.0476901999999999 1.59182540000000006 1.97880879999999992 1.89348270000000007 1.59182540000000006 1.75897740000000002 2.35649679999999995 1.59182540000000006 1.97875310000000004 2.2016635 1.59182540000000006 1.75893389999999994 2.66556719999999991 1.59182540000000006 1.97874360000000005 2.51070789999999988 1.59182540000000006 1.75894940000000011 2.97357460000000007 1.59182540000000006 1.97881470000000004 2.81960459999999991 1.59182540000000006 1.75886239999999994 3.28075219999999979 1.59182540000000006 1.97885859999999991 3.12694120000000009 1.59182540000000006 1.7588128999999999 3.60671330000000001 1.59221729999999995 1.98964040000000009 3.43531060000000021 1.59181879999999998 1.75814150000000002 3.92977929999999986 1.62604130000000002 1.9823786000000001 3.76440429999999981 1.59579169999999992 1.76316 4.06130839999999971 1.40041090000000001 1.974931 4.06748770000000004 1.56250679999999997 1.75660349999999998 4.03966759999999958 1.11052309999999999 1.966498099999999"
-		+ "92 4.05763630000000042 1.2578796000000001 1.75167549999999994 4.00829270000000015 0.82436215999999995 1.96159789999999989 4.04370929999999973 0.96821230999999996 1.74706769999999989 3.9812379 0.54630637000000004 1.95903749999999999 4.02474929999999986 0.68536025 1.74415589999999998 3.96257569999999992 0.27562969999999998 1.95755539999999995 4.011158 0.41025019000000001 1.74232889999999996 0.90498716000000001 0.078132315999999993 1.52854420000000002 0.89115434999999998 0.34939551000000002 1.52712110000000001 0.88159704000000005 0.21117132999999999 1.30943680000000007 0.87255609000000001 0.62821943000000002 1.52662710000000001 0.86592066000000001 0.48563313000000002 1.30884329999999993 0.85744911000000001 0.91518396000000002 1.52851319999999991 0.85524374000000003 0.76791823000000003 1.30869719999999989 0.84613097000000004 1.20947589999999994 1.53216090000000005 0.84950530999999996 1.056824 1.30982510000000008 0.81231648000000001 1.51435889999999995 1.53782240000000003 0.84601051000000005 1.32857660000000011 1."
-		+ "30371630000000005 1.0916288999999999 1.59751629999999989 1.54125270000000003 0.92314046999999999 1.63332630000000001 1.31910959999999999 1.43034050000000001 1.59182209999999991 1.53885390000000011 1.2545153 1.59243130000000011 1.31902239999999993 1.7398598999999999 1.59182540000000006 1.53904960000000002 1.58595050000000004 1.59182540000000006 1.3190379000000001 2.047528 1.59182540000000006 1.53923879999999991 1.89381090000000007 1.59182540000000006 1.31927109999999992 2.35616110000000001 1.59182540000000006 1.5392764000000001 2.20161819999999997 1.59182540000000006 1.31934250000000008 2.66519020000000006 1.59182540000000006 1.53919880000000009 2.5106134 1.59182540000000006 1.319417 2.97331829999999986 1.59182540000000006 1.538857 2.81933709999999982 1.59182540000000006 1.31917480000000009 3.2802547999999998 1.59182540000000006 1.538829 3.126632 1.59182540000000006 1.31904109999999997 3.60429669999999991 1.59198759999999995 1.54267880000000002 3.43483159999999987 1.59181879999999998 1.31870559999999992 3.9283"
-		+ "6119999999989 1.626968 1.54025520000000005 3.76405 1.59536110000000009 1.31991429999999998 4.06305029999999956 1.40098440000000002 1.53616930000000007 4.06574960000000019 1.56295690000000009 1.31766460000000007 4.06106 1.11178050000000006 1.53222619999999998 4.06033229999999978 1.25654130000000008 1.31417239999999991 4.06219429999999981 0.82604085999999999 1.529641 4.064487 0.96907443000000004 1.31211520000000004 4.06782719999999998 0.54727857999999996 1.52924949999999993 4.07370140000000003 0.68686389999999997 1.31117379999999994 4.07946540000000013 0.2767348 1.53020660000000008 4.08653119999999959 0.41161457000000001 1.31131360000000008 0.83995569000000003 0.075056866 1.09457049999999989 0.84289992000000002 0.34634601999999998 1.09288980000000002 0.82730298999999996 0.20837457000000001 0.87502831000000003 0.84595739999999997 0.62507259999999998 1.092203 0.83856421999999997 0.48269382 0.87363935000000004 0.84646666000000004 0.91059840000000003 1.09288980000000002 0.84345811999999998 0.76407462000000004 0.873"
-		+ "02721000000005 0.84465676999999995 1.20253750000000004 1.09398660000000003 0.84452105 1.05191429999999997 0.87290608999999997 0.82164013000000002 1.52516659999999993 1.09891150000000004 0.84707743000000002 1.32330379999999992 0.86812096999999999 1.09133119999999995 1.59900679999999995 1.09932779999999997 0.91924965000000003 1.63318380000000007 0.87885325999999997 1.43034449999999991 1.59182209999999991 1.099154 1.25430039999999998 1.59250280000000011 0.87818830999999997 1.7398711 1.59182540000000006 1.09928749999999997 1.5857656 1.59182540000000006 0.87937832000000005 2.047528 1.59182540000000006 1.09943339999999989 1.89367510000000006 1.59182540000000006 0.87943738999999999 2.35612729999999981 1.59182540000000006 1.09957339999999992 2.20157310000000006 1.59182540000000006 0.87943428999999995 2.66511459999999989 1.59182540000000006 1.09943970000000002 2.510561 1.59182540000000006 0.87950885000000001 2.973367 1.59182540000000006 1.0988275999999999 2.81957840000000015 1.59182540000000006 0.87930070999999999 3.2"
-		+ "8048470000000014 1.59182540000000006 1.09909469999999998 3.1278081000000002 1.59182540000000006 0.87903344999999999 3.60391210000000006 1.59196460000000006 1.10041220000000006 3.43574020000000013 1.59181879999999998 0.87902725000000004 3.92793890000000001 1.62805369999999994 1.09974419999999995 3.76428750000000001 1.59515680000000004 0.87909245000000003 4.06006429999999963 1.399753 1.09776469999999993 4.06435869999999966 1.56379280000000009 0.87840890999999999 4.05869959999999974 1.1112263 1.09554949999999995 4.05872580000000038 1.2575978000000001 0.87621205999999996 4.06327679999999969 0.82698393000000003 1.094117 4.05684470000000008 0.97001736999999999 0.87530487999999995 4.06943319999999975 0.54829293000000001 1.09333410000000009 4.05434889999999992 0.68795282000000002 0.87530792000000002 4.0740103999999997 0.27711076000000001 1.09280859999999991 4.04882570000000008 0.41260629999999998 0.87532032000000004 0.84189725000000004 0.072295739999999997 0.65780072999999994 0.84291117999999998 0.34361079 0.65654849"
-		+ "999999998 0.85208421999999995 0.20571718999999999 0.43819620999999997 0.84402710000000003 0.62183522999999996 0.65608250999999995 0.84699833000000002 0.47999108000000001 0.43710550999999997 0.84476238000000003 0.90630436000000003 0.65628445000000002 0.84572773999999995 0.76083058000000003 0.43640643000000001 0.84421586999999998 1.19800060000000008 0.65665108000000005 0.84678715000000004 1.04781469999999999 0.435931 0.82188505000000001 1.523666 0.65959984000000005 0.84628957999999999 1.32162869999999999 0.43318122999999997 1.0902194999999999 1.599036 0.65921759999999996 0.91993188999999997 1.63393879999999991 0.43897298000000001 1.43012980000000001 1.59182540000000006 0.65968369999999998 1.25343690000000008 1.59245410000000009 0.43824901999999999 1.73965609999999993 1.59182540000000006 0.65956568999999998 1.58566380000000007 1.59182540000000006 0.43977144000000001 2.04739590000000016 1.59182540000000006 0.65957803000000004 1.89355830000000003 1.59182540000000006 0.43970323 2.3561084000000001 1.5918254000000000"
-		+ "6 0.65965264999999995 2.20151660000000016 1.59182540000000006 0.43963482999999998 2.66508840000000014 1.59182540000000006 0.65962779999999999 2.51053810000000022 1.59182540000000006 0.43965655999999997 2.97374420000000006 1.59182540000000006 0.65939473999999998 2.81941649999999999 1.59182540000000006 0.43964409999999998 3.28138949999999996 1.59182540000000006 0.6594103 3.1272316 1.59182540000000006 0.43946078 3.60405920000000002 1.5919551999999999 0.65985769000000005 3.43534059999999997 1.59181879999999998 0.43909416000000001 3.9282404999999998 1.62751259999999998 0.65978932000000001 3.7645325999999999 1.59495269999999989 0.43904448000000001 4.06050540000000026 1.40216729999999989 0.65944444999999996 4.06446410000000036 1.56383840000000007 0.43903202000000002 4.05545329999999993 1.11334909999999998 0.65825444 4.05530260000000009 1.25857960000000002 0.43826145 4.05171349999999997 0.82803391999999998 0.65781009000000001 4.05669360000000001 0.97090213999999997 0.43875544999999999 4.04053880000000021 0.5496897699"
-		+ "9999997 0.65746205999999996 4.05543470000000017 0.68849724999999995 0.43917804999999999 4.02327869999999965 0.27883481999999998 0.65709233 4.05319879999999966 0.41326733999999998 0.43947011000000002"
-		)
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"pt[830:995]" (" 0.84616511999999999 0.070179543999999996 0.22035028000000001 0.84564101999999997 0.34146221999999998 0.21963874999999999 0.84078889999999995 0.20402872999999999 0.00087001635000000005 0.84539204999999995 0.61938183999999996 0.21927519000000001 0.84379338999999998 0.47820538000000001 0.00017089608 0.84516959999999997 0.90358216000000002 0.21917265999999999 0.84437048000000003 0.75898993000000003 -0.00046608024000000003 0.84412145999999999 1.19565419999999989 0.21962008999999999 0.84407657000000003 1.0463823000000001 -0.00082340837000000001 0.81589447999999998 1.51123450000000004 0.22023222000000001 0.84702080000000002 1.31777809999999995 -0.0027716238999999998 1.08811550000000001 1.59796 0.21977235000000001 0.91817146999999999 1.6333358 -0.00036664979000000002 1.43032559999999997 1.59182209999999991 0.22008306 1.25251690000000004 1.59241830000000006 -0.0010906276 1.73962970000000006 1.59182540000000006 0.21991837 1.58574269999999995 1.59182540000000006 0.00013671686 2.04735090000000008 1.59182540000000006 0.2"
-		+ "1987488999999999 1.89354679999999997 1.59182540000000006 5.5929624e-05 2.35606690000000008 1.59182540000000006 0.21987799 2.20149350000000021 1.59182540000000006 -4.3500819000000001e-05 2.665066 1.59182540000000006 0.21985935000000001 2.51051570000000002 1.59182540000000006 -5.2822426000000002e-05 2.97344259999999982 1.59182540000000006 0.21967291999999999 2.81942389999999987 1.59182540000000006 -6.2144026999999994e-05 3.28095220000000021 1.59182540000000006 0.21969776999999999 3.1271675000000001 1.59182540000000006 -0.00014293127000000001 3.604116 1.5919551999999999 0.21987799 3.43554039999999983 1.59181569999999994 -0.00036043537000000003 3.9275658 1.62778460000000003 0.22012346999999999 3.76480009999999998 1.59519579999999994 -0.00081097956999999997 4.06201740000000022 1.40180780000000005 0.22055848 4.06460380000000043 1.56339120000000009 -0.00046297297 4.05991739999999979 1.1127788999999999 0.22123896000000001 4.06016639999999995 1.25712130000000011 0.00059347546999999996 4.06254910000000002 0.82777142999"
-		+ "999997 0.22143470000000001 4.06018110000000032 0.96926230000000002 0.0019699655999999999 4.07267189999999957 0.54959577000000004 0.22174232999999999 4.0635671999999996 0.68748944999999995 0.0028772684999999998 4.09062150000000013 0.27886074999999999 0.22275837000000001 4.07045890000000021 0.41241828000000003 0.0038808942999999999 0.84614979999999995 0.068922095000000003 -0.21724929000000001 0.84530174999999996 0.34022744999999999 -0.21751029999999999 0.84938848 0.20323472000000001 -0.43648413000000003 0.84446847000000003 0.61811804999999997 -0.21768119999999999 0.84515476 0.47744381000000002 -0.43681346999999998 0.843997 0.90237659000000003 -0.21770296 0.84400856000000002 0.7582835 -0.43733235999999998 0.84334891999999995 1.19377149999999999 -0.21760972000000001 0.84385765000000001 1.04525449999999998 -0.43781397 0.81673138999999995 1.51112770000000007 -0.21921926999999999 0.84695297000000003 1.31694219999999995 -0.43808429999999998 1.0870031 1.59811890000000001 -0.21924721999999999 0.91756426999999996 1.6334"
-		+ "3660000000002 -0.44022822 1.43049910000000002 1.59182209999999991 -0.21956727000000001 1.25156690000000004 1.59239909999999996 -0.44038987000000002 1.73963390000000007 1.59182540000000006 -0.2197568 1.58579589999999993 1.59182540000000006 -0.43951982000000001 2.04735090000000008 1.59182540000000006 -0.21978787 1.89359220000000006 1.59182540000000006 -0.43959132000000001 2.3560557000000002 1.59182540000000006 -0.21980965 2.20151260000000004 1.59182540000000006 -0.43974045 2.665081 1.59182540000000006 -0.21981275 2.51053069999999989 1.59182540000000006 -0.43975911000000001 2.97350290000000017 1.59182540000000006 -0.21993391000000001 2.81944989999999995 1.59182540000000006 -0.43970323 3.28105450000000021 1.59182540000000006 -0.21973506000000001 3.12721630000000017 1.59182540000000006 -0.43973735000000003 3.60459450000000015 1.59197129999999998 -0.22000539 3.43545390000000017 1.59181569999999994 -0.43975597999999999 3.92851190000000017 1.6286951999999999 -0.21958902 3.76607059999999993 1.59597980000000006 -0.4405"
-		+ "6073000000001 4.05808880000000016 1.39546229999999993 -0.21766875999999999 4.06454320000000013 1.56267819999999991 -0.43980881999999999 4.057478 1.11014719999999989 -0.21606234999999999 4.06003429999999987 1.25427939999999993 -0.43691289 4.05737639999999988 0.82586914 -0.21528864 4.05831150000000029 0.96688688 -0.43516979 4.05323649999999969 0.54783278999999996 -0.21458020999999999 4.05485390000000034 0.68561620000000001 -0.43384919 4.04310270000000038 0.27685147999999998 -0.2131913 4.04741570000000017 0.41064235999999998 -0.43255969999999999 0.83992146999999995 0.068419829000000001 -0.65466869000000005 0.84138440999999997 0.33979325999999999 -0.65456926999999998 0.83356512000000005 0.20313428 -0.87361449000000002 0.84280597999999995 0.61788469999999995 -0.65458167 0.84075475 0.47747614999999999 -0.87358338000000002 0.84329944999999995 0.90220153000000003 -0.65483338000000002 0.84333365999999998 0.75877607000000002 -0.87406503999999996 0.84303205999999997 1.19276329999999997 -0.65492344000000002 0.84345811999"
-		+ "999998 1.04603230000000003 -0.87513702999999998 0.81534755000000003 1.50757249999999998 -0.65696180000000004 0.84675699000000004 1.31841370000000002 -0.87456535999999996 1.0852987999999999 1.59679389999999999 -0.65836625999999998 0.90463662 1.62571379999999999 -0.87922918999999999 1.43063089999999993 1.59181879999999998 -0.65924561000000004 1.25126910000000002 1.59222719999999995 -0.87903655000000003 1.73972440000000006 1.59182540000000006 -0.65943198999999997 1.5860183000000001 1.59182540000000006 -0.87914842000000004 2.04741479999999987 1.59182540000000006 -0.65951901999999996 1.8937541 1.59182540000000006 -0.87931000999999998 2.35607409999999984 1.59182540000000006 -0.65956873000000005 2.201592 1.59182540000000006 -0.87956785999999998 2.66505839999999994 1.59182540000000006 -0.65952211999999999 2.51053430000000022 1.59182540000000006 -0.87961142999999997 2.97347660000000014 1.59182540000000006 -0.65952211999999999 2.819356 1.59182540000000006 -0.87946539999999995 3.28097130000000003 1.59182540000000006 -0."
-		+ "65929221999999998 3.12706179999999989 1.59182540000000006 -0.87939387999999996 3.60616680000000001 1.5920588 -0.65984838999999995 3.43530250000000015 1.59181879999999998 -0.87942809 3.93095520000000009 1.629269 -0.65966815000000001 3.76982950000000017 1.59737029999999991 -0.87991589000000003 4.06312940000000022 1.39546560000000008 -0.65558534999999996 4.079752 1.5506743999999999 -0.87650108000000004 4.06087489999999995 1.1076648 -0.65336983999999998 4.06274889999999989 1.2508798000000001 -0.87535143000000004 4.06018110000000032 0.82406729000000001 -0.65218293999999999 4.06517649999999975 0.96554518 -0.87265121999999995 4.057056 0.54597901999999998 -0.65139985 4.06798169999999981 0.68413526000000002 -0.87047934999999999 4.0518717999999998 0.27484544999999999 -0.65069770999999998 4.07200049999999969 0.40898954999999998 -0.86923331000000004 0.8436051 0.068487867999999993 -1.09187970000000001 0.84578443000000003 0.33992285 -1.09131430000000007 0.86213183000000004 0.20342595999999999 -1.3102199000000001 0.8464064 "
-		+ "0.61850041 -1.09102549999999998 0.85635203000000004 0.47812763000000003 -1.30967309999999992 0.84579568999999999 0.90364694999999995 -1.09171520000000011 0.85143924000000004 0.76024079 -1.31002710000000011 0.84384239000000005 1.19534969999999996 -1.09348939999999994 0.84872871999999999 1.04923739999999999 -1.3117608999999999 0.81434481999999997 1.50746880000000005 -1.09790469999999996 0.84593850000000004 1.333308 -1.31280519999999989 1.08632079999999998 1.59683559999999991 -1.09670529999999999 0.92120652999999997 1.63352420000000009 -1.31788219999999989 1.43089510000000009 1.59182209999999991 -1.09878410000000004 1.25356909999999999 1.5924121 -1.31832959999999999 1.73992410000000008 1.59182540000000006 -1.09916320000000001 1.58622189999999996 1.59182540000000006 -1.31884549999999989 2.04756949999999982 1.59182540000000006 -1.0993402000000001 1.893909 1.59182540000000006 -1.31911249999999991 2.3561122000000001 1.59182540000000006 -1.09946140000000003 2.2016597 1.59182540000000006 -1.31937989999999994 2.6649978"
-		+ "0000000008 1.59182540000000006 -1.09938059999999993 2.51053810000000022 1.59182540000000006 -1.31942939999999997 2.97329189999999999 1.59182540000000006 -1.09916320000000001 2.81921270000000002 1.59182540000000006 -1.31922760000000006 3.28078650000000005 1.59182540000000006 -1.09896119999999997 3.12690730000000006 1.59182540000000006 -1.31901939999999995 3.60759570000000007 1.59211049999999998 -1.09883379999999997 3.43543839999999978 1.59181879999999998 -1.3190442 3.93708539999999996 1.62769389999999992 -1.09653749999999994 3.76967879999999989 1.59647910000000004 -1.31913750000000007 4.06907890000000005 1.39458079999999995 -1.093999 4.08029889999999984 1.55257010000000006 -1.31587790000000004 4.0679173000000004 1.10710409999999992 -1.09126459999999992 4.06751060000000031 1.25362170000000006 -1.31386760000000002 4.0721740999999998 0.82291681000000005 -1.08881579999999989 4.06702039999999965 0.96533126000000002 -1.30940260000000008 4.08393720000000027 0.54471517000000003 -1.08761050000000004 4.07109979999999982"
-		+ " 0.68265741999999996 -1.30647559999999996 4.10171370000000035 0.27405470999999998 -1.08660080000000003 4.07830050000000011 0.40733021000000003 -1.30540370000000006 0.87541007999999998 0.069648050000000003 -1.52894810000000003 0.86728912999999996 0.34097284 -1.52747520000000003"
-		)
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"pt[996:1161]" (" 0.85068553999999996 0.20495880999999999 -1.74660769999999999 0.85802977999999996 0.61986154000000004 -1.52651519999999996 0.84560685999999996 0.47932342 -1.74478979999999995 0.85168058000000002 0.90641457000000003 -1.52726709999999999 0.84551293000000005 0.76199085 -1.74452279999999993 0.84603298000000005 1.2008394 -1.52972160000000001 0.84829902999999995 1.0532397 -1.74668219999999996 0.82334799000000003 1.52778170000000002 -1.53784420000000011 0.84500014999999995 1.33243310000000004 -1.74584329999999999 1.091697 1.59934059999999989 -1.53711069999999994 0.92367213999999997 1.63305089999999997 -1.75925719999999997 1.4309175999999999 1.59182209999999991 -1.53842509999999999 1.25534459999999992 1.59252550000000004 -1.76086340000000008 1.73996569999999995 1.59182540000000006 -1.53888190000000002 1.58579589999999993 1.59182540000000006 -1.75862919999999989 2.04756949999999982 1.59182540000000006 -1.53904960000000002 1.89356569999999991 1.59182540000000006 -1.7588128999999999 2.35614990000000013 1.591825400000000"
-		+ "06 -1.53911789999999993 2.20167469999999987 1.59182540000000006 -1.75883129999999999 2.66506959999999982 1.59182540000000006 -1.53908059999999991 2.5106096 1.59182540000000006 -1.75882509999999992 2.97337480000000021 1.59182540000000006 -1.53888190000000002 2.81946560000000002 1.59182540000000006 -1.75875369999999998 3.28091480000000013 1.59182540000000006 -1.53850280000000006 3.12708809999999993 1.59182540000000006 -1.7587067999999999 3.607245 1.59204910000000011 -1.53947210000000001 3.435842 1.59181250000000007 -1.75871920000000004 3.92984679999999997 1.62806980000000001 -1.53767929999999997 3.7674468000000001 1.59616789999999997 -1.76239809999999997 4.06408360000000002 1.39846969999999993 -1.53269839999999991 4.06516549999999999 1.562662 -1.75769409999999993 4.05898619999999966 1.10807959999999994 -1.52772390000000002 4.0560079 1.25513150000000007 -1.75036419999999993 4.05006980000000016 0.82134174999999998 -1.52407910000000002 4.03978820000000027 0.96395069 -1.74332329999999991 4.03612380000000037 0.54246"
-		+ "276999999998 -1.52156230000000003 4.0163416999999999 0.68048286000000002 -1.7393554 4.0186377000000002 0.27197742000000003 -1.5183215000000001 3.99483679999999985 0.40544096000000002 -1.73679469999999991 0.78168773999999996 0.071048058999999997 -1.95805570000000007 0.78559332999999998 0.34237604999999999 -1.95730380000000004 0.74981487000000002 0.20651439999999999 -2.17448780000000008 0.80260461999999999 0.62110918999999998 -1.95799970000000001 0.76848095999999999 0.48053869999999999 -2.174432 0.82239783 0.90820997999999997 -1.959749 0.79141848999999997 0.76245099000000005 -2.17509679999999994 0.83762574000000001 1.2056422 -1.96434149999999996 0.81892960999999997 1.05331749999999991 -2.1779244000000002 0.82345723999999998 1.53040039999999999 -1.9762888999999999 0.84855521 1.3379067 -2.18125530000000012 1.09250739999999991 1.59937630000000008 -1.9806668999999999 0.92354773999999995 1.631142 -2.202533 1.43014090000000005 1.59182209999999991 -1.97831760000000001 1.25219290000000005 1.59238290000000005 -2.2077567"
-		+ "9999999985 1.73952409999999991 1.59182540000000006 -1.97878090000000006 1.58551679999999995 1.59182540000000006 -2.19937970000000016 2.04771280000000022 1.59182540000000006 -1.9786284999999999 1.89422190000000001 1.59182540000000006 -2.1990628000000001 2.35628910000000014 1.59182540000000006 -1.97852279999999991 2.20222519999999999 1.59182540000000006 -2.19882989999999978 2.66497919999999988 1.59182540000000006 -1.978464 2.51045870000000004 1.59182540000000006 -2.19877669999999981 2.97338989999999992 1.59182540000000006 -1.97860060000000004 2.81865480000000002 1.59182540000000006 -2.19882039999999979 3.28080149999999993 1.59181879999999998 -1.97837039999999997 3.12651130000000022 1.59182540000000006 -2.19924279999999994 3.61010289999999978 1.59202960000000004 -1.98561680000000007 3.43239589999999994 1.5917444999999999 -2.19639989999999985 3.93177319999999986 1.62855919999999998 -1.980611 3.775285 1.59796990000000005 -2.21121809999999996 4.06217190000000006 1.39735459999999989 -1.97071440000000009 4.0668468000"
-		+ "0000043 1.55874059999999992 -2.19591519999999996 4.05322889999999969 1.10440779999999994 -1.961741 4.085649 1.24718529999999994 -2.183126 4.04236750000000011 0.81689869999999998 -1.95717980000000003 4.11163659999999975 0.95515536999999995 -2.16946670000000008 4.03875920000000033 0.53783183999999995 -1.95395110000000005 4.1404595000000004 0.67322683000000005 -2.15687629999999997 4.04132270000000027 0.2667987 -1.94973459999999998 4.1648259000000003 0.39952980999999999 -2.144444 0.86671609000000005 0.067178607000000001 -2.36737039999999999 0.86377185999999995 0.33812748999999998 -2.37390780000000001 1.037531 0.19901209 -2.53660130000000006 0.85917228000000001 0.61607628999999997 -2.38062880000000021 1.00867810000000002 0.47203496 -2.55866220000000011 0.85042172999999999 0.90237993000000005 -2.38749579999999995 0.96880834999999998 0.75338024000000003 -2.58037539999999987 0.83850396000000005 1.1979841 -2.39673040000000004 0.91087973 1.04179010000000005 -2.60103820000000008 0.80786031000000003 1.50063410000000008 -"
-		+ "2.41492610000000019 0.83928060999999998 1.32771440000000007 -2.61220860000000021 1.08318019999999993 1.595387 -2.42825939999999996 0.89968245999999996 1.61911880000000008 -2.64956330000000007 1.4297527000000001 1.59181569999999994 -2.41993809999999998 1.2414596 1.59275879999999992 -2.65743710000000011 1.74065169999999991 1.59181879999999998 -2.419966 1.5725553000000001 1.59260939999999995 -2.65459079999999981 2.04871539999999985 1.59181879999999998 -2.41965219999999981 1.89063249999999994 1.59233749999999996 -2.65313670000000013 2.35651179999999982 1.59181879999999998 -2.419497 2.20174670000000017 1.59229529999999997 -2.65267059999999999 2.66437960000000018 1.59181879999999998 -2.419503 2.51088880000000003 1.59231469999999997 -2.6528567999999999 2.97209289999999982 1.59181879999999998 -2.41980769999999978 2.82116560000000005 1.59240219999999999 -2.65408730000000004 3.2806921 1.59181879999999998 -2.41975780000000018 3.13659290000000013 1.59254490000000004 -2.657058 3.621696 1.59243789999999996 -2.4365242000000"
-		+ "0003 3.46374490000000002 1.59239580000000003 -2.66192390000000012 3.95517109999999983 1.62335469999999993 -2.42932490000000012 3.8004131000000001 1.59672869999999989 -2.6646147 4.10162639999999978 1.384891 -2.40572259999999982 4.08993149999999961 1.51692519999999997 -2.64353850000000001 4.15973620000000022 1.09297789999999995 -2.38451909999999989 4.11276010000000003 1.2207732 -2.60797329999999983 4.20590539999999979 0.80818760000000001 -2.36960769999999998 4.11793989999999965 0.93004929999999997 -2.5849025000000001 4.23907949999999989 0.53044623000000002 -2.35653880000000004 4.112462 0.64855176000000003 -2.55861880000000008 4.26569649999999978 0.26067370000000001 -2.34417510000000018 4.10089870000000012 0.37525343999999999 -2.52779530000000019 1.10442839999999998 0.049950796999999998 -2.738184 1.06122640000000001 0.31846264000000002 -2.76176140000000014 0.87534219000000002 0.14568885000000001 -2.87978220000000018 1.00874949999999997 0.59537452000000002 -2.78342489999999998 0.81213939000000002 0.41344237 -2.87"
-		+ "913890000000006 0.94388788999999995 0.87993770999999998 -2.80347560000000007 0.74746972 0.68833518000000005 -2.88387439999999984 0.87443388 1.17144580000000009 -2.823489 0.69781256000000003 0.97521234000000001 -2.92819239999999992 0.81297629999999999 1.47504210000000002 -2.85878059999999978 0.72742748000000002 1.27319230000000005 -3.02556249999999993 1.06841230000000009 1.59638520000000006 -2.88023879999999988 0.87352872000000004 1.63982739999999994 -3.13593339999999987 1.40729009999999999 1.6016414000000001 -2.87732119999999991 1.24288820000000011 1.63663829999999999 -3.1165292 1.732561 1.60007969999999999 -2.87620260000000005 1.58243679999999998 1.63078250000000002 -3.11569619999999992 2.04674770000000006 1.59925640000000002 -2.87596629999999998 1.89348270000000007 1.6292561000000001 -3.115895 2.35653829999999997 1.59936009999999995 -2.87604430000000022 2.20227810000000002 1.62896759999999996 -3.11625240000000003 2.66615560000000018 1.59961620000000004 -2.876411 2.51031570000000004 1.629081 -3.1164481999999"
-		+ "9978 2.97998360000000018 1.60029350000000004 -2.87795829999999997 2.818387 1.6296967 -3.11698580000000014 3.30392380000000019 1.600031 -2.88146950000000013 3.12774039999999998 1.63122950000000011 -3.11750149999999993 3.641248 1.59625539999999999 -2.88740730000000001 3.46813010000000022 1.62995930000000011 -3.1231011999999998 4.0007596000000003 1.61432909999999996 -2.8847132000000002 3.80828910000000009 1.61694120000000008 -3.14348079999999985 4.0765513999999996 1.334131 -2.83584639999999988 4.13595389999999963 1.4514688 -3.09581950000000017 3.959661 1.05514529999999995 -2.76847909999999997 4.01165530000000015 1.14036690000000007 -3.00085379999999979 3.90874509999999997 0.77608484 -2.70712110000000017 3.91581370000000017 0.86436599000000003 -2.94442439999999994 3.87496829999999992 0.50488317000000005 -2.64980269999999996 3.82402940000000013 0.59679066999999997 -2.881777 3.84341189999999999 0.24308941000000001 -2.59181619999999979 3.75078630000000013 0.33542793999999998 -2.81477330000000014 0.64688533999999998 "
-		+ "-0.032117779999999999 -2.86752129999999994 0.58455318000000001 0.23327318 -2.88883659999999987 0.38580912000000001 0.049432299999999998 -2.97413870000000014 0.53711313000000005 0.50456559999999995 -2.95177289999999992"
-		)
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"pt[1162:1327]" (" 0.41158938 0.30190243999999999 -3.08635189999999993 0.55314010000000002 0.77746868000000002 -3.05780289999999999 0.51432657000000004 0.54893464000000003 -3.20030880000000018 0.66779864 1.04562719999999998 -3.16680340000000005 0.67824178999999996 0.79086255999999999 -3.28859659999999998 0.85712105000000005 1.30195379999999994 -3.24471070000000017 0.87913912999999999 1.02312990000000004 -3.34785410000000017 1.125289 1.43728410000000006 -3.25100560000000005 1.1155771000000001 1.16908980000000007 -3.28988289999999983 1.42279660000000008 1.4624486000000001 -3.256443 1.2930349000000001 1.21645 -3.21745420000000015 1.74049319999999996 1.46789619999999998 -3.25870870000000012 1.58787319999999998 1.22593569999999996 -3.2703568999999999 2.04835369999999983 1.46758169999999999 -3.25959729999999981 1.89439510000000011 1.22672329999999996 -3.26747059999999978 2.35623670000000018 1.467303 -3.259557 2.20181439999999995 1.2262694999999999 -3.26661940000000017 2.663995 1.46688829999999992 -3.25893239999999995 2.5091280999999"
-		+ "9986 1.22577690000000006 -3.26840589999999986 2.97129749999999992 1.46590320000000007 -3.25707080000000015 2.816468 1.22460060000000004 -3.262527 3.292372 1.456223 -3.25895709999999994 3.12401179999999989 1.22141490000000008 -3.26251479999999994 3.61245919999999998 1.43206319999999998 -3.2514126000000001 3.4289426999999999 1.21027330000000011 -3.2788558000000001 3.909548 1.35097310000000004 -3.25823309999999999 3.712029 1.17464780000000002 -3.1980833999999998 4.170074 1.18452559999999996 -3.21335550000000003 3.93826529999999986 1.09266329999999989 -3.34438009999999997 4.17934469999999969 0.91734557999999999 -3.06826519999999991 4.19203520000000029 0.92376875999999997 -3.31556080000000009 4.09590720000000008 0.64947551000000003 -2.98988889999999996 4.29968829999999969 0.68901246999999999 -3.17111039999999988 3.9943995000000001 0.38858264999999997 -2.95975520000000003 4.27884340000000041 0.43948822999999998 -3.03705310000000006 3.89835449999999994 0.13291384000000001 -2.92475269999999998 4.19524719999999984 0.1"
-		+ "8799028000000001 -2.95419650000000011 0.29917806000000002 -0.15544105999999999 -3.11959289999999978 0.40907839000000001 0.077192477999999995 -3.22347880000000009 0.49346632000000001 -0.15956651999999999 -3.31132269999999984 0.56027716000000005 0.30682835000000003 -3.30621430000000016 0.64613878999999996 0.059339263000000003 -3.38411190000000017 0.73069262999999995 0.53726792000000001 -3.37667969999999995 0.80088550000000003 0.28343668999999999 -3.46218039999999982 0.92791349000000001 0.75887972000000004 -3.42479440000000013 0.99511307000000004 0.49639245999999998 -3.49871830000000017 1.15637790000000007 0.91332703999999998 -3.35325430000000013 1.20637379999999994 0.65313750999999998 -3.39548110000000003 1.19076969999999993 0.98598461999999998 -3.11646080000000003 1.14573849999999999 0.72811532000000001 -3.17271970000000003 1.44540249999999992 0.98964012000000001 -3.251065 1.33727430000000003 0.75563574 -3.163162 1.74344549999999998 0.99407350999999999 -3.27654390000000006 1.59384879999999995 0.759618640000000"
-		+ "01 -3.29042669999999982 2.04868909999999982 0.99431974000000001 -3.26369879999999979 1.89650260000000004 0.76082413999999998 -3.26753280000000013 2.3548338000000002 0.99399245000000003 -3.2684991000000001 2.20161439999999997 0.76096350000000001 -3.26294990000000018 2.6607075 0.99331510000000001 -3.266989 2.50680520000000007 0.76065563999999997 -3.27665540000000011 2.96538570000000012 0.99155539000000004 -3.249275 2.80973460000000008 0.75936908000000003 -3.24857949999999995 3.26298380000000021 0.98501240999999995 -3.29405 3.10940219999999989 0.75519829999999999 -3.26345319999999983 3.53157779999999999 0.96354567999999996 -3.22732259999999993 3.3975067000000001 0.74461067000000003 -3.317714 3.78016730000000001 0.91239691000000001 -3.21288039999999997 3.59495429999999994 0.72189963000000001 -3.12832089999999985 3.93305870000000013 0.82324081999999998 -3.407882 3.77080230000000016 0.65271621999999996 -3.27504280000000003 4.18261 0.65798891000000004 -3.403296 3.91481140000000005 0.55898088000000001 -3.469047300000"
-		+ "00017 4.34378810000000026 0.44410628000000002 -3.28398559999999984 4.16236780000000017 0.39641872 -3.478251 4.40683269999999983 0.21707271 -3.13513829999999993 4.34052659999999957 0.19278656999999999 -3.378 4.390244 -0.012984440999999999 -2.99471759999999998 4.44575209999999998 -0.020752506 -3.24007179999999995 0.46341416000000002 -0.30125508000000001 -3.5221338000000002 0.72696364000000002 -0.18050495 -3.47315530000000017 0.69162606999999998 -0.30134907 -3.69389680000000009 0.87811702000000003 0.039123483000000001 -3.54595349999999998 0.95541692 -0.20048416999999999 -3.6418731000000002 1.07437690000000008 0.24562365 -3.56709189999999987 1.16320939999999995 -0.0032071138 -3.63138270000000007 1.2691437000000001 0.39654510999999998 -3.44111969999999978 1.34098760000000006 0.14326479 -3.48869730000000011 1.228863 0.47440400999999999 -3.211252 1.30257010000000006 0.22014821000000001 -3.25473429999999997 1.266135 0.52459334999999996 -3.04891990000000002 1.14485260000000011 0.28108385000000002 -3.05226920000000002 "
-		+ "1.4548395999999999 0.52661555999999998 -3.24735780000000007 1.36186289999999999 0.29502233999999999 -3.149472 1.7464386999999999 0.52919846999999998 -3.29097989999999996 1.59475370000000005 0.29791632000000001 -3.30436590000000008 2.048723 0.52991467999999997 -3.25511650000000019 1.89583149999999989 0.29909598999999998 -3.25995139999999983 2.35368390000000005 0.52970081999999996 -3.27338670000000009 2.20143749999999994 0.29914774999999999 -3.258749 2.657944 0.52892302999999996 -3.27099129999999994 2.50530529999999985 0.29904409999999998 -3.29089570000000009 2.957412 0.52727997000000004 -3.22487430000000019 2.80091240000000008 0.29831168000000002 -3.22579120000000019 3.23159689999999999 0.52183228999999998 -3.33212850000000005 3.08902840000000012 0.29370334999999997 -3.27762460000000022 3.46634220000000015 0.50353824999999997 -3.22529339999999998 3.366539 0.28319684000000001 -3.33904170000000011 3.68442010000000009 0.46778642999999998 -3.10724160000000005 3.4835045 0.26926815999999998 -3.10475279999999998 3.73"
-		+ "764729999999989 0.39579657000000001 -3.33532880000000009 3.71619149999999987 0.20861437999999999 -3.15788290000000016 3.88386560000000003 0.29711586000000001 -3.52403239999999984 3.68434879999999998 0.14387723999999999 -3.4016769 4.1248054999999999 0.13820921999999999 -3.55120490000000011 3.84427519999999978 0.042740150999999997 -3.59082150000000011 4.29514170000000028 -0.058753468000000003 -3.45898009999999978 4.08685489999999962 -0.11140582 -3.63618659999999982 4.44799569999999989 -0.25650688999999999 -3.35519649999999992 4.30323980000000006 -0.29305597999999999 -3.57605929999999983 0.47519212999999999 -0.28758561999999999 3.531064 0.72202109999999997 -0.13222437000000001 3.47342230000000018 0.91578090000000001 0.065713800000000003 3.52125760000000021 1.13927639999999997 0.23431022000000001 3.46031 1.32319640000000005 0.37645247999999998 3.31248450000000005 1.45226809999999995 0.47798494000000002 3.15541859999999996 1.38094040000000007 0.47528221999999998 3.20045760000000001 1.63447239999999994 0.4992767000"
-		+ "0000002 3.33361390000000002 1.91408289999999992 0.50987720000000003 3.23477360000000003 2.210855 0.51446283000000004 3.250931 2.50847959999999981 0.51447253999999998 3.29552889999999987 2.80275559999999979 0.51133549 3.2295661 3.09215 0.50315905000000005 3.27846720000000014 3.3798398999999999 0.48655348999999998 3.30492190000000008 3.56488350000000009 0.46521318 3.10670089999999988 3.75626829999999989 0.40278035000000001 3.22244120000000001 3.78093270000000015 0.32523906000000002 3.45682689999999981 4.01454690000000003 0.19703844000000001 3.56185030000000014 4.23361590000000021 0.018052159000000002 3.51024270000000005 4.3058109 -0.1928619 3.3706634000000002 0.39309680000000002 -0.10775675 3.11876029999999993 0.44103842999999998 0.13915230000000001 3.23294689999999996 0.58974868000000003 0.36635109999999999 3.33015540000000021 0.79515833000000002 0.57851607000000005 3.38637109999999986 1.0377383 0.76109313999999995 3.37096859999999987 1.24834369999999995 0.89899004000000005 3.25191570000000008 1.37789009999999"
-		+ "99 0.94422114000000001 3.16476230000000003 1.604481 0.96361047 3.303272 1.90198080000000003 0.97397434999999999 3.2507448000000001 2.2059126 0.97840446000000003 3.25923680000000004 2.51031970000000015 0.97853087999999999 3.273937 2.81440950000000001 0.97522211000000003 3.24993659999999984 3.1160755 0.96646231000000005 3.27600910000000001 3.41490269999999985 0.94923455000000001 3.27897980000000011 3.67343779999999986 0.92253077000000006 3.14887210000000017 3.8144003999999998 0.84732609999999997 3.34426520000000016 4.06322769999999966 0.72007513000000001 3.42735840000000014 4.25682160000000032 0.52039659000000005 3.32457830000000021 4.30495210000000039 0.29203435999999999 3.17091130000000021 4.24375060000000026 0.056568407000000001 3.040673 0.70550025000000005 0.050291080000000002 2.83899090000000021 0.62932754000000002 0.31199089000000002 2.88664269999999989 0.57588576999999996 0.58115077000000004 2.96736790000000017 0.59964532000000004 0.84965621999999996 3.08789010000000008 0.74249308999999997 1.10491 3.2055"
-		+ "3849999999985 0.97695577 1.31858539999999991 3.27008080000000012 1.26433290000000009 1.4083215 3.2431135000000002"
-		)
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"pt[1328:1493]" (" 1.57451190000000008 1.43666830000000001 3.26006030000000013 1.887556 1.44674680000000011 3.26079939999999979 2.20027609999999996 1.44829610000000009 3.25905939999999994 2.51286459999999989 1.45029560000000002 3.26132489999999997 2.82597660000000017 1.44833180000000006 3.2619056999999998 3.14087959999999988 1.437381 3.2610762000000002 3.45942019999999983 1.42240929999999999 3.26095459999999981 3.77672909999999984 1.381822 3.24812270000000014 4.05809969999999964 1.26200829999999997 3.26722530000000022 4.15076730000000005 1.01660630000000007 3.11408379999999996 4.05531790000000036 0.75675386 3.01444219999999996 3.91777849999999983 0.50634157999999996 2.9747941 3.79320449999999987 0.26086488000000002 2.91192010000000012 1.139906 0.16646201999999999 2.667439 1.08279539999999996 0.43473411000000001 2.71308969999999983 1.01183719999999999 0.71073841999999998 2.75665950000000004 0.93114090000000005 0.99412208999999996 2.79853180000000012 0.84965634000000001 1.28326439999999997 2.84452129999999981 0.86201095999999999"
-		+ " 1.60962680000000002 2.92822979999999999 1.21773360000000008 1.59293029999999991 2.90344669999999994 1.5564076 1.59846270000000001 2.89196229999999987 1.88087920000000008 1.60028719999999991 2.88712759999999991 2.19836449999999983 1.60080230000000001 2.88553669999999984 2.51360340000000004 1.60105819999999999 2.8857946000000001 2.8299048 1.60029020000000011 2.88774279999999983 3.15010119999999993 1.59799240000000009 2.8920338000000001 3.47918770000000022 1.59545789999999998 2.90041089999999979 3.82274769999999986 1.62784309999999999 2.911942 4.09975670000000036 1.51287130000000003 2.866014 4.02440979999999993 1.19050159999999994 2.78530759999999988 4.00693889999999975 0.90804779999999996 2.70806259999999988 4.03164479999999958 0.62912679000000005 2.66491629999999979 4.07272429999999996 0.35859275000000002 2.65079069999999994 0.84165942999999999 0.20041531000000001 2.33532289999999998 0.83399475000000001 0.47418361999999997 2.35566260000000005 0.82974577000000005 0.75579779999999996 2.37351970000000012 0.82840"
-		+ "740999999996 1.0466027 2.39013719999999985 0.83264512000000002 1.34308859999999997 2.41320159999999984 0.87953097000000002 1.6089462000000001 2.44116640000000018 1.23863539999999994 1.59198419999999996 2.44496039999999981 1.58584140000000007 1.59181569999999994 2.42073040000000006 1.89484380000000008 1.59181569999999994 2.42034510000000003 2.20267750000000007 1.59181250000000007 2.41999720000000007 2.51079439999999998 1.59181569999999994 2.41994759999999998 2.8184022999999998 1.59181569999999994 2.42050980000000004 3.1259834999999998 1.59181569999999994 2.42082359999999985 3.43604539999999981 1.59181250000000007 2.42062160000000004 3.78132460000000004 1.60147620000000002 2.44329809999999981 4.073916 1.55736009999999991 2.42403030000000008 4.08425379999999993 1.24284590000000006 2.404166 4.15347769999999983 0.95559280999999996 2.37780449999999988 4.20239969999999996 0.67598152 2.35259580000000001 4.23364259999999959 0.40232655000000001 2.32996010000000009 0.73980497999999995 0.21401994999999999 1.9416217000000"
-		+ "0001 0.76448053000000005 0.48872157999999999 1.94800409999999991 0.79450977 0.77121079000000003 1.95490190000000008 0.82135338000000002 1.06349669999999996 1.962844 0.84091294000000005 1.35742570000000007 1.972178 0.92003393 1.63106119999999999 1.98239110000000007 1.25260020000000005 1.59228239999999999 1.99049169999999997 1.58541519999999991 1.59182540000000006 1.97901689999999997 1.89344139999999994 1.59182540000000006 1.97889589999999993 2.20202540000000013 1.59182540000000006 1.97865639999999998 2.51105830000000019 1.59182540000000006 1.9786937 2.81971410000000011 1.59182540000000006 1.97867820000000005 3.12675619999999999 1.59182540000000006 1.97884609999999994 3.43604539999999981 1.59182209999999991 1.97882120000000006 3.76718310000000001 1.59607089999999996 1.98885439999999991 4.068615 1.563349 1.97660269999999993 4.053071 1.25296030000000003 1.97068320000000008 4.02210659999999987 0.96570723999999997 1.96425139999999998 3.99102880000000004 0.68405097999999998 1.96077450000000009 3.96837779999999984 0."
-		+ "409803 1.95899709999999994 0.90129994999999996 0.21299909 1.5281712999999999 0.88361007000000003 0.48814796999999999 1.52696870000000007 0.86521548000000004 0.77127886000000001 1.52738210000000008 0.85248374999999998 1.06251469999999992 1.53049860000000004 0.84110534000000003 1.35631740000000001 1.53373939999999997 0.90990716000000005 1.62544489999999997 1.54136429999999991 1.2556988 1.59227249999999998 1.54268179999999999 1.58612 1.59182540000000006 1.53891909999999998 1.89352809999999994 1.59182540000000006 1.53910239999999998 2.2017237999999999 1.59182540000000006 1.53925479999999992 2.51073030000000008 1.59182540000000006 1.53929819999999995 2.81937119999999997 1.59182540000000006 1.53900290000000006 3.12648510000000002 1.59182540000000006 1.53877620000000004 3.43557449999999998 1.59182209999999991 1.53902469999999991 3.76506780000000019 1.59478739999999997 1.542567 4.06870940000000036 1.56315779999999993 1.53821370000000002 4.06179860000000037 1.25617179999999995 1.53495739999999992 4.061305 0.9676711000"
-		+ "0000001 1.53111090000000005 4.06467150000000021 0.68530511999999999 1.52943910000000005 4.07324120000000001 0.41077196999999999 1.5298368 0.84099972000000001 0.20992041 1.09385920000000003 0.84455115000000003 0.48508546000000002 1.0925571999999999 0.84638351000000001 0.76760702999999997 1.09262550000000003 0.84600288000000001 1.05637350000000008 1.09385920000000003 0.84575385000000003 1.33493820000000007 1.09173380000000009 0.91744380999999997 1.63372790000000001 1.10016059999999993 1.25593669999999991 1.59239909999999996 1.10040270000000007 1.5861502999999999 1.59182540000000006 1.09923769999999998 1.89361109999999999 1.59182540000000006 1.09931540000000005 2.20170140000000014 1.59182540000000006 1.09955160000000007 2.51065490000000002 1.59182540000000006 1.09962319999999991 2.81935210000000014 1.59182540000000006 1.09913520000000009 3.1266961000000002 1.59182540000000006 1.09897360000000011 3.43551040000000008 1.59182209999999991 1.09959830000000003 3.76511690000000021 1.59473559999999992 1.1006422000000000"
-		+ "1 4.06758590000000009 1.56325169999999991 1.09920670000000009 4.05432270000000017 1.24372729999999998 1.09603110000000004 4.06099180000000004 0.96806972999999996 1.09503360000000005 4.06670379999999998 0.68648474999999998 1.09380009999999994 4.07386680000000023 0.41148817999999998 1.09312260000000006 0.84174614999999997 0.20721437000000001 0.65725385999999997 0.84332596999999998 0.48217207000000001 0.65640253000000004 0.84441184999999996 0.76382505999999994 0.65639632999999997 0.84483427 1.05168740000000005 0.65694940000000002 0.84619522000000003 1.32482710000000004 0.65530871999999996 0.91529464999999999 1.6338743 0.66037351 1.25538970000000005 1.5924121 0.66008144999999996 1.5858973999999999 1.59182540000000006 0.65960604 1.89342250000000001 1.59182540000000006 0.65956247000000001 2.20162609999999992 1.59182540000000006 0.65965885000000002 2.51063629999999982 1.59182540000000006 0.65970856 2.81943490000000008 1.59182540000000006 0.65948485999999995 3.12780479999999983 1.59182540000000006 0.65916169000000002"
-		+ " 3.43617749999999988 1.59182209999999991 0.65949106000000002 3.7654185 1.59466430000000003 0.66024923000000002 4.06824209999999997 1.56314160000000002 0.65997576999999996 4.0552463999999997 1.25681360000000009 0.65917413999999996 4.05416769999999982 0.96932715000000003 0.65831655 4.04695940000000043 0.68763523999999998 0.65783488999999995 4.03047989999999956 0.41311829999999999 0.65747761999999998 0.84626668999999999 0.20512088000000001 0.22013588000000001 0.84561449 0.47987439999999998 0.21964496 0.84532057999999999 0.76115476999999998 0.21953618999999999 0.84508687000000005 1.0490332 0.21998364000000001 0.84610485999999996 1.32768240000000004 0.22038758 0.90577143000000004 1.62847169999999997 0.2207045 1.254357 1.59233439999999993 0.22046214 1.58585609999999999 1.59182540000000006 0.21993703000000001 1.89335809999999993 1.59182540000000006 0.21987799 2.20158409999999982 1.59182540000000006 0.21990286000000001 2.51060220000000012 1.59182540000000006 0.21991837 2.81937119999999997 1.59182540000000006 0.219818"
-		+ "96000000001 3.12720889999999985 1.59182540000000006 0.21948649000000001 3.4359061999999998 1.59182209999999991 0.21985003 3.76553180000000021 1.59465790000000007 0.22031920999999999 4.06709579999999971 1.56367649999999991 0.22053981 4.06044529999999959 1.25687829999999989 0.22163978000000001 4.060596 0.96902250999999995 0.22185107000000001 4.06642870000000034 0.68747966999999999 0.22175784000000001 4.08224060000000044 0.4130761 0.22243834000000001 0.84554666000000001 0.20387964 -0.21720581 0.84470981000000001 0.47859429999999997 -0.21734871 0.84420466000000005 0.75988113999999995 -0.21732077 0.84377455999999995 1.04758140000000011 -0.21691993000000001 0.84675699000000004 1.32049430000000001 -0.21626122 0.90513056999999997 1.62910080000000002 -0.2188464 1.2534784000000001 1.592357 -0.21879979999999999 1.58590509999999996 1.59182540000000006 -0.21972573000000001 1.89337709999999992 1.59182540000000006 -0.21976925 2.20158049999999994 1.59182540000000006 -0.21977545000000001 2.51060630000000007 1.5918254000000000"
-		+ "6 -0.21976925 2.81943149999999987 1.59182540000000006 -0.21985312000000001 3.12734079999999981 1.59182540000000006 -0.22004886000000001"
-		)
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"pt[1494:1659]" (" 3.4361174000000001 1.59182209999999991 -0.2195269 3.76620219999999994 1.59478429999999993 -0.21944918999999999 4.067081 1.56303170000000002 -0.21911052 4.05469939999999962 1.248284 -0.21615556 4.05781749999999963 0.96677338999999995 -0.21520787 4.0560565000000004 0.68575554999999999 -0.21476973999999999 4.048686 0.41118034999999997 -0.2137599 0.84083384000000005 0.20340003000000001 -0.65445118999999996 0.84230441 0.47823134 -0.65428030000000004 0.84313762000000003 0.75968343000000005 -0.65421814 0.84330355999999995 1.04705629999999994 -0.65405029000000003 0.84704327999999995 1.320225 -0.65221083000000002 0.90208787000000001 1.62684190000000006 -0.65820467000000005 1.25273940000000006 1.59224019999999999 -0.65797782000000005 1.58602960000000004 1.59182540000000006 -0.65937614 1.8934188999999999 1.59182540000000006 -0.65943819000000004 2.20161439999999997 1.59182540000000006 -0.65950971999999997 2.5106096 1.59182540000000006 -0.65951592000000003 2.81942389999999987 1.59182540000000006 -0.65950346000000004 3.12"
-		+ "730689999999978 1.59182540000000006 -0.65960907999999996 3.43595149999999983 1.59182209999999991 -0.65893798999999997 3.76887179999999988 1.59550370000000008 -0.65913367 4.06640960000000007 1.56251289999999998 -0.65815805999999999 4.06023789999999973 1.25088939999999993 -0.65365881000000003 4.06070520000000013 0.96479331999999995 -0.65245633999999997 4.05875640000000004 0.68395686 -0.65158634999999998 4.05373050000000035 0.40924883000000001 -0.65090274999999997 0.84422355999999998 0.20344863999999999 -1.09149150000000006 0.84610850000000004 0.47856831999999999 -1.09084819999999993 0.84614979999999995 0.76064593000000003 -1.09074260000000001 0.84512823999999998 1.04901709999999992 -1.0914976999999999 0.84628194999999995 1.32240939999999996 -1.0889622000000001 0.90248740000000005 1.62603150000000007 -1.09607150000000009 1.25324089999999999 1.59221419999999991 -1.09649719999999995 1.58623340000000002 1.59182540000000006 -1.09904190000000002 1.89357719999999996 1.59182540000000006 -1.09921289999999994 2.201678799"
-		+ "99999982 1.59182540000000006 -1.09938059999999993 2.5105944 1.59182540000000006 -1.09941789999999995 2.81926919999999992 1.59182540000000006 -1.09929990000000011 3.12709569999999992 1.59182540000000006 -1.09923459999999995 3.43576289999999984 1.59182209999999991 -1.09867840000000005 3.77163929999999992 1.59591529999999993 -1.0978737999999999 4.07355789999999995 1.55809890000000006 -1.09427560000000001 4.06798549999999981 1.25013419999999997 -1.09260069999999998 4.0693501999999997 0.96384053999999997 -1.0897981000000001 4.07718470000000011 0.68262827000000004 -1.08795860000000011 4.09333990000000014 0.40816640999999998 -1.0869485000000001 0.87250709999999998 0.20449218 -1.52816510000000005 0.86261814999999997 0.4797188 -1.52667679999999995 0.85459881999999998 0.76256447999999999 -1.52623869999999995 0.84938084999999997 1.05302920000000011 -1.52725160000000004 0.84510176999999997 1.33077380000000001 -1.52507649999999995 0.91925721999999999 1.63463889999999989 -1.53734989999999994 1.25583479999999992 1.592425 -1"
-		+ ".53715730000000006 1.58633120000000005 1.59182540000000006 -1.53876070000000009 1.8935318000000001 1.59182540000000006 -1.53899990000000009 2.201705 1.59182540000000006 -1.5390838 2.51063990000000015 1.59182540000000006 -1.53909929999999995 2.81932209999999994 1.59182540000000006 -1.53900290000000006 3.12715219999999983 1.59182540000000006 -1.53886319999999999 3.43614359999999985 1.59182209999999991 -1.53819850000000002 3.7693093000000002 1.59521190000000002 -1.53804289999999999 4.06624750000000024 1.5634364999999999 -1.53790619999999989 4.06178759999999972 1.25268829999999998 -1.53007589999999993 4.05544610000000016 0.96322810999999997 -1.52550220000000003 4.04428629999999956 0.68049914 -1.5226592000000001 4.02896069999999984 0.40583630999999998 -1.52010190000000001 0.78222298999999995 0.20587269999999999 -1.95749010000000001 0.79391425999999998 0.48109287000000001 -1.95758349999999992 0.81301403000000005 0.76396768999999998 -1.95857790000000009 0.83148776999999996 1.05607870000000004 -1.96080239999999995 0."
-		+ "84333002999999995 1.35719229999999991 -1.96670940000000005 0.92235619000000002 1.63408139999999991 -1.97879950000000004 1.25581239999999994 1.59241830000000006 -1.9810274000000001 1.58565660000000008 1.59182540000000006 -1.97860370000000008 1.89358070000000001 1.59182540000000006 -1.97864090000000004 2.20199919999999993 1.59182540000000006 -1.97847 2.51064730000000003 1.59182540000000006 -1.97847 2.81933709999999982 1.59182540000000006 -1.978529 3.12691089999999994 1.59182540000000006 -1.97861609999999999 3.44964480000000018 1.59185789999999994 -1.98401650000000007 3.77045150000000007 1.59630070000000002 -1.98360629999999993 4.0688108999999999 1.56148240000000005 -1.97537530000000006 4.05827709999999975 1.25019250000000004 -1.9655161000000001 4.0457377000000001 0.95907657999999996 -1.95868039999999999 4.03693439999999981 0.67599772999999996 -1.95566939999999989 4.036139 0.40112429999999999 -1.95275810000000005 0.86146444 0.20198058999999999 -2.37241960000000018 0.85912686999999999 0.47651374000000002 -2.37822"
-		+ "390000000006 0.85322260999999999 0.75873714999999997 -2.384572 0.84385765000000001 1.04989210000000011 -2.39114359999999992 0.83378392000000001 1.3473729000000001 -2.40347929999999987 0.89550132000000005 1.61523970000000006 -2.42235850000000008 1.249859 1.59216249999999993 -2.42854189999999992 1.58603739999999993 1.59182209999999991 -2.41983579999999998 1.8949758000000001 1.59182209999999991 -2.41966439999999983 2.20265129999999987 1.59182209999999991 -2.41938189999999986 2.51052670000000022 1.59182209999999991 -2.419301 2.81829669999999988 1.59182209999999991 -2.41945340000000009 3.12630819999999998 1.59182209999999991 -2.4197175999999998 3.43657350000000017 1.59181879999999998 -2.419065 3.78672 1.59699119999999994 -2.4335507999999999 4.08791450000000012 1.54655209999999999 -2.41752719999999988 4.13092849999999956 1.23747279999999993 -2.39354559999999994 4.18632320000000036 0.94939004999999999 -2.37594010000000022 4.22561979999999959 0.66799951000000002 -2.36214730000000017 4.25481219999999993 0.394402949999"
-		+ "99997 -2.34958169999999988 1.08579669999999995 0.18364765999999999 -2.7500038 1.03857920000000004 0.45665117999999999 -2.77243469999999981 0.97957956999999996 0.73815185000000005 -2.79355410000000015 0.91170536999999996 1.02630939999999993 -2.813235 0.84282488 1.31510149999999992 -2.817899 0.87622445999999998 1.60718310000000009 -2.87304570000000004 1.23934030000000006 1.5996710999999999 -2.87759490000000007 1.57215919999999998 1.60028719999999991 -2.87567450000000013 1.8906061999999999 1.59839759999999997 -2.87538239999999989 2.20177289999999992 1.59820319999999993 -2.87552519999999978 2.51103949999999987 1.59840749999999998 -2.87580180000000007 2.82209680000000018 1.59902630000000001 -2.87661290000000003 3.14037040000000012 1.59991109999999992 -2.87876939999999992 3.47080659999999996 1.59797630000000002 -2.8828583000000001 3.81261729999999988 1.59545789999999998 -2.88673020000000013 4.10437540000000034 1.50187849999999989 -2.86234449999999985 4.00169469999999983 1.19248470000000006 -2.79548690000000022 3.93"
-		+ "041609999999997 0.91457146 -2.73588470000000017 3.8906483999999999 0.63924115999999997 -2.67730449999999998 3.85977050000000022 0.37269648999999999 -2.6207471 0.61541568999999996 0.099936022999999999 -2.87477019999999994 0.55627716000000005 0.36888211999999998 -2.91447089999999998 0.53304523000000004 0.64258236000000002 -3.0012051999999998 0.59756392000000003 0.91393959999999996 -3.11638880000000018 0.75711733000000003 1.17922679999999991 -3.21394609999999981 0.96943438000000004 1.45234379999999996 -3.29580520000000021 1.26783920000000006 1.4611715999999999 -3.25726989999999983 1.58414830000000006 1.46572159999999996 -3.26355579999999978 1.8935959 1.46578309999999989 -3.26571560000000005 2.20213869999999989 1.46519979999999994 -3.26610969999999989 2.51018359999999996 1.46474919999999997 -3.265883 2.81846620000000003 1.46400069999999993 -3.26451249999999993 3.12757849999999982 1.46256509999999995 -3.26213260000000016 3.45414259999999995 1.4532058000000001 -3.26112890000000011 3.76616879999999998 1.417029400000"
-		+ "00011 -3.25857809999999981 4.08468389999999992 1.31401919999999994 -3.28557660000000018 4.1951041 1.05498 -3.13032509999999986 4.14024069999999966 0.78278667000000002 -3.01999759999999995 4.03972819999999988 0.51753508999999998 -2.97879 3.94277789999999984 0.25945517000000001 -2.94673609999999986 0.34350035000000001 -0.036790937000000003 -3.17411490000000018 0.47913957000000001 0.19274446000000001 -3.26911739999999984 0.64309256999999997 0.42282107000000002 -3.3447654 0.82493132000000002 0.65173101 -3.40910959999999985 1.04757119999999992 0.85173677999999997 -3.41858649999999997 1.17748319999999995 0.95315581999999999 -3.23282530000000001 1.32231769999999993 0.98905677000000003 -3.17588589999999993 1.59111950000000002 0.99346095000000001 -3.284399 1.89548479999999997 0.99464381000000002 -3.2686392999999998 2.20145249999999981 0.99453365999999999 -3.26530860000000001 2.50755980000000012 0.99413823999999995 -3.27178650000000015 2.81298450000000022 0.99294888999999997 -3.25851889999999988 3.11683729999999981 0.9"
-		+ "8915397999999999 -3.25899120000000009 3.41281390000000018 0.97815490000000005 -3.30534429999999979 3.65350889999999984 0.94982438999999996 -3.15487839999999986 3.83111360000000012 0.87329738999999995 -3.32663509999999985 4.0665754999999999 0.75259918000000003 -3.43063619999999991 4.27989909999999973 0.55524116999999995 -3.3494164999999998 4.38900329999999972 0.33182742999999998 -3.20826630000000002"
-		)
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"pt[1660:1680]" (" 4.40716079999999977 0.10226939 -3.0598974000000001 0.60677068999999995 -0.26659533000000002 -3.48537279999999994 0.80525493999999997 -0.070964575000000002 -3.5063181000000001 0.96929103000000005 0.14614905 -3.5706777999999999 1.18467689999999992 0.33161360000000001 -3.52789449999999993 1.29049769999999997 0.44101137000000001 -3.32333489999999987 1.13797210000000004 0.50484430999999996 -3.1142297000000001 1.36218759999999994 0.52613926 -3.14654470000000019 1.593155 0.52894567999999997 -3.30106279999999996 1.89588080000000003 0.52979474999999998 -3.26505609999999979 2.20135449999999988 0.52993745000000003 -3.25841 2.50564840000000011 0.52975583000000004 -3.28617289999999995 2.80502180000000001 0.52866380999999996 -3.23678419999999978 3.10251810000000017 0.524185 -3.264354 3.38351960000000007 0.5139994 -3.33176180000000022 3.53581190000000012 0.49592250999999998 -3.11314249999999992 3.7525284000000001 0.42974003999999999 -3.21369740000000004 3.77883289999999983 0.35554001000000002 -3.45083589999999996 4.0073385"
-		+ "0000000036 0.22572553000000001 -3.560719 4.22960139999999996 0.043822567999999999 -3.51969790000000016 4.33749960000000012 -0.16495265000000001 -3.39039469999999987"
-		)
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"dispResolution" " 3"
-		2 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape" 
-		"displaySmoothMesh" " 2"
-		3 "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		5 3 "table_cloth2_latestRN" "|SouveneirStall|SouveneirStallGrp|table_cloth2_latest:tablecloth2_Mesh|table_cloth2_latest:tablecloth2_MeshShape.instObjGroups" 
-		"table_cloth2_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm";
-	setAttr ".ptag" -type "string" "";
-lockNode -l 1 ;
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	rename -uid "6F15E50C-4AB6-BE45-713B-A0BF0F6E5668";
 	setAttr ".pee" yes;
@@ -641,98 +472,1227 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[31].x" 1335.7142333984375;
 	setAttr ".tgi[0].ni[31].y" -185.71427917480469;
 	setAttr ".tgi[0].ni[31].nvs" 1922;
-createNode reference -n "table_latestRN1";
-	rename -uid "6D8AEFDD-4DCB-4FD5-0B98-67A64F996B8F";
-	setAttr -s 2 ".phl";
-	setAttr ".phl[1]" 0;
-	setAttr ".phl[2]" 0;
-	setAttr ".ed" -type "dataReferenceEdits" 
-		"table_latestRN1"
-		"table_latestRN1" 0
-		"table_latestRN1" 22
-		0 "|table_latest1:Table" "|SouveneirStall" "-s -r "
-		2 "|SouveneirStall|table_latest1:Table" "translate" " -type \"double3\" 0 0 0"
-		
-		2 "|SouveneirStall|table_latest1:Table" "scale" " -type \"double3\" 1 1 1"
-		
-		2 "|SouveneirStall|table_latest1:Table" "rotatePivot" " -type \"double3\" 2.51538232277350415 -0.68263894748820853 0"
-		
-		2 "|SouveneirStall|table_latest1:Table" "scalePivot" " -type \"double3\" 2.51538232277350415 -0.68263894748820853 0"
-		
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp" "translate" 
-		" -type \"double3\" 0 0 0"
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp" "scale" " -type \"double3\" 1 1 1"
-		
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp" "rotatePivot" 
-		" -type \"double3\" 2.53454937790820667 0.50367704765637145 -0.014198724921288854"
-		
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp" "scalePivot" 
-		" -type \"double3\" 2.53454937790820356 0.503677047656371 -0.014198724921288854"
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp" "scalePivotTranslate" 
-		" -type \"double3\" 0 0 0"
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp|table_latest1:top_Mesh" 
-		"rotatePivot" " -type \"double3\" 0.019986514588013152 -0.68263894748820919 0"
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp|table_latest1:top_Mesh" 
-		"scalePivot" " -type \"double3\" 0.019986514588013152 -0.68263894748820919 0"
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp|table_latest1:top_Mesh|table_latest1:top_MeshShape" 
-		"pt[0:67]" (" -s 68 -type \"float3\" 0.91459643999999996 1.09952840000000007 2.899652 3.76324490000000011 1.09952840000000007 2.899652 0.91459643999999996 1.34355160000000007 2.899652 3.76324490000000011 1.34355160000000007 2.899652 0.91459643999999996 1.34355160000000007 -2.899652 3.76324490000000011 1.34355160000000007 -2.899652 0.91459643999999996 1.09952840000000007 -2.899652 3.76324490000000011 1.09952840000000007 -2.899652 1.00265910000000003 1.34355160000000007 -2.899652 1.00265910000000003 1.09952840000000007 -2.899652 1.00265910000000003 1.09952840000000007 2.899652 1.00265910000000003 1.34355160000000007 2.899652 0.91459643999999996 1.34355160000000007 -2.83313969999999982 0.91459643999999996 1.09952840000000007 -2.83313969999999982 3.76324490000000011 1.09952840000000007 -2.83313969999999982 3.76324490000000011 1.34355160000000007 -2.83313969999999982 1.00265910000000003 1.34355160000000007 -2.83313969999999982 0.91459643999999996 1.15047609999999989 -2.899652 0.91459643999999996 1.15047609999999989 -2.8331396999"
-		+ "9999982 0.91459643999999996 1.15047609999999989 2.899652 1.00265910000000003 1.15047609999999989 2.899652 3.76324490000000011 1.15047609999999989 2.899652 3.76324490000000011 1.15047609999999989 -2.83313969999999982 3.76324490000000011 1.15047609999999989 -2.899652 1.00265910000000003 1.15047609999999989 -2.899652 1.00265910000000003 1.28405630000000004 -2.899652 0.91459643999999996 1.28405630000000004 -2.899652 0.91459643999999996 1.28405630000000004 -2.83313969999999982 0.91459643999999996 1.28405630000000004 2.899652 1.00265910000000003 1.28405630000000004 2.899652 3.76324490000000011 1.28405630000000004 2.899652 3.76324490000000011 1.28405630000000004 -2.83313969999999982 3.76324490000000011 1.28405630000000004 -2.899652 3.65783570000000013 1.28405630000000004 -2.899652 3.65783570000000013 1.34355160000000007 -2.899652 3.65783570000000013 1.34355160000000007 -2.83313969999999982 3.65783570000000013 1.34355160000000007 2.899652 3.65783570000000013 1.28405630000000004 2.899652 3.65783570000000013 1.15047609"
-		+ "999999989 2.899652 3.65783570000000013 1.09952840000000007 2.899652 3.65783570000000013 1.09952840000000007 -2.899652 3.65783570000000013 1.15047609999999989 -2.899652 3.76324490000000011 1.28405630000000004 2.81457829999999998 3.76324490000000011 1.34355160000000007 2.81457829999999998 3.65783570000000013 1.34355160000000007 2.81457829999999998 1.00265910000000003 1.34355160000000007 2.81457829999999998 0.91459643999999996 1.34355160000000007 2.81457829999999998 0.91459643999999996 1.28405630000000004 2.81457829999999998 0.91459643999999996 1.15047609999999989 2.81457829999999998 0.91459643999999996 1.09952840000000007 2.81457829999999998 3.76324490000000011 1.09952840000000007 2.81457829999999998 3.76324490000000011 1.15047609999999989 2.81457829999999998 0.92660796999999995 1.3174087000000001 2.79083920000000019 1.01393289999999991 1.3174087000000001 2.79083920000000019 1.01393289999999991 1.3174087000000001 2.87520959999999981 0.92660796999999995 1.3174087000000001 2.87520959999999981 3.6467236999999999 1"
-		+ ".3174087000000001 2.87520959999999981 3.6467236999999999 1.3174087000000001 2.79083920000000019 3.75122590000000011 1.3174087000000001 2.79083920000000019 3.75122590000000011 1.3174087000000001 2.87520959999999981 0.92660796999999995 1.3174087000000001 -2.87520959999999981 1.01393289999999991 1.3174087000000001 -2.87520959999999981 1.01393289999999991 1.3174087000000001 -2.80924150000000017 0.92660796999999995 1.3174087000000001 -2.80924150000000017 3.6467236999999999 1.3174087000000001 -2.80924150000000017 3.75122590000000011 1.3174087000000001 -2.80924150000000017 3.6467236999999999 1.3174087000000001 -2.87520959999999981 3.75122590000000011 1.3174087000000001 -2.87520959999999981"
-		)
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp|table_latest1:left_Mesh" 
-		"rotatePivot" " -type \"double3\" 0.019986514588013152 -0.68263894748820919 0"
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp|table_latest1:left_Mesh" 
-		"scalePivot" " -type \"double3\" 0.019986514588013152 -0.68263894748820919 0"
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp|table_latest1:left_Mesh|table_latest1:left_MeshShape" 
-		"pt[0:163]" (" -s 164 -type \"float3\" 1.46597639999999996 -0.72446442 2.81132530000000003 1.40231069999999991 -0.72446442 2.82672260000000009 1.40231069999999991 -0.72446442 2.87652039999999998 1.46597639999999996 -0.72446442 2.89189290000000021 1.50531830000000011 -0.72446442 2.85160970000000002 1.89643059999999997 1.27231190000000005 2.81132530000000003 1.83277240000000008 1.27231190000000005 2.82672260000000009 1.83277240000000008 1.27231190000000005 2.87652039999999998 1.89643059999999997 1.27231190000000005 2.89189290000000021 1.93578 1.27231190000000005 2.85160970000000002 1.44837879999999997 -0.72446442 2.85160970000000002 1.87884070000000003 1.27231190000000005 2.85160970000000002 1.83530009999999999 0.41193112999999998 2.89189290000000021 1.7716419000000001 0.41193112999999998 2.87652039999999998 1.7716419000000001 0.41193112999999998 2.82672260000000009 1.83530009999999999 0.41193112999999998 2.81132530000000003 1.87464870000000006 0.41193112999999998 2.85160970000000002 1.89643059999999997 1.25840930000000006 2.8"
-		+ "1132530000000003 1.93578 1.25840930000000006 2.85160970000000002 1.89643059999999997 1.25840930000000006 2.89189290000000021 1.83277240000000008 1.25840930000000006 2.87652039999999998 1.83277240000000008 1.25840930000000006 2.82672260000000009 1.47772820000000005 -0.69343679999999996 2.89189290000000021 1.41406260000000006 -0.69343679999999996 2.87652039999999998 1.41406260000000006 -0.69343679999999996 2.82672260000000009 1.47772820000000005 -0.69343679999999996 2.81132530000000003 1.51707759999999992 -0.69343679999999996 2.85160970000000002 1.49384880000000009 -0.011406117 2.87652039999999998 1.49384880000000009 -0.011406117 2.82672260000000009 1.55752029999999997 -0.011406117 2.81132530000000003 1.5968696 -0.011406117 2.85160970000000002 1.55752029999999997 -0.011406117 2.89189290000000021 1.443254 -0.44395411000000001 2.87652039999999998 1.443254 -0.44395411000000001 2.82672260000000009 1.50691259999999994 -0.44395411000000001 2.81132530000000003 1.54626179999999991 -0.44395411000000001 2.851609700000000"
-		+ "02 1.50691259999999994 -0.44395411000000001 2.89189290000000021 1.64582739999999994 0.20130396 2.87652039999999998 1.64582739999999994 0.20130396 2.82672260000000009 1.70950040000000003 0.20130396 2.81132530000000003 1.74885019999999991 0.20130396 2.85160970000000002 1.70950040000000003 0.20130396 2.89189290000000021 1.83277240000000008 0.76972514000000003 2.87652039999999998 1.83277240000000008 0.76972514000000003 2.82672260000000009 1.89643059999999997 0.76972514000000003 2.81132530000000003 1.93578 0.76972514000000003 2.85160970000000002 1.89643059999999997 0.76972514000000003 2.89189290000000021 1.75437920000000003 0.27645570000000003 2.89189290000000021 1.69072090000000008 0.27645570000000003 2.87652039999999998 1.69072090000000008 0.27645570000000003 2.82672260000000009 1.75437920000000003 0.27645570000000003 2.81132530000000003 1.79372850000000006 0.27645570000000003 2.85160970000000002 3.004993 0.20130396 2.81132530000000003 2.96564320000000015 0.20130396 2.85160970000000002 2.94274710000000006 0.2764"
-		+ "5570000000003 2.81132530000000003 2.91547059999999991 0.27645570000000003 2.85160970000000002 3.004993 0.20130396 2.89190650000000016 2.96009969999999978 0.27645570000000003 2.89190650000000016 3.24850960000000022 -0.72446442 2.89190650000000016 3.31218270000000015 -0.72446442 2.87652039999999998 3.31218270000000015 -0.72446442 2.82672260000000009 3.24850960000000022 -0.72446442 2.81132530000000003 3.20915989999999995 -0.72446442 2.85160970000000002 2.818048 1.27231190000000005 2.89190650000000016 2.88172080000000008 1.27231190000000005 2.87652039999999998 2.88172080000000008 1.27231190000000005 2.82672260000000009 2.818048 1.27231190000000005 2.81132530000000003 2.778698 1.27231190000000005 2.85160970000000002 3.26611450000000003 -0.72446442 2.85160970000000002 2.83563710000000002 1.27231190000000005 2.85160970000000002 2.87917850000000008 0.41193112999999998 2.81132530000000003 2.94285130000000006 0.41193112999999998 2.82672260000000009 2.94285130000000006 0.41193112999999998 2.87652039999999998 2.879178500"
-		+ "00000008 0.41193112999999998 2.89190650000000016 2.83982920000000005 0.41193112999999998 2.85160970000000002 2.818048 1.25840930000000006 2.89190650000000016 2.778698 1.25840930000000006 2.85160970000000002 2.818048 1.25840930000000006 2.81132530000000003 2.88172080000000008 1.25840930000000006 2.82672260000000009 2.88172080000000008 1.25840930000000006 2.87652039999999998 3.2367653999999999 -0.69343679999999996 2.81132530000000003 3.30042359999999979 -0.69343679999999996 2.82672260000000009 3.30042359999999979 -0.69343679999999996 2.87652039999999998 3.2367653999999999 -0.69343679999999996 2.89190650000000016 3.19741540000000013 -0.69343679999999996 2.85160970000000002 3.22064569999999994 -0.011406117 2.82672260000000009 3.22064569999999994 -0.011406117 2.87652039999999998 3.15695829999999988 -0.011406117 2.89190650000000016 3.11760830000000011 -0.011406117 2.85160970000000002 3.15695829999999988 -0.011406117 2.81132530000000003 3.27123929999999996 -0.44395411000000001 2.82672260000000009 3.27123929999999996"
-		+ " -0.44395411000000001 2.87652039999999998 3.20756649999999999 -0.44395411000000001 2.89190650000000016 3.16821859999999988 -0.44395411000000001 2.85160970000000002 3.20756649999999999 -0.44395411000000001 2.81132530000000003 3.06866569999999994 0.20130396 2.82672260000000009 3.06866569999999994 0.20130396 2.87652039999999998 2.88172080000000008 0.76972514000000003 2.82672260000000009 2.88172080000000008 0.76972514000000003 2.87652039999999998 2.818048 0.76972514000000003 2.89190650000000016 2.778698 0.76972514000000003 2.85160970000000002 2.818048 0.76972514000000003 2.81132530000000003 3.02377269999999987 0.27645570000000003 2.82672260000000009 3.02377269999999987 0.27645570000000003 2.87652039999999998 1.76677 0.27645570000000003 2.89189290000000021 1.80525669999999994 0.27645570000000003 2.85160970000000002 1.76659689999999991 0.27645570000000003 2.81132530000000003 1.7228041999999999 0.20130396 2.81132530000000003 1.76134919999999995 0.20130396 2.85160970000000002 1.7228041999999999 0.20130396 2.891892900"
-		+ "00000021 2.94805530000000005 0.27645570000000003 2.89190650000000016 2.90425850000000008 0.27645570000000003 2.85160970000000002 2.93085690000000021 0.27645570000000003 2.81132530000000003 2.99203440000000009 0.20130396 2.81132530000000003 2.95346090000000006 0.20130396 2.85160970000000002 2.99203440000000009 0.20130396 2.89190650000000016 2.83375 0.67776179000000003 2.89190650000000016 2.79440020000000011 0.67776179000000003 2.85160970000000002 2.83375 0.67776179000000003 2.81132530000000003 2.89743780000000006 0.67776179000000003 2.82672260000000009 2.89743780000000006 0.67776179000000003 2.87652039999999998 1.87986889999999995 0.67275465000000001 2.81132530000000003 1.91921879999999989 0.67275465000000001 2.85160970000000002 1.87986889999999995 0.67275465000000001 2.89189290000000021 1.8161963000000001 0.67275465000000001 2.87652039999999998 1.8161963000000001 0.67275465000000001 2.82672260000000009 2.818048 0.88178818999999997 2.81132530000000003 2.88172080000000008 0.88178818999999997 2.82672260000000009"
-		+ " 2.88172080000000008 0.88178818999999997 2.87652039999999998 2.818048 0.88178818999999997 2.89190650000000016 2.778698 0.88178818999999997 2.85160970000000002 1.89643059999999997 0.88439727000000001 2.81132530000000003 1.93578 0.88439727000000001 2.85160970000000002 1.89643059999999997 0.88439727000000001 2.89189290000000021 1.83277240000000008 0.88439727000000001 2.87652039999999998 1.83277240000000008 0.88439727000000001 2.82672260000000009 2.87379650000000009 0.76972514000000003 2.81993269999999985 2.81112219999999979 0.76972514000000003 2.80525679999999999 2.82656859999999988 0.67773503000000002 2.80520490000000011 2.88927170000000011 0.67773503000000002 2.819881 1.84264410000000001 0.76972514000000003 2.818198 1.82636609999999999 0.67279679000000003 2.81812620000000003 1.888864 0.67279679000000003 2.80363659999999992 1.90512719999999991 0.76972514000000003 2.80370810000000015 2.30969880000000005 1.21553409999999995 1.76414969999999993 2.31441570000000008 1.21556839999999999 1.7930005 2.31613250000000015 "
-		+ "1.31018579999999996 1.796158 2.31141759999999996 1.310159 1.76731850000000001 2.40564439999999991 1.310159 1.765856 2.40046140000000019 1.31018579999999996 1.793025 2.40126250000000008 1.2159530999999999 1.78998469999999998 2.40644310000000017 1.21592689999999992 1.76282659999999991 2.30636380000000019 1.2117772 1.77144550000000001 2.31147860000000005 1.2118192000000001 1.79999519999999991 2.3132811000000002 1.30644619999999989 1.80314179999999991 2.30818250000000003 1.30641019999999997 1.77459030000000006 2.01287219999999989 0.88222109999999998 2.4114412999999999 2.05307389999999979 0.882236 2.41366769999999997 2.06371949999999993 0.97827881999999999 2.414928 2.0235183000000001 0.97825401999999995 2.41270179999999979 2.65872339999999996 0.89014578 2.40454979999999985 2.69872949999999978 0.89013087999999996 2.40271519999999983 2.689038 0.98301625000000004 2.4039347000000002 2.64903449999999996 0.98302369999999994 2.405782"
-		)
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp|table_latest1:right_Mesh" 
-		"rotatePivot" " -type \"double3\" 0.019986514588013152 -0.68263894748820919 0"
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp|table_latest1:right_Mesh" 
-		"scalePivot" " -type \"double3\" 0.019986514588013152 -0.68263894748820919 0"
-		2 "|SouveneirStall|table_latest1:Table|table_latest1:Table_Grp|table_latest1:right_Mesh|table_latest1:right_MeshShape" 
-		"pt[0:163]" (" -s 164 -type \"float3\" 3.24850960000000022 -0.72446442 -2.79772379999999998 3.31218270000000015 -0.72446442 -2.81310819999999984 3.31218270000000015 -0.72446442 -2.86290619999999985 3.24850960000000022 -0.72446442 -2.87830329999999979 3.20915989999999995 -0.72446442 -2.83801959999999998 2.818048 1.27231190000000005 -2.79772379999999998 2.88172080000000008 1.27231190000000005 -2.81310819999999984 2.88172080000000008 1.27231190000000005 -2.86290619999999985 2.818048 1.27231190000000005 -2.87830329999999979 2.778698 1.27231190000000005 -2.83801959999999998 3.26611450000000003 -0.72446442 -2.83801959999999998 2.83563710000000002 1.27231190000000005 -2.83801959999999998 2.87917850000000008 0.41193112999999998 -2.87830329999999979 2.94285130000000006 0.41193112999999998 -2.86290619999999985 2.94285130000000006 0.41193112999999998 -2.81310819999999984 2.87917850000000008 0.41193112999999998 -2.79772379999999998 2.83982920000000005 0.41193112999999998 -2.83801959999999998 2.818048 1.25840930000000006 -2.7977237999999"
-		+ "9998 2.778698 1.25840930000000006 -2.83801959999999998 2.818048 1.25840930000000006 -2.87830329999999979 2.88172080000000008 1.25840930000000006 -2.86290619999999985 2.88172080000000008 1.25840930000000006 -2.81310819999999984 3.2367653999999999 -0.69343679999999996 -2.87830329999999979 3.30042359999999979 -0.69343679999999996 -2.86290619999999985 3.30042359999999979 -0.69343679999999996 -2.81310819999999984 3.2367653999999999 -0.69343679999999996 -2.79772379999999998 3.19741540000000013 -0.69343679999999996 -2.83801959999999998 3.220629 -0.011406117 -2.86290619999999985 3.220629 -0.011406117 -2.81310819999999984 3.15695829999999988 -0.011406117 -2.79772379999999998 3.11760830000000011 -0.011406117 -2.83801959999999998 3.15695829999999988 -0.011406117 -2.87830329999999979 3.27123929999999996 -0.44395411000000001 -2.86290619999999985 3.27123929999999996 -0.44395411000000001 -2.81310819999999984 3.20756649999999999 -0.44395411000000001 -2.79772379999999998 3.16821650000000021 -0.44395411000000001 -2.83801959999"
-		+ "999998 3.20756649999999999 -0.44395411000000001 -2.87830329999999979 3.06866569999999994 0.20130396 -2.86290619999999985 3.06866569999999994 0.20130396 -2.81310819999999984 3.004993 0.20130396 -2.79772379999999998 2.96564320000000015 0.20130396 -2.83801959999999998 3.004993 0.20130396 -2.87830329999999979 2.88172080000000008 0.76972514000000003 -2.86290619999999985 2.88172080000000008 0.76972514000000003 -2.81310819999999984 2.818048 0.76972514000000003 -2.79772379999999998 2.778698 0.76972514000000003 -2.83801959999999998 2.818048 0.76972514000000003 -2.87830329999999979 2.96009969999999978 0.27645570000000003 -2.87830329999999979 3.02377269999999987 0.27645570000000003 -2.86290619999999985 3.02377269999999987 0.27645570000000003 -2.81310819999999984 2.96009969999999978 0.27645570000000003 -2.79772379999999998 2.92074990000000012 0.27645570000000003 -2.83801959999999998 1.70950040000000003 0.20130396 -2.79772379999999998 1.74885019999999991 0.20130396 -2.83801959999999998 1.771746 0.27645570000000003 -2.7977"
-		+ "2379999999998 1.79900850000000001 0.27645570000000003 -2.83801959999999998 1.70950040000000003 0.20130396 -2.8782928000000001 1.75437920000000003 0.27645570000000003 -2.8782928000000001 1.46597639999999996 -0.72446442 -2.8782928000000001 1.40231069999999991 -0.72446442 -2.86290619999999985 1.40231069999999991 -0.72446442 -2.81310819999999984 1.46597639999999996 -0.72446442 -2.79772379999999998 1.50531830000000011 -0.72446442 -2.83801959999999998 1.89643059999999997 1.27231190000000005 -2.8782928000000001 1.83277240000000008 1.27231190000000005 -2.86290619999999985 1.83277240000000008 1.27231190000000005 -2.81310819999999984 1.89643059999999997 1.27231190000000005 -2.79772379999999998 1.93578 1.27231190000000005 -2.83801959999999998 1.44837879999999997 -0.72446442 -2.83801959999999998 1.87884070000000003 1.27231190000000005 -2.83801959999999998 1.83530009999999999 0.41193112999999998 -2.79772379999999998 1.7716419000000001 0.41193112999999998 -2.81310819999999984 1.7716419000000001 0.41193112999999998 -2.86290"
-		+ "619999999985 1.83530009999999999 0.41193112999999998 -2.8782928000000001 1.87464870000000006 0.41193112999999998 -2.83801959999999998 1.89643059999999997 1.25840930000000006 -2.8782928000000001 1.93578 1.25840930000000006 -2.83801959999999998 1.89643059999999997 1.25840930000000006 -2.79772379999999998 1.83277240000000008 1.25840930000000006 -2.81310819999999984 1.83277240000000008 1.25840930000000006 -2.86290619999999985 1.47772820000000005 -0.69343679999999996 -2.79772379999999998 1.41406260000000006 -0.69343679999999996 -2.81310819999999984 1.41406260000000006 -0.69343679999999996 -2.86290619999999985 1.47772820000000005 -0.69343679999999996 -2.8782928000000001 1.51707759999999992 -0.69343679999999996 -2.83801959999999998 1.49384880000000009 -0.011406117 -2.81310819999999984 1.49384880000000009 -0.011406117 -2.86290619999999985 1.55752029999999997 -0.011406117 -2.8782928000000001 1.5968696 -0.011406117 -2.83801959999999998 1.55752029999999997 -0.011406117 -2.79772379999999998 1.443254 -0.44395411000000001 "
-		+ "-2.81310819999999984 1.443254 -0.44395411000000001 -2.86290619999999985 1.50691259999999994 -0.44395411000000001 -2.8782928000000001 1.54626179999999991 -0.44395411000000001 -2.83801959999999998 1.50691259999999994 -0.44395411000000001 -2.79772379999999998 1.64582739999999994 0.20130396 -2.81310819999999984 1.64582739999999994 0.20130396 -2.86290619999999985 1.83277240000000008 0.76972514000000003 -2.81310819999999984 1.83277240000000008 0.76972514000000003 -2.86290619999999985 1.89643059999999997 0.76972514000000003 -2.8782928000000001 1.93578 0.76972514000000003 -2.83801959999999998 1.89643059999999997 0.76972514000000003 -2.79772379999999998 1.69072090000000008 0.27645570000000003 -2.81310819999999984 1.69072090000000008 0.27645570000000003 -2.86290619999999985 2.94770809999999983 0.27645570000000003 -2.87830329999999979 2.90923739999999986 0.27645570000000003 -2.83801959999999998 2.947896 0.27645570000000003 -2.79772379999999998 2.99167469999999991 0.20130396 -2.79772379999999998 2.95314429999999994 0.201"
-		+ "30396 -2.83801959999999998 2.99167469999999991 0.20130396 -2.87830329999999979 1.76643780000000006 0.27645570000000003 -2.8782928000000001 1.81023470000000009 0.27645570000000003 -2.83801959999999998 1.78362179999999992 0.27645570000000003 -2.79772379999999998 1.72245859999999995 0.20130396 -2.79772379999999998 1.76101709999999989 0.20130396 -2.83801959999999998 1.72245859999999995 0.20130396 -2.8782928000000001 1.88072820000000007 0.67776179000000003 -2.8782928000000001 1.92007789999999989 0.67776179000000003 -2.83801959999999998 1.88072820000000007 0.67776179000000003 -2.79772379999999998 1.81705559999999999 0.67776179000000003 -2.81310819999999984 1.81705559999999999 0.67776179000000003 -2.86290619999999985 2.83461 0.67275465000000001 -2.79772379999999998 2.79525919999999983 0.67275465000000001 -2.83801959999999998 2.83461 0.67275465000000001 -2.87830329999999979 2.89828229999999998 0.67275465000000001 -2.86290619999999985 2.89828229999999998 0.67275465000000001 -2.81310819999999984 1.89643059999999997 0.8"
-		+ "8178818999999997 -2.79772379999999998 1.83277240000000008 0.88178818999999997 -2.81310819999999984 1.83277240000000008 0.88178818999999997 -2.86290619999999985 1.89643059999999997 0.88178818999999997 -2.8782928000000001 1.93578 0.88178818999999997 -2.83801959999999998 2.818048 0.88439727000000001 -2.79772379999999998 2.778698 0.88439727000000001 -2.83801959999999998 2.818048 0.88439727000000001 -2.87830329999999979 2.88172080000000008 0.88439727000000001 -2.86290619999999985 2.88172080000000008 0.88439727000000001 -2.81310819999999984 1.840682 0.76972514000000003 -2.80634309999999987 1.903371 0.76972514000000003 -2.79165479999999988 1.88790940000000007 0.67773503000000002 -2.79161569999999992 1.82522129999999994 0.67773503000000002 -2.80629179999999989 2.87183430000000017 0.76972514000000003 -2.80459589999999981 2.88811250000000008 0.67279679000000003 -2.80453630000000009 2.82562919999999984 0.67279679000000003 -2.79003449999999997 2.80935069999999998 0.76972514000000003 -2.7900946000000002 2.4047793999999997"
-		+ "9 1.21553409999999995 -1.7505478000000001 2.40006519999999979 1.21556839999999999 -1.77939840000000005 2.3983604999999999 1.31018579999999996 -1.78256869999999989 2.40307549999999992 1.310159 -1.753704 2.30884860000000014 1.310159 -1.75225439999999999 2.31401730000000017 1.31018579999999996 -1.77942339999999999 2.3132166999999999 1.2159530999999999 -1.776383 2.30804920000000013 1.21592689999999992 -1.7492125999999999 2.40812990000000005 1.2117772 -1.75784349999999989 2.40301490000000006 1.2118192000000001 -1.78639339999999991 2.4012121999999998 1.30644619999999989 -1.78954020000000003 2.40631079999999997 1.30641019999999997 -1.76097670000000006 2.70160579999999984 0.88222109999999998 -2.39783979999999985 2.66141959999999989 0.882236 -2.40006589999999997 2.65077380000000007 0.97827881999999999 -2.40132639999999986 2.69095970000000007 0.97825401999999995 -2.39910010000000007 2.05575539999999979 0.89014578 -2.39093590000000011 2.015764 0.89013087999999996 -2.38911339999999983 2.0254401999999998 0.983016250000000"
-		+ "04 -2.3903452999999999 2.065444 0.98302369999999994 -2.39216780000000018")
-		3 "table_latest1:makeNurbCircle1.outputCurve" "|SouveneirStall|table_latest1:Table|table_latest1:TableShape.create" 
-		""
-		5 4 "table_latestRN1" "|SouveneirStall|table_latest1:Table|table_latest1:TableShape.create" 
-		"table_latestRN1.placeHolderList[1]" ""
-		5 3 "table_latestRN1" "table_latest1:makeNurbCircle1.outputCurve" "table_latestRN1.placeHolderList[2]" 
-		"table_latest1:TableShape.cr";
-	setAttr ".ptag" -type "string" "";
-lockNode -l 1 ;
-createNode reference -n "sharedReferenceNode";
-	rename -uid "72BE9FCE-4D87-BB28-260D-F0AA3E017228";
-	setAttr ".ed" -type "dataReferenceEdits" 
-		"sharedReferenceNode";
-createNode transformGeometry -n "transformGeometry1";
-	rename -uid "DA55C606-42A1-734E-29DD-B9BE4379E677";
-	setAttr ".txf" -type "matrix" 116.89227708829905 0 0 0 0 118.20658584167658 0 0
-		 0 0 147.06398097749783 0 76.668853198136404 -20.806835119440596 0 1;
 createNode reference -n "tent_Souveneir_latestRN";
-	rename -uid "E928B5CA-4345-4CDC-6B2E-5FB698A77A3E";
+	rename -uid "9331DAA6-4368-E6FA-E349-C4B6CC135C8E";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"tent_Souveneir_latestRN"
 		"tent_Souveneir_latestRN" 0
-		"tent_Souveneir_latestRN" 1
-		0 "|tent_Souveneir_latest:tent_Souveneir" "|SouveneirStall" "-s -r ";
+		"tent_Souveneir_latestRN" 2
+		0 "|tent_Souveneir_latest:tent_Souveneir" "|SouveneirStall" "-s -r "
+		2 "|SouveneirStall|tent_Souveneir_latest:tent_Souveneir" "translate" " -type \"double3\" 0 0.60314348691195407 0";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "table_latestRN";
+	rename -uid "E40C8F8E-4E3B-B2FC-8792-14AF480CB607";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"table_latestRN"
+		"table_latestRN" 0
+		"table_latestRN" 415
+		0 "|table_latest:Table" "|SouveneirStall" "-s -r "
+		2 "|SouveneirStall|table_latest:Table" "translate" " -type \"double3\" 0 0 0"
+		
+		2 "|SouveneirStall|table_latest:Table" "rotate" " -type \"double3\" 0 0 0"
+		
+		2 "|SouveneirStall|table_latest:Table" "scale" " -type \"double3\" 1 1 1"
+		
+		2 "|SouveneirStall|table_latest:Table" "rotatePivot" " -type \"double3\" -0.15399408176475454 0.9175506031814129 1.46651162250313361"
+		
+		2 "|SouveneirStall|table_latest:Table" "rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		
+		2 "|SouveneirStall|table_latest:Table" "scalePivot" " -type \"double3\" -0.15399408176475454 0.9175506031814129 1.46651162250313361"
+		
+		2 "|SouveneirStall|table_latest:Table" "scalePivotTranslate" " -type \"double3\" 0 0 0"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp" "rotatePivot" 
+		" -type \"double3\" -0.16583234949791431 1.02467173011304435 1.45053098117099477"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp" "scalePivot" 
+		" -type \"double3\" -0.16583234949791431 1.02467173011304391 1.45053098117099699"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop" 
+		"rotatePivot" " -type \"double3\" -0.15399408176475604 0.03557401574057785 3.54706208328495443"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop" 
+		"scalePivot" " -type \"double3\" -0.15399408176475604 0.03557401574057785 3.54706208328495443"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts" " -s 68"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[0]" " -type \"float3\" 0.64007378000000004 -1.97463129999999998 -3.85733080000000017"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[1]" " -type \"float3\" -5.10531229999999958 -1.97463129999999998 -6.38956829999999965"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[2]" " -type \"float3\" 0.64007378000000004 -2.2498790999999998 -3.85733080000000017"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[3]" " -type \"float3\" -5.10531229999999958 -2.2498790999999998 -6.38956829999999965"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[4]" " -type \"float3\" -4.556706 -2.2498790999999998 9.36097149999999978"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[5]" " -type \"float3\" -10.302092 -2.2498790999999998 6.82873339999999995"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[6]" " -type \"float3\" -4.556706 -1.97463129999999998 9.36097149999999978"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[7]" " -type \"float3\" -10.302092 -1.97463129999999998 6.82873339999999995"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[8]" " -type \"float3\" -4.73431780000000035 -2.2498790999999998 9.28269"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[9]" " -type \"float3\" -4.73431780000000035 -1.97463129999999998 9.28269"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[10]" " -type \"float3\" 0.46246195000000001 -1.97463129999999998 -3.93561169999999994"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[11]" " -type \"float3\" 0.46246195000000001 -2.2498790999999998 -3.93561169999999994"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[12]" " -type \"float3\" -4.49710270000000012 -2.2498790999999998 9.20936969999999988"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[13]" " -type \"float3\" -4.49710270000000012 -1.97463129999999998 9.20936969999999988"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[14]" " -type \"float3\" -10.242489 -1.97463129999999998 6.6771326000000002"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[15]" " -type \"float3\" -10.242489 -2.2498790999999998 6.6771326000000002"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[16]" " -type \"float3\" -4.67471459999999972 -2.2498790999999998 9.13108919999999991"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[17]" " -type \"float3\" -4.556706 -2.03209829999999991 9.36097149999999978"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[18]" " -type \"float3\" -4.49710270000000012 -2.03209829999999991 9.20936969999999988"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[19]" " -type \"float3\" 0.64007378000000004 -2.03209829999999991 -3.85733080000000017"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[20]" " -type \"float3\" 0.46246195000000001 -2.03209829999999991 -3.93561169999999994"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[21]" " -type \"float3\" -5.10531229999999958 -2.03209829999999991 -6.38956829999999965"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[22]" " -type \"float3\" -10.242489 -2.03209829999999991 6.6771326000000002"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[23]" " -type \"float3\" -10.302092 -2.03209829999999991 6.82873339999999995"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[24]" " -type \"float3\" -4.73431780000000035 -2.03209829999999991 9.28269"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[25]" " -type \"float3\" -4.73431780000000035 -2.18277069999999984 9.28269"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[26]" " -type \"float3\" -4.556706 -2.18277069999999984 9.36097149999999978"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[27]" " -type \"float3\" -4.49710270000000012 -2.18277069999999984 9.20936969999999988"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[28]" " -type \"float3\" 0.64007378000000004 -2.18277069999999984 -3.85733080000000017"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[29]" " -type \"float3\" 0.46246195000000001 -2.18277069999999984 -3.93561169999999994"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[30]" " -type \"float3\" -5.10531229999999958 -2.18277069999999984 -6.38956829999999965"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[31]" " -type \"float3\" -10.242489 -2.18277069999999984 6.6771326000000002"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[32]" " -type \"float3\" -10.302092 -2.18277069999999984 6.82873339999999995"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[33]" " -type \"float3\" -10.089494 -2.18277069999999984 6.92243480000000044"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[34]" " -type \"float3\" -10.089494 -2.2498790999999998 6.92243480000000044"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[35]" " -type \"float3\" -10.02989 -2.2498790999999998 6.770834"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[36]" " -type \"float3\" -4.8927145000000003 -2.2498790999999998 -6.295867"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[37]" " -type \"float3\" -4.8927145000000003 -2.18277069999999984 -6.295867"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[38]" " -type \"float3\" -4.8927145000000003 -2.03209829999999991 -6.295867"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[39]" " -type \"float3\" -4.8927145000000003 -1.97463129999999998 -6.295867"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[40]" " -type \"float3\" -10.089494 -1.97463129999999998 6.92243480000000044"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[41]" " -type \"float3\" -10.089494 -2.03209829999999991 6.92243480000000044"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[42]" " -type \"float3\" -5.18154860000000017 -2.18277069999999984 -6.19566060000000007"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[43]" " -type \"float3\" -5.18154860000000017 -2.2498790999999998 -6.19566060000000007"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[44]" " -type \"float3\" -4.96895069999999972 -2.2498790999999998 -6.10195919999999958"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[45]" " -type \"float3\" 0.38622521999999998 -2.2498790999999998 -3.741704"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[46]" " -type \"float3\" 0.56383729000000005 -2.2498790999999998 -3.66342310000000015"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[47]" " -type \"float3\" 0.56383729000000005 -2.18277069999999984 -3.66342310000000015"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[48]" " -type \"float3\" 0.56383729000000005 -2.03209829999999991 -3.66342310000000015"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[49]" " -type \"float3\" 0.56383729000000005 -1.97463129999999998 -3.66342310000000015"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[50]" " -type \"float3\" -5.18154860000000017 -1.97463129999999998 -6.19566060000000007"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[51]" " -type \"float3\" -5.18154860000000017 -2.03209829999999991 -6.19566060000000007"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[52]" " -type \"float3\" 0.51834035000000001 -2.22039080000000011 -3.61999320000000013"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[53]" " -type \"float3\" 0.34221625 -2.22039080000000011 -3.69761870000000004"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[54]" " -type \"float3\" 0.41782164999999999 -2.22039080000000011 -3.88992290000000018"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[55]" " -type \"float3\" 0.59394574 -2.22039080000000011 -3.8122973"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[56]" " -type \"float3\" -4.89220480000000002 -2.22039080000000011 -6.230278"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[57]" " -type \"float3\" -4.96780970000000011 -2.22039080000000011 -6.03797389999999989"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[58]" " -type \"float3\" -5.17857840000000014 -2.22039080000000011 -6.13086839999999977"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[59]" " -type \"float3\" -5.10297350000000005 -2.22039080000000011 -6.32317260000000037"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[60]" " -type \"float3\" -4.55902959999999968 -2.22039080000000011 9.29458239999999947"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[61]" " -type \"float3\" -4.73515369999999969 -2.22039080000000011 9.21695710000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[62]" " -type \"float3\" -4.67603779999999958 -2.22039080000000011 9.066596"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[63]" " -type \"float3\" -4.49991369999999957 -2.22039080000000011 9.14422229999999914"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[64]" " -type \"float3\" -9.986064 -2.22039080000000011 6.72624110000000019"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[65]" " -type \"float3\" -10.196833 -2.22039080000000011 6.63334660000000031"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[66]" " -type \"float3\" -10.04518 -2.22039080000000011 6.87660219999999978"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
+		"pnts[67]" " -type \"float3\" -10.255949 -2.22039080000000011 6.78370759999999962"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left" 
+		"rotatePivot" " -type \"double3\" -0.15399408176475604 0.03557401574057785 3.54706208328495443"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left" 
+		"scalePivot" " -type \"double3\" -0.15399408176475604 0.03557401574057785 3.54706208328495443"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts" " -s 164"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[0]" " -type \"float3\" -0.55114412000000002 0.082751281999999995 -4.14614439999999984"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[1]" " -type \"float3\" -0.40894055000000001 0.082751281999999995 -4.12464519999999979"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[2]" " -type \"float3\" -0.36431646000000001 0.082751281999999995 -4.23814869999999999"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[3]" " -type \"float3\" -0.47894787999999999 0.082751281999999995 -4.32978150000000017"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[4]" " -type \"float3\" -0.59439324999999998 0.082751281999999995 -4.27293590000000023"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[5]" " -type \"float3\" -1.41931919999999989 -2.16952370000000005 -4.52878670000000039"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[6]" " -type \"float3\" -1.2771306 -2.16952370000000005 -4.50729369999999996"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[7]" " -type \"float3\" -1.23250649999999995 -2.16952370000000005 -4.62079669999999965"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[8]" " -type \"float3\" -1.34712290000000001 -2.16952370000000005 -4.71242379999999983"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[9]" " -type \"float3\" -1.46258329999999992 -2.16952370000000005 -4.65558430000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[10]" " -type \"float3\" -0.47955322 0.082751281999999995 -4.22232149999999962"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[11]" " -type \"float3\" -1.34774330000000009 -2.16952370000000005 -4.60496950000000016"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[12]" " -type \"float3\" -1.22383 -1.19905210000000007 -4.658083"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[13]" " -type \"float3\" -1.10921359999999991 -1.19905210000000007 -4.56645629999999958"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[14]" " -type \"float3\" -1.15383769999999997 -1.19905210000000007 -4.45295329999999989"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[15]" " -type \"float3\" -1.29602620000000002 -1.19905210000000007 -4.47444579999999981"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[16]" " -type \"float3\" -1.33928920000000007 -1.19905210000000007 -4.60124349999999982"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[17]" " -type \"float3\" -1.41931919999999989 -2.15384220000000015 -4.52878670000000039"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[18]" " -type \"float3\" -1.46258329999999992 -2.15384220000000015 -4.65558430000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[19]" " -type \"float3\" -1.34712290000000001 -2.15384220000000015 -4.71242379999999983"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[20]" " -type \"float3\" -1.23250649999999995 -2.15384220000000015 -4.62079669999999965"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[21]" " -type \"float3\" -1.2771306 -2.15384220000000015 -4.50729369999999996"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[22]" " -type \"float3\" -0.50265002000000003 0.047753520000000001 -4.34022810000000003"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[23]" " -type \"float3\" -0.38801860999999999 0.047753520000000001 -4.24859480000000023"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[24]" " -type \"float3\" -0.43264269999999999 0.047753520000000001 -4.13509179999999965"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[25]" " -type \"float3\" -0.57484626999999999 0.047753520000000001 -4.15659090000000031"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[26]" " -type \"float3\" -0.61811017999999995 0.047753520000000001 -4.28338959999999958"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[27]" " -type \"float3\" -0.54893851000000005 -0.72154671000000004 -4.31951950000000018"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[28]" " -type \"float3\" -0.59356260000000005 -0.72154671000000004 -4.2060164999999996"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[29]" " -type \"float3\" -0.73577714000000005 -0.72154671000000004 -4.22752049999999979"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[30]" " -type \"float3\" -0.77904129 -0.72154671000000004 -4.35431860000000004"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[31]" " -type \"float3\" -0.66358088999999998 -0.72154671000000004 -4.41115760000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[32]" " -type \"float3\" -0.44689465 -0.23365188000000001 -4.27454420000000024"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[33]" " -type \"float3\" -0.49151874000000001 -0.23365188000000001 -4.16104129999999994"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[34]" " -type \"float3\" -0.63370727999999998 -0.23365188000000001 -4.18253420000000009"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[35]" " -type \"float3\" -0.6769712 -0.23365188000000001 -4.30933139999999959"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[36]" " -type \"float3\" -0.56151103999999996 -0.23365188000000001 -4.36617139999999981"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[37]" " -type \"float3\" -0.85546063999999999 -0.96147424000000004 -4.454617"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[38]" " -type \"float3\" -0.90008473 -0.96147424000000004 -4.341114"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[39]" " -type \"float3\" -1.04230310000000004 -0.96147424000000004 -4.36261890000000019"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[40]" " -type \"float3\" -1.08556819999999998 -0.96147424000000004 -4.48941760000000034"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[41]" " -type \"float3\" -0.97010684000000003 -0.96147424000000004 -4.54625609999999991"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[42]" " -type \"float3\" -1.23250649999999995 -1.60262780000000005 -4.62079669999999965"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[43]" " -type \"float3\" -1.2771306 -1.60262780000000005 -4.50729369999999996"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[44]" " -type \"float3\" -1.41931919999999989 -1.60262780000000005 -4.52878670000000039"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[45]" " -type \"float3\" -1.46258329999999992 -1.60262780000000005 -4.65558430000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[46]" " -type \"float3\" -1.34712290000000001 -1.60262780000000005 -4.71242379999999983"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[47]" " -type \"float3\" -1.060622 -1.046242 -4.58615019999999962"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[48]" " -type \"float3\" -0.94600558000000001 -1.046242 -4.494524"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[49]" " -type \"float3\" -0.99062967000000002 -1.046242 -4.38102150000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[50]" " -type \"float3\" -1.1328182 -1.046242 -4.402513"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[51]" " -type \"float3\" -1.17608209999999991 -1.046242 -4.52931120000000043"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[52]" " -type \"float3\" -3.655158 -0.96147424000000004 -5.51421549999999971"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[53]" " -type \"float3\" -3.53969529999999999 -0.96147424000000004 -5.57105680000000003"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[54]" " -type \"float3\" -3.52961539999999996 -1.046242 -5.4588852000000001"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[55]" " -type \"float3\" -3.43850230000000012 -1.046242 -5.52645680000000006"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[56]" " -type \"float3\" -3.58294820000000014 -0.96147424000000004 -5.69788359999999994"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[57]" " -type \"float3\" -3.49240349999999999 -1.046242 -5.65797620000000023"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[58]" " -type \"float3\" -4.07409239999999961 0.082751281999999995 -5.91435240000000029"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[59]" " -type \"float3\" -4.21630139999999987 0.082751281999999995 -5.935883"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[60]" " -type \"float3\" -4.26092579999999987 0.082751281999999995 -5.82238010000000017"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[61]" " -type \"float3\" -4.14630220000000005 0.082751281999999995 -5.73068430000000006"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[62]" " -type \"float3\" -4.03083939999999963 0.082751281999999995 -5.78752420000000001"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[63]" " -type \"float3\" -3.20590259999999994 -2.16952370000000005 -5.53170390000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[64]" " -type \"float3\" -3.34811069999999988 -2.16952370000000005 -5.55323459999999969"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[65]" " -type \"float3\" -3.39273479999999994 -2.16952370000000005 -5.4397316"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[66]" " -type \"float3\" -3.27811239999999993 -2.16952370000000005 -5.3480357999999999"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[67]" " -type \"float3\" -3.16264920000000016 -2.16952370000000005 -5.40487580000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[68]" " -type \"float3\" -4.14571 0.082751281999999995 -5.83815289999999987"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[69]" " -type \"float3\" -3.27748920000000021 -2.16952370000000005 -5.4554910999999997"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[70]" " -type \"float3\" -3.40140529999999996 -1.19905210000000007 -5.40237709999999982"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[71]" " -type \"float3\" -3.51602769999999998 -1.19905210000000007 -5.49407150000000044"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[72]" " -type \"float3\" -3.47140359999999992 -1.19905210000000007 -5.60757450000000013"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[73]" " -type \"float3\" -3.32919549999999997 -1.19905210000000007 -5.58604530000000032"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[74]" " -type \"float3\" -3.285943 -1.19905210000000007 -5.45921710000000004"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[75]" " -type \"float3\" -3.20590259999999994 -2.15384220000000015 -5.53170390000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[76]" " -type \"float3\" -3.16264920000000016 -2.15384220000000015 -5.40487580000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[77]" " -type \"float3\" -3.27811239999999993 -2.15384220000000015 -5.3480357999999999"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[78]" " -type \"float3\" -3.39273479999999994 -2.15384220000000015 -5.4397316"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[79]" " -type \"float3\" -3.34811069999999988 -2.15384220000000015 -5.55323459999999969"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[80]" " -type \"float3\" -4.12261529999999965 0.047753520000000001 -5.72024489999999997"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[81]" " -type \"float3\" -4.23720880000000033 0.047753520000000001 -5.81192680000000017"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[82]" " -type \"float3\" -4.19258449999999971 0.047753520000000001 -5.92543030000000037"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[83]" " -type \"float3\" -4.0504055000000001 0.047753520000000001 -5.903913"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[84]" " -type \"float3\" -4.00715209999999988 0.047753520000000001 -5.77708479999999991"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[85]" " -type \"float3\" -4.07630680000000023 -0.72154671000000004 -5.74101070000000036"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[86]" " -type \"float3\" -4.03168249999999961 -0.72154671000000004 -5.85451359999999976"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[87]" " -type \"float3\" -3.88944439999999991 -0.72154671000000004 -5.83297060000000034"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[88]" " -type \"float3\" -3.84619139999999993 -0.72154671000000004 -5.70614240000000006"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[89]" " -type \"float3\" -3.9616541999999999 -0.72154671000000004 -5.64930250000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[90]" " -type \"float3\" -4.17834810000000001 -0.23365188000000001 -5.78598449999999964"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[91]" " -type \"float3\" -4.1337237 -0.23365188000000001 -5.89948750000000022"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[92]" " -type \"float3\" -3.99151420000000012 -0.23365188000000001 -5.8779558999999999"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[93]" " -type \"float3\" -3.948266 -0.23365188000000001 -5.75113149999999962"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[94]" " -type \"float3\" -4.063724 -0.23365188000000001 -5.69428779999999968"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[95]" " -type \"float3\" -3.76978109999999988 -0.96147424000000004 -5.60591129999999982"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[96]" " -type \"float3\" -3.72515680000000016 -0.96147424000000004 -5.71941420000000011"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[97]" " -type \"float3\" -3.39273479999999994 -1.60262780000000005 -5.4397316"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[98]" " -type \"float3\" -3.34811069999999988 -1.60262780000000005 -5.55323459999999969"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[99]" " -type \"float3\" -3.20590259999999994 -1.60262780000000005 -5.53170390000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[100]" " -type \"float3\" -3.16264920000000016 -1.60262780000000005 -5.40487580000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[101]" " -type \"float3\" -3.27811239999999993 -1.60262780000000005 -5.3480357999999999"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[102]" " -type \"float3\" -3.67923670000000014 -1.046242 -5.56600479999999997"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[103]" " -type \"float3\" -3.63461260000000008 -1.046242 -5.67950770000000027"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[104]" " -type \"float3\" -1.085613 -1.046242 -4.59716509999999978"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[105]" " -type \"float3\" -1.1993332000000001 -1.046242 -4.53955939999999991"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[106]" " -type \"float3\" -1.15746020000000005 -1.046242 -4.41337389999999985"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[107]" " -type \"float3\" -1.06913520000000006 -0.96147424000000004 -4.374445"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[108]" " -type \"float3\" -1.11077709999999996 -0.96147424000000004 -4.50052830000000004"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[109]" " -type \"float3\" -0.99693894000000005 -0.96147424000000004 -4.55808210000000003"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[110]" " -type \"float3\" -3.46811150000000001 -1.046242 -5.64727020000000035"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[111]" " -type \"float3\" -3.41588929999999991 -1.046242 -5.51649049999999974"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[112]" " -type \"float3\" -3.50563430000000009 -1.046242 -5.44831470000000007"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[113]" " -type \"float3\" -3.62902209999999981 -0.96147424000000004 -5.50269649999999988"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[114]" " -type \"float3\" -3.51512529999999979 -0.96147424000000004 -5.56022689999999997"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[115]" " -type \"float3\" -3.55681229999999982 -0.96147424000000004 -5.68636470000000038"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[116]" " -type \"float3\" -3.23757219999999979 -1.4988973000000001 -5.54566189999999981"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[117]" " -type \"float3\" -3.19431829999999994 -1.4988973000000001 -5.41883469999999967"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[118]" " -type \"float3\" -3.309782 -1.4988973000000001 -5.36199379999999959"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[119]" " -type \"float3\" -3.42443439999999999 -1.4988973000000001 -5.45370240000000006"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[120]" " -type \"float3\" -3.37981029999999993 -1.4988973000000001 -5.56720539999999975"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[121]" " -type \"float3\" -1.38591620000000004 -1.49324970000000001 -4.51406430000000025"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[122]" " -type \"float3\" -1.42918129999999999 -1.49324970000000001 -4.64086249999999989"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[123]" " -type \"float3\" -1.31372 -1.49324970000000001 -4.69770149999999997"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[124]" " -type \"float3\" -1.19907450000000004 -1.49324970000000001 -4.60606239999999989"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[125]" " -type \"float3\" -1.2436986000000001 -1.49324970000000001 -4.4925594000000002"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[126]" " -type \"float3\" -3.27811239999999993 -1.72902990000000001 -5.3480357999999999"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[127]" " -type \"float3\" -3.39273479999999994 -1.72902990000000001 -5.4397316"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[128]" " -type \"float3\" -3.34811069999999988 -1.72902990000000001 -5.55323459999999969"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[129]" " -type \"float3\" -3.20590259999999994 -1.72902990000000001 -5.53170390000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[130]" " -type \"float3\" -3.16264920000000016 -1.72902990000000001 -5.40487580000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[131]" " -type \"float3\" -1.41931919999999989 -1.7319732000000001 -4.52878670000000039"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[132]" " -type \"float3\" -1.46258329999999992 -1.7319732000000001 -4.65558430000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[133]" " -type \"float3\" -1.34712290000000001 -1.7319732000000001 -4.71242379999999983"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[134]" " -type \"float3\" -1.23250649999999995 -1.7319732000000001 -4.62079669999999965"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[135]" " -type \"float3\" -1.2771306 -1.7319732000000001 -4.50729369999999996"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[136]" " -type \"float3\" -3.38283710000000015 -1.60262780000000005 -5.41721059999999976"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[137]" " -type \"float3\" -3.26958249999999984 -1.60262780000000005 -5.32804780000000022"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[138]" " -type \"float3\" -3.30078169999999993 -1.49886720000000007 -5.3416604999999997"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[139]" " -type \"float3\" -3.41409470000000015 -1.49886720000000007 -5.43084960000000017"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[140]" " -type \"float3\" -1.30468080000000008 -1.60262780000000005 -4.49663930000000001"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[141]" " -type \"float3\" -1.27191309999999991 -1.49329690000000004 -4.4820051000000003"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[142]" " -type \"float3\" -1.41094849999999994 -1.49329690000000004 -4.50453569999999992"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[143]" " -type \"float3\" -1.44368619999999992 -1.60262780000000005 -4.519155"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[144]" " -type \"float3\" -3.19121070000000007 -2.1054807000000002 -2.50933360000000016"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[145]" " -type \"float3\" -3.17487049999999993 -2.10551980000000016 -2.57928589999999991"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[146]" " -type \"float3\" -3.17550420000000022 -2.21224329999999991 -2.5880084000000001"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[147]" " -type \"float3\" -3.19183830000000013 -2.21221349999999983 -2.5180836000000002"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[148]" " -type \"float3\" -3.38319210000000004 -2.21221349999999983 -2.59851030000000005"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[149]" " -type \"float3\" -3.3483925000000001 -2.21224329999999991 -2.65582850000000015"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[150]" " -type \"float3\" -3.35273269999999979 -2.10595350000000003 -2.64961290000000016"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[151]" " -type \"float3\" -3.38751859999999994 -2.10592319999999988 -2.59231569999999989"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[152]" " -type \"float3\" -3.17794610000000022 -2.101243 -2.52299739999999995"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[153]" " -type \"float3\" -3.16267869999999984 -2.10129050000000017 -2.592617"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[154]" " -type \"float3\" -3.16349459999999993 -2.2080255000000002 -2.60139159999999992"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[155]" " -type \"float3\" -3.17879719999999999 -2.20798490000000003 -2.53178260000000011"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[156]" " -type \"float3\" -2.0125065000000002 -1.7295183999999999 -3.72084239999999999"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[157]" " -type \"float3\" -2.09159329999999999 -1.72953519999999994 -3.76165219999999989"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[158]" " -type \"float3\" -2.11193510000000018 -1.83786749999999999 -3.773989"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[159]" " -type \"float3\" -2.03284909999999996 -1.83783889999999994 -3.7331793000000002"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[160]" " -type \"float3\" -3.32128619999999986 -1.73845669999999997 -4.27924780000000027"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[161]" " -type \"float3\" -3.40361879999999983 -1.73844050000000006 -4.31062939999999983"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[162]" " -type \"float3\" -3.382978 -1.84321069999999998 -4.30479340000000033"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
+		"pnts[163]" " -type \"float3\" -3.300642 -1.84321960000000007 -4.2734432"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right" 
+		"rotatePivot" " -type \"double3\" -0.15399408176475604 0.03557401574057785 3.54706208328495443"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right" 
+		"scalePivot" " -type \"double3\" -0.15399408176475604 0.03557401574057785 3.54706208328495443"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts" " -s 164"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[0]" " -type \"float3\" -9.17259310000000028 0.082751281999999995 7.05397129999999972"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[1]" " -type \"float3\" -9.31480029999999992 0.082751281999999995 7.03243639999999992"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[2]" " -type \"float3\" -9.35942460000000054 0.082751281999999995 7.14594079999999998"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[3]" " -type \"float3\" -9.24480149999999945 0.082751281999999995 7.23763559999999995"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[4]" " -type \"float3\" -9.12933830000000057 0.082751281999999995 7.18079659999999986"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[5]" " -type \"float3\" -8.3044033000000006 -2.16952370000000005 7.43661979999999989"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[6]" " -type \"float3\" -8.44660949999999922 -2.16952370000000005 7.41508479999999981"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[7]" " -type \"float3\" -8.49123379999999983 -2.16952370000000005 7.52858919999999987"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[8]" " -type \"float3\" -8.37661169999999977 -2.16952370000000005 7.62028410000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[9]" " -type \"float3\" -8.26114749999999987 -2.16952370000000005 7.56344510000000003"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[10]" " -type \"float3\" -9.24420830000000038 0.082751281999999995 7.13016839999999963"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[11]" " -type \"float3\" -8.375988 -2.16952370000000005 7.51283070000000031"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[12]" " -type \"float3\" -8.4999046000000007 -1.19905210000000007 7.56594280000000019"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[13]" " -type \"float3\" -8.61452670000000076 -1.19905210000000007 7.47424939999999971"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[14]" " -type \"float3\" -8.56990240000000014 -1.19905210000000007 7.36074539999999988"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[15]" " -type \"float3\" -8.42769619999999975 -1.19905210000000007 7.38227839999999969"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[16]" " -type \"float3\" -8.38444140000000004 -1.19905210000000007 7.50910429999999973"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[17]" " -type \"float3\" -8.3044033000000006 -2.15384220000000015 7.43661979999999989"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[18]" " -type \"float3\" -8.26114749999999987 -2.15384220000000015 7.56344510000000003"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[19]" " -type \"float3\" -8.37661169999999977 -2.15384220000000015 7.62028410000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[20]" " -type \"float3\" -8.49123379999999983 -2.15384220000000015 7.52858919999999987"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[21]" " -type \"float3\" -8.44660949999999922 -2.15384220000000015 7.41508479999999981"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[22]" " -type \"float3\" -9.22111510000000045 0.047753520000000001 7.248075"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[23]" " -type \"float3\" -9.33570669999999936 0.047753520000000001 7.156394"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[24]" " -type \"float3\" -9.29108429999999963 0.047753520000000001 7.04288959999999964"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[25]" " -type \"float3\" -9.1489066999999995 0.047753520000000001 7.06441069999999982"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[26]" " -type \"float3\" -9.10565090000000055 0.047753520000000001 7.19123649999999959"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[27]" " -type \"float3\" -9.17477129999999974 -0.72154671000000004 7.22732539999999979"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[28]" " -type \"float3\" -9.13014790000000076 -0.72154671000000004 7.113821"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[29]" " -type \"float3\" -8.98794559999999976 -0.72154671000000004 7.13535309999999967"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[30]" " -type \"float3\" -8.9446898000000008 -0.72154671000000004 7.26217939999999995"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[31]" " -type \"float3\" -9.060154 -0.72154671000000004 7.3190173999999999"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[32]" " -type \"float3\" -9.27684589999999965 -0.23365188000000001 7.18233630000000023"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[33]" " -type \"float3\" -9.23222349999999992 -0.23365188000000001 7.06883239999999979"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[34]" " -type \"float3\" -9.09001540000000041 -0.23365188000000001 7.0903672999999996"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[35]" " -type \"float3\" -9.04675959999999968 -0.23365188000000001 7.21719259999999974"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[36]" " -type \"float3\" -9.16222379999999958 -0.23365188000000001 7.27403159999999982"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[37]" " -type \"float3\" -8.86827949999999987 -0.96147424000000004 7.36240960000000033"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[38]" " -type \"float3\" -8.82365609999999911 -0.96147424000000004 7.2489056999999999"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[39]" " -type \"float3\" -8.68144889999999947 -0.96147424000000004 7.27044010000000007"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[40]" " -type \"float3\" -8.63819409999999976 -0.96147424000000004 7.39726450000000035"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[41]" " -type \"float3\" -8.75365730000000042 -0.96147424000000004 7.4541044000000003"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[42]" " -type \"float3\" -8.49123379999999983 -1.60262780000000005 7.52858919999999987"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[43]" " -type \"float3\" -8.44660949999999922 -1.60262780000000005 7.41508479999999981"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[44]" " -type \"float3\" -8.3044033000000006 -1.60262780000000005 7.43661979999999989"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[45]" " -type \"float3\" -8.26114749999999987 -1.60262780000000005 7.56344510000000003"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[46]" " -type \"float3\" -8.37661169999999977 -1.60262780000000005 7.62028410000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[47]" " -type \"float3\" -8.66311259999999983 -1.046242 7.49401190000000028"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[48]" " -type \"float3\" -8.77773479999999928 -1.046242 7.40231610000000018"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[49]" " -type \"float3\" -8.73311230000000016 -1.046242 7.28881219999999974"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[50]" " -type \"float3\" -8.59090420000000066 -1.046242 7.31034760000000006"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[51]" " -type \"float3\" -8.54764939999999918 -1.046242 7.43717190000000006"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[52]" " -type \"float3\" -6.068594 -0.96147424000000004 8.42203710000000072"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[53]" " -type \"float3\" -6.18406680000000009 -0.96147424000000004 8.47890379999999944"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[54]" " -type \"float3\" -6.1941360999999997 -1.046242 8.366704"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[55]" " -type \"float3\" -6.28522970000000036 -1.046242 8.43431660000000072"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[56]" " -type \"float3\" -6.14079279999999983 -0.96147424000000004 8.60567670000000007"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[57]" " -type \"float3\" -6.231308 -1.046242 8.56578249999999919"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[58]" " -type \"float3\" -5.64963339999999992 0.082751281999999995 8.82215120000000042"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[59]" " -type \"float3\" -5.50743910000000003 0.082751281999999995 8.84367559999999919"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[60]" " -type \"float3\" -5.46281580000000044 0.082751281999999995 8.73017119999999913"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[61]" " -type \"float3\" -5.577435 0.082751281999999995 8.63851170000000046"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[62]" " -type \"float3\" -5.6928920999999999 0.082751281999999995 8.695385"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[63]" " -type \"float3\" -6.51780890000000035 -2.16952370000000005 8.43950839999999936"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[64]" " -type \"float3\" -6.37562940000000022 -2.16952370000000005 8.4610271000000008"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[65]" " -type \"float3\" -6.33100609999999975 -2.16952370000000005 8.34752270000000074"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[66]" " -type \"float3\" -6.44561 -2.16952370000000005 8.2558688999999994"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[67]" " -type \"float3\" -6.56108189999999958 -2.16952370000000005 8.31273649999999975"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[68]" " -type \"float3\" -5.57805160000000022 0.082751281999999995 8.74600030000000039"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[69]" " -type \"float3\" -6.44624190000000041 -2.16952370000000005 8.36335180000000022"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[70]" " -type \"float3\" -6.32231710000000025 -1.19905210000000007 8.31020930000000035"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[71]" " -type \"float3\" -6.20771310000000032 -1.19905210000000007 8.40186309999999992"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[72]" " -type \"float3\" -6.25233650000000019 -1.19905210000000007 8.51536749999999998"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[73]" " -type \"float3\" -6.394516 -1.19905210000000007 8.49384979999999956"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[74]" " -type \"float3\" -6.437788 -1.19905210000000007 8.36707780000000056"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[75]" " -type \"float3\" -6.51780890000000035 -2.15384220000000015 8.43950839999999936"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[76]" " -type \"float3\" -6.56108189999999958 -2.15384220000000015 8.31273649999999975"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[77]" " -type \"float3\" -6.44561 -2.15384220000000015 8.2558688999999994"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[78]" " -type \"float3\" -6.33100609999999975 -2.15384220000000015 8.34752270000000074"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[79]" " -type \"float3\" -6.37562940000000022 -2.15384220000000015 8.4610271000000008"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[80]" " -type \"float3\" -5.60113720000000015 0.047753520000000001 8.6280651000000006"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[81]" " -type \"float3\" -5.48651789999999995 0.047753520000000001 8.71972470000000044"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[82]" " -type \"float3\" -5.53114129999999982 0.047753520000000001 8.8332291000000005"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[83]" " -type \"float3\" -5.673336 0.047753520000000001 8.81170460000000055"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[84]" " -type \"float3\" -5.716609 0.047753520000000001 8.68493179999999931"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[85]" " -type \"float3\" -5.647438 -0.72154671000000004 8.64880080000000007"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[86]" " -type \"float3\" -5.69206140000000005 -0.72154671000000004 8.76230430000000027"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[87]" " -type \"float3\" -5.83426669999999969 -0.72154671000000004 8.74077510000000046"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[88]" " -type \"float3\" -5.87753960000000042 -0.72154671000000004 8.61400320000000086"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[89]" " -type \"float3\" -5.76206779999999963 -0.72154671000000004 8.55713459999999948"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[90]" " -type \"float3\" -5.54539389999999965 -0.23365188000000001 8.69377519999999926"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[91]" " -type \"float3\" -5.59001730000000041 -0.23365188000000001 8.80727959999999932"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[92]" " -type \"float3\" -5.73219679999999965 -0.23365188000000001 8.78576179999999951"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[93]" " -type \"float3\" -5.77546979999999976 -0.23365188000000001 8.65898989999999991"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[94]" " -type \"float3\" -5.65999789999999958 -0.23365188000000001 8.6021213999999997"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[95]" " -type \"float3\" -5.95395990000000008 -0.96147424000000004 8.51370239999999967"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[96]" " -type \"float3\" -5.99858329999999995 -0.96147424000000004 8.62720679999999973"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[97]" " -type \"float3\" -6.33100609999999975 -1.60262780000000005 8.34752270000000074"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[98]" " -type \"float3\" -6.37562940000000022 -1.60262780000000005 8.4610271000000008"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[99]" " -type \"float3\" -6.51780890000000035 -1.60262780000000005 8.43950839999999936"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[100]" " -type \"float3\" -6.56108189999999958 -1.60262780000000005 8.31273649999999975"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[101]" " -type \"float3\" -6.44561 -1.60262780000000005 8.2558688999999994"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[102]" " -type \"float3\" -6.0445051000000003 -1.046242 8.47379590000000071"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[103]" " -type \"float3\" -6.08912850000000017 -1.046242 8.58729929999999975"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[104]" " -type \"float3\" -8.63812069999999999 -1.046242 7.50502589999999969"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[105]" " -type \"float3\" -8.52443030000000057 -1.046242 7.44740490000000044"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[106]" " -type \"float3\" -8.56629090000000026 -1.046242 7.32119509999999973"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[107]" " -type \"float3\" -8.65458680000000058 -0.96147424000000004 7.28227949999999957"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[108]" " -type \"float3\" -8.61298470000000016 -0.96147424000000004 7.40837569999999968"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[109]" " -type \"float3\" -8.72679519999999975 -0.96147424000000004 7.4659437999999998"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[110]" " -type \"float3\" -6.25562859999999965 -1.046242 8.55506319999999931"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[111]" " -type \"float3\" -6.30787180000000003 -1.046242 8.42433740000000064"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[112]" " -type \"float3\" -6.2180882000000004 -1.046242 8.35614780000000046"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[113]" " -type \"float3\" -6.0947294000000003 -0.96147424000000004 8.41051769999999976"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[114]" " -type \"float3\" -6.20860579999999995 -0.96147424000000004 8.4680882000000004"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[115]" " -type \"float3\" -6.16692779999999985 -0.96147424000000004 8.59415820000000075"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[116]" " -type \"float3\" -6.48613879999999998 -1.4988973000000001 8.45346830000000082"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[117]" " -type \"float3\" -6.52941269999999996 -1.4988973000000001 8.32669450000000033"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[118]" " -type \"float3\" -6.41394040000000043 -1.4988973000000001 8.26982779999999984"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[119]" " -type \"float3\" -6.29930690000000038 -1.4988973000000001 8.36149409999999982"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[120]" " -type \"float3\" -6.34393019999999996 -1.4988973000000001 8.47499750000000063"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[121]" " -type \"float3\" -8.33780669999999979 -1.49324970000000001 7.42189790000000027"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[122]" " -type \"float3\" -8.29454989999999981 -1.49324970000000001 7.54872370000000004"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[123]" " -type \"float3\" -8.41001510000000074 -1.49324970000000001 7.60556219999999961"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[124]" " -type \"float3\" -8.52463629999999917 -1.49324970000000001 7.51386640000000039"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[125]" " -type \"float3\" -8.48001290000000019 -1.49324970000000001 7.40036249999999995"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[126]" " -type \"float3\" -6.44561 -1.72902990000000001 8.2558688999999994"
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[127]" " -type \"float3\" -6.33100609999999975 -1.72902990000000001 8.34752270000000074"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[128]" " -type \"float3\" -6.37562940000000022 -1.72902990000000001 8.4610271000000008"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[129]" " -type \"float3\" -6.51780890000000035 -1.72902990000000001 8.43950839999999936"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[130]" " -type \"float3\" -6.56108189999999958 -1.72902990000000001 8.31273649999999975"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[131]" " -type \"float3\" -8.3044033000000006 -1.7319732000000001 7.43661979999999989"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[132]" " -type \"float3\" -8.26114749999999987 -1.7319732000000001 7.56344510000000003"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[133]" " -type \"float3\" -8.37661169999999977 -1.7319732000000001 7.62028410000000012"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[134]" " -type \"float3\" -8.49123379999999983 -1.7319732000000001 7.52858919999999987"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[135]" " -type \"float3\" -8.44660949999999922 -1.7319732000000001 7.41508479999999981"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[136]" " -type \"float3\" -6.34089469999999977 -1.60262780000000005 8.3250712999999994"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[137]" " -type \"float3\" -6.45417020000000008 -1.60262780000000005 8.2358665000000002"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[138]" " -type \"float3\" -6.42295030000000011 -1.49886720000000007 8.24952219999999947"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[139]" " -type \"float3\" -6.30966619999999967 -1.49886720000000007 8.33869840000000018"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[140]" " -type \"float3\" -8.4190415999999999 -1.60262780000000005 7.40447140000000026"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[141]" " -type \"float3\" -8.4518184999999999 -1.49329690000000004 7.38986590000000021"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[142]" " -type \"float3\" -8.31280330000000056 -1.49329690000000004 7.41235490000000041"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[143]" " -type \"float3\" -8.2800255000000007 -1.60262780000000005 7.42696290000000037"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[144]" " -type \"float3\" -6.53251079999999984 -2.1054807000000002 5.4171661999999996"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[145]" " -type \"float3\" -6.54885580000000012 -2.10551980000000016 5.48711630000000028"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[146]" " -type \"float3\" -6.54825880000000016 -2.21224329999999991 5.49585629999999981"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[147]" " -type \"float3\" -6.53190229999999961 -2.21221349999999983 5.42587379999999975"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[148]" " -type \"float3\" -6.340559 -2.21221349999999983 5.50633139999999965"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[149]" " -type \"float3\" -6.37533040000000017 -2.21224329999999991 5.56366210000000017"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[150]" " -type \"float3\" -6.3709908000000004 -2.10595350000000003 5.55744409999999966"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[151]" " -type \"float3\" -6.33622219999999992 -2.10592319999999988 5.50010919999999981"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[152]" " -type \"float3\" -6.54580689999999965 -2.101243 5.43081570000000013"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[153]" " -type \"float3\" -6.56107429999999958 -2.10129050000000017 5.50043769999999999"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[154]" " -type \"float3\" -6.56025789999999986 -2.2080255000000002 5.50921250000000029"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[155]" " -type \"float3\" -6.54494519999999991 -2.20798490000000003 5.43957520000000017"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[156]" " -type \"float3\" -7.71121449999999964 -1.7295183999999999 6.62867590000000018"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[157]" " -type \"float3\" -7.63215880000000002 -1.72953519999999994 6.66947270000000003"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[158]" " -type \"float3\" -7.61181739999999962 -1.83786749999999999 6.68180939999999968"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[159]" " -type \"float3\" -7.69087359999999975 -1.83783889999999994 6.6410127000000001"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[160]" " -type \"float3\" -6.40242480000000036 -1.73845669999999997 7.18705320000000025"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[161]" " -type \"float3\" -6.32013420000000004 -1.73844050000000006 7.21844909999999995"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[162]" " -type \"float3\" -6.34075360000000021 -1.84321069999999998 7.212657"
+		
+		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
+		"pnts[163]" " -type \"float3\" -6.42307 -1.84321960000000007 7.18124870000000026";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 select -ne :time1;
@@ -753,7 +1713,7 @@ select -ne :renderPartition;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 4 ".st";
+	setAttr -s 6 ".st";
 	setAttr -cb on ".an";
 	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
@@ -766,7 +1726,7 @@ select -ne :defaultShaderList1;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 6 ".s";
+	setAttr -s 8 ".s";
 select -ne :postProcessList1;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -774,17 +1734,16 @@ select -ne :postProcessList1;
 	setAttr -cb on ".bnm";
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 4 ".u";
+	setAttr -s 8 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 12 ".r";
+	setAttr -s 10 ".r";
 select -ne :defaultTextureList1;
-	setAttr -s 5 ".tx";
+	setAttr -s 10 ".tx";
 select -ne :initialShadingGroup;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 4 ".dsm";
 	setAttr -k on ".mwc";
 	setAttr -cb on ".an";
 	setAttr -cb on ".il";
@@ -855,9 +1814,6 @@ select -ne :hardwareRenderGlobals;
 	setAttr -k on ".hwcc";
 	setAttr -k on ".hwdp";
 	setAttr -k on ".hwql";
-connectAttr "table_cloth2_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
-connectAttr "transformGeometry1.og" "table_latestRN1.phl[1]";
-connectAttr "table_latestRN1.phl[2]" "transformGeometry1.ig";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -871,7 +1827,6 @@ connectAttr ":PxrPathTracer.msg" ":rmanGlobals.ri_integrator";
 connectAttr "tent_latest_d_openexr.msg" ":rmanDefaultDisplay.displayType";
 connectAttr "tent_latest_Ci.msg" ":rmanDefaultDisplay.displayChannels[0]";
 connectAttr "tent_latest_a.msg" ":rmanDefaultDisplay.displayChannels[1]";
-connectAttr "sharedReferenceNode.sr" "table_latestRN1.sr";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "tent_latest_defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanGlobals.msg" ":defaultRenderingList1.r" -na;
