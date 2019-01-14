@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: buildingMed_destroyed_latest.ma
-//Last modified: Mon, Jan 14, 2019 03:44:32 PM
+//Last modified: Mon, Jan 14, 2019 03:50:10 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -19,13 +19,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "A2E4EF53-F441-A6E2-7FC5-B9B6D344AB6E";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.0320684973884269 3.331456291455217 -10.224379644144319 ;
-	setAttr ".r" -type "double3" 708.26164726627189 -903.39999999964584 0 ;
+	setAttr ".t" -type "double3" 1.3767756133448434 1.8842673503057286 -8.4340066731444079 ;
+	setAttr ".r" -type "double3" 712.46164726651386 -893.80000000014059 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "DF146361-7E47-2958-3AF8-F7A3C5F14CE6";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 11.265532377809546;
+	setAttr ".coi" 9.0908700659099555;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -25445,7 +25445,7 @@ createNode transform -n "side1" -p "|medBuilding2|medBuilding|windowpanes";
 	rename -uid "EB04A207-BD41-7E61-CCEE-DE8242968387";
 	setAttr ".rp" -type "double3" -1.6417138361474688 1.3867905614075293 0.27121642284125036 ;
 	setAttr ".sp" -type "double3" -1.6417138361474688 1.3867905614075293 0.27121642284125036 ;
-createNode transform -n "pasted__pane18" -p "|medBuilding2|medBuilding|windowpanes|side1";
+createNode transform -n "pasted__pane18" -p "side1";
 	rename -uid "C84941E9-C748-B343-87DC-D39840491BFF";
 	setAttr ".rp" -type "double3" -1.6634555028922589 2.101235254865105 -0.75169964819709212 ;
 	setAttr ".sp" -type "double3" -1.6634555028922593 2.101235254865105 -0.75169964819709212 ;
@@ -25713,7 +25713,7 @@ createNode mesh -n "pasted__pane18Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane19" -p "|medBuilding2|medBuilding|windowpanes|side1";
+createNode transform -n "pasted__pane19" -p "side1";
 	rename -uid "546B516D-0E42-5A7A-CE30-08B7C95A1067";
 	setAttr ".rp" -type "double3" -1.6634555028922584 2.1012352548651112 -0.068803954179065374 ;
 	setAttr ".sp" -type "double3" -1.6634555028922589 2.1012352548651112 -0.068803954179065374 ;
@@ -25981,7 +25981,7 @@ createNode mesh -n "pasted__pane19Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane28" -p "|medBuilding2|medBuilding|windowpanes|side1";
+createNode transform -n "pasted__pane28" -p "side1";
 	rename -uid "DFE72301-174D-CDA2-A0D6-C7A08AE36155";
 	setAttr ".rp" -type "double3" -1.6634555028922584 0.99645495671687201 0.61123767798818296 ;
 	setAttr ".sp" -type "double3" -1.6634555028922589 0.99645495671687201 0.61123767798818296 ;
@@ -26250,7 +26250,7 @@ createNode mesh -n "pasted__pane28Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane27" -p "|medBuilding2|medBuilding|windowpanes|side1";
+createNode transform -n "pasted__pane27" -p "side1";
 	rename -uid "FFF6F864-8843-ED17-8557-03836E82BDCE";
 	setAttr ".rp" -type "double3" -1.6634555028922589 0.99645495671686135 -0.75169964819709212 ;
 	setAttr ".sp" -type "double3" -1.6634555028922593 0.99645495671686135 -0.75169964819709212 ;
@@ -26518,7 +26518,7 @@ createNode mesh -n "pasted__pane27Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane26" -p "|medBuilding2|medBuilding|windowpanes|side1";
+createNode transform -n "pasted__pane26" -p "side1";
 	rename -uid "A3E2D344-2841-0D36-9157-D280420F4C85";
 	setAttr ".rp" -type "double3" -1.6634555028922589 0.99645495671686135 -0.068803954179065374 ;
 	setAttr ".sp" -type "double3" -1.6634555028922593 0.99645495671686135 -0.068803954179065374 ;
@@ -26786,7 +26786,7 @@ createNode mesh -n "pasted__pane26Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane22" -p "|medBuilding2|medBuilding|windowpanes|side1";
+createNode transform -n "pasted__pane22" -p "side1";
 	rename -uid "93C1FFB1-F64F-B44C-0337-B49F282012D7";
 	setAttr ".rp" -type "double3" -1.6634555028922584 2.101235254865105 1.2941333720062127 ;
 	setAttr ".sp" -type "double3" -1.6634555028922589 2.101235254865105 1.2941333720062127 ;
@@ -27054,7 +27054,7 @@ createNode mesh -n "pasted__pane22Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane21" -p "|medBuilding2|medBuilding|windowpanes|side1";
+createNode transform -n "pasted__pane21" -p "side1";
 	rename -uid "FAD63926-6B42-958E-4DF4-D78C532FD9CE";
 	setAttr ".rp" -type "double3" -1.6634555028922584 0.99645495671687279 1.2941333720062127 ;
 	setAttr ".sp" -type "double3" -1.6634555028922589 0.99645495671687279 1.2941333720062127 ;
@@ -27322,7 +27322,7 @@ createNode mesh -n "pasted__pane21Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane17" -p "|medBuilding2|medBuilding|windowpanes|side1";
+createNode transform -n "pasted__pane17" -p "side1";
 	rename -uid "91FB9821-E34D-36A4-8786-15B355DA7158";
 	setAttr ".rp" -type "double3" -1.6634555028922584 2.1012352548651112 0.61123767798818296 ;
 	setAttr ".sp" -type "double3" -1.6634555028922589 2.1012352548651112 0.61123767798818296 ;
@@ -27594,7 +27594,7 @@ createNode transform -n "side2" -p "|medBuilding2|medBuilding|windowpanes";
 	rename -uid "8808892A-5A44-7FB8-06C6-8891C4C6B5BB";
 	setAttr ".rp" -type "double3" -7.0332844062427702 1.3867905614075293 0.27121642284125191 ;
 	setAttr ".sp" -type "double3" -7.0332844062427702 1.3867905614075293 0.27121642284125191 ;
-createNode transform -n "pasted__pane18" -p "|medBuilding2|medBuilding|windowpanes|side2";
+createNode transform -n "pasted__pane18" -p "side2";
 	rename -uid "5B8D240A-5A4E-DE45-CE2A-8FA6E14BA513";
 	setAttr ".rp" -type "double3" -7.0115427394979806 2.101235254865105 1.2941324938795951 ;
 	setAttr ".sp" -type "double3" -7.0115427394979806 2.101235254865105 1.2941324938795951 ;
@@ -27863,7 +27863,7 @@ createNode mesh -n "pasted__pane18Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane19" -p "|medBuilding2|medBuilding|windowpanes|side2";
+createNode transform -n "pasted__pane19" -p "side2";
 	rename -uid "FAA658C3-0749-4433-B242-4B8D90170DCA";
 	setAttr ".rp" -type "double3" -7.0115427394979806 2.1012352548651112 0.61123679986156798 ;
 	setAttr ".sp" -type "double3" -7.0115427394979806 2.1012352548651112 0.61123679986156798 ;
@@ -28131,7 +28131,7 @@ createNode mesh -n "pasted__pane19Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane28" -p "|medBuilding2|medBuilding|windowpanes|side2";
+createNode transform -n "pasted__pane28" -p "side2";
 	rename -uid "A53AA796-D849-E678-797C-36B95158D30D";
 	setAttr ".rp" -type "double3" -7.0115427394979806 0.99645495671687201 -0.068804832305680463 ;
 	setAttr ".sp" -type "double3" -7.0115427394979806 0.99645495671687201 -0.068804832305680463 ;
@@ -28399,7 +28399,7 @@ createNode mesh -n "pasted__pane28Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane27" -p "|medBuilding2|medBuilding|windowpanes|side2";
+createNode transform -n "pasted__pane27" -p "side2";
 	rename -uid "80B4E366-A248-79D8-312C-0AB7588B1DCA";
 	setAttr ".rp" -type "double3" -7.0115427394979806 0.99645495671686135 1.2941324938795951 ;
 	setAttr ".sp" -type "double3" -7.0115427394979806 0.99645495671686135 1.2941324938795951 ;
@@ -28667,7 +28667,7 @@ createNode mesh -n "pasted__pane27Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane26" -p "|medBuilding2|medBuilding|windowpanes|side2";
+createNode transform -n "pasted__pane26" -p "side2";
 	rename -uid "C41E7F13-4744-603E-3629-F9B7F7FE67CC";
 	setAttr ".rp" -type "double3" -7.0115427394979806 0.99645495671686135 0.61123679986156798 ;
 	setAttr ".sp" -type "double3" -7.0115427394979806 0.99645495671686135 0.61123679986156798 ;
@@ -28935,7 +28935,7 @@ createNode mesh -n "pasted__pane26Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane22" -p "|medBuilding2|medBuilding|windowpanes|side2";
+createNode transform -n "pasted__pane22" -p "side2";
 	rename -uid "D25C0FA3-0849-F777-358D-2EA2E2128C02";
 	setAttr ".rp" -type "double3" -7.0115427394979806 2.101235254865105 -0.75170052632371043 ;
 	setAttr ".sp" -type "double3" -7.0115427394979806 2.101235254865105 -0.75170052632371043 ;
@@ -29203,7 +29203,7 @@ createNode mesh -n "pasted__pane22Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane21" -p "|medBuilding2|medBuilding|windowpanes|side2";
+createNode transform -n "pasted__pane21" -p "side2";
 	rename -uid "7A4EE57B-5A4E-D571-F206-8D9FC1C2848D";
 	setAttr ".rp" -type "double3" -7.0115427394979806 0.99645495671687279 -0.75170052632371043 ;
 	setAttr ".sp" -type "double3" -7.0115427394979806 0.99645495671687279 -0.75170052632371043 ;
@@ -29471,7 +29471,7 @@ createNode mesh -n "pasted__pane21Shape" -p "|medBuilding2|medBuilding|windowpan
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane17" -p "|medBuilding2|medBuilding|windowpanes|side2";
+createNode transform -n "pasted__pane17" -p "side2";
 	rename -uid "1BD25901-9147-A5EA-9AB9-1487CCED7841";
 	setAttr ".rp" -type "double3" -7.0115427394979806 2.1012352548651112 -0.068804832305680463 ;
 	setAttr ".sp" -type "double3" -7.0115427394979806 2.1012352548651112 -0.068804832305680463 ;
@@ -38460,15 +38460,15 @@ createNode transform -n "medBuilding" -p "medBuilding1";
 	setAttr ".sp" -type "double3" 5.422537705084884 1.3867905730336421 0.28402460862438916 ;
 createNode transform -n "walls" -p "|medBuilding1|medBuilding";
 	rename -uid "9F2139E3-6941-60CA-8432-F3B9416CA9D3";
-createNode transform -n "window" -p "|medBuilding1|medBuilding|walls";
+createNode transform -n "front" -p "|medBuilding1|medBuilding|walls";
 	rename -uid "47F9A9C5-764B-9DCD-0C2F-45BAC5D47446";
 	setAttr ".rp" -type "double3" 9.1115262254777996 2.1012352548651814 -1.0505995082731472 ;
 	setAttr ".sp" -type "double3" 9.1115262254777996 2.1012352548651814 -1.0505995082731472 ;
-createNode transform -n "window" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "35CF4A46-B848-B9C6-BBF6-A8B1E5AB8B2B";
 	setAttr ".rp" -type "double3" 3.6397426357778864 2.1012352548651814 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" 3.6397426357778864 2.1012352548651814 -1.0505995082731474 ;
-createNode mesh -n "windowShape" -p "|medBuilding1|medBuilding|walls|window|window";
+createNode mesh -n "windowShape" -p "|medBuilding1|medBuilding|walls|front|window";
 	rename -uid "F00900DC-BF4A-6F5A-9395-F88C2D7B3056";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -38844,11 +38844,11 @@ createNode mesh -n "windowShape" -p "|medBuilding1|medBuilding|walls|window|wind
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window1" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window1" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "7476E4BB-9340-6EC7-CCDF-6BBFFEB24109";
 	setAttr ".rp" -type "double3" 2.9568469417598564 2.1012352548651814 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" 2.9568469417598564 2.1012352548651814 -1.0505995082731474 ;
-createNode mesh -n "window1Shape" -p "|medBuilding1|medBuilding|walls|window|window1";
+createNode mesh -n "window1Shape" -p "|medBuilding1|medBuilding|walls|front|window1";
 	rename -uid "6FCA0ECE-3C4C-71AC-69A9-43B11E1074C8";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -39224,11 +39224,11 @@ createNode mesh -n "window1Shape" -p "|medBuilding1|medBuilding|walls|window|win
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window2" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window2" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "8BB74393-2E4C-D8F0-0222-2FB1F7E47A5D";
 	setAttr ".rp" -type "double3" 2.2768053095926062 2.1012352548651814 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" 2.2768053095926062 2.1012352548651814 -1.0505995082731474 ;
-createNode mesh -n "window2Shape" -p "|medBuilding1|medBuilding|walls|window|window2";
+createNode mesh -n "window2Shape" -p "|medBuilding1|medBuilding|walls|front|window2";
 	rename -uid "76184309-D644-0EE8-4C12-789C1EFBB864";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -39604,11 +39604,11 @@ createNode mesh -n "window2Shape" -p "|medBuilding1|medBuilding|walls|window|win
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window3" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window3" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "176E4EDC-1F48-5896-2DC3-F8B61776BBD8";
 	setAttr ".rp" -type "double3" 1.593909615574578 2.1012352548651814 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" 1.593909615574578 2.1012352548651814 -1.0505995082731474 ;
-createNode mesh -n "window3Shape" -p "|medBuilding1|medBuilding|walls|window|window3";
+createNode mesh -n "window3Shape" -p "|medBuilding1|medBuilding|walls|front|window3";
 	rename -uid "FFE35291-D043-CEA0-54B0-E195DD1F780E";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -39984,11 +39984,11 @@ createNode mesh -n "window3Shape" -p "|medBuilding1|medBuilding|walls|window|win
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window4" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window4" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "171FE362-E547-0790-2D5B-93A17C589B4E";
 	setAttr ".rp" -type "double3" 0.90750461563431273 2.1012352548651814 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" 0.90750461563431273 2.1012352548651814 -1.0505995082731474 ;
-createNode mesh -n "window4Shape" -p "|medBuilding1|medBuilding|walls|window|window4";
+createNode mesh -n "window4Shape" -p "|medBuilding1|medBuilding|walls|front|window4";
 	rename -uid "CFA2B3CD-754F-F445-6D9E-DFBDB582926B";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -40364,11 +40364,11 @@ createNode mesh -n "window4Shape" -p "|medBuilding1|medBuilding|walls|window|win
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window5" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window5" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "467FD965-7B4F-36B7-3C4B-22B1F8FBF9C3";
 	setAttr ".rp" -type "double3" -1.1383284045690001 2.1012352548651823 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" -1.1383284045690001 2.1012352548651823 -1.0505995082731474 ;
-createNode mesh -n "window5Shape" -p "|medBuilding1|medBuilding|walls|window|window5";
+createNode mesh -n "window5Shape" -p "|medBuilding1|medBuilding|walls|front|window5";
 	rename -uid "2A6B4F9C-D945-DD9F-9E42-81956F5FC23B";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -40745,11 +40745,11 @@ createNode mesh -n "window5Shape" -p "|medBuilding1|medBuilding|walls|window|win
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window6" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window6" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "8B12902D-924C-932B-D085-97BFB21627F5";
 	setAttr ".rp" -type "double3" -0.45543271055096923 2.1012352548651823 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" -0.45543271055096923 2.1012352548651823 -1.0505995082731474 ;
-createNode mesh -n "window6Shape" -p "|medBuilding1|medBuilding|walls|window|window6";
+createNode mesh -n "window6Shape" -p "|medBuilding1|medBuilding|walls|front|window6";
 	rename -uid "B468A76F-EF4B-AEE0-5542-3F80BD0B70FD";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -41125,11 +41125,11 @@ createNode mesh -n "window6Shape" -p "|medBuilding1|medBuilding|walls|window|win
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window7" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window7" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "399CB06B-4B4F-95A1-6B57-3BA46B3745B1";
 	setAttr ".rp" -type "double3" 0.2246089216162801 2.1012352548651814 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" 0.2246089216162801 2.1012352548651814 -1.0505995082731474 ;
-createNode mesh -n "window7Shape" -p "|medBuilding1|medBuilding|walls|window|window7";
+createNode mesh -n "window7Shape" -p "|medBuilding1|medBuilding|walls|front|window7";
 	rename -uid "34B16CFC-EC4A-48EB-DF60-0E912C31D592";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -41505,11 +41505,11 @@ createNode mesh -n "window7Shape" -p "|medBuilding1|medBuilding|walls|window|win
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window8" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window8" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "91928F55-CA4E-74B3-654C-F4887629F30C";
 	setAttr ".rp" -type "double3" -1.1383284045690001 0.99645495671693207 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" -1.1383284045690001 0.99645495671693207 -1.0505995082731474 ;
-createNode mesh -n "window8Shape" -p "|medBuilding1|medBuilding|walls|window|window8";
+createNode mesh -n "window8Shape" -p "|medBuilding1|medBuilding|walls|front|window8";
 	rename -uid "DFAF10DF-B345-36C4-FF66-4381B0CB2ED3";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -41928,11 +41928,11 @@ createNode mesh -n "window8Shape" -p "|medBuilding1|medBuilding|walls|window|win
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window9" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window9" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "E6AB4AE5-0F44-BB1E-66E3-3D8AA0F5D6B4";
 	setAttr ".rp" -type "double3" 0.2246089216162801 0.99645495671693185 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" 0.2246089216162801 0.99645495671693185 -1.0505995082731474 ;
-createNode mesh -n "window9Shape" -p "|medBuilding1|medBuilding|walls|window|window9";
+createNode mesh -n "window9Shape" -p "|medBuilding1|medBuilding|walls|front|window9";
 	rename -uid "1EACBE9A-124C-45CF-C376-F8A621DD8BE0";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -42351,11 +42351,11 @@ createNode mesh -n "window9Shape" -p "|medBuilding1|medBuilding|walls|window|win
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window11" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window11" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "A7D85EFA-5B46-84DB-B69D-50857A22F73A";
 	setAttr ".rp" -type "double3" 3.639742635777885 0.99645495671693141 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" 3.639742635777885 0.99645495671693141 -1.0505995082731474 ;
-createNode mesh -n "window11Shape" -p "|medBuilding1|medBuilding|walls|window|window11";
+createNode mesh -n "window11Shape" -p "|medBuilding1|medBuilding|walls|front|window11";
 	rename -uid "A41410EC-6342-E20B-317A-C8A95F082ACE";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -42774,11 +42774,11 @@ createNode mesh -n "window11Shape" -p "|medBuilding1|medBuilding|walls|window|wi
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window12" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window12" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "8315ABE9-514F-54A7-D548-61944178CE1C";
 	setAttr ".rp" -type "double3" 1.593909615574578 0.99645495671693163 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" 1.593909615574578 0.99645495671693163 -1.0505995082731474 ;
-createNode mesh -n "window12Shape" -p "|medBuilding1|medBuilding|walls|window|window12";
+createNode mesh -n "window12Shape" -p "|medBuilding1|medBuilding|walls|front|window12";
 	rename -uid "710E6C9C-404C-81F7-E1C4-D69AAA8A088B";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -43197,11 +43197,11 @@ createNode mesh -n "window12Shape" -p "|medBuilding1|medBuilding|walls|window|wi
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window13" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window13" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "0E03C0A4-F945-F8FB-E682-A2B6BAD37A80";
 	setAttr ".rp" -type "double3" 0.90750461563431273 0.99645495671693163 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" 0.90750461563431273 0.99645495671693163 -1.0505995082731474 ;
-createNode mesh -n "window13Shape" -p "|medBuilding1|medBuilding|walls|window|window13";
+createNode mesh -n "window13Shape" -p "|medBuilding1|medBuilding|walls|front|window13";
 	rename -uid "34C6D0B8-CD46-061C-773E-219837EFFFB3";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -43621,11 +43621,11 @@ createNode mesh -n "window13Shape" -p "|medBuilding1|medBuilding|walls|window|wi
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window14" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window14" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "C71B87CB-4843-6973-F8D1-558972C49762";
 	setAttr ".rp" -type "double3" 2.2768053095926062 0.99645495671693163 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" 2.2768053095926062 0.99645495671693163 -1.0505995082731474 ;
-createNode mesh -n "window14Shape" -p "|medBuilding1|medBuilding|walls|window|window14";
+createNode mesh -n "window14Shape" -p "|medBuilding1|medBuilding|walls|front|window14";
 	rename -uid "0BCFEEC2-BF44-8F73-5DCE-69880BEE7DB1";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -44044,11 +44044,11 @@ createNode mesh -n "window14Shape" -p "|medBuilding1|medBuilding|walls|window|wi
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window15" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window15" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "0F70E3AB-FA41-6535-F007-70AD4E473D27";
 	setAttr ".rp" -type "double3" 2.9568469417598555 0.99645495671693141 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" 2.9568469417598555 0.99645495671693141 -1.0505995082731474 ;
-createNode mesh -n "window15Shape" -p "|medBuilding1|medBuilding|walls|window|window15";
+createNode mesh -n "window15Shape" -p "|medBuilding1|medBuilding|walls|front|window15";
 	rename -uid "9A2E4061-054D-1B05-0676-AB930C601524";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -44468,11 +44468,11 @@ createNode mesh -n "window15Shape" -p "|medBuilding1|medBuilding|walls|window|wi
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window10" -p "|medBuilding1|medBuilding|walls|window";
+createNode transform -n "window10" -p "|medBuilding1|medBuilding|walls|front";
 	rename -uid "9CD3A223-0A49-68B6-8DE2-77B4944F041A";
 	setAttr ".rp" -type "double3" -0.45543271055096923 0.99645495671693185 -1.0505995082731474 ;
 	setAttr ".sp" -type "double3" -0.45543271055096923 0.99645495671693185 -1.0505995082731474 ;
-createNode mesh -n "window10Shape" -p "|medBuilding1|medBuilding|walls|window|window10";
+createNode mesh -n "window10Shape" -p "|medBuilding1|medBuilding|walls|front|window10";
 	rename -uid "326D6488-BA46-1F8A-A6F1-C4801A6B852C";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -44892,15 +44892,15 @@ createNode mesh -n "window10Shape" -p "|medBuilding1|medBuilding|walls|window|wi
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window17" -p "|medBuilding1|medBuilding|walls";
+createNode transform -n "back" -p "|medBuilding1|medBuilding|walls";
 	rename -uid "88D2283C-474F-7387-CFB2-EBBBA9E63A30";
 	setAttr ".rp" -type "double3" 1.724008341728533 2.1012352548651818 1.6186487785126806 ;
 	setAttr ".sp" -type "double3" 1.724008341728533 2.1012352548651818 1.6186487785126806 ;
-createNode transform -n "window" -p "window17";
+createNode transform -n "window" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "13D7DC94-434D-C712-6DFF-AC80AE9E6832";
 	setAttr ".rp" -type "double3" -1.1383294815484959 2.1012352548651823 1.6186487785126804 ;
 	setAttr ".sp" -type "double3" -1.1383294815484959 2.1012352548651823 1.6186487785126804 ;
-createNode mesh -n "windowShape" -p "|medBuilding1|medBuilding|walls|window17|window";
+createNode mesh -n "windowShape" -p "|medBuilding1|medBuilding|walls|back|window";
 	rename -uid "92CB3BD1-554E-B19D-14A2-F0A024A5BF25";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -45276,11 +45276,11 @@ createNode mesh -n "windowShape" -p "|medBuilding1|medBuilding|walls|window17|wi
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window1" -p "window17";
+createNode transform -n "window1" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "19ACED6A-674E-108E-BAED-45BC3B87572C";
 	setAttr ".rp" -type "double3" -0.45543378753046682 2.1012352548651814 1.6186487785126802 ;
 	setAttr ".sp" -type "double3" -0.45543378753046682 2.1012352548651814 1.6186487785126802 ;
-createNode mesh -n "window1Shape" -p "|medBuilding1|medBuilding|walls|window17|window1";
+createNode mesh -n "window1Shape" -p "|medBuilding1|medBuilding|walls|back|window1";
 	rename -uid "AC44EE1A-BD41-3E99-4ABB-A88165F5D000";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -45657,11 +45657,11 @@ createNode mesh -n "window1Shape" -p "|medBuilding1|medBuilding|walls|window17|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window2" -p "window17";
+createNode transform -n "window2" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "64B5F8FE-8840-B67E-633E-6F8975AF600F";
 	setAttr ".rp" -type "double3" 0.22460784463678252 2.1012352548651814 1.6186487785126802 ;
 	setAttr ".sp" -type "double3" 0.22460784463678252 2.1012352548651814 1.6186487785126802 ;
-createNode mesh -n "window2Shape" -p "|medBuilding1|medBuilding|walls|window17|window2";
+createNode mesh -n "window2Shape" -p "|medBuilding1|medBuilding|walls|back|window2";
 	rename -uid "50446C14-4547-A72E-ED6E-86ACD280E9BA";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -46037,11 +46037,11 @@ createNode mesh -n "window2Shape" -p "|medBuilding1|medBuilding|walls|window17|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window3" -p "window17";
+createNode transform -n "window3" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "E7D90CF5-D440-F790-E91A-908E5573AB82";
 	setAttr ".rp" -type "double3" 0.90750353865481159 2.1012352548651814 1.61864877851268 ;
 	setAttr ".sp" -type "double3" 0.90750353865481159 2.1012352548651814 1.61864877851268 ;
-createNode mesh -n "window3Shape" -p "|medBuilding1|medBuilding|walls|window17|window3";
+createNode mesh -n "window3Shape" -p "|medBuilding1|medBuilding|walls|back|window3";
 	rename -uid "39CB555D-7344-4515-768F-A9B3A494EE16";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -46417,11 +46417,11 @@ createNode mesh -n "window3Shape" -p "|medBuilding1|medBuilding|walls|window17|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window4" -p "window17";
+createNode transform -n "window4" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "5C6EDCDB-1643-24B8-DC26-B69CE32A3F5E";
 	setAttr ".rp" -type "double3" 1.5939085385950769 2.1012352548651814 1.61864877851268 ;
 	setAttr ".sp" -type "double3" 1.5939085385950769 2.1012352548651814 1.61864877851268 ;
-createNode mesh -n "window4Shape" -p "|medBuilding1|medBuilding|walls|window17|window4";
+createNode mesh -n "window4Shape" -p "|medBuilding1|medBuilding|walls|back|window4";
 	rename -uid "E515BCFC-C843-047A-ACC0-9BA980634875";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -46797,11 +46797,11 @@ createNode mesh -n "window4Shape" -p "|medBuilding1|medBuilding|walls|window17|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window5" -p "window17";
+createNode transform -n "window5" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "70FECFFF-F148-789D-4E7E-CE9E552B8112";
 	setAttr ".rp" -type "double3" 3.6397415587983879 2.1012352548651814 1.6186487785126797 ;
 	setAttr ".sp" -type "double3" 3.6397415587983879 2.1012352548651814 1.6186487785126797 ;
-createNode mesh -n "window5Shape" -p "|medBuilding1|medBuilding|walls|window17|window5";
+createNode mesh -n "window5Shape" -p "|medBuilding1|medBuilding|walls|back|window5";
 	rename -uid "DA671E12-2B4C-2B88-963F-5E8BADAA8207";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -47178,11 +47178,11 @@ createNode mesh -n "window5Shape" -p "|medBuilding1|medBuilding|walls|window17|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window6" -p "window17";
+createNode transform -n "window6" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "8EAB6455-4945-CDDB-F9B5-50B6E6D6A9F5";
 	setAttr ".rp" -type "double3" 2.9568458647803597 2.1012352548651814 1.6186487785126797 ;
 	setAttr ".sp" -type "double3" 2.9568458647803597 2.1012352548651814 1.6186487785126797 ;
-createNode mesh -n "window6Shape" -p "|medBuilding1|medBuilding|walls|window17|window6";
+createNode mesh -n "window6Shape" -p "|medBuilding1|medBuilding|walls|back|window6";
 	rename -uid "AFA16325-1444-3C65-F71F-8FB1C1FE7E56";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -47558,11 +47558,11 @@ createNode mesh -n "window6Shape" -p "|medBuilding1|medBuilding|walls|window17|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window7" -p "window17";
+createNode transform -n "window7" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "E211BB8F-6A4A-1344-5473-1EBB7CBDE81E";
 	setAttr ".rp" -type "double3" 2.2768042326131095 2.1012352548651814 1.6186487785126797 ;
 	setAttr ".sp" -type "double3" 2.2768042326131095 2.1012352548651814 1.6186487785126797 ;
-createNode mesh -n "window7Shape" -p "|medBuilding1|medBuilding|walls|window17|window7";
+createNode mesh -n "window7Shape" -p "|medBuilding1|medBuilding|walls|back|window7";
 	rename -uid "9E8CDF51-9C44-670F-DE74-4ABA2A5DB349";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -47938,11 +47938,11 @@ createNode mesh -n "window7Shape" -p "|medBuilding1|medBuilding|walls|window17|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window8" -p "window17";
+createNode transform -n "window8" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "E4E839ED-4647-A678-8F60-5EBB7D44CADB";
 	setAttr ".rp" -type "double3" 3.6397415587983879 0.99645495671693141 1.6186487785126797 ;
 	setAttr ".sp" -type "double3" 3.6397415587983879 0.99645495671693141 1.6186487785126797 ;
-createNode mesh -n "window8Shape" -p "|medBuilding1|medBuilding|walls|window17|window8";
+createNode mesh -n "window8Shape" -p "|medBuilding1|medBuilding|walls|back|window8";
 	rename -uid "D614F23D-5644-4463-FB8A-BE9D443ABE8E";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -48361,7 +48361,7 @@ createNode mesh -n "window8Shape" -p "|medBuilding1|medBuilding|walls|window17|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "polySurfaceShape9" -p "|medBuilding1|medBuilding|walls|window17|window8";
+createNode mesh -n "polySurfaceShape9" -p "|medBuilding1|medBuilding|walls|back|window8";
 	rename -uid "58BAF8C4-8B45-F52D-F86C-949D53F088C1";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -48742,11 +48742,11 @@ createNode mesh -n "polySurfaceShape9" -p "|medBuilding1|medBuilding|walls|windo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window9" -p "window17";
+createNode transform -n "window9" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "B69A7D39-E44C-1812-5C2B-F6B4D3B6B8B9";
 	setAttr ".rp" -type "double3" 2.2768042326131095 0.99645495671693141 1.6186487785126797 ;
 	setAttr ".sp" -type "double3" 2.2768042326131095 0.99645495671693141 1.6186487785126797 ;
-createNode mesh -n "window9Shape" -p "|medBuilding1|medBuilding|walls|window17|window9";
+createNode mesh -n "window9Shape" -p "|medBuilding1|medBuilding|walls|back|window9";
 	rename -uid "ACAF2D11-A748-29F3-A222-81A56AF59F8E";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -49166,7 +49166,7 @@ createNode mesh -n "window9Shape" -p "|medBuilding1|medBuilding|walls|window17|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "polySurfaceShape7" -p "|medBuilding1|medBuilding|walls|window17|window9";
+createNode mesh -n "polySurfaceShape7" -p "|medBuilding1|medBuilding|walls|back|window9";
 	rename -uid "F2786E9B-F641-0599-106B-F693BAF9ABB6";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -49547,11 +49547,11 @@ createNode mesh -n "polySurfaceShape7" -p "|medBuilding1|medBuilding|walls|windo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window10" -p "window17";
+createNode transform -n "window10" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "5AB30D09-FD47-53AE-5522-35A96BF11510";
 	setAttr ".rp" -type "double3" 2.9568458647803597 0.99645495671693141 1.6186487785126797 ;
 	setAttr ".sp" -type "double3" 2.9568458647803597 0.99645495671693141 1.6186487785126797 ;
-createNode mesh -n "window10Shape" -p "|medBuilding1|medBuilding|walls|window17|window10";
+createNode mesh -n "window10Shape" -p "|medBuilding1|medBuilding|walls|back|window10";
 	rename -uid "AF9415F8-5648-597D-CCB3-7996014502BC";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -49970,7 +49970,7 @@ createNode mesh -n "window10Shape" -p "|medBuilding1|medBuilding|walls|window17|
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "polySurfaceShape8" -p "|medBuilding1|medBuilding|walls|window17|window10";
+createNode mesh -n "polySurfaceShape8" -p "|medBuilding1|medBuilding|walls|back|window10";
 	rename -uid "94F87A58-0241-5B9E-42D5-1785351B49F4";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -50351,11 +50351,11 @@ createNode mesh -n "polySurfaceShape8" -p "|medBuilding1|medBuilding|walls|windo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window11" -p "window17";
+createNode transform -n "window11" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "AAC750D9-494D-E8BC-0B19-1D8550045FDD";
 	setAttr ".rp" -type "double3" -1.1383294815484959 0.99645495671693185 1.6186487785126804 ;
 	setAttr ".sp" -type "double3" -1.1383294815484959 0.99645495671693185 1.6186487785126804 ;
-createNode mesh -n "window11Shape" -p "|medBuilding1|medBuilding|walls|window17|window11";
+createNode mesh -n "window11Shape" -p "|medBuilding1|medBuilding|walls|back|window11";
 	rename -uid "EB83ADFC-314A-23EE-5DEA-1C9EF3B9DCCB";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -50774,7 +50774,7 @@ createNode mesh -n "window11Shape" -p "|medBuilding1|medBuilding|walls|window17|
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "polySurfaceShape4" -p "|medBuilding1|medBuilding|walls|window17|window11";
+createNode mesh -n "polySurfaceShape4" -p "|medBuilding1|medBuilding|walls|back|window11";
 	rename -uid "B52A8311-8F46-FBE9-EF55-6AAEA97CD723";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -51155,11 +51155,11 @@ createNode mesh -n "polySurfaceShape4" -p "|medBuilding1|medBuilding|walls|windo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window12" -p "window17";
+createNode transform -n "window12" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "A0F7D51B-B642-1E69-E097-3EBDEEA76D5A";
 	setAttr ".rp" -type "double3" 0.90750353865481159 0.99645495671693163 1.61864877851268 ;
 	setAttr ".sp" -type "double3" 0.90750353865481159 0.99645495671693163 1.61864877851268 ;
-createNode mesh -n "window12Shape" -p "|medBuilding1|medBuilding|walls|window17|window12";
+createNode mesh -n "window12Shape" -p "|medBuilding1|medBuilding|walls|back|window12";
 	rename -uid "84605226-2643-0B41-409F-449F802B45E1";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -51579,7 +51579,7 @@ createNode mesh -n "window12Shape" -p "|medBuilding1|medBuilding|walls|window17|
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "polySurfaceShape5" -p "|medBuilding1|medBuilding|walls|window17|window12";
+createNode mesh -n "polySurfaceShape5" -p "|medBuilding1|medBuilding|walls|back|window12";
 	rename -uid "31DF9596-6B41-6E95-504C-E88305C09E57";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -51960,11 +51960,11 @@ createNode mesh -n "polySurfaceShape5" -p "|medBuilding1|medBuilding|walls|windo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window13" -p "window17";
+createNode transform -n "window13" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "9AAA636A-1B4F-58C2-CADF-BAAFAFFF7295";
 	setAttr ".rp" -type "double3" 1.5939085385950769 0.99645495671693163 1.61864877851268 ;
 	setAttr ".sp" -type "double3" 1.5939085385950769 0.99645495671693163 1.61864877851268 ;
-createNode mesh -n "window13Shape" -p "|medBuilding1|medBuilding|walls|window17|window13";
+createNode mesh -n "window13Shape" -p "|medBuilding1|medBuilding|walls|back|window13";
 	rename -uid "E6A3FE69-4343-5BF7-9360-D7BD1B563344";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -52383,7 +52383,7 @@ createNode mesh -n "window13Shape" -p "|medBuilding1|medBuilding|walls|window17|
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "polySurfaceShape6" -p "|medBuilding1|medBuilding|walls|window17|window13";
+createNode mesh -n "polySurfaceShape6" -p "|medBuilding1|medBuilding|walls|back|window13";
 	rename -uid "403F9698-C643-5A1B-2BC5-76AED71E518C";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -52764,11 +52764,11 @@ createNode mesh -n "polySurfaceShape6" -p "|medBuilding1|medBuilding|walls|windo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window14" -p "window17";
+createNode transform -n "window14" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "4C05025B-B245-F493-0502-1A8B7AD7A95D";
 	setAttr ".rp" -type "double3" 0.22460784463678252 0.99645495671693163 1.6186487785126802 ;
 	setAttr ".sp" -type "double3" 0.22460784463678252 0.99645495671693163 1.6186487785126802 ;
-createNode mesh -n "window14Shape" -p "|medBuilding1|medBuilding|walls|window17|window14";
+createNode mesh -n "window14Shape" -p "|medBuilding1|medBuilding|walls|back|window14";
 	rename -uid "4AA7FF01-6B4C-BA88-63EF-22B3DB9BADA0";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -53187,7 +53187,7 @@ createNode mesh -n "window14Shape" -p "|medBuilding1|medBuilding|walls|window17|
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "polySurfaceShape2" -p "|medBuilding1|medBuilding|walls|window17|window14";
+createNode mesh -n "polySurfaceShape2" -p "|medBuilding1|medBuilding|walls|back|window14";
 	rename -uid "3D95496F-3641-04A0-6412-E49BC225C143";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -53568,11 +53568,11 @@ createNode mesh -n "polySurfaceShape2" -p "|medBuilding1|medBuilding|walls|windo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window15" -p "window17";
+createNode transform -n "window15" -p "|medBuilding1|medBuilding|walls|back";
 	rename -uid "91F9F779-A94F-4243-08F1-70A37FA7E728";
 	setAttr ".rp" -type "double3" -0.45543378753046682 0.99645495671693185 1.6186487785126802 ;
 	setAttr ".sp" -type "double3" -0.45543378753046682 0.99645495671693185 1.6186487785126802 ;
-createNode mesh -n "window15Shape" -p "|medBuilding1|medBuilding|walls|window17|window15";
+createNode mesh -n "window15Shape" -p "|medBuilding1|medBuilding|walls|back|window15";
 	rename -uid "31EC8D01-224F-61B2-E06F-0287528A4E08";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -53991,7 +53991,7 @@ createNode mesh -n "window15Shape" -p "|medBuilding1|medBuilding|walls|window17|
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "polySurfaceShape3" -p "|medBuilding1|medBuilding|walls|window17|window15";
+createNode mesh -n "polySurfaceShape3" -p "|medBuilding1|medBuilding|walls|back|window15";
 	rename -uid "84A873CC-D244-D28F-C6B6-CC804E443B0D";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -54372,15 +54372,15 @@ createNode mesh -n "polySurfaceShape3" -p "|medBuilding1|medBuilding|walls|windo
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window18" -p "|medBuilding1|medBuilding|walls";
+createNode transform -n "right" -p "|medBuilding1|medBuilding|walls";
 	rename -uid "107B9C3E-7E40-630D-4596-56B8356A97D7";
 	setAttr ".rp" -type "double3" 9.7600369973245158 0 0 ;
 	setAttr ".sp" -type "double3" 9.7600369973245158 0 0 ;
-createNode transform -n "pasted__window16" -p "window18";
+createNode transform -n "pasted__window16" -p "|medBuilding1|medBuilding|walls|right";
 	rename -uid "F316EB51-AB40-2272-222F-379649A1C20C";
 	setAttr ".rp" -type "double3" 3.9295207879437846 2.1012352548651227 -0.75169964819710122 ;
 	setAttr ".sp" -type "double3" 3.9295207879437846 2.1012352548651227 -0.75169964819710122 ;
-createNode mesh -n "pasted__window16Shape" -p "|medBuilding1|medBuilding|walls|window18|pasted__window16";
+createNode mesh -n "pasted__window16Shape" -p "|medBuilding1|medBuilding|walls|right|pasted__window16";
 	rename -uid "D0C846B8-CA4B-3578-8419-A393CE763161";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -54757,11 +54757,11 @@ createNode mesh -n "pasted__window16Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window30" -p "window18";
+createNode transform -n "pasted__window30" -p "|medBuilding1|medBuilding|walls|right";
 	rename -uid "C9D66E12-AB47-213C-B803-6F9319EB6E95";
 	setAttr ".rp" -type "double3" 3.9295207879437846 0.99645495671687279 0.61123767798818252 ;
 	setAttr ".sp" -type "double3" 3.9295207879437846 0.99645495671687279 0.61123767798818252 ;
-createNode mesh -n "pasted__window30Shape" -p "|medBuilding1|medBuilding|walls|window18|pasted__window30";
+createNode mesh -n "pasted__window30Shape" -p "|medBuilding1|medBuilding|walls|right|pasted__window30";
 	rename -uid "A73935B1-8E4E-12AE-512F-E3AB05DC332A";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -55181,7 +55181,7 @@ createNode mesh -n "pasted__window30Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "pasted__polySurfaceShape7" -p "|medBuilding1|medBuilding|walls|window18|pasted__window30";
+createNode mesh -n "pasted__polySurfaceShape7" -p "|medBuilding1|medBuilding|walls|right|pasted__window30";
 	rename -uid "D3BA7960-8A40-12D6-4FF6-B796952E9845";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -55562,11 +55562,11 @@ createNode mesh -n "pasted__polySurfaceShape7" -p "|medBuilding1|medBuilding|wal
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window29" -p "window18";
+createNode transform -n "pasted__window29" -p "|medBuilding1|medBuilding|walls|right";
 	rename -uid "E9F33A58-E349-7E7B-755C-9CA4C0E735A1";
 	setAttr ".rp" -type "double3" 3.9295207879437846 0.99645495671687279 -0.068803954179066595 ;
 	setAttr ".sp" -type "double3" 3.9295207879437846 0.99645495671687279 -0.068803954179066595 ;
-createNode mesh -n "pasted__window29Shape" -p "|medBuilding1|medBuilding|walls|window18|pasted__window29";
+createNode mesh -n "pasted__window29Shape" -p "|medBuilding1|medBuilding|walls|right|pasted__window29";
 	rename -uid "19023B9F-CC48-98C2-C695-728ABB214F3A";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -55985,7 +55985,7 @@ createNode mesh -n "pasted__window29Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "pasted__polySurfaceShape8" -p "|medBuilding1|medBuilding|walls|window18|pasted__window29";
+createNode mesh -n "pasted__polySurfaceShape8" -p "|medBuilding1|medBuilding|walls|right|pasted__window29";
 	rename -uid "B7EAF1B9-0949-8BBD-608C-EBA77A593B7D";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -56366,11 +56366,11 @@ createNode mesh -n "pasted__polySurfaceShape8" -p "|medBuilding1|medBuilding|wal
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window31" -p "window18";
+createNode transform -n "pasted__window31" -p "|medBuilding1|medBuilding|walls|right";
 	rename -uid "9F84C194-844F-92BA-2914-D69821BBF33E";
 	setAttr ".rp" -type "double3" 3.929520787943785 0.99645495671687279 -0.75169964819710122 ;
 	setAttr ".sp" -type "double3" 3.929520787943785 0.99645495671687279 -0.75169964819710122 ;
-createNode mesh -n "pasted__window31Shape" -p "|medBuilding1|medBuilding|walls|window18|pasted__window31";
+createNode mesh -n "pasted__window31Shape" -p "|medBuilding1|medBuilding|walls|right|pasted__window31";
 	rename -uid "E4740E2B-EA46-F365-472B-889AB2AF3C64";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -56789,7 +56789,7 @@ createNode mesh -n "pasted__window31Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "pasted__polySurfaceShape9" -p "|medBuilding1|medBuilding|walls|window18|pasted__window31";
+createNode mesh -n "pasted__polySurfaceShape9" -p "|medBuilding1|medBuilding|walls|right|pasted__window31";
 	rename -uid "9A08BC8F-6D44-8455-F12F-DA8A6886366E";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -57170,11 +57170,11 @@ createNode mesh -n "pasted__polySurfaceShape9" -p "|medBuilding1|medBuilding|wal
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window22" -p "window18";
+createNode transform -n "pasted__window22" -p "|medBuilding1|medBuilding|walls|right";
 	rename -uid "ED11E2D4-9C44-6623-206E-21AB0137BD92";
 	setAttr ".rp" -type "double3" 3.9295207879437846 0.99645495671686535 1.2941333720062147 ;
 	setAttr ".sp" -type "double3" 3.9295207879437846 0.99645495671686535 1.2941333720062147 ;
-createNode mesh -n "pasted__window22Shape" -p "|medBuilding1|medBuilding|walls|window18|pasted__window22";
+createNode mesh -n "pasted__window22Shape" -p "|medBuilding1|medBuilding|walls|right|pasted__window22";
 	rename -uid "A211A770-CF47-CD24-2851-E0ABC5A613F1";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -57593,7 +57593,7 @@ createNode mesh -n "pasted__window22Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "pasted__polySurfaceShape6" -p "|medBuilding1|medBuilding|walls|window18|pasted__window22";
+createNode mesh -n "pasted__polySurfaceShape6" -p "|medBuilding1|medBuilding|walls|right|pasted__window22";
 	rename -uid "0D843CC6-CA48-70BD-5299-7E877BEEDFF7";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -57974,11 +57974,11 @@ createNode mesh -n "pasted__polySurfaceShape6" -p "|medBuilding1|medBuilding|wal
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window21" -p "window18";
+createNode transform -n "pasted__window21" -p "|medBuilding1|medBuilding|walls|right";
 	rename -uid "C6DEDEB5-574F-12A3-1869-BDBDAEE00DC3";
 	setAttr ".rp" -type "double3" 3.9295207879437846 2.1012352548651227 1.2941333720062147 ;
 	setAttr ".sp" -type "double3" 3.9295207879437846 2.1012352548651227 1.2941333720062147 ;
-createNode mesh -n "pasted__window21Shape" -p "|medBuilding1|medBuilding|walls|window18|pasted__window21";
+createNode mesh -n "pasted__window21Shape" -p "|medBuilding1|medBuilding|walls|right|pasted__window21";
 	rename -uid "19E8E10F-0943-059B-CA60-93894DC39D14";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -58354,11 +58354,11 @@ createNode mesh -n "pasted__window21Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window18" -p "window18";
+createNode transform -n "pasted__window18" -p "|medBuilding1|medBuilding|walls|right";
 	rename -uid "D9426328-564A-275F-1391-089F68FB46B6";
 	setAttr ".rp" -type "double3" 3.9295207879437846 2.1012352548651236 -0.068803954179066595 ;
 	setAttr ".sp" -type "double3" 3.9295207879437846 2.1012352548651236 -0.068803954179066595 ;
-createNode mesh -n "pasted__window18Shape" -p "|medBuilding1|medBuilding|walls|window18|pasted__window18";
+createNode mesh -n "pasted__window18Shape" -p "|medBuilding1|medBuilding|walls|right|pasted__window18";
 	rename -uid "5C207255-8C46-568B-05FB-B68A3CB18746";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -58735,11 +58735,11 @@ createNode mesh -n "pasted__window18Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window17" -p "window18";
+createNode transform -n "pasted__window17" -p "|medBuilding1|medBuilding|walls|right";
 	rename -uid "90D238E7-8746-A1ED-6DD6-10901853D6E4";
 	setAttr ".rp" -type "double3" 3.9295207879437846 2.1012352548651227 0.61123767798818252 ;
 	setAttr ".sp" -type "double3" 3.9295207879437846 2.1012352548651227 0.61123767798818252 ;
-createNode mesh -n "pasted__window17Shape" -p "|medBuilding1|medBuilding|walls|window18|pasted__window17";
+createNode mesh -n "pasted__window17Shape" -p "|medBuilding1|medBuilding|walls|right|pasted__window17";
 	rename -uid "D346BC12-AC4D-3690-773B-919A9C5B7569";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -59115,15 +59115,15 @@ createNode mesh -n "pasted__window17Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "window19" -p "|medBuilding1|medBuilding|walls";
+createNode transform -n "left" -p "|medBuilding1|medBuilding|walls";
 	rename -uid "1A2593B2-1246-9332-5494-CDAAFCF66A76";
 	setAttr ".rp" -type "double3" 9.7600369973245158 0 0 ;
 	setAttr ".sp" -type "double3" 9.7600369973245158 0 0 ;
-createNode transform -n "pasted__window17" -p "window19";
+createNode transform -n "pasted__window17" -p "|medBuilding1|medBuilding|walls|left";
 	rename -uid "BDAB7DA7-4C43-CB7D-9FF8-2FBBD4F8FEFF";
 	setAttr ".rp" -type "double3" -1.4185664486619363 2.1012352548651227 -0.068804832305680685 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 2.1012352548651227 -0.068804832305680685 ;
-createNode mesh -n "pasted__window17Shape" -p "|medBuilding1|medBuilding|walls|window19|pasted__window17";
+createNode mesh -n "pasted__window17Shape" -p "|medBuilding1|medBuilding|walls|left|pasted__window17";
 	rename -uid "C6CD319F-EA46-A53D-6917-99BFDB15D5A6";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -59500,11 +59500,11 @@ createNode mesh -n "pasted__window17Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window18" -p "window19";
+createNode transform -n "pasted__window18" -p "|medBuilding1|medBuilding|walls|left";
 	rename -uid "2282AFFF-C742-58EB-F18C-37A7868AD1C4";
 	setAttr ".rp" -type "double3" -1.4185664486619363 2.1012352548651236 0.61123679986156843 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 2.1012352548651236 0.61123679986156843 ;
-createNode mesh -n "pasted__window18Shape" -p "|medBuilding1|medBuilding|walls|window19|pasted__window18";
+createNode mesh -n "pasted__window18Shape" -p "|medBuilding1|medBuilding|walls|left|pasted__window18";
 	rename -uid "B9DEB991-414D-AD38-801A-E2A43C07E21E";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -59880,11 +59880,11 @@ createNode mesh -n "pasted__window18Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window21" -p "window19";
+createNode transform -n "pasted__window21" -p "|medBuilding1|medBuilding|walls|left";
 	rename -uid "53B5850C-A145-BA44-CCB8-C3875D63C0B7";
 	setAttr ".rp" -type "double3" -1.4185664486619363 2.1012352548651227 -0.75170052632371298 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 2.1012352548651227 -0.75170052632371298 ;
-createNode mesh -n "pasted__window21Shape" -p "|medBuilding1|medBuilding|walls|window19|pasted__window21";
+createNode mesh -n "pasted__window21Shape" -p "|medBuilding1|medBuilding|walls|left|pasted__window21";
 	rename -uid "16DC9B1E-B643-71A2-4C0D-BB83A937CC49";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -60261,11 +60261,11 @@ createNode mesh -n "pasted__window21Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window22" -p "window19";
+createNode transform -n "pasted__window22" -p "|medBuilding1|medBuilding|walls|left";
 	rename -uid "85A92C7F-A04E-E782-DA01-CB98FF23E61A";
 	setAttr ".rp" -type "double3" -1.4185664486619363 0.99645495671686535 -0.75170052632371298 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 0.99645495671686535 -0.75170052632371298 ;
-createNode mesh -n "pasted__window22Shape" -p "|medBuilding1|medBuilding|walls|window19|pasted__window22";
+createNode mesh -n "pasted__window22Shape" -p "|medBuilding1|medBuilding|walls|left|pasted__window22";
 	rename -uid "4719327B-CA4A-A08B-F145-F096215008C3";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -60685,7 +60685,7 @@ createNode mesh -n "pasted__window22Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "pasted__polySurfaceShape6" -p "|medBuilding1|medBuilding|walls|window19|pasted__window22";
+createNode mesh -n "pasted__polySurfaceShape6" -p "|medBuilding1|medBuilding|walls|left|pasted__window22";
 	rename -uid "2E159FEF-2143-B1C3-484B-7C8A9E5B65FC";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -61066,11 +61066,11 @@ createNode mesh -n "pasted__polySurfaceShape6" -p "|medBuilding1|medBuilding|wal
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window31" -p "window19";
+createNode transform -n "pasted__window31" -p "|medBuilding1|medBuilding|walls|left";
 	rename -uid "8AEF3E37-694C-2063-C2C4-F2ADFF794466";
 	setAttr ".rp" -type "double3" -1.4185664486619363 0.99645495671687279 1.2941324938796033 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 0.99645495671687279 1.2941324938796033 ;
-createNode mesh -n "pasted__window31Shape" -p "|medBuilding1|medBuilding|walls|window19|pasted__window31";
+createNode mesh -n "pasted__window31Shape" -p "|medBuilding1|medBuilding|walls|left|pasted__window31";
 	rename -uid "E45E66BE-3444-E8BB-5732-B6A45F5977DA";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -61490,7 +61490,7 @@ createNode mesh -n "pasted__window31Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "pasted__polySurfaceShape9" -p "|medBuilding1|medBuilding|walls|window19|pasted__window31";
+createNode mesh -n "pasted__polySurfaceShape9" -p "|medBuilding1|medBuilding|walls|left|pasted__window31";
 	rename -uid "B4DFF3A3-1A42-768B-C9A0-B9B80030ABE2";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -61871,11 +61871,11 @@ createNode mesh -n "pasted__polySurfaceShape9" -p "|medBuilding1|medBuilding|wal
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window29" -p "window19";
+createNode transform -n "pasted__window29" -p "|medBuilding1|medBuilding|walls|left";
 	rename -uid "5D67BA31-914D-5EB5-805F-3DB7CC013E39";
 	setAttr ".rp" -type "double3" -1.4185664486619363 0.99645495671687279 0.61123679986156843 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 0.99645495671687279 0.61123679986156843 ;
-createNode mesh -n "pasted__window29Shape" -p "|medBuilding1|medBuilding|walls|window19|pasted__window29";
+createNode mesh -n "pasted__window29Shape" -p "|medBuilding1|medBuilding|walls|left|pasted__window29";
 	rename -uid "FB3A301D-2D45-85EA-9F41-C69DFE295301";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -62294,7 +62294,7 @@ createNode mesh -n "pasted__window29Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "pasted__polySurfaceShape8" -p "|medBuilding1|medBuilding|walls|window19|pasted__window29";
+createNode mesh -n "pasted__polySurfaceShape8" -p "|medBuilding1|medBuilding|walls|left|pasted__window29";
 	rename -uid "20B0184D-724C-4C6B-3C82-C288AA0B7557";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -62675,11 +62675,11 @@ createNode mesh -n "pasted__polySurfaceShape8" -p "|medBuilding1|medBuilding|wal
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window30" -p "window19";
+createNode transform -n "pasted__window30" -p "|medBuilding1|medBuilding|walls|left";
 	rename -uid "63486DFA-B741-2A0A-1F05-3FAB342B9868";
 	setAttr ".rp" -type "double3" -1.4185664486619363 0.99645495671687279 -0.068804832305680685 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 0.99645495671687279 -0.068804832305680685 ;
-createNode mesh -n "pasted__window30Shape" -p "|medBuilding1|medBuilding|walls|window19|pasted__window30";
+createNode mesh -n "pasted__window30Shape" -p "|medBuilding1|medBuilding|walls|left|pasted__window30";
 	rename -uid "278F7498-914D-D447-6A72-E59E4595A266";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:129]";
@@ -63099,7 +63099,7 @@ createNode mesh -n "pasted__window30Shape" -p "|medBuilding1|medBuilding|walls|w
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "pasted__polySurfaceShape7" -p "|medBuilding1|medBuilding|walls|window19|pasted__window30";
+createNode mesh -n "pasted__polySurfaceShape7" -p "|medBuilding1|medBuilding|walls|left|pasted__window30";
 	rename -uid "98CD6207-D448-0CA5-F8B7-04B8BC029818";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -63480,11 +63480,11 @@ createNode mesh -n "pasted__polySurfaceShape7" -p "|medBuilding1|medBuilding|wal
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__window16" -p "window19";
+createNode transform -n "pasted__window16" -p "|medBuilding1|medBuilding|walls|left";
 	rename -uid "508DFE61-084F-6133-F7FE-AAAF734C29B9";
 	setAttr ".rp" -type "double3" -1.4185664486619363 2.1012352548651227 1.2941324938796033 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 2.1012352548651227 1.2941324938796033 ;
-createNode mesh -n "pasted__window16Shape" -p "|medBuilding1|medBuilding|walls|window19|pasted__window16";
+createNode mesh -n "pasted__window16Shape" -p "|medBuilding1|medBuilding|walls|left|pasted__window16";
 	rename -uid "B0C853CE-B44F-78C7-A96E-958B4811FBB8";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:115]";
@@ -63863,18 +63863,14 @@ createNode mesh -n "pasted__window16Shape" -p "|medBuilding1|medBuilding|walls|w
 createNode transform -n "windowpanes" -p "|medBuilding1|medBuilding";
 	rename -uid "3A4BAEC2-A244-802C-EB5F-429488C83DC7";
 createNode transform -n "back" -p "|medBuilding1|medBuilding|windowpanes";
-	rename -uid "B30D3B8B-C84E-850E-5651-13B887C67052";
-	setAttr ".rp" -type "double3" 5.4177672836031672 1.3867905614075915 1.613322931273109 ;
-	setAttr ".sp" -type "double3" 5.4177672836031672 1.3867905614075915 1.613322931273109 ;
-createNode transform -n "panes" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "1B942398-D84C-AABB-5E5E-1F9A15184F55";
 	setAttr ".rp" -type "double3" 5.4184566659989848 1.5487183332443237 1.6136597709655762 ;
 	setAttr ".sp" -type "double3" 5.4184566659989848 1.5487183332443237 1.6136597709655762 ;
-createNode transform -n "pane" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "E09BBDDB-4C46-9EE5-B142-8D8DD0DF7B24";
 	setAttr ".rp" -type "double3" -1.1383294815484941 2.1012352548651823 1.5755830609195192 ;
 	setAttr ".sp" -type "double3" -1.1383294815484941 2.1012352548651823 1.5755830609195192 ;
-createNode mesh -n "paneShape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane";
+createNode mesh -n "paneShape" -p "|medBuilding1|medBuilding|windowpanes|back|pane";
 	rename -uid "7ACF6240-B849-2363-FFFB-3EB27717E86F";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -64140,11 +64136,11 @@ createNode mesh -n "paneShape" -p "|medBuilding1|medBuilding|windowpanes|back|pa
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane1" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane1" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "B2C9B9F7-2C4B-4BCE-6886-35BCB0A60E44";
 	setAttr ".rp" -type "double3" -0.45543378753046504 2.1012352548651823 1.5755830609195187 ;
 	setAttr ".sp" -type "double3" -0.45543378753046504 2.1012352548651823 1.5755830609195187 ;
-createNode mesh -n "pane1Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane1";
+createNode mesh -n "pane1Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane1";
 	rename -uid "648BD97B-464E-3455-06D1-5A81D53BA85C";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -64409,11 +64405,11 @@ createNode mesh -n "pane1Shape" -p "|medBuilding1|medBuilding|windowpanes|back|p
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane2" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane2" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "04E16089-6A4D-065F-AB01-ED9381B53EFD";
 	setAttr ".rp" -type "double3" 0.22460784463678429 2.1012352548651823 1.5755830609195187 ;
 	setAttr ".sp" -type "double3" 0.22460784463678429 2.1012352548651823 1.5755830609195187 ;
-createNode mesh -n "pane2Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane2";
+createNode mesh -n "pane2Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane2";
 	rename -uid "7DB07C48-D541-E4E1-8B27-05892076AC58";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -64678,11 +64674,11 @@ createNode mesh -n "pane2Shape" -p "|medBuilding1|medBuilding|windowpanes|back|p
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane3" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane3" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "535918D5-7440-AE54-B915-999AF0755A35";
 	setAttr ".rp" -type "double3" 0.90750353865481159 2.1012352548651823 1.5755830609195187 ;
 	setAttr ".sp" -type "double3" 0.90750353865481159 2.1012352548651823 1.5755830609195187 ;
-createNode mesh -n "pane3Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane3";
+createNode mesh -n "pane3Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane3";
 	rename -uid "E2AB2FA7-D849-4659-4FE9-D69525AF67C4";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -64947,11 +64943,11 @@ createNode mesh -n "pane3Shape" -p "|medBuilding1|medBuilding|windowpanes|back|p
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane4" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane4" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "DD8F28B5-2045-B53F-8FBE-668371D81FB9";
 	setAttr ".rp" -type "double3" 1.5939085385950804 2.1012352548651814 1.5755830609195187 ;
 	setAttr ".sp" -type "double3" 1.5939085385950804 2.1012352548651814 1.5755830609195187 ;
-createNode mesh -n "pane4Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane4";
+createNode mesh -n "pane4Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane4";
 	rename -uid "7E5943C0-244C-C328-99BD-348D1CC69123";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -65216,11 +65212,11 @@ createNode mesh -n "pane4Shape" -p "|medBuilding1|medBuilding|windowpanes|back|p
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane5" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane5" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "1E4441D1-6D44-E749-3075-97A591D92CB1";
 	setAttr ".rp" -type "double3" 2.2768042326131095 2.1012352548651814 1.5755830609195183 ;
 	setAttr ".sp" -type "double3" 2.2768042326131095 2.1012352548651814 1.5755830609195183 ;
-createNode mesh -n "pane5Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane5";
+createNode mesh -n "pane5Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane5";
 	rename -uid "96ED1B3B-A549-C2A4-992A-49B9284988B5";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -65485,11 +65481,11 @@ createNode mesh -n "pane5Shape" -p "|medBuilding1|medBuilding|windowpanes|back|p
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane6" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane6" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "45CCCC00-3C49-174E-D9B7-4FB81FD50DA3";
 	setAttr ".rp" -type "double3" 2.9568458647803588 2.1012352548651814 1.5755830609195183 ;
 	setAttr ".sp" -type "double3" 2.9568458647803588 2.1012352548651814 1.5755830609195183 ;
-createNode mesh -n "pane6Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane6";
+createNode mesh -n "pane6Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane6";
 	rename -uid "AD965BA8-7B45-CF1F-CECE-65B6C06CA084";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -65755,11 +65751,11 @@ createNode mesh -n "pane6Shape" -p "|medBuilding1|medBuilding|windowpanes|back|p
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane7" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane7" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "A81D154C-6346-8104-B882-74BC4A89956B";
 	setAttr ".rp" -type "double3" 3.6397415587983888 2.1012352548651814 1.5755830609195183 ;
 	setAttr ".sp" -type "double3" 3.6397415587983888 2.1012352548651814 1.5755830609195183 ;
-createNode mesh -n "pane7Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane7";
+createNode mesh -n "pane7Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane7";
 	rename -uid "03D050C6-614A-2470-53C9-9587E322D482";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -66025,11 +66021,11 @@ createNode mesh -n "pane7Shape" -p "|medBuilding1|medBuilding|windowpanes|back|p
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane8" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane8" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "76DAF5C8-874E-D8B5-2405-579DA1F3F217";
 	setAttr ".rp" -type "double3" -1.1383294815484959 0.99645495671693185 1.5755830609195192 ;
 	setAttr ".sp" -type "double3" -1.1383294815484959 0.99645495671693185 1.5755830609195192 ;
-createNode mesh -n "pane8Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane8";
+createNode mesh -n "pane8Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane8";
 	rename -uid "EEFCEE6D-9249-4B51-292F-9489F999FCD7";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -66294,11 +66290,11 @@ createNode mesh -n "pane8Shape" -p "|medBuilding1|medBuilding|windowpanes|back|p
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane9" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane9" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "8FBB679E-8644-2226-A4D6-8B9757DA759F";
 	setAttr ".rp" -type "double3" 2.2768042326131095 0.99645495671693141 1.5755830609195183 ;
 	setAttr ".sp" -type "double3" 2.2768042326131095 0.99645495671693141 1.5755830609195183 ;
-createNode mesh -n "pane9Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane9";
+createNode mesh -n "pane9Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane9";
 	rename -uid "BAC465AC-E34C-F771-5C78-F29865C13760";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -66563,11 +66559,11 @@ createNode mesh -n "pane9Shape" -p "|medBuilding1|medBuilding|windowpanes|back|p
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane10" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane10" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "4975D82B-8047-D0CD-F202-0B949A0A1E00";
 	setAttr ".rp" -type "double3" 3.6397415587983888 0.99645495671693141 1.5755830609195183 ;
 	setAttr ".sp" -type "double3" 3.6397415587983888 0.99645495671693141 1.5755830609195183 ;
-createNode mesh -n "pane10Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane10";
+createNode mesh -n "pane10Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane10";
 	rename -uid "D52FD91E-9F4C-A9D7-DF30-15A25CA0091A";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -66832,11 +66828,11 @@ createNode mesh -n "pane10Shape" -p "|medBuilding1|medBuilding|windowpanes|back|
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane11" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane11" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "5D89E024-1046-7115-0E52-E9A554D1817E";
 	setAttr ".rp" -type "double3" 2.9568458647803588 0.99645495671693141 1.5755830609195183 ;
 	setAttr ".sp" -type "double3" 2.9568458647803588 0.99645495671693141 1.5755830609195183 ;
-createNode mesh -n "pane11Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane11";
+createNode mesh -n "pane11Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane11";
 	rename -uid "32673DC0-CF46-8A1F-62A3-579DFBAA4C81";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -67100,11 +67096,11 @@ createNode mesh -n "pane11Shape" -p "|medBuilding1|medBuilding|windowpanes|back|
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane12" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane12" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "687EEC66-5F49-7768-AEBF-4B8D77500C85";
 	setAttr ".rp" -type "double3" 1.5939085385950804 0.99645495671693185 1.5755830609195187 ;
 	setAttr ".sp" -type "double3" 1.5939085385950804 0.99645495671693185 1.5755830609195187 ;
-createNode mesh -n "pane12Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane12";
+createNode mesh -n "pane12Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane12";
 	rename -uid "EA990FF4-DF44-1A63-BF37-9E80FD78B603";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -67369,11 +67365,11 @@ createNode mesh -n "pane12Shape" -p "|medBuilding1|medBuilding|windowpanes|back|
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane13" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane13" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "413EDC3F-0D45-7B44-F25A-F0839B731424";
 	setAttr ".rp" -type "double3" -0.45543378753046682 0.99645495671693185 1.5755830609195187 ;
 	setAttr ".sp" -type "double3" -0.45543378753046682 0.99645495671693185 1.5755830609195187 ;
-createNode mesh -n "pane13Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane13";
+createNode mesh -n "pane13Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane13";
 	rename -uid "C4497881-394E-4EFE-2C64-B29ABE08442D";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -67638,11 +67634,11 @@ createNode mesh -n "pane13Shape" -p "|medBuilding1|medBuilding|windowpanes|back|
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane14" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane14" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "658BC638-594A-100C-7C84-0B9EB50BC507";
 	setAttr ".rp" -type "double3" 0.22460784463678252 0.99645495671693185 1.5755830609195187 ;
 	setAttr ".sp" -type "double3" 0.22460784463678252 0.99645495671693185 1.5755830609195187 ;
-createNode mesh -n "pane14Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane14";
+createNode mesh -n "pane14Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane14";
 	rename -uid "DC227170-304D-E84F-98C4-3BB0D6EC1C11";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -67907,11 +67903,11 @@ createNode mesh -n "pane14Shape" -p "|medBuilding1|medBuilding|windowpanes|back|
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane15" -p "|medBuilding1|medBuilding|windowpanes|back|panes";
+createNode transform -n "pane15" -p "|medBuilding1|medBuilding|windowpanes|back";
 	rename -uid "D8A7FEF4-2645-1A16-2A2F-0B9B9EC58D77";
 	setAttr ".rp" -type "double3" 0.90750353865481159 0.99645495671693185 1.5755830609195187 ;
 	setAttr ".sp" -type "double3" 0.90750353865481159 0.99645495671693185 1.5755830609195187 ;
-createNode mesh -n "pane15Shape" -p "|medBuilding1|medBuilding|windowpanes|back|panes|pane15";
+createNode mesh -n "pane15Shape" -p "|medBuilding1|medBuilding|windowpanes|back|pane15";
 	rename -uid "F60A8EEE-B046-1F14-C652-52BA98FDFC33";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -68177,19 +68173,15 @@ createNode mesh -n "pane15Shape" -p "|medBuilding1|medBuilding|windowpanes|back|
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "front1" -p "|medBuilding1|medBuilding|windowpanes";
-	rename -uid "93EABF48-C14C-64C3-DFB0-A09B69DFDB61";
-	setAttr ".rp" -type "double3" 5.4177672836031663 1.4895528793588266 -1.0452736576290513 ;
-	setAttr ".sp" -type "double3" 5.4177672836031663 1.4895528793588266 -1.0452736576290513 ;
-createNode transform -n "panes" -p "front1";
+createNode transform -n "front" -p "|medBuilding1|medBuilding|windowpanes";
 	rename -uid "AF617A0F-9747-FE64-BEF0-478312E0E1C3";
 	setAttr ".rp" -type "double3" 5.4170777721467509 1.5487182140350342 -1.045509299615762 ;
 	setAttr ".sp" -type "double3" 5.4170777721467509 1.5487182140350342 -1.045509299615762 ;
-createNode transform -n "pane" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "56F2AE9D-C240-41C1-B0F8-BFBA4F4C6E3A";
 	setAttr ".rp" -type "double3" 3.6397426357778864 2.1012352548651814 -1.0074326309680501 ;
 	setAttr ".sp" -type "double3" 3.6397426357778864 2.1012352548651814 -1.0074326309680499 ;
-createNode mesh -n "paneShape" -p "|medBuilding1|medBuilding|windowpanes|front1|panes|pane";
+createNode mesh -n "paneShape" -p "|medBuilding1|medBuilding|windowpanes|front|pane";
 	rename -uid "BBF42881-A647-41CD-633C-CAAFFFAE7AC0";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -68456,11 +68448,11 @@ createNode mesh -n "paneShape" -p "|medBuilding1|medBuilding|windowpanes|front1|
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane1" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane1" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "4C8CAEB6-6444-B379-5F03-4AB73A4D1CBD";
 	setAttr ".rp" -type "double3" 2.9568469417598564 2.1012352548651814 -1.0074326309680501 ;
 	setAttr ".sp" -type "double3" 2.9568469417598564 2.1012352548651814 -1.0074326309680497 ;
-createNode mesh -n "pane1Shape" -p "|medBuilding1|medBuilding|windowpanes|front1|panes|pane1";
+createNode mesh -n "pane1Shape" -p "|medBuilding1|medBuilding|windowpanes|front|pane1";
 	rename -uid "F5ED0D93-8146-B430-1A12-97A2E73851DE";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -68727,11 +68719,11 @@ createNode mesh -n "pane1Shape" -p "|medBuilding1|medBuilding|windowpanes|front1
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane2" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane2" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "F40D455A-BD44-60CD-C59E-018558D0EB3A";
 	setAttr ".rp" -type "double3" 2.2768053095926062 2.1012352548651814 -1.0074326309680501 ;
 	setAttr ".sp" -type "double3" 2.2768053095926062 2.1012352548651814 -1.0074326309680499 ;
-createNode mesh -n "pane2Shape" -p "|medBuilding1|medBuilding|windowpanes|front1|panes|pane2";
+createNode mesh -n "pane2Shape" -p "|medBuilding1|medBuilding|windowpanes|front|pane2";
 	rename -uid "AB9E8112-8949-9B49-84A5-5E8E8EDBE3B2";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -68999,11 +68991,11 @@ createNode mesh -n "pane2Shape" -p "|medBuilding1|medBuilding|windowpanes|front1
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane4" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane4" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "EB9AB3AC-A845-120C-DF0C-FD8A2AFEBF4F";
 	setAttr ".rp" -type "double3" 0.90750461563430918 2.1012352548651814 -1.0074326309680501 ;
 	setAttr ".sp" -type "double3" 0.90750461563430918 2.1012352548651814 -1.0074326309680499 ;
-createNode mesh -n "pane4Shape" -p "|medBuilding1|medBuilding|windowpanes|front1|panes|pane4";
+createNode mesh -n "pane4Shape" -p "|medBuilding1|medBuilding|windowpanes|front|pane4";
 	rename -uid "3BABB55E-AD4E-1148-36F2-2EB2DC6F205A";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -69270,11 +69262,11 @@ createNode mesh -n "pane4Shape" -p "|medBuilding1|medBuilding|windowpanes|front1
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane5" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane5" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "3850384F-D844-3CE6-A884-D49264F370AC";
 	setAttr ".rp" -type "double3" 0.2246089216162801 2.1012352548651823 -1.0074326309680501 ;
 	setAttr ".sp" -type "double3" 0.2246089216162801 2.1012352548651823 -1.0074326309680497 ;
-createNode mesh -n "pane5Shape" -p "|medBuilding1|medBuilding|windowpanes|front1|panes|pane5";
+createNode mesh -n "pane5Shape" -p "|medBuilding1|medBuilding|windowpanes|front|pane5";
 	rename -uid "09C4C349-1940-6BD7-25EC-01BD731889E3";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -69541,11 +69533,11 @@ createNode mesh -n "pane5Shape" -p "|medBuilding1|medBuilding|windowpanes|front1
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane6" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane6" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "90F6FAEA-EB42-612A-6F9C-E9AB1306DE17";
 	setAttr ".rp" -type "double3" -0.45543271055096923 2.1012352548651823 -1.0074326309680501 ;
 	setAttr ".sp" -type "double3" -0.45543271055096923 2.1012352548651823 -1.0074326309680499 ;
-createNode mesh -n "pane6Shape" -p "|medBuilding1|medBuilding|windowpanes|front1|panes|pane6";
+createNode mesh -n "pane6Shape" -p "|medBuilding1|medBuilding|windowpanes|front|pane6";
 	rename -uid "78260AD4-CB49-645A-5EA7-EDA4DBAE876F";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -69812,11 +69804,11 @@ createNode mesh -n "pane6Shape" -p "|medBuilding1|medBuilding|windowpanes|front1
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane7" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane7" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "B7ED4A7C-E14D-565A-5471-C9941557C7C0";
 	setAttr ".rp" -type "double3" -1.1383284045690001 2.1012352548651823 -1.0074326309680501 ;
 	setAttr ".sp" -type "double3" -1.1383284045690001 2.1012352548651823 -1.0074326309680497 ;
-createNode mesh -n "pane7Shape" -p "|medBuilding1|medBuilding|windowpanes|front1|panes|pane7";
+createNode mesh -n "pane7Shape" -p "|medBuilding1|medBuilding|windowpanes|front|pane7";
 	rename -uid "9148DA3A-E64A-440C-DC0B-8E9023749EA4";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -70083,11 +70075,11 @@ createNode mesh -n "pane7Shape" -p "|medBuilding1|medBuilding|windowpanes|front1
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane8" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane8" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "D43D8B28-7A43-D93E-5115-F5864A3530E3";
 	setAttr ".rp" -type "double3" 3.6397426357778864 0.99645495671693141 -1.0074326309680501 ;
 	setAttr ".sp" -type "double3" 3.6397426357778864 0.99645495671693141 -1.0074326309680499 ;
-createNode mesh -n "pane8Shape" -p "|medBuilding1|medBuilding|windowpanes|front1|panes|pane8";
+createNode mesh -n "pane8Shape" -p "|medBuilding1|medBuilding|windowpanes|front|pane8";
 	rename -uid "C630D4AA-A54F-DFCF-B90B-CA9E967B8C2D";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -70355,11 +70347,11 @@ createNode mesh -n "pane8Shape" -p "|medBuilding1|medBuilding|windowpanes|front1
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane9" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane9" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "CBD313E7-7944-6FA5-2089-07816E04436A";
 	setAttr ".rp" -type "double3" 0.2246089216162801 0.99645495671693185 -1.0074326309680501 ;
 	setAttr ".sp" -type "double3" 0.2246089216162801 0.99645495671693185 -1.0074326309680497 ;
-createNode mesh -n "pane9Shape" -p "|medBuilding1|medBuilding|windowpanes|front1|panes|pane9";
+createNode mesh -n "pane9Shape" -p "|medBuilding1|medBuilding|windowpanes|front|pane9";
 	rename -uid "E4BF7084-8541-94D0-371B-A8A8DBBAF1F0";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:75]";
@@ -70625,11 +70617,11 @@ createNode mesh -n "pane9Shape" -p "|medBuilding1|medBuilding|windowpanes|front1
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane10" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane10" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "FF050238-334F-A8A0-3E59-3898698C2ACB";
 	setAttr ".rp" -type "double3" -1.1383284045690001 0.99645495671693185 -1.0074326309680501 ;
 	setAttr ".sp" -type "double3" -1.1383284045690001 0.99645495671693185 -1.0074326309680497 ;
-createNode mesh -n "pane10Shape" -p "|medBuilding1|medBuilding|windowpanes|front1|panes|pane10";
+createNode mesh -n "pane10Shape" -p "|medBuilding1|medBuilding|windowpanes|front|pane10";
 	rename -uid "011F72E4-6144-6EA5-0972-9498CC6DDE48";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -70896,11 +70888,11 @@ createNode mesh -n "pane10Shape" -p "|medBuilding1|medBuilding|windowpanes|front
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane11" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane11" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "A51F62AF-5849-FD05-8939-B5B08EB851AC";
 	setAttr ".rp" -type "double3" -0.45543271055096923 0.99645495671693185 -1.0074326309680501 ;
 	setAttr ".sp" -type "double3" -0.45543271055096923 0.99645495671693185 -1.0074326309680499 ;
-createNode mesh -n "pane11Shape" -p "|medBuilding1|medBuilding|windowpanes|front1|panes|pane11";
+createNode mesh -n "pane11Shape" -p "|medBuilding1|medBuilding|windowpanes|front|pane11";
 	rename -uid "42CF378E-894E-7F25-D31C-E69ACE17E870";
 	setAttr -k off ".v";
 	setAttr -s 3 ".iog[0].og";
@@ -71169,11 +71161,11 @@ createNode mesh -n "pane11Shape" -p "|medBuilding1|medBuilding|windowpanes|front
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane13" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane13" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "A134D81D-F747-4E25-B37C-3BB3D0FC0BD3";
 	setAttr ".rp" -type "double3" 2.9568469417598555 0.99645495671693141 -1.0074326309680501 ;
 	setAttr ".sp" -type "double3" 2.9568469417598555 0.99645495671693141 -1.0074326309680497 ;
-createNode mesh -n "pane13Shape" -p "|medBuilding1|medBuilding|windowpanes|front1|panes|pane13";
+createNode mesh -n "pane13Shape" -p "|medBuilding1|medBuilding|windowpanes|front|pane13";
 	rename -uid "1B4FB167-6249-EA86-4C2E-B3A8ED86FA06";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -71440,7 +71432,7 @@ createNode mesh -n "pane13Shape" -p "|medBuilding1|medBuilding|windowpanes|front
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane16" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane16" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "7B7AAE2D-C84D-652E-5D1C-5390BF7CFE77";
 	setAttr ".t" -type "double3" 2.0446582408324603 0 0 ;
 	setAttr ".rp" -type "double3" 0.2246089216162801 0.99645495671693185 -1.0074326309680501 ;
@@ -71711,7 +71703,7 @@ createNode mesh -n "pane16Shape" -p "pane16";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane17" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane17" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "4CF20FF4-2941-F1D7-3510-AB9B251DD928";
 	setAttr ".t" -type "double3" 2.0446582408324603 0 0 ;
 	setAttr ".rp" -type "double3" -0.45543271055096923 0.99645495671693185 -1.0074326309680501 ;
@@ -71984,7 +71976,7 @@ createNode mesh -n "pane17Shape" -p "pane17";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane18" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane18" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "8C8EA203-9943-4B6F-59DE-74A10266B284";
 	setAttr ".t" -type "double3" 2.0446582408324603 0 0 ;
 	setAttr ".rp" -type "double3" -1.1383284045690001 0.99645495671693185 -1.0074326309680501 ;
@@ -72256,11 +72248,11 @@ createNode mesh -n "pane18Shape" -p "pane18";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pane3" -p "|medBuilding1|medBuilding|windowpanes|front1|panes";
+createNode transform -n "pane3" -p "|medBuilding1|medBuilding|windowpanes|front";
 	rename -uid "4F9559A5-FB4E-82EB-DAEE-688B048B7922";
 	setAttr ".rp" -type "double3" 1.593909615574578 2.1012352548651814 -1.0074326309680501 ;
 	setAttr ".sp" -type "double3" 1.593909615574578 2.1012352548651814 -1.0074326309680497 ;
-createNode mesh -n "pane3Shape" -p "|medBuilding1|medBuilding|windowpanes|front1|panes|pane3";
+createNode mesh -n "pane3Shape" -p "|medBuilding1|medBuilding|windowpanes|front|pane3";
 	rename -uid "5C1F4AD2-EC4D-BEBE-9176-A593C78D7415";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -72526,23 +72518,19 @@ createNode mesh -n "pane3Shape" -p "|medBuilding1|medBuilding|windowpanes|front1
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "side1" -p "|medBuilding1|medBuilding|windowpanes";
-	rename -uid "938DFE37-5947-AF48-FEEC-44BFD57D617C";
-	setAttr ".rp" -type "double3" 8.118323161177047 1.3867905614075293 0.27121642284125125 ;
-	setAttr ".sp" -type "double3" 8.118323161177047 1.3867905614075293 0.27121642284125125 ;
-createNode transform -n "wall" -p "|medBuilding1|medBuilding|windowpanes|side1";
+createNode transform -n "right" -p "|medBuilding1|medBuilding|windowpanes";
 	rename -uid "F15CFEC3-3948-283B-84CB-CF95A5380E02";
 	setAttr ".rp" -type "double3" 8.118323161177047 1.3867905614075293 0.27121642284125036 ;
 	setAttr ".sp" -type "double3" 8.118323161177047 1.3867905614075293 0.27121642284125036 ;
-createNode transform -n "pane" -p "|medBuilding1|medBuilding|windowpanes|side1|wall";
+createNode transform -n "pane" -p "|medBuilding1|medBuilding|windowpanes|right";
 	rename -uid "EAB218F2-C64E-DEA9-67EB-199E71614979";
 	setAttr ".rp" -type "double3" 9.7600369973245158 0 0 ;
 	setAttr ".sp" -type "double3" 9.7600369973245158 0 0 ;
-createNode transform -n "pasted__pane18" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane";
+createNode transform -n "pasted__pane18" -p "|medBuilding1|medBuilding|windowpanes|right|pane";
 	rename -uid "A4BB67FD-DC4D-8B95-B34A-DF8D6670CDC9";
 	setAttr ".rp" -type "double3" 3.9295207879437846 2.101235254865105 -0.75169964819709234 ;
 	setAttr ".sp" -type "double3" 3.9295207879437841 2.101235254865105 -0.75169964819709234 ;
-createNode mesh -n "pasted__pane18Shape" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane18";
+createNode mesh -n "pasted__pane18Shape" -p "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane18";
 	rename -uid "A85F0872-1344-A501-9273-039DE5C54949";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -72806,11 +72794,11 @@ createNode mesh -n "pasted__pane18Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane19" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane";
+createNode transform -n "pasted__pane19" -p "|medBuilding1|medBuilding|windowpanes|right|pane";
 	rename -uid "D30067C2-F049-BDA9-1389-CA92E1460D05";
 	setAttr ".rp" -type "double3" 3.9295207879437859 2.1012352548651112 -0.068803954179065596 ;
 	setAttr ".sp" -type "double3" 3.9295207879437855 2.1012352548651112 -0.068803954179065596 ;
-createNode mesh -n "pasted__pane19Shape" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane19";
+createNode mesh -n "pasted__pane19Shape" -p "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane19";
 	rename -uid "B13C8119-1A44-3FD1-9E8C-1EA71C2B13D9";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -73074,11 +73062,11 @@ createNode mesh -n "pasted__pane19Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane28" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane";
+createNode transform -n "pasted__pane28" -p "|medBuilding1|medBuilding|windowpanes|right|pane";
 	rename -uid "CDDB5849-2547-24C7-CD2D-E38F24968348";
 	setAttr ".rp" -type "double3" 3.9295207879437859 0.99645495671687223 0.61123767798818274 ;
 	setAttr ".sp" -type "double3" 3.9295207879437855 0.99645495671687223 0.61123767798818274 ;
-createNode mesh -n "pasted__pane28Shape" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane28";
+createNode mesh -n "pasted__pane28Shape" -p "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane28";
 	rename -uid "27096CE1-7143-09AB-9332-B0B450E16304";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -73343,11 +73331,11 @@ createNode mesh -n "pasted__pane28Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane27" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane";
+createNode transform -n "pasted__pane27" -p "|medBuilding1|medBuilding|windowpanes|right|pane";
 	rename -uid "378FFF20-B243-A731-FE22-5084EBD7BDF7";
 	setAttr ".rp" -type "double3" 3.9295207879437846 0.99645495671686157 -0.75169964819709234 ;
 	setAttr ".sp" -type "double3" 3.9295207879437841 0.99645495671686157 -0.75169964819709234 ;
-createNode mesh -n "pasted__pane27Shape" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane27";
+createNode mesh -n "pasted__pane27Shape" -p "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane27";
 	rename -uid "E46FCDB4-3C47-B5EB-D8DD-15A193F2070B";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -73611,11 +73599,11 @@ createNode mesh -n "pasted__pane27Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane26" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane";
+createNode transform -n "pasted__pane26" -p "|medBuilding1|medBuilding|windowpanes|right|pane";
 	rename -uid "C0501E35-CD43-1403-773C-57B2BDB6D83A";
 	setAttr ".rp" -type "double3" 3.9295207879437846 0.99645495671686157 -0.068803954179065596 ;
 	setAttr ".sp" -type "double3" 3.9295207879437841 0.99645495671686157 -0.068803954179065596 ;
-createNode mesh -n "pasted__pane26Shape" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane26";
+createNode mesh -n "pasted__pane26Shape" -p "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane26";
 	rename -uid "A94DD04C-364C-3776-524F-6EA99B80FF1F";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -73880,11 +73868,11 @@ createNode mesh -n "pasted__pane26Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane22" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane";
+createNode transform -n "pasted__pane22" -p "|medBuilding1|medBuilding|windowpanes|right|pane";
 	rename -uid "953B3F9A-524F-A137-FE25-6B9CB4CA87AE";
 	setAttr ".rp" -type "double3" 3.9295207879437859 2.101235254865105 1.2941333720062125 ;
 	setAttr ".sp" -type "double3" 3.9295207879437855 2.101235254865105 1.2941333720062125 ;
-createNode mesh -n "pasted__pane22Shape" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane22";
+createNode mesh -n "pasted__pane22Shape" -p "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane22";
 	rename -uid "3F3D47E7-CF48-E132-B859-148ABF52CA4E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -74148,11 +74136,11 @@ createNode mesh -n "pasted__pane22Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane21" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane";
+createNode transform -n "pasted__pane21" -p "|medBuilding1|medBuilding|windowpanes|right|pane";
 	rename -uid "A07AD9A6-8E4C-4F94-BD85-70BAA5210CB8";
 	setAttr ".rp" -type "double3" 3.9295207879437859 0.99645495671687301 1.2941333720062125 ;
 	setAttr ".sp" -type "double3" 3.9295207879437855 0.99645495671687301 1.2941333720062125 ;
-createNode mesh -n "pasted__pane21Shape" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane21";
+createNode mesh -n "pasted__pane21Shape" -p "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane21";
 	rename -uid "2311E4DA-CC46-109D-6F85-22A26F12F29A";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -74416,11 +74404,11 @@ createNode mesh -n "pasted__pane21Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane17" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane";
+createNode transform -n "pasted__pane17" -p "|medBuilding1|medBuilding|windowpanes|right|pane";
 	rename -uid "13E442C7-4541-AC29-14D2-CA98BC68D01C";
 	setAttr ".rp" -type "double3" 3.9295207879437859 2.1012352548651112 0.61123767798818274 ;
 	setAttr ".sp" -type "double3" 3.9295207879437855 2.1012352548651112 0.61123767798818274 ;
-createNode mesh -n "pasted__pane17Shape" -p "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane17";
+createNode mesh -n "pasted__pane17Shape" -p "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane17";
 	rename -uid "34CE7BD0-EA4F-A043-1965-D2BAF9414FB6";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -74684,23 +74672,15 @@ createNode mesh -n "pasted__pane17Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "side2" -p "|medBuilding1|medBuilding|windowpanes";
-	rename -uid "648D28FE-6145-FF8C-7DA3-B7B4386C1467";
-	setAttr ".rp" -type "double3" 2.7267525910817456 1.3867905614075293 0.27121642284125125 ;
-	setAttr ".sp" -type "double3" 2.7267525910817456 1.3867905614075293 0.27121642284125125 ;
-createNode transform -n "wall" -p "|medBuilding1|medBuilding|windowpanes|side2";
-	rename -uid "DE9AF0E4-E247-CC1B-D43B-B7BE3DFD3058";
-	setAttr ".rp" -type "double3" 2.7267525910817456 1.3867905614075293 0.27121642284125191 ;
-	setAttr ".sp" -type "double3" 2.7267525910817456 1.3867905614075293 0.27121642284125191 ;
-createNode transform -n "panes" -p "|medBuilding1|medBuilding|windowpanes|side2|wall";
+createNode transform -n "left" -p "|medBuilding1|medBuilding|windowpanes";
 	rename -uid "AAE42210-2C46-DE8A-4A1B-7FACF52F5761";
 	setAttr ".rp" -type "double3" 9.7600369973245158 0 0 ;
 	setAttr ".sp" -type "double3" 9.7600369973245158 0 0 ;
-createNode transform -n "pasted__pane18" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes";
+createNode transform -n "pasted__pane18" -p "|medBuilding1|medBuilding|windowpanes|left";
 	rename -uid "329D6E0F-314C-DC7E-13BF-F0B2A1DE3C6E";
 	setAttr ".rp" -type "double3" -1.4185664486619363 2.101235254865105 1.2941324938795948 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 2.101235254865105 1.2941324938795948 ;
-createNode mesh -n "pasted__pane18Shape" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane18";
+createNode mesh -n "pasted__pane18Shape" -p "|medBuilding1|medBuilding|windowpanes|left|pasted__pane18";
 	rename -uid "AA9EF97F-3D4B-DAC9-78F1-5699B82A3372";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -74965,11 +74945,11 @@ createNode mesh -n "pasted__pane18Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane19" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes";
+createNode transform -n "pasted__pane19" -p "|medBuilding1|medBuilding|windowpanes|left";
 	rename -uid "344FD123-7A46-740A-850F-8FAEF503405A";
 	setAttr ".rp" -type "double3" -1.4185664486619363 2.1012352548651112 0.61123679986156776 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 2.1012352548651112 0.61123679986156776 ;
-createNode mesh -n "pasted__pane19Shape" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane19";
+createNode mesh -n "pasted__pane19Shape" -p "|medBuilding1|medBuilding|windowpanes|left|pasted__pane19";
 	rename -uid "77AD60F9-E949-449E-E659-869AD8E3C8C7";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -75233,11 +75213,11 @@ createNode mesh -n "pasted__pane19Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane28" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes";
+createNode transform -n "pasted__pane28" -p "|medBuilding1|medBuilding|windowpanes|left";
 	rename -uid "D59A7746-E749-3AD4-FA87-5CA3FB71C7E4";
 	setAttr ".rp" -type "double3" -1.4185664486619363 0.99645495671687223 -0.068804832305680685 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 0.99645495671687223 -0.068804832305680685 ;
-createNode mesh -n "pasted__pane28Shape" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane28";
+createNode mesh -n "pasted__pane28Shape" -p "|medBuilding1|medBuilding|windowpanes|left|pasted__pane28";
 	rename -uid "4A208400-E445-1492-7592-4AB8B8B6E73F";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -75501,11 +75481,11 @@ createNode mesh -n "pasted__pane28Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane27" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes";
+createNode transform -n "pasted__pane27" -p "|medBuilding1|medBuilding|windowpanes|left";
 	rename -uid "9118ABD9-0948-9FFF-632B-44893AEF9B2F";
 	setAttr ".rp" -type "double3" -1.4185664486619363 0.99645495671686157 1.2941324938795948 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 0.99645495671686157 1.2941324938795948 ;
-createNode mesh -n "pasted__pane27Shape" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane27";
+createNode mesh -n "pasted__pane27Shape" -p "|medBuilding1|medBuilding|windowpanes|left|pasted__pane27";
 	rename -uid "99EC60B7-3C46-A0B2-E88D-E0A48BD8B08E";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -75769,11 +75749,11 @@ createNode mesh -n "pasted__pane27Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane26" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes";
+createNode transform -n "pasted__pane26" -p "|medBuilding1|medBuilding|windowpanes|left";
 	rename -uid "ED8B5DC1-1E4D-2ED7-1D61-4B83874FF4E3";
 	setAttr ".rp" -type "double3" -1.4185664486619363 0.99645495671686157 0.61123679986156776 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 0.99645495671686157 0.61123679986156776 ;
-createNode mesh -n "pasted__pane26Shape" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane26";
+createNode mesh -n "pasted__pane26Shape" -p "|medBuilding1|medBuilding|windowpanes|left|pasted__pane26";
 	rename -uid "096CA117-3B47-33A1-D0FD-D0A706E40C96";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -76037,11 +76017,11 @@ createNode mesh -n "pasted__pane26Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane22" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes";
+createNode transform -n "pasted__pane22" -p "|medBuilding1|medBuilding|windowpanes|left";
 	rename -uid "FFAC10D1-EE4B-402E-1897-F2AEC1242919";
 	setAttr ".rp" -type "double3" -1.4185664486619363 2.101235254865105 -0.75170052632371065 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 2.101235254865105 -0.75170052632371065 ;
-createNode mesh -n "pasted__pane22Shape" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane22";
+createNode mesh -n "pasted__pane22Shape" -p "|medBuilding1|medBuilding|windowpanes|left|pasted__pane22";
 	rename -uid "76CDDA00-D440-470D-C524-58ABDA490891";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -76305,11 +76285,11 @@ createNode mesh -n "pasted__pane22Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane21" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes";
+createNode transform -n "pasted__pane21" -p "|medBuilding1|medBuilding|windowpanes|left";
 	rename -uid "841CFAF8-524F-3256-521C-59B28411F97C";
 	setAttr ".rp" -type "double3" -1.4185664486619363 0.99645495671687301 -0.75170052632371065 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 0.99645495671687301 -0.75170052632371065 ;
-createNode mesh -n "pasted__pane21Shape" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane21";
+createNode mesh -n "pasted__pane21Shape" -p "|medBuilding1|medBuilding|windowpanes|left|pasted__pane21";
 	rename -uid "F37832CC-8244-F41B-F9BF-97B171B77EBE";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -76572,11 +76552,11 @@ createNode mesh -n "pasted__pane21Shape" -p "|medBuilding1|medBuilding|windowpan
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "pasted__pane17" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes";
+createNode transform -n "pasted__pane17" -p "|medBuilding1|medBuilding|windowpanes|left";
 	rename -uid "351D966D-4149-7ADC-91B5-34A3E34C7E2C";
 	setAttr ".rp" -type "double3" -1.4185664486619363 2.1012352548651112 -0.068804832305680685 ;
 	setAttr ".sp" -type "double3" -1.4185664486619363 2.1012352548651112 -0.068804832305680685 ;
-createNode mesh -n "pasted__pane17Shape" -p "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane17";
+createNode mesh -n "pasted__pane17Shape" -p "|medBuilding1|medBuilding|windowpanes|left|pasted__pane17";
 	rename -uid "B82B3C56-294F-32B8-5C07-A2BEF8EAAC89";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -80625,97 +80605,97 @@ select -ne :hardwareRenderGlobals;
 	setAttr -k on ".hwcc";
 	setAttr -k on ".hwdp";
 	setAttr -k on ".hwql";
-connectAttr "groupId174.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane|paneShape.iog.og[0].gid"
+connectAttr "groupId174.id" "|medBuilding1|medBuilding|windowpanes|front|pane|paneShape.iog.og[0].gid"
 		;
-connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane|paneShape.iog.og[0].gco"
+connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane|paneShape.iog.og[0].gco"
 		;
-connectAttr "groupId175.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane|paneShape.iog.og[1].gid"
+connectAttr "groupId175.id" "|medBuilding1|medBuilding|windowpanes|front|pane|paneShape.iog.og[1].gid"
 		;
-connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane|paneShape.iog.og[1].gco"
+connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane|paneShape.iog.og[1].gco"
 		;
-connectAttr "groupId176.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane1|pane1Shape.iog.og[0].gid"
+connectAttr "groupId176.id" "|medBuilding1|medBuilding|windowpanes|front|pane1|pane1Shape.iog.og[0].gid"
 		;
-connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane1|pane1Shape.iog.og[0].gco"
+connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane1|pane1Shape.iog.og[0].gco"
 		;
-connectAttr "groupId177.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane1|pane1Shape.iog.og[1].gid"
+connectAttr "groupId177.id" "|medBuilding1|medBuilding|windowpanes|front|pane1|pane1Shape.iog.og[1].gid"
 		;
-connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane1|pane1Shape.iog.og[1].gco"
+connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane1|pane1Shape.iog.og[1].gco"
 		;
-connectAttr "groupId178.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane2|pane2Shape.iog.og[0].gid"
+connectAttr "groupId178.id" "|medBuilding1|medBuilding|windowpanes|front|pane2|pane2Shape.iog.og[0].gid"
 		;
-connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane2|pane2Shape.iog.og[0].gco"
+connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane2|pane2Shape.iog.og[0].gco"
 		;
-connectAttr "groupId179.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane2|pane2Shape.iog.og[1].gid"
+connectAttr "groupId179.id" "|medBuilding1|medBuilding|windowpanes|front|pane2|pane2Shape.iog.og[1].gid"
 		;
-connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane2|pane2Shape.iog.og[1].gco"
+connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane2|pane2Shape.iog.og[1].gco"
 		;
-connectAttr "groupId180.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane4|pane4Shape.iog.og[0].gid"
+connectAttr "groupId180.id" "|medBuilding1|medBuilding|windowpanes|front|pane4|pane4Shape.iog.og[0].gid"
 		;
-connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane4|pane4Shape.iog.og[0].gco"
+connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane4|pane4Shape.iog.og[0].gco"
 		;
-connectAttr "groupId181.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane4|pane4Shape.iog.og[1].gid"
+connectAttr "groupId181.id" "|medBuilding1|medBuilding|windowpanes|front|pane4|pane4Shape.iog.og[1].gid"
 		;
-connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane4|pane4Shape.iog.og[1].gco"
+connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane4|pane4Shape.iog.og[1].gco"
 		;
-connectAttr "groupId182.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane5|pane5Shape.iog.og[0].gid"
+connectAttr "groupId182.id" "|medBuilding1|medBuilding|windowpanes|front|pane5|pane5Shape.iog.og[0].gid"
 		;
-connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane5|pane5Shape.iog.og[0].gco"
+connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane5|pane5Shape.iog.og[0].gco"
 		;
-connectAttr "groupId183.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane5|pane5Shape.iog.og[1].gid"
+connectAttr "groupId183.id" "|medBuilding1|medBuilding|windowpanes|front|pane5|pane5Shape.iog.og[1].gid"
 		;
-connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane5|pane5Shape.iog.og[1].gco"
+connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane5|pane5Shape.iog.og[1].gco"
 		;
-connectAttr "groupId184.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane6|pane6Shape.iog.og[0].gid"
+connectAttr "groupId184.id" "|medBuilding1|medBuilding|windowpanes|front|pane6|pane6Shape.iog.og[0].gid"
 		;
-connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane6|pane6Shape.iog.og[0].gco"
+connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane6|pane6Shape.iog.og[0].gco"
 		;
-connectAttr "groupId185.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane6|pane6Shape.iog.og[1].gid"
+connectAttr "groupId185.id" "|medBuilding1|medBuilding|windowpanes|front|pane6|pane6Shape.iog.og[1].gid"
 		;
-connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane6|pane6Shape.iog.og[1].gco"
+connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane6|pane6Shape.iog.og[1].gco"
 		;
-connectAttr "groupId186.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane7|pane7Shape.iog.og[0].gid"
+connectAttr "groupId186.id" "|medBuilding1|medBuilding|windowpanes|front|pane7|pane7Shape.iog.og[0].gid"
 		;
-connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane7|pane7Shape.iog.og[0].gco"
+connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane7|pane7Shape.iog.og[0].gco"
 		;
-connectAttr "groupId187.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane7|pane7Shape.iog.og[1].gid"
+connectAttr "groupId187.id" "|medBuilding1|medBuilding|windowpanes|front|pane7|pane7Shape.iog.og[1].gid"
 		;
-connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane7|pane7Shape.iog.og[1].gco"
+connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane7|pane7Shape.iog.og[1].gco"
 		;
-connectAttr "groupId188.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane8|pane8Shape.iog.og[0].gid"
+connectAttr "groupId188.id" "|medBuilding1|medBuilding|windowpanes|front|pane8|pane8Shape.iog.og[0].gid"
 		;
-connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane8|pane8Shape.iog.og[0].gco"
+connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane8|pane8Shape.iog.og[0].gco"
 		;
-connectAttr "groupId189.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane8|pane8Shape.iog.og[1].gid"
+connectAttr "groupId189.id" "|medBuilding1|medBuilding|windowpanes|front|pane8|pane8Shape.iog.og[1].gid"
 		;
-connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane8|pane8Shape.iog.og[1].gco"
+connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane8|pane8Shape.iog.og[1].gco"
 		;
-connectAttr "groupId190.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane10|pane10Shape.iog.og[0].gid"
+connectAttr "groupId190.id" "|medBuilding1|medBuilding|windowpanes|front|pane10|pane10Shape.iog.og[0].gid"
 		;
-connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane10|pane10Shape.iog.og[0].gco"
+connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane10|pane10Shape.iog.og[0].gco"
 		;
-connectAttr "groupId191.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane10|pane10Shape.iog.og[1].gid"
+connectAttr "groupId191.id" "|medBuilding1|medBuilding|windowpanes|front|pane10|pane10Shape.iog.og[1].gid"
 		;
-connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane10|pane10Shape.iog.og[1].gco"
+connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane10|pane10Shape.iog.og[1].gco"
 		;
-connectAttr "groupId192.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane11|pane11Shape.iog.og[0].gid"
+connectAttr "groupId192.id" "|medBuilding1|medBuilding|windowpanes|front|pane11|pane11Shape.iog.og[0].gid"
 		;
-connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane11|pane11Shape.iog.og[0].gco"
+connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane11|pane11Shape.iog.og[0].gco"
 		;
-connectAttr "groupId193.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane11|pane11Shape.iog.og[1].gid"
+connectAttr "groupId193.id" "|medBuilding1|medBuilding|windowpanes|front|pane11|pane11Shape.iog.og[1].gid"
 		;
-connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane11|pane11Shape.iog.og[1].gco"
+connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane11|pane11Shape.iog.og[1].gco"
 		;
-connectAttr "groupId194.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane11|pane11Shape.iog.og[2].gid"
+connectAttr "groupId194.id" "|medBuilding1|medBuilding|windowpanes|front|pane11|pane11Shape.iog.og[2].gid"
 		;
-connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane11|pane11Shape.iog.og[2].gco"
+connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane11|pane11Shape.iog.og[2].gco"
 		;
-connectAttr "groupId195.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane13|pane13Shape.iog.og[0].gid"
+connectAttr "groupId195.id" "|medBuilding1|medBuilding|windowpanes|front|pane13|pane13Shape.iog.og[0].gid"
 		;
-connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane13|pane13Shape.iog.og[0].gco"
+connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane13|pane13Shape.iog.og[0].gco"
 		;
-connectAttr "groupId196.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane13|pane13Shape.iog.og[1].gid"
+connectAttr "groupId196.id" "|medBuilding1|medBuilding|windowpanes|front|pane13|pane13Shape.iog.og[1].gid"
 		;
-connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane13|pane13Shape.iog.og[1].gco"
+connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane13|pane13Shape.iog.og[1].gco"
 		;
 connectAttr "groupId197.id" "pane17Shape.iog.og[0].gid";
 connectAttr "PxrSurface1SG.mwc" "pane17Shape.iog.og[0].gco";
@@ -80727,13 +80707,13 @@ connectAttr "groupId200.id" "pane18Shape.iog.og[0].gid";
 connectAttr "PxrSurface1SG.mwc" "pane18Shape.iog.og[0].gco";
 connectAttr "groupId201.id" "pane18Shape.iog.og[1].gid";
 connectAttr "PxrSurface5SG.mwc" "pane18Shape.iog.og[1].gco";
-connectAttr "groupId202.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane3|pane3Shape.iog.og[0].gid"
+connectAttr "groupId202.id" "|medBuilding1|medBuilding|windowpanes|front|pane3|pane3Shape.iog.og[0].gid"
 		;
-connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane3|pane3Shape.iog.og[0].gco"
+connectAttr "PxrSurface1SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane3|pane3Shape.iog.og[0].gco"
 		;
-connectAttr "groupId203.id" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane3|pane3Shape.iog.og[1].gid"
+connectAttr "groupId203.id" "|medBuilding1|medBuilding|windowpanes|front|pane3|pane3Shape.iog.og[1].gid"
 		;
-connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front1|panes|pane3|pane3Shape.iog.og[1].gco"
+connectAttr "PxrSurface5SG.mwc" "|medBuilding1|medBuilding|windowpanes|front|pane3|pane3Shape.iog.og[1].gco"
 		;
 connectAttr ":rmanDefaultDisplay.msg" ":rmanGlobals.displays[0]";
 connectAttr ":PxrPathTracer.msg" ":rmanGlobals.ri_integrator";
@@ -80787,63 +80767,63 @@ connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
 connectAttr "file1.oc" "b1panes_back.diffuseColor";
 connectAttr "b1panes_back.oc" "PxrSurface1SG.rman__surface";
 connectAttr "lambert9.oc" "PxrSurface1SG.ss";
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane15|pane15Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane15|pane15Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane14|pane14Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane14|pane14Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane13|pane13Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane13|pane13Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane12|pane12Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane12|pane12Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane11|pane11Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane11|pane11Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane10|pane10Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane10|pane10Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane9|pane9Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane9|pane9Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane8|pane8Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane8|pane8Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane7|pane7Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane7|pane7Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane6|pane6Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane6|pane6Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane5|pane5Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane5|pane5Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane4|pane4Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane4|pane4Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane3|pane3Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane3|pane3Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane2|pane2Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane2|pane2Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane1|pane1Shape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane1|pane1Shape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|back|panes|pane|paneShape.iog" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|back|pane|paneShape.iog" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane|paneShape.iog.og[0]" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane|paneShape.iog.og[0]" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane1|pane1Shape.iog.og[0]" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane1|pane1Shape.iog.og[0]" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane2|pane2Shape.iog.og[0]" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane2|pane2Shape.iog.og[0]" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane4|pane4Shape.iog.og[0]" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane4|pane4Shape.iog.og[0]" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane5|pane5Shape.iog.og[0]" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane5|pane5Shape.iog.og[0]" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane6|pane6Shape.iog.og[0]" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane6|pane6Shape.iog.og[0]" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane7|pane7Shape.iog.og[0]" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane7|pane7Shape.iog.og[0]" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane8|pane8Shape.iog.og[0]" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane8|pane8Shape.iog.og[0]" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane10|pane10Shape.iog.og[0]" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane10|pane10Shape.iog.og[0]" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane11|pane11Shape.iog.og[0]" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane11|pane11Shape.iog.og[0]" "PxrSurface1SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane13|pane13Shape.iog.og[0]" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane13|pane13Shape.iog.og[0]" "PxrSurface1SG.dsm"
 		 -na;
 connectAttr "pane17Shape.iog.og[0]" "PxrSurface1SG.dsm" -na;
 connectAttr "pane18Shape.iog.og[0]" "PxrSurface1SG.dsm" -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane3|pane3Shape.iog.og[0]" "PxrSurface1SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane3|pane3Shape.iog.og[0]" "PxrSurface1SG.dsm"
 		 -na;
 connectAttr "groupId174.msg" "PxrSurface1SG.gn" -na;
 connectAttr "groupId176.msg" "PxrSurface1SG.gn" -na;
@@ -80988,37 +80968,37 @@ connectAttr "place2dTexture3.ofs" "file3.fs";
 connectAttr "file4.oc" "b1window_front.diffuseColor";
 connectAttr "b1window_front.oc" "PxrSurface4SG.rman__surface";
 connectAttr "lambert12.oc" "PxrSurface4SG.ss";
-connectAttr "|medBuilding1|medBuilding|walls|window|window15|window15Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window15|window15Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window14|window14Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window14|window14Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window13|window13Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window13|window13Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window12|window12Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window12|window12Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window11|window11Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window11|window11Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window10|window10Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window10|window10Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window9|window9Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window9|window9Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window8|window8Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window8|window8Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window7|window7Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window7|window7Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window6|window6Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window6|window6Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window5|window5Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window5|window5Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window4|window4Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window4|window4Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window3|window3Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window3|window3Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window2|window2Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window2|window2Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window1|window1Shape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window1|window1Shape.iog" "PxrSurface4SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window|window|windowShape.iog" "PxrSurface4SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|front|window|windowShape.iog" "PxrSurface4SG.dsm"
 		 -na;
 connectAttr "PxrSurface4SG.msg" "materialInfo11.sg";
 connectAttr "lambert12.msg" "materialInfo11.m";
@@ -81072,153 +81052,153 @@ connectAttr "groupId198.msg" "PxrSurface5SG.gn" -na;
 connectAttr "groupId199.msg" "PxrSurface5SG.gn" -na;
 connectAttr "groupId201.msg" "PxrSurface5SG.gn" -na;
 connectAttr "groupId203.msg" "PxrSurface5SG.gn" -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane9|pane9Shape.iog" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane9|pane9Shape.iog" "PxrSurface5SG.dsm"
 		 -na;
 connectAttr "pane16Shape.iog" "PxrSurface5SG.dsm" -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane|paneShape.iog.og[1]" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane|paneShape.iog.og[1]" "PxrSurface5SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane1|pane1Shape.iog.og[1]" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane1|pane1Shape.iog.og[1]" "PxrSurface5SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane2|pane2Shape.iog.og[1]" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane2|pane2Shape.iog.og[1]" "PxrSurface5SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane4|pane4Shape.iog.og[1]" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane4|pane4Shape.iog.og[1]" "PxrSurface5SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane5|pane5Shape.iog.og[1]" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane5|pane5Shape.iog.og[1]" "PxrSurface5SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane6|pane6Shape.iog.og[1]" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane6|pane6Shape.iog.og[1]" "PxrSurface5SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane7|pane7Shape.iog.og[1]" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane7|pane7Shape.iog.og[1]" "PxrSurface5SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane8|pane8Shape.iog.og[1]" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane8|pane8Shape.iog.og[1]" "PxrSurface5SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane10|pane10Shape.iog.og[1]" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane10|pane10Shape.iog.og[1]" "PxrSurface5SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane11|pane11Shape.iog.og[1]" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane11|pane11Shape.iog.og[1]" "PxrSurface5SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane11|pane11Shape.iog.og[2]" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane11|pane11Shape.iog.og[2]" "PxrSurface5SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane13|pane13Shape.iog.og[1]" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane13|pane13Shape.iog.og[1]" "PxrSurface5SG.dsm"
 		 -na;
 connectAttr "pane17Shape.iog.og[1]" "PxrSurface5SG.dsm" -na;
 connectAttr "pane17Shape.iog.og[2]" "PxrSurface5SG.dsm" -na;
 connectAttr "pane18Shape.iog.og[1]" "PxrSurface5SG.dsm" -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|front1|panes|pane3|pane3Shape.iog.og[1]" "PxrSurface5SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|front|pane3|pane3Shape.iog.og[1]" "PxrSurface5SG.dsm"
 		 -na;
 connectAttr "PxrSurface5SG.msg" "materialInfo14.sg";
 connectAttr "lambert15.msg" "materialInfo14.m";
 connectAttr "b1window_right.oc" "PxrSurface6SG.rman__surface";
 connectAttr "lambert16.oc" "PxrSurface6SG.ss";
-connectAttr "|medBuilding1|medBuilding|walls|window18|pasted__window17|pasted__window17Shape.iog" "PxrSurface6SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|right|pasted__window17|pasted__window17Shape.iog" "PxrSurface6SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window18|pasted__window18|pasted__window18Shape.iog" "PxrSurface6SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|right|pasted__window18|pasted__window18Shape.iog" "PxrSurface6SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window18|pasted__window21|pasted__window21Shape.iog" "PxrSurface6SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|right|pasted__window21|pasted__window21Shape.iog" "PxrSurface6SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window18|pasted__window22|pasted__window22Shape.iog" "PxrSurface6SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|right|pasted__window22|pasted__window22Shape.iog" "PxrSurface6SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window18|pasted__window31|pasted__window31Shape.iog" "PxrSurface6SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|right|pasted__window31|pasted__window31Shape.iog" "PxrSurface6SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window18|pasted__window29|pasted__window29Shape.iog" "PxrSurface6SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|right|pasted__window29|pasted__window29Shape.iog" "PxrSurface6SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window18|pasted__window30|pasted__window30Shape.iog" "PxrSurface6SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|right|pasted__window30|pasted__window30Shape.iog" "PxrSurface6SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window18|pasted__window16|pasted__window16Shape.iog" "PxrSurface6SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|right|pasted__window16|pasted__window16Shape.iog" "PxrSurface6SG.dsm"
 		 -na;
 connectAttr "PxrSurface6SG.msg" "materialInfo15.sg";
 connectAttr "lambert16.msg" "materialInfo15.m";
 connectAttr "b1window_back.oc" "PxrSurface7SG.rman__surface";
 connectAttr "lambert17.oc" "PxrSurface7SG.ss";
-connectAttr "|medBuilding1|medBuilding|walls|window17|window15|window15Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window15|window15Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window14|window14Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window14|window14Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window13|window13Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window13|window13Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window12|window12Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window12|window12Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window11|window11Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window11|window11Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window10|window10Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window10|window10Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window9|window9Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window9|window9Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window8|window8Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window8|window8Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window7|window7Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window7|window7Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window6|window6Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window6|window6Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window5|window5Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window5|window5Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window4|window4Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window4|window4Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window3|window3Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window3|window3Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window2|window2Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window2|window2Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window1|window1Shape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window1|window1Shape.iog" "PxrSurface7SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window17|window|windowShape.iog" "PxrSurface7SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|back|window|windowShape.iog" "PxrSurface7SG.dsm"
 		 -na;
 connectAttr "PxrSurface7SG.msg" "materialInfo16.sg";
 connectAttr "lambert17.msg" "materialInfo16.m";
 connectAttr "b1window_left.oc" "PxrSurface8SG.rman__surface";
 connectAttr "lambert18.oc" "PxrSurface8SG.ss";
-connectAttr "|medBuilding1|medBuilding|walls|window19|pasted__window16|pasted__window16Shape.iog" "PxrSurface8SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|left|pasted__window16|pasted__window16Shape.iog" "PxrSurface8SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window19|pasted__window30|pasted__window30Shape.iog" "PxrSurface8SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|left|pasted__window30|pasted__window30Shape.iog" "PxrSurface8SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window19|pasted__window29|pasted__window29Shape.iog" "PxrSurface8SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|left|pasted__window29|pasted__window29Shape.iog" "PxrSurface8SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window19|pasted__window31|pasted__window31Shape.iog" "PxrSurface8SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|left|pasted__window31|pasted__window31Shape.iog" "PxrSurface8SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window19|pasted__window22|pasted__window22Shape.iog" "PxrSurface8SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|left|pasted__window22|pasted__window22Shape.iog" "PxrSurface8SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window19|pasted__window21|pasted__window21Shape.iog" "PxrSurface8SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|left|pasted__window21|pasted__window21Shape.iog" "PxrSurface8SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window19|pasted__window18|pasted__window18Shape.iog" "PxrSurface8SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|left|pasted__window18|pasted__window18Shape.iog" "PxrSurface8SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|walls|window19|pasted__window17|pasted__window17Shape.iog" "PxrSurface8SG.dsm"
+connectAttr "|medBuilding1|medBuilding|walls|left|pasted__window17|pasted__window17Shape.iog" "PxrSurface8SG.dsm"
 		 -na;
 connectAttr "PxrSurface8SG.msg" "materialInfo17.sg";
 connectAttr "lambert18.msg" "materialInfo17.m";
 connectAttr "b1panes_right.oc" "PxrSurface9SG.rman__surface";
 connectAttr "lambert19.oc" "PxrSurface9SG.ss";
-connectAttr "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane17|pasted__pane17Shape.iog" "PxrSurface9SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane17|pasted__pane17Shape.iog" "PxrSurface9SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane21|pasted__pane21Shape.iog" "PxrSurface9SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane21|pasted__pane21Shape.iog" "PxrSurface9SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane22|pasted__pane22Shape.iog" "PxrSurface9SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane22|pasted__pane22Shape.iog" "PxrSurface9SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane26|pasted__pane26Shape.iog" "PxrSurface9SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane26|pasted__pane26Shape.iog" "PxrSurface9SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane27|pasted__pane27Shape.iog" "PxrSurface9SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane27|pasted__pane27Shape.iog" "PxrSurface9SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane28|pasted__pane28Shape.iog" "PxrSurface9SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane28|pasted__pane28Shape.iog" "PxrSurface9SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane19|pasted__pane19Shape.iog" "PxrSurface9SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane19|pasted__pane19Shape.iog" "PxrSurface9SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side1|wall|pane|pasted__pane18|pasted__pane18Shape.iog" "PxrSurface9SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|right|pane|pasted__pane18|pasted__pane18Shape.iog" "PxrSurface9SG.dsm"
 		 -na;
 connectAttr "PxrSurface9SG.msg" "materialInfo18.sg";
 connectAttr "lambert19.msg" "materialInfo18.m";
 connectAttr "b1panes_left.oc" "PxrSurface10SG.rman__surface";
 connectAttr "lambert20.oc" "PxrSurface10SG.ss";
-connectAttr "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane18|pasted__pane18Shape.iog" "PxrSurface10SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|left|pasted__pane18|pasted__pane18Shape.iog" "PxrSurface10SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane19|pasted__pane19Shape.iog" "PxrSurface10SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|left|pasted__pane19|pasted__pane19Shape.iog" "PxrSurface10SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane28|pasted__pane28Shape.iog" "PxrSurface10SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|left|pasted__pane28|pasted__pane28Shape.iog" "PxrSurface10SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane27|pasted__pane27Shape.iog" "PxrSurface10SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|left|pasted__pane27|pasted__pane27Shape.iog" "PxrSurface10SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane26|pasted__pane26Shape.iog" "PxrSurface10SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|left|pasted__pane26|pasted__pane26Shape.iog" "PxrSurface10SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane22|pasted__pane22Shape.iog" "PxrSurface10SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|left|pasted__pane22|pasted__pane22Shape.iog" "PxrSurface10SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane21|pasted__pane21Shape.iog" "PxrSurface10SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|left|pasted__pane21|pasted__pane21Shape.iog" "PxrSurface10SG.dsm"
 		 -na;
-connectAttr "|medBuilding1|medBuilding|windowpanes|side2|wall|panes|pasted__pane17|pasted__pane17Shape.iog" "PxrSurface10SG.dsm"
+connectAttr "|medBuilding1|medBuilding|windowpanes|left|pasted__pane17|pasted__pane17Shape.iog" "PxrSurface10SG.dsm"
 		 -na;
 connectAttr "PxrSurface10SG.msg" "materialInfo19.sg";
 connectAttr "lambert20.msg" "materialInfo19.m";
