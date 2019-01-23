@@ -1,6 +1,6 @@
-//Maya ASCII 2018 scene
+//Maya ASCII 2018ff09 scene
 //Name: jackie_phys_cell.ma
-//Last modified: Wed, Dec 19, 2018 02:34:26 PM
+//Last modified: Tue, Jan 22, 2019 10:31:48 PM
 //Codeset: 1252
 file -rdi 1 -ns "teeth_v1_latest" -rfn "Jackie_latest_teeth_v1_latestRN" -op
 		 "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma";
@@ -26,7 +26,8 @@ file -r -ns "Jacies_shoe_latest1" -dr 1 -rfn "Jackie_latest_Jacies_shoe_latestRN
 		 -typ "mayaAscii" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/Jacies_shoe_latest.ma";
 file -r -ns "jackieHair_latest" -dr 1 -rfn "Jackie_latest_jackieHair_latestRN" -op
 		 "v=0;" -typ "mayaAscii" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/jackieHair_latest.ma";
-requires maya "2018";
+requires maya "2018ff09";
+requires -nodeType "renderSetup" "renderSetup.py" "1.0";
 requires "stereoCamera" "10.0";
 requires -nodeType "PxrLayer" -nodeType "PxrNormalMap" -nodeType "PxrSurface" -nodeType "PxrDomeLight"
 		 -nodeType "rmanDisplayChannel" -nodeType "PxrInvert" -nodeType "PxrLayerMixer" -nodeType "PxrOSL"
@@ -37,20 +38,20 @@ currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2018";
 fileInfo "version" "2018";
-fileInfo "cutIdentifier" "201706261615-f9658c4cfc";
-fileInfo "osv" "Microsoft Windows 8 Home Premium Edition, 64-bit  (Build 9200)\n";
+fileInfo "cutIdentifier" "201811122215-49253d42f6";
+fileInfo "osv" "Microsoft Windows 8 Business Edition, 64-bit  (Build 9200)\n";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "432C3F67-4689-FFDC-EF80-898233CEBFA1";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 3.8313292139716681 17.961698184698413 35.767952523305638 ;
-	setAttr ".r" -type "double3" -18.938352729602883 9.8000000000004377 2.017283075337564e-16 ;
+	setAttr ".t" -type "double3" 1.7996875510063144 19.12859718417949 57.52138808823485 ;
+	setAttr ".r" -type "double3" -11.738352729602941 1.4000000000004125 4.9711006141188245e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "71E7638E-4B80-C29C-9B5E-B5B161CCB94D";
 	setAttr -k off ".v" no;
 	setAttr ".ovr" 1.3;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 32.626502247335452;
+	setAttr ".coi" 53.19745498461311;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -76,13 +77,13 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "47293974-48A5-655A-1DAF-239C24A92C8E";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0 0 1000.1 ;
+	setAttr ".t" -type "double3" 1.286863270777479 10.455764075067023 1000.1 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "B28092A9-48E9-9FC7-974F-C08F77811E96";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 30;
+	setAttr ".ow" 49.926066856045892;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
@@ -104,20 +105,6 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".man" -type "string" "side_mask";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
-createNode transform -n "turntable_persp1";
-	rename -uid "808A5364-4044-D009-689E-A3BFDC442250";
-	setAttr ".t" -type "double3" 8.4620854099484752 15.527557066567422 41.230573878032523 ;
-	setAttr ".r" -type "double3" -8.1383527296044704 34.60000000000079 1.4489798423952461e-15 ;
-createNode camera -n "turntable_perspShape1" -p "turntable_persp1";
-	rename -uid "87504B94-4C4C-F7E4-5386-78A3585CC2AB";
-	setAttr -k off ".v";
-	setAttr ".rnd" no;
-	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 32.882829193039697;
-	setAttr ".imn" -type "string" "persp1";
-	setAttr ".den" -type "string" "persp1_depth";
-	setAttr ".man" -type "string" "persp1_mask";
-	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -n "turntable_Bkgrnd";
 	rename -uid "382F899E-4683-16E2-72B7-8FB4A98E8091";
 	setAttr ".t" -type "double3" 0 0 1.939977125810854 ;
@@ -163,16 +150,21 @@ createNode mesh -n "turntable_BkgrndShape" -p "turntable_Bkgrnd";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".rman_subdivScheme" 1;
-createNode transform -n "turntable_pCylinder1";
+createNode transform -n "turntable_TurnTable";
+	rename -uid "F49B2DCC-4DD2-71F4-6BDA-3E9F79350F4E";
+createNode nurbsCurve -n "turntable_TurnTableShape" -p "turntable_TurnTable";
+	rename -uid "9D8C6606-4ED6-A260-1E4F-64B6610521E3";
+	setAttr -k off ".v";
+	setAttr ".tw" yes;
+createNode transform -n "turntable_pCylinder1" -p "turntable_TurnTable";
 	rename -uid "39D9E925-43E1-5EDF-7C67-369FFB0183FF";
-	setAttr ".t" -type "double3" -0.28656119313322176 1.5488361688340642 8.5339572255450022 ;
-	setAttr ".r" -type "double3" 0.22063118579250987 1.815852210764245 -0.13143602995314269 ;
-	setAttr ".s" -type "double3" 0.52852152724671597 0.64612987410831468 0.52852307937224607 ;
-	setAttr ".sh" -type "double3" -0.00075872918786907607 4.4490787166603822e-06 -0.0019404047535587251 ;
-	setAttr ".rp" -type "double3" -7.2684816350981278e-05 0.13125945190731197 9.038305103816457 ;
-	setAttr ".rpt" -type "double3" 0.28663387794957307 -0.035462172094225121 -0.0040982342322121558 ;
+	setAttr ".t" -type "double3" -0.049390980954209587 0.012470656354325815 -0.94063205455108467 ;
+	setAttr ".r" -type "double3" 0.26917833047429468 3.0048059391973365 -0.1076055066721326 ;
+	setAttr ".s" -type "double3" 0.055077169359903824 0.055077169359903838 0.055077169359903824 ;
+	setAttr ".rp" -type "double3" -7.0615367108883963e-22 0.012683736111638883 0.94187799995536203 ;
+	setAttr ".rpt" -type "double3" 0.049390983503515042 -0.0045178571727110583 -0.0012458225707181214 ;
 	setAttr ".sp" -type "double3" 0 0.23029026834615562 17.101060401282204 ;
-	setAttr ".spt" -type "double3" -7.2684816350981332e-05 -0.099030816438843594 -8.0627552974657544 ;
+	setAttr ".spt" -type "double3" 0 -0.21760653223451673 -16.159182401326841 ;
 createNode mesh -n "turntable_pCylinderShape1" -p "turntable_pCylinder1";
 	rename -uid "4DE44B50-40E5-74C1-FEFA-F480C4338997";
 	setAttr -k off ".v";
@@ -430,145 +422,11 @@ createNode mesh -n "turntable_pCylinderShape1" -p "turntable_pCylinder1";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 3;
 	setAttr ".dsm" 2;
-createNode transform -n "turntable_TurnTable";
-	rename -uid "F49B2DCC-4DD2-71F4-6BDA-3E9F79350F4E";
-createNode nurbsCurve -n "turntable_TurnTableShape" -p "turntable_TurnTable";
-	rename -uid "9D8C6606-4ED6-A260-1E4F-64B6610521E3";
-	setAttr -k off ".v";
-	setAttr ".tw" yes;
-createNode transform -n "turntable_FillLight";
-	rename -uid "D5203D3A-452B-C7A4-7AF4-9082BC8C7A35";
-createNode PxrDomeLight -n "turntable_FillLightShape" -p "turntable_FillLight";
-	rename -uid "F7B4DA56-4B32-7319-331E-C18984FAD4BD";
-	setAttr ".cch" no;
-	setAttr ".fzn" no;
-	setAttr ".ihi" 2;
-	setAttr ".nds" 0;
-	setAttr ".isc" no;
-	setAttr ".bbx" no;
-	setAttr ".icn" -type "string" "";
-	setAttr ".vwm" 2;
-	setAttr ".tpv" 0;
-	setAttr ".uit" 0;
-	setAttr -k off ".v" yes;
-	setAttr ".io" no;
-	setAttr ".tmp" no;
-	setAttr ".gh" no;
-	setAttr ".obcc" -type "float3" 0 0 0 ;
-	setAttr ".wfcc" -type "float3" 0 0 0 ;
-	setAttr ".uoc" 0;
-	setAttr ".oc" 0;
-	setAttr ".ovdt" 0;
-	setAttr ".ovlod" 0;
-	setAttr ".ovs" yes;
-	setAttr ".ovt" yes;
-	setAttr ".ovp" yes;
-	setAttr ".ove" no;
-	setAttr ".ovv" yes;
-	setAttr ".hpb" no;
-	setAttr ".ovrgbf" no;
-	setAttr ".ovc" 0;
-	setAttr ".ovrgb" -type "float3" 0 0 0 ;
-	setAttr ".lodv" yes;
-	setAttr ".sech" yes;
-	setAttr ".rlid" 0;
-	setAttr ".rndr" yes;
-	setAttr ".lovc" 0;
-	setAttr ".gc" 0;
-	setAttr ".gpr" 3;
-	setAttr ".gps" 3;
-	setAttr ".gss" 1;
-	setAttr ".gap" 1;
-	setAttr ".gcp" -type "float3" 0.447 1 1 ;
-	setAttr ".gla" 1;
-	setAttr ".gac" -type "float3" 0.87800002 0.67799997 0.66299999 ;
-	setAttr ".grs" 0;
-	setAttr ".gre" 100;
-	setAttr ".rt" 0;
-	setAttr ".rv" no;
-	setAttr ".vf" 1;
-	setAttr ".hfm" 1;
-	setAttr ".mb" yes;
-	setAttr ".vir" no;
-	setAttr ".vif" no;
-	setAttr ".csh" yes;
-	setAttr ".rcsh" yes;
-	setAttr ".asbg" no;
-	setAttr ".vbo" no;
-	setAttr ".mvs" 1;
-	setAttr ".gao" no;
-	setAttr ".gal" 1;
-	setAttr ".sso" no;
-	setAttr ".ssa" 1;
-	setAttr ".msa" 1;
-	setAttr ".vso" no;
-	setAttr ".vss" 1;
-	setAttr ".dej" no;
-	setAttr ".iss" no;
-	setAttr ".vis" yes;
-	setAttr ".tw" no;
-	setAttr ".rtw" yes;
-	setAttr ".pv" -type "double2" 0 0 ;
-	setAttr ".di" no;
-	setAttr ".dcol" no;
-	setAttr ".dcc" -type "string" "color";
-	setAttr ".ih" no;
-	setAttr ".ds" yes;
-	setAttr ".op" no;
-	setAttr ".hot" no;
-	setAttr ".smo" yes;
-	setAttr ".bbs" -type "float3" 1.5 1.5 1.5 ;
-	setAttr ".fbda" yes;
-	setAttr ".dsr" 6;
-	setAttr ".xsr" 5;
-	setAttr ".fth" 0;
-	setAttr ".nat" 30;
-	setAttr ".dhe" no;
-	setAttr ".covm[0]"  0 1 1;
-	setAttr ".cdvm[0]"  0 1 1;
-	setAttr ".intensity" 0.5;
-	setAttr ".exposure" 0.40000000596046448;
-	setAttr ".lightColor" -type "float3" 0.54000002 0.39930001 0.31760001 ;
-	setAttr ".lightColorMap" -type "string" "";
-	setAttr ".colorMapGamma" -type "float3" 1 1 1 ;
-	setAttr ".colorMapSaturation" 1;
-	setAttr ".enableTemperature" no;
-	setAttr ".temperature" 6500;
-	setAttr ".specular" 1;
-	setAttr ".diffuse" 1;
-	setAttr ".enableShadows" no;
-	setAttr ".shadowColor" -type "float3" 0 0 0 ;
-	setAttr ".shadowDistance" -1;
-	setAttr ".shadowFalloff" -1;
-	setAttr ".shadowFalloffGamma" 1;
-	setAttr ".shadowSubset" -type "string" "";
-	setAttr ".shadowExcludeSubset" -type "string" "";
-	setAttr ".traceLightPaths" no;
-	setAttr ".thinShadow" yes;
-	setAttr ".visibleInRefractionPath" no;
-	setAttr ".cheapCaustics" no;
-	setAttr ".cheapCausticsExcludeGroup" -type "string" "";
-	setAttr ".fixedSampleCount" 0;
-	setAttr ".lightGroup" -type "string" "";
-	setAttr ".importanceMultiplier" 1;
-	setAttr ".rman__lightfilters[0]" -type "float3"  0 0 0;
-	setAttr ".cl" -type "float3" 0.54000002 0.39930001 0.31760001 ;
-	setAttr ".ed" yes;
-	setAttr ".sn" yes;
-	setAttr ".lls" 1;
-	setAttr ".de" 2;
-	setAttr ".urs" yes;
-	setAttr ".col" 5;
-	setAttr ".hio" no;
-	setAttr ".uocol" no;
-	setAttr ".oclr" -type "float3" 0 0 0 ;
-	setAttr ".locatorScale" 2500;
-	setAttr ".rman_textureResolution" 1024;
-	setAttr ".rman__portals[0]" -type "string" "";
-createNode transform -n "Jackie_latest_jackieBody";
+createNode transform -n "Jackie_latest_jackieBody" -p "turntable_TurnTable";
 	rename -uid "BC77FC5E-4CD5-DBC2-C8FE-829B902FE7E9";
-	setAttr ".t" -type "double3" 0 2.5419090047661426 18.330934416564837 ;
-	setAttr ".s" -type "double3" 4.6862001504891193 4.6862001504891193 4.6862001504891193 ;
+	setAttr ".t" -type "double3" 0.0016493586641461513 0.097121416496799895 0.079471288384318273 ;
+	setAttr ".r" -type "double3" 0 1.1889542432486462 0 ;
+	setAttr ".s" -type "double3" 0.48834881938086755 0.39945751264694962 0.48834881938086755 ;
 createNode nurbsCurve -n "Jackie_latest_jackieBodyShape" -p "Jackie_latest_jackieBody";
 	rename -uid "5B4BF1B1-4645-EA72-A3D8-6C9C184F8BC2";
 	setAttr -k off ".v";
@@ -17813,6 +17671,135 @@ createNode mesh -n "Jackie_latest_jackierEyeRightShape" -p "Jackie_latest_jackie
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "turntable_FillLight";
+	rename -uid "D5203D3A-452B-C7A4-7AF4-9082BC8C7A35";
+createNode PxrDomeLight -n "turntable_FillLightShape" -p "turntable_FillLight";
+	rename -uid "F7B4DA56-4B32-7319-331E-C18984FAD4BD";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".isc" no;
+	setAttr ".bbx" no;
+	setAttr ".icn" -type "string" "";
+	setAttr ".vwm" 2;
+	setAttr ".tpv" 0;
+	setAttr ".uit" 0;
+	setAttr -k off ".v" yes;
+	setAttr ".io" no;
+	setAttr ".tmp" no;
+	setAttr ".gh" no;
+	setAttr ".obcc" -type "float3" 0 0 0 ;
+	setAttr ".wfcc" -type "float3" 0 0 0 ;
+	setAttr ".uoc" 0;
+	setAttr ".oc" 0;
+	setAttr ".ovdt" 0;
+	setAttr ".ovlod" 0;
+	setAttr ".ovs" yes;
+	setAttr ".ovt" yes;
+	setAttr ".ovp" yes;
+	setAttr ".ove" no;
+	setAttr ".ovv" yes;
+	setAttr ".hpb" no;
+	setAttr ".ovrgbf" no;
+	setAttr ".ovc" 0;
+	setAttr ".ovrgb" -type "float3" 0 0 0 ;
+	setAttr ".lodv" yes;
+	setAttr ".sech" yes;
+	setAttr ".rlid" 0;
+	setAttr ".rndr" yes;
+	setAttr ".lovc" 0;
+	setAttr ".gc" 0;
+	setAttr ".gpr" 3;
+	setAttr ".gps" 3;
+	setAttr ".gss" 1;
+	setAttr ".gap" 1;
+	setAttr ".gcp" -type "float3" 0.447 1 1 ;
+	setAttr ".gla" 1;
+	setAttr ".gac" -type "float3" 0.87800002 0.67799997 0.66299999 ;
+	setAttr ".grs" 0;
+	setAttr ".gre" 100;
+	setAttr ".rt" 0;
+	setAttr ".rv" no;
+	setAttr ".vf" 1;
+	setAttr ".hfm" 1;
+	setAttr ".mb" yes;
+	setAttr ".vir" no;
+	setAttr ".vif" no;
+	setAttr ".csh" yes;
+	setAttr ".rcsh" yes;
+	setAttr ".asbg" no;
+	setAttr ".vbo" no;
+	setAttr ".mvs" 1;
+	setAttr ".gao" no;
+	setAttr ".gal" 1;
+	setAttr ".sso" no;
+	setAttr ".ssa" 1;
+	setAttr ".msa" 1;
+	setAttr ".vso" no;
+	setAttr ".vss" 1;
+	setAttr ".dej" no;
+	setAttr ".iss" no;
+	setAttr ".vis" yes;
+	setAttr ".tw" no;
+	setAttr ".rtw" yes;
+	setAttr ".pv" -type "double2" 0 0 ;
+	setAttr ".di" no;
+	setAttr ".dcol" no;
+	setAttr ".dcc" -type "string" "color";
+	setAttr ".ih" no;
+	setAttr ".ds" yes;
+	setAttr ".op" no;
+	setAttr ".hot" no;
+	setAttr ".smo" yes;
+	setAttr ".bbs" -type "float3" 1.5 1.5 1.5 ;
+	setAttr ".fbda" yes;
+	setAttr ".dsr" 6;
+	setAttr ".xsr" 5;
+	setAttr ".fth" 0;
+	setAttr ".nat" 30;
+	setAttr ".dhe" no;
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".intensity" 0.5;
+	setAttr ".exposure" 0.40000000596046448;
+	setAttr ".lightColor" -type "float3" 0.54000002 0.39930001 0.31760001 ;
+	setAttr ".lightColorMap" -type "string" "";
+	setAttr ".colorMapGamma" -type "float3" 1 1 1 ;
+	setAttr ".colorMapSaturation" 1;
+	setAttr ".enableTemperature" no;
+	setAttr ".temperature" 6500;
+	setAttr ".specular" 1;
+	setAttr ".diffuse" 1;
+	setAttr ".enableShadows" no;
+	setAttr ".shadowColor" -type "float3" 0 0 0 ;
+	setAttr ".shadowDistance" -1;
+	setAttr ".shadowFalloff" -1;
+	setAttr ".shadowFalloffGamma" 1;
+	setAttr ".shadowSubset" -type "string" "";
+	setAttr ".shadowExcludeSubset" -type "string" "";
+	setAttr ".traceLightPaths" no;
+	setAttr ".thinShadow" yes;
+	setAttr ".visibleInRefractionPath" no;
+	setAttr ".cheapCaustics" no;
+	setAttr ".cheapCausticsExcludeGroup" -type "string" "";
+	setAttr ".fixedSampleCount" 0;
+	setAttr ".lightGroup" -type "string" "";
+	setAttr ".importanceMultiplier" 1;
+	setAttr ".rman__lightfilters[0]" -type "float3"  0 0 0;
+	setAttr ".cl" -type "float3" 0.54000002 0.39930001 0.31760001 ;
+	setAttr ".ed" yes;
+	setAttr ".sn" yes;
+	setAttr ".lls" 1;
+	setAttr ".de" 2;
+	setAttr ".urs" yes;
+	setAttr ".col" 5;
+	setAttr ".hio" no;
+	setAttr ".uocol" no;
+	setAttr ".oclr" -type "float3" 0 0 0 ;
+	setAttr ".locatorScale" 2500;
+	setAttr ".rman_textureResolution" 1024;
+	setAttr ".rman__portals[0]" -type "string" "";
 createNode transform -n "RimLight";
 	rename -uid "D12EC332-42CE-071F-FB08-049547A06231";
 	setAttr ".t" -type "double3" -10.282072305019952 21.266667809484517 11.782810082572691 ;
@@ -17956,23 +17943,6 @@ createNode PxrDistantLight -n "KeyShape" -p "Key";
 	setAttr ".uocol" no;
 	setAttr ".oclr" -type "float3" 0 0 0 ;
 	setAttr ".locatorScale" 10;
-createNode lightLinker -s -n "lightLinker1";
-	rename -uid "F637AA58-4B01-4730-39D3-1580C781C5F5";
-	setAttr -s 60 ".lnk";
-	setAttr -s 60 ".slnk";
-createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "0C4564DC-43C7-1CD0-D2FE-088DC0CBEA14";
-createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "7A454FF9-4ABE-A8E0-1671-39A8459C8193";
-createNode displayLayerManager -n "layerManager";
-	rename -uid "0A611E92-4C96-6353-085E-38B71F678EC9";
-createNode displayLayer -n "defaultLayer";
-	rename -uid "53847653-4265-F4D1-FB4F-D4B8BE3AC8BA";
-createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "BB8A5DF5-45DB-1BB9-3F91-9699F41112A0";
-createNode renderLayer -n "defaultRenderLayer";
-	rename -uid "36268B19-4953-501F-6E5E-D192A6C83CCB";
-	setAttr ".g" yes;
 createNode rmanGlobals -s -n "rmanGlobals";
 	rename -uid "50B25647-442D-AF78-4315-1F916B45644E";
 	setAttr ".cch" no;
@@ -18000,7 +17970,6 @@ createNode rmanGlobals -s -n "rmanGlobals";
 	setAttr ".displayFilters[0]" -type "string" "";
 	setAttr ".sampleFilters[0]" -type "string" "";
 	setAttr ".outputAllShaders" no;
-	setAttr ".nestedInstancing" no;
 	setAttr ".reentrantProcedurals" yes;
 	setAttr ".outputShadowAOV" 0;
 	setAttr ".enableImagePlaneFilter" yes;
@@ -18079,7 +18048,84 @@ createNode rmanGlobals -s -n "rmanGlobals";
 	setAttr ".UserTokens[9].userTokenKeys" -type "string" "";
 	setAttr ".UserTokens[9].userTokenValues" -type "string" "";
 	setAttr ".rlfData" -type "string" "init";
+	setAttr ".jobid" -type "string" "";
+createNode rmanDisplay -s -n "rmanDefaultDisplay";
+	rename -uid "1AB7587D-4280-FF76-7068-918485C1EB55";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".enable" yes;
+	setAttr ".denoise" no;
+	setAttr ".frameMode" 0;
+	setAttr ".remapBreakPoint" 0;
+	setAttr ".remapMaxValue" 0;
+	setAttr ".remapSmoothness" 0;
+	setAttr -s 3 ".displayChannels";
+	setAttr -l on ".name" -type "string" "beauty";
 createNode d_openexr -n "d_openexr";
+	rename -uid "F958C8FF-43DA-4AB2-85F0-B69C6B3E14BB";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".asrgba" yes;
+	setAttr ".storage" -type "string" "scanline";
+	setAttr ".exrpixeltype" -type "string" "half";
+	setAttr ".compression" -type "string" "zips";
+	setAttr ".compressionlevel" 45;
+createNode rmanDisplayChannel -n "Ci";
+	rename -uid "91197F04-4687-721B-0E98-8EA492DA3C76";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".enable" yes;
+	setAttr ".channelType" -type "string" "color";
+	setAttr ".channelSource" -type "string" "Ci";
+	setAttr ".lpeLightGroup" -type "string" "";
+	setAttr ".filter" -type "string" "inherit from display";
+	setAttr ".filterwidth" -type "float2" -1 -1 ;
+	setAttr ".statistics" -type "string" "";
+	setAttr ".remapBreakPoint" 0;
+	setAttr ".remapMaxValue" 0;
+	setAttr ".remapSmoothness" 0;
+	setAttr -l on ".name" -type "string" "Ci";
+createNode rmanDisplayChannel -n "a";
+	rename -uid "DB1D9DE0-4220-C305-D3F5-C3B83E222D30";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".enable" yes;
+	setAttr ".channelType" -type "string" "float";
+	setAttr ".channelSource" -type "string" "a";
+	setAttr ".lpeLightGroup" -type "string" "";
+	setAttr ".filter" -type "string" "inherit from display";
+	setAttr ".filterwidth" -type "float2" -1 -1 ;
+	setAttr ".statistics" -type "string" "";
+	setAttr ".remapBreakPoint" 0;
+	setAttr ".remapMaxValue" 0;
+	setAttr ".remapSmoothness" 0;
+	setAttr -l on ".name" -type "string" "a";
+createNode lightLinker -s -n "lightLinker1";
+	rename -uid "0556B825-4148-7E77-F280-18B7571630B2";
+	setAttr -s 60 ".lnk";
+	setAttr -s 60 ".slnk";
+createNode shapeEditorManager -n "shapeEditorManager";
+	rename -uid "32911E51-4543-0A50-E6DA-8D9F5D3EDBF8";
+createNode poseInterpolatorManager -n "poseInterpolatorManager";
+	rename -uid "15604E1E-436A-BD02-63AD-AEA022E41C79";
+createNode displayLayerManager -n "layerManager";
+	rename -uid "0B3DB8CC-4BBC-0A3A-DC28-A7812CCFA243";
+createNode displayLayer -n "defaultLayer";
+	rename -uid "53847653-4265-F4D1-FB4F-D4B8BE3AC8BA";
+createNode renderLayerManager -n "renderLayerManager";
+	rename -uid "DB28EAAA-487E-2426-C967-1FB98CB8D050";
+createNode renderLayer -n "defaultRenderLayer";
+	rename -uid "36268B19-4953-501F-6E5E-D192A6C83CCB";
+	setAttr ".g" yes;
+createNode d_openexr -n "d_openexr1";
 	rename -uid "91FA31C8-4FF5-F7F5-53B4-DC9573D79154";
 	setAttr ".cch" no;
 	setAttr ".fzn" no;
@@ -18322,47 +18368,49 @@ createNode lambert -n "turntable_lambert2";
 createNode script -n "turntable_uiConfigurationScriptNode";
 	rename -uid "487B24B9-4831-F2AA-9B0C-AD9DB57FDC15";
 	setAttr ".b" -type "string" (
-		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n"
-		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
-		+ "            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n"
-		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
+		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 556\n            -height 324\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
-		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 556\n            -height 324\n"
+		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 768\n            -height 696\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n"
-		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 0\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
-		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
-		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n"
-		+ "            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n"
-		+ "                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n"
-		+ "                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n"
-		+ "                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n"
-		+ "                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n"
-		+ "                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n"
-		+ "                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n"
-		+ "                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n"
-		+ "                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 556\n            -height 324\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
+		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
+		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1580\n            -height 693\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
+		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
+		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n"
+		+ "            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n"
+		+ "            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n"
+		+ "                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n"
+		+ "                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -autoFitTime 0\n                -snapTime \"integer\" \n"
+		+ "                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 0\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 0\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n"
+		+ "                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n"
+		+ "                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n"
+		+ "                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n"
+		+ "\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n"
+		+ "                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
+		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n"
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n"
-		+ "                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n"
-		+ "                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n"
-		+ "                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n"
-		+ "                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n"
-		+ "                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 768\\n    -height 696\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 768\\n    -height 696\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n"
+		+ "                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n"
+		+ "                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n"
+		+ "                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n"
+		+ "\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1580\\n    -height 693\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1580\\n    -height 693\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "turntable_sceneConfigurationScriptNode";
@@ -19974,7 +20022,7 @@ createNode PxrNormalMap -n "turntable_Jackie_latest_jackieSkinNormal";
 	setAttr ".nds" 0;
 	setAttr ".bumpScale" 1;
 	setAttr ".inputRGB" -type "float3" 0 0 0 ;
-	setAttr ".filename" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackie_normalmap.tif";
+	setAttr ".filename" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackie_normalmap.tif";
 	setAttr ".bumpOverlay" -type "float3" 0 0 0 ;
 	setAttr ".invertBump" no;
 	setAttr ".orientation" 2;
@@ -19996,14 +20044,14 @@ createNode PxrNormalMap -n "turntable_Jackie_latest_jackieSkinNormal";
 	setAttr ".disable" no;
 createNode file -n "turntable_Jackie_latest_file1";
 	rename -uid "A31D8351-4926-716B-B2DD-6FB58BAF08FA";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_DiffuseColor.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_Jackie_latest_place2dTexture1";
 	rename -uid "4F357F2E-4388-8268-AC6B-858DE5CB42AE";
 createNode file -n "turntable_Jackie_latest_file2";
 	rename -uid "715978D5-4837-FD05-CD63-6193012DA613";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_Roughness.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_Roughness.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_Jackie_latest_place2dTexture2";
 	rename -uid "968451DA-4DA8-664C-608A-AD8945ED5DD7";
@@ -20164,14 +20212,14 @@ createNode lambert -n "turntable_Jackie_latest_lambert3";
 	rename -uid "5AAD371D-4FB4-ED9D-6E8C-468561B3D733";
 createNode file -n "turntable_Jackie_latest_jackieEyeDiffuse";
 	rename -uid "B40B7117-47D2-6BD5-7291-CF9978123AF3";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_DiffuseColor.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_Jackie_latest_place2dTexture3";
 	rename -uid "3FE8A5A2-4DD3-862C-3A28-0B89B867F195";
 createNode file -n "turntable_Jackie_latest_jackieEyeRefBmp";
 	rename -uid "5F5A630E-4FD7-5C0A-9732-BB80A11F9AD9";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_RoughRefBump.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_RoughRefBump.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_Jackie_latest_place2dTexture4";
@@ -20702,7 +20750,7 @@ createNode renderLayerManager -n "renderLayerManager1";
 createNode renderLayer -n "defaultRenderLayer1";
 	rename -uid "855A5CE4-4D01-9F84-2112-2583C376DB8C";
 	setAttr ".g" yes;
-createNode d_openexr -n "d_openexr1";
+createNode d_openexr -n "d_openexr2";
 	rename -uid "49C9CED2-4EBA-3AFA-483E-B590159E35C8";
 	setAttr ".cch" no;
 	setAttr ".fzn" no;
@@ -21119,7 +21167,7 @@ createNode PxrNormalMap -n "turntable_Jackie_latest_jackieSkinNormal1";
 	setAttr ".nds" 0;
 	setAttr ".bumpScale" 1;
 	setAttr ".inputRGB" -type "float3" 0 0 0 ;
-	setAttr ".filename" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackie_normalmap.tif";
+	setAttr ".filename" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackie_normalmap.tif";
 	setAttr ".bumpOverlay" -type "float3" 0 0 0 ;
 	setAttr ".invertBump" no;
 	setAttr ".orientation" 2;
@@ -21141,14 +21189,14 @@ createNode PxrNormalMap -n "turntable_Jackie_latest_jackieSkinNormal1";
 	setAttr ".disable" no;
 createNode file -n "turntable_Jackie_latest_file3";
 	rename -uid "4C9AF4F9-41B6-F3C9-8626-F4A508EE9171";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_DiffuseColor.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_Jackie_latest_place2dTexture5";
 	rename -uid "97324BD6-4DD7-1A80-F419-F5BACBD93ED0";
 createNode file -n "turntable_Jackie_latest_file4";
 	rename -uid "7A223EDC-4156-5C3D-97DF-BC9FD47574D1";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_Roughness.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_Roughness.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_Jackie_latest_place2dTexture6";
 	rename -uid "F7F66F46-4554-79F7-C818-5B928AFAF883";
@@ -21309,14 +21357,14 @@ createNode lambert -n "turntable_Jackie_latest_lambert5";
 	rename -uid "4CB62D52-4F20-DEDE-93F4-5295D0EC2E0A";
 createNode file -n "turntable_Jackie_latest_jackieEyeDiffuse1";
 	rename -uid "C32425FC-45E8-941E-BFBE-BABF6CE1C5C9";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_DiffuseColor.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_Jackie_latest_place2dTexture7";
 	rename -uid "361B7B43-43A1-2BDD-3493-FAAFFDEF7D04";
 createNode file -n "turntable_Jackie_latest_jackieEyeRefBmp1";
 	rename -uid "68F4C000-4BC8-4963-83C3-2EB47DCA4440";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_RoughRefBump.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_RoughRefBump.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_Jackie_latest_place2dTexture8";
@@ -22260,14 +22308,14 @@ createNode PxrSurface -n "turntable_jackieHair_latest_bangs1";
 	setAttr ".utilityPattern[0]"  0;
 createNode file -n "turntable_jackieHair_latest_bangsDiffuse";
 	rename -uid "41F33E02-4DC4-283F-3021-6CB411996258";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_DiffuseColor.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture1";
 	rename -uid "B6508109-4579-2224-6CB3-A888E108D66F";
 createNode file -n "turntable_jackieHair_latest_bangsSpecular";
 	rename -uid "2EB601A5-47C6-3415-7D51-5A9E15151DB4";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Specular.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Specular.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture2";
@@ -22280,7 +22328,7 @@ createNode PxrNormalMap -n "turntable_jackieHair_latest_bangsNormal";
 	setAttr ".nds" 0;
 	setAttr ".bumpScale" 1;
 	setAttr ".inputRGB" -type "float3" 0 0 0 ;
-	setAttr ".filename" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Normal.png";
+	setAttr ".filename" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Normal.png";
 	setAttr ".bumpOverlay" -type "float3" 0 0 0 ;
 	setAttr ".invertBump" no;
 	setAttr ".orientation" 2;
@@ -22303,41 +22351,41 @@ createNode PxrNormalMap -n "turntable_jackieHair_latest_bangsNormal";
 createNode file -n "turntable_jackieHair_latest_bangsBigone";
 	rename -uid "C30A0730-43E8-9253-89DF-59BB5F30E625";
 	setAttr ".ail" yes;
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_RoughRefBump.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_RoughRefBump.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture3";
 	rename -uid "3CC9E8AF-4922-4428-392C-748ABA559C00";
 createNode file -n "turntable_jackieHair_latest_file1";
 	rename -uid "EE119A39-44B9-F292-4CFB-F4823A6181F4";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_DiffuseColor.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture4";
 	rename -uid "56CE2789-4C0E-9E89-AB67-61B271963E5F";
 createNode file -n "turntable_jackieHair_latest_file2";
 	rename -uid "EAF4BFF0-4A6D-9CCA-140B-139A6541C153";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Transparency_fixed.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Transparency_fixed.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture5";
 	rename -uid "CBD56E32-4BDD-D8C3-7EB8-05B0036E6DD3";
 createNode file -n "turntable_jackieHair_latest_hairtop_diffuse";
 	rename -uid "EB3645F9-4BCF-67E0-51B0-AEACAF3E9165";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_DiffuseColor.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture6";
 	rename -uid "AD875EE9-4488-27CB-1DAC-2A800BD736AD";
 createNode file -n "turntable_jackieHair_latest_hairTop_specular";
 	rename -uid "12C6D105-4CB1-D769-F8D6-7CAA40F40503";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_Specular.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_Specular.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture7";
 	rename -uid "C9E6638D-434A-6D6C-0D77-F9B05B24769D";
 createNode file -n "turntable_jackieHair_latest_hairTop_bigone";
 	rename -uid "71C81C75-4116-94A5-97B6-13B0A0E4F006";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_RoughRefBump.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_RoughRefBump.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture8";
@@ -22350,7 +22398,7 @@ createNode PxrNormalMap -n "turntable_jackieHair_latest_hairTop_normal";
 	setAttr ".nds" 0;
 	setAttr ".bumpScale" 1;
 	setAttr ".inputRGB" -type "float3" 0 0 0 ;
-	setAttr ".filename" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_Normal.png";
+	setAttr ".filename" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_Normal.png";
 	setAttr ".bumpOverlay" -type "float3" 0 0 0 ;
 	setAttr ".invertBump" no;
 	setAttr ".orientation" 2;
@@ -22379,62 +22427,62 @@ createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture9";
 	rename -uid "EA79AC05-4E0E-6529-58CF-5AB29CC51AF6";
 createNode file -n "turntable_jackieHair_latest_hairMid_diffuse";
 	rename -uid "B019D4BD-42EE-FFB2-A77D-488FD226A5B4";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_DiffuseColor.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture10";
 	rename -uid "73193B9C-4FDE-1DED-221C-E8823FAC0585";
 createNode file -n "turntable_jackieHair_latest_hairMid_specular";
 	rename -uid "232DEACC-499E-3A43-6D83-F798C608B09E";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_Specular.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_Specular.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture11";
 	rename -uid "6D77E659-490D-BD05-EB77-419011F3B0B3";
 createNode file -n "turntable_jackieHair_latest_hairMid_bigone";
 	rename -uid "6180F7D6-4AA4-3A52-5665-DB9D11E09788";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_RoughRefBump.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_RoughRefBump.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture12";
 	rename -uid "93A9C47C-48D2-9DDE-65B2-5A969D6866B1";
 createNode file -n "turntable_jackieHair_latest_file4";
 	rename -uid "36732BC3-4A9E-A769-2D02-B595CBAD641B";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_DiffuseColor.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture13";
 	rename -uid "E8282741-47C1-4D77-BAB0-72B9639A7075";
 createNode file -n "turntable_jackieHair_latest_file5";
 	rename -uid "426B5790-4097-F54D-3F6B-4C9E6978F8A6";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_Specular.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_Specular.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture14";
 	rename -uid "18A049A8-4A0E-286E-D94E-AB9024B18E0D";
 createNode file -n "turntable_jackieHair_latest_file6";
 	rename -uid "C37D34C5-4D00-42A3-2871-87A0C8750791";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_RoughRefBump.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_RoughRefBump.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture15";
 	rename -uid "3E85FB39-4F4B-AAC0-4F1B-FCBA19E0F17D";
 createNode file -n "turntable_jackieHair_latest_file7";
 	rename -uid "01CCC8EE-4E0E-5E8C-8211-0A811E282133";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_Specular.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_Specular.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture16";
 	rename -uid "528FF45C-4736-FECA-0241-61B64EB83D52";
 createNode file -n "turntable_jackieHair_latest_file8";
 	rename -uid "13472385-42BE-5E10-62DC-FE87F5A06513";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_RoughRefBump.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_RoughRefBump.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture17";
 	rename -uid "C31D50D1-46B2-CC22-9A6B-AA8F78069949";
 createNode file -n "turntable_jackieHair_latest_file9";
 	rename -uid "EBB6BB8E-4005-B7ED-7C70-96961AC2B192";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_Transparency_Fixed.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_Transparency_Fixed.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture18";
@@ -22751,21 +22799,21 @@ createNode lambert -n "turntable_jackieHair_latest_lambert6";
 	rename -uid "5674126C-4C77-1503-9CB2-7DA875455197";
 createNode file -n "turntable_jackieHair_latest_file10";
 	rename -uid "E87AB73E-4824-4D50-ECE8-779488006581";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_DiffuseColor.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture19";
 	rename -uid "1345BE13-4947-6507-22E5-AAA8ED537D07";
 createNode file -n "turntable_jackieHair_latest_file11";
 	rename -uid "CEDCA827-4D5B-CFEB-15DC-E5B68E46D97D";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_Specular.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_Specular.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture20";
 	rename -uid "79E07A0B-4722-99ED-5C5D-25971662CA0C";
 createNode file -n "turntable_jackieHair_latest_file12";
 	rename -uid "CA89ED75-4008-74E3-68E6-19891470A00F";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_RoughRefBump.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_RoughRefBump.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "Raw";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture21";
@@ -22933,21 +22981,21 @@ createNode lambert -n "turntable_jackieHair_latest_lambert8";
 	rename -uid "59A8F060-41F3-1E74-A54A-B6902EDD424F";
 createNode file -n "turntable_jackieHair_latest_file13";
 	rename -uid "0CABAAC5-4F01-F7F9-E3D0-D6B2DD915682";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_DiffuseColor.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture22";
 	rename -uid "4D877D0A-45A0-6BAE-1179-7687D7461D0A";
 createNode file -n "turntable_jackieHair_latest_file14";
 	rename -uid "3F9E3AF8-4517-4333-7541-8D8DF9F31A6A";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_RoughRefBump.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_RoughRefBump.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "Raw";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture23";
 	rename -uid "60F98745-4F94-FD73-34DA-A6871D309177";
 createNode file -n "turntable_jackieHair_latest_file15";
 	rename -uid "F249AF6B-4021-63C6-F0C7-5599574A6083";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Specular.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Specular.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "turntable_jackieHair_latest_place2dTexture24";
@@ -24143,7 +24191,7 @@ createNode renderLayer -n "Jackie_latest_defaultRenderLayer";
 	setAttr ".g" yes;
 createNode reference -n "Jackie_latest_teeth_v1_latestRN";
 	rename -uid "680B507E-48FA-75B6-CAAA-A2BFD1631FC9";
-	setAttr ".fn[0]" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma";
+	setAttr ".fn[0]" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma";
 	setAttr -s 34 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
@@ -24192,308 +24240,312 @@ createNode reference -n "Jackie_latest_teeth_v1_latestRN";
 		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
 		"aiTranslator" " -type \"string\" \"polymesh\""
 		"Jackie_latest_teeth_v1_latestRN" 143
-		0 "|teeth_v1_latest:Teeth" "|Jackie_latest_jackieBody" "-s -r "
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "visibility" " 1"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "translate" " -type \"double3\" -0.014107181928579335 0.00086101544270004158 0"
+		0 "|teeth_v1_latest:Teeth" "|turntable_TurnTable|Jackie_latest_jackieBody" 
+		"-s -r "
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "visibility" 
+		" 1"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "translate" 
+		" -type \"double3\" -0.014107181928579335 0.00086101544270004158 0"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "rotate" 
+		" -type \"double3\" 0 0 0"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "scale" 
+		" -type \"double3\" 0.54223655410944704 0.54223655410944704 0.54223655410944704"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "rotatePivot" 
+		" -type \"double3\" 3.4979684490874427e-05 3.36440014716446623 0.026033266306095221"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "rotate" " -type \"double3\" 0 0 0"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "scalePivot" 
+		" -type \"double3\" 6.4510008087381721e-05 6.20467233657836914 0.048010902453545334"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "scale" " -type \"double3\" 0.54223655410944704 0.54223655410944704 0.54223655410944704"
-		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "rotatePivot" " -type \"double3\" 3.4979684490874427e-05 3.36440014716446623 0.026033266306095221"
-		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "scalePivot" " -type \"double3\" 6.4510008087381721e-05 6.20467233657836914 0.048010902453545334"
-		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "scalePivotTranslate" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth" "scalePivotTranslate" 
 		" -type \"double3\" -2.9530323596507294e-05 -2.84027218941390291 -0.021977636147450113"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
 		"visibility" " 1"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
 		"translate" " -type \"double3\" 0.027818624436220962 6.16424887354757089 0.2768623618663355"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
 		"rotate" " -type \"double3\" 0.76715028290843656 180 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
 		"scale" " -type \"double3\" 0.030605657841804787 0.030605657841804787 0.030605657841804787"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
 		"rotatePivot" " -type \"double3\" -0.85713999628042759 5.82354373531631797 -6.4624858634394835"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
 		"rotatePivotTranslate" " -type \"double3\" 1.7142799925608545 0.086003570428340309 12.84642162544893473"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
 		"scalePivot" " -type \"double3\" -28.00593278245590056 190.27670522284350341 -211.15330690955667592"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont" 
 		"scalePivotTranslate" " -type \"double3\" 27.14879278617547342 -184.45316148752721119 204.69082104611720752"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1" 
 		"rotatePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1" 
 		"scalePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
 		"rotate" " -type \"double3\" 0 -5.95887430432263532 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
 		"scale" " -type \"double3\" 0.99999999999999967 1.45638427770627654 0.56803875542812066"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
 		"rotatePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
 		"scalePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3" 
 		"rotatePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3" 
 		"scalePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
 		"scale" " -type \"double3\" 0.90175843369556541 1.45638427770627654 -0.56803875542812043"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
 		"rotatePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
 		"scalePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
 		"translate" " -type \"double3\" -2.65683371528119183 0 6.5275604180748914"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
 		"rotate" " -type \"double3\" 0 -86.37133346446121607 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
 		"rotatePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
 		"scalePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
 		"scale" " -type \"double3\" 0.90175843369556541 1.45638427770627654 -0.95568051360206874"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
 		"rotatePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
 		"scalePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
 		"translate" " -type \"double3\" -2.73668776395887736 0 5.40430622619354839"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
 		"scale" " -type \"double3\" 0.9017584336955643 1.45638427770627654 -0.95568051360206741"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
 		"rotatePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
 		"scalePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
 		"scale" " -type \"double3\" 0.90175843369556508 1.45638427770627654 -0.9556805136020684"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
 		"rotatePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
 		"scalePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5" 
 		"rotatePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5" 
 		"scalePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
 		"scale" " -type \"double3\" 0.90175843369556596 1.45638427770627654 -0.95568051360206918"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
 		"rotatePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
 		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
 		"scalePivot" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums" 
 		"rotatePivot" " -type \"double3\" 0 -0.010167027137036657 -0.024175630883831907"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums" 
 		"scalePivot" " -type \"double3\" 0 -0.010167027137036657 -0.024175630883831907"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
 		"translate" " -type \"double3\" 0.041211589025990536 6.2237508071537464 0.27531936617569741"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
 		"rotate" " -type \"double3\" 1.85295424159940691 0 180"
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
 		"scale" " -type \"double3\" 0.032336123923482299 0.032336123923482285 -0.032336123923482285"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
 		"rotatePivot" " -type \"double3\" -0.83162720216163033 -5.73010877043133604 6.58945017190767768"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
 		"rotatePivotTranslate" " -type \"double3\" 1.66325440432326133 11.6702879610385839 -0.18872589472584825"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
 		"scalePivot" " -type \"double3\" -25.71820927361393316 -177.20456490056230336 -203.77984038842774339"
 		
-		2 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" 
 		"scalePivotTranslate" " -type \"double3\" 24.8865820714523025 171.47445613013096022 210.36929056033540064"
 		
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1|teeth_v1_latest:pCubeShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2|teeth_v1_latest:pCubeShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3|teeth_v1_latest:pCubeShape3.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1|teeth_v1_latest:pCubeShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4|teeth_v1_latest:pCubeShape3.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2|teeth_v1_latest:pCubeShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3|teeth_v1_latest:pCubeShape3.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4|teeth_v1_latest:pCubeShape3.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1|teeth_v1_latest:pCubeShape1.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3|teeth_v1_latest:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2|teeth_v1_latest:pCubeShape1.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4|teeth_v1_latest:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1|teeth_v1_latest:pCubeShape1.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3|teeth_v1_latest:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2|teeth_v1_latest:pCubeShape1.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4|teeth_v1_latest:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1|teeth_v1_latest:pCubeShape1.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1|teeth_v1_latest:pCubeShape1.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2|teeth_v1_latest:pCubeShape1.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2|teeth_v1_latest:pCubeShape1.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[2]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1|teeth_v1_latest:pCubeShape1.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube1|teeth_v1_latest:pCubeShape1.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[3]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2|teeth_v1_latest:pCubeShape1.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube2|teeth_v1_latest:pCubeShape1.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[4]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3|teeth_v1_latest:pCubeShape3.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3|teeth_v1_latest:pCubeShape3.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[5]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4|teeth_v1_latest:pCubeShape3.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4|teeth_v1_latest:pCubeShape3.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[6]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3|teeth_v1_latest:pCubeShape3.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube3|teeth_v1_latest:pCubeShape3.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[7]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4|teeth_v1_latest:pCubeShape3.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:pCube4|teeth_v1_latest:pCubeShape3.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[8]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[9]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[10]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[11]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[12]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[13]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[14]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[15]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[16]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[17]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[18]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[19]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[20]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[21]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[22]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[23]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[24]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[25]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[26]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube11|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[27]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube7|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[28]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube9|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[29]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube8|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[30]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube5|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[31]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:PearlyWhites|teeth_v1_latest:Molars1|teeth_v1_latest:pCube6|teeth_v1_latest:pCubeShape5.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[32]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[33]" ":initialShadingGroup.dsm"
-		5 3 "Jackie_latest_teeth_v1_latestRN" "|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape.instObjGroups" 
+		5 3 "Jackie_latest_teeth_v1_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape.instObjGroups" 
 		"Jackie_latest_teeth_v1_latestRN.placeHolderList[34]" ":initialShadingGroup.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -24773,7 +24825,7 @@ createNode nodeGraphEditorInfo -n "jackieHoodie_latest3:hyperShadePrimaryNodeEdi
 	setAttr ".tgi[0].ni[6].nvs" 1923;
 createNode reference -n "Jackie_latest_jackieHoodie_latestRN";
 	rename -uid "1D9C088D-48CE-69F7-0620-87A58371A55C";
-	setAttr ".fn[0]" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/jackieHoodie_latest.ma";
+	setAttr ".fn[0]" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/jackieHoodie_latest.ma";
 	setAttr -s 3 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[3]" 0;
@@ -24798,49 +24850,50 @@ createNode reference -n "Jackie_latest_jackieHoodie_latestRN";
 		
 		"Jackie_latest_jackieHoodie_latestRN" 0
 		"Jackie_latest_jackieHoodie_latestRN" 24
-		0 "|jackieHoodie_latest1:jackieHoodie" "|Jackie_latest_jackieBody" "-s -r "
+		0 "|jackieHoodie_latest1:jackieHoodie" "|turntable_TurnTable|Jackie_latest_jackieBody" 
+		"-s -r "
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie" 
+		"translate" " -type \"double3\" 0 -0.055836706366977497 -0.013727816548070513"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie" 
+		"scale" " -type \"double3\" 0.54223655410944704 0.54223655410944704 0.54223655410944704"
 		
-		2 "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie" "translate" 
-		" -type \"double3\" 0 -0.055836706366977497 -0.013727816548070513"
-		2 "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie" "scale" " -type \"double3\" 0.54223655410944704 0.54223655410944704 0.54223655410944704"
-		
-		2 "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie" "rotatePivot" 
-		" -type \"double3\" 0 2.79942430895907002 0"
-		2 "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie" "scalePivot" 
-		" -type \"double3\" 0 5.16273624074784188 0"
-		2 "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie" "scalePivotTranslate" 
-		" -type \"double3\" 0 -2.36331193178877186 0"
-		2 "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie" 
+		"rotatePivot" " -type \"double3\" 0 2.79942430895907002 0"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie" 
+		"scalePivot" " -type \"double3\" 0 5.16273624074784188 0"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie" 
+		"scalePivotTranslate" " -type \"double3\" 0 -2.36331193178877186 0"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie" 
 		"visibility" " 1"
-		2 "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie" 
 		"rotatePivot" " -type \"double3\" 0 -2.39700103031324785 0"
-		2 "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie" 
 		"scalePivot" " -type \"double3\" 0 -2.39700103031324785 0"
-		2 "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape" 
 		"castsShadows" " 0"
-		2 "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape" 
 		"receiveShadows" " 0"
-		2 "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape" 
 		"dispResolution" " 1"
-		2 "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape" 
 		"displaySmoothMesh" " 0"
-		2 "jackieHoodie_latest1:jackieHoodieNormal" "filename" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHoodie/jackieHoodie_jackieHoodie_latest_defaultMat_Normal.png\""
+		2 "jackieHoodie_latest1:jackieHoodieNormal" "filename" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHoodie/jackieHoodie_jackieHoodie_latest_defaultMat_Normal.png\""
 		
-		2 "jackieHoodie_latest1:file1" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHoodie/jackieHoodie_jackieHoodie_latest_defaultMat_DiffuseColor.png\""
+		2 "jackieHoodie_latest1:file1" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHoodie/jackieHoodie_jackieHoodie_latest_defaultMat_DiffuseColor.png\""
 		
 		2 "jackieHoodie_latest1:file1" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "jackieHoodie_latest1:file2" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHoodie/jackieHoodie_jackieHoodie_latest_defaultMat_RoughRefBump.png\""
+		2 "jackieHoodie_latest1:file2" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHoodie/jackieHoodie_jackieHoodie_latest_defaultMat_RoughRefBump.png\""
 		
 		2 "jackieHoodie_latest1:file2" "colorSpace" " -type \"string\" \"sRGB\""
 		2 "jackieHoodie_latest1:jackieHoodie1" "inputMaterial" " 0"
 		2 "jackieHoodie_latest1:jackieHoodie1" "diffuseGain" " 1"
 		2 "jackieHoodie_latest1:hyperShadePrimaryNodeEditorSavedTabsInfo" "tabGraphInfo[0].nodeInfo" 
 		" -s 11"
-		3 "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape.instObjGroups" 
-		"jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" "-na"
 		3 ":rmanDefaultDisplay.message" "jackieHoodie_latest1:hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[2].dependNode" 
 		""
-		5 3 "Jackie_latest_jackieHoodie_latestRN" "|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape.instObjGroups" 
+		"jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" "-na"
+		5 3 "Jackie_latest_jackieHoodie_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodie|jackieHoodie_latest1:jackieHoodieShape.instObjGroups" 
 		"Jackie_latest_jackieHoodie_latestRN.placeHolderList[3]" "jackieHoodie_latest1:PxrSurface1SG.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -25007,7 +25060,7 @@ createNode PxrNormalMap -n "Jackie_latest_jackieSkinNormal";
 	setAttr ".nds" 0;
 	setAttr ".bumpScale" 1;
 	setAttr ".inputRGB" -type "float3" 0 0 0 ;
-	setAttr ".filename" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackie_normalmap.tif";
+	setAttr ".filename" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackie_normalmap.tif";
 	setAttr ".bumpOverlay" -type "float3" 0 0 0 ;
 	setAttr ".invertBump" no;
 	setAttr ".orientation" 2;
@@ -25029,7 +25082,7 @@ createNode PxrNormalMap -n "Jackie_latest_jackieSkinNormal";
 	setAttr ".disable" no;
 createNode reference -n "Jackie_latest_jackiePants_latestRN";
 	rename -uid "611C8910-496F-42D6-78B8-86AD0C7258CD";
-	setAttr ".fn[0]" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/jackiePants_latest.ma";
+	setAttr ".fn[0]" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/jackiePants_latest.ma";
 	setAttr ".phl[1]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Jackie_latest_jackiePants_latestRN"
@@ -26457,28 +26510,32 @@ createNode reference -n "Jackie_latest_jackiePants_latestRN";
 		2 "jackiePants_latest:jackiePantsNormal" "filename" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackiePants_normalmap.tif\""
 		
 		"Jackie_latest_jackiePants_latestRN" 12
-		0 "|jackiePants_latest:jackiePant" "|Jackie_latest_jackieBody" "-s -r "
-		2 "|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" "visibility" 
-		" 1"
-		2 "|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" "translate" " -type \"double3\" -0.0033340550010083703 -0.034296916329878274 0.0062188016411949092"
+		0 "|jackiePants_latest:jackiePant" "|turntable_TurnTable|Jackie_latest_jackieBody" 
+		"-s -r "
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" 
+		"visibility" " 1"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" 
+		"translate" " -type \"double3\" -0.0033340550010083703 -0.034296916329878274 0.0062188016411949092"
 		
-		2 "|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" "rotate" " -type \"double3\" 0 0 0"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" 
+		"scale" " -type \"double3\" 0.55038336971344826 0.55038336971344826 0.55038336971344826"
 		
-		2 "|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" "scale" " -type \"double3\" 0.55038336971344826 0.55038336971344826 0.55038336971344826"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" 
+		"rotatePivot" " -type \"double3\" 0 1.27169728326366815 -0.23922744045428576"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" 
+		"scalePivot" " -type \"double3\" 0 2.31056633111164889 -0.43465601182469815"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" 
+		"scalePivotTranslate" " -type \"double3\" 0 -1.03886904784798073 0.19542857137041239"
 		
-		2 "|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" "rotatePivot" 
-		" -type \"double3\" 0 1.27169728326366815 -0.23922744045428576"
-		2 "|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" "scalePivot" 
-		" -type \"double3\" 0 2.31056633111164889 -0.43465601182469815"
-		2 "|Jackie_latest_jackieBody|jackiePants_latest:jackiePant" "scalePivotTranslate" 
-		" -type \"double3\" 0 -1.03886904784798073 0.19542857137041239"
 		2 "jackiePants_latest:hyperShadePrimaryNodeEditorSavedTabsInfo" "tabGraphInfo[0].nodeInfo" 
 		" -s 11"
 		3 ":rmanDefaultDisplay.message" "jackiePants_latest:hyperShadePrimaryNodeEditorSavedTabsInfo.tabGraphInfo[0].nodeInfo[5].dependNode" 
 		""
-		3 "|Jackie_latest_jackieBody|jackiePants_latest:jackiePant|jackiePants_latest:jackiePants_latest:polySurface1|jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackiePants_latest:jackiePant|jackiePants_latest:jackiePants_latest:polySurface1|jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
 		"jackiePants_latest:PxrSurface1SG.dagSetMembers" "-na"
-		5 3 "Jackie_latest_jackiePants_latestRN" "|Jackie_latest_jackieBody|jackiePants_latest:jackiePant|jackiePants_latest:jackiePants_latest:polySurface1|jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
+		5 3 "Jackie_latest_jackiePants_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackiePants_latest:jackiePant|jackiePants_latest:jackiePants_latest:polySurface1|jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
 		"Jackie_latest_jackiePants_latestRN.placeHolderList[1]" "jackiePants_latest:PxrSurface1SG.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -26515,152 +26572,156 @@ createNode reference -n "Jackie_latest_Jacies_shoe_latestRN";
 		"Jackie_latest_Jacies_shoe_latestRN" 0
 		"Jacies_shoe_latestRN" 0
 		"Jackie_latest_Jacies_shoe_latestRN" 63
-		0 "|Jacies_shoe_latest:transform1" "|Jackie_latest_jackieBody" "-s -r "
-		0 "|Jacies_shoe_latest:Jackie_Shoe" "|Jackie_latest_jackieBody" "-s -r "
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe" "visibility" 
-		" 1"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe" "translate" 
-		" -type \"double3\" -0.23646372767935189 0.066297141804096724 0.057827523305288578"
+		0 "|Jacies_shoe_latest:transform1" "|turntable_TurnTable|Jackie_latest_jackieBody" 
+		"-s -r "
+		0 "|Jacies_shoe_latest:Jackie_Shoe" "|turntable_TurnTable|Jackie_latest_jackieBody" 
+		"-s -r "
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe" 
+		"visibility" " 1"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe" 
+		"translate" " -type \"double3\" -0.23646372767935189 0.066297141804096724 0.057827523305288578"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe" "scale" " -type \"double3\" 0.17825990711679249 0.17825990711679249 0.17825990711679249"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe" 
+		"scale" " -type \"double3\" 0.17825990711679249 0.17825990711679249 0.17825990711679249"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe" "rotatePivot" 
-		" -type \"double3\" 0 0 0.01811953284177233"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe" "scalePivot" 
-		" -type \"double3\" 0 0 0.10164670864492686"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe" "scalePivotTranslate" 
-		" -type \"double3\" 0 0 -0.083527175803154538"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest:transform1" "scale" " -type \"double3\" 0.54223655410944704 0.54223655410944704 0.54223655410944704"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe" 
+		"rotatePivot" " -type \"double3\" 0 0 0.01811953284177233"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe" 
+		"scalePivot" " -type \"double3\" 0 0 0.10164670864492686"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 -0.083527175803154538"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:transform1" 
+		"scale" " -type \"double3\" 0.54223655410944704 0.54223655410944704 0.54223655410944704"
 		
-		2 "Jacies_shoe_latest:file2" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieShoe/jackieShoe_PxrSurface1SG_Height.png\""
+		2 "Jacies_shoe_latest:file2" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieShoe/jackieShoe_PxrSurface1SG_Height.png\""
 		
 		2 "Jacies_shoe_latest:file2" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "Jacies_shoe_latest:file10" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieShoe/jackieShoe_PxrSurface3SG_Height.png\""
+		2 "Jacies_shoe_latest:file10" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieShoe/jackieShoe_PxrSurface3SG_Height.png\""
 		
 		2 "Jacies_shoe_latest:file10" "colorSpace" " -type \"string\" \"sRGB\""
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube2|Jacies_shoe_latest:pCubeShape1.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Tongue|Jacies_shoe_latest:TongueShape.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Base|Jacies_shoe_latest:BaseShape.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Right_Side|Jacies_shoe_latest:Right_SideShape.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Left_Side|Jacies_shoe_latest:Left_SideShape.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus2|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus1|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus3|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus4|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus9|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus8|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus7|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus6|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus5|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus10|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube2|Jacies_shoe_latest:pCubeShape1.instObjGroups" 
 		"Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube9|Jacies_shoe_latest:pCubeShape9.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube9|Jacies_shoe_latest:pCubeShape9.instObjGroups" 
 		"Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube10|Jacies_shoe_latest:pCubeShape10.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube10|Jacies_shoe_latest:pCubeShape10.instObjGroups" 
 		"Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube11|Jacies_shoe_latest:pCubeShape11.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube11|Jacies_shoe_latest:pCubeShape11.instObjGroups" 
 		"Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube12|Jacies_shoe_latest:pCubeShape12.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube12|Jacies_shoe_latest:pCubeShape12.instObjGroups" 
 		"Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube13|Jacies_shoe_latest:pCubeShape13.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube13|Jacies_shoe_latest:pCubeShape13.instObjGroups" 
 		"Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube14|Jacies_shoe_latest:pCubeShape14.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube14|Jacies_shoe_latest:pCubeShape14.instObjGroups" 
 		"Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube15|Jacies_shoe_latest:pCubeShape15.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube15|Jacies_shoe_latest:pCubeShape15.instObjGroups" 
 		"Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus2|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus1|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus3|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus4|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus9|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus8|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus7|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus6|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus5|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus10|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:RubberParts|Jacies_shoe_latest:Toe|Jacies_shoe_latest:ToeShape.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:RubberParts|Jacies_shoe_latest:Toe|Jacies_shoe_latest:ToeShape.instObjGroups" 
 		"Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:RubberParts|Jacies_shoe_latest:Sole|Jacies_shoe_latest:SoleShape.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:RubberParts|Jacies_shoe_latest:Sole|Jacies_shoe_latest:SoleShape.instObjGroups" 
 		"Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:RubberParts|Jacies_shoe_latest:Back|Jacies_shoe_latest:BackShape.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:RubberParts|Jacies_shoe_latest:Back|Jacies_shoe_latest:BackShape.instObjGroups" 
 		"Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Tongue|Jacies_shoe_latest:TongueShape.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Base|Jacies_shoe_latest:BaseShape.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Right_Side|Jacies_shoe_latest:Right_SideShape.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Left_Side|Jacies_shoe_latest:Left_SideShape.instObjGroups" 
-		"Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:RubberParts|Jacies_shoe_latest:Toe|Jacies_shoe_latest:ToeShape.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:RubberParts|Jacies_shoe_latest:Toe|Jacies_shoe_latest:ToeShape.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[1]" "Jacies_shoe_latest:PxrSurface1SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:RubberParts|Jacies_shoe_latest:Sole|Jacies_shoe_latest:SoleShape.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:RubberParts|Jacies_shoe_latest:Sole|Jacies_shoe_latest:SoleShape.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[2]" "Jacies_shoe_latest:PxrSurface1SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:RubberParts|Jacies_shoe_latest:Back|Jacies_shoe_latest:BackShape.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:RubberParts|Jacies_shoe_latest:Back|Jacies_shoe_latest:BackShape.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[3]" "Jacies_shoe_latest:PxrSurface1SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Tongue|Jacies_shoe_latest:TongueShape.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Tongue|Jacies_shoe_latest:TongueShape.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[4]" "Jacies_shoe_latest:PxrSurface2SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Base|Jacies_shoe_latest:BaseShape.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Base|Jacies_shoe_latest:BaseShape.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[5]" "Jacies_shoe_latest:PxrSurface2SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Right_Side|Jacies_shoe_latest:Right_SideShape.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Right_Side|Jacies_shoe_latest:Right_SideShape.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[6]" "Jacies_shoe_latest:PxrSurface2SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Left_Side|Jacies_shoe_latest:Left_SideShape.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:ClothParts|Jacies_shoe_latest:Left_Side|Jacies_shoe_latest:Left_SideShape.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[7]" "Jacies_shoe_latest:PxrSurface2SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube2|Jacies_shoe_latest:pCubeShape1.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube2|Jacies_shoe_latest:pCubeShape1.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[8]" "Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube9|Jacies_shoe_latest:pCubeShape9.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube9|Jacies_shoe_latest:pCubeShape9.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[9]" "Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube10|Jacies_shoe_latest:pCubeShape10.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube10|Jacies_shoe_latest:pCubeShape10.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[10]" "Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube11|Jacies_shoe_latest:pCubeShape11.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube11|Jacies_shoe_latest:pCubeShape11.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[11]" "Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube12|Jacies_shoe_latest:pCubeShape12.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube12|Jacies_shoe_latest:pCubeShape12.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[12]" "Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube13|Jacies_shoe_latest:pCubeShape13.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube13|Jacies_shoe_latest:pCubeShape13.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[13]" "Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube14|Jacies_shoe_latest:pCubeShape14.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube14|Jacies_shoe_latest:pCubeShape14.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[14]" "Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube15|Jacies_shoe_latest:pCubeShape15.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Laces|Jacies_shoe_latest:pCube15|Jacies_shoe_latest:pCubeShape15.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[15]" "Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus10|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus10|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[16]" "Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus5|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus5|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[17]" "Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus6|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus6|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[18]" "Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus7|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus7|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[19]" "Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus8|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Left_Lace_holes|Jacies_shoe_latest:pTorus8|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[20]" "Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus9|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus9|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[21]" "Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus4|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus4|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[22]" "Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus3|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus3|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[23]" "Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus1|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus1|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[24]" "Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus2|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 1 "Jackie_latest_Jacies_shoe_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:Jackie_Shoe|Jacies_shoe_latest:LaceHoles|Jacies_shoe_latest:Right_Lace_Holes|Jacies_shoe_latest:pTorus2|Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"Jackie_latest_Jacies_shoe_latestRN.placeHolderList[25]" "Jacies_shoe_latest:PxrSurface4SG.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -26727,235 +26788,238 @@ createNode reference -n "Jackie_latest_Jacies_shoe_latestRN1";
 		"Jacies_shoe_latestRN1" 0
 		"Jackie_latest_Jacies_shoe_latestRN1" 0
 		"Jackie_latest_Jacies_shoe_latestRN1" 135
-		0 "|Jacies_shoe_latest1:transform1" "|Jackie_latest_jackieBody" "-s -r "
-		0 "|Jacies_shoe_latest1:Jackie_Shoe" "|Jackie_latest_jackieBody" "-s -r "
+		0 "|Jacies_shoe_latest1:transform1" "|turntable_TurnTable|Jackie_latest_jackieBody" 
+		"-s -r "
+		0 "|Jacies_shoe_latest1:Jackie_Shoe" "|turntable_TurnTable|Jackie_latest_jackieBody" 
+		"-s -r "
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" 
+		"visibility" " 1"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" 
+		"translate" " -type \"double3\" 0.23431415750959764 0.066152859601352532 0.05758820150875988"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" "visibility" 
-		" 1"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" "translate" 
-		" -type \"double3\" 0.23431415750959764 0.066152859601352532 0.05758820150875988"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" 
+		"rotate" " -type \"double3\" 0 180 0"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" 
+		"scale" " -type \"double3\" 0.17839582630200809 0.17839582630200809 -0.17839582630200809"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" "rotate" " -type \"double3\" 0 180 0"
-		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" "scale" " -type \"double3\" 0.17839582630200809 0.17839582630200809 -0.17839582630200809"
-		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" "rotatePivot" 
-		" -type \"double3\" 0 0 -0.018133348579591198"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" "rotatePivotTranslate" 
-		" -type \"double3\" 0 0 0.036266697159182397"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" "scalePivot" 
-		" -type \"double3\" 0 0 0.10164670864492686"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" "scalePivotTranslate" 
-		" -type \"double3\" 0 0 -0.11978005722451807"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" 
+		"rotatePivot" " -type \"double3\" 0 0 -0.018133348579591198"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" 
+		"rotatePivotTranslate" " -type \"double3\" 0 0 0.036266697159182397"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" 
+		"scalePivot" " -type \"double3\" 0 0 0.10164670864492686"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 -0.11978005722451807"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe" 
 		"scale" " -type \"double3\" 1.07831704425896469 1 1"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces" 
 		"scale" " -type \"double3\" 0.92737104112753288 1 1"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube15" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube15" 
 		"translate" " -type \"double3\" -0.11283424074909208 0.75790570376160527 0.16075424160044982"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube15" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube15" 
 		"scale" " -type \"double3\" 0.77374000765526707 0.03111569784810363 0.16238820414558025"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube14" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube14" 
 		"translate" " -type \"double3\" -0.10094998203809784 0.71390445878569075 0.1955287615347148"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube14" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube14" 
 		"scale" " -type \"double3\" 0.74734500272262905 0.031115697848103634 0.16238820414558025"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube13" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube13" 
 		"translate" " -type \"double3\" -0.16808025277405356 0.56001290886467936 0.51448707533090443"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube13" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube13" 
 		"scale" " -type \"double3\" 0.72009381017895435 0.031115697848103616 0.16238820414558025"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube12" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube12" 
 		"translate" " -type \"double3\" -0.13336382990961182 0.40583264697323662 1.08635238471947826"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube12" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube12" 
 		"scale" " -type \"double3\" 0.80057332706443229 0.031115697848103613 0.16238820414558025"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube11" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube11" 
 		"translate" " -type \"double3\" -0.14072696311568206 0.50934129699684583 0.78653758234383742"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube11" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube11" 
 		"scale" " -type \"double3\" 0.79789164358652709 0.03111569784810362 0.18037672570938137"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube10" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube10" 
 		"translate" " -type \"double3\" -0.16808025277405356 0.47247423544628686 0.80074209041203959"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube10" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube10" 
 		"scale" " -type \"double3\" 0.72009381017895435 0.031115697848103616 0.16238820414558025"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube9" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube9" 
 		"translate" " -type \"double3\" -0.11674335300689231 0.63423573308449588 0.47423918238695922"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube9" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube9" 
 		"scale" " -type \"double3\" 0.78433210447632751 0.031115697848103627 0.19361342132177006"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
-		"translate" " -type \"double3\" -0.15913213497628798 0.43988325071671552 1.07890806740027378"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
+		"translate" " -type \"double3\" -0.15212778646168612 0.42064048712709889 1.06490882729628455"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
 		"translateX" " -av"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
 		"translateY" " -av"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
 		"translateZ" " -av"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
-		"scale" " -type \"double3\" 0.78837546743454012 0.031115697848103613 0.17603346393323419"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
+		"scale" " -type \"double3\" 0.79371414222350767 0.031115697848103613 0.16238820414558025"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
 		"scaleX" " -av"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
 		"scaleZ" " -av"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Laces|Jacies_shoe_latest1:pCube2" 
 		"scaleY" " -av"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Left_Side" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Left_Side" 
 		"translate" " -type \"double3\" -0.035059531421939516 -0.041244044463602525 0.062956087826560037"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Left_Side" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Left_Side" 
 		"scale" " -type \"double3\" 1.0282780452530329 1.0282780452530329 0.94979639204148292"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Right_Side" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Right_Side" 
 		"translate" " -type \"double3\" 0.057795374965290851 0 0"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Right_Side" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Right_Side" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Base" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Base" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Base" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Base" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Tongue" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Tongue" 
 		"translate" " -type \"double3\" -0.012991211965339592 -0.028197592180554176 0"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Tongue" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:ClothParts|Jacies_shoe_latest1:Tongue" 
 		"scale" " -type \"double3\" 0.75686592572516043 0.96200101960357054 1"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes" 
 		"translate" " -type \"double3\" 0.0181767058106167 0.019054081790557342 0"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes" 
 		"scale" " -type \"double3\" 0.92737104112753288 1 1"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus2" 
 		"translate" " -type \"double3\" -0.48583138698774619 0.58724535527270605 0.27084089608450518"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus2" 
 		"scale" " -type \"double3\" 0.0782418225749303 0.0782418225749303 0.0782418225749303"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus1" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus1" 
 		"translate" " -type \"double3\" -0.47371378645517587 0.73561020050218862 -0.031414764936191775"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus1" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus1" 
 		"scale" " -type \"double3\" 0.0782418225749303 0.0782418225749303 0.0782418225749303"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus3" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus3" 
 		"translate" " -type \"double3\" -0.53626252839985233 0.42166830912234621 0.60336363424806561"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus3" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus3" 
 		"scale" " -type \"double3\" 0.0782418225749303 0.078241822574930314 0.0782418225749303"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus4" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus4" 
 		"translate" " -type \"double3\" -0.5159144691816604 0.38319954638531739 0.89105756082165222"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus4" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus4" 
 		"scale" " -type \"double3\" 0.0782418225749303 0.078241822574930328 0.0782418225749303"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes" 
 		"scale" " -type \"double3\" 0.92737104112753288 1 1"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus5" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus5" 
 		"translate" " -type \"double3\" 0.3161547920633126 0.71833263339083153 0.025464562890374853"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus5" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus5" 
 		"scale" " -type \"double3\" 0.0782418225749303 0.0782418225749303 -0.0782418225749303"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus6" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus6" 
 		"translate" " -type \"double3\" 0.30611231307560011 0.56006140571258345 0.32838726600914886"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus6" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus6" 
 		"scale" " -type \"double3\" 0.0782418225749303 0.0782418225749303 -0.0782418225749303"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus7" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus7" 
 		"translate" " -type \"double3\" 0.2960698340878869 0.44058449878320394 0.64804743410744492"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus7" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus7" 
 		"scale" " -type \"double3\" 0.0782418225749303 0.0782418225749303 -0.0782418225749303"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus8" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus8" 
 		"translate" " -type \"double3\" 0.27188528893418001 0.38475088346927033 0.93372657877790122"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus8" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus8" 
 		"scale" " -type \"double3\" 0.0782418225749303 0.0782418225749303 -0.0782418225749303"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus9" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus9" 
 		"translate" " -type \"double3\" -0.50094958499831233 0.29780368887009845 1.21551369909610929"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus9" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus9" 
 		"scale" " -type \"double3\" 0.0782418225749303 0.078241822574930328 0.0782418225749303"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus10" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus10" 
 		"translate" " -type \"double3\" 0.24404882851550086 0.3230604358630888 1.26006587035112316"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus10" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus10" 
 		"scale" " -type \"double3\" 0.0782418225749303 0.0782418225749303 -0.0782418225749303"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts" 
 		"translate" " -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts|Jacies_shoe_latest1:Back" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts|Jacies_shoe_latest1:Back" 
 		"translate" " -type \"double3\" 0 0.21605161434299874 0.23455897837496831"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts|Jacies_shoe_latest1:Back" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts|Jacies_shoe_latest1:Back" 
 		"scale" " -type \"double3\" 1.03393500056823795 1.44030140076752278 1.15525780351664942"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts|Jacies_shoe_latest1:Sole" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts|Jacies_shoe_latest1:Sole" 
 		"translate" " -type \"double3\" 0 0.046645332460448552 0"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts|Jacies_shoe_latest1:Sole" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts|Jacies_shoe_latest1:Sole" 
 		"scale" " -type \"double3\" 1 1 1"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts|Jacies_shoe_latest1:Toe" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts|Jacies_shoe_latest1:Toe" 
 		"translate" " -type \"double3\" -0.056454318054262528 0.12007507321078319 0.14309586433002641"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts|Jacies_shoe_latest1:Toe" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:RubberParts|Jacies_shoe_latest1:Toe" 
 		"scale" " -type \"double3\" 0.72539669658858108 0.75446023678929797 0.88714928079342881"
 		
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:transform1" "translate" 
-		" -type \"double3\" 0 0 0"
-		2 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:transform1" "scale" " -type \"double3\" 0.54223655410944704 0.54223655410944704 0.54223655410944704"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:transform1" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:transform1" 
+		"scale" " -type \"double3\" 0.54223655410944704 0.54223655410944704 0.54223655410944704"
 		
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus2|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus1|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus3|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus4|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus9|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus5|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus6|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus7|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus8|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus10|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
 		3 "Jacies_shoe_latest1:lambert2.message" "Jacies_shoe_latest1:materialInfo1.material" 
 		""
 		3 "Jacies_shoe_latest1:lambert2.outColor" "Jacies_shoe_latest1:PxrSurface1SG.surfaceShader" 
 		""
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus2|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus1|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus3|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus4|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus9|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus5|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus6|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus7|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus8|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus10|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
 		5 3 "Jackie_latest_Jacies_shoe_latestRN1" "Jacies_shoe_latest1:jackieShoeRubber.message" 
 		"Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[1]" ""
 		5 3 "Jackie_latest_Jacies_shoe_latestRN1" "Jacies_shoe_latest1:PxrSurface1SG.message" 
@@ -27011,43 +27075,43 @@ createNode reference -n "Jackie_latest_Jacies_shoe_latestRN1";
 		5 2 "Jackie_latest_Jacies_shoe_latestRN1" "Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" 
 		"Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[20]" "Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus10|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus10|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[21]" 
 		"Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[22]" "Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus8|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus8|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[23]" 
 		"Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[24]" "Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus7|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus7|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[25]" 
 		"Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[26]" "Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus6|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus6|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[27]" 
 		"Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[28]" "Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus5|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Left_Lace_holes|Jacies_shoe_latest1:pTorus5|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[29]" 
 		"Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[30]" "Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus9|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus9|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[31]" 
 		"Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[32]" "Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus4|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus4|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[33]" 
 		"Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[34]" "Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus3|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus3|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[35]" 
 		"Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[36]" "Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus1|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus1|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[37]" 
 		"Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[38]" "Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus2|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "Jackie_latest_Jacies_shoe_latestRN1" "|turntable_TurnTable|Jackie_latest_jackieBody|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:Jackie_Shoe|Jacies_shoe_latest1:LaceHoles|Jacies_shoe_latest1:Right_Lace_Holes|Jacies_shoe_latest1:pTorus2|Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[39]" 
 		"Jackie_latest_Jacies_shoe_latestRN1.placeHolderList[40]" "Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
@@ -27086,20 +27150,20 @@ createNode reference -n "Jackie_latest_Jacies_shoe_latestRN1";
 lockNode -l 1 ;
 createNode file -n "Jackie_latest_file1";
 	rename -uid "6D2F2A3A-408A-6693-DBBC-AAB5DCEEC10C";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_DiffuseColor.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "Jackie_latest_place2dTexture1";
 	rename -uid "CE0FA3BC-4536-47D6-9553-939960839412";
 createNode file -n "Jackie_latest_file2";
 	rename -uid "048A267E-4314-54A6-9789-A8A1FFEB70AA";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_Roughness.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_Roughness.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "Jackie_latest_place2dTexture2";
 	rename -uid "B892E61B-4434-9F9C-31AF-178D1DB076C4";
 createNode reference -n "Jackie_latest_jackieHair_latestRN";
 	rename -uid "82E1BDA0-4627-B9C4-BE18-B6890B28BF54";
-	setAttr ".fn[0]" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/jackieHair_latest.ma";
+	setAttr ".fn[0]" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/jackieHair_latest.ma";
 	setAttr -s 72 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
@@ -27182,94 +27246,97 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		5 4 "Jackie_latest_jackieHair_latestRN" "jackieHair_latest:PxrSurface4SG.dagSetMembers" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[1]" ""
 		"Jackie_latest_jackieHair_latestRN" 700
-		0 "|jackieHair_latest:jackieHair" "|Jackie_latest_jackieBody" "-s -r "
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair" "translate" " -type \"double3\" 0 0 0.014324963027338893"
+		0 "|jackieHair_latest:jackieHair" "|turntable_TurnTable|Jackie_latest_jackieBody" 
+		"-s -r "
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair" 
+		"translate" " -type \"double3\" 0 0 0.014324963027338893"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair" 
+		"scale" " -type \"double3\" 0.54223655410944704 0.54223655410944704 0.54223655410944704"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair" "rotate" " -type \"double3\" 0 0 0"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair" 
+		"rotatePivot" " -type \"double3\" 0 3.68899997764172038 -0.083615289790918659"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair" 
+		"scalePivot" " -type \"double3\" 0 6.80330374203639376 -0.15420445035883995"
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair" 
+		"scalePivotTranslate" " -type \"double3\" 0 -3.11430376439467338 0.070589160567921291"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair" "scale" " -type \"double3\" 0.54223655410944704 0.54223655410944704 0.54223655410944704"
-		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair" "rotatePivot" 
-		" -type \"double3\" 0 3.68899997764172038 -0.083615289790918659"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair" "scalePivot" " -type \"double3\" 0 6.80330374203639376 -0.15420445035883995"
-		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair" "scalePivotTranslate" 
-		" -type \"double3\" 0 -3.11430376439467338 0.070589160567921291"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair" 
 		"visibility" " 1"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair" 
 		"rotatePivot" " -type \"double3\" 0 6.88316097220539724 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair" 
 		"scalePivot" " -type \"double3\" 0 6.88316097220539724 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs" 
 		"rotatePivot" " -type \"double3\" 0 6.34400611306023965 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs" 
 		"scalePivot" " -type \"double3\" 0 6.34400611306023965 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop" 
 		"rotatePivot" " -type \"double3\" 0 6.27835120431268123 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop" 
 		"scalePivot" " -type \"double3\" 0 6.27835120431268123 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface22" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface22" 
 		"rotatePivot" " -type \"double3\" 0 6.75740413041357346 0.20662285163686084"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface22" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface22" 
 		"scalePivot" " -type \"double3\" 0 6.75740413041357346 0.20662285163686084"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface22|jackieHair_latest:polySurfaceShape33" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface22|jackieHair_latest:polySurfaceShape33" 
 		"pt[0:55]" (" -s 56 -type \"float3\" -0.0013551237 0.039209012000000001 0.0030658245000000002 0.0013551237 0.039209012000000001 0.0030658245000000002 -0.0010037022 0.041174534999999998 0.00062917172999999999 0.0010037022 0.041174534999999998 0.00062917172999999999 -0.0010037022 0.040753010999999999 0.00030879676000000002 0.0010037022 0.040753010999999999 0.00030879676000000002 -0.0013578245000000001 0.038789394999999997 0.0027454345999999999 0.0013578245000000001 0.038789394999999997 0.0027454345999999999 -0.0016614366000000001 0.036289815000000003 0.0046023577000000003 0.0016614366000000001 0.036289815000000003 0.0046023577000000003 0.0016614366000000001 0.036536816999999999 0.0050707310000000002 -0.0016614366000000001 0.036536816999999999 0.0050707310000000002 0.00045170798000000002 0.039209012000000001 0.0030658245000000002 0.00033456738999999998 0.041174534999999998 0.00062917172999999999 0.00033456738999999998 0.040753010999999999 0.00030879676000000002 0.00045260809999999999 0.038789394999999997 0.0027454345999999999 "
 		+ "0.00055381189999999996 0.036289815000000003 0.0046023577000000003 0.00055381189999999996 0.036536816999999999 0.0050707310000000002 -0.00045170821000000002 0.039209012000000001 0.0030658245000000002 -0.00033456761999999999 0.041174534999999998 0.00062917172999999999 -0.00033456761999999999 0.040753010999999999 0.00030879676000000002 -0.00045260834000000001 0.038789394999999997 0.0027454345999999999 -0.00055381237000000003 0.036289815000000003 0.0046023577000000003 -0.00055381237000000003 0.036536816999999999 0.0050707310000000002 0.00048894132000000003 0.038446071999999998 0.0037341416000000001 -0.00048894132000000003 0.038446071999999998 0.0037341416000000001 -0.0014668236999999999 0.038446071999999998 0.0037341416000000001 -0.0014821579999999999 0.038091305999999998 0.003364414 -0.00049405266 0.038091305999999998 0.003364414 0.00049405241999999998 0.038091305999999998 0.003364414 0.0014821579999999999 0.038091305999999998 0.003364414 0.0014668236999999999 0.038446071999999998 0.0037341416000000001 0.0005322"
 		+ "3455 0.037509087000000003 0.0044024288999999998 -0.00053223501999999996 0.037509087000000003 0.0044024288999999998 -0.0015967050999999999 0.037509564000000002 0.0044024288999999998 -0.0016039247000000001 0.037208203000000002 0.0039833784000000002 -0.00053464156000000002 0.037208203000000002 0.0039833784000000002 0.00053464109000000005 0.037208203000000002 0.0039833784000000002 0.0016039247000000001 0.037208203000000002 0.0039833784000000002 0.0015967050999999999 0.037509564000000002 0.0044024288999999998 0.00042281905000000002 0.039581898999999997 0.0019332170000000001 -0.00042281928000000002 0.039581898999999997 0.0019332170000000001 -0.0012684586000000001 0.039581898999999997 0.0019332170000000001 -0.0012684586000000001 0.040003423000000003 0.0022536068999999999 -0.00042281928000000002 0.040003423000000003 0.0022536068999999999 0.00042281905000000002 0.040003423000000003 0.0022536068999999999 0.0012684586000000001 0.040003423000000003 0.0022536068999999999 0.0012684586000000001 0.039581898999999997 0.001933"
 		+ "2170000000001 0.00037869344999999998 0.040167454999999998 0.0011209995000000001 -0.00037869344999999998 0.040167454999999998 0.0011209995000000001 -0.0011360804 0.040167454999999998 0.0011209995000000001 -0.0011360804 0.040588978999999997 0.0014413893000000001 -0.00037869344999999998 0.040588978999999997 0.0014413893000000001 0.00037869344999999998 0.040588978999999997 0.0014413893000000001 0.0011360804 0.040588978999999997 0.0014413893000000001 0.0011360804 0.040167454999999998 0.0011209995000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface23" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface23" 
 		"rotatePivot" " -type \"double3\" 0.15672671326190235 6.75740413041357346 0.17139813230912421"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface23" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface23" 
 		"scalePivot" " -type \"double3\" 0.15672671326190235 6.75740413041357346 0.17139813230912421"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface23|jackieHair_latest:polySurfaceShape34" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface23|jackieHair_latest:polySurfaceShape34" 
 		"pt[0:41]" (" -s 42 -type \"float3\" 0.0013216166000000001 0.039595726999999997 0.0029233694 0.0031870585000000002 0.039209489 0.0019734949 0.00083581498000000003 0.041262750000000001 0.00068840383999999998 0.0016876636 0.041054848999999997 0.00017622113 0.00067349988999999995 0.040839317999999999 0.00041463970999999999 0.0015253425 0.040631417000000003 -9.7557902000000002e-05 0.0011592982000000001 0.039172772000000002 0.0026495904 0.0030247401000000002 0.038787011000000003 0.0016997159 0.0014335839000000001 0.036266926999999997 0.0045822561000000003 0.0040409508999999996 0.035881165 0.0036323815999999998 0.0042327381999999998 0.036133889000000002 0.0040562302000000001 0.0016253776999999999 0.036519650000000001 0.0050061046999999997 0.0022543371 0.039402607999999999 0.0024484247000000001 0.0012617399999999999 0.041158321999999997 0.00043229759000000003 0.0010994215999999999 0.040735368000000001 0.00015853345 0.0020920187 0.038979653000000003 0.0021746605999999999 0.0027372688 0.036074283999999998 0.0041073263000000002 0.002"
 		+ "9290579 0.036327008000000001 0.0045311600000000002 0.0024792439999999998 0.038377408000000002 0.0031426698000000001 0.0014228699999999999 0.038570527 0.0036176145000000001 0.0012507270999999999 0.038203839000000003 0.0032938272000000001 0.0023071021000000001 0.038011196999999997 0.0028188825000000002 0.0033634771000000002 0.037818554999999997 0.0023439378000000002 0.0035356171 0.038184766000000002 0.00266774 0.0027041510000000001 0.037352207999999998 0.0038369149000000002 0.0015241234 0.037544849999999998 0.0043118595999999997 0.0013421559999999999 0.037235382999999997 0.0039380342 0.0025221853999999998 0.037042263999999998 0.0034631044 0.0037022158999999999 0.036850098999999997 0.0029881597 0.0038841758 0.037159565999999998 0.0033619851000000001 0.0017611533 0.039565208999999997 0.0015026181999999999 0.0009973649900000001 0.039727811000000002 0.0019046217 0.0011596829000000001 0.040151241999999997 0.0021783710000000001 0.0019234717 0.039988164 0.0017763971999999999 0.0026872605000000001 0.039824608999999997 "
 		+ "0.0013743937 0.0025249402999999999 0.039401654000000001 0.0011006296000000001 0.0014302869999999999 0.040150287999999999 0.00083057582000000004 0.00083543267000000003 0.040283803 0.0011596382 0.00099774916000000004 0.040706757000000003 0.0014333874000000001 0.0015926053999999999 0.040573243000000002 0.0011043400000000001 0.0021874625 0.040439729000000001 0.00077530741999999998 0.0020251414 0.040016773999999998 0.00050154327999999998"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface24" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface24" 
 		"rotatePivot" " -type \"double3\" 0.15672671326190235 6.75740413041357346 0.17139813230912421"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface24" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface24" 
 		"scalePivot" " -type \"double3\" 0.15672671326190235 6.75740413041357346 0.17139813230912421"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface24|jackieHair_latest:polySurfaceShape35" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface24|jackieHair_latest:polySurfaceShape35" 
 		"pt[0:41]" (" -s 42 -type \"float3\" -0.0013910867 0.039446477000000001 0.0029233694 -0.0031043459 0.039061192000000002 0.0019735097999999999 -0.00083581870000000002 0.041262750000000001 0.00068841875000000003 -0.0016876617 0.041054848999999997 0.00017622113 -0.00067349988999999995 0.040839317999999999 0.00041465460999999998 -0.0015253443 0.040631417000000003 -9.7557902000000002e-05 -0.0012420109000000001 0.039023521999999998 0.0026495904 -0.0029552691 0.038637761 0.0016997308 -0.0014335858000000001 0.036266926999999997 0.0045822561000000003 -0.0040409490000000003 0.035881165 0.0036323815999999998 -0.0042327381999999998 0.036133889000000002 0.0040562302000000001 -0.001625374 0.036519650000000001 0.0050060898000000003 -0.0022477171999999998 0.039253358000000002 0.0024484247000000001 -0.0029290560999999998 0.036327008000000001 0.0045311748999999997 -0.0027372688 0.036074283999999998 0.0041073263000000002 -0.0020986423000000001 0.038830879999999998 0.0021746755000000002 -0.0010994215999999999 0.040735368000000001 0.00015854836"
 		+ " -0.0012617399999999999 0.041158321999999997 0.00043231249000000001 -0.0027041490999999999 0.037352207999999998 0.0038369149000000002 -0.0015241215 0.037544849999999998 0.0043118447000000002 -0.0013421569 0.037235382999999997 0.0039380342 -0.0025221836000000001 0.037042263999999998 0.0034631044 -0.0037022103000000002 0.036849621999999999 0.0029881597 -0.0038841758 0.037159565999999998 0.0033619851000000001 -0.0024792439999999998 0.038377408000000002 0.0031426698000000001 -0.001422869 0.038570527 0.0036176145000000001 -0.0012507289999999999 0.038203839000000003 0.0032938122999999998 -0.0023071021000000001 0.038011196999999997 0.0028188825000000002 -0.0033634752 0.037818554999999997 0.0023439527000000001 -0.0035356189999999998 0.038184766000000002 0.00266774 -0.0019234726000000001 0.039988164 0.0017763971999999999 -0.0011596847 0.040151241999999997 0.0021783710000000001 -0.00099736637999999996 0.039728288 0.0019046217 -0.0017611542999999999 0.039564731999999998 0.0015026331 -0.0025249402999999999 0.039401654000"
 		+ "000001 0.0011006445 -0.0026872585999999999 0.039824608999999997 0.0013743937 -0.0015926063 0.040573243000000002 0.0011043549 -0.00099775149000000006 0.040706757000000003 0.0014333874000000001 -0.00083543313999999999 0.040283803 0.0011596232999999999 -0.001430288 0.040150287999999999 0.00083059072000000002 -0.0020251422999999998 0.040016773999999998 0.00050154327999999998 -0.0021874606999999998 0.040439729000000001 0.00077530741999999998"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface25" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface25" 
 		"rotatePivot" " -type \"double3\" 0.2425431084068882 6.75740413041357346 0.089192199681601247"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface25" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface25" 
 		"scalePivot" " -type \"double3\" 0.2425431084068882 6.75740413041357346 0.089192199681601247"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface25|jackieHair_latest:polySurfaceShape36" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface25|jackieHair_latest:polySurfaceShape36" 
 		"pt[0:41]" (" -s 42 -type \"float3\" 0.0032730717 0.038545731 0.0025890320999999998 0.0049492903 0.038454655999999997 0.00056999921999999995 0.0013443371 0.041129235 0.00048948823999999996 0.0019581596999999999 0.041124466999999998 -0.00031949579999999999 0.0011426852999999999 0.040715341000000002 0.00022783874999999999 0.0017565163 0.040710572 -0.00058113038999999997 0.0030251034 0.038129929 0.0023709983000000001 0.0047013163999999998 0.038039330000000003 0.00035196543 0.0037151928999999998 0.035665158000000002 0.0033488423 0.0058155656000000002 0.034880283999999998 0.0016689300999999999 0.0061477125000000002 0.035055283 0.0020071119000000001 0.0040473230000000002 0.035839680999999998 0.0036870091999999998 0.0041111819000000001 0.038499955000000002 0.0015795081999999999 0.0016512489 0.041126850999999999 8.4996223000000001e-05 0.0014496007999999999 0.040712956000000002 -0.00017665327000000001 0.0038632079999999999 0.038084630000000001 0.0013614892999999999 0.0047653801999999997 0.035272721 0.0025088787000000002 0.0050975196"
 		+ "000000002 0.035447244000000003 0.0028470606 0.0045545882999999997 0.037605408999999999 0.0020020305999999999 0.0036457833000000002 0.037766580000000001 0.0029550194999999999 0.0033697597999999998 0.037431363000000002 0.0026969463000000001 0.0042785592000000004 0.037270192000000001 0.0017439573999999999 0.0051873587000000002 0.037109020999999999 0.00079095363999999999 0.0054633915000000003 0.037444713999999997 0.0010490416999999999 0.0048260539999999998 0.036526325999999998 0.0024245381 0.0038465577999999999 0.036803368000000003 0.0033210068999999999 0.0035424773000000001 0.036548260999999999 0.0030228943 0.0045219696999999996 0.036271218000000001 0.0021264105999999998 0.0055014603000000002 0.035994653000000001 0.0012299418000000001 0.0058055557000000002 0.036250236999999998 0.0015280694000000001 0.0025285408 0.040312889999999997 0.00058317183999999995 0.0020445622999999999 0.040329578999999997 0.0011893362000000001 0.0018274719000000001 0.039915208000000001 0.00094221531999999996 0.0023114514000000001 0.03989"
 		+ "8518000000001 0.00033606589 0.0027954299000000002 0.039881352000000002 -0.00027009845000000002 0.0030125193000000001 0.040296200999999997 -2.2992492000000002e-05 0.0034058318000000001 0.039498452000000003 0.0010813325999999999 0.0027447882999999998 0.039529923000000002 0.0018891692000000001 0.0025122593999999999 0.039115074999999999 0.0016566068 0.0031732991000000001 0.039083604000000001 0.00084877013999999998 0.0038343444000000001 0.039052609000000002 4.0933489999999996e-05 0.0040668752000000002 0.039467457999999997 0.00027349591000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface26" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface26" 
 		"rotatePivot" " -type \"double3\" 0.2425431084068882 6.75740413041357346 0.089192199681601247"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface26" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface26" 
 		"scalePivot" " -type \"double3\" 0.2425431084068882 6.75740413041357346 0.089192199681601247"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface26|jackieHair_latest:polySurfaceShape37" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface26|jackieHair_latest:polySurfaceShape37" 
 		"pt[0:41]" (" -s 42 -type \"float3\" -0.0033793841000000001 0.038487556999999999 0.0025227815000000002 -0.0050555951999999996 0.038396958000000002 0.00062334537999999997 -0.0013443343000000001 0.041129235 0.00048947333999999998 -0.0019581596999999999 0.041124466999999998 -0.00031949579999999999 -0.0011426871999999999 0.040715341000000002 0.00022783874999999999 -0.0017565135000000001 0.040710572 -0.00058113038999999997 -0.0031314137999999998 0.038072231999999998 0.0023176520999999999 -0.0048076250000000003 0.037981633000000001 0.00041823088999999998 -0.0037151873000000001 0.035665158000000002 0.0033488423 -0.0058155767999999997 0.034880283999999998 0.0016689300999999999 -0.0061477086999999998 0.035055283 0.0020071119000000001 -0.0040473267000000002 0.035839680999999998 0.0036870241000000002 -0.0042174906000000002 0.038442258 0.001573056 -0.0050975196000000002 0.035447244000000003 0.0028470606 -0.0047653801999999997 0.035272721 0.0025088936000000001 -0.0039695184999999997 0.038026932999999999 0.0013679415000000001 -0.00144959"
 		+ "99000000001 0.040712956000000002 -0.00017665327000000001 -0.0016512479999999999 0.041126850999999999 8.4996223000000001e-05 -0.0048260539999999998 0.036526325999999998 0.0024245381 -0.0038465559000000001 0.036803368000000003 0.0033210217999999998 -0.0035424735000000001 0.036548260999999999 0.0030228943 -0.0045219733999999996 0.036271218000000001 0.0021264255000000001 -0.0055014677000000001 0.035995129000000001 0.0012299418000000001 -0.0058055483000000003 0.036249760999999998 0.0015280694000000001 -0.0045545882999999997 0.037605408999999999 0.0020020305999999999 -0.0036457888999999999 0.037766580000000001 0.0029550194999999999 -0.0033697616 0.037431363000000002 0.0026969463000000001 -0.0042785666999999999 0.037270192000000001 0.0017439425 -0.0051873661999999997 0.037109020999999999 0.00079095363999999999 -0.0054633952999999999 0.037444713999999997 0.0010490416999999999 -0.0034058335999999998 0.039498452000000003 0.0010813475 -0.0027447919999999998 0.039529923000000002 0.0018891692000000001 -0.00251226309999999"
 		+ "99 0.039115074999999999 0.0016566068 -0.0031733046999999999 0.039083604000000001 0.00084877013999999998 -0.0038343425999999999 0.039052609000000002 4.0933489999999996e-05 -0.0040668733 0.039467457999999997 0.00027349591000000001 -0.0025285408 0.040312889999999997 0.00058317183999999995 -0.0020445641000000001 0.040329101999999999 0.0011893362000000001 -0.0018274747 0.039915208000000001 0.00094221531999999996 -0.0023114514000000001 0.039898518000000001 0.00033605099000000001 -0.002795428 0.039881352000000002 -0.00027009845000000002 -0.0030125174999999999 0.040296200999999997 -2.2992492000000002e-05"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface27" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface27" 
 		"rotatePivot" " -type \"double3\" 0.31227936159382508 6.75740413041357346 -0.014780404265093833"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface27" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface27" 
 		"scalePivot" " -type \"double3\" 0.31227936159382508 6.75740413041357346 -0.014780404265093833"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface27|jackieHair_latest:polySurfaceShape38" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface27|jackieHair_latest:polySurfaceShape38" 
 		"pt[0:95]" (" -s 96 -type \"float3\" 0.0049805567000000004 0.038355473000000001 0.048911899000000002 0.0058555118999999997 0.038408879 0.046523437000000001 0.0018858016000000001 0.040803078999999999 0.047902420000000001 0.0021852720999999999 0.040858868999999999 0.047020301 0.0015690941000000001 0.040435436999999998 0.047690510999999998 0.0018685609000000001 0.040491226999999998 0.046808376999999998 0.0046351366 0.037983540000000003 0.048756644000000002 0.0055100842999999998 0.038036946000000002 0.046368167000000002 0.0055628531 0.034407262000000001 0.049531802999999999 0.0067639351 0.034108762000000001 0.046732812999999998 0.0072272046999999999 0.034236554000000002 0.046894594999999997 0.0060261376000000002 0.034534576999999997 0.049693598999999998 0.0049762948999999999 0.027695777000000001 0.051266998000000001 0.0061773658 0.027397754 0.048541844000000001 0.0066406466000000003 0.027525546000000001 0.048703626 0.0054395757999999997 0.027823568999999999 0.051428794999999999 0.0038208254000000001 0.024020792999999999 0.05323"
 		+ "3698000000003 0.0053064786000000001 0.025058866999999999 0.050669908999999999 0.0056155622000000002 0.025350214999999999 0.050946831999999997 0.0041299127000000001 0.024312139999999999 0.053510621000000001 0.0060028210000000002 0.030916335 0.050653919999999998 0.0072038807 0.030617834999999999 0.047760799999999999 0.0067406148000000001 0.030490995999999999 0.047599032999999999 0.0055395365 0.03078902 0.050492137999999999 0.0054180360999999998 0.038382175999999997 0.047674358 0.0020355376999999998 0.040831211999999999 0.047418043 0.0017188275 0.040463570999999997 0.047206133999999997 0.0050726086000000004 0.038010242999999999 0.047519088000000001 0.0061633959000000002 0.034258011999999997 0.048088998000000001 0.0061400756000000003 0.03063977 0.048955217000000002 0.0055768303999999998 0.027546527000000001 0.049695670999999997 0.0045636519999999996 0.024540069000000001 0.051951796000000001 0.0048727355999999998 0.024830939 0.052228733999999999 0.0060401112 0.027674318999999999 0.049857453000000003 0.006603348999"
 		+ "9999997 0.030767085 0.049117014000000001 0.0066266692999999996 0.034385327 0.048250794 0.0032370184000000001 0.040318134999999998 0.047503485999999998 0.0029913709 0.040290478999999997 0.048238903 0.0026650894 0.039921406999999999 0.048045874000000002 0.0029107369 0.039949063 0.047310457 0.0031563845000000001 0.039976243000000002 0.046575024999999999 0.0034826659000000001 0.040345315 0.046768054000000003 0.0043645202999999999 0.039501313000000003 0.047588915000000002 0.0040229578 0.03947461 0.048575400999999997 0.0036871022999999999 0.039104107999999999 0.048401250999999999 0.004028663 0.039131287000000001 0.047414764999999998 0.0043702274999999997 0.039157989999999997 0.046428293000000002 0.004706081 0.039528492999999998 0.046602428000000001 0.0058948956 0.037353162000000002 0.047866493000000003 0.0054030642 0.037385109999999999 0.049172476 0.0050183535000000003 0.037094239000000001 0.049015015000000002 0.0055101849000000003 0.037062290999999997 0.047709063000000003 0.0060020163999999999 0.037030819999999999"
@@ -27277,13 +27344,13 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "9999996 0.032148960999999997 0.048666491999999999 0.0068223700000000003 0.031999711 0.047223657000000002 0.0072856359000000002 0.032127026000000003 0.047385454 0.0064895860999999999 0.030039432000000001 0.049363822000000002 0.0058890580999999996 0.030188204999999999 0.050806627 0.0054257697999999998 0.030060889 0.05064486 0.0060263089999999997 0.029912115999999999 0.049202040000000002 0.0066268480999999999 0.029762865999999999 0.047759234999999997 0.0070901141000000003 0.029890180999999998 0.047921001999999997 0.0063018388999999996 0.029008510000000001 0.049610645000000002 0.0057013072000000001 0.029157282999999999 0.051053464 0.0052380227 0.029029967 0.050891683 0.0058385618000000002 0.028880717 0.049448847999999997 0.006439101 0.028731943999999999 0.048006042999999998 0.0069023742999999999 0.028859260000000001 0.048167824999999997 0.0056509860000000002 0.026726367000000001 0.050647869999999998 0.0050030239000000004 0.026652457000000001 0.052037075000000002 0.0045911409000000004 0.026470782000000002 0.051836"
 		+ "878000000003 0.0052391030000000002 0.026544692000000002 0.050447701999999997 0.0058870724999999999 0.026618124999999999 0.049058541999999997 0.0062989518 0.026799799999999999 0.049258708999999998 0.0052618608000000004 0.025778892000000001 0.051438301999999998 0.0045664646000000003 0.025482299 0.052773847999999998 0.0042059831000000004 0.025245788000000002 0.052535281000000003 0.0049013792999999996 0.025541903000000001 0.051199749000000003 0.0055967717999999998 0.025838495999999999 0.049864218000000002 0.0059572569999999997 0.026075007000000001 0.050102769999999998"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface28" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface28" 
 		"rotatePivot" " -type \"double3\" 0.31227936159382508 6.75740413041357346 -0.014780404265093833"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface28" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface28" 
 		"scalePivot" " -type \"double3\" 0.31227936159382508 6.75740413041357346 -0.014780404265093833"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface28|jackieHair_latest:polySurfaceShape39" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface28|jackieHair_latest:polySurfaceShape39" 
 		"pt[0:95]" (" -s 96 -type \"float3\" -0.0078646019000000005 0.038563373999999997 0.057772666 -0.0087395534000000007 0.038616302999999998 0.055297582999999997 -0.0046324608999999996 0.041021469999999997 0.056763187 -0.0049319313999999998 0.041076782999999999 0.055794432999999997 -0.0043157580999999999 0.040653829000000002 0.056551278000000003 -0.0046152323 0.040709618000000003 0.055582538000000001 -0.0075191705999999997 0.038190965 0.057617411 -0.0083941295999999995 0.03824437 0.055142312999999998 -0.0086202249000000009 0.034710052999999998 0.058392568999999998 -0.0098212920000000006 0.034412030000000003 0.055506945000000002 -0.010284569 0.034539345999999999 0.055668741000000001 -0.0090835094000000002 0.034837369 0.058554381000000003 -0.0080303549999999994 0.027999045 0.063567712999999998 -0.0092314258 0.027701021999999999 0.060809091000000003 -0.0096947066000000002 0.027828338000000001 0.060958430000000001 -0.008493647 0.028126360999999999 0.063717037000000004 -0.0067048762000000003 0.024323585000000002 0.065552935000000007"
 		+ " -0.0081905238000000002 0.025362136 0.062989160000000002 -0.0084995963000000004 0.025653006999999999 0.063266098000000007 -0.0070139597999999996 0.024614931999999999 0.065829888000000003 -0.0090246758999999992 0.031219126999999999 0.059352889999999998 -0.010225738999999999 0.030921580000000001 0.056469098000000002 -0.0097624659999999992 0.030793787999999999 0.056307331000000002 -0.0085613877000000008 0.031091811 0.059191063000000002 -0.0079566501000000005 0.038218144000000003 0.056379869999999999 -0.0044654951999999999 0.040681962000000002 0.056066900000000003 -0.0047821970999999998 0.041049602999999997 0.056278809999999999 -0.0083020777000000004 0.038590077 0.056535124999999999 -0.0096840411000000005 0.034688596000000002 0.057111545999999999 -0.0096252039000000005 0.031070352999999998 0.057977780999999999 -0.0090941749999999995 0.027977588000000001 0.062170476000000002 -0.0077567770999999999 0.025134208000000002 0.064548000999999994 -0.0074476971999999997 0.024842860000000001 0.064271047999999997 -0.00863088"
 		+ "66999999997 0.027849795 0.062021166000000003 -0.0091619267999999993 0.030943037999999999 0.057815969000000002 -0.0092207603000000003 0.03456128 0.05694975 -0.0073998681999999996 0.039473179999999997 0.05643335 -0.0070583056999999998 0.039446477000000001 0.057419837000000001 -0.0067224540000000001 0.039075973999999999 0.057245687000000003 -0.0070640184000000002 0.039102677000000002 0.056259200000000002 -0.0074055791000000003 0.039129856999999997 0.055172890000000002 -0.0077414288999999997 0.039500358999999999 0.05534704 -0.0062265730999999996 0.040260915000000001 0.056347907000000003 -0.0059809238000000002 0.040233735 0.057083337999999997 -0.0056546479000000004 0.039864663000000002 0.056890309 -0.0059002992000000004 0.039892320000000002 0.056154891999999998 -0.0061459484999999998 0.039919498999999997 0.055419444999999998 -0.0064722206000000001 0.040288571000000002 0.055612490000000001 -0.0093789175000000002 0.036020878999999999 0.056903079000000002 -0.0088327453 0.036111000999999997 0.058277488000000002 -0.008"
@@ -27291,83 +27358,83 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "734976000000003 0.033631448000000001 0.058826773999999998 -0.0087102129999999996 0.033504131999999999 0.058664963000000001 -0.0093107484000000008 0.033354882000000002 0.057222158000000002 -0.0099112838999999998 0.033206108999999998 0.055779352999999997 -0.010374560999999999 0.033333424 0.055941135000000003 -0.0093829854999999997 0.029008510000000001 0.059495806999999998 -0.0087824537999999994 0.029157282999999999 0.060857594000000001 -0.0083191655999999992 0.029029967 0.060900985999999997 -0.0089197010000000004 0.028881193999999999 0.059598729000000003 -0.0095202363999999998 0.028731943999999999 0.057819798999999998 -0.0099835172 0.028859260000000001 0.057844758000000003 -0.0095707326999999991 0.030039432000000001 0.058208256999999999 -0.0089702010000000006 0.030188204999999999 0.059651076999999997 -0.008506909 0.030060889 0.059489279999999999 -0.0091074481999999998 0.029912115999999999 0.058046460000000001 -0.0097079873000000001 0.029762865999999999 0.056603639999999997 -0.010171260999999999 0.02989018099999"
 		+ "9998 0.056765437000000002 -0.0083028822999999998 0.026081683000000001 0.063757583000000007 -0.0076074934999999996 0.025785566999999999 0.065093100000000001 -0.0072470084000000002 0.025548578999999998 0.064854546999999999 -0.0079424009000000004 0.025845172 0.063519001000000005 -0.0086377971000000005 0.026141765000000001 0.062183469999999998 -0.0089982711 0.026378275999999999 0.062422037 -0.0087444410000000004 0.027029635 0.062967137000000006 -0.0080964789000000006 0.026955725999999999 0.064356311999999999 -0.0076845921999999997 0.026773574000000001 0.064156144999999998 -0.0083325580000000003 0.026847484000000001 0.062766969000000006 -0.0089805201000000001 0.026921392999999998 0.061377793999999999 -0.0093923992999999997 0.027103545 0.061577961000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom" 
 		"rotatePivot" " -type \"double3\" 0 -0.021990912528377926 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom" 
 		"scalePivot" " -type \"double3\" 0 -0.021990912528377926 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface29" 
 		"rotatePivot" " -type \"double3\" 0.1580067425092784 6.82933981548174174 0.1453311111635977"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface29" 
 		"scalePivot" " -type \"double3\" 0.1580067425092784 6.82933981548174174 0.1453311111635977"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface29|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface29|jackieHair_latest:polySurfaceShape29" 
 		"pt[0:41]" (" -s 42 -type \"float3\" 0.011544145 0.018724563 -0.025826782 0.015778345999999999 0.019677759999999999 -0.023479237999999999 0.010171836 0.014236571 -0.020303234 0.012277110000000001 0.014750602 -0.019037366 0.0097706774000000003 0.015282275 -0.019626647000000001 0.011875953999999999 0.015796306 -0.018360764000000002 0.011175714 0.019770266000000002 -0.025150164999999999 0.015409915 0.020723464 -0.022802651 0.011649178 0.026582361999999998 -0.029926613000000001 0.018093094000000001 0.027535560000000001 -0.027579039 0.018567085000000001 0.026911379999999999 -0.028626576000000001 0.012123169 0.025957705000000001 -0.030974120000000001 0.013661247 0.0192014 -0.024653003 0.015345128 0.026434543000000001 -0.029800341000000001 0.014871137 0.027059198999999999 -0.028752834000000001 0.013292814999999999 0.020247103999999998 -0.023976399999999998 0.010823315 0.015539290000000001 -0.018993705999999999 0.011224473 0.014493585999999999 -0.019670292999999998 0.014789287999999999 0.023900629999999999 -0.028084561000000001 0.0"
 		+ "11872931999999999 0.023423792999999998 -0.029258341 0.011423219 0.024189116 -0.028334469000000001 0.014339575 0.024665954 -0.027160688999999998 0.017255932000000002 0.025142313999999999 -0.025986909999999998 0.017705644999999999 0.024377467 -0.026910797 0.01423345 0.021366717 -0.026368782 0.011622693 0.02088988 -0.027542546000000001 0.011197260000000001 0.021795393999999999 -0.026742324000000001 0.013808012999999999 0.022271754000000001 -0.025568560000000001 0.016418769999999999 0.022748590999999999 -0.024394780000000001 0.016844204000000002 0.021843077999999998 -0.025195031999999999 0.012859895999999999 0.017386558 -0.022992103999999999 0.010972249 0.016983153000000001 -0.023985579999999999 0.010571092000000001 0.018028856999999999 -0.023308992000000001 0.012458739999999999 0.018431784999999999 -0.022315517 0.014346387 0.018835666000000001 -0.021322027 0.014747543 0.017789961999999999 -0.021998614 0.012042185 0.015939834 -0.021331205999999998 0.010572042 0.015609862 -0.022144407000000001 0.010170884 0.016655"
 		+ "566 -0.021467819999999999 0.011641027 0.016985536999999998 -0.020654618999999999 0.01311117 0.017315985999999998 -0.019841403000000001 0.013512326999999999 0.016270282 -0.02051799"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface31" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface31" 
 		"rotatePivot" " -type \"double3\" 0.1580067425092784 6.82933981548174174 0.1453311111635977"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface31" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface31" 
 		"scalePivot" " -type \"double3\" 0.1580067425092784 6.82933981548174174 0.1453311111635977"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface31|jackieHair_latest:polySurfaceShape31" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface31|jackieHair_latest:polySurfaceShape31" 
 		"pt[0:41]" (" -s 42 -type \"float3\" 0.0048398840999999996 0.018356444 -0.025826767 0.00022957288 0.019309641999999998 -0.023479223 0.0060405079000000004 0.014236571 -0.020303205000000001 0.0039352262000000001 0.014750602 -0.019037366 0.0064416602000000002 0.015281797999999999 -0.019626647000000001 0.0043363888000000003 0.015796306 -0.018360779000000001 0.0052410438999999998 0.019402148000000001 -0.025150164999999999 0.00063072889999999998 0.020355346 -0.022802636000000001 0.0045631611999999997 0.026582361999999998 -0.029926613000000001 -0.0018807667999999999 0.027535560000000001 -0.027579069000000001 -0.0023547504000000002 0.026911379999999999 -0.028626560999999998 0.0040891599000000001 0.025957705000000001 -0.030974120000000001 0.0025347285000000002 0.018832805000000001 -0.024652988000000001 0.0049878674999999997 0.014493585999999999 -0.019670292999999998 0.0053890244999999998 0.015539290000000001 -0.018993705999999999 0.0029358864000000001 0.019878508999999999 -0.023976399999999998 0.0013411975999999999 0.027059198999999"
 		+ "999 -0.028752849 0.00086720473999999997 0.026434543000000001 -0.029800341000000001 0.0019788872 0.021366717 -0.026368782 0.0045896414999999999 0.02088988 -0.027542561 0.0050150827000000004 0.021795393999999999 -0.026742324000000001 0.0024043247 0.022271754000000001 -0.025568545000000002 -0.00020643509999999999 0.022748590999999999 -0.024394780000000001 -0.00063186883999999995 0.021843077999999998 -0.025195003000000001 0.0014230460000000001 0.023900629999999999 -0.028084561000000001 0.0043394007 0.023423792999999998 -0.029258341 0.0047891224 0.024189116 -0.028334453999999999 0.0018727612 0.024665954 -0.027160688999999998 -0.0010436009999999999 0.025142313999999999 -0.025986925000000001 -0.0014933106000000001 0.024377467 -0.026910782000000001 0.0037535997000000001 0.018432260999999998 -0.022315502000000001 0.0056412499 0.018028856999999999 -0.023308992000000001 0.0052400920999999996 0.016983153000000001 -0.023985579999999999 0.0033524418000000001 0.017386558 -0.022992089 0.0014647916 0.017789961999999999 -0.021"
 		+ "998614 0.0018659494999999999 0.018835188999999999 -0.021322012000000001 0.0045713120999999997 0.016985536999999998 -0.020654604 0.0060414542 0.016655566 -0.021467819999999999 0.0056403 0.015609862 -0.022144407000000001 0.0041701541999999998 0.015940309999999999 -0.021331190999999999 0.0027000085 0.016270282 -0.02051799 0.0031011691 0.017315985999999998 -0.019841388000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface32" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface32" 
 		"rotatePivot" " -type \"double3\" 0.24452402324934722 6.82933981548174174 0.062453780560062788"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface32" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface32" 
 		"scalePivot" " -type \"double3\" 0.24452402324934722 6.82933981548174174 0.062453780560062788"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface32|jackieHair_latest:polySurfaceShape32" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface32|jackieHair_latest:polySurfaceShape32" 
 		"pt[0:41]" (" -s 42 -type \"float3\" 0.0044555627000000004 0.020951391999999999 -0.029252305999999999 0.00031290202999999998 0.021175981999999999 -0.024262427999999999 0.0092222989000000002 0.014566066000000001 -0.024063423 0.0077052767999999999 0.014577987000000001 -0.022064090000000001 0.0097206681999999992 0.015588405 -0.023416771999999999 0.0082036285000000007 0.015600802 -0.021417469000000001 0.0050684027000000003 0.021978498999999999 -0.028713465000000001 0.00092575698999999997 0.022203090000000002 -0.023723557999999999 0.0033628922000000002 0.028070570999999999 -0.031130135 -0.0018280372000000001 0.030009867999999999 -0.026978344000000001 -0.0026489085999999999 0.029577375999999999 -0.027814149999999999 0.0025420467999999999 0.027638079999999999 -0.031965896000000001 0.0023842324000000002 0.021063449000000001 -0.026757360000000001 0.0084637878000000007 0.014572264999999999 -0.023063764 0.0089621487999999999 0.015594603 -0.022417112999999999 0.0029970799 0.022091033 -0.026218518999999999 0.00076742843000000003 0.02903"
 		+ "9980999999999 -0.029054238999999999 -5.3431838999999999e-05 0.028607965999999999 -0.029890031000000001 0.0012883804999999999 0.023274066 -0.027801587999999999 0.0035344287999999999 0.022876384 -0.030156835999999999 0.0042166039000000001 0.023705126999999999 -0.029519021999999999 0.0019705667999999998 0.024103286000000002 -0.027163744 -0.00027546659000000001 0.024501445 -0.024808481 -0.00095766782999999998 0.023672225000000002 -0.025446325999999998 0.00061747058999999998 0.025941016000000001 -0.028845802 0.0030382387000000002 0.025257232000000001 -0.031061366 0.0037897489999999998 0.025888087000000001 -0.030324578000000001 0.0013689995 0.026571872 -0.028108998999999999 -0.00105175 0.027255656 -0.02589342 -0.0018032864 0.026624801 -0.026630238000000001 0.0062956213999999996 0.016584041000000001 -0.024294957999999998 0.0074917394999999996 0.016542556 -0.025793046 0.0080282659999999992 0.017566325000000001 -0.025182336999999999 0.0068321433000000003 0.017608287 -0.023684248000000001 0.0056360233999999997 0.017649"
 		+ "772000000001 -0.022186174999999999 0.0050995032999999997 0.016625524999999999 -0.022796869000000001 0.004127454 0.018595817000000001 -0.025526165999999999 0.0057611800999999999 0.018518568999999999 -0.027522682999999999 0.0063358620000000003 0.019544723 -0.026947901 0.0047021414999999997 0.019621493 -0.024951383000000001 0.0030684191999999998 0.019698264 -0.022954866000000001 0.0024937297999999999 0.018672587000000001 -0.023529649"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface33" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface33" 
 		"rotatePivot" " -type \"double3\" 0.24452402324934722 6.82933981548174174 0.062453780560062788"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface33" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface33" 
 		"scalePivot" " -type \"double3\" 0.24452402324934722 6.82933981548174174 0.062453780560062788"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface33|jackieHair_latest:polySurfaceShape33" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface33|jackieHair_latest:polySurfaceShape33" 
 		"pt[0:41]" (" -s 42 -type \"float3\" 0.020896655 0.021094443000000001 -0.029088541999999998 0.025039293000000001 0.021319034000000001 -0.024394259000000001 0.015867165999999999 0.014566066000000001 -0.024063423 0.017384196000000001 0.014577987000000001 -0.022064090000000001 0.015368807999999999 0.015588405 -0.023416787000000001 0.016885838 0.015600802 -0.021417453999999999 0.020283810999999999 0.022121074000000001 -0.028581618999999999 0.024426448999999999 0.022345664000000001 -0.023887321 0.021726564 0.028070570999999999 -0.031130135 0.026917532000000001 0.030009867999999999 -0.026978344000000001 0.027738380999999999 0.029577375999999999 -0.027814149999999999 0.022547424 0.027638079999999999 -0.031965896000000001 0.022967976000000001 0.0212065 -0.026741415000000001 0.025142900999999999 0.028607965999999999 -0.029890031000000001 0.024322047999999999 0.029040458000000002 -0.029054254000000002 0.022355130000000001 0.022233606999999999 -0.026234463 0.016127321999999999 0.015594603 -0.022417128000000001 0.01662568 0.01457226499"
 		+ "9999999 -0.023063764 0.024472002 0.025941016000000001 -0.028845802 0.022051239 0.025257232000000001 -0.031061380999999999 0.021299720000000001 0.025888087000000001 -0.030324593 0.023720482000000001 0.026571872 -0.028108998999999999 0.026141246999999999 0.027255656 -0.02589342 0.026892758999999999 0.026624801 -0.026630238000000001 0.023801096000000001 0.023274066 -0.027801587999999999 0.021555055 0.022876384 -0.030156850999999998 0.020872872000000001 0.023705126999999999 -0.029519021999999999 0.023118915 0.024103286000000002 -0.027163758999999999 0.025364958 0.024501445 -0.024808495999999999 0.026047131000000001 0.023672225000000002 -0.025446340000000001 0.020962018999999998 0.018595817000000001 -0.025526151 0.019328304000000001 0.018519046000000001 -0.027522682999999999 0.018753622000000001 0.019544723 -0.026947901 0.020387338000000001 0.019621493 -0.024951383000000001 0.022021057 0.019698264 -0.022954866000000001 0.022595739 0.018672587000000001 -0.023529649 0.018793849000000001 0.016584041000000001 -0.02429"
 		+ "4957999999998 0.017597735 0.016542556 -0.025793046 0.017061212999999999 0.017566325000000001 -0.025182336999999999 0.018257331000000002 0.017608287 -0.023684248000000001 0.019453446999999999 0.017649772000000001 -0.02218616 0.019989967000000001 0.016625524999999999 -0.022796869000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface34" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface34" 
 		"rotatePivot" " -type \"double3\" 0.066559226321892831 6.82933981548174174 0.18100855817014411"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface34" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface34" 
 		"scalePivot" " -type \"double3\" 0.066559226321892831 6.82933981548174174 0.18100855817014411"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface34|jackieHair_latest:polySurfaceShape34" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface34|jackieHair_latest:polySurfaceShape34" 
 		"pt[0:41]" (" -s 42 -type \"float3\" -0.080318704000000005 0.018356444 -0.016043022000000001 -0.073507100000000006 0.019309641999999998 0.023215398000000002 -0.036942641999999998 0.014236571 -0.012340903 -0.032405551999999997 0.014750602 0.0060263425000000002 -0.031052864999999999 0.015281797999999999 -0.013757408 -0.026515470999999999 0.015796306 0.0046098231999999999 -0.074428618000000002 0.019402148000000001 -0.017459512 -0.067617028999999995 0.020355346 0.021798924000000001 -0.11111971 0.026582361999999998 -0.023312882 -0.10847028 0.027535560000000001 0.029440075 -0.11725517000000001 0.026911379999999999 0.030550659000000001 -0.11990479 0.025957705000000001 -0.022202237999999999 -0.076912902000000005 0.018832805000000001 0.0035861880000000001 -0.034674097000000001 0.014493585999999999 -0.0031572728999999999 -0.028784166999999999 0.015539290000000001 -0.0045737922000000002 -0.071022822999999999 0.019878508999999999 0.0021697133999999999 -0.10979499 0.027059198999999999 0.0030635892999999999 -0.11857998 0.0264345430000000"
 		+ "01 0.0041742176000000002 -0.090801932000000002 0.021366717 0.0037821978 -0.093514070000000005 0.02088988 -0.018096103999999998 -0.086658983999999994 0.021795393999999999 -0.01941064 -0.083946883999999999 0.022271754000000001 0.0024676770000000002 -0.081234783000000005 0.022748590999999999 0.024345979 -0.088089793999999999 0.021843077999999998 0.025660485 -0.10469095 0.023900629999999999 0.0039782076999999999 -0.10670942999999999 0.023423792999999998 -0.020149156000000001 -0.098889351 0.024189116 -0.021361768 -0.096870936000000005 0.024665954 0.0027656406 -0.094852521999999995 0.025142313999999999 0.026893034999999999 -0.10267248 0.024377467 0.028105571999999999 -0.056943267999999998 0.018432260999999998 -7.8126787999999999e-05 -0.059970032 0.018028856999999999 -0.016225487 -0.065860018000000006 0.016983153000000001 -0.014808998 -0.062833293999999998 0.017386558 0.0013383627000000001 -0.059806585000000002 0.017789961999999999 0.017485707999999999 -0.053916506000000003 0.018835188999999999 0.016069232999999999 "
 		+ "-0.042863714999999997 0.016985536999999998 -0.002325967 -0.045511451000000001 0.016655566 -0.014991447 -0.051401324999999998 0.015609862 -0.013574943000000001 -0.048753696999999999 0.015940309999999999 -0.00090946256999999999 -0.046106067000000001 0.016270282 0.011756018 -0.040215991 0.017315985999999998 0.010339528000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface35" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface35" 
 		"rotatePivot" " -type \"double3\" 0.21237555681560871 6.83174574711431148 0.12594739717703907"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface35" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface35" 
 		"scalePivot" " -type \"double3\" 0.21237555681560871 6.83174574711431148 0.12594739717703907"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface35|jackieHair_latest:polySurfaceShape35" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface35|jackieHair_latest:polySurfaceShape35" 
 		"pt[0:41]" (" -s 42 -type \"float3\" 0.067291103000000005 0.021130205999999999 -0.014494494 0.065376051000000004 0.02208388 0.00098328292000000005 0.049135439000000003 0.016642214999999998 -0.011943176 0.047888501999999999 0.017156245000000001 -0.0041287243 0.046630893 0.017687919 -0.012327015 0.045383888999999997 0.018201948999999999 -0.0045125334999999997 0.064825921999999994 0.02217591 -0.014780506000000001 0.062910885 0.023129106999999999 0.00069724022999999996 0.079667031999999999 0.028988481999999999 -0.019117713000000001 0.080412789999999998 0.029941679999999998 0.0029622614 0.084113374000000005 0.029317023000000001 0.0031169951 0.083367496999999999 0.028363826000000002 -0.018962935 0.066333577000000005 0.021607042999999999 -0.0067556201999999996 0.083740436000000001 0.028840662999999999 -0.0079229622999999992 0.080039911000000005 0.02946532 -0.0080777257999999994 0.063868403000000004 0.022652747000000001 -0.0070416330999999999 0.046007391000000002 0.017944933999999999 -0.0084197669999999999 0.048511971000000001 0.01"
 		+ "6899230000000001 -0.0080359578000000001 0.077944717999999996 0.02630675 -0.0075175613000000004 0.077939779000000001 0.025829912999999999 -0.017644435 0.074637941999999999 0.026594759999999999 -0.017875566999999998 0.074642837000000004 0.027071596999999999 -0.0077486634000000004 0.074647731999999994 0.027547957000000001 0.0023782401999999998 0.077949658000000005 0.026783110999999998 0.0026093422999999998 0.072149009 0.023772838000000001 -0.0071121454000000004 0.072512067999999999 0.023296476999999999 -0.016325950999999998 0.069608851999999999 0.024201514 -0.016633420999999999 0.069245770999999998 0.024677874999999998 -0.0074195861999999998 0.068882681000000001 0.025154711999999999 0.0017942339 0.071785933999999996 0.024249674999999998 0.0021016746999999998 0.060406177999999998 0.019792678000000001 -0.0071497857999999999 0.061101384000000002 0.019388796999999999 -0.013986036 0.058596805000000002 0.020434501000000001 -0.014369844999999999 0.057901595 0.020838381999999999 -0.0075336099 0.057206381000000001 0.0212"
 		+ "41309 -0.00069737434 0.059710975999999999 0.020195604999999998 -0.00031356514000000001 0.054459072999999997 0.018345954000000001 -0.0075928717999999996 0.055118411999999999 0.018015506000000001 -0.012964621000000001 0.052613851000000003 0.019061209999999999 -0.01334843 0.051954492999999997 0.019391657999999999 -0.0079766959000000005 0.051295134999999999 0.019721629000000001 -0.0026049614 0.053799737 0.018676402000000002 -0.0022211372999999999"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface36" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface36" 
 		"rotatePivot" " -type \"double3\" 0.28627982882647496 6.8429312306493415 -0.014901119804605956"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface36" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface36" 
 		"scalePivot" " -type \"double3\" 0.28627982882647496 6.8429312306493415 -0.014901119804605956"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface36|jackieHair_latest:polySurfaceShape36" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface36|jackieHair_latest:polySurfaceShape36" 
 		"pt[0:95]" (" -s 96 -type \"float3\" 0.014561012 0.038776997000000001 0.0078611224999999996 0.015036134 0.032204273999999998 0.018304094999999999 0.0011009332 0.026500346000000001 0.0016696602 0.0011233827 0.023790957000000001 0.0056169330999999998 -0.00034822336999999997 0.027350070000000001 0.0030777006999999999 -0.00032576174000000001 0.024640203999999999 0.0070249288999999996 0.013067877 0.039788368999999997 0.0090281366999999998 0.013543021000000001 0.033216123 0.019471169 0.018150343999999999 0.055281284999999999 0.016324564999999999 0.019392869 0.049017075 0.029641583999999999 0.021341837999999998 0.048971292 0.029218897000000001 0.020099408999999999 0.055235032000000003 0.015901729 0.017885372 0.085572361999999999 0.026408046000000001 0.019274296 0.079637647000000006 0.039233892999999999 0.021208942000000001 0.079559445000000006 0.038859366999999999 0.019820055 0.085494160999999999 0.026033521 0.015131512999999999 0.1048137 0.026733338999999998 0.017827695000000001 0.094247460000000005 0.035668134999999997 0.0193227"
 		+ "96 0.093860268999999996 0.034197657999999999 0.016626663999999999 0.10442603 0.025262862000000001 0.020796161000000001 0.071251988000000002 0.022127866999999999 0.022040766 0.064993023999999996 0.035437837 0.020091798000000001 0.065038322999999995 0.035860537999999997 0.018847095000000001 0.071297757000000003 0.022550687 0.01330545 0.036502484000000002 0.014249668 -0.00033699255000000001 0.025994898999999998 0.0050513297 0.0011121583999999999 0.025145174999999999 0.0036432892000000001 0.014798571999999999 0.035490635999999999 0.013082638000000001 0.020720626999999998 0.052103165999999999 0.022560328000000001 0.021495461 0.068295597999999999 0.028524548 0.020321685999999999 0.082092881000000006 0.033093317999999997 0.017974733999999999 0.099143147000000001 0.029730260000000001 0.016479603999999998 0.099530815999999994 0.031200736999999999 0.018387022999999999 0.082171082000000006 0.033467843999999997 0.019546442000000001 0.068340897999999997 0.028947309000000001 0.018771606999999999 0.052149411 0.022983059 0.0"
 		+ "11248899999999999 0.031769875000000003 0.010146528 0.011086784000000001 0.034412030000000003 0.0060076862999999996 0.0096083078999999998 0.035369519000000002 0.0072550178000000002 0.0097704325000000005 0.032727841000000001 0.01139392 0.0098174755000000006 0.029826285000000001 0.015918866 0.011295932999999999 0.028868795999999999 0.014671490000000001 0.0066867619999999997 0.028443934000000001 0.0070825814999999999 0.0066000903 0.030442358999999999 0.0040263683000000003 0.0051362747000000004 0.031346444000000001 0.0053540319000000003 0.0052229529000000002 0.029347541000000001 0.0084103048000000007 0.0053096282999999999 0.027349592999999998 0.011466532999999999 0.0067734327 0.026445509999999998 0.010138839 0.019319486 0.046409730000000003 0.019560903000000001 0.018826157 0.049593094999999997 0.013381331999999999 0.017029068000000001 0.049960735999999999 0.014052242 0.017522434 0.046777370999999998 0.020231724 0.018015799999999998 0.043593529999999998 0.026411250000000001 0.019812817 0.043225887999999997 0.025740"
@@ -27375,13 +27442,13 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "6388999999997 0.021124233999999999 0.077468514000000002 0.031746238000000003 0.020502992000000001 0.080600857999999997 0.025087683999999999 0.018553917999999999 0.080646156999999996 0.02551055 0.019175180999999999 0.077514290999999999 0.032169029000000002 0.019796444 0.074382424000000003 0.038827553000000001 0.021745469 0.074336648000000005 0.038404778000000001 0.021553932000000001 0.072864652000000002 0.030243724999999999 0.020932699999999999 0.075996517999999999 0.023585170999999999 0.018983628999999998 0.076042294999999996 0.024008005999999998 0.019604901000000001 0.072910427999999999 0.030666499999999999 0.020226168999999999 0.069778076999999994 0.037325024999999998 0.022175169000000002 0.069732777999999995 0.036902279000000003 0.019141054000000001 0.093471169000000007 0.030958757 0.018035259000000001 0.098036893 0.025760964000000001 0.016388799999999999 0.098310113000000005 0.026882216 0.017494612999999999 0.093744396999999993 0.032079995 0.018600425 0.089178680999999996 0.037277773 0.020246843 0.0889049"
 		+ "76999999996 0.036156504999999999 0.019909631000000001 0.087792993 0.032066807000000003 0.019046111000000001 0.091642022000000004 0.026138677999999999 0.017248343999999999 0.091801285999999996 0.026910722000000002 0.018111876999999998 0.087952256000000006 0.032838866000000001 0.018975413999999999 0.084103227000000003 0.038767009999999998 0.020773148000000002 0.083943962999999996 0.037994950999999999"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface37" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface37" 
 		"rotatePivot" " -type \"double3\" 0.29887542621291568 6.84293123064934239 -0.014901119804605872"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface37" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface37" 
 		"scalePivot" " -type \"double3\" 0.29887542621291568 6.84293123064934239 -0.014901119804605872"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface37|jackieHair_latest:polySurfaceShape37" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface37|jackieHair_latest:polySurfaceShape37" 
 		"pt[0:95]" (" -s 96 -type \"float3\" -0.014579315000000001 0.035814407999999999 -0.0047058463000000002 -0.011853356000000001 0.034616593000000001 0.0043926388000000002 -0.0029995460000000001 0.028148771999999999 -0.0096731483999999996 -0.0019211788 0.027599456000000001 -0.0063815861999999999 -0.0015825825000000001 0.029141070000000002 -0.009586677 -0.00050419942000000004 0.028592230999999999 -0.0062951148000000004 -0.013203177999999999 0.036844852999999997 -0.0048516541999999996 -0.010477195 0.035647037999999999 0.0042468308999999999 -0.017783988000000001 0.047741536000000001 -0.0035417973999999999 -0.015122745 0.047401551 0.0076709092000000001 -0.016871110000000002 0.047095898999999997 0.0081674308000000001 -0.019532420000000002 0.047435882999999998 -0.0030452460000000002 -0.020032536 0.068311334000000001 -0.0071362852999999997 -0.017536568999999998 0.068003304000000001 0.00385499 -0.019284951000000002 0.067697644000000001 0.0043515563 -0.021780968000000001 0.068005680999999998 -0.0066397488000000003 -0.021039173000000001 "
 		+ "0.080019116000000001 -0.014020652 -0.019733167999999999 0.075836300999999995 -0.0034581124999999999 -0.021274224000000001 0.075096726000000003 -0.0037233979000000001 -0.022580283 0.079279541999999995 -0.014285967 -0.021678158999999999 0.058536652000000002 -0.0044017433999999998 -0.018806122000000002 0.058155652000000002 0.0070931464 -0.017057772999999998 0.058461312000000001 0.0065965950000000002 -0.01992975 0.058842304999999998 -0.0048983395000000004 -0.013119373 0.035196904000000001 -2.6732683000000003e-05 -0.0023634015 0.027855517 -0.0078974813000000001 -0.00094643049000000005 0.028847814999999999 -0.0078110098999999997 -0.011743229000000001 0.036227348999999999 -0.00017252564 -0.016356409999999998 0.047552708999999999 0.0021944195000000001 -0.018291464 0.058612461999999997 0.0011201054000000001 -0.018317189000000001 0.068066239000000001 -0.0010146052000000001 -0.020386168999999999 0.077927231999999999 -0.0087393820000000004 -0.021927252000000001 0.077188134000000005 -0.0090046823000000005 -0.0200655939999"
 		+ "99999 0.067760593999999993 -0.00051805377000000005 -0.020039845000000001 0.058306816999999997 0.0016166866 -0.018104805000000002 0.047247056000000003 0.0026909708999999999 -0.0061649623999999997 0.029407622000000001 -0.0052402467000000003 -0.0070757045999999997 0.029809118999999999 -0.0079837291999999994 -0.0056723496000000003 0.030814292 -0.0079746693000000007 -0.0047615970999999998 0.030412794999999999 -0.0052312015999999998 -0.0038508474999999999 0.030011297999999999 -0.0024877340000000001 -0.0052542201999999996 0.029006125000000001 -0.0024967790000000002 -0.0097502861 0.031854752 -0.0026166587999999998 -0.010935627 0.032364491000000002 -0.0063279568999999999 -0.0095458794000000003 0.033382061999999997 -0.0063963383000000002 -0.0083605312000000001 0.032872323000000002 -0.0026850402000000002 -0.0071751810999999997 0.032362584 0.0010262578999999999 -0.0085649434000000003 0.031345013999999997 0.0010946393 -0.014997421 0.038318757000000002 0.00091281532999999996 -0.016446585 0.038793687 -0.0041186660999999996 "
@@ -27389,83 +27456,83 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "00001 -0.021038698000000002 0.053914192999999999 -0.0037277936999999999 -0.019290285000000001 0.054219846000000002 -0.0042243749000000002 -0.017862678999999999 0.054031018 0.0015118569000000001 -0.016435078999999998 0.053842198000000001 0.0072481035999999999 -0.018183432999999999 0.053536538000000002 0.0077446549999999996 -0.020264661 0.060563218000000002 0.00093875825000000002 -0.021692295 0.060752038000000001 -0.0047974884999999997 -0.019943883999999999 0.061057698000000001 -0.0052940547000000001 -0.018516276000000002 0.060868863000000002 0.00044219195999999999 -0.017088666999999998 0.060680036 0.0061784387000000003 -0.018837026999999999 0.060374382999999997 0.0066749751999999997 -0.020273246000000002 0.063714622999999998 0.00022716819999999999 -0.021700873999999998 0.063903451 -0.0055090636 -0.01995245 0.064209104000000003 -0.0060056149999999997 -0.018524849999999999 0.064020283999999997 -0.00026939808999999998 -0.017097247999999999 0.063830972 0.0054668486000000001 -0.018845618000000001 0.0635253189999999"
 		+ "97 0.0059634149000000001 -0.020686148000000001 0.070903419999999995 -0.0033469200000000002 -0.021855570000000001 0.071726441000000002 -0.0089315175999999993 -0.02017625 0.072176098999999994 -0.0091741085 -0.019006848 0.071353547000000003 -0.0035895406999999998 -0.017837453999999999 0.070530534000000006 0.0019950270999999999 -0.019516724999999999 0.070080400000000001 0.0022376626999999999 -0.021306698999999998 0.074045776999999993 -0.0061758011999999999 -0.022217929000000001 0.075502992000000005 -0.011608749999999999 -0.020607710000000001 0.076097607999999997 -0.011597365 -0.019696509000000001 0.074640392999999999 -0.0061644613999999997 -0.018785309 0.073183179000000001 -0.00073154271000000005 -0.020395470999999998 0.072588562999999995 -0.00074286758999999995"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle" 
 		"rotatePivot" " -type \"double3\" 0 6.50730695000970094 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle" 
 		"scalePivot" " -type \"double3\" 0 6.50730695000970094 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface29" 
 		"rotatePivot" " -type \"double3\" 0.15672671326190235 6.74392282073040672 0.14415376853955025"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface29" 
 		"scalePivot" " -type \"double3\" 0.15672671326190235 6.74392282073040672 0.14415376853955025"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface29|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface29|jackieHair_latest:polySurfaceShape29" 
 		"pt[0:41]" (" -s 42 -type \"float3\" 0.0076565351000000004 0.038957242000000003 -0.017747356999999998 0.0065268445999999997 0.038702610999999998 -0.018373682999999998 0.0080226697000000003 0.040154580000000002 -0.019221037999999999 0.0074609797000000002 0.040017250999999997 -0.019558787000000001 0.0081296991999999998 0.039875153000000003 -0.01940155 0.0075680087 0.039738300999999997 -0.019739300000000001 0.007754833 0.038677814999999997 -0.017927885000000001 0.0066251447000000002 0.038423660999999998 -0.018554195999999998 0.0076285121000000001 0.036860588999999999 -0.016653508000000001 0.0059092659999999998 0.036606435 -0.017279848 0.0057828054000000004 0.036772851000000002 -0.017000377000000001 0.0075020510999999996 0.037027005000000002 -0.016374052 0.0070916907999999997 0.038829926000000001 -0.01806052 0.0066424281999999998 0.036900165999999998 -0.016687213999999999 0.0067688907000000003 0.036733272999999997 -0.016966686000000002 0.0071899876999999999 0.038550977 -0.018241047999999999 0.0078488532000000003 0.0398069659999"
 		+ "99999 -0.019570424999999999 0.0077418247000000003 0.040085439 -0.019389911999999999 0.0067907274 0.037576322000000002 -0.017144978000000002 0.0075688142999999998 0.037703159999999999 -0.016831815 0.0076887984999999999 0.037499074 -0.017078295 0.0069107125 0.037371757999999998 -0.017391473000000001 0.0061326232000000003 0.037244443000000002 -0.017704621 0.0060126409000000004 0.037448529000000001 -0.017458141 0.0069390247 0.038252 -0.017602757 0.0076355776000000004 0.038378837999999998 -0.017289578999999999 0.0077490852999999998 0.038137559000000001 -0.017503082999999999 0.0070525314999999996 0.038010719999999998 -0.017816246000000001 0.0063559803999999999 0.037883405000000002 -0.018129408 0.0062424726999999996 0.038124683999999999 -0.017915904999999999 0.0073054907999999998 0.039313915999999997 -0.018503650999999999 0.0078091183999999996 0.039421681 -0.018238588999999999 0.0079161469000000005 0.039142732 -0.018419102 0.0074125201999999998 0.039034965999999997 -0.018684164 0.0069088936000000004 0.03892720100000"
 		+ "0002 -0.018949226 0.0068018632000000001 0.039206151000000002 -0.018768712999999999 0.0075236573000000001 0.039700154000000001 -0.018946781999999999 0.0079158935999999996 0.039787891999999998 -0.018729821000000001 0.0080229229999999995 0.039508942999999998 -0.018910334000000001 0.0076306871999999998 0.039421204000000001 -0.019127294 0.0072384514 0.039332513 -0.01934427 0.0071314209999999998 0.039611938999999999 -0.019163743"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface31" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface31" 
 		"rotatePivot" " -type \"double3\" 0.15672671326190235 6.74392282073040672 0.14415376853955025"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface31" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface31" 
 		"scalePivot" " -type \"double3\" 0.15672671326190235 6.74392282073040672 0.14415376853955025"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface31|jackieHair_latest:polySurfaceShape31" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface31|jackieHair_latest:polySurfaceShape31" 
 		"pt[0:41]" (" -s 42 -type \"float3\" 0.0094452406999999995 0.039054994000000003 -0.017747356999999998 0.010675278 0.038800838999999997 -0.018373682999999998 0.0091249133000000007 0.040154580000000002 -0.019221052999999998 0.0096866031999999994 0.040017250999999997 -0.019558787000000001 0.0090178846999999993 0.039875153000000003 -0.019401564999999999 0.0095795746999999994 0.039738300999999997 -0.019739300000000001 0.0093382112999999996 0.038776521000000001 -0.017927885000000001 0.010568248000000001 0.038521890000000003 -0.018554195999999998 0.0095190712999999993 0.036860588999999999 -0.016653508000000001 0.011238318000000001 0.036605958000000001 -0.017279848 0.01136478 0.036772851000000002 -0.017000362000000002 0.0096455346999999997 0.037027005000000002 -0.016374037000000001 0.010060258000000001 0.038928154999999999 -0.01806052 0.0094057592000000006 0.040085439 -0.019389911999999999 0.0092987287999999994 0.039806965999999999 -0.019570424999999999 0.0099532288 0.038649204999999999 -0.018241033 0.010378694000000001 0.036733272"
 		+ "999999997 -0.016966686000000002 0.010505158000000001 0.036900165999999998 -0.016687213999999999 0.010208558 0.038252 -0.017602757 0.0095120054000000006 0.038378837999999998 -0.017289578999999999 0.0093984975999999998 0.038137559000000001 -0.017503098000000002 0.010095051000000001 0.038010719999999998 -0.01781626 0.010791604999999999 0.037883405000000002 -0.018129422999999999 0.010905111 0.038124683999999999 -0.017915904999999999 0.010356858 0.037575844999999997 -0.017144978000000002 0.0095787700000000003 0.037703159999999999 -0.016831815 0.0094587839999999996 0.037499074 -0.017078295 0.010236871999999999 0.037371757999999998 -0.017391473000000001 0.011014962999999999 0.037244920000000001 -0.017704621 0.011134945 0.037448529000000001 -0.017458141 0.0097350618 0.039034965999999997 -0.018684164 0.0092314361000000004 0.039142732 -0.018419102 0.0093384646000000005 0.039421681 -0.018238588999999999 0.0098420921999999994 0.039313915999999997 -0.018503650999999999 0.010345719999999999 0.039206151000000002 -0.01876871"
 		+ "2999999999 0.01023869 0.038927201000000002 -0.018949239999999999 0.0095168956999999998 0.039420728000000002 -0.019127294 0.0091246590000000002 0.039508942999999998 -0.018910334000000001 0.0092316875000000003 0.039787891999999998 -0.018729821000000001 0.0096239251999999994 0.039699677000000003 -0.018946781999999999 0.010016162 0.039611938999999999 -0.019163743 0.0099091325000000008 0.039332513 -0.019344255000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface32" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface32" 
 		"rotatePivot" " -type \"double3\" 0.2425431084068882 6.74392282073040672 0.061947835912027294"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface32" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface32" 
 		"scalePivot" " -type \"double3\" 0.2425431084068882 6.74392282073040672 0.061947835912027294"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface32|jackieHair_latest:polySurfaceShape32" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface32|jackieHair_latest:polySurfaceShape32" 
 		"pt[0:41]" (" -s 42 -type \"float3\" 0.015426611999999999 0.038362625999999997 -0.022464916000000001 0.016531877 0.038303021 -0.023796231000000001 0.014154839000000001 0.040066365 -0.023849308 0.014559582 0.040063504 -0.02438274 0.014021873000000001 0.039793613999999998 -0.024021849000000001 0.014426622 0.039790275999999999 -0.024555265999999999 0.015263105000000001 0.038088920999999998 -0.022608683000000001 0.016368367000000002 0.038028840000000001 -0.023939997000000001 0.015718136000000001 0.036463384000000001 -0.021963909 0.017103083000000002 0.035946014999999998 -0.023071616999999999 0.017322093 0.036061410000000002 -0.022848621 0.015937138 0.036578777999999999 -0.021740928 0.015979242000000001 0.038332585000000002 -0.023130581000000001 0.01435721 0.040064457999999997 -0.024116024 0.014224245999999999 0.039791707000000003 -0.024288565000000002 0.015815732999999998 0.038058881000000003 -0.023274331999999998 0.016410608 0.036204461 -0.022517756 0.016629614000000001 0.036319855999999998 -0.022294789999999998 0.016271621 0."
 		+ "037742737999999998 -0.022851974000000001 0.015672368999999998 0.037849071999999997 -0.022223592 0.015490364 0.037627819999999999 -0.022393748000000002 0.016089611 0.037521961999999999 -0.023022145000000001 0.016688853999999999 0.037415627 -0.023650542 0.016870867000000001 0.037636879999999998 -0.023480356000000001 0.016450617000000001 0.037031296999999998 -0.022573381999999999 0.015804755 0.037213925000000002 -0.021982267 0.01560425 0.037046079000000003 -0.022178844 0.016250111000000001 0.036862973 -0.022769958 0.016895971999999999 0.036680821000000002 -0.023361086999999999 0.017096482 0.036849145 -0.023164496 0.01493568 0.039528015999999999 -0.023787543000000001 0.014616555 0.039538983 -0.023387848999999999 0.014473409 0.039266231999999998 -0.023550794 0.014792537 0.039254787999999999 -0.023950486999999999 0.015111662 0.039243820999999998 -0.024350180999999999 0.015254807 0.039517048999999999 -0.024187237 0.015514148 0.038991574000000001 -0.023459061999999999 0.015078266999999999 0.039011601 -0.0229263900000"
 		+ "00001 0.014924945 0.038737897 -0.023079737999999999 0.015360822999999999 0.038717870000000001 -0.02361241 0.015796704000000002 0.038697365999999997 -0.024145081999999998 0.015950031999999999 0.038971069999999997 -0.023991734000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface33" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface33" 
 		"rotatePivot" " -type \"double3\" 0.2425431084068882 6.74392282073040672 0.061947835912027294"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface33" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface33" 
 		"scalePivot" " -type \"double3\" 0.2425431084068882 6.74392282073040672 0.061947835912027294"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface33|jackieHair_latest:polySurfaceShape33" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface33|jackieHair_latest:polySurfaceShape33" 
 		"pt[0:41]" (" -s 42 -type \"float3\" 0.011040107 0.038324479000000002 -0.022508606 0.0099348482000000005 0.038264873999999997 -0.023761048999999999 0.012381980000000001 0.040066365 -0.023849322999999999 0.011977236 0.040063504 -0.02438274 0.012514943000000001 0.039793613999999998 -0.024021849000000001 0.012110197 0.039790275999999999 -0.024555265999999999 0.011203614000000001 0.038050774000000002 -0.022643864 0.010098351 0.037990692999999999 -0.023896306999999999 0.010818685999999999 0.036463384000000001 -0.021963909 0.0094337277000000001 0.035946014999999998 -0.023071616999999999 0.0092147253000000005 0.036061410000000002 -0.022848621 0.01059968 0.036578777999999999 -0.021740913000000001 0.010487476000000001 0.038294914999999999 -0.023134828 0.0099072047 0.036319855999999998 -0.022294774999999999 0.010126207 0.036204461 -0.022517756 0.010650982999999999 0.038020734 -0.023270084999999999 0.012312571 0.039791707000000003 -0.024288549999999999 0.012179608 0.040064457999999997 -0.024116024 0.010086197 0.037031296999999998 -0.0"
 		+ "22573367 0.010732062000000001 0.037213925000000002 -0.021982253 0.010932569 0.037045601999999997 -0.022178844 0.010286709 0.036863449999999999 -0.022769958 0.0096408427000000008 0.036680821000000002 -0.023361072 0.0094403400999999998 0.036849145 -0.023164496 0.010265198999999999 0.037742737999999998 -0.022851974000000001 0.010864443999999999 0.037849071999999997 -0.022223592 0.011046452 0.037627819999999999 -0.022393748000000002 0.010447204 0.037521961999999999 -0.02302216 0.0098479594999999996 0.037416103999999999 -0.023650542 0.0096659529999999997 0.037636879999999998 -0.023480356000000001 0.011022667 0.038991097000000002 -0.023459061999999999 0.011458546 0.039011601 -0.022926390000000001 0.011611870999999999 0.038738373999999999 -0.023079737999999999 0.011175991999999999 0.038717870000000001 -0.02361241 0.010740114 0.038697365999999997 -0.024145081999999998 0.010586788999999999 0.038971069999999997 -0.023991734000000001 0.011601138 0.039528015999999999 -0.023787543000000001 0.011920263 0.039538983 -0.02338"
 		+ "7848999999999 0.012063407 0.039265755999999999 -0.023550794 0.011744281000000001 0.039254787999999999 -0.023950486999999999 0.011425154999999999 0.039243820999999998 -0.024350180999999999 0.011282013 0.039517048999999999 -0.024187237"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface34" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface34" 
 		"rotatePivot" " -type \"double3\" 0.066020023025743946 6.74392282073040672 0.17954218879372616"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface34" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface34" 
 		"scalePivot" " -type \"double3\" 0.066020023025743946 6.74392282073040672 0.17954218879372616"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface34|jackieHair_latest:polySurfaceShape34" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface34|jackieHair_latest:polySurfaceShape34" 
 		"pt[0:41]" (" -s 42 -type \"float3\" -0.080625914000000007 0.039054994000000003 -0.0073992312000000001 -0.067315072000000004 0.038800838999999997 0.031014636000000002 -0.036337822999999998 0.040154580000000002 -0.010799408 -0.028750571999999999 0.040017250999999997 0.0069507956999999999 -0.030639598000000001 0.039875153000000003 -0.013193741 -0.023052047999999999 0.039738300999999997 0.0045564026000000004 -0.074927382000000001 0.038776521000000001 -0.0097935795999999995 -0.061616539999999997 0.038521890000000003 0.028620303 -0.11283724000000001 0.036860588999999999 -0.0096582471999999992 -0.10150004999999999 0.036605958000000001 0.043028577999999998 -0.11016392999999999 0.036772851000000002 0.045590624000000003 -0.12150129 0.037027005000000002 -0.0070961267000000001 -0.073970489 0.038928154999999999 0.011807710000000001 -0.032544195999999997 0.040085439 -0.0019243062 -0.026845821999999998 0.039806965999999999 -0.0043186693999999999 -0.068271956999999994 0.038649204999999999 0.0094133615 -0.10716864 0.036733272999999997 0.01"
 		+ "6685173000000001 -0.11583261 0.036900165999999998 0.019247249000000001 -0.087924532999999999 0.038252 0.014287561000000001 -0.094251044000000006 0.038378837999999998 -0.0072981864 -0.087563999000000003 0.038137559000000001 -0.0097484738000000008 -0.081237525000000005 0.038010719999999998 0.011837304 -0.074911050000000007 0.037883405000000002 0.033423066000000001 -0.081598021000000007 0.038124683999999999 0.035873294 -0.10187858 0.037575844999999997 0.016767411999999999 -0.10787616999999999 0.037703159999999999 -0.0071971565000000003 -0.10020062 0.037499074 -0.0097033529999999996 -0.094203092000000002 0.037371757999999998 0.014261230999999999 -0.088205545999999996 0.037244920000000001 0.038225830000000002 -0.095880969999999996 0.037448529000000001 0.040731952000000002 -0.054463245 0.039034965999999997 0.0048360228999999996 -0.060164782999999999 0.039142732 -0.010926962 -0.065863214000000003 0.039421681 -0.0085326134999999994 -0.060161724999999999 0.039313915999999997 0.0072303712000000003 -0.054460235000000003"
 		+ " 0.039206151000000002 0.022993356 -0.048761707000000001 0.038927201000000002 0.020599007999999999 -0.040654533 0.039420728000000002 0.00025868415999999998 -0.045402192000000001 0.039508942999999998 -0.012060359 -0.051100518999999997 0.039787891999999998 -0.0096660106999999999 -0.046352964000000003 0.039699677000000003 0.0026530474000000001 -0.041605405999999998 0.039611938999999999 0.014972076000000001 -0.035906876999999997 0.039332513 0.012577698"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface35" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface35" 
 		"rotatePivot" " -type \"double3\" 0.21065508008256173 6.74630926165765565 0.12492708405965397"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface35" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface35" 
 		"scalePivot" " -type \"double3\" 0.21065508008256173 6.74630926165765565 0.12492708405965397"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface35|jackieHair_latest:polySurfaceShape35" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface35|jackieHair_latest:polySurfaceShape35" 
 		"pt[0:41]" (" -s 42 -type \"float3\" 0.066619389000000001 0.041501644999999997 -0.0057613552000000002 0.058985709999999997 0.041247490999999997 0.0075000225999999996 0.049233973 0.042698983000000003 -0.010378718 0.045126698999999999 0.042562131000000003 -0.0037900954 0.047116280000000003 0.042420033000000003 -0.011680827 0.043008927000000002 0.042283181000000003 -0.0050921886999999999 0.064499974000000002 0.041222694999999997 -0.0069600195000000002 0.056866314000000001 0.040968063999999998 0.0063013434000000002 0.079570136999999999 0.039404992 -0.0052210837999999999 0.071824014000000005 0.039150838 0.015023290999999999 0.075110285999999998 0.039317254000000003 0.016574398000000001 0.082856274999999993 0.039571885000000001 -0.0036699772000000001 0.062802552999999997 0.041374329000000001 0.00086933373999999999 0.078983277000000005 0.039444568999999999 0.0064522177000000003 0.075697079 0.039278153000000003 0.0049010961999999998 0.060683142000000002 0.041095380000000001 -0.00032934545999999999 0.045062604999999999 0.042351369 -"
 		+ "0.0083865076000000007 0.047180340000000001 0.042630794999999999 -0.0070844144 0.073589422000000002 0.040120725000000003 0.0046084821000000002 0.077446884999999993 0.040248039999999999 -0.0045479535999999997 0.074550203999999995 0.040043954 -0.0060160607 0.070692711000000005 0.039916637999999997 0.0031403898999999998 0.066835201999999996 0.039789323000000001 0.012296826 0.069731966000000006 0.039993409000000001 0.013764933 0.068195573999999995 0.040796880000000001 0.0027647613999999998 0.072037503000000003 0.040924194999999997 -0.0054259299999999998 0.069530285999999997 0.040682439000000001 -0.0068110228000000002 0.065688341999999997 0.040555122999999998 0.0013796686999999999 0.061846397999999997 0.040427808000000003 0.0095703751000000004 0.064353645000000001 0.040669563999999998 0.010955467999999999 0.057594590000000001 0.041858795999999997 -0.0017474443 0.060830068000000001 0.041966084000000001 -0.007662192 0.058712337000000003 0.041687135 -0.0089642852999999995 0.055476852 0.041579368999999998 -0.0030495374"
 		+ "999999999 0.052241370000000002 0.041472081000000001 0.0028652102 0.054359115999999999 0.041751031000000001 0.0041672884999999996 0.052387465000000001 0.042244557000000002 -0.0044159293000000004 0.055032022 0.042332771999999998 -0.0090204625999999993 0.052914307000000001 0.042053821999999998 -0.010322556 0.050269727 0.041965608000000001 -0.0057180225999999999 0.047625147 0.041877869999999998 -0.0011135042 0.049742907000000003 0.042156341999999999 0.00018860400000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface36" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface36" 
 		"rotatePivot" " -type \"double3\" 0.28396064580926811 6.75740413041357346 -0.014780404265093861"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface36" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface36" 
 		"scalePivot" " -type \"double3\" 0.28396064580926811 6.75740413041357346 -0.014780404265093861"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface36|jackieHair_latest:polySurfaceShape36" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface36|jackieHair_latest:polySurfaceShape36" 
 		"pt[0:95]" (" -s 96 -type \"float3\" 0.0031780674999999999 0.057273987999999998 0.011510015 0.00081655010999999997 0.050496700999999998 0.014453471000000001 -0.00047845020999999998 0.052335861999999997 0.0016569197 -0.0014349892999999999 0.049652691999999998 0.0026608407000000001 -0.00097451731999999996 0.052031647 0.0024525374 -0.0019310544999999999 0.049348477000000002 0.0034564137 0.0027295182999999999 0.057127122000000002 0.012236118000000001 0.00036801025000000003 0.050349835000000003 0.015179633999999999 0.0045010186999999997 0.062118175999999997 0.022490843999999999 0.0018836594999999999 0.054517391999999998 0.027130350000000001 0.002428595 0.054885986999999997 0.027212857999999999 0.0050460137 0.062487240999999999 0.022573291999999998 0.018649444000000001 0.032966259999999997 0.047491475999999998 0.016168333999999999 0.046076897999999998 0.050173953 0.016716915999999998 0.045295837999999998 0.051186799999999998 0.019198026999999999 0.032184246999999999 0.048504367 0.019466132000000001 0.027114988999999999 0.02701246"
 		+ "6999999998 0.017648052000000001 0.038100842000000003 0.036037579 0.018261399000000001 0.036567810999999999 0.037499933999999999 0.020079486000000001 0.025581481 0.028474912000000002 0.0059755481999999999 0.067583679999999993 0.031772435000000002 0.0033604093000000001 0.059987668000000001 0.036410466000000002 0.0028154738 0.059619073000000002 0.036327958 0.0054305643000000002 0.067214607999999995 0.031689956999999998 0.0015487634 0.053738716999999998 0.013707891 -0.0014527858999999999 0.050690297000000002 0.0029544681000000001 -0.00095671880999999997 0.050994511999999999 0.0021588951000000001 0.0019973107000000002 0.053885583000000001 0.012981757999999999 0.0037373006 0.058686856000000003 0.02489309 0.0047494136000000003 0.063968778000000004 0.034036829999999997 0.017755304 0.039513711 0.050003066999999998 0.019170448 0.031074645000000001 0.032987445999999997 0.018557094 0.032608155 0.031525046000000001 0.017206721000000001 0.040295723999999998 0.048990174999999997 0.004204452 0.063600183000000005 0.033954352 "
 		+ "0.0031923390999999998 0.058317783999999998 0.024810582000000001 0.0011961404 0.052842263 0.0095431209000000003 0.0021427366999999999 0.055548314000000001 0.0083946586000000004 0.0016783494999999999 0.055348995999999998 0.0091439337000000006 0.00073175504999999997 0.052642461000000002 0.010292440999999999 -0.0003365539 0.049662235999999998 0.011522502 0.00012782960999999999 0.049862031000000001 0.010773212000000001 0.00021146796999999999 0.051903848000000002 0.0060227661999999998 0.00092389806999999997 0.053928021 0.0051975696999999998 0.00044366904 0.053675774000000002 0.0059700012 -0.00026875921000000001 0.051651608000000002 0.0067952126000000003 -0.00098118931 0.049627904 0.0076204091000000003 -0.00050096585999999995 0.049880158000000001 0.0068479776000000001 0.0032541007 0.057025070999999997 0.021038204000000001 0.0045201629000000002 0.060688142 0.019001067 0.0040073171000000003 0.060393455999999998 0.019188151000000001 0.0027412771999999999 0.056730392999999997 0.021225213999999999 0.0014752373 0.05306733"
@@ -27473,13 +27540,13 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "5361999999999 0.0022833533999999998 0.056239728000000003 0.030325129999999999 0.0028282887999999998 0.056608806999999997 0.030407637000000001 0.017826538999999999 0.039762143 0.055364116999999997 0.019143857 0.032912377 0.053963125000000001 0.018580171999999999 0.033752088 0.052961900999999999 0.017262864999999999 0.040601376000000002 0.054362967999999998 0.015945557999999999 0.047451142000000002 0.055764004999999998 0.014200486 0.049752351 0.054450274 0.0094893575000000001 0.056877252000000003 0.045882076000000001 0.010804541000000001 0.056978824999999997 0.044041872000000003 0.01076539 0.055637951999999997 0.044626146999999998 0.0094497166999999993 0.055961732 0.046422317999999997 0.0076222903999999996 0.056815277999999997 0.047301427 0.0057245344 0.059471253000000002 0.043022274999999999 0.018776524999999999 0.033884170999999998 0.038779512000000002 0.019821655000000001 0.027938964 0.035304113999999998 0.019224852000000001 0.029241205999999999 0.033995494000000001 0.018179726 0.035186413999999999 0.0374708"
 		+ "77 0.017134599 0.041131619000000001 0.040946215000000001 0.017731390999999999 0.039829376999999999 0.042254819999999998 0.018304142999999998 0.036687496999999999 0.044444262999999998 0.019485361999999999 0.030290247999999999 0.042006090000000003 0.018905117999999999 0.031360272000000002 0.040851176000000003 0.017723899000000001 0.037757520000000003 0.043289378000000003 0.016542681 0.044155244000000003 0.045727596000000002 0.017122917000000001 0.043084268000000002 0.046882464999999998"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface37" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface37" 
 		"rotatePivot" " -type \"double3\" 0.29645420493590557 6.75740413041357346 -0.014780404265093833"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface37" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface37" 
 		"scalePivot" " -type \"double3\" 0.29645420493590557 6.75740413041357346 -0.014780404265093833"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface37|jackieHair_latest:polySurfaceShape37" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface37|jackieHair_latest:polySurfaceShape37" 
 		"pt[0:95]" (" -s 96 -type \"float3\" 0.00088291987999999997 0.053461675 -0.0018354207 0.0066301859999999997 0.052368763999999998 -3.0443072e-05 0.0030003702000000001 0.053365352999999997 -0.010393708999999999 0.0051212217999999999 0.052967194000000002 -0.0097997785 0.0034623704999999999 0.053212281 -0.010995909999999999 0.0055832312999999998 0.052813653000000002 -0.010401993999999999 0.0012077354000000001 0.053333881999999999 -0.0024978966000000001 0.0069550126999999998 0.052240494999999998 -0.00069293380000000002 -0.00060055031999999996 0.053151737999999997 0.0014249533 0.0061458162999999998 0.051816585999999998 0.0041222869999999997 0.0058130435999999997 0.051910523 0.0051770656999999996 -0.00093333795999999997 0.053245667000000003 0.0024797617999999999 -0.0048988460999999997 0.0083519239000000006 0.0033031105999999999 0.0016726851 0.0070511126000000002 0.0060079247000000002 0.0013399273 0.0071445726999999999 0.0070627182999999996 -0.0052316411999999996 0.0084458607999999998 0.0043579042000000002 -0.0097458418000000002 0."
 		+ "0087043065999999995 0.0024593025000000002 -0.0035013966000000001 0.0076791070999999997 0.0052389204999999999 -0.0041196011000000001 0.0078507679999999993 0.0058647990000000004 -0.010364089 0.0088759679000000001 0.0030852109 -0.0032791792999999998 0.053142677999999999 0.0041885226999999999 0.0036900564999999999 0.051764134000000003 0.0068762451 0.0040228106000000001 0.051621082999999998 0.0058214664000000001 -0.0029464215 0.052999612000000001 0.0031336992999999999 0.0038591064999999999 0.052894715000000002 -0.00093732774000000003 0.0041633490000000002 0.053146000999999998 -0.01010114 0.0046253520999999997 0.052993428000000002 -0.010703354999999999 0.0041839294000000004 0.052767407000000002 -0.0015998036000000001 0.0028751864999999998 0.052464130999999997 0.0027692169 0.00075215845999999995 0.052317742 0.0044684260999999998 -0.0011187568000000001 0.0076051983000000002 0.0046343206999999997 -0.0066236146000000001 0.0081917065999999993 0.0038491039999999999 -0.0072418450999999998 0.0083628912 0.004474997500000000"
 		+ "3 -0.0014515296 0.0076991343000000004 0.0056891292000000003 0.00041940435999999998 0.052411671999999999 0.0055232197 0.0025424025999999998 0.052558067999999999 0.0038240104999999998 0.0040753986999999998 0.053108337999999998 -0.0070109515999999998 0.0023080128999999998 0.053443077999999998 -0.0075053573000000004 0.0027242880000000001 0.053298595999999997 -0.0081276447000000005 0.0044916738000000001 0.052963387000000001 -0.007633239 0.0062590613999999999 0.052628648 -0.0071388333999999999 0.0058427807000000003 0.052773121999999999 -0.0065165459999999998 0.0039739831999999996 0.053024414999999998 -0.0039563328000000002 0.0016021970999999999 0.053475503000000001 -0.0046525895999999997 0.0019727441999999999 0.053339127 -0.0052949637000000004 0.0043445304000000002 0.052888032000000001 -0.0045987368000000002 0.0067163183999999999 0.052437420999999998 -0.0039024799999999998 0.0063457675000000002 0.052573804000000002 -0.0032600909000000001 0.0034336671000000001 0.052828435 0.00068537890999999999 0.0002909600699999999"
@@ -27487,261 +27554,261 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "92000000001 0.0036481618999999999 -0.0020024552999999999 0.053100231999999997 0.0025933534000000002 0.0014733001999999999 0.052412156000000001 0.0039376169000000004 0.0049490519000000002 0.051725034000000003 0.0052818804999999998 0.0046162866 0.051818494 0.0063366591999999998 -0.00019077957 0.037496213 0.0056141168 -0.0036665349999999998 0.038184289000000003 0.0042698681 -0.0033337697000000001 0.036299352 0.0032150595999999999 0.00014198571 0.035611275999999997 0.0045593231999999997 0.0036177337 0.034924152999999999 0.0059035867000000004 0.0032849796000000001 0.036809091000000002 0.0069583505 -0.00081442668999999999 0.0077863955000000004 0.0056694149999999997 -0.0042901820999999996 0.0084739941999999995 0.0043251662999999997 -0.0039573982000000001 0.0083800573000000003 0.0032703578000000001 -0.00048165395999999998 0.0076924586000000003 0.0046146214000000003 0.0029940940000000001 0.0070048602999999996 0.0059588849999999997 0.0026613324999999999 0.0070987962999999998 0.0070136636 -0.0033816359999999999 0.007920"
 		+ "3863000000003 0.0052844286000000001 -0.0067395548999999999 0.0085493345000000002 0.0039249808000000001 -0.0063116085000000004 0.0084301251999999993 0.0030131489000000001 -0.0029537118999999998 0.0078007006 0.0043725817999999998 0.00040419027000000002 0.0071717533 0.0057320297000000003 -2.3718922999999997e-05 0.0072909617000000001 0.0066438614999999998 -0.0053117386999999997 0.0081416387000000003 0.0048797131000000004 -0.0085518230000000001 0.0087128896000000008 0.0035050958 -0.0080287269999999994 0.0085669774999999997 0.0027362256999999999 -0.0047886613999999997 0.0079962034000000005 0.0041108428999999998 -0.0015486032 0.0074249529000000002 0.0054854750999999997 -0.0020716562999999999 0.0075708651 0.0062543154"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom" 
 		"rotatePivot" " -type \"double3\" 0 -0.051904556118707035 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom" 
 		"scalePivot" " -type \"double3\" 0 -0.051904556118707035 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface1" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface1" 
 		"rotatePivot" " -type \"double3\" 0.20584883750712829 6.16126904566839162 -0.48064630283777787"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface1" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface1" 
 		"scalePivot" " -type \"double3\" 0.20584883750712829 6.16126904566839162 -0.48064630283777787"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface1|jackieHair_latest:polySurfaceShape12" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface1|jackieHair_latest:polySurfaceShape12" 
 		"pt[0:47]" (" -s 48 -type \"float3\" 0.0010865312 0.028995634999999999 -0.0040030702999999997 0.0022269897000000002 0.028975131000000001 -0.0035920142999999998 0.0011352338000000001 0.031005027000000001 -0.0039448141999999997 0.0020763463999999999 0.030966403 -0.0031809434 0.0012860987000000001 0.031014086999999999 -0.0041302144999999998 0.0022272095000000001 0.03097594 -0.0033663361999999998 0.0011678208 0.029006601999999999 -0.0042276233000000003 0.0023085064999999998 0.028986097999999998 -0.0038168951999999999 0.0011409242 0.027918459999999999 -0.0044200196999999997 0.0023370683 0.027908446 -0.0042205080000000004 0.0022970438000000002 0.027896524999999998 -0.0039844735999999999 0.001101058 0.027907016 -0.0041849538999999998 0.0012308359000000001 0.026425483 -0.0050425008000000004 0.0024292841999999999 0.026415945999999999 -0.0048572868 0.0023927054999999999 0.026404025000000001 -0.0046211927999999999 0.0011942573000000001 0.026413562000000002 -0.0048064068000000003 0.0013662931 0.024028422000000001 -0.0058130472999999997"
 		+ " 0.0025602802999999999 0.024017931999999999 -0.0056010186999999999 0.0025179273999999998 0.024006011000000001 -0.0053720102 0.0013238582999999999 0.024016978000000001 -0.0055835620000000002 0.0014240368999999999 0.022222639999999998 -0.0060264020999999997 0.0026175975999999999 0.02221215 -0.0058119744000000003 0.0025752671 0.022206428 -0.0055806859999999996 0.0013817102 0.022217395000000001 -0.0057951063000000001 0.0018300600000000001 0.026420714000000001 -0.0049498900999999998 0.0019632876 0.024023653999999998 -0.0057070330000000002 0.0020208172999999999 0.022217395000000001 -0.0059191883000000002 0.0019784905 0.022211673000000001 -0.0056878850000000002 0.0019208919 0.024011256000000002 -0.0054777860999999997 0.0017934813999999999 0.026408793 -0.0047137960999999997 0.0016990528 0.027901770999999999 -0.0040847137999999996 0.0016567595 0.028985621 -0.0037975460000000002 0.0016057901 0.030985476000000001 -0.0035628751000000001 0.0017566551 0.030995012999999998 -0.0037482752999999998 0.0017381645999999999 0.0289"
 		+ "96589 -0.0040222555000000004 0.0017389972 0.027913691000000001 -0.0043202639000000003 0.0012985653999999999 0.025226714000000001 -0.0054277778000000002 0.0012590587 0.025215270000000001 -0.0051949843999999998 0.0018571894999999999 0.025210025 -0.0050957948000000001 0.0024553202000000001 0.025205255999999999 -0.0049965977999999996 0.0024947859000000001 0.025217177 -0.0052291526999999997 0.0018966738 0.025221945999999999 -0.0053284615000000002 0.0017474107 0.029996038999999999 -0.0038852691999999999 0.0012269579 0.030010821 -0.0041789263 0.0011108833999999999 0.030000331000000002 -0.0039739385000000004 0.0016312767000000001 0.029985549 -0.0036802142999999999 0.0021516680999999998 0.029970766999999999 -0.0033864750999999999 0.0022678599 0.029981257000000001 -0.0035916194"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface2" 
 		"rotatePivot" " -type \"double3\" 0.20584883750712829 6.16126904566839162 -0.48064630283777787"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface2" 
 		"scalePivot" " -type \"double3\" 0.20584883750712829 6.16126904566839162 -0.48064630283777787"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface2|jackieHair_latest:polySurfaceShape13" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface2|jackieHair_latest:polySurfaceShape13" 
 		"pt[0:47]" (" -s 48 -type \"float3\" -0.0010865293 0.028995634999999999 -0.0040030628000000002 -0.0022269897000000002 0.028975131000000001 -0.0035920142999999998 -0.0011352338000000001 0.031005027000000001 -0.0039448141999999997 -0.0020763501999999999 0.030966403 -0.0031809360000000001 -0.0012860987000000001 0.031014086999999999 -0.0041302144999999998 -0.0022272095000000001 0.03097594 -0.0033663437000000002 -0.0011678208 0.029006601999999999 -0.0042276233000000003 -0.0023085101999999998 0.028986097999999998 -0.0038168951999999999 -0.0011409223 0.027918459999999999 -0.0044200196999999997 -0.0023370719999999999 0.027908446 -0.0042205080000000004 -0.0022970438000000002 0.027896524999999998 -0.0039844735999999999 -0.001101058 0.027907016 -0.0041849538999999998 -0.0012308378000000001 0.026425483 -0.0050425008000000004 -0.0024292841999999999 0.026415945999999999 -0.0048572868 -0.0023927092999999999 0.026404025000000001 -0.0046211927999999999 -0.0011942573000000001 0.026413562000000002 -0.0048064068000000003 -0.0013662931 0.024028"
 		+ "422000000001 -0.0058130472999999997 -0.0025602802999999999 0.024017931999999999 -0.0056010260999999999 -0.0025179311999999998 0.024006011000000001 -0.0053720102 -0.0013238601000000001 0.024016978000000001 -0.0055835620000000002 -0.0014240368999999999 0.022222639999999998 -0.0060263946999999998 -0.0026175975999999999 0.02221215 -0.0058119744000000003 -0.0025752708 0.022206428 -0.0055806785999999997 -0.001381712 0.022217395000000001 -0.0057951063000000001 -0.0018300638000000001 0.026420714000000001 -0.0049498900999999998 -0.0017389972 0.027913691000000001 -0.0043202639000000003 -0.0017381645999999999 0.028996589 -0.0040222555000000004 -0.0017566551 0.030995012999999998 -0.0037482752999999998 -0.0016057901 0.030985476000000001 -0.0035628751000000001 -0.0016567595 0.028985621 -0.0037975460000000002 -0.0016990509 0.027901770999999999 -0.0040847137999999996 -0.0017934813999999999 0.026408793 -0.0047137960999999997 -0.0019208919 0.024011256000000002 -0.0054777860999999997 -0.0019784942 0.022211673000000001 -0.005687"
 		+ "8924000000001 -0.0020208172999999999 0.022217395000000001 -0.0059191883000000002 -0.0019632876 0.024023653999999998 -0.0057070404000000002 -0.0018966738 0.025221945999999999 -0.0053284615000000002 -0.0012985653999999999 0.025226714000000001 -0.0054277778000000002 -0.0012590606 0.025215270000000001 -0.0051949843999999998 -0.0018571894999999999 0.025210025 -0.0050957948000000001 -0.0024553202000000001 0.025205255999999999 -0.0049965977999999996 -0.0024947859000000001 0.025217177 -0.0052291602000000001 -0.0017474107 0.029996038999999999 -0.0038852691999999999 -0.0012269579 0.030010821 -0.0041789263 -0.0011108833999999999 0.030000331000000002 -0.0039739385000000004 -0.0016312748000000001 0.029985549 -0.0036802142999999999 -0.0021516642999999998 0.029970766999999999 -0.0033864825999999999 -0.0022678599 0.029981257000000001 -0.0035916120000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface3" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface3" 
 		"rotatePivot" " -type \"double3\" 0.32242153807977719 6.16126904566839162 -0.3067358540562195"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface3" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface3" 
 		"scalePivot" " -type \"double3\" 0.32242153807977719 6.16126904566839162 -0.3067358540562195"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface3|jackieHair_latest:polySurfaceShape14" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface3|jackieHair_latest:polySurfaceShape14" 
 		"pt[0:47]" (" -s 48 -type \"float3\" 0.0021395012999999999 0.028738143000000001 -0.0032622217999999999 0.0023151971000000002 0.028674247 -0.0020662695000000001 0.0022433065000000002 0.031020286000000001 -0.0028262585000000001 0.0025662221 0.030961157999999999 -0.0016567111 0.0024738424000000001 0.031023147000000001 -0.0028885974999999999 0.002791591 0.030964496000000001 -0.0017197281 0.0023760832999999999 0.028735282000000001 -0.0032997503999999999 0.0025521666 0.028659942000000001 -0.0021114647000000002 0.0024800561 0.027513625 -0.0041437074999999997 0.0028837807000000001 0.027433993 -0.0028433055000000001 0.002651006 0.027417304 -0.0026730597 0.0022549368000000002 0.027506473 -0.0040401070999999998 0.0026562250999999999 0.026530864000000001 -0.0051655844000000001 0.0036384910000000002 0.026500823 -0.0044584571999999999 0.0035027191000000001 0.026460768999999999 -0.0042741000999999999 0.0025235824 0.026489855999999999 -0.0049868374999999998 0.0030187704000000002 0.024027944999999998 -0.0058493987000000002 0.004010915799999"
 		+ "9997 0.023993136000000002 -0.0054388270000000002 0.0038755386999999998 0.023983122999999999 -0.0052547007999999996 0.0028831287999999998 0.024017931999999999 -0.0056619123000000004 0.0031229070999999999 0.022220256000000001 -0.0057101100999999996 0.0041136369000000002 0.022184969999999998 -0.0056352913000000003 0.0039774776000000003 0.022181632 -0.0054842383000000003 0.0029867439999999999 0.022216917999999999 -0.0055578201999999998 0.0031473599000000001 0.026515605000000001 -0.0048120170999999996 0.0035148412 0.024010302000000001 -0.0056441203000000004 0.0036182738999999998 0.022202613 -0.0056727006999999999 0.0034821070999999999 0.022199275000000001 -0.0055210292000000003 0.0033793374999999998 0.024000766 -0.0054583028000000002 0.0030131526 0.026475074000000001 -0.0046304687999999998 0.0024529695999999999 0.027461650000000001 -0.0033565908999999999 0.0022273472999999998 0.028705718000000002 -0.0026642381999999998 0.0024047642999999999 0.030990721999999998 -0.0022414774000000001 0.0026327185000000002 0.030993"
 		+ "583000000002 -0.0023041517000000002 0.0024641267999999999 0.028697612000000001 -0.0027056037999999998 0.0026819146999999999 0.027474048000000001 -0.0034935176 0.0038246996999999998 0.025246741 -0.0049486458000000001 0.0033310987 0.025262954000000001 -0.0052280724000000004 0.0028375014999999998 0.025279165999999999 -0.0055074989999999999 0.0027033575000000002 0.025253893999999999 -0.0053243711999999997 0.0031962432000000002 0.025237681000000001 -0.0050443857999999996 0.0036891252000000002 0.025221945999999999 -0.0047644004000000004 0.0024249628 0.029879214000000001 -0.0030941664999999999 0.0021914056999999998 0.029878736999999999 -0.0030442476000000001 0.0023160540000000001 0.029848220000000002 -0.0024528651999999999 0.0024407058999999999 0.029817702000000001 -0.0018614828999999999 0.0026718788000000002 0.029812457000000001 -0.0019155890000000001 0.0025484189000000001 0.029845836000000001 -0.0025048852000000002"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface4" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface4" 
 		"rotatePivot" " -type \"double3\" 0.32242153807977719 6.16126904566839162 -0.3067358540562195"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface4" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface4" 
 		"scalePivot" " -type \"double3\" 0.32242153807977719 6.16126904566839162 -0.3067358540562195"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface4|jackieHair_latest:polySurfaceShape15" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface4|jackieHair_latest:polySurfaceShape15" 
 		"pt[0:47]" (" -s 48 -type \"float3\" -0.0021394974999999999 0.028738143000000001 -0.0032622217999999999 -0.0023151933999999998 0.028674247 -0.0020662695000000001 -0.0022433027999999998 0.031020286000000001 -0.0028262585000000001 -0.0025662257999999999 0.030961157999999999 -0.0016567111 -0.0024738424000000001 0.031023147000000001 -0.0028885974999999999 -0.002791591 0.030964496000000001 -0.0017197281 -0.0023760832999999999 0.028735282000000001 -0.0032997428999999999 -0.0025521629000000001 0.028659942000000001 -0.0021114647000000002 -0.0024800524000000001 0.027513625 -0.0041437074999999997 -0.0028837807000000001 0.027433993 -0.0028433204 -0.002651006 0.027417304 -0.0026730597 -0.0022549330999999998 0.027506473 -0.0040401070999999998 -0.0026562287999999999 0.026530864000000001 -0.0051655844000000001 -0.0036384910000000002 0.026500823 -0.0044584498 -0.0035027191000000001 0.026460768999999999 -0.0042741000999999999 -0.0025235824 0.026489855999999999 -0.0049868374999999998 -0.0030187704000000002 0.024027944999999998 -0.00584940610"
 		+ "00000002 -0.0040109157999999997 0.023993136000000002 -0.0054388270000000002 -0.0038755386999999998 0.023983122999999999 -0.0052547007999999996 -0.0028831324999999998 0.024017931999999999 -0.0056619123000000004 -0.0031229070999999999 0.022220256000000001 -0.0057101100999999996 -0.0041136369000000002 0.022184969999999998 -0.0056352987999999998 -0.0039774700999999999 0.022181632 -0.0054842307999999999 -0.0029867439999999999 0.022216917999999999 -0.0055578277000000002 -0.0031473599000000001 0.026515605000000001 -0.0048120245000000004 -0.0026819146999999999 0.027474048000000001 -0.0034935102000000001 -0.0024641231 0.028697612000000001 -0.0027056037999999998 -0.0026327147999999998 0.030993583000000002 -0.0023041517000000002 -0.0024047642999999999 0.030990721999999998 -0.0022414774000000001 -0.0022273472999999998 0.028705718000000002 -0.0026642531000000001 -0.0024529732999999999 0.027461650000000001 -0.0033565833999999999 -0.0030131489000000001 0.026475074000000001 -0.0046304687999999998 -0.0033793374999999998 0.024"
 		+ "000766 -0.0054583028000000002 -0.0034821070999999999 0.022199275000000001 -0.0055210292000000003 -0.0036182738999999998 0.022202613 -0.0056727082000000003 -0.0035148412 0.024010302000000001 -0.0056441203000000004 -0.0036891252000000002 0.025221945999999999 -0.0047644004000000004 -0.0031962432000000002 0.025237681000000001 -0.0050443857999999996 -0.0027033538000000002 0.025253893999999999 -0.0053243711999999997 -0.0028375014999999998 0.025279165999999999 -0.0055074915000000004 -0.0033310987 0.025262954000000001 -0.0052280724000000004 -0.0038247071000000001 0.025246741 -0.0049486384000000001 -0.0025484189000000001 0.029845836000000001 -0.0025048852000000002 -0.0024249628 0.029879214000000001 -0.0030941664999999999 -0.0021914056999999998 0.029878736999999999 -0.0030442476000000001 -0.0023160540000000001 0.029848220000000002 -0.0024528651999999999 -0.0024407095999999999 0.029817702000000001 -0.0018614828999999999 -0.0026718750999999998 0.029812457000000001 -0.0019155890000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface7" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface7" 
 		"rotatePivot" " -type \"double3\" 0 6.16126904566839162 -0.48692479100347208"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface7" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface7" 
 		"scalePivot" " -type \"double3\" 0 6.16126904566839162 -0.48692479100347208"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface7|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface7|jackieHair_latest:polySurfaceShape18" 
 		"pt[0:47]" (" -s 48 -type \"float3\" -0.00059110950999999995 0.028985145 -0.0039075986000000002 0.00059110950999999995 0.028985145 -0.0039075986000000002 -0.00059110950999999995 0.030984523 -0.0038071945 0.00059110950999999995 0.030984523 -0.0038071945 -0.00059110950999999995 0.030996444000000001 -0.0040460974000000004 0.00059110950999999995 0.030996444000000001 -0.0040460974000000004 -0.00059110950999999995 0.028997064999999999 -0.0041465013999999996 0.00059110950999999995 0.028997064999999999 -0.0041465013999999996 -0.00059110950999999995 0.027913691000000001 -0.0043771490000000003 0.00059110950999999995 0.027913691000000001 -0.0043771490000000003 0.00059110950999999995 0.027901770999999999 -0.0041382462 -0.00059110950999999995 0.027901770999999999 -0.0041382462 -0.00059110950999999995 0.026421191 -0.0050142108999999997 0.00059110950999999995 0.026421191 -0.0050142108999999997 0.00059110950999999995 0.026409269999999999 -0.0047753005999999999 -0.00059110950999999995 0.026409269999999999 -0.0047753005999999999 -0.000591109"
 		+ "50999999995 0.023992659999999999 -0.0058619231000000003 0.00059110950999999995 0.023992659999999999 -0.0058619231000000003 0.00059110950999999995 0.023980261999999999 -0.0056230128000000004 -0.00059110950999999995 0.023980261999999999 -0.0056230128000000004 -0.00059110950999999995 0.02213824 -0.0062918588999999999 0.00059110950999999995 0.02213824 -0.0062918588999999999 0.00059110950999999995 0.022126318999999998 -0.0060529633999999999 -0.00059110950999999995 0.022126318999999998 -0.0060529633999999999 0 0.027913691000000001 -0.0043771490000000003 0 0.026421191 -0.0050142108999999997 0 0.023992659999999999 -0.0058619231000000003 0 0.02213824 -0.0062918588999999999 0 0.022126318999999998 -0.0060529633999999999 0 0.023980261999999999 -0.0056230128000000004 0 0.026409269999999999 -0.0047753005999999999 0 0.027901770999999999 -0.0041382462 0 0.028985145 -0.0039075986000000002 0 0.030984523 -0.0038071945 0 0.030996444000000001 -0.0040460974000000004 0 0.028997064999999999 -0.0041465013999999996 0 0.025206686999999"
 		+ "998 -0.0054380670000000004 -0.00059110950999999995 0.025206686999999998 -0.0054380670000000004 -0.00059110950999999995 0.025195242999999999 -0.0051991566999999997 0 0.025195242999999999 -0.0051991566999999997 0.00059110950999999995 0.025195242999999999 -0.0051991566999999997 0.00059110950999999995 0.025206686999999998 -0.0054380670000000004 0 0.029996516000000001 -0.0040962994000000004 -0.00059110950999999995 0.029996516000000001 -0.0040962994000000004 -0.00059110950999999995 0.029985072000000002 -0.0038573965000000001 0 0.029985072000000002 -0.0038573965000000001 0.00059110950999999995 0.029985072000000002 -0.0038573965000000001 0.00059110950999999995 0.029996516000000001 -0.0040962994000000004"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface40" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface40" 
 		"rotatePivot" " -type \"double3\" 0.099992758324652209 6.16126904566839162 -0.50657341540733125"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface40" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface40" 
 		"scalePivot" " -type \"double3\" 0.099992758324652209 6.16126904566839162 -0.50657341540733125"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface40|jackieHair_latest:polySurfaceShape40" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface40|jackieHair_latest:polySurfaceShape40" 
 		"pt[0:47]" (" -s 48 -type \"float3\" -0.10613802 0.028995634999999999 -0.016418472 -0.098047866999999997 0.028975131000000001 -0.042882666 -0.10486466 0.031005027000000001 -0.017594367 -0.088506116999999995 0.030966403 -0.039910084999999998 -0.10926130000000001 0.031014086999999999 -0.020825662000000002 -0.092902741999999996 0.03097594 -0.043141372999999997 -0.11134929 0.029006601999999999 -0.018019453000000001 -0.10326660999999999 0.028986097999999998 -0.044488527 -0.11570556999999999 0.027918459999999999 -0.017190001999999999 -0.11250110000000001 0.027908446 -0.044686165 -0.10707459 0.027896524999999998 -0.044038835999999998 -0.11030126 0.027907016 -0.016545272999999999 -0.12999909000000001 0.026425483 -0.018540419999999998 -0.12712314999999999 0.026415945999999999 -0.046073019999999999 -0.12169914 0.026404025000000001 -0.045504349999999999 -0.12457509 0.026413562000000002 -0.017971761999999999 -0.14771971 0.024028422000000001 -0.020762797 -0.14422746 0.024017931999999999 -0.048223770999999999 -0.13895838999999999 0.02400"
 		+ "6011000000001 -0.047515590000000003 -0.14243981 0.024016978000000001 -0.020053227 -0.15264886999999999 0.022222639999999998 -0.021839577999999998 -0.14910142000000001 0.02221215 -0.049293466000000001 -0.14378052999999999 0.022206428 -0.048588391000000002 -0.14732788999999999 0.022217395000000001 -0.021134507 -0.12856111000000001 0.026420714000000001 -0.032306712000000001 -0.14597357999999999 0.024023653999999998 -0.034493285999999998 -0.15087515000000001 0.022217395000000001 -0.035566515999999999 -0.14555419999999999 0.022211673000000001 -0.034861444999999998 -0.14069909999999999 0.024011256000000002 -0.033784412 -0.12313712 0.026408793 -0.031738049999999997 -0.10868793 0.027901770999999999 -0.030292057000000001 -0.10209293999999999 0.028985621 -0.029650569000000002 -0.096685394999999993 0.030985476000000001 -0.028752223 -0.10108201999999999 0.030995012999999998 -0.031983517000000003 -0.10730795 0.028996589 -0.031253994 -0.11410334 0.027913691000000001 -0.030938080999999999 -0.1356753 0.025217177 -0.047148395"
 		+ "000000003 -0.13726735000000001 0.025221945999999999 -0.033399995000000002 -0.13885940999999999 0.025226714000000001 -0.019651607000000001 -0.13350745 0.025215270000000001 -0.019012496 -0.13191812 0.025210025 -0.032761231000000002 -0.13032877000000001 0.025205255999999999 -0.046509969999999998 -0.10419498000000001 0.029996038999999999 -0.031618752 -0.11030529 0.030010821 -0.019422552999999999 -0.10550134 0.030000331000000002 -0.017006411999999999 -0.099389166000000001 0.029985549 -0.029201396000000001 -0.093276992000000003 0.029970766999999999 -0.041396372000000001 -0.098084672999999997 0.029981257000000001 -0.043814949999999998"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface41" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface41" 
 		"rotatePivot" " -type \"double3\" 0.28701162712306999 6.16126904566839162 -0.44274746276730431"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface41" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface41" 
 		"scalePivot" " -type \"double3\" 0.28701162712306999 6.16126904566839162 -0.44274746276730431"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface41|jackieHair_latest:polySurfaceShape41" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface41|jackieHair_latest:polySurfaceShape41" 
 		"pt[0:47]" (" -s 48 -type \"float3\" 0.086963519000000003 0.028995634999999999 -0.021847561000000001 0.079395540000000001 0.028975131000000001 -0.045277647999999997 0.085814214999999999 0.031005027000000001 -0.022875844999999999 0.070948541000000004 0.030966403 -0.042499490000000001 0.089680335999999999 0.031014086999999999 -0.025812089 0.074814737000000006 0.03097594 -0.045435718999999999 0.091577195 0.029006601999999999 -0.023344844999999999 0.084015846000000005 0.028986097999999998 -0.046779383000000001 0.095464304 0.027918459999999999 -0.022667936999999999 0.092228389999999993 0.027908446 -0.047084547999999997 0.087409832000000007 0.027896524999999998 -0.046432651999999998 0.090665489000000002 0.027907016 -0.022018701000000002 0.10816135 0.026425483 -0.02406954 0.1052172 0.026415945999999999 -0.048523109000000002 0.10039979 0.026404025000000001 -0.047941253000000003 0.10334396 0.026413562000000002 -0.023487642 0.12389505000000001 0.024028422000000001 -0.026294815999999999 0.12040362 0.024017931999999999 -0.0506760659999"
 		+ "99999 0.11572602 0.024006011000000001 -0.049972236000000003 0.11920781 0.024016978000000001 -0.025589648999999999 0.12826504999999999 0.022222639999999998 -0.027321814999999999 0.12472469 0.02221215 -0.051695965000000003 0.12000092 0.022206428 -0.050994194999999999 0.12354125000000001 0.022217395000000001 -0.026620049 0.10668927 0.026420714000000001 -0.036296330000000002 0.093846342999999999 0.027913691000000001 -0.034876242000000002 0.087796517000000004 0.028996589 -0.035062111999999999 0.082247539999999994 0.030995012999999998 -0.035623908000000003 0.078381374000000004 0.030985476000000001 -0.032687663999999998 0.083179533 0.028985621 -0.033562600999999997 0.089037657000000006 0.027901770999999999 -0.034225671999999999 0.10187185999999999 0.026408793 -0.035714447000000003 0.11746692 0.024011256000000002 -0.037780940999999998 0.12177108 0.022211673000000001 -0.038807120000000001 0.12649487000000001 0.022217395000000001 -0.039508889999999998 0.12214933 0.024023653999999998 -0.038485441000000002 0.1160282 0.02"
 		+ "5226714000000001 -0.025182184 0.1144193 0.025221945999999999 -0.037390883999999999 0.11281041 0.025217177 -0.049599595000000003 0.10806291 0.025205255999999999 -0.048956748000000001 0.10966939000000001 0.025210025 -0.036747698000000002 0.11127587999999999 0.025215270000000001 -0.024538643999999998 0.085022025000000001 0.029996038999999999 -0.035343006000000003 0.090628758000000004 0.030010821 -0.024578473999999999 0.086388871000000006 0.030000331000000002 -0.022361703 0.080780454000000002 0.029985549 -0.033125139999999997 0.075172043999999993 0.029970766999999999 -0.043888569000000002 0.079415291999999998 0.029981257000000001 -0.046107553000000003"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface42" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface42" 
 		"rotatePivot" " -type \"double3\" 0.27853276735043603 6.16126904566839162 -0.39483457217876089"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface42" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface42" 
 		"scalePivot" " -type \"double3\" 0.27853276735043603 6.16126904566839162 -0.39483457217876089"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface42|jackieHair_latest:polySurfaceShape42" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface42|jackieHair_latest:polySurfaceShape42" 
 		"pt[0:47]" (" -s 48 -type \"float3\" -0.059280142000000001 0.028738143000000001 -0.078282505000000002 -0.030521261000000001 0.028674247 -0.084225333999999999 -0.048852626000000003 0.031020286000000001 -0.081413164999999996 -0.020940619000000001 0.030961157999999999 -0.090889573000000001 -0.050688494000000001 0.031023147000000001 -0.086916879000000002 -0.022785973000000001 0.030964496000000001 -0.096266955000000001 -0.060522909999999999 0.028735282000000001 -0.083967670999999994 -0.031950474 0.028659942000000001 -0.089909159000000002 -0.081138238000000001 0.027513625 -0.085302650999999993 -0.050166685000000003 0.027433993 -0.096922964 -0.045710239999999999 0.027417304 -0.091516756000000005 -0.078309013999999996 0.027506473 -0.079988368000000004 -0.10617002 0.026530864000000001 -0.088138536000000003 -0.090400844999999994 0.026500823 -0.11295626 -0.085738554999999994 0.026460768999999999 -0.10992253 -0.10164834 0.026489855999999999 -0.085172810000000002 -0.12326486 0.024027944999999998 -0.095970063999999994 -0.11470198 0.02399"
 		+ "3136000000002 -0.12061021 -0.11004584000000001 0.023983122999999999 -0.11758599 -0.11852670999999999 0.024017931999999999 -0.092943884000000004 -0.12003284 0.022220256000000001 -0.098691598000000005 -0.11961146 0.022184969999999998 -0.12282558 -0.11575611 0.022181632 -0.11973543 -0.11614782999999999 0.022216917999999999 -0.095603182999999994 -0.098285437000000003 0.026515605000000001 -0.10054739 -0.11898342000000001 0.024010302000000001 -0.10829013999999999 -0.11982216 0.022202613 -0.11075859 -0.11595197 0.022199275000000001 -0.10766931 -0.11428627 0.024000766 -0.10526493000000001 -0.093693449999999998 0.026475074000000001 -0.097547665000000006 -0.062009633000000002 0.027461650000000001 -0.085752553999999995 -0.044900700000000002 0.028705718000000002 -0.081253931000000001 -0.034896623000000002 0.030990721999999998 -0.086151376000000002 -0.036737236999999999 0.030993583000000002 -0.091591909999999999 -0.046236689999999997 0.028697612000000001 -0.086938410999999993 -0.065652459999999996 0.027474048000000001 -0."
 		+ "091112807000000004 -0.10255142 0.025246741 -0.11678323 -0.10863443 0.025262954000000001 -0.10441876999999999 -0.11471744 0.025279165999999999 -0.092054300000000006 -0.11008751999999999 0.025253893999999999 -0.089058346999999996 -0.10398984999999999 0.025237681000000001 -0.1014063 -0.097892195000000001 0.025221945999999999 -0.11375426 -0.041486964000000001 0.029845836000000001 -0.089265168000000006 -0.055605702 0.029879214000000001 -0.085442274999999998 -0.054066382000000003 0.029878736999999999 -0.079847842000000002 -0.039898664 0.029848220000000002 -0.083702654000000001 -0.025730940000000001 0.029817702000000001 -0.087557465000000001 -0.027368224999999999 0.029812457000000001 -0.093088061"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface43" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface43" 
 		"rotatePivot" " -type \"double3\" 0.34058979198648193 6.16126904566839162 -0.25240439431161665"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface43" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface43" 
 		"scalePivot" " -type \"double3\" 0.34058979198648193 6.16126904566839162 -0.25240439431161665"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface43|jackieHair_latest:polySurfaceShape43" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface43|jackieHair_latest:polySurfaceShape43" 
 		"pt[0:47]" (" -s 48 -type \"float3\" 0.046131589000000001 0.028738143000000001 -0.062718942999999999 0.017298283000000001 0.028674247 -0.068688445000000001 0.035677358999999999 0.031020286000000001 -0.065861896000000003 0.0076946653000000004 0.030961157999999999 -0.075373985000000004 0.037520314999999999 0.031023147000000001 -0.071379534999999994 0.0095469616000000007 0.030964496000000001 -0.080765024000000005 0.047379672999999997 0.028735282000000001 -0.068418815999999993 0.018733481 0.028659942000000001 -0.074386850000000004 0.068050489000000006 0.027513625 -0.069749600999999994 0.037000793999999997 0.027433993 -0.081412508999999994 0.032530412000000002 0.027417304 -0.075993544999999996 0.065211727999999997 0.027506473 -0.064422204999999996 0.093150004999999994 0.026530864000000001 -0.072583659999999994 0.077348060999999996 0.026500823 -0.097473375000000001 0.072672307000000005 0.026460768999999999 -0.094433307999999994 0.088615163999999996 0.026489855999999999 -0.069611675999999997 0.11029337 0.024027944999999998 -0.0804"
 		+ "29606000000001 0.10171689 0.023993136000000002 -0.10513858 0.097047209999999995 0.023983122999999999 -0.10210805000000001 0.10554142 0.024017931999999999 -0.077397116000000002 0.10705381999999999 0.022220256000000001 -0.083159536000000006 0.10664038000000001 0.022184969999999998 -0.10735799 0.10277341 0.022181632 -0.10426114 0.10315729999999999 0.022216917999999999 -0.080064400999999993 0.085249037 0.026515605000000001 -0.085028507000000003 0.052525639999999998 0.027474048000000001 -0.075581059000000006 0.033056575999999997 0.028697612000000001 -0.071402832999999999 0.023533637 0.030993583000000002 -0.076072283000000004 0.021686014 0.030990721999999998 -0.070617944000000002 0.031714935 0.028705718000000002 -0.065703689999999995 0.048871074 0.027461650000000001 -0.070207879000000001 0.080643735999999994 0.026475074000000001 -0.082022488000000005 0.10129431 0.024000766 -0.089752584999999996 0.10296535 0.022199275000000001 -0.092162765999999993 0.10684709000000001 0.022202613 -0.095258764999999995 0.10600513 0.0"
 		+ "24010302000000001 -0.092784091999999999 0.089532479999999998 0.025246741 -0.10130598 0.084859759000000007 0.025221945999999999 -0.098270677000000001 0.090969025999999995 0.025237681000000001 -0.085887543999999996 0.097078293999999996 0.025253893999999999 -0.073504396 0.10172169 0.025279165999999999 -0.076506630000000006 0.095627084000000001 0.025262954000000001 -0.088906303000000006 0.028295107 0.029845836000000001 -0.073737562000000006 0.042449991999999999 0.029879214000000001 -0.069899171999999996 0.040904474000000003 0.029878736999999999 -0.064290419000000001 0.026700471 0.029848220000000002 -0.068160816999999999 0.012496475 0.029817702000000001 -0.072031222000000006 0.014140221999999999 0.029812457000000001 -0.077575936999999998"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface44" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface44" 
 		"rotatePivot" " -type \"double3\" 0.29589482722251609 6.13011841931489698 -0.27203341249096125"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface44" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface44" 
 		"scalePivot" " -type \"double3\" 0.29589482722251609 6.13011841931489698 -0.27203341249096125"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface44|jackieHair_latest:polySurfaceShape44" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface44|jackieHair_latest:polySurfaceShape44" 
 		"pt[0:47]" (" -s 48 -type \"float3\" -0.034293149000000002 -0.00024688010999999999 0.069753751000000003 -0.023148796999999999 -0.0072487569000000002 0.071646124000000005 -0.030256152000000001 -0.00082146889000000002 0.084099500999999993 -0.019454501999999999 -0.0077327467000000002 0.087389602999999996 -0.030990562999999999 -0.00056206946999999997 0.086253478999999994 -0.020192053000000001 -0.0074666715 0.089494883999999997 -0.034797858000000001 -0.00013768440000000001 0.071943044999999997 -0.023725968 -0.0071057057999999998 0.073769539999999995 -0.042808339000000001 0.0036083483 0.065458506 -0.030826934 -0.0041087843000000004 0.069451137999999996 -0.029075328000000001 -0.0049985623999999999 0.067254974999999995 -0.041688979000000001 0.0031057619000000002 0.063350751999999996 -0.052539616999999997 0.0085502882000000006 0.060932077000000001 -0.046512969000000001 0.0040303492 0.070352874999999995 -0.044690731999999997 0.0029970431000000001 0.068940743999999998 -0.050772205000000001 0.0075460696000000001 0.059538513000000001 -0"
 		+ ".059208360000000002 0.010152938 0.049575007999999997 -0.055979348999999998 0.0073281550000000003 0.058909625 -0.054159507000000003 0.0063215516999999997 0.057673544 -0.057356648000000003 0.0091272611000000007 0.048337944000000001 -0.057963949000000001 0.0077425265000000002 0.040209561999999997 -0.057894452999999998 0.0068470262999999996 0.049360499000000002 -0.056385241000000003 0.0060359263000000002 0.048137903000000003 -0.056443300000000002 0.0069247507000000002 0.038987583999999999 -0.049526292999999999 0.0062900804999999997 0.065642460999999999 -0.036817636000000001 -0.00025021796999999998 0.067454815000000001 -0.029261908999999999 -0.0036214567000000001 0.072856292000000003 -0.025591309999999999 -0.0040143705000000003 0.087874189000000005 -0.024855327 -0.0042771077999999999 0.085744545000000005 -0.028720971000000001 -0.0037478185000000002 0.070699945 -0.035382154999999998 -0.00094640022000000001 0.065302848999999996 -0.047731469999999998 0.0052715562999999998 0.064239620999999997 -0.055758073999999998 0."
 		+ "0077244067000000003 0.053005746999999999 -0.056414269000000003 0.0064803385000000002 0.043562740000000003 -0.057929210000000002 0.0072947773000000002 0.044785037999999999 -0.057593852000000001 0.0087405461999999993 0.054242313 -0.051246158999999999 0.0056792520999999997 0.064631246000000003 -0.049425117999999997 0.0046592973999999999 0.063307129000000004 -0.051744770000000002 0.0064975047000000001 0.058622687999999999 -0.054064429999999997 0.0083366650999999996 0.05393821 -0.055873986 0.0093513746000000002 0.055253549999999998 -0.053560073999999999 0.007515552 0.059942387 -0.026788144999999999 -0.0040124630999999996 0.078222244999999996 -0.032274649000000002 -0.00053393608000000005 0.076926633999999994 -0.032894205000000003 -0.00034940010000000002 0.079098284000000005 -0.027426612 -0.0038179135999999998 0.080365241000000004 -0.021959011000000001 -0.0072864271000000003 0.081632197000000004 -0.021301646 -0.0074905134 0.079517855999999998"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface45" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface45" 
 		"rotatePivot" " -type \"double3\" 0.34594136837173256 6.16126904566839162 -0.24798764955183766"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface45" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface45" 
 		"scalePivot" " -type \"double3\" 0.34594136837173256 6.16126904566839162 -0.24798764955183766"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface45|jackieHair_latest:polySurfaceShape45" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface45|jackieHair_latest:polySurfaceShape45" 
 		"pt[0:47]" (" -s 48 -type \"float3\" 0.025851428999999999 0.028738143000000001 0.055965795999999998 0.026027116999999999 0.028674247 0.057161733999999999 0.025955226000000001 0.031020286000000001 0.056401743999999997 0.026278145999999999 0.030961157999999999 0.057571322000000001 0.026185765999999999 0.031023147000000001 0.056339427999999997 0.026503513999999999 0.030964496000000001 0.057508305000000003 0.026088007 0.028735282000000001 0.055928275 0.026264085999999999 0.028659942000000001 0.057116553 0.02619198 0.027513625 0.055084303000000001 0.026595704000000001 0.027433993 0.056384697999999997 0.026362929 0.027417304 0.056554943000000003 0.025966853000000002 0.027506473 0.055187903000000003 0.026368151999999999 0.026530864000000001 0.054062441000000003 0.027350414999999999 0.026500823 0.054769552999999999 0.027214643 0.026460768999999999 0.054953917999999997 0.026235505999999999 0.026489855999999999 0.05424118 0.026730693999999999 0.024027944999999998 0.053378619000000002 0.027722828000000001 0.023993136000000002 0.053789"
 		+ "182999999997 0.027587457999999999 0.023983122999999999 0.053973317 0.026595052000000001 0.024017931999999999 0.053566106000000002 0.026834833999999998 0.022220256000000001 0.053517908000000003 0.027825572 0.022184969999999998 0.053592718999999997 0.027689397000000001 0.022181632 0.053743787000000001 0.026698667999999998 0.022216917999999999 0.053670198000000002 0.026859283000000001 0.026515605000000001 0.054415986 0.027226767999999998 0.024010302000000001 0.053583905000000001 0.027330197000000001 0.022202613 0.053555325000000001 0.027194026999999999 0.022199275000000001 0.053706996 0.027091257000000001 0.024000766 0.053769715000000003 0.026725071999999999 0.026475074000000001 0.054597556999999998 0.026164889 0.027461650000000001 0.055871427000000001 0.025939266999999998 0.028705718000000002 0.056563765000000002 0.026116687999999999 0.030990721999999998 0.056986526000000003 0.026344638 0.030993583000000002 0.056923865999999997 0.026176043 0.028697612000000001 0.056522414 0.026393837999999999 0.0274740480000000"
 		+ "01 0.055734514999999998 0.027536623 0.025246741 0.054279380000000002 0.027043022 0.025262954000000001 0.053999946 0.026549425000000001 0.025279165999999999 0.053720525999999998 0.026415277000000001 0.025253893999999999 0.053903646999999999 0.026908167 0.025237681000000001 0.054183624999999999 0.027401060000000001 0.025221945999999999 0.054463617999999998 0.026260339000000001 0.029845836000000001 0.056723148000000001 0.026136883 0.029879214000000001 0.056133850999999998 0.025903326000000001 0.029878736999999999 0.056183770000000001 0.026027977000000001 0.029848220000000002 0.056775153000000002 0.026152629 0.029817702000000001 0.057366535000000003 0.026383798999999999 0.029812457000000001 0.057312428999999998"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2" 
 		"rotatePivot" " -type \"double3\" 0 6.17057214613303895 -0.16935000546251244"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2" 
 		"scalePivot" " -type \"double3\" 0 6.17057214613303895 -0.16935000546251244"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface1" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface1" 
 		"rotatePivot" " -type \"double3\" 0.20584883750712829 6.05134704798876033 -0.41949675760010263"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface1" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface1" 
 		"scalePivot" " -type \"double3\" 0.20584883750712829 6.05134704798876033 -0.41949675760010263"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface1|jackieHair_latest:polySurfaceShape1" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface1|jackieHair_latest:polySurfaceShape1" 
 		"pt[0:47]" (" -s 48 -type \"float3\" 0.0010865312 -0.081824182999999995 0.057645909000000002 0.0022269897000000002 -0.081844686999999999 0.058056957999999999 0.0011352338000000001 -0.079814791999999996 0.057704151000000002 0.0020763463999999999 -0.079853414999999997 0.058468028999999998 0.0012860987000000001 -0.079805255000000005 0.05751875 0.0022272095000000001 -0.079843879000000006 0.058282629000000002 0.0011678208 -0.081812738999999995 0.057421333999999997 0.0023085064999999998 -0.081833719999999999 0.057832084999999998 0.0011409242 -0.082901358999999994 0.057228945000000003 0.0023370683 -0.082911371999999997 0.057428457000000002 0.0022970438000000002 -0.082923292999999995 0.057664490999999998 0.001101058 -0.082913280000000006 0.057464017999999999 0.0012308359000000001 -0.084394336 0.056606464000000002 0.0024292841999999999 -0.084403872000000005 0.056791686000000001 0.0023927054999999999 -0.084415317000000004 0.057027771999999997 0.0011942573000000001 -0.084406256999999998 0.056842565999999997 0.0013662931 -0.08679091899"
 		+ "9999994 0.055835917999999998 0.0025602802999999999 -0.086801886999999994 0.056047953999999997 0.0025179273999999998 -0.086813330999999994 0.056276962 0.0013238582999999999 -0.086802840000000006 0.056065403 0.0014240368999999999 -0.088597177999999999 0.055622570000000003 0.0026175975999999999 -0.088607669 0.055837005000000002 0.0025752671 -0.088613391 0.056068286000000002 0.0013817102 -0.088602423999999999 0.055853866000000002 0.0018300600000000001 -0.084399104000000003 0.056699075000000002 0.0019632876 -0.086796640999999994 0.055941923999999997 0.0020208172999999999 -0.088602423999999999 0.055729792 0.0019784905 -0.088607669 0.055961072000000001 0.0019208919 -0.086808084999999993 0.056171179000000002 0.0017934813999999999 -0.084411025000000001 0.056935175999999997 0.0016990528 -0.082918047999999994 0.057564250999999997 0.0016567595 -0.081834196999999997 0.057851425999999997 0.0016057901 -0.079833865000000004 0.05808609 0.0017566551 -0.079824804999999999 0.057900682000000002 0.0017381645999999999 -0.0818227529"
 		+ "99999998 0.057626708999999998 0.0017389972 -0.082906126999999996 0.057328707999999999 0.0012985653999999999 -0.085593104000000003 0.056221195000000002 0.0012590587 -0.085604548000000003 0.056453981 0.0018571894999999999 -0.085609794000000003 0.056553178000000003 0.0024553202000000001 -0.085614562000000005 0.056652374999999998 0.0024947859000000001 -0.085602640999999993 0.056419812 0.0018966738 -0.085597873000000005 0.056320510999999997 0.0017474107 -0.080823778999999998 0.057763703 0.0012269579 -0.080809474000000006 0.057470045999999997 0.0011108833999999999 -0.080819487999999995 0.057675025999999997 0.0016312767000000001 -0.08083427 0.057968758000000002 0.0021516680999999998 -0.080849051000000005 0.058262497000000003 0.0022678599 -0.080838561000000003 0.058057360000000002"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface2" 
 		"rotatePivot" " -type \"double3\" 0.20584883750712829 6.05134704798876033 -0.41949675760010263"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface2" 
 		"scalePivot" " -type \"double3\" 0.20584883750712829 6.05134704798876033 -0.41949675760010263"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface2|jackieHair_latest:polySurfaceShape2" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface2|jackieHair_latest:polySurfaceShape2" 
 		"pt[0:47]" (" -s 48 -type \"float3\" -0.0010865293 -0.081824182999999995 0.057645895000000003 -0.0022269897000000002 -0.081844686999999999 0.058056951000000002 -0.0011352338000000001 -0.079814791999999996 0.057704151000000002 -0.0020763501999999999 -0.079853414999999997 0.058468028999999998 -0.0012860987000000001 -0.079805255000000005 0.05751875 -0.0022272095000000001 -0.079843879000000006 0.058282629000000002 -0.0011678208 -0.081812738999999995 0.057421333999999997 -0.0023085101999999998 -0.081833719999999999 0.057832077000000003 -0.0011409223 -0.082901358999999994 0.057228952999999999 -0.0023370719999999999 -0.082911371999999997 0.057428457000000002 -0.0022970438000000002 -0.082923292999999995 0.057664490999999998 -0.001101058 -0.082913280000000006 0.057464017999999999 -0.0012308378000000001 -0.084394336 0.056606464000000002 -0.0024292841999999999 -0.084403872000000005 0.056791686000000001 -0.0023927092999999999 -0.084415317000000004 0.057027771999999997 -0.0011942573000000001 -0.084406256999999998 0.056842565999999997 -0"
 		+ ".0013662931 -0.086790918999999994 0.055835917999999998 -0.0025602802999999999 -0.086801886999999994 0.056047938999999998 -0.0025179311999999998 -0.086813330999999994 0.056276962 -0.0013238601000000001 -0.086802840000000006 0.056065403 -0.0014240368999999999 -0.088597177999999999 0.055622570000000003 -0.0026175975999999999 -0.088607669 0.055836997999999999 -0.0025752708 -0.088613391 0.056068286000000002 -0.001381712 -0.088602423999999999 0.055853866000000002 -0.0018300638000000001 -0.084399104000000003 0.056699075000000002 -0.0017389972 -0.082906126999999996 0.057328701000000003 -0.0017381645999999999 -0.081822752999999998 0.057626708999999998 -0.0017566551 -0.079824804999999999 0.057900697000000001 -0.0016057901 -0.079833865000000004 0.05808609 -0.0016567595 -0.081834196999999997 0.057851434 -0.0016990509 -0.082918047999999994 0.057564259 -0.0017934813999999999 -0.084411025000000001 0.056935175999999997 -0.0019208919 -0.086808084999999993 0.056171170999999999 -0.0019784942 -0.088607669 0.055961080000000003 -0"
 		+ ".0020208172999999999 -0.088602423999999999 0.055729792 -0.0019632876 -0.086796640999999994 0.055941939000000003 -0.0018966738 -0.085597873000000005 0.056320503000000001 -0.0012985653999999999 -0.085593104000000003 0.056221195000000002 -0.0012590606 -0.085604548000000003 0.056453981 -0.0018571894999999999 -0.085609794000000003 0.05655317 -0.0024553202000000001 -0.085614562000000005 0.056652359999999999 -0.0024947859000000001 -0.085602640999999993 0.056419812 -0.0017474107 -0.080823778999999998 0.057763711000000002 -0.0012269579 -0.080809474000000006 0.057470045999999997 -0.0011108833999999999 -0.080819487999999995 0.057675019000000001 -0.0016312748000000001 -0.08083427 0.057968758000000002 -0.0021516642999999998 -0.080849051000000005 0.058262497000000003 -0.0022678599 -0.080838561000000003 0.058057352999999999"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface3" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface3" 
 		"rotatePivot" " -type \"double3\" 0.32242153807977719 6.08249767434225497 -0.24558630881854426"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface3" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface3" 
 		"scalePivot" " -type \"double3\" 0.32242153807977719 6.08249767434225497 -0.24558630881854426"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface3|jackieHair_latest:polySurfaceShape3" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface3|jackieHair_latest:polySurfaceShape3" 
 		"pt[0:47]" (" -s 48 -type \"float3\" 0.0021395012999999999 -0.050676699999999998 0.058386742999999998 0.0023151971000000002 -0.050740119 0.059582694999999998 0.0022433065000000002 -0.048394556999999998 0.058822706000000002 0.0025662221 -0.048453685000000003 0.059992269000000001 0.0024738424000000001 -0.048391218999999999 0.058760374999999997 0.002791591 -0.048450346999999998 0.059929252000000002 0.0023760832999999999 -0.050679560999999998 0.058349221999999999 0.0025521666 -0.050754423999999999 0.059537514999999999 0.0024800561 -0.051900741 0.057505250000000001 0.0028837807000000001 -0.051980849000000003 0.058805659000000003 0.002651006 -0.051997061999999997 0.058975905000000002 0.0022549368000000002 -0.051908370000000002 0.057608850000000003 0.0026562250999999999 -0.052883978999999998 0.056483388000000002 0.0036384910000000002 -0.052914019999999999 0.057190508000000001 0.0035027191000000001 -0.052954073999999997 0.057374872 0.0025235824 -0.052924987 0.056662127 0.0030187704000000002 -0.055386896999999997 0.05579956600000000"
 		+ "2 0.0040109157999999997 -0.055421706000000001 0.056210152999999999 0.0038755386999999998 -0.055431719999999997 0.056394272000000002 0.0028831287999999998 -0.055396911 0.055987059999999998 0.0031229070999999999 -0.057194586999999998 0.055938861999999999 0.0041136369000000002 -0.057229873000000001 0.056013665999999997 0.0039774776000000003 -0.057233210999999999 0.056164741999999997 0.0029867439999999999 -0.057197924999999997 0.056091151999999998 0.0031473599000000001 -0.052899238000000001 0.056836955000000002 0.0035148412 -0.055404063000000003 0.056004859999999997 0.0036182738999999998 -0.057212230000000003 0.055976272000000001 0.0034821070999999999 -0.057215568000000001 0.056127943 0.0033793374999999998 -0.055414076999999999 0.056190669999999998 0.0030131526 -0.052939768999999998 0.057018503999999998 0.0024529695999999999 -0.051952716000000003 0.058292374000000001 0.0022273472999999998 -0.050708648000000002 0.058984712000000002 0.0024047642999999999 -0.048424121000000001 0.059407488000000001 0.0026327185000000"
 		+ "002 -0.048421260000000001 0.059344813000000003 0.0024641267999999999 -0.050717231000000002 0.058943361 0.0026819146999999999 -0.051940794999999998 0.058155461999999998 0.0038246996999999998 -0.054168101000000003 0.056700327000000002 0.0033310987 -0.054151889000000002 0.056420900000000003 0.0028375014999999998 -0.054135676000000001 0.056141472999999997 0.0027033575000000002 -0.054160949 0.056324601000000002 0.0031962432000000002 -0.054176684000000003 0.056604579000000002 0.0036891252000000002 -0.054192419999999998 0.056884572000000001 0.0024249628 -0.049535627999999998 0.058554797999999998 0.0021914056999999998 -0.049536104999999997 0.058604717000000001 0.0023160540000000001 -0.049566622999999997 0.059196115000000001 0.0024407058999999999 -0.049597139999999998 0.059787482000000003 0.0026718788000000002 -0.049602385999999998 0.059733375999999998 0.0025484189000000001 -0.049569006999999998 0.059144095000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface4" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface4" 
 		"rotatePivot" " -type \"double3\" 0.32242153807977719 6.05134704798876033 -0.24558630881854426"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface4" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface4" 
 		"scalePivot" " -type \"double3\" 0.32242153807977719 6.05134704798876033 -0.24558630881854426"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface4|jackieHair_latest:polySurfaceShape4" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface4|jackieHair_latest:polySurfaceShape4" 
 		"pt[0:47]" (" -s 48 -type \"float3\" -0.0021394974999999999 -0.082081676000000006 0.058386757999999997 -0.0023151933999999998 -0.082145095000000001 0.059582694999999998 -0.0022433027999999998 -0.079799533000000006 0.058822706000000002 -0.0025662257999999999 -0.079858660999999997 0.059992269000000001 -0.0024738424000000001 -0.079796195 0.058760374999999997 -0.002791591 -0.079855323000000006 0.059929252000000002 -0.0023760832999999999 -0.082084536999999999 0.058349236999999998 -0.0025521629000000001 -0.082159399999999994 0.0595375 -0.0024800524000000001 -0.083306193000000001 0.057505250000000001 -0.0028837807000000001 -0.083385824999999997 0.058805659000000003 -0.002651006 -0.083402037999999998 0.058975905000000002 -0.0022549330999999998 -0.083313345999999996 0.057608850000000003 -0.0026562287999999999 -0.084288954999999999 0.056483388000000002 -0.0036384910000000002 -0.084318994999999994 0.057190514999999997 -0.0035027191000000001 -0.084359050000000005 0.057374872 -0.0025235824 -0.084329962999999994 0.056662127 -0.0030187704"
 		+ "000000002 -0.086791873000000005 0.055799566000000002 -0.0040109157999999997 -0.086826682000000002 0.056210152999999999 -0.0038755386999999998 -0.086837173000000004 0.056394272000000002 -0.0028831324999999998 -0.086801886999999994 0.055987059999999998 -0.0031229070999999999 -0.088600039000000005 0.055938861999999999 -0.0041136369000000002 -0.088634849000000002 0.056013673999999999 -0.0039774700999999999 -0.088638185999999994 0.056164741999999997 -0.0029867439999999999 -0.088602900999999998 0.056091145000000002 -0.0031473599000000001 -0.084304214000000002 0.056836955000000002 -0.0026819146999999999 -0.083345770999999999 0.058155461999999998 -0.0024641231 -0.082122207000000003 0.058943361 -0.0026327147999999998 -0.079826235999999995 0.059344813000000003 -0.0024047642999999999 -0.079829097000000002 0.059407488000000001 -0.0022273472999999998 -0.082113623999999996 0.058984727000000001 -0.0024529732999999999 -0.083357691999999997 0.058292374000000001 -0.0030131489000000001 -0.084344744999999999 0.057018503999999998"
 		+ " -0.0033793374999999998 -0.086819052999999993 0.056190669999999998 -0.0034821070999999999 -0.088620542999999996 0.056127943 -0.0036182738999999998 -0.088617206000000004 0.055976263999999998 -0.0035148412 -0.086809039000000005 0.056004859999999997 -0.0036891252000000002 -0.085597873000000005 0.056884572000000001 -0.0031962432000000002 -0.085581660000000004 0.056604579000000002 -0.0027033538000000002 -0.085566401 0.056324601000000002 -0.0028375014999999998 -0.085540651999999995 0.056141472999999997 -0.0033310987 -0.085556864999999996 0.056420906999999999 -0.0038247071000000001 -0.085573076999999997 0.056700327000000002 -0.0025484189000000001 -0.080973982999999999 0.059144095000000001 -0.0024249628 -0.080940603999999999 0.058554797999999998 -0.0021914056999999998 -0.080941080999999998 0.058604717000000001 -0.0023160540000000001 -0.080971599000000005 0.059196100000000001 -0.0024407095999999999 -0.081002115999999999 0.059787482000000003 -0.0026718750999999998 -0.081007361 0.059733375999999998"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface7" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface7" 
 		"rotatePivot" " -type \"double3\" 0 6.05134704798876033 -0.42577524576579684"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface7" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface7" 
 		"scalePivot" " -type \"double3\" 0 6.05134704798876033 -0.42577524576579684"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface7|jackieHair_latest:polySurfaceShape7" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface7|jackieHair_latest:polySurfaceShape7" 
 		"pt[0:47]" (" -s 48 -type \"float3\" -0.00059110950999999995 -0.081834673999999996 0.057741381000000001 0.00059110950999999995 -0.081834673999999996 0.057741381000000001 -0.00059110950999999995 -0.079835296 0.057841785 0.00059110950999999995 -0.079835296 0.057841785 -0.00059110950999999995 -0.079823375000000002 0.057602867000000002 0.00059110950999999995 -0.079823375000000002 0.057602867000000002 -0.00059110950999999995 -0.081822752999999998 0.057502470999999999 0.00059110950999999995 -0.081822752999999998 0.057502470999999999 -0.00059110950999999995 -0.082906126999999996 0.057271816000000003 0.00059110950999999995 -0.082906126999999996 0.057271816000000003 0.00059110950999999995 -0.082918047999999994 0.057510734000000001 -0.00059110950999999995 -0.082918047999999994 0.057510734000000001 -0.00059110950999999995 -0.084398627000000004 0.056634769000000001 0.00059110950999999995 -0.084398627000000004 0.056634769000000001 0.00059110950999999995 -0.084410548000000002 0.056873663999999997 -0.00059110950999999995 -0.08441054800000"
 		+ "0002 0.056873663999999997 -0.00059110950999999995 -0.086827636 0.055787057000000001 0.00059110950999999995 -0.086827636 0.055787057000000001 0.00059110950999999995 -0.086839556999999998 0.056025951999999997 -0.00059110950999999995 -0.086839556999999998 0.056025951999999997 -0.00059110950999999995 -0.088681578999999996 0.055357106000000003 0.00059110950999999995 -0.088681578999999996 0.055357106000000003 0.00059110950999999995 -0.088693499999999995 0.055596000999999999 -0.00059110950999999995 -0.088693499999999995 0.055596000999999999 0 -0.082906126999999996 0.057271816000000003 0 -0.084398627000000004 0.056634769000000001 0 -0.086827636 0.055787057000000001 0 -0.088681578999999996 0.055357106000000003 0 -0.088693499999999995 0.055596000999999999 0 -0.086839556999999998 0.056025951999999997 0 -0.084410548000000002 0.056873663999999997 0 -0.082918047999999994 0.057510734000000001 0 -0.081834673999999996 0.057741381000000001 0 -0.079835296 0.057841785 0 -0.079823375000000002 0.057602867000000002 0 -0.08182275299"
 		+ "9999998 0.057502470999999999 0 -0.085613131999999995 0.056210904999999999 -0.00059110950999999995 -0.085613131999999995 0.056210904999999999 -0.00059110950999999995 -0.085625051999999993 0.056449801000000001 0 -0.085625051999999993 0.056449801000000001 0.00059110950999999995 -0.085625051999999993 0.056449801000000001 0.00059110950999999995 -0.085613131999999995 0.056210904999999999 0 -0.080822825000000001 0.057552672999999999 -0.00059110950999999995 -0.080822825000000001 0.057552672999999999 -0.00059110950999999995 -0.080835222999999998 0.057791575999999997 0 -0.080835222999999998 0.057791575999999997 0.00059110950999999995 -0.080835222999999998 0.057791575999999997 0.00059110950999999995 -0.080822825000000001 0.057552672999999999"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface40" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface40" 
 		"rotatePivot" " -type \"double3\" 0.099992758324652209 6.05134704798876033 -0.44542387016965601"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface40" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface40" 
 		"scalePivot" " -type \"double3\" 0.099992758324652209 6.05134704798876033 -0.44542387016965601"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface40|jackieHair_latest:polySurfaceShape40" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface40|jackieHair_latest:polySurfaceShape40" 
 		"pt[0:47]" (" -s 48 -type \"float3\" -0.10613802 -0.081824182999999995 0.045230508000000003 -0.098047866999999997 -0.081844686999999999 0.018766306 -0.10486466 -0.079814791999999996 0.044054604999999997 -0.088506116999999995 -0.079853414999999997 0.021738886999999998 -0.10926130000000001 -0.079805255000000005 0.040823302999999998 -0.092902741999999996 -0.079843879000000006 0.018507592 -0.11134929 -0.081812738999999995 0.043629512000000002 -0.10326660999999999 -0.081833719999999999 0.017160445 -0.11570556999999999 -0.082901358999999994 0.044458962999999997 -0.11250110000000001 -0.082911371999999997 0.016962804000000001 -0.10707459 -0.082923292999999995 0.017610133 -0.11030126 -0.082913280000000006 0.045103698999999997 -0.12999909000000001 -0.084394336 0.043108553000000001 -0.12712314999999999 -0.084403872000000005 0.015575953 -0.12169914 -0.084415317000000004 0.016144617999999999 -0.12457509 -0.084406256999999998 0.043677211000000001 -0.14771971 -0.086790918999999994 0.040886170999999999 -0.14422746 -0.086801886999999994 0.0"
 		+ "13425200999999999 -0.13895838999999999 -0.086813330999999994 0.014133371 -0.14243981 -0.086802840000000006 0.041595735000000002 -0.15264886999999999 -0.088597177999999999 0.039809398000000003 -0.14910142000000001 -0.088607669 0.012355499000000001 -0.14378052999999999 -0.088613391 0.013060585 -0.14732788999999999 -0.088602423999999999 0.040514453999999998 -0.12856111000000001 -0.084399104000000003 0.029342249000000001 -0.14597357999999999 -0.086796640999999994 0.02715569 -0.15087515000000001 -0.088602423999999999 0.026082449000000001 -0.14555419999999999 -0.088607669 0.026787518999999999 -0.14069909999999999 -0.086808084999999993 0.027864553 -0.12313712 -0.084411025000000001 0.029910907 -0.10868793 -0.082918047999999994 0.031356923000000002 -0.10209293999999999 -0.081834196999999997 0.031998395999999998 -0.096685394999999993 -0.079833865000000004 0.032896742 -0.10108201999999999 -0.079824804999999999 0.029665463 -0.10730795 -0.081822752999999998 0.030394978999999999 -0.11410334 -0.082906126999999996 0.03071088"
 		+ "3000000001 -0.1356753 -0.085602640999999993 0.014500581 -0.13726735000000001 -0.085597873000000005 0.028248973 -0.13885940999999999 -0.085593104000000003 0.041997357999999999 -0.13350745 -0.085604548000000003 0.042636476 -0.13191812 -0.085609794000000003 0.028887741000000002 -0.13032877000000001 -0.085614562000000005 0.015138990999999999 -0.10419498000000001 -0.080823778999999998 0.030030213 -0.11030529 -0.080809474000000006 0.042226410999999998 -0.10550134 -0.080819487999999995 0.044642544999999999 -0.099389166000000001 -0.08083427 0.032447576999999998 -0.093276992000000003 -0.080849051000000005 0.020252592999999999 -0.098084672999999997 -0.080838561000000003 0.017834015000000002"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface41" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface41" 
 		"rotatePivot" " -type \"double3\" 0.28701162712306999 6.05134704798876033 -0.38159791752962907"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface41" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface41" 
 		"scalePivot" " -type \"double3\" 0.28701162712306999 6.05134704798876033 -0.38159791752962907"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface41|jackieHair_latest:polySurfaceShape41" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface41|jackieHair_latest:polySurfaceShape41" 
 		"pt[0:47]" (" -s 48 -type \"float3\" 0.086963519000000003 -0.081824182999999995 0.039801411000000002 0.079395540000000001 -0.081844686999999999 0.016371324999999999 0.085814214999999999 -0.079814791999999996 0.038773119000000002 0.070948541000000004 -0.079853414999999997 0.019149481999999999 0.089680335999999999 -0.079805255000000005 0.035836874999999997 0.074814737000000006 -0.079843879000000006 0.016213246000000001 0.091577195 -0.081812738999999995 0.038304128 0.084015846000000005 -0.081833719999999999 0.014869586000000001 0.095464304 -0.082901358999999994 0.038981034999999997 0.092228389999999993 -0.082911371999999997 0.014564425000000001 0.087409832000000007 -0.082923292999999995 0.015216327999999999 0.090665489000000002 -0.082913280000000006 0.039630271000000002 0.10816135 -0.084394336 0.037579416999999997 0.1052172 -0.084403872000000005 0.013125859 0.10039979 -0.084415317000000004 0.013707712 0.10334396 -0.084406256999999998 0.038161321999999998 0.12389505000000001 -0.086790918999999994 0.035354152 0.12040362 -0.08680"
 		+ "1886999999994 0.010972902 0.11572602 -0.086813330999999994 0.011676736 0.11920781 -0.086802840000000006 0.036059327000000002 0.12826504999999999 -0.088597177999999999 0.034327156999999997 0.12472469 -0.088607669 0.0099529996999999995 0.12000092 -0.088613391 0.010654777000000001 0.12354125000000001 -0.088602423999999999 0.035028927000000001 0.10668927 -0.084399104000000003 0.025352642000000002 0.093846342999999999 -0.082906126999999996 0.026772722999999998 0.087796517000000004 -0.081822752999999998 0.026586846000000001 0.082247539999999994 -0.079824804999999999 0.026025057000000001 0.078381374000000004 -0.079833865000000004 0.028961292999999999 0.083179533 -0.081834196999999997 0.028086363999999999 0.089037657000000006 -0.082918047999999994 0.027423291999999998 0.10187185999999999 -0.084411025000000001 0.025934517000000001 0.11746692 -0.086808084999999993 0.023868032000000001 0.12177108 -0.088607669 0.022841848000000001 0.12649487000000001 -0.088602423999999999 0.022140086 0.12214933 -0.086796640999999994 0.02"
 		+ "3163527 0.1160282 -0.085593104000000003 0.036466791999999998 0.1144193 -0.085597873000000005 0.024258084999999999 0.11281041 -0.085602640999999993 0.012049377 0.10806291 -0.085614562000000005 0.012692228 0.10966939000000001 -0.085609794000000003 0.024901270999999999 0.11127587999999999 -0.085604548000000003 0.037110321000000002 0.085022025000000001 -0.080823778999999998 0.026305951000000001 0.090628758000000004 -0.080809474000000006 0.037070498 0.086388871000000006 -0.080819487999999995 0.039287262000000003 0.080780454000000002 -0.08083427 0.028523832999999998 0.075172043999999993 -0.080849051000000005 0.017760403000000001 0.079415291999999998 -0.080838561000000003 0.015541427"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface42" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface42" 
 		"rotatePivot" " -type \"double3\" 0.27853276735043603 6.05134704798876033 -0.33368502694108565"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface42" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface42" 
 		"scalePivot" " -type \"double3\" 0.27853276735043603 6.05134704798876033 -0.33368502694108565"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface42|jackieHair_latest:polySurfaceShape42" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface42|jackieHair_latest:polySurfaceShape42" 
 		"pt[0:47]" (" -s 48 -type \"float3\" -0.059280142000000001 -0.082081676000000006 -0.016633539999999999 -0.030521261000000001 -0.082145095000000001 -0.022576377000000002 -0.048852626000000003 -0.079799533000000006 -0.019764199999999999 -0.020940619000000001 -0.079858660999999997 -0.029240601000000001 -0.050688494000000001 -0.079796195 -0.025267906 -0.022785973000000001 -0.079855323000000006 -0.034617982999999998 -0.060522909999999999 -0.082084536999999999 -0.022318698000000001 -0.031950474 -0.082159399999999994 -0.028260186 -0.081138238000000001 -0.083306193000000001 -0.023653679 -0.050166685000000003 -0.083385824999999997 -0.035273984000000001 -0.045710239999999999 -0.083402037999999998 -0.029867791000000001 -0.078309013999999996 -0.083313345999999996 -0.018339396000000001 -0.10617002 -0.084288954999999999 -0.026489571 -0.090400844999999994 -0.084318994999999994 -0.051307287 -0.085738554999999994 -0.084359050000000005 -0.048273551999999997 -0.10164834 -0.084329962999999994 -0.023523845000000002 -0.12326486 -0.08679187300000"
 		+ "0005 -0.034321102999999999 -0.11470198 -0.086826682000000002 -0.058961227999999997 -0.11004584000000001 -0.086837173000000004 -0.055937011000000002 -0.11852670999999999 -0.086801886999999994 -0.031294919999999997 -0.12003284 -0.088600039000000005 -0.037042632999999998 -0.11961146 -0.088634849000000002 -0.061176606000000001 -0.11575611 -0.088638185999999994 -0.058086466000000003 -0.11614782999999999 -0.088602900999999998 -0.033954214000000003 -0.098285437000000003 -0.084304214000000002 -0.038898426999999999 -0.11898342000000001 -0.086809039000000005 -0.046641166999999997 -0.11982216 -0.088617206000000004 -0.049109622999999998 -0.11595197 -0.088620542999999996 -0.046020336000000002 -0.11428627 -0.086819052999999993 -0.043615966999999999 -0.093693449999999998 -0.084344744999999999 -0.035898699999999999 -0.062009633000000002 -0.083357691999999997 -0.024103589000000002 -0.044900700000000002 -0.082113623999999996 -0.019604959000000002 -0.034896623000000002 -0.079829097000000002 -0.024502403999999998 -0.036737236999"
 		+ "999999 -0.079826235999999995 -0.029942951999999998 -0.046236689999999997 -0.082122207000000003 -0.025289439 -0.065652459999999996 -0.083345770999999999 -0.029463835000000001 -0.10255142 -0.085573076999999997 -0.055134258999999998 -0.10863443 -0.085556864999999996 -0.042769801000000003 -0.11471744 -0.085540651999999995 -0.030405334999999999 -0.11008751999999999 -0.085566401 -0.027409381999999999 -0.10398984999999999 -0.085581660000000004 -0.039757326000000003 -0.097892195000000001 -0.085597873000000005 -0.052105285000000001 -0.041486964000000001 -0.080973982999999999 -0.027616195 -0.055605702 -0.080940603999999999 -0.023793301999999999 -0.054066382000000003 -0.080941080999999998 -0.018198862999999999 -0.039898664 -0.080971599000000005 -0.022053680999999999 -0.025730940000000001 -0.081002115999999999 -0.025908484999999998 -0.027368224999999999 -0.081007361 -0.031439087999999997"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface43" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface43" 
 		"rotatePivot" " -type \"double3\" 0.34058979198648193 6.05134704798876033 -0.19125484907394141"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface43" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface43" 
 		"scalePivot" " -type \"double3\" 0.34058979198648193 6.05134704798876033 -0.19125484907394141"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface43|jackieHair_latest:polySurfaceShape43" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface43|jackieHair_latest:polySurfaceShape43" 
 		"pt[0:47]" (" -s 48 -type \"float3\" 0.046131589000000001 -0.082081676000000006 -0.0010699704000000001 0.017298283000000001 -0.082145095000000001 -0.0070394725000000003 0.035677358999999999 -0.079799533000000006 -0.0042129233 0.0076946653000000004 -0.079858660999999997 -0.013725012999999999 0.037520314999999999 -0.079796195 -0.0097305699999999992 0.0095469616000000007 -0.079855323000000006 -0.019116074 0.047379672999999997 -0.082084536999999999 -0.0067698508999999999 0.018733481 -0.082159399999999994 -0.012737884999999999 0.068050489000000006 -0.083306193000000001 -0.0081006363000000001 0.037000793999999997 -0.083385824999999997 -0.019763544000000001 0.032530412000000002 -0.083402037999999998 -0.014344572999999999 0.065211727999999997 -0.083313345999999996 -0.0027732401999999998 0.093150004999999994 -0.084288954999999999 -0.010934696000000001 0.077348060999999996 -0.084318994999999994 -0.035824399 0.072672307000000005 -0.084359050000000005 -0.032784334999999998 0.088615163999999996 -0.084329962999999994 -0.0079627112 0.1102"
 		+ "9337 -0.086791873000000005 -0.018780623 0.10171689 -0.086826682000000002 -0.043489613000000003 0.097047209999999995 -0.086837173000000004 -0.040459078000000002 0.10554142 -0.086801886999999994 -0.015748142999999999 0.10705381999999999 -0.088600039000000005 -0.021510570999999999 0.10664038000000001 -0.088634849000000002 -0.045709017999999997 0.10277341 -0.088638185999999994 -0.042612157999999997 0.10315729999999999 -0.088602900999999998 -0.018415436 0.085249037 -0.084304214000000002 -0.023379542 0.052525639999999998 -0.083345770999999999 -0.013932086999999999 0.033056575999999997 -0.082122207000000003 -0.0097538604999999994 0.023533637 -0.079826235999999995 -0.014423310999999999 0.021686014 -0.079829097000000002 -0.0089689790999999998 0.031714935 -0.082113623999999996 -0.0040547252000000004 0.048871074 -0.083357691999999997 -0.0085589065999999991 0.080643735999999994 -0.084344744999999999 -0.020373523000000001 0.10129431 -0.086819052999999993 -0.028103609000000002 0.10296535 -0.088620542999999996 -0.030513801 "
 		+ "0.10684709000000001 -0.088617206000000004 -0.033609800000000002 0.10600513 -0.086809039000000005 -0.031135116000000001 0.089532479999999998 -0.085573076999999997 -0.039657011999999998 0.084859759000000007 -0.085597873000000005 -0.036621712000000001 0.090969025999999995 -0.085581660000000004 -0.024238564000000001 0.097078293999999996 -0.085566401 -0.011855431 0.10172169 -0.085540651999999995 -0.014857657 0.095627084000000001 -0.085556864999999996 -0.027257334000000001 0.028295107 -0.080973982999999999 -0.012088589 0.042449991999999999 -0.080940603999999999 -0.0082502067000000002 0.040904474000000003 -0.080941080999999998 -0.0026414468999999999 0.026700471 -0.080971599000000005 -0.0065118372000000004 0.012496475 -0.081002115999999999 -0.010382250000000001 0.014140221999999999 -0.081007361 -0.015926972000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface44" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface44" 
 		"rotatePivot" " -type \"double3\" 0.29589482722251609 6.08249767434225497 -0.21088386725328601"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface44" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface44" 
 		"scalePivot" " -type \"double3\" 0.29589482722251609 6.08249767434225497 -0.21088386725328601"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface44|jackieHair_latest:polySurfaceShape44" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface44|jackieHair_latest:polySurfaceShape44" 
 		"pt[0:47]" (" -s 48 -type \"float3\" -0.034293149000000002 -0.048256274000000002 0.13140273 -0.023148796999999999 -0.055258627999999997 0.13329506999999999 -0.030256152000000001 -0.048831340000000001 0.14574846999999999 -0.019454501999999999 -0.055742141000000002 0.14903854999999999 -0.030990562999999999 -0.048571941 0.14790244 -0.020192053000000001 -0.055476543000000003 0.15114385 -0.034797858000000001 -0.048147555000000002 0.13359201000000001 -0.023725968 -0.055115576999999999 0.13541851999999999 -0.042808339000000001 -0.044401522999999998 0.12710747 -0.030826934 -0.052118178000000001 0.1311001 -0.029075328000000001 -0.053008433000000001 0.12890393999999999 -0.041688979000000001 -0.044904108999999998 0.12499971999999999 -0.052539616999999997 -0.039459582 0.12258106000000001 -0.046512969000000001 -0.043979522 0.13200182999999999 -0.044690731999999997 -0.045012827999999998 0.13058969000000001 -0.050772205000000001 -0.040463801000000001 0.12118748 -0.059208360000000002 -0.037856455999999997 0.11122398 -0.055979348999999998 -"
 		+ "0.040681239000000001 0.1205586 -0.054159507000000003 -0.041688319000000001 0.11932251000000001 -0.057356648000000003 -0.038882608999999999 0.10998690999999999 -0.057963949000000001 -0.040267345000000003 0.10185854 -0.057894452999999998 -0.041162367999999998 0.11100947 -0.056385241000000003 -0.041973468 0.10978686 -0.056443300000000002 -0.041085120000000003 0.10063656 -0.049526292999999999 -0.041719790999999999 0.12729144000000001 -0.036817636000000001 -0.048259612 0.12910379 -0.029261908999999999 -0.051631327999999997 0.13450527000000001 -0.025591309999999999 -0.052024241999999998 0.14952314999999999 -0.024855327 -0.052286501999999999 0.14739351000000001 -0.028720971000000001 -0.051757690000000002 0.13234890999999999 -0.035382154999999998 -0.048956271000000003 0.12695181 -0.047731469999999998 -0.042738314999999999 0.12588858999999999 -0.055758073999999998 -0.040285464 0.1146547 -0.056414269000000003 -0.041529056000000002 0.10521170000000001 -0.057929210000000002 -0.040715095 0.106434 -0.057593852000000001 -0."
 		+ "039268848000000002 0.11589128999999999 -0.051246158999999999 -0.042330142000000001 0.12628022 -0.049425117999999997 -0.043350574000000003 0.1249561 -0.051744770000000002 -0.041512366000000002 0.12027167 -0.054064429999999997 -0.039673205000000003 0.11558719000000001 -0.055873986 -0.038658496000000001 0.11690253 -0.053560073999999999 -0.040494319000000001 0.12159137 -0.026788144999999999 -0.052022334000000003 0.13987121999999999 -0.032274649000000002 -0.048543807000000001 0.13857559999999999 -0.032894205000000003 -0.048359271000000002 0.14074724999999999 -0.027426612 -0.051827785000000001 0.14201421 -0.021959011000000001 -0.055296298000000001 0.14328115999999999 -0.021301646 -0.055500384 0.14116683999999999"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface45" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface45" 
 		"rotatePivot" " -type \"double3\" 0.34594136837173256 6.08249767434225497 -0.18683810431416242"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface45" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface45" 
 		"scalePivot" " -type \"double3\" 0.34594136837173256 6.08249767434225497 -0.18683810431416242"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface45|jackieHair_latest:polySurfaceShape45" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface45|jackieHair_latest:polySurfaceShape45" 
 		"pt[0:47]" (" -s 48 -type \"float3\" 0.025851428999999999 -0.050676699999999998 0.11761476 0.026027116999999999 -0.050740119 0.11881070000000001 0.025955226000000001 -0.048394556999999998 0.11805071 0.026278145999999999 -0.048453685000000003 0.11922029000000001 0.026185765999999999 -0.048391218999999999 0.11798839 0.026503513999999999 -0.048450346999999998 0.11915727 0.026088007 -0.050679560999999998 0.11757724 0.026264085999999999 -0.050754423999999999 0.11876552999999999 0.02619198 -0.051900741 0.11673327999999999 0.026595704000000001 -0.051980849000000003 0.11803368 0.026362929 -0.051997061999999997 0.11820391 0.025966853000000002 -0.051908370000000002 0.11683688 0.026368151999999999 -0.052883978999999998 0.11571140000000001 0.027350414999999999 -0.052914019999999999 0.11641853000000001 0.027214643 -0.052954073999999997 0.1166029 0.026235505999999999 -0.052924987 0.11589015 0.026730693999999999 -0.055386896999999997 0.11502758 0.027722828000000001 -0.055421706000000001 0.11543816 0.027587457999999999 -0.05543171999999999"
 		+ "7 0.11562227999999999 0.026595052000000001 -0.055396911 0.11521509000000001 0.026834833999999998 -0.057194586999999998 0.11516688999999999 0.027825572 -0.057229873000000001 0.11524168999999999 0.027689397000000001 -0.057233210999999999 0.11539276 0.026698667999999998 -0.057197924999999997 0.11531916 0.026859283000000001 -0.052899238000000001 0.11606497 0.027226767999999998 -0.055404063000000003 0.11523287 0.027330197000000001 -0.057212230000000003 0.11520428000000001 0.027194026999999999 -0.057215568000000001 0.11535597 0.027091257000000001 -0.055414076999999999 0.11541868 0.026725071999999999 -0.052939768999999998 0.11624651 0.026164889 -0.051952716000000003 0.11752039 0.025939266999999998 -0.050708648000000002 0.11821274 0.026116687999999999 -0.048424121000000001 0.11863549 0.026344638 -0.048421260000000001 0.11857282 0.026176043 -0.050717231000000002 0.11817138000000001 0.026393837999999999 -0.051940794999999998 0.11738348 0.027536623 -0.054168101000000003 0.11592834 0.027043022 -0.054151889000000002 0.115"
 		+ "64893 0.026549425000000001 -0.054135676000000001 0.1153695 0.026415277000000001 -0.054160949 0.11555261 0.026908167 -0.054176684000000003 0.11583259999999999 0.027401060000000001 -0.054192419999999998 0.1161126 0.026260339000000001 -0.049569006999999998 0.11837209999999999 0.026136883 -0.049535627999999998 0.11778282 0.025903326000000001 -0.049536104999999997 0.11783274000000001 0.026027977000000001 -0.049566622999999997 0.11842413 0.026152629 -0.049597139999999998 0.1190155 0.026383798999999999 -0.049602385999999998 0.11896139"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop" 
 		"rotatePivot" " -type \"double3\" 0 6.33536732498481037 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop" 
 		"scalePivot" " -type \"double3\" 0 6.33536732498481037 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface14" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface14" 
 		"rotatePivot" " -type \"double3\" 0 6.9208628290676506 -0.045420641326840316"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface14" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface14" 
 		"scalePivot" " -type \"double3\" 0 6.9208628290676506 -0.045420641326840316"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface14|jackieHair_latest:polySurfaceShape25" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface14|jackieHair_latest:polySurfaceShape25" 
 		"pt[0:113]" (" -s 114 -type \"float3\" -9.5098279e-05 -0.0081266146000000001 0.00034724175999999998 9.5098279e-05 -0.0081266146000000001 0.00034724175999999998 -9.5098279e-05 -0.0079220514999999991 0.00047200918 9.5098279e-05 -0.0079220514999999991 0.00047200918 -0.00044946373 -0.0073479391 -0.0010754466000000001 0.00044946373 -0.0073479391 -0.0010754466000000001 -0.00055012292999999997 -0.0075353360999999997 -0.001158461 0.00055012292999999997 -0.0075353360999999997 -0.001158461 -0.00058901123999999998 -0.0073040700999999998 -0.0023064762000000001 0.00058901123999999998 -0.0073040700999999998 -0.0023064762000000001 0.00058901123999999998 -0.0076187826000000004 -0.0022741406999999998 -0.00058901123999999998 -0.0076187826000000004 -0.0022741406999999998 -0.00072199106000000004 -0.0080393533999999992 -0.0037548095000000002 0.00072199106000000004 -0.0080393533999999992 -0.0037548095000000002 0.00072199106000000004 -0.0083101969000000005 -0.0035915598000000001 -0.00072199106000000004 -0.0083101969000000005 -0.0035915598000000001"
 		+ " -0.00072199106000000004 -0.0096691828000000004 -0.0050348490000000001 0.00072199106000000004 -0.0096691828000000004 -0.0050348490000000001 0.00072199106000000004 -0.0098241548999999997 -0.0047591179999999997 -0.00072199106000000004 -0.0098241548999999997 -0.0047591179999999997 -0.00072199106000000004 -0.012189744000000001 -0.0052530468000000002 0.00072199106000000004 -0.012189744000000001 -0.0052530468000000002 0.00072199106000000004 -0.012283680999999999 -0.0049510971000000003 -0.00072199106000000004 -0.012283680999999999 -0.0049510971000000003 -0.00072199106000000004 -0.015060304 -0.0052530468000000002 0.00072199106000000004 -0.015060304 -0.0052530468000000002 0.00072199106000000004 -0.015154717 -0.0049510971000000003 -0.00072199106000000004 -0.015154717 -0.0049510971000000003 -0.00072199106000000004 -0.019325611999999999 -0.0065321959999999997 0.00072199106000000004 -0.019325611999999999 -0.0065321959999999997 0.00072199106000000004 -0.019420026 -0.0062302351000000002 -0.00072199106000000004 -0.019420026 "
 		+ "-0.0062302351000000002 -0.00072199106000000004 -0.021818516999999999 -0.0071502550999999999 0.00072199106000000004 -0.021818516999999999 -0.0071502550999999999 0.00072199106000000004 -0.021912931 -0.0068482980000000001 -0.00072199106000000004 -0.021912931 -0.0068482980000000001 0 -0.012189744000000001 -0.0052530468000000002 0 -0.015060304 -0.0052530468000000002 0 -0.019325611999999999 -0.0065321959999999997 0 -0.021818516999999999 -0.0071502550999999999 0 -0.021912931 -0.0068482980000000001 0 -0.019420026 -0.0062302351000000002 0 -0.015154717 -0.0049510971000000003 0 -0.012283680999999999 -0.0049510971000000003 0 -0.0098241548999999997 -0.0047591179999999997 0 -0.0083101969000000005 -0.0035915598000000001 0 -0.0076187826000000004 -0.0022741406999999998 0 -0.0075353360999999997 -0.001158461 0 -0.0081266146000000001 0.00034724175999999998 0 -0.0079220514999999991 0.00047200918 0 -0.0073479391 -0.0010754466000000001 0 -0.0073040700999999998 -0.0023064762000000001 0 -0.0080393533999999992 -0.0037548095000000002 0"
@@ -27750,13 +27817,13 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "00000004 -0.013146279 -0.0052530542000000001 0 -0.011349557 -0.0051803216000000001 -0.00072199106000000004 -0.011349557 -0.0051803216000000001 -0.00072199106000000004 -0.011463998 -0.0048871039999999998 0 -0.011463998 -0.0048871039999999998 0.00072199106000000004 -0.011463998 -0.0048871039999999998 0.00072199106000000004 -0.011349557 -0.0051803216000000001 0 -0.010509370000000001 -0.0051075816000000001 -0.00072199106000000004 -0.010509370000000001 -0.0051075816000000001 -0.00072199106000000004 -0.010644315 -0.0048231109999999997 0 -0.010644315 -0.0048231109999999997 0.00072199106000000004 -0.010644315 -0.0048231109999999997 0.00072199106000000004 -0.010509370000000001 -0.0051075816000000001 0 -0.0091260652999999997 -0.0046081691999999997 -0.00072199106000000004 -0.0091260652999999997 -0.0046081691999999997 -0.00072199106000000004 -0.0093196612000000009 -0.0043699369000000004 0 -0.0093196612000000009 -0.0043699369000000004 0.00072199106000000004 -0.0093196612000000009 -0.0043699369000000004 0.00072199106000000"
 		+ "004 -0.0091260652999999997 -0.0046081691999999997 0 -0.0085824708999999999 -0.0041814892999999997 -0.00072199106000000004 -0.0085824708999999999 -0.0041814892999999997 -0.00072199106000000004 -0.0088151675000000002 -0.0039807484000000002 0 -0.0088151675000000002 -0.0039807484000000002 0.00072199106000000004 -0.0088151675000000002 -0.0039807484000000002 0.00072199106000000004 -0.0085824708999999999 -0.0041814892999999997"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface16" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface16" 
 		"rotatePivot" " -type \"double3\" 0.14604062827874226 6.90594075087519421 -0.045420641326840316"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface16" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface16" 
 		"scalePivot" " -type \"double3\" 0.14604062827874226 6.90594075087519421 -0.045420641326840316"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface16|jackieHair_latest:polySurfaceShape27" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface16|jackieHair_latest:polySurfaceShape27" 
 		"pt[0:113]" (" -s 114 -type \"float3\" 0.00013954216 -0.0081533174999999999 -0.00025780498999999999 0.00053634587999999998 -0.0082043390999999993 -0.00013226271 0.00014274707 -0.0078634004999999993 -0.00013034046000000001 0.00053955148999999998 -0.0079134684 -4.7981738999999998e-06 0.00045283371999999998 -0.0073226667 -0.0011440962999999999 0.0014031417999999999 -0.0073870397000000004 -0.00099496543000000002 0.0004409994 -0.0076278424999999999 -0.0012300760000000001 0.0013913046999999999 -0.0076917386999999999 -0.0010809451000000001 0.00064349081000000005 -0.0073932386000000001 -0.0025824606000000002 0.001922315 -0.0074704862000000002 -0.0019957572 0.0018977913999999999 -0.0077847219000000004 -0.0019710213 0.00061896909 -0.0077074743000000003 -0.0025577247000000002 0.00071688369000000004 -0.0080646257999999992 -0.0038197562000000002 0.0023681371999999998 -0.0081285219999999991 -0.0031503960000000002 0.0022860727999999999 -0.0084642152999999994 -0.0029960945000000001 0.00067888479999999999 -0.0084031802000000006 -0.0036584287"
 		+ "999999999 0.00076008681 -0.0096958857000000002 -0.0050958097000000004 0.0026316493999999999 -0.0097764711999999993 -0.0043848007999999997 0.0025213063000000002 -0.0099948625999999995 -0.0041221827000000001 0.00071297213 -0.0099185686999999998 -0.0048224330000000001 0.00058850180000000001 -0.012282727 -0.0053199381000000002 0.0025574527999999998 -0.012360929 -0.0046097860000000003 0.0024345405 -0.012448667 -0.0043217167000000004 0.00053738989000000001 -0.012376187 -0.0050203352999999996 0.00035562598999999999 -0.015150426 -0.0055966154000000002 0.0024573132000000001 -0.015224813 -0.0048923268999999997 0.0023217163999999998 -0.015312551000000001 -0.0046042501999999999 0.00029923999999999999 -0.015243408999999999 -0.0052970125999999996 0.00032283086 -0.019413827000000002 -0.0067946650000000001 0.0024225487999999999 -0.019497272999999999 -0.0060594752 0.0022926069999999999 -0.019585488000000002 -0.0057712346000000003 0.00026881182999999998 -0.019506809999999999 -0.0064948946000000004 0.00026873964999999999 -0.021"
 		+ "905300999999999 -0.0072979294 0.0023732855999999999 -0.021991132 -0.0065505913999999998 0.0022432840999999999 -0.022079824000000001 -0.0062625184999999996 0.00021467987 -0.021998284 -0.0069983303999999998 0.0015729778 -0.012321828 -0.0049648657000000004 0.0014064703 -0.015187618999999999 -0.0052444711000000001 0.0013726894 -0.019455311999999999 -0.0064270719999999998 0.0013210121999999999 -0.021948216 -0.0069242567 0.0012289826 -0.022038815999999999 -0.0066304207000000004 0.0012807101 -0.019545910999999999 -0.0061330645999999999 0.0013104808 -0.015278218 -0.0049506350999999997 0.0014859624000000001 -0.012412427 -0.0046710223 0.0016171410999999999 -0.0099567156000000007 -0.0044723004000000004 0.0014824793 -0.0084336976999999994 -0.0033272579 0.0012583787999999999 -0.0077460981000000003 -0.0022643805 0.00091615225999999998 -0.0076597905999999999 -0.0011554956000000001 0.00033794437 -0.0081790666999999994 -0.00019504130000000001 0.00034114905000000003 -0.0078881960000000001 -6.7561864999999999e-05 0.000927987510"
@@ -27765,13 +27832,13 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ " -0.0047981515999999998 0.0015174765 -0.013276932999999999 -0.0050580651000000001 0.00051087699999999997 -0.013238786000000001 -0.0054121687999999996 0.00045800535 -0.013331769 -0.0051125585999999999 0.0014274698000000001 -0.013367532 -0.0047642216000000001 0.0023969299999999998 -0.013403771 -0.0044158920999999999 0.0025240741999999999 -0.01331508 -0.0047039687999999996 0.001613941 -0.011460183000000001 -0.0048900098000000001 0.00064569712000000004 -0.011420606 -0.0052452311 0.00059591698999999999 -0.011556980999999999 -0.0049543753000000001 0.0015296899 -0.011594174 -0.0046047865999999998 0.0024634600000000002 -0.011630891000000001 -0.0042551979000000004 0.0025821849999999999 -0.011499284 -0.0045347883999999998 0.0016549042999999999 -0.010598062 -0.0048151538000000002 0.00070289243000000001 -0.010558006999999999 -0.0051705166999999998 0.00065444503000000002 -0.010737775 -0.0048884004000000003 0.0015734136000000001 -0.010775445 -0.004538551 0.0024923831 -0.010812637999999999 -0.0041886941000000002 0.002606917"
 		+ "1999999999 -0.010638116 -0.0044597908999999998 0.0016447473000000001 -0.0091894846000000006 -0.0043218954999999998 0.00074568577000000001 -0.0091522913000000004 -0.0046704561000000004 0.00070160907 -0.0094135981000000001 -0.0044344366000000001 0.0015722513000000001 -0.0094488841000000007 -0.0040906294999999999 0.0024428964000000001 -0.0094841700000000001 -0.0037468150000000001 0.0025438107999999999 -0.0092271547999999998 -0.0039733275999999998 0.0015936308 -0.0086430293000000005 -0.0039034858000000002 0.00073128380000000005 -0.0086082200999999994 -0.0042451099000000003 0.00069024785999999999 -0.0089081507000000008 -0.0040464252000000003 0.0015273672 -0.0089415293000000007 -0.0037089363 0.0023644827 -0.0089744310999999993 -0.0033714473000000002 0.0024559758999999999 -0.0086778384000000004 -0.0035618618000000002"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface17" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface17" 
 		"rotatePivot" " -type \"double3\" 0.14604062827874226 6.90594075087519421 -0.045420641326840316"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface17" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface17" 
 		"scalePivot" " -type \"double3\" 0.14604062827874226 6.90594075087519421 -0.045420641326840316"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface17|jackieHair_latest:polySurfaceShape28" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface17|jackieHair_latest:polySurfaceShape28" 
 		"pt[0:113]" (" -s 114 -type \"float3\" -7.5331626999999999e-06 -0.0081533174999999999 0.00028784573000000002 -0.00030139741 -0.0082043390999999993 0.00033807755000000002 -3.6766054000000001e-05 -0.0078634004999999993 0.00040912628000000002 -0.00033063069 -0.0079134684 0.00045935810000000002 -0.00036826589999999998 -0.0073226667 -0.0013028681 -0.0015535709000000001 -0.0073870397000000004 -0.00083748996000000003 -0.00038400339000000002 -0.0076278424999999999 -0.0013849139000000001 -0.0015693065000000001 -0.0076917386999999999 -0.00091953575999999997 -0.00066800694999999996 -0.0073932386000000001 -0.0025290996000000001 -0.0022064446999999999 -0.0074704862000000002 -0.0020510851999999999 -0.0021797940000000001 -0.0077847219000000004 -0.0020243824000000001 -0.00064135156999999996 -0.0077074743000000003 -0.0025023818 -0.00072754454000000001 -0.0080636721000000005 -0.0038197562000000002 -0.0023569762999999999 -0.0081280451 -0.0031503960000000002 -0.0022759922000000002 -0.0084642152999999994 -0.0029960871000000002 -0.000690049489999"
 		+ "99997 -0.0084031802000000006 -0.0036584212999999999 -0.00079347285999999996 -0.0096954089000000007 -0.0050958097000000004 -0.0025965385 -0.0097759943000000002 -0.0043848007999999997 -0.0024902335999999999 -0.0099948625999999995 -0.0041221827000000001 -0.00074808299999999997 -0.0099185686999999998 -0.0048224330000000001 -0.00081975012999999997 -0.012282727 -0.0053199381000000002 -0.0027262232999999999 -0.012360929 -0.0046097860000000003 -0.0026072115000000001 -0.012448667 -0.0043217167000000004 -0.00077025871999999995 -0.012376187 -0.0050203352999999996 -0.00069283601000000002 -0.015150426 -0.0055966154000000002 -0.0026137345000000001 -0.015224813 -0.0048923268999999997 -0.0024898052 -0.015312551000000001 -0.0046042501999999999 -0.00064130033999999997 -0.015243408999999999 -0.0052970125999999996 -0.00059460104 0.0031029008999999999 -0.012776271000000001 -0.0025100819999999999 -0.021606324 -0.018400505000000001 -0.0023915431999999999 -0.031083462999999999 -0.022490784999999999 -0.00054532102999999997 -0.0067485"
 		+ "547999999998 -0.017076648999999999 -0.00044229813000000001 0.029665591000000002 -0.095682442000000006 -0.0024395175000000002 0.0045529626999999996 -0.10143652 -0.0023161471000000002 -0.0049194073999999999 -0.10552499 -0.00039099483000000002 0.019820333999999998 -0.099982141999999996 -0.0017729867000000001 -0.012321828 -0.0049648657000000004 -0.0016950034 -0.0097354632000000007 -0.0047403052000000003 -0.001542259 -0.008096097 -0.0034850761000000002 -0.0014372244000000001 -0.0074318624000000002 -0.0022900849999999999 -0.00096091720999999996 -0.0073550915999999996 -0.0010701716 -0.00018369826000000001 -0.0078881960000000001 0.00043424963999999999 -0.00015446519999999999 -0.0081790666999999994 0.00031295419 -0.00097665377000000003 -0.0076597905999999999 -0.0011522323000000001 -0.0014105700000000001 -0.0077460981000000003 -0.0022633969999999999 -0.0014830213000000001 -0.0084336976999999994 -0.0033272579 -0.0016191583 -0.0099567156000000007 -0.0044723004000000004 -0.0016887337 -0.012412427 -0.0046710223 -0.00156555"
@@ -27780,392 +27847,392 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "2 -0.0047642216000000001 -0.0025680735999999999 -0.013403771 -0.0044158920999999999 -0.0026887283000000001 -0.01331508 -0.0047039613000000001 -0.0016931873 -0.014232038000000001 -0.0051512718000000001 -0.00073514041 -0.014194366999999999 -0.0055043994999999998 -0.00068428553999999998 -0.014287351 -0.0052047893000000001 -0.0016066133999999999 -0.014322636999999999 -0.0048574283999999997 -0.0025289431000000001 -0.014357923 -0.0045100749000000001 -0.0026512331999999999 -0.014270184999999999 -0.0047981441000000003 -0.0017210003 -0.010597585 -0.0048151612000000002 -0.00080223195000000004 -0.010558006999999999 -0.0051705166999999998 -0.00075547489999999999 -0.010738252 -0.0048884004000000003 -0.0016423519999999999 -0.010775445 -0.004538551 -0.0025292261999999999 -0.010812637999999999 -0.0041886941000000002 -0.0026397630999999999 -0.010637639000000001 -0.0044597908999999998 -0.0017469935 -0.011459706 -0.0048900098000000001 -0.00081099011000000003 -0.011420606 -0.0052452384999999999 -0.00076286680999999997 -0.0115569"
 		+ "80999999999 -0.0049543753000000001 -0.0016655419000000001 -0.011594174 -0.0046047865999999998 -0.0025682151 -0.011630891000000001 -0.0042552053999999999 -0.0026829951000000001 -0.011499284 -0.0045347883999999998 -0.0015931744000000001 -0.0086425523999999997 -0.0039034858000000002 -0.00074952003000000004 -0.0086077432999999998 -0.0042451099000000003 -0.00070939305999999998 -0.0089081507000000008 -0.0040464252000000003 -0.0015284008999999999 -0.0089415293000000007 -0.0037089363 -0.0023474097000000002 -0.0089744310999999993 -0.0033714473000000002 -0.0024368278999999998 -0.0086768847 -0.0035618618000000002 -0.0016440897999999999 -0.0091890077999999993 -0.0043218954999999998 -0.00077149738 -0.0091513376999999996 -0.0046704635000000003 -0.00072873755999999996 -0.0094135981000000001 -0.0044344366000000001 -0.0015737787000000001 -0.0094488841000000007 -0.0040906221 -0.0024188234999999998 -0.0094841700000000001 -0.0037468150000000001 -0.0025166795000000001 -0.0092262010999999994 -0.0039733349999999997"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18" 
 		"rotatePivot" " -type \"double3\" 0.15944841362606282 6.90594075087519421 -0.020527535562085086"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18" 
 		"scalePivot" " -type \"double3\" 0.15944841362606282 6.90594075087519421 -0.020527535562085086"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts" " -s 156"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[0]" " -type \"float3\" -0.00013212999000000001 -0.0081108789999999997 0.00022780895"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[1]" " -type \"float3\" 0.0001864701 -0.0081218461999999995 0.00051517784999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[2]" " -type \"float3\" -0.00028570834999999998 -0.0079034547999999993 0.00016118586"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[3]" " -type \"float3\" 0.00028397003000000002 -0.0079144221000000004 0.00053876637999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[4]" " -type \"float3\" 0.0012944229 -0.0073732114000000003 -0.0015201867"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[5]" " -type \"float3\" 0.0014352147 -0.0075563169000000003 -0.00016276537999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[6]" " -type \"float3\" 0.0013123993 -0.0076836324000000003 -0.0011819600999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[7]" " -type \"float3\" 0.0014396477000000001 -0.0078634004999999993 -0.00023819506"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[8]" " -type \"float3\" 0.0019569099 -0.0077255941000000002 -0.0021593720000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[9]" " -type \"float3\" 0.0025616772000000001 -0.0080336313999999995 -0.00054040551000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[10]" " -type \"float3\" 0.0024589262999999998 -0.0083307008999999998 -0.00057330727999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[11]" " -type \"float3\" 0.0019013938 -0.0080355387000000007 -0.0021265745000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[12]" " -type \"float3\" 0.0025781727999999999 -0.0090798120999999992 -0.0030703619000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[13]" " -type \"float3\" 0.0033566542000000002 -0.0094245653999999995 -0.0012366473999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[14]" " -type \"float3\" 0.0031449459 -0.0096582156000000006 -0.0012134165000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[15]" " -type \"float3\" 0.002445329 -0.0093344430999999992 -0.0029374510000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[16]" " -type \"float3\" 0.0030369498 -0.011170266 -0.0035574064000000001"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[17]" " -type \"float3\" 0.0037297644000000001 -0.011542676 -0.0016742199999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[18]" " -type \"float3\" 0.0034427159000000001 -0.011646149999999999 -0.0015915483"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[19]" " -type \"float3\" 0.0028464495999999998 -0.011298535 -0.0033404231"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[20]" " -type \"float3\" 0.0030299573999999999 -0.013865827000000001 -0.0042286887999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[21]" " -type \"float3\" 0.0034908764000000001 -0.014252065 -0.0022398084"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[22]" " -type \"float3\" 0.0031829215999999998 -0.014277814 -0.0021616369000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[23]" " -type \"float3\" 0.0028015748000000001 -0.013925908000000001 -0.0039837509000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[24]" " -type \"float3\" 0.0030256472999999999 -0.015519498 -0.0048933550999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[25]" " -type \"float3\" 0.0035537927999999999 -0.015807984000000001 -0.0028432459000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[26]" " -type \"float3\" 0.003246896 -0.015840885999999998 -0.0027500837999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[27]" " -type \"float3\" 0.0027997829000000001 -0.015581964 -0.0046064705000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[28]" " -type \"float3\" 0.0032950639999999999 -0.017153142 -0.0057493374000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[29]" " -type \"float3\" 0.0042814165000000003 -0.017403482000000001 -0.0041278228"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[30]" " -type \"float3\" 0.0039845406999999998 -0.01744449 -0.0040263458999999996"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[31]" " -type \"float3\" 0.0030948259000000001 -0.017219422000000002 -0.0055134668999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[32]" " -type \"float3\" 0.0032770261000000002 -0.019218801000000001 -0.0066955163999999996"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[33]" " -type \"float3\" 0.0048655345999999997 -0.019285080999999999 -0.0053860918000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[34]" " -type \"float3\" 0.0046144202000000002 -0.019332288 -0.0051998048999999996"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[35]" " -type \"float3\" 0.0031580142999999999 -0.019276021000000001 -0.0064081624000000004"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[36]" " -type \"float3\" 0.092722863000000003 -0.021623013999999999 -0.0072116330000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[37]" " -type \"float3\" 0.094320430999999996 -0.021561025000000001 -0.0063272192999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[38]" " -type \"float3\" 0.094069323999999996 -0.021608708000000001 -0.0061409324000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[39]" " -type \"float3\" 0.092603861999999995 -0.021679757000000001 -0.0069242901999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[40]" " -type \"float3\" 0.0031445809 -0.011472581000000001 -0.0024659932000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[41]" " -type \"float3\" 0.0027951374999999998 -0.0094960909000000003 -0.0020754337"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[42]" " -type \"float3\" 0.0021801554000000002 -0.0081828813999999996 -0.0013499409000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[43]" " -type \"float3\" 0.0013760254 -0.0077732777999999997 -0.00071008503000000004"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[44]" " -type \"float3\" 2.7169997000000001e-05 -0.0081166009999999993 0.00037150085"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[45]" " -type \"float3\" -8.6942237000000003e-07 -0.0079091769000000003 0.00034996867000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[46]" " -type \"float3\" 0.0013648197 -0.0074642872999999997 -0.00084146856999999995"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[47]" " -type \"float3\" 0.0022592916999999999 -0.0078796130000000006 -0.0013498962"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[48]" " -type \"float3\" 0.0029674172 -0.0092524271000000002 -0.0021535008999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[49]" " -type \"float3\" 0.0033833608 -0.011356233 -0.0026158093999999999"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[50]" " -type \"float3\" 0.003260415 -0.014058945999999999 -0.0032342598"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[51]" " -type \"float3\" 0.0032897219000000001 -0.015663502999999999 -0.0038683042"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[52]" " -type \"float3\" 0.0037882403000000001 -0.01727855 -0.0049385801000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[53]" " -type \"float3\" 0.0040712804000000002 -0.019252179000000001 -0.0060408040999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[54]" " -type \"float3\" 0.093521670000000001 -0.021592019 -0.0067694299000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[55]" " -type \"float3\" 0.093336596999999993 -0.021643994 -0.0065326168999999996"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[56]" " -type \"float3\" 0.0038862153999999999 -0.019304154 -0.0058039948000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[57]" " -type \"float3\" 0.0035396851999999999 -0.017331955999999999 -0.0047698990000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[58]" " -type \"float3\" 0.0030233375999999998 -0.015711663000000001 -0.0036782770999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[59]" " -type \"float3\" 0.0029922463000000002 -0.014101861 -0.0030727013999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[60]" " -type \"float3\" 0.0039769337 -0.018594144 -0.0056733935999999999"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[61]" " -type \"float3\" 0.0032830350000000001 -0.018530247999999999 -0.0063801183999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[62]" " -type \"float3\" 0.0031369478 -0.018590328999999999 -0.0061099305999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[63]" " -type \"float3\" 0.0037707053000000002 -0.018646596000000001 -0.0054592863000000004"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[64]" " -type \"float3\" 0.004404448 -0.018703339999999999 -0.0048086568999999996"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[65]" " -type \"float3\" 0.0046708286000000003 -0.018657562999999999 -0.0049666687999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[66]" " -type \"float3\" 0.0038825869999999998 -0.017936585000000001 -0.0053059906000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[67]" " -type \"float3\" 0.0032890514 -0.017841695000000001 -0.0060647278999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[68]" " -type \"float3\" 0.0031158850000000001 -0.017905114 -0.0058116912999999996"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[69]" " -type \"float3\" 0.0036551915000000001 -0.017989514000000002 -0.0051146001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[70]" " -type \"float3\" 0.0041944981000000001 -0.018073438000000001 -0.0044174938999999996"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[71]" " -type \"float3\" 0.0044761226000000001 -0.018030522 -0.0045472532999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[72]" " -type \"float3\" 0.063734755000000004 -0.020811914000000001 -0.0065315887000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[73]" " -type \"float3\" 0.062937483000000002 -0.020821449999999998 -0.0070446320000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[74]" " -type \"float3\" 0.062818468000000002 -0.020878671000000001 -0.0067572891999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[75]" " -type \"float3\" 0.063549697000000002 -0.020863889 -0.0062947719999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[76]" " -type \"float3\" 0.064280911999999996 -0.020849584000000001 -0.0058322623000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[77]" " -type \"float3\" 0.064532041999999998 -0.020802377 -0.0060185491999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[78]" " -type \"float3\" 0.031140976000000001 -0.020031808000000002 -0.0062786489999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[79]" " -type \"float3\" 0.030345209000000001 -0.020019887 -0.0068625212"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[80]" " -type \"float3\" 0.03022619 -0.020077583999999999 -0.0065751784000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[81]" " -type \"float3\" 0.030955903 -0.02008426 -0.0060418323000000001"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[82]" " -type \"float3\" 0.031685613000000001 -0.020090936 -0.0055084825"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[83]" " -type \"float3\" 0.031936735000000001 -0.020043729 -0.0056947693000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[84]" " -type \"float3\" 0.0036220699999999998 -0.016740201 -0.0045818239000000004"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[85]" " -type \"float3\" 0.0032052584 -0.016608594000000001 -0.0054640098999999996"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[86]" " -type \"float3\" 0.0029964745 -0.016673921000000001 -0.0052111372000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[87]" " -type \"float3\" 0.0033675693 -0.016791699 -0.0044060274999999996"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[88]" " -type \"float3\" 0.0037386604000000001 -0.016909955000000001 -0.0036009252000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[89]" " -type \"float3\" 0.0040388702999999996 -0.016871807999999999 -0.0036996378999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[90]" " -type \"float3\" 0.0034558885 -0.016201851999999999 -0.0042250602999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[91]" " -type \"float3\" 0.0031154491000000002 -0.016064045999999998 -0.0051786751000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[92]" " -type \"float3\" 0.0028981305999999998 -0.016128419000000001 -0.0049088001000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[93]" " -type \"float3\" 0.0031954534000000001 -0.016251443000000001 -0.0040421559999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[94]" " -type \"float3\" 0.0034927763000000001 -0.016375421000000001 -0.0031755045000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[95]" " -type \"float3\" 0.0037963390000000001 -0.016340134999999999 -0.0032714456000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[96]" " -type \"float3\" 0.0032799505 -0.015128968 -0.0036569535999999999"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[97]" " -type \"float3\" 0.0030270815000000002 -0.014968274 -0.0046718046000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[98]" " -type \"float3\" 0.0028003788999999999 -0.015030263 -0.0043988973000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[99]" " -type \"float3\" 0.0030129737999999998 -0.015175220999999999 -0.0034764111"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[100]" " -type \"float3\" 0.0032255724 -0.015319703 -0.0025539248999999998"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[101]" " -type \"float3\" 0.0035328194000000001 -0.015289186 -0.00264211"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[102]" " -type \"float3\" 0.0032701827999999998 -0.014593956999999999 -0.0034456030000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[103]" " -type \"float3\" 0.0030285157000000001 -0.014417050000000001 -0.0044502467000000004"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[104]" " -type \"float3\" 0.0028009749999999998 -0.014478085999999999 -0.0041913241000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[105]" " -type \"float3\" 0.0030026138000000002 -0.014638303 -0.0032745600000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[106]" " -type \"float3\" 0.0032042451000000001 -0.014798996999999999 -0.0023577809000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[107]" " -type \"float3\" 0.0035118497999999999 -0.014770864 -0.0024409592"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[108]" " -type \"float3\" 0.0033013970000000002 -0.013157723 -0.0030281097"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[109]" " -type \"float3\" 0.0030322894000000002 -0.012966989 -0.0040049329"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[110]" " -type \"float3\" 0.0028165355 -0.013049958 -0.0037693157999999999"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[111]" " -type \"float3\" 0.0030430256999999998 -0.013225433999999999 -0.0028704703000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[112]" " -type \"float3\" 0.0032695159000000001 -0.01340091 -0.0019716024"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[113]" " -type \"float3\" 0.0035705045000000001 -0.013348934999999999 -0.0020512789"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[114]" " -type \"float3\" 0.0033423751999999999 -0.012256978 -0.0028219669999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[115]" " -type \"float3\" 0.0030346215000000001 -0.012068627 -0.0037811696999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[116]" " -type \"float3\" 0.0028314925999999999 -0.012174485000000001 -0.0035548732000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[117]" " -type \"float3\" 0.0030938013999999999 -0.012349008 -0.0026682316999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[118]" " -type \"float3\" 0.0033561139999999999 -0.01252353 -0.0017815679"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[119]" " -type \"float3\" 0.0036501363000000001 -0.012445806 -0.0018627644"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[120]" " -type \"float3\" 0.0032447054999999998 -0.010654805 -0.0024617015999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[121]" " -type \"float3\" 0.0028840265999999998 -0.010473130000000001 -0.0033950508"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[122]" " -type \"float3\" 0.0027127452 -0.010644315 -0.003206104"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[123]" " -type \"float3\" 0.0030281022 -0.010814069000000001 -0.0023358017"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[124]" " -type \"float3\" 0.0033434555000000001 -0.010983823 -0.0014654994"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[125]" " -type \"float3\" 0.0036053918000000002 -0.010836480000000001 -0.0015283674"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[126]" " -type \"float3\" 0.0031060613999999999 -0.0099533777999999996 -0.0023076086999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[127]" " -type \"float3\" 0.0027310997000000001 -0.0097764711999999993 -0.0032327100999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[128]" " -type \"float3\" 0.0025790371000000002 -0.0099891405999999999 -0.0030717775000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[129]" " -type \"float3\" 0.0029116198000000001 -0.01015508 -0.0022056102999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[130]" " -type \"float3\" 0.0032442026000000001 -0.010321019000000001 -0.0013394654000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29" 
 		"pnts[131]" " -type \"float3\" -9.3132257000000002e-10 0 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface19" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface19" 
 		"rotatePivot" " -type \"double3\" 0.15944841362606282 6.90594075087519421 -0.020527535562085086"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface19" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface19" 
 		"scalePivot" " -type \"double3\" 0.15944841362606282 6.90594075087519421 -0.020527535562085086"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface19|jackieHair_latest:polySurfaceShape30" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface19|jackieHair_latest:polySurfaceShape30" 
 		"pt[0:143]" (" -s 144 -type \"float3\" -0.00067835021999999997 -0.0080322008999999996 -0.00025102495999999999 -0.00061309150999999998 -0.0080426912999999999 0.00025467574999999998 -0.00047248508999999999 -0.0078228693000000002 -0.00024852156999999997 -0.00036827987 -0.0078471879999999997 0.00031258166 -0.0014893841000000001 -0.0075730062000000003 -0.0015202016000000001 -0.0016301777 -0.0077561117000000002 -0.00016275048000000001 -0.0016432106 -0.0078839045000000003 -0.0014496595 -0.0017704610000000001 -0.0080636721000000005 -0.00023819506 -0.0019569136 -0.0077255941000000002 -0.0021593720000000001 -0.0025616735000000002 -0.0080336313999999995 -0.00054042040999999999 -0.0024589262999999998 -0.0083307008999999998 -0.00057330727999999997 -0.00190139 -0.0080355387000000007 -0.0021265745000000002 -0.0025781727999999999 -0.0090798120999999992 -0.0030703619000000001 -0.0033566542000000002 -0.0094245653999999995 -0.0012366473999999999 -0.0031449459 -0.0096582156000000006 -0.0012134165000000001 -0.002445329 -0.0093339662999999996 -0."
 		+ "0029374435999999999 0.0096508264999999992 -0.011170266 -0.0035574064000000001 0.0089580080999999995 -0.011542676 -0.0016742199999999999 0.0092450603999999995 -0.011646149999999999 -0.0015915333999999999 0.0098413228999999994 -0.011298535 -0.0033404231 -0.0030998774000000002 -0.013598321 -0.0043056904999999998 -0.0034250691999999998 -0.013984082 -0.0022892058000000002 -0.0031127892 -0.014010308000000001 -0.0022396593999999999 -0.0028556660000000002 -0.013657926000000001 -0.0040833353999999997 -0.0095922165000000004 -0.015519020999999999 -0.0048644170000000002 -0.010120369000000001 -0.015807984000000001 -0.0029058754000000002 -0.0098134725999999995 -0.015840885999999998 -0.0028168707999999998 -0.0093663558000000001 -0.015582439999999999 -0.0045903474 -0.0032950639999999999 -0.017153142 -0.0057493298999999999 -0.0042814165000000003 -0.017403482000000001 -0.0041278228 -0.0039845406999999998 -0.01744449 -0.0040263384999999997 -0.0030948259000000001 -0.017219422000000002 -0.0055134668999999997 -0.003277022399999999"
 		+ "8 -0.019218801000000001 -0.0066955052000000001 -0.0048655271999999998 -0.019285080999999999 -0.0053860918000000002 -0.0046144052999999999 -0.019332288 -0.0051998124 -0.0031580104999999999 -0.019276021000000001 -0.0064081624000000004 -0.12723991000000001 -0.021623013999999999 -0.0071965344000000002 -0.12883749999999999 -0.021561025000000001 -0.0063121169999999999 -0.12858637000000001 -0.021608708000000001 -0.0061258301000000001 -0.12712091 -0.021679757000000001 -0.0069091952999999996 -0.0095899142000000007 -0.015711663000000001 -0.0037036091000000001 -0.0035396851999999999 -0.017331955999999999 -0.0047699064000000001 -0.0038862153999999999 -0.019304154 -0.0058039874000000002 -0.12785362 -0.021643994 -0.0065175071000000001 -0.12803869000000001 -0.021592019 -0.0067543237999999998 -0.0040712804000000002 -0.019251701999999999 -0.0060408040999999999 -0.0037882403000000001 -0.01727855 -0.0049385801000000002 -0.0098562948000000001 -0.015663502999999999 -0.00388515 -0.0032624751 -0.013790963 -0.0032974482000000002 0.0"
@@ -28176,37 +28243,37 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "0029296501999999999 -0.0032227635000000002 -0.013222573 -0.0020236223999999998 -0.0035266316999999999 -0.013170121 -0.0020842105000000001 -0.0031060613999999999 -0.0099533777999999996 -0.0023076086999999999 -0.0027310960000000001 -0.0097764711999999993 -0.0032327100999999998 -0.0025790371000000002 -0.0099891405999999999 -0.0030717775000000001 -0.0029116198000000001 -0.01015508 -0.0022056102999999999 -0.0032442026000000001 -0.010321019000000001 -0.0013394654000000001 -0.0034810267000000002 -0.010130761 -0.0013824999 -0.0032447092000000002 -0.010654805 -0.0024617164999999998 -0.0028840228999999998 -0.010473130000000001 -0.0033950508 -0.0027127452 -0.010643837999999999 -0.003206104 -0.0030280985000000001 -0.010814069000000001 -0.0023358017 -0.0033434555000000001 -0.010983823 -0.0014654994 -0.0036053956000000002 -0.010836480000000001 -0.0015283674 -0.0024953336 -0.0083368998000000003 -0.0016177595 -0.0021639988000000001 -0.0081771594 -0.0024630277999999999 -0.0020827055 -0.0084685069000000005 -0.00239686669999999"
 		+ "99 -0.0023851544000000001 -0.0086206179000000004 -0.0015917717999999999 -0.0026875957999999999 -0.0087736826000000007 -0.00078667699999999995 -0.0028266646000000002 -0.0084971170999999998 -0.00077249109999999997 -0.0027313717 -0.0087946634999999992 -0.0018856227 -0.0023710876999999998 -0.0086282472999999991 -0.0027666837000000001 -0.0022640191 -0.0089009981999999994 -0.0026671588 -0.0025901459000000002 -0.0090583543999999995 -0.0018336028 -0.0029162726999999999 -0.0092157106999999992 -0.0010000466999999999 -0.0030916594000000002 -0.0089610795999999996 -0.0010045618"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface20" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface20" 
 		"rotatePivot" " -type \"double3\" 0.20258795063086091 6.87259056724701978 -0.033698851640897268"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface20" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface20" 
 		"scalePivot" " -type \"double3\" 0.20258795063086091 6.87259056724701978 -0.033698851640897268"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface20|jackieHair_latest:polySurfaceShape31" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface20|jackieHair_latest:polySurfaceShape31" 
 		"pt[0:59]" (" -s 60 -type \"float3\" 0.0021030902999999998 -0.0053123212000000001 0.00043225288 0.0023863017999999998 -0.0052474714000000002 -0.00056006014000000001 0.00033717974999999999 -0.0049108244000000004 0.00045418739000000001 0.00045542744999999999 -0.0048693395 9.1627240000000012e-05 0.00028314022000000002 -0.0050595974999999996 0.0004350841 0.00040138838999999999 -0.0050181126999999997 7.2523952000000001e-05 0.0019736624999999999 -0.0055454946 0.00037997961000000002 0.0022568702999999999 -0.0054801679000000001 -0.00061234831999999999 0.0027747825000000001 -0.0066040730999999998 0.00038547814000000001 0.0030579902000000001 -0.0065387463999999999 -0.00060683489000000002 0.0033068544999999999 -0.0064605451000000003 -0.00053067505 0.0030236356 -0.0065258718000000002 0.00046165287 0.0030052884999999998 -0.0081838351 0.00036188959999999999 0.0034286379999999999 -0.0082072000999999992 -0.00058117509000000004 0.0036669559999999999 -0.0081299525000000008 -0.0004761368 0.0032435953999999999 -0.0081061106000000008 0.00046694"
 		+ "279000000002 0.0029974021000000002 -0.010762570000000001 0.00022526085000000001 0.0037148297 -0.010569451000000001 -0.00049377977999999999 0.0039099008000000003 -0.010597585 -0.00030680000999999999 0.0031924769 -0.010791181 0.00041224061999999999 0.0029687174000000002 -0.013849136999999999 0.044934869000000002 0.0037426688 -0.013950704 0.044256732 0.0039214417000000001 -0.013954042 0.044461294999999998 0.0031474939999999998 -0.013852475 0.045139432 0.0028290078 -0.017611859000000001 0.046142146000000002 0.0035327970999999999 -0.016854165000000001 0.046134934000000002 0.0034999548999999999 -0.016821262999999999 0.046402618 0.0027961767999999999 -0.017578957999999999 0.046409829999999999 0.0030117743000000002 -0.015495656 0.045942484999999998 0.0039357840999999999 -0.015510915 0.045585483000000003 0.0038453675999999999 -0.015566228 0.045351668999999997 0.0029213540000000001 -0.015550492000000001 0.045708670999999999 0.0031689628999999999 -0.012391446 0.00041705369999999999 0.0039159282999999996 -0.012352346 -0."
 		+ "00028060377 0.0037293768999999998 -0.012337087 -0.00047677754999999998 0.0029824115000000001 -0.012376187 0.00022087990999999999 0.0032172501000000001 -0.0094903689000000006 0.00043874978999999998 0.0037921741999999998 -0.0094016771999999998 -0.00038886070000000001 0.0035761409000000001 -0.0094245653999999995 -0.00053614378000000002 0.0030012241999999999 -0.0095132571000000003 0.00029146671000000003 0.0035511889000000001 -0.01069486 5.2720307999999992e-05 0.0035047084000000002 -0.0094460229999999996 2.4944543999999998e-05 0.0034552774999999998 -0.0081180314999999992 -4.5895576000000004e-06 0.0031652451000000002 -0.0064934468999999998 -3.4511088999999999e-05 0.002244696 -0.0052798962999999997 -6.3896179000000002e-05 0.00039630383000000002 -0.0048903204000000002 0.00027289987 0.00034226431000000001 -0.0050390935999999999 0.00025379657999999999 0.0021152683000000001 -0.0055130696999999996 -0.00011618434999999999 0.0029163881999999999 -0.0065716482000000003 -0.00011068583000000001 0.0032169632999999999 -0.0081952"
 		+ "792000000007 -0.00010964274 0.0032886788 -0.0094689111999999992 -0.00012233852999999999 0.0033561177999999999 -0.010665772 -0.00013425945999999999 0.0033558942 -0.012356637 -0.00012795627000000001 0.0033556930999999999 -0.013899682 0.044595793000000002 0.0033833571000000001 -0.015558122000000001 0.045530170000000002 0.0031808987 -0.017233251000000002 0.046138539999999999 0.0031480676999999999 -0.017199872000000001 0.046406224000000003 0.003473781 -0.015503285 0.045763984000000001 0.0035344698 -0.013903497000000001 0.044800370999999999 0.0035424493000000001 -0.012371896 6.8217515999999999e-05"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface21" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface21" 
 		"rotatePivot" " -type \"double3\" 0.20258795063086091 6.87259056724701978 -0.033698851640897268"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface21" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface21" 
 		"scalePivot" " -type \"double3\" 0.20258795063086091 6.87259056724701978 -0.033698851640897268"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface21|jackieHair_latest:polySurfaceShape32" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface21|jackieHair_latest:polySurfaceShape32" 
 		"pt[0:59]" (" -s 60 -type \"float3\" -0.0021030977000000002 -0.0053123212000000001 0.00043225288 -0.0023863055000000002 -0.0052474714000000002 -0.00056006014000000001 -0.00033718300999999997 -0.0049709057999999997 0.00048816204 -0.00045542884999999998 -0.0049294209999999998 6.1050057000000009e-05 -0.00028314254999999998 -0.0051196790000000002 0.00046564639000000002 -0.00040139072 -0.0050777174 3.8549304000000005e-05 -0.0019736624999999999 -0.0055454946 0.00037997961000000002 -0.0022568739999999999 -0.0054801679000000001 -0.00061234831999999999 -0.0027747862000000001 -0.0066040730999999998 0.00038549303999999999 -0.0030579977 -0.0065387463999999999 -0.00060683489000000002 -0.0033068581999999998 -0.0064605451000000003 -0.00053066015000000002 -0.0030236392999999999 -0.0065258718000000002 0.00046165287 -0.0030052884999999998 -0.0081833581999999992 0.00036190449999999998 -0.0034286416999999999 -0.0082072000999999992 -0.00058117509000000004 -0.0036669596999999998 -0.0081299525000000008 -0.00047612190000000001 -0.00324359539999999"
 		+ "99 -0.0081061106000000008 0.00046694279000000002 -0.0029974096000000001 -0.010762570000000001 0.00022526085000000001 -0.0037148297 -0.010569451000000001 0.00096856058 -0.0039099082000000002 -0.010597585 0.0016307234999999999 -0.0031924806999999999 -0.010791181 0.00041224061999999999 -0.0029687248000000001 -0.013849136999999999 0.048581465999999997 -0.0037426725 -0.013950704 0.10392733 -0.0039214491999999997 -0.013954042 0.10413192 -0.0031474939999999998 -0.013852475 0.048786029000000002 -0.0028290078 -0.017611859000000001 0.10581272999999999 -0.0035327970999999999 -0.016854165000000001 0.10580555 -0.0034999511999999999 -0.016821262999999999 0.10607322 -0.0027961804999999998 -0.017578957999999999 0.10608043 -0.0030007063999999998 -0.015667317 0.10567859 -0.0029174871999999999 -0.015726922000000001 0.10544236999999999 -0.0038537457999999998 -0.015735505 0.10511155 -0.0039369612999999998 -0.015675900999999999 0.10534776999999999 -0.0031705797 -0.012281297 0.0092331319999999998 -0.0029834433999999998 -0.012265084"
 		+ "000000001 0.0090375840999999991 -0.0037283822999999998 -0.012215492999999999 0.023315847000000001 -0.0039155185000000004 -0.012231706 0.023511395000000001 -0.0032142960000000002 -0.009645341 0.00043559073999999999 -0.0030007698000000002 -0.0096620303000000008 0.00028356909999999999 -0.0035926922999999999 -0.0095609408000000007 -0.00053107738000000002 -0.0038062259999999998 -0.0095442514999999999 -0.00037907064000000001 -0.0035511926000000001 -0.010694383 0.00064341723999999999 -0.0035430527999999999 -0.012256501 0.023860961 -0.003534466 -0.013903497000000001 0.10447098 -0.0034688339 -0.015671609 0.10551319000000001 -0.0031480639999999999 -0.017199872000000001 0.10607682 -0.0031809024999999999 -0.017233251000000002 0.10580912000000001 -0.0033856183000000001 -0.015731214 0.10527699 -0.0033556967999999999 -0.013899682 0.10426639 -0.0033559128999999998 -0.012240289 0.023665413 -0.0033561177999999999 -0.010665772 0.00024314224999999999 -0.0032967329 -0.0096114854999999992 -0.00012373924000000001 -0.003216966999999"
 		+ "9998 -0.0081952792000000007 -0.00010964274 -0.0029163881999999999 -0.0065716482000000003 -0.00011068583000000001 -0.0021152683000000001 -0.0055130696999999996 -0.00011619924999999999 -0.00034226709999999997 -0.0050986981999999997 0.00025209784999999997 -0.00039630569999999998 -0.0049504018000000004 0.0002746135 -0.0022446997 -0.0052798962999999997 -6.3911079999999997e-05 -0.0031652488000000001 -0.0064934468999999998 -3.4511088999999999e-05 -0.0034552774999999998 -0.0081180314999999992 -4.5895576000000004e-06 -0.0035102591 -0.0095947962000000001 2.8252602000000003e-05"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface38" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface38" 
 		"rotatePivot" " -type \"double3\" 0.11050596713789235 6.90594075087519421 0.028109722473097454"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface38" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface38" 
 		"scalePivot" " -type \"double3\" 0.11050596713789235 6.90594075087519421 0.028109722473097454"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface38|jackieHair_latest:polySurfaceShape38" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface38|jackieHair_latest:polySurfaceShape38" 
 		"pt[0:113]" (" -s 114 -type \"float3\" -0.032021890999999997 -0.0081533174999999999 0.026228248999999999 -0.040464092 -0.0082043390999999993 0.042917996999999999 -0.037699140999999999 -0.0078634004999999993 0.025447041 -0.046141356000000001 -0.0079134684 0.042136788000000001 0.0050170515000000004 -0.0073226667 0.046542793999999998 -0.0084801018000000006 -0.0073870397000000004 0.087610780999999999 0.0089160045999999993 -0.0076278424999999999 0.046640635 -0.0045812782000000003 -0.0076917386999999999 0.087708606999999994 0.029397024000000001 -0.032622691000000002 0.065417111 -0.0058871078999999998 -0.032699938999999997 0.11788605000000001 -0.0068061798999999997 -0.033014175 0.11661936000000001 0.028477933 -0.032936926999999998 0.064150408000000006 0.083742312999999999 -0.033293124 0.077634132999999994 0.042094734000000002 -0.033357973999999999 0.14602259000000001 0.035844937 -0.033693668000000003 0.14126511 0.076862088999999995 -0.033632632000000003 0.074780269999999996 0.12650297999999999 -0.034925338 0.10114910000000001 0.081"
 		+ "411763999999998 -0.035005923000000001 0.17900685999999999 0.070563613999999997 -0.035223838 0.17221089000000001 0.11471918 -0.035148021000000002 0.097079337000000002 0.15120868000000001 -0.037512179 0.082806207000000007 0.1054505 -0.037589904 0.16498968999999999 0.093564018999999998 -0.037678119000000003 0.15745149999999999 0.13829072000000001 -0.037605162999999997 0.078369132999999994 0.21820104000000001 -0.015150426 0.054682128000000003 0.17174111 -0.015224813 0.14279525000000001 0.15994652000000001 -0.015312551000000001 0.13469473000000001 0.20532130000000001 -0.015243408999999999 0.050011218000000003 0.25130847000000001 0.027791620999999999 0.042448707000000002 0.25632986000000002 0.027708175000000002 0.034364045000000003 0.25741269999999999 0.027619959999999999 0.035113983000000001 0.25251006999999998 0.027698638000000001 0.042952925000000003 0.24915667999999999 0.025300146999999999 0.085142590000000004 0.25423324000000003 0.025214316000000001 0.059248312999999997 0.25531542000000002 0.025126101000000001"
 		+ " 0.060058996000000003 0.25035748000000002 0.025207164000000001 0.082821406 0.12832958999999999 -0.037550803000000001 0.12389795000000001 0.19497107 -0.015187618999999999 0.098738685000000007 0.25381920000000002 0.027750136000000002 0.038406379999999997 0.25169498000000001 0.025256754999999999 0.066368811 0.25283646999999998 0.025166633000000001 0.065901033999999997 0.25496137000000002 0.027659537000000001 0.039003207999999998 0.18263391000000001 -0.015278218 0.092352971000000006 0.11592737 -0.037641401999999997 0.11791032999999999 0.092641398 -0.035186167999999997 0.13464513 0.056353513000000001 -0.033663150000000003 0.1080227 0.010835885999999999 -0.032975550999999999 0.090384901000000004 0.0021673637000000001 -0.0076597905999999999 0.067174612999999994 -0.036242992000000002 -0.0081790666999999994 0.034573122999999997 -0.041920248 -0.0078881960000000001 0.033791914999999999 -0.0017315242 -0.0073550915999999996 0.067076786999999999 0.011754962000000001 -0.032661315000000003 0.091651589000000006 0.062918529000"
@@ -28215,13 +28282,13 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "99999999 0.12517259 0.14748090999999999 -0.036650057999999999 0.084801800999999996 0.13494101 -0.036785956000000002 0.080487162000000001 0.11267284 -0.036823149999999999 0.11936985999999999 0.090404659999999998 -0.036860342999999997 0.15825258 0.10194502 -0.036728735999999998 0.16554337999999999 0.12065287 -0.035827513999999998 0.12685245000000001 0.14330962 -0.035787459000000001 0.087202609 0.13159128 -0.035967226999999997 0.082605168000000007 0.10941827 -0.036004420000000002 0.12082942000000001 0.087245315000000004 -0.036042090999999998 0.15905364999999999 0.098025768999999999 -0.035867090999999997 0.16647514999999999 0.098435111000000006 -0.034418936999999997 0.12320758 0.12040678 -0.034381267 0.085856922000000002 0.10947295999999999 -0.034643050000000002 0.082909367999999997 0.087911658000000004 -0.034678335999999997 0.11904003000000001 0.066381201000000001 -0.034713622 0.15514249999999999 0.076484099 -0.034456130000000001 0.16053936999999999 0.081105590000000005 -0.033872481000000003 0.11712618 0.1025033"
 		+ "0000000001 -0.033837671999999999 0.081353746000000005 0.093988575000000005 -0.034137603000000002 0.078094572000000001 0.072956941999999997 -0.034170504999999997 0.11277811 0.051925283000000003 -0.034203405999999999 0.14746165 0.059707853999999998 -0.033907290999999999 0.15289860999999999"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface39" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface39" 
 		"rotatePivot" " -type \"double3\" 0.14604062827874226 6.90120191795864191 -0.065026222679073598"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface39" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface39" 
 		"scalePivot" " -type \"double3\" 0.14604062827874226 6.90120191795864191 -0.065026222679073598"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface39|jackieHair_latest:polySurfaceShape39" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface39|jackieHair_latest:polySurfaceShape39" 
 		"pt[0:113]" (" -s 114 -type \"float3\" 0.037671145000000003 -0.033130523000000002 0.014360293999999999 0.042103596 -0.033560153000000002 0.026822180000000001 0.044019703 -0.033883926000000002 0.015579611 0.048452179999999997 -0.034313556000000002 0.028041482 -0.023643948000000001 -0.020061849 0.071294099 0.0087527557999999995 -0.073375105999999995 0.11722462 -0.028004020000000001 -0.019626496 0.071270584999999997 0.0043926742000000001 -0.072939753999999996 0.11720106 -0.073117942000000005 -0.01058328 0.11043753000000001 -0.037256587000000001 -0.063897014000000002 0.17272119 -0.037413507999999998 -0.064322351999999999 0.16835306999999999 -0.073274799000000002 -0.011009095 0.10606936 -0.12642555 -0.050407287000000002 0.13467683 -0.084617129999999999 -0.055710669999999997 0.19739430999999999 -0.079920344000000004 -0.057154533 0.18761605000000001 -0.12107594000000001 -0.051908370000000002 0.12678623 -0.18629551 -0.023935674000000001 0.15110961000000001 -0.1402708 -0.047143336000000001 0.22105208000000001 -0.13081859000000001 -0."
 		+ "049357290999999998 0.20877588 -0.17484479999999999 -0.043803092000000002 0.14145625000000001 -0.20616361 0.0079876202999999996 0.13601294 -0.16034517000000001 0.0024625086000000002 0.21089078 -0.14948422 0.00013840430999999999 0.19854368 -0.19425164 0.0056778215999999998 0.12667859000000001 -0.22780056000000001 0.0095154065999999999 0.093733363 -0.18208916 0.0039306901999999998 0.16944471999999999 -0.17126995 0.0016065859000000001 0.15686480999999999 -0.21589944 0.0070978426000000002 0.084302314000000003 -0.29004618999999998 0.021428705999999999 -0.0043868720999999996 -0.24274683 0.016145349999999999 0.061853267000000003 -0.23187538999999999 0.013819816 0.049525357999999998 -0.27775946000000001 0.019559981000000001 -0.022212646999999999 -0.31874710000000001 0.027095438999999999 -0.074205129999999994 -0.27061275000000001 0.021164538 0.0041317343999999999 -0.25978866 0.018840434 -0.0084214657999999998 -0.30684414999999998 0.024677398 -0.083625092999999998 -0.18325119000000001 0.0051709436999999997 0.17345187000"
 		+ "000001 -0.16276070000000001 -0.044322845 0.18608084 -0.10552134000000001 -0.053058978 0.16603559000000001 -0.053714916000000001 -0.061992999 0.14157935999999999 -0.0085321162000000002 -0.028452752000000001 0.094259336999999999 0.046235941000000003 -0.034098502000000003 0.021810547 0.03988738 -0.033345576000000002 0.020591259000000001 -0.012892181000000001 -0.028017400000000001 0.094235837000000003 -0.053871803000000003 -0.062418337999999997 0.13721119000000001 -0.10049814 -0.054531451000000002 0.15720113999999999 -0.15283168999999999 -0.046580191999999999 0.17511605999999999 -0.17186794 0.0029078745000000001 0.16261112999999999 -0.1935847 0.0043522142999999998 0.12058356000000001 -0.25481740000000003 0.016689898000000002 0.013656348 -0.28331636999999998 0.021758677000000001 -0.046023297999999997 -0.29467993999999997 0.024129989000000001 -0.035036702000000003 -0.26621655 0.019061686000000001 0.024484045999999999 -0.20494486000000001 0.0067230485999999999 0.13158906000000001 -0.27522361000000001 0.0214864030000"
@@ -28230,117 +28297,117 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "187121000000001 -0.19124004 -0.041506644000000002 0.14607740999999999 -0.18033004999999999 -0.043846960999999997 0.13653034 -0.15819338999999999 -0.046621677 0.17094777999999999 -0.13605675 -0.049395914999999999 0.20536512000000001 -0.14597853999999999 -0.047146197000000001 0.21766501999999999 -0.17445789 -0.044329997000000003 0.17766151999999999 -0.19722946999999999 -0.041512366000000002 0.14104517999999999 -0.18581527 -0.043890829999999999 0.13160446000000001 -0.16355510000000001 -0.046663161000000002 0.16677945999999999 -0.14129491 -0.049435492999999997 0.20195441 -0.15168627000000001 -0.047148105000000003 0.21427788 -0.12689713 -0.011548398 0.17271732000000001 -0.14603390999999999 -0.047438975000000001 0.14015442 -0.13899891 -0.049206610999999997 0.13167619999999999 -0.12044346 -0.0098389368999999994 0.16317275000000001 -0.096886425999999998 -0.054555292999999998 0.19466934 -0.10432087 -0.033480520999999999 0.20528020999999999 -0.14475489 -0.029180405999999999 0.17939910000000001 -0.16564226000000001 -0.0"
 		+ "44470187000000001 0.14563201000000001 -0.15692185 -0.046504851 0.13656621999999999 -0.13538717 -0.049230453 0.16914441999999999 -0.11385251 -0.051956054000000002 0.20172261999999999 -0.1217196 -0.049999591000000003 0.21316615"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid" 
 		"rotatePivot" " -type \"double3\" 0 6.39298727394559219 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid" 
 		"scalePivot" " -type \"double3\" 0 6.39298727394559219 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface6" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface6" 
 		"rotatePivot" " -type \"double3\" 0 6.44275585117159544 -0.57707349053613166"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface6" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface6" 
 		"scalePivot" " -type \"double3\" 0 6.44275585117159544 -0.57707349053613166"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface6|jackieHair_latest:polySurfaceShape17" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface6|jackieHair_latest:polySurfaceShape17" 
 		"pt[0:51]" (" -s 52 -type \"float3\" 0.00093323178999999996 -0.012787221 -0.0042311474999999999 -0.00093323178999999996 -0.012787221 -0.0042311474999999999 0.00093323178999999996 -0.010222314 -0.0045292674999999998 -0.00093323178999999996 -0.010222314 -0.0045292674999999998 0.00093323178999999996 -0.010210393 -0.0047681629999999997 -0.00093323178999999996 -0.010210393 -0.0047681629999999997 0.00093323178999999996 -0.0127753 -0.0044606849999999998 -0.00093323178999999996 -0.0127753 -0.0044606849999999998 0.00093323178999999996 -0.014167664999999999 -0.0045189558999999997 -0.00093323178999999996 -0.014167664999999999 -0.0045189558999999997 -0.00093323178999999996 -0.014179109000000001 -0.0042920038000000002 0.00093323178999999996 -0.014179109000000001 -0.0042920038000000002 0.00093323178999999996 -0.016089795 -0.0049162208999999997 -0.00093323178999999996 -0.016089795 -0.0049162208999999997 -0.00093323178999999996 -0.016101715999999999 -0.0046841651000000002 0.00093323178999999996 -0.016101715999999999 -0.0046833456000000004 "
 		+ "0.00093323178999999996 -0.019545910999999999 -0.0061639026 -0.00093323178999999996 -0.019545910999999999 -0.0061094462999999998 -0.00093323178999999996 -0.019557354999999998 -0.0058678760999999998 0.00093323178999999996 -0.019556878 -0.0059207827000000001 0.00093323178999999996 -0.021950124000000001 -0.0066969394999999996 -0.00093323178999999996 -0.021950124000000001 -0.0066251121000000003 -0.00093323178999999996 -0.021961568000000001 -0.0063859746000000002 0.00093323178999999996 -0.021962044999999999 -0.0064584463999999998 0.00093323178999999996 -0.0089658480000000002 -0.0041105226000000003 -0.00093323178999999996 -0.0089658480000000002 -0.0041105226000000003 -0.00093323178999999996 -0.0089348536000000006 -0.0043477267000000003 0.00093323178999999996 -0.0089348536000000006 -0.0043477267000000003 -0.00093323178999999996 -0.011635659 -0.0047144741000000002 -0.00093323178999999996 -0.011648057 -0.0044807791999999999 0.00093323178999999996 -0.011648057 -0.0044807791999999999 0.00093323178999999996 -0.011635659 -"
 		+ "0.0047144741000000002 -0.00093323178999999996 -0.018083927999999999 -0.0056047142000000003 -0.00093323178999999996 -0.018095371999999998 -0.0053671598000000001 0.00093323178999999996 -0.018095371999999998 -0.0053973420999999999 0.00093323178999999996 -0.018083927999999999 -0.0056361257999999999 -0.00093323178999999996 -0.020670292999999999 -0.0063505545000000002 -0.00093323178999999996 -0.020681736999999999 -0.0061101167999999999 0.00093323178999999996 -0.020681736999999999 -0.0061721726999999999 0.00093323178999999996 -0.020669814000000002 -0.0064131244999999998 0.0007616058 -0.0081790666999999994 -0.0031059607999999999 0.0007616058 -0.0080083589999999996 -0.0032740235000000002 -0.0007616058 -0.0080083589999999996 -0.0032740235000000002 -0.0007616058 -0.0081790666999999994 -0.0031059607999999999 0.00061451922999999995 -0.0079635363000000008 -0.0023401529000000002 0.00061451922999999995 -0.0078376512999999998 -0.0025082379999999999 -0.00061451922999999995 -0.0078376512999999998 -0.0025082379999999999 -0.00061"
 		+ "451922999999995 -0.0079635363000000008 -0.0023401529000000002 -0.026071728999999998 -0.0047644352999999997 0.12488101 -0.026071728999999998 -0.011037229000000001 0.12471293999999999 0.026071728999999998 -0.011037229000000001 0.12471293999999999 0.026071728999999998 -0.0047644352999999997 0.12488101"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface8" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface8" 
 		"rotatePivot" " -type \"double3\" 0.24502612978839022 6.44275585117159544 -0.49318269838735451"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface8" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface8" 
 		"scalePivot" " -type \"double3\" 0.24502612978839022 6.44275585117159544 -0.49318269838735451"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface8|jackieHair_latest:polySurfaceShape19" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface8|jackieHair_latest:polySurfaceShape19" 
 		"pt[0:47]" (" -s 48 -type \"float3\" 0.0010566804999999999 -0.012752411999999999 -0.0045437812999999999 0.0025316513999999999 -0.012809632 -0.0033960342000000001 0.0012543350000000001 -0.010187982 -0.0045350492000000003 0.0025796145000000002 -0.010253785 -0.0032224282999999999 0.0014227739999999999 -0.010179399 -0.0047046839999999998 0.0027480572 -0.010245202 -0.0033920630999999999 0.0011986773000000001 -0.012742875000000001 -0.0047239289000000004 0.0026755147000000002 -0.012800572 -0.0035799816000000001 0.0010892488 -0.014137624 -0.0047754720000000002 0.0026768558 -0.014186261 -0.0037991777000000002 0.0025526508999999999 -0.014197227999999999 -0.0036000386000000001 0.00096722878999999998 -0.014147636999999999 -0.0045815930000000001 0.0011151098 -0.015969154999999999 -0.0052420050000000001 0.0028872787999999999 -0.015871881000000001 -0.004651919 0.0028110929000000002 -0.015890953999999999 -0.0044202060000000003 0.0010460689999999999 -0.015980599000000002 -0.0050225481000000004 0.0013084449000000001 -0.019476292999999999 -0."
 		+ "0061038658000000003 0.0031047053999999998 -0.019065736 -0.0059594736000000001 0.0030956007999999998 -0.019033311000000001 -0.0057252123999999996 0.0012953038999999999 -0.019444344999999998 -0.0058557391 0.0015035923999999999 -0.022005914000000001 -0.0066994018999999997 0.0032581164999999999 -0.021609662000000002 -0.0061795264000000004 0.0031991005 -0.021582958999999999 -0.0059373975000000002 0.0014488623000000001 -0.021977779999999999 -0.0064630955 0.0010156035000000001 -0.0087064485999999996 -0.0040032640000000003 0.0023408792999999998 -0.0087722521000000008 -0.0026906431 0.0025093183000000001 -0.0087636690999999996 -0.0028602778999999999 0.0011840387999999999 -0.0086978655000000005 -0.0041728987999999998 0.00047143222999999998 -0.0079649668000000007 -0.0031799302000000002 0.0017911865999999999 -0.0080221873000000006 -0.0020378678999999999 0.0019493029000000001 -0.0080136041999999998 -0.0022170544000000001 0.00062954704999999996 -0.0079559069000000003 -0.0033591240999999998 0.00029985466999999999 -0.01563727"
 		+ "7000000002 -0.0011896789000000001 0.00099129789000000005 -0.019071457999999999 -0.00051943957999999997 0.0010066386 -0.028920053000000001 -0.00053399801000000001 0.00031519308999999998 -0.025487302 -0.0012042373 0.012981559 -0.01366031 0.049395844000000001 -0.0097860963999999995 -0.018043396999999999 -0.025124863000000001 -0.012425484000000001 -0.030614731999999999 -0.024992809000000001 0.010342478 -0.026232597999999999 0.049528003000000001 0.0029932968000000002 -0.017429707999999999 -0.005289495 0.0012093819999999999 -0.017679093 -0.0056622549999999997 0.0011675991000000001 -0.01766908 -0.0054288134000000004 0.0029498189999999998 -0.017423032000000001 -0.0050565376999999996 0.0027082338999999999 -0.011647579999999999 -0.0034952237999999998 0.0012997500999999999 -0.011587022000000001 -0.0047152488999999999 0.0011458303999999999 -0.011595605 -0.0045398473999999998 0.0025532841999999999 -0.011657117 -0.0033177361"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface9" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface9" 
 		"rotatePivot" " -type \"double3\" 0.24502612978839022 6.44275585117159544 -0.49318269838735451"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface9" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface9" 
 		"scalePivot" " -type \"double3\" 0.24502612978839022 6.44275585117159544 -0.49318269838735451"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface9|jackieHair_latest:polySurfaceShape20" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface9|jackieHair_latest:polySurfaceShape20" 
 		"pt[0:39]" (" -s 40 -type \"float3\" -0.0010566804999999999 -0.012752411999999999 -0.0045437812999999999 -0.0025316513999999999 -0.012809632 -0.0033960342000000001 -0.0012543369000000001 -0.010187982 -0.0045350492000000003 -0.0025796145000000002 -0.010253785 -0.0032224208 -0.0014227758999999999 -0.010179399 -0.0047046839999999998 -0.0027480535 -0.010245202 -0.0033920555999999999 -0.0011986773000000001 -0.012742875000000001 -0.0047239214 -0.0026755147000000002 -0.012800572 -0.0035799816000000001 -0.0010892488 -0.014137624 -0.0047754644999999998 -0.0026768558 -0.014186261 -0.0037991777000000002 -0.0025526508999999999 -0.014197227999999999 -0.003600046 -0.00096722878999999998 -0.014147636999999999 -0.0045815930000000001 -0.0011151079 -0.015969154999999999 -0.0052420050000000001 -0.0028872750999999999 -0.015871881000000001 -0.004651919 -0.0028110929000000002 -0.015890953999999999 -0.0044201984999999999 -0.0010460689999999999 -0.015980599000000002 -0.0050225406999999996 -0.0013084430000000001 -0.019476292999999999 -0.00610386580"
 		+ "00000003 -0.0031047053999999998 -0.019065736 -0.0059594736000000001 -0.0030955969999999998 -0.019033311000000001 -0.0057252123999999996 -0.0012953038999999999 -0.019444344999999998 -0.0058557391 -0.0015035923999999999 -0.022005914000000001 -0.0066994018999999997 -0.0032581164999999999 -0.021609662000000002 -0.0061795264000000004 -0.0031991042 -0.021582958999999999 -0.0059373975000000002 -0.0014488623000000001 -0.021977779999999999 -0.0064630955 -0.0010155997999999999 -0.0087064485999999996 -0.0040032566000000004 -0.0023408830000000002 -0.0087722521000000008 -0.0026906579999999999 -0.0025093183000000001 -0.0087636690999999996 -0.0028602778999999999 -0.0011840387999999999 -0.0086978655000000005 -0.0041728987999999998 -0.00047143222999999998 -0.0088790637000000002 -0.0031799376000000001 -0.0017911884999999999 -0.0067681051000000004 -0.0020378530000000001 -0.0019493029000000001 -0.0070985531999999997 -0.0022170544000000001 -0.00062954704999999996 -0.0092099885999999999 -0.0033591240999999998 -0.000299854669999999"
 		+ "99 -0.014940141000000001 -0.0011896789000000001 -0.00099129601999999994 -0.017814515 -0.00051943957999999997 -0.0010066386 -0.026059982999999998 -0.00053398311000000002 -0.00031519308999999998 -0.023185608999999999 -0.0012042373 -0.0093715610000000005 -0.022514698999999999 0.044003695000000002 0.0060811698999999999 -0.026141998999999999 -0.040355190999999999 0.0088154542999999991 -0.036548015000000003 -0.040260851 -0.0066376211999999999 -0.032920713999999997 0.044098243000000002"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface10" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface10" 
 		"rotatePivot" " -type \"double3\" 0.3833701645163044 6.46886998343686859 -0.32251783516884119"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface10" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface10" 
 		"scalePivot" " -type \"double3\" 0.3833701645163044 6.46886998343686859 -0.32251783516884119"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface10|jackieHair_latest:polySurfaceShape21" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface10|jackieHair_latest:polySurfaceShape21" 
 		"pt[0:47]" (" -s 48 -type \"float3\" 0.0025774874 -0.014282105 -0.0033284202 0.0027750133999999999 -0.014476177999999999 -0.0021188557 0.0025063716000000001 -0.010302423 -0.0029895231 0.0028409883000000001 -0.010454534 -0.0016865878999999999 0.0027642324999999999 -0.010284303 -0.0030579193999999998 0.0030929372000000001 -0.010431645 -0.0017552673999999999 0.0028426647000000002 -0.014303563 -0.0033449903 0.0030412599 -0.014517663 -0.0021435021999999999 0.0029611625 0.035315159999999998 -0.048494712000000002 0.0034163967000000002 0.035083416999999999 -0.047157004000000002 0.0031556486999999999 0.035063866999999999 -0.047013267999999997 0.0027089566 0.035308007000000002 -0.048394077000000001 0.0031567663000000002 -0.01686704 -0.0048740581000000002 0.0042572393999999996 -0.017033455999999999 -0.0040885210000000003 0.0041051209000000002 -0.017122623999999999 -0.0038842261000000002 0.0030081645 -0.016950486000000001 -0.0046756788999999998 0.0035629459 -0.019127247999999999 -0.0060139297999999997 0.0046744719000000002 -0.019174455"
 		+ " -0.0055776015000000003 0.0045228228000000004 -0.019195911999999999 -0.0053551793000000004 0.0034109801000000001 -0.019144891000000001 -0.0057918429 0.0036796108000000001 -0.021133302 -0.0061865523000000002 0.0047895758999999998 -0.021172402 -0.0061148703000000002 0.0046370177999999996 -0.021171448999999998 -0.0059411302000000003 0.0035270563999999999 -0.021132347999999999 -0.0060119107000000003 0.0022225343000000001 -0.0090464334999999993 0.027506918000000002 0.0025571510000000001 -0.0091990214000000001 0.02880986 0.0028090999000000001 -0.0091756563999999992 0.028741181000000001 0.0024803950999999999 -0.0090283137000000003 0.027438521 0.0028017387 -0.012205957 -0.0031951889000000002 0.0025403723 -0.012205479999999999 -0.0031515732 0.0028094425999999999 -0.012377618 -0.0018932669999999999 0.0030682272999999999 -0.012385724000000001 -0.0019408911 0.0033705533000000002 -0.018056272000000002 -0.0054740086 0.0032201781999999998 -0.018105386000000001 -0.0052631572000000001 0.0043249726 -0.018214105000000001 -0.004"
 		+ "6584382999999997 0.0044768452999999998 -0.018160222 -0.0048722699000000001 0.032472833999999999 -0.013285039 0.012524113 -0.012511970000000001 -0.013448593999999999 0.0046307594000000001 -0.016006958000000002 -0.013246414999999999 0.0040459781999999996 0.028601330000000001 -0.013078091999999999 0.011876612999999999 0.00099486485000000011 0.048034791 -0.00096103549000000005 0.0016061421000000001 0.047873619999999999 -0.00041918457000000002 0.0014848877000000001 0.047731521999999998 -0.00039197504999999999 0.00086764339000000004 0.047891263000000003 -0.00093334913000000001 0.00173763 0.047604207000000003 -0.0020094812000000001 0.0022076257000000002 0.047450188999999997 -0.0010872334000000001 0.0020210184 0.047367219000000002 -0.0010392814999999999 0.0015450864999999999 0.047523145000000003 -0.0019614398"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface11" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface11" 
 		"rotatePivot" " -type \"double3\" 0.3833701645163044 6.46886998343686859 -0.32251783516884119"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface11" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface11" 
 		"scalePivot" " -type \"double3\" 0.3833701645163044 6.46886998343686859 -0.32251783516884119"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface11|jackieHair_latest:polySurfaceShape22" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface11|jackieHair_latest:polySurfaceShape22" 
 		"pt[0:43]" (" -s 44 -type \"float3\" -0.0025774874 -0.014282105 -0.017401442 -0.0027750133999999999 -0.014476177999999999 0.012345418 -0.0025063716000000001 -0.010302423 -0.0029895231 -0.0028409883000000001 -0.010454534 -0.0016865878999999999 -0.0027642324999999999 -0.010284303 -0.0030579193999999998 -0.0030929372000000001 -0.010431645 -0.0017552673999999999 -0.0028426647000000002 -0.014303563 -0.017809256999999998 -0.0030412562000000001 -0.014517663 0.011739342999999999 -0.0029611625 -0.016036389000000002 -0.052929904 -0.0034164004000000001 -0.016267654999999999 -0.032620758 -0.0031556449999999999 -0.016287683000000001 -0.030438661999999998 -0.0027089566 -0.016043064999999999 -0.051402099 -0.0031567700000000001 -0.01686704 -0.0048740581000000002 -0.0042572393999999996 -0.017033455999999999 -0.0040885210000000003 -0.0041051209000000002 -0.017122623999999999 -0.0038842261000000002 -0.0030081607 -0.016950486000000001 -0.0046756864000000002 -0.0035629459 -0.019127247999999999 -0.0060139297999999997 -0.0046744719000000002 -0.01"
 		+ "9174455 -0.0055776015000000003 -0.0045228153 -0.019195911999999999 -0.0053551793000000004 -0.0034109801000000001 -0.019144891000000001 -0.0057918429 -0.0036796108000000001 -0.021133302 -0.0061865597999999997 -0.0047895758999999998 -0.021172402 -0.0061148703000000002 -0.0046370177999999996 -0.021171448999999998 -0.0059411302000000003 -0.0035270601999999999 -0.021132347999999999 -0.0060119181999999998 -0.0022225343000000001 -0.0090464334999999993 0.040019244000000002 -0.0025571510000000001 -0.0091990214000000001 0.041322201000000003 -0.0028091036000000001 -0.0091756563999999992 0.041253492000000003 -0.0024803950999999999 -0.0090283137000000003 0.039950863000000003 -0.0028016566999999998 -0.012202141999999999 -0.0031948835000000001 -0.0030682831999999998 -0.012380956 -0.0019404888 -0.0028095096000000002 -0.012373326 -0.0018928349 -0.0025403053000000002 -0.012201188 -0.0031512156 -0.00021088473000000001 -0.0079406480999999994 0.00012420118000000001 -0.00020533125000000001 -0.0078200083000000004 6.6697597999999998"
 		+ "e-05 -0.00056560338000000003 -0.0080345850000000003 0.00024805962999999999 -0.00057183764999999996 -0.0081576089999999997 0.00030399859000000001 -0.00096368603000000004 0.046524648000000002 -0.00097484887000000005 -0.00088143534999999998 0.046437863000000003 -0.0009136945 -0.0012336094 0.046242360000000003 -0.00035952032000000002 -0.0013134348999999999 0.046332005000000002 -0.00041970610999999999 -0.0017220397000000001 0.046121719999999998 0.024131878999999998 -0.0015519857000000001 0.046069267999999997 0.024196655000000001 -0.0018953774000000001 0.045895222999999999 0.02512522 -0.0020612665000000001 0.045951488999999998 0.025060788000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface12" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface12" 
 		"rotatePivot" " -type \"double3\" 0.16599367939063558 6.87331574514375454 -0.071602379316412473"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface12" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface12" 
 		"scalePivot" " -type \"double3\" 0.16599367939063558 6.87331574514375454 -0.071602379316412473"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface12|jackieHair_latest:polySurfaceShape23" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface12|jackieHair_latest:polySurfaceShape23" 
 		"pt[0:27]" (" -s 28 -type \"float3\" -0.025242490999999999 -0.0082606059000000006 0.018233240000000001 -0.023069541999999998 -0.0082153062999999991 0.045204862999999998 0.00059591886 -0.0077675558 0.029832572000000002 0.00041451911000000001 -0.0077217793999999999 0.13235422999999999 0.00056467392000000003 -0.0079506617000000002 0.030047938 0.00038327696000000001 -0.0079048852999999992 0.13256942999999999 -0.024868239 -0.0084432345000000006 0.018289923999999999 -0.022695309 -0.0083979350000000005 0.045261532 0.0025397241000000002 -0.0091012698000000006 -0.00021016597999999999 0.0023583248 -0.0090554933999999997 -0.0013401061 0.0024698115999999999 -0.0089076738999999995 -0.0013520419999999999 0.0026512146 -0.0089529733999999996 -0.00022210181000000001 0.0028560161999999999 -0.0097860078999999992 -0.00036682189 0.0026746169000000002 -0.0097402315999999996 -0.0014967470999999999 0.0028205775000000001 -0.0096605997999999992 -0.001516968 0.0030019805000000002 -0.0097058992999999993 -0.00038702786 0.0032900124999999999 -0.01154315"
 		+ "3 -0.00073985754999999999 0.0031086169000000001 -0.011497853000000001 -0.0018697977000000001 0.0032882653 -0.011459706 -0.0018970966 0.0034696609000000002 -0.011505483 -0.00076714158000000001 0.0032862984000000001 -0.012105344000000001 -0.0011769831 0.0031439177999999998 -0.012069580999999999 -0.0020638406000000002 0.0033235736 -0.012031434000000001 -0.0020911545000000002 0.0034659504999999999 -0.012067197 -0.0012042969 0.0032504796999999999 -0.012828229 -0.0020779967000000002 0.0031804367999999999 -0.012911199 -0.0025500357000000002 0.0033593923000000002 -0.012874482 -0.0025831163 0.0034294276999999999 -0.012791036 -0.0021110624000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface13" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface13" 
 		"rotatePivot" " -type \"double3\" 0.16599367939063558 6.87331574514375454 -0.071602379316412473"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface13" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface13" 
 		"scalePivot" " -type \"double3\" 0.16599367939063558 6.87331574514375454 -0.071602379316412473"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface13|jackieHair_latest:polySurfaceShape24" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface13|jackieHair_latest:polySurfaceShape24" 
 		"pt[0:27]" (" -s 28 -type \"float3\" 0.025262588999999998 -0.0083345156 0.019991188999999999 0.023500374000000001 -0.0082834940000000006 0.046825826000000001 -0.00059591698999999999 -0.0077675558 0.029832572000000002 -0.00041451864 -0.0077217793999999999 0.13235420000000001 -0.00056467485 -0.0079506617000000002 0.030047938 -0.00038327510000000001 -0.0079048852999999992 0.13256946 0.024959077999999999 -0.0085166674000000005 0.020024284999999999 0.023196876000000002 -0.0084651689999999998 0.046858906999999998 -0.0025397278000000001 -0.0091012698000000006 -0.00021016597999999999 -0.0023583248 -0.0090554933999999997 -0.0013401061 -0.0024698115999999999 -0.0089076738999999995 -0.0013520271 -0.0026512146 -0.0089534501999999992 -0.00022208691 -0.0028323606000000001 -0.0099381190000000005 -0.00051800906999999998 -0.0027006902 -0.0098842363999999995 -0.0016396195000000001 -0.0028442404999999998 -0.0098122339999999995 -0.0016675442 -0.0029759071999999999 -0.0098661166000000005 -0.00054591893999999998 -0.0032900124999999999 -0.0115431"
 		+ "53 -0.00073985754999999999 -0.0031086169000000001 -0.011497853000000001 -0.0018697977000000001 -0.0032882616 -0.011459706 -0.0018970966 -0.0034696609000000002 -0.011505483 -0.00076714158000000001 -0.0032862984000000001 -0.012105344000000001 -0.0011769831 -0.0031439177999999998 -0.012069580999999999 -0.0020638406000000002 -0.0033235736 -0.012031910999999999 -0.0020911545000000002 -0.0034659468 -0.012067197 -0.0012042969 -0.003250476 -0.012828229 -0.0020779967000000002 -0.0031804404999999998 -0.012911199 -0.0025500357000000002 -0.0033593847999999998 -0.012874959 -0.0025831163 -0.0034294276999999999 -0.012791036 -0.0021110624000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface47" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface47" 
 		"rotatePivot" " -type \"double3\" 0.18053523448140243 6.87259056724701978 -0.033698851640897268"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface47" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface47" 
 		"scalePivot" " -type \"double3\" 0.18053523448140243 6.87259056724701978 -0.033698851640897268"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface47|jackieHair_latest:polySurfaceShape47" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface47|jackieHair_latest:polySurfaceShape47" 
 		"pt[0:59]" (" -s 60 -type \"float3\" -0.022926315999999999 -0.0036848760000000001 -0.0039791614000000003 -0.024409040999999999 -0.0040272451000000001 0.0012160093 -0.013681076 -0.0057872510999999998 -0.0040939896999999999 -0.014300152999999999 -0.0060051656 -0.0021958648999999999 -0.013398157000000001 -0.0050090528000000002 -0.0039939731000000001 -0.014017234999999999 -0.0052269674 -0.0020958334000000002 -0.022248711000000001 -0.0024646497 -0.0037054420000000002 -0.023731413999999999 -0.0028070187999999999 0.0014897436 -0.026442878 0.003076198 -0.0037343055 -0.027925584 0.0027343058000000001 0.0014608799999999999 -0.029228476999999999 0.0023251794999999999 0.0010621101 -0.027745735000000001 0.0026675485999999998 -0.0041330456999999999 -0.027649666999999999 0.011346461 -0.0036108345 -0.029866073 0.011469485 0.0013265312 -0.031113756999999999 0.011064174 0.00077657401999999996 -0.028897312000000001 0.01094115 -0.0041607915999999998 -0.027608396 0.024848582000000001 -0.002895534 -0.031364388999999999 0.023835302999999999 0.000"
 		+ "86900591999999996 -0.032385677000000002 0.023984552999999999 -0.00010991096 -0.028629681000000001 0.024997354999999999 -0.0038743763999999998 -0.027458223 0.041005734000000002 0.022459864999999999 -0.031510143999999997 0.041537884999999997 0.026010081000000001 -0.032446079000000003 0.041556957999999998 0.024939090000000001 -0.028394181000000001 0.041024808000000003 0.021388888000000002 -0.026726771 0.060706261999999997 0.016139269000000001 -0.030411361000000001 0.056740407 0.016176954 -0.030239444000000001 0.056567791999999999 0.0147755 -0.026554880999999999 0.060533646000000003 0.014737815 -0.027683623000000001 0.049627427000000002 0.017184496 -0.032521196000000002 0.049708481999999998 0.019053519000000001 -0.032047807999999997 0.049996022000000001 0.020277679 -0.027210226000000001 0.049914966999999998 0.018408671000000001 -0.028506567999999999 0.033376339999999997 -0.0038995742999999999 -0.032417253 0.033170823000000002 -0.00024707614999999999 -0.031440586 0.033089761000000002 0.00077995658000000001 -0.0275"
 		+ "29890000000001 0.033295277999999998 -0.0028725266 -0.028759375 0.018185260000000002 -0.0040131806999999997 -0.031769298000000001 0.017723204999999999 0.00031968950999999998 -0.030638292000000001 0.017842891 0.0010907203 -0.027628396 0.018305423000000001 -0.0032421350000000002 -0.030507673999999999 0.024490953999999999 -0.0019921361999999999 -0.030264336999999999 0.017954471 -0.0018467456000000001 -0.030005533000000001 0.011002184999999999 -0.0016921162999999999 -0.028487103 0.0024963641000000001 -0.0015354603999999999 -0.023667678000000001 -0.0038560605999999999 -0.0013815761000000001 -0.013990615 -0.0058959698999999999 -0.0031449198999999998 -0.013707696 -0.0051177716999999999 -0.0030449032999999999 -0.022990063000000002 -0.0026358343000000002 -0.0011078417000000001 -0.027184235000000001 0.0029050134999999999 -0.0011367202 -0.028757867999999999 0.011407973 -0.0011421442 -0.029133343999999999 0.018074157 -0.0010757148 -0.029486390000000001 0.024342181000000001 -0.0010132641000000001 -0.029485234999999999 0.03"
 		+ "3192758000000003 -0.0010462999 -0.029484181000000002 0.041272285999999998 0.02423498 -0.029629018 0.049955490999999998 0.019343168000000001 -0.028569067 0.058723573000000001 0.016158118999999999 -0.028397163 0.058550487999999998 0.01475665 -0.030102409 0.049667957999999998 0.018119006999999999 -0.030420131999999999 0.041290883 0.023163974 -0.030461913 0.033273820000000003 -0.0020733327"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface46" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface46" 
 		"rotatePivot" " -type \"double3\" -0.42166339202233283 6.50896370712592365 0.025595438852397859"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface46" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface46" 
 		"scalePivot" " -type \"double3\" -0.42166339202233283 6.50896370712592365 0.025595438852397859"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface46|jackieHair_latest:polySurfaceShape46" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface46|jackieHair_latest:polySurfaceShape46" 
 		"pt[0:59]" (" -s 60 -type \"float3\" 0.018025275 -0.027704118 0.021501213000000002 0.020083080999999999 -0.028178570999999999 0.028711408000000001 0.0051940930999999999 -0.030186531999999999 0.021095023000000001 0.0060532703 -0.030489324000000002 0.024198352999999999 0.0048014353999999999 -0.029106495999999999 0.021258533 0.0056606317 -0.029409286999999999 0.024361878999999999 0.017084798000000002 -0.026010392 0.021881103999999998 0.019142632999999999 -0.026485321999999999 0.029091328 0.022905788999999999 -0.018320439000000001 0.021841064 0.024963605999999999 -0.018794892000000001 0.029051258999999999 0.026771834000000001 -0.019362329000000001 0.028497814999999999 0.024713967 -0.018887398999999999 0.02128762 0.024580617999999999 -0.0068424916999999998 0.022012383 0.027656727999999998 -0.0066713071000000001 0.028864846 0.029388350000000001 -0.0072339750000000001 0.028101489 0.026312190999999999 -0.0074046826999999999 0.021249145000000001 0.024523372000000002 0.011897207999999999 0.023005158000000001 0.029736170999999999 0.01"
 		+ "0491014999999999 0.028229847999999998 0.031153619 0.010697963 0.026871234000000001 0.025940774 0.012104155 0.021646663999999999 0.024314957000000002 0.034321430999999999 0.10504773000000001 0.029938475999999999 0.035060052000000001 0.10997510000000001 0.031237457 0.035086277999999999 0.10848845999999999 0.025613905999999999 0.034347656999999997 0.10356136000000001 0.023299772 0.061662796999999998 0.096275598000000004 0.028413524999999999 0.056159142000000002 0.096327886000000001 0.028174861999999998 0.055918816000000003 0.094382836999999997 0.023061225000000001 0.061422947999999998 0.094330564000000006 0.024547340000000001 0.047533634999999998 0.097250372000000002 0.023942684999999998 0.047967557000000001 0.098966553999999998 0.030745555000000001 0.048028592000000002 0.10137047 0.031350188000000001 0.047595146999999997 0.099654048999999995 0.025781644999999999 0.022932650999999998 0.021614060000000001 0.024421913999999999 0.022813917999999999 0.023034915 0.029834658 0.022451999 0.028114839999999999 0.03119442"
 		+ "6000000001 0.022570731 0.026693866 0.026099283000000001 0.0037781014 0.021476984000000001 0.024547808000000001 0.0038996958000000002 0.022581488 0.028848728000000001 0.0031667970999999999 0.028500810000000001 0.030400257999999999 0.0030452036 0.027396321000000001 0.028547196 0.011400821 0.024258956000000002 0.028488036000000001 0.022751929000000001 0.024153963000000001 0.028425682000000001 0.034716729000000002 0.10602491999999999 0.027948760999999999 0.047564152999999998 0.098452209999999998 0.025618044999999999 0.058671128000000003 0.094356701000000001 0.025856649999999998 0.058910977000000003 0.096301734 0.027344119 0.047998074000000002 0.10016851 0.027126714999999999 0.034690502999999998 0.10751142 0.027128289 0.022632719999999999 0.025574893000000001 0.027129772999999999 0.011193873 0.025617495000000001 0.026698270999999999 0.0035330079999999998 0.025541156999999998 0.026118672999999999 -0.0067566609999999997 0.025438606999999998 0.023934698000000001 -0.018557427000000001 0.025446146999999999 0.0181137170"
 		+ "00000001 -0.026247856999999999 0.025486215999999999 0.0052310339999999999 -0.02925813 0.022810206 0.0056236819 -0.030338166 0.022646679999999999 0.019054178000000001 -0.027941106 0.025106310999999999 0.025742900999999999 -0.019124863999999998 0.024892733 0.02785027 -0.0073193288000000002 0.024675309999999999 0.028249769000000001 0.0034118913999999999 0.024436652999999999"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop" 
 		"rotatePivot" " -type \"double3\" 0 6.21184700709577164 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop" 
 		"scalePivot" " -type \"double3\" 0 6.21184700709577164 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface14" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface14" 
 		"rotatePivot" " -type \"double3\" 0 7.02023555814959721 -0.049097105318490403"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface14" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface14" 
 		"scalePivot" " -type \"double3\" 0 7.02023555814959721 -0.049097105318490403"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface14|jackieHair_latest:polySurfaceShape14" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface14|jackieHair_latest:polySurfaceShape14" 
 		"pt[0:113]" (" -s 114 -type \"float3\" -0.00094248097999999998 0.042190674999999997 0.0034413040000000001 0.00094248097999999998 0.020912291 0.0034413040000000001 -0.00094248097999999998 0.044218662999999998 0.0046778321000000003 0.00094248097999999998 0.02294028 0.0046778321000000003 -0.0044544605000000001 0.028629900999999999 -0.010658234000000001 0.0044544605000000001 0.028629900999999999 -0.010658234000000001 -0.0054520499000000004 0.026767852000000002 -0.011481046999999999 0.0054520499000000004 0.026767852000000002 -0.011481046999999999 -0.0058374591000000002 0.029062869000000002 -0.022858590000000002 0.0058374591000000002 0.029062869000000002 -0.022858590000000002 0.0058374591000000002 0.025944831000000002 -0.02253817 -0.0058374591000000002 0.025944831000000002 -0.02253817 -0.0071553709000000002 0.021777273999999999 -0.037212439 0.0071553709000000002 0.021777273999999999 -0.037212439 0.0071553709000000002 0.019093157999999999 -0.035594523000000003 -0.0071553709000000002 0.019093157999999999 -0.035594523000000003 -0.007"
 		+ "1553709000000002 0.026900889000000001 -0.049898431 0.0071553709000000002 0.026900889000000001 -0.049898431 0.0071553709000000002 0.025366427 -0.047165774000000001 -0.0071553709000000002 0.025366427 -0.047165774000000001 -0.0071553709000000002 0.0019212984 -0.052060901999999999 0.0071553709000000002 0.0019212984 -0.052060901999999999 0.0071553709000000002 0.00098955864000000002 -0.049068308999999997 -0.0071553709000000002 0.00098955864000000002 -0.049068308999999997 -0.0071553709000000002 -0.026531097999999999 -0.052060883000000002 0.0071553709000000002 -0.026531097999999999 -0.052060883000000002 0.0071553709000000002 -0.027462361000000001 -0.049068308999999997 -0.0071553709000000002 -0.027462361000000001 -0.049068308999999997 -0.0071553709000000002 -0.067722200999999996 -0.13476316999999999 0.0071553709000000002 -0.067722200999999996 -0.13476316999999999 0.0071553709000000002 -0.069854616999999994 -0.13216448 -0.0071553709000000002 -0.069854616999999994 -0.13216448 -0.0071553709000000002 -0.089809298999999995"
 		+ " -0.15081074999999999 0.0071553709000000002 -0.089809298999999995 -0.15081074999999999 0.0071553709000000002 -0.091941713999999994 -0.14821206000000001 -0.0071553709000000002 -0.091941713999999994 -0.14821206000000001 0 0.0019212984 -0.052060901999999999 0 -0.026531097999999999 -0.052060883000000002 0 -0.067722200999999996 -0.13476316999999999 0 -0.089809298999999995 -0.15081074999999999 0 -0.091941713999999994 -0.14821206000000001 0 -0.069854616999999994 -0.13216448 0 -0.027462361000000001 -0.049068308999999997 0 0.00098955864000000002 -0.049068308999999997 0 0.025366427 -0.047165774000000001 0 0.019093157999999999 -0.035594523000000003 0 0.025944831000000002 -0.02253817 0 0.026767852000000002 -0.011481046999999999 0 0.020912291 0.0034413040000000001 0 0.02294028 0.0046778321000000003 0 0.028629900999999999 -0.010658234000000001 0 0.029062869000000002 -0.022858590000000002 0 0.021777273999999999 -0.037212439 0 0.026900889000000001 -0.049898431 0 -0.055420753000000003 -0.12488322 -0.0071553709000000002 -0.055"
@@ -28348,13 +28415,13 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "51364999999999 0 -0.077217460000000002 -0.13751364999999999 0.0071553709000000002 -0.077217460000000002 -0.13751364999999999 0.0071553709000000002 -0.075084567000000005 -0.14011235999999999 0 -0.017046329999999998 -0.052060887 -0.0071553709000000002 -0.017046329999999998 -0.052060887 -0.0071553709000000002 -0.017978069999999999 -0.049068308999999997 0 -0.017978069999999999 -0.049068308999999997 0.0071553709000000002 -0.017978069999999999 -0.049068308999999997 0.0071553709000000002 -0.017046329999999998 -0.052060887 0 -0.0075625158 -0.052060895000000003 -0.0071553709000000002 -0.0075625158 -0.052060895000000003 -0.0071553709000000002 -0.0084942561 -0.049068308999999997 0 -0.0084942561 -0.049068308999999997 0.0071553709000000002 -0.0084942561 -0.049068308999999997 0.0071553709000000002 -0.0075625158 -0.052060895000000003 0 0.010247828 -0.051340081000000003 -0.0071553709000000002 0.010247828 -0.051340081000000003 -0.0071553709000000002 0.0091153402000000005 -0.048434127 0 0.0091153402000000005 -0.048434127 0.007"
 		+ "1553709000000002 0.0091153402000000005 -0.048434127 0.0071553709000000002 0.010247828 -0.051340081000000003 0 0.018574358999999999 -0.050619256000000001 -0.0071553709000000002 0.018574358999999999 -0.050619256000000001 -0.0071553709000000002 0.017240644999999999 -0.047799955999999998 0 0.017240644999999999 -0.047799955999999998 0.0071553709000000002 0.017240644999999999 -0.047799955999999998 0.0071553709000000002 0.018574358999999999 -0.050619256000000001 0 0.032285812999999997 -0.045669767999999999 -0.0071553709000000002 0.032285812999999997 -0.045669767999999999 -0.0071553709000000002 0.0090891141000000002 -0.043308694000000002 0 0.030367972 -0.043308694000000002 0.0071553709000000002 0.030367972 -0.043308694000000002 0.0071553709000000002 0.032285812999999997 -0.045669767999999999 0 0.037671212000000003 -0.041441102 -0.0071553709000000002 0.016392351999999999 -0.041441102 -0.0071553709000000002 0.014091136000000001 -0.039451607 0 0.014091136000000001 -0.039451607 0.0071553709000000002 0.035369519000000002 "
 		+ "-0.039451607 0.0071553709000000002 0.037671212000000003 -0.041441102")
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface16" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface16" 
 		"rotatePivot" " -type \"double3\" 0.1578615338296174 7.00410564841728256 -0.049097105318490403"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface16" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface16" 
 		"scalePivot" " -type \"double3\" 0.1578615338296174 7.00410564841728256 -0.049097105318490403"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface16|jackieHair_latest:polySurfaceShape16" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface16|jackieHair_latest:polySurfaceShape16" 
 		"pt[0:113]" (" -s 114 -type \"float3\" 0.0013829478999999999 0.041922214999999999 -0.0025551021000000001 0.0053155106000000001 0.017369391000000001 -0.0013109148000000001 0.0014147102000000001 0.044802311999999997 -0.0012916923 0.0053472733000000001 0.020249488 -4.7490000999999997e-05 0.0044878582 0.026103141 -0.011338621 0.013905967 0.025468946999999999 -0.0098607092999999993 0.0043705673999999998 0.023079993 -0.0121907 0.013788676 0.022445323 -0.010712757999999999 0.0063773841000000003 0.025404573999999999 -0.025593698000000002 0.019051284000000002 0.024637820000000001 -0.019779130999999998 0.018808261 0.02152455 -0.019534073999999998 0.0061343582000000004 0.022291305000000001 -0.025348641000000002 0.0071047478999999997 0.018755556999999999 -0.03785608 0.023469679 0.018118503000000001 -0.031222373000000001 0.022656369999999999 0.014790655999999999 -0.029693015 0.0067281601999999996 0.015395762 -0.036257178000000001 0.0075329187999999998 0.026635768000000001 -0.050502602000000001 0.026081223000000001 0.02583945 -0.043455962"
 		+ "000000001 0.024987683 0.023676993 -0.040853325000000003 0.0070659844000000001 0.024428011999999999 -0.047793224000000002 0.0058324168999999999 0.0009981417099999999 -0.052723846999999997 0.025345914000000001 0.00022566551 -0.045685789999999997 0.024127740000000002 -0.00064694649000000002 -0.042830788000000002 0.0053258519999999998 7.6415483000000001e-05 -0.049754564000000001 0.0035244678000000002 -0.027418016 -0.055465902999999997 0.024353478000000001 -0.028155683000000001 -0.048485885999999999 0.023009647000000001 -0.029028770999999998 -0.045630894999999998 0.0029656505 -0.028339264999999999 -0.052496634 0.0031994496999999998 -0.069672942000000002 -0.11908075999999999 0.024008919 -0.070500254999999998 -0.12304163999999999 0.022721127000000001 -0.071373343000000006 -0.12018508 0.0026640892000000002 -0.070594667999999999 -0.11610988999999999 0.0026633730000000001 -0.094366907999999999 -0.13531549000000001 0.023520711999999999 -0.095218062000000006 -0.12790894999999999 0.02223232 -0.096091151 -0.125053930000000"
 		+ "01 0.0021276075999999999 -0.095288633999999997 -0.13234624 0.015589165 0.00061238044999999998 -0.049204818999999997 0.013938973 -0.027786610999999999 -0.051975898 0.013604181 -0.07008636 -0.11543766 0.013092041 -0.094792246999999996 -0.13161221000000001 0.012179963 -0.095689653999999999 -0.12870008999999999 0.012692607999999999 -0.070983768000000003 -0.11252395 0.012987647 -0.028684017999999999 -0.049063760999999997 0.014726793 -0.00028550392 -0.046292673999999999 0.016026834 0.024052264 -0.044323277000000001 0.014692266000000001 0.015093448000000001 -0.0329751 0.012471311000000001 0.021907927000000001 -0.022441365000000001 0.0090796201999999993 0.022762419999999998 -0.011451736000000001 0.0033492292000000001 0.017619731 -0.0019329935 0.0033809915 0.020499827000000002 -0.00066959858000000005 0.0091969128999999997 0.025785566999999999 -0.010599673 0.012714334000000001 0.025021196999999998 -0.022686422000000001 0.015287212999999999 0.01843703 -0.034539229999999997 0.016807074000000002 0.026237608999999999 -0.04"
@@ -28363,13 +28430,13 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "65999999997 0.015995136 0.0091539640000000005 -0.048462972 0.0063992505999999998 0.0095444936000000005 -0.051983430999999997 0.0059058974000000004 0.0081936140000000001 -0.049100783000000002 0.015160140000000001 0.0078274030000000001 -0.045636206999999998 0.024414386999999999 0.0074611926000000004 -0.042171631000000001 0.025591019999999999 0.0087634344000000006 -0.044942513000000003 0.016401104999999999 0.017695547999999998 -0.047721125000000003 0.0069660842000000001 0.018089892 -0.051243015000000003 0.0064859389999999996 0.016310813 -0.048447008999999999 0.015593486 0.015939834 -0.044979735999999999 0.024701033000000001 0.015569331 -0.041512474000000001 0.025836125000000001 0.017301680999999999 -0.044199239000000001 0.016300452999999999 0.031654957999999997 -0.042832594000000002 0.0073901955000000002 0.0079742688999999995 -0.046287093000000001 0.0069533763000000004 0.029434325000000001 -0.043947874999999997 0.015581975 0.029083372999999999 -0.040540553999999999 0.024210576000000001 0.028732421000000001 -0.03"
 		+ "7133223999999999 0.025210716000000001 0.031283024999999999 -0.039378099 0.015793834 0.013020159999999999 -0.038685909999999997 0.0072474721999999997 0.013364913000000001 -0.042071585000000002 0.0068407664 0.010388972 -0.040102526999999999 0.015137121 0.010062339 -0.036757818999999997 0.023433473 0.033787850000000001 -0.033413119999999998 0.024340193999999999 0.036727074999999998 -0.035300232000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface17" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface17" 
 		"rotatePivot" " -type \"double3\" 0.1578615338296174 7.00410564841728256 -0.049097105318490403"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface17" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface17" 
 		"scalePivot" " -type \"double3\" 0.1578615338296174 7.00410564841728256 -0.049097105318490403"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface17|jackieHair_latest:polySurfaceShape17" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface17|jackieHair_latest:polySurfaceShape17" 
 		"pt[0:113]" (" -s 114 -type \"float3\" -7.4658179000000005e-05 0.011995436999999999 0.0028526783000000001 -0.0029870295000000002 0.011495234 0.0033504366999999998 -0.00036437384999999999 0.01487601 0.0040547997000000002 -0.0032767500000000001 0.014374853999999999 0.0045525729999999999 -0.0036497409000000001 0.020228507 -0.012912259000000001 -0.015396819000000001 0.019594314000000002 -0.0083000361999999994 -0.0038057053 0.017205359 -0.013725385 -0.015552771999999999 0.016571165999999998 -0.0091131479000000001 -0.0066203494000000003 0.019529940999999999 -0.025064937999999998 -0.021867212 0.018763663 -0.020327523 -0.021603059000000001 0.015650392999999999 -0.020062841000000001 -0.0063561881000000001 0.016417147999999999 -0.024800234000000001 -0.0072104046000000003 0.012887599 -0.03785608 -0.023359037999999999 0.012251021000000001 -0.031222373000000001 -0.022556468999999999 0.0089164990999999992 -0.029693007 -0.0068387984999999998 0.0095216054000000008 -0.036257184999999997 -0.0078638010000000001 -0.0032838559999999999 -0.050502"
 		+ "613000000002 -0.025733243999999999 -0.0040806508999999998 -0.043455962000000001 -0.024679738999999999 0.023676993 -0.040853321999999997 -0.0074139497999999998 0.024428011999999999 -0.047793224000000002 -0.0081242137000000006 0.0009981417099999999 -0.052723851000000002 -0.027018542999999999 0.00022566551 -0.045685789999999997 -0.025839020000000001 -0.00064694649000000002 -0.042830776000000001 -0.0076337280000000002 7.6415483000000001e-05 -0.049754564000000001 -0.0068664299000000002 -0.027418016 -0.055465902999999997 -0.025903705999999999 -0.028155683000000001 -0.048485874999999998 -0.024675477000000001 -0.029028770999999998 -0.045630902000000001 -0.0063556758999999997 -0.028339264999999999 -0.052496634 -0.055590837999999997 -0.075651525999999997 -0.11103228 -0.074574402999999997 -0.088673949000000002 -0.10078624999999999 -0.073399595999999998 -0.094038366999999998 -0.099603980999999994 -0.055102448999999998 -0.081243395999999996 -0.10982438999999999 -0.054081432999999998 -0.087288737000000005 -0.17732096 -0.07"
 		+ "3875070000000001 -0.099923015000000004 -0.17199279000000001 -0.072652385 -0.10528553 -0.17081146 -0.053572979 -0.092878221999999996 -0.17611450000000001 -0.017571377999999999 0.00061238044999999998 -0.049204818999999997 -0.016798523999999999 -0.0036824917999999998 -0.046979286000000002 -0.015284720999999999 0.012569072000000001 -0.034539229999999997 -0.014243778 0.019146562999999998 -0.022696233999999999 -0.0095232780999999992 0.019911410000000001 -0.01060614 -0.0018205618999999999 0.01462567 0.0043036938000000002 -0.0015308438000000001 0.011745096999999999 0.0031015575000000002 -0.0096792392000000001 0.016888263000000001 -0.011419266000000001 -0.013979623 0.016033770999999999 -0.022431530000000002 -0.014697636 0.0092188138999999992 -0.0329751 -0.016046843000000002 0.024052264 -0.044323268999999998 -0.016736375000000001 -0.00028550392 -0.046292666000000003 -0.015515575 -0.028684017999999999 -0.049063768000000001 -0.064251028000000002 -0.087339759000000003 -0.10720792 -0.063112684000000002 -0.099081874 -0.1734"
@@ -28378,404 +28445,404 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "01 -0.018320439000000001 -0.051052205000000003 -0.0072856917999999998 -0.017945645 -0.054551888 -0.0067816917000000001 -0.018867372 -0.051582612 -0.015922505 -0.019217847 -0.048140071 -0.025063321 -0.019568321999999999 -0.044697527000000001 -0.026275314000000001 -0.018695232999999999 -0.047552510999999999 -0.017056141 -0.012226460999999999 -0.047721132999999999 -0.0079506057999999998 0.018094661000000001 -0.051243025999999997 -0.0074872094999999996 0.016310813 -0.048447008999999999 -0.016276689 0.015939834 -0.044979735999999999 -0.025066171000000002 0.015569331 -0.041512471000000002 -0.026161678000000001 0.017305971999999999 -0.044199242999999999 -0.017313757999999999 0.0091563482000000009 -0.048462979000000003 -0.0080374096999999995 0.0095464009999999995 -0.051983446000000003 -0.0075604683000000004 0.0081936140000000001 -0.049100783000000002 -0.016506532000000001 0.0078274030000000001 -0.045636206999999998 -0.025452595000000001 0.0074611926000000004 -0.042171627000000003 -0.026590112999999999 0.0087658185999"
 		+ "999992 -0.044942520999999999 -0.015789323000000001 0.0071517252000000003 -0.038685909999999997 -0.0074282028000000003 0.0074969544000000003 -0.042071596000000003 -0.0070305159000000001 0.0045143389000000004 -0.040102534000000002 -0.015147371 0.0041877054999999996 -0.036757818999999997 -0.023264222000000001 0.0038610720000000001 -0.033413112000000002 -0.024150445999999999 0.0068069719999999997 -0.035300232000000001 -0.016293921999999999 0.0017348551 -0.042832601999999997 -0.0076460019000000002 0.0021067881000000001 -0.046287096999999999 -0.0072222333000000003 -0.00049197441000000005 -0.043947874999999997 -0.015597107000000001 -0.00084292655999999996 -0.040540545999999997 -0.023971981999999999 -0.0011943555 -0.037133223999999999 -0.024941847 0.0013629221 -0.039378099"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18" 
 		"rotatePivot" " -type \"double3\" 0.17235457994378825 7.00410564841728256 -0.022189087295541698"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18" 
 		"scalePivot" " -type \"double3\" 0.17235457994378825 7.00410564841728256 -0.022189087295541698"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts" " -s 156"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[0]" " -type \"float3\" -0.0013094884000000001 0.042346123999999999 0.0022577345000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[1]" " -type \"float3\" 0.0018480304 0.042238357999999997 0.0051057487999999996"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[2]" " -type \"float3\" -0.0028315460999999999 0.044401292000000002 0.0015973747"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[3]" " -type \"float3\" 0.0028143133999999998 0.044293526999999999 0.0053394734999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[4]" " -type \"float3\" 0.012828521000000001 0.020222308000000001 -0.015066072"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[5]" " -type \"float3\" 0.014223850999999999 0.018407466000000001 -0.0016130209"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[6]" " -type \"float3\" 0.013006685 0.017143847 -0.011713952"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[7]" " -type \"float3\" 0.014267793000000001 0.015363336999999999 -0.0023607164999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[8]" " -type \"float3\" 0.019394193000000001 0.025294902000000001 -0.021400638"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[9]" " -type \"float3\" 0.025387749000000001 0.022246482000000001 -0.0053557754000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[10]" " -type \"float3\" 0.024369437000000001 0.019300105000000001 -0.0056817978999999996"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[11]" " -type \"float3\" 0.018843929999999998 0.022225978 -0.021075606"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[12]" " -type \"float3\" 0.025551247999999999 0.032743577000000003 -0.030429095"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[13]" " -type \"float3\" 0.033266484999999998 0.029325128999999998 -0.012255847"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[14]" " -type \"float3\" 0.031168330000000001 0.027008178000000001 -0.012025744"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[15]" " -type \"float3\" 0.024234708000000001 0.030222537000000001 -0.029111899"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[16]" " -type \"float3\" 0.030098017000000001 0.012029292 -0.035256013000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[17]" " -type \"float3\" 0.036964215000000002 0.0083352345999999997 -0.016592606999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[18]" " -type \"float3\" 0.034119378999999998 0.0073066972999999997 -0.015773131999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[19]" " -type \"float3\" 0.028210051 0.010750892 -0.033105641999999998"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[20]" " -type \"float3\" 0.030028697 -0.014689801000000001 -0.041908941999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[21]" " -type \"float3\" 0.034596696000000003 -0.018516896000000001 -0.022197946999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[22]" " -type \"float3\" 0.031544674000000002 -0.018773435000000002 -0.021423131000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[23]" " -type \"float3\" 0.027765307999999999 -0.015282987 -0.039481446000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[24]" " -type \"float3\" 0.029985968000000002 -0.031075357000000001 -0.048496086000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[25]" " -type \"float3\" 0.035220262000000002 -0.033936854000000002 -0.028178379"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[26]" " -type \"float3\" 0.032178714999999997 -0.034262533999999997 -0.027254961000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[27]" " -type \"float3\" 0.027747527000000001 -0.031700487999999999 -0.045652926000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[28]" " -type \"float3\" 0.032656070000000002 -0.047271129000000002 -0.056979373"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[29]" " -type \"float3\" 0.042431422000000003 -0.049749728 -0.040909264000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[30]" " -type \"float3\" 0.039489217 -0.050155516999999997 -0.039903453999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[31]" " -type \"float3\" 0.030671578000000001 -0.047927257000000001 -0.054641780000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[32]" " -type \"float3\" 0.032477292999999997 -0.067739843999999994 -0.066356570000000004"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[33]" " -type \"float3\" 0.048220328999999999 -0.068395495000000001 -0.053379468999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[34]" " -type \"float3\" 0.045731596999999999 -0.068865179999999998 -0.051533258999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[35]" " -type \"float3\" 0.031297795000000003 -0.068308233999999995 -0.063508785999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[36]" " -type \"float3\" 0.12432319 -0.091565013000000001 -0.071338213999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[37]" " -type \"float3\" 0.14015612 -0.090953230999999995 -0.062573119999999996"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[38]" " -type \"float3\" 0.13766735999999999 -0.091422914999999993 -0.060726881000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[39]" " -type \"float3\" 0.12314373000000001 -0.092132449000000005 -0.068490453000000007"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[40]" " -type \"float3\" 0.031164717000000002 0.0090285557999999991 -0.024439387"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[41]" " -type \"float3\" 0.027701512000000001 0.028615596 -0.020568824999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[42]" " -type \"float3\" 0.021606686999999999 0.020763040999999999 -0.01337871"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[43]" " -type \"float3\" 0.013637239000000001 0.016254068999999999 -0.0070373266999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[44]" " -type \"float3\" 0.00026927114 0.042292241000000001 0.0036817490999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[45]" " -type \"float3\" -8.6165019000000001e-06 0.044347408999999997 0.0034684240999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[46]" " -type \"float3\" 0.01352619 0.019314886999999999 -0.0083395541000000004"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[47]" " -type \"float3\" 0.022390964999999999 0.023770929999999999 -0.013378203"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[48]" " -type \"float3\" 0.029408868000000001 0.031034591 -0.021342479000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[49]" " -type \"float3\" 0.033531114000000001 0.010182502 -0.025924309999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[50]" " -type \"float3\" 0.032312695000000002 -0.016603349 -0.032053441000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[51]" " -type \"float3\" 0.032603110999999997 -0.032505866000000001 -0.038337238000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[52]" " -type \"float3\" 0.037543743999999997 -0.048510429000000001 -0.048944323999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[53]" " -type \"float3\" 0.040348812999999997 -0.068067430999999998 -0.059868019000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[54]" " -type \"float3\" 0.13223964999999999 -0.091258882999999999 -0.066955656000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[55]" " -type \"float3\" 0.13040555000000001 -0.091778158999999998 -0.064608662999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[56]" " -type \"float3\" 0.038514696000000001 -0.068586706999999997 -0.057521022999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[57]" " -type \"float3\" 0.035080398999999998 -0.049041148 -0.047272614999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[58]" " -type \"float3\" 0.029963125 -0.032981272999999998 -0.036453939999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[59]" " -type \"float3\" 0.029654990999999999 -0.017028688 -0.030452289"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[60]" " -type \"float3\" 0.039413795000000001 -0.061548587000000002 -0.056226778999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[61]" " -type \"float3\" 0.032536878999999998 -0.060916777999999998 -0.063230834999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[62]" " -type \"float3\" 0.031089060000000002 -0.061514254999999997 -0.060553122000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[63]" " -type \"float3\" 0.037369929000000003 -0.062071676999999999 -0.054104886999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[64]" " -type \"float3\" 0.043650806 -0.062628627000000006 -0.047656654999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[65]" " -type \"float3\" 0.046290695999999999 -0.062179919 -0.049222733999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[66]" " -type \"float3\" 0.038478769000000003 -0.055029268999999999 -0.052585550000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[67]" " -type \"float3\" 0.032596479999999997 -0.054094191999999999 -0.060105097000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[68]" " -type \"float3\" 0.030880320999999999 -0.054721233000000001 -0.057597447000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[69]" " -type \"float3\" 0.036225170000000001 -0.055556174 -0.050688746999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[70]" " -type \"float3\" 0.041570015000000002 -0.056392070000000002 -0.043780054999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[71]" " -type \"float3\" 0.044361062 -0.055964824000000003 -0.045065999000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[72]" " -type \"float3\" 0.10164142 -0.083528399000000003 -0.064598507999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[73]" " -type \"float3\" 0.093739942000000007 -0.083623290000000003 -0.069683060000000005"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[74]" " -type \"float3\" 0.092560470000000006 -0.084191203000000006 -0.066835299000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[75]" " -type \"float3\" 0.099807314999999994 -0.084047675000000002 -0.062251518999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[76]" " -type \"float3\" 0.10705416 -0.083904146999999998 -0.057667731999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[77]" " -type \"float3\" 0.10954290999999999 -0.083433986000000002 -0.059513956"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[78]" " -type \"float3\" 0.068033687999999995 -0.075798392000000006 -0.062225170000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[79]" " -type \"float3\" 0.060147184999999999 -0.075681567000000005 -0.068011716"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[80]" " -type \"float3\" 0.05896771 -0.076249479999999994 -0.065163947999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[81]" " -type \"float3\" 0.066199577999999995 -0.076317191000000006 -0.059878173999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[82]" " -type \"float3\" 0.073431440000000001 -0.076384902000000005 -0.054592400999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[83]" " -type \"float3\" 0.075920187 -0.075914740999999994 -0.056438617000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[84]" " -type \"float3\" 0.035896867999999998 -0.043175574000000001 -0.045408625000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[85]" " -type \"float3\" 0.031766034999999998 -0.041872855 -0.054151616999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[86]" " -type \"float3\" 0.029696897 -0.042518492999999997 -0.051645495"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[87]" " -type \"float3\" 0.033374645000000001 -0.043688174000000003 -0.043666400000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[88]" " -type \"float3\" 0.037052386 -0.044857856000000002 -0.035687290000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[89]" " -type \"float3\" 0.040027699999999999 -0.044478770000000001 -0.036665640999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[90]" " -type \"float3\" 0.034249991 -0.037840720000000001 -0.041872930000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[91]" " -type \"float3\" 0.030876002999999999 -0.036473628000000001 -0.051323853000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[92]" " -type \"float3\" 0.028722212 -0.037109252000000002 -0.048649209999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[93]" " -type \"float3\" 0.031668883000000002 -0.038334724000000001 -0.040060169999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[94]" " -type \"float3\" 0.034615542999999999 -0.039560194999999999 -0.031471126000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[95]" " -type \"float3\" 0.037623979000000002 -0.039207812000000002 -0.032422006000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[96]" " -type \"float3\" 0.032506305999999999 -0.027204869 -0.036242634000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[97]" " -type \"float3\" 0.030000209999999999 -0.025613186999999999 -0.046300373999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[98]" " -type \"float3\" 0.027753449999999999 -0.026227830000000001 -0.043595765000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[99]" " -type \"float3\" 0.029860411 -0.027664062999999999 -0.034453391999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[100]" " -type \"float3\" 0.031967361 -0.029099819999999998 -0.025311015999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[101]" " -type \"float3\" 0.035012401999999998 -0.028796552 -0.026184901999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[102]" " -type \"float3\" 0.032409500000000001 -0.021904347000000001 -0.034148045000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[103]" " -type \"float3\" 0.030014454999999999 -0.020151492 -0.044104654"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[104]" " -type \"float3\" 0.027759376999999998 -0.020755646999999999 -0.041538611000000003"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[105]" " -type \"float3\" 0.029757701000000001 -0.022346376000000001 -0.032452844000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[106]" " -type \"float3\" 0.031756016999999997 -0.023936626999999999 -0.02336707"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[107]" " -type \"float3\" 0.034804553000000002 -0.023656724000000001 -0.024191424"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[108]" " -type \"float3\" 0.032718834000000002 -0.0076745724999999999 -0.030010394999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[109]" " -type \"float3\" 0.030051805000000001 -0.0057834363999999996 -0.039691307000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[110]" " -type \"float3\" 0.027913552000000001 -0.0066055035999999998 -0.037356174999999998"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[111]" " -type \"float3\" 0.030158237000000001 -0.0083426218 -0.028447986000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[112]" " -type \"float3\" 0.032402907000000002 -0.010080215999999999 -0.019539787999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[113]" " -type \"float3\" 0.035385861999999997 -0.0095661860000000008 -0.020329489999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[114]" " -type \"float3\" 0.033124967999999998 0.0012537264000000001 -0.027967355999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[115]" " -type \"float3\" 0.030074909 0.0031229281000000001 -0.037473656000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[116]" " -type \"float3\" 0.028061803 0.0020729326999999998 -0.035230905"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[117]" " -type \"float3\" 0.030661475000000001 0.00034296745 -0.026443689999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[118]" " -type \"float3\" 0.033261145999999998 -0.0013869977999999999 -0.017656459999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[119]" " -type \"float3\" 0.036175041999999998 -0.00061547523000000004 -0.018461056"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[120]" " -type \"float3\" 0.032157030000000003 0.01713288 -0.02439703"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[121]" " -type \"float3\" 0.028582428 0.018934370999999998 -0.033647037999999997"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[122]" " -type \"float3\" 0.02688494 0.017241599 -0.031774393999999997"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[123]" " -type \"float3\" 0.03001032 0.015557886999999999 -0.023149200000000002"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[124]" " -type \"float3\" 0.033135700999999997 0.013873698 -0.014523998"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[125]" " -type \"float3\" 0.035731635999999997 0.015331866 -0.015147030000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[126]" " -type \"float3\" 0.030782949 0.024083734999999998 -0.022869751000000001"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[127]" " -type \"float3\" 0.027066837999999999 0.025838973000000001 -0.032038062999999999"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[128]" " -type \"float3\" 0.025559828 0.023731829999999999 -0.030443147"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[129]" " -type \"float3\" 0.02885592 0.022086265000000001 -0.02185902"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[130]" " -type \"float3\" 0.032152008000000003 0.020441175999999998 -0.013274878"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18" 
 		"pnts[131]" " -type \"float3\" -9.3132257000000002e-10 0 0"
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface19" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface19" 
 		"rotatePivot" " -type \"double3\" 0.17235457994378825 7.00410564841728256 -0.022189087295541698"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface19" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface19" 
 		"scalePivot" " -type \"double3\" 0.17235457994378825 7.00410564841728256 -0.022189087295541698"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface19|jackieHair_latest:polySurfaceShape19" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface19|jackieHair_latest:polySurfaceShape19" 
 		"pt[0:143]" (" -s 144 -type \"float3\" -0.0067228571999999997 0.043128613000000003 -0.0024878830000000002 -0.0060761067999999998 0.043020371000000002 0.0025241077000000001 -0.0046826126000000003 0.045196656000000002 -0.0024629980000000001 -0.0036498778 0.044955852999999997 0.0030978023999999999 -0.014760700999999999 0.047673825000000003 -0.015066072 -0.016156038000000001 0.045858029000000002 -0.0016130209 -0.016285201999999999 0.044594887999999999 -0.014367059 -0.017546332000000001 0.042814378 -0.0023607164999999999 -0.019394185000000001 0.046161775000000002 -0.021400659999999998 -0.025387738 0.043113354999999999 -0.0053557604999999999 -0.024369430000000001 0.040166977999999999 -0.0056817978999999996 -0.018843938000000001 0.043092851000000001 -0.021075613999999999 -0.025551240999999999 0.032743577000000003 -0.030429095 -0.033266469999999999 0.029325128999999998 -0.012255847 -0.031168316000000001 0.027008178000000001 -0.012025729000000001 -0.024234720000000001 0.030222537000000001 -0.029111892 -0.016494348999999998 0.01202929"
 		+ "2 -0.035256013000000003 -0.023360558 0.0083352345999999997 -0.016592622000000001 -0.02051571 0.0073066972999999997 -0.015773103 -0.01460639 0.010750892 -0.033105649000000001 -0.030721678999999998 -0.012037156 -0.042671955999999997 -0.033944494999999998 -0.015864250999999999 -0.022687450000000001 -0.030849606000000002 -0.016121265999999999 -0.022196382000000001 -0.028301354000000001 -0.012630341999999999 -0.040468305000000003 -0.037142027000000001 -0.031075357000000001 -0.048209291000000001 -0.042376324999999999 -0.033936854000000002 -0.028799042 -0.039334784999999997 -0.034262533999999997 -0.027916870999999999 -0.034903604999999997 -0.031700487999999999 -0.045493132999999998 -0.032656070000000002 -0.047271129000000002 -0.056979395000000002 -0.042431414000000001 -0.049749728 -0.040909264000000001 -0.039489217 -0.050155516999999997 -0.039903462000000001 -0.030671578000000001 -0.047927257000000001 -0.054641782999999999 -0.032477275 -0.067739843999999994 -0.066356554999999998 -0.048220328999999999 -0.068395971999"
 		+ "999999 -0.053379476000000002 -0.045731558999999998 -0.068865179999999998 -0.051533273999999997 -0.031297810000000002 -0.068308233999999995 -0.063508793999999993 -0.16133183000000001 -0.091565013000000001 -0.071322023999999998 -0.17716481000000001 -0.090953230999999995 -0.062556899999999999 -0.17467603000000001 -0.091422914999999993 -0.060710683000000001 -0.16015241 -0.092132449000000005 -0.068474278 -0.037119195000000001 -0.032981749999999997 -0.036705002 -0.035080398999999998 -0.049041148 -0.047272623 -0.038514681000000002 -0.068586706999999997 -0.057521037999999997 -0.16741422 -0.091778158999999998 -0.064592480999999993 -0.16924831000000001 -0.091258882999999999 -0.066939466000000003 -0.040348805000000001 -0.068067907999999996 -0.059868022999999999 -0.037543743999999997 -0.048510429000000001 -0.048944320999999999 -0.039759174000000001 -0.032505866000000001 -0.038504167999999998 -0.032333091000000001 -0.013950704 -0.032679699 -0.019927461 0.010182502 -0.025924317999999998 -0.029408857 0.031034591 -0.02134246"
@@ -28786,37 +28853,37 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "88999999999 -0.031939520999999998 -0.0083116274000000004 -0.020055294000000001 -0.034951068000000002 -0.0077975965000000001 -0.020655841000000001 -0.030782937999999999 0.024083734999999998 -0.022869751000000001 -0.027066827000000002 0.025838973000000001 -0.032038062999999999 -0.025559828 0.023732306000000002 -0.030443139000000001 -0.028855915999999999 0.022086741 -0.021859005000000001 -0.032152000999999999 0.020441175999999998 -0.013274863 -0.034499048999999997 0.022328497999999999 -0.013701438999999999 -0.032157025999999998 0.01713288 -0.02439703 -0.028582413000000001 0.018933894 -0.033647037999999997 -0.026884932 0.017241122000000001 -0.031774393999999997 -0.030010301999999999 0.015557886999999999 -0.023149191999999999 -0.033135682 0.013873698 -0.014523983000000001 -0.035731629000000001 0.015331866 -0.015147030000000001 -0.024730258000000001 0.040103081999999998 -0.016032964 -0.021446534 0.041689042000000003 -0.024410135999999999 -0.020640865000000001 0.038802746999999999 -0.023754381000000001 -0.0236382930"
 		+ "00000001 0.037291650000000003 -0.015775411999999999 -0.026635724999999999 0.035781029999999998 -0.0077964514000000004 -0.028013982 0.038517121000000001 -0.0076557845000000003 -0.027069560999999999 0.035568836999999999 -0.01868771 -0.023498885000000001 0.037216309000000003 -0.027419618999999999 -0.022437789 0.034512643000000003 -0.026433133000000001 -0.025669910000000001 0.032953862 -0.018172122999999998 -0.028902023999999998 0.031394604999999999 -0.0099111049999999999 -0.030640230000000001 0.033921365000000002 -0.0099558233999999992"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface20" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface20" 
 		"rotatePivot" " -type \"double3\" 0.21898594246626954 6.96805601481125247 -0.036426523708013289"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface20" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface20" 
 		"scalePivot" " -type \"double3\" 0.21898594246626954 6.96805601481125247 -0.036426523708013289"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface20|jackieHair_latest:polySurfaceShape20" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface20|jackieHair_latest:polySurfaceShape20" 
 		"pt[0:59]" (" -s 60 -type \"float3\" 0.020842906000000001 0.043911103 0.0042839050000000002 0.023649706999999999 0.044558647999999999 -0.0055505633000000002 0.0033416571000000001 0.047889356000000001 0.0045012385 0.0045135701000000002 0.048302297000000001 0.00090807675999999996 0.0028060898000000002 0.046416882 0.0043119192000000001 0.0039780064999999998 0.046829823 0.00071875751000000001 0.019560203000000002 0.041600827 0.0037657171000000001 0.022366960000000002 0.042248371999999999 -0.0060687661000000002 0.027499776 0.031112315000000001 0.0038203597 0.030306533 0.031759385000000001 -0.0060141385000000002 0.032772905999999997 0.032532815 -0.0052592604999999997 0.029966074999999998 0.031885746999999999 0.0045751929000000004 0.029784214 0.015456321 0.0035866201 0.033979877999999998 0.015222671 -0.0057598203000000002 0.036341757000000002 0.015990378 -0.0047187208999999999 0.032146017999999998 0.016223551999999999 0.0046277046000000001 0.029706086999999999 -0.010103581 0.0022325814000000001 0.036816195000000003 -0.008185742399"
 		+ "9999995 -0.0048937201000000003 0.038749486 -0.0084675532000000001 -0.0030406266 0.031639385999999999 -0.010385869000000001 0.004085511 0.011953034 -0.040689345000000002 0.065122172000000006 0.019623324000000001 -0.041696902000000001 0.058401599999999998 0.021395049999999999 -0.041732665000000002 0.060429007 0.013724804 -0.040725108000000003 0.06714958 0.028037183 -0.0057677007000000004 0.062060221999999998 0.035012119000000001 0.0017396235 0.061988904999999997 0.034686673000000001 0.0020667338000000001 0.064641878 0.02771179 -0.0054405903999999996 0.064713209999999993 0.029848501 0.015205028000000001 0.060081631000000003 0.039006032000000003 0.015051485999999999 0.056543573999999999 0.038109913000000002 0.014507414999999999 0.054226234999999998 0.02895236 0.014660955999999999 0.057764292000000002 0.031406327999999997 -0.026246426999999999 0.0041332095999999999 0.038809261999999997 -0.025857804000000002 -0.0027809589999999999 0.036960430000000002 -0.02570474 -0.0047251283999999996 0.029557481 -0.026092885 0.00"
 		+ "21890401999999998 0.031884901 0.0025092386999999998 0.0043482631000000002 0.037582681 0.0033851885000000001 -0.0038538575000000002 0.035441693000000003 0.0031582139999999999 -0.0053134263000000001 0.029743951000000001 0.002282741 0.0028887092999999998 0.035194438000000001 -0.0094264727000000006 0.00052243470999999999 0.034733787000000002 0.0029469752000000002 0.00024721025999999998 0.034243877999999998 0.016107203 -4.5493245000000003e-05 0.031369491999999999 0.032209518999999999 -0.00034204124999999999 0.022246305000000001 0.044234875999999999 -0.00063334405 0.0039276140999999999 0.048095826000000001 0.0027046650999999998 0.0033920482 0.046623352999999999 0.0025153309 0.020963579 0.041924599999999999 -0.0011515169999999999 0.028903156999999999 0.031435613000000001 -0.0010968893999999999 0.031882048000000003 0.015339495999999999 -0.0010866076000000001 0.032592822 0.0027204775 -0.0012123584999999999 0.033261139000000002 -0.0091446619 -0.0013305693999999999 0.033258955999999999 -0.025898812 -0.001268044100000000"
 		+ "1 0.015788178999999999 -0.041192884999999999 0.061761886000000002 0.033531132999999998 0.014584186000000001 0.055995270999999999 0.031524651000000001 -0.0020140385999999999 0.062024563999999997 0.031199232 -0.0016864515 0.064677535999999994 0.034427270000000003 0.015128734 0.058312610000000001 0.017559926999999999 -0.041228648 0.063789278000000005 0.035107803 -0.026051877000000001 0.00067614018999999999"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface21" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface21" 
 		"rotatePivot" " -type \"double3\" 0.21898594246626954 6.96805601481125247 -0.036426523708013289"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface21" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface21" 
 		"scalePivot" " -type \"double3\" 0.21898594246626954 6.96805601481125247 -0.036426523708013289"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface21|jackieHair_latest:polySurfaceShape21" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface21|jackieHair_latest:polySurfaceShape21" 
 		"pt[0:59]" (" -s 60 -type \"float3\" -0.020842962 0.043911103 0.0042838900999999999 -0.023649733999999999 0.044558647999999999 -0.0055505633000000002 -0.0033416854999999998 0.047297124000000003 0.0048379451000000002 -0.0045135729000000003 0.047709587999999997 0.00060507655000000004 -0.0028061144999999999 0.045824174000000002 0.0046149045000000001 -0.0039780279999999998 0.046237115000000002 0.00038203597 -0.019560180999999999 0.041600827 0.0037657319999999999 -0.022366997 0.042248371999999999 -0.0060687511999999999 -0.027499798999999998 0.031112315000000001 0.0038203597 -0.030306588999999998 0.031759385000000001 -0.0060140938000000001 -0.032772946999999997 0.032532815 -0.0052592157999999996 -0.029966097000000001 0.031885746999999999 0.0045752227000000001 -0.029784209999999998 0.015456321 0.0035866945999999999 -0.033979911000000002 0.015222671 -0.0057598203000000002 -0.036341786000000001 0.015990378 -0.0047186464000000001 -0.032146014000000001 0.016223551999999999 0.0046277046000000001 -0.029706132 -0.010103581 0.002232581400"
 		+ "0000001 -0.036816201999999999 -0.0081857423999999995 -0.0033258200000000002 -0.038749546000000003 -0.0084675532000000001 -0.00096324086000000001 -0.031639415999999997 -0.010385392 0.004085511 -0.029421857999999999 -0.040689345000000002 0.084968239000000001 -0.037092133999999999 -0.041696902000000001 0.13831562 -0.038863889999999998 -0.041732665000000002 0.14034331 -0.031193579999999999 -0.040725108000000003 0.086995631000000004 -0.030445806999999998 0.021761538 0.12603818999999999 -0.037420776000000003 0.029268862999999999 0.12596686000000001 -0.037095252000000002 0.02959645 0.12861985000000001 -0.030120431999999999 0.022089126000000001 0.12869116999999999 -0.032147440999999999 0.041033391000000002 0.14307307 -0.031322714000000001 0.04044259 0.14073226999999999 -0.040601580999999998 0.040358189000000003 0.13745345 -0.041426271000000001 0.040949468000000003 0.13979453999999999 -0.031422365000000001 -0.025155423 0.023837298 -0.029567741000000002 -0.024993299 0.021899298000000001 -0.036950535999999999 -0.0245002"
 		+ "49000000002 0.031029016 -0.038805209 -0.024661896999999999 0.032967165 -0.031855612999999998 0.00097048515000000004 0.0043169259999999996 -0.029739462000000001 0.00080454582000000002 0.0028104334999999999 -0.035605758000000001 0.0018044732999999999 -0.0052633137000000002 -0.037721992000000003 0.0019704127000000002 -0.0037568212000000001 -0.035194479000000001 -0.0094269495000000002 0.0011557937 -0.035113788999999999 -0.024908897999999999 0.036431506000000002 -0.035028732999999999 -0.041228648 0.14370352 -0.036786861999999997 0.040991429000000003 0.14143380999999999 -0.033607843999999998 0.025842787999999998 0.12865551 -0.033933288999999998 0.025515201000000001 0.12600252000000001 -0.035962149999999998 0.040400151000000002 0.13909286000000001 -0.033256992999999999 -0.041192884999999999 0.14167599 -0.033259130999999997 -0.024746773999999999 0.034493416999999998 -0.033261160999999997 -0.0091446619 -0.00092592835000000003 -0.032672606 0.0013042711999999999 -0.0012264400999999999 -0.031882063000000002 0.01533949599"
 		+ "9999999 -0.0010865629 -0.028903194 0.031435613000000001 -0.0010968745 -0.020963586999999999 0.041924599999999999 -0.0011515021 -0.0033920718999999998 0.046030644000000003 0.0024984777000000001 -0.0039276284999999996 0.047503594000000003 0.0027215183000000001 -0.022246346 0.044234875999999999 -0.00063332915000000002 -0.031369517999999999 0.032209518999999999 -0.00034199654999999998 -0.034243897000000002 0.016107203 -4.5463443e-05 -0.034788802000000001 0.0014702105 0.00028005241999999998"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface38" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface38" 
 		"rotatePivot" " -type \"double3\" 0.11945060546040001 7.00410564841728256 0.030384995993433084"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface38" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface38" 
 		"scalePivot" " -type \"double3\" 0.11945060546040001 7.00410564841728256 0.030384995993433084"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface38|jackieHair_latest:polySurfaceShape38" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface38|jackieHair_latest:polySurfaceShape38" 
 		"pt[0:113]" (" -s 114 -type \"float3\" -0.033100083000000002 0.041922214999999999 0.025842875000000001 -0.038644575 0.041421536000000002 0.044846997 -0.039158821000000003 0.044802311999999997 0.026131987999999998 -0.044703327000000001 0.044301633 0.045136109000000001 0.0093815466000000004 0.025036455999999999 0.039790586000000003 0.0033092983000000001 0.024402263 0.085141122 0.013457345000000001 0.022013785000000001 0.039135574999999999 0.0073849577 0.021379115000000001 0.084486126999999994 0.037206507999999999 0.022406222 0.047314465 0.010678135 0.021639467999999999 0.10875642000000001 0.0094759836999999993 0.018526674999999999 0.10761684000000001 0.036004346 0.019293429000000001 0.046174883999999999 0.096123426999999997 0.015757205 0.049477607 0.066063977999999995 0.015120626999999999 0.12871878 0.058637712000000002 0.011792781 0.12498179 0.088410697999999996 0.012397887 0.047843656999999998 0.14235264 -0.00041472679000000001 0.063411682999999996 0.11054814 -0.0012115216999999999 0.15317397999999999 0.097941674000000006 -0"
 		+ ".0033735013999999998 0.14820848 0.12930182000000001 -0.0026224828 0.061464392 0.16732522999999999 -0.026051877000000001 0.041763759999999997 0.13566639 -0.026824352999999999 0.13615637 0.12183547 -0.027697441999999999 0.13062014999999999 0.153023 -0.026974080000000001 0.039654455999999998 0.23709522 -0.027418016 0.0091641246999999999 0.20585716000000001 -0.028155683000000001 0.10986263 0.19201271 -0.029028770999999998 0.10372348000000001 0.2227874 -0.028339264999999999 0.0068040714000000002 0.27230269000000001 -0.019060014 -0.014541185999999999 0.29624474000000001 -0.019886849000000002 -0.016711502999999999 0.29625726000000002 -0.020760415000000001 -0.013359919 0.27311354999999998 -0.019981740000000001 -0.011351116 0.26951747999999998 -0.043753501 0.026786524999999999 0.29356136999999999 -0.044605131999999999 0.0056283100999999997 0.29357265999999999 -0.045478220999999999 0.0090436562999999994 0.27032718 -0.044675703999999997 0.026945785 0.15149581000000001 -0.026438115000000002 0.088960066000000004 0.2214762"
 		+ "0000000001 -0.027786610999999999 0.059513360000000001 0.28427374 -0.019473431999999999 -0.015626340999999998 0.28153943999999997 -0.044179317000000003 0.0099601894999999992 0.28194991000000003 -0.045076723999999999 0.012055702999999999 0.28468539999999998 -0.020370839000000002 -0.012387954 0.20740005 -0.028684017999999999 0.055263773000000002 0.13742924000000001 -0.027335523 0.085137307999999995 0.11362174 -0.0029977536999999999 0.10483642999999999 0.073524214000000004 0.012095096 0.086412727999999994 0.022740173999999998 0.018910052 0.076895862999999995 0.010421153000000001 0.021696211999999999 0.061810836000000001 -0.035872324999999997 0.041671875999999997 0.035344928999999997 -0.041931073999999999 0.044551972000000002 0.035634040999999998 0.0063454228999999997 0.024719359 0.062465846999999998 0.023942328999999998 0.022022844999999999 0.078035459000000001 0.081093699000000005 0.015438678000000001 0.089098200000000002 0.12645039 -0.00081288582000000004 0.10829283000000001 0.28245084999999998 -0.035943862 -0."
@@ -28825,13 +28892,13 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		+ "0.0092343072999999994 0.13446805000000001 0.14798015 -0.017896531 0.090988292999999998 0.16383386999999999 -0.017506002 0.044563718000000002 0.14994879 -0.018856880999999999 0.042508393999999998 0.13432622 -0.019223092000000001 0.087287657000000005 0.11870368000000001 -0.019589780000000001 0.13206688999999999 0.13212645000000001 -0.018286584000000002 0.13741286 0.14398902999999999 -0.0093544703000000007 0.093451001000000006 0.159867 -0.0089601260000000005 0.047798133999999999 0.14687454999999999 -0.010739682 0.045362353000000001 0.13122322 -0.011110185 0.089437999000000004 0.11557191999999999 -0.011481641000000001 0.13351362999999999 0.12814286 -0.0097488146000000008 0.13907476999999999 0.12007771 0.0046039842999999999 0.093902700000000006 0.13568911 0.0049759173000000004 0.050775088000000003 0.12357646999999999 0.0023838305000000001 0.049700900999999999 0.10815386 0.0020328782999999998 0.091478377999999999 0.092764317999999998 0.0016819262000000001 0.13322568000000001 0.10448844 0.0042325282000000002 0.13701"
 		+ "008000000001 0.10104542 0.010021331 0.091080375000000005 0.11636597999999999 0.010366561 0.049706279999999999 0.10687391 0.0073906207000000003 0.047967880999999997 0.091722891000000001 0.0070639871999999999 0.088137925000000006 0.076571851999999996 0.0067373537000000004 0.12830796999999999 0.08572486 0.0096765775000000002 0.13245448000000001"
 		)
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface39" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface39" 
 		"rotatePivot" " -type \"double3\" 0.15786153382961737 6.98272856896993854 -0.075740564998374879"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface39" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface39" 
 		"scalePivot" " -type \"double3\" 0.15786153382961737 6.98272856896993854 -0.075740564998374879"
 		
-		2 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface39|jackieHair_latest:polySurfaceShape39" 
+		2 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface39|jackieHair_latest:polySurfaceShape39" 
 		"pt[0:113]" (" -s 114 -type \"float3\" 0.040323882999999998 0.015142085 0.017940952999999999 0.042479005 0.014235141 0.031746343000000003 0.046872344000000003 0.016903044999999998 0.020320371 0.049027488000000001 0.015996099999999999 0.03412573 -0.028605598999999999 0.024924399 0.064925179 -0.0043465196999999999 -0.032803412999999997 0.11828449000000001 -0.033419490000000003 0.022695185999999999 0.064174815999999996 -0.0091604218000000005 -0.035032625999999997 0.11753407 -0.084300137999999997 0.034463529 0.096056252999999994 -0.059447471000000002 -0.023382542999999999 0.16706085000000001 -0.059380139999999998 -0.026615021999999999 0.16261342000000001 -0.084232733000000004 0.031231524 0.091608836999999999 -0.141982 -0.014159082 0.11063800999999999 -0.1115572 -0.020412801000000001 0.18379883 -0.10580564000000001 -0.024934648 0.17467862000000001 -0.13591485 -0.018770096999999999 0.10360372 -0.20675644000000001 0.011374118000000001 0.11697865 -0.17334563 -0.014219163 0.19825424 -0.16227158999999999 -0.018526910000000001 0.187412"
 		+ "93000000001 -0.19407798000000001 -0.011902688 0.10904469 -0.22829099 0.022732379 0.098811254000000001 -0.19601531 0.016119123999999999 0.18537082999999999 -0.18331847000000001 0.012848975 0.17467861000000001 -0.21508171000000001 0.019433143 0.091451152999999993 -0.25036808999999999 -0.00097167258999999995 0.051034286999999998 -0.21833467000000001 -0.0076178289 0.13843584 -0.20563918 -0.010887979000000001 0.12749392000000001 -0.23715240000000001 -0.0043863035 0.043570504000000003 -0.31623869999999998 -0.025882599999999999 -0.064757623 -0.28245482 -0.032284614000000003 0.012762040000000001 -0.26975092000000001 -0.035556669999999999 0.0020917356000000002 -0.3026295 -0.028707860000000002 -0.081220723999999994 -0.34566531 -0.041828509 -0.14406383 -0.3117086 -0.048947210999999997 -0.053466905000000002 -0.29901277999999998 -0.052217360999999997 -0.064380139000000003 -0.33244970000000001 -0.045243140000000001 -0.15151576999999999 -0.21214970999999999 0.019367339000000001 0.14209107000000001 -0.18949087000000001 -0.01"
 		+ "0839817999999999 0.15761644 -0.12676960000000001 -0.017285702999999999 0.14721841999999999 -0.070295170000000004 -0.020998356999999999 0.13155854 -0.017641009999999999 0.015644670999999999 0.091604828999999999 0.047949914000000003 0.016449096 0.027223035999999999 0.041401449999999999 0.01468909 0.024843662999999998 -0.022454894999999999 0.013415458 0.090854451000000003 -0.070227802000000006 -0.024230835999999999 0.12711114000000001 -0.12086023 -0.021852371999999998 0.13914117000000001 -0.17817475999999999 -0.015214798999999999 0.14822882000000001 -0.19920009 0.016141058999999999 0.13306488 -0.22139576 -0.0076373791999999998 0.085532203000000001 -0.28619021 -0.032132026000000001 -0.039564490000000001 -0.31573122999999997 -0.048730250000000003 -0.10794796 -0.32868694999999998 -0.045387622000000002 -0.098765357999999998 -0.29915385999999999 -0.028788445999999999 -0.030553684000000001 -0.23435143 -0.0042947506999999998 0.094735055999999998 -0.30848277000000002 -0.033533449999999999 -0.065461091999999999 -0.325274"
@@ -28842,445 +28909,445 @@ createNode reference -n "Jackie_latest_jackieHair_latestRN";
 		)
 		2 "jackieHair_latest:PxrSurface4SG" "rman__surface" " -type \"float3\" 0 0 0"
 		
-		2 "jackieHair_latest:bangsDiffuse" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_DiffuseColor.png\""
+		2 "jackieHair_latest:bangsDiffuse" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_DiffuseColor.png\""
 		
 		2 "jackieHair_latest:bangsDiffuse" "colorSpace" " -type \"string\" \"sRGB\""
 		
-		2 "jackieHair_latest:bangsSpecular" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Specular.png\""
+		2 "jackieHair_latest:bangsSpecular" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Specular.png\""
 		
 		2 "jackieHair_latest:bangsSpecular" "colorSpace" " -type \"string\" \"sRGB\""
 		
-		2 "jackieHair_latest:bangsNormal" "filename" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Normal.png\""
+		2 "jackieHair_latest:bangsNormal" "filename" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Normal.png\""
 		
-		2 "jackieHair_latest:bangsBigone" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_RoughRefBump.png\""
+		2 "jackieHair_latest:bangsBigone" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_RoughRefBump.png\""
 		
 		2 "jackieHair_latest:bangsBigone" "colorSpace" " -type \"string\" \"sRGB\""
 		
-		2 "jackieHair_latest:file1" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_DiffuseColor.png\""
+		2 "jackieHair_latest:file1" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_DiffuseColor.png\""
 		
 		2 "jackieHair_latest:file1" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "jackieHair_latest:hairtop_diffuse" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_DiffuseColor.png\""
+		2 "jackieHair_latest:hairtop_diffuse" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_DiffuseColor.png\""
 		
 		2 "jackieHair_latest:hairtop_diffuse" "colorSpace" " -type \"string\" \"sRGB\""
 		
-		2 "jackieHair_latest:hairTop_specular" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_Specular.png\""
+		2 "jackieHair_latest:hairTop_specular" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_Specular.png\""
 		
 		2 "jackieHair_latest:hairTop_specular" "colorSpace" " -type \"string\" \"sRGB\""
 		
-		2 "jackieHair_latest:hairTop_bigone" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_RoughRefBump.png\""
+		2 "jackieHair_latest:hairTop_bigone" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_RoughRefBump.png\""
 		
 		2 "jackieHair_latest:hairTop_bigone" "colorSpace" " -type \"string\" \"sRGB\""
 		
-		2 "jackieHair_latest:hairTop_normal" "filename" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_Normal.png\""
+		2 "jackieHair_latest:hairTop_normal" "filename" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_Normal.png\""
 		
 		2 "jackieHair_latest:file3" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_Transparency_Fixed.png\""
 		
 		2 "jackieHair_latest:file3" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "jackieHair_latest:hairMid_diffuse" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_DiffuseColor.png\""
+		2 "jackieHair_latest:hairMid_diffuse" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_DiffuseColor.png\""
 		
 		2 "jackieHair_latest:hairMid_diffuse" "colorSpace" " -type \"string\" \"sRGB\""
 		
-		2 "jackieHair_latest:hairMid_specular" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_Specular.png\""
+		2 "jackieHair_latest:hairMid_specular" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_Specular.png\""
 		
 		2 "jackieHair_latest:hairMid_specular" "colorSpace" " -type \"string\" \"sRGB\""
 		
-		2 "jackieHair_latest:hairMid_bigone" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_RoughRefBump.png\""
+		2 "jackieHair_latest:hairMid_bigone" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_RoughRefBump.png\""
 		
 		2 "jackieHair_latest:hairMid_bigone" "colorSpace" " -type \"string\" \"sRGB\""
 		
-		2 "jackieHair_latest:file4" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_DiffuseColor.png\""
+		2 "jackieHair_latest:file4" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_DiffuseColor.png\""
 		
 		2 "jackieHair_latest:file4" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "jackieHair_latest:file5" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_Specular.png\""
+		2 "jackieHair_latest:file5" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_Specular.png\""
 		
 		2 "jackieHair_latest:file5" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "jackieHair_latest:file6" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_RoughRefBump.png\""
+		2 "jackieHair_latest:file6" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface1SG_RoughRefBump.png\""
 		
 		2 "jackieHair_latest:file6" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "jackieHair_latest:file7" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_Specular.png\""
+		2 "jackieHair_latest:file7" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_Specular.png\""
 		
 		2 "jackieHair_latest:file7" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "jackieHair_latest:file8" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_RoughRefBump.png\""
+		2 "jackieHair_latest:file8" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_RoughRefBump.png\""
 		
 		2 "jackieHair_latest:file8" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "jackieHair_latest:file10" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_DiffuseColor.png\""
+		2 "jackieHair_latest:file10" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_DiffuseColor.png\""
 		
 		2 "jackieHair_latest:file10" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "jackieHair_latest:file11" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_Specular.png\""
+		2 "jackieHair_latest:file11" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface3SG_Specular.png\""
 		
 		2 "jackieHair_latest:file11" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "jackieHair_latest:file12" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_RoughRefBump.png\""
+		2 "jackieHair_latest:file12" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface2SG_RoughRefBump.png\""
 		
 		2 "jackieHair_latest:file12" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "jackieHair_latest:file13" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_DiffuseColor.png\""
+		2 "jackieHair_latest:file13" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_DiffuseColor.png\""
 		
 		2 "jackieHair_latest:file13" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "jackieHair_latest:file14" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_RoughRefBump.png\""
+		2 "jackieHair_latest:file14" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_RoughRefBump.png\""
 		
 		2 "jackieHair_latest:file14" "colorSpace" " -type \"string\" \"sRGB\""
-		2 "jackieHair_latest:file15" "fileTextureName" " -type \"string\" \"C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Specular.png\""
+		2 "jackieHair_latest:file15" "fileTextureName" " -type \"string\" \"C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface4SG_Specular.png\""
 		
 		2 "jackieHair_latest:file15" "colorSpace" " -type \"string\" \"sRGB\""
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface39|jackieHair_latest:polySurfaceShape39.instObjGroups" 
-		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface38|jackieHair_latest:polySurfaceShape38.instObjGroups" 
-		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface21|jackieHair_latest:polySurfaceShape21.instObjGroups" 
-		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface20|jackieHair_latest:polySurfaceShape20.instObjGroups" 
-		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface19|jackieHair_latest:polySurfaceShape19.instObjGroups" 
-		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18.instObjGroups" 
-		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface17|jackieHair_latest:polySurfaceShape17.instObjGroups" 
-		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface16|jackieHair_latest:polySurfaceShape16.instObjGroups" 
-		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface14|jackieHair_latest:polySurfaceShape14.instObjGroups" 
-		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface46|jackieHair_latest:polySurfaceShape46.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface46|jackieHair_latest:polySurfaceShape46.instObjGroups" 
 		"jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface47|jackieHair_latest:polySurfaceShape47.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface47|jackieHair_latest:polySurfaceShape47.instObjGroups" 
 		"jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface13|jackieHair_latest:polySurfaceShape24.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface13|jackieHair_latest:polySurfaceShape24.instObjGroups" 
 		"jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface12|jackieHair_latest:polySurfaceShape23.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface12|jackieHair_latest:polySurfaceShape23.instObjGroups" 
 		"jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface11|jackieHair_latest:polySurfaceShape22.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface11|jackieHair_latest:polySurfaceShape22.instObjGroups" 
 		"jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface10|jackieHair_latest:polySurfaceShape21.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface10|jackieHair_latest:polySurfaceShape21.instObjGroups" 
 		"jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface9|jackieHair_latest:polySurfaceShape20.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface9|jackieHair_latest:polySurfaceShape20.instObjGroups" 
 		"jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface8|jackieHair_latest:polySurfaceShape19.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface8|jackieHair_latest:polySurfaceShape19.instObjGroups" 
 		"jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface6|jackieHair_latest:polySurfaceShape17.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface6|jackieHair_latest:polySurfaceShape17.instObjGroups" 
 		"jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface37|jackieHair_latest:polySurfaceShape37.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface36|jackieHair_latest:polySurfaceShape36.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface35|jackieHair_latest:polySurfaceShape35.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface34|jackieHair_latest:polySurfaceShape34.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface33|jackieHair_latest:polySurfaceShape33.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface32|jackieHair_latest:polySurfaceShape32.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface31|jackieHair_latest:polySurfaceShape31.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface29|jackieHair_latest:polySurfaceShape29.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface37|jackieHair_latest:polySurfaceShape37.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface36|jackieHair_latest:polySurfaceShape36.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface35|jackieHair_latest:polySurfaceShape35.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface34|jackieHair_latest:polySurfaceShape34.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface33|jackieHair_latest:polySurfaceShape33.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface32|jackieHair_latest:polySurfaceShape32.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface31|jackieHair_latest:polySurfaceShape31.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface29|jackieHair_latest:polySurfaceShape29.instObjGroups" 
-		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface45|jackieHair_latest:polySurfaceShape45.instObjGroups" 
-		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface44|jackieHair_latest:polySurfaceShape44.instObjGroups" 
-		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface43|jackieHair_latest:polySurfaceShape43.instObjGroups" 
-		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface42|jackieHair_latest:polySurfaceShape42.instObjGroups" 
-		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface41|jackieHair_latest:polySurfaceShape41.instObjGroups" 
-		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface40|jackieHair_latest:polySurfaceShape40.instObjGroups" 
-		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface7|jackieHair_latest:polySurfaceShape18.instObjGroups" 
-		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface4|jackieHair_latest:polySurfaceShape15.instObjGroups" 
-		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface3|jackieHair_latest:polySurfaceShape14.instObjGroups" 
-		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface2|jackieHair_latest:polySurfaceShape13.instObjGroups" 
-		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface1|jackieHair_latest:polySurfaceShape12.instObjGroups" 
-		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface39|jackieHair_latest:polySurfaceShape39.instObjGroups" 
-		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface38|jackieHair_latest:polySurfaceShape38.instObjGroups" 
-		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface21|jackieHair_latest:polySurfaceShape32.instObjGroups" 
-		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface20|jackieHair_latest:polySurfaceShape31.instObjGroups" 
-		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface19|jackieHair_latest:polySurfaceShape30.instObjGroups" 
-		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29.instObjGroups" 
-		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface17|jackieHair_latest:polySurfaceShape28.instObjGroups" 
-		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface16|jackieHair_latest:polySurfaceShape27.instObjGroups" 
-		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface14|jackieHair_latest:polySurfaceShape25.instObjGroups" 
-		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
 		3 "jackieHair_latest:bangs1.outColor" "jackieHair_latest:PxrSurface4SG.rman__surface" 
 		""
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface28|jackieHair_latest:polySurfaceShape39.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface28|jackieHair_latest:polySurfaceShape39.instObjGroups" 
 		"jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface27|jackieHair_latest:polySurfaceShape38.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface27|jackieHair_latest:polySurfaceShape38.instObjGroups" 
 		"jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface26|jackieHair_latest:polySurfaceShape37.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface26|jackieHair_latest:polySurfaceShape37.instObjGroups" 
 		"jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface25|jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface25|jackieHair_latest:polySurfaceShape36.instObjGroups" 
 		"jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface24|jackieHair_latest:polySurfaceShape35.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface24|jackieHair_latest:polySurfaceShape35.instObjGroups" 
 		"jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface23|jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface23|jackieHair_latest:polySurfaceShape34.instObjGroups" 
 		"jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface22|jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface22|jackieHair_latest:polySurfaceShape33.instObjGroups" 
 		"jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface45|jackieHair_latest:polySurfaceShape45.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface45|jackieHair_latest:polySurfaceShape45.instObjGroups" 
+		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface44|jackieHair_latest:polySurfaceShape44.instObjGroups" 
+		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface43|jackieHair_latest:polySurfaceShape43.instObjGroups" 
+		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface42|jackieHair_latest:polySurfaceShape42.instObjGroups" 
+		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface41|jackieHair_latest:polySurfaceShape41.instObjGroups" 
+		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface40|jackieHair_latest:polySurfaceShape40.instObjGroups" 
+		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface7|jackieHair_latest:polySurfaceShape18.instObjGroups" 
+		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface4|jackieHair_latest:polySurfaceShape15.instObjGroups" 
+		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface3|jackieHair_latest:polySurfaceShape14.instObjGroups" 
+		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface2|jackieHair_latest:polySurfaceShape13.instObjGroups" 
+		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface1|jackieHair_latest:polySurfaceShape12.instObjGroups" 
+		"jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface45|jackieHair_latest:polySurfaceShape45.instObjGroups" 
 		"jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface44|jackieHair_latest:polySurfaceShape44.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface44|jackieHair_latest:polySurfaceShape44.instObjGroups" 
 		"jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface43|jackieHair_latest:polySurfaceShape43.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface43|jackieHair_latest:polySurfaceShape43.instObjGroups" 
 		"jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface42|jackieHair_latest:polySurfaceShape42.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface42|jackieHair_latest:polySurfaceShape42.instObjGroups" 
 		"jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface41|jackieHair_latest:polySurfaceShape41.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface41|jackieHair_latest:polySurfaceShape41.instObjGroups" 
 		"jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface40|jackieHair_latest:polySurfaceShape40.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface40|jackieHair_latest:polySurfaceShape40.instObjGroups" 
 		"jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface7|jackieHair_latest:polySurfaceShape7.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface7|jackieHair_latest:polySurfaceShape7.instObjGroups" 
 		"jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface4|jackieHair_latest:polySurfaceShape4.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface4|jackieHair_latest:polySurfaceShape4.instObjGroups" 
 		"jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface3|jackieHair_latest:polySurfaceShape3.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface3|jackieHair_latest:polySurfaceShape3.instObjGroups" 
 		"jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface2|jackieHair_latest:polySurfaceShape2.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface2|jackieHair_latest:polySurfaceShape2.instObjGroups" 
 		"jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface1|jackieHair_latest:polySurfaceShape1.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface1|jackieHair_latest:polySurfaceShape1.instObjGroups" 
 		"jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface22|jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface39|jackieHair_latest:polySurfaceShape39.instObjGroups" 
+		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface38|jackieHair_latest:polySurfaceShape38.instObjGroups" 
+		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface21|jackieHair_latest:polySurfaceShape32.instObjGroups" 
+		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface20|jackieHair_latest:polySurfaceShape31.instObjGroups" 
+		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface19|jackieHair_latest:polySurfaceShape30.instObjGroups" 
+		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29.instObjGroups" 
+		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface17|jackieHair_latest:polySurfaceShape28.instObjGroups" 
+		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface16|jackieHair_latest:polySurfaceShape27.instObjGroups" 
+		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface14|jackieHair_latest:polySurfaceShape25.instObjGroups" 
+		"jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface37|jackieHair_latest:polySurfaceShape37.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface36|jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface35|jackieHair_latest:polySurfaceShape35.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface34|jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface33|jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface32|jackieHair_latest:polySurfaceShape32.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface31|jackieHair_latest:polySurfaceShape31.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface29|jackieHair_latest:polySurfaceShape29.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface37|jackieHair_latest:polySurfaceShape37.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface36|jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface35|jackieHair_latest:polySurfaceShape35.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface34|jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface33|jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface32|jackieHair_latest:polySurfaceShape32.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface31|jackieHair_latest:polySurfaceShape31.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface29|jackieHair_latest:polySurfaceShape29.instObjGroups" 
+		"jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface39|jackieHair_latest:polySurfaceShape39.instObjGroups" 
+		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface38|jackieHair_latest:polySurfaceShape38.instObjGroups" 
+		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface21|jackieHair_latest:polySurfaceShape21.instObjGroups" 
+		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface20|jackieHair_latest:polySurfaceShape20.instObjGroups" 
+		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface19|jackieHair_latest:polySurfaceShape19.instObjGroups" 
+		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18.instObjGroups" 
+		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface17|jackieHair_latest:polySurfaceShape17.instObjGroups" 
+		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface16|jackieHair_latest:polySurfaceShape16.instObjGroups" 
+		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface14|jackieHair_latest:polySurfaceShape14.instObjGroups" 
+		"jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface22|jackieHair_latest:polySurfaceShape33.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[1]" "jackieHair_latest:PxrSurface4SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface23|jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface23|jackieHair_latest:polySurfaceShape34.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[2]" "jackieHair_latest:PxrSurface4SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface24|jackieHair_latest:polySurfaceShape35.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface24|jackieHair_latest:polySurfaceShape35.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[3]" "jackieHair_latest:PxrSurface4SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface25|jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface25|jackieHair_latest:polySurfaceShape36.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[4]" "jackieHair_latest:PxrSurface4SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface26|jackieHair_latest:polySurfaceShape37.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface26|jackieHair_latest:polySurfaceShape37.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[5]" "jackieHair_latest:PxrSurface4SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface27|jackieHair_latest:polySurfaceShape38.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface27|jackieHair_latest:polySurfaceShape38.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[6]" "jackieHair_latest:PxrSurface4SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface28|jackieHair_latest:polySurfaceShape39.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangstop|jackieHair_latest:polySurface28|jackieHair_latest:polySurfaceShape39.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[7]" "jackieHair_latest:PxrSurface4SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface29|jackieHair_latest:polySurfaceShape29.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface29|jackieHair_latest:polySurfaceShape29.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[8]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface31|jackieHair_latest:polySurfaceShape31.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface31|jackieHair_latest:polySurfaceShape31.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[9]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface32|jackieHair_latest:polySurfaceShape32.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface32|jackieHair_latest:polySurfaceShape32.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[10]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface33|jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface33|jackieHair_latest:polySurfaceShape33.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[11]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface34|jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface34|jackieHair_latest:polySurfaceShape34.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[12]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface35|jackieHair_latest:polySurfaceShape35.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface35|jackieHair_latest:polySurfaceShape35.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[13]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface36|jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface36|jackieHair_latest:polySurfaceShape36.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[14]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface37|jackieHair_latest:polySurfaceShape37.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsbottom|jackieHair_latest:polySurface37|jackieHair_latest:polySurfaceShape37.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[15]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface29|jackieHair_latest:polySurfaceShape29.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface29|jackieHair_latest:polySurfaceShape29.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[16]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface31|jackieHair_latest:polySurfaceShape31.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface31|jackieHair_latest:polySurfaceShape31.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[17]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface32|jackieHair_latest:polySurfaceShape32.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface32|jackieHair_latest:polySurfaceShape32.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[18]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface33|jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface33|jackieHair_latest:polySurfaceShape33.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[19]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface34|jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface34|jackieHair_latest:polySurfaceShape34.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[20]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface35|jackieHair_latest:polySurfaceShape35.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface35|jackieHair_latest:polySurfaceShape35.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[21]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface36|jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface36|jackieHair_latest:polySurfaceShape36.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[22]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface37|jackieHair_latest:polySurfaceShape37.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:bangs|jackieHair_latest:bangsmiddle|jackieHair_latest:polySurface37|jackieHair_latest:polySurfaceShape37.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[23]" "jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface1|jackieHair_latest:polySurfaceShape12.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface1|jackieHair_latest:polySurfaceShape12.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[24]" "jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface2|jackieHair_latest:polySurfaceShape13.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface2|jackieHair_latest:polySurfaceShape13.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[25]" "jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface3|jackieHair_latest:polySurfaceShape14.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface3|jackieHair_latest:polySurfaceShape14.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[26]" "jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface4|jackieHair_latest:polySurfaceShape15.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface4|jackieHair_latest:polySurfaceShape15.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[27]" "jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface7|jackieHair_latest:polySurfaceShape18.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface7|jackieHair_latest:polySurfaceShape18.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[28]" "jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface40|jackieHair_latest:polySurfaceShape40.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface40|jackieHair_latest:polySurfaceShape40.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[29]" "jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface41|jackieHair_latest:polySurfaceShape41.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface41|jackieHair_latest:polySurfaceShape41.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[30]" "jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface42|jackieHair_latest:polySurfaceShape42.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface42|jackieHair_latest:polySurfaceShape42.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[31]" "jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface43|jackieHair_latest:polySurfaceShape43.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface43|jackieHair_latest:polySurfaceShape43.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[32]" "jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface44|jackieHair_latest:polySurfaceShape44.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface44|jackieHair_latest:polySurfaceShape44.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[33]" "jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface45|jackieHair_latest:polySurfaceShape45.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom|jackieHair_latest:polySurface45|jackieHair_latest:polySurfaceShape45.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[34]" "jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface1|jackieHair_latest:polySurfaceShape1.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface1|jackieHair_latest:polySurfaceShape1.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[35]" "jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface2|jackieHair_latest:polySurfaceShape2.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface2|jackieHair_latest:polySurfaceShape2.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[36]" "jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface3|jackieHair_latest:polySurfaceShape3.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface3|jackieHair_latest:polySurfaceShape3.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[37]" "jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface4|jackieHair_latest:polySurfaceShape4.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface4|jackieHair_latest:polySurfaceShape4.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[38]" "jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface7|jackieHair_latest:polySurfaceShape7.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface7|jackieHair_latest:polySurfaceShape7.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[39]" "jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface40|jackieHair_latest:polySurfaceShape40.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface40|jackieHair_latest:polySurfaceShape40.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[40]" "jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface41|jackieHair_latest:polySurfaceShape41.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface41|jackieHair_latest:polySurfaceShape41.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[41]" "jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface42|jackieHair_latest:polySurfaceShape42.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface42|jackieHair_latest:polySurfaceShape42.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[42]" "jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface43|jackieHair_latest:polySurfaceShape43.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface43|jackieHair_latest:polySurfaceShape43.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[43]" "jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface44|jackieHair_latest:polySurfaceShape44.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface44|jackieHair_latest:polySurfaceShape44.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[44]" "jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface45|jackieHair_latest:polySurfaceShape45.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairbottom2|jackieHair_latest:polySurface45|jackieHair_latest:polySurfaceShape45.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[45]" "jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface14|jackieHair_latest:polySurfaceShape25.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface14|jackieHair_latest:polySurfaceShape25.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[46]" "jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface16|jackieHair_latest:polySurfaceShape27.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface16|jackieHair_latest:polySurfaceShape27.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[47]" "jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface17|jackieHair_latest:polySurfaceShape28.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface17|jackieHair_latest:polySurfaceShape28.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[48]" "jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape29.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[49]" "jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface19|jackieHair_latest:polySurfaceShape30.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface19|jackieHair_latest:polySurfaceShape30.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[50]" "jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface20|jackieHair_latest:polySurfaceShape31.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface20|jackieHair_latest:polySurfaceShape31.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[51]" "jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface21|jackieHair_latest:polySurfaceShape32.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface21|jackieHair_latest:polySurfaceShape32.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[52]" "jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface38|jackieHair_latest:polySurfaceShape38.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface38|jackieHair_latest:polySurfaceShape38.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[53]" "jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface39|jackieHair_latest:polySurfaceShape39.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtop|jackieHair_latest:polySurface39|jackieHair_latest:polySurfaceShape39.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[54]" "jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface6|jackieHair_latest:polySurfaceShape17.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface6|jackieHair_latest:polySurfaceShape17.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[55]" "jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface8|jackieHair_latest:polySurfaceShape19.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface8|jackieHair_latest:polySurfaceShape19.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[56]" "jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface9|jackieHair_latest:polySurfaceShape20.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface9|jackieHair_latest:polySurfaceShape20.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[57]" "jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface10|jackieHair_latest:polySurfaceShape21.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface10|jackieHair_latest:polySurfaceShape21.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[58]" "jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface11|jackieHair_latest:polySurfaceShape22.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface11|jackieHair_latest:polySurfaceShape22.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[59]" "jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface12|jackieHair_latest:polySurfaceShape23.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface12|jackieHair_latest:polySurfaceShape23.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[60]" "jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface13|jackieHair_latest:polySurfaceShape24.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface13|jackieHair_latest:polySurfaceShape24.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[61]" "jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface47|jackieHair_latest:polySurfaceShape47.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface47|jackieHair_latest:polySurfaceShape47.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[62]" "jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface46|jackieHair_latest:polySurfaceShape46.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairmid|jackieHair_latest:polySurface46|jackieHair_latest:polySurfaceShape46.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[63]" "jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface14|jackieHair_latest:polySurfaceShape14.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface14|jackieHair_latest:polySurfaceShape14.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[64]" "jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface16|jackieHair_latest:polySurfaceShape16.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface16|jackieHair_latest:polySurfaceShape16.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[65]" "jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface17|jackieHair_latest:polySurfaceShape17.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface17|jackieHair_latest:polySurfaceShape17.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[66]" "jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface18|jackieHair_latest:polySurfaceShape18.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[67]" "jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface19|jackieHair_latest:polySurfaceShape19.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface19|jackieHair_latest:polySurfaceShape19.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[68]" "jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface20|jackieHair_latest:polySurfaceShape20.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface20|jackieHair_latest:polySurfaceShape20.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[69]" "jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface21|jackieHair_latest:polySurfaceShape21.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface21|jackieHair_latest:polySurfaceShape21.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[70]" "jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface38|jackieHair_latest:polySurfaceShape38.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface38|jackieHair_latest:polySurfaceShape38.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[71]" "jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 3 "Jackie_latest_jackieHair_latestRN" "|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface39|jackieHair_latest:polySurfaceShape39.instObjGroups" 
+		5 3 "Jackie_latest_jackieHair_latestRN" "|turntable_TurnTable|Jackie_latest_jackieBody|jackieHair_latest:jackieHair|jackieHair_latest:jackieHair|jackieHair_latest:hairtoptop|jackieHair_latest:polySurface39|jackieHair_latest:polySurfaceShape39.instObjGroups" 
 		"Jackie_latest_jackieHair_latestRN.placeHolderList[72]" "jackieHair_latest:PxrSurface3SG.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -29441,14 +29508,14 @@ createNode lambert -n "Jackie_latest_lambert3";
 	rename -uid "20AB72CB-4D7C-8345-FB60-2AAC5D0C537C";
 createNode file -n "Jackie_latest_jackieEyeDiffuse";
 	rename -uid "2AEB3476-4123-CE66-B168-9E870C837A5C";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_DiffuseColor.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "Jackie_latest_place2dTexture3";
 	rename -uid "5F90AE26-49C8-1DAF-0916-32BB7E571891";
 createNode file -n "Jackie_latest_jackieEyeRefBmp";
 	rename -uid "C1DE654A-4078-8694-73B0-CCAB3ED58E37";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_RoughRefBump.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_RoughRefBump.png";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "Jackie_latest_place2dTexture4";
@@ -30268,7 +30335,7 @@ createNode PxrOSL -n "cel_HoodieOSL";
 	setAttr ".fzn" no;
 	setAttr ".ihi" 2;
 	setAttr ".nds" 0;
-	setAttr ".shadername" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/OSL/light_dir_intensity.oso";
+	setAttr ".shadername" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/OSL/light_dir_intensity.oso";
 	setAttr ".oslCompile" -type "string" "";
 	setAttr ".shaderSource" -type "string" "<ws>/renderman/sample_osl_pattern.osl";
 	setAttr ".oslCode" -type "string" "shader sample_osl_pattern(\n\tfloat noiseScale = 1.0\n\t[[float min=0.001, \n\t  float slidermax=10]],\n\tstring noiseType = \"cell\"\n\t[[string widget=\"popup\", \n\t  string options=\"perlin|uperlin|cell|simplex|usimplex|gabor\"]],\n\tint gAnisotropic = 1\n\t[[string widget=\"checkBox\", \n      string label=\"Gabor Anisotropic\"]],\n\tvector gDirection = vector(1.0)\n\t[[string label=\"Gabor Direction\"]],\n\toutput color outColor = 0)\n{\n\toutColor = float(noise(noiseType, P/noiseScale,\n\t\t\t\t\t\t   \"anisotropic\", gAnisotropic,\n\t\t\t\t\t\t   \"direction\", gDirection));\n}\n";
@@ -31027,19 +31094,19 @@ createNode PxrLayer -n "HoodieBase";
 	setAttr ".bumpNormal" -type "float3" 0 0 0 ;
 createNode file -n "file1";
 	rename -uid "B999676B-4B96-CAAD-A0BE-35B3DE573A0D";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHoodie/jackieHoodie_jackieHoodie_latest_defaultMat_Normal.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHoodie/jackieHoodie_jackieHoodie_latest_defaultMat_Normal.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture1";
 	rename -uid "E9F8D091-4D59-2B45-EEC6-B29408ED7E60";
 createNode file -n "file2";
 	rename -uid "A203C892-42B0-A741-4E61-53BEE8116100";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHoodie/jackieHoodie_jackieHoodie_latest_defaultMat_Normal.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHoodie/jackieHoodie_jackieHoodie_latest_defaultMat_Normal.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture2";
 	rename -uid "14CD7ADC-4746-9FAA-34C5-05B478F8C5A5";
 createNode file -n "file3";
 	rename -uid "76C7CA24-4383-BCD1-1F0D-BC9A227388CB";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHoodie/jackieHoodie_jackieHoodie_latest_defaultMat_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHoodie/jackieHoodie_jackieHoodie_latest_defaultMat_DiffuseColor.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture3";
 	rename -uid "4295A1D9-466C-C76E-DCDE-5FB90B2287CB";
@@ -31788,13 +31855,13 @@ createNode PxrLayer -n "cel_SkinLayer";
 	setAttr ".bumpNormal" -type "float3" 0 0 0 ;
 createNode file -n "file4";
 	rename -uid "8DFE5A3D-4F07-67C6-D26C-E3AB3D7A1D07";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_Normal.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_Normal.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture4";
 	rename -uid "1D1028A6-406E-9506-1A59-B49B3E96D69F";
 createNode file -n "file5";
 	rename -uid "3B4D6FA9-42F4-CA9A-9736-F4A15831BFDC";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_DiffuseColor.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture5";
 	rename -uid "60C30FD2-4EB3-CB49-19BC-B8B7A3A4E29A";
@@ -31836,7 +31903,7 @@ createNode PxrOSL -n "cel_SkinOSL";
 	setAttr ".fzn" no;
 	setAttr ".ihi" 2;
 	setAttr ".nds" 0;
-	setAttr ".shadername" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/OSL/light_dir_intensity.oso";
+	setAttr ".shadername" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/OSL/light_dir_intensity.oso";
 	setAttr ".oslCompile" -type "string" "";
 	setAttr ".shaderSource" -type "string" "<ws>/renderman/sample_osl_pattern.osl";
 	setAttr ".oslCode" -type "string" "shader sample_osl_pattern(\n\tfloat noiseScale = 1.0\n\t[[float min=0.001, \n\t  float slidermax=10]],\n\tstring noiseType = \"cell\"\n\t[[string widget=\"popup\", \n\t  string options=\"perlin|uperlin|cell|simplex|usimplex|gabor\"]],\n\tint gAnisotropic = 1\n\t[[string widget=\"checkBox\", \n      string label=\"Gabor Anisotropic\"]],\n\tvector gDirection = vector(1.0)\n\t[[string label=\"Gabor Direction\"]],\n\toutput color outColor = 0)\n{\n\toutColor = float(noise(noiseType, P/noiseScale,\n\t\t\t\t\t\t   \"anisotropic\", gAnisotropic,\n\t\t\t\t\t\t   \"direction\", gDirection));\n}\n";
@@ -32595,19 +32662,19 @@ createNode PxrLayer -n "cel_PantsLayer";
 	setAttr ".bumpNormal" -type "float3" 0 0 0 ;
 createNode file -n "file6";
 	rename -uid "19A4583F-4A33-7055-3399-758DA373AD94";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackiePants/jackiePants_normalmap.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackiePants/jackiePants_normalmap.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture6";
 	rename -uid "92A6B390-4F73-516B-540F-CC99EBA17B00";
 createNode file -n "file7";
 	rename -uid "95949083-402E-3A0E-6706-DAB7BCCE2B46";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackiePants/jackiePants_latest_jackiePants_latest_PxrSurface1SG_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackiePants/jackiePants_latest_jackiePants_latest_PxrSurface1SG_DiffuseColor.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture7";
 	rename -uid "C8F422AC-45A6-48EE-0725-448CF6895454";
 createNode file -n "file8";
 	rename -uid "D0DB8E3A-4691-A817-8A14-529C009FA6FD";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackiePants/jackiePants_latest_jackiePants_latest_PxrSurface1SG_RoughRefBump.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackiePants/jackiePants_latest_jackiePants_latest_PxrSurface1SG_RoughRefBump.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture8";
 	rename -uid "48FA9B12-48D4-DF66-FCF8-64AF9F3C0D95";
@@ -32649,7 +32716,7 @@ createNode PxrOSL -n "cel_PantsOSL";
 	setAttr ".fzn" no;
 	setAttr ".ihi" 2;
 	setAttr ".nds" 0;
-	setAttr ".shadername" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/OSL/light_dir_intensity.oso";
+	setAttr ".shadername" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/OSL/light_dir_intensity.oso";
 	setAttr ".oslCompile" -type "string" "";
 	setAttr ".shaderSource" -type "string" "<ws>/renderman/sample_osl_pattern.osl";
 	setAttr ".oslCode" -type "string" "shader sample_osl_pattern(\n\tfloat noiseScale = 1.0\n\t[[float min=0.001, \n\t  float slidermax=10]],\n\tstring noiseType = \"cell\"\n\t[[string widget=\"popup\", \n\t  string options=\"perlin|uperlin|cell|simplex|usimplex|gabor\"]],\n\tint gAnisotropic = 1\n\t[[string widget=\"checkBox\", \n      string label=\"Gabor Anisotropic\"]],\n\tvector gDirection = vector(1.0)\n\t[[string label=\"Gabor Direction\"]],\n\toutput color outColor = 0)\n{\n\toutColor = float(noise(noiseType, P/noiseScale,\n\t\t\t\t\t\t   \"anisotropic\", gAnisotropic,\n\t\t\t\t\t\t   \"direction\", gDirection));\n}\n";
@@ -32682,7 +32749,7 @@ createNode lambert -n "lambert6";
 	rename -uid "1AFB9CD0-4992-739D-370A-6884350238C4";
 createNode file -n "file9";
 	rename -uid "0696A302-4696-F68E-65AF-A58D2C2A8F29";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieEye_initialShadingGroup_DiffuseColor.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture9";
 	rename -uid "0E1C7DA2-4F26-8705-D477-A6BB97E1C15A";
@@ -33432,7 +33499,7 @@ createNode PxrLayer -n "cel_HairLayer";
 	setAttr ".bumpNormal" -type "float3" 0 0 0 ;
 createNode file -n "file10";
 	rename -uid "18ECC308-43C2-D07B-B84F-87B77293167C";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_DiffuseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieHair/jackieHair_PxrSurface5SG_DiffuseColor.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture10";
 	rename -uid "3594EDF4-4F10-5BE7-24BE-2B91EFA01AFA";
@@ -33474,7 +33541,7 @@ createNode PxrOSL -n "cel_HairOSL";
 	setAttr ".fzn" no;
 	setAttr ".ihi" 2;
 	setAttr ".nds" 0;
-	setAttr ".shadername" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/OSL/light_dir_intensity.oso";
+	setAttr ".shadername" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/OSL/light_dir_intensity.oso";
 	setAttr ".oslCompile" -type "string" "";
 	setAttr ".shaderSource" -type "string" "<ws>/renderman/sample_osl_pattern.osl";
 	setAttr ".oslCode" -type "string" "shader sample_osl_pattern(\n\tfloat noiseScale = 1.0\n\t[[float min=0.001, \n\t  float slidermax=10]],\n\tstring noiseType = \"cell\"\n\t[[string widget=\"popup\", \n\t  string options=\"perlin|uperlin|cell|simplex|usimplex|gabor\"]],\n\tint gAnisotropic = 1\n\t[[string widget=\"checkBox\", \n      string label=\"Gabor Anisotropic\"]],\n\tvector gDirection = vector(1.0)\n\t[[string label=\"Gabor Direction\"]],\n\toutput color outColor = 0)\n{\n\toutColor = float(noise(noiseType, P/noiseScale,\n\t\t\t\t\t\t   \"anisotropic\", gAnisotropic,\n\t\t\t\t\t\t   \"direction\", gDirection));\n}\n";
@@ -33490,7 +33557,7 @@ createNode PxrOSL -n "cel_HairOSL";
 	setAttr ".rim" -type "float3" 0.87959999 0 1 ;
 createNode file -n "file11";
 	rename -uid "1CD85997-4C7E-DA80-EB20-5D846231AD6F";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_BaseColor.png";
+	setAttr ".ftn" -type "string" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//sourceimages/jackieMaps/jackieBody/jackie_0002_PxrSurface1SG_BaseColor.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture11";
 	rename -uid "7330A89E-44A6-2798-1D98-5181FD3B9FA0";
@@ -33720,7 +33787,7 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo1";
 	setAttr ".tgi[0].ni[2].x" 1076.5333251953125;
 	setAttr ".tgi[0].ni[2].y" 3281.68505859375;
 	setAttr ".tgi[0].ni[2].nvs" 1923;
-createNode d_openexr -n "d_openexr2";
+createNode d_openexr -n "d_openexr3";
 	rename -uid "81C8AC2F-448D-0997-88EA-9E826CE640D0";
 	setAttr ".cch" no;
 	setAttr ".fzn" no;
@@ -33748,7 +33815,7 @@ createNode rmanDisplayChannel -n "indirectDiffuse";
 	setAttr ".remapMaxValue" 0;
 	setAttr ".remapSmoothness" 0;
 	setAttr -l on ".name" -type "string" "indirectDiffuse";
-createNode d_openexr -n "d_openexr3";
+createNode d_openexr -n "d_openexr4";
 	rename -uid "B30174B5-4380-C2C1-2E2A-BEB03A1E99B1";
 	setAttr ".cch" no;
 	setAttr ".fzn" no;
@@ -33759,7 +33826,7 @@ createNode d_openexr -n "d_openexr3";
 	setAttr ".exrpixeltype" -type "string" "half";
 	setAttr ".compression" -type "string" "zips";
 	setAttr ".compressionlevel" 45;
-createNode d_openexr -n "d_openexr4";
+createNode d_openexr -n "d_openexr5";
 	rename -uid "1BE292B1-41A1-5D24-C71E-B7A982FB78E7";
 	setAttr ".cch" no;
 	setAttr ".fzn" no;
@@ -33770,7 +33837,7 @@ createNode d_openexr -n "d_openexr4";
 	setAttr ".exrpixeltype" -type "string" "half";
 	setAttr ".compression" -type "string" "zips";
 	setAttr ".compressionlevel" 45;
-createNode d_openexr -n "d_openexr5";
+createNode d_openexr -n "d_openexr6";
 	rename -uid "B9E2630D-42CB-1D5E-7BB4-4E98C994A1F1";
 	setAttr ".cch" no;
 	setAttr ".fzn" no;
@@ -33798,7 +33865,7 @@ createNode rmanDisplayChannel -n "beauty";
 	setAttr ".remapMaxValue" 0;
 	setAttr ".remapSmoothness" 0;
 	setAttr -l on ".name" -type "string" "beauty";
-createNode d_openexr -n "d_openexr6";
+createNode d_openexr -n "d_openexr7";
 	rename -uid "5513F1D2-4BE9-F18C-2764-05BEEB492F5B";
 	setAttr ".cch" no;
 	setAttr ".fzn" no;
@@ -33809,7 +33876,7 @@ createNode d_openexr -n "d_openexr6";
 	setAttr ".exrpixeltype" -type "string" "half";
 	setAttr ".compression" -type "string" "zips";
 	setAttr ".compressionlevel" 45;
-createNode d_openexr -n "d_openexr7";
+createNode d_openexr -n "d_openexr8";
 	rename -uid "9A94E59E-4396-6F83-A6E9-3B9232DB9F4A";
 	setAttr ".cch" no;
 	setAttr ".fzn" no;
@@ -33820,7 +33887,7 @@ createNode d_openexr -n "d_openexr7";
 	setAttr ".exrpixeltype" -type "string" "half";
 	setAttr ".compression" -type "string" "zips";
 	setAttr ".compressionlevel" 45;
-createNode d_openexr -n "d_openexr8";
+createNode d_openexr -n "d_openexr9";
 	rename -uid "1B88C451-46ED-5E8A-4EED-82AD7DC661CB";
 	setAttr ".cch" no;
 	setAttr ".fzn" no;
@@ -33851,21 +33918,7 @@ createNode rmanDisplayChannel -n "CustomChannel";
 	setAttr ".remapSmoothness" 0;
 	setAttr -l on ".name" -type "string" "CustomChannel";
 	setAttr ".rmanCustomChannel" yes;
-createNode rmanDisplay -s -n "rmanDefaultDisplay";
-	rename -uid "1AB7587D-4280-FF76-7068-918485C1EB55";
-	setAttr ".cch" no;
-	setAttr ".fzn" no;
-	setAttr ".ihi" 2;
-	setAttr ".nds" 0;
-	setAttr ".enable" yes;
-	setAttr ".denoise" no;
-	setAttr ".frameMode" 0;
-	setAttr ".remapBreakPoint" 0;
-	setAttr ".remapMaxValue" 0;
-	setAttr ".remapSmoothness" 0;
-	setAttr -s 3 ".displayChannels";
-	setAttr -l on ".name" -type "string" "beauty";
-createNode d_openexr -n "d_openexr9";
+createNode d_openexr -n "d_openexr10";
 	rename -uid "9A90D43A-4988-C2F2-633F-06ADFD8A3E83";
 	setAttr ".cch" no;
 	setAttr ".fzn" no;
@@ -33893,7 +33946,7 @@ createNode rmanDisplayChannel -n "Ci2";
 	setAttr ".remapMaxValue" 0;
 	setAttr ".remapSmoothness" 0;
 	setAttr -l on ".name" -type "string" "Ci";
-createNode rmanDisplayChannel -n "a";
+createNode rmanDisplayChannel -n "a2";
 	rename -uid "7B1C3859-4CC1-351C-F250-0DBB13337A4F";
 	setAttr ".cch" no;
 	setAttr ".fzn" no;
@@ -33910,7 +33963,7 @@ createNode rmanDisplayChannel -n "a";
 	setAttr ".remapMaxValue" 0;
 	setAttr ".remapSmoothness" 0;
 	setAttr -l on ".name" -type "string" "a";
-createNode d_openexr -n "d_openexr10";
+createNode d_openexr -n "d_openexr11";
 	rename -uid "DC942863-48EA-4A99-8DDE-689A8484C124";
 	setAttr ".cch" no;
 	setAttr ".fzn" no;
@@ -33921,6 +33974,8 @@ createNode d_openexr -n "d_openexr10";
 	setAttr ".exrpixeltype" -type "string" "half";
 	setAttr ".compression" -type "string" "zips";
 	setAttr ".compressionlevel" 45;
+createNode renderSetup -n "renderSetup";
+	rename -uid "CDBA39A7-44D5-7A16-E297-04A0BA0999C1";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -33952,6 +34007,10 @@ select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
 	setAttr ".ren" -type "string" "renderman";
+	setAttr ".an" yes;
+	setAttr ".ef" 150;
+	setAttr ".pff" yes;
+	setAttr ".ifp" -type "string" "untitled";
 select -ne :defaultResolution;
 	setAttr ".w" 1024;
 	setAttr ".h" 1024;
@@ -34268,6 +34327,12 @@ connectAttr "turntable_TurnTable_scaleX.o" "turntable_TurnTable.sx";
 connectAttr "turntable_TurnTable_scaleY.o" "turntable_TurnTable.sy";
 connectAttr "turntable_TurnTable_scaleZ.o" "turntable_TurnTable.sz";
 connectAttr "turntable_makeNurbCircle1.oc" "turntable_TurnTableShape.cr";
+connectAttr ":rmanDefaultDisplay.msg" ":rmanGlobals.displays[0]";
+connectAttr ":PxrPathTracer.msg" ":rmanGlobals.ri_integrator";
+connectAttr "d_openexr.msg" ":rmanDefaultDisplay.displayType";
+connectAttr "Ci.msg" ":rmanDefaultDisplay.displayChannels[0]";
+connectAttr "a.msg" ":rmanDefaultDisplay.displayChannels[1]";
+connectAttr "CustomChannel.msg" ":rmanDefaultDisplay.displayChannels[2]";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "turntable_PxrSurface1SG.message" ":defaultLightSet.message";
@@ -34339,8 +34404,6 @@ relationship "shadowLink" ":lightLinker1" "PxrLayerSurface5SG.message" ":default
 relationship "ignore" ":lightLinker1" "turntable_pCylinderShape1.message" "turntable_FillLightShape.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
-connectAttr ":rmanDefaultDisplay.msg" ":rmanGlobals.displays[0]";
-connectAttr ":PxrPathTracer.msg" ":rmanGlobals.ri_integrator";
 connectAttr "turntable_renderLayerManager.rlmi[0]" "turntable_defaultRenderLayer.rlid"
 		;
 connectAttr "turntable_PxrSurface1.oc" "turntable_PxrSurface1SG.rman__surface";
@@ -36746,10 +36809,6 @@ connectAttr "place2dTexture11.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
 connectAttr "PxrInvert1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn";
 connectAttr "RimLightShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[13].dn";
 connectAttr "RimLight.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[14].dn";
-connectAttr "d_openexr9.msg" ":rmanDefaultDisplay.displayType";
-connectAttr "Ci2.msg" ":rmanDefaultDisplay.displayChannels[0]";
-connectAttr "a.msg" ":rmanDefaultDisplay.displayChannels[1]";
-connectAttr "CustomChannel.msg" ":rmanDefaultDisplay.displayChannels[2]";
 connectAttr "turntable_PxrSurface1SG.pa" ":renderPartition.st" -na;
 connectAttr "turntable_PxrSurface2SG.pa" ":renderPartition.st" -na;
 connectAttr "turntable_alumina_oxide_SG.pa" ":renderPartition.st" -na;
@@ -36926,9 +36985,10 @@ connectAttr "place2dTexture8.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture9.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture10.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "place2dTexture11.msg" ":defaultRenderUtilityList1.u" -na;
-connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":rmanGlobals.msg" ":defaultRenderingList1.r" -na;
+connectAttr ":rmanDefaultDisplay.msg" ":defaultRenderingList1.r" -na;
 connectAttr "d_openexr.msg" ":defaultRenderingList1.r" -na;
+connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr ":PxrPathTracer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "turntable_defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "turntable_d_openexr.msg" ":defaultRenderingList1.r" -na;
@@ -36962,7 +37022,6 @@ connectAttr "d_openexr5.msg" ":defaultRenderingList1.r" -na;
 connectAttr "d_openexr6.msg" ":defaultRenderingList1.r" -na;
 connectAttr "d_openexr7.msg" ":defaultRenderingList1.r" -na;
 connectAttr "d_openexr8.msg" ":defaultRenderingList1.r" -na;
-connectAttr ":rmanDefaultDisplay.msg" ":defaultRenderingList1.r" -na;
 connectAttr "d_openexr9.msg" ":defaultRenderingList1.r" -na;
 connectAttr "d_openexr10.msg" ":defaultRenderingList1.r" -na;
 connectAttr "turntable_FillLightShape.msg" ":lightList1.l" -na;
