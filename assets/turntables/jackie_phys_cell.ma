@@ -1,6 +1,6 @@
 //Maya ASCII 2018ff09 scene
 //Name: jackie_phys_cell.ma
-//Last modified: Tue, Jan 22, 2019 10:31:48 PM
+//Last modified: Wed, Jan 23, 2019 10:43:25 AM
 //Codeset: 1252
 file -rdi 1 -ns "teeth_v1_latest" -rfn "Jackie_latest_teeth_v1_latestRN" -op
 		 "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma";
@@ -44,14 +44,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "432C3F67-4689-FFDC-EF80-898233CEBFA1";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.7996875510063144 19.12859718417949 57.52138808823485 ;
+	setAttr ".t" -type "double3" 1.0159321335342828 18.401016381498362 48.84226558282797 ;
 	setAttr ".r" -type "double3" -11.738352729602941 1.4000000000004125 4.9711006141188245e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "71E7638E-4B80-C29C-9B5E-B5B161CCB94D";
 	setAttr -k off ".v" no;
 	setAttr ".ovr" 1.3;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 53.19745498461311;
+	setAttr ".coi" 44.535607492586465;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -17950,11 +17950,11 @@ createNode rmanGlobals -s -n "rmanGlobals";
 	setAttr ".ihi" 2;
 	setAttr ".nds" 0;
 	setAttr ".hider_minSamples" 0;
-	setAttr ".hider_maxSamples" 128;
+	setAttr ".hider_maxSamples" 32;
 	setAttr ".ri_pixelVariance" 0.0099999997764825821;
 	setAttr ".hider_darkfalloff" 0.02500000037252903;
 	setAttr ".hider_incremental" yes;
-	setAttr ".ipr_hider_maxSamples" 64;
+	setAttr ".ipr_hider_maxSamples" 128;
 	setAttr ".ipr_ri_pixelVariance" 0.05000000074505806;
 	setAttr ".ri_maxSpecularDepth" 4;
 	setAttr ".ri_maxDiffuseDepth" 1;
@@ -33977,8 +33977,8 @@ createNode d_openexr -n "d_openexr11";
 createNode renderSetup -n "renderSetup";
 	rename -uid "CDBA39A7-44D5-7A16-E297-04A0BA0999C1";
 select -ne :time1;
-	setAttr ".o" 1;
-	setAttr ".unw" 1;
+	setAttr ".o" 150;
+	setAttr ".unw" 150;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
