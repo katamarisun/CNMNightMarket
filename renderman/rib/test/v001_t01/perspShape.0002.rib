@@ -1,5 +1,5 @@
 ##RenderMan RIB
-# scene graph export /Users/abbyrcohn/Desktop/CNMNightMarket/renderman/rib/UNTITLED/v001_t01/perspShape.0008.rib
+# scene graph export /Users/abbyrcohn/Desktop/CNMNightMarket/renderman/rib/test/v001_t01/perspShape.0002.rib
 ##rifcontrol insert begin -rif abind -rifend
 version 3.04999995
 Option "ribparse" "string varsubst" [""]
@@ -13,7 +13,7 @@ Option "lighting" "int selectionlearningscheme" [0]
 Option "limits" "int threads" [4] "int[2] bucketsize" [16 16] "float[3] othreshold" [0.995999992 0.995999992 0.995999992] "int texturememory" [4194304] "int geocachememory" [4194304] "int opacitycachememory" [2097152]
 Option "lpe" "string diffuse2" ["Diffuse,HairDiffuse"] "string diffuse3" ["Subsurface"] "string specular2" ["Specular,HairSpecularR"] "string specular3" ["RoughSpecular,HairSpecularTRT"] "string specular4" ["Clearcoat"] "string specular5" ["Iridescence"] "string specular6" ["Fuzz,HairSpecularGLINTS"] "string specular7" ["SingleScatter,HairSpecularTT"] "string specular8" ["Glass"] "string user2" ["Albedo,DiffuseAlbedo,SubsurfaceAlbedo,HairAlbedo"] "string user3" [""] "string user4" [""] "string user5" [""] "string user6" [""] "string user7" [""] "string user8" [""] "string user9" [""] "string user10" [""] "string user11" [""] "string user12" [""]
 Option "searchpath" "string rixplugin" ["/Users/abbyrcohn/rfm:::/Applications/Pixar/RenderManForMaya-22.2/lib/plugins:@"] "string shader" ["/Users/abbyrcohn/rfm:::/Applications/Pixar/RenderManProServer-22.2/lib/shaders:@"] "string texture" ["@"] "string procedural" ["/Users/abbyrcohn/rfm:::/Applications/Pixar/RenderManForMaya-22.2/lib/2018:@"] "string dirmap" ["[ \"UNC\" \"/myserver/\" \"Z:/\"]"]
-Option "statistics" "int level" [1] "string xmlfilename" ["/Users/abbyrcohn/Desktop/CNMNightMarket/renderman/rib/UNTITLED/v001_t01/perspShape.0008.xml"]
+Option "statistics" "int level" [1] "string xmlfilename" ["/Users/abbyrcohn/Desktop/CNMNightMarket/renderman/rib/test/v001_t01/perspShape.0002.xml"]
 Option "trace" "string worldorigin" ["worldoffset"] "float[3] worldoffset" [12.7837572 8.61146355 18.8107262]
 Option "user" "int osl:batched" [0] "float sceneUnits" [1] "int iesIgnoreWatts" [1]
 Integrator "PxrPathTracer" "PxrPathTracer" "int maxPathLength" [10] "int maxContinuationLength" [-1] "int maxNonStochasticOpacityEvents" [0] "string sampleMode" ["bxdf"] "int numLightSamples" [1] "int numBxdfSamples" [1] "int numIndirectSamples" [1] "int numDiffuseSamples" [1] "int numSpecularSamples" [1] "int numSubsurfaceSamples" [1] "int numRefractionSamples" [1] "int allowCaustics" [0] "int accumOpacity" [0] "int rouletteDepth" [4] "float rouletteThreshold" [0.200000003] "int clampDepth" [2] "float clampLuminance" [10]
@@ -22,11 +22,11 @@ DisplayChannel "float a" "string source" ["a"]
 Projection "PxrPerspective" "float fov" [54.4322243] "float fStop" [9.99999968e+37] "float focalLength" [0] "float focalDistance" [1]
 Transform [ 0.827080548 -0.199034244 -0.525664389 -0  -1.49011612e-08 0.935207248 -0.354100943 -0  -0.562083364 -0.292870015 -0.773491681 -0  -0 -0 0 1 ]
 Camera "|persp|perspShape" "float shutterOpenTime" [0] "float shutterCloseTime" [1] "int apertureNSides" [0] "float apertureAngle" [0] "float apertureRoundness" [0] "float apertureDensity" [0] "float dofaspect" [1] "float nearClip" [0.100000001] "float farClip" [10000]
-Display "/Users/abbyrcohn/Desktop/CNMNightMarket/images/UNTITLED_v001_t01/UNTITLED__perspShape_beauty.0008.exr" "openexr" "Ci,a" "int asrgba" [1] "string storage" ["scanline"] "string exrpixeltype" ["half"] "string compression" ["zips"] "float compressionlevel" [45] "string camera" ["|persp|perspShape"]
+Display "/Users/abbyrcohn/Desktop/CNMNightMarket/images/test_v001_t01/test__perspShape_beauty.0002.exr" "openexr" "Ci,a" "int asrgba" [1] "string storage" ["scanline"] "string exrpixeltype" ["half"] "string compression" ["zips"] "float compressionlevel" [45] "string camera" ["|persp|perspShape"]
 WorldBegin 
 	AttributeBegin 
 	AttributeEnd 
-	ObjectBegin "273f2f6c-1f44-11e9-ba45-9801a7aa3999" 
+	ObjectBegin "74d05904-1f44-11e9-ba45-9801a7aa3999" 
 		Attribute "Ri" "string Orientation" ["outside"]
 		Attribute "dice" "float micropolygonlength" [1] "int watertight" [0]
 		Attribute "displacementbound" "float sphere" [0.100000001] "string CoordinateSystem" ["object"]
@@ -888,7 +888,24 @@ WorldBegin
 		Attribute "trace" "int maxspeculardepth" [4] "int maxdiffusedepth" [1]
 		Attribute "user" "string __materialid" ["initialShadingGroup"]
 		Attribute "visibility" "int camera" [1] "int indirect" [1] "int transmission" [1]
-		Transform [ 1 0 0 0  0 1 0 0  0 0 1 0  -8.93871307 -8.61146355 -18.8107262 1 ]
-		ObjectInstance "273f2f6c-1f44-11e9-ba45-9801a7aa3999" 
+		Transform [ 1 0 0 0  0 1 0 0  0 0 1 0  -12.6328526 -8.61146355 -18.8107262 1 ]
+		ObjectInstance "74d05904-1f44-11e9-ba45-9801a7aa3999" 
+	AttributeEnd 
+	ObjectBegin "74d0cace-1f44-11e9-ba45-9801a7aa3999" 
+		Transform [ -0 0 -1 0  1 0 -0 -0  -0 1 0 0  0 0 0 1 ]
+		Light "PxrEnvDayLight" "PxrEnvDayLightShape" "float intensity" [1] "float exposure" [0] "vector sunDirection" [-0 0 1] "float haziness" [2] "color skyTint" [1 1 1] "color sunTint" [1 1 1] 
+			"float sunSize" [1] "int groundMode" [0] "color groundColor" [0.180000007 0.180000007 0.180000007] "int month" [11] "int day" [20] "int year" [2014] "float hour" [14.6333332] "float zone" [-8] "float latitude" [47.6018982] "float longitude" [-122.331802] "float specular" [1] "float diffuse" [1] 
+			"int enableShadows" [1] "color shadowColor" [0 0 0] "float shadowDistance" [-1] "float shadowFalloff" [-1] "float shadowFalloffGamma" [1] "string shadowSubset" [""] "string shadowExcludeSubset" [""] "int traceLightPaths" [0] "int thinShadow" [1] "int visibleInRefractionPath" [0] "int cheapCaustics" [0] "string cheapCausticsExcludeGroup" [""] "int fixedSampleCount" [0] "string lightGroup" [""] "float importanceMultiplier" [1]
+	ObjectEnd 
+	AttributeBegin 
+		Attribute "Ri" "int Sides" [2]
+		Attribute "grouping" "string membership" ["PxrEnvDayLightShape World"]
+		Attribute "identifier" "string name" ["|PxrEnvDayLight|PxrEnvDayLightShape"] "int id" [-426846401] "int id2" [0]
+		Attribute "lighting" "int mute" [0]
+		Attribute "shade" "float relativepixelvariance" [1]
+		Attribute "trace" "int maxspeculardepth" [4] "int maxdiffusedepth" [1]
+		Attribute "visibility" "int camera" [1] "int indirect" [0] "int transmission" [1]
+		Transform [ 1 0 0 0  0 1 0 0  0 0 1 0  -12.7837572 -8.61146355 -18.8107262 1 ]
+		ObjectInstance "74d0cace-1f44-11e9-ba45-9801a7aa3999" 
 	AttributeEnd 
 WorldEnd 
