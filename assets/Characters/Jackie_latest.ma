@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Jackie_latest.ma
-//Last modified: Fri, Jan 25, 2019 07:30:46 PM
+//Last modified: Sun, Jan 27, 2019 09:32:03 AM
 //Codeset: UTF-8
 file -rdi 1 -ns "teeth_v1_latest" -rfn "teeth_v1_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma";
@@ -46,17 +46,17 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "BA3FAA52-4FDA-0ED2-0460-EBACF1374B49";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.0012632957081630848 6.6410069814466661 1.0865733969751776 ;
-	setAttr ".r" -type "double3" -5.7383527300375246 -361.39999999937936 0 ;
+	setAttr ".t" -type "double3" -0.047256057743827171 6.5286355300074232 2.5538791515611652 ;
+	setAttr ".r" -type "double3" -3.9383527306272201 -1440.9999999998561 -3.7277802763318904e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "899F93F5-4660-0706-8C2E-1286961DC47A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 0.79247595038914731;
+	setAttr ".coi" 2.3199763518248178;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -0.62492790558167677 -0.12520373652504541 0.071643261212730458 ;
+	setAttr ".tp" -type "double3" 0.11399762359061975 6.1989279464670632 0.27453338022719481 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "7BC81F7C-4B9B-7AE0-49D4-F18F5D5DA37D";
@@ -77,13 +77,13 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "3FCE0089-442E-9E16-BB2D-C19B35CC5E06";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.1857530187327203 4.2203387143289106 1000.1 ;
+	setAttr ".t" -type "double3" -0.0021727960316937772 6.2460195321602825 1000.1 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "15E943B0-4F1B-4676-0A73-AA92C97B7566";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 16.474411019807018;
+	setAttr ".ow" 0.47516297831675325;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
@@ -271,14 +271,112 @@ createNode transform -n "Jackie_latest:Group9688" -p "jackieBody";
 createNode mesh -n "Jackie_latest:Group9688Shape" -p "Jackie_latest:Group9688";
 	rename -uid "1A9B4F69-4D32-C140-CFD8-F988208498CB";
 	setAttr -k off ".v";
-	setAttr -s 4 ".iog[0].og";
+	setAttr -s 8 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.72504997253417969 0.35611000657081604 ;
+	setAttr ".pv" -type "double2" 0.77713000774383545 0.41585001349449158 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
-	setAttr -s 8 ".pt";
+	setAttr -s 125 ".pt";
+	setAttr ".pt[4]" -type "float3" 0 -2.3283064e-10 0 ;
+	setAttr ".pt[5]" -type "float3" 0 3.6379788e-12 0 ;
+	setAttr ".pt[6]" -type "float3" 2.3283064e-10 2.910383e-10 0 ;
+	setAttr ".pt[7]" -type "float3" 3.259629e-09 0.0061151655 0.0054506678 ;
+	setAttr ".pt[8]" -type "float3" 0 0.014612438 0.0054506678 ;
+	setAttr ".pt[9]" -type "float3" -5.6843419e-14 0.017188596 0.0054506678 ;
+	setAttr ".pt[10]" -type "float3" 0 0.017188596 0.0054506678 ;
+	setAttr ".pt[11]" -type "float3" 0 0.0061151665 0.0054506678 ;
+	setAttr ".pt[12]" -type "float3" -3.4924597e-10 0 0 ;
+	setAttr ".pt[13]" -type "float3" 0.0081509408 -4.4408921e-16 0 ;
+	setAttr ".pt[18]" -type "float3" 9.3132257e-10 0.00036177598 0 ;
+	setAttr ".pt[19]" -type "float3" 0.0081509389 0.0064819166 0 ;
+	setAttr ".pt[20]" -type "float3" 0.0081509389 -1.280569e-09 0 ;
+	setAttr ".pt[21]" -type "float3" 3.7252903e-09 0.00076532131 0 ;
+	setAttr ".pt[22]" -type "float3" 0 0.0061151655 2.3283064e-10 ;
+	setAttr ".pt[23]" -type "float3" 0 0.0061151655 2.3283064e-10 ;
+	setAttr ".pt[24]" -type "float3" 0.0081509398 0.0061151646 1.1641532e-09 ;
+	setAttr ".pt[26]" -type "float3" 9.3132257e-10 4.6566129e-10 0 ;
+	setAttr ".pt[28]" -type "float3" 9.3132257e-10 4.6566129e-10 0 ;
+	setAttr ".pt[29]" -type "float3" 9.3132257e-10 4.6566129e-10 0 ;
+	setAttr ".pt[30]" -type "float3" -9.3132257e-10 4.6566129e-10 0 ;
+	setAttr ".pt[31]" -type "float3" -4.6566129e-10 0 0 ;
+	setAttr ".pt[33]" -type "float3" 0.0081509389 0.0058923075 0 ;
+	setAttr ".pt[34]" -type "float3" 9.3132257e-10 4.6566129e-10 0 ;
+	setAttr ".pt[35]" -type "float3" 4.6566129e-10 5.8207661e-11 0 ;
+	setAttr ".pt[36]" -type "float3" 0 0.00060356979 0 ;
+	setAttr ".pt[40]" -type "float3" 3.7252903e-09 0.0007453945 0 ;
+	setAttr ".pt[41]" -type "float3" 9.3132257e-10 4.6566129e-10 0 ;
+	setAttr ".pt[42]" -type "float3" 2.3283064e-10 1.1641532e-10 0 ;
+	setAttr ".pt[45]" -type "float3" 0 0.0061151665 2.3283064e-10 ;
+	setAttr ".pt[46]" -type "float3" 0.0081509408 0.0064759245 2.3283064e-10 ;
+	setAttr ".pt[47]" -type "float3" 9.3132257e-10 4.6566129e-10 0 ;
+	setAttr ".pt[53]" -type "float3" 2.910383e-11 7.2759576e-12 0 ;
+	setAttr ".pt[189]" -type "float3" 0 0.0061151665 0.0054506678 ;
+	setAttr ".pt[190]" -type "float3" 2.7939677e-09 0.0061151655 0.005450666 ;
+	setAttr ".pt[191]" -type "float3" 0.0081509417 0.0061151655 -6.9849193e-10 ;
+	setAttr ".pt[459]" -type "float3" -2.3283064e-10 -1.1641532e-10 0 ;
+	setAttr ".pt[460]" -type "float3" 0.008150937 -4.4408921e-16 -5.8207661e-11 ;
+	setAttr ".pt[461]" -type "float3" -6.9849193e-10 0 0 ;
+	setAttr ".pt[466]" -type "float3" 0 -4.6566129e-10 0 ;
+	setAttr ".pt[630]" -type "float3" 0.0081509408 -4.4408921e-16 0 ;
+	setAttr ".pt[631]" -type "float3" 0.008150937 -4.4408921e-16 -5.8207661e-11 ;
+	setAttr ".pt[632]" -type "float3" 0.0081509389 1.0477375e-09 0 ;
+	setAttr ".pt[633]" -type "float3" 0.0081509389 1.0477375e-09 0 ;
+	setAttr ".pt[634]" -type "float3" 0.008150937 1.1641488e-10 0 ;
+	setAttr ".pt[635]" -type "float3" 9.3132257e-10 0 0 ;
+	setAttr ".pt[636]" -type "float3" 0.0081509426 -0.0019243703 0 ;
+	setAttr ".pt[637]" -type "float3" 0.0081509426 0.00041711016 0 ;
+	setAttr ".pt[638]" -type "float3" 0.0081509408 5.8207617e-10 0 ;
+	setAttr ".pt[639]" -type "float3" 0.0081509426 -4.6566173e-10 4.6566129e-10 ;
+	setAttr ".pt[640]" -type "float3" 2.7939677e-09 0 -9.3132257e-10 ;
+	setAttr ".pt[646]" -type "float3" 0.0081509389 -4.4408921e-16 0 ;
+	setAttr ".pt[647]" -type "float3" 0.0081509389 4.6566084e-10 -5.8207661e-11 ;
+	setAttr ".pt[648]" -type "float3" 0.0081509389 -4.4408921e-16 0 ;
+	setAttr ".pt[649]" -type "float3" 1.8626451e-09 1.3595447e-05 0 ;
+	setAttr ".pt[650]" -type "float3" 0.0081509408 0.0047792667 0 ;
+	setAttr ".pt[651]" -type "float3" 1.8626451e-09 -2.6109166e-05 0 ;
+	setAttr ".pt[652]" -type "float3" 9.3132257e-10 -1.4113262e-05 0 ;
+	setAttr ".pt[653]" -type "float3" 3.7252903e-09 2.3283064e-09 0 ;
+	setAttr ".pt[654]" -type "float3" 2.7939677e-09 0.0061151665 2.3283064e-10 ;
+	setAttr ".pt[655]" -type "float3" 0.0081509417 0.0061151655 0.0054506678 ;
+	setAttr ".pt[656]" -type "float3" 0.0081509436 0.0061151655 0.005450666 ;
+	setAttr ".pt[657]" -type "float3" 0 0.014612439 0.0054506678 ;
+	setAttr ".pt[658]" -type "float3" -8.8817842e-16 0.0061151646 0.0054506678 ;
+	setAttr ".pt[660]" -type "float3" 4.6566129e-10 0 0 ;
+	setAttr ".pt[661]" -type "float3" 0 -2.1827873e-11 0 ;
+	setAttr ".pt[2299]" -type "float3" 0 0.0061151655 0.0054506678 ;
+	setAttr ".pt[2300]" -type "float3" 0 0.014612436 0.0054506678 ;
+	setAttr ".pt[2301]" -type "float3" 0 0.0061151665 0.0054506678 ;
+	setAttr ".pt[2303]" -type "float3" -0.0081509389 -4.4408921e-16 0 ;
+	setAttr ".pt[2307]" -type "float3" -0.0081509389 1.1641488e-10 0 ;
+	setAttr ".pt[2308]" -type "float3" -0.0081509389 1.1641488e-10 0 ;
+	setAttr ".pt[2309]" -type "float3" 0 0.0061151655 2.3283064e-10 ;
+	setAttr ".pt[2310]" -type "float3" -0.008150938 0.0061151655 2.3283064e-10 ;
+	setAttr ".pt[2318]" -type "float3" -0.0081509389 1.1641488e-10 0 ;
+	setAttr ".pt[2330]" -type "float3" 0 0.0061151665 2.3283064e-10 ;
+	setAttr ".pt[2331]" -type "float3" -0.0081509389 0.006115166 2.3283064e-10 ;
+	setAttr ".pt[2459]" -type "float3" 0 0.0061151665 0.0054506678 ;
+	setAttr ".pt[2460]" -type "float3" 0 0.0061151655 0.0054506678 ;
+	setAttr ".pt[2461]" -type "float3" -0.008150938 0.0061151655 2.3283064e-10 ;
+	setAttr ".pt[2703]" -type "float3" -0.0081509389 -4.4408921e-16 0 ;
+	setAttr ".pt[2859]" -type "float3" -0.0081509389 -4.4408921e-16 0 ;
+	setAttr ".pt[2860]" -type "float3" -0.0081509389 -4.4408921e-16 0 ;
+	setAttr ".pt[2861]" -type "float3" -0.0081509389 1.1641488e-10 0 ;
+	setAttr ".pt[2862]" -type "float3" -0.0081509389 1.1641488e-10 0 ;
+	setAttr ".pt[2863]" -type "float3" -0.0081509389 1.1641488e-10 0 ;
+	setAttr ".pt[2865]" -type "float3" -0.0081509389 1.1641488e-10 0 ;
+	setAttr ".pt[2866]" -type "float3" -0.0081509389 1.1641488e-10 0 ;
+	setAttr ".pt[2867]" -type "float3" -0.0081509389 1.1641488e-10 0 ;
+	setAttr ".pt[2868]" -type "float3" -0.0081509389 -4.4408921e-16 0 ;
+	setAttr ".pt[2873]" -type "float3" -0.0081509389 -4.4408921e-16 0 ;
+	setAttr ".pt[2874]" -type "float3" -0.0081509389 -4.4408921e-16 0 ;
+	setAttr ".pt[2875]" -type "float3" -0.0081509389 -4.4408921e-16 0 ;
+	setAttr ".pt[2881]" -type "float3" 0 0.0061151665 2.3283064e-10 ;
+	setAttr ".pt[2882]" -type "float3" -0.0081509398 0.0061151655 0.0054506678 ;
+	setAttr ".pt[2883]" -type "float3" -0.0081509398 0.0061151655 0.0054506678 ;
+	setAttr ".pt[2884]" -type "float3" 0 0.014612435 0.0054506678 ;
+	setAttr ".pt[2885]" -type "float3" -4.6566129e-10 0 0 ;
 	setAttr ".pt[4294]" -type "float3" 0 3.6379788e-12 0 ;
 	setAttr ".pt[4295]" -type "float3" 0 5.8207661e-11 0 ;
 	setAttr ".pt[4304]" -type "float3" 0 -4.6566129e-10 0 ;
@@ -18204,20 +18302,22 @@ createNode rmanDisplayChannel -n "a11";
 	setAttr ".remapSmoothness" 0;
 	setAttr -l on ".name" -type "string" "a";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "0193AD10-7F4C-2E27-5C67-B587F2353E57";
+	rename -uid "9AF1DCE2-9846-BE48-301C-5EB7F9AFA5D4";
 	setAttr -s 32 ".lnk";
 	setAttr -s 32 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "26F43DED-4B45-00F4-DDE8-D88D822B2E7E";
-	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 0 ;
+	rename -uid "C99F3044-CC40-CFBF-8FEC-1AA2317EFD44";
+	setAttr ".bsdt[0].bscd" -type "Int32Array" 3 0 1 2 ;
+	setAttr -s 3 ".bspr";
+	setAttr -s 3 ".obsv";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "986E5235-C04A-DE5D-1419-E29B3F504204";
+	rename -uid "3E5CC0AA-C447-4B57-A174-2C9392AE5B2F";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "367DC3A0-C149-08CE-F1E2-908A91B17ED0";
+	rename -uid "856CF47F-A04C-C1A3-0534-F8A35B10BE60";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "366B4F51-49DE-2FE9-93D3-9BA4B6278754";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "26661447-C243-C8B9-4C9F-2AA3A7FDB5DF";
+	rename -uid "FE8AFDDE-0447-396B-514B-4ABD14FE9FB0";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "CE0F7FAC-4FFE-0694-38FF-4ABC4C28240E";
 	setAttr ".g" yes;
@@ -18235,7 +18335,7 @@ createNode reference -n "teeth_v1_latestRN";
 		"aiTranslator" " -type \"string\" \"polymesh\""
 		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
 		"aiTranslator" " -type \"string\" \"polymesh\""
-		"teeth_v1_latestRN" 73
+		"teeth_v1_latestRN" 3247
 		2 "|teeth_v1_latest:Teeth" "visibility" " 1"
 		2 "|teeth_v1_latest:Teeth" "translate" " -type \"double3\" -0.026016656054751869 0.0015878963455611128 0"
 		
@@ -18372,6 +18472,8435 @@ createNode reference -n "teeth_v1_latestRN";
 		"rotatePivot" " -type \"double3\" 0 -0.010167027137036657 -0.024175630883831907"
 		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums" 
 		"scalePivot" " -type \"double3\" 0 -0.010167027137036657 -0.024175630883831907"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"instObjGroups" " -s 2"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"instObjGroups.objectGroups" " -s 2"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"uvPivot" " -type \"double2\" 0 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"colorSet" " -s 2"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"colorSet[0].colorName" " -type \"string\" \"SculptFreezeColorTemp\""
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"colorSet[0].clamped" " 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"colorSet[0].representation" " 4"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"colorSet[1].colorName" " -type \"string\" \"SculptMaskColorTemp\""
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"colorSet[1].clamped" " 0"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"colorSet[1].representation" " 4"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts" " -s 3162"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[0]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1]" " -type \"float3\" -0.0066606998000000002 -0.027096147000000001 -0.025315748999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2]" " -type \"float3\" -0.19455743 0.32859622999999999 0.053842558999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[4]" " -type \"float3\" 0.012811184 -0.0074999276999999998 -0.025501237999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[5]" " -type \"float3\" 0.12083089 -0.036920331000000001 0.097656204999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[6]" " -type \"float3\" -0.025572896000000001 -0.22515668999999999 -0.017857538999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[7]" " -type \"float3\" -0.0039701164000000002 -0.11090114 -0.029385792000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[8]" " -type \"float3\" 0.0080311298 -0.57334362999999999 -0.057211623000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[9]" " -type \"float3\" -0.00027275085000000001 -0.010725046 -0.023973929000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[10]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[11]" " -type \"float3\" 0.00024977326 -0.0096696261000000002 -0.024066793"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[12]" " -type \"float3\" 0.00035357474999999998 -0.0094629172000000004 -0.024021493000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[13]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[14]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[15]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[16]" " -type \"float3\" -0.020544766999999999 0.017498082000000002 -0.028989302000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[17]" " -type \"float3\" -0.00071239470999999996 -0.068735621999999996 -0.023482785999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[18]" " -type \"float3\" 0.001075983 -0.10638122999999999 -0.021296965000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[19]" " -type \"float3\" -0.00068449973999999995 -0.11303972 -0.021565424"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[20]" " -type \"float3\" -0.0078566074 -0.014768654000000001 -0.025695788000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[21]" " -type \"float3\" -0.047868252 0.074280180000000001 -0.032744392999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[22]" " -type \"float3\" -0.21121382999999999 0.35856958999999999 0.059877886999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[23]" " -type \"float3\" -0.21616054000000001 0.36404829999999999 0.060702816"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[24]" " -type \"float3\" -0.17671132000000001 0.29540720999999998 0.045352115999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[25]" " -type \"float3\" -0.17743539999999999 0.29023522000000002 0.048623577000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[26]" " -type \"float3\" -0.20354795000000001 0.327241 0.057559744000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[27]" " -type \"float3\" -0.11071968 0.18139097000000001 0.021278871000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[28]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[29]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[30]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[31]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[32]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[33]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[34]" " -type \"float3\" 0.012120247000000001 -0.0076458695999999998 -0.025430666000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[35]" " -type \"float3\" 0.024488926000000001 -0.0050733480999999997 -0.026713358"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[36]" " -type \"float3\" 0.018535613999999999 -0.0063078049999999997 -0.026093470000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[37]" " -type \"float3\" 0.0064263343999999998 -0.0088281426999999996 -0.024839864999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[38]" " -type \"float3\" 0.0044088364000000003 -0.0092484895000000001 -0.024631009999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[39]" " -type \"float3\" 0.0024068356000000002 -0.0096656474999999992 -0.024424540000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[40]" " -type \"float3\" 0.14365315000000001 -0.069364450999999994 0.082326546"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[41]" " -type \"float3\" 0.18475246000000001 -0.13825992000000001 0.035483493999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[42]" " -type \"float3\" 0.14117193 -0.037773274000000003 0.076597824999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[43]" " -type \"float3\" 0.073372363999999995 -0.016565228000000001 0.13630481"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[44]" " -type \"float3\" 0.072718978000000004 -0.024123334999999999 0.13492079000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[45]" " -type \"float3\" 0.082282185999999993 0.026772713 0.14076801"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[46]" " -type \"float3\" -0.01674819 -0.21389058 -0.030514227000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[47]" " -type \"float3\" 0.015287995 -0.22194985 -0.030126081999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[48]" " -type \"float3\" -0.010382414 -0.23402002 -0.0048398840999999996"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[49]" " -type \"float3\" -0.031154155999999999 -0.24226107999999999 0.0083542001000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[50]" " -type \"float3\" -0.036077498999999999 -0.22897664000000001 -0.013386713"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[51]" " -type \"float3\" -0.032940388000000001 -0.21302524 -0.026572214"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[52]" " -type \"float3\" -0.0025477110999999998 -0.062387607999999997 -0.026518809000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[53]" " -type \"float3\" -0.0058054328000000004 -0.094984315 -0.026007162"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[54]" " -type \"float3\" -0.0072060227000000001 -0.16010669 -0.031585677999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[55]" " -type \"float3\" -0.0081660151 -0.19505253 -0.034159169000000003"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[56]" " -type \"float3\" -0.0030163527000000002 -0.11848261 -0.029593215999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[57]" " -type \"float3\" 0.0010641813000000001 -0.049601339000000001 -0.026402699000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[58]" " -type \"float3\" 0.0089259743999999999 -0.42843070999999999 -0.011814104000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[59]" " -type \"float3\" -0.011928380000000001 -0.40979042999999998 -0.023240315000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[60]" " -type \"float3\" 0.0039359330999999996 -0.48624088999999998 -0.038125023000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[61]" " -type \"float3\" 0.018622040999999999 -0.62165892 -0.067623839000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[62]" " -type \"float3\" 0.020682096000000001 -0.57652175000000006 -0.057387576000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[63]" " -type \"float3\" 0.012973905000000001 -0.52681959 -0.048535332"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[64]" " -type \"float3\" 0.0048731564999999998 -0.40348615999999998 -0.00057433731999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[65]" " -type \"float3\" 0.0049577355000000002 -0.57434713999999998 -0.067427263000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[66]" " -type \"float3\" 0.014789462 -0.60299550999999996 -0.071515545"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[67]" " -type \"float3\" -0.0029351710999999999 -0.48925271999999997 -0.057337627000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[68]" " -type \"float3\" -0.00027751923 -0.010294819 -0.024073588"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[69]" " -type \"float3\" 0.0033590794000000002 -0.010460282 -0.027240739999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[70]" " -type \"float3\" 0.0037388802 -0.010651017 -0.027209269000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[71]" " -type \"float3\" -0.00032782554999999998 -0.010467077 -0.023589598"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[72]" " -type \"float3\" -0.00050926208000000002 -0.010638857 -0.023803220999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[73]" " -type \"float3\" 0.0032312869999999998 -0.0090564731999999998 -0.022992598"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[74]" " -type \"float3\" 0.0052371025000000002 -0.0082540753999999997 -0.025912748999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[75]" " -type \"float3\" 0.0021655559999999999 -0.0068613533000000003 -0.027461515999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[76]" " -type \"float3\" 0.0028967857000000001 -0.0082162860999999993 -0.027841555"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[77]" " -type \"float3\" 0.0042328835000000004 -0.01020279 -0.024930941000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[78]" " -type \"float3\" 0.0011050700999999999 -0.0096749308999999999 -0.024642454000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[79]" " -type \"float3\" 0.0054991244999999999 -0.010047341 -0.026879773999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[80]" " -type \"float3\" 0.0052905082999999999 -0.0081525091000000001 -0.02802466"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[81]" " -type \"float3\" 0.0037548541999999998 -0.0050783399000000002 -0.025146471"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[82]" " -type \"float3\" 0.0055637359999999997 -0.0044199469999999996 -0.024635779"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[83]" " -type \"float3\" 0.0064196586999999998 -0.0084074978000000002 -0.023807989000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[84]" " -type \"float3\" 0.0017025471 -0.0083236935999999994 -0.025289045999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[85]" " -type \"float3\" 0.0060744286 -0.0048622135000000004 -0.026181685"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[86]" " -type \"float3\" 0.019422531 -0.0066364053999999999 -0.024344431"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[87]" " -type \"float3\" 0.004370451 -0.0080366376999999999 -0.029184805000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[88]" " -type \"float3\" 0.0035986899999999999 -0.0074807648000000003 -0.027679907"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[89]" " -type \"float3\" 0.0072715282000000003 -0.0030374769000000002 -0.029577242"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[90]" " -type \"float3\" 0.0036635398999999998 -0.0066646580000000004 -0.025084005999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[91]" " -type \"float3\" 0.0054938792999999998 0.0010492559999999999 -0.028184401000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[92]" " -type \"float3\" 0.0018596648999999999 0.001580691 -0.02970122"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[93]" " -type \"float3\" -0.00015759467999999999 -0.0089322571000000003 -0.026257979000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[94]" " -type \"float3\" 0.0083608627000000008 -0.0044631007999999996 -0.029557692"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[95]" " -type \"float3\" 0.0035758017999999998 -0.0079031233000000003 -0.028044688000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[96]" " -type \"float3\" 0.0055992602999999997 -0.0075640921000000002 -0.029931532"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[97]" " -type \"float3\" 0.010487556 -0.0053012613000000004 -0.030163751999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[98]" " -type \"float3\" 0.0039978026999999998 1.8572435000000001e-05 -0.031621917999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[99]" " -type \"float3\" 0.010703325 -0.0057636741999999999 -0.030398356000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[100]" " -type \"float3\" 0.0012445449999999999 -0.0035411361999999999 -0.032151684"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[101]" " -type \"float3\" -0.00041699408999999998 -0.0025228503999999998 -0.031810746000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[102]" " -type \"float3\" 0.0041518210999999996 0.0039247031999999999 -0.028914914999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[103]" " -type \"float3\" -7.5578690000000008e-05 -0.00095226801999999996 -0.035738453000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[104]" " -type \"float3\" 0.0017805099000000001 0.0062678810000000003 -0.031273826999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[105]" " -type \"float3\" 0.0025622844999999999 0.0044861789999999999 -0.029964911"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[106]" " -type \"float3\" 0.0083646773999999993 0.012191390999999999 -0.033206448"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[107]" " -type \"float3\" 0.0023643969999999999 0.0096862074000000006 -0.031538947999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[108]" " -type \"float3\" 0.00090265273999999996 -0.0054253582 -0.030772196000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[109]" " -type \"float3\" -0.00042200088999999998 -0.0095499995999999993 -0.028612601000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[110]" " -type \"float3\" 0.00059294700999999999 -0.0083389524000000003 -0.028651701000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[111]" " -type \"float3\" -0.00073409080999999998 -0.0081601385000000005 -0.027991759000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[112]" " -type \"float3\" 0.0053799151999999999 -0.0033935551 -0.028233037999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[113]" " -type \"float3\" 0.0031390189999999998 -0.0046888831999999997 -0.027578818000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[114]" " -type \"float3\" 0.0012030602 -0.0083464626 -0.026904569999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[115]" " -type \"float3\" -0.00031161307999999998 -0.0062486175000000003 -0.027433381999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[116]" " -type \"float3\" 0.0016562939 -0.0066663269000000001 -0.026370989000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[117]" " -type \"float3\" 0.00060796737999999995 -0.0071673635000000001 -0.027065741000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[118]" " -type \"float3\" 0.0038073063 -0.0072218422000000001 -0.025409208999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[119]" " -type \"float3\" 0.0014371872 -0.0087508204999999992 -0.026267038999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[120]" " -type \"float3\" 0.001591444 -0.0098104718999999993 -0.024775015000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[121]" " -type \"float3\" 0.0010061263999999999 -0.01047113 -0.024656283000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[122]" " -type \"float3\" -0.00018477439999999999 -0.011088753 -0.02396916"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[123]" " -type \"float3\" -5.9604644999999995e-06 -0.010293030999999999 -0.023883330000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[124]" " -type \"float3\" -0.00010895729 -0.010177874999999999 -0.024099814000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[125]" " -type \"float3\" 0.00031185149999999999 -0.010320091999999999 -0.024105059000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[126]" " -type \"float3\" 4.8398972000000005e-05 -0.010180378 -0.024202333999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[127]" " -type \"float3\" 0.00015032291000000001 -0.010191346 -0.02415465"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[128]" " -type \"float3\" 0.00032734871000000002 -0.010209345999999999 -0.024236666"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[129]" " -type \"float3\" -1.0848045e-05 -0.010171556999999999 -0.024163232999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[130]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[131]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[132]" " -type \"float3\" 0.00016641617000000001 -0.010154033 -0.024178015000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[133]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[134]" " -type \"float3\" -0.00019967556 -0.010221744 -0.024105536"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[135]" " -type \"float3\" -0.00084590912 -0.010595106999999999 -0.023523794000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[136]" " -type \"float3\" -2.0265579e-06 -0.010168218999999999 -0.024182782999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[137]" " -type \"float3\" 2.0265578999999997e-05 -0.010182047 -0.024145590000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[138]" " -type \"float3\" -0.0012508631000000001 -0.011270904999999999 -0.023176180000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[139]" " -type \"float3\" -0.001611948 -0.019431973000000002 -0.016000734999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[140]" " -type \"float3\" 0.0036296843999999999 -0.033228181000000002 -0.0070834028999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[141]" " -type \"float3\" 0.00027370452999999999 -0.011827732000000001 -0.022684084"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[142]" " -type \"float3\" 0.00034272670999999999 -0.020283723 -0.020422922"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[143]" " -type \"float3\" -0.00098037720000000001 -0.050346039000000002 0.0034852158000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[144]" " -type \"float3\" 0.0018882154999999999 -0.076127908999999994 0.0037884843000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[145]" " -type \"float3\" 0.0022326111999999999 -0.093330644000000004 -0.021749483"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[146]" " -type \"float3\" 0.011641264 -0.045022987 -0.015172945"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[147]" " -type \"float3\" -0.013891219999999999 -0.089015864 0.014232649"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[148]" " -type \"float3\" -0.037097990999999997 -0.12012281 -0.0012931692999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[149]" " -type \"float3\" -0.040081799000000001 -0.14909591999999999 -0.033032879000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[150]" " -type \"float3\" -0.030235022 -0.19805755999999999 -0.058313832000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[151]" " -type \"float3\" 0.0033247470999999999 -0.10421862 -0.042842373000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[152]" " -type \"float3\" -0.076795637999999999 -0.18467358 -0.015851961000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[153]" " -type \"float3\" -0.08842063 -0.26301028999999998 -0.038421139"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[154]" " -type \"float3\" -0.084712297000000006 -0.31658008999999998 -0.059931262999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[155]" " -type \"float3\" -0.079288660999999996 -0.32794181 -0.086155399999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[156]" " -type \"float3\" -0.016973123 -0.23993661999999999 -0.085714802000000007"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[157]" " -type \"float3\" -0.090563744000000002 -0.32970515 -0.030529486000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[158]" " -type \"float3\" -0.12331734 -0.36770943 -0.044637665"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[159]" " -type \"float3\" -0.13805217 -0.38364366 -0.068580136"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[160]" " -type \"float3\" -0.10766488 -0.42041376000000003 -0.079106315999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[161]" " -type \"float3\" -0.069568425000000003 -0.32754496 -0.11175154"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[162]" " -type \"float3\" -0.097083732000000006 -0.38950016999999998 -0.027194963999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[163]" " -type \"float3\" -0.13382268999999999 -0.41266765999999999 -0.039026245000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[164]" " -type \"float3\" -0.097326756 -0.46518341000000002 -0.028000342000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[165]" " -type \"float3\" -0.036332129999999997 -0.52678966999999999 -0.015064703"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[166]" " -type \"float3\" -0.044532507999999998 -0.46162012000000002 -0.093457207"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[167]" " -type \"float3\" -0.099155933000000002 -0.40975776000000003 -0.014837728999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[168]" " -type \"float3\" -0.084957480000000002 -0.439441 0.0016899238999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[169]" " -type \"float3\" -0.034916877999999998 -0.49695745000000002 0.038344398000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[170]" " -type \"float3\" 0.0095573663999999996 -0.52529787999999999 0.074278369999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[171]" " -type \"float3\" 0.012859046000000001 -0.55590236000000004 -0.0095376838000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[172]" " -type \"float3\" -0.060606539000000001 -0.40986445999999999 0.024107946000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[173]" " -type \"float3\" -0.026033789000000002 -0.41587594 0.051013007999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[174]" " -type \"float3\" 0.012490869 -0.42055049999999999 0.083716884000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[175]" " -type \"float3\" 0.047370194999999997 -0.41664568000000002 0.092044368000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[176]" " -type \"float3\" 0.055339336000000003 -0.51539480999999998 0.073821559999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[177]" " -type \"float3\" -0.022737831 -0.38090673000000003 0.054598822999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[178]" " -type \"float3\" 0.0070767998999999998 -0.37632169999999998 0.072762981000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[179]" " -type \"float3\" 0.036839127999999999 -0.36753836000000001 0.081515803999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[180]" " -type \"float3\" 0.069692253999999995 -0.35488441999999998 0.075369850000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[181]" " -type \"float3\" 0.096389711000000003 -0.39145448999999999 0.073830143000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[182]" " -type \"float3\" 0.00081765652000000003 -0.34799686000000002 0.060345188000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[183]" " -type \"float3\" 0.018362462999999999 -0.34799686000000002 0.068026319000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[184]" " -type \"float3\" 0.035297751000000002 -0.33820966000000002 0.067446247000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[185]" " -type \"float3\" 0.049438238000000002 -0.31303075000000002 0.051692978000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[186]" " -type \"float3\" 0.089425801999999999 -0.34071436999999999 0.048611178999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[187]" " -type \"float3\" 0.0051815510000000004 -0.31278029000000002 0.053758159"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[188]" " -type \"float3\" 0.015257835000000001 -0.29546955000000003 0.051553741"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[189]" " -type \"float3\" 0.023837686 -0.26793662000000001 0.044153467000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[190]" " -type \"float3\" 0.025747538 -0.24687007 0.024797929"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[191]" " -type \"float3\" 0.058209895999999997 -0.27883950000000002 0.021626486"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[192]" " -type \"float3\" 0.0019763708000000001 -0.27551952000000002 0.040708318"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[193]" " -type \"float3\" 0.0016884803999999999 -0.26580431999999998 0.034848705000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[194]" " -type \"float3\" -0.00060570239999999998 -0.25599387000000001 0.025227083000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[195]" " -type \"float3\" -0.0034792423000000001 -0.24526396 0.010657562000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[196]" " -type \"float3\" 0.025208831000000001 -0.23342255000000001 -0.0029592384"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[197]" " -type \"float3\" -0.0088399649000000004 -0.27519431999999999 0.024880421999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[198]" " -type \"float3\" -0.013228893 -0.26606885000000002 0.018525851999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[199]" " -type \"float3\" -0.019016504 -0.25500050000000002 0.013591303000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[200]" " -type \"float3\" -0.015187025 -0.27569059000000001 0.0097315441999999992"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[201]" " -type \"float3\" -0.022114635000000001 -0.26533189000000001 0.0061297547000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[202]" " -type \"float3\" -0.034620285000000001 -0.25428692000000003 0.0024175773999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[203]" " -type \"float3\" -0.022032738 -0.28378608999999999 -0.00031469948999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[204]" " -type \"float3\" -0.031460762000000003 -0.27468994000000002 -0.0035853256000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[205]" " -type \"float3\" -0.040805340000000002 -0.26642922000000002 -0.010519492"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[206]" " -type \"float3\" -0.045202494000000003 -0.241285 -0.010209309"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[207]" " -type \"float3\" -0.040903807 -0.25466265999999999 -0.022435652"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[208]" " -type \"float3\" -0.037452459 -0.2247043 -0.023361192999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[209]" " -type \"float3\" -0.036866188000000001 -0.23790934999999999 -0.029940115"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[210]" " -type \"float3\" -0.037392138999999998 -0.20283714 -0.031737790000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[211]" " -type \"float3\" -0.026949643999999998 -0.19165351999999999 -0.032362923000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[212]" " -type \"float3\" -0.0040910243999999997 -0.19522431000000001 -0.038611396999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[213]" " -type \"float3\" -0.031119823000000001 -0.17655137000000001 -0.029699789000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[214]" " -type \"float3\" -0.024727105999999999 -0.16463974000000001 -0.034243092000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[215]" " -type \"float3\" 0.0062497854 -0.17114367999999999 -0.046652302"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[216]" " -type \"float3\" -0.020712852 -0.13370778999999999 -0.029423224000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[217]" " -type \"float3\" -0.00016403197999999999 -0.14409437999999999 -0.038795932999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[218]" " -type \"float3\" 0.040364861000000002 -0.21613994 -0.042145714000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[219]" " -type \"float3\" 0.054919243 -0.20957782999999999 -0.050022587"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[220]" " -type \"float3\" 0.039501547999999997 -0.20720722999999999 -0.044033989000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[221]" " -type \"float3\" 0.083290815000000004 -0.27155772 -0.027016627000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[222]" " -type \"float3\" 0.057759523 -0.23739615 -0.016537652999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[223]" " -type \"float3\" 0.094212173999999996 -0.31886807 0.0066595207999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[224]" " -type \"float3\" 0.089967132000000005 -0.27916959000000002 -0.033637986000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[225]" " -type \"float3\" 0.12966299000000001 -0.32080796 -0.013418184999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[226]" " -type \"float3\" 0.14272934000000001 -0.35217395000000001 0.031982914000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[227]" " -type \"float3\" 0.12452125999999999 -0.30619171000000001 -0.019719111000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[228]" " -type \"float3\" 0.15500217999999999 -0.36139824999999998 0.0075903068999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[229]" " -type \"float3\" 0.11164296 -0.45296898000000002 0.044464602999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[230]" " -type \"float3\" 0.12926733000000001 -0.33567742 -0.0034789908999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[231]" " -type \"float3\" 0.098706782000000007 -0.44266548999999999 -0.0020699371"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[232]" " -type \"float3\" 0.048887609999999998 -0.5290494 -0.0055522788000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[233]" " -type \"float3\" 0.090932786000000002 -0.38757339000000002 -0.030316340000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[234]" " -type \"float3\" 0.048470259000000002 -0.45209005000000002 -0.087572559999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[235]" " -type \"float3\" 0.0079217255000000007 -0.47000207999999999 -0.10588978"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[236]" " -type \"float3\" 0.059857189999999998 -0.30369331999999999 -0.097120269999999995"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[237]" " -type \"float3\" 0.019768267999999999 -0.31218782 -0.12001083999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[238]" " -type \"float3\" -0.02748391 -0.32193187000000001 -0.12251090000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[239]" " -type \"float3\" 0.033404171000000003 -0.21103874 -0.11089228"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[240]" " -type \"float3\" 0.018756255999999999 -0.22341052 -0.12300394000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[241]" " -type \"float3\" -0.0022441818999999999 -0.23976639 -0.11186980000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[242]" " -type \"float3\" 0.029116735000000001 -0.1362845 -0.10635087999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[243]" " -type \"float3\" 0.019460119000000001 -0.12761632000000001 -0.087968810999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[244]" " -type \"float3\" 0.010874211999999999 -0.11854257 -0.062273964000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[245]" " -type \"float3\" 0.028228104 -0.050314805999999997 -0.058924182999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[246]" " -type \"float3\" 0.023809105000000001 -0.053070924999999998 -0.037879929"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[247]" " -type \"float3\" 0.017822741999999999 -0.051214717 -0.026692853999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[248]" " -type \"float3\" 0.012798488 -0.016689682000000001 -0.026081548999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[249]" " -type \"float3\" 0.0087101460000000002 -0.015576744 -0.024291025000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[250]" " -type \"float3\" 0.0041635036 -0.013555551000000001 -0.023852812000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[251]" " -type \"float3\" 0.00075680017000000004 -0.010217095000000001 -0.025151717000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[252]" " -type \"float3\" 0.00030636786999999998 -0.010205054999999999 -0.024585711"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[253]" " -type \"float3\" 7.2360038999999998e-05 -0.010173107000000001 -0.024286256999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[254]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[255]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[256]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[257]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[258]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[259]" " -type \"float3\" 2.3841858000000001e-06 -0.010167027 -0.024178015000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[260]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[261]" " -type \"float3\" 1.7881393000000001e-06 -0.010167027 -0.024176585"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[262]" " -type \"float3\" 0.00021266937000000001 -0.010175014 -0.024316774999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[263]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[264]" " -type \"float3\" 0.00030851364 -0.010163330999999999 -0.024273858999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[265]" " -type \"float3\" 0.0014064311999999999 -0.010218883 -0.024647222999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[266]" " -type \"float3\" 0.00015902519 -0.010154748 -0.024108873999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[267]" " -type \"float3\" 0.0013325214000000001 -0.010153079000000001 -0.024261938"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[268]" " -type \"float3\" 0.00012755393999999999 -0.010116125 -0.024087892999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[269]" " -type \"float3\" 0.00068044662000000004 -0.0099570992999999993 -0.024209009"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[270]" " -type \"float3\" 0.00017929077000000001 -0.0099227671000000003 -0.024294362999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[271]" " -type \"float3\" 0.00098037720000000001 -0.0089745763999999999 -0.024999605000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[272]" " -type \"float3\" 0.00018596648999999999 -0.010104919 -0.024205672000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[273]" " -type \"float3\" 0.00091981888000000004 -0.0098023656999999993 -0.0248618"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[274]" " -type \"float3\" 0.00017237662999999999 -0.010193371999999999 -0.024002539"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[275]" " -type \"float3\" 0.00061154365999999995 -0.010226155000000001 -0.024097905999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[276]" " -type \"float3\" 8.893013e-05 -0.0096996072999999995 -0.023960100000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[277]" " -type \"float3\" 0.00048041343999999999 -0.0087859873000000008 -0.024255262999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[278]" " -type \"float3\" 0.00010085106 -0.010014080999999999 -0.023906218"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[279]" " -type \"float3\" 0.00084328650999999997 -0.0099766496999999996 -0.023334967000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[280]" " -type \"float3\" 0.00037598610000000001 -0.01005795 -0.023798929999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[281]" " -type \"float3\" 0.00093984603999999999 -0.0098084452999999995 -0.023080336"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[282]" " -type \"float3\" 0.0055751801000000004 -0.0078319553000000004 -0.028973565999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[283]" " -type \"float3\" 0.0010449885999999999 -0.010545516 -0.023152338000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[284]" " -type \"float3\" 0.0026328564 -0.0099931004999999993 -0.025928484000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[285]" " -type \"float3\" 0.0076479911999999999 -0.0088156703999999995 -0.030388819000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[286]" " -type \"float3\" 0.0022528171999999999 -0.010725046 -0.025414454"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[287]" " -type \"float3\" 0.0095236300999999995 -0.0093186143999999995 -0.029096589999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[288]" " -type \"float3\" 0.0083186626000000003 -0.012329901000000001 -0.030950532999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[289]" " -type \"float3\" -0.0013046265000000001 -0.01200583 -0.032964214999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[290]" " -type \"float3\" 0.0044884681999999999 -0.015297616 -0.02945994"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[291]" " -type \"float3\" -0.0073480606000000002 -0.013955617 -0.030604348999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[292]" " -type \"float3\" 0.011299849000000001 -0.013871873 -0.032742485000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[293]" " -type \"float3\" 0.0040378571000000002 -0.015653753999999999 -0.035172448000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[294]" " -type \"float3\" 0.023410319999999998 -0.019774163000000001 -0.031537994999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[295]" " -type \"float3\" 0.018783092000000001 -0.012913012999999999 -0.032814010999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[296]" " -type \"float3\" 0.0084493160000000001 -0.0011306051000000001 -0.03414391"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[297]" " -type \"float3\" 0.030068635999999999 -0.010084296 -0.02761315"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[298]" " -type \"float3\" 0.016182661000000001 -0.00086715258999999997 -0.027886378"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[299]" " -type \"float3\" 0.0079357624000000009 0.012899851 -0.029194819"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[300]" " -type \"float3\" 0.013923168 0.0025580879 -0.019134031999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[301]" " -type \"float3\" 0.012435675 0.017161345000000001 -0.019992337999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[302]" " -type \"float3\" -0.0050094127999999998 0.022904490999999999 -0.023262010999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[303]" " -type \"float3\" 0.0021173953999999999 0.018355465000000001 -0.029347884000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[304]" " -type \"float3\" 0.0020179748999999999 0.0017132517000000001 -0.024654852000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[305]" " -type \"float3\" 0.0034728049999999998 -0.0026861671000000002 -0.027180658999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[306]" " -type \"float3\" 0.0067079067000000003 -0.0051688198000000001 -0.024646268999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[307]" " -type \"float3\" 0.0048418044999999996 -0.0075217727999999998 -0.026928411999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[308]" " -type \"float3\" 0.0097510814999999997 -0.0014682058 -0.024218546000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[309]" " -type \"float3\" 0.0078086852999999998 -0.0031713488999999999 -0.026021944000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[310]" " -type \"float3\" 0.0051364899 -0.0094053986999999995 -0.025148378999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[311]" " -type \"float3\" 0.0033793449000000001 -0.010408186999999999 -0.025671468999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[312]" " -type \"float3\" 0.0058679581 -0.0097619536999999992 -0.024983869999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[313]" " -type \"float3\" 0.0026426315000000001 -0.0097899679 -0.025258527999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[314]" " -type \"float3\" 0.0069825649 -0.0085233692000000003 -0.024223314999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[315]" " -type \"float3\" 0.0055375099000000002 -0.0092087034000000005 -0.024272429000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[316]" " -type \"float3\" 0.0016191006 -0.010668898 -0.024284826999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[317]" " -type \"float3\" 0.0011720656999999999 -0.010370040000000001 -0.024407851000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[318]" " -type \"float3\" 0.00010335445 -0.010173226 -0.024182782999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[319]" " -type \"float3\" 0.0023467541 -0.010393048 -0.024540888"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[320]" " -type \"float3\" 0.00023484229999999999 -0.010261083000000001 -0.024178491999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[321]" " -type \"float3\" 0.00031054020000000001 -0.010491156999999999 -0.024140345000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[322]" " -type \"float3\" 0.00041639805000000002 -0.010244155 -0.024156080999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[323]" " -type \"float3\" 0.0013958216 -0.013263011 -0.023889052000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[324]" " -type \"float3\" 0.0044186115 -0.041161202000000001 -0.015761362000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[325]" " -type \"float3\" 0.0031917095000000002 -0.018723631000000001 -0.023422704999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[326]" " -type \"float3\" 0.0058281421999999998 -0.066651008999999997 -0.014113413"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[327]" " -type \"float3\" -0.029937267 -0.12293817999999999 -2.6689842000000001e-05"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[328]" " -type \"float3\" 0.010851263999999999 -0.091756128000000006 -0.017188536000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[329]" " -type \"float3\" -0.016438841999999999 -0.15990713000000001 -0.012761102999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[330]" " -type \"float3\" -0.054227889000000001 -0.25203267000000001 -0.021224962999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[331]" " -type \"float3\" 0.0012216568000000001 -0.17880489999999999 -0.015954958000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[332]" " -type \"float3\" -0.022781849 -0.27651527999999997 -0.016280161000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[333]" " -type \"float3\" -0.053365797 -0.36067357999999999 -0.017370211"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[334]" " -type \"float3\" -0.0073449611999999997 -0.26117054000000001 -0.014785276999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[335]" " -type \"float3\" -0.024415314 -0.36748162000000001 -0.0069737304000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[336]" " -type \"float3\" -0.059717074000000002 -0.40111855000000002 -0.010138022"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[337]" " -type \"float3\" -0.0071145295999999998 -0.32910433 -0.0036783088000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[338]" " -type \"float3\" -0.030300342000000001 -0.38589171 0.0041422973999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[339]" " -type \"float3\" -0.059213012000000002 -0.40513542000000002 0.010172857"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[340]" " -type \"float3\" -0.014362946 -0.32854250000000002 0.0034475457"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[341]" " -type \"float3\" -0.035380109999999999 -0.36395553000000003 0.018556131"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[342]" " -type \"float3\" -0.042822926999999997 -0.38233092000000002 0.035719885999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[343]" " -type \"float3\" -0.020430639 -0.31309226000000001 0.013114704"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[344]" " -type \"float3\" -0.027116953999999999 -0.32458105999999998 0.028513921000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[345]" " -type \"float3\" -0.016376376000000002 -0.33713058000000001 0.045602098000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[346]" " -type \"float3\" -0.013495147000000001 -0.30540552999999998 0.021632446"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[347]" " -type \"float3\" -0.011911988 -0.30298021000000003 0.034143700999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[348]" " -type \"float3\" -0.0040743350999999997 -0.31000105 0.044329658000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[349]" " -type \"float3\" -0.0089184642000000001 -0.30188074999999998 0.025810731999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[350]" " -type \"float3\" -0.0037564635 -0.29551878999999998 0.036032929999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[351]" " -type \"float3\" -0.001542449 -0.28818503000000001 0.041367306999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[352]" " -type \"float3\" -0.0074850320999999996 -0.30062403999999998 0.028416408000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[353]" " -type \"float3\" -0.0052058696999999999 -0.29225614999999999 0.033518091"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[354]" " -type \"float3\" -0.0051927567000000004 -0.28368333000000001 0.030651344000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[355]" " -type \"float3\" -0.0058703423000000003 -0.30310812999999998 0.022085203000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[356]" " -type \"float3\" -0.0072810649999999998 -0.29375805999999999 0.013936056"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[357]" " -type \"float3\" -0.010652541999999999 -0.28509083000000002 0.012297882"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[358]" " -type \"float3\" -0.0024536848000000001 -0.32951345999999998 -0.0066749918999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[359]" " -type \"float3\" -0.0094482899000000002 -0.31102875000000002 -0.0038852561000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[360]" " -type \"float3\" -0.015128374 -0.29595866999999998 0.00044037215000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[361]" " -type \"float3\" -0.0064251422999999997 -0.35760607999999999 -0.016483771000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[362]" " -type \"float3\" -0.015327454000000001 -0.32873276000000001 -0.011584746"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[363]" " -type \"float3\" -0.023202658000000001 -0.30960526999999999 -0.0092854368999999992"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[364]" " -type \"float3\" -0.016728639999999999 -0.35890892000000002 -0.017943369000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[365]" " -type \"float3\" -0.024626492999999999 -0.33164135 -0.014922606"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[366]" " -type \"float3\" -0.030651331 -0.32018045000000001 -0.015916573"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[367]" " -type \"float3\" -0.03069067 -0.30052951 -0.0099112856999999995"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[368]" " -type \"float3\" -0.033214092000000001 -0.31707457 -0.021120297"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[369]" " -type \"float3\" -0.035197020000000002 -0.29678336 -0.017013536999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[370]" " -type \"float3\" -0.035239697 -0.31443812999999998 -0.026767955999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[371]" " -type \"float3\" -0.036951779999999997 -0.29184988000000001 -0.025920378000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[372]" " -type \"float3\" -0.037337065000000003 -0.31049325999999999 -0.031431183000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[373]" " -type \"float3\" -0.035916805000000003 -0.28269103000000001 -0.030622468999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[374]" " -type \"float3\" -0.040640593000000003 -0.30510619 -0.034485324999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[375]" " -type \"float3\" -0.037706375 -0.27084950000000002 -0.033144459000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[376]" " -type \"float3\" -0.033225060000000001 -0.21768978 -0.030647741999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[377]" " -type \"float3\" -0.039234160999999997 -0.25460544000000002 -0.034345611999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[378]" " -type \"float3\" -0.030449628999999999 -0.19046763 -0.030222880000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[379]" " -type \"float3\" -0.025881290000000001 -0.14572789999999999 -0.026745306"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[380]" " -type \"float3\" -0.027632713 -0.15885880999999999 -0.030324446000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[381]" " -type \"float3\" -0.020011662999999999 -0.10840930999999999 -0.025210844"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[382]" " -type \"float3\" -0.017031669999999999 -0.099188469000000001 -0.026458249999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[383]" " -type \"float3\" -0.013397694 -0.072313212000000002 -0.025447832"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[384]" " -type \"float3\" -0.012616396 -0.068961284999999997 -0.024833188999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[385]" " -type \"float3\" -0.011709331999999999 -0.1220788 -0.028645502"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[386]" " -type \"float3\" -0.0058134794 -0.13118926 -0.033468708"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[387]" " -type \"float3\" 0.0094807147999999997 -0.17977741 -0.033850178000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[388]" " -type \"float3\" 0.022516131000000002 -0.20383003 -0.036458954000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[389]" " -type \"float3\" 0.050990462 -0.24300696999999999 -0.032787785"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[390]" " -type \"float3\" 0.070007205000000003 -0.26513590999999997 -0.032114014000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[391]" " -type \"float3\" 0.0995785 -0.28511217 -0.022119032"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[392]" " -type \"float3\" 0.035392761000000002 -0.21740118 -0.032679542999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[393]" " -type \"float3\" 0.090564250999999998 -0.26140359000000002 -0.020662295000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[394]" " -type \"float3\" 0.11879319000000001 -0.30767944000000003 -0.01019858"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[395]" " -type \"float3\" 0.066332458999999996 -0.21989742000000001 -0.024730192000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[396]" " -type \"float3\" 0.094615161000000003 -0.25247911000000001 -0.033887370999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[397]" " -type \"float3\" 0.079887926999999997 -0.28516092999999998 -0.062895282999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[398]" " -type \"float3\" 0.053710341000000002 -0.18114594000000001 -0.044671996999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[399]" " -type \"float3\" 0.057814360000000002 -0.19485453 -0.065801605999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[400]" " -type \"float3\" 0.043843686999999999 -0.20363858000000001 -0.087426647999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[401]" " -type \"float3\" 0.024530053 -0.12236574 -0.057056889"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[402]" " -type \"float3\" 0.025965333 -0.13662329000000001 -0.071556075999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[403]" " -type \"float3\" 0.029557347000000001 -0.14093628999999999 -0.094654545000000007"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[404]" " -type \"float3\" 0.0088310539999999996 -0.058463833999999999 -0.047926888000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[405]" " -type \"float3\" 0.014481664 -0.063179157999999999 -0.061935410000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[406]" " -type \"float3\" 0.023100723 -0.054758570999999999 -0.072543605999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[407]" " -type \"float3\" 0.0018175095000000001 -0.015758538999999998 -0.03421925"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[408]" " -type \"float3\" 0.0076891816999999996 -0.015663885999999998 -0.037221417"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[409]" " -type \"float3\" 0.013229907000000001 -0.016422892000000001 -0.032130702999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[410]" " -type \"float3\" 0.00068505108 -0.010188246 -0.026681409999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[411]" " -type \"float3\" 0.0015307963 -0.010262633 -0.026166902999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[412]" " -type \"float3\" 0.0011802316000000001 -0.010261083000000001 -0.025625215999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[413]" " -type \"float3\" 3.2216311000000002e-05 -0.010166908000000001 -0.024261938"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[414]" " -type \"float3\" 1.0609627e-05 -0.010167146 -0.024198519000000002"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[415]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[416]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[417]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[418]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[419]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[420]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[421]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[422]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[423]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[424]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[425]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[426]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[427]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[428]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[429]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[430]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[431]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[432]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[433]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[434]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[435]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[436]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[437]" " -type \"float3\" 2.3841858000000002e-07 -0.010166788 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[438]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[439]" " -type \"float3\" 2.8610228999999999e-06 -0.010164762000000001 -0.024173246999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[440]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[441]" " -type \"float3\" 2.3841858000000001e-06 -0.010164047000000001 -0.024173246999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[442]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[443]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[444]" " -type \"float3\" 0.00024342537000000001 -0.010270381 -0.023963914999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[445]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[446]" " -type \"float3\" 0.00011229515000000001 -0.010272109999999999 -0.024076925999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[447]" " -type \"float3\" 0.00084567069999999999 -0.010966623 -0.023692595"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[448]" " -type \"float3\" 2.1934509000000003e-05 -0.010184074 -0.024152265999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[449]" " -type \"float3\" 0.00039720534999999999 -0.010539437 -0.023988234000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[450]" " -type \"float3\" 0.0044031143000000002 -0.010208869000000001 -0.025101649"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[451]" " -type \"float3\" 0.00025868415999999998 -0.01025393 -0.024167524999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[452]" " -type \"float3\" 0.0081517696000000008 -0.0090504530999999996 -0.025115"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[453]" " -type \"float3\" 0.024795055 -0.0053618195999999996 -0.02807902"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[454]" " -type \"float3\" 0.015934706 -0.0074827912999999996 -0.028043734000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[455]" " -type \"float3\" 0.041304588000000003 -0.0022954587 -0.029072747999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[456]" " -type \"float3\" 0.027222633 -0.0061841849000000004 -0.029151427000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[457]" " -type \"float3\" 0.044552087999999997 -0.0033884291000000001 -0.029703126999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[458]" " -type \"float3\" 0.030741214999999999 -0.0074529890000000001 -0.030016886"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[459]" " -type \"float3\" 0.041608094999999998 -0.0079969410000000005 -0.029538617999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[460]" " -type \"float3\" 0.026347637 -0.0095829013999999997 -0.030798421999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[461]" " -type \"float3\" 0.061503410000000001 -0.019498194 -0.029227721000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[462]" " -type \"float3\" 0.038781403999999998 -0.016536439 -0.029358374"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[463]" " -type \"float3\" 0.074424982000000001 -0.023311162 -0.030360686000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[464]" " -type \"float3\" 0.051144599999999998 -0.021292174000000001 -0.029802786000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[465]" " -type \"float3\" 0.033398628 -0.017408990999999999 -0.028609740000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[466]" " -type \"float3\" 0.022005558000000001 -0.022501851 -0.027935015000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[467]" " -type \"float3\" 0.020638943 -0.017579161999999999 -0.023755061000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[468]" " -type \"float3\" 0.020052433000000001 -0.0081488136000000006 -0.019239413"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[469]" " -type \"float3\" 0.00043511390999999999 -0.025367403 -0.021113382999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[470]" " -type \"float3\" 0.0045833588000000003 -0.010302090999999999 -0.015271651000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[471]" " -type \"float3\" -0.0029201508000000001 0.0029102322000000001 -0.015297877"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[472]" " -type \"float3\" -0.020309687 -0.026490116000000001 -0.019218908999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[473]" " -type \"float3\" -0.031125069000000002 -0.0073811058000000001 -0.020222651000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[474]" " -type \"float3\" -0.045314550000000002 0.0087965484999999993 -0.025304780999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[475]" " -type \"float3\" -0.012072563 0.013647413000000001 -0.018235669999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[476]" " -type \"float3\" -0.049171209 0.019999956999999999 -0.031242834000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[477]" " -type \"float3\" -0.025829076999999999 0.031936503999999998 -0.024847017999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[478]" " -type \"float3\" -0.030144214999999999 0.0074672456999999998 -0.030079828999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[479]" " -type \"float3\" -0.010339499 0.0033032652000000002 -0.026144968000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[480]" " -type \"float3\" -0.011601925000000001 -0.0025784019 -0.026931750000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[481]" " -type \"float3\" -0.0013258457 -0.0056177620000000001 -0.025776373000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[482]" " -type \"float3\" 0.00033140182000000002 0.003773069 -0.025200354000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[483]" " -type \"float3\" 0.0055480002999999996 -0.0014389995 -0.024481760000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[484]" " -type \"float3\" -0.0011217594000000001 -0.0054395440999999998 -0.024819361000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[485]" " -type \"float3\" 0.0030550957000000001 -0.0075475220000000001 -0.024973855999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[486]" " -type \"float3\" -0.00020933150999999999 -0.0083137993000000007 -0.024847017999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[487]" " -type \"float3\" 0.004704237 -0.0076347832000000001 -0.024646746000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[488]" " -type \"float3\" 0.0067219734000000001 -0.0085964444999999997 -0.023681628"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[489]" " -type \"float3\" 0.0067305565000000001 -0.0063098911000000002 -0.024943338999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[490]" " -type \"float3\" 0.0024080275999999999 -0.0099473241999999996 -0.02422856"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[491]" " -type \"float3\" 0.0080065727000000007 -0.0088806393999999993 -0.021754252000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[492]" " -type \"float3\" 0.0017938614 -0.0095254425 -0.023741232000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[493]" " -type \"float3\" 0.00061857700000000004 -0.010284448 -0.024086461999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[494]" " -type \"float3\" 0.002166748 -0.010200525 -0.023418890000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[495]" " -type \"float3\" 0.00056767464000000004 -0.010789775999999999 -0.024028765000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[496]" " -type \"float3\" 0.0051308869999999998 -0.026208663 -0.022822843999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[497]" " -type \"float3\" 0.00037324428999999999 -0.011119509 -0.024049269000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[498]" " -type \"float3\" 0.0063242912000000002 -0.033163450999999997 -0.021898733"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[499]" " -type \"float3\" 0.016382575 -0.1119087 -0.017209993999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[500]" " -type \"float3\" 0.0062625407999999999 -0.037161014999999999 -0.021090017999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[501]" " -type \"float3\" 0.019693136 -0.12770775000000001 -0.015251623000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[502]" " -type \"float3\" 0.013025343 -0.19360641000000001 -0.015851961000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[503]" " -type \"float3\" 0.020113467999999999 -0.13469413 -0.013232694999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[504]" " -type \"float3\" 0.022299886000000001 -0.21014503000000001 -0.013051497"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[505]" " -type \"float3\" 0.0097283125000000008 -0.26176849000000002 -0.010864245"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[506]" " -type \"float3\" 0.027148485 -0.22089018999999999 -0.009219395"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[507]" " -type \"float3\" 0.023428500000000001 -0.27282408000000002 -0.0066890585999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[508]" " -type \"float3\" 0.0063712596999999996 -0.29921392000000002 -0.0039515365"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[509]" " -type \"float3\" 0.026209235000000001 -0.28279999 -0.0055558550999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[510]" " -type \"float3\" 0.015560061 -0.30614438999999999 -0.0029454100999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[511]" " -type \"float3\" -0.0029099956000000001 -0.31104233999999997 0.0022428166000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[512]" " -type \"float3\" 0.017161101000000002 -0.31059089000000001 -0.0053369869"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[513]" " -type \"float3\" 0.0054202228999999996 -0.31586303999999998 0.00027943960999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[514]" " -type \"float3\" -0.0080369859999999994 -0.31262830000000003 0.0097656380000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[515]" " -type \"float3\" 0.0066049778999999996 -0.31518748000000002 -0.0073416102999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[516]" " -type \"float3\" -0.0026253461999999998 -0.31514636000000001 4.5789406000000002e-05"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[517]" " -type \"float3\" -0.0079231857999999995 -0.30970207 0.011979593"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[518]" " -type \"float3\" -0.0055882633000000001 -0.32118871999999998 -0.013041006000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[519]" " -type \"float3\" -0.010138035 -0.31924668 0.00065208785000000005"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[520]" " -type \"float3\" -0.010580539999999999 -0.31086507000000002 0.016733420999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[521]" " -type \"float3\" -0.014970361999999999 -0.34597697999999999 -0.012449251"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[522]" " -type \"float3\" -0.011645854000000001 -0.33765890999999998 0.0058944356000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[523]" " -type \"float3\" -0.010437846000000001 -0.32002512 0.020625127"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[524]" " -type \"float3\" 0.00064337254000000003 -0.35972145 -0.0058913100999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[525]" " -type \"float3\" 0.0092583895000000003 -0.45264629000000001 -0.035411819999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[526]" " -type \"float3\" 0.0022528171999999999 -0.39580526999999999 -0.025037276000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[527]" " -type \"float3\" 0.015267968 -0.50525998999999999 -0.044144615999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[528]" " -type \"float3\" 0.0053646563999999999 -0.44465712000000002 -0.032397017"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[529]" " -type \"float3\" -0.0061366557999999998 -0.39781572999999998 -0.023777710000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[530]" " -type \"float3\" 0.0052623749000000001 -0.44774797999999999 -0.033724770000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[531]" " -type \"float3\" -0.0062460898999999997 -0.40456513 -0.025723205999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[532]" " -type \"float3\" -0.017166852999999999 -0.36366966000000001 -0.020200000999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[533]" " -type \"float3\" -0.015085459000000001 -0.36628154000000002 -0.022357212000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[534]" " -type \"float3\" -0.030639171999999999 -0.32742062 -0.022257077"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[535]" " -type \"float3\" -0.040319681000000003 -0.29984859000000003 -0.023300635"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[536]" " -type \"float3\" -0.025860786 -0.33314732000000002 -0.017488705"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[537]" " -type \"float3\" -0.041930199000000001 -0.29022302999999999 -0.023932206000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[538]" " -type \"float3\" -0.030068635999999999 -0.32057430999999997 -0.018023715999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[539]" " -type \"float3\" -0.036030768999999997 -0.29299905999999998 -0.024977194000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[540]" " -type \"float3\" -0.032202004999999999 -0.31771031 -0.022003637999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[541]" " -type \"float3\" -0.032893419 -0.29760066000000002 -0.028025853"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[542]" " -type \"float3\" -0.034102200999999999 -0.31699624999999998 -0.027023541000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[543]" " -type \"float3\" -0.038419246999999997 -0.29970625000000001 -0.034436688"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[544]" " -type \"float3\" -0.037013053999999997 -0.31581596000000001 -0.031670555000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[545]" " -type \"float3\" -0.053889036000000001 -0.30010870000000001 -0.045987591000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[546]" " -type \"float3\" -0.043214559999999999 -0.31276479000000001 -0.036811337"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[547]" " -type \"float3\" -0.067323922999999994 -0.29588655000000003 -0.055195793999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[548]" " -type \"float3\" -0.050220727999999999 -0.30510010999999998 -0.041531548000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[549]" " -type \"float3\" -0.044095516000000001 -0.29479696999999999 -0.036789401999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[550]" " -type \"float3\" -0.052320480000000003 -0.28883197999999999 -0.042747005999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[551]" " -type \"float3\" -0.045835732999999997 -0.27581683000000001 -0.038095935999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[552]" " -type \"float3\" -0.039422274 -0.23079672000000001 -0.035456643000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[553]" " -type \"float3\" -0.044586897 -0.24519458 -0.038369641000000003"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[554]" " -type \"float3\" -0.036729336000000001 -0.19702306 -0.035496697000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[555]" " -type \"float3\" -0.022821903000000001 -0.12238122999999999 -0.030232416000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[556]" " -type \"float3\" -0.030557394000000002 -0.15404192 -0.034359916999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[557]" " -type \"float3\" -0.016435385 -0.085063599000000004 -0.029332625000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[558]" " -type \"float3\" -0.0070376396000000003 -0.041355632000000003 -0.025256144000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[559]" " -type \"float3\" -0.0095460414999999996 -0.051360271999999998 -0.027624117"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[560]" " -type \"float3\" -0.0025856494999999999 -0.021381641 -0.024855123999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[561]" " -type \"float3\" -0.0024654865 -0.023412490000000001 -0.023921953999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[562]" " -type \"float3\" -0.0077083111000000003 -0.046264909 -0.024309145000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[563]" " -type \"float3\" -0.0074744225000000003 -0.055231594000000002 -0.026628958000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[564]" " -type \"float3\" -0.011574030000000001 -0.095251583000000001 -0.027506815"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[565]" " -type \"float3\" -0.0042867660999999996 -0.11446144 -0.032267556000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[566]" " -type \"float3\" 0.00014567375000000001 -0.15040007 -0.033574089000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[567]" " -type \"float3\" 0.023819685 -0.17336467 -0.031109319999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[568]" " -type \"float3\" -0.0020724534999999999 -0.053264044000000003 -0.027165877000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[569]" " -type \"float3\" 0.015024185000000001 -0.11246195 -0.026565538999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[570]" " -type \"float3\" 0.037711143000000003 -0.15514924999999999 -0.030282483999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[571]" " -type \"float3\" 0.0059298277000000002 -0.045976661000000002 -0.023151385"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[572]" " -type \"float3\" 0.015993476 -0.071936510999999995 -0.029842364"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[573]" " -type \"float3\" 0.021296619999999999 -0.1009443 -0.042854771"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[574]" " -type \"float3\" 0.0014075041 -0.024885440000000002 -0.027811037"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[575]" " -type \"float3\" 0.0034722685999999999 -0.033824943000000003 -0.034680351999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[576]" " -type \"float3\" 0.0064873099 -0.046229622999999997 -0.041432365999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[577]" " -type \"float3\" -0.00059318542000000004 -0.012126112 -0.027103411000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[578]" " -type \"float3\" -0.00030791758999999997 -0.01297679 -0.029080378"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[579]" " -type \"float3\" 4.4584273999999995e-05 -0.013991142 -0.031592831000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[580]" " -type \"float3\" -0.00017935038 -0.010169648999999999 -0.025302874"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[581]" " -type \"float3\" -0.00015991926 -0.010147834 -0.026041017999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[582]" " -type \"float3\" -0.00013235210999999999 -0.010128642 -0.026788698999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[583]" " -type \"float3\" -6.1690807000000007e-06 -0.010166669 -0.024237620000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[584]" " -type \"float3\" -3.9041041999999996e-06 -0.010165835 -0.024311528999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[585]" " -type \"float3\" 1.9334256999999998e-05 -0.010166191999999999 -0.024326311"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[586]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[587]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[588]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[589]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[590]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[591]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[592]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[593]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[594]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[595]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[596]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[597]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[598]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[599]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[600]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[601]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[602]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[603]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[604]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[605]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[606]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[607]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[608]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[609]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[610]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[611]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[612]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[613]" " -type \"float3\" 0.0017232895 -0.0037863496999999999 -0.025669562"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[614]" " -type \"float3\" 0.00021231173999999999 -0.0094584469000000004 -0.024349200000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[615]" " -type \"float3\" 0.010716915 0.029663776999999999 -0.032699092999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[616]" " -type \"float3\" 0.0040684937999999997 0.0039691086999999996 -0.027147757000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[617]" " -type \"float3\" 0.00015699862999999999 -0.0096494201999999998 -0.024240003999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[618]" " -type \"float3\" 0.010741353 0.027615880999999998 -0.031642422000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[619]" " -type \"float3\" 0.0013000965000000001 -0.0058763864999999997 -0.024750695999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[620]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[621]" " -type \"float3\" 0.0026384592000000002 -0.0013915543 -0.025389181"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[622]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[623]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[624]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[625]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[626]" " -type \"float3\" 0.00026917458000000002 -0.010117167999999999 -0.024200426000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[627]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[628]" " -type \"float3\" 0.00017356873000000001 -0.010130877 -0.024193750999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[629]" " -type \"float3\" 0.0081820487999999993 -0.0084780101000000007 -0.025042043999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[630]" " -type \"float3\" 0.0090610980999999997 -0.0084739570000000007 -0.025163161"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[631]" " -type \"float3\" 0.030161858 -0.0039814059000000002 -0.027386652000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[632]" " -type \"float3\" 0.029350758000000001 -0.0042470340000000002 -0.027748095"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[633]" " -type \"float3\" 0.046205996999999999 -0.00054895319000000003 -0.028906332"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[634]" " -type \"float3\" 0.046022892000000003 -0.00062176026 -0.028902041"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[635]" " -type \"float3\" 0.046907902000000001 -0.00059011019999999999 -0.029175268000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[636]" " -type \"float3\" 0.047714949 -0.00083946623000000003 -0.029344545999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[637]" " -type \"float3\" 0.047302008 -0.0068376306000000001 -0.028617845999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[638]" " -type \"float3\" 0.048081159999999998 -0.0071058813000000002 -0.029096113999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[639]" " -type \"float3\" 0.075672865000000006 -0.021619195000000001 -0.029061304"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[640]" " -type \"float3\" 0.072854519000000006 -0.020995909 -0.029395567000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[641]" " -type \"float3\" 0.090740681000000004 -0.027890766000000001 -0.030018792999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[642]" " -type \"float3\" 0.087003231 -0.025864058999999998 -0.030110822999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[643]" " -type \"float3\" 0.063552856000000005 -0.044235937000000003 -0.032013878000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[644]" " -type \"float3\" 0.050703287 -0.034201525000000003 -0.030989157"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[645]" " -type \"float3\" 0.035039901999999998 -0.027929031999999999 -0.029943452999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[646]" " -type \"float3\" 0.0082874297999999992 -0.057235441999999997 -0.033871158999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[647]" " -type \"float3\" -0.0075170994000000003 -0.040274880999999998 -0.030661093"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[648]" " -type \"float3\" -0.010573864000000001 -0.035595558999999999 -0.027513013999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[649]" " -type \"float3\" 0.0067043303999999998 -0.047942064999999999 -0.032616600000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[650]" " -type \"float3\" -0.01355052 -0.042713902999999998 -0.027631269999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[651]" " -type \"float3\" -0.016457558000000001 -0.040837250999999998 -0.022532449999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[652]" " -type \"float3\" 0.0090322495000000006 -0.036817155999999997 -0.026089655"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[653]" " -type \"float3\" -0.0053815842000000001 -0.036569797000000001 -0.022471415000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[654]" " -type \"float3\" -0.016608238000000001 -0.032909057999999998 -0.020840154999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[655]" " -type \"float3\" 0.0044813155999999998 -0.035120867 -0.025031076999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[656]" " -type \"float3\" 0.0061335564000000002 -0.025258565 -0.023192392999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[657]" " -type \"float3\" -0.0054090023000000001 -0.0034791472999999998 -0.024508463000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[658]" " -type \"float3\" -0.034354448000000003 -0.012170458 -0.023654925"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[659]" " -type \"float3\" -0.023039102999999998 0.016692017999999999 -0.029114709999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[660]" " -type \"float3\" -0.050597428999999999 0.0057787652999999996 -0.029275404000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[661]" " -type \"float3\" -0.022547959999999999 0.011830425 -0.031913266000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[662]" " -type \"float3\" -0.047739267000000002 0.012196993 -0.033338531999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[663]" " -type \"float3\" -0.0087261200000000004 -0.0015385392999999999 -0.031823142999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[664]" " -type \"float3\" -0.027858257000000001 0.0042762514000000001 -0.031369671000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[665]" " -type \"float3\" 0.0055446625000000003 -0.0088091139000000002 -0.02783631"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[666]" " -type \"float3\" -0.0084948539999999996 -0.0047521832999999998 -0.027455317"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[667]" " -type \"float3\" 0.012791156999999999 0.0032435413000000001 -0.025153623999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[668]" " -type \"float3\" 0.00058364867999999997 0.0026751514999999999 -0.025341974999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[669]" " -type \"float3\" 0.0014896393 -0.0087887290999999999 -0.023871885999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[670]" " -type \"float3\" -0.0039830207999999997 -0.0061676743999999999 -0.024448859"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[671]" " -type \"float3\" 0.0020542145000000001 -0.011260414 -0.022876250000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[672]" " -type \"float3\" -0.0015120506 -0.0095466617000000004 -0.024115073000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[673]" " -type \"float3\" 0.0044391155000000002 -0.010444188 -0.022321211000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[674]" " -type \"float3\" 0.0055224895 -0.016605640000000001 -0.023280130999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[675]" " -type \"float3\" 0.0072371960000000004 -0.014065051 -0.022582517999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[676]" " -type \"float3\" 0.0016074181 -0.011460685999999999 -0.023601996"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[677]" " -type \"float3\" 0.0047717094 -0.010801458999999999 -0.023422228"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[678]" " -type \"float3\" 0.00063562392999999995 -0.010459328 -0.024029241999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[679]" " -type \"float3\" 0.00030255317999999999 -0.011258984 -0.024024474000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[680]" " -type \"float3\" 0.00019013881999999999 -0.010094308999999999 -0.024147021000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[681]" " -type \"float3\" 0.00020098686000000001 -0.011038447 -0.024053561000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[682]" " -type \"float3\" 0.0053423643000000002 -0.037163756999999999 -0.020854459999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[683]" " -type \"float3\" 6.4492225999999997e-05 -0.010517264 -0.024126278000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[684]" " -type \"float3\" 0.0035530329000000001 -0.033235333999999998 -0.021460282000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[685]" " -type \"float3\" 0.017442941999999999 -0.13026550000000001 -0.012661444000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[686]" " -type \"float3\" 0.0018851757 -0.028382922000000001 -0.022473561"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[687]" " -type \"float3\" 0.011913061000000001 -0.1167834 -0.014111983"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[688]" " -type \"float3\" 0.024069726 -0.22142186999999999 -0.0082340109999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[689]" " -type \"float3\" 0.0068204403000000002 -0.098647021000000001 -0.017765270999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[690]" " -type \"float3\" 0.017287015999999999 -0.21181884000000001 -0.010274396999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[691]" " -type \"float3\" 0.022315443000000001 -0.28108623999999999 -0.0075566638000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[692]" " -type \"float3\" 0.010993361 -0.18781640999999999 -0.015349137000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[693]" " -type \"float3\" 0.016555011000000001 -0.26576927 -0.012638794"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[694]" " -type \"float3\" 0.014240444 -0.30289592999999998 -0.011919246999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[695]" " -type \"float3\" 0.011441499000000001 -0.24328092000000001 -0.020544753999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[696]" " -type \"float3\" 0.0089208484000000005 -0.29212585000000002 -0.021119104999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[697]" " -type \"float3\" 0.0018054023000000001 -0.31485405999999999 -0.020105587000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[698]" " -type \"float3\" -0.002305381 -0.28493847999999999 -0.034198746000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[699]" " -type \"float3\" -0.0079151316999999995 -0.32141568999999998 -0.032996163000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[700]" " -type \"float3\" -0.012418060999999999 -0.34135869000000002 -0.026299224999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[701]" " -type \"float3\" -0.022213116000000001 -0.33371868999999998 -0.041574939999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[702]" " -type \"float3\" -0.019342899 -0.37587419 -0.032932505000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[703]" " -type \"float3\" -0.022401825 -0.33550623000000002 -0.039413676000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[704]" " -type \"float3\" -0.014199197 -0.40590348999999998 -0.038241848000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[705]" " -type \"float3\" -0.012693316 -0.30461219 -0.035017237"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[706]" " -type \"float3\" -0.0097461939000000001 -0.39249328 -0.043196663000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[707]" " -type \"float3\" -0.0068620443 -0.31319717000000002 -0.045079692999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[708]" " -type \"float3\" -0.0038526654 -0.41015067999999999 -0.056062326000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[709]" " -type \"float3\" -0.0068141818000000002 -0.22050932000000001 -0.035906181000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[710]" " -type \"float3\" -0.0053561926000000003 -0.12534574000000001 -0.033913239999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[711]" " -type \"float3\" -0.0056781471000000002 -0.19576110999999999 -0.040946468999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[712]" " -type \"float3\" -0.017540305999999999 -0.22946026999999999 -0.033631070999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[713]" " -type \"float3\" -0.0061024278 -0.14837137 -0.029976592999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[714]" " -type \"float3\" -0.0039173215999999999 -0.073433302000000006 -0.029247031999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[715]" " -type \"float3\" -0.0015989541999999999 -0.029943371 -0.026227104000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[716]" " -type \"float3\" -0.0026345700000000001 -0.054093026000000002 -0.028048145"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[717]" " -type \"float3\" -0.0019418001000000001 -0.040540359999999998 -0.026548253000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[718]" " -type \"float3\" -0.00073015690000000002 -0.017864609 -0.025035964000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[719]" " -type \"float3\" 0.00055342913000000005 -0.010286712999999999 -0.023562776000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[720]" " -type \"float3\" -5.3882599000000002e-05 -0.012605333999999999 -0.022002803000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[721]" " -type \"float3\" -0.00082880259000000004 -0.023425722 -0.025104748"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[722]" " -type \"float3\" -0.00020641088 -0.012465024 -0.024410831000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[723]" " -type \"float3\" 0.0014623404 -0.0099309924999999993 -0.022790418999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[724]" " -type \"float3\" 0.0099680424 -0.011708641000000001 -0.015603051999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[725]" " -type \"float3\" 0.0050309895999999998 -0.0067805293999999997 -0.017727124"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[726]" " -type \"float3\" 1.8775462999999999e-05 -0.010534549000000001 -0.024167286"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[727]" " -type \"float3\" 0.0012453793999999999 -0.010508919 -0.023065672999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[728]" " -type \"float3\" 0.0085568428000000005 -0.013686324 -0.017472850000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[729]" " -type \"float3\" 0.020594477999999999 -0.0093511584999999998 -0.011824237"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[730]" " -type \"float3\" 0.023803591999999998 -0.018780613000000002 0.00048698299000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[731]" " -type \"float3\" 0.00037133693999999998 -0.010236764000000001 -0.023729549999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[732]" " -type \"float3\" 0.0017192364 -0.0092319492000000006 -0.022192107999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[733]" " -type \"float3\" 0.0055162906999999999 -0.0073546413 -0.01970421"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[734]" " -type \"float3\" 0.0070458650999999997 -0.0047012809999999999 -0.019939410000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[735]" " -type \"float3\" 0.024464369 -0.0064691547000000002 -0.0083818304999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[736]" " -type \"float3\" 0.00014352798 -0.010213519000000001 -0.023997293999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[737]" " -type \"float3\" 0.00057697295999999999 -0.010153079000000001 -0.023642527"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[738]" " -type \"float3\" 0.00017750263000000001 -0.010218405999999999 -0.024216877000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[739]" " -type \"float3\" 0.00051140785000000004 -0.0092504266999999998 -0.024566636999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[740]" " -type \"float3\" 0.012726426000000001 -0.0033632759000000001 -0.018402206000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[741]" " -type \"float3\" 0.00017154217 -0.010588313 -0.024261700000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[742]" " -type \"float3\" -5.1736832000000003e-05 -0.010888719999999999 -0.024682747000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[743]" " -type \"float3\" 0.00044560432000000002 -0.0090300086999999998 -0.024956213000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[744]" " -type \"float3\" -3.6239623999999997e-05 -0.0085035804999999999 -0.026408421000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[745]" " -type \"float3\" 0.0027458667999999999 -0.0073313954999999998 -0.024925218999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[746]" " -type \"float3\" 0.00018191337999999999 -0.0099318270000000007 -0.024200426000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[747]" " -type \"float3\" 0.0014016628 -0.0088670495999999994 -0.024311290999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[748]" " -type \"float3\" -0.00059008598000000005 -0.010640645000000001 -0.026242958"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[749]" " -type \"float3\" -0.0014994144 -0.0053494218999999999 -0.028482423999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[750]" " -type \"float3\" -0.0099613666999999999 -0.0063132290000000001 -0.033954843999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[751]" " -type \"float3\" 0.0010697841999999999 -0.0088036302000000007 -0.024039494000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[752]" " -type \"float3\" 0.00083780289000000003 -0.0095662121000000006 -0.024526105999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[753]" " -type \"float3\" 0.0021748543 0.0025237557000000002 -0.025286184999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[754]" " -type \"float3\" 0.011651992999999999 0.010614490000000001 -0.025466428999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[755]" " -type \"float3\" -0.0097219943999999996 0.0014902111 -0.038645968000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[756]" " -type \"float3\" 0.0035748481999999999 -0.0061364415999999996 -0.023489224"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[757]" " -type \"float3\" 0.0080935955 0.0023621078999999999 -0.023588405999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[758]" " -type \"float3\" 0.021964549999999999 0.014242863 -0.023654448000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[759]" " -type \"float3\" 0.037775755000000001 0.0019812342000000002 -0.019388663"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[760]" " -type \"float3\" 0.016879558999999999 -0.011128927 -0.024417626000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[761]" " -type \"float3\" 0.012507915 0.0037740226999999999 -0.024430262000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[762]" " -type \"float3\" 0.026101350999999998 0.013226843 -0.027648674000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[763]" " -type \"float3\" 0.041865109999999997 0.0063770767000000004 -0.026146637"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[764]" " -type \"float3\" 0.038336277000000002 -0.011696481999999999 -0.023423182000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[765]" " -type \"float3\" 0.038563489999999999 -0.021898531999999998 -0.014354931"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[766]" " -type \"float3\" 0.0089638232999999998 0.013804888 -0.031157003999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[767]" " -type \"float3\" 0.017351627000000001 0.0023239608999999998 -0.031225668000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[768]" " -type \"float3\" 0.024215698000000001 -0.0098566059000000008 -0.032742962"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[769]" " -type \"float3\" 0.018022537000000002 -0.024293208 -0.033045753999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[770]" " -type \"float3\" 0.02332592 -0.024155999000000001 -0.023833976999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[771]" " -type \"float3\" -0.034818649 -0.011586809999999999 -0.02807902"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[772]" " -type \"float3\" -0.039568423999999998 -0.029056931000000001 -0.029711709999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[773]" " -type \"float3\" -0.031768084000000002 -0.048818848999999997 -0.031813845"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[774]" " -type \"float3\" -0.0076117516000000001 -0.056310317999999998 -0.030418621"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[775]" " -type \"float3\" 0.0081026554000000004 -0.035861931999999999 -0.031296"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[776]" " -type \"float3\" -0.013800621000000001 -0.013640428 -0.026399123"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[777]" " -type \"float3\" -0.013458014000000001 -0.039427063999999998 -0.027993666"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[778]" " -type \"float3\" -0.0037989616000000002 -0.048553549000000001 -0.027008043999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[779]" " -type \"float3\" 0.011752604999999999 -0.053287229999999998 -0.022112356"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[780]" " -type \"float3\" 0.022807359999999999 -0.062340042999999998 -0.022390591000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[781]" " -type \"float3\" 0.0081117153000000008 -0.035523497000000001 -0.025938975"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[782]" " -type \"float3\" 0.010511875 -0.018153750999999999 -0.024751173000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[783]" " -type \"float3\" 0.040061474 -0.057070993 -0.014617430000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[784]" " -type \"float3\" 0.025468349000000001 -0.033173940999999998 -0.030344473"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[785]" " -type \"float3\" 0.047177314999999997 -0.039874814000000001 -0.031646237000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[786]" " -type \"float3\" 0.012317896 -0.0074695591000000002 -0.023167119999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[787]" " -type \"float3\" 0.034105061999999998 -0.063981525999999997 -0.036148532999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[788]" " -type \"float3\" 0.054582595999999997 -0.073753171000000006 -0.036163315000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[789]" " -type \"float3\" 0.061128377999999997 -0.043855748999999999 -0.030882822000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[790]" " -type \"float3\" 0.027653932999999999 -0.074214242 -0.035777076999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[791]" " -type \"float3\" 0.041983604000000001 -0.082937977999999996 -0.036160931"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[792]" " -type \"float3\" 0.068292617999999999 -0.075282238000000001 -0.035426602000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[793]" " -type \"float3\" 0.070328951000000001 -0.053219072999999999 -0.032434448999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[794]" " -type \"float3\" 0.067941188999999999 -0.057511083999999997 -0.032492146"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[795]" " -type \"float3\" 0.047184706 -0.080934784999999995 -0.035065158999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[796]" " -type \"float3\" 0.088637829000000001 -0.029193186999999999 -0.029818522"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[797]" " -type \"float3\" 0.081986189000000001 -0.029343421000000001 -0.029446112"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[798]" " -type \"float3\" 0.072884560000000001 -0.028148511000000001 -0.028920161"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[799]" " -type \"float3\" 0.058081865000000003 -0.055458731999999997 -0.031631455000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[800]" " -type \"float3\" 0.070473194000000003 -0.021800989 -0.028493867999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[801]" " -type \"float3\" 0.060628175999999999 -0.02068072 -0.027776704999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[802]" " -type \"float3\" 0.050849676000000003 -0.019135708000000001 -0.027160631000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[803]" " -type \"float3\" 0.036260843000000001 -0.016739363 -0.026266085000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[804]" " -type \"float3\" 0.056776762000000001 -0.024764100000000001 -0.027801024000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[805]" " -type \"float3\" 0.034380198000000001 -0.0080893729000000008 -0.027173982999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[806]" " -type \"float3\" 0.029515982 -0.0079725776000000009 -0.026805387999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[807]" " -type \"float3\" 0.021545410000000001 -0.0081258360000000009 -0.026163565"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[808]" " -type \"float3\" 0.010520458 -0.0087804588999999995 -0.025195109"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[809]" " -type \"float3\" 0.015245676 -0.013128633000000001 -0.025017247999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[810]" " -type \"float3\" 0.037360191000000001 -0.0024003777999999998 -0.028061854000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[811]" " -type \"float3\" 0.030905485 -0.0037290397999999998 -0.027377116"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[812]" " -type \"float3\" 0.019523143999999999 -0.0061158035000000001 -0.026198374"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[813]" " -type \"float3\" 0.0072591304999999997 -0.0086604747999999999 -0.024935232000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[814]" " -type \"float3\" 0.0019609928000000002 -0.0097202454000000008 -0.024381147999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[815]" " -type \"float3\" 0.033901690999999998 -0.0031045618999999999 -0.027686583000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[816]" " -type \"float3\" 0.038692235999999998 -0.0021215918999999998 -0.028195367999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[817]" " -type \"float3\" 0.025789022000000002 -0.0047962609999999996 -0.026844488"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[818]" " -type \"float3\" 0.023496388999999999 -0.0052733216000000003 -0.026605116000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[819]" " -type \"float3\" 0.0081610680000000005 -0.0084667149999999997 -0.025019156000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[820]" " -type \"float3\" 0.0077116488999999996 -0.0085603538999999996 -0.024972425999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[821]" " -type \"float3\" 0.000177145 -0.010130132 -0.024193750999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[822]" " -type \"float3\" 0.00025558471999999999 -0.010113769999999999 -0.024201857"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[823]" " -type \"float3\" 0.024912595999999999 -0.0049798730999999997 -0.026754366000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[824]" " -type \"float3\" 0.0063211917999999997 -0.0088500622999999994 -0.024828897999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[825]" " -type \"float3\" 4.8637389999999995e-05 -0.010156923999999999 -0.024180876"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[826]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[827]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[828]" " -type \"float3\" 0.0068027972999999999 -0.0087497177999999991 -0.024878489"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[829]" " -type \"float3\" 7.0571898999999998e-05 -0.010152305 -0.024182782999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[830]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[831]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[832]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[833]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[834]" " -type \"float3\" 0.0032027959999999999 0.00053105317000000005 -0.025689588999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[835]" " -type \"float3\" 0.0028085709000000001 -0.00079073942999999995 -0.025498854000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[836]" " -type \"float3\" 0.0032212733999999999 0.00057989917999999997 -0.025685774000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[837]" " -type \"float3\" 0.019811868999999999 0.060256249999999997 -0.037595733999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[838]" " -type \"float3\" 0.021329284 0.065869249000000005 -0.038582310000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[839]" " -type \"float3\" 0.016926289000000001 0.049751139999999999 -0.035691246000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[840]" " -type \"float3\" 0.032418489000000002 0.10957604999999999 -0.048340782999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[841]" " -type \"float3\" 0.036064982000000002 0.12291665 -0.050760253999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[842]" " -type \"float3\" 0.022928357 0.074794984999999994 -0.041723713000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[843]" " -type \"float3\" 0.017270445999999998 0.057995356999999997 -0.038155541000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[844]" " -type \"float3\" 0.025065184000000001 0.087774552000000006 -0.044383034000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[845]" " -type \"float3\" 0.0077767371999999998 0.020876324000000002 -0.030561911000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[846]" " -type \"float3\" 0.0010931491999999999 -0.0051667932000000003 -0.024946200000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[847]" " -type \"float3\" 0.0035454035000000001 0.0055066105000000001 -0.026830183000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[848]" " -type \"float3\" 0.0011507272999999999 -0.0054489615999999998 -0.025144086999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[849]" " -type \"float3\" 1.6808510000000001e-05 -0.010074282 -0.024181352999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[850]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[851]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[852]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[853]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[854]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[855]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[856]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[857]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[858]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[859]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[860]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[861]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[862]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[863]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[864]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[865]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[866]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[867]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[868]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[869]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[870]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[871]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[872]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[873]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[874]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[875]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[876]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[877]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[878]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[879]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[880]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[881]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[882]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[883]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[884]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[885]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[886]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[887]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[888]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[889]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[890]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[891]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[892]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[893]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[894]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[895]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[896]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[897]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[898]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[899]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[900]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[901]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[902]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[903]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[904]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[905]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[906]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[907]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[908]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[909]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[910]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[911]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[912]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[913]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[914]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[915]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[916]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[917]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[918]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[919]" " -type \"float3\" -0.00020360946999999999 -0.010907317 -0.024270045000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[920]" " -type \"float3\" -0.0010914803 -0.014269376 -0.024664388999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[921]" " -type \"float3\" -0.00018429756 -0.010825777 -0.024262892000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[922]" " -type \"float3\" -0.00012898445 -0.010643626 -0.024234281999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[923]" " -type \"float3\" -0.0014805794 -0.015847587999999999 -0.024822222000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[924]" " -type \"float3\" -0.0039162635999999999 -0.025502825 -0.025849329000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[925]" " -type \"float3\" -0.0057222842999999999 -0.032767198999999997 -0.026602732"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[926]" " -type \"float3\" -0.0020740032000000001 -0.018034602 -0.025096403"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[927]" " -type \"float3\" -0.0050971508000000002 -0.030667686999999999 -0.026267038999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[928]" " -type \"float3\" -0.010374784 -0.052489422000000001 -0.028374659"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[929]" " -type \"float3\" -0.013335227999999999 -0.064967892999999999 -0.029554831"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[930]" " -type \"float3\" -0.020501374999999999 -0.097837828000000002 -0.031979545999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[931]" " -type \"float3\" -0.024451970999999999 -0.11606314 -0.033435806999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[932]" " -type \"float3\" -0.024534701999999999 -0.11669744999999999 -0.033504948"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[933]" " -type \"float3\" -0.013508081 -0.065713666000000004 -0.029646384000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[934]" " -type \"float3\" -0.0057773590000000001 -0.032948158999999998 -0.026638017999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[935]" " -type \"float3\" -0.011954308 -0.059109113999999997 -0.029061304"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[936]" " -type \"float3\" -0.0048916339999999997 -0.029341603000000001 -0.026280390000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[937]" " -type \"float3\" -0.0015947819000000001 -0.016134644 -0.024895178"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[938]" " -type \"float3\" -0.0020959377000000002 -0.018098617000000001 -0.025109755000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[939]" " -type \"float3\" -0.00035643578000000003 -0.011444592999999999 -0.024343954000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[940]" " -type \"float3\" -0.00057935715000000001 -0.012276316000000001 -0.024445043999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[941]" " -type \"float3\" -0.00063180923000000005 -0.012484813000000001 -0.024466978"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[942]" " -type \"float3\" -7.2717666999999993e-05 -0.010426187999999999 -0.024209963000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[943]" " -type \"float3\" -7.8916549999999999e-05 -0.010448122000000001 -0.024213301"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[944]" " -type \"float3\" -7.1525574000000002e-07 -0.010169769 -0.024176108000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[945]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[946]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[947]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[948]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[949]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[950]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[951]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[952]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[953]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[954]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[955]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[956]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[957]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[958]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[959]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[960]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[961]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[962]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[963]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[964]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[965]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[966]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[967]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[968]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[969]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[970]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[971]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[972]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[973]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[974]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[975]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[976]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[977]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[978]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[979]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[980]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[981]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[982]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[983]" " -type \"float3\" 6.5565109000000006e-07 -0.010163330999999999 -0.024175631"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[984]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[985]" " -type \"float3\" 3.9875507e-05 -0.0099467876999999993 -0.024188982000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[986]" " -type \"float3\" 0.0061381459000000001 0.016679084 -0.028814302999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[987]" " -type \"float3\" 9.1552734000000001e-05 -0.0096613411 -0.024206148"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[988]" " -type \"float3\" 0.0077102183999999997 0.023499046999999999 -0.030004011000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[989]" " -type \"float3\" 0.028126121 0.099284506999999994 -0.046825393999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[990]" " -type \"float3\" 0.0086343883999999999 0.027681177000000001 -0.030659186000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[991]" " -type \"float3\" 0.029513001000000001 0.1046998 -0.047962651000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[992]" " -type \"float3\" 0.037697077000000002 0.12907447999999999 -0.051879868000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[993]" " -type \"float3\" 0.029247403000000002 0.10426692 -0.047822937000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[994]" " -type \"float3\" 0.037257075000000001 0.12806906000000001 -0.051776394000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[995]" " -type \"float3\" 0.020900129999999999 0.064613737000000004 -0.038369641000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[996]" " -type \"float3\" 0.040224313999999997 0.13752656999999999 -0.052933200999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[997]" " -type \"float3\" 0.023756266000000002 0.074136472999999994 -0.039514050000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[998]" " -type \"float3\" 0.0037218332 0.0023346896999999998 -0.025755869000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[999]" " -type \"float3\" 0.031310080999999997 0.099500902000000002 -0.042066081999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1000]" " -type \"float3\" 0.0072137117000000001 0.014558321000000001 -0.026688086"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1001]" " -type \"float3\" 0.00013756751999999999 -0.0096584502999999995 -0.024186121000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1002]" " -type \"float3\" 0.012366533000000001 0.033396147000000001 -0.027697072999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1003]" " -type \"float3\" 0.00093770026999999998 -0.0065132920000000004 -0.024240481000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1004]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1005]" " -type \"float3\" 0.0028283596000000001 0.0015305634999999999 -0.024351583999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1006]" " -type \"float3\" 3.8146973e-06 -0.010148727999999999 -0.024175631"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1007]" " -type \"float3\" 0.0002143383 -0.010122353000000001 -0.024197565000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1008]" " -type \"float3\" 0.00076580048 -0.0060161892 -0.024178491999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1009]" " -type \"float3\" 3.3617020000000002e-05 -0.010160023000000001 -0.024178969000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1010]" " -type \"float3\" 0.0045945643999999999 0.016230231000000001 -0.024077879"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1011]" " -type \"float3\" 0.00046443938999999999 -0.0072323772999999996 -0.024149882000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1012]" " -type \"float3\" 0.013483047 0.072247975000000006 -0.022881017999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1013]" " -type \"float3\" 0.0037894248999999999 0.014209529 -0.023505198000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1014]" " -type \"float3\" 0.00064444541999999995 -0.0086213741000000007 -0.024164663999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1015]" " -type \"float3\" 0.010206699 0.059307924999999997 -0.019860731"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1016]" " -type \"float3\" 0.0018947123999999999 0.0030983145999999998 -0.023107516000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1017]" " -type \"float3\" 0.016586304 0.11520945 -0.0095586646000000008"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1018]" " -type \"float3\" 0.0051703453000000003 0.031295917999999999 -0.018291937000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1019]" " -type \"float3\" 0.0024802685000000001 -0.0059172901999999996 -0.023467528000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1020]" " -type \"float3\" 0.0072374344000000002 0.078037985000000004 -0.0054025519999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1021]" " -type \"float3\" 0.0065560341000000001 0.014077773 -0.018373"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1022]" " -type \"float3\" 0.028194427000000001 -0.013490983999999999 -0.024842249"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1023]" " -type \"float3\" 0.0031538009999999999 0.041408203999999997 -0.0067024101000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1024]" " -type \"float3\" 0.022821187999999999 -0.020426730000000001 -0.022633540000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1025]" " -type \"float3\" 0.042160748999999997 -0.045020497999999999 -0.028806673000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1026]" " -type \"float3\" 0.022108078 -0.012967118999999999 -0.015682207"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1027]" " -type \"float3\" 0.037436961999999997 -0.051003315 -0.026764857"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1028]" " -type \"float3\" 0.044976473000000003 -0.070362352000000003 -0.032256588000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1029]" " -type \"float3\" 0.053335189999999998 -0.023286441000000001 -0.020059095999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1030]" " -type \"float3\" 0.069322586000000005 -0.053693362000000001 -0.028822885999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1031]" " -type \"float3\" 0.073720217000000005 -0.069400527000000004 -0.033518299000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1032]" " -type \"float3\" 0.050583124 -0.013893956000000001 -0.024655329"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1033]" " -type \"float3\" 0.063994169000000004 -0.030575404 -0.028335558"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1034]" " -type \"float3\" 0.066860675999999994 -0.039966129000000003 -0.029871927999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1035]" " -type \"float3\" -0.0036742686999999999 0.020603885999999998 -0.021107661"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1036]" " -type \"float3\" 0.0031452178999999999 0.015125176000000001 -0.021484362"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1037]" " -type \"float3\" 0.0092208385 0.0042707976 -0.022144780999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1038]" " -type \"float3\" 0.090984105999999995 -0.088720135000000006 0.0026683938000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1039]" " -type \"float3\" 0.088554382000000001 -0.080578588000000007 -0.00016068108000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1040]" " -type \"float3\" 0.070799827999999995 -0.067052834000000006 -0.0065007079000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1041]" " -type \"float3\" 0.13200808 -0.11035114 0.0038321149000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1042]" " -type \"float3\" 0.10637546000000001 -0.091647020999999995 -0.0015492309000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1043]" " -type \"float3\" 0.065587520999999996 -0.072576545000000006 -0.011415945"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1044]" " -type \"float3\" 0.041772126999999999 -0.025437736999999998 -0.01778339"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1045]" " -type \"float3\" 0.028120279000000001 -0.029001737 -0.021111475000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1046]" " -type \"float3\" 0.015233994000000001 -0.038719080000000003 -0.027161108"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1047]" " -type \"float3\" 0.0050747394999999997 -0.048287950000000003 -0.028449761"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1048]" " -type \"float3\" 0.0030879974 -0.039831302999999998 -0.026174294000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1049]" " -type \"float3\" 0.0064654350000000003 -0.030250811999999998 -0.025439488"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1050]" " -type \"float3\" 0.019052029000000002 -0.069960735999999996 -0.022523866999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1051]" " -type \"float3\" 0.014482498 -0.045160733000000002 -0.018547998999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1052]" " -type \"float3\" 0.025079727 -0.034739873999999997 -0.014840113"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1053]" " -type \"float3\" 0.032915592 -0.057281754999999997 -0.014620529"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1054]" " -type \"float3\" 0.026181221000000001 -0.048716210000000003 -0.012430655000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1055]" " -type \"float3\" 0.024201632000000001 -0.036785863000000002 -0.015743004000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1056]" " -type \"float3\" 0.020531654 -0.052137636000000001 -0.013692128"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1057]" " -type \"float3\" 0.0090324879000000004 -0.045074723999999997 -0.022553430999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1058]" " -type \"float3\" -0.011553526 -0.025299453999999999 -0.043767436999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1059]" " -type \"float3\" -0.036180734999999999 -0.052083872000000003 -0.037076696999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1060]" " -type \"float3\" -0.032920837000000001 -0.028535866999999999 -0.063362345"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1061]" " -type \"float3\" -0.025107145000000001 -0.0044466499000000003 -0.052067503000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1062]" " -type \"float3\" 0.017558575 0.016920662 -0.044140801"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1063]" " -type \"float3\" 0.0056772232000000004 0.011441564 -0.042699321999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1064]" " -type \"float3\" 0.0022554398 -0.0064910892000000003 -0.029944644999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1065]" " -type \"float3\" 0.059608817000000001 0.017493701 -0.0019496549"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1066]" " -type \"float3\" 0.036972404 0.00084385834999999997 -0.0080605615000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1067]" " -type \"float3\" 0.020113348999999999 -0.0058667902000000003 -0.017351972"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1068]" " -type \"float3\" 0.032410622 0.0030545946000000001 0.0027061831000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1069]" " -type \"float3\" 0.029914379000000001 -0.0065278057 -0.0034332145000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1070]" " -type \"float3\" 0.031892537999999998 -0.0043037179999999998 -0.0033867228999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1071]" " -type \"float3\" 0.013967991000000001 0.0072395558999999998 0.0061444174000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1072]" " -type \"float3\" 0.011062860000000001 -0.0066571477999999998 -0.0015839208"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1073]" " -type \"float3\" 0.013206601 -0.016686821000000001 -0.0049091446999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1074]" " -type \"float3\" 0.012950659 0.0073774810999999996 0.0088768136000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1075]" " -type \"float3\" 0.010609388000000001 -0.0019470695 0.0011319052"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1076]" " -type \"float3\" 0.016260624000000001 -0.0058602337000000001 0.00064171664000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1077]" " -type \"float3\" 0.0076973438 0.0032979008000000001 0.0052461755000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1078]" " -type \"float3\" 0.0098064542000000001 -0.0014077667 0.00095440260999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1079]" " -type \"float3\" 0.0024399756999999998 -0.0053404812000000003 -0.014134871"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1080]" " -type \"float3\" 0.0084985792999999997 0.0062325951000000001 0.023696972"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1081]" " -type \"float3\" 0.0026083589000000002 -0.0014213565999999999 -0.00020419247000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1082]" " -type \"float3\" 9.1791152999999991e-06 -0.016803169999999999 -0.017384874000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1083]" " -type \"float3\" 0.0037027894999999999 0.00054416619000000001 0.017141415"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1084]" " -type \"float3\" 3.4493394000000001e-05 -0.027149821000000001 -0.012493597"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1085]" " -type \"float3\" -0.0031907036999999998 -0.09169998 -0.030705080999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1086]" " -type \"float3\" 0.00010137260000000001 -0.046812675999999998 -0.011655079"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1087]" " -type \"float3\" -0.0028364062000000002 -0.14046719999999999 -0.035522326999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1088]" " -type \"float3\" -0.0041523576 -0.27370420000000001 -0.049343571000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1089]" " -type \"float3\" 0.0030198096999999998 -0.19084838000000001 -0.041050061999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1090]" " -type \"float3\" 0.0026547909000000001 -0.34628037 -0.057058915000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1091]" " -type \"float3\" 0.001901865 -0.49084224999999998 -0.065850005000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1092]" " -type \"float3\" 0.034014164999999999 -0.39810506000000001 -0.059782013000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1093]" " -type \"float3\" 0.017891168999999998 -0.53312767000000005 -0.069261059"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1094]" " -type \"float3\" 0.091920375999999998 -0.40941051000000001 -0.053886160000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1095]" " -type \"float3\" 0.057460308000000002 -0.52353406000000002 -0.065341576999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1096]" " -type \"float3\" 0.034915090000000003 -0.57681583999999997 -0.068135366000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1097]" " -type \"float3\" 0.11657059 -0.44750025999999998 -0.048789605"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1098]" " -type \"float3\" 0.063780189000000001 -0.48110774000000001 -0.053953514000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1099]" " -type \"float3\" 0.029484987000000001 -0.48701539999999999 -0.054043992999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1100]" " -type \"float3\" 0.025249957999999999 -0.581599 -0.064702733999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1101]" " -type \"float3\" 0.019050597999999998 -0.47114720999999998 -0.047797187999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1102]" " -type \"float3\" 0.022693992 -0.54950655000000004 -0.055728659"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1103]" " -type \"float3\" 0.011174440000000001 -0.43891636000000001 -0.037509902999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1104]" " -type \"float3\" 0.015781402999999999 -0.49699226000000002 -0.044163688999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1105]" " -type \"float3\" -0.00064563751000000003 -0.40313866999999998 -0.027588831000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1106]" " -type \"float3\" -0.0088191031999999992 -0.32850363999999999 -0.015682802999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1107]" " -type \"float3\" -0.024608135 -0.30611994999999997 -0.010054814"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1108]" " -type \"float3\" -0.047196626999999998 -0.27654031000000001 -0.015232312"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1109]" " -type \"float3\" -0.069670677 -0.17414727999999999 0.012535108"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1110]" " -type \"float3\" -0.099406958000000004 -0.15126970000000001 -0.0083107818"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1111]" " -type \"float3\" -0.13293575999999999 -0.11928573000000001 -0.037905439999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1112]" " -type \"float3\" -0.069837570000000002 -0.24098638 -0.027183043"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1113]" " -type \"float3\" -0.15932679 -0.10012438 -0.061591132999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1114]" " -type \"float3\" -0.088568448999999994 -0.21363356999999999 -0.038604483000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1115]" " -type \"float3\" -0.15768862 -0.10642161 -0.066705212"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1116]" " -type \"float3\" -0.088079691000000002 -0.21051243 -0.041491016999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1117]" " -type \"float3\" -0.11839485 -0.13250843000000001 -0.055715783999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1118]" " -type \"float3\" -0.062515259000000004 -0.22700074000000001 -0.037215218000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1119]" " -type \"float3\" -0.061403036000000001 -0.16918388000000001 -0.043165191999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1120]" " -type \"float3\" -0.040655613 -0.24632195000000001 -0.033370480000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1121]" " -type \"float3\" -0.055590868000000002 -0.20502666 -0.051735148000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1122]" " -type \"float3\" -0.044457196999999997 -0.26133421000000001 -0.041690335000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1123]" " -type \"float3\" -0.093826532000000004 -0.22447719999999999 -0.081323609000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1124]" " -type \"float3\" -0.072712420999999999 -0.26971832000000001 -0.062360272000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1125]" " -type \"float3\" -0.12307405 -0.23149492999999999 -0.101593"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1126]" " -type \"float3\" -0.095430373999999998 -0.27105131999999998 -0.078062518999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1127]" " -type \"float3\" -0.12127876 -0.22655538 -0.099333271000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1128]" " -type \"float3\" -0.095345497000000001 -0.26073744999999998 -0.077324851999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1129]" " -type \"float3\" -0.068895339999999999 -0.28203812 -0.055882438999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1130]" " -type \"float3\" -0.075838088999999997 -0.23671201 -0.06333445"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1131]" " -type \"float3\" -0.059213161 -0.25610092000000001 -0.049267276999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1132]" " -type \"float3\" -0.048730373 -0.26102677000000002 -0.040784820999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1133]" " -type \"float3\" -0.045514344999999998 -0.21871795999999999 -0.041076168000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1134]" " -type \"float3\" -0.042674302999999997 -0.22166327 -0.038491233999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1135]" " -type \"float3\" -0.039709091000000002 -0.20309129000000001 -0.037454112999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1136]" " -type \"float3\" -0.035148381999999999 -0.17238023999999999 -0.036629185000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1137]" " -type \"float3\" -0.031307459000000003 -0.15213135 -0.035310253999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1138]" " -type \"float3\" -0.021672487000000001 -0.10596324999999999 -0.031962856999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1139]" " -type \"float3\" -0.012209654 -0.061454438 -0.028877722000000002"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1140]" " -type \"float3\" -0.0041551590000000003 -0.027233506000000001 -0.025815474000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1141]" " -type \"float3\" -0.0011792183 -0.014771724 -0.024678694000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1142]" " -type \"float3\" -8.1062316999999998e-06 -0.010196352000000001 -0.024179446"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1143]" " -type \"float3\" -0.00051236152999999997 -0.012255334999999999 -0.024382101"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1144]" " -type \"float3\" 0.00016951560999999999 -0.010278249 -0.024287688000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1145]" " -type \"float3\" 3.6478043000000003e-05 -0.012225652 -0.024413573000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1146]" " -type \"float3\" 0.00071680546000000005 -0.011877919000000001 -0.02538489"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1147]" " -type \"float3\" -0.001786232 -0.021314645 -0.025815474000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1148]" " -type \"float3\" 0.00063991546999999998 -0.021163607000000001 -0.025462137999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1149]" " -type \"float3\" 0.00022959709 -0.010233188000000001 -0.024437414000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1150]" " -type \"float3\" 0.0012618302999999999 -0.011605763999999999 -0.024628148999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1151]" " -type \"float3\" 0.0017119646000000001 -0.016811752999999999 -0.024112212000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1152]" " -type \"float3\" 7.3075294000000005e-05 -0.010174298999999999 -0.024253831999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1153]" " -type \"float3\" 0.00020086765 -0.010306025 -0.024458395000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1154]" " -type \"float3\" -0.00044882298000000002 -0.011046434000000001 -0.025367724000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1155]" " -type \"float3\" -8.3446503e-07 -0.010167027 -0.024179922"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1156]" " -type \"float3\" -2.5391579000000002e-05 -0.010168099999999999 -0.024349676000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1157]" " -type \"float3\" -0.00012022257 -0.010176087 -0.024762141000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1158]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1159]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1160]" " -type \"float3\" -7.7486037999999994e-07 -0.010167027 -0.024183260000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1161]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1162]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1163]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1164]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1165]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1166]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1167]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1168]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1169]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1170]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1171]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1172]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1173]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1174]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1175]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1176]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1177]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1178]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1179]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1180]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1181]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1182]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1183]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1184]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1185]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1186]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1187]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1188]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1189]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1190]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1191]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1192]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1193]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1194]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1195]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1196]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1197]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1198]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1199]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1200]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1201]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1202]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1203]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1204]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1205]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1206]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1207]" " -type \"float3\" 7.1525574000000002e-07 -0.010167504000000001 -0.024176585"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1208]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1209]" " -type \"float3\" -0.034882069000000002 -0.17182568000000001 -0.036604866"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1210]" " -type \"float3\" -0.049622774000000001 -0.20203784 -0.045635685000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1211]" " -type \"float3\" -0.032566309000000002 -0.15928808 -0.036009297000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1212]" " -type \"float3\" -0.022461175999999999 -0.1072463 -0.032804950999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1213]" " -type \"float3\" -0.029684782 -0.14036979999999999 -0.035494788999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1214]" " -type \"float3\" -0.019476414000000001 -0.093774699000000003 -0.031748279999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1215]" " -type \"float3\" -0.010040998000000001 -0.051069401 -0.028314577"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1216]" " -type \"float3\" -0.016330719 -0.079832694999999995 -0.030591951999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1217]" " -type \"float3\" -0.0081920624000000001 -0.043393515000000001 -0.027577386999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1218]" " -type \"float3\" -0.0029780865000000002 -0.021676684000000002 -0.025481211"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1219]" " -type \"float3\" -0.0039000510999999999 -0.025349999000000002 -0.025869832999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1220]" " -type \"float3\" -0.00071525574000000001 -0.012770439 -0.024507985999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1221]" " -type \"float3\" -0.0011200905 -0.014303351000000001 -0.024688231000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1222]" " -type \"float3\" -5.1736832000000003e-05 -0.010351205 -0.024199950000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1223]" " -type \"float3\" -0.00016283989000000001 -0.010747338 -0.024252879000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1224]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1225]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1226]" " -type \"float3\" -1.2397765999999999e-05 -0.010211134 -0.024181352999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1227]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1228]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1229]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1230]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1231]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1232]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1233]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1234]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1235]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1236]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1237]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1238]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1239]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1240]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1241]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1242]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1243]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1244]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1245]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1246]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1247]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1248]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1249]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1250]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1251]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1252]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1253]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1254]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1255]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1256]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1257]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1258]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1259]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1260]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1261]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1262]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1263]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1264]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1265]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1266]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1267]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1268]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1269]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1270]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1271]" " -type \"float3\" 0.00014162064000000001 -0.0093856696000000003 -0.024223314999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1272]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1273]" " -type \"float3\" 0.00018197298000000001 -0.0091670695999999992 -0.024238572999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1274]" " -type \"float3\" 0.0089031457999999997 0.029116010000000001 -0.030794130999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1275]" " -type \"float3\" 0.00021058321 -0.0090286377999999994 -0.024256216000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1276]" " -type \"float3\" 0.010034978 0.033211118999999997 -0.031845077999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1277]" " -type \"float3\" 0.032015680999999997 0.11316676000000001 -0.049711212999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1278]" " -type \"float3\" 0.010854959000000001 0.035658725000000002 -0.032694802000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1279]" " -type \"float3\" 0.035468221000000001 0.12375572999999999 -0.051625714000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1280]" " -type \"float3\" 0.045788407000000003 0.15497468 -0.054389938999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1281]" " -type \"float3\" 0.037923217000000002 0.13069143999999999 -0.052459701999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1282]" " -type \"float3\" 0.050323844 0.16908028999999999 -0.054597840000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1283]" " -type \"float3\" 0.038767098999999999 0.12507763999999999 -0.043467029999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1284]" " -type \"float3\" 0.053944111000000003 0.18029438 -0.053672775999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1285]" " -type \"float3\" 0.045640826000000002 0.15015608 -0.043484196000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1286]" " -type \"float3\" 0.019303322000000001 0.060423485999999998 -0.028533446000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1287]" " -type \"float3\" 0.052492856999999997 0.17834398000000001 -0.041704640000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1288]" " -type \"float3\" 0.028641343 0.10120290999999999 -0.028813826000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1289]" " -type \"float3\" 0.0075731276999999996 0.023961863 -0.024520861000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1290]" " -type \"float3\" 0.039160847999999998 0.15507240999999999 -0.028627382999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1291]" " -type \"float3\" 0.016568660999999998 0.072610444999999996 -0.024516092999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1292]" " -type \"float3\" 0.053382396999999998 0.21800944 -0.031365379999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1293]" " -type \"float3\" 0.028544188000000002 0.14567140000000001 -0.023872839"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1294]" " -type \"float3\" 0.081187128999999997 0.29338047 -0.039351447999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1295]" " -type \"float3\" 0.047281027000000003 0.22245543000000001 -0.023993479000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1296]" " -type \"float3\" 0.024215101999999999 0.145803 -0.017687307999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1297]" " -type \"float3\" 0.078852773000000001 0.29435869999999997 -0.023611055999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1298]" " -type \"float3\" 0.039340973000000001 0.20844692000000001 -0.0092296470000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1299]" " -type \"float3\" 0.10039866 0.31192239999999999 -0.019319998000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1300]" " -type \"float3\" 0.062050104000000002 0.26421614999999998 0.0012645852"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1301]" " -type \"float3\" 0.020861626000000001 0.16427122 0.0061793458000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1302]" " -type \"float3\" 0.083700656999999998 0.30015087000000001 0.016280664"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1303]" " -type \"float3\" 0.029256105000000001 0.21672127999999999 0.026736749000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1304]" " -type \"float3\" 0.0033133030000000001 0.12627140000000001 0.014489663999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1305]" " -type \"float3\" 0.052833796000000002 0.28891781 0.058240905000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1306]" " -type \"float3\" 0.0022125244000000001 0.18190953000000001 0.039159313000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1307]" " -type \"float3\" -0.0018975735 0.072623885999999999 0.0090599189999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1308]" " -type \"float3\" 0.015003203999999999 0.25695315000000002 0.065010562999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1309]" " -type \"float3\" -0.012772560000000001 0.12630647 0.025048269000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1310]" " -type \"float3\" 0.023519516000000001 0.030355981000000001 -0.0047974456000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1311]" " -type \"float3\" -0.016480923000000001 0.15308923999999999 0.024523748000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1312]" " -type \"float3\" -0.00079178810000000001 0.050530113000000001 -0.0058636534999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1313]" " -type \"float3\" 0.028791428000000001 0.0096191223999999992 -0.018368708000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1314]" " -type \"float3\" -0.020694016999999999 0.0069404150999999997 -0.019630419"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1315]" " -type \"float3\" -0.016668558 0.0042156483999999999 -0.022303567999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1316]" " -type \"float3\" -0.010494946999999999 0.016313454000000002 -0.021551595999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1317]" " -type \"float3\" 0.030827522 -0.088018528999999998 -0.010958659000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1318]" " -type \"float3\" 0.055550336999999998 -0.095519744000000004 -0.0032758582"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1319]" " -type \"float3\" 0.077699423000000004 -0.092308126000000004 0.0016365182000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1320]" " -type \"float3\" 0.10747218 -0.10605357 -0.0010845531000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1321]" " -type \"float3\" 0.12752485 -0.11303133999999999 0.0039301049000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1322]" " -type \"float3\" 0.13836575000000001 -0.11687239000000001 0.0055046212000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1323]" " -type \"float3\" 0.045155048000000003 -0.014323676 -0.019519793000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1324]" " -type \"float3\" 0.052505493 -0.018558347999999999 -0.017893063000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1325]" " -type \"float3\" 0.050599098000000002 -0.021774762999999999 -0.017494189"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1326]" " -type \"float3\" 0.034262419000000002 -0.10360672 -0.025664316"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1327]" " -type \"float3\" 0.027136803000000001 -0.088457875000000005 -0.026545512"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1328]" " -type \"float3\" 0.017155170000000001 -0.065871975999999999 -0.027557837000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1329]" " -type \"float3\" 0.079550742999999993 -0.15427262 -0.036792501999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1330]" " -type \"float3\" 0.057337523000000001 -0.11840682 -0.035779699999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1331]" " -type \"float3\" 0.033879279999999998 -0.094104849000000004 -0.030267464000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1332]" " -type \"float3\" 0.075443267999999994 -0.088000201 -0.040215476999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1333]" " -type \"float3\" 0.058377503999999997 -0.079373144000000007 -0.032802089999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1334]" " -type \"float3\" 0.048160076000000003 -0.076040350000000007 -0.018900858"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1335]" " -type \"float3\" 0.046360731000000002 -0.022941970999999999 -0.025575385999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1336]" " -type \"float3\" 0.048696280000000002 -0.044188580999999998 -0.018141017999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1337]" " -type \"float3\" 0.037196397999999999 -0.047598623 -0.013284908999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1338]" " -type \"float3\" 0.0047369003000000002 -0.042970382000000001 -0.022438751999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1339]" " -type \"float3\" -0.018478631999999998 -0.045817099999999999 -0.025547968000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1340]" " -type \"float3\" -0.026528119999999999 -0.049643777 -0.021538483000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1341]" " -type \"float3\" 0.0037992001 -0.023481274 -0.0046619045999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1342]" " -type \"float3\" -0.0038547516000000002 -0.016783976999999999 -0.0086220372"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1343]" " -type \"float3\" 0.015719414000000001 0.0037153717000000001 -0.016912923999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1344]" " -type \"float3\" 0.065217495 -0.00058271921999999998 0.032419576999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1345]" " -type \"float3\" 0.078727602999999993 0.024241781 0.022977008"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1346]" " -type \"float3\" 0.086270809000000004 0.039491869999999998 0.0096732507999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1347]" " -type \"float3\" 0.033641219 0.023735737 0.023189914999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1348]" " -type \"float3\" 0.035187243999999999 0.050973154999999999 0.024188889000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1349]" " -type \"float3\" 0.029844045999999999 0.024342869999999999 0.0099917780999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1350]" " -type \"float3\" -0.019296646000000001 0.046328164999999998 -0.016401158999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1351]" " -type \"float3\" -0.010869622000000001 0.031576372999999998 -0.013845431"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1352]" " -type \"float3\" 0.00080561637999999999 0.0094029661 -0.0017115939000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1353]" " -type \"float3\" -0.00014400481999999999 0.054322219999999997 0.013004197"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1354]" " -type \"float3\" 0.0043092966 0.018059586999999998 0.012728943"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1355]" " -type \"float3\" 0.014494181 0.011929965000000001 0.017667366"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1356]" " -type \"float3\" -0.010904967999999999 0.036872961000000003 0.0068702828000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1357]" " -type \"float3\" 0.0017541646999999999 0.025152062999999999 0.014081908000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1358]" " -type \"float3\" 0.0060818790999999997 0.01612792 0.011258377"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1359]" " -type \"float3\" -0.0088370441999999997 0.035321571000000003 0.029497994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1360]" " -type \"float3\" -0.00079810619000000003 0.024387692999999998 0.031049920000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1361]" " -type \"float3\" 0.0028833151 0.011674261 0.026453448000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1362]" " -type \"float3\" 0.015075623999999999 0.047690011999999997 0.091877534999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1363]" " -type \"float3\" 0.014087886000000001 0.038029528999999999 0.071216061999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1364]" " -type \"float3\" 0.0081437677000000003 0.019945955000000001 0.050294116"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1365]" " -type \"float3\" 0.015961241000000001 0.064745760999999999 0.10337291999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1366]" " -type \"float3\" 0.014505591 0.031496145000000003 0.068404331999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1367]" " -type \"float3\" 0.0060970484999999996 -0.0034896377000000001 0.025363457999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1368]" " -type \"float3\" 0.014239430000000001 0.030899619999999999 0.074380651000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1369]" " -type \"float3\" 0.0093420744000000007 -0.0071088317999999998 0.029249681"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1370]" " -type \"float3\" 0.0029537081999999998 -0.072442434999999999 -0.013871776000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1371]" " -type \"float3\" 0.019140184000000001 0.00041518174000000001 0.046173826000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1372]" " -type \"float3\" 0.029893040999999999 -0.084977529999999996 -0.0053212512"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1373]" " -type \"float3\" 0.040006340000000001 -0.22771910000000001 -0.039500222000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1374]" " -type \"float3\" 0.086868166999999996 -0.069900654000000007 0.01750697"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1375]" " -type \"float3\" 0.11192679 -0.2348769 -0.026429283000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1376]" " -type \"float3\" 0.13889610999999999 -0.046039722999999998 0.046140209000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1377]" " -type \"float3\" 0.17719315999999999 -0.20201197000000001 -0.0010869372999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1378]" " -type \"float3\" 0.16286552000000001 -0.35457280000000002 -0.032536968999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1379]" " -type \"float3\" 0.18486296999999999 -0.23787931000000001 0.0075570474999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1380]" " -type \"float3\" 0.13223325999999999 -0.30066636000000002 -0.0098719466000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1381]" " -type \"float3\" 0.14899671 -0.11337174999999999 0.061383559999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1382]" " -type \"float3\" 0.094707966000000005 -0.15053216 0.04114379"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1383]" " -type \"float3\" 0.01631403 -0.16937378 0.025020135999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1384]" " -type \"float3\" 0.057110309999999997 -0.33104959 -0.021635996000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1385]" " -type \"float3\" -0.026815413999999999 -0.18031564 0.016374838999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1386]" " -type \"float3\" 0.012512206999999999 -0.34248700999999998 -0.026645050999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1387]" " -type \"float3\" -0.037402153 -0.18769111999999999 0.015370501"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1388]" " -type \"float3\" -0.00032806395999999998 -0.34237221000000001 -0.024082527999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1389]" " -type \"float3\" -0.046099662999999999 -0.18638602000000001 0.018260849999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1390]" " -type \"float3\" -0.082896947999999998 -0.041396520999999999 0.058184399999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1391]" " -type \"float3\" -0.092404127000000003 -0.045350335999999998 0.050848379999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1392]" " -type \"float3\" -0.11830783 -0.043827317999999997 0.030070795000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1393]" " -type \"float3\" -0.12948370000000001 0.054095841999999998 0.070539609000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1394]" " -type \"float3\" -0.15190482 0.050024963999999998 0.038393989000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1395]" " -type \"float3\" -0.18887639000000001 0.059618330999999997 -0.0087761748999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1396]" " -type \"float3\" -0.15609144999999999 -0.023449563999999999 -0.0046677458999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1397]" " -type \"float3\" -0.23341893999999999 0.065347768000000001 -0.059690699"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1398]" " -type \"float3\" -0.20129848 -0.0067047123000000004 -0.046551451000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1399]" " -type \"float3\" -0.26241302 0.071738339999999998 -0.093622908000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1400]" " -type \"float3\" -0.23470210999999999 -0.00066413916999999998 -0.077037796000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1401]" " -type \"float3\" -0.25401997999999998 0.042530513999999998 -0.10251831"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1402]" " -type \"float3\" -0.22628880000000001 -0.016347433000000001 -0.086975559999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1403]" " -type \"float3\" -0.19346189 -0.0038109068 -0.087001546999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1404]" " -type \"float3\" -0.16555476 -0.055299424 -0.073073610999999997"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1405]" " -type \"float3\" -0.10178160999999999 -0.052673124000000002 -0.06099914"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1406]" " -type \"float3\" -0.085454225999999994 -0.099178575000000005 -0.052762969999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1407]" " -type \"float3\" -0.071971654999999995 -0.1074002 -0.065355047999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1408]" " -type \"float3\" -0.065507174000000001 -0.14878501999999999 -0.060107215999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1409]" " -type \"float3\" -0.11301708000000001 -0.14353588 -0.10102318"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1410]" " -type \"float3\" -0.10654521 -0.17964736000000001 -0.093842492"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1411]" " -type \"float3\" -0.14145016999999999 -0.15821853 -0.12052487000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1412]" " -type \"float3\" -0.1361475 -0.19394758000000001 -0.11403368"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1413]" " -type \"float3\" -0.13897729 -0.15525773000000001 -0.11800811999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1414]" " -type \"float3\" -0.13399934999999999 -0.19162276 -0.11150883"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1415]" " -type \"float3\" -0.10491896000000001 -0.13918748 -0.092988476"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1416]" " -type \"float3\" -0.10061741 -0.17391445999999999 -0.086966500000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1417]" " -type \"float3\" -0.091173886999999995 -0.20869674999999999 -0.077088341000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1418]" " -type \"float3\" -0.053450346000000003 -0.14770976 -0.053076251999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1419]" " -type \"float3\" -0.052304268000000001 -0.17891899 -0.049603924000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1420]" " -type \"float3\" -0.026922464 -0.11953463 -0.035219654000000003"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1421]" " -type \"float3\" -0.053337573999999999 -0.12057461999999999 -0.055255875000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1422]" " -type \"float3\" -0.024026631999999999 -0.098134062999999994 -0.034876809000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1423]" " -type \"float3\" -0.013397694 -0.067007444999999999 -0.029486643"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1424]" " -type \"float3\" -0.020799636999999999 -0.078387639999999995 -0.034126267000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1425]" " -type \"float3\" -0.010570049 -0.054780148000000001 -0.028397546999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1426]" " -type \"float3\" -0.0047640800000000004 -0.029251123 -0.026189314000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1427]" " -type \"float3\" -0.0064876079999999997 -0.036343596999999998 -0.026890265"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1428]" " -type \"float3\" -0.0013380051 -0.015208625999999999 -0.024778352999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1429]" " -type \"float3\" -0.0021736621999999999 -0.018494869000000001 -0.025137888000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1430]" " -type \"float3\" -0.00018596648999999999 -0.010829711000000001 -0.024263845999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1431]" " -type \"float3\" -0.00040864944 -0.011633658999999999 -0.024368750000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1432]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1433]" " -type \"float3\" -4.2915343999999998e-06 -0.010181569999999999 -0.024177537999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1434]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1435]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1436]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1437]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1438]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1439]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1440]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1441]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1442]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1443]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1444]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1445]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1446]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1447]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1448]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1449]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1450]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1451]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1452]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1453]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1454]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1455]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1456]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1457]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1458]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1459]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1460]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1461]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1462]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1463]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1464]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1465]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1466]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1467]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1468]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1469]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1470]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1471]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1472]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1473]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1474]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1475]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1476]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1477]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1478]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1479]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1480]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1481]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1482]" " -type \"float3\" 0.0002014637 -0.0090938751000000009 -0.024259077"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1483]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1484]" " -type \"float3\" 0.00015765429 -0.0093335155000000003 -0.024243342000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1485]" " -type \"float3\" 0.010950267 0.035045213999999998 -0.032919391999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1486]" " -type \"float3\" 8.3327293000000005e-05 -0.0097239260000000008 -0.02421044"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1487]" " -type \"float3\" 0.01015079 0.030715859000000002 -0.032375797999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1488]" " -type \"float3\" 0.039250373999999998 0.13331129999999999 -0.052108272999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1489]" " -type \"float3\" 0.0075953006999999999 0.019252812000000001 -0.030354964000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1490]" " -type \"float3\" 0.037841380000000001 0.12486554 -0.049191936999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1491]" " -type \"float3\" 0.057115078 0.18930504000000001 -0.051407321999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1492]" " -type \"float3\" 0.032143176000000002 0.099535592000000006 -0.043067916999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1493]" " -type \"float3\" 0.060082436000000003 0.19452407999999999 -0.048574909999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1494]" " -type \"float3\" 0.059658170000000003 0.20812897 -0.039962276999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1495]" " -type \"float3\" 0.064789176000000004 0.19649452000000001 -0.046743855000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1496]" " -type \"float3\" 0.074235559000000007 0.25206429000000002 -0.042850478999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1497]" " -type \"float3\" 0.066793441999999995 0.17609468 -0.047396168000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1498]" " -type \"float3\" 0.092920899000000001 0.28734862999999999 -0.049086556000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1499]" " -type \"float3\" 0.066334665000000001 0.14752951 -0.048276409999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1500]" " -type \"float3\" 0.096605062000000005 0.25239608000000002 -0.050433620999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1501]" " -type \"float3\" 0.10456525999999999 0.32027820000000001 -0.041923984999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1502]" " -type \"float3\" 0.085045575999999998 0.18418958999999999 -0.044009671"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1503]" " -type \"float3\" 0.10216165000000001 0.25997722000000001 -0.037085040999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1504]" " -type \"float3\" 0.060476303000000002 0.11604903 -0.034644111999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1505]" " -type \"float3\" 0.089243293000000001 0.18706274000000001 -0.031802163000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1506]" " -type \"float3\" 0.10351825000000001 0.26897990999999999 -0.013186442"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1507]" " -type \"float3\" 0.069857478000000001 0.12753233 -0.026445376"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1508]" " -type \"float3\" 0.10079646 0.2160396 -0.0050220359000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1509]" " -type \"float3\" 0.10356271 0.3124015 0.039001956999999997"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1510]" " -type \"float3\" 0.094962357999999997 0.17642841000000001 0.0052685867999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1511]" " -type \"float3\" 0.12863743 0.29844293 0.053018585"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1512]" " -type \"float3\" 0.091850042000000007 0.34413904000000001 0.082817092999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1513]" " -type \"float3\" 0.16587531999999999 0.25767403999999999 0.041454329999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1514]" " -type \"float3\" 0.15060079000000001 0.31699660000000002 0.057740702999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1515]" " -type \"float3\" 0.056435346999999997 0.29536249999999997 0.057357326"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1516]" " -type \"float3\" 0.20208871 0.22298703 -0.017834174000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1517]" " -type \"float3\" 0.099886417000000005 0.28200194000000001 -0.0091252196999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1518]" " -type \"float3\" -0.0043644905000000001 0.13087383 -0.0052909721000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1519]" " -type \"float3\" 0.16180633999999999 0.28090277000000002 -0.087157235"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1520]" " -type \"float3\" 0.026894569 0.097690947 -0.050702557000000002"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1521]" " -type \"float3\" 0.0065593719000000003 -0.049733840000000001 -0.024025904000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1522]" " -type \"float3\" 0.11491036 0.11527529 -0.085730060999999996"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1523]" " -type \"float3\" 0.061507939999999997 -0.045083395999999998 -0.028056609"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1524]" " -type \"float3\" 0.085762978000000004 -0.091162465999999998 -0.0094618667"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1525]" " -type \"float3\" 0.028063774 0.052384488 -0.033610329000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1526]" " -type \"float3\" 0.019402981 0.014533391 -0.025661455"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1527]" " -type \"float3\" 0.031537056000000001 -0.0051269326 -0.022182212999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1528]" " -type \"float3\" 0.031601667 -0.056363530000000002 -0.023537145999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1529]" " -type \"float3\" 0.033765077999999997 -0.090450085999999999 -0.024189221"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1530]" " -type \"float3\" 0.036355019000000002 -0.10543859999999999 -0.024775492"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1531]" " -type \"float3\" 0.11551404 -0.18534444 -0.029887662999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1532]" " -type \"float3\" 0.10628867 -0.20089607000000001 -0.033981070000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1533]" " -type \"float3\" 0.094322205000000006 -0.18491717999999999 -0.036750301999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1534]" " -type \"float3\" 0.077141762000000003 -0.077350459999999996 -0.048723205999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1535]" " -type \"float3\" 0.084910154000000002 -0.094068161999999997 -0.045166238999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1536]" " -type \"float3\" 0.087244271999999998 -0.094426266999999994 -0.042285666"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1537]" " -type \"float3\" 0.022180557 0.049448021000000002 -0.042396769000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1538]" " -type \"float3\" 0.036455393000000003 0.025134033 -0.033166155000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1539]" " -type \"float3\" 0.044624089999999998 -0.0010676626 -0.028407561000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1540]" " -type \"float3\" 0.051540851999999998 0.013852989 -0.0064194072000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1541]" " -type \"float3\" 0.035088539000000002 0.0051452870999999997 -0.013966786"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1542]" " -type \"float3\" 0.019526720000000001 -0.017605388999999999 -0.020518050999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1543]" " -type \"float3\" 0.067587614000000004 0.0033490415999999999 0.011832608"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1544]" " -type \"float3\" 0.055741310000000002 -0.013673985 0.0092939269000000008"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1545]" " -type \"float3\" 0.033147811999999999 -0.024636590999999999 0.0037421118000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1546]" " -type \"float3\" 0.11949372 -0.014447952 0.058567539000000002"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1547]" " -type \"float3\" 0.10084008999999999 -0.015374685000000001 0.052419915999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1548]" " -type \"float3\" 0.077168941000000005 -0.0091133359999999997 0.040642395999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1549]" " -type \"float3\" 0.073485613000000005 -0.038075887000000003 0.048555985000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1550]" " -type \"float3\" 0.053238273000000003 -0.028460288 0.036034599"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1551]" " -type \"float3\" 0.039531826999999999 -0.0082555058999999997 0.029090298000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1552]" " -type \"float3\" 0.024946451000000001 -0.039067768000000003 0.0097640286999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1553]" " -type \"float3\" 0.0060905218000000001 -0.018144513000000001 0.0049863588"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1554]" " -type \"float3\" -0.013126135000000001 0.010649179999999999 -0.0058022606999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1555]" " -type \"float3\" 0.043478727000000002 -0.0059690717999999997 0.043793216000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1556]" " -type \"float3\" 0.028630494999999999 0.026597355999999999 0.043166353999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1557]" " -type \"float3\" 0.010902286000000001 0.058996536000000002 0.028209640000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1558]" " -type \"float3\" 0.0090018510999999996 0.010988092 0.027882231"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1559]" " -type \"float3\" -0.013184786 0.047447659000000003 0.013396096999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1560]" " -type \"float3\" -0.021294355000000001 0.068171717000000007 0.0065599810000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1561]" " -type \"float3\" -0.017110527 0.048068382 0.0095256995000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1562]" " -type \"float3\" -0.023116529 0.079101062999999999 0.0040952098000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1563]" " -type \"float3\" -0.018367350000000001 0.052173234999999998 0.013610077999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1564]" " -type \"float3\" 0.027470260999999999 0.10412834 0.10431783"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1565]" " -type \"float3\" 0.016180633999999999 0.080835320000000002 0.099111423000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1566]" " -type \"float3\" 0.013420641000000001 0.059931494000000002 0.10185413"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1567]" " -type \"float3\" 0.029737636000000001 0.10861775999999999 0.17795074999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1568]" " -type \"float3\" 0.026765712000000001 0.092612958999999995 0.16695671000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1569]" " -type \"float3\" 0.022672418999999999 0.079418994000000007 0.14145095999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1570]" " -type \"float3\" 0.016989291 0.11267433 0.18952005999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1571]" " -type \"float3\" 0.012126893 0.090739823999999997 0.15482987000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1572]" " -type \"float3\" 0.0085066557000000008 0.064848520000000007 0.11220608999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1573]" " -type \"float3\" -0.0031103492000000002 0.11018322 0.17145488"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1574]" " -type \"float3\" 0.0023635029999999999 0.074044682000000001 0.13152543999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1575]" " -type \"float3\" 0.011947513 0.038261271999999999 0.096352651999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1576]" " -type \"float3\" -0.0061102509000000001 0.12239454 0.18024759000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1577]" " -type \"float3\" 0.01829803 0.081765152999999993 0.14622046"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1578]" " -type \"float3\" 0.047439277000000002 0.029173231000000001 0.078105643000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1579]" " -type \"float3\" 0.024837135999999999 0.094205596000000003 0.18879385000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1580]" " -type \"float3\" 0.077716469999999996 0.046892143999999997 0.11185314"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1581]" " -type \"float3\" 0.020009994999999999 0.062578893999999996 0.20877297"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1582]" " -type \"float3\" -0.036017776000000001 0.093360639999999995 0.24611701"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1583]" " -type \"float3\" -0.048077940999999999 0.011383032 0.24275841000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1584]" " -type \"float3\" 0.0053724050999999998 -0.0045148376 0.20743249"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1585]" " -type \"float3\" -0.017702698999999999 0.13514467999999999 0.22669302"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1586]" " -type \"float3\" -0.045714378 0.16589852999999999 0.26949849999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1587]" " -type \"float3\" -0.080635071000000003 0.12126098 0.28593856000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1588]" " -type \"float3\" -0.020176231999999999 0.15226576 0.21987449000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1589]" " -type \"float3\" -0.030886411999999999 0.17116866 0.25181729000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1590]" " -type \"float3\" -0.065833211000000003 0.18394585999999999 0.30624467"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1591]" " -type \"float3\" -0.0059580207000000003 0.13586506000000001 0.20434774"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1592]" " -type \"float3\" -0.013993889000000001 0.14762111999999999 0.20527379000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1593]" " -type \"float3\" -0.039635122000000002 0.1779618 0.25270220999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1594]" " -type \"float3\" 0.011023507 0.12547705000000001 0.19975093999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1595]" " -type \"float3\" 0.0094409138000000007 0.13969894999999999 0.20874590000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1596]" " -type \"float3\" -0.021274 0.15276274000000001 0.18876643000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1597]" " -type \"float3\" 0.038224979999999999 0.12030385 0.19462294999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1598]" " -type \"float3\" 0.050303503999999999 0.10661421 0.21870095000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1599]" " -type \"float3\" 0.01621823 0.11635826000000001 0.22221"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1600]" " -type \"float3\" 0.035752684 0.081328727000000003 0.1171712"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1601]" " -type \"float3\" 0.029192864999999998 0.030619716000000002 0.10507406"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1602]" " -type \"float3\" 0.046908364000000001 0.060609914000000001 0.19990632999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1603]" " -type \"float3\" -0.0152421 -0.00062682666 0.0026144813999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1604]" " -type \"float3\" -0.015776813000000001 -0.042633316999999997 -0.013742404"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1605]" " -type \"float3\" 0.019076169 -0.018443013000000001 0.077661589000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1606]" " -type \"float3\" 0.021443486000000001 -0.026152516000000001 0.027708304999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1607]" " -type \"float3\" 0.013910413 -0.039654754 0.0050689410000000004"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1608]" " -type \"float3\" -0.0098706483999999994 -0.055683694999999998 -0.013661133000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1609]" " -type \"float3\" 0.038349389999999997 -0.031864725000000003 0.020218683000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1610]" " -type \"float3\" 0.025536298999999998 -0.029753173000000001 0.0018074047000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1611]" " -type \"float3\" 0.0065901279000000002 -0.038757287000000001 -0.0080717374000000008"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1612]" " -type \"float3\" 0.039756656000000001 -0.047729038000000001 0.016551150000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1613]" " -type \"float3\" 0.050966023999999999 -0.045256934999999998 0.026815248999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1614]" " -type \"float3\" 0.028966664999999999 -0.037085734000000002 0.007635368"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1615]" " -type \"float3\" 0.088630556999999999 -0.035693309999999999 0.058054104000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1616]" " -type \"float3\" 0.099962472999999996 -0.026781464000000001 0.060894623000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1617]" " -type \"float3\" 0.060220361 -0.040129921999999998 0.040961697999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1618]" " -type \"float3\" 0.12546468 -0.0034585837000000001 0.056175843000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1619]" " -type \"float3\" 0.11799049 0.016629492999999999 0.046482458999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1620]" " -type \"float3\" 0.10511136 -0.0098190848000000008 0.062859191999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1621]" " -type \"float3\" 0.079226970999999993 0.014587319 0.015610231"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1622]" " -type \"float3\" 0.085328102000000003 0.020703202 0.020978225"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1623]" " -type \"float3\" 0.099773883999999993 0.041362949000000003 0.037315740999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1624]" " -type \"float3\" 0.066526651000000006 0.014536893 -0.0016224254"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1625]" " -type \"float3\" 0.071163893000000006 0.019811605999999999 -0.0032667983000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1626]" " -type \"float3\" 0.083150147999999993 0.031448491000000002 0.023277414999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1627]" " -type \"float3\" 0.012301922 0.068870999000000002 -0.050532326000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1628]" " -type \"float3\" 0.0053403378 0.082507469 -0.055780873000000002"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1629]" " -type \"float3\" 0.072209835 0.034719087000000003 -0.0051231254000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1630]" " -type \"float3\" 0.068960667000000003 -0.049343206000000001 -0.050496086000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1631]" " -type \"float3\" 0.063952683999999996 -0.015737826 -0.048216566000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1632]" " -type \"float3\" -0.00080251694000000001 0.091887153999999999 -0.058093055999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1633]" " -type \"float3\" 0.11692691 -0.13287251999999999 -0.025514828"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1634]" " -type \"float3\" 0.10471701999999999 -0.036545299000000003 -0.023065792000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1635]" " -type \"float3\" 0.066687106999999995 0.032652549000000003 -0.039310679000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1636]" " -type \"float3\" 0.040886402000000002 0.0057719405999999999 -0.024507271000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1637]" " -type \"float3\" 0.13234447999999999 0.15699616 -0.049238428000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1638]" " -type \"float3\" 0.10334444 0.11503956 -0.028219448000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1639]" " -type \"float3\" 0.15415454000000001 0.18756412 -0.080739722"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1640]" " -type \"float3\" 0.33259618000000002 0.38760855999999999 -0.14366005000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1641]" " -type \"float3\" 0.34005510999999999 0.37323340999999999 -0.11141466"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1642]" " -type \"float3\" 0.26157033000000002 0.29764614 -0.14647029"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1643]" " -type \"float3\" 0.34072672999999998 0.21801983999999999 -0.15375517"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1644]" " -type \"float3\" 0.40515279999999998 0.36241484000000002 -0.14727066"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1645]" " -type \"float3\" 0.25530850999999999 0.17778548999999999 -0.096149429999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1646]" " -type \"float3\" 0.23723757000000001 0.0019381101999999999 -0.050306305000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1647]" " -type \"float3\" 0.27495289000000001 0.0012149867 -0.081753716000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1648]" " -type \"float3\" 0.20732665 0.13416797 -0.0040655005999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1649]" " -type \"float3\" 0.055712341999999998 0.049231804999999997 -0.012837397"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1650]" " -type \"float3\" 0.050175786 -0.041910909000000003 -0.030346380999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1651]" " -type \"float3\" 0.078685759999999993 0.12660187000000001 0.0048341881000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1652]" " -type \"float3\" 0.012278676000000001 0.012240028 -0.021831499000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1653]" " -type \"float3\" 0.0010756253999999999 -0.0080921295999999993 -0.023873793000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1654]" " -type \"float3\" 0.040499805999999999 0.065809883 -0.021725642"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1655]" " -type \"float3\" 0.0065090655999999998 0.0026033875000000001 -0.02452849"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1656]" " -type \"float3\" 0.00013327599 -0.0099194887999999991 -0.024168954999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1657]" " -type \"float3\" 0.028271437 0.047233678000000001 -0.027421461000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1658]" " -type \"float3\" 0.0034749507999999999 -0.0029322151000000002 -0.024744498"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1659]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1660]" " -type \"float3\" 0.022841454000000001 0.038512744000000002 -0.029499995000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1661]" " -type \"float3\" 0.0020088553 -0.0058055166000000004 -0.02475022"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1662]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1663]" " -type \"float3\" 0.053347527999999998 0.10720757 -0.040862069000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1664]" " -type \"float3\" 0.013893366000000001 0.021229182999999999 -0.029401289000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1665]" " -type \"float3\" 0.00011032820000000001 -0.0099086408000000001 -0.024223791000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1666]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1667]" " -type \"float3\" 0.025190771000000001 0.048043466999999999 -0.035212978999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1668]" " -type \"float3\" 0.001621604 -0.0063625816000000002 -0.024975286999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1669]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1670]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1671]" " -type \"float3\" 0.023226917 0.047379470999999999 -0.034574016999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1672]" " -type \"float3\" 0.0014849304999999999 -0.0066801552000000002 -0.024936663000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1673]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1674]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1675]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1676]" " -type \"float3\" 0.00094586610999999995 -0.0073765758000000001 -0.024800763999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1677]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1678]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1679]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1680]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1681]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1682]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1683]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1684]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1685]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1686]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1687]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1688]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1689]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1690]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1691]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1692]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1693]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1694]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1695]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1696]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1697]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1698]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1699]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1700]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1701]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1702]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1703]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1704]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1705]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1706]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1707]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1708]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1709]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1710]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1711]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1712]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1713]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1714]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1715]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1716]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1717]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1718]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1719]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1720]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1721]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1722]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1723]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1724]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1725]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1726]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1727]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1728]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1729]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1730]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1731]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1732]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1733]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1734]" " -type \"float3\" 0.00014543533 -0.011822546 -0.024200902999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1735]" " -type \"float3\" 0.00060558319000000003 -0.017443561999999999 -0.024227129"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1736]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1737]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1738]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1739]" " -type \"float3\" 2.0980835e-05 -0.010818207999999999 -0.024124132"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1740]" " -type \"float3\" 0.00059175491000000005 -0.022026980000000002 -0.023595319999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1741]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1742]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1743]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1744]" " -type \"float3\" 0.00018167496000000001 -0.010179186 -0.024137960999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1745]" " -type \"float3\" 0.0027031898000000002 -0.010760509999999999 -0.023597226999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1746]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1747]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1748]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1749]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1750]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1751]" " -type \"float3\" 5.2928924999999996e-05 -0.010171795000000001 -0.024164187"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1752]" " -type \"float3\" 0.0089583396999999999 -0.011044169 -0.022275911999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1753]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1754]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1755]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1756]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1757]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1758]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1759]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1760]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1761]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1762]" " -type \"float3\" 0.00016975403 -0.010202909 -0.024134623000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1763]" " -type \"float3\" 0.016379356000000001 -0.012575293 -0.020487772000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1764]" " -type \"float3\" 0.0041966438000000002 -0.010760093 -0.023234831000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1765]" " -type \"float3\" 0.070884227999999994 -0.018710041 -0.0084547865999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1766]" " -type \"float3\" 0.031667709000000002 -0.013645554000000001 -0.017363534999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1767]" " -type \"float3\" 0.088450908999999994 -0.020847285 -0.0016116965999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1768]" " -type \"float3\" 0.052104949999999997 -0.015353644 -0.012823569"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1769]" " -type \"float3\" 0.020582198999999999 -0.012006426000000001 -0.019885527"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1770]" " -type \"float3\" 0.043224812000000001 -0.019036972999999999 -0.013281332"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1771]" " -type \"float3\" 0.019071579000000002 -0.017998362 -0.019683824999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1772]" " -type \"float3\" 0.0029635428999999999 -0.021964991 -0.022715556000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1773]" " -type \"float3\" 0.010985851 -0.033554159 -0.020112978"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1774]" " -type \"float3\" 0.0017466545 -0.045843861999999999 -0.021513449"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1775]" " -type \"float3\" 0.0017988682 -0.043104193999999998 -0.022901044999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1776]" " -type \"float3\" 0.0018386841 -0.066031508000000003 -0.020750985999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1777]" " -type \"float3\" 0.0027399063 -0.055508755 -0.022835241999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1778]" " -type \"float3\" 0.00091552734000000001 -0.021075988 -0.02426623"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1779]" " -type \"float3\" 0.0034091473000000001 -0.064014218999999997 -0.022829043"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1780]" " -type \"float3\" 0.0011332034999999999 -0.023528928000000001 -0.024306761"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1781]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1782]" " -type \"float3\" 0.0011734962000000001 -0.023798639 -0.024338709"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1783]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1784]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1785]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1786]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1787]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1788]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1789]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1790]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1791]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1792]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1793]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1794]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1795]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1796]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1797]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1798]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1799]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1800]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1801]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1802]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1803]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1804]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1805]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1806]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1807]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1808]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1809]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1810]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1811]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1812]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1813]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1814]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1815]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1816]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1817]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1818]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1819]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1820]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1821]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1822]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1823]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1824]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1825]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1826]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1827]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1828]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1829]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1830]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1831]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1832]" " -type \"float3\" 0.0019522904999999999 -0.015094364000000001 -0.024497972999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1833]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1834]" " -type \"float3\" 0.0091712475000000002 -0.035932802 -0.025884138000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1835]" " -type \"float3\" 0.059366822 -0.1071709 -0.035026534999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1836]" " -type \"float3\" 0.014021039000000001 -0.049557588999999999 -0.026787745000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1837]" " -type \"float3\" 0.075380801999999997 -0.12993558999999999 -0.036761745999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1838]" " -type \"float3\" 0.36191331999999998 0.067665346000000001 -0.10849427"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1839]" " -type \"float3\" 0.13881361 -0.054104171999999999 -0.038767084"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1840]" " -type \"float3\" 0.42726922000000001 0.15443397 -0.10302542000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1841]" " -type \"float3\" 0.43823946000000003 0.388475 -0.12538384"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1842]" " -type \"float3\" 0.40060508 0.28631972999999999 -0.064599499000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1843]" " -type \"float3\" 0.39058113 0.3776466 -0.084397062999999994"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1844]" " -type \"float3\" 0.23981749999999999 0.28572484999999997 -0.060856566000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1845]" " -type \"float3\" 0.25852931000000001 0.34007540000000003 -0.035166248999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1846]" " -type \"float3\" 0.12062573 0.23060204000000001 -0.022639738"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1847]" " -type \"float3\" 0.074738025999999999 0.12589001999999999 -0.024808871"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1848]" " -type \"float3\" 0.069758892000000003 0.1970066 -0.0058250296999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1849]" " -type \"float3\" 0.032744884000000002 0.13985752000000001 -0.029461132000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1850]" " -type \"float3\" 0.0028047561999999999 0.10377481 -0.052047238000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1851]" " -type \"float3\" 0.042325616000000003 0.11492156000000001 -0.0038993228"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1852]" " -type \"float3\" 0.056664467000000003 0.067742832000000003 -0.0067765582000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1853]" " -type \"float3\" 0.070627688999999994 0.047792441999999997 -0.0048196185000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1854]" " -type \"float3\" 0.060313701999999997 0.090680606999999996 0.028435123999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1855]" " -type \"float3\" 0.068705082000000001 0.068306156000000007 0.028271926999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1856]" " -type \"float3\" 0.074729203999999994 0.051824099999999998 0.025639665999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1857]" " -type \"float3\" 0.012637615 0.13936572 0.025485766999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1858]" " -type \"float3\" 0.031311749999999999 0.11453844000000001 0.026178135000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1859]" " -type \"float3\" 0.067460060000000002 0.073702014999999996 0.029940976000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1860]" " -type \"float3\" 0.032771944999999997 0.089944794999999994 0.031976118999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1861]" " -type \"float3\" 0.061850547999999998 0.049684501999999998 0.043689146999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1862]" " -type \"float3\" 0.092245936000000001 0.014271651999999999 0.056936636999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1863]" " -type \"float3\" 0.053196430000000003 -0.017965714000000001 0.045177295999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1864]" " -type \"float3\" 0.059642315000000001 -0.024555380000000002 0.052125647999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1865]" " -type \"float3\" 0.064850926000000003 -0.031221742 0.053644493000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1866]" " -type \"float3\" 0.040917873 -0.037205122 0.023323847000000002"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1867]" " -type \"float3\" 0.042963742999999999 -0.036961428999999997 0.026911974000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1868]" " -type \"float3\" 0.036797046999999999 -0.034351847999999997 0.020345403000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1869]" " -type \"float3\" 0.065719962000000007 -0.10076519 0.056186721000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1870]" " -type \"float3\" 0.039511919 -0.065179906999999995 0.030921412999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1871]" " -type \"float3\" 0.016197561999999999 -0.049149774 0.0071121882999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1872]" " -type \"float3\" 0.018345475 -0.049621247 0.030013544"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1873]" " -type \"float3\" 0.0026903749 -0.042227589000000003 0.0088917817999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1874]" " -type \"float3\" -0.0071892142000000003 -0.048743568000000001 -0.010164813999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1875]" " -type \"float3\" 0.0026341081000000001 -0.0048994664 0.044800155000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1876]" " -type \"float3\" 0.00031030178 -0.023232603000000001 0.034644589000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1877]" " -type \"float3\" 0.0051677227000000003 -0.035145901 0.046634628999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1878]" " -type \"float3\" 0.00085505843000000003 0.0092790480999999994 0.10682079"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1879]" " -type \"float3\" 0.019934385999999998 -0.0031727794999999999 0.13265262999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1880]" " -type \"float3\" 0.037549853000000001 0.012602901 0.16452716000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1881]" " -type \"float3\" -0.010991111 0.014757668999999999 0.11838381000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1882]" " -type \"float3\" 0.0098679623999999994 0.030525422 0.15843889"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1883]" " -type \"float3\" 0.017293945000000002 0.073674418000000005 0.19404708000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1884]" " -type \"float3\" -0.013178557 0.051020480999999999 0.13932033999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1885]" " -type \"float3\" -0.010737896 0.089903212999999996 0.17067893000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1886]" " -type \"float3\" -0.016897261 0.12632486000000001 0.17823317999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1887]" " -type \"float3\" -0.034070789999999997 0.11226986 0.19721384"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1888]" " -type \"float3\" -0.040049969999999997 0.15584633000000001 0.21959323"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1889]" " -type \"float3\" -0.043909073 0.18235525 0.23631625000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1890]" " -type \"float3\" -0.068768023999999997 0.17247185000000001 0.28941306"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1891]" " -type \"float3\" -0.074299931999999999 0.19221063999999999 0.30385142999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1892]" " -type \"float3\" -0.074140190999999994 0.18812153000000001 0.31462615999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1893]" " -type \"float3\" -0.123878 0.16236361999999999 0.33756556999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1894]" " -type \"float3\" -0.12383187 0.14740476 0.34124130000000003"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1895]" " -type \"float3\" -0.10933018 0.13929579 0.32484415"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1896]" " -type \"float3\" -0.19817650000000001 0.07867644 0.38317173999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1897]" " -type \"float3\" -0.16288757000000001 0.055160023000000002 0.33792791"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1898]" " -type \"float3\" -0.10808671 0.032039857999999997 0.28477287000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1899]" " -type \"float3\" -0.17251527 0.019047116999999999 0.29262778"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1900]" " -type \"float3\" -0.094942211999999998 0.0014376397999999999 0.24667488000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1901]" " -type \"float3\" -0.034928440999999998 -0.011729622 0.20965118999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1902]" " -type \"float3\" -0.071965217999999997 0.035257197999999997 0.19143905"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1903]" " -type \"float3\" -0.010853052 0.031801559 0.16746326"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1904]" " -type \"float3\" 0.040663958 0.017932271999999999 0.14362152"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1905]" " -type \"float3\" 0.015562057000000001 -0.014832878000000001 0.17875606999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1906]" " -type \"float3\" 0.094907403000000001 -0.024577046000000002 0.10952868"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1907]" " -type \"float3\" -0.014351605999999999 0.027363156999999999 0.11655618"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1908]" " -type \"float3\" 0.040903330000000002 -0.037778041999999998 0.086622134000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1909]" " -type \"float3\" -0.088524580000000005 0.048865654000000001 0.10839666000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1910]" " -type \"float3\" -0.038889884999999999 -0.035553834999999999 0.073761001000000007"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1911]" " -type \"float3\" -0.12056065000000001 0.067082025000000003 0.10238899"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1912]" " -type \"float3\" -0.076588392000000005 -0.036128900999999998 0.064710273999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1913]" " -type \"float3\" -0.12367773 0.065268016999999998 0.089261428000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1914]" " -type \"float3\" -0.15057372999999999 0.12142275 0.12319745"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1915]" " -type \"float3\" -0.15203570999999999 0.11877976 0.10454835"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1916]" " -type \"float3\" -0.14969014999999999 0.10804472 0.078621045000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1917]" " -type \"float3\" -0.17231655000000001 0.14854904999999999 0.11196496"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1918]" " -type \"float3\" -0.16853045999999999 0.14051589 0.084073797000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1919]" " -type \"float3\" -0.18927836000000001 0.14511845000000001 0.042345420000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1920]" " -type \"float3\" -0.17255092 0.10809372 0.041131273000000003"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1921]" " -type \"float3\" -0.23142815 0.15355715 -0.016229377999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1922]" " -type \"float3\" -0.21296715999999999 0.11433623 -0.013272034"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1923]" " -type \"float3\" -0.27637672000000002 0.16282316999999999 -0.068002924000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1924]" " -type \"float3\" -0.25761771 0.11748073000000001 -0.064251407999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1925]" " -type \"float3\" -0.30493998999999999 0.15920231000000001 -0.10307500999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1926]" " -type \"float3\" -0.28691887999999999 0.11863027 -0.10121678000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1927]" " -type \"float3\" -0.29449344 0.11599312000000001 -0.11344837000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1928]" " -type \"float3\" -0.27655100999999999 0.082019544999999999 -0.11254452"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1929]" " -type \"float3\" -0.23955202 0.066535093000000003 -0.094936356"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1930]" " -type \"float3\" -0.21860789999999999 0.035857297000000003 -0.094280705000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1931]" " -type \"float3\" -0.14072942999999999 0.012101268 -0.071965680000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1932]" " -type \"float3\" -0.11954951 -0.014257097999999999 -0.067000851"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1933]" " -type \"float3\" -0.085756779000000005 -0.046854756999999997 -0.072000727"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1934]" " -type \"float3\" -0.078164576999999999 -0.072590731000000006 -0.069234832999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1935]" " -type \"float3\" -0.11680364999999999 -0.088459991000000002 -0.106719"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1936]" " -type \"float3\" -0.11596202999999999 -0.11075069999999999 -0.10523985"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1937]" " -type \"float3\" -0.14261723000000001 -0.10993352000000001 -0.1248288"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1938]" " -type \"float3\" -0.14230585000000001 -0.12461843 -0.12354420000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1939]" " -type \"float3\" -0.14033413 -0.11394193 -0.12234162"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1940]" " -type \"float3\" -0.14084673 -0.12909582 -0.12142371"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1941]" " -type \"float3\" -0.10410261 -0.093400858000000003 -0.096014007999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1942]" " -type \"float3\" -0.10646296 -0.11509397 -0.096110328999999994"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1943]" " -type \"float3\" -0.046384334999999999 -0.069777987999999999 -0.054204449000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1944]" " -type \"float3\" -0.051192759999999997 -0.095634363999999999 -0.05572556"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1945]" " -type \"float3\" -0.016149521 -0.056055091000000001 -0.032809719000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1946]" " -type \"float3\" -0.043697356999999999 -0.044025920000000003 -0.051806434999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1947]" " -type \"float3\" -0.013797283 -0.032640479999999999 -0.032544121000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1948]" " -type \"float3\" 2.1934509000000003e-05 -0.024834775999999999 -0.025971876000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1949]" " -type \"float3\" -0.0064797400999999999 -0.039260171000000003 -0.027044760000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1950]" " -type \"float3\" -0.00062370299999999997 -0.0142416 -0.024648177"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1951]" " -type \"float3\" -0.0027775764000000001 -0.020917082 -0.025375829999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1952]" " -type \"float3\" -0.00058555602999999998 -0.010254288 -0.024343954000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1953]" " -type \"float3\" -0.00061750412000000001 -0.012222076 -0.024445998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1954]" " -type \"float3\" 0.00040197372000000002 -0.010221744 -0.024095522000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1955]" " -type \"float3\" -3.0517577999999997e-05 -0.010275388 -0.024189935999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1956]" " -type \"float3\" 0.0096302031999999996 -0.011978173999999999 -0.022139058999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1957]" " -type \"float3\" 0.021942616000000002 -0.013675118 -0.019318090999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1958]" " -type \"float3\" 0.076656342000000002 -0.019653463999999999 -0.0060958732"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1959]" " -type \"float3\" 0.083650111999999999 -0.021051311999999999 -0.0041594374999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1960]" " -type \"float3\" 0.14488792 -0.021251524000000001 0.024248136"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1961]" " -type \"float3\" 0.10599709 -0.021867955000000001 0.01352693"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1962]" " -type \"float3\" 0.12276363 -0.033258282 0.041662708"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1963]" " -type \"float3\" 0.066231728000000004 -0.034906647999999998 0.025105966"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1964]" " -type \"float3\" 0.059424877000000001 -0.028433705 -0.00085829384999999995"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1965]" " -type \"float3\" 0.014050484 -0.063977323000000003 0.028164399999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1966]" " -type \"float3\" 0.014179229999999999 -0.050854525999999997 -0.0012340414999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1967]" " -type \"float3\" 0.020813941999999998 -0.032194577000000002 -0.015611158999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1968]" " -type \"float3\" -0.024494648000000001 -0.076367489999999996 -0.0022182334000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1969]" " -type \"float3\" 0.0029888152999999998 -0.047091029999999999 -0.017445074000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1970]" " -type \"float3\" 0.0046229362000000003 -0.050386450999999999 -0.020357119"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1971]" " -type \"float3\" -0.0060024261000000004 -0.059358559999999998 -0.018714892"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1972]" " -type \"float3\" 0.0019712447999999999 -0.062638782000000004 -0.020130143999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1973]" " -type \"float3\" 0.0025653838999999999 -0.079830847999999996 -0.020295607"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1974]" " -type \"float3\" 0.0010747910000000001 -0.067995063999999994 -0.020019518"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1975]" " -type \"float3\" 0.0029644965999999998 -0.086356126000000005 -0.020164"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1976]" " -type \"float3\" 0.0037469864 -0.067656033000000004 -0.022901522000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1977]" " -type \"float3\" 0.0033102036 -0.088512145 -0.020368086000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1978]" " -type \"float3\" 0.003813982 -0.066804252999999994 -0.023104178"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1979]" " -type \"float3\" 0.0011875629 -0.02379995 -0.024362074000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1980]" " -type \"float3\" 0.0045206546999999996 -0.077668092999999994 -0.022904859999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1981]" " -type \"float3\" 0.0015044212 -0.027482236 -0.024405942999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1982]" " -type \"float3\" 4.7683716000000005e-07 -0.010171318 -0.024175631"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1983]" " -type \"float3\" 0.001714468 -0.029887312999999999 -0.024439799000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1984]" " -type \"float3\" 3.3378600999999999e-06 -0.010202909 -0.024176108000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1985]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1986]" " -type \"float3\" 3.3378600999999999e-06 -0.010204487999999999 -0.024176108000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1987]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1988]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1989]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1990]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1991]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1992]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1993]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1994]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1995]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1996]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1997]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1998]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[1999]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2000]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2001]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2002]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2003]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2004]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2005]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2006]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2007]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2008]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2009]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2010]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2011]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2012]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2013]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2014]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2015]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2016]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2017]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2018]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2019]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2020]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2021]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2022]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2023]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2024]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2025]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2026]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2027]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2028]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2029]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2030]" " -type \"float3\" 0.00025177001999999998 -0.010874415 -0.024222361000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2031]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2032]" " -type \"float3\" 5.7458878e-05 -0.010302687 -0.024183975999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2033]" " -type \"float3\" 0.019482017000000001 -0.031915091 -0.025438533999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2034]" " -type \"float3\" 0.0071780085999999998 -0.001519287 -0.022978054000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2035]" " -type \"float3\" 0.079622506999999995 0.057595766999999999 -0.017531620000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2036]" " -type \"float3\" 0.23990417 0.13283369 -0.028264033000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2037]" " -type \"float3\" 0.16819012 0.19912173999999999 0.0034685265000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2038]" " -type \"float3\" 0.27345097000000002 0.28986201 0.00083495490000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2039]" " -type \"float3\" 0.33546673999999999 0.37861731999999998 -0.021427857000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2040]" " -type \"float3\" 0.26880704999999999 0.36466064999999998 0.026855482"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2041]" " -type \"float3\" 0.24687195000000001 0.38072452000000001 0.012173188999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2042]" " -type \"float3\" 0.12389243 0.26447067000000002 -0.0026316512000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2043]" " -type \"float3\" 0.14961553 0.32099118999999998 0.030564560000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2044]" " -type \"float3\" 0.068229914000000003 0.24318385000000001 0.022665514000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2045]" " -type \"float3\" 0.051085114000000001 0.19732881999999999 0.012812151000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2046]" " -type \"float3\" 0.077474952 0.30340781999999999 0.062115683999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2047]" " -type \"float3\" 0.059021234999999998 0.24166014999999999 0.044352069000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2048]" " -type \"float3\" 0.049821972999999999 0.13822238000000001 0.028361572000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2049]" " -type \"float3\" 0.069708586000000003 0.28511365999999999 0.072479263000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2050]" " -type \"float3\" 0.018916965000000001 0.18764599000000001 0.038238779000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2051]" " -type \"float3\" 0.0074330567999999998 0.15315483999999999 0.029967560000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2052]" " -type \"float3\" 0.022588968000000001 0.16486202 0.035145535999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2053]" " -type \"float3\" 0.0095973015000000005 0.128802 0.021760119000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2054]" " -type \"float3\" 0.014592290000000001 0.11755819000000001 0.024040235"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2055]" " -type \"float3\" 0.030840396999999999 0.046419106000000002 0.022021783999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2056]" " -type \"float3\" 0.034362196999999997 0.01520299 0.024200095000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2057]" " -type \"float3\" 0.044124245999999999 -0.0028589312 0.033988371000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2058]" " -type \"float3\" 0.018007993999999999 0.014191514000000001 0.0037759077"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2059]" " -type \"float3\" 0.022715807000000001 -0.014325434 0.0048368704000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2060]" " -type \"float3\" 0.032438636 -0.031001978999999999 0.013718976000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2061]" " -type \"float3\" 0.055722713 -0.056879765999999998 0.034690335000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2062]" " -type \"float3\" 0.073785781999999994 -0.11031746000000001 0.051609769"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2063]" " -type \"float3\" 0.078862905999999997 -0.12409239 0.062660322000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2064]" " -type \"float3\" 0.072014152999999997 -0.11119182 0.068465754000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2065]" " -type \"float3\" 0.057873665999999997 -0.11426731 0.066970779999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2066]" " -type \"float3\" 0.035357356 -0.081767253999999998 0.048497558000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2067]" " -type \"float3\" 0.0034292936000000001 -0.037717842000000001 0.032789855999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2068]" " -type \"float3\" -0.00047743319999999999 -0.022348249000000001 0.038312063"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2069]" " -type \"float3\" 0.0015236138999999999 -0.0038360003000000001 0.048096895000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2070]" " -type \"float3\" -0.0074086189000000004 -0.0029497388999999998 0.12211432"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2071]" " -type \"float3\" -0.0067242682000000003 0.019684499000000001 0.12756540999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2072]" " -type \"float3\" -0.0060133933999999998 0.023554122 0.11341836"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2073]" " -type \"float3\" -0.040689506 0.031008249000000002 0.14676717"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2074]" " -type \"float3\" -0.043441646 0.047962941000000002 0.11724137"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2075]" " -type \"float3\" -0.033394590000000002 0.033439256000000001 0.097586349000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2076]" " -type \"float3\" -0.081679164999999998 0.084042348000000003 0.081359534999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2077]" " -type \"float3\" -0.062308729 0.073824622000000006 0.070537105000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2078]" " -type \"float3\" -0.03010726 0.038531459999999997 0.095495506999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2079]" " -type \"float3\" -0.045967876999999997 0.049247302 0.12893996999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2080]" " -type \"float3\" -0.035138309 0.052813388000000003 0.13528243000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2081]" " -type \"float3\" -0.031582892000000001 0.069357849999999999 0.16275732000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2082]" " -type \"float3\" -0.050176858999999997 0.055761851000000001 0.19451020999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2083]" " -type \"float3\" -0.057719588000000002 0.082653023000000006 0.22640745000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2084]" " -type \"float3\" -0.063669205000000006 0.12409876 0.25938639000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2085]" " -type \"float3\" -0.10198557 0.070001579999999994 0.26553586000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2086]" " -type \"float3\" -0.11305249000000001 0.10869417000000001 0.2988652"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2087]" " -type \"float3\" -0.11854529 0.14858337999999999 0.32514715"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2088]" " -type \"float3\" -0.2009145 0.083156563000000003 0.38116547000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2089]" " -type \"float3\" -0.21069467 0.1107981 0.40250935999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2090]" " -type \"float3\" -0.21292901 0.10130785 0.40060076"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2091]" " -type \"float3\" -0.302176 0.065690136999999996 0.34190005000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2092]" " -type \"float3\" -0.28941274 0.066287137999999995 0.33315420000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2093]" " -type \"float3\" -0.24185872 0.038143255000000001 0.32243103000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2094]" " -type \"float3\" -0.28988241999999997 0.042036034 0.25282951999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2095]" " -type \"float3\" -0.22393130999999999 0.029426549999999999 0.24058504"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2096]" " -type \"float3\" -0.14654850999999999 0.027990555 0.21707566"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2097]" " -type \"float3\" -0.23066138999999999 0.075755216 0.23179968000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2098]" " -type \"float3\" -0.16060805 0.072106816000000004 0.18808407999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2099]" " -type \"float3\" -0.10644984 0.069229938000000005 0.15597136"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2100]" " -type \"float3\" -0.061062336000000002 0.056773759 0.1364301"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2101]" " -type \"float3\" -0.19163369999999999 0.13013753 0.17089510999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2102]" " -type \"float3\" -0.15404867999999999 0.11490259 0.14738680000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2103]" " -type \"float3\" -0.1229229 0.090981342000000007 0.12955654999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2104]" " -type \"float3\" -0.17460322 0.15235266 0.13625134999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2105]" " -type \"float3\" -0.19811749000000001 0.16951342999999999 0.14648654"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2106]" " -type \"float3\" -0.19563627 0.16426393 0.11915554"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2107]" " -type \"float3\" -0.21591758999999999 0.17540475999999999 0.15321757"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2108]" " -type \"float3\" -0.21659397999999999 0.16659376000000001 0.12016894"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2109]" " -type \"float3\" -0.21656251000000001 0.16557118000000001 0.086013213000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2110]" " -type \"float3\" -0.19322323999999999 0.16031274000000001 0.088065878"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2111]" " -type \"float3\" -0.21720052000000001 0.18013534 0.039394155"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2112]" " -type \"float3\" -0.20627593999999999 0.16881594 0.043071643"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2113]" " -type \"float3\" -0.23784517999999999 0.19878408 -0.020033346"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2114]" " -type \"float3\" -0.24207592 0.17973765999999999 -0.017369018999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2115]" " -type \"float3\" -0.27050470999999998 0.20289871000000001 -0.069782003999999995"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2116]" " -type \"float3\" -0.285743 0.18486437 -0.069108233000000005"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2117]" " -type \"float3\" -0.28806996000000001 0.19287035 -0.097729668000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2118]" " -type \"float3\" -0.31122422 0.17574891000000001 -0.10438751"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2119]" " -type \"float3\" -0.28563045999999997 0.14680715999999999 -0.10007642"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2120]" " -type \"float3\" -0.29917526 0.12981924 -0.11199234"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2121]" " -type \"float3\" -0.24898361999999999 0.092844821999999994 -0.084455952000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2122]" " -type \"float3\" -0.25100278999999998 0.078250742999999998 -0.093860372999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2123]" " -type \"float3\" -0.16317606000000001 0.040050006999999999 -0.078704341999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2124]" " -type \"float3\" -0.15522575 0.026037073000000001 -0.076426729999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2125]" " -type \"float3\" -0.10351133 -0.0078914407999999998 -0.078116640000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2126]" " -type \"float3\" -0.094298362999999996 -0.029871368999999998 -0.073706850000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2127]" " -type \"float3\" -0.10715914 -0.045040748999999998 -0.10217379"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2128]" " -type \"float3\" -0.11470985 -0.072760366000000007 -0.10537718"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2129]" " -type \"float3\" -0.1175518 -0.063828491000000001 -0.11478518"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2130]" " -type \"float3\" -0.13727427 -0.094088577000000007 -0.12330769"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2131]" " -type \"float3\" -0.10532618000000001 -0.058368348 -0.10441874"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2132]" " -type \"float3\" -0.13231324999999999 -0.092077635000000005 -0.11879776"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2133]" " -type \"float3\" -0.074223518000000002 -0.041095397999999998 -0.074651703"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2134]" " -type \"float3\" -0.094339371000000005 -0.068367979999999995 -0.090009197999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2135]" " -type \"float3\" -0.050549507 -0.021307135000000001 -0.048400864000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2136]" " -type \"float3\" -0.055367470000000002 -0.025958681000000001 -0.060495839000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2137]" " -type \"float3\" -0.064122200000000004 -0.020072604000000001 -0.044773087000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2138]" " -type \"float3\" -0.025384903 -0.024721051000000001 -0.033159717999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2139]" " -type \"float3\" -0.019508362000000001 -0.018864059999999998 -0.033950314000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2140]" " -type \"float3\" 0.050792217000000001 -0.033756398 -0.012653338"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2141]" " -type \"float3\" 0.01560545 -0.022433424 -0.022836671999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2142]" " -type \"float3\" 0.067603110999999994 -0.025804067 -0.010822760000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2143]" " -type \"float3\" 0.014027596 -0.016478563000000002 -0.023097979000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2144]" " -type \"float3\" 0.071108818000000004 -0.038379572000000001 -0.0049009192999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2145]" " -type \"float3\" 0.11707687 -0.030095303 0.0083441864999999997"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2146]" " -type \"float3\" 0.044845581000000002 -0.043848357999999997 -0.0025892126999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2147]" " -type \"float3\" 0.1118145 -0.035885118000000001 0.018328203000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2148]" " -type \"float3\" -0.0060138702000000002 -0.049409173000000001 -0.0069222320000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2149]" " -type \"float3\" 0.069802284000000006 -0.042069636000000001 0.016661657"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2150]" " -type \"float3\" 0.062529086999999997 -0.050721966 0.040604129000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2151]" " -type \"float3\" 0.018831252999999999 -0.054827444000000003 0.010460867"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2152]" " -type \"float3\" 0.011106968 -0.068508856000000007 0.033425346000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2153]" " -type \"float3\" -0.033911705 -0.093789987000000005 0.026282799999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2154]" " -type \"float3\" -0.022951603000000001 -0.078979305999999999 0.025446904999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2155]" " -type \"float3\" -0.063368797000000004 -0.10600489 0.021470083000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2156]" " -type \"float3\" -0.054848194000000003 -0.097598067999999996 -0.0022826064000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2157]" " -type \"float3\" -0.092983723000000004 -0.11545371 0.014199747"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2158]" " -type \"float3\" -0.075843810999999997 -0.11163133 -0.0049710142999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2159]" " -type \"float3\" -0.011649609 -0.071194164000000004 -0.018939482000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2160]" " -type \"float3\" -0.088232039999999998 -0.13396517999999999 -0.0069107878999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2161]" " -type \"float3\" -0.018640517999999998 -0.099880777000000004 -0.017667756999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2162]" " -type \"float3\" 0.00093507767000000001 -0.074251391 -0.019728170999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2163]" " -type \"float3\" -0.023152351000000002 -0.14539663 -0.013858782"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2164]" " -type \"float3\" 0.0014853476999999999 -0.11210547 -0.017571435999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2165]" " -type \"float3\" 0.0043740272999999996 -0.11188190000000001 -0.019554124999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2166]" " -type \"float3\" 0.0020713806 -0.14922842 -0.015759454999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2167]" " -type \"float3\" 0.0052347182999999999 -0.13287699 -0.018840300000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2168]" " -type \"float3\" 0.0049815177999999998 -0.085131787 -0.022757039999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2169]" " -type \"float3\" 0.0057384968000000003 -0.14691961000000001 -0.018432127"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2170]" " -type \"float3\" 0.0051386356000000001 -0.087370522000000006 -0.022780405"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2171]" " -type \"float3\" 0.0017526149999999999 -0.030275578000000001 -0.024461256000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2172]" " -type \"float3\" 0.0049569606999999996 -0.083696759999999995 -0.023043619000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2173]" " -type \"float3\" 0.0011961459999999999 -0.027625167999999999 -0.024616228"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2174]" " -type \"float3\" -0.00028729439000000002 -0.0096519236000000008 -0.024289117999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2175]" " -type \"float3\" -0.0018723011000000001 -0.017411822 -0.025478826999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2176]" " -type \"float3\" -0.0023853779 -0.0058478955000000003 -0.025070654000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2177]" " -type \"float3\" -0.00029134750000000002 -0.0096377973000000006 -0.024290549000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2178]" " -type \"float3\" -0.010692358000000001 0.0090710279000000005 -0.027820574000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2179]" " -type \"float3\" -0.0019445419 -0.0066427235000000003 -0.024915204999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2180]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2181]" " -type \"float3\" -0.0075228214 0.0033716913000000001 -0.026751504999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2182]" " -type \"float3\" -4.2438507000000003e-05 -0.010090137000000001 -0.02419232"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2183]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2184]" " -type \"float3\" -0.00018000603000000001 -0.0098397377999999997 -0.02424668"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2185]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2186]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2187]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2188]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2189]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2190]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2191]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2192]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2193]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2194]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2195]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2196]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2197]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2198]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2199]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2200]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2201]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2202]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2203]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2204]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2205]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2206]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2207]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2208]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2209]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2210]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2211]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2212]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2213]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2214]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2215]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2216]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2217]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2218]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2219]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2220]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2221]" " -type \"float3\" 0.00090688466999999998 -0.0089148525000000006 -0.023923861000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2222]" " -type \"float3\" 0.042310119 0.046189643000000002 -0.014818655"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2223]" " -type \"float3\" 0.0098266602000000002 0.0053081270000000002 -0.020712601000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2224]" " -type \"float3\" 0.093813956000000004 0.12912825 0.0023236404999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2225]" " -type \"float3\" 0.21784972999999999 0.29928212999999998 0.026400579"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2226]" " -type \"float3\" 0.13526750000000001 0.21058193 0.019188894000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2227]" " -type \"float3\" 0.22833127 0.34783514999999998 0.039320722000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2228]" " -type \"float3\" 0.23698831000000001 0.37195745000000002 0.039281145000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2229]" " -type \"float3\" 0.20590705000000001 0.33867803000000002 0.040399565999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2230]" " -type \"float3\" 0.19211584000000001 0.35164153999999997 0.045376316"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2231]" " -type \"float3\" 0.11043786999999999 0.32031273999999998 0.055725827999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2232]" " -type \"float3\" 0.14423823 0.29846688999999998 0.044737116"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2233]" " -type \"float3\" 0.10366511 0.31998410999999999 0.077901855000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2234]" " -type \"float3\" 0.096065163999999995 0.33712909000000002 0.093469872999999995"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2235]" " -type \"float3\" 0.090501547000000002 0.27584567999999998 0.082994237999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2236]" " -type \"float3\" 0.096236467000000006 0.31157699 0.10330273"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2237]" " -type \"float3\" 0.071343660000000003 0.25413503999999998 0.077865377"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2238]" " -type \"float3\" 0.076056718999999995 0.24247614000000001 0.092275992000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2239]" " -type \"float3\" 0.060159206 0.19231524 0.070418729999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2240]" " -type \"float3\" 0.037311672999999997 0.1050215 0.034461751999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2241]" " -type \"float3\" 0.049452543000000002 0.18152541 0.068852201000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2242]" " -type \"float3\" 0.034413815 0.12363306 0.042012229999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2243]" " -type \"float3\" 0.021982431 0.059813133999999997 0.016067934999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2244]" " -type \"float3\" 0.043257474999999997 0.16631465000000001 0.047414795000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2245]" " -type \"float3\" 0.034967302999999998 0.10874844 0.030746533"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2246]" " -type \"float3\" 0.038586139999999998 0.026201677999999999 0.024924411"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2247]" " -type \"float3\" 0.047127365999999997 0.13581249000000001 0.034339741"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2248]" " -type \"float3\" 0.050247550000000002 0.054486804 0.037636652999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2249]" " -type \"float3\" 0.065837026000000007 -0.047460413999999999 0.054975018"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2250]" " -type \"float3\" 0.022046356999999999 0.079529159000000002 0.015935970000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2251]" " -type \"float3\" 0.012291074000000001 0.025308704000000001 0.023730379999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2252]" " -type \"float3\" 0.0068972110999999999 -0.021058687999999999 0.026544733000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2253]" " -type \"float3\" -0.0040992349000000001 0.0068546589000000003 0.023562474"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2254]" " -type \"float3\" -0.0077867209999999999 -0.012739324999999999 0.058187350999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2255]" " -type \"float3\" -0.0084078907999999997 -0.016945535000000001 0.092873752000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2256]" " -type \"float3\" -0.0022082552000000002 -0.051202707 0.16960210000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2257]" " -type \"float3\" -0.015618089999999999 -0.034186475000000001 0.1748894"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2258]" " -type \"float3\" -0.030012466000000002 -0.0046323780000000004 0.16436727000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2259]" " -type \"float3\" -0.061392963000000002 -0.044988118000000001 0.0769035"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2260]" " -type \"float3\" -0.072053461999999999 -0.00096544065000000003 0.093524218000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2261]" " -type \"float3\" -0.081679255000000006 0.047587730000000002 0.096721075000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2262]" " -type \"float3\" -0.051282941999999998 -0.036491564999999997 0.17018676999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2263]" " -type \"float3\" -0.057695745999999999 0.0062829312000000003 0.14939065000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2264]" " -type \"float3\" -0.057233750999999999 0.041831709000000002 0.12913874"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2265]" " -type \"float3\" 0.0044435263000000003 -0.024953032 0.15170230000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2266]" " -type \"float3\" -0.018613457999999999 0.0060275551 0.15354429"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2267]" " -type \"float3\" -0.038958192000000003 0.027103578999999999 0.16611793999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2268]" " -type \"float3\" 0.012361169 -0.036939047000000003 0.14275138000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2269]" " -type \"float3\" -0.035853744 -0.0037742498999999998 0.17759784000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2270]" " -type \"float3\" -0.077432871 0.034210301999999998 0.22311321000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2271]" " -type \"float3\" -0.094155668999999997 -0.057553849999999997 0.25134888"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2272]" " -type \"float3\" -0.13938832000000001 -0.010994637 0.29418265999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2273]" " -type \"float3\" -0.17714738999999999 0.039179779999999997 0.33924872"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2274]" " -type \"float3\" -0.22106814 -0.050065719000000002 0.27065578000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2275]" " -type \"float3\" -0.25380456000000001 -0.0079442504999999997 0.29735702000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2276]" " -type \"float3\" -0.28510940000000001 0.036557652000000003 0.32910119999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2277]" " -type \"float3\" -0.30080938000000002 -0.016672635000000002 0.23140852000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2278]" " -type \"float3\" -0.32145381000000001 0.027873134000000001 0.25048825000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2279]" " -type \"float3\" -0.32314587 0.046748258000000001 0.26029360000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2280]" " -type \"float3\" -0.34991860000000002 0.081782079999999993 0.25348383000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2281]" " -type \"float3\" -0.34246373000000002 0.087941623999999996 0.26369758999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2282]" " -type \"float3\" -0.30011511000000002 0.082806922000000005 0.25898892000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2283]" " -type \"float3\" -0.29385090000000003 0.13965949 0.21438289999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2284]" " -type \"float3\" -0.27069854999999998 0.14945897 0.21432836"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2285]" " -type \"float3\" -0.23404597999999999 0.14102754000000001 0.19871874"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2286]" " -type \"float3\" -0.22054434000000001 0.18445668000000001 0.14986933999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2287]" " -type \"float3\" -0.22812772000000001 0.16723200999999999 0.14256543999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2288]" " -type \"float3\" -0.22279500999999999 0.16354176000000001 0.093772188000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2289]" " -type \"float3\" -0.22139739999999999 0.16808769000000001 0.10930564"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2290]" " -type \"float3\" -0.23820375999999999 0.1680344 0.061054720999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2291]" " -type \"float3\" -0.22883296 0.17005034999999999 0.074370876000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2292]" " -type \"float3\" -0.22912573999999999 0.18603668000000001 0.018999709"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2293]" " -type \"float3\" -0.22490644000000001 0.18625518999999999 0.030829681000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2294]" " -type \"float3\" -0.20899915999999999 0.21471950000000001 -0.027353750999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2295]" " -type \"float3\" -0.22927237 0.20939097000000001 -0.026171433000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2296]" " -type \"float3\" -0.21209979000000001 0.2233108 -0.058898910999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2297]" " -type \"float3\" -0.25008511999999999 0.21831891 -0.073127732000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2298]" " -type \"float3\" -0.21475839999999999 0.22638103000000001 -0.062174543999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2299]" " -type \"float3\" -0.26008439 0.21592792999999999 -0.088354095999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2300]" " -type \"float3\" -0.22870135 0.19953473999999999 -0.041071400000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2301]" " -type \"float3\" -0.26321529999999999 0.1764693 -0.075387463000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2302]" " -type \"float3\" -0.23266459 0.14129779000000001 -0.037742600000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2303]" " -type \"float3\" -0.24084258 0.12495742 -0.067878707999999996"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2304]" " -type \"float3\" -0.17580556999999999 0.080792881999999996 -0.052447542999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2305]" " -type \"float3\" -0.16646718999999999 0.070944286999999995 -0.071206555000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2306]" " -type \"float3\" -0.12951708000000001 0.028229450999999999 -0.061463818000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2307]" " -type \"float3\" -0.11263895 0.028423285 -0.078030094999999994"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2308]" " -type \"float3\" -0.084300995000000004 -0.0091135743999999994 -0.066942677000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2309]" " -type \"float3\" -0.096077441999999999 -0.015458489000000001 -0.089156135999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2310]" " -type \"float3\" -0.068309783999999998 -0.030303859999999998 -0.066762431999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2311]" " -type \"float3\" -0.080365658000000006 -0.034661910999999997 -0.091344341999999995"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2312]" " -type \"float3\" -0.060558318999999999 -0.035587928999999997 -0.060397132999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2313]" " -type \"float3\" -0.068756579999999998 -0.032170556000000003 -0.080747588999999995"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2314]" " -type \"float3\" -0.052826405 -0.041754148999999997 -0.047612175"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2315]" " -type \"float3\" -0.077350139999999998 -0.047982238000000003 -0.041009888000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2316]" " -type \"float3\" -0.079878329999999997 -0.052372359 -0.035847649000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2317]" " -type \"float3\" -0.066571236000000006 -0.065366767000000006 -0.026884543"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2318]" " -type \"float3\" -0.050733089000000002 -0.041471265 -0.034634575000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2319]" " -type \"float3\" -0.026955605000000001 -0.056146166999999997 -0.019014344999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2320]" " -type \"float3\" -0.0021314620999999998 -0.038960478999999999 -0.021568761999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2321]" " -type \"float3\" -0.11122036 -0.070755026999999998 -0.025255666999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2322]" " -type \"float3\" -0.076582909000000005 -0.059664032999999998 -0.021920190999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2323]" " -type \"float3\" -0.16553497 -0.083029411999999997 -0.028178201999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2324]" " -type \"float3\" -0.13044643 -0.077349714999999999 -0.026041972"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2325]" " -type \"float3\" -0.056059361000000002 -0.062424174999999998 -0.012011992000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2326]" " -type \"float3\" -0.17387438 -0.076872311999999998 -0.033065781000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2327]" " -type \"float3\" -0.090139389 -0.059935145000000002 -0.019326673999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2328]" " -type \"float3\" -0.010776997 -0.050707094000000001 0.00088263861999999995"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2329]" " -type \"float3\" -0.11464452999999999 -0.065010361000000003 -0.024723040000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2330]" " -type \"float3\" -0.042648791999999998 -0.054824017000000003 -0.0081810821000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2331]" " -type \"float3\" -0.049905776999999998 -0.084586225000000001 0.015121473"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2332]" " -type \"float3\" -0.062649727000000002 -0.058691867000000002 -0.016586291"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2333]" " -type \"float3\" -0.074915886000000001 -0.089142746999999994 0.0034184585999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2334]" " -type \"float3\" -0.11538887 -0.12536061000000001 0.0045333038999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2335]" " -type \"float3\" -0.065953255000000002 -0.089531340000000001 -0.0015992987999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2336]" " -type \"float3\" -0.11204147 -0.13589022000000001 0.0044899116999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2337]" " -type \"float3\" -0.089807033999999994 -0.16289179000000001 -0.0037846435"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2338]" " -type \"float3\" -0.10217667 -0.14440194000000001 0.0026273858000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2339]" " -type \"float3\" -0.088648796000000002 -0.18462165 -0.0027341712000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2340]" " -type \"float3\" -0.025167941999999999 -0.17194307 -0.012005793000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2341]" " -type \"float3\" -0.083333491999999995 -0.19961664000000001 -0.0047130454"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2342]" " -type \"float3\" -0.024858952 -0.20227476999999999 -0.010581004"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2343]" " -type \"float3\" 0.0027623177 -0.17866336999999999 -0.014822947"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2344]" " -type \"float3\" -0.021466731999999999 -0.21761662000000001 -0.011244284"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2345]" " -type \"float3\" 0.0032289027999999999 -0.19980575 -0.014830098999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2346]" " -type \"float3\" 0.0059144497000000002 -0.15137275 -0.018537985"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2347]" " -type \"float3\" 0.0030689239999999998 -0.19240239000000001 -0.016424642999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2348]" " -type \"float3\" 0.0053772925999999999 -0.1366802 -0.019616590999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2349]" " -type \"float3\" 0.0028307438 -0.066853307000000001 -0.024112212000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2350]" " -type \"float3\" -0.0088744163999999997 -0.017373764999999999 -0.027528272999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2351]" " -type \"float3\" -0.016042470999999999 0.015391415 -0.029456601999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2352]" " -type \"float3\" -0.041270732999999997 0.060820199999999998 -0.034565910999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2353]" " -type \"float3\" -0.046101093000000003 0.071491577000000001 -0.036512836999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2354]" " -type \"float3\" -0.030658007000000001 0.044547834000000001 -0.033381447000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2355]" " -type \"float3\" -0.079090357 0.12741113000000001 -0.040563568000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2356]" " -type \"float3\" -0.054241418999999999 0.085366286 -0.037567600999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2357]" " -type \"float3\" -0.014262199 0.015299534 -0.028494345000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2358]" " -type \"float3\" -0.064533948999999993 0.1014475 -0.036626324000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2359]" " -type \"float3\" -0.013529062 0.0136855 -0.027563559000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2360]" " -type \"float3\" -1.4305114999999999e-05 -0.010141218 -0.024181352999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2361]" " -type \"float3\" -0.0064923762999999999 0.00098476372999999995 -0.025264727000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2362]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2363]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2364]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2365]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2366]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2367]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2368]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2369]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2370]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2371]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2372]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2373]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2374]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2375]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2376]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2377]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2378]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2379]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2380]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2381]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2382]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2383]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2384]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2385]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2386]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2387]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2388]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2389]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2390]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2391]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2392]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2393]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2394]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2395]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2396]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2397]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2398]" " -type \"float3\" 0.00042876600999999998 -0.0093745235000000007 -0.023996340000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2399]" " -type \"float3\" 0.027777076000000001 0.038097239999999997 -0.013532626000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2400]" " -type \"float3\" 0.0029533802999999999 -0.0045128110999999999 -0.022919164999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2401]" " -type \"float3\" 0.046464205000000001 0.075268663 -0.0061051715000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2402]" " -type \"float3\" 0.14604855 0.24484590000000001 0.025432361000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2403]" " -type \"float3\" 0.048364639000000001 0.081499316000000002 -0.0048982966999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2404]" " -type \"float3\" 0.12087821999999999 0.21071376999999999 0.018641246"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2405]" " -type \"float3\" 0.15730262 0.27360322999999998 0.028690350999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2406]" " -type \"float3\" 0.074693143000000004 0.13076015999999999 0.0042319428000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2407]" " -type \"float3\" 0.091226875999999998 0.1604853 0.0088439117999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2408]" " -type \"float3\" 0.085812985999999994 0.18882889 0.029934181000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2409]" " -type \"float3\" 0.033665477999999999 0.054921128 -0.010502802"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2410]" " -type \"float3\" 0.033567429000000003 0.077353217000000002 0.0073107611000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2411]" " -type \"float3\" 0.064687669000000003 0.19793438999999999 0.068687691999999995"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2412]" " -type \"float3\" 0.010883749 0.025986945000000001 -0.0069253314"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2413]" " -type \"float3\" 0.039710820000000001 0.13381325999999999 0.047360434999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2414]" " -type \"float3\" 0.053837656999999997 0.19257556000000001 0.074833170000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2415]" " -type \"float3\" 0.027598619000000001 0.10205106 0.027736080999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2416]" " -type \"float3\" 0.047681093000000001 0.184036 0.058566703999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2417]" " -type \"float3\" 0.050392329999999999 0.19489263000000001 0.059865609"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2418]" " -type \"float3\" 0.053283631999999997 0.17579578000000001 0.045553221999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2419]" " -type \"float3\" 0.060360192999999999 0.19768575999999999 0.052511229999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2420]" " -type \"float3\" 0.054763496000000002 0.18085519999999999 0.043735458999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2421]" " -type \"float3\" 0.061024845000000001 0.19429260000000001 0.035854295000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2422]" " -type \"float3\" 0.047075777999999999 0.17535326000000001 0.0055754315000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2423]" " -type \"float3\" 0.033936231999999997 0.13193532999999999 0.0060675275000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2424]" " -type \"float3\" 0.028756238999999999 0.14505617000000001 -0.012950646"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2425]" " -type \"float3\" 0.013711065 0.093656017999999994 -0.019288497000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2426]" " -type \"float3\" 0.0026296824000000001 0.044767357000000001 -0.0044855047000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2427]" " -type \"float3\" 0.019965947000000001 0.030762276000000002 0.085604696999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2428]" " -type \"float3\" 0.013662054999999999 -0.012812654 0.1108909"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2429]" " -type \"float3\" 0.0064722299999999998 -0.045142926 0.14169498999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2430]" " -type \"float3\" -0.039061099000000002 -0.083213620000000002 0.0077422727000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2431]" " -type \"float3\" -0.045753150999999999 -0.092487982999999996 0.026946769999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2432]" " -type \"float3\" -0.052525848 -0.077151528999999996 0.052215367999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2433]" " -type \"float3\" -0.052261949000000002 -0.067860908999999997 0.17044164000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2434]" " -type \"float3\" -0.048648535999999999 -0.079476394000000006 0.18722296999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2435]" " -type \"float3\" -0.047819316000000001 -0.068886987999999996 0.18688080000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2436]" " -type \"float3\" 0.029101372 -0.043447277999999999 0.15663753"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2437]" " -type \"float3\" 0.031317115 -0.061207971999999999 0.15865071"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2438]" " -type \"float3\" 0.022747277999999999 -0.053436330999999997 0.15468343000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2439]" " -type \"float3\" 0.057119966000000001 -0.12862155 0.064333065999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2440]" " -type \"float3\" 0.057166099999999997 -0.10139271 0.087183162999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2441]" " -type \"float3\" 0.044243693000000001 -0.068495980999999997 0.11551477"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2442]" " -type \"float3\" -0.011491895 -0.13416222 0.094496958000000006"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2443]" " -type \"float3\" -0.023401022 -0.1155576 0.16294929"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2444]" " -type \"float3\" -0.051665306000000001 -0.087940656000000006 0.21251057000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2445]" " -type \"float3\" -0.12559843000000001 -0.13044715000000001 0.17468396"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2446]" " -type \"float3\" -0.15374160000000001 -0.10424240999999999 0.21588476000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2447]" " -type \"float3\" -0.18649768999999999 -0.081636094000000006 0.24260092999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2448]" " -type \"float3\" -0.22785448999999999 -0.10367514999999999 0.20619393999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2449]" " -type \"float3\" -0.25144482000000001 -0.076607190000000006 0.21671413"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2450]" " -type \"float3\" -0.27549219000000003 -0.050635599000000003 0.22010075000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2451]" " -type \"float3\" -0.27598309999999998 -0.0059030894000000004 0.19236633"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2452]" " -type \"float3\" -0.30395269000000003 0.016382014 0.20445289999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2453]" " -type \"float3\" -0.33009147999999999 0.051455356000000001 0.22700413"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2454]" " -type \"float3\" -0.25088263 0.079317309000000003 0.137639"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2455]" " -type \"float3\" -0.28170252000000001 0.10736594000000001 0.17063624999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2456]" " -type \"float3\" -0.29612516999999999 0.12673184000000001 0.19727363000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2457]" " -type \"float3\" -0.22189713 0.10643324999999999 0.091665402000000007"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2458]" " -type \"float3\" -0.23571824999999999 0.14078650000000001 0.12294592"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2459]" " -type \"float3\" -0.22254992000000001 0.092686987999999998 0.051308051"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2460]" " -type \"float3\" -0.22828340999999999 0.12818071 0.071765794999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2461]" " -type \"float3\" -0.2218349 0.082754231999999997 0.026772035"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2462]" " -type \"float3\" -0.24066805999999999 0.13382933 0.045990839999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2463]" " -type \"float3\" -0.17052913 0.075840928000000002 0.0034452807"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2464]" " -type \"float3\" -0.21073127 0.14600155000000001 0.010299338"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2465]" " -type \"float3\" -0.11544991 0.083884098000000004 -0.015856967999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2466]" " -type \"float3\" -0.17055297 0.15812919 -0.022305476000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2467]" " -type \"float3\" -0.12623644000000001 0.10051212 -0.012877928"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2468]" " -type \"float3\" -0.15909957999999999 0.17000207000000001 -0.040158257000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2469]" " -type \"float3\" -0.13341069 0.10458824999999999 0.00076152198000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2470]" " -type \"float3\" -0.15890383999999999 0.17073426 -0.036705716999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2471]" " -type \"float3\" -0.15547752000000001 0.092724659000000001 0.020707382"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2472]" " -type \"float3\" -0.18873118999999999 0.15523598 -0.012117373000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2473]" " -type \"float3\" -0.19507216999999999 0.057250477000000001 0.029076351"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2474]" " -type \"float3\" -0.21972560999999999 0.11300204 -0.0025048126000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2475]" " -type \"float3\" -0.17163228999999999 0.0093811507999999998 0.012197507999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2476]" " -type \"float3\" -0.18163729000000001 0.051245548000000002 -0.021877753"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2477]" " -type \"float3\" -0.13781023000000001 -0.040297291999999998 0.0024542939000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2478]" " -type \"float3\" -0.12510109 0.0019366499 -0.033186659"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2479]" " -type \"float3\" -0.12166834 -0.065821490999999996 -0.00035427697000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2480]" " -type \"float3\" -0.096066951999999997 -0.029961491 -0.036505206999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2481]" " -type \"float3\" -0.10666895 -0.067762217999999999 -0.0095419753"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2482]" " -type \"float3\" -0.080399035999999993 -0.044919691999999997 -0.039483532000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2483]" " -type \"float3\" -0.10177326 -0.072289370000000006 -0.021765218999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2484]" " -type \"float3\" -0.14789390999999999 -0.084298991000000004 0.018807900999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2485]" " -type \"float3\" -0.12544060000000001 -0.077437303999999998 -0.0077404845999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2486]" " -type \"float3\" -0.15154696000000001 -0.083078705000000003 -0.022990213999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2487]" " -type \"float3\" -0.11617613 -0.067573987000000002 -0.027317988000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2488]" " -type \"float3\" -0.13896227 -0.081938706 0.0095811021000000007"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2489]" " -type \"float3\" -0.16961145 -0.092614792000000001 -0.014709936"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2490]" " -type \"float3\" -0.20092106000000001 -0.092427991000000001 -0.033995137000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2491]" " -type \"float3\" -0.16723727999999999 -0.090838395000000002 -0.013196454999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2492]" " -type \"float3\" -0.21406269 -0.099477492000000001 -0.039038165999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2493]" " -type \"float3\" -0.19892883 -0.089348576999999998 -0.038054928000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2494]" " -type \"float3\" -0.22119999000000001 -0.10840347 -0.040616021000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2495]" " -type \"float3\" -0.20885657999999999 -0.10434655 -0.038961872000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2496]" " -type \"float3\" -0.13356351999999999 -0.077553770999999994 -0.028093324999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2497]" " -type \"float3\" -0.20022630999999999 -0.11077466 -0.037835106"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2498]" " -type \"float3\" -0.1192565 -0.078409553000000007 -0.028985487000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2499]" " -type \"float3\" -0.055246352999999998 -0.056745507000000001 -0.019711005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2500]" " -type \"float3\" -0.10353946999999999 -0.077618970999999995 -0.028680787999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2501]" " -type \"float3\" -0.048021793 -0.056172118 -0.021316992"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2502]" " -type \"float3\" -0.053943156999999999 -0.087561882999999993 -0.0055751669999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2503]" " -type \"float3\" -0.035552978999999998 -0.049768544999999997 -0.023200976000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2504]" " -type \"float3\" -0.039837360000000002 -0.082598932 -0.010521875999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2505]" " -type \"float3\" -0.085622787000000006 -0.14436695999999999 -0.0021123755999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2506]" " -type \"float3\" -0.020534515 -0.069849171000000002 -0.016039834999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2507]" " -type \"float3\" -0.049485207000000003 -0.12913309000000001 -0.0087103713000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2508]" " -type \"float3\" -0.064592361000000001 -0.19360627 -0.0092329848999999995"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2509]" " -type \"float3\" -0.0065741539 -0.088060655000000002 -0.017157064999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2510]" " -type \"float3\" -0.025540829000000001 -0.14979658000000001 -0.015971170999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2511]" " -type \"float3\" -0.012155294000000001 -0.19710325000000001 -0.015111909999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2512]" " -type \"float3\" 0.00014805794000000001 -0.074480377 -0.023122297999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2513]" " -type \"float3\" 0.0024170875999999998 -0.036702983000000002 -0.023997771000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2514]" " -type \"float3\" -0.011147499 0.018212860000000001 -0.025905119000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2515]" " -type \"float3\" -0.0090012549999999997 0.00023052654999999999 -0.025660502000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2516]" " -type \"float3\" -0.074353932999999997 0.15152609 -0.033599362000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2517]" " -type \"float3\" -0.064867019999999997 0.11353318 -0.033339962000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2518]" " -type \"float3\" -0.12577986999999999 0.22889629 -0.039134488000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2519]" " -type \"float3\" -0.10661101000000001 0.17865643 -0.039555535000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2520]" " -type \"float3\" -0.079989909999999997 0.12874049000000001 -0.039276585000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2521]" " -type \"float3\" -0.10148048 0.16347086 -0.040097699000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2522]" " -type \"float3\" -0.11155987000000001 0.18138725 -0.037468418000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2523]" " -type \"float3\" -0.056049823999999998 0.084008552 -0.031720623000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2524]" " -type \"float3\" -0.12038493 0.20304242 -0.034507259999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2525]" " -type \"float3\" -0.046700716000000003 0.065599776999999998 -0.028451906999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2526]" " -type \"float3\" -0.0018498898 -0.0071324947999999999 -0.024339663000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2527]" " -type \"float3\" -0.050559521000000003 0.069498098999999994 -0.026258455999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2528]" " -type \"float3\" -0.0014157295000000001 -0.0079443697000000004 -0.024291502"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2529]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2530]" " -type \"float3\" -0.0032355785 -0.0052559021999999999 -0.024000154999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2531]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2532]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2533]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2534]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2535]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2536]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2537]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2538]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2539]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2540]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2541]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2542]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2543]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2544]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2545]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2546]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2547]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2548]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2549]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2550]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2551]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2552]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2553]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2554]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2555]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2556]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2557]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2558]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2559]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2560]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2561]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2562]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2563]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2564]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2565]" " -type \"float3\" 0.0054944455999999999 0.00056741199999999999 -0.021809326"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2566]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2567]" " -type \"float3\" 0.0041811466000000004 -0.0019083265000000001 -0.022360788999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2568]" " -type \"float3\" 0.032051920999999997 0.051990248000000003 -0.010799157"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2569]" " -type \"float3\" 0.0011889469000000001 -0.0078028682999999998 -0.023657547000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2570]" " -type \"float3\" 0.012586653 0.014689719 -0.018714653000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2571]" " -type \"float3\" 0.032020539000000001 0.052228488000000003 -0.010794388"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2572]" " -type \"float3\" 0.0019224286000000001 -0.0063441638000000002 -0.023337947000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2573]" " -type \"float3\" 0.0073182880999999997 0.0043442007000000001 -0.020991432000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2574]" " -type \"float3\" 0.0064373909999999998 0.0026159044000000002 -0.021359310999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2575]" " -type \"float3\" 0.0043211876999999996 0.0071361419000000002 -0.015324818"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2576]" " -type \"float3\" 0.001796335 -0.0031808856999999999 -0.021435129000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2577]" " -type \"float3\" 0.024891347000000001 0.080189711999999996 0.010556472000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2578]" " -type \"float3\" 0.0037906318999999999 0.0017118211999999999 -0.018267499"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2579]" " -type \"float3\" 0.030912711999999998 0.085738338999999997 0.019041611"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2580]" " -type \"float3\" 0.058892459000000001 0.16966492999999999 0.053883030999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2581]" " -type \"float3\" 0.024165787000000001 0.11986823000000001 0.048377051999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2582]" " -type \"float3\" 0.041318893000000002 0.17356658999999999 0.069761648999999995"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2583]" " -type \"float3\" 0.043126210999999998 0.18097128000000001 0.028558087999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2584]" " -type \"float3\" 0.0079157054000000004 0.18419835000000001 0.089173213000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2585]" " -type \"float3\" 0.019677058000000001 0.12977396999999999 0.073775305999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2586]" " -type \"float3\" 0.022508918999999999 0.074545345999999998 0.071829155000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2587]" " -type \"float3\" -0.025095135000000001 0.10627327 0.039801850999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2588]" " -type \"float3\" -0.025189459000000001 0.0068793949000000004 -0.012825685"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2589]" " -type \"float3\" -0.031528115000000002 -0.050276927999999999 -0.011401506"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2590]" " -type \"float3\" -0.058988929000000002 0.093128733000000005 0.12040623"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2591]" " -type \"float3\" -0.058754980999999998 0.022113895000000001 0.12481745"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2592]" " -type \"float3\" -0.056913077999999999 -0.034477048000000003 0.14654353000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2593]" " -type \"float3\" -0.014349937 0.088423646999999994 0.14589636"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2594]" " -type \"float3\" 0.0028260946000000001 0.034990765 0.15031916000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2595]" " -type \"float3\" 0.018385887 -0.0097764526000000008 0.1537801"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2596]" " -type \"float3\" 0.015309095 -0.058892049000000002 0.040452778000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2597]" " -type \"float3\" 0.034722327999999997 -0.11328699 0.033398785"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2598]" " -type \"float3\" 0.050048350999999998 -0.13670744000000001 0.043577067999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2599]" " -type \"float3\" 0.0018169880000000001 -0.10303950000000001 -0.051483556999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2600]" " -type \"float3\" -0.00091421603999999998 -0.13520128000000001 -0.020307210999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2601]" " -type \"float3\" -0.0073637961999999998 -0.14055925999999999 0.031611368000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2602]" " -type \"float3\" -0.065103053999999994 -0.16369139999999999 -0.0077534337000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2603]" " -type \"float3\" -0.084360599999999994 -0.17219018999999999 0.054648734999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2604]" " -type \"float3\" -0.10433911999999999 -0.15740894999999999 0.12139331"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2605]" " -type \"float3\" -0.1474762 -0.19098034999999999 0.098625167999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2606]" " -type \"float3\" -0.18116903000000001 -0.17769246999999999 0.15147004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2607]" " -type \"float3\" -0.20958446999999999 -0.14110681 0.18826341999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2608]" " -type \"float3\" -0.20849824 -0.075826249999999998 0.14915158000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2609]" " -type \"float3\" -0.24052477 -0.049084744999999999 0.17742832"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2610]" " -type \"float3\" -0.25303173000000001 -0.025141263 0.18413768999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2611]" " -type \"float3\" -0.16400838000000001 -0.015811378000000001 0.080995813"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2612]" " -type \"float3\" -0.17454410000000001 0.0024747606000000001 0.081662014000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2613]" " -type \"float3\" -0.20142984 0.046885885000000002 0.1004196"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2614]" " -type \"float3\" -0.13721085 0.018268263 0.042565777999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2615]" " -type \"float3\" -0.16043114999999999 0.044802285999999997 0.044573382000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2616]" " -type \"float3\" -0.187222 0.074065961 0.058440521000000002"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2617]" " -type \"float3\" -0.18677663999999999 0.023459946999999998 0.034827963000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2618]" " -type \"float3\" -0.20208930999999999 0.058633185999999997 0.033986107000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2619]" " -type \"float3\" -0.17470454999999999 -0.012683415999999999 0.014034046"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2620]" " -type \"float3\" -0.19252610000000001 0.032141544000000001 0.013743294"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2621]" " -type \"float3\" -0.1233418 -0.041512512000000001 0.019593370999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2622]" " -type \"float3\" -0.12917638000000001 0.014684355 0.0041201244999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2623]" " -type \"float3\" -0.080152034999999996 -0.036291025999999997 0.026008142000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2624]" " -type \"float3\" -0.080755233999999995 0.01801852 0.0015218388"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2625]" " -type \"float3\" -0.071997166000000001 -0.021105016000000001 0.036614671000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2626]" " -type \"float3\" -0.1035552 0.035392738999999999 0.020971310999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2627]" " -type \"float3\" -0.094792843000000002 -0.019927466000000001 0.061179176000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2628]" " -type \"float3\" -0.12108374 0.034909404999999998 0.038637176000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2629]" " -type \"float3\" -0.11833428999999999 -0.030070985000000001 0.081149115999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2630]" " -type \"float3\" -0.13501024 0.021429157000000001 0.053445830999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2631]" " -type \"float3\" -0.12882853 -0.048821828999999997 0.081617608999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2632]" " -type \"float3\" -0.15807915 -0.0035544876 0.058543458999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2633]" " -type \"float3\" -0.13265181000000001 -0.077314815999999995 0.069659009999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2634]" " -type \"float3\" -0.14698362000000001 -0.040095352000000001 0.043486848000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2635]" " -type \"float3\" -0.15409565 -0.09342172 0.064133658999999996"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2636]" " -type \"float3\" -0.14295578 -0.074174367000000005 0.035516514999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2637]" " -type \"float3\" -0.18084621000000001 -0.093933961999999996 0.059590354999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2638]" " -type \"float3\" -0.14475917999999999 -0.090339921000000004 0.032291665999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2639]" " -type \"float3\" -0.16313314000000001 -0.081276379999999995 0.036428466"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2640]" " -type \"float3\" -0.19805622000000001 -0.11656759999999999 0.075236574000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2641]" " -type \"float3\" -0.16181087 -0.096825174999999999 0.048787131999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2642]" " -type \"float3\" -0.12638711999999999 -0.081863723999999999 0.023633970000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2643]" " -type \"float3\" -0.14514160000000001 -0.10909744 0.055176272999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2644]" " -type \"float3\" -0.11928034 -0.085986011000000001 0.029094232000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2645]" " -type \"float3\" -0.15536404000000001 -0.090511583000000007 -0.012766348"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2646]" " -type \"float3\" -0.1116848 -0.093777693999999995 0.032005325000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2647]" " -type \"float3\" -0.14086341999999999 -0.093283720000000001 -0.014343725999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2648]" " -type \"float3\" -0.20617008000000001 -0.1095107 -0.039659962"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2649]" " -type \"float3\" -0.12254286 -0.080638639999999998 -0.015641676"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2650]" " -type \"float3\" -0.18497658 -0.10388335 -0.035770877999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2651]" " -type \"float3\" -0.18234348 -0.11177099 -0.035841927000000003"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2652]" " -type \"float3\" -0.15917539999999999 -0.099080346999999999 -0.031336293000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2653]" " -type \"float3\" -0.1549778 -0.10738046 -0.033394321999999997"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2654]" " -type \"float3\" -0.086463927999999995 -0.071688271999999997 -0.028454291"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2655]" " -type \"float3\" -0.11881638 -0.093540728000000004 -0.029774653000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2656]" " -type \"float3\" -0.062605381000000002 -0.063057311000000005 -0.027912604000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2657]" " -type \"float3\" -0.021739006000000002 -0.038557625999999998 -0.024371133999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2658]" " -type \"float3\" -0.028555870000000001 -0.04523696 -0.025802122"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2659]" " -type \"float3\" -0.0091524124000000005 -0.02408565 -0.025068746999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2660]" " -type \"float3\" 0.00037574768 -0.042595617000000002 -0.022330270999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2661]" " -type \"float3\" -0.0049033165000000002 -4.2045488999999999e-05 -0.025331006999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2662]" " -type \"float3\" -0.0011057854000000001 -0.0118913 -0.024701105000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2663]" " -type \"float3\" -0.021945237999999999 0.066851564000000002 -0.027776704999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2664]" " -type \"float3\" -0.016516447 0.044237173999999997 -0.026979433000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2665]" " -type \"float3\" -0.088951348999999999 0.22639248000000001 -0.033434376000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2666]" " -type \"float3\" -0.083422898999999995 0.19390694999999999 -0.034375652999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2667]" " -type \"float3\" -0.15355182000000001 0.32559460000000001 -0.032924637"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2668]" " -type \"float3\" -0.14126300999999999 0.28044984000000001 -0.037851319000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2669]" " -type \"float3\" -0.13230801 0.23422267999999999 -0.028484331000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2670]" " -type \"float3\" -0.15884541999999999 0.35336669999999998 -0.022025572"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2671]" " -type \"float3\" -0.14131284 0.26146557999999998 -0.015597807"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2672]" " -type \"float3\" -0.061264514999999999 0.084629513000000003 -0.019772517"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2673]" " -type \"float3\" -0.14583588 0.28312208999999999 0.0043072830999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2674]" " -type \"float3\" -0.072560549000000002 0.10432348 -0.0072369445000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2675]" " -type \"float3\" -0.0074517727000000004 0.0011345502000000001 -0.022313581999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2676]" " -type \"float3\" -0.088749647000000001 0.14011565000000001 0.0092172752999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2677]" " -type \"float3\" -0.014827251 0.012802635999999999 -0.017981993000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2678]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2679]" " -type \"float3\" -0.031338930000000001 0.040121414000000001 -0.011309611000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2680]" " -type \"float3\" -0.00016927719000000001 -0.0098983292 -0.024089322999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2681]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2682]" " -type \"float3\" -0.0025718211999999998 -0.0060754661000000003 -0.023257243"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2683]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2684]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2685]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2686]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2687]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2688]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2689]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2690]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2691]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2692]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2693]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2694]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2695]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2696]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2697]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2698]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2699]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2700]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2701]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2702]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2703]" " -type \"float3\" 1.5199184e-05 -0.011704111 -0.024188982000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2704]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2705]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2706]" " -type \"float3\" 5.6385994000000002e-05 -0.015882634999999999 -0.024225460000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2707]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2708]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2709]" " -type \"float3\" 1.1265278e-05 -0.011308933 -0.024185643999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2710]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2711]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2712]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2713]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2714]" " -type \"float3\" 7.1600080000000003e-06 -0.010152721999999999 -0.024172531000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2715]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2716]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2717]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2718]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2719]" " -type \"float3\" 2.554059e-05 -0.0056079271999999996 -0.021418439000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2720]" " -type \"float3\" 4.5895576000000004e-06 -0.0099569205000000008 -0.024048554"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2721]" " -type \"float3\" -0.0020827055 0.072872735999999994 0.027721537000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2722]" " -type \"float3\" 0.0045782402 0.024737155 -0.0036560167"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2723]" " -type \"float3\" -0.00047376751999999997 0.17739379 0.089563504000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2724]" " -type \"float3\" -0.018942773 0.13740864 0.075670317000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2725]" " -type \"float3\" -0.032446504000000001 0.23587917999999999 0.13885041000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2726]" " -type \"float3\" -0.028826773 0.21600246000000001 0.13042171"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2727]" " -type \"float3\" -0.062886417 0.28318222999999998 0.18855532"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2728]" " -type \"float3\" -0.058346151999999998 0.27184810999999998 0.17461713000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2729]" " -type \"float3\" -0.058160186000000003 0.1813361 0.13564454000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2730]" " -type \"float3\" -0.072473645000000003 0.30737397 0.19935896"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2731]" " -type \"float3\" -0.047923923 0.22262402000000001 0.16124964999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2732]" " -type \"float3\" -0.029640316999999999 0.14720954 0.14655460000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2733]" " -type \"float3\" -0.033595084999999997 0.17098031999999999 0.091050073999999995"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2734]" " -type \"float3\" -0.013031244000000001 0.084735251999999997 0.062962577000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2735]" " -type \"float3\" -8.3684920999999986e-05 0.013132071 0.051723480000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2736]" " -type \"float3\" -0.0034335851999999999 0.072261907 -0.026979224999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2737]" " -type \"float3\" 0.0021070241999999999 0.013131326 -0.055958926999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2738]" " -type \"float3\" 0.0028241872999999998 -0.050814948999999998 -0.061372608000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2739]" " -type \"float3\" 0.0082697867999999997 0.0050466564000000002 -0.10457115"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2740]" " -type \"float3\" -0.015738248999999999 -0.082001141999999999 -0.093084766999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2741]" " -type \"float3\" -0.041911601999999999 -0.13435082000000001 -0.055711731"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2742]" " -type \"float3\" -0.015568495 -0.046003960000000003 -0.062237695000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2743]" " -type \"float3\" -0.062556981999999997 -0.11989441000000001 -0.014211135"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2744]" " -type \"float3\" -0.10606813 -0.16525909 0.043699100999999997"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2745]" " -type \"float3\" -0.058056592999999997 -0.074735515000000002 0.0097963939999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2746]" " -type \"float3\" -0.10559011 -0.088898055000000004 0.058377519000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2747]" " -type \"float3\" -0.16190958 -0.093063556000000006 0.10735022"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2748]" " -type \"float3\" -0.083340406000000006 -0.060671902999999999 0.038327828000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2749]" " -type \"float3\" -0.11464357 -0.061171226000000002 0.060148253999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2750]" " -type \"float3\" -0.14195466000000001 -0.040530047999999999 0.074226990000000007"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2751]" " -type \"float3\" -0.10672234999999999 -0.031451396999999999 0.052299752999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2752]" " -type \"float3\" -0.11706305 -0.010887259999999999 0.050345078000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2753]" " -type \"float3\" -0.12577890999999999 0.0084587390999999994 0.046827272000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2754]" " -type \"float3\" -0.12727785 -0.025120997999999999 0.045613661"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2755]" " -type \"float3\" -0.14564109 -0.0058492366 0.046492948999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2756]" " -type \"float3\" -0.16565274999999999 -5.3489580999999998e-05 0.039881721000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2757]" " -type \"float3\" -0.17941045999999999 -0.068046442999999998 0.049652591000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2758]" " -type \"float3\" -0.17451190999999999 -0.051254116000000002 0.027470006000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2759]" " -type \"float3\" -0.20999551 -0.11066901 0.073570265999999995"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2760]" " -type \"float3\" -0.16927718999999999 -0.090300106000000005 0.050206318"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2761]" " -type \"float3\" -0.12906836999999999 -0.071369551000000003 0.061027302999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2762]" " -type \"float3\" -0.1092875 -0.063956818999999998 0.050716892"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2763]" " -type \"float3\" -0.064210415000000007 -0.048471413999999997 0.068272129000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2764]" " -type \"float3\" -0.061180829999999999 -0.037923299000000001 0.053865208999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2765]" " -type \"float3\" -0.057075977 -0.059118471999999998 0.093391194999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2766]" " -type \"float3\" -0.070358275999999997 -0.042896174000000002 0.078685537"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2767]" " -type \"float3\" -0.066370964000000005 -0.073205553000000007 0.10808231"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2768]" " -type \"float3\" -0.095171452000000004 -0.056898557000000002 0.097745433000000007"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2769]" " -type \"float3\" -0.075287819000000006 -0.079749964000000007 0.10735275"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2770]" " -type \"float3\" -0.10445641999999999 -0.068822168000000003 0.096974625999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2771]" " -type \"float3\" -0.10992146 -0.099298440000000002 0.10019685"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2772]" " -type \"float3\" -0.12064409 -0.082859716999999999 0.086637035000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2773]" " -type \"float3\" -0.16536236000000001 -0.12828276 0.092450395000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2774]" " -type \"float3\" -0.17415094 -0.10859647 0.088517681000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2775]" " -type \"float3\" -0.18209362000000001 -0.13485691 0.075766101000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2776]" " -type \"float3\" -0.13816117999999999 -0.13496786 0.084666267000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2777]" " -type \"float3\" -0.16241884000000001 -0.1458835 0.074614539999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2778]" " -type \"float3\" -0.13647985000000001 -0.1235859 0.057436480999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2779]" " -type \"float3\" -0.13923836000000001 -0.15551087 0.069822565000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2780]" " -type \"float3\" -0.12792587 -0.13500449 0.057024017000000003"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2781]" " -type \"float3\" -0.10334539 -0.098655798000000003 0.026725305000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2782]" " -type \"float3\" -0.11545134 -0.14735380000000001 0.052394404999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2783]" " -type \"float3\" -0.095518112000000002 -0.10541729 0.022126211"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2784]" " -type \"float3\" -0.10709906 -0.079414092000000006 -0.014101969000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2785]" " -type \"float3\" -0.083728789999999997 -0.10238572 0.014913094999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2786]" " -type \"float3\" -0.088024139000000001 -0.078569420000000001 -0.013143526000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2787]" " -type \"float3\" -0.12186241 -0.090342082000000004 -0.027535424999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2788]" " -type \"float3\" -0.045037745999999997 -0.066998429999999998 -0.01393746"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2789]" " -type \"float3\" -0.069066048000000005 -0.069885216999999999 -0.024388300000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2790]" " -type \"float3\" -0.069353103999999999 -0.070023901999999999 -0.026082503"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2791]" " -type \"float3\" -0.019285440000000001 -0.029720389999999999 -0.023030744999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2792]" " -type \"float3\" -0.020087957 -0.026389592999999999 -0.024114119"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2793]" " -type \"float3\" -0.0097136497000000002 -0.0092985723000000003 -0.025160775999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2794]" " -type \"float3\" -0.018726349 0.055965714 -0.025026308000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2795]" " -type \"float3\" -0.022898196999999999 0.072093881999999998 -0.027122008"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2796]" " -type \"float3\" -0.075804948999999996 0.21729881000000001 -0.021635518999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2797]" " -type \"float3\" -0.086800575000000005 0.23566306000000001 -0.029210078"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2798]" " -type \"float3\" -0.15400981999999999 0.35443901999999999 -0.0049714911999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2799]" " -type \"float3\" -0.059759617000000001 0.18300034000000001 -0.012872682999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2800]" " -type \"float3\" -0.14213490000000001 0.34090987 0.01422788"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2801]" " -type \"float3\" -0.15274429 0.31446721999999999 0.026721014000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2802]" " -type \"float3\" -0.13552855999999999 0.34178757999999998 0.028445257000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2803]" " -type \"float3\" -0.17281985 0.37453339000000002 0.043831362999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2804]" " -type \"float3\" -0.12128496 0.21369173999999999 0.023959173"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2805]" " -type \"float3\" -0.199265 0.44760516 0.050443187"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2806]" " -type \"float3\" -0.16349411 0.31205623999999998 0.030982984000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2807]" " -type \"float3\" -0.061617374000000003 0.091883815999999993 -0.0046362746999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2808]" " -type \"float3\" -0.19906187 0.40068640999999999 0.028265489000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2809]" " -type \"float3\" -0.093622445999999998 0.14950326 -0.0016398299000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2810]" " -type \"float3\" -0.0073745251000000003 0.0014119502 -0.022164331999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2811]" " -type \"float3\" -0.11653423 0.19184271 -0.0047178137999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2812]" " -type \"float3\" -0.012173414 0.0084331389999999992 -0.021844374"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2813]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2814]" " -type \"float3\" -0.019563436999999999 0.017416333999999999 -0.022586094000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2815]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2816]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2817]" " -type \"float3\" -1.0490417e-05 -0.010155582999999999 -0.024176346000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2818]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2819]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2820]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2821]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2822]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2823]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2824]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2825]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2826]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2827]" " -type \"float3\" 1.5854836000000001e-05 -0.011774445 -0.024189697999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2828]" " -type \"float3\" 3.3617020000000002e-05 -0.013576174 -0.024205194999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2829]" " -type \"float3\" 0.00021755694999999999 -0.032206437999999997 -0.024367558000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2830]" " -type \"float3\" 0.00031602383000000001 -0.042181394999999997 -0.024454342"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2831]" " -type \"float3\" 0.00022387505 -0.032850406999999998 -0.024373041000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2832]" " -type \"float3\" 0.00049221515999999996 -0.060034178000000001 -0.024609552999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2833]" " -type \"float3\" 0.00042045115999999997 -0.052758834999999997 -0.024546372"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2834]" " -type \"float3\" 0.00016850232999999999 -0.027238393 -0.024324166000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2835]" " -type \"float3\" 0.00029253960000000001 -0.039801261999999997 -0.0244336"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2836]" " -type \"float3\" 0.00010675192000000001 -0.020981098 -0.024269806000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2837]" " -type \"float3\" 5.9604644999999995e-06 -0.010767961 -0.024180876"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2838]" " -type \"float3\" -1.7464161000000001e-05 -0.010355974 -0.024021732000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2839]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2840]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2841]" " -type \"float3\" -0.00053513050000000004 -0.0069312098999999997 -0.021190748999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2842]" " -type \"float3\" -1.8477440000000001e-06 -0.010151768 -0.024161564"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2843]" " -type \"float3\" -0.014678359 0.044902182999999998 0.022095811999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2844]" " -type \"float3\" -0.0017765164 0.0080406424000000008 -0.011602031"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2845]" " -type \"float3\" -0.049984694000000003 0.20330533000000001 0.14030249"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2846]" " -type \"float3\" -0.050935686000000001 0.1082745 0.090268268999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2847]" " -type \"float3\" -0.095960081000000003 0.24875531000000001 0.20521863000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2848]" " -type \"float3\" -0.099125922000000005 0.33210093000000002 0.24419231999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2849]" " -type \"float3\" -0.147596 0.26974776 0.24747153"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2850]" " -type \"float3\" -0.14854371999999999 0.34670784999999998 0.27617508000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2851]" " -type \"float3\" -0.089304805000000001 0.28095824000000003 0.18517990000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2852]" " -type \"float3\" -0.18881273000000001 0.35386956000000003 0.28106856000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2853]" " -type \"float3\" -0.1127044 0.26348074999999999 0.17242773"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2854]" " -type \"float3\" -0.030262588999999999 0.15390794999999999 0.031886771000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2855]" " -type \"float3\" -0.13462508000000001 0.25969797 0.16327764"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2856]" " -type \"float3\" -0.039307117000000003 0.15485561 0.021966590000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2857]" " -type \"float3\" 0.0011407137 0.087768323999999995 -0.063355817999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2858]" " -type \"float3\" -0.028007746 0.13140541 -0.0072624552999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2859]" " -type \"float3\" 0.0070459842999999996 0.074086078 -0.066227659999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2860]" " -type \"float3\" 0.014281749999999999 0.023777087999999998 -0.083805844000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2861]" " -type \"float3\" 0.0012474059999999999 0.033421285000000002 -0.056157932000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2862]" " -type \"float3\" 0.0029983521000000002 -0.010392541 -0.060562953000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2863]" " -type \"float3\" -0.019541979000000001 -0.048559137000000002 -0.034107788999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2864]" " -type \"float3\" -0.027155399 -0.0068369451999999997 -0.016410099000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2865]" " -type \"float3\" -0.038264989999999999 -0.032153374999999998 -0.0033870209"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2866]" " -type \"float3\" -0.058362007 -0.050417877999999999 0.016565931999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2867]" " -type \"float3\" -0.073213816000000001 -0.039080760999999999 0.034603372"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2868]" " -type \"float3\" -0.087175131000000003 -0.046031348 0.045271649999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2869]" " -type \"float3\" -0.098271131999999997 -0.045438579999999999 0.051888957999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2870]" " -type \"float3\" -0.066373109999999999 -0.041010118999999998 0.016175998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2871]" " -type \"float3\" -0.085982799999999998 -0.042776979999999999 0.027336968"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2872]" " -type \"float3\" -0.10566187 -0.038619958000000003 0.036898269999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2873]" " -type \"float3\" -0.13987421999999999 -0.091525353000000004 0.046119942999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2874]" " -type \"float3\" -0.16025281 -0.093839175999999996 0.056848541000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2875]" " -type \"float3\" -0.17690539 -0.087052338000000007 0.060982122999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2876]" " -type \"float3\" -0.23451638 -0.13461592999999999 0.085477009000000007"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2877]" " -type \"float3\" -0.230515 -0.12754703000000001 0.084667101999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2878]" " -type \"float3\" -0.11683941 -0.075797937999999995 0.060765997000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2879]" " -type \"float3\" -0.12519479 -0.075248592000000003 0.062911763999999995"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2880]" " -type \"float3\" -0.034179688 -0.058433912999999997 0.071718946000000006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2881]" " -type \"float3\" -0.056281327999999999 -0.057639144000000003 0.072137848000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2882]" " -type \"float3\" -0.021070957000000001 -0.080496631999999999 0.10102274"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2883]" " -type \"float3\" -0.045995951 -0.074536285999999993 0.099300637999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2884]" " -type \"float3\" -0.020749092 -0.097848645999999997 0.11717083"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2885]" " -type \"float3\" -0.052958487999999998 -0.092957966000000003 0.11647488"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2886]" " -type \"float3\" -0.029574394 -0.10433891000000001 0.11132719000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2887]" " -type \"float3\" -0.060238838000000003 -0.10059615 0.11559273"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2888]" " -type \"float3\" -0.054561615000000001 -0.11081161 0.089620127999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2889]" " -type \"float3\" -0.088752269999999994 -0.11329951000000001 0.10189463"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2890]" " -type \"float3\" -0.10727024 -0.13509935000000001 0.074423804999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2891]" " -type \"float3\" -0.02339983 -0.10197046 0.075079933000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2892]" " -type \"float3\" -0.074688910999999997 -0.13070482 0.060344473000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2893]" " -type \"float3\" -0.11639214000000001 -0.16046663999999999 0.061287418000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2894]" " -type \"float3\" -0.044408321000000001 -0.12018859 0.042052761000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2895]" " -type \"float3\" -0.091908455 -0.15828519999999999 0.045093073999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2896]" " -type \"float3\" -0.097463130999999995 -0.14782943000000001 0.039338603999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2897]" " -type \"float3\" -0.067015170999999998 -0.12515113 0.021972669"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2898]" " -type \"float3\" -0.081028222999999996 -0.11543768 0.023067010999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2899]" " -type \"float3\" -0.064369678 -0.085835359999999999 0.0052065979999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2900]" " -type \"float3\" -0.034074305999999999 -0.069604836000000003 0.00033236854"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2901]" " -type \"float3\" -0.023499249999999999 -0.064892553000000006 -0.006111132"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2902]" " -type \"float3\" -0.014792441999999999 -0.045478499999999998 -0.015883432999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2903]" " -type \"float3\" -0.003882885 -0.023484135 -0.015748010999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2904]" " -type \"float3\" -0.0058395862999999996 0.0025987681 -0.019637571999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2905]" " -type \"float3\" -0.011901617 0.032810770000000003 -0.022875772999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2906]" " -type \"float3\" -0.044017076000000002 0.14421791 -0.0067376959999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2907]" " -type \"float3\" -0.033253907999999999 0.11273245 -0.0059966910999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2908]" " -type \"float3\" -0.14310788999999999 0.37114564 0.035123362999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2909]" " -type \"float3\" -0.028157949000000002 0.094228245000000002 -0.010809409000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2910]" " -type \"float3\" -0.15207672 0.40476972 0.03064586"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2911]" " -type \"float3\" -0.22148060999999999 0.51133949000000001 0.043707386000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2912]" " -type \"float3\" -0.15948772 0.42112896 0.016448510999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2913]" " -type \"float3\" -0.24175787000000001 0.55061895000000005 0.025073063999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2914]" " -type \"float3\" -0.22729397000000001 0.46177781000000001 0.015512003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2915]" " -type \"float3\" -0.27423191000000002 0.55885421999999996 -0.0028307307999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2916]" " -type \"float3\" -0.26415824999999998 0.48977642999999998 -0.0086181033000000008"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2917]" " -type \"float3\" -0.14374303999999999 0.22738834999999999 -0.015347229"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2918]" " -type \"float3\" -0.32018590000000002 0.49172744000000002 -0.039495929999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2919]" " -type \"float3\" -0.17899513 0.24097583 -0.033448681000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2920]" " -type \"float3\" -0.024889469000000001 0.020826494000000001 -0.024667965"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2921]" " -type \"float3\" -0.21274090000000001 0.24428496 -0.050638899000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2922]" " -type \"float3\" -0.029405355000000001 0.022656536000000001 -0.027259097999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2923]" " -type \"float3\" -7.8916549999999999e-05 -0.010086322 -0.024181115"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2924]" " -type \"float3\" -0.042989969000000003 0.033281721 -0.030477748999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2925]" " -type \"float3\" -0.00053215027000000001 -0.0097164157999999994 -0.024278866"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2926]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2927]" " -type \"float3\" -0.0048458575999999996 -0.0061987880999999998 -0.024470555000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2928]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2929]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2930]" " -type \"float3\" -6.3776970000000007e-05 -0.010072494 -0.024140583"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2931]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2932]" " -type \"float3\" 4.9114226999999999e-05 -0.015141273 -0.024219022999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2933]" " -type \"float3\" -0.00043427944000000001 -0.010518814 -0.023905741000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2934]" " -type \"float3\" -0.00034284592 -0.025753761 -0.024001346999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2935]" " -type \"float3\" 0.00035393238 -0.052193783000000001 -0.024503456"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2936]" " -type \"float3\" -0.012774825 -0.0092267040000000005 -0.014676319"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2937]" " -type \"float3\" -0.0069334506999999997 -0.033438585999999999 -0.018878208"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2938]" " -type \"float3\" -0.0010999441000000001 -0.046110891000000001 -0.023392664000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2939]" " -type \"float3\" -0.043979405999999999 0.029556608000000002 0.016689552"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2940]" " -type \"float3\" -0.022437215 0.0089821572999999998 -0.00074969418000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2941]" " -type \"float3\" -0.0038976669 -0.0079939607999999999 -0.019120561000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2942]" " -type \"float3\" -0.078911781 0.093143739000000003 0.087723150999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2943]" " -type \"float3\" -0.037886977000000002 0.054010369000000003 0.044513240000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2944]" " -type \"float3\" -0.0086405873000000005 0.012149906 -0.0020102131999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2945]" " -type \"float3\" -0.10450458999999999 0.16902961999999999 0.16492106000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2946]" " -type \"float3\" -0.15234149 0.21057340999999999 0.20735289000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2947]" " -type \"float3\" -0.19835162000000001 0.31606728000000001 0.28218734000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2948]" " -type \"float3\" -0.1780467 0.22524926000000001 0.19670703"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2949]" " -type \"float3\" -0.22984409 0.34502380999999999 0.27131820000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2950]" " -type \"float3\" -0.20471608999999999 0.34617436000000001 0.24804159000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2951]" " -type \"float3\" -0.23677790000000001 0.35113019000000001 0.21178199"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2952]" " -type \"float3\" -0.20429516 0.33233151 0.18883516"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2953]" " -type \"float3\" -0.13588130000000001 0.24744384999999999 0.12773634"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2954]" " -type \"float3\" -0.20170403000000001 0.32026577000000001 0.13060166000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2955]" " -type \"float3\" -0.12846017000000001 0.22015777 0.085614576999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2956]" " -type \"float3\" -0.031484127000000001 0.092695706000000003 -0.014542865"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2957]" " -type \"float3\" -0.10901761 0.175423 0.042579785000000002"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2958]" " -type \"float3\" -0.049644947000000002 0.066045739000000006 0.0029682050999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2959]" " -type \"float3\" -0.028199195999999999 0.020383467999999998 -0.015922652999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2960]" " -type \"float3\" -0.055755138000000003 0.027003681000000002 0.0069550406000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2961]" " -type \"float3\" -0.051524878000000003 -0.0081119778999999993 0.010546458999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2962]" " -type \"float3\" -0.060403824000000002 -0.025972689 0.02191533"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2963]" " -type \"float3\" -0.027434825999999999 -0.016952911000000001 -0.011515127"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2964]" " -type \"float3\" -0.033846855000000002 -0.025575185 -0.0056265461999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2965]" " -type \"float3\" -0.046570301000000001 -0.035456724000000002 0.0037601124000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2966]" " -type \"float3\" -0.066737651999999995 -0.058919407 0.0049965512000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2967]" " -type \"float3\" -0.091043234000000001 -0.074114464000000005 0.017642392"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2968]" " -type \"float3\" -0.11613393 -0.085669256999999999 0.032584562999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2969]" " -type \"float3\" -0.15225506 -0.097589485000000004 0.048417940999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2970]" " -type \"float3\" -0.1894691 -0.11683563 0.065625324999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2971]" " -type \"float3\" -0.21939038999999999 -0.13116427 0.078292862000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2972]" " -type \"float3\" -0.084043264000000006 -0.063317976999999998 0.044414296999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2973]" " -type \"float3\" -0.10234571000000001 -0.071394287000000001 0.054360643"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2974]" " -type \"float3\" 0.0064287186000000001 -0.045907906999999998 0.055183664"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2975]" " -type \"float3\" -0.013201714 -0.052519493 0.065019621999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2976]" " -type \"float3\" 0.034132956999999998 -0.066265605000000005 0.081587567999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2977]" " -type \"float3\" 0.0091807842000000001 -0.073719970999999995 0.093386902999999993"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2978]" " -type \"float3\" 0.042254686 -0.083891890999999996 0.094451203999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2979]" " -type \"float3\" 0.013416290000000001 -0.092346660999999997 0.10938074"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2980]" " -type \"float3\" 0.034792185000000003 -0.083700738999999996 0.083533302000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2981]" " -type \"float3\" 0.0060095786999999996 -0.096037589000000007 0.099953665999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2982]" " -type \"float3\" 0.0048527717999999999 -0.086597941999999997 0.055788770000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2983]" " -type \"float3\" 0.050467252999999997 -0.067200534000000006 0.060339943"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2984]" " -type \"float3\" 0.022276878 -0.059774480999999997 0.034647718000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2985]" " -type \"float3\" -0.023846388 -0.085990988000000004 0.019138348999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2986]" " -type \"float3\" 0.026339293 -0.019183242999999999 0.013465655999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2987]" " -type \"float3\" -0.0050673484999999999 -0.035542211999999997 -0.0050053466000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2988]" " -type \"float3\" -0.029873848000000001 -0.060115508999999998 -0.0040941108"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2989]" " -type \"float3\" 0.0015294551999999999 -0.0067801121999999997 -0.019325004999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2990]" " -type \"float3\" -0.0051052570000000002 -0.012797230999999999 -0.021106706999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2991]" " -type \"float3\" -0.0060949326000000002 -0.025432699999999999 -0.016288744000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2992]" " -type \"float3\" -0.028187513000000001 0.080954975999999998 -0.016284453000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2993]" " -type \"float3\" -0.034847735999999997 0.074992128000000005 -0.020297753000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2994]" " -type \"float3\" -0.18109488000000001 0.42175779000000002 -0.0036859382000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2995]" " -type \"float3\" -0.045269728000000002 0.079201140000000003 -0.021014201"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2996]" " -type \"float3\" -0.22782540000000001 0.41278967 -0.028935419"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2997]" " -type \"float3\" -0.32791901000000001 0.54447389000000002 -0.035044417000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2998]" " -type \"float3\" -0.26837778000000001 0.37365541000000002 -0.049441561000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[2999]" " -type \"float3\" -0.37218975999999998 0.50721954999999996 -0.058100923999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3000]" " -type \"float3\" -0.36681151000000001 0.47059199000000002 -0.062793954999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3001]" " -type \"float3\" -0.37487315999999998 0.44274232000000002 -0.060981019999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3002]" " -type \"float3\" -0.37547469 0.42792085000000002 -0.064687236999999995"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3003]" " -type \"float3\" -0.23324323 0.24530621999999999 -0.054633125999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3004]" " -type \"float3\" -0.33733629999999998 0.36743954000000001 -0.044950232"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3005]" " -type \"float3\" -0.2278173 0.23314950000000001 -0.038244233000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3006]" " -type \"float3\" -0.062164068000000003 0.050416625999999999 -0.027130114"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3007]" " -type \"float3\" -0.21195053999999999 0.22374179999999999 -0.0083768236999999992"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3008]" " -type \"float3\" -0.086846113000000003 0.082811989000000003 -0.012058245"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3009]" " -type \"float3\" -0.014515399999999999 0.0056813712999999998 -0.020739304"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3010]" " -type \"float3\" -0.11808133 0.14316156999999999 0.012366069"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3011]" " -type \"float3\" -0.029464006000000001 0.032486774000000003 -0.011802183000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3012]" " -type \"float3\" -0.0016428231999999999 -0.0076240542999999996 -0.02332996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3013]" " -type \"float3\" -0.058629751000000001 0.088232376000000001 0.0015053879"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3014]" " -type \"float3\" -0.012217283000000001 0.0081439968000000008 -0.018108355"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3015]" " -type \"float3\" -0.010659574999999999 -0.00045611896 -0.016667352999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3016]" " -type \"float3\" -0.058600425999999997 0.076002575000000003 0.0043141971999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3017]" " -type \"float3\" -0.044158815999999997 0.035549975999999997 0.0089166295000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3018]" " -type \"float3\" -0.049468278999999997 0.036965705000000001 0.018659009000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3019]" " -type \"float3\" -0.1190722 0.13870695 0.059662833999999998"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3020]" " -type \"float3\" -0.099681377000000002 0.097494222000000005 0.068025007999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3021]" " -type \"float3\" -0.097265958999999999 0.097956575000000004 0.086005582999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3022]" " -type \"float3\" -0.19623351 0.24942163000000001 0.16486944000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3023]" " -type \"float3\" -0.21480763 0.29812064999999999 0.12417163000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3024]" " -type \"float3\" -0.23261857 0.35372671 0.13967265000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3025]" " -type \"float3\" -0.21591008 0.33916780000000002 0.077008261999999994"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3026]" " -type \"float3\" -0.22611498999999999 0.36057465999999999 0.087051049000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3027]" " -type \"float3\" -0.19255161000000001 0.30396482000000002 0.081794514999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3028]" " -type \"float3\" -0.21498465999999999 0.35876586999999999 0.061016216999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3029]" " -type \"float3\" -0.16605663000000001 0.26775747999999999 0.043840423000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3030]" " -type \"float3\" -0.088454008000000001 0.12085745000000001 0.015034927"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3031]" " -type \"float3\" -0.12360692 0.2082434 0.019889487000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3032]" " -type \"float3\" -0.049145699000000001 0.060104109000000003 -0.0083014834999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3033]" " -type \"float3\" -0.028043269999999999 -0.0018131378999999999 -0.013486730000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3034]" " -type \"float3\" -0.026450634000000001 0.028603738 -0.014975773"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3035]" " -type \"float3\" -0.024507760999999999 -0.019114130999999999 -0.014594065"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3036]" " -type \"float3\" -0.043965815999999998 -0.041493990000000001 -0.0055992472999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3037]" " -type \"float3\" -0.030612945999999999 -0.023773694000000001 -0.0088939536000000007"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3038]" " -type \"float3\" -0.068670511000000004 -0.050304092000000002 0.0099289548000000005"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3039]" " -type \"float3\" -0.10989641999999999 -0.074649340999999994 0.028667701"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3040]" " -type \"float3\" -0.027539729999999998 -0.028376663 0.0047848355"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3041]" " -type \"float3\" -0.044290543000000002 -0.042980008 0.018863929000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3042]" " -type \"float3\" -0.063857078999999997 -0.053771578 0.032132401999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3043]" " -type \"float3\" 0.031637907 -0.020417505999999998 0.027460350000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3044]" " -type \"float3\" 0.024833679000000001 -0.035136871 0.041086689000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3045]" " -type \"float3\" 0.061939715999999999 -0.029837632999999999 0.048178687999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3046]" " -type \"float3\" 0.055973291000000001 -0.052793792999999999 0.066705956999999996"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3047]" " -type \"float3\" 0.067074299000000004 -0.041775905000000002 0.051247372999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3048]" " -type \"float3\" 0.062396765 -0.070033482999999994 0.073372617000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3049]" " -type \"float3\" 0.048264979999999999 -0.027290100000000001 0.038250699999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3050]" " -type \"float3\" 0.049170732000000002 0.0014989432 0.025638593000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3051]" " -type \"float3\" 0.039350509999999998 0.0037464853 0.012184633"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3052]" " -type \"float3\" 0.019173622000000001 0.0019083675 -0.0052993166999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3053]" " -type \"float3\" -0.052048206 0.081627168 -0.017610774999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3054]" " -type \"float3\" -0.037310123000000001 0.069321938 -0.0063860286000000004"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3055]" " -type \"float3\" -0.25316167000000001 0.29654713999999999 -0.048777565000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3056]" " -type \"float3\" -0.021292209999999999 0.055274792000000003 0.0031993519999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3057]" " -type \"float3\" -0.19527912 0.21855306999999999 -0.028490053000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3058]" " -type \"float3\" -0.32347846000000002 0.35899060999999999 -0.043014987999999997"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3059]" " -type \"float3\" -0.1231699 0.13885507 -0.0074472297000000003"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3060]" " -type \"float3\" -0.2417531 0.26460930999999999 -0.012553201999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3061]" " -type \"float3\" -0.27461957999999997 0.29980779000000002 -0.01227163"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3062]" " -type \"float3\" -0.17161918000000001 0.20044512 0.015544189"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3063]" " -type \"float3\" -0.23198152 0.27394344999999998 0.023114694000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3064]" " -type \"float3\" -0.20812511 0.24749436999999999 0.023677838999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3065]" " -type \"float3\" -0.19728826999999999 0.27767217 0.045322672000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3066]" " -type \"float3\" -0.20482469 0.28866792000000002 0.046791329999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3067]" " -type \"float3\" -0.15011883000000001 0.22038706999999999 0.034641281000000003"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3068]" " -type \"float3\" -0.18105363999999999 0.29839110000000002 0.049360290000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3069]" " -type \"float3\" -0.098225831999999999 0.16409844000000001 0.014830006"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3070]" " -type \"float3\" -0.19429255000000001 0.33294538000000001 0.050325409000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3071]" " -type \"float3\" -0.11599660000000001 0.16517949000000001 0.022076620000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3072]" " -type \"float3\" -0.025691031999999999 0.026784306000000001 -0.012665259"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3073]" " -type \"float3\" -0.061702727999999998 0.070103324999999994 -0.0042757858000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3074]" " -type \"float3\" -0.015026331 -0.00079690850999999995 -0.0097401012000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3075]" " -type \"float3\" -0.010729551 0.032201357 0.00042559020000000001"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3076]" " -type \"float3\" 0.022425652000000001 -0.0029583815000000001 0.014276041"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3077]" " -type \"float3\" 0.045361757000000003 -0.00054633058999999996 0.027727379"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3078]" " -type \"float3\" -0.15092003000000001 0.22198364000000001 0.047042503999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3079]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3080]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3081]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3082]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3083]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3084]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3085]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3086]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3087]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3088]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3089]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3090]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3091]" " -type \"float3\" 3.0696392000000001e-06 -0.010149979999999999 -0.024176585"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3092]" " -type \"float3\" 0.0038208960999999999 0.0039014573999999998 -0.027263150999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3093]" " -type \"float3\" 0.024414122 0.064398265999999996 -0.035962090000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3094]" " -type \"float3\" 0.02671051 -0.0046293083999999997 -0.026977048999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3095]" " -type \"float3\" 0.039839745000000003 -0.0019168201999999999 -0.02830361"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3096]" " -type \"float3\" 0.043420315000000001 -0.0011891369 -0.028676974000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3097]" " -type \"float3\" 0.039338827 -0.0020831021999999999 -0.028263555999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3098]" " -type \"float3\" 0.043614864000000003 -0.0012528839999999999 -0.028722273"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3099]" " -type \"float3\" 0.041506767 -0.0076797847000000001 -0.027852999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3100]" " -type \"float3\" -0.020030974999999999 0.0073624607000000002 -0.027430998000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3101]" " -type \"float3\" -0.029028654000000001 0.0045077559000000003 -0.027559266999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3102]" " -type \"float3\" -0.0097744465000000006 0.011491154999999999 -0.026608454"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3103]" " -type \"float3\" -0.012460232 0.0064813848999999996 -0.026626574"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3104]" " -type \"float3\" 0.0026974678000000001 -0.0083464626 -0.027017579999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3105]" " -type \"float3\" 0.0021641254 -0.004144216 -0.024653899"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3106]" " -type \"float3\" 0.012936115 -0.015115405 -0.027076230999999999"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3107]" " -type \"float3\" 0.0078244209000000002 -0.0032316687999999999 -0.026136385000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3108]" " -type \"float3\" 0.014741659000000001 -0.0069076064999999999 -0.026139723"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3109]" " -type \"float3\" 0.0023174286000000001 -0.0098108294999999998 -0.025560843"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3110]" " -type \"float3\" 0.0053868294000000002 -0.016205335000000001 -0.024576651000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3111]" " -type \"float3\" 0.0032048225000000001 -0.011614347000000001 -0.024194704000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3112]" " -type \"float3\" 0.0013175011 -0.0070889237999999999 -0.024651752999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3113]" " -type \"float3\" 0.0010545254000000001 -0.0089545492000000001 -0.024394975999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3114]" " -type \"float3\" 0.0014908314000000001 -0.0096028092999999991 -0.023892865999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3115]" " -type \"float3\" 0.00025582314 -0.0095221045999999993 -0.024185643999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3116]" " -type \"float3\" 0.00027441978 -0.0098654273999999997 -0.024138198999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3117]" " -type \"float3\" 2.6226044e-06 -0.010163808 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3118]" " -type \"float3\" 0.00018358231000000001 -0.010088587 -0.024129378"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3119]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3120]" " -type \"float3\" 7.9870223999999999e-06 -0.010296369 -0.024168478"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3121]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3122]" " -type \"float3\" 1.0609627e-05 -0.010394955000000001 -0.024169909"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3123]" " -type \"float3\" 0.00091063975999999998 -0.024096989999999999 -0.023381220000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3124]" " -type \"float3\" 9.4175339000000006e-06 -0.010392093999999999 -0.024172531000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3125]" " -type \"float3\" 0.00050151348000000001 -0.020944142999999998 -0.023890959"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3126]" " -type \"float3\" 0.0037804841999999998 -0.080324672 -0.021071183"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3127]" " -type \"float3\" 0.00032496452 -0.018363619000000001 -0.024061905000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3128]" " -type \"float3\" 0.0023705363 -0.065082929999999997 -0.023039328000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3129]" " -type \"float3\" 0.0075120330000000004 -0.16001346999999999 -0.020339475999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3130]" " -type \"float3\" 0.0017651915999999999 -0.054274105000000003 -0.023905025999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3131]" " -type \"float3\" 0.0051146150000000003 -0.13960185999999999 -0.024435984000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3132]" " -type \"float3\" 0.0031194091000000001 -0.22423306000000001 -0.030696378999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3133]" " -type \"float3\" 0.00048798323 -0.12857701999999999 -0.031123624999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3134]" " -type \"float3\" -0.0050695239999999997 -0.21335604999999999 -0.032361730999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3135]" " -type \"float3\" -0.022966798 -0.28211454000000002 -0.045622572"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3136]" " -type \"float3\" -0.014303032 -0.26954976000000003 -0.037553057000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3137]" " -type \"float3\" 0.0012142062000000001 -0.048466109 -0.024441228999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3138]" " -type \"float3\" 0.00011205673 -0.013933921 -0.024198041999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3139]" " -type \"float3\" -0.00016224383999999999 -0.015868092 -0.024395213999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3140]" " -type \"float3\" 0.00020766257999999999 -0.015466357 -0.024127709000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3141]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3142]" " -type \"float3\" 1.1920929000000001e-06 -0.010167027 -0.024174916000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3143]" " -type \"float3\" 3.5762787000000002e-06 -0.010251308000000001 -0.024174438999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3144]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3145]" " -type \"float3\" 1.6689301000000002e-06 -0.010167504000000001 -0.024173962"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3146]" " -type \"float3\" 0 -0.010167027 -0.024175631"
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3147]" " -type \"float3\" 0.00015926361000000001 -0.010161900999999999 -0.024129616"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3148]" " -type \"float3\" 6.9618225000000005e-05 -0.010208393 -0.024149882000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3149]" " -type \"float3\" 0.00022816658000000001 -0.010100031000000001 -0.024111972999999998"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3150]" " -type \"float3\" 0.00018358231000000001 -0.0098663811000000001 -0.024083124000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3151]" " -type \"float3\" 0.00021016597999999999 -0.010203742999999999 -0.024184929000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3152]" " -type \"float3\" 0.00034976005999999999 -0.0097869876999999994 -0.024064528000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3153]" " -type \"float3\" 0.00094914436000000004 -0.0087548735999999992 -0.023916231"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3154]" " -type \"float3\" 0.00039696692999999998 -0.0091916564999999992 -0.023934113"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3155]" " -type \"float3\" 0.00087952614000000003 -0.0085789206999999992 -0.024103389999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3156]" " -type \"float3\" 0.0021514893 -0.0080347302999999991 -0.023842799000000001"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3157]" " -type \"float3\" 0.0019640922999999999 -0.0077237132999999998 -0.0235772"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3158]" " -type \"float3\" 0.0029201508000000001 -0.0046029332999999997 -0.024248825000000002"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3159]" " -type \"float3\" 0.0012705326 -0.0064348225000000004 -0.024045693"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3160]" " -type \"float3\" 0.0049786568 -0.0047782902000000002 -0.023681865999999999"
+		
+		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:BottomCont|teeth_v1_latest:Bottom|teeth_v1_latest:Gums|teeth_v1_latest:GumsShape" 
+		"pnts[3161]" " -type \"float3\" -0.00082373619000000004 0.0043248888000000001 -0.026967511999999999"
+		
 		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" "translate" " -type \"double3\" 0.041211589025990536 6.2237508071537464 0.27531936617569741"
 		
 		2 "|teeth_v1_latest:Teeth|teeth_v1_latest:TopCont" "rotate" " -type \"double3\" 1.85295424159940691 0 180"
@@ -18395,17 +26924,17 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n"
 		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
 		+ "            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n"
-		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
+		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 436\n            -height 353\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 879\n            -height 640\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 436\n            -height 352\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
-		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 436\n            -height 352\n"
+		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 879\n            -height 640\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 879\n            -height 750\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n"
 		+ "            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n"
 		+ "            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
 		+ "\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n"
@@ -18432,9 +26961,9 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n"
 		+ "                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n"
 		+ "            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n"
-		+ "            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Side View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Side View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 879\\n    -height 640\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Side View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 879\\n    -height 640\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 879\\n    -height 750\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 879\\n    -height 750\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -22589,11 +31118,18 @@ createNode reference -n "JadeNecklace_v2_latestRN";
 		"JadeNecklace_v2_latestRN" 0;
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
-createNode blendShape -n "Blink";
+createNode blendShape -n "Eyes";
 	rename -uid "FA025DB9-D14A-8245-1290-A68DF18EA2D3";
 	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
-	setAttr -s 5 ".w[0:4]"  1 0 0 0 1;
-	setAttr -s 5 ".it[0].itg";
+	setAttr -s 7 ".w";
+	setAttr ".w[0]" 0;
+	setAttr ".w[2]" 0;
+	setAttr ".w[3]" 0;
+	setAttr ".w[4]" 0;
+	setAttr ".w[5]" 0;
+	setAttr ".w[6]" 1;
+	setAttr ".w[7]" 1;
+	setAttr -s 7 ".it[0].itg";
 	setAttr ".it[0].itg[0].iti[6000].ipt" -type "pointArray" 47 0 0 0 1 0 0 0 1 0
 		 0.00051779781939842451 0 1 0 -0.00195924894876498 0.00087176674242073204 1 0 -0.0064377696663058259
 		 0.0084110062032394239 1 0 -0.014688814057572497 0.0056062134064998048 1 0 -0.00013425719357229582
@@ -22617,52 +31153,41 @@ createNode blendShape -n "Blink";
 		 1 0 -0.02437345524799639 0.0085387515719048679 1 0 0 0 1 0 -1.6410695025115274e-10
 		 0 1 0 1.3415046851150692e-10 -1.7316778844200797e-09 1 ;
 	setAttr ".it[0].itg[0].iti[6000].ict" -type "componentList" 21 "vtx[0]" "vtx[247]" "vtx[2393]" "vtx[2397]" "vtx[2399]" "vtx[2401:2404]" "vtx[2407:2408]" "vtx[2413:2414]" "vtx[2416]" "vtx[4294:4296]" "vtx[4298:4307]" "vtx[4309:4310]" "vtx[4318:4319]" "vtx[4321]" "vtx[4328:4329]" "vtx[4337]" "vtx[4342:4345]" "vtx[4357:4361]" "vtx[4376]" "vtx[4387]" "vtx[4449]";
-	setAttr ".it[0].itg[1].iti[6000].ipt" -type "pointArray" 47 0 0 0 1 0 0 0 1 0
-		 0.00051779781939842451 0 1 0 -0.00195924894876498 0.00087176674242073204 1 0 -0.0064377696663058259
-		 0.0084110062032394239 1 0 -0.014688814057572497 0.0056062134064998048 1 0 -0.00013425719357229582
-		 5.1241339619298443e-05 1 0 -0.0054177222472908682 0 1 0 -8.9588284394537254e-05 -2.2737367544323206e-13
-		 1 0.00074178935028612614 0.0073155952902652643 -0.00030271860305219889 1 4.6022167225601152e-05
-		 0.00062189746799390377 -1.8781298422254622e-05 1 0 6.7920780111307977e-11 0 1 0 1.5079049120458876e-10
-		 0 1 0 4.3655745685100555e-11 0 1 0 -0.0081454298788230517 0.0072950512130773859 1 0
+	setAttr ".it[0].itg[2].iti[6000].ipt" -type "pointArray" 70 0 0 0 1 0 -0.015908979124560574
+		 -5.8207660913467407e-10 1 0 -1.4551915228366852e-10 -5.8207660913467407e-10 1 0 -1.4551915228366852e-10
+		 -5.8207660913467407e-10 1 0 4.4881431904286728e-11 -5.8207660913467407e-10 1 4.9988226237474009e-05
+		 -0.02378117105041655 -0.010352924418839393 1 0 -1.4551915228366852e-10 -5.8207660913467407e-10
+		 1 0 0.00065506128885317594 0 1 0 -0.0074407927837114585 0.012201342717162333 1 0
+		 -0.004345472676504869 0 1 0 -2.9103830456733704e-11 -7.2759576141834259e-11 1 0 -2.7284841053187847e-11
+		 -5.8207660913467407e-11 1 0 0.001770044666845827 0 1 -1.0099006431119051e-07 -1.4003685464558657e-05
+		 1.2551884083222831e-06 1 -1.6808192171424707e-08 -1.810381659339555e-05 2.0890618657176674e-07
+		 1 0 -0.020366408450399831 3.7834979593753815e-10 1 0 -8.7311491370201111e-11 -5.8207660913467407e-10
+		 1 0 0 0 1 0 -1.1718562841434021e-05 0 1 0 0.00044428083395597895 0 1 0 0.0097554447467587124
+		 0 1 0 0.0019374628057597931 0 1 0 0.0068197872867372666 0 1 0 -1.4551915228366852e-10
+		 -5.8207660913467407e-10 1 0 0 0 1 0 0.0006843668175022799 0 1 0 -0.016563427285234411
+		 0.00087176616034412291 1 0 -0.031936177034420865 0.030817223379706604 1 0 -0.036847127305857708
+		 0.016627062574334772 1 0 -0.00013425711958703346 5.1240757542689308e-05 1 0 -0.032752915202738819
+		 0.01102084870217368 1 0 -8.9588400809859081e-05 -5.823039828101173e-10 1 0.00074149496805375747
+		 0.0029633090166498732 -0.00029905977589805843 1 4.6022167225601152e-05 0.00062189746799390377
+		 -1.8781298422254622e-05 1 0 6.7920780111307977e-11 0 1 0 1.5079049120458876e-10 0
+		 1 0 4.3655745685100555e-11 0 1 0 -0.017460450518285597 0.0072950512130773859 1 0
 		 -0.018199844766058959 0.0054550123168155551 1 0 -0.014854912668852194 0.0066096852242480963
-		 1 0 -0.025625566919003973 -6.5483618527650833e-11 1 0 -0.038748280636170307 -6.5483618527650833e-11
-		 1 0 0.0063198330597060703 0 1 0 0.00049364213919034228 0 1 0 0 0 1 0 1.1641532182693481e-10
-		 0 1 0 -0.012231688769134053 0.0072072044413289404 1 0 -0.035309872975346934 0.021258426573353972
-		 1 0 -0.031742358370763224 0.012183773384020213 1 0.00096503901295363903 -0.019627627574593021
-		 -0.00039382521208608523 1 0 0.0089877252682981634 0 1 0 0.0034940946184462973 0 1 0
-		 -0.034248960762397473 0.0085387515719048679 1 0 -0.0051029887017932651 0.0012722474093607161
-		 1 0 2.1827872842550278e-11 0 1 0.00035543745616450906 0.003929264576015612 -0.00014505133731290698
-		 1 0 -0.02752473519721832 -0.0036568598370649852 1 0 0.0062005187355680391 0 1 0 -0.059101158168380241
-		 0.021258424841676088 1 0 -0.0053513578202450951 0.0023004352719837862 1 -1.8290917068952695e-05
-		 -0.04228750738591236 0.012183773054189828 1 0 -0.046672430135326959 0.012183772761764189
-		 1 0 -0.0022468883089459268 0.0044871981281175977 1 0 -0.02437345524799639 0.0085387515719048679
-		 1 0 -0.033541746850801246 0.021258426724330093 1 0 -0.031742358566068773 0.012183773218614746
-		 1 0 -0.02437345524799639 0.0085387515719048679 1 0 0 0 1 0 -1.6410695025115274e-10
+		 1 0 -0.025625566919003973 -6.5483618527650833e-11 1 -0.019698584111210948 -0.030267557785734311
+		 -0.013974225330457557 1 -3.3917908126568364e-07 0.0014713717825998174 4.2155993469350506e-06
+		 1 0 0.00049364213919034228 0 1 0 0.0020851278285505259 0 1 0 0.0011493657657410949
+		 0 1 0 -0.016112374066324264 0.011011788300493208 1 0 -0.024796357517050449 0.021258426340523329
+		 1 0 -0.026477191882519957 0.012183773849681501 1 0.00096459000653226212 -0.025664267432304655
+		 -0.00038824458715680521 1 0 0.0089877252682981634 0 1 0 0.0034940946184462973 0 1 0
+		 -0.025654818797193002 0.0085387515719048679 1 0 -0.0051029887017932651 0.0012722474020847585
+		 1 0 0.0044984734049648978 0 1 0.00035478002479294446 -0.00026640994775561921 -0.0001368802340948605
+		 1 -0.011060504372836011 -0.02752542106917133 -0.0036567983791400138 1 0 0.0062005187355680391
+		 0 1 0 -0.037822626552190375 0.021258424841676088 1 0 -0.034031869057002506 0.0023004352719837862
+		 1 -1.8290917068952695e-05 -0.030440553746733823 0.012183773054189828 1 0 -0.036734703142268454
+		 0.012183772761764189 1 0 -0.019254441786301868 0.015508046601098613 1 0 -0.02437345524799639
+		 -0.0085330682632047683 1 0 -0.030498045311173616 0.021258426695226262 1 0 -0.031625321922026828
+		 0.012183773225890704 1 0 -0.02437345524799639 0.0085387515737238573 1 0 0 0 1 0 -1.6410695025115274e-10
 		 0 1 0 1.3415046851150692e-10 -1.7316778844200797e-09 1 ;
-	setAttr ".it[0].itg[1].iti[6000].ict" -type "componentList" 21 "vtx[0]" "vtx[247]" "vtx[2393]" "vtx[2397]" "vtx[2399]" "vtx[2401:2404]" "vtx[2407:2408]" "vtx[2413:2414]" "vtx[2416]" "vtx[4294:4296]" "vtx[4298:4307]" "vtx[4309:4310]" "vtx[4318:4319]" "vtx[4321]" "vtx[4328:4329]" "vtx[4337]" "vtx[4342:4345]" "vtx[4357:4361]" "vtx[4376]" "vtx[4387]" "vtx[4449]";
-	setAttr ".it[0].itg[2].iti[6000].ipt" -type "pointArray" 47 0 0 0 1 0 0 0 1 0
-		 0.00051779781939842451 0 1 0 -0.00195924894876498 0.00087176674242073204 1 0 -0.0064377696663058259
-		 0.0084110062032394239 1 0 -0.014688814057572497 0.0056062134064998048 1 0 -0.00013425719357229582
-		 5.1241339619298443e-05 1 0 -0.0054177222472908682 0 1 0 -8.9588284394537254e-05 -2.2737367544323206e-13
-		 1 0.00074178935028612614 0.0073155952902652643 -0.00030271860305219889 1 4.6022167225601152e-05
-		 0.00062189746799390377 -1.8781298422254622e-05 1 0 6.7920780111307977e-11 0 1 0 1.5079049120458876e-10
-		 0 1 0 4.3655745685100555e-11 0 1 0 -0.0081454298788230517 0.0072950512130773859 1 0
-		 -0.018199844766058959 0.0054550123168155551 1 0 -0.014854912668852194 0.0066096852242480963
-		 1 0 -0.025625566919003973 -6.5483618527650833e-11 1 0 -0.038748280636170307 -6.5483618527650833e-11
-		 1 0 0.0063198330597060703 0 1 0 0.00049364213919034228 0 1 0 0 0 1 0 1.1641532182693481e-10
-		 0 1 0 -0.012231688769134053 0.0072072044413289404 1 0 -0.035309872975346934 0.021258426573353972
-		 1 0 -0.031742358370763224 0.012183773384020213 1 0.00096503901295363903 -0.019627627574593021
-		 -0.00039382521208608523 1 0 0.0089877252682981634 0 1 0 0.0034940946184462973 0 1 0
-		 -0.034248960762397473 0.0085387515719048679 1 0 -0.0051029887017932651 0.0012722474093607161
-		 1 0 2.1827872842550278e-11 0 1 0.00035543745616450906 0.003929264576015612 -0.00014505133731290698
-		 1 0 -0.02752473519721832 -0.0036568598370649852 1 0 0.0062005187355680391 0 1 0 -0.059101158168380241
-		 0.021258424841676088 1 0 -0.0053513578202450951 0.0023004352719837862 1 -1.8290917068952695e-05
-		 -0.04228750738591236 0.012183773054189828 1 0 -0.046672430135326959 0.012183772761764189
-		 1 0 -0.0022468883089459268 0.0044871981281175977 1 0 -0.02437345524799639 0.0085387515719048679
-		 1 0 -0.033541746850801246 0.021258426724330093 1 0 -0.031742358566068773 0.012183773218614746
-		 1 0 -0.02437345524799639 0.0085387515719048679 1 0 0 0 1 0 -1.6410695025115274e-10
-		 0 1 0 1.3415046851150692e-10 -1.7316778844200797e-09 1 ;
-	setAttr ".it[0].itg[2].iti[6000].ict" -type "componentList" 21 "vtx[0]" "vtx[247]" "vtx[2393]" "vtx[2397]" "vtx[2399]" "vtx[2401:2404]" "vtx[2407:2408]" "vtx[2413:2414]" "vtx[2416]" "vtx[4294:4296]" "vtx[4298:4307]" "vtx[4309:4310]" "vtx[4318:4319]" "vtx[4321]" "vtx[4328:4329]" "vtx[4337]" "vtx[4342:4345]" "vtx[4357:4361]" "vtx[4376]" "vtx[4387]" "vtx[4449]";
+	setAttr ".it[0].itg[2].iti[6000].ict" -type "componentList" 36 "vtx[0]" "vtx[2391]" "vtx[2396]" "vtx[2398]" "vtx[2400]" "vtx[2405:2406]" "vtx[2415]" "vtx[2417:2419]" "vtx[2431]" "vtx[4308]" "vtx[4317]" "vtx[4327]" "vtx[4330:4332]" "vtx[4336]" "vtx[4338:4341]" "vtx[4356]" "vtx[247]" "vtx[2393]" "vtx[2397]" "vtx[2399]" "vtx[2401:2404]" "vtx[2407:2408]" "vtx[2413:2414]" "vtx[2416]" "vtx[4294:4296]" "vtx[4298:4307]" "vtx[4309:4310]" "vtx[4318:4319]" "vtx[4321]" "vtx[4328:4329]" "vtx[4337]" "vtx[4342:4345]" "vtx[4357:4361]" "vtx[4376]" "vtx[4387]" "vtx[4449]";
 	setAttr ".it[0].itg[3].iti[6000].ipt" -type "pointArray" 85 0 0.00051779781939842451
 		 0 1 0 -0.00195924894876498 0.00087176674242073204 1 0 -0.0064377696663058259 0.0084110062032394239
 		 1 0 -0.014688814057572497 0.0056062134064998048 1 0 -0.00013425719357229582 5.1241339619298443e-05
@@ -22728,20 +31253,187 @@ createNode blendShape -n "Blink";
 		 0.012183773218614746 1 0 -0.02437345524799639 0.0085387515719048679 1 0 -1.6410695025115274e-10
 		 0 1 0 1.3415046851150692e-10 -1.7316778844200797e-09 1 ;
 	setAttr ".it[0].itg[4].iti[6000].ict" -type "componentList" 17 "vtx[117]" "vtx[121]" "vtx[123]" "vtx[125:128]" "vtx[131:132]" "vtx[138]" "vtx[2105:2107]" "vtx[2109:2112]" "vtx[2114:2118]" "vtx[2120:2121]" "vtx[2130:2131]" "vtx[2141:2142]" "vtx[2151]" "vtx[2156:2159]" "vtx[2172:2176]" "vtx[2202]" "vtx[2268]";
-	setAttr ".it[0].sti" 2;
+	setAttr ".it[0].itg[5].iti[6000].ipt" -type "pointArray" 118 0 0 0 1 0 -0.015908979124560574
+		 -5.8207660913467407e-10 1 0 0.0006843668175022799 0 1 0 -1.4551915228366852e-10 -5.8207660913467407e-10
+		 1 0 -0.016255092034214158 0.00087176616034412291 1 0 -1.4551915228366852e-10 -5.8207660913467407e-10
+		 1 0 -0.031936177034420865 0.030817223379706604 1 0 4.4881431904286728e-11 -5.8207660913467407e-10
+		 1 0 -0.036847127305857708 0.016627062574334772 1 0 -0.00013425711958703346 5.1240757542689308e-05
+		 1 0 -0.032752915202738819 0.01102084870217368 1 0 -8.9588400809859081e-05 -5.823039828101173e-10
+		 1 -4.9988226237474009e-05 -0.02378117105041655 -0.010352924418839393 1 0 -1.4551915228366852e-10
+		 -5.8207660913467407e-10 1 -0.00074149496805375747 0.0029633090166498732 -0.00029905977589805843
+		 1 -4.6022167225601152e-05 0.00062189746799390377 -1.8781298422254622e-05 1 0 1.5079049120458876e-10
+		 0 1 0 0.00065506128885317594 0 1 0 -0.0074407927837114585 0.012201342717162333 1 0
+		 -0.004345472676504869 0 1 0 -0.017460450518285597 -0.0019839664437313331 1 0 -0.018199844766058959
+		 0.0054550123168155551 1 0 -0.014854912668852194 0.0066096852242480963 1 0 -0.025625566919003973
+		 -6.5483618527650833e-11 1 0.019698584111210948 -0.030267557785734311 -0.013974225330457557
+		 1 3.3917908126568364e-07 0.0014713717825998174 4.2155993469350506e-06 1 0 0.00049364213919034228
+		 0 1 0 0.0020851278285505259 0 1 0 0.0011493657657410949 0 1 9.5269570010714233e-11
+		 -0.016112374066324264 0.0075597903405650868 1 0 -0.024796357517050449 0.021258426340523329
+		 1 0 -0.026477191882519957 0.012183773849681501 1 -0.00096459000653226212 -0.025664267432304655
+		 -0.00038824458715680521 1 0 0.001770044666845827 0 1 0 0.0089877252682981634 0 1 0
+		 0.0034940946184462973 0 1 1.0099006431119051e-07 -1.4003685464558657e-05 1.2551884083222831e-06
+		 1 0 -0.025654818797193002 0.0085387515719048679 1 0 -0.0051029887017932651 0.0012722474020847585
+		 1 0 0.0044984734049648978 0 1 1.6808192171424707e-08 -1.810381659339555e-05 2.0890618657176674e-07
+		 1 -0.00035478002479294446 -0.00026640994775561921 -0.0001368802340948605 1 0.011060504372836011
+		 -0.02752542106917133 -0.0036567983791400138 1 0 -0.020366408450399831 3.7834979593753815e-10
+		 1 0 -8.7311491370201111e-11 -5.8207660913467407e-10 1 0 -1.1718562841434021e-05 0
+		 1 0 0.0062005187355680391 0 1 0 0.00044428083395597895 0 1 0 0.0097554447467587124
+		 0 1 0 0.0019374628057597931 0 1 0 0.0068197872867372666 0 1 0 -0.037822626552190375
+		 0.021258424841676088 1 0 -0.034031869057002506 0.0023004352719837862 1 1.8290917068952695e-05
+		 -0.030440553746733823 0.012183773054189828 1 0 -0.036734703142268454 0.012183772761764189
+		 1 0 -1.4551915228366852e-10 -5.8207660913467407e-10 1 0 -0.019254441786301868 0.015508046601098613
+		 1 0 -0.02437345524799639 -0.0085330682632047683 1 0 -0.030498045311173616 0.021258426695226262
+		 1 0 -0.031625321922026828 0.012183773225890704 1 0 -0.02437345524799639 0.0085387515737238573
+		 1 0 1.8007009614962044e-05 0 1 0 -1.6410695025115274e-10 0 1 0 1.3415046851150692e-10
+		 -1.7316778844200797e-09 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 ;
+	setAttr ".it[0].itg[5].iti[6000].ict" -type "componentList" 30 "vtx[0]" "vtx[115]" "vtx[117]" "vtx[120:132]" "vtx[138:139]" "vtx[141:142]" "vtx[2105:2107]" "vtx[2109:2121]" "vtx[2129:2131]" "vtx[2133]" "vtx[2140:2144]" "vtx[2150:2159]" "vtx[2171:2177]" "vtx[2202]" "vtx[2268]" "vtx[2391]" "vtx[2393]" "vtx[2396:2407]" "vtx[2415]" "vtx[2417:2419]" "vtx[2431]" "vtx[4294]" "vtx[4299:4300]" "vtx[4302:4308]" "vtx[4317:4319]" "vtx[4321]" "vtx[4327:4332]" "vtx[4336]" "vtx[4338:4345]" "vtx[4356:4361]";
+	setAttr ".it[0].itg[6].iti[6000].ipt" -type "pointArray" 72 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 9.5434771196778456e-12 2.1503632208208501e-13
+		 1 0 0 0 1 0 4.7037929107318632e-12 -1.5996648450311568e-12 1 0 0 0 1 0 -3.3140601374270773e-11
+		 -7.0807221197455306e-11 1 0 -3.9968028886505635e-13 -4.3180736764014682e-13 1 0 2.8576249054612646e-05
+		 -2.6120173836102767e-05 1 0 2.7410659126925196e-05 -2.476117379368592e-05 1 -1.3877787807814457e-17
+		 0.0078932017643063013 -0.0050589270478876569 1 0 0 0 1 0 0 0 1 0 0 0 1 -1.3877787807814457e-17
+		 0.0084582713815812838 0.0016409855757412717 1 0 3.096349369746676e-05 1.0799251464327364e-05
+		 1 0 0 0 1 0 0 0 1 -2.7755575615628914e-17 -0.0011341242736992996 0.00096274991200900883
+		 1 -2.7755575615628914e-17 -0.0003221908026769249 0.0030835830368716177 1 -2.7755575615628914e-17
+		 -0.00019620942491371807 0.0049529012938663297 1 -2.7755575615628914e-17 0.0011159680642562897
+		 0.0066923117203687016 1 0 0.00044036142787762245 -0.00039356969923964868 1 -1.3877787807814457e-17
+		 0.0075014854369439554 -0.0062747434604820407 1 0 0 0 1 0 0 0 1 0 0 0 1 0 -1.8715768731691895e-05
+		 -1.5355116784451783e-05 1 0 0.00047034970046189173 -0.00023434621526437216 1 0 0.00014639375911684738
+		 -0.00017311214810075692 1 -1.3877787807814457e-17 0.015125594215315452 -0.00018621697729985509
+		 1 0 0 0 1 0 0.00045045372031404796 0.00026970589262370614 1 -1.3877787807814457e-17
+		 0.0086276886242071527 0.0043608173552400487 1 -1.3877787807814457e-17 0.0068713902158195062
+		 0.0051505833455021272 1 -2.7755575615628914e-17 0.0066731578163534699 0.0076316135534099661
+		 1 -2.7755575615628914e-17 0.0073398633171866123 0.012602664469667138 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 -1.3877787807814457e-17 0.013267417238436163 -0.0068754766974273018
+		 1 -1.3877787807814457e-17 0.0083521805722273079 -0.001579123406405758 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 -1.3877787807814457e-17 0.011967713850038919
+		 -0.0025206663901429366 1 -1.3877787807814457e-17 0.010990657482722099 0.0010242847787492598
+		 1 -1.3877787807814457e-17 0.017107809720257272 -0.0057998677270078153 1 -1.3877787807814457e-17
+		 0.01842287911177154 0.0059339944542591144 1 0 0 0 1 0 3.2818192607919627e-12 8.2900075693004283e-12
+		 1 0 2.4654323174111425e-06 -5.0715269694828757e-05 1 -1.3877787807814457e-17 0.0041172139214320502
+		 -0.0050374246570624726 1 -1.3877787807814457e-17 0.0062329992114906752 -0.0069375636560959769
+		 1 -2.7755575615628914e-17 0.00083767358735453712 -0.0017692401612239284 1 -2.7755575615628914e-17
+		 -0.0022103996065157006 0.0049518344914567941 1 -2.7755575615628914e-17 -0.0012150782155324613
+		 0.0069783231533857432 1 0 0.0080905558598907135 -0.007753587786554994 1 0 0.00015625616865966308
+		 0.0001637010835121161 1 -2.7755575615628914e-17 -0.0068659067324396972 0.0096777119547813012
+		 1 0 0.0086215341116964161 0.00063597238117163446 1 0 -0.0034799423919356087 0.0017502476182220672
+		 1 ;
+	setAttr ".it[0].itg[6].iti[6000].ict" -type "componentList" 21 "vtx[0]" "vtx[121]" "vtx[2105]" "vtx[2115]" "vtx[2177]" "vtx[2391]" "vtx[2393]" "vtx[2396:2407]" "vtx[2415]" "vtx[2417:2419]" "vtx[2431]" "vtx[4294:4300]" "vtx[4302:4308]" "vtx[4315:4319]" "vtx[4321]" "vtx[4327:4332]" "vtx[4336]" "vtx[4338:4345]" "vtx[4356:4366]" "vtx[4368]" "vtx[4372]";
+	setAttr ".it[0].itg[7].iti[6000].ipt" -type "pointArray" 37 0 2.8576249054612646e-05
+		 -2.6120173836102767e-05 1 0 2.7410659126925196e-05 -2.476117379368592e-05 1 1.3877787807814457e-17
+		 0.0078932017643063013 -0.0050589270478876569 1 1.3877787807814457e-17 0.0084582713815812838
+		 0.0016409855757412717 1 0 3.096349369746676e-05 1.0799251464327364e-05 1 2.7755575615628914e-17
+		 -0.0011341242736992996 0.00096274991200900883 1 2.7755575615628914e-17 -0.0003221908026769249
+		 0.0030835830368716177 1 2.7755575615628914e-17 -0.00019620942491371807 0.0049529012938663297
+		 1 2.7755575615628914e-17 0.0011159680642562897 0.0066923117203687016 1 0 0.00044036142787762245
+		 -0.00039356969923964868 1 1.3877787807814457e-17 0.0075014854369439554 -0.0062747434604820407
+		 1 0 -1.8715768731691895e-05 -1.5355116784451783e-05 1 0 0.00047034970046189173 -0.00023434621526437216
+		 1 0 0.00014639375911684738 -0.00017311214810075692 1 1.3877787807814457e-17 0.015125594215315452
+		 -0.00018621697729985509 1 0 0.00045045372031404796 0.00026970589262370614 1 1.3877787807814457e-17
+		 0.0086276886242071527 0.0043608173552400487 1 1.3877787807814457e-17 0.0068713902158195062
+		 0.0051505833455021272 1 2.7755575615628914e-17 0.0066731578163534699 0.0076316135534099661
+		 1 2.7755575615628914e-17 0.0073398633171866123 0.012602664469667138 1 1.3877787807814457e-17
+		 0.013267417238436163 -0.0068754766974273018 1 1.3877787807814457e-17 0.0083521805722273079
+		 -0.001579123406405758 1 1.3877787807814457e-17 0.011967713850038919 -0.0025206663901429366
+		 1 1.3877787807814457e-17 0.010990657482722099 0.0010242847787492598 1 1.3877787807814457e-17
+		 0.017107809720257272 -0.0057998677270078153 1 1.3877787807814457e-17 0.01842287911177154
+		 0.0059339944542591144 1 0 2.4654323174111425e-06 -5.0715269694828757e-05 1 1.3877787807814457e-17
+		 0.0041172139214320502 -0.0050374246570624726 1 1.3877787807814457e-17 0.0062329992114906752
+		 -0.0069375636560959769 1 2.7755575615628914e-17 0.00083767358735453712 -0.0017692401612239284
+		 1 2.7755575615628914e-17 -0.0022103996065157006 0.0049518344914567941 1 2.7755575615628914e-17
+		 -0.0012150782155324613 0.0069783231533857432 1 0 0.0080905558598907135 -0.007753587786554994
+		 1 0 0.00015625616865966308 0.0001637010835121161 1 2.7755575615628914e-17 -0.0068659067324396972
+		 0.0096777119547813012 1 0 0.0086215341116964161 0.00063597238117163446 1 0 -0.0034799423919356087
+		 0.0017502476182220672 1 ;
+	setAttr ".it[0].itg[7].iti[6000].ict" -type "componentList" 10 "vtx[127:129]" "vtx[141:142]" "vtx[2105:2110]" "vtx[2115:2118]" "vtx[2127:2131]" "vtx[2142:2143]" "vtx[2156:2159]" "vtx[2173:2181]" "vtx[2183]" "vtx[2187]";
 	setAttr ".it[0].siw" 1;
 	setAttr ".mlid" 0;
 	setAttr ".mlpr" 0;
-	setAttr -s 5 ".pndr[0:4]"  0 0 0 0 0;
-	setAttr -s 5 ".tgvs[0:4]" yes yes yes yes yes;
-	setAttr -s 5 ".tpvs[0:4]" yes yes yes yes yes;
-	setAttr ".tgdt[0].cid" -type "Int32Array" 5 0 4 3 2 1 ;
-	setAttr -s 4 ".ibig";
-	setAttr ".aal" -type "attributeAlias" {"RightBlink","weight[0]","RightBlink_Copy"
-		,"weight[1]","RightBlink_Copy1","weight[2]","WhyNotBoth","weight[3]","LeftBlink","weight[4]"
-		} ;
+	setAttr -s 7 ".pndr";
+	setAttr ".pndr[0]" 0;
+	setAttr ".pndr[2]" 0;
+	setAttr ".pndr[3]" 0;
+	setAttr ".pndr[4]" 0;
+	setAttr ".pndr[5]" 0;
+	setAttr ".pndr[6]" 0;
+	setAttr ".pndr[7]" 0;
+	setAttr -s 7 ".tgvs";
+	setAttr ".tgvs[0]" yes;
+	setAttr ".tgvs[2]" yes;
+	setAttr ".tgvs[3]" yes;
+	setAttr ".tgvs[4]" yes;
+	setAttr ".tgvs[5]" yes;
+	setAttr ".tgvs[6]" yes;
+	setAttr ".tgvs[7]" yes;
+	setAttr -s 7 ".tpvs";
+	setAttr ".tpvs[0]" yes;
+	setAttr ".tpvs[2]" yes;
+	setAttr ".tpvs[3]" yes;
+	setAttr ".tpvs[4]" yes;
+	setAttr ".tpvs[5]" yes;
+	setAttr ".tpvs[6]" yes;
+	setAttr ".tpvs[7]" yes;
+	setAttr ".tgdt[0].cid" -type "Int32Array" 7 0 4 3 2 5
+		 6 7 ;
+	setAttr ".aal" -type "attributeAlias" {"RightBlink","weight[0]","scrunchRight","weight[2]"
+		,"WhyNotBoth","weight[3]","LeftBlink","weight[4]","scrunchLeft","weight[5]","wideRight"
+		,"weight[6]","wideLeft","weight[7]"} ;
 createNode tweak -n "tweak1";
 	rename -uid "EE1DCD2C-3D40-80F3-8999-D7A7047485C8";
+	setAttr -s 58 ".vl[0].vt";
+	setAttr ".vl[0].vt[9]" -type "float3" 0 -1.8626451e-09 0 ;
+	setAttr ".vl[0].vt[22]" -type "float3" 0 0 9.3132257e-10 ;
+	setAttr ".vl[0].vt[658]" -type "float3" 0 0 -1.8626451e-09 ;
+	setAttr ".vl[0].vt[2296]" -type "float3" 0 -2.3283064e-10 0 ;
+	setAttr ".vl[0].vt[2297]" -type "float3" 0 -3.3032848e-09 0 ;
+	setAttr ".vl[0].vt[2298]" -type "float3" 0 -1.7462298e-10 0 ;
+	setAttr ".vl[0].vt[2299]" -type "float3" 0 2.3283064e-10 0 ;
+	setAttr ".vl[0].vt[2300]" -type "float3" 0 9.3132257e-10 0 ;
+	setAttr ".vl[0].vt[2301]" -type "float3" 0 2.0954758e-09 1.8626451e-09 ;
+	setAttr ".vl[0].vt[2305]" -type "float3" 0 -3.259629e-09 0 ;
+	setAttr ".vl[0].vt[2306]" -type "float3" 0 -3.259629e-09 0 ;
+	setAttr ".vl[0].vt[2307]" -type "float3" 0 -2.7939677e-09 0 ;
+	setAttr ".vl[0].vt[2308]" -type "float3" 0 -6.9849193e-10 0 ;
+	setAttr ".vl[0].vt[2316]" -type "float3" 0 -2.910383e-11 0 ;
+	setAttr ".vl[0].vt[2318]" -type "float3" 0 -1.6298145e-09 -2.3283064e-10 ;
+	setAttr ".vl[0].vt[2319]" -type "float3" 0 2.910383e-11 0 ;
+	setAttr ".vl[0].vt[2320]" -type "float3" 0 -1.6298145e-09 0 ;
+	setAttr ".vl[0].vt[2321]" -type "float3" 0 1.8626451e-09 0 ;
+	setAttr ".vl[0].vt[2325]" -type "float3" 0 1.7462298e-10 0 ;
+	setAttr ".vl[0].vt[2327]" -type "float3" 0 3.4924597e-10 0 ;
+	setAttr ".vl[0].vt[2330]" -type "float3" 0 -2.3283064e-10 0 ;
+	setAttr ".vl[0].vt[2331]" -type "float3" 0 -1.3969839e-08 0 ;
+	setAttr ".vl[0].vt[2460]" -type "float3" 0 2.3283064e-10 0 ;
+	setAttr ".vl[0].vt[2487]" -type "float3" 0 -0.010646651 0 ;
+	setAttr ".vl[0].vt[2490]" -type "float3" 0 -0.010646651 0 ;
+	setAttr ".vl[0].vt[2593]" -type "float3" 0 -0.010646651 0 ;
+	setAttr ".vl[0].vt[2594]" -type "float3" 0 -0.010646651 0 ;
+	setAttr ".vl[0].vt[2607]" -type "float3" 0 -0.010646651 0 ;
+	setAttr ".vl[0].vt[2614]" -type "float3" 0 -0.010646651 0 ;
+	setAttr ".vl[0].vt[2702]" -type "float3" 0 -3.7252903e-09 0 ;
+	setAttr ".vl[0].vt[2703]" -type "float3" 0 -2.3283064e-09 0 ;
+	setAttr ".vl[0].vt[2860]" -type "float3" 0 -2.3283064e-09 0 ;
+	setAttr ".vl[0].vt[2861]" -type "float3" 0 -2.3283064e-09 0 ;
+	setAttr ".vl[0].vt[2862]" -type "float3" 0 -2.7939677e-09 0 ;
+	setAttr ".vl[0].vt[2863]" -type "float3" 0 -4.6566129e-09 0 ;
+	setAttr ".vl[0].vt[2864]" -type "float3" 0 -3.259629e-09 0 ;
+	setAttr ".vl[0].vt[2866]" -type "float3" 0 -9.3132257e-10 0 ;
+	setAttr ".vl[0].vt[2867]" -type "float3" 0 -2.7939677e-09 0 ;
+	setAttr ".vl[0].vt[2874]" -type "float3" 0 -2.3283064e-09 0 ;
+	setAttr ".vl[0].vt[2875]" -type "float3" 0 -1.1641532e-09 0 ;
+	setAttr ".vl[0].vt[2876]" -type "float3" 0 -6.9849193e-10 0 ;
+	setAttr ".vl[0].vt[2877]" -type "float3" 0 -3.7252903e-09 0 ;
+	setAttr ".vl[0].vt[2878]" -type "float3" 0 3.4924597e-10 0 ;
+	setAttr ".vl[0].vt[2879]" -type "float3" 0 -5.0931703e-10 0 ;
+	setAttr ".vl[0].vt[2880]" -type "float3" 0 -4.6566129e-10 0 ;
+	setAttr ".vl[0].vt[2881]" -type "float3" 0 1.8626451e-09 0 ;
+	setAttr ".vl[0].vt[2882]" -type "float3" 0 1.3969839e-09 0 ;
 createNode objectSet -n "blendShape1Set";
 	rename -uid "E8D6D062-5F44-DE45-08C0-ECB549A7D0E1";
 	setAttr ".ihi" 0;
@@ -22764,6 +31456,668 @@ createNode groupParts -n "groupParts2";
 	rename -uid "AA87DB4C-8345-893C-4872-19BFAE82947A";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode blendShape -n "Eyebrows";
+	rename -uid "6BEC32FC-5A4F-D174-6BCD-24937043DB13";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	setAttr -s 9 ".w";
+	setAttr ".w[0]" 1;
+	setAttr ".w[1]" 0.47486034035682678;
+	setAttr ".w[2]" 0.45251396298408508;
+	setAttr ".w[3]" 0;
+	setAttr ".w[5]" 1;
+	setAttr ".w[6]" 1;
+	setAttr ".w[7]" 0;
+	setAttr ".w[8]" 0.0055865924805402756;
+	setAttr ".w[9]" 0;
+	setAttr -s 9 ".it[0].itg";
+	setAttr ".it[0].itg[0].iti[6000].ipt" -type "pointArray" 40 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 9.276845958083868e-11
+		 0.021174388017764285 1 0 9.276845958083868e-11 0.021174388412168017 1 0 9.276845958083868e-11
+		 0.021174387938883536 1 0 9.276845958083868e-11 0.02117438770224131 1 0 9.276845958083868e-11
+		 0.021174387307837605 1 0 9.276845958083868e-11 0.021174388096645024 1 0 9.2768437896795231e-11
+		 0.021174387623360564 1 0 9.2768437896795231e-11 0.021174386676791702 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0.011417512419059108 0 1 0 0.011417512419059108 0 1 0 0 0 1 0 0 0
+		 1 0 0.011417512419059108 0 1 0 0.011417512419059108 0 1 0 0 0 1 0 0 0 1 0 9.276845958083868e-11
+		 0.021174388017764285 1 0 9.276845958083868e-11 0.021174388412168017 1 0 0.011417512511827568
+		 0.021174387938883536 1 0 9.276845958083868e-11 0.02117438770224131 1 0 9.276845958083868e-11
+		 0.021174387307837605 1 0 0.011417512511827568 0.021174388096645024 1 0 0 0 1 0 0
+		 0 1 0 9.2768437896795231e-11 0.021174387623360564 1 0 9.2768437896795231e-11 0.021174386676791702
+		 1 0 0 0 1 ;
+	setAttr ".it[0].itg[0].iti[6000].ict" -type "componentList" 25 "vtx[0]" "vtx[130]" "vtx[222]" "vtx[226]" "vtx[228:229]" "vtx[335:336]" "vtx[343:344]" "vtx[350:353]" "vtx[355]" "vtx[359]" "vtx[2167:2169]" "vtx[2406]" "vtx[2417]" "vtx[2487]" "vtx[2490]" "vtx[2492:2493]" "vtx[2593:2594]" "vtx[2598]" "vtx[2601]" "vtx[2605:2608]" "vtx[2610]" "vtx[2614]" "vtx[4332]" "vtx[4345]" "vtx[4352:4354]";
+	setAttr ".it[0].itg[1].iti[6000].ipt" -type "pointArray" 11 0 0 0 1 0 0.010328149153451704
+		 0 1 0 0.010328149153451704 0 1 0 0.010480745055247098 0 1 0 0.010480745055247098
+		 0 1 0 0.020808894208698803 0 1 0 0.010480745055247098 0 1 0 0.010480745055247098
+		 0 1 0 0.020808894208698803 0 1 0 0.010480742556443347 0 1 0 0.010480742556443347
+		 0 1 ;
+	setAttr ".it[0].itg[1].iti[6000].ict" -type "componentList" 6 "vtx[0]" "vtx[2593:2594]" "vtx[2605:2608]" "vtx[2610]" "vtx[2614]" "vtx[4352:4353]";
+	setAttr ".it[0].itg[2].iti[6000].ipt" -type "pointArray" 10 0 0.010328149153451704
+		 0 1 0 0.010328149153451704 0 1 0 0.010480745055247098 0 1 0 0.010480745055247098
+		 0 1 0 0.020808894208698803 0 1 0 0.010480745055247098 0 1 0 0.010480745055247098
+		 0 1 0 0.020808894208698803 0 1 0 0.010480742556443347 0 1 0 0.010480742556443347
+		 0 1 ;
+	setAttr ".it[0].itg[2].iti[6000].ict" -type "componentList" 5 "vtx[335:336]" "vtx[350:353]" "vtx[355]" "vtx[359]" "vtx[2167:2168]";
+	setAttr ".it[0].itg[3].iti[6000].ipt" -type "pointArray" 50 0 0 0 1 0 0 0 1 0
+		 -8.7311469686157661e-11 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 -5.8207660913467407e-11 0 1 0
+		 0 0 1 0 -5.8207660913467407e-11 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 -5.8207660913467407e-11
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 -5.8207660913467407e-11 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0.010747580581210059 0 1 0 -1.2164488492026615e-11
+		 0 1 0 -0.041816011599621561 0 1 0 -0.027700984187958966 0 1 0 -1.1598899618547875e-10
+		 0 1 0 -0.018860234914882312 0 1 0 0 0 1 0 -0.056715304707388725 0 1 0 -0.038164906238769447
+		 0 1 0 -0.018860234914882312 0 1 0 -0.032975254464631586 0 1 0 -0.032975262617583212
+		 0 1 0 -0.032975262617583212 0 1 0 -0.044917125073887121 0 1 0 -0.032975262617583212
+		 0 1 0 -0.032975262617583212 0 1 0 -0.038164906238769447 0 1 0 7.9580786405131221e-13
+		 0 1 0 -4.3655756093441411e-11 0 1 0 0 0 1 0 -3.3111299211361148e-12 0 1 0 -0.032975254755669821
+		 0 1 0 -0.032975254755669821 0 1 0 -0.032975254464631586 0 1 ;
+	setAttr ".it[0].itg[3].iti[6000].ict" -type "componentList" 31 "vtx[0]" "vtx[124]" "vtx[130]" "vtx[143]" "vtx[221:222]" "vtx[226]" "vtx[228:229]" "vtx[333:336]" "vtx[343:344]" "vtx[346]" "vtx[350:353]" "vtx[355]" "vtx[359]" "vtx[2115]" "vtx[2167:2169]" "vtx[2406]" "vtx[2417]" "vtx[2487]" "vtx[2490]" "vtx[2492:2493]" "vtx[2495]" "vtx[2593:2594]" "vtx[2598]" "vtx[2601]" "vtx[2605:2608]" "vtx[2610]" "vtx[2614]" "vtx[4332]" "vtx[4334:4335]" "vtx[4345]" "vtx[4352:4354]";
+	setAttr ".it[0].itg[5].iti[6000].ipt" -type "pointArray" 39 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0.0081571426562732086
+		 0 1 0 0.0081571426562732086 0 1 0 0 0 1 0 0 0 1 0 0.0081571426562732086 0 1 0 0.0081571426562732086
+		 0 1 0 -0.013302739360369742 0 1 0 -0.013302736188750278 0 1 0 0 0 1 0 -0.013302739360369742
+		 0 1 0 -0.0051455967040965334 0 1 0 0 0 1 0 -0.013302739360369742 0 1 0 -0.0051455967040965334
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 ;
+	setAttr ".it[0].itg[5].iti[6000].ict" -type "componentList" 25 "vtx[0]" "vtx[130]" "vtx[221:222]" "vtx[226]" "vtx[228:229]" "vtx[335:336]" "vtx[343:344]" "vtx[350]" "vtx[352:353]" "vtx[359]" "vtx[2167:2169]" "vtx[2406]" "vtx[2417]" "vtx[2487]" "vtx[2490]" "vtx[2492:2493]" "vtx[2593:2594]" "vtx[2598]" "vtx[2601]" "vtx[2605:2608]" "vtx[2610]" "vtx[2614]" "vtx[4332]" "vtx[4345]" "vtx[4352:4354]";
+	setAttr ".it[0].itg[6].iti[6000].ipt" -type "pointArray" 44 0 0 0 1 0 3.5527136788005009e-14
+		 0 1 0 0 0 1 0 -2.1600499167107046e-12 0 1 0 0 0 1 0 0.013148994350595813 0 1 0 0.013148996730896763
+		 0 1 0 0.0018519894954668506 0 1 0 0 0 1 0 0.013148994350595813 0 1 0 0.013148994350595813
+		 0 1 0 -0.013302739360369742 0 1 0 -0.0061778770259479643 0 1 0 -0.013302736241500959
+		 0 1 0 -0.0061778770259479643 0 1 0 -0.013302739413120435 0 1 0 -0.00015374262947298557
+		 0 1 0 -0.0061778755530276525 0 1 0 -0.013302739413120435 0 1 0 -0.0001537450097739289
+		 0 1 0 -0.0061778756057783313 0 1 0 -0.006177877078698657 0 1 0 -0.0061778756057783313
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 ;
+	setAttr ".it[0].itg[6].iti[6000].ict" -type "componentList" 28 "vtx[0]" "vtx[124]" "vtx[130]" "vtx[143]" "vtx[221:222]" "vtx[226]" "vtx[228:229]" "vtx[335:336]" "vtx[343:344]" "vtx[346]" "vtx[350:353]" "vtx[355]" "vtx[359]" "vtx[2167:2169]" "vtx[2406]" "vtx[2417]" "vtx[2487]" "vtx[2490]" "vtx[2492:2493]" "vtx[2593:2594]" "vtx[2598]" "vtx[2601]" "vtx[2605:2608]" "vtx[2610]" "vtx[2614]" "vtx[4332]" "vtx[4345]" "vtx[4352:4354]";
+	setAttr ".it[0].itg[7].iti[6000].ipt" -type "pointArray" 48 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 -0.0050358432237233393 -0.027900065118055019 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 -0.0050358431689026218 -0.027900078421845952 0 1 -0.0050358430598862469
+		 -0.027900065118055019 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 -0.0050358429191864219
+		 -0.052403571905776047 0 1 -0.0050358428910464567 -0.039295955218582534 0 1 0 -0.00010493945762934942
+		 0 1 0 0 0 1 -0.00053993193882178627 -0.0082517323429343037 0 1 -0.0050358430505062579
+		 -0.042348488206092938 0 1 -0.0050358430505062579 -0.033317666210981756 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 -0.0050358430598862469 -0.0016519495292186548 0 1 -0.0050358429098064329
+		 -0.030892820986840874 0 1 0 0 0 1 -0.0050358429098064329 -0.0016519495292186548 0
+		 1 -0.0050358429285664091 -0.021861998991729692 0 1 0 0 0 1 0 -0.0017813826979251601
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 ;
+	setAttr ".it[0].itg[7].iti[6000].ict" -type "componentList" 30 "vtx[0]" "vtx[124]" "vtx[130]" "vtx[143]" "vtx[221:222]" "vtx[226]" "vtx[228:229]" "vtx[333:336]" "vtx[343:344]" "vtx[346]" "vtx[350:353]" "vtx[355]" "vtx[359]" "vtx[2167:2169]" "vtx[2406]" "vtx[2417]" "vtx[2487]" "vtx[2490]" "vtx[2492:2493]" "vtx[2495]" "vtx[2593:2594]" "vtx[2598]" "vtx[2601]" "vtx[2605:2608]" "vtx[2610]" "vtx[2614]" "vtx[4332]" "vtx[4335]" "vtx[4345]" "vtx[4352:4354]";
+	setAttr ".it[0].itg[8].iti[6000].ipt" -type "pointArray" 14 0.0050358432237233393
+		 -0.027900065118055019 0 1 0.0050358429191864219 -0.052403571905776047 0 1 0.0050358428910464567
+		 -0.039295955218582534 0 1 0 -0.00010493945762934942 0 1 0.00053993193882178627 -0.0082517323429343037
+		 0 1 0.0050358431689026218 -0.027900078421845952 0 1 0.0050358430598862469 -0.027900065118055019
+		 0 1 0.0050358430505062579 -0.042348488206092938 0 1 0.0050358430505062579 -0.033317666210981756
+		 0 1 0.0050358430598862469 -0.0016519495292186548 0 1 0.0050358429098064329 -0.030892820986840874
+		 0 1 0.0050358429098064329 -0.0016519495292186548 0 1 0.0050358429285664091 -0.021861998991729692
+		 0 1 0 -0.0017813826979251601 0 1 ;
+	setAttr ".it[0].itg[8].iti[6000].ict" -type "componentList" 9 "vtx[221:222]" "vtx[226]" "vtx[228]" "vtx[231]" "vtx[333:336]" "vtx[351:352]" "vtx[355]" "vtx[359]" "vtx[2148]";
+	setAttr ".it[0].itg[9].iti[6000].ipt" -type "pointArray" 18 0 0.010747580581210059
+		 0 1 0 -0.041816011599621561 0 1 0 -0.027700984187958966 0 1 0 -1.1598899618547875e-10
+		 0 1 0 -0.018860234914882312 0 1 0 -0.056715304707388725 0 1 0 -0.038164906238769447
+		 0 1 0 -0.018860234914882312 0 1 0 -0.032975254464631586 0 1 0 -0.032975262617583212
+		 0 1 0 -0.032975262617583212 0 1 0 -0.044917125073887121 0 1 0 -0.032975262617583212
+		 0 1 0 -0.032975262617583212 0 1 0 -0.038164906238769447 0 1 0 -0.032975254755669821
+		 0 1 0 -0.032975254755669821 0 1 0 -0.032975254464631586 0 1 ;
+	setAttr ".it[0].itg[9].iti[6000].ict" -type "componentList" 11 "vtx[130]" "vtx[222]" "vtx[226]" "vtx[228:229]" "vtx[335:336]" "vtx[343]" "vtx[346]" "vtx[350:353]" "vtx[355]" "vtx[359]" "vtx[2167:2169]";
+	setAttr ".it[0].siw" 1;
+	setAttr ".mlid" 1;
+	setAttr ".mlpr" 0;
+	setAttr -s 9 ".pndr";
+	setAttr ".pndr[0]" 0;
+	setAttr ".pndr[1]" 0;
+	setAttr ".pndr[2]" 0;
+	setAttr ".pndr[3]" 0;
+	setAttr ".pndr[5]" 0;
+	setAttr ".pndr[6]" 0;
+	setAttr ".pndr[7]" 0;
+	setAttr ".pndr[8]" 0;
+	setAttr ".pndr[9]" 0;
+	setAttr -s 9 ".tgvs";
+	setAttr ".tgvs[0]" yes;
+	setAttr ".tgvs[1]" yes;
+	setAttr ".tgvs[2]" yes;
+	setAttr ".tgvs[3]" yes;
+	setAttr ".tgvs[5]" yes;
+	setAttr ".tgvs[6]" yes;
+	setAttr ".tgvs[7]" yes;
+	setAttr ".tgvs[8]" yes;
+	setAttr ".tgvs[9]" yes;
+	setAttr -s 9 ".tpvs";
+	setAttr ".tpvs[0]" yes;
+	setAttr ".tpvs[1]" yes;
+	setAttr ".tpvs[2]" yes;
+	setAttr ".tpvs[3]" yes;
+	setAttr ".tpvs[5]" yes;
+	setAttr ".tpvs[6]" yes;
+	setAttr ".tpvs[7]" yes;
+	setAttr ".tpvs[8]" yes;
+	setAttr ".tpvs[9]" yes;
+	setAttr ".tgdt[0].cid" -type "Int32Array" 9 0 1 2 3 9
+		 5 6 7 8 ;
+	setAttr ".aal" -type "attributeAlias" {"EyebrowsAppear","weight[0]","rightUp","weight[1]"
+		,"leftUp","weight[2]","rightDown","weight[3]","sadRight","weight[5]","sadLeft","weight[6]"
+		,"angryRight","weight[7]","angryLeft","weight[8]","leftDown","weight[9]"} ;
+createNode objectSet -n "blendShape2Set";
+	rename -uid "05592CD1-6E49-5EC4-6920-BA9CA66A393D";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "blendShape2GroupId";
+	rename -uid "E7797AAD-DB4E-5483-05AF-DE95054222FF";
+	setAttr ".ihi" 0;
+createNode groupParts -n "blendShape2GroupParts";
+	rename -uid "B84B78CE-864D-32CD-8AE5-21932E29B88E";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode blendShape -n "Mouth";
+	rename -uid "E16E0433-CA4D-DD23-F585-4295EC291F2E";
+	addAttr -ci true -h true -sn "aal" -ln "attributeAliasList" -dt "attributeAlias";
+	setAttr -s 10 ".w";
+	setAttr ".w[0]" 0;
+	setAttr ".w[5]" 0;
+	setAttr ".w[6]" 0;
+	setAttr ".w[7]" 0;
+	setAttr ".w[8]" 0;
+	setAttr ".w[9]" 0;
+	setAttr ".w[10]" 0;
+	setAttr ".w[11]" 0;
+	setAttr ".w[12]" 0;
+	setAttr ".w[13]" 1;
+	setAttr -s 10 ".it[0].itg";
+	setAttr ".it[0].itg[0].iti[6000].ipt" -type "pointArray" 139 0 0 0 1 0 -0.0024216633333389304
+		 0 1 0 -0.0024826053522937208 0 1 0 0.0093807258090237156 0 1 0 -0.0024328881151007842
+		 0 1 0 0.013377162382987851 0 1 0 0.015754725089042111 0 1 0 0.01620376579297278 0
+		 1 0 0.01622424637776021 0 1 0 0.016212451619637872 0 1 0 0.01622424637776021 0 1 0
+		 -0.0024826053522937208 0 1 0 -0.0024826059441931041 0 1 0 0.0042795131193762437 0
+		 1 0 -0.0024826053522937208 0 1 0 -0.0024826059441931041 0 1 0 0.01299192914364593
+		 0 1 0 0.01622424671245426 0 1 0 0.01622424671245426 0 1 0 0.016224242844293323 0
+		 1 0 -0.0023407188214954466 0 1 0 -0.0023082513763434953 0 1 0 -0.00052717318494452847
+		 0 1 0 0.00033210514669974851 0 1 0 0.012644227613860082 0 1 0 0.013377162382987851
+		 0 1 0 0.013377159193623811 0 1 0 0.013377156004261277 0 1 0 0.013377159193623811
+		 0 1 0 0.013856131270181038 0 1 0 0.013377159193623811 0 1 0 0.01622424637776021 0
+		 1 0 0.016224242509599352 0 1 0 0.014989454059683478 0 1 0 0.01622424671245426 0 1 0
+		 0.00069501006620478712 0 1 0 -0.0013579163555115237 0 1 0 -0.0024826059441931041
+		 0 1 0 -0.0018111765846478001 0 1 0 -0.0024826059441931041 0 1 0 -0.0024826053522937208
+		 0 1 0 -0.0024826053522937208 0 1 0 -0.0024826053522937208 0 1 0 -0.0024826053522937208
+		 0 1 0 -0.0024826059441931041 0 1 0 -0.0024826053522937208 0 1 0 -0.0024826053522937208
+		 0 1 0 -0.0024826059441931041 0 1 0 0.012600111755965315 0 1 0 0.012396987038506904
+		 0 1 0 0.01622424671245426 0 1 0 0.016224250580617019 0 1 0 0.016224242844293323 0
+		 1 0 0.016224242844293323 0 1 0 0.016224250580617019 0 1 0 -0.0024826047603946229
+		 0 1 0 -0.0024826059441931041 0 1 0 -0.0024826047603946229 0 1 0 -0.0024826059441931041
+		 0 1 0 -0.0024826059441931041 0 1 0 -0.0010855611991140712 0 1 0 0.00023512129913659175
+		 0 1 0 -0.0020838927649178274 0 1 0 0.010327427416516865 0 1 0 0.013377159193623811
+		 0 1 0 0.013377159193623811 0 1 0 0.015893235828500437 0 1 0 0.015191693657668979
+		 0 1 0 0.016224250245922889 0 1 0 0.016224242509599352 0 1 0 0.016224250245922889
+		 0 1 0 -0.0022195329265835007 0 1 0 -0.0024826047603946229 0 1 0 -0.0024826059441931041
+		 0 1 0 -0.0024826053522937208 0 1 0 0.0093807280455635873 0 1 0 -0.0024360368918210362
+		 0 1 0 0.013377156004261277 0 1 0 0.015754732601482239 0 1 0 0.01622424637776021 0
+		 1 0 0.01622424637776021 0 1 0 -0.0024826053522937208 0 1 0 0.0042814352869950641
+		 0 1 0 -0.0024826053522937208 0 1 0 -0.0024826053522937208 0 1 0 0.01299192914364593
+		 0 1 0 0.016224242844293323 0 1 0 0.01622424671245426 0 1 0 -0.0023407182634247264
+		 0 1 0 -0.0023082513763434953 0 1 0 -0.00052834857552852554 0 1 0 0.0003321052258797863
+		 0 1 0 0.012642967512631387 0 1 0 0.013377156004261277 0 1 0 0.013377159193623811
+		 0 1 0 0.013377159193623811 0 1 0 0.013377156004261277 0 1 0 0.013856131297465879
+		 0 1 0 0.013377162382987851 0 1 0 0.016224242509599352 0 1 0 0.016224242509599352
+		 0 1 0 0.01504499254927083 0 1 0 0.01622424671245426 0 1 0 0.00069221187108877401
+		 0 1 0 -0.0014119979217306344 0 1 0 -0.0024826059441931041 0 1 0 7.9453381264564461e-05
+		 0 1 0 -0.0020054490459764374 0 1 0 -0.0024826047603946229 0 1 0 -0.0024826059441931041
+		 0 1 0 -0.0024826053522937208 0 1 0 -0.0024826047603946229 0 1 0 -0.0024826053522937208
+		 0 1 0 -0.0024826047603946229 0 1 0 -0.0024826053522937208 0 1 0 -0.0024826047603946229
+		 0 1 0 -0.0024826047603946229 0 1 0 0.012600111755965315 0 1 0 0.012394911596986146
+		 0 1 0 0.016224250580617019 0 1 0 0.016224250580617019 0 1 0 0.01622424671245426 0
+		 1 0 0.016224250580617019 0 1 0 -0.0024826047603946229 0 1 0 -0.0024826059441931041
+		 0 1 0 -0.0024826059441931041 0 1 0 -0.0024826053522937208 0 1 0 -0.0010901397645734321
+		 0 1 0 0.00023430183335067324 0 1 0 -0.0020838927649178274 0 1 0 0.010327432341019177
+		 0 1 0 0.013377159193623811 0 1 0 0.013377159193623811 0 1 0 0.015892645812686779
+		 0 1 0 0.015196495458521114 0 1 0 0.01622424637776021 0 1 0 0.01622424637776021 0
+		 1 0 -0.0024826047603946229 0 1 0 -0.0024826053522937208 0 1 ;
+	setAttr ".it[0].itg[0].iti[6000].ict" -type "componentList" 28 "vtx[0:2]" "vtx[4:11]" "vtx[13:14]" "vtx[18:24]" "vtx[33]" "vtx[35:36]" "vtx[39:40]" "vtx[42:46]" "vtx[48:49]" "vtx[189:191]" "vtx[458:460]" "vtx[466:467]" "vtx[474:475]" "vtx[630:661]" "vtx[2294]" "vtx[2296:2301]" "vtx[2303]" "vtx[2305:2310]" "vtx[2318]" "vtx[2320:2321]" "vtx[2324:2325]" "vtx[2327:2331]" "vtx[2333:2334]" "vtx[2459:2461]" "vtx[2701:2703]" "vtx[2708:2710]" "vtx[2716:2717]" "vtx[2859:2886]";
+	setAttr ".it[0].itg[5].iti[6000].ipt" -type "pointArray" 211 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 -0.0034896860121307327 0 1 0 0 0 1 0 -0.0077499736082555469 0 1 0 -0.013867984504682752
+		 0 1 0.015609338677234684 -0.022164637445512048 0 1 0.015609338365817856 -0.02216463216105069
+		 0 1 0.015609338310167142 -0.027586527393710401 0 1 0.015609339229653218 -0.02758652081656976
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0.00074652063862092174 0 1 0 0 0 1 0 0 0 1 0 -0.0016425824254889742
+		 0 1 0.015609339115917062 -0.021018015988829575 0 1 0.015609339287802532 -0.021018016250764049
+		 0 1 0 -0.010378299324557787 0 1 0.015609339113354579 -0.021018016250764049 0 1 0
+		 7.5763914115789532e-06 0 1 0.01560933999011648 -0.021018016250764049 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 -0.0089115724749806256 0 1 0 0.0029936577429339195
+		 0 1 0 -0.0034896868441369102 0 1 0 -0.008911574599665073 0 1 0 -0.013171857207636707
+		 0 1 0 -0.011937719413197101 0 1 0 -0.0079470789840476504 0 1 0 -0.00013068116025975401
+		 0 1 0 -0.013171860348052178 0 1 0 -0.015102128809417081 0 1 0 -0.012759055733561777
+		 0 1 0 -0.013585551010531912 0 1 0 -0.012438931861197489 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 -0.0042602837169255243 0 1 0 -0.0084480334010663682 0 1 0
+		 -0.010378304273317727 0 1 0 -0.0061905527338092228 0 1 0.015609339491325156 -0.021018011239679658
+		 0 1 0.015609339070706186 -0.021018020999916263 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0.0034860270279704012 0 1 0 0.0030763954665268215
+		 0 1 0 -8.6686731009422147e-05 0 1 0 -0.0030530812340814365 0 1 0 -0.004956414393104105
+		 0 1 0 -0.004673974286181372 0 1 0.015609339462250505 -0.013253054401611215 0 1 0.015609339944140306
+		 -0.013253060459226982 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 -0.008911577073482892 0 1 0 -0.0089115749487973517
+		 0 1 0 -0.008911577073482892 0 1 0 -0.0089115728241128175 0 1 0 -0.0089115749487973517
+		 0 1 0 -0.015102125557922043 0 1 0 -0.01510212915854936 0 1 0.015609338284726814 -0.029929591595646343
+		 0 1 0.015609339124257568 -0.029929591595646343 0 1 0 0 0 1 -0.010426956786777131
+		 0.001872338908052518 0 1 0 0 0 1 -0.0027528969534034802 0.0054137800726130423 0 1 0.015609338510913839
+		 -0.026773332153055319 0 1 0.015609338473712093 -0.02216463216105069 0 1 0.01560933825565216
+		 -0.02758652081656976 0 1 0 0 0 1 0 0 0 1 -0.010515723529687278 0.0017287475161101829
+		 0 1 -0.010426956126438642 0 0 1 -0.010426957798894954 0 0 1 -0.0027528967380413419
+		 -0.0014995662509320611 0 1 0.015609339345951856 -0.02101801097774525 0 1 0.006448480737420343
+		 -0.0026785351045361949 0 1 0.015609339549474481 -0.021018011239679658 0 1 0.0098909037448694347
+		 -0.002678535366470669 0 1 -0.010426957241481769 0 0 1 0 0 0 1 0 0 0 1 -0.010426957721208064
+		 0 0 1 0 0 0 1 -0.010426957643521174 0 0 1 -0.010426957449303951 0 0 1 -0.010426956905495761
+		 0 0 1 -0.010426957282597628 0 0 1 -0.010426957604677722 0 0 1 -0.010426957255086732
+		 0 0 1 -0.01042695721863782 0 0 1 -0.010495256680894407 0.0044903316887996425 0 1 -0.010426957293930172
+		 0 0 1 -0.010426956126438642 0.0022790995847835542 0 1 -0.010426956903307461 0 0 1 -0.0027528968768883019
+		 -0.0021981982717989013 0 1 0.0045779088854282605 0.0021186396489714064 0 1 0.002880990754923222
+		 -0.0019644474051219163 0 1 0.010732509192493661 -0.0042727098874568124 0 1 0.00014442750960781702
+		 -0.0026947840491825218 0 1 0.022924292186862212 -0.032195206681394403 0 1 0 0 0 1 0.0019313667251678948
+		 -0.002265623506900738 0 1 0.0019313667179729922 -0.0022656229667341347 0 1 0.015609339869295767
+		 -0.027586514239432213 0 1 0.016352625903463001 -0.0045130222010385523 0 1 0.015609338386488113
+		 -0.0033664060288174369 0 1 0.015609339782071779 -0.0099844153849630857 0 1 -0.010426957915425293
+		 0 0 1 -0.010426956905495761 0 0 1 -0.01042695682780888 0 0 1 -0.010426957138556407
+		 0 0 1 -0.010426957837738402 0 0 1 -0.01042695589337804 0 0 1 -0.010426957058681225
+		 0 0 1 -0.010426957915425293 0 0 1 -0.010426957837738402 0 0 1 -0.010426957449303951
+		 0 0 1 -0.010426957060869518 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 -0.010426956672435123 0 0 1 -0.01042695682562057
+		 0 0 1 -0.010426957060869518 0 0 1 0 0 0 1 -0.010426957876581849 0 0 1 -0.010426957022026076
+		 0 0 1 -0.010426957526990834 0 0 1 -0.010426957449303951 0 0 1 -0.010909214084437345
+		 0 0 1 -0.01291943204826387 0.0027899860718036962 0 1 -0.0027528968816161034 -0.0021981976895000714
+		 0 1 0.0030045740265955954 -0.0022656240470676093 0 1 0.016875437744625434 -0.0026785357431488607
+		 0 1 0.015609338677234684 -0.0033664060288174369 0 1 0.015609339316877203 -0.021018020999916263
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 -0.010426957721208064 0 0 1 -0.010204107597956313
+		 -6.3834197590040276e-05 0 1 -0.010426956437186163 0.0044255775412249026 0 1 -0.010067354362778988
+		 0.0066936622181401617 0 1 -0.0027528968303394004 0.0044690152005273376 0 1 0.0028809908193183804
+		 0.0031562643281215427 0 1 0.0064484810256898875 0.0027433528289318673 0 1 0.0051823819257225808
+		 0.0043985526605609948 0 1 0.015609339665773129 -0.013253057299451143 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 -0.010426957604677722 0 0 1 0.015609339200578555
+		 -0.029929598731418726 0 1 -0.010426957604677722 0 0 1 -0.010426957837738402 0 0 1 -0.010426957837738402
+		 0 0 1 -0.010426957293930172 0 0 1 -0.0078515194657922966 0 0 1 0.0051823819257225808
+		 -0.029929591595646343 0 1 0.015609339723922446 -0.012277981635634205 0 1 -0.010426956905495761
+		 0 0 1 -0.010426956983182637 0 0 1 -0.01042695682780888 0 0 1 -0.010426957022026076
+		 0 0 1 -0.010426957604677722 0 0 1 -0.010426957915425293 0 0 1 -0.010426957798894954
+		 0 0 1 ;
+	setAttr ".it[0].itg[5].iti[6000].ict" -type "componentList" 42 "vtx[0:2]" "vtx[4:11]" "vtx[13:15]" "vtx[18:27]" "vtx[30]" "vtx[32:33]" "vtx[35:36]" "vtx[39:40]" "vtx[42:49]" "vtx[189:191]" "vtx[458:460]" "vtx[465:467]" "vtx[474:475]" "vtx[503]" "vtx[630:661]" "vtx[2225]" "vtx[2230:2235]" "vtx[2290:2291]" "vtx[2294]" "vtx[2296:2303]" "vtx[2305:2334]" "vtx[2440]" "vtx[2442]" "vtx[2446]" "vtx[2459:2462]" "vtx[2655]" "vtx[2657]" "vtx[2660:2661]" "vtx[2667]" "vtx[2669:2672]" "vtx[2678:2679]" "vtx[2701:2704]" "vtx[2708:2711]" "vtx[2716:2718]" "vtx[2757:2759]" "vtx[2859:2888]" "vtx[2902:2903]" "vtx[4169]" "vtx[4409]" "vtx[4413:4419]" "vtx[4428:4431]" "vtx[4442:4444]";
+	setAttr ".it[0].itg[6].iti[6000].ipt" -type "pointArray" 139 0.010426956786777131
+		 0.001872338908052518 0 1 0.0027528969534034802 0.0054137800726130423 0 1 -0.015609338510913839
+		 -0.026773332153055319 0 1 -0.015609338473712093 -0.02216463216105069 0 1 -0.015609338365817856
+		 -0.02216463216105069 0 1 -0.015609338310167142 -0.027586527393710401 0 1 -0.01560933825565216
+		 -0.02758652081656976 0 1 0.010515723529687278 0.0017287475161101829 0 1 0.010426956126438642
+		 0 0 1 0.010426957798894954 0 0 1 0.0027528967380413419 -0.0014995662509320611 0 1 -0.015609339115917062
+		 -0.021018015988829575 0 1 -0.015609339345951856 -0.02101801097774525 0 1 -0.006448480737420343
+		 -0.0026785351045361949 0 1 -0.015609339549474481 -0.021018011239679658 0 1 -0.0098909037448694347
+		 -0.002678535366470669 0 1 -0.01560933999011648 -0.021018016250764049 0 1 0.010426957241481769
+		 0 0 1 0.010426957721208064 0 0 1 0.010426957643521174 0 0 1 0.010426957449303951
+		 0 0 1 0.010426956905495761 0 0 1 0.010426957282597628 0 0 1 0.010426957604677722
+		 0 0 1 0.010426957255086732 0 0 1 0.01042695721863782 0 0 1 0.010495256680894407 0.0044903316887996425
+		 0 1 0.010426957293930172 0 0 1 0.010426956126438642 0.0022790995847835542 0 1 0.010426956903307461
+		 0 0 1 0.0027528968768883019 -0.0021981982717989013 0 1 -0.0045779088854282605 0.0021186396489714064
+		 0 1 -0.002880990754923222 -0.0019644474051219163 0 1 -0.010732509192493661 -0.0042727098874568124
+		 0 1 -0.00014442750960781702 -0.0026947840491825218 0 1 -0.022924292186862212 -0.032195206681394403
+		 0 1 -0.0019313667251678948 -0.002265623506900738 0 1 -0.0019313667179729922 -0.0022656229667341347
+		 0 1 -0.015609339869295767 -0.027586514239432213 0 1 -0.016352625903463001 -0.0045130222010385523
+		 0 1 -0.015609338386488113 -0.0033664060288174369 0 1 -0.015609339782071779 -0.0099844153849630857
+		 0 1 0.010426957915425293 0 0 1 0.010426956905495761 0 0 1 0.01042695682780888 0 0
+		 1 0.010426957138556407 0 0 1 0.010426957837738402 0 0 1 0.01042695589337804 0 0 1 0.010426957058681225
+		 0 0 1 0.010426957915425293 0 0 1 0.010426957837738402 0 0 1 0.010426957449303951
+		 0 0 1 0.010426957060869518 0 0 1 0.010426956672435123 0 0 1 0.01042695682562057 0
+		 0 1 0.010426957060869518 0 0 1 0.010426957876581849 0 0 1 0.010426957022026076 0
+		 0 1 0.010426957526990834 0 0 1 0.010426957449303951 0 0 1 0.010909214084437345 0
+		 0 1 0.01291943204826387 0.0027899860718036962 0 1 0.0027528968816161034 -0.0021981976895000714
+		 0 1 -0.0030045740265955954 -0.0022656240470676093 0 1 -0.016875437744625434 -0.0026785357431488607
+		 0 1 -0.015609338677234684 -0.0033664060288174369 0 1 -0.015609339316877203 -0.021018020999916263
+		 0 1 -0.015609339070706186 -0.021018020999916263 0 1 0.010426957721208064 0 0 1 0.010204107597956313
+		 -6.3834197590040276e-05 0 1 0.010426956437186163 0.0044255775412249026 0 1 0.010067354362778988
+		 0.0066936622181401617 0 1 0.0027528968303394004 0.0044690152005273376 0 1 -0.0028809908193183804
+		 0.0031562643281215427 0 1 -0.0064484810256898875 0.0027433528289318673 0 1 -0.0051823819257225808
+		 0.0043985526605609948 0 1 -0.015609339665773129 -0.013253057299451143 0 1 -0.015609339944140306
+		 -0.013253060459226982 0 1 0.010426957604677722 0 0 1 -0.015609339200578555 -0.029929598731418726
+		 0 1 0.010426957604677722 0 0 1 0.010426957837738402 0 0 1 0.010426957837738402 0
+		 0 1 0.010426957293930172 0 0 1 0.0078515194657922966 0 0 1 -0.0051823819257225808
+		 -0.029929591595646343 0 1 -0.015609339723922446 -0.012277981635634205 0 1 0.010426956905495761
+		 0 0 1 0.010426956983182637 0 0 1 0.01042695682780888 0 0 1 0.010426957022026076 0
+		 0 1 0.010426957604677722 0 0 1 0.010426957915425293 0 0 1 0.010426957798894954 0
+		 0 1 -0.015609338284726814 -0.029929591595646343 0 1 -0.015609339124257568 -0.029929591595646343
+		 0 1 0 -0.0034896860121307327 0 1 0 -0.0077499736082555469 0 1 0 -0.013867984504682752
+		 0 1 -0.015609338677234684 -0.022164637445512048 0 1 -0.015609339229653218 -0.02758652081656976
+		 0 1 0 0.00074652063862092174 0 1 0 -0.0016425824254889742 0 1 -0.015609339287802532
+		 -0.021018016250764049 0 1 0 -0.010378299324557787 0 1 -0.015609339113354579 -0.021018016250764049
+		 0 1 0 7.5763914115789532e-06 0 1 0 -0.0089115724749806256 0 1 0 0.0029936577429339195
+		 0 1 0 -0.0034896868441369102 0 1 0 -0.008911574599665073 0 1 0 -0.013171857207636707
+		 0 1 0 -0.011937719413197101 0 1 0 -0.0079470789840476504 0 1 0 -0.00013068116025975401
+		 0 1 0 -0.013171860348052178 0 1 0 -0.015102128809417081 0 1 0 -0.012759055733561777
+		 0 1 0 -0.013585551010531912 0 1 0 -0.012438931861197489 0 1 0 -0.0042602837169255243
+		 0 1 0 -0.0084480334010663682 0 1 0 -0.010378304273317727 0 1 0 -0.0061905527338092228
+		 0 1 -0.015609339491325156 -0.021018011239679658 0 1 0 0.0034860270279704012 0 1 0
+		 0.0030763954665268215 0 1 0 -8.6686731009422147e-05 0 1 0 -0.0030530812340814365
+		 0 1 0 -0.004956414393104105 0 1 0 -0.004673974286181372 0 1 -0.015609339462250505
+		 -0.013253054401611215 0 1 0 -0.008911577073482892 0 1 0 -0.0089115749487973517 0
+		 1 0 -0.008911577073482892 0 1 0 -0.0089115728241128175 0 1 0 -0.0089115749487973517
+		 0 1 0 -0.015102125557922043 0 1 0 -0.01510212915854936 0 1 ;
+	setAttr ".it[0].itg[6].iti[6000].ict" -type "componentList" 34 "vtx[4]" "vtx[6:11]" "vtx[18:28]" "vtx[31]" "vtx[33:49]" "vtx[168]" "vtx[173]" "vtx[189:192]" "vtx[403]" "vtx[405]" "vtx[410:411]" "vtx[418]" "vtx[421:424]" "vtx[430:431]" "vtx[519:521]" "vtx[631:642]" "vtx[649:658]" "vtx[1975]" "vtx[2225]" "vtx[2229:2235]" "vtx[2244:2247]" "vtx[2260:2262]" "vtx[2290:2291]" "vtx[2296]" "vtx[2298:2301]" "vtx[2305]" "vtx[2308:2312]" "vtx[2324:2325]" "vtx[2327:2334]" "vtx[2459:2461]" "vtx[2866:2870]" "vtx[2878:2884]" "vtx[4409]" "vtx[4414:4419]";
+	setAttr ".it[0].itg[7].iti[6000].ipt" -type "pointArray" 223 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0.0089726372100200815 -1.7553247744217515e-10 -0.014322057967863112 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0.0081755079052675921 0 -0.014322057133578935 1 -6.4028430127316405e-10
+		 0 0 1 0 0 0 1 0 0 0 1 0.0081755069604219112 0 -0.014322058414070684 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0.008972637443999839 -1.7553243407408825e-10 -0.014322057327617262
+		 1 0.0089726368705669302 -1.7553243407408825e-10 -0.014322057967863112 1 0.0089726373102971095
+		 -1.7553243407408825e-10 -0.01432205839469371 1 0.0089726363691818092 -1.7553243407408825e-10
+		 -0.014322057541032537 1 0.0089726371097430657 -1.755325173408151e-10 -0.014322057541032537
+		 1 0.0089726367368642493 -1.7553243407408825e-10 -0.014322058821524325 1 0.0089726376445539366
+		 -1.7553247744217515e-10 -0.014322057541032537 1 0.0089726373385264572 -1.7553243407408825e-10
+		 -0.014322058608109015 1 -6.4028424576201282e-10 0 0 1 -6.4028424923145977e-10 0 0
+		 1 -6.4028428392592929e-10 0 0 1 -6.4028426310924758e-10 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0.0081755076616184599 0 -0.014322058200655376 1 0.0081755076007061847
+		 0 -0.014322058200655376 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0.0089726372434457465 -1.755325173408151e-10
+		 -0.014322057967863112 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0.0089726376111282473 -1.7553243407408825e-10
+		 -0.01432205839469371 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 ;
+	setAttr ".it[0].itg[7].iti[6000].ict" -type "componentList" 48 "vtx[0:2]" "vtx[4:11]" "vtx[13:15]" "vtx[18:27]" "vtx[30]" "vtx[32:33]" "vtx[35:36]" "vtx[39:40]" "vtx[42:49]" "vtx[189:191]" "vtx[458:460]" "vtx[465:467]" "vtx[474:475]" "vtx[503]" "vtx[630:661]" "vtx[2225]" "vtx[2230:2235]" "vtx[2290:2291]" "vtx[2294]" "vtx[2296:2303]" "vtx[2305:2334]" "vtx[2338]" "vtx[2340]" "vtx[2345:2350]" "vtx[2357:2358]" "vtx[2384]" "vtx[2390]" "vtx[2440]" "vtx[2442]" "vtx[2446]" "vtx[2459:2462]" "vtx[2655]" "vtx[2657]" "vtx[2660:2661]" "vtx[2667]" "vtx[2669:2672]" "vtx[2678:2679]" "vtx[2701:2704]" "vtx[2708:2711]" "vtx[2716:2718]" "vtx[2757:2759]" "vtx[2859:2888]" "vtx[2902:2903]" "vtx[4169]" "vtx[4409]" "vtx[4413:4419]" "vtx[4428:4431]" "vtx[4442:4444]";
+	setAttr ".it[0].itg[8].iti[6000].ipt" -type "pointArray" 20 -0.0089726372100200815
+		 -1.7553247744217515e-10 -0.014322057967863112 1 -0.0081755079052675921 0 -0.014322057133578935
+		 1 6.4028430127316405e-10 0 0 1 -0.0081755069604219112 0 -0.014322058414070684 1 -0.008972637443999839
+		 -1.7553243407408825e-10 -0.014322057327617262 1 -0.0089726368705669302 -1.7553243407408825e-10
+		 -0.014322057967863112 1 -0.0089726373102971095 -1.7553243407408825e-10 -0.01432205839469371
+		 1 -0.0089726363691818092 -1.7553243407408825e-10 -0.014322057541032537 1 -0.0089726371097430657
+		 -1.755325173408151e-10 -0.014322057541032537 1 -0.0089726367368642493 -1.7553243407408825e-10
+		 -0.014322058821524325 1 -0.0089726376445539366 -1.7553247744217515e-10 -0.014322057541032537
+		 1 -0.0089726373385264572 -1.7553243407408825e-10 -0.014322058608109015 1 6.4028424576201282e-10
+		 0 0 1 6.4028424923145977e-10 0 0 1 6.4028428392592929e-10 0 0 1 6.4028426310924758e-10
+		 0 0 1 -0.0081755076616184599 0 -0.014322058200655376 1 -0.0081755076007061847 0 -0.014322058200655376
+		 1 -0.0089726372434457465 -1.755325173408151e-10 -0.014322057967863112 1 -0.0089726376111282473
+		 -1.7553243407408825e-10 -0.01432205839469371 1 ;
+	setAttr ".it[0].itg[8].iti[6000].ict" -type "componentList" 12 "vtx[24]" "vtx[30:31]" "vtx[34]" "vtx[53]" "vtx[55]" "vtx[62:67]" "vtx[76:77]" "vtx[108]" "vtx[114]" "vtx[633:634]" "vtx[639]" "vtx[655]";
+	setAttr ".it[0].itg[9].iti[6000].ipt" -type "pointArray" 229 0 0 0 1 0 0.0061128331544750836
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0.0076509484366854138 0 1 0 0.0076509466125571635 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0.0046011159802219481 0 1 0 0.0046011159802219481 0 1 0 0.0046011159802219481 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0.0076509447884297753 0 1 0 0.0046011170772137441 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0.0070579915204689314 0 1 0 0.004601114883230676
+		 0 1 0 0 0 1 0 -1.7826100665030431e-10 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 -1.7826092164885399e-10 0 1 0 0 0 1 0 -1.7826096154749393e-10 0 1 0 -1.7826096154749393e-10
+		 0 1 0 0.010690764018917776 0.011788315620960714 1 0 0.0015017662739970608 0 1 0 0
+		 0 1 0 0.017445104150581869 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0.010493197034870616
+		 0 1 0 0.015177073490320936 0 1 0 0 0 1 0 0 0 1 0 0.017445104150581869 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 2.1634610075649263e-10 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0.0059880775311181413 0 1 0
+		 0.013492824030294059 0.015000785933807492 1 0 0.016277945542307857 0 1 0 0.010493197057210087
+		 0 1 0 0 0 1 0 0.0085054106102120386 0 1 0 0.009788780825026459 0 1 0 1.5188561519607902e-10
+		 0 1 0 0.0079731676224746948 0 1 -0.0088119100722514818 0.0087159076239338162 0 1 -0.0088119098342562888
+		 0.0036110023457096001 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0.015177070023711102 0 1 0 0.01627794166134322
+		 0 1 0 0.017445099991345928 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 -0.0088119094485399618 0.0087159055458999966 0 1 0 0.0097887856445676557
+		 0 1 0.0023932954664172773 0.010690766567795161 0.0081654939672870623 1 0 0.01627794166134322
+		 -5.2386892740452495e-10 1 0 0.017445108309819816 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 -0.0088119093951962157 0.007154864404157653
+		 0 1 0 0.0040761076137982855 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0.005784746770871152
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 ;
+	setAttr ".it[0].itg[9].iti[6000].ict" -type "componentList" 50 "vtx[0:2]" "vtx[4:11]" "vtx[13:15]" "vtx[18:27]" "vtx[30]" "vtx[32:33]" "vtx[35:36]" "vtx[39:40]" "vtx[42:49]" "vtx[189:191]" "vtx[458:460]" "vtx[465:467]" "vtx[474:476]" "vtx[503]" "vtx[630:661]" "vtx[2225]" "vtx[2230:2235]" "vtx[2239]" "vtx[2290:2292]" "vtx[2294:2303]" "vtx[2305:2334]" "vtx[2338]" "vtx[2340]" "vtx[2345:2350]" "vtx[2357:2358]" "vtx[2384]" "vtx[2390]" "vtx[2440]" "vtx[2442]" "vtx[2446]" "vtx[2459:2462]" "vtx[2655]" "vtx[2657]" "vtx[2660:2661]" "vtx[2667]" "vtx[2669:2672]" "vtx[2678:2679]" "vtx[2701:2704]" "vtx[2708:2711]" "vtx[2716:2718]" "vtx[2757:2759]" "vtx[2859:2888]" "vtx[2902:2903]" "vtx[4061]" "vtx[4169]" "vtx[4409]" "vtx[4413:4419]" "vtx[4426]" "vtx[4428:4431]" "vtx[4442:4444]";
+	setAttr ".it[0].itg[10].iti[6000].ipt" -type "pointArray" 42 0 0.0061128331544750836
+		 0 1 0 0.010690764018917776 0.011788315620960714 1 0 0.0015017662739970608 0 1 0 0.017445104150581869
+		 0 1 0 0.010493197034870616 0 1 0 0.015177073490320936 0 1 0 0.0076509484366854138
+		 0 1 0 0.0076509466125571635 0 1 0 0.017445104150581869 0 1 0 2.1634610075649263e-10
+		 0 1 0 0.0059880775311181413 0 1 0 0.013492824030294059 0.015000785933807492 1 0 0.016277945542307857
+		 0 1 0 0.010493197057210087 0 1 0 0.0085054106102120386 0 1 0 0.009788780825026459
+		 0 1 0 1.5188561519607902e-10 0 1 0 0.0079731676224746948 0 1 0.0088119100722514818
+		 0.0087159076239338162 0 1 0.0088119098342562888 0.0036110023457096001 0 1 0 0.015177070023711102
+		 0 1 0 0.01627794166134322 0 1 0 0.017445099991345928 0 1 0 0.0076509447884297753
+		 0 1 0.0088119094485399618 0.0087159055458999966 0 1 0 0.0097887856445676557 0 1 -0.0023932954664172773
+		 0.010690766567795161 0.0081654939672870623 1 0 0.01627794166134322 -5.2386892740452495e-10
+		 1 0 0.017445108309819816 0 1 0 0.0070579915204689314 0 1 0.0088119093951962157 0.007154864404157653
+		 0 1 0 0.0040761076137982855 0 1 0 0.005784746770871152 0 1 0 -1.7826096154749393e-10
+		 0 1 0 -1.7826096154749393e-10 0 1 0 0.0046011159802219481 0 1 0 0.0046011159802219481
+		 0 1 0 0.0046011159802219481 0 1 0 0.0046011170772137441 0 1 0 0.004601114883230676
+		 0 1 0 -1.7826100665030431e-10 0 1 0 -1.7826092164885399e-10 0 1 ;
+	setAttr ".it[0].itg[10].iti[6000].ict" -type "componentList" 18 "vtx[1:3]" "vtx[5]" "vtx[12:15]" "vtx[20]" "vtx[31]" "vtx[458:461]" "vtx[466:468]" "vtx[474:476]" "vtx[630:632]" "vtx[643:648]" "vtx[659:661]" "vtx[2242]" "vtx[2291:2292]" "vtx[2716:2718]" "vtx[2871]" "vtx[2885]" "vtx[4409]" "vtx[4423]";
+	setAttr ".it[0].itg[11].iti[6000].ipt" -type "pointArray" 139 0 0 0 1 0 -0.0024216633333389304
+		 0 1 0 -0.0024826053522937208 0 1 0 0.0093807258090237156 0 1 0 -0.0024328881151007842
+		 0 1 0 0.013377162382987851 0 1 0 0.015754725089042111 0 1 0 0.01620376579297278 0
+		 1 0 0.01622424637776021 0 1 0 0.016212451619637872 0 1 0 0.01622424637776021 0 1 0
+		 -0.0024826053522937208 0 1 0 -0.0024826059441931041 0 1 0 0.0042795131193762437 0
+		 1 0 -0.0024826053522937208 0 1 0 -0.0024826059441931041 0 1 0 0.01299192914364593
+		 0 1 0 0.01622424671245426 0 1 0 0.01622424671245426 0 1 0 0.016224242844293323 0
+		 1 0 -0.0023407188214954466 0 1 0 -0.0023082513763434953 0 1 0 -0.00052717318494452847
+		 0 1 0 0.00033210514669974851 0 1 0 0.012644227613860082 0 1 0 0.013377162382987851
+		 0 1 0 0.013377159193623811 0 1 0 0.013377156004261277 0 1 0 0.013377159193623811
+		 0 1 0 0.013856131270181038 0 1 0 0.013377159193623811 0 1 0 0.01622424637776021 0
+		 1 0 0.016224242509599352 0 1 0 0.014989454059683478 0 1 0 0.01622424671245426 0 1 0
+		 0.00069501006620478712 0 1 0 -0.0013579163555115237 0 1 0 -0.0024826059441931041
+		 0 1 0 -0.0018111765846478001 0 1 0 -0.0024826059441931041 0 1 0 -0.0024826053522937208
+		 0 1 0 -0.0024826053522937208 0 1 0 -0.0024826053522937208 0 1 0 -0.0024826053522937208
+		 0 1 0 -0.0024826059441931041 0 1 0 -0.0024826053522937208 0 1 0 -0.0024826053522937208
+		 0 1 0 -0.0024826059441931041 0 1 0 0.012600111755965315 0 1 0 0.012396987038506904
+		 0 1 0 0.01622424671245426 0 1 0 0.016224250580617019 0 1 0 0.016224242844293323 0
+		 1 0 0.016224242844293323 0 1 0 0.016224250580617019 0 1 0 -0.0024826047603946229
+		 0 1 0 -0.0024826059441931041 0 1 0 -0.0024826047603946229 0 1 0 -0.0024826059441931041
+		 0 1 0 -0.0024826059441931041 0 1 0 -0.0010855611991140712 0 1 0 0.00023512129913659175
+		 0 1 0 -0.0020838927649178274 0 1 0 0.010327427416516865 0 1 0 0.013377159193623811
+		 0 1 0 0.013377159193623811 0 1 0 0.015893235828500437 0 1 0 0.015191693657668979
+		 0 1 0 0.016224250245922889 0 1 0 0.016224242509599352 0 1 0 0.016224250245922889
+		 0 1 0 -0.0022195329265835007 0 1 0 -0.0024826047603946229 0 1 0 -0.0024826059441931041
+		 0 1 0 -0.0024826053522937208 0 1 0 0.0093807280455635873 0 1 0 -0.0024360368918210362
+		 0 1 0 0.013377156004261277 0 1 0 0.015754732601482239 0 1 0 0.01622424637776021 0
+		 1 0 0.01622424637776021 0 1 0 -0.0024826053522937208 0 1 0 0.0042814352869950641
+		 0 1 0 -0.0024826053522937208 0 1 0 -0.0024826053522937208 0 1 0 0.01299192914364593
+		 0 1 0 0.016224242844293323 0 1 0 0.01622424671245426 0 1 0 -0.0023407182634247264
+		 0 1 0 -0.0023082513763434953 0 1 0 -0.00052834857552852554 0 1 0 0.0003321052258797863
+		 0 1 0 0.012642967512631387 0 1 0 0.013377156004261277 0 1 0 0.013377159193623811
+		 0 1 0 0.013377159193623811 0 1 0 0.013377156004261277 0 1 0 0.013856131297465879
+		 0 1 0 0.013377162382987851 0 1 0 0.016224242509599352 0 1 0 0.016224242509599352
+		 0 1 0 0.01504499254927083 0 1 0 0.01622424671245426 0 1 0 0.00069221187108877401
+		 0 1 0 -0.0014119979217306344 0 1 0 -0.0024826059441931041 0 1 0 7.9453381264564461e-05
+		 0 1 0 -0.0020054490459764374 0 1 0 -0.0024826047603946229 0 1 0 -0.0024826059441931041
+		 0 1 0 -0.0024826053522937208 0 1 0 -0.0024826047603946229 0 1 0 -0.0024826053522937208
+		 0 1 0 -0.0024826047603946229 0 1 0 -0.0024826053522937208 0 1 0 -0.0024826047603946229
+		 0 1 0 -0.0024826047603946229 0 1 0 0.012600111755965315 0 1 0 0.012394911596986146
+		 0 1 0 0.016224250580617019 0 1 0 0.016224250580617019 0 1 0 0.01622424671245426 0
+		 1 0 0.016224250580617019 0 1 0 -0.0024826047603946229 0 1 0 -0.0024826059441931041
+		 0 1 0 -0.0024826059441931041 0 1 0 -0.0024826053522937208 0 1 0 -0.0010901397645734321
+		 0 1 0 0.00023430183335067324 0 1 0 -0.0020838927649178274 0 1 0 0.010327432341019177
+		 0 1 0 0.013377159193623811 0 1 0 0.013377159193623811 0 1 0 0.015892645812686779
+		 0 1 0 0.015196495458521114 0 1 0 0.01622424637776021 0 1 0 0.01622424637776021 0
+		 1 0 -0.0024826047603946229 0 1 0 -0.0024826053522937208 0 1 ;
+	setAttr ".it[0].itg[11].iti[6000].ict" -type "componentList" 28 "vtx[0:2]" "vtx[4:11]" "vtx[13:14]" "vtx[18:24]" "vtx[33]" "vtx[35:36]" "vtx[39:40]" "vtx[42:46]" "vtx[48:49]" "vtx[189:191]" "vtx[458:460]" "vtx[466:467]" "vtx[474:475]" "vtx[630:661]" "vtx[2294]" "vtx[2296:2301]" "vtx[2303]" "vtx[2305:2310]" "vtx[2318]" "vtx[2320:2321]" "vtx[2324:2325]" "vtx[2327:2331]" "vtx[2333:2334]" "vtx[2459:2461]" "vtx[2701:2703]" "vtx[2708:2710]" "vtx[2716:2717]" "vtx[2859:2886]";
+	setAttr ".it[0].itg[12].iti[6000].ipt" -type "pointArray" 233 -0.0014399561026091935
+		 0.0021303688726175274 0 1 0 0.020288109548715686 0 1 0 0.021155660967657752 -0.024715969245692471
+		 1 -0.0086688954466820657 0.023593930917478519 0 1 0 0.029034079931553571 0.0022553346619499071
+		 1 0 0.018925827920033066 0 1 0 0.012606198546819769 0 1 0 0.0027754081803212679 0
+		 1 0 0.0025844474282597611 0 1 -0.0014399561455232302 0.0021303688726175274 0 1 0
+		 0 -0.0042993805952181424 1 0 0 -0.0042993806592839029 1 -0.0014763534569540032 0.037960877941758758
+		 0 1 -0.0054481936868215498 0.036881943833790842 0 1 -0.0046585521761036489 0.019319472486863276
+		 0 1 -0.0072785541466904588 0.030852605904624873 0 1 0 0.018326433584903639 0 1 0
+		 0.022427820294581124 0 1 0 0.016444747510019796 0.0022553351400789257 1 0 0.011405676660451983
+		 0 1 0 0.0079100646253209561 0 1 0 0.0072986134105121891 0 1 0 0.01965529442531988
+		 0 1 -0.0087642889273518241 0.029449808490508624 0 1 0 0.02788298191946401 0 1 0 0.013893850552145639
+		 -0.010699156917221408 1 -0.007013653682075442 0.025908607748784979 0 1 6.1629758220391547e-33
+		 0.019438018694584142 0 1 0.00091994966425670052 0.036027660587976129 -0.00027910552801324953
+		 1 -0.00091992030268377319 0.024202900506693936 0 1 0 -1.925854562628837e-10 0 1 -0.0086688946393282864
+		 0.046801182532888674 0 1 0 0.027670800299574694 0 1 -0.0086688947685048846 0.038758626733171993
+		 0 1 0 0.028284914957396268 0 1 0 0.020911390451564902 0 1 0 0.0088768930372459653
+		 0 1 0 1.7462302437376565e-10 0 1 0 1.746229411070388e-10 0 1 0 5.6911618646904305e-10
+		 0 1 0 0.019985846791371387 0 1 0 2.3646862246096134e-10 0 1 0 0.025642422314099023
+		 0 1 0 0.017574934971981978 0 1 0 0.0073869120681138156 0 1 -0.0055061168460120843
+		 0.008471332903230433 0 1 -0.0055061164973100665 0.012332509933270459 0 1 0 0.0096529844429842741
+		 0 1 0 1.6979125484067881e-10 0 1 0 0.0014871998378396256 0 1 0 0 -0.0042993806592839029
+		 1 0 0 -0.0042993806592839029 1 0 0 -0.0042993805952181424 1 0 0 -0.0042993809796127384
+		 1 -0.0014399560596951592 0.0021303683646981273 0 1 -0.0055061169075477359 0.012332506992970949
+		 0 1 -0.0046585518290144781 0.022191416506264449 -0.0052042235622157054 1 -0.0039916872285628005
+		 0.027960958486801246 -0.002151544619211394 1 -0.0086688951560346863 0.035630255261303187
+		 0 1 0.00041348801439616069 0.042288960742211612 0 1 -0.0086688948976814811 0.02359393683573785
+		 0 1 -0.0072785545262966447 0.027615244337839046 0 1 -0.0025657235253185267 0.020673666023740524
+		 0 1 0 0.015481027702603314 0 1 0 0.021780163992602297 0 1 0 0.020107506422305878
+		 8.7311495707009801e-11 1 0 0.018326433528024686 2.0372680105407159e-10 1 0 0 -0.0042993807874154299
+		 1 0 0 -0.0042993805311523792 1 0 0 -0.0042993809796127384 1 -0.0014399561669802498
+		 0.0021303693805371678 0 1 -0.0055061162921912557 0.013423595860240667 0 1 -0.011812938765503791
+		 0.021108187407500919 0 1 -0.0039916873177839656 0.030162097468632677 0 1 -0.011937106403042338
+		 0.036372690345842784 -0.011057033521099983 1 -0.0086688950268580811 0.043534916454755899
+		 0 1 -0.0086688947039165846 0.038758635733586289 0 1 -0.0086688950591522328 0.047669001093481711
+		 0 1 0 0.033450485873295577 -1.8189889698649875e-12 1 0 0.021838142850068909 0.0022553351892800164
+		 1 0 0.023197278075681196 0 1 0 0.016928199159509258 0 1 0 0.018326437616355006 0
+		 1 0 0 -0.0042993807233496634 1 0 0 -0.0042993809796127384 1 0 0 -0.0042993809796127384
+		 1 0 0.027347998571030985 0 1 0 0.017056751436903994 0 1 0 1.7462298274040222e-10
+		 0 1 0 2.4010660126805305e-10 0 1 -0.0086688949945639294 0.023593931176769726 0 1 0.0014399561026091935
+		 0.0021303688726175274 0 1 0 0 0 1 0 0.020288109548715686 0 1 0 0.021155660967657752
+		 -0.024715969245692471 1 0.0086688954466820657 0.023593930917478519 0 1 0 0.029034079931553571
+		 0.0022553346619499071 1 0 0.018925827920033066 0 1 0 -9.16031851067034e-11 0 1 0
+		 0.0025844474282597611 0 1 0.0014399561455232302 0.0021303688726175274 0 1 0.0014763534569540032
+		 0.037960877941758758 0 1 0.0054481936868215498 0.036881943833790842 0 1 0.0046585521761036489
+		 0.019319472486863276 0 1 0.0072785541466904588 0.030852605904624873 0 1 0 0.022427820294581124
+		 0 1 0 0.016444747510019796 0.0022553351400789257 1 0 0.011405676660451983 0 1 0 0.0079100646253209561
+		 0 1 0 0.01965529442531988 0 1 0.0087642889273518241 0.029449808490508624 0 1 0 0.02788298191946401
+		 0 1 0 0.013893850552145639 -0.010699156917221408 1 0 2.7746693831431912e-11 0 1 0.007013653682075442
+		 0.025908607748784979 0 1 -6.1629758220391547e-33 0.019438018694584142 0 1 -0.00091994966425670052
+		 0.036027660587976129 -0.00027910552801324953 1 0.00091992030268377319 0.024202900506693936
+		 0 1 0 -1.925854562628837e-10 0 1 0 0 0 1 0 0 0 1 0.0086688946393282864 0.046801182532888674
+		 0 1 0 0.027670800299574694 0 1 0.0086688947685048846 0.038758626733171993 0 1 0 0
+		 0 1 0 0 0 1 0 0.028284914957396268 0 1 0 0.020911390451564902 0 1 0 0.0088768930372459653
+		 0 1 0 1.7462302437376565e-10 0 1 0 1.746229411070388e-10 0 1 0 0 0 1 0 5.6911618646904305e-10
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 2.774668602517627e-11 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0.019985846791371387 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 2.3646862246096134e-10
+		 0 1 0 0.025642422314099023 0 1 0 0.017574934971981978 0 1 0 0.0073869120681138156
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 4.3368086899420177e-19 0 1 0.0055061168460120843
+		 0.008471332903230433 0 1 0.0055061164973100665 0.012332509933270459 0 1 0 0.0096529844429842741
+		 0 1 0 1.6979125484067881e-10 0 1 0 0 0 1 0 0.0014871998378396256 0 1 0 0 -0.0042993806592839029
+		 1 0 0 -0.0042993806592839029 1 0 0 -0.0042993805952181424 1 0 0 -0.0042993809796127384
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0.0014399560596951592 0.0021303683646981273
+		 0 1 0.0055061169075477359 0.012332506992970949 0 1 0.0046585518290144781 0.022191416506264449
+		 -0.0052042235622157054 1 0.0039916872285628005 0.027960958486801246 -0.002151544619211394
+		 1 0.0086688951560346863 0.035630255261303187 0 1 -0.00041348801439616069 0.042288960742211612
+		 0 1 0.0086688948976814811 0.02359393683573785 0 1 0.0072785545262966447 0.027615244337839046
+		 0 1 0.0025657235253185267 0.020673666023740524 0 1 0 0.015481027702603314 0 1 0 0.021780163992602297
+		 0 1 0 0.020107506422305878 8.7311495707009801e-11 1 0 0 -0.0042993805311523792 1 0
+		 0 -0.0042993809796127384 1 0.0014399561669802498 0.0021303693805371678 0 1 0.0055061162921912557
+		 0.013423595860240667 0 1 0.011812938765503791 0.021108187407500919 0 1 0.0039916873177839656
+		 0.030162097468632677 0 1 0.011937106403042338 0.036372690345842784 -0.011057033521099983
+		 1 0.0086688950268580811 0.043534916454755899 0 1 0.0086688947039165846 0.038758635733586289
+		 0 1 0.0086688950591522328 0.047669001093481711 0 1 0 0.033450485873295577 -1.8189889698649875e-12
+		 1 0 0.021838142850068909 0.0022553351892800164 1 0 0.023197278075681196 0 1 0 0.016928199159509258
+		 0 1 0 0 -0.0042993809796127384 1 0 0 -0.0042993809796127384 1 0 0.027347998571030985
+		 0 1 0 0 0 1 0 0.017056751436903994 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 1.7462298274040222e-10 0 1 0 2.4010660126805305e-10 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0.0086688949945639294 0.023593931176769726
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 ;
+	setAttr ".it[0].itg[12].iti[6000].ict" -type "componentList" 50 "vtx[2]" "vtx[4:10]" "vtx[12:15]" "vtx[18:31]" "vtx[33:37]" "vtx[40:42]" "vtx[45:49]" "vtx[55]" "vtx[157]" "vtx[189:192]" "vtx[459:462]" "vtx[466:468]" "vtx[475:476]" "vtx[630:662]" "vtx[679]" "vtx[2233:2234]" "vtx[2248]" "vtx[2294:2303]" "vtx[2305:2334]" "vtx[2338]" "vtx[2340]" "vtx[2345:2350]" "vtx[2357:2358]" "vtx[2384]" "vtx[2390]" "vtx[2433]" "vtx[2440]" "vtx[2442]" "vtx[2446]" "vtx[2459:2462]" "vtx[2655]" "vtx[2657:2661]" "vtx[2663]" "vtx[2667]" "vtx[2669:2672]" "vtx[2678:2679]" "vtx[2701:2705]" "vtx[2708:2711]" "vtx[2717:2718]" "vtx[2757:2759]" "vtx[2813]" "vtx[2815]" "vtx[2859:2888]" "vtx[2902:2903]" "vtx[4061]" "vtx[4169]" "vtx[4409]" "vtx[4413:4419]" "vtx[4426:4432]" "vtx[4442:4444]";
+	setAttr ".it[0].itg[13].iti[6000].ipt" -type "pointArray" 248 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 -2.9103837395627608e-10 0 1 0 -0.010036457827482081 0 1 0
+		 -0.017089868172661227 0 1 0 -0.018431985022516528 0 1 0 -0.02332843282957461 0 1 0
+		 -0.010036459590990168 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 -2.9103837395627608e-10 0 1 0 -0.010036460653507606 0 1 0 -0.010036460220360647 0
+		 1 0 -0.010036457827482081 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 -0.010036460220360647 0 1 0.00068581087550168127 -0.010036457827482081
+		 0 1 0 0 0 1 0.00091772044404656201 4.4408920985006262e-16 5.4522641839773215e-05
+		 1 0 0 0 1 0 -0.010036457081696426 0 1 0 -0.010036462613240402 0 1 0 -0.010036460220360647
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 -2.9103816578945896e-10
+		 0 1 0 -0.0015889227922798455 0 1 0 -0.010036460220360647 0 1 0 -0.010036455434604619
+		 0 1 0 -0.010036455434604619 0 1 0 -0.010036460653507606 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 -2.9103830456733704e-10
+		 0 1 0 -0.010036462613240402 0 1 0 -0.010036462613240402 0 1 0 -0.010036462613240402
+		 0 1 0 -0.010036453041728345 0 1 0 -0.010036463046387466 0 1 0 -5.8207660913467407e-11
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 2.168404342446654e-19 -0.0014472570037469268 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 -2.91038235178398e-10 0 1 0 -0.010036462613240402
+		 0 1 0 -0.015652673737118199 0 1 0 -0.014206040430193072 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 -2.9103837395627608e-10 0 1 0 -0.010036457827482081 0 1 0 -0.010036460220360647
+		 0 1 0 -0.010036455434604619 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 -0.010036457827482081 0 1 -0.002511191216334916 -0.010036460220360647
+		 0 1 0 0 0 1 0 0 0 1 0 -0.010036455434604619 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 -0.010036457827482081 0 1 0 -0.010036460220360647 0 1 0 -0.010036460220360647
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0.0028578855074760769
+		 0 1 -0.0039730294567294532 -0.0039258421967460549 0 1 0 -0.010036460220360647 0 1 0
+		 -0.010036457827482081 0 1 0 -0.010036460220360647 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 -2.9103830456733704e-10 0 1 0 -0.010036457827482081
+		 0 1 0 -0.010036457827482081 0 1 0 -0.010036460220360647 0 1 0 -0.010036460220360647
+		 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0
+		 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0
+		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 ;
+	setAttr ".it[0].itg[13].iti[6000].ict" -type "componentList" 49 "vtx[0:2]" "vtx[4:15]" "vtx[18:36]" "vtx[39:49]" "vtx[189:191]" "vtx[458:461]" "vtx[465:468]" "vtx[474:476]" "vtx[503]" "vtx[630:661]" "vtx[1058]" "vtx[2225]" "vtx[2230:2235]" "vtx[2239]" "vtx[2265]" "vtx[2290:2292]" "vtx[2294:2303]" "vtx[2305:2334]" "vtx[2338]" "vtx[2340]" "vtx[2345:2350]" "vtx[2357:2358]" "vtx[2384]" "vtx[2390]" "vtx[2433]" "vtx[2440]" "vtx[2442]" "vtx[2446]" "vtx[2459:2462]" "vtx[2655]" "vtx[2657:2661]" "vtx[2663]" "vtx[2667]" "vtx[2669:2672]" "vtx[2678:2679]" "vtx[2701:2705]" "vtx[2708:2711]" "vtx[2716:2718]" "vtx[2757:2759]" "vtx[2813]" "vtx[2815]" "vtx[2859:2888]" "vtx[2902:2903]" "vtx[4061]" "vtx[4169]" "vtx[4409]" "vtx[4413:4419]" "vtx[4426:4432]" "vtx[4442:4444]";
+	setAttr ".it[0].sti" 13;
+	setAttr ".it[0].siw" 1;
+	setAttr ".mlid" 2;
+	setAttr ".mlpr" 0;
+	setAttr -s 10 ".pndr";
+	setAttr ".pndr[0]" 0;
+	setAttr ".pndr[5]" 0;
+	setAttr ".pndr[6]" 0;
+	setAttr ".pndr[7]" 0;
+	setAttr ".pndr[8]" 0;
+	setAttr ".pndr[9]" 0;
+	setAttr ".pndr[10]" 0;
+	setAttr ".pndr[11]" 0;
+	setAttr ".pndr[12]" 0;
+	setAttr ".pndr[13]" 0;
+	setAttr -s 10 ".tgvs";
+	setAttr ".tgvs[0]" yes;
+	setAttr ".tgvs[5]" yes;
+	setAttr ".tgvs[6]" yes;
+	setAttr ".tgvs[7]" yes;
+	setAttr ".tgvs[8]" yes;
+	setAttr ".tgvs[9]" yes;
+	setAttr ".tgvs[10]" yes;
+	setAttr ".tgvs[11]" yes;
+	setAttr ".tgvs[12]" yes;
+	setAttr ".tgvs[13]" yes;
+	setAttr -s 10 ".tpvs";
+	setAttr ".tpvs[0]" yes;
+	setAttr ".tpvs[5]" yes;
+	setAttr ".tpvs[6]" yes;
+	setAttr ".tpvs[7]" yes;
+	setAttr ".tpvs[8]" yes;
+	setAttr ".tpvs[9]" yes;
+	setAttr ".tpvs[10]" yes;
+	setAttr ".tpvs[11]" yes;
+	setAttr ".tpvs[12]" yes;
+	setAttr ".tpvs[13]" yes;
+	setAttr ".tgdt[0].cid" -type "Int32Array" 10 0 11 5 6 7
+		 8 9 10 12 13 ;
+	setAttr -s 6 ".ibig";
+	setAttr ".aal" -type "attributeAlias" {"restClose","weight[0]","disgustUpperLeft"
+		,"weight[10]","Pout","weight[11]","smileClosedRight","weight[12]","slightlyParted"
+		,"weight[13]","disgustLowerRight","weight[5]","disgustLowerLeft","weight[6]","laughLineRight"
+		,"weight[7]","laughLineLeft","weight[8]","disgustUpperRight","weight[9]"} ;
+createNode objectSet -n "blendShape3Set";
+	rename -uid "16D008A0-3346-215C-BD84-AC9CA12DAB4F";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "blendShape3GroupId";
+	rename -uid "FA5D9DE1-2E45-E583-2E44-A588317520B2";
+	setAttr ".ihi" 0;
+createNode groupParts -n "blendShape3GroupParts";
+	rename -uid "F47BB8A1-0A43-97DF-2D48-36A74CF1E3E9";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode deleteComponent -n "deleteComponent1";
+	rename -uid "83240B23-1E4B-9662-BD35-15877FEF044A";
+	setAttr ".dc" -type "componentList" 1 "vtx[33]";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -22806,8 +32160,14 @@ connectAttr "blendShape1GroupId.id" "Jackie_latest:Group9688Shape.iog.og[0].gid"
 connectAttr "blendShape1Set.mwc" "Jackie_latest:Group9688Shape.iog.og[0].gco";
 connectAttr "groupId2.id" "Jackie_latest:Group9688Shape.iog.og[1].gid";
 connectAttr "tweakSet1.mwc" "Jackie_latest:Group9688Shape.iog.og[1].gco";
-connectAttr "Blink.og[0]" "Jackie_latest:Group9688Shape.i";
-connectAttr "Blink.it[0].vt[0]" "Jackie_latest:Group9688Shape.twl";
+connectAttr "blendShape2GroupId.id" "Jackie_latest:Group9688Shape.iog.og[2].gid"
+		;
+connectAttr "blendShape2Set.mwc" "Jackie_latest:Group9688Shape.iog.og[2].gco";
+connectAttr "blendShape3GroupId.id" "Jackie_latest:Group9688Shape.iog.og[4].gid"
+		;
+connectAttr "blendShape3Set.mwc" "Jackie_latest:Group9688Shape.iog.og[4].gco";
+connectAttr "deleteComponent1.og" "Jackie_latest:Group9688Shape.i";
+connectAttr "Mouth.it[0].vt[0]" "Jackie_latest:Group9688Shape.twl";
 connectAttr ":rmanDefaultDisplay.msg" ":rmanGlobals.displays[0]";
 connectAttr ":PxrPathTracer.msg" ":rmanGlobals.ri_integrator";
 connectAttr "d_openexr.msg" ":rmanDefaultDisplay.displayType";
@@ -22825,7 +32185,9 @@ relationship "shadowLink" ":lightLinker1" "jackie_lowest:defaultMat.message" ":d
 relationship "shadowLink" ":lightLinker1" "jackieHoodie_latest:jackieHoodie_latest:defaultMat.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "PxrSurface1SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "PxrSurface2SG.message" ":defaultLightSet.message";
-connectAttr "Blink.mlpr" "shapeEditorManager.bspr[0]";
+connectAttr "Eyes.mlpr" "shapeEditorManager.bspr[0]";
+connectAttr "Eyebrows.mlpr" "shapeEditorManager.bspr[1]";
+connectAttr "Mouth.mlpr" "shapeEditorManager.bspr[2]";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "sharedReferenceNode.sr" "teeth_v1_latestRN.sr";
@@ -22999,14 +32361,14 @@ connectAttr "jackieEyeRefBmp.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[
 connectAttr "place2dTexture3.msg" "hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
 		;
 connectAttr "sharedReferenceNode.sr" "JadeNecklace_v2_latestRN.sr";
-connectAttr "blendShape1GroupParts.og" "Blink.ip[0].ig";
-connectAttr "blendShape1GroupId.id" "Blink.ip[0].gi";
-connectAttr "shapeEditorManager.obsv[0]" "Blink.tgdt[0].dpvs";
+connectAttr "Eyebrows.og[0]" "Eyes.ip[0].ig";
+connectAttr "blendShape1GroupId.id" "Eyes.ip[0].gi";
+connectAttr "shapeEditorManager.obsv[0]" "Eyes.tgdt[0].dpvs";
 connectAttr "groupParts2.og" "tweak1.ip[0].ig";
 connectAttr "groupId2.id" "tweak1.ip[0].gi";
 connectAttr "blendShape1GroupId.msg" "blendShape1Set.gn" -na;
 connectAttr "Jackie_latest:Group9688Shape.iog.og[0]" "blendShape1Set.dsm" -na;
-connectAttr "Blink.msg" "blendShape1Set.ub[0]";
+connectAttr "Eyes.msg" "blendShape1Set.ub[0]";
 connectAttr "tweak1.og[0]" "blendShape1GroupParts.ig";
 connectAttr "blendShape1GroupId.id" "blendShape1GroupParts.gi";
 connectAttr "groupId2.msg" "tweakSet1.gn" -na;
@@ -23014,6 +32376,23 @@ connectAttr "Jackie_latest:Group9688Shape.iog.og[1]" "tweakSet1.dsm" -na;
 connectAttr "tweak1.msg" "tweakSet1.ub[0]";
 connectAttr "Group9688ShapeOrig.w" "groupParts2.ig";
 connectAttr "groupId2.id" "groupParts2.gi";
+connectAttr "Mouth.og[0]" "Eyebrows.ip[0].ig";
+connectAttr "blendShape2GroupId.id" "Eyebrows.ip[0].gi";
+connectAttr "shapeEditorManager.obsv[1]" "Eyebrows.tgdt[0].dpvs";
+connectAttr "blendShape2GroupId.msg" "blendShape2Set.gn" -na;
+connectAttr "Jackie_latest:Group9688Shape.iog.og[2]" "blendShape2Set.dsm" -na;
+connectAttr "Eyebrows.msg" "blendShape2Set.ub[0]";
+connectAttr "blendShape1GroupParts.og" "blendShape2GroupParts.ig";
+connectAttr "blendShape2GroupId.id" "blendShape2GroupParts.gi";
+connectAttr "blendShape3GroupParts.og" "Mouth.ip[0].ig";
+connectAttr "blendShape3GroupId.id" "Mouth.ip[0].gi";
+connectAttr "shapeEditorManager.obsv[2]" "Mouth.tgdt[0].dpvs";
+connectAttr "blendShape3GroupId.msg" "blendShape3Set.gn" -na;
+connectAttr "Jackie_latest:Group9688Shape.iog.og[4]" "blendShape3Set.dsm" -na;
+connectAttr "Mouth.msg" "blendShape3Set.ub[0]";
+connectAttr "blendShape2GroupParts.og" "blendShape3GroupParts.ig";
+connectAttr "blendShape3GroupId.id" "blendShape3GroupParts.gi";
+connectAttr "Eyes.og[0]" "deleteComponent1.ig";
 connectAttr "jackie_lowest:defaultMat.pa" ":renderPartition.st" -na;
 connectAttr "jackieHoodie_latest:jackieHoodie_latest:defaultMat.pa" ":renderPartition.st"
 		 -na;
