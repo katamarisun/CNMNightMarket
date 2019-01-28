@@ -1,15 +1,19 @@
 //Maya ASCII 2018 scene
 //Name: Souveneir_Stall_latest.ma
-//Last modified: Wed, Jan 09, 2019 08:42:47 AM
+//Last modified: Fri, Jan 25, 2019 11:44:47 PM
 //Codeset: 1252
 file -rdi 1 -ns "tent_Souveneir_latest" -rfn "tent_Souveneir_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Tents/tent_Souveneir_latest.ma";
 file -rdi 1 -ns "table_latest" -rfn "table_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/table_latest.ma";
+file -rdi 1 -ns "Firecrackers_latest" -rfn "Firecrackers_latestRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Souveneir_Props/Firecrackers_latest.ma";
 file -r -ns "tent_Souveneir_latest" -dr 1 -rfn "tent_Souveneir_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Tents/tent_Souveneir_latest.ma";
 file -r -ns "table_latest" -dr 1 -rfn "table_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/table_latest.ma";
+file -r -ns "Firecrackers_latest" -dr 1 -rfn "Firecrackers_latestRN" -op "v=0;" 
+		-typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Souveneir_Props/Firecrackers_latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
 requires -nodeType "rmanDisplayChannel" -nodeType "d_openexr" -nodeType "rmanGlobals"
@@ -24,13 +28,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "8A156E9D-4179-6B38-3521-9888E7E340B4";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 9.5775854761598449 5.5347466078629832 16.099633838144769 ;
-	setAttr ".r" -type "double3" -15.338352729606415 31.800000000003632 9.3557536960516048e-16 ;
+	setAttr ".t" -type "double3" 12.679674406385642 6.6440031254187115 14.0911665637369 ;
+	setAttr ".r" -type "double3" -14.738352729607298 39.000000000004249 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "9D854303-41E7-46D5-2F0E-63B8EE0D330D";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 20.460165934826122;
+	setAttr ".coi" 17.570047518810565;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -110,19 +114,20 @@ createNode transform -n "SouveneirStallGrp" -p "SouveneirStall";
 	setAttr ".rp" -type "double3" 0 -0.65155485031883331 -2.74368134203397e-15 ;
 	setAttr ".sp" -type "double3" 0 -0.65155485031883331 -2.74368134203397e-15 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "F755072C-404E-1894-2678-A99D2CDB24FB";
-	setAttr -s 10 ".lnk";
-	setAttr -s 10 ".slnk";
+	rename -uid "2CB0419E-4BDB-ADEB-8640-C8BBB1709974";
+	setAttr -s 20 ".lnk";
+	setAttr -s 20 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "FAE3A2A2-4C55-AC39-AE2A-168A42A95102";
+	rename -uid "0393B087-433D-171D-BF4E-2084AA67EC51";
+	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "3CE14B79-41EC-46C7-7236-48B57BBCBB23";
+	rename -uid "F46C40DC-48E3-DC89-F1AB-9F80D05877D9";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "03C3FC99-4E3A-DC53-93D6-3396945E1A8B";
+	rename -uid "06B51BB3-4F22-2AF9-9F31-BC9AB2CCCF03";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "349B90C7-454F-F319-79C6-59857AC97141";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "5223A3EB-4F38-D074-6A2F-18ADA0CF2352";
+	rename -uid "256A3758-4D5F-5C1C-80C2-6C893C70B352";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "A2190F46-4684-D980-EBC3-F1B7552EAD69";
 	setAttr ".g" yes;
@@ -335,7 +340,7 @@ createNode script -n "tent_latest_uiConfigurationScriptNode";
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1319\n            -height 713\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1576\n            -height 874\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
 		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n"
@@ -355,14 +360,14 @@ createNode script -n "tent_latest_uiConfigurationScriptNode";
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n"
-		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
-		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
-		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"straight\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n"
-		+ "                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 713\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 713\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -editorChanged \"updateModelPanelBar\" \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n"
+		+ "                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n"
+		+ "                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n"
+		+ "                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n"
+		+ "                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1576\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1576\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "tent_latest_sceneConfigurationScriptNode";
@@ -487,7 +492,7 @@ createNode reference -n "table_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"table_latestRN"
 		"table_latestRN" 0
-		"table_latestRN" 415
+		"table_latestRN" 19
 		0 "|table_latest:Table" "|SouveneirStall" "-s -r "
 		2 "|SouveneirStall|table_latest:Table" "translate" " -type \"double3\" 0 0 0"
 		
@@ -516,199 +521,11 @@ createNode reference -n "table_latestRN";
 		"scalePivot" " -type \"double3\" -0.15399408176475604 0.03557401574057785 3.54706208328495443"
 		
 		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts" " -s 68"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[0]" " -type \"float3\" 0.64007378000000004 -1.97463129999999998 -3.85733080000000017"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[1]" " -type \"float3\" -5.10531229999999958 -1.97463129999999998 -6.38956829999999965"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[2]" " -type \"float3\" 0.64007378000000004 -2.2498790999999998 -3.85733080000000017"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[3]" " -type \"float3\" -5.10531229999999958 -2.2498790999999998 -6.38956829999999965"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[4]" " -type \"float3\" -4.556706 -2.2498790999999998 9.36097149999999978"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[5]" " -type \"float3\" -10.302092 -2.2498790999999998 6.82873339999999995"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[6]" " -type \"float3\" -4.556706 -1.97463129999999998 9.36097149999999978"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[7]" " -type \"float3\" -10.302092 -1.97463129999999998 6.82873339999999995"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[8]" " -type \"float3\" -4.73431780000000035 -2.2498790999999998 9.28269"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[9]" " -type \"float3\" -4.73431780000000035 -1.97463129999999998 9.28269"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[10]" " -type \"float3\" 0.46246195000000001 -1.97463129999999998 -3.93561169999999994"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[11]" " -type \"float3\" 0.46246195000000001 -2.2498790999999998 -3.93561169999999994"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[12]" " -type \"float3\" -4.49710270000000012 -2.2498790999999998 9.20936969999999988"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[13]" " -type \"float3\" -4.49710270000000012 -1.97463129999999998 9.20936969999999988"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[14]" " -type \"float3\" -10.242489 -1.97463129999999998 6.6771326000000002"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[15]" " -type \"float3\" -10.242489 -2.2498790999999998 6.6771326000000002"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[16]" " -type \"float3\" -4.67471459999999972 -2.2498790999999998 9.13108919999999991"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[17]" " -type \"float3\" -4.556706 -2.03209829999999991 9.36097149999999978"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[18]" " -type \"float3\" -4.49710270000000012 -2.03209829999999991 9.20936969999999988"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[19]" " -type \"float3\" 0.64007378000000004 -2.03209829999999991 -3.85733080000000017"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[20]" " -type \"float3\" 0.46246195000000001 -2.03209829999999991 -3.93561169999999994"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[21]" " -type \"float3\" -5.10531229999999958 -2.03209829999999991 -6.38956829999999965"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[22]" " -type \"float3\" -10.242489 -2.03209829999999991 6.6771326000000002"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[23]" " -type \"float3\" -10.302092 -2.03209829999999991 6.82873339999999995"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[24]" " -type \"float3\" -4.73431780000000035 -2.03209829999999991 9.28269"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[25]" " -type \"float3\" -4.73431780000000035 -2.18277069999999984 9.28269"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[26]" " -type \"float3\" -4.556706 -2.18277069999999984 9.36097149999999978"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[27]" " -type \"float3\" -4.49710270000000012 -2.18277069999999984 9.20936969999999988"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[28]" " -type \"float3\" 0.64007378000000004 -2.18277069999999984 -3.85733080000000017"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[29]" " -type \"float3\" 0.46246195000000001 -2.18277069999999984 -3.93561169999999994"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[30]" " -type \"float3\" -5.10531229999999958 -2.18277069999999984 -6.38956829999999965"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[31]" " -type \"float3\" -10.242489 -2.18277069999999984 6.6771326000000002"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[32]" " -type \"float3\" -10.302092 -2.18277069999999984 6.82873339999999995"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[33]" " -type \"float3\" -10.089494 -2.18277069999999984 6.92243480000000044"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[34]" " -type \"float3\" -10.089494 -2.2498790999999998 6.92243480000000044"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[35]" " -type \"float3\" -10.02989 -2.2498790999999998 6.770834"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[36]" " -type \"float3\" -4.8927145000000003 -2.2498790999999998 -6.295867"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[37]" " -type \"float3\" -4.8927145000000003 -2.18277069999999984 -6.295867"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[38]" " -type \"float3\" -4.8927145000000003 -2.03209829999999991 -6.295867"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[39]" " -type \"float3\" -4.8927145000000003 -1.97463129999999998 -6.295867"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[40]" " -type \"float3\" -10.089494 -1.97463129999999998 6.92243480000000044"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[41]" " -type \"float3\" -10.089494 -2.03209829999999991 6.92243480000000044"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[42]" " -type \"float3\" -5.18154860000000017 -2.18277069999999984 -6.19566060000000007"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[43]" " -type \"float3\" -5.18154860000000017 -2.2498790999999998 -6.19566060000000007"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[44]" " -type \"float3\" -4.96895069999999972 -2.2498790999999998 -6.10195919999999958"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[45]" " -type \"float3\" 0.38622521999999998 -2.2498790999999998 -3.741704"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[46]" " -type \"float3\" 0.56383729000000005 -2.2498790999999998 -3.66342310000000015"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[47]" " -type \"float3\" 0.56383729000000005 -2.18277069999999984 -3.66342310000000015"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[48]" " -type \"float3\" 0.56383729000000005 -2.03209829999999991 -3.66342310000000015"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[49]" " -type \"float3\" 0.56383729000000005 -1.97463129999999998 -3.66342310000000015"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[50]" " -type \"float3\" -5.18154860000000017 -1.97463129999999998 -6.19566060000000007"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[51]" " -type \"float3\" -5.18154860000000017 -2.03209829999999991 -6.19566060000000007"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[52]" " -type \"float3\" 0.51834035000000001 -2.22039080000000011 -3.61999320000000013"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[53]" " -type \"float3\" 0.34221625 -2.22039080000000011 -3.69761870000000004"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[54]" " -type \"float3\" 0.41782164999999999 -2.22039080000000011 -3.88992290000000018"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[55]" " -type \"float3\" 0.59394574 -2.22039080000000011 -3.8122973"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[56]" " -type \"float3\" -4.89220480000000002 -2.22039080000000011 -6.230278"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[57]" " -type \"float3\" -4.96780970000000011 -2.22039080000000011 -6.03797389999999989"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[58]" " -type \"float3\" -5.17857840000000014 -2.22039080000000011 -6.13086839999999977"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[59]" " -type \"float3\" -5.10297350000000005 -2.22039080000000011 -6.32317260000000037"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[60]" " -type \"float3\" -4.55902959999999968 -2.22039080000000011 9.29458239999999947"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[61]" " -type \"float3\" -4.73515369999999969 -2.22039080000000011 9.21695710000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[62]" " -type \"float3\" -4.67603779999999958 -2.22039080000000011 9.066596"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[63]" " -type \"float3\" -4.49991369999999957 -2.22039080000000011 9.14422229999999914"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[64]" " -type \"float3\" -9.986064 -2.22039080000000011 6.72624110000000019"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[65]" " -type \"float3\" -10.196833 -2.22039080000000011 6.63334660000000031"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[66]" " -type \"float3\" -10.04518 -2.22039080000000011 6.87660219999999978"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop|table_latest:tabletopShape" 
-		"pnts[67]" " -type \"float3\" -10.255949 -2.22039080000000011 6.78370759999999962"
-		
+		"pt[0:67]" (" -s 68 -type \"float3\" 0.64007378000000004 -1.97463129999999998 -3.85733080000000017 -5.10531229999999958 -1.97463129999999998 -6.38956829999999965 0.64007378000000004 -2.2498790999999998 -3.85733080000000017 -5.10531229999999958 -2.2498790999999998 -6.38956829999999965 -4.556706 -2.2498790999999998 9.36097149999999978 -10.302092 -2.2498790999999998 6.82873339999999995 -4.556706 -1.97463129999999998 9.36097149999999978 -10.302092 -1.97463129999999998 6.82873339999999995 -4.73431780000000035 -2.2498790999999998 9.28269 -4.73431780000000035 -1.97463129999999998 9.28269 0.46246195000000001 -1.97463129999999998 -3.93561169999999994 0.46246195000000001 -2.2498790999999998 -3.93561169999999994 -4.49710270000000012 -2.2498790999999998 9.20936969999999988 -4.49710270000000012 -1.97463129999999998 9.20936969999999988 -10.242489 -1.97463129999999998 6.6771326000000002 -10.242489 -2.2498790999999998 6.6771326000000002 -4.67471459999999972 -2.2498790999999998 9.13108919999999991 -4.556706 -2.03209829999999991 9.3609714999"
+		+ "9999978 -4.49710270000000012 -2.03209829999999991 9.20936969999999988 0.64007378000000004 -2.03209829999999991 -3.85733080000000017 0.46246195000000001 -2.03209829999999991 -3.93561169999999994 -5.10531229999999958 -2.03209829999999991 -6.38956829999999965 -10.242489 -2.03209829999999991 6.6771326000000002 -10.302092 -2.03209829999999991 6.82873339999999995 -4.73431780000000035 -2.03209829999999991 9.28269 -4.73431780000000035 -2.18277069999999984 9.28269 -4.556706 -2.18277069999999984 9.36097149999999978 -4.49710270000000012 -2.18277069999999984 9.20936969999999988 0.64007378000000004 -2.18277069999999984 -3.85733080000000017 0.46246195000000001 -2.18277069999999984 -3.93561169999999994 -5.10531229999999958 -2.18277069999999984 -6.38956829999999965 -10.242489 -2.18277069999999984 6.6771326000000002 -10.302092 -2.18277069999999984 6.82873339999999995 -10.089494 -2.18277069999999984 6.92243480000000044 -10.089494 -2.2498790999999998 6.92243480000000044 -10.02989 -2.2498790999999998 6.770834 -4.8927145000000003"
+		+ " -2.2498790999999998 -6.295867 -4.8927145000000003 -2.18277069999999984 -6.295867 -4.8927145000000003 -2.03209829999999991 -6.295867 -4.8927145000000003 -1.97463129999999998 -6.295867 -10.089494 -1.97463129999999998 6.92243480000000044 -10.089494 -2.03209829999999991 6.92243480000000044 -5.18154860000000017 -2.18277069999999984 -6.19566060000000007 -5.18154860000000017 -2.2498790999999998 -6.19566060000000007 -4.96895069999999972 -2.2498790999999998 -6.10195919999999958 0.38622521999999998 -2.2498790999999998 -3.741704 0.56383729000000005 -2.2498790999999998 -3.66342310000000015 0.56383729000000005 -2.18277069999999984 -3.66342310000000015 0.56383729000000005 -2.03209829999999991 -3.66342310000000015 0.56383729000000005 -1.97463129999999998 -3.66342310000000015 -5.18154860000000017 -1.97463129999999998 -6.19566060000000007 -5.18154860000000017 -2.03209829999999991 -6.19566060000000007 0.51834035000000001 -2.22039080000000011 -3.61999320000000013 0.34221625 -2.22039080000000011 -3.69761870000000004 0.417821649"
+		+ "99999999 -2.22039080000000011 -3.88992290000000018 0.59394574 -2.22039080000000011 -3.8122973 -4.89220480000000002 -2.22039080000000011 -6.230278 -4.96780970000000011 -2.22039080000000011 -6.03797389999999989 -5.17857840000000014 -2.22039080000000011 -6.13086839999999977 -5.10297350000000005 -2.22039080000000011 -6.32317260000000037 -4.55902959999999968 -2.22039080000000011 9.29458239999999947 -4.73515369999999969 -2.22039080000000011 9.21695710000000012 -4.67603779999999958 -2.22039080000000011 9.066596 -4.49991369999999957 -2.22039080000000011 9.14422229999999914 -9.986064 -2.22039080000000011 6.72624110000000019 -10.196833 -2.22039080000000011 6.63334660000000031 -10.04518 -2.22039080000000011 6.87660219999999978 -10.255949 -2.22039080000000011 6.78370759999999962"
+		)
 		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left" 
 		"rotatePivot" " -type \"double3\" -0.15399408176475604 0.03557401574057785 3.54706208328495443"
 		
@@ -716,492 +533,17 @@ createNode reference -n "table_latestRN";
 		"scalePivot" " -type \"double3\" -0.15399408176475604 0.03557401574057785 3.54706208328495443"
 		
 		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts" " -s 164"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[0]" " -type \"float3\" -0.55114412000000002 0.082751281999999995 -4.14614439999999984"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[1]" " -type \"float3\" -0.40894055000000001 0.082751281999999995 -4.12464519999999979"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[2]" " -type \"float3\" -0.36431646000000001 0.082751281999999995 -4.23814869999999999"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[3]" " -type \"float3\" -0.47894787999999999 0.082751281999999995 -4.32978150000000017"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[4]" " -type \"float3\" -0.59439324999999998 0.082751281999999995 -4.27293590000000023"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[5]" " -type \"float3\" -1.41931919999999989 -2.16952370000000005 -4.52878670000000039"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[6]" " -type \"float3\" -1.2771306 -2.16952370000000005 -4.50729369999999996"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[7]" " -type \"float3\" -1.23250649999999995 -2.16952370000000005 -4.62079669999999965"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[8]" " -type \"float3\" -1.34712290000000001 -2.16952370000000005 -4.71242379999999983"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[9]" " -type \"float3\" -1.46258329999999992 -2.16952370000000005 -4.65558430000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[10]" " -type \"float3\" -0.47955322 0.082751281999999995 -4.22232149999999962"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[11]" " -type \"float3\" -1.34774330000000009 -2.16952370000000005 -4.60496950000000016"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[12]" " -type \"float3\" -1.22383 -1.19905210000000007 -4.658083"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[13]" " -type \"float3\" -1.10921359999999991 -1.19905210000000007 -4.56645629999999958"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[14]" " -type \"float3\" -1.15383769999999997 -1.19905210000000007 -4.45295329999999989"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[15]" " -type \"float3\" -1.29602620000000002 -1.19905210000000007 -4.47444579999999981"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[16]" " -type \"float3\" -1.33928920000000007 -1.19905210000000007 -4.60124349999999982"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[17]" " -type \"float3\" -1.41931919999999989 -2.15384220000000015 -4.52878670000000039"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[18]" " -type \"float3\" -1.46258329999999992 -2.15384220000000015 -4.65558430000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[19]" " -type \"float3\" -1.34712290000000001 -2.15384220000000015 -4.71242379999999983"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[20]" " -type \"float3\" -1.23250649999999995 -2.15384220000000015 -4.62079669999999965"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[21]" " -type \"float3\" -1.2771306 -2.15384220000000015 -4.50729369999999996"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[22]" " -type \"float3\" -0.50265002000000003 0.047753520000000001 -4.34022810000000003"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[23]" " -type \"float3\" -0.38801860999999999 0.047753520000000001 -4.24859480000000023"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[24]" " -type \"float3\" -0.43264269999999999 0.047753520000000001 -4.13509179999999965"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[25]" " -type \"float3\" -0.57484626999999999 0.047753520000000001 -4.15659090000000031"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[26]" " -type \"float3\" -0.61811017999999995 0.047753520000000001 -4.28338959999999958"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[27]" " -type \"float3\" -0.54893851000000005 -0.72154671000000004 -4.31951950000000018"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[28]" " -type \"float3\" -0.59356260000000005 -0.72154671000000004 -4.2060164999999996"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[29]" " -type \"float3\" -0.73577714000000005 -0.72154671000000004 -4.22752049999999979"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[30]" " -type \"float3\" -0.77904129 -0.72154671000000004 -4.35431860000000004"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[31]" " -type \"float3\" -0.66358088999999998 -0.72154671000000004 -4.41115760000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[32]" " -type \"float3\" -0.44689465 -0.23365188000000001 -4.27454420000000024"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[33]" " -type \"float3\" -0.49151874000000001 -0.23365188000000001 -4.16104129999999994"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[34]" " -type \"float3\" -0.63370727999999998 -0.23365188000000001 -4.18253420000000009"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[35]" " -type \"float3\" -0.6769712 -0.23365188000000001 -4.30933139999999959"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[36]" " -type \"float3\" -0.56151103999999996 -0.23365188000000001 -4.36617139999999981"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[37]" " -type \"float3\" -0.85546063999999999 -0.96147424000000004 -4.454617"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[38]" " -type \"float3\" -0.90008473 -0.96147424000000004 -4.341114"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[39]" " -type \"float3\" -1.04230310000000004 -0.96147424000000004 -4.36261890000000019"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[40]" " -type \"float3\" -1.08556819999999998 -0.96147424000000004 -4.48941760000000034"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[41]" " -type \"float3\" -0.97010684000000003 -0.96147424000000004 -4.54625609999999991"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[42]" " -type \"float3\" -1.23250649999999995 -1.60262780000000005 -4.62079669999999965"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[43]" " -type \"float3\" -1.2771306 -1.60262780000000005 -4.50729369999999996"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[44]" " -type \"float3\" -1.41931919999999989 -1.60262780000000005 -4.52878670000000039"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[45]" " -type \"float3\" -1.46258329999999992 -1.60262780000000005 -4.65558430000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[46]" " -type \"float3\" -1.34712290000000001 -1.60262780000000005 -4.71242379999999983"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[47]" " -type \"float3\" -1.060622 -1.046242 -4.58615019999999962"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[48]" " -type \"float3\" -0.94600558000000001 -1.046242 -4.494524"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[49]" " -type \"float3\" -0.99062967000000002 -1.046242 -4.38102150000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[50]" " -type \"float3\" -1.1328182 -1.046242 -4.402513"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[51]" " -type \"float3\" -1.17608209999999991 -1.046242 -4.52931120000000043"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[52]" " -type \"float3\" -3.655158 -0.96147424000000004 -5.51421549999999971"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[53]" " -type \"float3\" -3.53969529999999999 -0.96147424000000004 -5.57105680000000003"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[54]" " -type \"float3\" -3.52961539999999996 -1.046242 -5.4588852000000001"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[55]" " -type \"float3\" -3.43850230000000012 -1.046242 -5.52645680000000006"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[56]" " -type \"float3\" -3.58294820000000014 -0.96147424000000004 -5.69788359999999994"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[57]" " -type \"float3\" -3.49240349999999999 -1.046242 -5.65797620000000023"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[58]" " -type \"float3\" -4.07409239999999961 0.082751281999999995 -5.91435240000000029"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[59]" " -type \"float3\" -4.21630139999999987 0.082751281999999995 -5.935883"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[60]" " -type \"float3\" -4.26092579999999987 0.082751281999999995 -5.82238010000000017"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[61]" " -type \"float3\" -4.14630220000000005 0.082751281999999995 -5.73068430000000006"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[62]" " -type \"float3\" -4.03083939999999963 0.082751281999999995 -5.78752420000000001"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[63]" " -type \"float3\" -3.20590259999999994 -2.16952370000000005 -5.53170390000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[64]" " -type \"float3\" -3.34811069999999988 -2.16952370000000005 -5.55323459999999969"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[65]" " -type \"float3\" -3.39273479999999994 -2.16952370000000005 -5.4397316"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[66]" " -type \"float3\" -3.27811239999999993 -2.16952370000000005 -5.3480357999999999"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[67]" " -type \"float3\" -3.16264920000000016 -2.16952370000000005 -5.40487580000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[68]" " -type \"float3\" -4.14571 0.082751281999999995 -5.83815289999999987"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[69]" " -type \"float3\" -3.27748920000000021 -2.16952370000000005 -5.4554910999999997"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[70]" " -type \"float3\" -3.40140529999999996 -1.19905210000000007 -5.40237709999999982"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[71]" " -type \"float3\" -3.51602769999999998 -1.19905210000000007 -5.49407150000000044"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[72]" " -type \"float3\" -3.47140359999999992 -1.19905210000000007 -5.60757450000000013"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[73]" " -type \"float3\" -3.32919549999999997 -1.19905210000000007 -5.58604530000000032"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[74]" " -type \"float3\" -3.285943 -1.19905210000000007 -5.45921710000000004"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[75]" " -type \"float3\" -3.20590259999999994 -2.15384220000000015 -5.53170390000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[76]" " -type \"float3\" -3.16264920000000016 -2.15384220000000015 -5.40487580000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[77]" " -type \"float3\" -3.27811239999999993 -2.15384220000000015 -5.3480357999999999"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[78]" " -type \"float3\" -3.39273479999999994 -2.15384220000000015 -5.4397316"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[79]" " -type \"float3\" -3.34811069999999988 -2.15384220000000015 -5.55323459999999969"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[80]" " -type \"float3\" -4.12261529999999965 0.047753520000000001 -5.72024489999999997"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[81]" " -type \"float3\" -4.23720880000000033 0.047753520000000001 -5.81192680000000017"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[82]" " -type \"float3\" -4.19258449999999971 0.047753520000000001 -5.92543030000000037"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[83]" " -type \"float3\" -4.0504055000000001 0.047753520000000001 -5.903913"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[84]" " -type \"float3\" -4.00715209999999988 0.047753520000000001 -5.77708479999999991"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[85]" " -type \"float3\" -4.07630680000000023 -0.72154671000000004 -5.74101070000000036"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[86]" " -type \"float3\" -4.03168249999999961 -0.72154671000000004 -5.85451359999999976"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[87]" " -type \"float3\" -3.88944439999999991 -0.72154671000000004 -5.83297060000000034"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[88]" " -type \"float3\" -3.84619139999999993 -0.72154671000000004 -5.70614240000000006"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[89]" " -type \"float3\" -3.9616541999999999 -0.72154671000000004 -5.64930250000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[90]" " -type \"float3\" -4.17834810000000001 -0.23365188000000001 -5.78598449999999964"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[91]" " -type \"float3\" -4.1337237 -0.23365188000000001 -5.89948750000000022"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[92]" " -type \"float3\" -3.99151420000000012 -0.23365188000000001 -5.8779558999999999"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[93]" " -type \"float3\" -3.948266 -0.23365188000000001 -5.75113149999999962"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[94]" " -type \"float3\" -4.063724 -0.23365188000000001 -5.69428779999999968"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[95]" " -type \"float3\" -3.76978109999999988 -0.96147424000000004 -5.60591129999999982"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[96]" " -type \"float3\" -3.72515680000000016 -0.96147424000000004 -5.71941420000000011"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[97]" " -type \"float3\" -3.39273479999999994 -1.60262780000000005 -5.4397316"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[98]" " -type \"float3\" -3.34811069999999988 -1.60262780000000005 -5.55323459999999969"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[99]" " -type \"float3\" -3.20590259999999994 -1.60262780000000005 -5.53170390000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[100]" " -type \"float3\" -3.16264920000000016 -1.60262780000000005 -5.40487580000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[101]" " -type \"float3\" -3.27811239999999993 -1.60262780000000005 -5.3480357999999999"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[102]" " -type \"float3\" -3.67923670000000014 -1.046242 -5.56600479999999997"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[103]" " -type \"float3\" -3.63461260000000008 -1.046242 -5.67950770000000027"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[104]" " -type \"float3\" -1.085613 -1.046242 -4.59716509999999978"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[105]" " -type \"float3\" -1.1993332000000001 -1.046242 -4.53955939999999991"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[106]" " -type \"float3\" -1.15746020000000005 -1.046242 -4.41337389999999985"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[107]" " -type \"float3\" -1.06913520000000006 -0.96147424000000004 -4.374445"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[108]" " -type \"float3\" -1.11077709999999996 -0.96147424000000004 -4.50052830000000004"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[109]" " -type \"float3\" -0.99693894000000005 -0.96147424000000004 -4.55808210000000003"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[110]" " -type \"float3\" -3.46811150000000001 -1.046242 -5.64727020000000035"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[111]" " -type \"float3\" -3.41588929999999991 -1.046242 -5.51649049999999974"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[112]" " -type \"float3\" -3.50563430000000009 -1.046242 -5.44831470000000007"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[113]" " -type \"float3\" -3.62902209999999981 -0.96147424000000004 -5.50269649999999988"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[114]" " -type \"float3\" -3.51512529999999979 -0.96147424000000004 -5.56022689999999997"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[115]" " -type \"float3\" -3.55681229999999982 -0.96147424000000004 -5.68636470000000038"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[116]" " -type \"float3\" -3.23757219999999979 -1.4988973000000001 -5.54566189999999981"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[117]" " -type \"float3\" -3.19431829999999994 -1.4988973000000001 -5.41883469999999967"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[118]" " -type \"float3\" -3.309782 -1.4988973000000001 -5.36199379999999959"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[119]" " -type \"float3\" -3.42443439999999999 -1.4988973000000001 -5.45370240000000006"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[120]" " -type \"float3\" -3.37981029999999993 -1.4988973000000001 -5.56720539999999975"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[121]" " -type \"float3\" -1.38591620000000004 -1.49324970000000001 -4.51406430000000025"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[122]" " -type \"float3\" -1.42918129999999999 -1.49324970000000001 -4.64086249999999989"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[123]" " -type \"float3\" -1.31372 -1.49324970000000001 -4.69770149999999997"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[124]" " -type \"float3\" -1.19907450000000004 -1.49324970000000001 -4.60606239999999989"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[125]" " -type \"float3\" -1.2436986000000001 -1.49324970000000001 -4.4925594000000002"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[126]" " -type \"float3\" -3.27811239999999993 -1.72902990000000001 -5.3480357999999999"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[127]" " -type \"float3\" -3.39273479999999994 -1.72902990000000001 -5.4397316"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[128]" " -type \"float3\" -3.34811069999999988 -1.72902990000000001 -5.55323459999999969"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[129]" " -type \"float3\" -3.20590259999999994 -1.72902990000000001 -5.53170390000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[130]" " -type \"float3\" -3.16264920000000016 -1.72902990000000001 -5.40487580000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[131]" " -type \"float3\" -1.41931919999999989 -1.7319732000000001 -4.52878670000000039"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[132]" " -type \"float3\" -1.46258329999999992 -1.7319732000000001 -4.65558430000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[133]" " -type \"float3\" -1.34712290000000001 -1.7319732000000001 -4.71242379999999983"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[134]" " -type \"float3\" -1.23250649999999995 -1.7319732000000001 -4.62079669999999965"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[135]" " -type \"float3\" -1.2771306 -1.7319732000000001 -4.50729369999999996"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[136]" " -type \"float3\" -3.38283710000000015 -1.60262780000000005 -5.41721059999999976"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[137]" " -type \"float3\" -3.26958249999999984 -1.60262780000000005 -5.32804780000000022"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[138]" " -type \"float3\" -3.30078169999999993 -1.49886720000000007 -5.3416604999999997"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[139]" " -type \"float3\" -3.41409470000000015 -1.49886720000000007 -5.43084960000000017"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[140]" " -type \"float3\" -1.30468080000000008 -1.60262780000000005 -4.49663930000000001"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[141]" " -type \"float3\" -1.27191309999999991 -1.49329690000000004 -4.4820051000000003"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[142]" " -type \"float3\" -1.41094849999999994 -1.49329690000000004 -4.50453569999999992"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[143]" " -type \"float3\" -1.44368619999999992 -1.60262780000000005 -4.519155"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[144]" " -type \"float3\" -3.19121070000000007 -2.1054807000000002 -2.50933360000000016"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[145]" " -type \"float3\" -3.17487049999999993 -2.10551980000000016 -2.57928589999999991"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[146]" " -type \"float3\" -3.17550420000000022 -2.21224329999999991 -2.5880084000000001"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[147]" " -type \"float3\" -3.19183830000000013 -2.21221349999999983 -2.5180836000000002"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[148]" " -type \"float3\" -3.38319210000000004 -2.21221349999999983 -2.59851030000000005"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[149]" " -type \"float3\" -3.3483925000000001 -2.21224329999999991 -2.65582850000000015"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[150]" " -type \"float3\" -3.35273269999999979 -2.10595350000000003 -2.64961290000000016"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[151]" " -type \"float3\" -3.38751859999999994 -2.10592319999999988 -2.59231569999999989"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[152]" " -type \"float3\" -3.17794610000000022 -2.101243 -2.52299739999999995"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[153]" " -type \"float3\" -3.16267869999999984 -2.10129050000000017 -2.592617"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[154]" " -type \"float3\" -3.16349459999999993 -2.2080255000000002 -2.60139159999999992"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[155]" " -type \"float3\" -3.17879719999999999 -2.20798490000000003 -2.53178260000000011"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[156]" " -type \"float3\" -2.0125065000000002 -1.7295183999999999 -3.72084239999999999"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[157]" " -type \"float3\" -2.09159329999999999 -1.72953519999999994 -3.76165219999999989"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[158]" " -type \"float3\" -2.11193510000000018 -1.83786749999999999 -3.773989"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[159]" " -type \"float3\" -2.03284909999999996 -1.83783889999999994 -3.7331793000000002"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[160]" " -type \"float3\" -3.32128619999999986 -1.73845669999999997 -4.27924780000000027"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[161]" " -type \"float3\" -3.40361879999999983 -1.73844050000000006 -4.31062939999999983"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[162]" " -type \"float3\" -3.382978 -1.84321069999999998 -4.30479340000000033"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left|table_latest:leg_leftShape" 
-		"pnts[163]" " -type \"float3\" -3.300642 -1.84321960000000007 -4.2734432"
+		"pt[0:163]" (" -s 164 -type \"float3\" -0.55114412000000002 0.082751281999999995 -4.14614439999999984 -0.40894055000000001 0.082751281999999995 -4.12464519999999979 -0.36431646000000001 0.082751281999999995 -4.23814869999999999 -0.47894787999999999 0.082751281999999995 -4.32978150000000017 -0.59439324999999998 0.082751281999999995 -4.27293590000000023 -1.41931919999999989 -2.16952370000000005 -4.52878670000000039 -1.2771306 -2.16952370000000005 -4.50729369999999996 -1.23250649999999995 -2.16952370000000005 -4.62079669999999965 -1.34712290000000001 -2.16952370000000005 -4.71242379999999983 -1.46258329999999992 -2.16952370000000005 -4.65558430000000012 -0.47955322 0.082751281999999995 -4.22232149999999962 -1.34774330000000009 -2.16952370000000005 -4.60496950000000016 -1.22383 -1.19905210000000007 -4.658083 -1.10921359999999991 -1.19905210000000007 -4.56645629999999958 -1.15383769999999997 -1.19905210000000007 -4.45295329999999989 -1.29602620000000002 -1.19905210000000007 -4.47444579999999981 -1.33928920000000007 -1.19905210000"
+		+ "000007 -4.60124349999999982 -1.41931919999999989 -2.15384220000000015 -4.52878670000000039 -1.46258329999999992 -2.15384220000000015 -4.65558430000000012 -1.34712290000000001 -2.15384220000000015 -4.71242379999999983 -1.23250649999999995 -2.15384220000000015 -4.62079669999999965 -1.2771306 -2.15384220000000015 -4.50729369999999996 -0.50265002000000003 0.047753520000000001 -4.34022810000000003 -0.38801860999999999 0.047753520000000001 -4.24859480000000023 -0.43264269999999999 0.047753520000000001 -4.13509179999999965 -0.57484626999999999 0.047753520000000001 -4.15659090000000031 -0.61811017999999995 0.047753520000000001 -4.28338959999999958 -0.54893851000000005 -0.72154671000000004 -4.31951950000000018 -0.59356260000000005 -0.72154671000000004 -4.2060164999999996 -0.73577714000000005 -0.72154671000000004 -4.22752049999999979 -0.77904129 -0.72154671000000004 -4.35431860000000004 -0.66358088999999998 -0.72154671000000004 -4.41115760000000012 -0.44689465 -0.23365188000000001 -4.27454420000000024 -0.49151874000000"
+		+ "001 -0.23365188000000001 -4.16104129999999994 -0.63370727999999998 -0.23365188000000001 -4.18253420000000009 -0.6769712 -0.23365188000000001 -4.30933139999999959 -0.56151103999999996 -0.23365188000000001 -4.36617139999999981 -0.85546063999999999 -0.96147424000000004 -4.454617 -0.90008473 -0.96147424000000004 -4.341114 -1.04230310000000004 -0.96147424000000004 -4.36261890000000019 -1.08556819999999998 -0.96147424000000004 -4.48941760000000034 -0.97010684000000003 -0.96147424000000004 -4.54625609999999991 -1.23250649999999995 -1.60262780000000005 -4.62079669999999965 -1.2771306 -1.60262780000000005 -4.50729369999999996 -1.41931919999999989 -1.60262780000000005 -4.52878670000000039 -1.46258329999999992 -1.60262780000000005 -4.65558430000000012 -1.34712290000000001 -1.60262780000000005 -4.71242379999999983 -1.060622 -1.046242 -4.58615019999999962 -0.94600558000000001 -1.046242 -4.494524 -0.99062967000000002 -1.046242 -4.38102150000000012 -1.1328182 -1.046242 -4.402513 -1.17608209999999991 -1.046242 -4.52931120000"
+		+ "000043 -3.655158 -0.96147424000000004 -5.51421549999999971 -3.53969529999999999 -0.96147424000000004 -5.57105680000000003 -3.52961539999999996 -1.046242 -5.4588852000000001 -3.43850230000000012 -1.046242 -5.52645680000000006 -3.58294820000000014 -0.96147424000000004 -5.69788359999999994 -3.49240349999999999 -1.046242 -5.65797620000000023 -4.07409239999999961 0.082751281999999995 -5.91435240000000029 -4.21630139999999987 0.082751281999999995 -5.935883 -4.26092579999999987 0.082751281999999995 -5.82238010000000017 -4.14630220000000005 0.082751281999999995 -5.73068430000000006 -4.03083939999999963 0.082751281999999995 -5.78752420000000001 -3.20590259999999994 -2.16952370000000005 -5.53170390000000012 -3.34811069999999988 -2.16952370000000005 -5.55323459999999969 -3.39273479999999994 -2.16952370000000005 -5.4397316 -3.27811239999999993 -2.16952370000000005 -5.3480357999999999 -3.16264920000000016 -2.16952370000000005 -5.40487580000000012 -4.14571 0.082751281999999995 -5.83815289999999987 -3.27748920000000021 -2.1"
+		+ "6952370000000005 -5.4554910999999997 -3.40140529999999996 -1.19905210000000007 -5.40237709999999982 -3.51602769999999998 -1.19905210000000007 -5.49407150000000044 -3.47140359999999992 -1.19905210000000007 -5.60757450000000013 -3.32919549999999997 -1.19905210000000007 -5.58604530000000032 -3.285943 -1.19905210000000007 -5.45921710000000004 -3.20590259999999994 -2.15384220000000015 -5.53170390000000012 -3.16264920000000016 -2.15384220000000015 -5.40487580000000012 -3.27811239999999993 -2.15384220000000015 -5.3480357999999999 -3.39273479999999994 -2.15384220000000015 -5.4397316 -3.34811069999999988 -2.15384220000000015 -5.55323459999999969 -4.12261529999999965 0.047753520000000001 -5.72024489999999997 -4.23720880000000033 0.047753520000000001 -5.81192680000000017 -4.19258449999999971 0.047753520000000001 -5.92543030000000037 -4.0504055000000001 0.047753520000000001 -5.903913 -4.00715209999999988 0.047753520000000001 -5.77708479999999991 -4.07630680000000023 -0.72154671000000004 -5.74101070000000036 -4.0316824999"
+		+ "9999961 -0.72154671000000004 -5.85451359999999976 -3.88944439999999991 -0.72154671000000004 -5.83297060000000034 -3.84619139999999993 -0.72154671000000004 -5.70614240000000006 -3.9616541999999999 -0.72154671000000004 -5.64930250000000012 -4.17834810000000001 -0.23365188000000001 -5.78598449999999964 -4.1337237 -0.23365188000000001 -5.89948750000000022 -3.99151420000000012 -0.23365188000000001 -5.8779558999999999 -3.948266 -0.23365188000000001 -5.75113149999999962 -4.063724 -0.23365188000000001 -5.69428779999999968 -3.76978109999999988 -0.96147424000000004 -5.60591129999999982 -3.72515680000000016 -0.96147424000000004 -5.71941420000000011 -3.39273479999999994 -1.60262780000000005 -5.4397316 -3.34811069999999988 -1.60262780000000005 -5.55323459999999969 -3.20590259999999994 -1.60262780000000005 -5.53170390000000012 -3.16264920000000016 -1.60262780000000005 -5.40487580000000012 -3.27811239999999993 -1.60262780000000005 -5.3480357999999999 -3.67923670000000014 -1.046242 -5.56600479999999997 -3.63461260000000008 -"
+		+ "1.046242 -5.67950770000000027 -1.085613 -1.046242 -4.59716509999999978 -1.1993332000000001 -1.046242 -4.53955939999999991 -1.15746020000000005 -1.046242 -4.41337389999999985 -1.06913520000000006 -0.96147424000000004 -4.374445 -1.11077709999999996 -0.96147424000000004 -4.50052830000000004 -0.99693894000000005 -0.96147424000000004 -4.55808210000000003 -3.46811150000000001 -1.046242 -5.64727020000000035 -3.41588929999999991 -1.046242 -5.51649049999999974 -3.50563430000000009 -1.046242 -5.44831470000000007 -3.62902209999999981 -0.96147424000000004 -5.50269649999999988 -3.51512529999999979 -0.96147424000000004 -5.56022689999999997 -3.55681229999999982 -0.96147424000000004 -5.68636470000000038 -3.23757219999999979 -1.4988973000000001 -5.54566189999999981 -3.19431829999999994 -1.4988973000000001 -5.41883469999999967 -3.309782 -1.4988973000000001 -5.36199379999999959 -3.42443439999999999 -1.4988973000000001 -5.45370240000000006 -3.37981029999999993 -1.4988973000000001 -5.56720539999999975 -1.38591620000000004 -1.4932"
+		+ "4970000000001 -4.51406430000000025 -1.42918129999999999 -1.49324970000000001 -4.64086249999999989 -1.31372 -1.49324970000000001 -4.69770149999999997 -1.19907450000000004 -1.49324970000000001 -4.60606239999999989 -1.2436986000000001 -1.49324970000000001 -4.4925594000000002 -3.27811239999999993 -1.72902990000000001 -5.3480357999999999 -3.39273479999999994 -1.72902990000000001 -5.4397316 -3.34811069999999988 -1.72902990000000001 -5.55323459999999969 -3.20590259999999994 -1.72902990000000001 -5.53170390000000012 -3.16264920000000016 -1.72902990000000001 -5.40487580000000012 -1.41931919999999989 -1.7319732000000001 -4.52878670000000039 -1.46258329999999992 -1.7319732000000001 -4.65558430000000012 -1.34712290000000001 -1.7319732000000001 -4.71242379999999983 -1.23250649999999995 -1.7319732000000001 -4.62079669999999965 -1.2771306 -1.7319732000000001 -4.50729369999999996 -3.38283710000000015 -1.60262780000000005 -5.41721059999999976 -3.26958249999999984 -1.60262780000000005 -5.32804780000000022 -3.30078169999999993 "
+		+ "-1.49886720000000007 -5.3416604999999997 -3.41409470000000015 -1.49886720000000007 -5.43084960000000017 -1.30468080000000008 -1.60262780000000005 -4.49663930000000001 -1.27191309999999991 -1.49329690000000004 -4.4820051000000003 -1.41094849999999994 -1.49329690000000004 -4.50453569999999992 -1.44368619999999992 -1.60262780000000005 -4.519155 -3.19121070000000007 -2.1054807000000002 -2.50933360000000016 -3.17487049999999993 -2.10551980000000016 -2.57928589999999991 -3.17550420000000022 -2.21224329999999991 -2.5880084000000001 -3.19183830000000013 -2.21221349999999983 -2.5180836000000002 -3.38319210000000004 -2.21221349999999983 -2.59851030000000005 -3.3483925000000001 -2.21224329999999991 -2.65582850000000015 -3.35273269999999979 -2.10595350000000003 -2.64961290000000016 -3.38751859999999994 -2.10592319999999988 -2.59231569999999989 -3.17794610000000022 -2.101243 -2.52299739999999995 -3.16267869999999984 -2.10129050000000017 -2.592617 -3.16349459999999993 -2.2080255000000002 -2.60139159999999992 -3.17879719999"
+		+ "999999 -2.20798490000000003 -2.53178260000000011 -2.0125065000000002 -1.7295183999999999 -3.72084239999999999 -2.09159329999999999 -1.72953519999999994 -3.76165219999999989 -2.11193510000000018 -1.83786749999999999 -3.773989 -2.03284909999999996 -1.83783889999999994 -3.7331793000000002 -3.32128619999999986 -1.73845669999999997 -4.27924780000000027 -3.40361879999999983 -1.73844050000000006 -4.31062939999999983 -3.382978 -1.84321069999999998 -4.30479340000000033 -3.300642 -1.84321960000000007 -4.2734432"
+		)
 		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right" 
 		"rotatePivot" " -type \"double3\" -0.15399408176475604 0.03557401574057785 3.54706208328495443"
 		
@@ -1209,490 +551,32 @@ createNode reference -n "table_latestRN";
 		"scalePivot" " -type \"double3\" -0.15399408176475604 0.03557401574057785 3.54706208328495443"
 		
 		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts" " -s 164"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[0]" " -type \"float3\" -9.17259310000000028 0.082751281999999995 7.05397129999999972"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[1]" " -type \"float3\" -9.31480029999999992 0.082751281999999995 7.03243639999999992"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[2]" " -type \"float3\" -9.35942460000000054 0.082751281999999995 7.14594079999999998"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[3]" " -type \"float3\" -9.24480149999999945 0.082751281999999995 7.23763559999999995"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[4]" " -type \"float3\" -9.12933830000000057 0.082751281999999995 7.18079659999999986"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[5]" " -type \"float3\" -8.3044033000000006 -2.16952370000000005 7.43661979999999989"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[6]" " -type \"float3\" -8.44660949999999922 -2.16952370000000005 7.41508479999999981"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[7]" " -type \"float3\" -8.49123379999999983 -2.16952370000000005 7.52858919999999987"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[8]" " -type \"float3\" -8.37661169999999977 -2.16952370000000005 7.62028410000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[9]" " -type \"float3\" -8.26114749999999987 -2.16952370000000005 7.56344510000000003"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[10]" " -type \"float3\" -9.24420830000000038 0.082751281999999995 7.13016839999999963"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[11]" " -type \"float3\" -8.375988 -2.16952370000000005 7.51283070000000031"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[12]" " -type \"float3\" -8.4999046000000007 -1.19905210000000007 7.56594280000000019"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[13]" " -type \"float3\" -8.61452670000000076 -1.19905210000000007 7.47424939999999971"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[14]" " -type \"float3\" -8.56990240000000014 -1.19905210000000007 7.36074539999999988"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[15]" " -type \"float3\" -8.42769619999999975 -1.19905210000000007 7.38227839999999969"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[16]" " -type \"float3\" -8.38444140000000004 -1.19905210000000007 7.50910429999999973"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[17]" " -type \"float3\" -8.3044033000000006 -2.15384220000000015 7.43661979999999989"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[18]" " -type \"float3\" -8.26114749999999987 -2.15384220000000015 7.56344510000000003"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[19]" " -type \"float3\" -8.37661169999999977 -2.15384220000000015 7.62028410000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[20]" " -type \"float3\" -8.49123379999999983 -2.15384220000000015 7.52858919999999987"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[21]" " -type \"float3\" -8.44660949999999922 -2.15384220000000015 7.41508479999999981"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[22]" " -type \"float3\" -9.22111510000000045 0.047753520000000001 7.248075"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[23]" " -type \"float3\" -9.33570669999999936 0.047753520000000001 7.156394"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[24]" " -type \"float3\" -9.29108429999999963 0.047753520000000001 7.04288959999999964"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[25]" " -type \"float3\" -9.1489066999999995 0.047753520000000001 7.06441069999999982"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[26]" " -type \"float3\" -9.10565090000000055 0.047753520000000001 7.19123649999999959"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[27]" " -type \"float3\" -9.17477129999999974 -0.72154671000000004 7.22732539999999979"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[28]" " -type \"float3\" -9.13014790000000076 -0.72154671000000004 7.113821"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[29]" " -type \"float3\" -8.98794559999999976 -0.72154671000000004 7.13535309999999967"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[30]" " -type \"float3\" -8.9446898000000008 -0.72154671000000004 7.26217939999999995"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[31]" " -type \"float3\" -9.060154 -0.72154671000000004 7.3190173999999999"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[32]" " -type \"float3\" -9.27684589999999965 -0.23365188000000001 7.18233630000000023"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[33]" " -type \"float3\" -9.23222349999999992 -0.23365188000000001 7.06883239999999979"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[34]" " -type \"float3\" -9.09001540000000041 -0.23365188000000001 7.0903672999999996"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[35]" " -type \"float3\" -9.04675959999999968 -0.23365188000000001 7.21719259999999974"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[36]" " -type \"float3\" -9.16222379999999958 -0.23365188000000001 7.27403159999999982"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[37]" " -type \"float3\" -8.86827949999999987 -0.96147424000000004 7.36240960000000033"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[38]" " -type \"float3\" -8.82365609999999911 -0.96147424000000004 7.2489056999999999"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[39]" " -type \"float3\" -8.68144889999999947 -0.96147424000000004 7.27044010000000007"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[40]" " -type \"float3\" -8.63819409999999976 -0.96147424000000004 7.39726450000000035"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[41]" " -type \"float3\" -8.75365730000000042 -0.96147424000000004 7.4541044000000003"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[42]" " -type \"float3\" -8.49123379999999983 -1.60262780000000005 7.52858919999999987"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[43]" " -type \"float3\" -8.44660949999999922 -1.60262780000000005 7.41508479999999981"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[44]" " -type \"float3\" -8.3044033000000006 -1.60262780000000005 7.43661979999999989"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[45]" " -type \"float3\" -8.26114749999999987 -1.60262780000000005 7.56344510000000003"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[46]" " -type \"float3\" -8.37661169999999977 -1.60262780000000005 7.62028410000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[47]" " -type \"float3\" -8.66311259999999983 -1.046242 7.49401190000000028"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[48]" " -type \"float3\" -8.77773479999999928 -1.046242 7.40231610000000018"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[49]" " -type \"float3\" -8.73311230000000016 -1.046242 7.28881219999999974"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[50]" " -type \"float3\" -8.59090420000000066 -1.046242 7.31034760000000006"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[51]" " -type \"float3\" -8.54764939999999918 -1.046242 7.43717190000000006"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[52]" " -type \"float3\" -6.068594 -0.96147424000000004 8.42203710000000072"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[53]" " -type \"float3\" -6.18406680000000009 -0.96147424000000004 8.47890379999999944"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[54]" " -type \"float3\" -6.1941360999999997 -1.046242 8.366704"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[55]" " -type \"float3\" -6.28522970000000036 -1.046242 8.43431660000000072"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[56]" " -type \"float3\" -6.14079279999999983 -0.96147424000000004 8.60567670000000007"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[57]" " -type \"float3\" -6.231308 -1.046242 8.56578249999999919"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[58]" " -type \"float3\" -5.64963339999999992 0.082751281999999995 8.82215120000000042"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[59]" " -type \"float3\" -5.50743910000000003 0.082751281999999995 8.84367559999999919"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[60]" " -type \"float3\" -5.46281580000000044 0.082751281999999995 8.73017119999999913"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[61]" " -type \"float3\" -5.577435 0.082751281999999995 8.63851170000000046"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[62]" " -type \"float3\" -5.6928920999999999 0.082751281999999995 8.695385"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[63]" " -type \"float3\" -6.51780890000000035 -2.16952370000000005 8.43950839999999936"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[64]" " -type \"float3\" -6.37562940000000022 -2.16952370000000005 8.4610271000000008"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[65]" " -type \"float3\" -6.33100609999999975 -2.16952370000000005 8.34752270000000074"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[66]" " -type \"float3\" -6.44561 -2.16952370000000005 8.2558688999999994"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[67]" " -type \"float3\" -6.56108189999999958 -2.16952370000000005 8.31273649999999975"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[68]" " -type \"float3\" -5.57805160000000022 0.082751281999999995 8.74600030000000039"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[69]" " -type \"float3\" -6.44624190000000041 -2.16952370000000005 8.36335180000000022"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[70]" " -type \"float3\" -6.32231710000000025 -1.19905210000000007 8.31020930000000035"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[71]" " -type \"float3\" -6.20771310000000032 -1.19905210000000007 8.40186309999999992"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[72]" " -type \"float3\" -6.25233650000000019 -1.19905210000000007 8.51536749999999998"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[73]" " -type \"float3\" -6.394516 -1.19905210000000007 8.49384979999999956"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[74]" " -type \"float3\" -6.437788 -1.19905210000000007 8.36707780000000056"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[75]" " -type \"float3\" -6.51780890000000035 -2.15384220000000015 8.43950839999999936"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[76]" " -type \"float3\" -6.56108189999999958 -2.15384220000000015 8.31273649999999975"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[77]" " -type \"float3\" -6.44561 -2.15384220000000015 8.2558688999999994"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[78]" " -type \"float3\" -6.33100609999999975 -2.15384220000000015 8.34752270000000074"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[79]" " -type \"float3\" -6.37562940000000022 -2.15384220000000015 8.4610271000000008"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[80]" " -type \"float3\" -5.60113720000000015 0.047753520000000001 8.6280651000000006"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[81]" " -type \"float3\" -5.48651789999999995 0.047753520000000001 8.71972470000000044"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[82]" " -type \"float3\" -5.53114129999999982 0.047753520000000001 8.8332291000000005"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[83]" " -type \"float3\" -5.673336 0.047753520000000001 8.81170460000000055"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[84]" " -type \"float3\" -5.716609 0.047753520000000001 8.68493179999999931"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[85]" " -type \"float3\" -5.647438 -0.72154671000000004 8.64880080000000007"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[86]" " -type \"float3\" -5.69206140000000005 -0.72154671000000004 8.76230430000000027"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[87]" " -type \"float3\" -5.83426669999999969 -0.72154671000000004 8.74077510000000046"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[88]" " -type \"float3\" -5.87753960000000042 -0.72154671000000004 8.61400320000000086"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[89]" " -type \"float3\" -5.76206779999999963 -0.72154671000000004 8.55713459999999948"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[90]" " -type \"float3\" -5.54539389999999965 -0.23365188000000001 8.69377519999999926"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[91]" " -type \"float3\" -5.59001730000000041 -0.23365188000000001 8.80727959999999932"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[92]" " -type \"float3\" -5.73219679999999965 -0.23365188000000001 8.78576179999999951"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[93]" " -type \"float3\" -5.77546979999999976 -0.23365188000000001 8.65898989999999991"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[94]" " -type \"float3\" -5.65999789999999958 -0.23365188000000001 8.6021213999999997"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[95]" " -type \"float3\" -5.95395990000000008 -0.96147424000000004 8.51370239999999967"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[96]" " -type \"float3\" -5.99858329999999995 -0.96147424000000004 8.62720679999999973"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[97]" " -type \"float3\" -6.33100609999999975 -1.60262780000000005 8.34752270000000074"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[98]" " -type \"float3\" -6.37562940000000022 -1.60262780000000005 8.4610271000000008"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[99]" " -type \"float3\" -6.51780890000000035 -1.60262780000000005 8.43950839999999936"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[100]" " -type \"float3\" -6.56108189999999958 -1.60262780000000005 8.31273649999999975"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[101]" " -type \"float3\" -6.44561 -1.60262780000000005 8.2558688999999994"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[102]" " -type \"float3\" -6.0445051000000003 -1.046242 8.47379590000000071"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[103]" " -type \"float3\" -6.08912850000000017 -1.046242 8.58729929999999975"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[104]" " -type \"float3\" -8.63812069999999999 -1.046242 7.50502589999999969"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[105]" " -type \"float3\" -8.52443030000000057 -1.046242 7.44740490000000044"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[106]" " -type \"float3\" -8.56629090000000026 -1.046242 7.32119509999999973"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[107]" " -type \"float3\" -8.65458680000000058 -0.96147424000000004 7.28227949999999957"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[108]" " -type \"float3\" -8.61298470000000016 -0.96147424000000004 7.40837569999999968"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[109]" " -type \"float3\" -8.72679519999999975 -0.96147424000000004 7.4659437999999998"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[110]" " -type \"float3\" -6.25562859999999965 -1.046242 8.55506319999999931"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[111]" " -type \"float3\" -6.30787180000000003 -1.046242 8.42433740000000064"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[112]" " -type \"float3\" -6.2180882000000004 -1.046242 8.35614780000000046"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[113]" " -type \"float3\" -6.0947294000000003 -0.96147424000000004 8.41051769999999976"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[114]" " -type \"float3\" -6.20860579999999995 -0.96147424000000004 8.4680882000000004"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[115]" " -type \"float3\" -6.16692779999999985 -0.96147424000000004 8.59415820000000075"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[116]" " -type \"float3\" -6.48613879999999998 -1.4988973000000001 8.45346830000000082"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[117]" " -type \"float3\" -6.52941269999999996 -1.4988973000000001 8.32669450000000033"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[118]" " -type \"float3\" -6.41394040000000043 -1.4988973000000001 8.26982779999999984"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[119]" " -type \"float3\" -6.29930690000000038 -1.4988973000000001 8.36149409999999982"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[120]" " -type \"float3\" -6.34393019999999996 -1.4988973000000001 8.47499750000000063"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[121]" " -type \"float3\" -8.33780669999999979 -1.49324970000000001 7.42189790000000027"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[122]" " -type \"float3\" -8.29454989999999981 -1.49324970000000001 7.54872370000000004"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[123]" " -type \"float3\" -8.41001510000000074 -1.49324970000000001 7.60556219999999961"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[124]" " -type \"float3\" -8.52463629999999917 -1.49324970000000001 7.51386640000000039"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[125]" " -type \"float3\" -8.48001290000000019 -1.49324970000000001 7.40036249999999995"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[126]" " -type \"float3\" -6.44561 -1.72902990000000001 8.2558688999999994"
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[127]" " -type \"float3\" -6.33100609999999975 -1.72902990000000001 8.34752270000000074"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[128]" " -type \"float3\" -6.37562940000000022 -1.72902990000000001 8.4610271000000008"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[129]" " -type \"float3\" -6.51780890000000035 -1.72902990000000001 8.43950839999999936"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[130]" " -type \"float3\" -6.56108189999999958 -1.72902990000000001 8.31273649999999975"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[131]" " -type \"float3\" -8.3044033000000006 -1.7319732000000001 7.43661979999999989"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[132]" " -type \"float3\" -8.26114749999999987 -1.7319732000000001 7.56344510000000003"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[133]" " -type \"float3\" -8.37661169999999977 -1.7319732000000001 7.62028410000000012"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[134]" " -type \"float3\" -8.49123379999999983 -1.7319732000000001 7.52858919999999987"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[135]" " -type \"float3\" -8.44660949999999922 -1.7319732000000001 7.41508479999999981"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[136]" " -type \"float3\" -6.34089469999999977 -1.60262780000000005 8.3250712999999994"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[137]" " -type \"float3\" -6.45417020000000008 -1.60262780000000005 8.2358665000000002"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[138]" " -type \"float3\" -6.42295030000000011 -1.49886720000000007 8.24952219999999947"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[139]" " -type \"float3\" -6.30966619999999967 -1.49886720000000007 8.33869840000000018"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[140]" " -type \"float3\" -8.4190415999999999 -1.60262780000000005 7.40447140000000026"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[141]" " -type \"float3\" -8.4518184999999999 -1.49329690000000004 7.38986590000000021"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[142]" " -type \"float3\" -8.31280330000000056 -1.49329690000000004 7.41235490000000041"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[143]" " -type \"float3\" -8.2800255000000007 -1.60262780000000005 7.42696290000000037"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[144]" " -type \"float3\" -6.53251079999999984 -2.1054807000000002 5.4171661999999996"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[145]" " -type \"float3\" -6.54885580000000012 -2.10551980000000016 5.48711630000000028"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[146]" " -type \"float3\" -6.54825880000000016 -2.21224329999999991 5.49585629999999981"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[147]" " -type \"float3\" -6.53190229999999961 -2.21221349999999983 5.42587379999999975"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[148]" " -type \"float3\" -6.340559 -2.21221349999999983 5.50633139999999965"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[149]" " -type \"float3\" -6.37533040000000017 -2.21224329999999991 5.56366210000000017"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[150]" " -type \"float3\" -6.3709908000000004 -2.10595350000000003 5.55744409999999966"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[151]" " -type \"float3\" -6.33622219999999992 -2.10592319999999988 5.50010919999999981"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[152]" " -type \"float3\" -6.54580689999999965 -2.101243 5.43081570000000013"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[153]" " -type \"float3\" -6.56107429999999958 -2.10129050000000017 5.50043769999999999"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[154]" " -type \"float3\" -6.56025789999999986 -2.2080255000000002 5.50921250000000029"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[155]" " -type \"float3\" -6.54494519999999991 -2.20798490000000003 5.43957520000000017"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[156]" " -type \"float3\" -7.71121449999999964 -1.7295183999999999 6.62867590000000018"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[157]" " -type \"float3\" -7.63215880000000002 -1.72953519999999994 6.66947270000000003"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[158]" " -type \"float3\" -7.61181739999999962 -1.83786749999999999 6.68180939999999968"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[159]" " -type \"float3\" -7.69087359999999975 -1.83783889999999994 6.6410127000000001"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[160]" " -type \"float3\" -6.40242480000000036 -1.73845669999999997 7.18705320000000025"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[161]" " -type \"float3\" -6.32013420000000004 -1.73844050000000006 7.21844909999999995"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[162]" " -type \"float3\" -6.34075360000000021 -1.84321069999999998 7.212657"
-		
-		2 "|SouveneirStall|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right|table_latest:leg_rightShape" 
-		"pnts[163]" " -type \"float3\" -6.42307 -1.84321960000000007 7.18124870000000026";
+		"pt[0:163]" (" -s 164 -type \"float3\" -9.17259310000000028 0.082751281999999995 7.05397129999999972 -9.31480029999999992 0.082751281999999995 7.03243639999999992 -9.35942460000000054 0.082751281999999995 7.14594079999999998 -9.24480149999999945 0.082751281999999995 7.23763559999999995 -9.12933830000000057 0.082751281999999995 7.18079659999999986 -8.3044033000000006 -2.16952370000000005 7.43661979999999989 -8.44660949999999922 -2.16952370000000005 7.41508479999999981 -8.49123379999999983 -2.16952370000000005 7.52858919999999987 -8.37661169999999977 -2.16952370000000005 7.62028410000000012 -8.26114749999999987 -2.16952370000000005 7.56344510000000003 -9.24420830000000038 0.082751281999999995 7.13016839999999963 -8.375988 -2.16952370000000005 7.51283070000000031 -8.4999046000000007 -1.19905210000000007 7.56594280000000019 -8.61452670000000076 -1.19905210000000007 7.47424939999999971 -8.56990240000000014 -1.19905210000000007 7.36074539999999988 -8.42769619999999975 -1.19905210000000007 7.38227839999999969 -8.38444140000000004 -"
+		+ "1.19905210000000007 7.50910429999999973 -8.3044033000000006 -2.15384220000000015 7.43661979999999989 -8.26114749999999987 -2.15384220000000015 7.56344510000000003 -8.37661169999999977 -2.15384220000000015 7.62028410000000012 -8.49123379999999983 -2.15384220000000015 7.52858919999999987 -8.44660949999999922 -2.15384220000000015 7.41508479999999981 -9.22111510000000045 0.047753520000000001 7.248075 -9.33570669999999936 0.047753520000000001 7.156394 -9.29108429999999963 0.047753520000000001 7.04288959999999964 -9.1489066999999995 0.047753520000000001 7.06441069999999982 -9.10565090000000055 0.047753520000000001 7.19123649999999959 -9.17477129999999974 -0.72154671000000004 7.22732539999999979 -9.13014790000000076 -0.72154671000000004 7.113821 -8.98794559999999976 -0.72154671000000004 7.13535309999999967 -8.9446898000000008 -0.72154671000000004 7.26217939999999995 -9.060154 -0.72154671000000004 7.3190173999999999 -9.27684589999999965 -0.23365188000000001 7.18233630000000023 -9.23222349999999992 -0.2336518800000000"
+		+ "1 7.06883239999999979 -9.09001540000000041 -0.23365188000000001 7.0903672999999996 -9.04675959999999968 -0.23365188000000001 7.21719259999999974 -9.16222379999999958 -0.23365188000000001 7.27403159999999982 -8.86827949999999987 -0.96147424000000004 7.36240960000000033 -8.82365609999999911 -0.96147424000000004 7.2489056999999999 -8.68144889999999947 -0.96147424000000004 7.27044010000000007 -8.63819409999999976 -0.96147424000000004 7.39726450000000035 -8.75365730000000042 -0.96147424000000004 7.4541044000000003 -8.49123379999999983 -1.60262780000000005 7.52858919999999987 -8.44660949999999922 -1.60262780000000005 7.41508479999999981 -8.3044033000000006 -1.60262780000000005 7.43661979999999989 -8.26114749999999987 -1.60262780000000005 7.56344510000000003 -8.37661169999999977 -1.60262780000000005 7.62028410000000012 -8.66311259999999983 -1.046242 7.49401190000000028 -8.77773479999999928 -1.046242 7.40231610000000018 -8.73311230000000016 -1.046242 7.28881219999999974 -8.59090420000000066 -1.046242 7.31034760000000"
+		+ "006 -8.54764939999999918 -1.046242 7.43717190000000006 -6.068594 -0.96147424000000004 8.42203710000000072 -6.18406680000000009 -0.96147424000000004 8.47890379999999944 -6.1941360999999997 -1.046242 8.366704 -6.28522970000000036 -1.046242 8.43431660000000072 -6.14079279999999983 -0.96147424000000004 8.60567670000000007 -6.231308 -1.046242 8.56578249999999919 -5.64963339999999992 0.082751281999999995 8.82215120000000042 -5.50743910000000003 0.082751281999999995 8.84367559999999919 -5.46281580000000044 0.082751281999999995 8.73017119999999913 -5.577435 0.082751281999999995 8.63851170000000046 -5.6928920999999999 0.082751281999999995 8.695385 -6.51780890000000035 -2.16952370000000005 8.43950839999999936 -6.37562940000000022 -2.16952370000000005 8.4610271000000008 -6.33100609999999975 -2.16952370000000005 8.34752270000000074 -6.44561 -2.16952370000000005 8.2558688999999994 -6.56108189999999958 -2.16952370000000005 8.31273649999999975 -5.57805160000000022 0.082751281999999995 8.74600030000000039 -6.4462419000000004"
+		+ "1 -2.16952370000000005 8.36335180000000022 -6.32231710000000025 -1.19905210000000007 8.31020930000000035 -6.20771310000000032 -1.19905210000000007 8.40186309999999992 -6.25233650000000019 -1.19905210000000007 8.51536749999999998 -6.394516 -1.19905210000000007 8.49384979999999956 -6.437788 -1.19905210000000007 8.36707780000000056 -6.51780890000000035 -2.15384220000000015 8.43950839999999936 -6.56108189999999958 -2.15384220000000015 8.31273649999999975 -6.44561 -2.15384220000000015 8.2558688999999994 -6.33100609999999975 -2.15384220000000015 8.34752270000000074 -6.37562940000000022 -2.15384220000000015 8.4610271000000008 -5.60113720000000015 0.047753520000000001 8.6280651000000006 -5.48651789999999995 0.047753520000000001 8.71972470000000044 -5.53114129999999982 0.047753520000000001 8.8332291000000005 -5.673336 0.047753520000000001 8.81170460000000055 -5.716609 0.047753520000000001 8.68493179999999931 -5.647438 -0.72154671000000004 8.64880080000000007 -5.69206140000000005 -0.72154671000000004 8.7623043000000002"
+		+ "7 -5.83426669999999969 -0.72154671000000004 8.74077510000000046 -5.87753960000000042 -0.72154671000000004 8.61400320000000086 -5.76206779999999963 -0.72154671000000004 8.55713459999999948 -5.54539389999999965 -0.23365188000000001 8.69377519999999926 -5.59001730000000041 -0.23365188000000001 8.80727959999999932 -5.73219679999999965 -0.23365188000000001 8.78576179999999951 -5.77546979999999976 -0.23365188000000001 8.65898989999999991 -5.65999789999999958 -0.23365188000000001 8.6021213999999997 -5.95395990000000008 -0.96147424000000004 8.51370239999999967 -5.99858329999999995 -0.96147424000000004 8.62720679999999973 -6.33100609999999975 -1.60262780000000005 8.34752270000000074 -6.37562940000000022 -1.60262780000000005 8.4610271000000008 -6.51780890000000035 -1.60262780000000005 8.43950839999999936 -6.56108189999999958 -1.60262780000000005 8.31273649999999975 -6.44561 -1.60262780000000005 8.2558688999999994 -6.0445051000000003 -1.046242 8.47379590000000071 -6.08912850000000017 -1.046242 8.58729929999999975 -8.638"
+		+ "12069999999999 -1.046242 7.50502589999999969 -8.52443030000000057 -1.046242 7.44740490000000044 -8.56629090000000026 -1.046242 7.32119509999999973 -8.65458680000000058 -0.96147424000000004 7.28227949999999957 -8.61298470000000016 -0.96147424000000004 7.40837569999999968 -8.72679519999999975 -0.96147424000000004 7.4659437999999998 -6.25562859999999965 -1.046242 8.55506319999999931 -6.30787180000000003 -1.046242 8.42433740000000064 -6.2180882000000004 -1.046242 8.35614780000000046 -6.0947294000000003 -0.96147424000000004 8.41051769999999976 -6.20860579999999995 -0.96147424000000004 8.4680882000000004 -6.16692779999999985 -0.96147424000000004 8.59415820000000075 -6.48613879999999998 -1.4988973000000001 8.45346830000000082 -6.52941269999999996 -1.4988973000000001 8.32669450000000033 -6.41394040000000043 -1.4988973000000001 8.26982779999999984 -6.29930690000000038 -1.4988973000000001 8.36149409999999982 -6.34393019999999996 -1.4988973000000001 8.47499750000000063 -8.33780669999999979 -1.49324970000000001 7.4218979"
+		+ "0000000027 -8.29454989999999981 -1.49324970000000001 7.54872370000000004 -8.41001510000000074 -1.49324970000000001 7.60556219999999961 -8.52463629999999917 -1.49324970000000001 7.51386640000000039 -8.48001290000000019 -1.49324970000000001 7.40036249999999995 -6.44561 -1.72902990000000001 8.2558688999999994 -6.33100609999999975 -1.72902990000000001 8.34752270000000074 -6.37562940000000022 -1.72902990000000001 8.4610271000000008 -6.51780890000000035 -1.72902990000000001 8.43950839999999936 -6.56108189999999958 -1.72902990000000001 8.31273649999999975 -8.3044033000000006 -1.7319732000000001 7.43661979999999989 -8.26114749999999987 -1.7319732000000001 7.56344510000000003 -8.37661169999999977 -1.7319732000000001 7.62028410000000012 -8.49123379999999983 -1.7319732000000001 7.52858919999999987 -8.44660949999999922 -1.7319732000000001 7.41508479999999981 -6.34089469999999977 -1.60262780000000005 8.3250712999999994 -6.45417020000000008 -1.60262780000000005 8.2358665000000002 -6.42295030000000011 -1.49886720000000007 8"
+		+ ".24952219999999947 -6.30966619999999967 -1.49886720000000007 8.33869840000000018 -8.4190415999999999 -1.60262780000000005 7.40447140000000026 -8.4518184999999999 -1.49329690000000004 7.38986590000000021 -8.31280330000000056 -1.49329690000000004 7.41235490000000041 -8.2800255000000007 -1.60262780000000005 7.42696290000000037 -6.53251079999999984 -2.1054807000000002 5.4171661999999996 -6.54885580000000012 -2.10551980000000016 5.48711630000000028 -6.54825880000000016 -2.21224329999999991 5.49585629999999981 -6.53190229999999961 -2.21221349999999983 5.42587379999999975 -6.340559 -2.21221349999999983 5.50633139999999965 -6.37533040000000017 -2.21224329999999991 5.56366210000000017 -6.3709908000000004 -2.10595350000000003 5.55744409999999966 -6.33622219999999992 -2.10592319999999988 5.50010919999999981 -6.54580689999999965 -2.101243 5.43081570000000013 -6.56107429999999958 -2.10129050000000017 5.50043769999999999 -6.56025789999999986 -2.2080255000000002 5.50921250000000029 -6.54494519999999991 -2.20798490000000003 "
+		+ "5.43957520000000017 -7.71121449999999964 -1.7295183999999999 6.62867590000000018 -7.63215880000000002 -1.72953519999999994 6.66947270000000003 -7.61181739999999962 -1.83786749999999999 6.68180939999999968 -7.69087359999999975 -1.83783889999999994 6.6410127000000001 -6.40242480000000036 -1.73845669999999997 7.18705320000000025 -6.32013420000000004 -1.73844050000000006 7.21844909999999995 -6.34075360000000021 -1.84321069999999998 7.212657 -6.42307 -1.84321960000000007 7.18124870000000026"
+		);
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "Firecrackers_latestRN";
+	rename -uid "AA6DEF3D-43F0-A6A8-D34D-4AA164268617";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Firecrackers_latestRN"
+		"Firecrackers_latestRN" 0
+		"Firecrackers_latestRN" 5
+		0 "|Firecrackers_latest:controller" "|SouveneirStall" "-s -r "
+		0 "|Firecrackers_latest:left" "|SouveneirStall" "-s -r "
+		2 "|SouveneirStall|Firecrackers_latest:controller" "translate" " -type \"double3\" 3.03482076794572686 -2.00932151148343152 3.35270866867768724"
+		
+		2 "|SouveneirStall|Firecrackers_latest:controller" "rotate" " -type \"double3\" 0 17.12908769396973341 0"
+		
+		2 "|SouveneirStall|Firecrackers_latest:controller" "scale" " -type \"double3\" 0.52465859759404609 0.52465859759404609 0.52465859759404609";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 select -ne :time1;
@@ -1713,7 +597,7 @@ select -ne :renderPartition;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 6 ".st";
+	setAttr -s 13 ".st";
 	setAttr -cb on ".an";
 	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
@@ -1726,7 +610,7 @@ select -ne :defaultShaderList1;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 8 ".s";
+	setAttr -s 15 ".s";
 select -ne :postProcessList1;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -1734,11 +618,11 @@ select -ne :postProcessList1;
 	setAttr -cb on ".bnm";
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 8 ".u";
+	setAttr -s 29 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 10 ".r";
+	setAttr -s 12 ".r";
 select -ne :defaultTextureList1;
-	setAttr -s 10 ".tx";
+	setAttr -s 37 ".tx";
 select -ne :initialShadingGroup;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
