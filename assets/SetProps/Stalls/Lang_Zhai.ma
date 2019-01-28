@@ -1,7 +1,7 @@
 //Maya ASCII 2018 scene
-//Name: Buns_stall_latest.ma
-//Last modified: Wed, Jan 09, 2019 08:34:59 AM
-//Codeset: 1252
+//Name: Lang_Zhai.ma
+//Last modified: Mon, Jan 28, 2019 12:17:54 PM
+//Codeset: UTF-8
 file -rdi 1 -ns "tent_LengZhai_latest" -rfn "tent_LengZhai_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Tents/tent_LengZhai_latest.ma";
 file -rdi 1 -ns "portable_stove_latest" -rfn "portable_stove_latestRN" -op "v=0;"
@@ -16,6 +16,10 @@ file -rdi 1 -ns "wok_latest" -rfn "wok_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Lang_Zhai_Props/wok_latest.ma";
 file -rdi 1 -ns "cashbox_latest" -rfn "cashbox_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Barbatus_Props/cashbox_latest.ma";
+file -rdi 1 -ns "lights_shaded_latest" -rfn "lights_shaded_latestRN" -op "v=0;"
+		 -typ "mayaAscii" "/Users/abbyrcohn/Desktop/CNMNightMarket//assets/SetProps/lights_shaded_latest.ma";
+file -rdi 2 -ns "stringlightbulb_i1" -rfn "lights_shaded_latest:stringlightbulb_i1RN"
+		 -op "v=0;" -typ "mayaAscii" "/Users/abbyrcohn/Desktop/cnm190/stringlightbulb_i1.ma";
 file -r -ns "tent_LengZhai_latest" -dr 1 -rfn "tent_LengZhai_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Tents/tent_LengZhai_latest.ma";
 file -r -ns "portable_stove_latest" -dr 1 -rfn "portable_stove_latestRN" -op "v=0;"
@@ -29,31 +33,35 @@ file -r -ns "dumpling_case_latest" -dr 1 -rfn "dumpling_case_latestRN" -op "v=0;
 file -r -ns "wok_latest" -dr 1 -rfn "wok_latestRN" -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Lang_Zhai_Props/wok_latest.ma";
 file -r -ns "cashbox_latest" -dr 1 -rfn "cashbox_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Barbatus_Props/cashbox_latest.ma";
+file -r -ns "lights_shaded_latest" -dr 1 -rfn "lights_shaded_latestRN" -op "v=0;"
+		 -typ "mayaAscii" "/Users/abbyrcohn/Desktop/CNMNightMarket//assets/SetProps/lights_shaded_latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
-requires -nodeType "PxrSurface" -nodeType "rmanDisplayChannel" -nodeType "d_openexr"
-		 -nodeType "rmanGlobals" -nodeType "PxrPathTracer" -nodeType "rmanDisplay" "RenderMan_for_Maya.py" "1.0";
+requires -nodeType "PxrVisualizer" -nodeType "PxrSurface" -nodeType "PxrDefault"
+		 -nodeType "rmanDisplayChannel" -nodeType "d_openexr" -nodeType "PxrCamera" -nodeType "OmnidirectionalStereo"
+		 -nodeType "rmanGlobals" -nodeType "PxrOcclusion" -nodeType "PxrDirectLighting" -nodeType "PxrVCM"
+		 -nodeType "PxrPathTracer" -nodeType "rmanDisplay" "RenderMan_for_Maya.py" "1.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2018";
 fileInfo "version" "2018";
 fileInfo "cutIdentifier" "201706261615-f9658c4cfc";
-fileInfo "osv" "Microsoft Windows 8 Home Premium Edition, 64-bit  (Build 9200)\n";
+fileInfo "osv" "Mac OS X 10.13.6";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "70EAC88E-4D79-C2BD-3817-70A974F49DD3";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 12.81080679164895 7.3528816469509843 20.580720936447527 ;
-	setAttr ".r" -type "double3" -12.338352741766975 -1765.3999999997948 0 ;
+	setAttr ".t" -type "double3" -0.68435910890643104 5.5755899568319158 13.230875251067911 ;
+	setAttr ".r" -type "double3" -5.7383527417434284 -1803.3999999995906 7.4675692415332483e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "AE433CC0-4E0E-4F2E-B1D8-E4BFA7A9339C";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 21.240324390771654;
+	setAttr ".coi" 9.8552351778413811;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -0.25705877143852085 -6.4094948549207209e-30 0.99596359922934141 ;
+	setAttr ".tp" -type "double3" -0.10280974975556978 4.5902063897665126 3.4422859768573044 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "0AED8FB0-42CB-83AB-133C-A28320C529CF";
@@ -139,7 +147,7 @@ createNode nurbsCurve -n "CounterShape" -p "Counter";
 		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
 		11
 		2.7247183813600167 1.3375453600211658e-16 -1.1325526568410291
-		0.10603113338524109 1.891574788431135e-16 -2.1576095289416335
+		0.10603113338524109 1.8915747884311348e-16 -2.1576095289416335
 		-2.512656114589535 1.3375453600211656e-16 -1.1325526568410285
 		-3.5973518883141642 1.7469017945868177e-31 1.3421535459879943
 		-2.512656114589535 -1.3375453600211624e-16 3.8168597488170182
@@ -147,7 +155,7 @@ createNode nurbsCurve -n "CounterShape" -p "Counter";
 		2.7247183813600167 -1.3375453600211621e-16 3.8168597488170182
 		3.809414155084645 1.3908888375022339e-31 1.342153545987995
 		2.7247183813600167 1.3375453600211658e-16 -1.1325526568410291
-		0.10603113338524109 1.891574788431135e-16 -2.1576095289416335
+		0.10603113338524109 1.8915747884311348e-16 -2.1576095289416335
 		-2.512656114589535 1.3375453600211656e-16 -1.1325526568410285
 		;
 createNode transform -n "CounterGrp" -p "Counter";
@@ -213,7 +221,7 @@ createNode transform -n "LevelGrp" -p "|LengZai|DumplingBox|BunBox|Level0";
 	setAttr ".rp" -type "double3" 0 -6.3382184005160745e-16 2.3768319001935284e-16 ;
 	setAttr ".rpt" -type "double3" 1.0804107875686023e-16 0 -2.5974843186192473e-17 ;
 	setAttr ".sp" -type "double3" 0 -1.7763568394002505e-15 6.6613381477509392e-16 ;
-	setAttr ".spt" -type "double3" 0 1.142534999348643e-15 -4.2845062475574108e-16 ;
+	setAttr ".spt" -type "double3" 0 1.1425349993486432e-15 -4.2845062475574108e-16 ;
 createNode transform -n "Clip1" -p "|LengZai|DumplingBox|BunBox|Level0|LevelGrp";
 	rename -uid "FD25DF7F-4659-0EDB-D042-FBAE4909EF25";
 	setAttr ".t" -type "double3" 0.039376197089844245 -0.29727160296195959 3.008946194128129 ;
@@ -2285,7 +2293,7 @@ createNode transform -n "Board" -p "|LengZai|DumplingBox|BunBox|Level0|LevelGrp|
 createNode mesh -n "BoardShape" -p "|LengZai|DumplingBox|BunBox|Level0|LevelGrp|Boards|Board";
 	rename -uid "A139E649-4EB9-C285-B7C6-529DC16B5439";
 	setAttr -k off ".v";
-	setAttr -s 32 ".iog";
+	setAttr -s 27 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".pv" -type "double2" 0.19537964463233948 0.00038206702447496355 ;
@@ -2768,7 +2776,7 @@ createNode transform -n "LevelGrp3" -p "|LengZai|DumplingBox|BunBox|Level3";
 	setAttr ".rp" -type "double3" 0 -6.3382184005160736e-16 -7.9227730006450932e-17 ;
 	setAttr ".rpt" -type "double3" -3.6013692918953401e-17 0 8.6582810620641691e-18 ;
 	setAttr ".sp" -type "double3" 0 -1.7763568394002505e-15 -2.2204460492503131e-16 ;
-	setAttr ".spt" -type "double3" 0 1.142534999348643e-15 1.4281687491858038e-16 ;
+	setAttr ".spt" -type "double3" 0 1.1425349993486432e-15 1.4281687491858038e-16 ;
 createNode nurbsCurve -n "LevelShape3" -p "|LengZai|DumplingBox|BunBox|Level3";
 	rename -uid "44D56876-41C2-5468-BF47-E8A18F82A59F";
 	setAttr -k off ".v";
@@ -11762,7 +11770,7 @@ createNode transform -n "Clip1" -p "|LengZai|DumplingBox8|BunBox|Level0|LevelGrp
 createNode mesh -n "ClipShape1" -p "|LengZai|DumplingBox8|BunBox|Level0|LevelGrp|Clip1";
 	rename -uid "18EB4D97-4A6A-DD58-883A-D18995E6C38F";
 	setAttr -k off ".v";
-	setAttr -s 8 ".iog";
+	setAttr -s 6 ".iog";
 	setAttr ".iog[2].og[2].gcl" -type "componentList" 1 "f[0:121]";
 	setAttr ".iog[3].og[2].gcl" -type "componentList" 1 "f[0:121]";
 	setAttr ".iog[4].og[2].gcl" -type "componentList" 1 "f[0:121]";
@@ -13823,7 +13831,7 @@ createNode transform -n "Board" -p "|LengZai|DumplingBox8|BunBox|Level0|LevelGrp
 createNode mesh -n "BoardShape" -p "|LengZai|DumplingBox8|BunBox|Level0|LevelGrp|Boards|Board";
 	rename -uid "5A59275D-4C21-4C03-2132-D4939343B09F";
 	setAttr -k off ".v";
-	setAttr -s 32 ".iog";
+	setAttr -s 24 ".iog";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".pv" -type "double2" 0.19537964463233948 0.00038206702447496355 ;
@@ -14242,7 +14250,7 @@ createNode transform -n "LevelGrp1" -p "|LengZai|DumplingBox8|BunBox|Level1";
 	setAttr ".rp" -type "double3" 0 0 6.3382184005160745e-16 ;
 	setAttr ".rpt" -type "double3" 2.8810954335162721e-16 0 -6.9266248496513353e-17 ;
 	setAttr ".sp" -type "double3" 0 0 1.7763568394002505e-15 ;
-	setAttr ".spt" -type "double3" 0 0 -1.142534999348643e-15 ;
+	setAttr ".spt" -type "double3" 0 0 -1.1425349993486432e-15 ;
 createNode nurbsCurve -n "LevelShape1" -p "|LengZai|DumplingBox8|BunBox|Level1";
 	rename -uid "CEFE11BF-4CD2-B00B-8685-06A637DB3207";
 	setAttr -k off ".v";
@@ -14274,7 +14282,7 @@ createNode transform -n "LevelGrp2" -p "|LengZai|DumplingBox8|BunBox|Level2";
 	setAttr ".rp" -type "double3" 0 0 6.3382184005160745e-16 ;
 	setAttr ".rpt" -type "double3" 2.8810954335162721e-16 0 -6.9266248496513353e-17 ;
 	setAttr ".sp" -type "double3" 0 0 1.7763568394002505e-15 ;
-	setAttr ".spt" -type "double3" 0 0 -1.142534999348643e-15 ;
+	setAttr ".spt" -type "double3" 0 0 -1.1425349993486432e-15 ;
 createNode nurbsCurve -n "LevelShape2" -p "|LengZai|DumplingBox8|BunBox|Level2";
 	rename -uid "ED8D898B-4949-BC14-1FA5-9BAC6811FB04";
 	setAttr -k off ".v";
@@ -14306,7 +14314,7 @@ createNode transform -n "LevelGrp3" -p "|LengZai|DumplingBox8|BunBox|Level3";
 	setAttr ".rp" -type "double3" 0 0 6.3382184005160745e-16 ;
 	setAttr ".rpt" -type "double3" 2.8810954335162721e-16 0 -6.9266248496513353e-17 ;
 	setAttr ".sp" -type "double3" 0 0 1.7763568394002505e-15 ;
-	setAttr ".spt" -type "double3" 0 0 -1.142534999348643e-15 ;
+	setAttr ".spt" -type "double3" 0 0 -1.1425349993486432e-15 ;
 createNode nurbsCurve -n "LevelShape3" -p "|LengZai|DumplingBox8|BunBox|Level3";
 	rename -uid "56B83777-492E-7513-05A7-5A9B17D2AD36";
 	setAttr -k off ".v";
@@ -18087,7 +18095,7 @@ createNode transform -n "LevelGrp1" -p "|LengZai|DumplingBox9|BunBox|Level1";
 	setAttr ".rp" -type "double3" 1.2676436801032149e-15 0 -1.5845546001290186e-16 ;
 	setAttr ".rpt" -type "double3" -2.105598828309335e-16 0 -5.5890252457912615e-16 ;
 	setAttr ".sp" -type "double3" 3.5527136788005009e-15 0 -4.4408920985006262e-16 ;
-	setAttr ".spt" -type "double3" -2.285069998697286e-15 0 2.8563374983716075e-16 ;
+	setAttr ".spt" -type "double3" -2.2850699986972864e-15 0 2.8563374983716075e-16 ;
 createNode nurbsCurve -n "LevelShape1" -p "|LengZai|DumplingBox9|BunBox|Level1";
 	rename -uid "4B0C355D-4B09-EEE7-96DB-08ACD0D918AC";
 	setAttr -k off ".v";
@@ -18119,7 +18127,7 @@ createNode transform -n "LevelGrp2" -p "|LengZai|DumplingBox9|BunBox|Level2";
 	setAttr ".rp" -type "double3" 1.2676436801032149e-15 -1.5845546001290184e-16 -1.5845546001290186e-16 ;
 	setAttr ".rpt" -type "double3" -2.105598828309335e-16 0 -5.5890252457912615e-16 ;
 	setAttr ".sp" -type "double3" 3.5527136788005009e-15 -4.4408920985006262e-16 -4.4408920985006262e-16 ;
-	setAttr ".spt" -type "double3" -2.285069998697286e-15 2.8563374983716075e-16 2.8563374983716075e-16 ;
+	setAttr ".spt" -type "double3" -2.2850699986972864e-15 2.8563374983716075e-16 2.8563374983716075e-16 ;
 createNode nurbsCurve -n "LevelShape2" -p "|LengZai|DumplingBox9|BunBox|Level2";
 	rename -uid "9F8857D6-4DD9-4CB4-3D2B-DA88D8197F77";
 	setAttr -k off ".v";
@@ -18151,7 +18159,7 @@ createNode transform -n "LevelGrp3" -p "|LengZai|DumplingBox9|BunBox|Level3";
 	setAttr ".rp" -type "double3" 1.2676436801032149e-15 -1.5845546001290184e-16 -1.5845546001290186e-16 ;
 	setAttr ".rpt" -type "double3" -2.105598828309335e-16 0 -5.5890252457912615e-16 ;
 	setAttr ".sp" -type "double3" 3.5527136788005009e-15 -4.4408920985006262e-16 -4.4408920985006262e-16 ;
-	setAttr ".spt" -type "double3" -2.285069998697286e-15 2.8563374983716075e-16 2.8563374983716075e-16 ;
+	setAttr ".spt" -type "double3" -2.2850699986972864e-15 2.8563374983716075e-16 2.8563374983716075e-16 ;
 createNode nurbsCurve -n "LevelShape3" -p "|LengZai|DumplingBox9|BunBox|Level3";
 	rename -uid "E42FB1D1-4FC8-57CA-D66D-7EBBF2F7EEFF";
 	setAttr -k off ".v";
@@ -19500,19 +19508,19 @@ parent -s -nc -r -add "|LengZai|DumplingBox9|BunBox|Level0|LevelGrp|Boards|Board
 parent -s -nc -r -add "|LengZai|DumplingBox9|BunBox|Level0|LevelGrp|Boards|Board|BoardShape" "|LengZai|DumplingBox9|BunBox|Level0|LevelGrp|Boards|Board6" ;
 parent -s -nc -r -add "|LengZai|DumplingBox9|BunBox|Level0|LevelGrp|Boards|Board|BoardShape" "|LengZai|DumplingBox9|BunBox|Level0|LevelGrp|Boards|Board7" ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "2B637649-42DB-35E1-6861-4BAB2BEAD5EA";
-	setAttr -s 26 ".lnk";
-	setAttr -s 26 ".slnk";
+	rename -uid "B7FC737C-9641-3092-4824-1687B93FAF2F";
+	setAttr -s 30 ".lnk";
+	setAttr -s 30 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "635F43CF-46A1-723B-9B03-9AA2836699DF";
+	rename -uid "BC3E4437-484E-4AE1-580E-4F8A48FBBC88";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "0FA42237-4D3F-A822-9B2A-4EAA478AE5CA";
+	rename -uid "F358832E-0444-7366-30F0-34813CB6AA65";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "F0C021A0-4FB6-5EA9-E90D-8CB4107C896F";
+	rename -uid "4517DF93-1940-9A13-6636-76BD9F097868";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "738973F1-4268-2CD3-49D6-C6AC5801DE94";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "D8D48E76-46B6-B71B-722F-C282AE20A973";
+	rename -uid "90CC76EA-CE46-74A4-DC97-4CAC0B577D11";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "0C33BFE2-4BF9-B57E-BAA9-B2806F489CFA";
 	setAttr ".g" yes;
@@ -19543,7 +19551,6 @@ createNode rmanGlobals -s -n "rmanGlobals";
 	setAttr ".displayFilters[0]" -type "string" "";
 	setAttr ".sampleFilters[0]" -type "string" "";
 	setAttr ".outputAllShaders" no;
-	setAttr ".nestedInstancing" no;
 	setAttr ".reentrantProcedurals" yes;
 	setAttr ".outputShadowAOV" 0;
 	setAttr ".enableImagePlaneFilter" yes;
@@ -19622,6 +19629,7 @@ createNode rmanGlobals -s -n "rmanGlobals";
 	setAttr ".UserTokens[9].userTokenKeys" -type "string" "";
 	setAttr ".UserTokens[9].userTokenValues" -type "string" "";
 	setAttr ".rlfData" -type "string" "init";
+	setAttr ".jobid" -type "string" "";
 createNode rmanDisplay -s -n "rmanDefaultDisplay";
 	rename -uid "ECFC2D2C-4224-03A2-38BB-C3A37C4B0F94";
 	setAttr ".cch" no;
@@ -19758,19 +19766,19 @@ createNode script -n "tent_latest_uiConfigurationScriptNode";
 	rename -uid "5D15AAC6-4658-713C-9EB9-80A73A34E23A";
 	setAttr ".b" -type "string" (
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n"
-		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
+		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
 		+ "            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n"
 		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
+		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
 		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
-		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
+		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
 		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
-		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
+		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1319\n            -height 713\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 634\n            -height 402\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
 		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n"
@@ -19791,13 +19799,13 @@ createNode script -n "tent_latest_uiConfigurationScriptNode";
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n"
-		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
+		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
 		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
 		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n"
-		+ "                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 713\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 713\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n"
+		+ "                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 634\\n    -height 402\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 634\\n    -height 402\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "tent_latest_sceneConfigurationScriptNode";
@@ -19993,7 +20001,7 @@ createNode PxrSurface -n "BoxShader";
 	setAttr ".utilityPattern[0]"  0;
 createNode file -n "file1";
 	rename -uid "617E3BB0-4176-107F-6EB4-CEA628742F71";
-	setAttr ".ftn" -type "string" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Graphics/pngs/LengZaiBuns.png";
+	setAttr ".ftn" -type "string" "/Users/abbyrcohn/Desktop/CNMNightMarket//assets/Graphics/pngs/LengZaiBuns.png";
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "place2dTexture1";
 	rename -uid "E1B8522B-4249-AC18-EC96-3C8D9FE0CFC1";
@@ -20584,6 +20592,20 @@ createNode reference -n "simple_case_latestRN";
 		2 "simple_case_latest:groupParts47" "groupId" " 660"
 		3 "simple_case_latest:groupId49.message" ":initialShadingGroup.groupNodes" 
 		"-na"
+		3 "simple_case_latest:polyTweakUV7.output" "|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:Lid|simple_case_latest:polySurface2|simple_case_latest:polySurfaceShape3.inMesh" 
+		""
+		3 "simple_case_latest:groupId52.groupId" "|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:Lid|simple_case_latest:polySurface2|simple_case_latest:polySurfaceShape3.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:Lid|simple_case_latest:polySurface2|simple_case_latest:polySurfaceShape3.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:Lid|simple_case_latest:polySurface2|simple_case_latest:polySurfaceShape3.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "simple_case_latest:groupId37.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "simple_case_latest:groupId52.groupId" "simple_case_latest:groupParts1.groupId" 
+		""
+		3 "simple_case_latest:groupId98.groupId" "simple_case_latest:groupParts47.groupId" 
+		""
 		3 "simple_case_latest:groupId25.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:LevelGrp1|simple_case_latest:Outside|simple_case_latest:OutsideShape.instObjGroups.objectGroups[0]" 
@@ -20604,30 +20626,16 @@ createNode reference -n "simple_case_latestRN";
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:LevelGrp3|simple_case_latest:Outside|simple_case_latest:OutsideShape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		3 "simple_case_latest:groupId37.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "simple_case_latest:groupId52.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "simple_case_latest:groupId98.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "simple_case_latest:groupId98.groupId" "simple_case_latest:groupParts47.groupId" 
-		""
-		3 "simple_case_latest:groupId52.groupId" "simple_case_latest:groupParts1.groupId" 
-		""
 		3 "simple_case_latest:groupId98.groupId" "|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:Lid|simple_case_latest:LidOutside|simple_case_latest:LidOutsideShape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:Lid|simple_case_latest:LidOutside|simple_case_latest:LidOutsideShape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
 		3 "|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:Lid|simple_case_latest:LidOutside|simple_case_latest:LidOutsideShape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "simple_case_latest:polyTweakUV7.output" "|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:Lid|simple_case_latest:polySurface2|simple_case_latest:polySurfaceShape3.inMesh" 
-		""
-		3 "simple_case_latest:groupId52.groupId" "|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:Lid|simple_case_latest:polySurface2|simple_case_latest:polySurfaceShape3.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:Lid|simple_case_latest:polySurface2|simple_case_latest:polySurfaceShape3.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:Lid|simple_case_latest:polySurface2|simple_case_latest:polySurfaceShape3.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		3 "simple_case_latest:groupId98.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "simple_case_latest:groupId52.message" ":initialShadingGroup.groupNodes" 
+		"-na"
 		5 0 "simple_case_latestRN" "simple_case_latest:polyTweakUV7.output" 
 		"|LengZai|simple_case_latest:DumplingBox|simple_case_latest:BunBox|simple_case_latest:Lid|simple_case_latest:polySurface2|simple_case_latest:polySurfaceShape3.inMesh" 
 		"simple_case_latestRN.placeHolderList[1]" "simple_case_latestRN.placeHolderList[2]" 
@@ -20958,6 +20966,12 @@ createNode reference -n "dumpling_case_latestRN";
 		2 "|LengZai|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape" 
 		"instObjGroups.objectGroups[2].objectGrpCompList" " -type \"componentList\" 1 \"f[0:121]\""
 		
+		3 "|LengZai|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|LengZai|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|LengZai|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|LengZai|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups" 
 		"dumpling_case_latest:PxrSurface2SG.dagSetMembers" "-na"
 		3 "|LengZai|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level0|dumpling_case_latest:LevelGrp|dumpling_case_latest:Clip|dumpling_case_latest:ClipShape.instObjGroups" 
@@ -21071,12 +21085,6 @@ createNode reference -n "dumpling_case_latestRN";
 		3 "|LengZai|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board6|dumpling_case_latest:BoardShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|LengZai|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Boards|dumpling_case_latest:Board7|dumpling_case_latest:BoardShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|LengZai|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|LengZai|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level2|dumpling_case_latest:LevelGrp2|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|LengZai|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level3|dumpling_case_latest:LevelGrp3|dumpling_case_latest:Inside1|dumpling_case_latest:Inside1Shape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "dumpling_case_latestRN" "|LengZai|dumpling_case_latest:DumplingBox|dumpling_case_latest:BunBox|dumpling_case_latest:Level1|dumpling_case_latest:LevelGrp1|dumpling_case_latest:Clip1|dumpling_case_latest:ClipShape.instObjGroups.objectGroups[2]" 
 		"dumpling_case_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
@@ -21643,7 +21651,7 @@ createNode reference -n "cashbox_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"cashbox_latestRN"
 		"cashbox_latestRN" 0
-		"cashbox_latestRN" 919
+		"cashbox_latestRN" 59
 		0 "|cashbox_latest:Chashbox" "|LengZai" "-s -r "
 		2 "|LengZai|cashbox_latest:Chashbox" "translate" " -type \"double3\" 0 0 0"
 		
@@ -21674,29 +21682,7 @@ createNode reference -n "cashbox_latestRN";
 		"scalePivot" " -type \"double3\" -1.10865089006077233 2.15144078408567196 0.46316625273118872"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider2|cashbox_latest:MoneyDividerShape2" 
-		"pnts" " -s 8"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider2|cashbox_latest:MoneyDividerShape2" 
-		"pnts[0]" " -type \"float3\" -0.50894033999999999 2.5817578000000001 -0.23148184999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider2|cashbox_latest:MoneyDividerShape2" 
-		"pnts[1]" " -type \"float3\" -1.72173189999999998 2.60064720000000005 0.15634581"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider2|cashbox_latest:MoneyDividerShape2" 
-		"pnts[2]" " -type \"float3\" -0.50646566999999998 1.70223450000000009 -0.23599203999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider2|cashbox_latest:MoneyDividerShape2" 
-		"pnts[3]" " -type \"float3\" -1.71925759999999994 1.72112350000000003 0.15183595"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider2|cashbox_latest:MoneyDividerShape2" 
-		"pnts[4]" " -type \"float3\" -0.49556971 1.70223450000000009 0.76998633000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider2|cashbox_latest:MoneyDividerShape2" 
-		"pnts[5]" " -type \"float3\" -1.70836150000000009 1.72112350000000003 1.15781430000000007"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider2|cashbox_latest:MoneyDividerShape2" 
-		"pnts[6]" " -type \"float3\" -0.49804430999999999 2.5817578000000001 0.77449656"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider2|cashbox_latest:MoneyDividerShape2" 
-		"pnts[7]" " -type \"float3\" -1.71083589999999997 2.60064720000000005 1.16232420000000003"
+		"pt[0:7]" " -s 8 -type \"float3\" -0.50894033999999999 2.5817578000000001 -0.23148184999999999 -1.72173189999999998 2.60064720000000005 0.15634581 -0.50646566999999998 1.70223450000000009 -0.23599203999999999 -1.71925759999999994 1.72112350000000003 0.15183595 -0.49556971 1.70223450000000009 0.76998633000000005 -1.70836150000000009 1.72112350000000003 1.15781430000000007 -0.49804430999999999 2.5817578000000001 0.77449656 -1.71083589999999997 2.60064720000000005 1.16232420000000003"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider1" 
 		"rotatePivot" " -type \"double3\" -0.93185985905238244 2.15144078408567196 0.56016720719174939"
@@ -21705,29 +21691,8 @@ createNode reference -n "cashbox_latestRN";
 		"scalePivot" " -type \"double3\" -0.93185985905238244 2.15144078408567196 0.56016720719174939"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider1|cashbox_latest:MoneyDividerShape1" 
-		"pnts" " -s 8"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider1|cashbox_latest:MoneyDividerShape1" 
-		"pnts[0]" " -type \"float3\" -0.33214933000000002 2.5817578000000001 -0.13448088999999999"
+		"pt[0:7]" " -s 8 -type \"float3\" -0.33214933000000002 2.5817578000000001 -0.13448088999999999 -1.54494090000000006 2.60064720000000005 0.25334677 -0.32967466000000001 1.70223450000000009 -0.13899112 -1.5424663999999999 1.72112350000000003 0.24883686999999999 -0.31877856999999998 1.70223450000000009 0.86698728999999997 -1.53157040000000011 1.72112350000000003 1.25481529999999997 -0.32125324 2.5817578000000001 0.87149750999999998 -1.534045 2.60064720000000005 1.25932510000000009"
 		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider1|cashbox_latest:MoneyDividerShape1" 
-		"pnts[1]" " -type \"float3\" -1.54494090000000006 2.60064720000000005 0.25334677"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider1|cashbox_latest:MoneyDividerShape1" 
-		"pnts[2]" " -type \"float3\" -0.32967466000000001 1.70223450000000009 -0.13899112"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider1|cashbox_latest:MoneyDividerShape1" 
-		"pnts[3]" " -type \"float3\" -1.5424663999999999 1.72112350000000003 0.24883686999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider1|cashbox_latest:MoneyDividerShape1" 
-		"pnts[4]" " -type \"float3\" -0.31877856999999998 1.70223450000000009 0.86698728999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider1|cashbox_latest:MoneyDividerShape1" 
-		"pnts[5]" " -type \"float3\" -1.53157040000000011 1.72112350000000003 1.25481529999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider1|cashbox_latest:MoneyDividerShape1" 
-		"pnts[6]" " -type \"float3\" -0.32125324 2.5817578000000001 0.87149750999999998"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider1|cashbox_latest:MoneyDividerShape1" 
-		"pnts[7]" " -type \"float3\" -1.534045 2.60064720000000005 1.25932510000000009"
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider" 
 		"rotatePivot" " -type \"double3\" -0.74879430287282878 2.15144078408567196 0.66061084156043726"
 		
@@ -21735,27 +21700,7 @@ createNode reference -n "cashbox_latestRN";
 		"scalePivot" " -type \"double3\" -0.74879430287282878 2.15144078408567196 0.66061084156043726"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider|cashbox_latest:MoneyDividerShape" 
-		"pnts" " -s 8"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider|cashbox_latest:MoneyDividerShape" 
-		"pnts[0]" " -type \"float3\" -0.14908378999999999 2.5817578000000001 -0.034037291999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider|cashbox_latest:MoneyDividerShape" 
-		"pnts[1]" " -type \"float3\" -1.36187539999999996 2.60064720000000005 0.3537904"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider|cashbox_latest:MoneyDividerShape" 
-		"pnts[2]" " -type \"float3\" -0.14660913 1.70223450000000009 -0.038547456000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider|cashbox_latest:MoneyDividerShape" 
-		"pnts[3]" " -type \"float3\" -1.359401 1.72112350000000003 0.34928050999999999"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider|cashbox_latest:MoneyDividerShape" 
-		"pnts[4]" " -type \"float3\" -0.1357131 1.70223450000000009 0.96743089000000004"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider|cashbox_latest:MoneyDividerShape" 
-		"pnts[5]" " -type \"float3\" -1.34850490000000001 1.72112350000000003 1.35525889999999993"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider|cashbox_latest:MoneyDividerShape" 
-		"pnts[6]" " -type \"float3\" -0.13818776999999999 2.5817578000000001 0.97194111000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MoneyDivider|cashbox_latest:MoneyDividerShape" 
-		"pnts[7]" " -type \"float3\" -1.35097939999999994 2.60064720000000005 1.35976870000000005"
+		"pt[0:7]" " -s 8 -type \"float3\" -0.14908378999999999 2.5817578000000001 -0.034037291999999997 -1.36187539999999996 2.60064720000000005 0.3537904 -0.14660913 1.70223450000000009 -0.038547456000000001 -1.359401 1.72112350000000003 0.34928050999999999 -0.1357131 1.70223450000000009 0.96743089000000004 -1.34850490000000001 1.72112350000000003 1.35525889999999993 -0.13818776999999999 2.5817578000000001 0.97194111000000005 -1.35097939999999994 2.60064720000000005 1.35976870000000005"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MiddleDivider" 
 		"rotatePivot" " -type \"double3\" -0.82987720392674569 2.13533770236169396 0.36188074535904513"
@@ -21764,30 +21709,7 @@ createNode reference -n "cashbox_latestRN";
 		"scalePivot" " -type \"double3\" -0.82987720392674569 2.13533770236169396 0.36188074535904513"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MiddleDivider|cashbox_latest:MiddleDividerShape" 
-		"pnts" " -s 8"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MiddleDivider|cashbox_latest:MiddleDividerShape" 
-		"pnts[0]" " -type \"float3\" -0.27843714000000003 2.24726820000000016 0.52669858999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MiddleDivider|cashbox_latest:MiddleDividerShape" 
-		"pnts[1]" " -type \"float3\" -1.38729560000000007 2.24726820000000016 0.89779156000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MiddleDivider|cashbox_latest:MiddleDividerShape" 
-		"pnts[2]" " -type \"float3\" -0.27843714000000003 2.05597209999999997 0.52669858999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MiddleDivider|cashbox_latest:MiddleDividerShape" 
-		"pnts[3]" " -type \"float3\" -1.38729560000000007 2.05597209999999997 0.89779156000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MiddleDivider|cashbox_latest:MiddleDividerShape" 
-		"pnts[4]" " -type \"float3\" -0.27245884999999997 2.05597209999999997 0.54456294000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MiddleDivider|cashbox_latest:MiddleDividerShape" 
-		"pnts[5]" " -type \"float3\" -1.38131739999999992 2.05597209999999997 0.91565591000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MiddleDivider|cashbox_latest:MiddleDividerShape" 
-		"pnts[6]" " -type \"float3\" -0.27245884999999997 2.24726820000000016 0.54456294000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:MiddleDivider|cashbox_latest:MiddleDividerShape" 
-		"pnts[7]" " -type \"float3\" -1.38131739999999992 2.24726820000000016 0.91565591000000002"
+		"pt[0:7]" " -s 8 -type \"float3\" -0.27843714000000003 2.24726820000000016 0.52669858999999997 -1.38729560000000007 2.24726820000000016 0.89779156000000004 -0.27843714000000003 2.05597209999999997 0.52669858999999997 -1.38729560000000007 2.05597209999999997 0.89779156000000004 -0.27245884999999997 2.05597209999999997 0.54456294000000005 -1.38131739999999992 2.05597209999999997 0.91565591000000002 -0.27245884999999997 2.24726820000000016 0.54456294000000005 -1.38131739999999992 2.24726820000000016 0.91565591000000002"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider1" 
 		"rotatePivot" " -type \"double3\" -0.56798511330483215 2.12367782901510838 0.41995659875337138"
@@ -21796,30 +21718,7 @@ createNode reference -n "cashbox_latestRN";
 		"scalePivot" " -type \"double3\" -0.56798511330483215 2.12367782901510838 0.41995659875337138"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider1|cashbox_latest:CoinDividerShape1" 
-		"pnts" " -s 8"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider1|cashbox_latest:CoinDividerShape1" 
-		"pnts[0]" " -type \"float3\" -0.036745012000000001 2.56764320000000001 -0.14989978000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider1|cashbox_latest:CoinDividerShape1" 
-		"pnts[1]" " -type \"float3\" -1.10681340000000006 2.55932210000000016 -0.022195040999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider1|cashbox_latest:CoinDividerShape1" 
-		"pnts[2]" " -type \"float3\" -0.04005301 1.68803360000000002 -0.14387071000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider1|cashbox_latest:CoinDividerShape1" 
-		"pnts[3]" " -type \"float3\" -1.11012179999999994 1.67971230000000005 -0.016165375999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider1|cashbox_latest:CoinDividerShape1" 
-		"pnts[4]" " -type \"float3\" -0.029156983000000001 1.68803360000000002 0.86210768999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider1|cashbox_latest:CoinDividerShape1" 
-		"pnts[5]" " -type \"float3\" -1.09922579999999992 1.67971230000000005 0.98981302999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider1|cashbox_latest:CoinDividerShape1" 
-		"pnts[6]" " -type \"float3\" -0.025848985000000001 2.56764320000000001 0.85607862000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider1|cashbox_latest:CoinDividerShape1" 
-		"pnts[7]" " -type \"float3\" -1.09591769999999999 2.55932210000000016 0.98378365999999995"
+		"pt[0:7]" " -s 8 -type \"float3\" -0.036745012000000001 2.56764320000000001 -0.14989978000000001 -1.10681340000000006 2.55932210000000016 -0.022195040999999999 -0.04005301 1.68803360000000002 -0.14387071000000001 -1.11012179999999994 1.67971230000000005 -0.016165375999999999 -0.029156983000000001 1.68803360000000002 0.86210768999999998 -1.09922579999999992 1.67971230000000005 0.98981302999999998 -0.025848985000000001 2.56764320000000001 0.85607862000000001 -1.09591769999999999 2.55932210000000016 0.98378365999999995"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider2" 
 		"rotatePivot" " -type \"double3\" -0.71859931861667659 2.12367782901510838 0.33731823419813317"
@@ -21828,28 +21727,7 @@ createNode reference -n "cashbox_latestRN";
 		"scalePivot" " -type \"double3\" -0.71859931861667659 2.12367782901510838 0.33731823419813317"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider2|cashbox_latest:CoinDivider2Shape" 
-		"pnts" " -s 8"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider2|cashbox_latest:CoinDivider2Shape" 
-		"pnts[0]" " -type \"float3\" -0.18735904 2.56764320000000001 -0.23253804"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider2|cashbox_latest:CoinDivider2Shape" 
-		"pnts[1]" " -type \"float3\" -1.25742749999999992 2.55932210000000016 -0.1048333"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider2|cashbox_latest:CoinDivider2Shape" 
-		"pnts[2]" " -type \"float3\" -0.19066702999999999 1.68803360000000002 -0.22650898"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider2|cashbox_latest:CoinDivider2Shape" 
-		"pnts[3]" " -type \"float3\" -1.26073590000000002 1.67971230000000005 -0.098803638999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider2|cashbox_latest:CoinDivider2Shape" 
-		"pnts[4]" " -type \"float3\" -0.17977101000000001 1.68803360000000002 0.77946937000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider2|cashbox_latest:CoinDivider2Shape" 
-		"pnts[5]" " -type \"float3\" -1.24984 1.67971230000000005 0.90717464999999997"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider2|cashbox_latest:CoinDivider2Shape" 
-		"pnts[6]" " -type \"float3\" -0.17646301 2.56764320000000001 0.77344036000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider2|cashbox_latest:CoinDivider2Shape" 
-		"pnts[7]" " -type \"float3\" -1.24653180000000008 2.55932210000000016 0.90114528000000005"
+		"pt[0:7]" " -s 8 -type \"float3\" -0.18735904 2.56764320000000001 -0.23253804 -1.25742749999999992 2.55932210000000016 -0.1048333 -0.19066702999999999 1.68803360000000002 -0.22650898 -1.26073590000000002 1.67971230000000005 -0.098803638999999999 -0.17977101000000001 1.68803360000000002 0.77946937000000005 -1.24984 1.67971230000000005 0.90717464999999997 -0.17646301 2.56764320000000001 0.77344036000000005 -1.24653180000000008 2.55932210000000016 0.90114528000000005"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider4" 
 		"rotatePivot" " -type \"double3\" -1.01912775357638585 2.12367782901510838 0.17242556477166837"
@@ -21858,30 +21736,8 @@ createNode reference -n "cashbox_latestRN";
 		"scalePivot" " -type \"double3\" -1.01912775357638585 2.12367782901510838 0.17242556477166837"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider4|cashbox_latest:CoinDivider4Shape" 
-		"pnts" " -s 8"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider4|cashbox_latest:CoinDivider4Shape" 
-		"pnts[0]" " -type \"float3\" -0.48788737999999998 2.56764320000000001 -0.39743065999999999"
+		"pt[0:7]" " -s 8 -type \"float3\" -0.48788737999999998 2.56764320000000001 -0.39743065999999999 -1.55795590000000006 2.55932210000000016 -0.26972592000000001 -0.49119538000000001 1.68803360000000002 -0.39140159000000002 -1.56126429999999994 1.67971230000000005 -0.26369621999999998 -0.48029935000000001 1.68803360000000002 0.61457676000000006 -1.55036820000000009 1.67971230000000005 0.74228214999999997 -0.47699135999999998 2.56764320000000001 0.60854775000000005 -1.54706 2.55932210000000016 0.73625278000000005"
 		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider4|cashbox_latest:CoinDivider4Shape" 
-		"pnts[1]" " -type \"float3\" -1.55795590000000006 2.55932210000000016 -0.26972592000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider4|cashbox_latest:CoinDivider4Shape" 
-		"pnts[2]" " -type \"float3\" -0.49119538000000001 1.68803360000000002 -0.39140159000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider4|cashbox_latest:CoinDivider4Shape" 
-		"pnts[3]" " -type \"float3\" -1.56126429999999994 1.67971230000000005 -0.26369621999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider4|cashbox_latest:CoinDivider4Shape" 
-		"pnts[4]" " -type \"float3\" -0.48029935000000001 1.68803360000000002 0.61457676000000006"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider4|cashbox_latest:CoinDivider4Shape" 
-		"pnts[5]" " -type \"float3\" -1.55036820000000009 1.67971230000000005 0.74228214999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider4|cashbox_latest:CoinDivider4Shape" 
-		"pnts[6]" " -type \"float3\" -0.47699135999999998 2.56764320000000001 0.60854775000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider4|cashbox_latest:CoinDivider4Shape" 
-		"pnts[7]" " -type \"float3\" -1.54706 2.55932210000000016 0.73625278000000005"
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider3" 
 		"rotatePivot" " -type \"double3\" -0.89044793492414487 2.12367782901510838 0.24302906291228887"
 		
@@ -21889,29 +21745,7 @@ createNode reference -n "cashbox_latestRN";
 		"scalePivot" " -type \"double3\" -0.89044793492414487 2.12367782901510838 0.24302906291228887"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider3|cashbox_latest:CoinDividerShape3" 
-		"pnts" " -s 8"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider3|cashbox_latest:CoinDividerShape3" 
-		"pnts[0]" " -type \"float3\" -0.35920756999999998 2.56764320000000001 -0.32682717"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider3|cashbox_latest:CoinDividerShape3" 
-		"pnts[1]" " -type \"float3\" -1.429276 2.55932210000000016 -0.19912242999999999"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider3|cashbox_latest:CoinDividerShape3" 
-		"pnts[2]" " -type \"float3\" -0.36251557000000001 1.68803360000000002 -0.32079809999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider3|cashbox_latest:CoinDividerShape3" 
-		"pnts[3]" " -type \"float3\" -1.43258440000000009 1.67971230000000005 -0.19309276"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider3|cashbox_latest:CoinDividerShape3" 
-		"pnts[4]" " -type \"float3\" -0.35161954000000001 1.68803360000000002 0.68518031000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider3|cashbox_latest:CoinDividerShape3" 
-		"pnts[5]" " -type \"float3\" -1.42168830000000002 1.67971230000000005 0.81288563999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider3|cashbox_latest:CoinDividerShape3" 
-		"pnts[6]" " -type \"float3\" -0.34831153999999998 2.56764320000000001 0.67915124000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Dividers|cashbox_latest:CoinDivider3|cashbox_latest:CoinDividerShape3" 
-		"pnts[7]" " -type \"float3\" -1.41838029999999993 2.55932210000000016 0.80685627000000004"
+		"pt[0:7]" " -s 8 -type \"float3\" -0.35920756999999998 2.56764320000000001 -0.32682717 -1.429276 2.55932210000000016 -0.19912242999999999 -0.36251557000000001 1.68803360000000002 -0.32079809999999997 -1.43258440000000009 1.67971230000000005 -0.19309276 -0.35161954000000001 1.68803360000000002 0.68518031000000001 -1.42168830000000002 1.67971230000000005 0.81288563999999996 -0.34831153999999998 2.56764320000000001 0.67915124000000004 -1.41838029999999993 2.55932210000000016 0.80685627000000004"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid" 
 		"rotatePivot" " -type \"double3\" -1.04904582194311136 2.24843169870173032 0.76133089674442456"
@@ -21922,817 +21756,26 @@ createNode reference -n "cashbox_latestRN";
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
 		"pnts" " -s 280"
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[0]" " -type \"float3\" -0.47171049999999998 2.05133270000000012 -0.14110701"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[1]" " -type \"float3\" -1.63121150000000004 2.05133270000000012 0.24693477"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[2]" " -type \"float3\" -0.17681611 2.16341450000000002 0.75697565"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[3]" " -type \"float3\" -1.33631710000000004 2.16341450000000002 1.14501739999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[4]" " -type \"float3\" -0.20986468 2.11803410000000003 0.75145280000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[5]" " -type \"float3\" -1.32199179999999994 2.11803410000000003 1.12363909999999989"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[6]" " -type \"float3\" -1.60483709999999991 2.01053170000000003 0.26225066000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[7]" " -type \"float3\" -0.49270998999999999 2.01053170000000003 -0.10993564"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[8]" " -type \"float3\" -0.54056727999999998 1.976392 -0.080247357000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[9]" " -type \"float3\" -1.556196 1.976392 0.25964337999999998"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[10]" " -type \"float3\" -0.26397765000000001 2.08151559999999991 0.76208818"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[11]" " -type \"float3\" -1.27960629999999997 2.08151559999999991 1.10197889999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[12]" " -type \"float3\" -0.53148751999999999 1.97976090000000005 -0.10023248"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[13]" " -type \"float3\" -0.51043642 1.987613 -0.12255745999999999"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[14]" " -type \"float3\" -1.60235480000000008 1.987613 0.24286634000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[15]" " -type \"float3\" -1.574223 1.97976090000000005 0.24873"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[16]" " -type \"float3\" -0.21554219999999999 2.09969539999999988 0.77552496999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[17]" " -type \"float3\" -0.24514204000000001 2.088593 0.77181518000000005"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[18]" " -type \"float3\" -1.28787760000000007 2.088593 1.12077760000000004"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[19]" " -type \"float3\" -1.30746049999999991 2.09969539999999988 1.1409488000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[20]" " -type \"float3\" -0.50388544999999996 1.9900639 -0.12496422"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[21]" " -type \"float3\" -0.49212039000000002 1.99704189999999993 -0.12951361"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[22]" " -type \"float3\" -0.20899153000000001 2.102145 0.77311885000000002"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[23]" " -type \"float3\" -0.19722575000000001 2.10912370000000005 0.76856827999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[24]" " -type \"float3\" -1.60852590000000006 1.9900639 0.24471533000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[25]" " -type \"float3\" -1.61921080000000006 1.99704189999999993 0.24767989000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[26]" " -type \"float3\" -1.313632 2.102145 1.14279839999999999"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[27]" " -type \"float3\" -1.3243163 2.10912370000000005 1.14576169999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[28]" " -type \"float3\" -0.48343247 2.004581 -0.13308306"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[29]" " -type \"float3\" -0.4739216 2.022779 -0.13786274000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[30]" " -type \"float3\" -0.18853849 2.11666350000000003 0.76500016000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[31]" " -type \"float3\" -0.17902725999999999 2.13486079999999978 0.76021981000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[32]" " -type \"float3\" -1.62673040000000002 2.004581 0.2495349"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[33]" " -type \"float3\" -1.63342260000000006 2.022779 0.25017905000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[34]" " -type \"float3\" -1.33183650000000009 2.11666350000000003 1.14761810000000009"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[35]" " -type \"float3\" -1.33852839999999995 2.13486079999999978 1.14826150000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[36]" " -type \"float3\" -1.46946719999999997 2.00935510000000006 0.52377057000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[37]" " -type \"float3\" -0.45383853000000002 2.00935510000000006 0.18387982"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[38]" " -type \"float3\" -1.36690090000000009 2.04833750000000014 0.83613008"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[39]" " -type \"float3\" -0.35127216999999999 2.04833750000000014 0.49623929999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[40]" " -type \"float3\" -1.10859989999999997 2.09969539999999988 1.0743973"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[41]" " -type \"float3\" -1.09797359999999999 2.088593 1.05722450000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[42]" " -type \"float3\" -1.09463890000000008 2.08151559999999991 1.0400779"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[43]" " -type \"float3\" -1.18193339999999991 2.04833750000000014 0.77422917000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[44]" " -type \"float3\" -1.28449980000000008 2.00935510000000006 0.46186966000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[45]" " -type \"float3\" -1.37122860000000002 1.976392 0.19774246000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[46]" " -type \"float3\" -1.38431909999999991 1.97976090000000005 0.18517687999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[47]" " -type \"float3\" -1.40349410000000008 1.987613 0.17631500999999999"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[48]" " -type \"float3\" -0.42929392999999999 2.09969539999999988 0.84705960999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[49]" " -type \"float3\" -0.44926637000000003 2.088593 0.84012699000000002"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[50]" " -type \"float3\" -0.46279525999999999 2.08151559999999991 0.82862437"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[51]" " -type \"float3\" -0.55008984000000005 2.04833750000000014 0.56277549000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[52]" " -type \"float3\" -0.65265614000000005 2.00935510000000006 0.25041601000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[53]" " -type \"float3\" -0.73938488999999996 1.976392 -0.013711154"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[54]" " -type \"float3\" -0.73561186000000001 1.97976090000000005 -0.031920641999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[55]" " -type \"float3\" -0.72418815000000003 1.987613 -0.051022827999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[56]" " -type \"float3\" -1.12769579999999991 2.06256389999999978 0.71946526"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[57]" " -type \"float3\" -1.20974659999999989 2.0313785000000002 0.46958482000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[58]" " -type \"float3\" -0.62223565999999997 2.06256389999999978 0.55030685999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[59]" " -type \"float3\" -0.70428652000000003 2.0313785000000002 0.30042645000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[60]" " -type \"float3\" -0.85127079000000005 2.05359440000000015 0.48657887999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[61]" " -type \"float3\" -0.85440022000000004 2.04928160000000004 0.48808792000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[62]" " -type \"float3\" -0.86286193 2.0453910999999998 0.49133617000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[63]" " -type \"float3\" -0.87582749000000004 2.04230359999999989 0.49600573999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[64]" " -type \"float3\" -0.89202780000000004 2.04032109999999989 0.50163953999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[65]" " -type \"float3\" -0.90987706000000002 2.03963830000000002 0.50768614000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[66]" " -type \"float3\" -0.92762798000000002 2.04032109999999989 0.51355355999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[67]" " -type \"float3\" -0.94354307999999998 2.04230359999999989 0.51866752000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[68]" " -type \"float3\" -0.95606433999999996 2.0453910999999998 0.52252746000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[69]" " -type \"float3\" -0.96396625000000002 2.04928160000000004 0.52475548000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[70]" " -type \"float3\" -0.96647530999999998 2.05359440000000015 0.52513348999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[71]" " -type \"float3\" -0.84677827000000006 2.05430249999999992 0.49070491999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[72]" " -type \"float3\" -0.850061 2.04977939999999981 0.49228776000000002"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[73]" " -type \"float3\" -0.85893684999999997 2.04569819999999991 0.49569497000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[74]" " -type \"float3\" -0.87253702 2.04245920000000014 0.50059306999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[75]" " -type \"float3\" -0.88953017999999995 2.04038019999999998 0.50650262999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[76]" " -type \"float3\" -0.90825301000000003 2.0396643000000001 0.51284516000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[77]" " -type \"float3\" -0.92687279 2.04038019999999998 0.51899980999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[78]" " -type \"float3\" -0.94356680000000004 2.04245920000000014 0.52436404999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[79]" " -type \"float3\" -0.95670091999999995 2.04569819999999991 0.52841282000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[80]" " -type \"float3\" -0.9649896 2.04977939999999981 0.53074991999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[81]" " -type \"float3\" -0.96762144999999999 2.05430249999999992 0.53114647000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[82]" " -type \"float3\" -0.83708709000000003 2.05494140000000014 0.49254"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[83]" " -type \"float3\" -0.84081435000000004 2.04980539999999989 0.49433711000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[84]" " -type \"float3\" -0.85089207 2.04517220000000011 0.49820577999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[85]" " -type \"float3\" -0.86633384000000002 2.04149529999999979 0.50376712999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[86]" " -type \"float3\" -0.88562810000000003 2.03913380000000011 0.51047695000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[87]" " -type \"float3\" -0.90688621999999997 2.0383205000000002 0.51767832000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[88]" " -type \"float3\" -0.92802733000000004 2.03913380000000011 0.52466630999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[89]" " -type \"float3\" -0.94698196999999995 2.04149529999999979 0.53075700999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[90]" " -type \"float3\" -0.96189457 2.04517220000000011 0.53535407999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[91]" " -type \"float3\" -0.97130567000000001 2.04980539999999989 0.53800762000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[92]" " -type \"float3\" -0.97429376999999995 2.05494140000000014 0.53845787000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[93]" " -type \"float3\" -0.82314569000000004 2.05544880000000019 0.49190465"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[94]" " -type \"float3\" -0.82756536999999997 2.04935879999999981 0.49403556999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[95]" " -type \"float3\" -0.83951509000000002 2.04386430000000008 0.49862279999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[96]" " -type \"float3\" -0.85782522000000005 2.03950450000000005 0.50521731000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[97]" " -type \"float3\" -0.88070356999999999 2.036705 0.5131734"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[98]" " -type \"float3\" -0.90591049000000001 2.03574039999999989 0.52171248000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[99]" " -type \"float3\" -0.93097865999999996 2.036705 0.52999854000000002"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[100]" " -type \"float3\" -0.95345413999999995 2.03950450000000005 0.53722060000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[101]" " -type \"float3\" -0.97113687000000004 2.04386430000000008 0.54267167999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[102]" " -type \"float3\" -0.98229622999999999 2.04935879999999981 0.54581802999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[103]" " -type \"float3\" -0.98583924999999994 2.05544880000000019 0.54635202999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[104]" " -type \"float3\" -0.806319 2.05577450000000006 0.48886090999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[105]" " -type \"float3\" -0.81161094 2.04848169999999996 0.49141252000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[106]" " -type \"float3\" -0.82591950999999997 2.041903 0.49690529999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[107]" " -type \"float3\" -0.84784411999999998 2.03668240000000011 0.50480144999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[108]" " -type \"float3\" -0.87523859999999998 2.03333120000000012 0.51432812000000006"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[109]" " -type \"float3\" -0.90542131999999997 2.03217649999999983 0.52455275999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[110]" " -type \"float3\" -0.93543785999999995 2.03333120000000012 0.53447454999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[111]" " -type \"float3\" -0.96234995000000001 2.03668240000000011 0.54312216999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[112]" " -type \"float3\" -0.98352348999999994 2.041903 0.54964911999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[113]" " -type \"float3\" -0.99688529999999997 2.04848169999999996 0.55341678999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[114]" " -type \"float3\" -1.00112819999999991 2.05577450000000006 0.55405592999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[115]" " -type \"float3\" -0.78825383999999998 2.05588669999999984 0.48370686000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[116]" " -type \"float3\" -0.79451298999999997 2.047262 0.48672472999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[117]" " -type \"float3\" -0.81143641 2.03948090000000004 0.49322122000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[118]" " -type \"float3\" -0.83736759000000005 2.03330590000000022 0.50256038000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[119]" " -type \"float3\" -0.86976814000000002 2.0293416999999998 0.51382804000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[120]" " -type \"float3\" -0.90546656000000003 2.027976 0.52592123000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[121]" " -type \"float3\" -0.94096851000000004 2.0293416999999998 0.53765607000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[122]" " -type \"float3\" -0.97279864999999999 2.03330590000000022 0.54788404999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[123]" " -type \"float3\" -0.99784130000000004 2.03948090000000004 0.55560385999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[124]" " -type \"float3\" -1.01364520000000002 2.047262 0.56005990999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[125]" " -type \"float3\" -1.01866319999999999 2.05588669999999984 0.56081592999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[126]" " -type \"float3\" -0.77071880999999998 2.05577450000000006 0.47694685999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[127]" " -type \"float3\" -0.77794509999999994 2.04581640000000009 0.48043101999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[128]" " -type \"float3\" -0.79748315000000003 2.03683380000000014 0.48793140000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[129]" " -type \"float3\" -0.82742095000000004 2.029705 0.49871348999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[130]" " -type \"float3\" -0.86482769000000004 2.0251279000000002 0.51172209000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[131]" " -type \"float3\" -0.90604185999999998 2.023551 0.52568376000000006"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[132]" " -type \"float3\" -0.94702905000000004 2.0251279000000002 0.53923178000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[133]" " -type \"float3\" -0.98377727999999998 2.029705 0.55103999000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[134]" " -type \"float3\" -1.01268910000000001 2.03683380000000014 0.55995262000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[135]" " -type \"float3\" -1.03093480000000004 2.04581640000000009 0.56509715000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[136]" " -type \"float3\" -1.03672830000000005 2.05577450000000006 0.56596994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[137]" " -type \"float3\" -0.75543015999999996 2.05544880000000019 0.46924281000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[138]" " -type \"float3\" -0.76352876000000003 2.04428890000000019 0.47314766000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[139]" " -type \"float3\" -0.78542590000000001 2.03422239999999999 0.48155344"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[140]" " -type \"float3\" -0.81897788999999999 2.026232 0.49363738000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[141]" " -type \"float3\" -0.86090082000000001 2.02110309999999993 0.50821643999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[142]" " -type \"float3\" -0.90709077999999999 2.01933549999999995 0.52386367"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[143]" " -type \"float3\" -0.95302646999999996 2.02110309999999993 0.53904735999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[144]" " -type \"float3\" -0.99421119999999996 2.026232 0.55228120000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[145]" " -type \"float3\" -1.02661369999999996 2.03422239999999999 0.56226986999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[146]" " -type \"float3\" -1.0470619000000001 2.04428890000000019 0.56803559999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[147]" " -type \"float3\" -1.05355510000000008 2.05544880000000019 0.56901360000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[148]" " -type \"float3\" -0.74388480000000001 2.05494140000000014 0.46134861999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[149]" " -type \"float3\" -0.75267534999999997 2.04282779999999997 0.46558749999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[150]" " -type \"float3\" -0.77644473000000003 2.03189969999999986 0.47471174999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[151]" " -type \"float3\" -0.81286519999999995 2.02322790000000019 0.4878287"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[152]" " -type \"float3\" -0.85837196999999998 2.01765969999999983 0.50365424000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[153]" " -type \"float3\" -0.90851079999999995 2.01574130000000018 0.52063917999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[154]" " -type \"float3\" -0.95837342999999997 2.01765969999999983 0.53712093999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[155]" " -type \"float3\" -1.00307919999999995 2.02322790000000019 0.55148613000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[156]" " -type \"float3\" -1.03825180000000006 2.03189969999999986 0.56232881999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[157]" " -type \"float3\" -1.06044840000000007 2.04282779999999997 0.56858730000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[158]" " -type \"float3\" -1.0674961999999999 2.05494140000000014 0.56964915999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[159]" " -type \"float3\" -0.73721236000000001 2.05430249999999992 0.45403725"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[160]" " -type \"float3\" -0.74644767999999995 2.04157609999999989 0.45849031000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[161]" " -type \"float3\" -0.77141839000000001 2.03009530000000016 0.46807622999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[162]" " -type \"float3\" -0.80968063999999995 2.0209849000000002 0.48185641000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[163]" " -type \"float3\" -0.85748875000000002 2.01513549999999997 0.49848205000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[164]" " -type \"float3\" -0.91016280999999999 2.01311989999999996 0.51632582999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[165]" " -type \"float3\" -0.96254689000000004 2.01513549999999997 0.53364098000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[166]" " -type \"float3\" -1.00951309999999994 2.0209849000000002 0.54873263999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[167]" " -type \"float3\" -1.04646419999999996 2.03009530000000016 0.56012355999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[168]" " -type \"float3\" -1.06978320000000005 2.04157609999999989 0.56669842999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[169]" " -type \"float3\" -1.07718739999999991 2.05430249999999992 0.56781404999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[170]" " -type \"float3\" -0.73606621999999999 2.05359440000000015 0.44802429999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[171]" " -type \"float3\" -0.74545466999999999 2.040657 0.45255128"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[172]" " -type \"float3\" -0.77083975000000005 2.02898619999999985 0.46229604000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[173]" " -type \"float3\" -0.80973660999999997 2.01972409999999991 0.47630476999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[174]" " -type \"float3\" -0.85833746 2.01377769999999989 0.49320623000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[175]" " -type \"float3\" -0.91188508000000001 2.011729 0.51134597999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[176]" " -type \"float3\" -0.96513802000000004 2.01377769999999989 0.52894825000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[177]" " -type \"float3\" -1.01288320000000009 2.01972409999999991 0.54429024000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[178]" " -type \"float3\" -1.05044720000000003 2.02898619999999985 0.55586994000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[179]" " -type \"float3\" -1.07415269999999996 2.040657 0.56255412000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[180]" " -type \"float3\" -1.08167980000000008 2.05359440000000015 0.56368803999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[181]" " -type \"float3\" -0.74055868000000002 2.05288620000000011 0.44389828999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[182]" " -type \"float3\" -0.74979401000000001 2.04015989999999992 0.44835138000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[183]" " -type \"float3\" -0.77476471999999996 2.02867910000000018 0.45793729999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[184]" " -type \"float3\" -0.81302695999999997 2.019568 0.47171748000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[185]" " -type \"float3\" -0.86083507999999997 2.01371929999999999 0.48834308999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[186]" " -type \"float3\" -0.91350913 2.011703 0.5061869"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[187]" " -type \"float3\" -0.96589320999999995 2.01371929999999999 0.52350205000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[188]" " -type \"float3\" -1.01285950000000002 2.019568 0.53859371"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[189]" " -type \"float3\" -1.04981049999999998 2.02867910000000018 0.54998457000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[190]" " -type \"float3\" -1.07312969999999996 2.04015989999999992 0.55655949999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[191]" " -type \"float3\" -1.08053369999999993 2.05288620000000011 0.55767511999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[192]" " -type \"float3\" -0.75024992000000001 2.05224679999999982 0.44206318"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[193]" " -type \"float3\" -0.75904046999999997 2.04013320000000009 0.44630206"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[194]" " -type \"float3\" -0.78280985000000003 2.02920509999999998 0.45542631"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[195]" " -type \"float3\" -0.81923031999999996 2.02053329999999987 0.46854326000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[196]" " -type \"float3\" -0.86473708999999999 2.01496509999999995 0.48436886000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[197]" " -type \"float3\" -0.91487591999999995 2.01304669999999986 0.50135373999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[198]" " -type \"float3\" -0.96473854999999997 2.01496509999999995 0.5178355"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[199]" " -type \"float3\" -1.0094441999999999 2.02053329999999987 0.53220075"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[200]" " -type \"float3\" -1.04461690000000007 2.02920509999999998 0.54304332"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[201]" " -type \"float3\" -1.06681350000000008 2.04013320000000009 0.54930186000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[202]" " -type \"float3\" -1.07386139999999997 2.05224679999999982 0.55036372"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[203]" " -type \"float3\" -0.76419132999999995 2.05174019999999979 0.44269853999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[204]" " -type \"float3\" -0.77228962999999995 2.04058029999999979 0.44660350999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[205]" " -type \"float3\" -0.79418670999999996 2.030513 0.45500931"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[206]" " -type \"float3\" -0.82773876000000002 2.02252339999999986 0.46709326000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[207]" " -type \"float3\" -0.86966169000000004 2.01739379999999979 0.48167231999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[208]" " -type \"float3\" -0.91585165000000002 2.0156269 0.49731957999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[209]" " -type \"float3\" -0.96178728000000002 2.01739379999999979 0.51250320999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[210]" " -type \"float3\" -1.00297210000000003 2.02252339999999986 0.52573711000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[211]" " -type \"float3\" -1.03537459999999992 2.030513 0.53572576999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[212]" " -type \"float3\" -1.05582280000000006 2.04058029999999979 0.54149150999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[213]" " -type \"float3\" -1.06231589999999998 2.05174019999999979 0.54246956000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[214]" " -type \"float3\" -0.78101783999999996 2.0514142999999998 0.44574239999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[215]" " -type \"float3\" -0.78824406999999996 2.04145619999999983 0.44922656"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[216]" " -type \"float3\" -0.80778211 2.03247359999999988 0.45672690999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[217]" " -type \"float3\" -0.83771991999999995 2.02534480000000006 0.46750905999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[218]" " -type \"float3\" -0.87512665999999995 2.02076840000000013 0.48051759999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[219]" " -type \"float3\" -0.91634083 2.01919149999999981 0.49447923999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[220]" " -type \"float3\" -0.95732808000000003 2.02076840000000013 0.50802725999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[221]" " -type \"float3\" -0.99407630999999996 2.02534480000000006 0.51983553000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[222]" " -type \"float3\" -1.0229881999999999 2.03247359999999988 0.52874814999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[223]" " -type \"float3\" -1.0412338000000001 2.04145619999999983 0.53389268999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[224]" " -type \"float3\" -1.04702730000000011 2.0514142999999998 0.53476548000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[225]" " -type \"float3\" -0.79908288000000005 2.05130219999999985 0.45089653000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[226]" " -type \"float3\" -0.80534201999999999 2.04267740000000009 0.4539144"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[227]" " -type \"float3\" -0.82226544999999995 2.03489640000000005 0.46041092"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[228]" " -type \"float3\" -0.84819663000000001 2.02872129999999995 0.46975004999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[229]" " -type \"float3\" -0.88059717000000004 2.02475709999999998 0.48101770999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[230]" " -type \"float3\" -0.91629559000000005 2.02339119999999983 0.49311083999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[231]" " -type \"float3\" -0.95179754000000005 2.02475709999999998 0.50484574000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[232]" " -type \"float3\" -0.98362762000000004 2.02872129999999995 0.51507371999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[233]" " -type \"float3\" -1.00867029999999991 2.03489640000000005 0.52279352999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[234]" " -type \"float3\" -1.02447409999999994 2.04267740000000009 0.52724956999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[235]" " -type \"float3\" -1.02949209999999991 2.05130219999999985 0.52800559999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[236]" " -type \"float3\" -0.81661802999999999 2.0514142999999998 0.45765641000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[237]" " -type \"float3\" -0.82190996000000005 2.04412150000000015 0.46020809000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[238]" " -type \"float3\" -0.83621853999999995 2.03754349999999995 0.46570081000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[239]" " -type \"float3\" -0.85814314999999997 2.03232219999999986 0.47359705000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[240]" " -type \"float3\" -0.88553755999999995 2.028971 0.48312368999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[241]" " -type \"float3\" -0.91572034000000002 2.02781630000000002 0.49334833"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[242]" " -type \"float3\" -0.94573682999999997 2.028971 0.50327009"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[243]" " -type \"float3\" -0.97264898 2.03232219999999986 0.51191777000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[244]" " -type \"float3\" -0.99382245999999996 2.03754349999999995 0.51844466"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[245]" " -type \"float3\" -1.00718430000000003 2.04412150000000015 0.52221233"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[246]" " -type \"float3\" -1.01142690000000002 2.0514142999999998 0.52285152999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[247]" " -type \"float3\" -0.83190655999999996 2.05174019999999979 0.46536058000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[248]" " -type \"float3\" -0.83632624 2.04564980000000007 0.46749144999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[249]" " -type \"float3\" -0.84827596000000005 2.04015559999999985 0.47207871000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[250]" " -type \"float3\" -0.86658615000000006 2.03579519999999992 0.47867313"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[251]" " -type \"float3\" -0.88946444000000002 2.03299569999999985 0.48662930999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[252]" " -type \"float3\" -0.91467136000000004 2.03203179999999994 0.49516839000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[253]" " -type \"float3\" -0.93973947000000002 2.03299569999999985 0.50345445"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[254]" " -type \"float3\" -0.96221495000000001 2.03579519999999992 0.51067649999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[255]" " -type \"float3\" -0.97989786000000001 2.04015559999999985 0.51612747000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[256]" " -type \"float3\" -0.99105703999999994 2.04564980000000007 0.51927387999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[257]" " -type \"float3\" -0.99460011999999998 2.05174019999999979 0.51980788"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[258]" " -type \"float3\" -0.84345221999999997 2.05224679999999982 0.47325458999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[259]" " -type \"float3\" -0.84717953000000001 2.04711059999999989 0.47505170000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[260]" " -type \"float3\" -0.85725719 2.04247690000000004 0.47892036999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[261]" " -type \"float3\" -0.87269890000000006 2.03880069999999991 0.48448174999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[262]" " -type \"float3\" -0.89199322000000003 2.03643919999999978 0.49119151"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[263]" " -type \"float3\" -0.91325140000000005 2.03562589999999988 0.49839287999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[264]" " -type \"float3\" -0.93439245000000004 2.03643919999999978 0.50538086999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[265]" " -type \"float3\" -0.95334697000000002 2.03880069999999991 0.51147156999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[266]" " -type \"float3\" -0.96825969000000001 2.04247690000000004 0.51606863999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[267]" " -type \"float3\" -0.97767079000000001 2.04711059999999989 0.51872218000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[268]" " -type \"float3\" -0.98065882999999998 2.05224679999999982 0.51917237000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[269]" " -type \"float3\" -0.85012465999999998 2.05288620000000011 0.48056599"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[270]" " -type \"float3\" -0.85340744000000002 2.04836250000000009 0.48214874000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[271]" " -type \"float3\" -0.86228316999999999 2.04428119999999991 0.48555604000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[272]" " -type \"float3\" -0.87588334000000001 2.041043 0.49045417000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[273]" " -type \"float3\" -0.89287651000000001 2.038964 0.49636370000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[274]" " -type \"float3\" -0.91159933999999998 2.0382473000000001 0.50270616999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[275]" " -type \"float3\" -0.93021911000000002 2.038964 0.50886083000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[276]" " -type \"float3\" -0.94691312000000005 2.041043 0.51422506999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[277]" " -type \"float3\" -0.96004730000000005 2.04428119999999991 0.51827389000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[278]" " -type \"float3\" -0.96833592999999996 2.04836250000000009 0.52061093000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
-		"pnts[279]" " -type \"float3\" -0.97096771000000004 2.05288620000000011 0.52100742"
-		
+		"pt[0:165]" (" -type \"float3\" -0.47171049999999998 2.05133270000000012 -0.14110701 -1.63121150000000004 2.05133270000000012 0.24693477 -0.17681611 2.16341450000000002 0.75697565 -1.33631710000000004 2.16341450000000002 1.14501739999999996 -0.20986468 2.11803410000000003 0.75145280000000003 -1.32199179999999994 2.11803410000000003 1.12363909999999989 -1.60483709999999991 2.01053170000000003 0.26225066000000002 -0.49270998999999999 2.01053170000000003 -0.10993564 -0.54056727999999998 1.976392 -0.080247357000000005 -1.556196 1.976392 0.25964337999999998 -0.26397765000000001 2.08151559999999991 0.76208818 -1.27960629999999997 2.08151559999999991 1.10197889999999998 -0.53148751999999999 1.97976090000000005 -0.10023248 -0.51043642 1.987613 -0.12255745999999999 -1.60235480000000008 1.987613 0.24286634000000001 -1.574223 1.97976090000000005 0.24873 -0.21554219999999999 2.09969539999999988 0.77552496999999998 -0.24514204000000001 2.088593 0.77181518000000005 -1.28787760000000007 2.088593 1.12077760000000004 -1.30746049999999991 2.0"
+		+ "9969539999999988 1.1409488000000001 -0.50388544999999996 1.9900639 -0.12496422 -0.49212039000000002 1.99704189999999993 -0.12951361 -0.20899153000000001 2.102145 0.77311885000000002 -0.19722575000000001 2.10912370000000005 0.76856827999999999 -1.60852590000000006 1.9900639 0.24471533000000001 -1.61921080000000006 1.99704189999999993 0.24767989000000001 -1.313632 2.102145 1.14279839999999999 -1.3243163 2.10912370000000005 1.14576169999999999 -0.48343247 2.004581 -0.13308306 -0.4739216 2.022779 -0.13786274000000001 -0.18853849 2.11666350000000003 0.76500016000000004 -0.17902725999999999 2.13486079999999978 0.76021981000000005 -1.62673040000000002 2.004581 0.2495349 -1.63342260000000006 2.022779 0.25017905000000001 -1.33183650000000009 2.11666350000000003 1.14761810000000009 -1.33852839999999995 2.13486079999999978 1.14826150000000005 -1.46946719999999997 2.00935510000000006 0.52377057000000005 -0.45383853000000002 2.00935510000000006 0.18387982 -1.36690090000000009 2.04833750000000014 0.83613008 -0.351272169999"
+		+ "99999 2.04833750000000014 0.49623929999999999 -1.10859989999999997 2.09969539999999988 1.0743973 -1.09797359999999999 2.088593 1.05722450000000001 -1.09463890000000008 2.08151559999999991 1.0400779 -1.18193339999999991 2.04833750000000014 0.77422917000000002 -1.28449980000000008 2.00935510000000006 0.46186966000000002 -1.37122860000000002 1.976392 0.19774246000000001 -1.38431909999999991 1.97976090000000005 0.18517687999999999 -1.40349410000000008 1.987613 0.17631500999999999 -0.42929392999999999 2.09969539999999988 0.84705960999999996 -0.44926637000000003 2.088593 0.84012699000000002 -0.46279525999999999 2.08151559999999991 0.82862437 -0.55008984000000005 2.04833750000000014 0.56277549000000004 -0.65265614000000005 2.00935510000000006 0.25041601000000002 -0.73938488999999996 1.976392 -0.013711154 -0.73561186000000001 1.97976090000000005 -0.031920641999999999 -0.72418815000000003 1.987613 -0.051022827999999999 -1.12769579999999991 2.06256389999999978 0.71946526 -1.20974659999999989 2.0313785000000002 0.469584"
+		+ "82000000001 -0.62223565999999997 2.06256389999999978 0.55030685999999995 -0.70428652000000003 2.0313785000000002 0.30042645000000001 -0.85127079000000005 2.05359440000000015 0.48657887999999999 -0.85440022000000004 2.04928160000000004 0.48808792000000001 -0.86286193 2.0453910999999998 0.49133617000000002 -0.87582749000000004 2.04230359999999989 0.49600573999999997 -0.89202780000000004 2.04032109999999989 0.50163953999999999 -0.90987706000000002 2.03963830000000002 0.50768614000000001 -0.92762798000000002 2.04032109999999989 0.51355355999999996 -0.94354307999999998 2.04230359999999989 0.51866752000000005 -0.95606433999999996 2.0453910999999998 0.52252746000000005 -0.96396625000000002 2.04928160000000004 0.52475548000000005 -0.96647530999999998 2.05359440000000015 0.52513348999999998 -0.84677827000000006 2.05430249999999992 0.49070491999999999 -0.850061 2.04977939999999981 0.49228776000000002 -0.85893684999999997 2.04569819999999991 0.49569497000000001 -0.87253702 2.04245920000000014 0.50059306999999997 -0.8895"
+		+ "3017999999995 2.04038019999999998 0.50650262999999995 -0.90825301000000003 2.0396643000000001 0.51284516000000002 -0.92687279 2.04038019999999998 0.51899980999999995 -0.94356680000000004 2.04245920000000014 0.52436404999999997 -0.95670091999999995 2.04569819999999991 0.52841282000000001 -0.9649896 2.04977939999999981 0.53074991999999999 -0.96762144999999999 2.05430249999999992 0.53114647000000004 -0.83708709000000003 2.05494140000000014 0.49254 -0.84081435000000004 2.04980539999999989 0.49433711000000002 -0.85089207 2.04517220000000011 0.49820577999999999 -0.86633384000000002 2.04149529999999979 0.50376712999999995 -0.88562810000000003 2.03913380000000011 0.51047695000000004 -0.90688621999999997 2.0383205000000002 0.51767832000000003 -0.92802733000000004 2.03913380000000011 0.52466630999999997 -0.94698196999999995 2.04149529999999979 0.53075700999999997 -0.96189457 2.04517220000000011 0.53535407999999995 -0.97130567000000001 2.04980539999999989 0.53800762000000002 -0.97429376999999995 2.05494140000000014 0.53"
+		+ "845787000000001 -0.82314569000000004 2.05544880000000019 0.49190465 -0.82756536999999997 2.04935879999999981 0.49403556999999998 -0.83951509000000002 2.04386430000000008 0.49862279999999998 -0.85782522000000005 2.03950450000000005 0.50521731000000003 -0.88070356999999999 2.036705 0.5131734 -0.90591049000000001 2.03574039999999989 0.52171248000000003 -0.93097865999999996 2.036705 0.52999854000000002 -0.95345413999999995 2.03950450000000005 0.53722060000000005 -0.97113687000000004 2.04386430000000008 0.54267167999999999 -0.98229622999999999 2.04935879999999981 0.54581802999999995 -0.98583924999999994 2.05544880000000019 0.54635202999999999 -0.806319 2.05577450000000006 0.48886090999999998 -0.81161094 2.04848169999999996 0.49141252000000002 -0.82591950999999997 2.041903 0.49690529999999999 -0.84784411999999998 2.03668240000000011 0.50480144999999998 -0.87523859999999998 2.03333120000000012 0.51432812000000006 -0.90542131999999997 2.03217649999999983 0.52455275999999995 -0.93543785999999995 2.03333120000000012 0."
+		+ "53447454999999999 -0.96234995000000001 2.03668240000000011 0.54312216999999996 -0.98352348999999994 2.041903 0.54964911999999999 -0.99688529999999997 2.04848169999999996 0.55341678999999999 -1.00112819999999991 2.05577450000000006 0.55405592999999997 -0.78825383999999998 2.05588669999999984 0.48370686000000002 -0.79451298999999997 2.047262 0.48672472999999999 -0.81143641 2.03948090000000004 0.49322122000000002 -0.83736759000000005 2.03330590000000022 0.50256038000000003 -0.86976814000000002 2.0293416999999998 0.51382804000000004 -0.90546656000000003 2.027976 0.52592123000000002 -0.94096851000000004 2.0293416999999998 0.53765607000000004 -0.97279864999999999 2.03330590000000022 0.54788404999999996 -0.99784130000000004 2.03948090000000004 0.55560385999999995 -1.01364520000000002 2.047262 0.56005990999999999 -1.01866319999999999 2.05588669999999984 0.56081592999999996 -0.77071880999999998 2.05577450000000006 0.47694685999999997 -0.77794509999999994 2.04581640000000009 0.48043101999999999 -0.79748315000000003 2.0"
+		+ "3683380000000014 0.48793140000000002 -0.82742095000000004 2.029705 0.49871348999999998 -0.86482769000000004 2.0251279000000002 0.51172209000000002 -0.90604185999999998 2.023551 0.52568376000000006 -0.94702905000000004 2.0251279000000002 0.53923178000000005 -0.98377727999999998 2.029705 0.55103999000000004 -1.01268910000000001 2.03683380000000014 0.55995262000000001 -1.03093480000000004 2.04581640000000009 0.56509715000000005 -1.03672830000000005 2.05577450000000006 0.56596994 -0.75543015999999996 2.05544880000000019 0.46924281000000001 -0.76352876000000003 2.04428890000000019 0.47314766000000003 -0.78542590000000001 2.03422239999999999 0.48155344 -0.81897788999999999 2.026232 0.49363738000000001 -0.86090082000000001 2.02110309999999993 0.50821643999999999 -0.90709077999999999 2.01933549999999995 0.52386367 -0.95302646999999996 2.02110309999999993 0.53904735999999998 -0.99421119999999996 2.026232 0.55228120000000003 -1.02661369999999996 2.03422239999999999 0.56226986999999995 -1.0470619000000001 2.044288900000"
+		+ "00019 0.56803559999999997 -1.05355510000000008 2.05544880000000019 0.56901360000000001 -0.74388480000000001 2.05494140000000014 0.46134861999999999 -0.75267534999999997 2.04282779999999997 0.46558749999999999 -0.77644473000000003 2.03189969999999986 0.47471174999999999 -0.81286519999999995 2.02322790000000019 0.4878287 -0.85837196999999998 2.01765969999999983 0.50365424000000003 -0.90851079999999995 2.01574130000000018 0.52063917999999998 -0.95837342999999997 2.01765969999999983 0.53712093999999999 -1.00307919999999995 2.02322790000000019 0.55148613000000002 -1.03825180000000006 2.03189969999999986 0.56232881999999995 -1.06044840000000007 2.04282779999999997 0.56858730000000002 -1.0674961999999999 2.05494140000000014 0.56964915999999999 -0.73721236000000001 2.05430249999999992 0.45403725 -0.74644767999999995 2.04157609999999989 0.45849031000000001 -0.77141839000000001 2.03009530000000016 0.46807622999999998 -0.80968063999999995 2.0209849000000002 0.48185641000000001 -0.85748875000000002 2.01513549999999997 0."
+		+ "49848205000000001 -0.91016280999999999 2.01311989999999996 0.51632582999999999 -0.96254689000000004 2.01513549999999997 0.53364098000000004"
+		)
+		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lid|cashbox_latest:LidShape" 
+		"pt[166:279]" (" -1.00951309999999994 2.0209849000000002 0.54873263999999999 -1.04646419999999996 2.03009530000000016 0.56012355999999996 -1.06978320000000005 2.04157609999999989 0.56669842999999998 -1.07718739999999991 2.05430249999999992 0.56781404999999996 -0.73606621999999999 2.05359440000000015 0.44802429999999999 -0.74545466999999999 2.040657 0.45255128 -0.77083975000000005 2.02898619999999985 0.46229604000000002 -0.80973660999999997 2.01972409999999991 0.47630476999999999 -0.85833746 2.01377769999999989 0.49320623000000002 -0.91188508000000001 2.011729 0.51134597999999998 -0.96513802000000004 2.01377769999999989 0.52894825000000001 -1.01288320000000009 2.01972409999999991 0.54429024000000004 -1.05044720000000003 2.02898619999999985 0.55586994000000001 -1.07415269999999996 2.040657 0.56255412000000005 -1.08167980000000008 2.05359440000000015 0.56368803999999995 -0.74055868000000002 2.05288620000000011 0.44389828999999997 -0.74979401000000001 2.04015989999999992 0.44835138000000002 -0.77476471999999996 2.028679100000000"
+		+ "18 0.45793729999999999 -0.81302695999999997 2.019568 0.47171748000000002 -0.86083507999999997 2.01371929999999999 0.48834308999999998 -0.91350913 2.011703 0.5061869 -0.96589320999999995 2.01371929999999999 0.52350205000000005 -1.01285950000000002 2.019568 0.53859371 -1.04981049999999998 2.02867910000000018 0.54998457000000001 -1.07312969999999996 2.04015989999999992 0.55655949999999998 -1.08053369999999993 2.05288620000000011 0.55767511999999997 -0.75024992000000001 2.05224679999999982 0.44206318 -0.75904046999999997 2.04013320000000009 0.44630206 -0.78280985000000003 2.02920509999999998 0.45542631 -0.81923031999999996 2.02053329999999987 0.46854326000000002 -0.86473708999999999 2.01496509999999995 0.48436886000000001 -0.91487591999999995 2.01304669999999986 0.50135373999999999 -0.96473854999999997 2.01496509999999995 0.5178355 -1.0094441999999999 2.02053329999999987 0.53220075 -1.04461690000000007 2.02920509999999998 0.54304332 -1.06681350000000008 2.04013320000000009 0.54930186000000003 -1.07386139999999997"
+		+ " 2.05224679999999982 0.55036372 -0.76419132999999995 2.05174019999999979 0.44269853999999997 -0.77228962999999995 2.04058029999999979 0.44660350999999998 -0.79418670999999996 2.030513 0.45500931 -0.82773876000000002 2.02252339999999986 0.46709326000000001 -0.86966169000000004 2.01739379999999979 0.48167231999999999 -0.91585165000000002 2.0156269 0.49731957999999998 -0.96178728000000002 2.01739379999999979 0.51250320999999999 -1.00297210000000003 2.02252339999999986 0.52573711000000001 -1.03537459999999992 2.030513 0.53572576999999999 -1.05582280000000006 2.04058029999999979 0.54149150999999995 -1.06231589999999998 2.05174019999999979 0.54246956000000002 -0.78101783999999996 2.0514142999999998 0.44574239999999998 -0.78824406999999996 2.04145619999999983 0.44922656 -0.80778211 2.03247359999999988 0.45672690999999999 -0.83771991999999995 2.02534480000000006 0.46750905999999998 -0.87512665999999995 2.02076840000000013 0.48051759999999999 -0.91634083 2.01919149999999981 0.49447923999999999 -0.95732808000000003 2.0"
+		+ "2076840000000013 0.50802725999999998 -0.99407630999999996 2.02534480000000006 0.51983553000000005 -1.0229881999999999 2.03247359999999988 0.52874814999999997 -1.0412338000000001 2.04145619999999983 0.53389268999999995 -1.04702730000000011 2.0514142999999998 0.53476548000000002 -0.79908288000000005 2.05130219999999985 0.45089653000000002 -0.80534201999999999 2.04267740000000009 0.4539144 -0.82226544999999995 2.03489640000000005 0.46041092 -0.84819663000000001 2.02872129999999995 0.46975004999999997 -0.88059717000000004 2.02475709999999998 0.48101770999999999 -0.91629559000000005 2.02339119999999983 0.49311083999999999 -0.95179754000000005 2.02475709999999998 0.50484574000000004 -0.98362762000000004 2.02872129999999995 0.51507371999999996 -1.00867029999999991 2.03489640000000005 0.52279352999999995 -1.02447409999999994 2.04267740000000009 0.52724956999999995 -1.02949209999999991 2.05130219999999985 0.52800559999999996 -0.81661802999999999 2.0514142999999998 0.45765641000000001 -0.82190996000000005 2.04412150000"
+		+ "000015 0.46020809000000001 -0.83621853999999995 2.03754349999999995 0.46570081000000002 -0.85814314999999997 2.03232219999999986 0.47359705000000002 -0.88553755999999995 2.028971 0.48312368999999999 -0.91572034000000002 2.02781630000000002 0.49334833 -0.94573682999999997 2.028971 0.50327009 -0.97264898 2.03232219999999986 0.51191777000000005 -0.99382245999999996 2.03754349999999995 0.51844466 -1.00718430000000003 2.04412150000000015 0.52221233 -1.01142690000000002 2.0514142999999998 0.52285152999999995 -0.83190655999999996 2.05174019999999979 0.46536058000000002 -0.83632624 2.04564980000000007 0.46749144999999998 -0.84827596000000005 2.04015559999999985 0.47207871000000001 -0.86658615000000006 2.03579519999999992 0.47867313 -0.88946444000000002 2.03299569999999985 0.48662930999999998 -0.91467136000000004 2.03203179999999994 0.49516839000000001 -0.93973947000000002 2.03299569999999985 0.50345445 -0.96221495000000001 2.03579519999999992 0.51067649999999998 -0.97989786000000001 2.04015559999999985 0.516127470000"
+		+ "00003 -0.99105703999999994 2.04564980000000007 0.51927387999999997 -0.99460011999999998 2.05174019999999979 0.51980788 -0.84345221999999997 2.05224679999999982 0.47325458999999998 -0.84717953000000001 2.04711059999999989 0.47505170000000002 -0.85725719 2.04247690000000004 0.47892036999999998 -0.87269890000000006 2.03880069999999991 0.48448174999999999 -0.89199322000000003 2.03643919999999978 0.49119151 -0.91325140000000005 2.03562589999999988 0.49839287999999998 -0.93439245000000004 2.03643919999999978 0.50538086999999998 -0.95334697000000002 2.03880069999999991 0.51147156999999999 -0.96825969000000001 2.04247690000000004 0.51606863999999997 -0.97767079000000001 2.04711059999999989 0.51872218000000003 -0.98065882999999998 2.05224679999999982 0.51917237000000005 -0.85012465999999998 2.05288620000000011 0.48056599 -0.85340744000000002 2.04836250000000009 0.48214874000000002 -0.86228316999999999 2.04428119999999991 0.48555604000000002 -0.87588334000000001 2.041043 0.49045417000000002 -0.89287651000000001 2.03896"
+		+ "4 0.49636370000000002 -0.91159933999999998 2.0382473000000001 0.50270616999999995 -0.93021911000000002 2.038964 0.50886083000000004 -0.94691312000000005 2.041043 0.51422506999999995 -0.96004730000000005 2.04428119999999991 0.51827389000000001 -0.96833592999999996 2.04836250000000009 0.52061093000000003 -0.97096771000000004 2.05288620000000011 0.52100742"
+		)
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock" 
 		"rotatePivot" " -type \"double3\" -0.75500914677540554 2.14329003552196218 0.22542846255899485"
 		
@@ -22740,236 +21783,12 @@ createNode reference -n "cashbox_latestRN";
 		"scalePivot" " -type \"double3\" -0.75500914677540554 2.14329003552196218 0.22542846255899485"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts" " -s 82"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[0]" " -type \"float3\" -1.69028139999999993 3.13484840000000009 0.55967562999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[1]" " -type \"float3\" -1.55164290000000005 3.12723469999999981 0.83657800999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[2]" " -type \"float3\" -1.335708 3.12119249999999981 1.05490309999999998"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[3]" " -type \"float3\" -1.06361440000000007 3.11731310000000006 1.19328020000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[4]" " -type \"float3\" -0.76199651000000002 3.11597660000000021 1.23816389999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[5]" " -type \"float3\" -0.46037858999999998 3.11731310000000006 1.1851605999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[6]" " -type \"float3\" -0.18828528999999999 3.12119249999999981 1.03945880000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[7]" " -type \"float3\" 0.027649045000000001 3.12723469999999981 0.81532073000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[8]" " -type \"float3\" 0.16628760000000001 3.13484840000000009 0.53468621000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[9]" " -type \"float3\" 0.21405922999999999 3.14328809999999992 0.22502606999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[10]" " -type \"float3\" 0.16628772 3.15172819999999998 -0.083348094999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[11]" " -type \"float3\" 0.027649224 3.15934179999999998 -0.36025046999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[12]" " -type \"float3\" -0.18828505000000001 3.16538379999999986 -0.57857621000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[13]" " -type \"float3\" -0.46037855999999999 3.16926310000000022 -0.71695321999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[14]" " -type \"float3\" -0.76199645000000005 3.17059990000000003 -0.76183701000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[15]" " -type \"float3\" -1.06361419999999995 3.16926310000000022 -0.70883368999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[16]" " -type \"float3\" -1.3357078 3.16538379999999986 -0.56313126999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[17]" " -type \"float3\" -1.55164180000000007 3.15934179999999998 -0.33899384999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[18]" " -type \"float3\" -1.69028069999999997 3.15172819999999998 -0.058358728999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[19]" " -type \"float3\" -1.73805239999999994 3.14328809999999992 0.25130141"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[20]" " -type \"float3\" -1.61093909999999996 1.13688539999999993 0.458794"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[21]" " -type \"float3\" -1.5057391 1.13110850000000007 0.66890967000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[22]" " -type \"float3\" -1.3418855999999999 1.12652350000000001 0.83457607"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[23]" " -type \"float3\" -1.1354187 1.12357970000000007 0.93957763999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[24]" " -type \"float3\" -0.90654868 1.1225655000000001 0.97363650999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[25]" " -type \"float3\" -0.67767811 1.12357970000000007 0.93341642999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[26]" " -type \"float3\" -0.47121146000000003 1.12652350000000001 0.82285677999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[27]" " -type \"float3\" -0.30735886000000001 1.13110850000000007 0.65277945999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[28]" " -type \"float3\" -0.20215899000000001 1.13688539999999993 0.43983179"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[29]" " -type \"float3\" -0.16590916999999999 1.14329 0.20485854000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[30]" " -type \"float3\" -0.20215905000000001 1.14969420000000011 -0.029137552000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[31]" " -type \"float3\" -0.30735889 1.15547130000000009 -0.23925382000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[32]" " -type \"float3\" -0.47121149000000001 1.16005639999999999 -0.40492152999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[33]" " -type \"float3\" -0.67767829000000002 1.16300010000000009 -0.50992303999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[34]" " -type \"float3\" -0.90654868 1.16401430000000006 -0.54398071999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[35]" " -type \"float3\" -1.1354187 1.16300010000000009 -0.50376189000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[36]" " -type \"float3\" -1.34188519999999989 1.16005639999999999 -0.3932023"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[37]" " -type \"float3\" -1.50573829999999997 1.15547130000000009 -0.22312367"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[38]" " -type \"float3\" -1.6109388 1.14969420000000011 -0.010175467000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[39]" " -type \"float3\" -1.64718769999999992 1.14329 0.22479652999999999"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[40]" " -type \"float3\" -0.76199669000000003 3.14328809999999992 0.23816371"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[41]" " -type \"float3\" -1.40652310000000003 1.13874410000000004 0.38799362999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[42]" " -type \"float3\" -1.3318528999999999 1.13464380000000009 0.53713447000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[43]" " -type \"float3\" -1.21554969999999996 1.13138910000000004 0.65472357999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[44]" " -type \"float3\" -1.069 1.12929989999999991 0.72925377000000002"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[45]" " -type \"float3\" -0.90654855999999995 1.12858009999999997 0.75342845999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[46]" " -type \"float3\" -0.74409676000000002 1.12929989999999991 0.72488058"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[47]" " -type \"float3\" -0.59754704999999997 1.13138910000000004 0.64640522"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[48]" " -type \"float3\" -0.48124453 1.13464380000000009 0.52568406000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[49]" " -type \"float3\" -0.40657383000000002 1.13874410000000004 0.37453430999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[50]" " -type \"float3\" -0.38084430000000002 1.14329 0.20775157"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[51]" " -type \"float3\" -0.40657388999999999 1.1478356999999999 0.041660904999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[52]" " -type \"float3\" -0.48124486 1.15193649999999992 -0.10747867999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[53]" " -type \"float3\" -0.59754717000000002 1.1551906999999999 -0.22506904999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[54]" " -type \"float3\" -0.74409711000000001 1.15728 -0.29959857000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[55]" " -type \"float3\" -0.90654849999999998 1.15800020000000004 -0.32377326000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[56]" " -type \"float3\" -1.06900020000000007 1.15728 -0.29522537999999998"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[57]" " -type \"float3\" -1.2155495999999999 1.1551906999999999 -0.21675074"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[58]" " -type \"float3\" -1.331852 1.15193649999999992 -0.096029519999999993"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[59]" " -type \"float3\" -1.40652280000000007 1.1478356999999999 0.055120170000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[60]" " -type \"float3\" -1.4322528000000001 1.14329 0.22190356"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[61]" " -type \"float3\" -1.407887 1.13874410000000004 0.39047945000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[62]" " -type \"float3\" -1.33321610000000002 1.13464380000000009 0.53961903"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[63]" " -type \"float3\" -0.79539019 1.14329 0.2157982"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[64]" " -type \"float3\" -1.21691349999999998 1.13138939999999999 0.65720940000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[65]" " -type \"float3\" -1.070364 1.12929989999999991 0.73173951999999998"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[66]" " -type \"float3\" -0.90791213999999998 1.12858009999999997 0.75591361999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[67]" " -type \"float3\" -0.74546069000000004 1.12929989999999991 0.72736639000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[68]" " -type \"float3\" -0.59891099000000003 1.13138939999999999 0.64889103000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[69]" " -type \"float3\" -0.48260840999999999 1.13464380000000009 0.52816980999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[70]" " -type \"float3\" -0.40793776999999998 1.13874410000000004 0.37702012000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[71]" " -type \"float3\" -0.38220780999999998 1.14329 0.21023673000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[72]" " -type \"float3\" -0.40793782000000001 1.1478356999999999 0.044146717000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[73]" " -type \"float3\" -0.48260838 1.15193649999999992 -0.10499346"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[74]" " -type \"float3\" -0.59891105 1.1551906999999999 -0.22258322999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[75]" " -type \"float3\" -0.74546062999999996 1.15728 -0.29711342000000002"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[76]" " -type \"float3\" -0.90791202000000004 1.15800020000000004 -0.32128811000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[77]" " -type \"float3\" -1.07036379999999998 1.15728 -0.29274022999999999"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[78]" " -type \"float3\" -1.21691360000000004 1.1551906999999999 -0.21426498999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[79]" " -type \"float3\" -1.33321559999999995 1.15193649999999992 -0.093544303999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[80]" " -type \"float3\" -1.40788669999999994 1.1478356999999999 0.057605982"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Lock|cashbox_latest:LockShape" 
-		"pnts[81]" " -type \"float3\" -1.43361629999999995 1.14329 0.22438872000000001"
+		"pt[0:81]" (" -s 82 -type \"float3\" -1.69028139999999993 3.13484840000000009 0.55967562999999998 -1.55164290000000005 3.12723469999999981 0.83657800999999998 -1.335708 3.12119249999999981 1.05490309999999998 -1.06361440000000007 3.11731310000000006 1.19328020000000001 -0.76199651000000002 3.11597660000000021 1.23816389999999998 -0.46037858999999998 3.11731310000000006 1.1851605999999999 -0.18828528999999999 3.12119249999999981 1.03945880000000002 0.027649045000000001 3.12723469999999981 0.81532073000000005 0.16628760000000001 3.13484840000000009 0.53468621000000005 0.21405922999999999 3.14328809999999992 0.22502606999999999 0.16628772 3.15172819999999998 -0.083348094999999997 0.027649224 3.15934179999999998 -0.36025046999999999 -0.18828505000000001 3.16538379999999986 -0.57857621000000004 -0.46037855999999999 3.16926310000000022 -0.71695321999999995 -0.76199645000000005 3.17059990000000003 -0.76183701000000004 -1.06361419999999995 3.16926310000000022 -0.70883368999999996 -1.3357078 3.16538379999999986 -0.56313126999999996 "
+		+ "-1.55164180000000007 3.15934179999999998 -0.33899384999999999 -1.69028069999999997 3.15172819999999998 -0.058358728999999998 -1.73805239999999994 3.14328809999999992 0.25130141 -1.61093909999999996 1.13688539999999993 0.458794 -1.5057391 1.13110850000000007 0.66890967000000001 -1.3418855999999999 1.12652350000000001 0.83457607 -1.1354187 1.12357970000000007 0.93957763999999999 -0.90654868 1.1225655000000001 0.97363650999999996 -0.67767811 1.12357970000000007 0.93341642999999996 -0.47121146000000003 1.12652350000000001 0.82285677999999995 -0.30735886000000001 1.13110850000000007 0.65277945999999998 -0.20215899000000001 1.13688539999999993 0.43983179 -0.16590916999999999 1.14329 0.20485854000000001 -0.20215905000000001 1.14969420000000011 -0.029137552000000001 -0.30735889 1.15547130000000009 -0.23925382000000001 -0.47121149000000001 1.16005639999999999 -0.40492152999999997 -0.67767829000000002 1.16300010000000009 -0.50992303999999999 -0.90654868 1.16401430000000006 -0.54398071999999997 -1.1354187 1.163000100000"
+		+ "00009 -0.50376189000000005 -1.34188519999999989 1.16005639999999999 -0.3932023 -1.50573829999999997 1.15547130000000009 -0.22312367 -1.6109388 1.14969420000000011 -0.010175467000000001 -1.64718769999999992 1.14329 0.22479652999999999 -0.76199669000000003 3.14328809999999992 0.23816371 -1.40652310000000003 1.13874410000000004 0.38799362999999998 -1.3318528999999999 1.13464380000000009 0.53713447000000003 -1.21554969999999996 1.13138910000000004 0.65472357999999997 -1.069 1.12929989999999991 0.72925377000000002 -0.90654855999999995 1.12858009999999997 0.75342845999999997 -0.74409676000000002 1.12929989999999991 0.72488058 -0.59754704999999997 1.13138910000000004 0.64640522 -0.48124453 1.13464380000000009 0.52568406000000001 -0.40657383000000002 1.13874410000000004 0.37453430999999998 -0.38084430000000002 1.14329 0.20775157 -0.40657388999999999 1.1478356999999999 0.041660904999999998 -0.48124486 1.15193649999999992 -0.10747867999999999 -0.59754717000000002 1.1551906999999999 -0.22506904999999999 -0.7440971100000"
+		+ "0001 1.15728 -0.29959857000000001 -0.90654849999999998 1.15800020000000004 -0.32377326000000001 -1.06900020000000007 1.15728 -0.29522537999999998 -1.2155495999999999 1.1551906999999999 -0.21675074 -1.331852 1.15193649999999992 -0.096029519999999993 -1.40652280000000007 1.1478356999999999 0.055120170000000003 -1.4322528000000001 1.14329 0.22190356 -1.407887 1.13874410000000004 0.39047945000000001 -1.33321610000000002 1.13464380000000009 0.53961903 -0.79539019 1.14329 0.2157982 -1.21691349999999998 1.13138939999999999 0.65720940000000005 -1.070364 1.12929989999999991 0.73173951999999998 -0.90791213999999998 1.12858009999999997 0.75591361999999995 -0.74546069000000004 1.12929989999999991 0.72736639000000003 -0.59891099000000003 1.13138939999999999 0.64889103000000004 -0.48260840999999999 1.13464380000000009 0.52816980999999996 -0.40793776999999998 1.13874410000000004 0.37702012000000001 -0.38220780999999998 1.14329 0.21023673000000001 -0.40793782000000001 1.1478356999999999 0.044146717000000002 -0.48260838 1.151"
+		+ "93649999999992 -0.10499346 -0.59891105 1.1551906999999999 -0.22258322999999999 -0.74546062999999996 1.15728 -0.29711342000000002 -0.90791202000000004 1.15800020000000004 -0.32128811000000002 -1.07036379999999998 1.15728 -0.29274022999999999 -1.21691360000000004 1.1551906999999999 -0.21426498999999999 -1.33321559999999995 1.15193649999999992 -0.093544303999999995 -1.40788669999999994 1.1478356999999999 0.057605982 -1.43361629999999995 1.14329 0.22438872000000001"
+		)
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray" 
 		"rotatePivot" " -type \"double3\" -0.93691813584227168 2.1503593685738962 0.5569703382262875"
 		
@@ -22977,40 +21796,7 @@ createNode reference -n "cashbox_latestRN";
 		"scalePivot" " -type \"double3\" -0.93691813584227168 2.1503593685738962 0.5569703382262875"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray|cashbox_latest:MoneyTrayShape" 
-		"pnts" " -s 12"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray|cashbox_latest:MoneyTrayShape" 
-		"pnts[0]" " -type \"float3\" -0.49392258999999999 2.15621159999999978 -0.096099794000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray|cashbox_latest:MoneyTrayShape" 
-		"pnts[1]" " -type \"float3\" -1.59008529999999992 2.15621159999999978 0.27074510000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray|cashbox_latest:MoneyTrayShape" 
-		"pnts[2]" " -type \"float3\" -0.49392258999999999 2.03569129999999987 -0.096099794000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray|cashbox_latest:MoneyTrayShape" 
-		"pnts[3]" " -type \"float3\" -1.59008529999999992 2.03569129999999987 0.27074510000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray|cashbox_latest:MoneyTrayShape" 
-		"pnts[4]" " -type \"float3\" -0.28375101000000003 2.10755010000000009 0.53191268000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray|cashbox_latest:MoneyTrayShape" 
-		"pnts[5]" " -type \"float3\" -1.37991369999999991 2.10755010000000009 0.89875764000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray|cashbox_latest:MoneyTrayShape" 
-		"pnts[6]" " -type \"float3\" -0.28375101000000003 2.15621159999999978 0.53191268000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray|cashbox_latest:MoneyTrayShape" 
-		"pnts[7]" " -type \"float3\" -1.37991369999999991 2.15621159999999978 0.89875764000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray|cashbox_latest:MoneyTrayShape" 
-		"pnts[8]" " -type \"float3\" -0.51150470999999997 2.082834 -0.076355471999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray|cashbox_latest:MoneyTrayShape" 
-		"pnts[9]" " -type \"float3\" -1.56416080000000002 2.082834 0.27592741999999998"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray|cashbox_latest:MoneyTrayShape" 
-		"pnts[10]" " -type \"float3\" -1.36233139999999997 2.15184089999999983 0.879013"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:MoneyTray|cashbox_latest:MoneyTrayShape" 
-		"pnts[11]" " -type \"float3\" -0.30967528 2.15184089999999983 0.52673011999999997"
+		"pt[0:11]" " -s 12 -type \"float3\" -0.49392258999999999 2.15621159999999978 -0.096099794000000002 -1.59008529999999992 2.15621159999999978 0.27074510000000002 -0.49392258999999999 2.03569129999999987 -0.096099794000000002 -1.59008529999999992 2.03569129999999987 0.27074510000000002 -0.28375101000000003 2.10755010000000009 0.53191268000000003 -1.37991369999999991 2.10755010000000009 0.89875764000000002 -0.28375101000000003 2.15621159999999978 0.53191268000000003 -1.37991369999999991 2.15621159999999978 0.89875764000000002 -0.51150470999999997 2.082834 -0.076355471999999994 -1.56416080000000002 2.082834 0.27592741999999998 -1.36233139999999997 2.15184089999999983 0.879013 -0.30967528 2.15184089999999983 0.52673011999999997"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge" 
 		"rotatePivot" " -type \"double3\" -1.31054358421735984 2.22806148112061209 0.63796449842984415"
@@ -23021,580 +21807,21 @@ createNode reference -n "cashbox_latestRN";
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
 		"pnts" " -s 202"
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[0]" " -type \"float3\" -2.31186179999999997 3.23261639999999995 0.90341181000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[1]" " -type \"float3\" -2.17082879999999978 3.236726 1.18401789999999996"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[2]" " -type \"float3\" -1.9511657 3.23998710000000001 1.40810809999999997"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[3]" " -type \"float3\" -1.67437579999999997 3.24208089999999993 1.55375109999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[4]" " -type \"float3\" -1.3675482000000001 3.24280260000000009 1.60668769999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[5]" " -type \"float3\" -1.06072070000000007 3.24208089999999993 1.56173910000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[6]" " -type \"float3\" -0.78393078000000005 3.23998810000000015 1.42330160000000006"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[7]" " -type \"float3\" -0.56426734000000001 3.236726 1.20492829999999995"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[8]" " -type \"float3\" -0.42323494 3.2326166999999999 0.92799436999999996"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[9]" " -type \"float3\" -0.37463897000000002 3.22806119999999996 0.61961096999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[10]" " -type \"float3\" -0.42323464 3.22350670000000017 0.30996131999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[11]" " -type \"float3\" -0.56426734000000001 3.2193972999999998 0.029356792999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[12]" " -type \"float3\" -0.78393029999999997 3.216136 -0.19473545"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[13]" " -type \"float3\" -1.060722 3.2140415 -0.34037644"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[14]" " -type \"float3\" -1.3675482000000001 3.21332139999999988 -0.39331239000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[15]" " -type \"float3\" -1.67437429999999998 3.21404170000000011 -0.34836328"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[16]" " -type \"float3\" -1.95116420000000002 3.216136 -0.20992777000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[17]" " -type \"float3\" -2.17082879999999978 3.2193972999999998 0.0084466039999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[18]" " -type \"float3\" -2.31186150000000001 3.22350670000000017 0.28537908000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[19]" " -type \"float3\" -2.36045689999999997 3.22806119999999996 0.59376359000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[20]" " -type \"float3\" -2.19785209999999998 1.23261639999999995 0.96596574999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[21]" " -type \"float3\" -2.05682279999999995 1.2367258000000001 1.24657140000000011"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[22]" " -type \"float3\" -1.83715830000000002 1.23998710000000001 1.47066239999999993"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[23]" " -type \"float3\" -1.56036639999999993 1.24208089999999993 1.6163052"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[24]" " -type \"float3\" -1.25353939999999997 1.24280260000000009 1.66924150000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[25]" " -type \"float3\" -0.94671254999999999 1.24208089999999993 1.62429259999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[26]" " -type \"float3\" -0.66991966999999997 1.23998710000000001 1.485855"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[27]" " -type \"float3\" -0.45025717999999998 1.236726 1.26748290000000008"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[28]" " -type \"float3\" -0.30922781999999999 1.23261639999999995 0.99054796000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[29]" " -type \"float3\" -0.26062906000000002 1.22806119999999996 0.68216454999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[30]" " -type \"float3\" -0.30922747 1.22350669999999995 0.37251484000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[31]" " -type \"float3\" -0.45025717999999998 1.21939749999999991 0.091911480000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[32]" " -type \"float3\" -0.66992092000000003 1.2161362 -0.13218103"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[33]" " -type \"float3\" -0.94671452 1.21404120000000004 -0.27782223"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[34]" " -type \"float3\" -1.25353960000000009 1.21332050000000002 -0.33075856999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[35]" " -type \"float3\" -1.5603644000000001 1.2140415 -0.28580972999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[36]" " -type \"float3\" -1.83715720000000005 1.21613569999999993 -0.14737394000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[37]" " -type \"float3\" -2.05682089999999995 1.21939749999999991 0.071000010000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[38]" " -type \"float3\" -2.19785379999999986 1.22350650000000005 0.34793305000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[39]" " -type \"float3\" -2.24644760000000021 1.22806119999999996 0.65631764999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[40]" " -type \"float3\" -1.3675482000000001 3.22806119999999996 0.60668765999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[41]" " -type \"float3\" -1.25353939999999997 1.22806119999999996 0.66924148999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[42]" " -type \"float3\" -1.92293519999999996 2.74475069999999999 1.42359790000000008"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[43]" " -type \"float3\" -2.14259790000000017 2.74148939999999985 1.19950739999999989"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[44]" " -type \"float3\" -2.28363080000000007 2.73738 0.91890126000000005"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[45]" " -type \"float3\" -2.33222560000000012 2.73282479999999994 0.60925341"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[46]" " -type \"float3\" -2.28362990000000021 2.72827010000000003 0.30086880999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[47]" " -type \"float3\" -2.14259770000000005 2.7241607000000001 0.023935735"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[48]" " -type \"float3\" -1.9229343000000001 2.72089960000000008 -0.19443825000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[49]" " -type \"float3\" -1.64614240000000001 2.71880509999999997 -0.332874"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[50]" " -type \"float3\" -1.3393174000000001 2.7180841 -0.37782288000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[51]" " -type \"float3\" -1.03249239999999998 2.71880509999999997 -0.32488671000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[52]" " -type \"float3\" -0.75569945999999999 2.72089930000000013 -0.17924601000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[53]" " -type \"float3\" -0.53603584000000004 2.7241607000000001 0.044846593999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[54]" " -type \"float3\" -0.39500505000000002 2.72827010000000003 0.32545161"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[55]" " -type \"float3\" -0.34640819 2.73282479999999994 0.63510047999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[56]" " -type \"float3\" -0.39500468999999999 2.73738 0.94348346999999999"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[57]" " -type \"float3\" -0.53603584000000004 2.74148939999999985 1.220418"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[58]" " -type \"float3\" -0.75569980999999997 2.74475069999999999 1.43879090000000009"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[59]" " -type \"float3\" -1.03249239999999998 2.74684449999999991 1.57722819999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[60]" " -type \"float3\" -1.33931730000000004 2.74756620000000007 1.6221772000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[61]" " -type \"float3\" -1.64614250000000006 2.74684449999999991 1.569241"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[62]" " -type \"float3\" -1.870199 1.81962470000000009 1.45253279999999996"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[63]" " -type \"float3\" -2.08986189999999983 1.81636360000000008 1.22844229999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[64]" " -type \"float3\" -2.23089409999999999 1.812254 0.94783640000000002"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[65]" " -type \"float3\" -2.27949139999999995 1.80769869999999999 0.63818841999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[66]" " -type \"float3\" -2.23089409999999999 1.80314419999999997 0.32980394000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[67]" " -type \"float3\" -2.08986 1.79903459999999993 0.052870809999999997"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[68]" " -type \"float3\" -1.87019920000000006 1.79577370000000003 -0.16550334999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[69]" " -type \"float3\" -1.59340820000000005 1.793679 -0.30393906999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[70]" " -type \"float3\" -1.28658150000000004 1.7929584999999999 -0.34888792000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[71]" " -type \"float3\" -0.97975540000000005 1.793679 -0.29595168999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[72]" " -type \"float3\" -0.70296437000000001 1.79577370000000003 -0.15031108000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[73]" " -type \"float3\" -0.48330056999999998 1.79903459999999993 0.073781312000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[74]" " -type \"float3\" -0.34226948000000001 1.80314419999999997 0.35438554999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[75]" " -type \"float3\" -0.29367113 1.80769869999999999 0.66403537999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[76]" " -type \"float3\" -0.34226983999999999 1.812254 0.97241860999999996"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[77]" " -type \"float3\" -0.48330056999999998 1.81636360000000008 1.24935269999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[78]" " -type \"float3\" -0.70296365000000005 1.81962470000000009 1.46772579999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[79]" " -type \"float3\" -0.97975551999999999 1.82171850000000002 1.60616329999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[80]" " -type \"float3\" -1.28658139999999999 1.8224400999999999 1.65111220000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[81]" " -type \"float3\" -1.59340740000000003 1.82171850000000002 1.59817589999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[82]" " -type \"float3\" -1.926687 2.81057520000000016 1.42153930000000006"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[83]" " -type \"float3\" -2.14634990000000014 2.80731319999999984 1.19744880000000009"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[84]" " -type \"float3\" -2.2873831 2.8032045000000001 0.91684288000000003"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[85]" " -type \"float3\" -2.3359776000000001 2.79864930000000012 0.60719489999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[86]" " -type \"float3\" -2.28738209999999986 2.79409380000000018 0.29881042000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[87]" " -type \"float3\" -2.14635059999999989 2.78998519999999983 0.021877199"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[88]" " -type \"float3\" -1.926687 2.78672390000000014 -0.19649691999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[89]" " -type \"float3\" -1.64989520000000001 2.78462889999999996 -0.33493251000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[90]" " -type \"float3\" -1.34306930000000002 2.78390860000000018 -0.37988144000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[91]" " -type \"float3\" -1.03624420000000006 2.78462889999999996 -0.32694529999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[92]" " -type \"float3\" -0.75945145000000003 2.78672390000000014 -0.18130416999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[93]" " -type \"float3\" -0.53978842000000005 2.78998519999999983 0.042787775"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[94]" " -type \"float3\" -0.39875614999999998 2.79409460000000021 0.32339331999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[95]" " -type \"float3\" -0.35016 2.79864930000000012 0.63304185999999996"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[96]" " -type \"float3\" -0.39875579 2.8032045000000001 0.94142513999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[97]" " -type \"float3\" -0.53978842000000005 2.80731390000000003 1.21835920000000009"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[98]" " -type \"float3\" -0.75945169000000001 2.81057520000000016 1.43673239999999991"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[99]" " -type \"float3\" -1.03624420000000006 2.81266879999999997 1.57516959999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[100]" " -type \"float3\" -1.34306930000000002 2.81338979999999994 1.62011860000000008"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[101]" " -type \"float3\" -1.6498953999999999 2.81266809999999978 1.56718249999999992"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[102]" " -type \"float3\" -1.840398 2.80881239999999988 1.30304909999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[103]" " -type \"float3\" -2.02758359999999982 2.80603269999999982 1.11209230000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[104]" " -type \"float3\" -1.83664680000000002 2.74298790000000015 1.30510740000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[105]" " -type \"float3\" -2.02383140000000017 2.74020840000000021 1.1141506000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[106]" " -type \"float3\" -2.1477643999999998 2.80253150000000018 0.87297332000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[107]" " -type \"float3\" -2.144012 2.736707 0.87503207000000005"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[108]" " -type \"float3\" -2.18917470000000014 2.7986491 0.60910547000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[109]" " -type \"float3\" -2.18542289999999984 2.73282479999999994 0.61116402999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[110]" " -type \"float3\" -2.14776280000000019 2.79476689999999994 0.34631640000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[111]" " -type \"float3\" -2.144011 2.72894330000000007 0.34837493000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[112]" " -type \"float3\" -2.02758260000000012 2.79126569999999985 0.11032611000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[113]" " -type \"float3\" -2.02383069999999998 2.72544120000000012 0.11238459000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[114]" " -type \"float3\" -1.840398 2.78848669999999998 -0.075759903000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[115]" " -type \"float3\" -1.83664610000000006 2.72266219999999981 -0.073701322"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[116]" " -type \"float3\" -1.60453029999999996 2.7867023999999998 -0.19372702999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[117]" " -type \"float3\" -1.60077859999999994 2.72087790000000007 -0.19166834999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[118]" " -type \"float3\" -1.34306930000000002 2.786088 -0.23203135999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[119]" " -type \"float3\" -1.3393174000000001 2.72026350000000017 -0.22997279000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[120]" " -type \"float3\" -1.08160689999999993 2.78670170000000006 -0.18692037"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[121]" " -type \"float3\" -1.07785609999999998 2.72087790000000007 -0.18486184"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[122]" " -type \"float3\" -0.84573995999999996 2.78848669999999998 -0.062813461000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[123]" " -type \"float3\" -0.84198874000000001 2.72266219999999981 -0.060755207999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[124]" " -type \"float3\" -0.65855527000000003 2.79126569999999985 0.12814517"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[125]" " -type \"float3\" -0.65480422999999999 2.72544120000000012 0.13020359000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[126]" " -type \"float3\" -0.53837502000000004 2.79476689999999994 0.36726387999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[127]" " -type \"float3\" -0.53462326999999998 2.72894309999999995 0.36932253999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[128]" " -type \"float3\" -0.49696356000000003 2.79864930000000012 0.63113111"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[129]" " -type \"float3\" -0.49321175 2.73282479999999994 0.63318973999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[130]" " -type \"float3\" -0.53837418999999997 2.80253150000000018 0.89392108000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[131]" " -type \"float3\" -0.53462403999999997 2.736707 0.89597945999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[132]" " -type \"float3\" -0.65855520999999995 2.80603289999999994 1.12991130000000006"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[133]" " -type \"float3\" -0.65480417000000002 2.74020840000000021 1.13196969999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[134]" " -type \"float3\" -0.84573995999999996 2.80881239999999988 1.31599559999999993"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[135]" " -type \"float3\" -0.84198713000000003 2.74298790000000015 1.3180540999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[136]" " -type \"float3\" -1.08160780000000001 2.810596 1.43396149999999989"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[137]" " -type \"float3\" -1.07785609999999998 2.74477150000000014 1.43602040000000009"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[138]" " -type \"float3\" -1.34306930000000002 2.81121109999999996 1.47226670000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[139]" " -type \"float3\" -1.3393174000000001 2.7453867999999999 1.4743252"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[140]" " -type \"float3\" -1.60453050000000008 2.810596 1.4271552999999999"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[141]" " -type \"float3\" -1.60077829999999999 2.74477150000000014 1.42921349999999991"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[142]" " -type \"float3\" -2.28289220000000004 1.867373 0.63632195999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[143]" " -type \"float3\" -2.23429659999999997 1.86281849999999993 0.32793725000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[144]" " -type \"float3\" -2.09326239999999997 1.85870890000000011 0.051004261000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[145]" " -type \"float3\" -1.8736 1.85544780000000009 -0.16736972"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[146]" " -type \"float3\" -1.59680890000000009 1.85335369999999999 -0.30580552999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[147]" " -type \"float3\" -1.2899832 1.85263230000000001 -0.35075432000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[148]" " -type \"float3\" -0.98315722000000005 1.85335369999999999 -0.29781795"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[149]" " -type \"float3\" -0.70636451 1.85544780000000009 -0.15217683000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[150]" " -type \"float3\" -0.48670237999999999 1.85870890000000011 0.071915044999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[151]" " -type \"float3\" -0.34567267000000002 1.86281849999999993 0.35252022999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[152]" " -type \"float3\" -0.29707371999999999 1.867373 0.66216885999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[153]" " -type \"float3\" -0.34567230999999998 1.87192819999999993 0.97055208999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[154]" " -type \"float3\" -0.48670237999999999 1.87603779999999998 1.24748649999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[155]" " -type \"float3\" -0.70636445000000003 1.87929889999999999 1.46585940000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[156]" " -type \"float3\" -0.98315704000000004 1.88139269999999992 1.60429669999999991"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[157]" " -type \"float3\" -1.289983 1.88211440000000008 1.64924570000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[158]" " -type \"float3\" -1.59680909999999998 1.88139269999999992 1.59630969999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[159]" " -type \"float3\" -1.8736 1.87929889999999999 1.45066650000000008"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[160]" " -type \"float3\" -2.09326340000000011 1.87603779999999998 1.22657569999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[161]" " -type \"float3\" -2.23429579999999994 1.87192819999999993 0.94597"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[162]" " -type \"float3\" -2.13519380000000014 1.867373 0.63824457000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[163]" " -type \"float3\" -2.093827 1.86349579999999992 0.37573266"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[164]" " -type \"float3\" -2.131793 1.80769869999999999 0.64011085000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[165]" " -type \"float3\" -2.09042530000000015 1.80382160000000002 0.37759893999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[166]" " -type \"float3\" -1.97377559999999996 1.85999730000000008 0.13999260999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[167]" " -type \"float3\" -1.97037109999999993 1.800323 0.14185913"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[168]" " -type \"float3\" -1.78678720000000002 1.85722110000000007 -0.045897409"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[169]" " -type \"float3\" -1.78338430000000003 1.79754689999999995 -0.044031097999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[170]" " -type \"float3\" -1.55116870000000007 1.85543919999999996 -0.16373968"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[171]" " -type \"float3\" -1.54776690000000006 1.79576519999999995 -0.16187334"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[172]" " -type \"float3\" -1.289983 1.8548252999999999 -0.20200208"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[173]" " -type \"float3\" -1.28658150000000004 1.795151 -0.20013565999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[174]" " -type \"float3\" -1.028798 1.85543919999999996 -0.15694079999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[175]" " -type \"float3\" -1.02539559999999996 1.79576439999999993 -0.15507414999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[176]" " -type \"float3\" -0.79317915000000005 1.85722110000000007 -0.032964751"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[177]" " -type \"float3\" -0.78977662000000004 1.79754689999999995 -0.031098246999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[178]" " -type \"float3\" -0.60619252999999995 1.85999730000000008 0.15779309"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[179]" " -type \"float3\" -0.60279059000000002 1.800323 0.15965924000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[180]" " -type \"float3\" -0.48613888 1.86349579999999992 0.396658"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[181]" " -type \"float3\" -0.48273641 1.80382160000000002 0.39852458000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[182]" " -type \"float3\" -0.44477045999999998 1.867373 0.66024691000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[183]" " -type \"float3\" -0.44136983000000002 1.80769869999999999 0.66211343"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[184]" " -type \"float3\" -0.48613888 1.87125089999999994 0.92275815999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[185]" " -type \"float3\" -0.48273641 1.81157659999999998 0.92462473999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[186]" " -type \"float3\" -0.60619235000000005 1.87474940000000001 1.15849859999999993"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[187]" " -type \"float3\" -0.60279064999999998 1.81507520000000011 1.160365"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[188]" " -type \"float3\" -0.79317897999999998 1.87752490000000005 1.3443868000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[189]" " -type \"float3\" -0.78977662000000004 1.81785060000000009 1.34625349999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[190]" " -type \"float3\" -1.0287982 1.87930749999999991 1.46223060000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[191]" " -type \"float3\" -1.02539540000000007 1.81963319999999995 1.46409680000000009"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[192]" " -type \"float3\" -1.289983 1.87992139999999996 1.50049349999999992"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[193]" " -type \"float3\" -1.28658150000000004 1.82024720000000007 1.50235990000000008"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[194]" " -type \"float3\" -1.55116769999999993 1.87930749999999991 1.45543130000000009"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[195]" " -type \"float3\" -1.54776720000000001 1.81963319999999995 1.45729789999999992"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[196]" " -type \"float3\" -1.786787 1.87752490000000005 1.33145420000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[197]" " -type \"float3\" -1.78338630000000009 1.81785060000000009 1.33332070000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[198]" " -type \"float3\" -1.97377369999999996 1.87474940000000001 1.1406984"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[199]" " -type \"float3\" -1.970372 1.81507520000000011 1.14256479999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[200]" " -type \"float3\" -2.09382869999999999 1.87125089999999994 0.90183263999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
-		"pnts[201]" " -type \"float3\" -2.0904269000000002 1.81157659999999998 0.90369904000000001"
-		
+		"pt[0:165]" (" -type \"float3\" -2.31186179999999997 3.23261639999999995 0.90341181000000004 -2.17082879999999978 3.236726 1.18401789999999996 -1.9511657 3.23998710000000001 1.40810809999999997 -1.67437579999999997 3.24208089999999993 1.55375109999999994 -1.3675482000000001 3.24280260000000009 1.60668769999999994 -1.06072070000000007 3.24208089999999993 1.56173910000000005 -0.78393078000000005 3.23998810000000015 1.42330160000000006 -0.56426734000000001 3.236726 1.20492829999999995 -0.42323494 3.2326166999999999 0.92799436999999996 -0.37463897000000002 3.22806119999999996 0.61961096999999998 -0.42323464 3.22350670000000017 0.30996131999999998 -0.56426734000000001 3.2193972999999998 0.029356792999999999 -0.78393029999999997 3.216136 -0.19473545 -1.060722 3.2140415 -0.34037644 -1.3675482000000001 3.21332139999999988 -0.39331239000000001 -1.67437429999999998 3.21404170000000011 -0.34836328 -1.95116420000000002 3.216136 -0.20992777000000001 -2.17082879999999978 3.2193972999999998 0.0084466039999999999 -2.31186150000000001 3.2235"
+		+ "0670000000017 0.28537908000000001 -2.36045689999999997 3.22806119999999996 0.59376359000000001 -2.19785209999999998 1.23261639999999995 0.96596574999999996 -2.05682279999999995 1.2367258000000001 1.24657140000000011 -1.83715830000000002 1.23998710000000001 1.47066239999999993 -1.56036639999999993 1.24208089999999993 1.6163052 -1.25353939999999997 1.24280260000000009 1.66924150000000004 -0.94671254999999999 1.24208089999999993 1.62429259999999998 -0.66991966999999997 1.23998710000000001 1.485855 -0.45025717999999998 1.236726 1.26748290000000008 -0.30922781999999999 1.23261639999999995 0.99054796000000001 -0.26062906000000002 1.22806119999999996 0.68216454999999998 -0.30922747 1.22350669999999995 0.37251484000000001 -0.45025717999999998 1.21939749999999991 0.091911480000000004 -0.66992092000000003 1.2161362 -0.13218103 -0.94671452 1.21404120000000004 -0.27782223 -1.25353960000000009 1.21332050000000002 -0.33075856999999997 -1.5603644000000001 1.2140415 -0.28580972999999998 -1.83715720000000005 1.216135699999999"
+		+ "93 -0.14737394000000001 -2.05682089999999995 1.21939749999999991 0.071000010000000002 -2.19785379999999986 1.22350650000000005 0.34793305000000002 -2.24644760000000021 1.22806119999999996 0.65631764999999997 -1.3675482000000001 3.22806119999999996 0.60668765999999996 -1.25353939999999997 1.22806119999999996 0.66924148999999999 -1.92293519999999996 2.74475069999999999 1.42359790000000008 -2.14259790000000017 2.74148939999999985 1.19950739999999989 -2.28363080000000007 2.73738 0.91890126000000005 -2.33222560000000012 2.73282479999999994 0.60925341 -2.28362990000000021 2.72827010000000003 0.30086880999999999 -2.14259770000000005 2.7241607000000001 0.023935735 -1.9229343000000001 2.72089960000000008 -0.19443825000000001 -1.64614240000000001 2.71880509999999997 -0.332874 -1.3393174000000001 2.7180841 -0.37782288000000003 -1.03249239999999998 2.71880509999999997 -0.32488671000000002 -0.75569945999999999 2.72089930000000013 -0.17924601000000001 -0.53603584000000004 2.7241607000000001 0.044846593999999997 -0.39500505"
+		+ "000000002 2.72827010000000003 0.32545161 -0.34640819 2.73282479999999994 0.63510047999999997 -0.39500468999999999 2.73738 0.94348346999999999 -0.53603584000000004 2.74148939999999985 1.220418 -0.75569980999999997 2.74475069999999999 1.43879090000000009 -1.03249239999999998 2.74684449999999991 1.57722819999999997 -1.33931730000000004 2.74756620000000007 1.6221772000000001 -1.64614250000000006 2.74684449999999991 1.569241 -1.870199 1.81962470000000009 1.45253279999999996 -2.08986189999999983 1.81636360000000008 1.22844229999999999 -2.23089409999999999 1.812254 0.94783640000000002 -2.27949139999999995 1.80769869999999999 0.63818841999999998 -2.23089409999999999 1.80314419999999997 0.32980394000000002 -2.08986 1.79903459999999993 0.052870809999999997 -1.87019920000000006 1.79577370000000003 -0.16550334999999999 -1.59340820000000005 1.793679 -0.30393906999999998 -1.28658150000000004 1.7929584999999999 -0.34888792000000002 -0.97975540000000005 1.793679 -0.29595168999999999 -0.70296437000000001 1.79577370000000003 -"
+		+ "0.15031108000000001 -0.48330056999999998 1.79903459999999993 0.073781312000000002 -0.34226948000000001 1.80314419999999997 0.35438554999999999 -0.29367113 1.80769869999999999 0.66403537999999995 -0.34226983999999999 1.812254 0.97241860999999996 -0.48330056999999998 1.81636360000000008 1.24935269999999998 -0.70296365000000005 1.81962470000000009 1.46772579999999997 -0.97975551999999999 1.82171850000000002 1.60616329999999996 -1.28658139999999999 1.8224400999999999 1.65111220000000003 -1.59340740000000003 1.82171850000000002 1.59817589999999998 -1.926687 2.81057520000000016 1.42153930000000006 -2.14634990000000014 2.80731319999999984 1.19744880000000009 -2.2873831 2.8032045000000001 0.91684288000000003 -2.3359776000000001 2.79864930000000012 0.60719489999999998 -2.28738209999999986 2.79409380000000018 0.29881042000000002 -2.14635059999999989 2.78998519999999983 0.021877199 -1.926687 2.78672390000000014 -0.19649691999999999 -1.64989520000000001 2.78462889999999996 -0.33493251000000002 -1.34306930000000002 2.7839"
+		+ "0860000000018 -0.37988144000000001 -1.03624420000000006 2.78462889999999996 -0.32694529999999999 -0.75945145000000003 2.78672390000000014 -0.18130416999999999 -0.53978842000000005 2.78998519999999983 0.042787775 -0.39875614999999998 2.79409460000000021 0.32339331999999998 -0.35016 2.79864930000000012 0.63304185999999996 -0.39875579 2.8032045000000001 0.94142513999999999 -0.53978842000000005 2.80731390000000003 1.21835920000000009 -0.75945169000000001 2.81057520000000016 1.43673239999999991 -1.03624420000000006 2.81266879999999997 1.57516959999999995 -1.34306930000000002 2.81338979999999994 1.62011860000000008 -1.6498953999999999 2.81266809999999978 1.56718249999999992 -1.840398 2.80881239999999988 1.30304909999999996 -2.02758359999999982 2.80603269999999982 1.11209230000000003 -1.83664680000000002 2.74298790000000015 1.30510740000000003 -2.02383140000000017 2.74020840000000021 1.1141506000000001 -2.1477643999999998 2.80253150000000018 0.87297332000000005 -2.144012 2.736707 0.87503207000000005 -2.1891747000000"
+		+ "0014 2.7986491 0.60910547000000004 -2.18542289999999984 2.73282479999999994 0.61116402999999997 -2.14776280000000019 2.79476689999999994 0.34631640000000002 -2.144011 2.72894330000000007 0.34837493000000003 -2.02758260000000012 2.79126569999999985 0.11032611000000001 -2.02383069999999998 2.72544120000000012 0.11238459000000001 -1.840398 2.78848669999999998 -0.075759903000000003 -1.83664610000000006 2.72266219999999981 -0.073701322 -1.60453029999999996 2.7867023999999998 -0.19372702999999999 -1.60077859999999994 2.72087790000000007 -0.19166834999999999 -1.34306930000000002 2.786088 -0.23203135999999999 -1.3393174000000001 2.72026350000000017 -0.22997279000000001 -1.08160689999999993 2.78670170000000006 -0.18692037 -1.07785609999999998 2.72087790000000007 -0.18486184 -0.84573995999999996 2.78848669999999998 -0.062813461000000001 -0.84198874000000001 2.72266219999999981 -0.060755207999999998 -0.65855527000000003 2.79126569999999985 0.12814517 -0.65480422999999999 2.72544120000000012 0.13020359000000001 -0.538375"
+		+ "02000000004 2.79476689999999994 0.36726387999999999 -0.53462326999999998 2.72894309999999995 0.36932253999999998 -0.49696356000000003 2.79864930000000012 0.63113111 -0.49321175 2.73282479999999994 0.63318973999999995 -0.53837418999999997 2.80253150000000018 0.89392108000000003 -0.53462403999999997 2.736707 0.89597945999999995 -0.65855520999999995 2.80603289999999994 1.12991130000000006 -0.65480417000000002 2.74020840000000021 1.13196969999999997 -0.84573995999999996 2.80881239999999988 1.31599559999999993 -0.84198713000000003 2.74298790000000015 1.3180540999999999 -1.08160780000000001 2.810596 1.43396149999999989 -1.07785609999999998 2.74477150000000014 1.43602040000000009 -1.34306930000000002 2.81121109999999996 1.47226670000000004 -1.3393174000000001 2.7453867999999999 1.4743252 -1.60453050000000008 2.810596 1.4271552999999999 -1.60077829999999999 2.74477150000000014 1.42921349999999991 -2.28289220000000004 1.867373 0.63632195999999996 -2.23429659999999997 1.86281849999999993 0.32793725000000001 -2.09326239"
+		+ "999999997 1.85870890000000011 0.051004261000000002 -1.8736 1.85544780000000009 -0.16736972 -1.59680890000000009 1.85335369999999999 -0.30580552999999999 -1.2899832 1.85263230000000001 -0.35075432000000001 -0.98315722000000005 1.85335369999999999 -0.29781795 -0.70636451 1.85544780000000009 -0.15217683000000001 -0.48670237999999999 1.85870890000000011 0.071915044999999997 -0.34567267000000002 1.86281849999999993 0.35252022999999999 -0.29707371999999999 1.867373 0.66216885999999997 -0.34567230999999998 1.87192819999999993 0.97055208999999998 -0.48670237999999999 1.87603779999999998 1.24748649999999994 -0.70636445000000003 1.87929889999999999 1.46585940000000003 -0.98315704000000004 1.88139269999999992 1.60429669999999991 -1.289983 1.88211440000000008 1.64924570000000004 -1.59680909999999998 1.88139269999999992 1.59630969999999994 -1.8736 1.87929889999999999 1.45066650000000008 -2.09326340000000011 1.87603779999999998 1.22657569999999994 -2.23429579999999994 1.87192819999999993 0.94597 -2.13519380000000014 1.8673"
+		+ "73 0.63824457000000001 -2.093827 1.86349579999999992 0.37573266 -2.131793 1.80769869999999999 0.64011085000000001 -2.09042530000000015 1.80382160000000002 0.37759893999999999"
+		)
+		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge|cashbox_latest:HingeShape" 
+		"pt[166:201]" (" -1.97377559999999996 1.85999730000000008 0.13999260999999999 -1.97037109999999993 1.800323 0.14185913 -1.78678720000000002 1.85722110000000007 -0.045897409 -1.78338430000000003 1.79754689999999995 -0.044031097999999998 -1.55116870000000007 1.85543919999999996 -0.16373968 -1.54776690000000006 1.79576519999999995 -0.16187334 -1.289983 1.8548252999999999 -0.20200208 -1.28658150000000004 1.795151 -0.20013565999999999 -1.028798 1.85543919999999996 -0.15694079999999999 -1.02539559999999996 1.79576439999999993 -0.15507414999999999 -0.79317915000000005 1.85722110000000007 -0.032964751 -0.78977662000000004 1.79754689999999995 -0.031098246999999999 -0.60619252999999995 1.85999730000000008 0.15779309 -0.60279059000000002 1.800323 0.15965924000000001 -0.48613888 1.86349579999999992 0.396658 -0.48273641 1.80382160000000002 0.39852458000000002 -0.44477045999999998 1.867373 0.66024691000000002 -0.44136983000000002 1.80769869999999999 0.66211343 -0.48613888 1.87125089999999994 0.92275815999999999 -0.48273641 1.8115765999999"
+		+ "9998 0.92462473999999995 -0.60619235000000005 1.87474940000000001 1.15849859999999993 -0.60279064999999998 1.81507520000000011 1.160365 -0.79317897999999998 1.87752490000000005 1.3443868000000001 -0.78977662000000004 1.81785060000000009 1.34625349999999999 -1.0287982 1.87930749999999991 1.46223060000000005 -1.02539540000000007 1.81963319999999995 1.46409680000000009 -1.289983 1.87992139999999996 1.50049349999999992 -1.28658150000000004 1.82024720000000007 1.50235990000000008 -1.55116769999999993 1.87930749999999991 1.45543130000000009 -1.54776720000000001 1.81963319999999995 1.45729789999999992 -1.786787 1.87752490000000005 1.33145420000000003 -1.78338630000000009 1.81785060000000009 1.33332070000000003 -1.97377369999999996 1.87474940000000001 1.1406984 -1.970372 1.81507520000000011 1.14256479999999994 -2.09382869999999999 1.87125089999999994 0.90183263999999996 -2.0904269000000002 1.81157659999999998 0.90369904000000001"
+		)
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2" 
 		"rotatePivot" " -type \"double3\" -0.81534665726382749 2.22806148817683258 0.90966704511500807"
 		
@@ -23604,582 +21831,21 @@ createNode reference -n "cashbox_latestRN";
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
 		"pnts" " -s 202"
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[0]" " -type \"float3\" -1.81666430000000001 3.23261639999999995 1.17511480000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[1]" " -type \"float3\" -1.67563189999999995 3.236726 1.45572039999999991"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[2]" " -type \"float3\" -1.45596809999999999 3.23998710000000001 1.679811"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[3]" " -type \"float3\" -1.17917760000000005 3.24208160000000012 1.82545420000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[4]" " -type \"float3\" -0.87235068999999998 3.24280260000000009 1.87839059999999991"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[5]" " -type \"float3\" -0.56552433999999996 3.24208160000000012 1.83344130000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[6]" " -type \"float3\" -0.28873384000000002 3.23998810000000015 1.69500410000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[7]" " -type \"float3\" -0.069070458000000001 3.236726 1.47663079999999991"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[8]" " -type \"float3\" 0.071961998999999999 3.2326166999999999 1.19969689999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[9]" " -type \"float3\" 0.1205585 3.22806119999999996 0.89131384999999996"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[10]" " -type \"float3\" 0.071961641000000007 3.223506 0.58166510000000005"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[11]" " -type \"float3\" -0.069070458000000001 3.2193972999999998 0.30105934000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[12]" " -type \"float3\" -0.28873335999999999 3.216136 0.076967090000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[13]" " -type \"float3\" -0.56552446000000001 3.21404220000000018 -0.068673550999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[14]" " -type \"float3\" -0.87235068999999998 3.21332070000000014 -0.12160954"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[15]" " -type \"float3\" -1.17917739999999993 3.21404170000000011 -0.076660751999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[16]" " -type \"float3\" -1.45596729999999996 3.216136 0.061774759999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[17]" " -type \"float3\" -1.675632 3.2193972999999998 0.28014913000000002"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[18]" " -type \"float3\" -1.81666339999999993 3.22350670000000017 0.55708230000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[19]" " -type \"float3\" -1.86525950000000007 3.22806119999999996 0.86546648000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[20]" " -type \"float3\" -1.70265529999999998 1.23261639999999995 1.23766829999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[21]" " -type \"float3\" -1.56162449999999997 1.2367258000000001 1.51827470000000009"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[22]" " -type \"float3\" -1.34196080000000006 1.23998710000000001 1.74236520000000006"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[23]" " -type \"float3\" -1.06517020000000007 1.24208089999999993 1.8880074"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[24]" " -type \"float3\" -0.75834250000000003 1.24280260000000009 1.94094410000000006"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[25]" " -type \"float3\" -0.45151496000000002 1.24208089999999993 1.89599540000000011"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[26]" " -type \"float3\" -0.17472409999999999 1.23998710000000001 1.75755689999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[27]" " -type \"float3\" 0.044938802999999999 1.236726 1.53918409999999994"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[28]" " -type \"float3\" 0.18596910999999999 1.23261639999999995 1.26225040000000011"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[29]" " -type \"float3\" 0.23456848 1.22806119999999996 0.95386744000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[30]" " -type \"float3\" 0.18596947 1.223506 0.64421737000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[31]" " -type \"float3\" 0.044938802999999999 1.21939749999999991 0.36361271000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[32]" " -type \"float3\" -0.17472457999999999 1.216136 0.13952117999999999"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[33]" " -type \"float3\" -0.45151817999999999 1.21404190000000001 -0.0061200261000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[34]" " -type \"float3\" -0.75834261999999997 1.21332050000000002 -0.059056044000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[35]" " -type \"float3\" -1.06516680000000008 1.21404190000000001 -0.014106809999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[36]" " -type \"float3\" -1.34196040000000005 1.21613569999999993 0.12432861000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[37]" " -type \"float3\" -1.56162380000000001 1.21939749999999991 0.34270256999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[38]" " -type \"float3\" -1.702657 1.2235062000000001 0.61963557999999996"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[39]" " -type \"float3\" -1.7512506000000001 1.22806140000000008 0.92802017999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[40]" " -type \"float3\" -0.87235068999999998 3.22806119999999996 0.87839054999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[41]" " -type \"float3\" -0.75834250000000003 1.22806119999999996 0.94094401999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[42]" " -type \"float3\" -1.4277382999999999 2.74475069999999999 1.6953005000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[43]" " -type \"float3\" -1.647401 2.74148939999999985 1.47120990000000007"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[44]" " -type \"float3\" -1.788434 2.73738 1.19060389999999994"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[45]" " -type \"float3\" -1.83702860000000001 2.73282479999999994 0.88095593000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[46]" " -type \"float3\" -1.7884331 2.72827010000000003 0.57257133999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[47]" " -type \"float3\" -1.64740090000000006 2.7241607000000001 0.29563825999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[48]" " -type \"float3\" -1.4277375000000001 2.72089960000000008 0.077264279000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[49]" " -type \"float3\" -1.15094549999999995 2.71880509999999997 -0.061171441999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[50]" " -type \"float3\" -0.84412061999999999 2.7180841 -0.10612035"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[51]" " -type \"float3\" -0.53729475000000004 2.71880509999999997 -0.053183823999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[52]" " -type \"float3\" -0.26050257999999998 2.72089930000000013 0.092456548999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[53]" " -type \"float3\" -0.040838957000000002 2.7241607000000001 0.31654912000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[54]" " -type \"float3\" 0.10019183 2.72827010000000003 0.59715414"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[55]" " -type \"float3\" 0.14878869 2.73282550000000013 0.90680300999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[56]" " -type \"float3\" 0.10019219 2.73738 1.215186"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[57]" " -type \"float3\" -0.040838957000000002 2.74148939999999985 1.49212049999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[58]" " -type \"float3\" -0.26050293000000002 2.74475069999999999 1.71049340000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[59]" " -type \"float3\" -0.53729475000000004 2.74684449999999991 1.84893109999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[60]" " -type \"float3\" -0.84412050000000005 2.74756620000000007 1.89387979999999989"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[61]" " -type \"float3\" -1.15094570000000007 2.74684449999999991 1.8409435999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[62]" " -type \"float3\" -1.37500209999999989 1.81962470000000009 1.72423529999999992"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[63]" " -type \"float3\" -1.59466510000000006 1.81636360000000008 1.50014479999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[64]" " -type \"float3\" -1.7356973 1.812254 1.21953890000000009"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[65]" " -type \"float3\" -1.784294 1.80769869999999999 0.90989131000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[66]" " -type \"float3\" -1.73569670000000009 1.80314419999999997 0.60150683000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[67]" " -type \"float3\" -1.59466369999999991 1.79903459999999993 0.32457298000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[68]" " -type \"float3\" -1.3750017000000001 1.79577370000000003 0.1061995"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[69]" " -type \"float3\" -1.0982107000000001 1.793679 -0.032236217999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[70]" " -type \"float3\" -0.79138458 1.7929584999999999 -0.077185392000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[71]" " -type \"float3\" -0.48455858000000002 1.793679 -0.024249136000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[72]" " -type \"float3\" -0.20776689000000001 1.79577370000000003 0.12139179999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[73]" " -type \"float3\" 0.011896372000000001 1.79903459999999993 0.34548387000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[74]" " -type \"float3\" 0.15292799000000001 1.80314419999999997 0.62608838"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[75]" " -type \"float3\" 0.20152569000000001 1.80769869999999999 0.93573790999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[76]" " -type \"float3\" 0.15292776 1.812254 1.24412159999999994"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[77]" " -type \"float3\" 0.011896372000000001 1.81636360000000008 1.5210553"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[78]" " -type \"float3\" -0.20776676999999999 1.81962470000000009 1.73942829999999993"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[79]" " -type \"float3\" -0.48455858000000002 1.82171850000000002 1.87786579999999992"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[80]" " -type \"float3\" -0.79138445999999996 1.8224400999999999 1.92281469999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[81]" " -type \"float3\" -1.09821049999999998 1.82171850000000002 1.8698785"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[82]" " -type \"float3\" -1.43149009999999999 2.81057520000000016 1.69324180000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[83]" " -type \"float3\" -1.651153 2.80731390000000003 1.46915140000000011"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[84]" " -type \"float3\" -1.79218609999999989 2.8032045000000001 1.18854550000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[85]" " -type \"float3\" -1.8407811999999999 2.79864930000000012 0.87889706999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[86]" " -type \"float3\" -1.79218520000000003 2.79409380000000018 0.57051300999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[87]" " -type \"float3\" -1.65115370000000006 2.78998519999999983 0.29357972999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[88]" " -type \"float3\" -1.43149020000000005 2.78672390000000014 0.075205623999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[89]" " -type \"float3\" -1.15469840000000001 2.78463029999999989 -0.063229947999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[90]" " -type \"float3\" -0.84787250000000003 2.78390860000000018 -0.10817888000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[91]" " -type \"float3\" -0.54104722000000005 2.78462960000000015 -0.055242747000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[92]" " -type \"float3\" -0.26425516999999998 2.78672390000000014 0.090398013999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[93]" " -type \"float3\" -0.044592142000000001 2.78998519999999983 0.31448996000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[94]" " -type \"float3\" 0.096440076999999999 2.79409460000000021 0.59509551999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[95]" " -type \"float3\" 0.14503694 2.79864930000000012 0.90474438999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[96]" " -type \"float3\" 0.096440434000000005 2.8032045000000001 1.21312740000000008"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[97]" " -type \"float3\" -0.044592142000000001 2.80731390000000003 1.49006140000000009"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[98]" " -type \"float3\" -0.26425481000000001 2.81057520000000016 1.70843490000000009"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[99]" " -type \"float3\" -0.54104722000000005 2.81266879999999997 1.84687209999999991"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[100]" " -type \"float3\" -0.84787237999999998 2.81339050000000013 1.89182110000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[101]" " -type \"float3\" -1.15469850000000007 2.81266809999999978 1.83888509999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[102]" " -type \"float3\" -1.34520170000000006 2.80881239999999988 1.57475129999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[103]" " -type \"float3\" -1.5323865000000001 2.80603269999999982 1.38379479999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[104]" " -type \"float3\" -1.34145 2.74298790000000015 1.57680989999999999"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[105]" " -type \"float3\" -1.5286344999999999 2.74020909999999995 1.3858531999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[106]" " -type \"float3\" -1.65256760000000003 2.80253150000000018 1.14467589999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[107]" " -type \"float3\" -1.64881490000000008 2.736707 1.14673460000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[108]" " -type \"float3\" -1.69397780000000009 2.7986491 0.880808"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[109]" " -type \"float3\" -1.690226 2.73282479999999994 0.88286655999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[110]" " -type \"float3\" -1.65256639999999999 2.79476689999999994 0.61801863000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[111]" " -type \"float3\" -1.648814 2.72894330000000007 0.62007749000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[112]" " -type \"float3\" -1.53238570000000007 2.79126569999999985 0.38202863999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[113]" " -type \"float3\" -1.5286337000000001 2.72544120000000012 0.38408712"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[114]" " -type \"float3\" -1.34520109999999993 2.78848669999999998 0.19594264"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[115]" " -type \"float3\" -1.34144869999999994 2.72266219999999981 0.19800155999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[116]" " -type \"float3\" -1.109334 2.7867023999999998 0.077975154000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[117]" " -type \"float3\" -1.10558160000000005 2.72087790000000007 0.080034196000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[118]" " -type \"float3\" -0.84787237999999998 2.786088 0.039671182999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[119]" " -type \"float3\" -0.84412050000000005 2.72026350000000017 0.041729747999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[120]" " -type \"float3\" -0.58641063999999998 2.78670170000000006 0.084781826000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[121]" " -type \"float3\" -0.58265853000000001 2.72087790000000007 0.086841047000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[122]" " -type \"float3\" -0.35054362 2.78848669999999998 0.20888873999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[123]" " -type \"float3\" -0.34679186000000001 2.72266219999999981 0.21094732999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[124]" " -type \"float3\" -0.16335844999999999 2.79126569999999985 0.39984772000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[125]" " -type \"float3\" -0.15960669999999999 2.72544120000000012 0.40190646000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[126]" " -type \"float3\" -0.043178082 2.79476689999999994 0.63896644000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[127]" " -type \"float3\" -0.039425730999999999 2.72894309999999995 0.64102541999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[128]" " -type \"float3\" -0.0017666817 2.79864930000000012 0.90283369999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[129]" " -type \"float3\" 0.0019857883000000002 2.73282550000000013 0.90489262000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[130]" " -type \"float3\" -0.043177843 2.80253150000000018 1.16562330000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[131]" " -type \"float3\" -0.039426564999999997 2.736707 1.1676823999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[132]" " -type \"float3\" -0.16335833 2.80603289999999994 1.40161380000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[133]" " -type \"float3\" -0.15960658 2.74020840000000021 1.40367259999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[134]" " -type \"float3\" -0.35054301999999998 2.80881239999999988 1.58769809999999989"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[135]" " -type \"float3\" -0.34679019 2.74298790000000015 1.58975660000000008"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[136]" " -type \"float3\" -0.58641087999999997 2.810596 1.705664"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[137]" " -type \"float3\" -0.58265864999999994 2.74477150000000014 1.70772309999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[138]" " -type \"float3\" -0.84787237999999998 2.81121040000000022 1.7439692"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[139]" " -type \"float3\" -0.84412050000000005 2.7453867999999999 1.74602769999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[140]" " -type \"float3\" -1.10933360000000003 2.810596 1.69885780000000008"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[141]" " -type \"float3\" -1.10558149999999999 2.74477150000000014 1.70091609999999993"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[142]" " -type \"float3\" -1.78769529999999999 1.867373 0.90802448999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[143]" " -type \"float3\" -1.73909840000000004 1.86281849999999993 0.59964043"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[144]" " -type \"float3\" -1.59806559999999998 1.85870890000000011 0.32270682000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[145]" " -type \"float3\" -1.3784031000000001 1.85544780000000009 0.1043328"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[146]" " -type \"float3\" -1.10161210000000009 1.85335369999999999 -0.034102976"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[147]" " -type \"float3\" -0.79478621000000005 1.85263280000000008 -0.079051792999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[148]" " -type \"float3\" -0.48796033999999999 1.85335369999999999 -0.026115416999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[149]" " -type \"float3\" -0.21116757 1.85544780000000009 0.1195257"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[150]" " -type \"float3\" 0.0084944962999999995 1.85870890000000011 0.34361758999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[151]" " -type \"float3\" 0.14952624 1.86281849999999993 0.62422215999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[152]" " -type \"float3\" 0.19812321999999999 1.867373 0.93387138999999997"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[153]" " -type \"float3\" 0.14952588 1.87192819999999993 1.2422552"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[154]" " -type \"float3\" 0.0084944962999999995 1.87603779999999998 1.519189"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[155]" " -type \"float3\" -0.21116757 1.87929889999999999 1.73756189999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[156]" " -type \"float3\" -0.48796022 1.88139269999999992 1.87599920000000009"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[157]" " -type \"float3\" -0.79478621000000005 1.88211440000000008 1.92094830000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[158]" " -type \"float3\" -1.10161160000000002 1.88139269999999992 1.86801240000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[159]" " -type \"float3\" -1.3784031000000001 1.87929889999999999 1.7223691000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[160]" " -type \"float3\" -1.59806659999999989 1.87603779999999998 1.49827829999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[161]" " -type \"float3\" -1.739099 1.87192819999999993 1.21767259999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[162]" " -type \"float3\" -1.639997 1.867373 0.90994710000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[163]" " -type \"float3\" -1.59863010000000005 1.86349579999999992 0.64743519000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[164]" " -type \"float3\" -1.63659620000000006 1.80769869999999999 0.91181338000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[165]" " -type \"float3\" -1.59522830000000004 1.80382160000000002 0.64930147000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[166]" " -type \"float3\" -1.47857810000000001 1.85999730000000008 0.41169548"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[167]" " -type \"float3\" -1.4751742000000001 1.800323 0.41356164000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[168]" " -type \"float3\" -1.2915896 1.85722110000000007 0.22580546000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[169]" " -type \"float3\" -1.28818750000000004 1.79754689999999995 0.22767144"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[170]" " -type \"float3\" -1.05597190000000007 1.85543919999999996 0.10796285"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[171]" " -type \"float3\" -1.05257010000000006 1.79576519999999995 0.10982918999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[172]" " -type \"float3\" -0.79478621000000005 1.8548245000000001 0.069700479999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[173]" " -type \"float3\" -0.79138458 1.79515029999999998 0.071566879999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[174]" " -type \"float3\" -0.53360045 1.85543919999999996 0.11476206999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[175]" " -type \"float3\" -0.53019868999999997 1.79576439999999993 0.11662841"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[176]" " -type \"float3\" -0.29798222000000002 1.85722110000000007 0.23873779000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[177]" " -type \"float3\" -0.29457973999999998 1.79754689999999995 0.24060428"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[178]" " -type \"float3\" -0.11099505 1.85999730000000008 0.42949596000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[179]" " -type \"float3\" -0.10759365999999999 1.800323 0.43136179000000002"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[180]" " -type \"float3\" 0.0090585947000000003 1.86349579999999992 0.66836088999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[181]" " -type \"float3\" 0.01246047 1.80382160000000002 0.67022711000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[182]" " -type \"float3\" 0.050426483000000001 1.867373 0.93194949999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[183]" " -type \"float3\" 0.053827643000000001 1.80769869999999999 0.93381630999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[184]" " -type \"float3\" 0.0090585947000000003 1.87125089999999994 1.19446110000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[185]" " -type \"float3\" 0.01246047 1.81157659999999998 1.19632720000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[186]" " -type \"float3\" -0.11099481999999999 1.87474870000000005 1.4302014999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[187]" " -type \"float3\" -0.10759318 1.81507440000000009 1.43206790000000006"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[188]" " -type \"float3\" -0.29798210000000003 1.87752560000000002 1.61608930000000006"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[189]" " -type \"float3\" -0.29457973999999998 1.81785060000000009 1.617956"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[190]" " -type \"float3\" -0.53360068999999999 1.87930749999999991 1.73393339999999996"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[191]" " -type \"float3\" -0.53019844999999999 1.81963319999999995 1.73579930000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[192]" " -type \"float3\" -0.79478621000000005 1.87992139999999996 1.77219609999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[193]" " -type \"float3\" -0.79138458 1.82024720000000007 1.77406240000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[194]" " -type \"float3\" -1.0559708000000001 1.87930749999999991 1.727134"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[195]" " -type \"float3\" -1.05256959999999999 1.81963319999999995 1.72900079999999989"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[196]" " -type \"float3\" -1.29159010000000007 1.87752490000000005 1.60315680000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[197]" " -type \"float3\" -1.28818879999999991 1.81785060000000009 1.60502359999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[198]" " -type \"float3\" -1.47857689999999997 1.87474940000000001 1.412401"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[199]" " -type \"float3\" -1.47517509999999996 1.81507520000000011 1.41426729999999989"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[200]" " -type \"float3\" -1.59863130000000009 1.87125089999999994 1.1735355999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
-		"pnts[201]" " -type \"float3\" -1.59522950000000008 1.81157659999999998 1.1754019"
-		
+		"pt[0:165]" (" -type \"float3\" -1.81666430000000001 3.23261639999999995 1.17511480000000001 -1.67563189999999995 3.236726 1.45572039999999991 -1.45596809999999999 3.23998710000000001 1.679811 -1.17917760000000005 3.24208160000000012 1.82545420000000003 -0.87235068999999998 3.24280260000000009 1.87839059999999991 -0.56552433999999996 3.24208160000000012 1.83344130000000005 -0.28873384000000002 3.23998810000000015 1.69500410000000001 -0.069070458000000001 3.236726 1.47663079999999991 0.071961998999999999 3.2326166999999999 1.19969689999999995 0.1205585 3.22806119999999996 0.89131384999999996 0.071961641000000007 3.223506 0.58166510000000005 -0.069070458000000001 3.2193972999999998 0.30105934000000001 -0.28873335999999999 3.216136 0.076967090000000002 -0.56552446000000001 3.21404220000000018 -0.068673550999999999 -0.87235068999999998 3.21332070000000014 -0.12160954 -1.17917739999999993 3.21404170000000011 -0.076660751999999999 -1.45596729999999996 3.216136 0.061774759999999998 -1.675632 3.2193972999999998 0.28014913000000002 -"
+		+ "1.81666339999999993 3.22350670000000017 0.55708230000000003 -1.86525950000000007 3.22806119999999996 0.86546648000000004 -1.70265529999999998 1.23261639999999995 1.23766829999999994 -1.56162449999999997 1.2367258000000001 1.51827470000000009 -1.34196080000000006 1.23998710000000001 1.74236520000000006 -1.06517020000000007 1.24208089999999993 1.8880074 -0.75834250000000003 1.24280260000000009 1.94094410000000006 -0.45151496000000002 1.24208089999999993 1.89599540000000011 -0.17472409999999999 1.23998710000000001 1.75755689999999998 0.044938802999999999 1.236726 1.53918409999999994 0.18596910999999999 1.23261639999999995 1.26225040000000011 0.23456848 1.22806119999999996 0.95386744000000001 0.18596947 1.223506 0.64421737000000001 0.044938802999999999 1.21939749999999991 0.36361271000000001 -0.17472457999999999 1.216136 0.13952117999999999 -0.45151817999999999 1.21404190000000001 -0.0061200261000000002 -0.75834261999999997 1.21332050000000002 -0.059056044000000002 -1.06516680000000008 1.21404190000000001 -0.0141"
+		+ "06809999999999 -1.34196040000000005 1.21613569999999993 0.12432861000000001 -1.56162380000000001 1.21939749999999991 0.34270256999999998 -1.702657 1.2235062000000001 0.61963557999999996 -1.7512506000000001 1.22806140000000008 0.92802017999999997 -0.87235068999999998 3.22806119999999996 0.87839054999999999 -0.75834250000000003 1.22806119999999996 0.94094401999999999 -1.4277382999999999 2.74475069999999999 1.6953005000000001 -1.647401 2.74148939999999985 1.47120990000000007 -1.788434 2.73738 1.19060389999999994 -1.83702860000000001 2.73282479999999994 0.88095593000000005 -1.7884331 2.72827010000000003 0.57257133999999998 -1.64740090000000006 2.7241607000000001 0.29563825999999999 -1.4277375000000001 2.72089960000000008 0.077264279000000005 -1.15094549999999995 2.71880509999999997 -0.061171441999999999 -0.84412061999999999 2.7180841 -0.10612035 -0.53729475000000004 2.71880509999999997 -0.053183823999999998 -0.26050257999999998 2.72089930000000013 0.092456548999999999 -0.040838957000000002 2.7241607000000001 0.31"
+		+ "654912000000002 0.10019183 2.72827010000000003 0.59715414 0.14878869 2.73282550000000013 0.90680300999999996 0.10019219 2.73738 1.215186 -0.040838957000000002 2.74148939999999985 1.49212049999999996 -0.26050293000000002 2.74475069999999999 1.71049340000000005 -0.53729475000000004 2.74684449999999991 1.84893109999999994 -0.84412050000000005 2.74756620000000007 1.89387979999999989 -1.15094570000000007 2.74684449999999991 1.8409435999999999 -1.37500209999999989 1.81962470000000009 1.72423529999999992 -1.59466510000000006 1.81636360000000008 1.50014479999999994 -1.7356973 1.812254 1.21953890000000009 -1.784294 1.80769869999999999 0.90989131000000001 -1.73569670000000009 1.80314419999999997 0.60150683000000005 -1.59466369999999991 1.79903459999999993 0.32457298000000001 -1.3750017000000001 1.79577370000000003 0.1061995 -1.0982107000000001 1.793679 -0.032236217999999997 -0.79138458 1.7929584999999999 -0.077185392000000005 -0.48455858000000002 1.793679 -0.024249136000000001 -0.20776689000000001 1.79577370000000003 0"
+		+ ".12139179999999999 0.011896372000000001 1.79903459999999993 0.34548387000000003 0.15292799000000001 1.80314419999999997 0.62608838 0.20152569000000001 1.80769869999999999 0.93573790999999995 0.15292776 1.812254 1.24412159999999994 0.011896372000000001 1.81636360000000008 1.5210553 -0.20776676999999999 1.81962470000000009 1.73942829999999993 -0.48455858000000002 1.82171850000000002 1.87786579999999992 -0.79138445999999996 1.8224400999999999 1.92281469999999999 -1.09821049999999998 1.82171850000000002 1.8698785 -1.43149009999999999 2.81057520000000016 1.69324180000000002 -1.651153 2.80731390000000003 1.46915140000000011 -1.79218609999999989 2.8032045000000001 1.18854550000000003 -1.8407811999999999 2.79864930000000012 0.87889706999999995 -1.79218520000000003 2.79409380000000018 0.57051300999999999 -1.65115370000000006 2.78998519999999983 0.29357972999999998 -1.43149020000000005 2.78672390000000014 0.075205623999999999 -1.15469840000000001 2.78463029999999989 -0.063229947999999994 -0.84787250000000003 2.78390860"
+		+ "000000018 -0.10817888000000001 -0.54104722000000005 2.78462960000000015 -0.055242747000000002 -0.26425516999999998 2.78672390000000014 0.090398013999999999 -0.044592142000000001 2.78998519999999983 0.31448996000000001 0.096440076999999999 2.79409460000000021 0.59509551999999999 0.14503694 2.79864930000000012 0.90474438999999995 0.096440434000000005 2.8032045000000001 1.21312740000000008 -0.044592142000000001 2.80731390000000003 1.49006140000000009 -0.26425481000000001 2.81057520000000016 1.70843490000000009 -0.54104722000000005 2.81266879999999997 1.84687209999999991 -0.84787237999999998 2.81339050000000013 1.89182110000000003 -1.15469850000000007 2.81266809999999978 1.83888509999999994 -1.34520170000000006 2.80881239999999988 1.57475129999999996 -1.5323865000000001 2.80603269999999982 1.38379479999999999 -1.34145 2.74298790000000015 1.57680989999999999 -1.5286344999999999 2.74020909999999995 1.3858531999999999 -1.65256760000000003 2.80253150000000018 1.14467589999999997 -1.64881490000000008 2.736707 1.146734"
+		+ "60000000005 -1.69397780000000009 2.7986491 0.880808 -1.690226 2.73282479999999994 0.88286655999999997 -1.65256639999999999 2.79476689999999994 0.61801863000000001 -1.648814 2.72894330000000007 0.62007749000000001 -1.53238570000000007 2.79126569999999985 0.38202863999999997 -1.5286337000000001 2.72544120000000012 0.38408712 -1.34520109999999993 2.78848669999999998 0.19594264 -1.34144869999999994 2.72266219999999981 0.19800155999999999 -1.109334 2.7867023999999998 0.077975154000000005 -1.10558160000000005 2.72087790000000007 0.080034196000000002 -0.84787237999999998 2.786088 0.039671182999999999 -0.84412050000000005 2.72026350000000017 0.041729747999999997 -0.58641063999999998 2.78670170000000006 0.084781826000000005 -0.58265853000000001 2.72087790000000007 0.086841047000000005 -0.35054362 2.78848669999999998 0.20888873999999999 -0.34679186000000001 2.72266219999999981 0.21094732999999999 -0.16335844999999999 2.79126569999999985 0.39984772000000002 -0.15960669999999999 2.72544120000000012 0.40190646000000002 -0"
+		+ ".043178082 2.79476689999999994 0.63896644000000002 -0.039425730999999999 2.72894309999999995 0.64102541999999996 -0.0017666817 2.79864930000000012 0.90283369999999996 0.0019857883000000002 2.73282550000000013 0.90489262000000004 -0.043177843 2.80253150000000018 1.16562330000000003 -0.039426564999999997 2.736707 1.1676823999999999 -0.16335833 2.80603289999999994 1.40161380000000002 -0.15960658 2.74020840000000021 1.40367259999999994 -0.35054301999999998 2.80881239999999988 1.58769809999999989 -0.34679019 2.74298790000000015 1.58975660000000008 -0.58641087999999997 2.810596 1.705664 -0.58265864999999994 2.74477150000000014 1.70772309999999994 -0.84787237999999998 2.81121040000000022 1.7439692 -0.84412050000000005 2.7453867999999999 1.74602769999999996 -1.10933360000000003 2.810596 1.69885780000000008 -1.10558149999999999 2.74477150000000014 1.70091609999999993 -1.78769529999999999 1.867373 0.90802448999999996 -1.73909840000000004 1.86281849999999993 0.59964043 -1.59806559999999998 1.85870890000000011 0.32270682"
+		+ "000000001 -1.3784031000000001 1.85544780000000009 0.1043328 -1.10161210000000009 1.85335369999999999 -0.034102976 -0.79478621000000005 1.85263280000000008 -0.079051792999999995 -0.48796033999999999 1.85335369999999999 -0.026115416999999998 -0.21116757 1.85544780000000009 0.1195257 0.0084944962999999995 1.85870890000000011 0.34361758999999997 0.14952624 1.86281849999999993 0.62422215999999997 0.19812321999999999 1.867373 0.93387138999999997 0.14952588 1.87192819999999993 1.2422552 0.0084944962999999995 1.87603779999999998 1.519189 -0.21116757 1.87929889999999999 1.73756189999999999 -0.48796022 1.88139269999999992 1.87599920000000009 -0.79478621000000005 1.88211440000000008 1.92094830000000005 -1.10161160000000002 1.88139269999999992 1.86801240000000002 -1.3784031000000001 1.87929889999999999 1.7223691000000001 -1.59806659999999989 1.87603779999999998 1.49827829999999995 -1.739099 1.87192819999999993 1.21767259999999999 -1.639997 1.867373 0.90994710000000001 -1.59863010000000005 1.86349579999999992 0.6474351900"
+		+ "0000005 -1.63659620000000006 1.80769869999999999 0.91181338000000001 -1.59522830000000004 1.80382160000000002 0.64930147000000005"
+		)
+		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Hinge2|cashbox_latest:HingeShape2" 
+		"pt[166:201]" (" -1.47857810000000001 1.85999730000000008 0.41169548 -1.4751742000000001 1.800323 0.41356164000000001 -1.2915896 1.85722110000000007 0.22580546000000001 -1.28818750000000004 1.79754689999999995 0.22767144 -1.05597190000000007 1.85543919999999996 0.10796285 -1.05257010000000006 1.79576519999999995 0.10982918999999999 -0.79478621000000005 1.8548245000000001 0.069700479999999995 -0.79138458 1.79515029999999998 0.071566879999999999 -0.53360045 1.85543919999999996 0.11476206999999999 -0.53019868999999997 1.79576439999999993 0.11662841 -0.29798222000000002 1.85722110000000007 0.23873779000000001 -0.29457973999999998 1.79754689999999995 0.24060428 -0.11099505 1.85999730000000008 0.42949596000000001 -0.10759365999999999 1.800323 0.43136179000000002 0.0090585947000000003 1.86349579999999992 0.66836088999999999 0.01246047 1.80382160000000002 0.67022711000000001 0.050426483000000001 1.867373 0.93194949999999999 0.053827643000000001 1.80769869999999999 0.93381630999999998 0.0090585947000000003 1.87125089999999994 1.19446"
+		+ "110000000005 0.01246047 1.81157659999999998 1.19632720000000004 -0.11099481999999999 1.87474870000000005 1.4302014999999999 -0.10759318 1.81507440000000009 1.43206790000000006 -0.29798210000000003 1.87752560000000002 1.61608930000000006 -0.29457973999999998 1.81785060000000009 1.617956 -0.53360068999999999 1.87930749999999991 1.73393339999999996 -0.53019844999999999 1.81963319999999995 1.73579930000000004 -0.79478621000000005 1.87992139999999996 1.77219609999999994 -0.79138458 1.82024720000000007 1.77406240000000004 -1.0559708000000001 1.87930749999999991 1.727134 -1.05256959999999999 1.81963319999999995 1.72900079999999989 -1.29159010000000007 1.87752490000000005 1.60315680000000005 -1.28818879999999991 1.81785060000000009 1.60502359999999999 -1.47857689999999997 1.87474940000000001 1.412401 -1.47517509999999996 1.81507520000000011 1.41426729999999989 -1.59863130000000009 1.87125089999999994 1.1735355999999999 -1.59522950000000008 1.81157659999999998 1.1754019"
+		)
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box" 
 		"rotatePivot" " -type \"double3\" -0.90456470996492022 2.14237401396709792 0.49800395434564149"
 		
@@ -24187,73 +21853,1002 @@ createNode reference -n "cashbox_latestRN";
 		"scalePivot" " -type \"double3\" -0.90456470996492022 2.14237401396709792 0.49800395434564149"
 		
 		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts" " -s 24"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[0]" " -type \"float3\" -0.90658033000000005 2.51193949999999999 0.074451148999999994"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[1]" " -type \"float3\" -1.19934739999999995 2.51193949999999999 0.46249246999999999"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[2]" " -type \"float3\" -0.60978222000000004 2.51193949999999999 0.53351581000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[3]" " -type \"float3\" -0.90254926999999996 2.51193949999999999 0.92155712999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[4]" " -type \"float3\" -0.90646409999999999 2.36610129999999996 0.098657489000000001"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[5]" " -type \"float3\" -1.18250180000000005 2.36610129999999996 0.46452128999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[6]" " -type \"float3\" -0.90266519999999995 2.36610129999999996 0.89735012999999997"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[7]" " -type \"float3\" -0.62662744999999997 2.36610129999999996 0.53148638999999998"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[8]" " -type \"float3\" -0.61295474000000005 2.11649490000000018 0.53538107999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[9]" " -type \"float3\" -0.61295973999999998 2.11754469999999984 0.53177249000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[10]" " -type \"float3\" -0.90785634999999998 2.11649490000000018 0.90657460999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[11]" " -type \"float3\" -0.89937186000000002 2.11754469999999984 0.92330045000000005"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[12]" " -type \"float3\" -0.89681560000000005 1.920733 0.085828542999999993"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[13]" " -type \"float3\" -0.90658033000000005 1.921627 0.074451238000000003"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[14]" " -type \"float3\" -0.63505268000000004 1.921627 0.49442923"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[15]" " -type \"float3\" -0.62957971999999995 1.920733 0.49916791999999999"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[16]" " -type \"float3\" -1.20488320000000004 1.920733 0.45765667999999998"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[17]" " -type \"float3\" -1.19934729999999989 1.921627 0.46249246999999999"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[18]" " -type \"float3\" -0.92781961000000002 1.921627 0.88247049"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[19]" " -type \"float3\" -0.93764727999999997 1.920733 0.87099605999999996"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[20]" " -type \"float3\" -0.91613621000000001 1.824508 0.087115675000000004"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[21]" " -type \"float3\" -0.91609823999999995 1.82424710000000001 0.090102090999999995"
-		
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[22]" " -type \"float3\" -1.18979070000000009 1.824508 0.44982684000000001"
-		2 "|LengZai|cashbox_latest:Chashbox|cashbox_latest:cashbox|cashbox_latest:Box|cashbox_latest:BoxShape" 
-		"pnts[23]" " -type \"float3\" -1.18771479999999996 1.82424710000000001 0.45011157000000002";
+		"pt[0:23]" (" -s 24 -type \"float3\" -0.90658033000000005 2.51193949999999999 0.074451148999999994 -1.19934739999999995 2.51193949999999999 0.46249246999999999 -0.60978222000000004 2.51193949999999999 0.53351581000000003 -0.90254926999999996 2.51193949999999999 0.92155712999999995 -0.90646409999999999 2.36610129999999996 0.098657489000000001 -1.18250180000000005 2.36610129999999996 0.46452128999999998 -0.90266519999999995 2.36610129999999996 0.89735012999999997 -0.62662744999999997 2.36610129999999996 0.53148638999999998 -0.61295474000000005 2.11649490000000018 0.53538107999999995 -0.61295973999999998 2.11754469999999984 0.53177249000000004 -0.90785634999999998 2.11649490000000018 0.90657460999999995 -0.89937186000000002 2.11754469999999984 0.92330045000000005 -0.89681560000000005 1.920733 0.085828542999999993 -0.90658033000000005 1.921627 0.074451238000000003 -0.63505268000000004 1.921627 0.49442923 -0.62957971999999995 1.920733 0.49916791999999999 -1.20488320000000004 1.920733 0.45765667999999998 -1.19934729999999989 1.92"
+		+ "1627 0.46249246999999999 -0.92781961000000002 1.921627 0.88247049 -0.93764727999999997 1.920733 0.87099605999999996 -0.91613621000000001 1.824508 0.087115675000000004 -0.91609823999999995 1.82424710000000001 0.090102090999999995 -1.18979070000000009 1.824508 0.44982684000000001 -1.18771479999999996 1.82424710000000001 0.45011157000000002"
+		);
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode reference -n "lights_shaded_latestRN";
+	rename -uid "5FF77F01-9940-49F9-C7B8-728242CCB144";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"lights_shaded_latestRN"
+		"lights_shaded_latest:stringlightbulb_i1RN" 0
+		"lights_shaded_latestRN" 0
+		"lights_shaded_latestRN" 3
+		2 "|lights_shaded_latest:polySurface10" "translate" " -type \"double3\" -1.3570316624955121 3.24279074637501807 3.41293714243186352"
+		
+		2 "|lights_shaded_latest:polySurface10" "rotate" " -type \"double3\" 0 90 0"
+		
+		2 "|lights_shaded_latest:polySurface10" "scale" " -type \"double3\" 2.83941690478239606 2.83941690478239606 2.83941690478239606";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode RenderMan -s -n "renderManGlobals";
+	rename -uid "85C55500-A946-DCE3-12F7-719324A774FB";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "d" -ln "display" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "c" -ln "channel" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "rif" -ln "rif" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "p" -ln "passes" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "sh" -ln "shared" -at "message";
+	addAttr -ci true -m -sn "rman__displayfilters" -ln "rman__displayfilters" -dt "string";
+	addAttr -ci true -m -sn "rman__samplefilters" -ln "rman__samplefilters" -dt "string";
+	setAttr -s 2 ".p";
+	setAttr ".nt" -type "string" "settings:job";
+createNode OmnidirectionalStereo -s -n "OmnidirectionalStereo";
+	rename -uid "9F7DDF50-5E48-FADD-3D6B-C6B33EF005D0";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".interpupilaryDistance" 0.063500002026557922;
+lockNode -l 1 ;
+createNode PxrCamera -s -n "PxrCamera";
+	rename -uid "1BBCD2C5-234A-F5B5-EE53-04B73829C0A7";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".fov" 90;
+	setAttr ".fovEnd" 0;
+	setAttr ".fStop" 16;
+	setAttr ".focalLength" 0;
+	setAttr ".focalDistance" 1;
+	setAttr ".tilt" 0;
+	setAttr ".roll" 0;
+	setAttr ".focus1" -type "float3" 0 0 0 ;
+	setAttr ".focus2" -type "float3" 0 0 0 ;
+	setAttr ".focus3" -type "float3" 0 0 0 ;
+	setAttr ".shiftX" 0;
+	setAttr ".shiftY" 0;
+	setAttr ".radial1" 0;
+	setAttr ".radial2" 0;
+	setAttr ".assymX" 0;
+	setAttr ".assymY" 0;
+	setAttr ".squeeze" 1;
+	setAttr ".transverse" -type "float3" 1 1 1 ;
+	setAttr ".axial" -type "float3" 0 0 0 ;
+	setAttr ".natural" 0;
+	setAttr ".optical" 0;
+	setAttr ".sweep" -type "string" "down";
+	setAttr ".duration" 1;
+	setAttr ".detail" 0;
+	setAttr ".matte" -type "string" "";
+lockNode -l 1 ;
+createNode PxrDebugShadingContext -s -n "PxrDebugShadingContext";
+	rename -uid "681A9D78-5544-6E25-D8EF-B4A081106998";
+lockNode -l 1 ;
+createNode PxrDefault -s -n "PxrDefault";
+	rename -uid "C26D58BB-FC43-A9C2-D748-48B6C2DFBF61";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+lockNode -l 1 ;
+createNode PxrDirectLighting -s -n "PxrDirectLighting";
+	rename -uid "DB57BB72-7C44-52C7-DB0B-4AB136E90FAC";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".numLightSamples" 4;
+	setAttr ".numBxdfSamples" 4;
+lockNode -l 1 ;
+createNode PxrOcclusion -s -n "PxrOcclusion";
+	rename -uid "02506154-4A46-F861-0D6B-799E49E569CB";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".numSamples" 4;
+	setAttr ".distribution" 1;
+	setAttr ".cosineSpread" 1;
+	setAttr ".falloff" 0;
+	setAttr ".maxDistance" 0;
+	setAttr ".useAlbedo" no;
+lockNode -l 1 ;
+createNode PxrVCM -s -n "PxrVCM";
+	rename -uid "C7243B1C-6242-EC59-392B-88805E6EF649";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".connectPaths" yes;
+	setAttr ".mergePaths" yes;
+	setAttr ".numLightSamples" 1;
+	setAttr ".numBxdfSamples" 1;
+	setAttr ".maxPathLength" 10;
+	setAttr ".specularCurvatureFilter" 1;
+	setAttr ".rouletteDepth" 4;
+	setAttr ".rouletteThreshold" 0.20000000298023224;
+	setAttr ".clampDepth" 2;
+	setAttr ".clampLuminance" 10;
+	setAttr ".mergeRadius" 5;
+	setAttr ".timeRadius" 1;
+	setAttr ".photonGuiding" 0;
+	setAttr ".photonGuidingBBoxMin" -type "float3" 1e+30 1e+30 1e+30 ;
+	setAttr ".photonGuidingBBoxMax" -type "float3" -1e+30 -1e+30 -1e+30 ;
+lockNode -l 1 ;
+createNode PxrValidateBxdf -s -n "PxrValidateBxdf";
+	rename -uid "0D670250-CD4B-8CB0-A46E-E0BDF1E89AF9";
+lockNode -l 1 ;
+createNode PxrVisualizer -s -n "PxrVisualizer";
+	rename -uid "085DCA5D-8B46-6652-2608-DFB94E3CA61F";
+	setAttr ".cch" no;
+	setAttr ".fzn" no;
+	setAttr ".ihi" 2;
+	setAttr ".nds" 0;
+	setAttr ".style" -type "string" "shaded";
+	setAttr ".wireframe" yes;
+	setAttr ".normalCheck" no;
+	setAttr ".matCap" -type "string" "";
+	setAttr ".wireframeColor" -type "float3" 0 0 0 ;
+	setAttr ".wireframeOpacity" 0.5;
+	setAttr ".wireframeWidth" 1;
+lockNode -l 1 ;
+createNode RenderMan -s -n "rmanFinalGlobals";
+	rename -uid "800DB53F-B545-02D5-8ABD-02B44593A780";
+	addAttr -ci true -h true -sn "t" -ln "isTemplate" -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___class" -ln "rman__torattr___class" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___task" -ln "rman__torattr___task" -dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___phase" -ln "rman__torattr___phase" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___computeBehavior" -ln "rman__torattr___computeBehavior" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___passLayer" -ln "rman__torattr___passLayer" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___camera" -ln "rman__torattr___camera" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___crew" -ln "rman__torattr___crew" -dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___flavor" -ln "rman__torattr___flavor" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___cameraFlavor" -ln "rman__torattr___cameraFlavor" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___lightcrew" -ln "rman__torattr___lightcrew" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___depthOfField" -ln "rman__torattr___depthOfField" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt___CropWindow" -ln "rman__riopt___CropWindow" 
+		-at "compound" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt___CropWindowX" -ln "rman__riopt___CropWindowX" 
+		-at "float2" -p "rman__riopt___CropWindow" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt___CropWindowX0" -ln "rman__riopt___CropWindowX0" 
+		-dv -1 -at "float" -p "rman__riopt___CropWindowX";
+	addAttr -ci true -k true -sn "rman__riopt___CropWindowX1" -ln "rman__riopt___CropWindowX1" 
+		-dv -1 -at "float" -p "rman__riopt___CropWindowX";
+	addAttr -ci true -k true -sn "rman__riopt___CropWindowY" -ln "rman__riopt___CropWindowY" 
+		-at "float2" -p "rman__riopt___CropWindow" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt___CropWindowY0" -ln "rman__riopt___CropWindowY0" 
+		-dv -1 -at "float" -p "rman__riopt___CropWindowY";
+	addAttr -ci true -k true -sn "rman__riopt___CropWindowY1" -ln "rman__riopt___CropWindowY1" 
+		-dv -1 -at "float" -p "rman__riopt___CropWindowY";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "d" -ln "display" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "c" -ln "channel" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "rif" -ln "rif" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "p" -ln "passes" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "sh" -ln "shared" -at "message";
+	addAttr -ci true -m -sn "rman__displayfilters" -ln "rman__displayfilters" -dt "string";
+	addAttr -ci true -m -sn "rman__samplefilters" -ln "rman__samplefilters" -dt "string";
+	setAttr ".t" 1;
+	setAttr ".rman__torattr___class" -type "string" "Final";
+	setAttr ".rman__torattr___task" -type "string" "render";
+	setAttr ".rman__torattr___phase" -type "string" "/Job/Frames/Images";
+	setAttr -k on ".rman__torattr___computeBehavior" 1;
+	setAttr ".rman__torattr___passLayer" -type "string" "";
+	setAttr ".rman__torattr___camera" -type "string" "";
+	setAttr ".rman__torattr___crew" -type "string" "";
+	setAttr ".rman__torattr___flavor" -type "string" "";
+	setAttr ".rman__torattr___cameraFlavor" -type "string" "";
+	setAttr ".rman__torattr___lightcrew" -type "string" "";
+	setAttr -k on ".rman__torattr___depthOfField" 1;
+	setAttr -k on ".rman__riopt___CropWindowX" -type "float2" 0 1 ;
+	setAttr -k on ".rman__riopt___CropWindowY" -type "float2" 0 1 ;
+	setAttr ".nt" -type "string" "pass:render";
+createNode RenderMan -s -n "rmanFinalOutputGlobals0";
+	rename -uid "5D7B58D8-834F-B5DA-9CC6-2091C9BA7CA0";
+	addAttr -ci true -h true -sn "t" -ln "isTemplate" -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___class" -ln "rman__torattr___class" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___task" -ln "rman__torattr___task" -dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___computeBehavior" -ln "rman__torattr___computeBehavior" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___primaryDisplay" -ln "rman__torattr___primaryDisplay" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___dspyID" -ln "rman__torattr___dspyID" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___dspyGetChannelsFromCamera" -ln "rman__torattr___dspyGetChannelsFromCamera" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Display_name" -ln "rman__riopt__Display_name" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Display_type" -ln "rman__riopt__Display_type" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Display_mode" -ln "rman__riopt__Display_mode" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Display_filter" -ln "rman__riopt__Display_filter" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Display_filterwidth" -ln "rman__riopt__Display_filterwidth" 
+		-at "float2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_filterwidth0" -ln "rman__riopt__Display_filterwidth0" 
+		-dv -1 -at "float" -p "rman__riopt__Display_filterwidth";
+	addAttr -ci true -k true -sn "rman__riopt__Display_filterwidth1" -ln "rman__riopt__Display_filterwidth1" 
+		-dv -1 -at "float" -p "rman__riopt__Display_filterwidth";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantize" -ln "rman__riopt__Display_quantize" 
+		-at "compound" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeX" -ln "rman__riopt__Display_quantizeX" 
+		-at "long2" -p "rman__riopt__Display_quantize" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeX0" -ln "rman__riopt__Display_quantizeX0" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeX";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeX1" -ln "rman__riopt__Display_quantizeX1" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeX";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeY" -ln "rman__riopt__Display_quantizeY" 
+		-at "long2" -p "rman__riopt__Display_quantize" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeY0" -ln "rman__riopt__Display_quantizeY0" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeY";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeY1" -ln "rman__riopt__Display_quantizeY1" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeY";
+	addAttr -ci true -k true -sn "rman__riopt__Display_dither" -ln "rman__riopt__Display_dither" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Display_exposure" -ln "rman__riopt__Display_exposure" 
+		-at "float2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_exposure0" -ln "rman__riopt__Display_exposure0" 
+		-dv -1 -at "float" -p "rman__riopt__Display_exposure";
+	addAttr -ci true -k true -sn "rman__riopt__Display_exposure1" -ln "rman__riopt__Display_exposure1" 
+		-dv -1 -at "float" -p "rman__riopt__Display_exposure";
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap" -ln "rman__riopt__Display_remap" 
+		-at "float3" -nc 3;
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap0" -ln "rman__riopt__Display_remap0" 
+		-dv -1 -at "float" -p "rman__riopt__Display_remap";
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap1" -ln "rman__riopt__Display_remap1" 
+		-dv -1 -at "float" -p "rman__riopt__Display_remap";
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap2" -ln "rman__riopt__Display_remap2" 
+		-dv -1 -at "float" -p "rman__riopt__Display_remap";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "d" -ln "display" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "c" -ln "channel" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "rif" -ln "rif" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "p" -ln "passes" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "sh" -ln "shared" -at "message";
+	addAttr -ci true -m -sn "rman__displayfilters" -ln "rman__displayfilters" -dt "string";
+	addAttr -ci true -m -sn "rman__samplefilters" -ln "rman__samplefilters" -dt "string";
+	setAttr ".t" 1;
+	setAttr ".rman__torattr___class" -type "string" "Primary";
+	setAttr ".rman__torattr___task" -type "string" "display";
+	setAttr -k on ".rman__torattr___computeBehavior" 1;
+	setAttr -k on ".rman__torattr___primaryDisplay" 1;
+	setAttr ".rman__torattr___dspyID" -type "string" "";
+	setAttr -k on ".rman__torattr___dspyGetChannelsFromCamera" 1;
+	setAttr ".rman__riopt__Display_name" -type "string" "[passinfo this filename]";
+	setAttr ".rman__riopt__Display_type" -type "string" "openexr";
+	setAttr ".rman__riopt__Display_mode" -type "string" "rgba";
+	setAttr ".rman__riopt__Display_filter" -type "string" "gaussian";
+	setAttr -k on ".rman__riopt__Display_filterwidth" -type "float2" 2 2 ;
+	setAttr -k on ".rman__riopt__Display_quantizeX" -type "long2" 0 0 ;
+	setAttr -k on ".rman__riopt__Display_quantizeY" -type "long2" 0 0 ;
+	setAttr -k on ".rman__riopt__Display_dither" 0;
+	setAttr -k on ".rman__riopt__Display_exposure" -type "float2" 1 1 ;
+	setAttr -k on ".rman__riopt__Display_remap" -type "float3" 0 0 0 ;
+	setAttr ".nt" -type "string" "settings:display";
+createNode RenderMan -s -n "rmanRerenderRISGlobals";
+	rename -uid "EB048D01-7648-3C0D-55B3-FF8DC5536078";
+	addAttr -ci true -h true -sn "t" -ln "isTemplate" -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___class" -ln "rman__torattr___class" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___task" -ln "rman__torattr___task" -dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___phase" -ln "rman__torattr___phase" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_maxsamples" -ln "rman__riopt__Hider_maxsamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_darkfalloff" -ln "rman__riopt__Hider_darkfalloff" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt___PixelVariance" -ln "rman__riopt___PixelVariance" 
+		-dv -1 -at "float";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "d" -ln "display" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "c" -ln "channel" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "rif" -ln "rif" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "p" -ln "passes" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "sh" -ln "shared" -at "message";
+	addAttr -ci true -m -sn "rman__displayfilters" -ln "rman__displayfilters" -dt "string";
+	addAttr -ci true -m -sn "rman__samplefilters" -ln "rman__samplefilters" -dt "string";
+	setAttr ".t" 1;
+	setAttr ".rman__torattr___class" -type "string" "RerenderRIS";
+	setAttr ".rman__torattr___task" -type "string" "render";
+	setAttr ".rman__torattr___phase" -type "string" "/Job/Frames/Images";
+	setAttr -k on ".rman__riopt__Hider_maxsamples" 64;
+	setAttr -k on ".rman__riopt__Hider_darkfalloff" 0.02500000037252903;
+	setAttr -k on ".rman__riopt___PixelVariance" 0.05000000074505806;
+	setAttr ".nt" -type "string" "pass:render";
+createNode RenderMan -s -n "rmanRerenderRISOutputGlobals0";
+	rename -uid "FB084B8D-6049-ED1A-57A5-9BB099A9DF4C";
+	addAttr -ci true -h true -sn "t" -ln "isTemplate" -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___class" -ln "rman__torattr___class" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___task" -ln "rman__torattr___task" -dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___computeBehavior" -ln "rman__torattr___computeBehavior" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___primaryDisplay" -ln "rman__torattr___primaryDisplay" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___dspyID" -ln "rman__torattr___dspyID" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___dspyGetChannelsFromCamera" -ln "rman__torattr___dspyGetChannelsFromCamera" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Display_name" -ln "rman__riopt__Display_name" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Display_type" -ln "rman__riopt__Display_type" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Display_mode" -ln "rman__riopt__Display_mode" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Display_filter" -ln "rman__riopt__Display_filter" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Display_filterwidth" -ln "rman__riopt__Display_filterwidth" 
+		-at "float2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_filterwidth0" -ln "rman__riopt__Display_filterwidth0" 
+		-dv -1 -at "float" -p "rman__riopt__Display_filterwidth";
+	addAttr -ci true -k true -sn "rman__riopt__Display_filterwidth1" -ln "rman__riopt__Display_filterwidth1" 
+		-dv -1 -at "float" -p "rman__riopt__Display_filterwidth";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantize" -ln "rman__riopt__Display_quantize" 
+		-at "compound" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeX" -ln "rman__riopt__Display_quantizeX" 
+		-at "long2" -p "rman__riopt__Display_quantize" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeX0" -ln "rman__riopt__Display_quantizeX0" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeX";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeX1" -ln "rman__riopt__Display_quantizeX1" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeX";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeY" -ln "rman__riopt__Display_quantizeY" 
+		-at "long2" -p "rman__riopt__Display_quantize" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeY0" -ln "rman__riopt__Display_quantizeY0" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeY";
+	addAttr -ci true -k true -sn "rman__riopt__Display_quantizeY1" -ln "rman__riopt__Display_quantizeY1" 
+		-dv -1 -at "long" -p "rman__riopt__Display_quantizeY";
+	addAttr -ci true -k true -sn "rman__riopt__Display_dither" -ln "rman__riopt__Display_dither" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Display_exposure" -ln "rman__riopt__Display_exposure" 
+		-at "float2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Display_exposure0" -ln "rman__riopt__Display_exposure0" 
+		-dv -1 -at "float" -p "rman__riopt__Display_exposure";
+	addAttr -ci true -k true -sn "rman__riopt__Display_exposure1" -ln "rman__riopt__Display_exposure1" 
+		-dv -1 -at "float" -p "rman__riopt__Display_exposure";
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap" -ln "rman__riopt__Display_remap" 
+		-at "float3" -nc 3;
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap0" -ln "rman__riopt__Display_remap0" 
+		-dv -1 -at "float" -p "rman__riopt__Display_remap";
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap1" -ln "rman__riopt__Display_remap1" 
+		-dv -1 -at "float" -p "rman__riopt__Display_remap";
+	addAttr -ci true -k true -sn "rman__riopt__Display_remap2" -ln "rman__riopt__Display_remap2" 
+		-dv -1 -at "float" -p "rman__riopt__Display_remap";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "d" -ln "display" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "c" -ln "channel" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "rif" -ln "rif" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "p" -ln "passes" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "sh" -ln "shared" -at "message";
+	addAttr -ci true -m -sn "rman__displayfilters" -ln "rman__displayfilters" -dt "string";
+	addAttr -ci true -m -sn "rman__samplefilters" -ln "rman__samplefilters" -dt "string";
+	setAttr ".t" 1;
+	setAttr ".rman__torattr___class" -type "string" "PrimaryRerender";
+	setAttr ".rman__torattr___task" -type "string" "display";
+	setAttr -k on ".rman__torattr___computeBehavior" 1;
+	setAttr -k on ".rman__torattr___primaryDisplay" 1;
+	setAttr ".rman__torattr___dspyID" -type "string" "";
+	setAttr -k on ".rman__torattr___dspyGetChannelsFromCamera" 1;
+	setAttr ".rman__riopt__Display_name" -type "string" "[passinfo this filename]";
+	setAttr ".rman__riopt__Display_type" -type "string" "openexr";
+	setAttr ".rman__riopt__Display_mode" -type "string" "rgba";
+	setAttr ".rman__riopt__Display_filter" -type "string" "gaussian";
+	setAttr -k on ".rman__riopt__Display_filterwidth" -type "float2" 2 2 ;
+	setAttr -k on ".rman__riopt__Display_quantizeX" -type "long2" 0 0 ;
+	setAttr -k on ".rman__riopt__Display_quantizeY" -type "long2" 0 0 ;
+	setAttr -k on ".rman__riopt__Display_dither" 0;
+	setAttr -k on ".rman__riopt__Display_exposure" -type "float2" 1 1 ;
+	setAttr -k on ".rman__riopt__Display_remap" -type "float3" 0 0 0 ;
+	setAttr ".nt" -type "string" "settings:display";
+createNode RenderMan -s -n "renderManRISGlobals";
+	rename -uid "6C6C9D7B-D24C-9367-0A75-2484DA940BA0";
+	addAttr -ci true -h true -sn "rman__torattr___class" -ln "rman__torattr___class" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___task" -ln "rman__torattr___task" -dt "string";
+	addAttr -ci true -k true -sn "rman__toropt___renderDataCleanupJob" -ln "rman__toropt___renderDataCleanupJob" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___shaderCleanupJob" -ln "rman__toropt___shaderCleanupJob" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___textureCleanupJob" -ln "rman__toropt___textureCleanupJob" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___ribCleanupJob" -ln "rman__toropt___ribCleanupJob" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___ribFlatten" -ln "rman__toropt___ribFlatten" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___renderDataCleanupFrame" -ln "rman__toropt___renderDataCleanupFrame" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___textureCleanupFrame" -ln "rman__toropt___textureCleanupFrame" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___ribCleanupFrame" -ln "rman__toropt___ribCleanupFrame" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__toropt___primaryCamera" -ln "rman__toropt___primaryCamera" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__toropt___enableRenderLayers" -ln "rman__toropt___enableRenderLayers" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__toropt___renderLayer" -ln "rman__toropt___renderLayer" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__toropt___motionBlurType" -ln "rman__toropt___motionBlurType" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__toropt___shutterAngle" -ln "rman__toropt___shutterAngle" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__toropt___shutterTiming" -ln "rman__toropt___shutterTiming" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__toropt___cacheCrew" -ln "rman__toropt___cacheCrew" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__toropt___renumber" -ln "rman__toropt___renumber" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___renumberStart" -ln "rman__toropt___renumberStart" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___renumberBy" -ln "rman__toropt___renumberBy" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___lazyRibGen" -ln "rman__toropt___lazyRibGen" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___lazyRender" -ln "rman__toropt___lazyRender" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___bakeMode" -ln "rman__toropt___bakeMode" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___furChunkSize" -ln "rman__toropt___furChunkSize" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___enableRifs" -ln "rman__torattr___enableRifs" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__toropt___nativeShadingSupport" -ln "rman__toropt___nativeShadingSupport" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___motionSamples" -ln "rman__torattr___motionSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___referenceFrame" -ln "rman__torattr___referenceFrame" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___motionBlur" -ln "rman__torattr___motionBlur" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___mapResolution" -ln "rman__torattr___mapResolution" 
+		-at "long2" -nc 2;
+	addAttr -ci true -k true -sn "rman__torattr___mapResolution0" -ln "rman__torattr___mapResolution0" 
+		-dv -1 -at "long" -p "rman__torattr___mapResolution";
+	addAttr -ci true -k true -sn "rman__torattr___mapResolution1" -ln "rman__torattr___mapResolution1" 
+		-dv -1 -at "long" -p "rman__torattr___mapResolution";
+	addAttr -ci true -k true -sn "rman__torattr___depthOfField" -ln "rman__torattr___depthOfField" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___cameraBlur" -ln "rman__torattr___cameraBlur" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___frontPlane" -ln "rman__torattr___frontPlane" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___backPlane" -ln "rman__torattr___backPlane" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___passCommand" -ln "rman__torattr___passCommand" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___crop" -ln "rman__torattr___crop" -dv 
+		-1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___passExtFormat" -ln "rman__torattr___passExtFormat" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___passNameFormat" -ln "rman__torattr___passNameFormat" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___previewPass" -ln "rman__torattr___previewPass" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___defaultDisplacementShader" -ln "rman__torattr___defaultDisplacementShader" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___defaultAtmosphereShader" -ln "rman__torattr___defaultAtmosphereShader" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___defaultInteriorShader" -ln "rman__torattr___defaultInteriorShader" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___outputSurfaceShaders" -ln "rman__torattr___outputSurfaceShaders" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___outputDisplacementShaders" -ln "rman__torattr___outputDisplacementShaders" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___outputLightShaders" -ln "rman__torattr___outputLightShaders" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___outputVolumeShaders" -ln "rman__torattr___outputVolumeShaders" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___outputImagerShaders" -ln "rman__torattr___outputImagerShaders" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__toropt___preFrameScript" -ln "rman__toropt___preFrameScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__toropt___postFrameScript" -ln "rman__toropt___postFrameScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___preRenderScript" -ln "rman__torattr___preRenderScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___postRenderScript" -ln "rman__torattr___postRenderScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___defaultRiOptionsScript" -ln "rman__torattr___defaultRiOptionsScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___defaultRiAttributesScript" -ln "rman__torattr___defaultRiAttributesScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___renderBeginScript" -ln "rman__torattr___renderBeginScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___transformBeginScript" -ln "rman__torattr___transformBeginScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___transformEndScript" -ln "rman__torattr___transformEndScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___postTransformScript" -ln "rman__torattr___postTransformScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___preShapeScript" -ln "rman__torattr___preShapeScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___postShapeScript" -ln "rman__torattr___postShapeScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___cacheShapeScript" -ln "rman__torattr___cacheShapeScript" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___bakeChannels" -ln "rman__torattr___bakeChannels" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___bakeCrew" -ln "rman__torattr___bakeCrew" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___bakeOutputFile" -ln "rman__torattr___bakeOutputFile" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___customShadingGroup" -ln "rman__torattr___customShadingGroup" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___shaderBindingStrength" -ln "rman__torattr___shaderBindingStrength" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___computeBehavior" -ln "rman__torattr___computeBehavior" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___enableObjectInstancing" -ln "rman__torattr___enableObjectInstancing" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___impliedSSBakeMode" -ln "rman__torattr___impliedSSBakeMode" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__toropt___JOBSTYLE" -ln "rman__toropt___JOBSTYLE" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___deformationBlurStyle" -ln "rman__torattr___deformationBlurStyle" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___deformationBlurScale" -ln "rman__torattr___deformationBlurScale" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__torattr___enableMfcProcPrim" -ln "rman__torattr___enableMfcProcPrim" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___linearizeColors" -ln "rman__torattr___linearizeColors" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___rayTracing" -ln "rman__torattr___rayTracing" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___referenceCamera" -ln "rman__torattr___referenceCamera" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__toropt___enableRIS" -ln "rman__toropt___enableRIS" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___denoise" -ln "rman__torattr___denoise" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___denoiseFilter" -ln "rman__torattr___denoiseFilter" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___defaultSurfaceShader" -ln "rman__torattr___defaultSurfaceShader" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__torattr___outputShadowAOV" -ln "rman__torattr___outputShadowAOV" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__torattr___enableImagePlaneFilter" -ln "rman__torattr___enableImagePlaneFilter" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__trace_maxdepth" -ln "rman__riopt__trace_maxdepth" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt___PixelVariance" -ln "rman__riopt___PixelVariance" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__riopt__bucket_order" -ln "rman__riopt__bucket_order" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__limits_bucketsize" -ln "rman__riopt__limits_bucketsize" 
+		-at "long2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__limits_bucketsize0" -ln "rman__riopt__limits_bucketsize0" 
+		-dv -1 -at "long" -p "rman__riopt__limits_bucketsize";
+	addAttr -ci true -k true -sn "rman__riopt__limits_bucketsize1" -ln "rman__riopt__limits_bucketsize1" 
+		-dv -1 -at "long" -p "rman__riopt__limits_bucketsize";
+	addAttr -ci true -k true -sn "rman__riopt__trace_decimationrate" -ln "rman__riopt__trace_decimationrate" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__limits_threads" -ln "rman__riopt__limits_threads" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Camera_shutteropening" -ln "rman__riopt__Camera_shutteropening" 
+		-at "float2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Camera_shutteropening0" -ln "rman__riopt__Camera_shutteropening0" 
+		-dv -1 -at "float" -p "rman__riopt__Camera_shutteropening";
+	addAttr -ci true -k true -sn "rman__riopt__Camera_shutteropening1" -ln "rman__riopt__Camera_shutteropening1" 
+		-dv -1 -at "float" -p "rman__riopt__Camera_shutteropening";
+	addAttr -ci true -k true -sn "rman__riopt__Format_resolution" -ln "rman__riopt__Format_resolution" 
+		-at "long2" -nc 2;
+	addAttr -ci true -k true -sn "rman__riopt__Format_resolution0" -ln "rman__riopt__Format_resolution0" 
+		-dv -1 -at "long" -p "rman__riopt__Format_resolution";
+	addAttr -ci true -k true -sn "rman__riopt__Format_resolution1" -ln "rman__riopt__Format_resolution1" 
+		-dv -1 -at "long" -p "rman__riopt__Format_resolution";
+	addAttr -ci true -k true -sn "rman__riopt__Format_pixelaspectratio" -ln "rman__riopt__Format_pixelaspectratio" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__hair_minwidth" -ln "rman__riopt__hair_minwidth" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__riopt__rib_compression" -ln "rman__riopt__rib_compression" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__rib_format" -ln "rman__riopt__rib_format" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__rib_precision" -ln "rman__riopt__rib_precision" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__user_iesIgnoreWatts" -ln "rman__riopt__user_iesIgnoreWatts" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__statistics_level" -ln "rman__riopt__statistics_level" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__statistics_filename" -ln "rman__riopt__statistics_filename" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__statistics_xmlfilename" -ln "rman__riopt__statistics_xmlfilename" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Projection_name" -ln "rman__riopt__Projection_name" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Projection2_name" -ln "rman__riopt__Projection2_name" 
+		-dt "string";
+	addAttr -ci true -uac -k true -sn "rman__riopt__limits_zthreshold" -ln "rman__riopt__limits_zthreshold" 
+		-at "float3" -nc 3;
+	addAttr -ci true -k true -sn "rman__riopt__limits_zthresholdr" -ln "rman__riopt__limits_zthresholdR" 
+		-dv -1 -at "float" -p "rman__riopt__limits_zthreshold";
+	addAttr -ci true -k true -sn "rman__riopt__limits_zthresholdg" -ln "rman__riopt__limits_zthresholdG" 
+		-dv -1 -at "float" -p "rman__riopt__limits_zthreshold";
+	addAttr -ci true -k true -sn "rman__riopt__limits_zthresholdb" -ln "rman__riopt__limits_zthresholdB" 
+		-dv -1 -at "float" -p "rman__riopt__limits_zthreshold";
+	addAttr -ci true -uac -k true -sn "rman__riopt__limits_othreshold" -ln "rman__riopt__limits_othreshold" 
+		-at "float3" -nc 3;
+	addAttr -ci true -k true -sn "rman__riopt__limits_othresholdr" -ln "rman__riopt__limits_othresholdR" 
+		-dv -1 -at "float" -p "rman__riopt__limits_othreshold";
+	addAttr -ci true -k true -sn "rman__riopt__limits_othresholdg" -ln "rman__riopt__limits_othresholdG" 
+		-dv -1 -at "float" -p "rman__riopt__limits_othreshold";
+	addAttr -ci true -k true -sn "rman__riopt__limits_othresholdb" -ln "rman__riopt__limits_othresholdB" 
+		-dv -1 -at "float" -p "rman__riopt__limits_othreshold";
+	addAttr -ci true -k true -sn "rman__riopt__limits_texturememory" -ln "rman__riopt__limits_texturememory" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__limits_geocachememory" -ln "rman__riopt__limits_geocachememory" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__limits_proceduralmemory" -ln "rman__riopt__limits_proceduralmemory" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__limits_deepshadowtiles" -ln "rman__riopt__limits_deepshadowtiles" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__limits_deepshadowmemory" -ln "rman__riopt__limits_deepshadowmemory" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__limits_brickmemory" -ln "rman__riopt__limits_brickmemory" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__user_sceneUnits" -ln "rman__riopt__user_sceneUnits" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_diffuse2" -ln "rman__riopt__lpe_diffuse2" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_diffuse3" -ln "rman__riopt__lpe_diffuse3" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular2" -ln "rman__riopt__lpe_specular2" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular3" -ln "rman__riopt__lpe_specular3" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular4" -ln "rman__riopt__lpe_specular4" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular5" -ln "rman__riopt__lpe_specular5" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular6" -ln "rman__riopt__lpe_specular6" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular7" -ln "rman__riopt__lpe_specular7" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__lpe_specular8" -ln "rman__riopt__lpe_specular8" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Hider_name" -ln "rman__riopt__Hider_name" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_minsamples" -ln "rman__riopt__Hider_minsamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_minextrasamples" -ln "rman__riopt__Hider_minextrasamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_maxsamples" -ln "rman__riopt__Hider_maxsamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_darkfalloff" -ln "rman__riopt__Hider_darkfalloff" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__limits_opacitycachememory" -ln "rman__riopt__limits_opacitycachememory" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_name" -ln "rman__riopt__Integrator_name" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riattr__trace_maxdiffusedepth" -ln "rman__riattr__trace_maxdiffusedepth" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riattr__trace_maxspeculardepth" -ln "rman__riattr__trace_maxspeculardepth" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riattr__trace_samplemotion" -ln "rman__riattr__trace_samplemotion" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riattr__dice_referencecamera" -ln "rman__riattr__dice_referencecamera" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riattr__dice_minlength" -ln "rman__riattr__dice_minlength" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riattr__procedural_reentrant" -ln "rman__riattr__procedural_reentrant" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riattr__dice_micropolygonlength" -ln "rman__riattr__dice_micropolygonlength" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riattr__dice_watertight" -ln "rman__riattr__dice_watertight" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riattr__trace_autobias" -ln "rman__riattr__trace_autobias" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riattr__trace_bias" -ln "rman__riattr__trace_bias" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__riattr__displacementbound_coordinatesystem" 
+		-ln "rman__riattr__displacementbound_coordinatesystem" -dt "string";
+	addAttr -ci true -k true -sn "rman__riattr__displacementbound_sphere" -ln "rman__riattr__displacementbound_sphere" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riattr__trace_displacements" -ln "rman__riattr__trace_displacements" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Projection_fov" -ln "rman__riopt__Projection_fov" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Projection_hsweep" -ln "rman__riopt__Projection_hsweep" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Projection_vsweep" -ln "rman__riopt__Projection_vsweep" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Projection_minor" -ln "rman__riopt__Projection_minor" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_adaptall" -ln "rman__riopt__Hider_adaptall" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Hider_incremental" -ln "rman__riopt__Hider_incremental" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Hider_pixelfiltermode" -ln "rman__riopt__Hider_pixelfiltermode" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_mergePaths" -ln "rman__riopt__Integrator_mergePaths" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_mergeRadiusScale" -ln "rman__riopt__Integrator_mergeRadiusScale" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_timeRadius" -ln "rman__riopt__Integrator_timeRadius" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_reduceRadius" -ln "rman__riopt__Integrator_reduceRadius" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_connectPaths" -ln "rman__riopt__Integrator_connectPaths" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_maxPathLength" -ln "rman__riopt__Integrator_maxPathLength" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_sampleMode" -ln "rman__riopt__Integrator_sampleMode" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numLightSamples" -ln "rman__riopt__Integrator_numLightSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numBxdfSamples" -ln "rman__riopt__Integrator_numBxdfSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numIndirectSamples" -ln "rman__riopt__Integrator_numIndirectSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numDiffuseSamples" -ln "rman__riopt__Integrator_numDiffuseSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numSpecularSamples" -ln "rman__riopt__Integrator_numSpecularSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numSubsurfaceSamples" -ln "rman__riopt__Integrator_numSubsurfaceSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numRefractionSamples" -ln "rman__riopt__Integrator_numRefractionSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_rouletteDepth" -ln "rman__riopt__Integrator_rouletteDepth" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_rouletteThreshold" -ln "rman__riopt__Integrator_rouletteThreshold" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_imagePlaneSubset" -ln "rman__riopt__Integrator_imagePlaneSubset" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_clampDepth" -ln "rman__riopt__Integrator_clampDepth" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_clampLuminance" -ln "rman__riopt__Integrator_clampLuminance" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_allowCaustics" -ln "rman__riopt__Integrator_allowCaustics" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_distribution" -ln "rman__riopt__Integrator_distribution" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_numSamples" -ln "rman__riopt__Integrator_numSamples" 
+		-dv -1 -at "long";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_distance" -ln "rman__riopt__Integrator_distance" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_gamma" -ln "rman__riopt__Integrator_gamma" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_useAlbedo" -ln "rman__riopt__Integrator_useAlbedo" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_viewchannel" -ln "rman__riopt__Integrator_viewchannel" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_wireframe" -ln "rman__riopt__Integrator_wireframe" 
+		-dv -1 -at "long";
+	addAttr -ci true -uac -k true -sn "rman__riopt__Integrator_wireframeColor" -ln "rman__riopt__Integrator_wireframeColor" 
+		-at "float3" -nc 3;
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_wireframeColorr" -ln "rman__riopt__Integrator_wireframeColorR" 
+		-dv -1 -at "float" -p "rman__riopt__Integrator_wireframeColor";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_wireframeColorg" -ln "rman__riopt__Integrator_wireframeColorG" 
+		-dv -1 -at "float" -p "rman__riopt__Integrator_wireframeColor";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_wireframeColorb" -ln "rman__riopt__Integrator_wireframeColorB" 
+		-dv -1 -at "float" -p "rman__riopt__Integrator_wireframeColor";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_wireframeOpacity" -ln "rman__riopt__Integrator_wireframeOpacity" 
+		-dv -1 -at "float";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_wireframeWidth" -ln "rman__riopt__Integrator_wireframeWidth" 
+		-dv -1 -at "float";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_style" -ln "rman__riopt__Integrator_style" 
+		-dt "string";
+	addAttr -ci true -k true -sn "rman__riopt__Integrator_normalCheck" -ln "rman__riopt__Integrator_normalCheck" 
+		-dv -1 -at "long";
+	addAttr -ci true -h true -sn "rman__riopt__Integrator_matCap" -ln "rman__riopt__Integrator_matCap" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__EnvLight" -ln "rman__EnvLight" -dt "string";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "d" -ln "display" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "c" -ln "channel" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "rif" -ln "rif" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "p" -ln "passes" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "sh" -ln "shared" -at "message";
+	addAttr -ci true -m -sn "rman__displayfilters" -ln "rman__displayfilters" -dt "string";
+	addAttr -ci true -m -sn "rman__samplefilters" -ln "rman__samplefilters" -dt "string";
+	setAttr ".rman__torattr___class" -type "string" "RISJob";
+	setAttr ".rman__torattr___task" -type "string" "job";
+	setAttr -k on ".rman__toropt___renderDataCleanupJob" 0;
+	setAttr -k on ".rman__toropt___shaderCleanupJob" 0;
+	setAttr -k on ".rman__toropt___textureCleanupJob" 0;
+	setAttr -k on ".rman__toropt___ribCleanupJob" 0;
+	setAttr -k on ".rman__toropt___ribFlatten" 0;
+	setAttr -k on ".rman__toropt___renderDataCleanupFrame" 0;
+	setAttr -k on ".rman__toropt___textureCleanupFrame" 0;
+	setAttr -k on ".rman__toropt___ribCleanupFrame" 0;
+	setAttr ".rman__toropt___primaryCamera" -type "string" "";
+	setAttr -k on ".rman__toropt___enableRenderLayers" 0;
+	setAttr ".rman__toropt___renderLayer" -type "string" "";
+	setAttr ".rman__toropt___motionBlurType" -type "string" "frame";
+	setAttr -k on ".rman__toropt___shutterAngle" 180;
+	setAttr ".rman__toropt___shutterTiming" -type "string" "frameOpen";
+	setAttr ".rman__toropt___cacheCrew" -type "string" "";
+	setAttr -k on ".rman__toropt___renumber" 0;
+	setAttr -k on ".rman__toropt___renumberStart" 1;
+	setAttr -k on ".rman__toropt___renumberBy" 1;
+	setAttr -k on ".rman__toropt___lazyRibGen" 0;
+	setAttr -k on ".rman__toropt___lazyRender" 0;
+	setAttr -k on ".rman__toropt___bakeMode" 0;
+	setAttr -k on ".rman__toropt___furChunkSize" 10000;
+	setAttr -k on ".rman__torattr___enableRifs" 1;
+	setAttr -k on ".rman__toropt___nativeShadingSupport" 0;
+	setAttr -k on ".rman__torattr___motionSamples" 2;
+	setAttr -k on ".rman__torattr___referenceFrame" 0;
+	setAttr -k on ".rman__torattr___motionBlur" 0;
+	setAttr -k on ".rman__torattr___mapResolution" -type "long2" 0 0 ;
+	setAttr -k on ".rman__torattr___depthOfField" 0;
+	setAttr -k on ".rman__torattr___cameraBlur" 0;
+	setAttr -k on ".rman__torattr___frontPlane" 0;
+	setAttr -k on ".rman__torattr___backPlane" 0;
+	setAttr ".rman__torattr___passCommand" -type "string" "";
+	setAttr -k on ".rman__torattr___crop" 0;
+	setAttr ".rman__torattr___passExtFormat" -type "string" "";
+	setAttr ".rman__torattr___passNameFormat" -type "string" "";
+	setAttr -k on ".rman__torattr___previewPass" 0;
+	setAttr ".rman__torattr___defaultDisplacementShader" -type "string" "";
+	setAttr ".rman__torattr___defaultAtmosphereShader" -type "string" "";
+	setAttr ".rman__torattr___defaultInteriorShader" -type "string" "";
+	setAttr -k on ".rman__torattr___outputSurfaceShaders" 1;
+	setAttr -k on ".rman__torattr___outputDisplacementShaders" 1;
+	setAttr -k on ".rman__torattr___outputLightShaders" 1;
+	setAttr -k on ".rman__torattr___outputVolumeShaders" 1;
+	setAttr -k on ".rman__torattr___outputImagerShaders" 1;
+	setAttr ".rman__toropt___preFrameScript" -type "string" "";
+	setAttr ".rman__toropt___postFrameScript" -type "string" "";
+	setAttr ".rman__torattr___preRenderScript" -type "string" "";
+	setAttr ".rman__torattr___postRenderScript" -type "string" "";
+	setAttr ".rman__torattr___defaultRiOptionsScript" -type "string" "";
+	setAttr ".rman__torattr___defaultRiAttributesScript" -type "string" "";
+	setAttr ".rman__torattr___renderBeginScript" -type "string" "rmanTimeStampScript";
+	setAttr ".rman__torattr___transformBeginScript" -type "string" "";
+	setAttr ".rman__torattr___transformEndScript" -type "string" "";
+	setAttr ".rman__torattr___postTransformScript" -type "string" "";
+	setAttr ".rman__torattr___preShapeScript" -type "string" "";
+	setAttr ".rman__torattr___postShapeScript" -type "string" "";
+	setAttr ".rman__torattr___cacheShapeScript" -type "string" "";
+	setAttr ".rman__torattr___bakeChannels" -type "string" "";
+	setAttr ".rman__torattr___bakeCrew" -type "string" "";
+	setAttr ".rman__torattr___bakeOutputFile" -type "string" "";
+	setAttr ".rman__torattr___customShadingGroup" -type "string" "";
+	setAttr -k on ".rman__torattr___shaderBindingStrength" 1;
+	setAttr -k on ".rman__torattr___computeBehavior" 1;
+	setAttr -k on ".rman__torattr___enableObjectInstancing" 1;
+	setAttr ".rman__torattr___impliedSSBakeMode" -type "string" "SSDiffuse";
+	setAttr ".rman__toropt___JOBSTYLE" -type "string" "";
+	setAttr ".rman__torattr___deformationBlurStyle" -type "string" "none";
+	setAttr -k on ".rman__torattr___deformationBlurScale" 1;
+	setAttr -k on ".rman__torattr___enableMfcProcPrim" 0;
+	setAttr -k on ".rman__torattr___linearizeColors" 0;
+	setAttr -k on ".rman__torattr___rayTracing" 1;
+	setAttr ".rman__torattr___referenceCamera" -type "string" "";
+	setAttr -k on ".rman__toropt___enableRIS" 1;
+	setAttr -k on ".rman__torattr___denoise" 0;
+	setAttr ".rman__torattr___denoiseFilter" -type "string" "default.filter.json";
+	setAttr ".rman__torattr___defaultSurfaceShader" -type "string" "PxrDiffuse";
+	setAttr -k on ".rman__torattr___outputShadowAOV" 0;
+	setAttr -k on ".rman__torattr___enableImagePlaneFilter" 1;
+	setAttr -k on ".rman__riopt__trace_maxdepth" 10;
+	setAttr -k on ".rman__riopt___PixelVariance" 0.0099999997764825821;
+	setAttr ".rman__riopt__bucket_order" -type "string" "spiral";
+	setAttr -k on ".rman__riopt__limits_bucketsize" -type "long2" 16 16 ;
+	setAttr -k on ".rman__riopt__trace_decimationrate" 1;
+	setAttr -k on ".rman__riopt__limits_threads" 0;
+	setAttr -k on ".rman__riopt__Camera_shutteropening" -type "float2" 0 1 ;
+	setAttr -k on ".rman__riopt__Format_resolution" -type "long2" 960 540 ;
+	setAttr -k on ".rman__riopt__Format_pixelaspectratio" 1;
+	setAttr -k on ".rman__riopt__hair_minwidth" 0.5;
+	setAttr ".rman__riopt__rib_compression" -type "string" "none";
+	setAttr ".rman__riopt__rib_format" -type "string" "binary";
+	setAttr -k on ".rman__riopt__rib_precision" 6;
+	setAttr -k on ".rman__riopt__user_iesIgnoreWatts" 1;
+	setAttr -k on ".rman__riopt__statistics_level" 1;
+	setAttr ".rman__riopt__statistics_filename" -type "string" "stdout";
+	setAttr ".rman__riopt__statistics_xmlfilename" -type "string" "[AssetRef -cls rmanstat]";
+	setAttr ".rman__riopt__Projection_name" -type "string" "";
+	setAttr ".rman__riopt__Projection2_name" -type "string" "";
+	setAttr -k on ".rman__riopt__limits_zthreshold" -type "float3" 0.99599999 0.99599999 
+		0.99599999 ;
+	setAttr -k on ".rman__riopt__limits_othreshold" -type "float3" 0.99599999 0.99599999 
+		0.99599999 ;
+	setAttr -k on ".rman__riopt__limits_texturememory" 4194304;
+	setAttr -k on ".rman__riopt__limits_geocachememory" 2097152;
+	setAttr -k on ".rman__riopt__limits_proceduralmemory" 0;
+	setAttr -k on ".rman__riopt__limits_deepshadowtiles" 1000;
+	setAttr -k on ".rman__riopt__limits_deepshadowmemory" 102400;
+	setAttr -k on ".rman__riopt__limits_brickmemory" 10240;
+	setAttr -k on ".rman__riopt__user_sceneUnits" 1;
+	setAttr ".rman__riopt__lpe_diffuse2" -type "string" "Diffuse";
+	setAttr ".rman__riopt__lpe_diffuse3" -type "string" "Subsurface";
+	setAttr ".rman__riopt__lpe_specular2" -type "string" "Specular";
+	setAttr ".rman__riopt__lpe_specular3" -type "string" "RoughSpecular";
+	setAttr ".rman__riopt__lpe_specular4" -type "string" "Clearcoat";
+	setAttr ".rman__riopt__lpe_specular5" -type "string" "Iridescence";
+	setAttr ".rman__riopt__lpe_specular6" -type "string" "Fuzz";
+	setAttr ".rman__riopt__lpe_specular7" -type "string" "SingleScatter";
+	setAttr ".rman__riopt__lpe_specular8" -type "string" "Glass";
+	setAttr ".rman__riopt__Hider_name" -type "string" "raytrace";
+	setAttr -k on ".rman__riopt__Hider_minsamples" 0;
+	setAttr -k on ".rman__riopt__Hider_minextrasamples" 0;
+	setAttr -k on ".rman__riopt__Hider_maxsamples" 128;
+	setAttr -k on ".rman__riopt__Hider_darkfalloff" 0.02500000037252903;
+	setAttr -k on ".rman__riopt__limits_opacitycachememory" 4194304;
+	setAttr ".rman__riopt__Integrator_name" -type "string" "PxrPathTracer";
+	setAttr -k on ".rman__riattr__trace_maxdiffusedepth" 1;
+	setAttr -k on ".rman__riattr__trace_maxspeculardepth" 4;
+	setAttr -k on ".rman__riattr__trace_samplemotion" 1;
+	setAttr ".rman__riattr__dice_referencecamera" -type "string" "worldcamera";
+	setAttr -k on ".rman__riattr__procedural_reentrant" 1;
+	setAttr -k on ".rman__riattr__dice_micropolygonlength" 1;
+	setAttr -k on ".rman__riattr__dice_watertight" 0;
+	setAttr -k on ".rman__riattr__trace_autobias" 1;
+	setAttr -k on ".rman__riattr__trace_bias" 0.0010000000474974513;
+	setAttr ".rman__riattr__displacementbound_coordinatesystem" -type "string" "shader";
+	setAttr -k on ".rman__riattr__displacementbound_sphere" 0;
+	setAttr -k on ".rman__riattr__trace_displacements" 1;
+	setAttr -k on ".rman__riopt__Projection_fov" 0;
+	setAttr -k on ".rman__riopt__Projection_hsweep" 360;
+	setAttr -k on ".rman__riopt__Projection_vsweep" 180;
+	setAttr -k on ".rman__riopt__Projection_minor" 0.25;
+	setAttr -k on ".rman__riopt__Hider_adaptall" 0;
+	setAttr -k on ".rman__riopt__Hider_incremental" 1;
+	setAttr ".rman__riopt__Hider_pixelfiltermode" -type "string" "weighted";
+	setAttr -k on ".rman__riopt__Integrator_mergePaths" 1;
+	setAttr -k on ".rman__riopt__Integrator_mergeRadiusScale" 5;
+	setAttr -k on ".rman__riopt__Integrator_timeRadius" 1;
+	setAttr -k on ".rman__riopt__Integrator_reduceRadius" 1;
+	setAttr -k on ".rman__riopt__Integrator_connectPaths" 1;
+	setAttr -k on ".rman__riopt__Integrator_maxPathLength" 10;
+	setAttr ".rman__riopt__Integrator_sampleMode" -type "string" "bxdf";
+	setAttr -k on ".rman__riopt__Integrator_numLightSamples" 2;
+	setAttr -k on ".rman__riopt__Integrator_numBxdfSamples" 2;
+	setAttr -k on ".rman__riopt__Integrator_numIndirectSamples" 2;
+	setAttr -k on ".rman__riopt__Integrator_numDiffuseSamples" 1;
+	setAttr -k on ".rman__riopt__Integrator_numSpecularSamples" 1;
+	setAttr -k on ".rman__riopt__Integrator_numSubsurfaceSamples" 1;
+	setAttr -k on ".rman__riopt__Integrator_numRefractionSamples" 1;
+	setAttr -k on ".rman__riopt__Integrator_rouletteDepth" 4;
+	setAttr -k on ".rman__riopt__Integrator_rouletteThreshold" 0.20000000298023224;
+	setAttr ".rman__riopt__Integrator_imagePlaneSubset" -type "string" "rman__imageplane";
+	setAttr -k on ".rman__riopt__Integrator_clampDepth" 2;
+	setAttr -k on ".rman__riopt__Integrator_clampLuminance" 10;
+	setAttr -k on ".rman__riopt__Integrator_allowCaustics" 0;
+	setAttr ".rman__riopt__Integrator_distribution" -type "string" "cosine";
+	setAttr -k on ".rman__riopt__Integrator_numSamples" 4;
+	setAttr -k on ".rman__riopt__Integrator_distance" 10;
+	setAttr -k on ".rman__riopt__Integrator_gamma" 1;
+	setAttr -k on ".rman__riopt__Integrator_useAlbedo" 0;
+	setAttr ".rman__riopt__Integrator_viewchannel" -type "string" "Nn";
+	setAttr -k on ".rman__riopt__Integrator_wireframe" 1;
+	setAttr -k on ".rman__riopt__Integrator_wireframeColor" -type "float3" 0 0 0 ;
+	setAttr -k on ".rman__riopt__Integrator_wireframeOpacity" 0.5;
+	setAttr -k on ".rman__riopt__Integrator_wireframeWidth" 1;
+	setAttr ".rman__riopt__Integrator_style" -type "string" "shaded";
+	setAttr -k on ".rman__riopt__Integrator_normalCheck" 0;
+	setAttr ".rman__riopt__Integrator_matCap" -type "string" "";
+	setAttr ".rman__EnvLight" -type "string" "";
+	setAttr -s 3 ".p";
+	setAttr ".nt" -type "string" "settings:job";
+createNode RenderMan -s -n "rmanBakeGlobals";
+	rename -uid "47B5A5A4-4243-AC8B-9F5D-F69E8CA08367";
+	addAttr -ci true -h true -sn "t" -ln "isTemplate" -at "long";
+	addAttr -ci true -h true -sn "rman__torattr___class" -ln "rman__torattr___class" 
+		-dt "string";
+	addAttr -ci true -h true -sn "rman__torattr___task" -ln "rman__torattr___task" -dt "string";
+	addAttr -ci true -h true -sn "rman__riopt__Hider_name" -ln "rman__riopt__Hider_name" 
+		-dt "string";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "d" -ln "display" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "c" -ln "channel" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "rif" -ln "rif" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "p" -ln "passes" -at "message";
+	addAttr -r false -s false -ci true -h true -m -im false -sn "sh" -ln "shared" -at "message";
+	addAttr -ci true -m -sn "rman__displayfilters" -ln "rman__displayfilters" -dt "string";
+	addAttr -ci true -m -sn "rman__samplefilters" -ln "rman__samplefilters" -dt "string";
+	setAttr ".t" 1;
+	setAttr ".rman__torattr___class" -type "string" "Bake";
+	setAttr ".rman__torattr___task" -type "string" "render";
+	setAttr ".rman__riopt__Hider_name" -type "string" "bake";
+	setAttr ".nt" -type "string" "pass:render";
 select -ne :time1;
 	setAttr -av -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -24272,7 +22867,7 @@ select -ne :renderPartition;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 16 ".st";
+	setAttr -s 30 ".st";
 	setAttr -cb on ".an";
 	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
@@ -24285,7 +22880,7 @@ select -ne :defaultShaderList1;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 14 ".s";
+	setAttr -s 27 ".s";
 select -ne :postProcessList1;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -24293,17 +22888,19 @@ select -ne :postProcessList1;
 	setAttr -cb on ".bnm";
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 11 ".u";
+	setAttr -s 15 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 21 ".r";
+	setAttr -s 24 ".r";
+select -ne :lightList1;
+	setAttr -s 8 ".l";
 select -ne :defaultTextureList1;
-	setAttr -s 13 ".tx";
+	setAttr -s 20 ".tx";
 select -ne :initialShadingGroup;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 101 ".dsm";
+	setAttr -s 135 ".dsm";
 	setAttr -k on ".mwc";
 	setAttr -cb on ".an";
 	setAttr -cb on ".il";
@@ -24312,7 +22909,7 @@ select -ne :initialShadingGroup;
 	setAttr -cb on ".fo";
 	setAttr -cb on ".epo";
 	setAttr ".ro" yes;
-	setAttr -s 133 ".gn";
+	setAttr -s 167 ".gn";
 select -ne :initialParticleSE;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -24345,6 +22942,8 @@ select -ne :defaultResolution;
 	setAttr -av -k on ".zsl";
 	setAttr -k on ".isu";
 	setAttr -k on ".pdu";
+select -ne :defaultLightSet;
+	setAttr -s 8 ".dsm";
 select -ne :hardwareRenderGlobals;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -25216,4 +23815,4 @@ connectAttr "groupId179.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId180.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId181.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId182.msg" ":initialShadingGroup.gn" -na;
-// End of Buns_stall_latest.ma
+// End of Lang_Zhai.ma
