@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Game_Stand_latest.ma
-//Last modified: Wed, Jan 09, 2019 08:40:23 AM
+//Last modified: Sat, Jan 26, 2019 12:33:40 AM
 //Codeset: 1252
 file -rdi 1 -ns "tent_Games_latest" -rfn "tent_Games_latestRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Tents/tent_Games_latest.ma";
@@ -12,6 +12,10 @@ file -rdi 1 -ns "toy_rack_latest" -rfn "toy_rack_latestRN" -op "v=0;" -typ "maya
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/GameStand_Props/toy_rack_latest.ma";
 file -rdi 1 -ns "ring_toss_latest" -rfn "ring_toss_latestRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/GameStand_Props/ring_toss_latest.ma";
+file -rdi 1 -ns "toyfox_latest" -rfn "toyfox_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/GameStand_Props/toyfox_latest.ma";
+file -rdi 1 -ns "Bear_latest" -rfn "Bear_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/GameStand_Props/Bear_latest.ma";
 file -r -ns "tent_Games_latest" -dr 1 -rfn "tent_Games_latestRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Tents/tent_Games_latest.ma";
 file -r -ns "luckycat_latest" -dr 1 -rfn "luckycat_latestRN" -op "v=0;" -typ "mayaAscii"
@@ -22,6 +26,10 @@ file -r -ns "toy_rack_latest" -dr 1 -rfn "toy_rack_latestRN" -op "v=0;" -typ "ma
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/GameStand_Props/toy_rack_latest.ma";
 file -r -ns "ring_toss_latest" -dr 1 -rfn "ring_toss_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/GameStand_Props/ring_toss_latest.ma";
+file -r -ns "toyfox_latest" -dr 1 -rfn "toyfox_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/GameStand_Props/toyfox_latest.ma";
+file -r -ns "Bear_latest" -dr 1 -rfn "Bear_latestRN" -op "v=0;" -typ "mayaAscii"
+		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/GameStand_Props/Bear_latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
 requires -nodeType "PxrVisualizer" -nodeType "PxrDefault" -nodeType "rmanDisplayChannel"
@@ -38,8 +46,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "8A156E9D-4179-6B38-3521-9888E7E340B4";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -6.7795573361869614 6.6340627052326751 17.1898502176698 ;
-	setAttr ".r" -type "double3" -17.13835272927037 -380.59999999999451 8.4945309567102191e-16 ;
+	setAttr ".t" -type "double3" -0.46460203317760307 7.1781366809577394 19.174253233734156 ;
+	setAttr ".r" -type "double3" -19.538352729271576 -363.3999999999881 -4.978379494357551e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "9D854303-41E7-46D5-2F0E-63B8EE0D330D";
 	setAttr -k off ".v" no;
@@ -122,8 +130,8 @@ createNode nurbsCurve -n "GameStand_LatestShape" -p "GameStand_Latest";
 		;
 createNode transform -n "ToyRack" -p "GameStand_Latest";
 	rename -uid "36544E58-460B-850B-878D-BAB0FF8642AB";
-	setAttr ".rp" -type "double3" 3.1964631226581326 -1.2066004669367238e-31 3.3791625643585679 ;
-	setAttr ".sp" -type "double3" 3.1964631226581326 -1.2066004669367238e-31 3.3791625643585679 ;
+	setAttr ".rp" -type "double3" 3.1964631226581326 -1.2017802852976352e-31 3.3791625643585679 ;
+	setAttr ".sp" -type "double3" 3.1964631226581326 -1.2017802852976352e-31 3.3791625643585679 ;
 createNode nurbsCurve -n "ToyRackShape" -p "ToyRack";
 	rename -uid "E2080B27-4129-1690-E48E-0C9CE84EFC2A";
 	setAttr -k off ".v";
@@ -145,12 +153,12 @@ createNode nurbsCurve -n "ToyRackShape" -p "ToyRack";
 		;
 createNode transform -n "ToyRackGrp" -p "ToyRack";
 	rename -uid "6D3B0414-4EC5-2A86-6043-378CEE1FE9F6";
-	setAttr ".rp" -type "double3" 3.1847521900356623 2.649674209955355 3.3791625626769841 ;
-	setAttr ".sp" -type "double3" 3.1847521900356623 2.649674209955355 3.3791625626769841 ;
+	setAttr ".rp" -type "double3" 3.184654712677002 2.6496741155398396 3.3791625499725342 ;
+	setAttr ".sp" -type "double3" 3.184654712677002 2.6496741155398396 3.3791625499725342 ;
 createNode transform -n "LeftStand" -p "ToyRackGrp";
 	rename -uid "7D2767EF-4D78-57C1-9B86-88B4D3128394";
-	setAttr ".rp" -type "double3" 2.8245267614450564 2.6741442650685463 3.3791625643585679 ;
-	setAttr ".sp" -type "double3" 2.8245267614450564 2.6741442650685463 3.3791625643585679 ;
+	setAttr ".rp" -type "double3" 2.8245269060134888 2.6741442680358887 3.3791623115539551 ;
+	setAttr ".sp" -type "double3" 2.8245269060134888 2.6741442680358887 3.3791623115539551 ;
 createNode mesh -n "LeftStandShape" -p "LeftStand";
 	rename -uid "67FF2C97-49E9-0B24-0351-E3ABCFDD2DEF";
 	setAttr -k off ".v";
@@ -264,8 +272,8 @@ createNode mesh -n "LeftStandShape" -p "LeftStand";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "LeftStand1" -p "ToyRackGrp";
 	rename -uid "FCD54DDD-4DDA-F915-F6BB-7A91A295177C";
-	setAttr ".rp" -type "double3" 3.5433400293181032 2.645390753555255 3.3791625643585679 ;
-	setAttr ".sp" -type "double3" 3.5433400293181032 2.645390753555255 3.3791625643585679 ;
+	setAttr ".rp" -type "double3" 3.5433400869369507 2.6453902721405029 3.3791625499725342 ;
+	setAttr ".sp" -type "double3" 3.5433400869369507 2.6453902721405029 3.3791625499725342 ;
 createNode mesh -n "LeftStand1Shape" -p "LeftStand1";
 	rename -uid "7F62E8D4-4DDB-F5FB-3154-F1BC16135416";
 	setAttr -k off ".v";
@@ -379,17 +387,17 @@ createNode mesh -n "LeftStand1Shape" -p "LeftStand1";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "HorizontalRungs" -p "ToyRackGrp";
 	rename -uid "1795BF99-4020-C77E-4531-1D8DE69CB61A";
-	setAttr ".rp" -type "double3" 3.1964631226581326 1.1752675581012011 3.3791625643585679 ;
-	setAttr ".sp" -type "double3" 3.1964631226581326 1.1752675581012011 3.3791625643585679 ;
+	setAttr ".rp" -type "double3" 3.1910044355868554 2.6642658240678871 3.3791625639587739 ;
+	setAttr ".sp" -type "double3" 3.1910044355868554 2.6642658240678871 3.3791625639587739 ;
 createNode transform -n "pCylinder17" -p "HorizontalRungs";
 	rename -uid "C83EC431-461D-E971-AE94-7C8D755B02EE";
 	setAttr ".t" -type "double3" 3.1910044355868554 0.40491110988052631 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
-	setAttr ".rp" -type "double3" 0 0 8.2882472717553159e-17 ;
-	setAttr ".rpt" -type "double3" 1.8403605909778777e-32 -8.2882472717553159e-17 -8.2882472717553159e-17 ;
-	setAttr ".sp" -type "double3" 0 0 1.7763568394002505e-15 ;
-	setAttr ".spt" -type "double3" 0 0 -1.6934743666826974e-15 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode mesh -n "pCylinderShape17" -p "pCylinder17";
 	rename -uid "9ED3AE86-4792-4520-C39F-1186D566FB6F";
 	setAttr -k off ".v";
@@ -498,142 +506,158 @@ createNode transform -n "pCylinder18" -p "HorizontalRungs";
 	setAttr ".t" -type "double3" 3.1910044355868554 1.0509197439498046 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
-	setAttr ".rp" -type "double3" 0 0 -3.3152989087021264e-16 ;
-	setAttr ".rpt" -type "double3" -7.3614423639115109e-32 3.3152989087021264e-16 3.3152989087021264e-16 ;
-	setAttr ".sp" -type "double3" 0 0 -7.1054273576010019e-15 ;
-	setAttr ".spt" -type "double3" 0 0 6.7738974667307896e-15 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "pCylinder19" -p "HorizontalRungs";
 	rename -uid "C8CC15FE-4A1E-AA83-80B0-4384CFD9C80C";
 	setAttr ".t" -type "double3" 3.1910044355868554 1.6969283780190829 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
-	setAttr ".rp" -type "double3" 0 0 3.3152989087021264e-16 ;
-	setAttr ".rpt" -type "double3" 7.3614423639115109e-32 -3.3152989087021264e-16 -3.3152989087021264e-16 ;
-	setAttr ".sp" -type "double3" 0 0 7.1054273576010019e-15 ;
-	setAttr ".spt" -type "double3" 0 0 -6.7738974667307896e-15 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "pCylinder20" -p "HorizontalRungs";
 	rename -uid "8B350364-4F38-C620-A274-34A09C014F82";
 	setAttr ".t" -type "double3" 3.1910044355868554 2.3429370120883606 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "pCylinder21" -p "HorizontalRungs";
 	rename -uid "BAA32E68-4802-6EFD-39EA-5D893762370E";
 	setAttr ".t" -type "double3" 3.1910044355868554 2.9889456461576391 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "pCylinder22" -p "HorizontalRungs";
 	rename -uid "11758AF0-4818-E1D2-DC03-1D9B6299493A";
 	setAttr ".t" -type "double3" 3.1910044355868554 3.6349542802269168 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
-	setAttr ".rp" -type "double3" 0 0 6.6305978174042527e-16 ;
-	setAttr ".rpt" -type "double3" 1.4722884727823022e-31 -6.6305978174042527e-16 -6.6305978174042527e-16 ;
-	setAttr ".sp" -type "double3" 0 0 1.4210854715202004e-14 ;
-	setAttr ".spt" -type "double3" 0 0 -1.3547794933461579e-14 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "pCylinder23" -p "HorizontalRungs";
 	rename -uid "34C0721A-4B40-F430-C76A-7C84A242D5B2";
 	setAttr ".t" -type "double3" 3.1910044355868554 4.2809629142961949 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
-	setAttr ".rp" -type "double3" 0 -1.2887410616277156e-15 1.3261195634808505e-15 ;
-	setAttr ".rpt" -type "double3" -1.2887410616277154e-15 -3.737850185313523e-17 -1.3261195634808507e-15 ;
-	setAttr ".sp" -type "double3" 0 -1.4210854715202004e-14 2.8421709430404007e-14 ;
-	setAttr ".spt" -type "double3" 0 1.2922113653574288e-14 -2.7095589866923158e-14 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 1.5777218104420236e-30 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 -1.577721810442024e-30 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 1.5777218104420236e-30 0 ;
 createNode transform -n "pCylinder24" -p "HorizontalRungs";
 	rename -uid "B3C0D328-4AFD-8B2B-2B1C-9582A5782C93";
 	setAttr ".t" -type "double3" 3.1910044355868554 4.9269715483654721 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
-	setAttr ".rp" -type "double3" 0 0 -6.6305978174042527e-16 ;
-	setAttr ".rpt" -type "double3" -1.4722884727823022e-31 6.6305978174042527e-16 6.6305978174042527e-16 ;
-	setAttr ".sp" -type "double3" 0 0 -1.4210854715202004e-14 ;
-	setAttr ".spt" -type "double3" 0 0 1.3547794933461579e-14 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "pCylinder9" -p "HorizontalRungs";
 	rename -uid "AA790783-40C9-5D49-E6D7-29B70C39FF80";
 	setAttr ".t" -type "double3" 3.1910044355868554 0.08023128779077443 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
-	setAttr ".rp" -type "double3" 0 0 -2.072061817938829e-17 ;
-	setAttr ".rpt" -type "double3" -4.6009014774446943e-33 2.072061817938829e-17 2.072061817938829e-17 ;
-	setAttr ".sp" -type "double3" 0 0 -4.4408920985006262e-16 ;
-	setAttr ".spt" -type "double3" 0 0 4.2336859167067435e-16 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "pCylinder8" -p "HorizontalRungs";
 	rename -uid "5351FFC9-4E8B-E055-4CB1-97A2C0D3B94C";
 	setAttr ".t" -type "double3" 3.1910044355868554 0.72623992186005248 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "pCylinder7" -p "HorizontalRungs";
 	rename -uid "F8F5EFA4-401D-5A5A-39D0-E38BD2087D65";
 	setAttr ".t" -type "double3" 3.1910044355868554 1.3722485559293309 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
-	setAttr ".rp" -type "double3" 0 -1.2887410616277156e-15 -3.3152989087021264e-16 ;
-	setAttr ".rpt" -type "double3" -1.2887410616277158e-15 1.6202709524979281e-15 3.3152989087021234e-16 ;
-	setAttr ".sp" -type "double3" 0 -1.4210854715202004e-14 -7.1054273576010019e-15 ;
-	setAttr ".spt" -type "double3" 0 1.2922113653574288e-14 6.7738974667307896e-15 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 1.5777218104420236e-30 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 -1.4298103907130842e-30 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 1.5777218104420236e-30 0 ;
 createNode transform -n "pCylinder6" -p "HorizontalRungs";
 	rename -uid "6D8E2C96-495A-63CE-A020-568CF621F837";
 	setAttr ".t" -type "double3" 3.1910044355868554 2.018257189998609 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
-	setAttr ".rp" -type "double3" 0 0 3.3152989087021264e-16 ;
-	setAttr ".rpt" -type "double3" 7.3614423639115109e-32 -3.3152989087021264e-16 -3.3152989087021264e-16 ;
-	setAttr ".sp" -type "double3" 0 0 7.1054273576010019e-15 ;
-	setAttr ".spt" -type "double3" 0 0 -6.7738974667307896e-15 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "pCylinder5" -p "HorizontalRungs";
 	rename -uid "89EF0080-488D-82B5-3F22-779E18AAF044";
 	setAttr ".t" -type "double3" 3.1910044355868554 2.6642658240678871 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "pCylinder4" -p "HorizontalRungs";
 	rename -uid "C5F21C8E-4503-A46C-BE86-0D9EFC8066F3";
 	setAttr ".t" -type "double3" 3.1910044355868554 3.3102744581371657 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
-	setAttr ".rp" -type "double3" 0 0 -6.6305978174042527e-16 ;
-	setAttr ".rpt" -type "double3" -1.4722884727823022e-31 6.6305978174042527e-16 6.6305978174042527e-16 ;
-	setAttr ".sp" -type "double3" 0 0 -1.4210854715202004e-14 ;
-	setAttr ".spt" -type "double3" 0 0 1.3547794933461579e-14 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "pCylinder3" -p "HorizontalRungs";
 	rename -uid "85D36705-45C2-C62C-5843-C0A43C958739";
 	setAttr ".t" -type "double3" 3.1910044355868554 3.9562830922064429 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
-	setAttr ".rp" -type "double3" 0 0 -6.6305978174042527e-16 ;
-	setAttr ".rpt" -type "double3" -1.4722884727823022e-31 6.6305978174042527e-16 6.6305978174042527e-16 ;
-	setAttr ".sp" -type "double3" 0 0 -1.4210854715202004e-14 ;
-	setAttr ".spt" -type "double3" 0 0 1.3547794933461579e-14 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "pCylinder2" -p "HorizontalRungs";
 	rename -uid "A57F924C-4ED7-0624-EE66-DFA45CE179B0";
 	setAttr ".t" -type "double3" 3.1910044355868554 4.6022917262757215 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
-	setAttr ".rp" -type "double3" 0 0 6.6305978174042527e-16 ;
-	setAttr ".rpt" -type "double3" 1.4722884727823022e-31 -6.6305978174042527e-16 -6.6305978174042527e-16 ;
-	setAttr ".sp" -type "double3" 0 0 1.4210854715202004e-14 ;
-	setAttr ".spt" -type "double3" 0 0 -1.3547794933461579e-14 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "pCylinder1" -p "HorizontalRungs";
 	rename -uid "60DFB5E7-4A60-77DF-1995-B6972C1D3F4F";
 	setAttr ".t" -type "double3" 3.1910044355868554 5.2483003603449996 3.3791625643585679 ;
 	setAttr ".r" -type "double3" 89.999999999999986 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.090687090076931945 0.046658684155789713 ;
-	setAttr ".rp" -type "double3" 0 0 6.6305978174042527e-16 ;
-	setAttr ".rpt" -type "double3" 1.4722884727823022e-31 -6.6305978174042527e-16 -6.6305978174042527e-16 ;
-	setAttr ".sp" -type "double3" 0 0 1.4210854715202004e-14 ;
-	setAttr ".spt" -type "double3" 0 0 -1.3547794933461579e-14 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 0 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 0 0 ;
 createNode transform -n "VerticalRungs" -p "ToyRackGrp";
 	rename -uid "A3BA1E9B-4FDA-C783-6240-8EB4F01AC422";
-	setAttr ".rp" -type "double3" 2.8245267614450564 0.085580539703270314 3.3791625643585679 ;
-	setAttr ".sp" -type "double3" 2.8245267614450564 0.085580539703270314 3.3791625643585679 ;
+	setAttr ".rp" -type "double3" 3.1812240109148426 2.669021446176755 3.3776827540225831 ;
+	setAttr ".sp" -type "double3" 3.1812240109148426 2.669021446176755 3.3776827540225831 ;
 createNode transform -n "pCylinder10" -p "VerticalRungs";
 	rename -uid "A05D79F8-4DB5-3E91-C73A-189293DC00B2";
 	setAttr ".t" -type "double3" 3.4630655026405854 2.669021446176755 3.3776827544223766 ;
 	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.65607024164351668 0.020356311743997262 ;
-	setAttr ".rp" -type "double3" 7.6254605213305569e-16 -5.8270743043521794e-16 -1.1571223549252216e-15 ;
-	setAttr ".rpt" -type "double3" -1.9196684070582767e-15 0 3.945763027921657e-16 ;
-	setAttr ".sp" -type "double3" 2.8421709430404007e-14 -8.8817841970012523e-16 -5.6843418860808015e-14 ;
-	setAttr ".spt" -type "double3" -2.7659163378270951e-14 3.0547098926490724e-16 5.5686296505882796e-14 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 -4.9303806576313238e-32 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 -4.9303806576313238e-32 0 ;
 createNode mesh -n "pCylinderShape10" -p "pCylinder10";
 	rename -uid "DD1893C0-456A-30DC-22B7-62BF11941D7B";
 	setAttr -k off ".v";
@@ -742,46 +766,46 @@ createNode transform -n "pCylinder11" -p "VerticalRungs";
 	setAttr ".t" -type "double3" 3.3503289059502879 2.669021446176755 3.3776827544223766 ;
 	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.65607024164351668 0.020356311743997262 ;
-	setAttr ".rp" -type "double3" 7.6254605213305569e-16 -5.8270743043521794e-16 0 ;
-	setAttr ".rpt" -type "double3" -7.6254605213305549e-16 0 -7.6254605213305569e-16 ;
-	setAttr ".sp" -type "double3" 2.8421709430404007e-14 -8.8817841970012523e-16 0 ;
-	setAttr ".spt" -type "double3" -2.7659163378270951e-14 3.0547098926490724e-16 0 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 -4.9303806576313238e-32 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 -4.9303806576313238e-32 0 ;
 createNode transform -n "pCylinder12" -p "VerticalRungs";
 	rename -uid "5DE98840-4F95-CD94-5116-C9B85077C87B";
 	setAttr ".t" -type "double3" 3.2375923092599908 2.669021446176755 3.3776827544223766 ;
 	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.65607024164351668 0.020356311743997262 ;
-	setAttr ".rp" -type "double3" 7.6254605213305569e-16 -5.8270743043521794e-16 0 ;
-	setAttr ".rpt" -type "double3" -7.6254605213305549e-16 0 -7.6254605213305569e-16 ;
-	setAttr ".sp" -type "double3" 2.8421709430404007e-14 -8.8817841970012523e-16 0 ;
-	setAttr ".spt" -type "double3" -2.7659163378270951e-14 3.0547098926490724e-16 0 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 -4.9303806576313238e-32 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 -4.9303806576313238e-32 0 ;
 createNode transform -n "pCylinder13" -p "VerticalRungs";
 	rename -uid "D5BD6F45-4945-7DD3-31EC-71B8F05036F1";
 	setAttr ".t" -type "double3" 3.1248557125696932 2.669021446176755 3.3776827544223766 ;
 	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.65607024164351668 0.020356311743997262 ;
-	setAttr ".rp" -type "double3" 7.6254605213305569e-16 -5.8270743043521794e-16 0 ;
-	setAttr ".rpt" -type "double3" -7.6254605213305549e-16 0 -7.6254605213305569e-16 ;
-	setAttr ".sp" -type "double3" 2.8421709430404007e-14 -8.8817841970012523e-16 0 ;
-	setAttr ".spt" -type "double3" -2.7659163378270951e-14 3.0547098926490724e-16 0 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 -4.9303806576313238e-32 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 -4.9303806576313238e-32 0 ;
 createNode transform -n "pCylinder14" -p "VerticalRungs";
 	rename -uid "764B340F-473C-B1F4-2387-18919AF54D65";
 	setAttr ".t" -type "double3" 3.0121191158793965 2.669021446176755 3.3776827544223766 ;
 	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.65607024164351668 0.020356311743997258 ;
-	setAttr ".rp" -type "double3" 3.8127302606652784e-16 5.8270743043521794e-16 -1.1571223549252214e-15 ;
-	setAttr ".rpt" -type "double3" -1.5383953809917492e-15 0 7.7584932885869339e-16 ;
-	setAttr ".sp" -type "double3" 1.4210854715202004e-14 8.8817841970012523e-16 -5.6843418860808015e-14 ;
-	setAttr ".spt" -type "double3" -1.3829581689135475e-14 -3.0547098926490724e-16 5.5686296505882796e-14 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 4.9303806576313238e-32 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 4.9303806576313238e-32 0 ;
 createNode transform -n "pCylinder15" -p "VerticalRungs";
 	rename -uid "19FC69F9-4B39-D6CF-8F44-B48CF6CC5E9B";
 	setAttr ".t" -type "double3" 2.899382519189099 2.669021446176755 3.3776827544223766 ;
 	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.026829704033119427 0.65607024164351668 0.020356311743997248 ;
-	setAttr ".rp" -type "double3" -3.8127302606652784e-16 1.748122291305654e-15 0 ;
-	setAttr ".rpt" -type "double3" 3.8127302606652774e-16 0 3.8127302606652784e-16 ;
-	setAttr ".sp" -type "double3" -1.4210854715202004e-14 2.6645352591003757e-15 0 ;
-	setAttr ".spt" -type "double3" 1.3829581689135475e-14 -9.1641296779472168e-16 0 ;
+	setAttr ".rp" -type "double3" 3.9979374458073385e-10 1.9721522630525295e-31 0 ;
+	setAttr ".rpt" -type "double3" -3.9979374458073374e-10 0 -3.9979374458073385e-10 ;
+	setAttr ".sp" -type "double3" 1.4901161193847656e-08 0 0 ;
+	setAttr ".spt" -type "double3" -1.4501367449266922e-08 1.9721522630525295e-31 0 ;
 parent -s -nc -r -add "|GameStand_Latest|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape17" "pCylinder18" ;
 parent -s -nc -r -add "|GameStand_Latest|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape17" "pCylinder19" ;
 parent -s -nc -r -add "|GameStand_Latest|ToyRack|ToyRackGrp|HorizontalRungs|pCylinder17|pCylinderShape17" "pCylinder20" ;
@@ -804,20 +828,20 @@ parent -s -nc -r -add "|GameStand_Latest|ToyRack|ToyRackGrp|VerticalRungs|pCylin
 parent -s -nc -r -add "|GameStand_Latest|ToyRack|ToyRackGrp|VerticalRungs|pCylinder10|pCylinderShape10" "pCylinder14" ;
 parent -s -nc -r -add "|GameStand_Latest|ToyRack|ToyRackGrp|VerticalRungs|pCylinder10|pCylinderShape10" "pCylinder15" ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "3603EB63-4119-7C0F-9F6A-B88CD61CD7B8";
-	setAttr -s 50 ".lnk";
-	setAttr -s 50 ".slnk";
+	rename -uid "A11B9E87-49DE-0F02-1B7A-34B97D106200";
+	setAttr -s 48 ".lnk";
+	setAttr -s 48 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "8758657E-474C-6148-C4EB-D6AECA131077";
-	setAttr ".bsdt[0].bscd" -type "Int32Array" 0 ;
+	rename -uid "CB0684A6-42F3-8314-4082-6C8FF92E32BD";
+	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "D42444BF-4FC7-5046-7A68-4B9F080AC5DE";
+	rename -uid "37FE2737-402F-BADA-B873-4D9E9FD89F9E";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "A01E48E4-4F32-7335-E5A3-87B2446BB97F";
+	rename -uid "6F20B7C8-4482-E290-6C90-028156A305D3";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "349B90C7-454F-F319-79C6-59857AC97141";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "8DC0325F-4B39-AA89-8BF6-37AEC9331EFA";
+	rename -uid "BC64B99B-402C-ADB8-D092-218B00354F3D";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "A2190F46-4684-D980-EBC3-F1B7552EAD69";
 	setAttr ".g" yes;
@@ -1030,7 +1054,7 @@ createNode script -n "tent_latest_uiConfigurationScriptNode";
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1319\n            -height 713\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1576\n            -height 874\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
 		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n"
@@ -1050,14 +1074,14 @@ createNode script -n "tent_latest_uiConfigurationScriptNode";
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n"
-		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
-		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
-		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n"
-		+ "                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 713\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 713\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -editorChanged \"updateModelPanelBar\" \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n"
+		+ "                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n"
+		+ "                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n"
+		+ "                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n"
+		+ "                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1576\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1576\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "tent_latest_sceneConfigurationScriptNode";
@@ -2050,8 +2074,11 @@ createNode reference -n "tent_Games_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"tent_Games_latestRN"
 		"tent_Games_latestRN" 0
-		"tent_Games_latestRN" 1
-		0 "|tent_Games_latest:tent_games" "|GameStand_Latest" "-s -r ";
+		"tent_Games_latestRN" 3
+		0 "|tent_Games_latest:tent_games" "|GameStand_Latest" "-s -r "
+		2 "|GameStand_Latest|tent_Games_latest:tent_games" "rotatePivot" " -type \"double3\" -4.15829431952436668 0 0"
+		
+		2 "|GameStand_Latest|tent_Games_latest:tent_games" "scalePivot" " -type \"double3\" -4.15829431952436668 0 0";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "luckycat_latestRN";
@@ -2059,13 +2086,27 @@ createNode reference -n "luckycat_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"luckycat_latestRN"
 		"luckycat_latestRN" 0
-		"luckycat_latestRN" 4
+		"luckycat_latestRN" 10
 		0 "|luckycat_latest:Cat_Controller" "|GameStand_Latest" "-s -r "
 		2 "|GameStand_Latest|luckycat_latest:Cat_Controller" "translate" " -type \"double3\" -1.9899336544097217 0.99456720739787485 2.24344230279454848"
 		
 		2 "|GameStand_Latest|luckycat_latest:Cat_Controller" "rotate" " -type \"double3\" 0 90 0"
 		
-		2 "|GameStand_Latest|luckycat_latest:Cat_Controller" "scale" " -type \"double3\" 0.37158344089061141 0.37158344089061141 0.37158344089061141";
+		2 "|GameStand_Latest|luckycat_latest:Cat_Controller" "scale" " -type \"double3\" 0.37158344089061141 0.37158344089061141 0.37158344089061141"
+		
+		2 "|GameStand_Latest|luckycat_latest:Cat_Controller" "rotatePivot" " -type \"double3\" 0 0.88259013326979929 0"
+		
+		2 "|GameStand_Latest|luckycat_latest:Cat_Controller" "rotatePivotTranslate" 
+		" -type \"double3\" 0 0 0"
+		2 "|GameStand_Latest|luckycat_latest:Cat_Controller" "scalePivot" " -type \"double3\" 0 0 0"
+		
+		2 "|GameStand_Latest|luckycat_latest:Cat_Controller" "scalePivotTranslate" 
+		" -type \"double3\" 0 0.88259013326979929 0"
+		2 "|GameStand_Latest|luckycat_latest:Cat_Controller|luckycat_latest:Cat_Controller1" 
+		"rotatePivot" " -type \"double3\" -0.078370213508605957 1.40446678921580315 0.070400774478912354"
+		
+		2 "|GameStand_Latest|luckycat_latest:Cat_Controller|luckycat_latest:Cat_Controller1" 
+		"scalePivot" " -type \"double3\" -0.078370213508605957 1.40446678921580315 0.070400774478912354";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "table_latestRN";
@@ -2073,13 +2114,41 @@ createNode reference -n "table_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"table_latestRN"
 		"table_latestRN" 0
-		"table_latestRN" 4
+		"table_latestRN" 16
 		0 "|table_latest:Table" "|GameStand_Latest" "-s -r "
 		2 "|GameStand_Latest|table_latest:Table" "translate" " -type \"double3\" 0 0.36720859520949389 1.70389552628366703"
 		
 		2 "|GameStand_Latest|table_latest:Table" "rotate" " -type \"double3\" 0 90 0"
 		
-		2 "|GameStand_Latest|table_latest:Table" "scale" " -type \"double3\" 1.62860217681435038 1.62860217681435038 1.62860217681435038";
+		2 "|GameStand_Latest|table_latest:Table" "scale" " -type \"double3\" 1.62860217681435038 1.62860217681435038 1.62860217681435038"
+		
+		2 "|GameStand_Latest|table_latest:Table" "rotatePivot" " -type \"double3\" 0 -0.35090526022521135 0"
+		
+		2 "|GameStand_Latest|table_latest:Table" "rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		
+		2 "|GameStand_Latest|table_latest:Table" "scalePivot" " -type \"double3\" 0 0 0"
+		
+		2 "|GameStand_Latest|table_latest:Table" "scalePivotTranslate" " -type \"double3\" 0 -0.35090526022521135 0"
+		
+		2 "|GameStand_Latest|table_latest:Table|table_latest:Table_Grp" "rotatePivot" 
+		" -type \"double3\" -0.012145638465881348 0.55823107250034809 0"
+		2 "|GameStand_Latest|table_latest:Table|table_latest:Table_Grp" "scalePivot" 
+		" -type \"double3\" -0.012145638465881348 0.55823107250034809 0"
+		2 "|GameStand_Latest|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop" 
+		"rotatePivot" " -type \"double3\" -0.012145638465881348 1.07134711742401123 0"
+		2 "|GameStand_Latest|table_latest:Table|table_latest:Table_Grp|table_latest:tabletop" 
+		"scalePivot" " -type \"double3\" -0.012145638465881348 1.07134711742401123 0"
+		2 "|GameStand_Latest|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left" 
+		"rotatePivot" " -type \"double3\" -0.0018352270126342773 0.54884489066898823 1.32001900672912598"
+		
+		2 "|GameStand_Latest|table_latest:Table|table_latest:Table_Grp|table_latest:leg_left" 
+		"scalePivot" " -type \"double3\" -0.0018352270126342773 0.54884489066898823 1.32001900672912598"
+		
+		2 "|GameStand_Latest|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right" 
+		"rotatePivot" " -type \"double3\" -0.0018352270126342773 0.54884489066898823 -1.31230056285858154"
+		
+		2 "|GameStand_Latest|table_latest:Table|table_latest:Table_Grp|table_latest:leg_right" 
+		"scalePivot" " -type \"double3\" -0.0018352270126342773 0.54884489066898823 -1.31230056285858154";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "toy_rack_latestRN";
@@ -2111,7 +2180,7 @@ createNode reference -n "toy_rack_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"toy_rack_latestRN"
 		"toy_rack_latestRN" 0
-		"toy_rack_latestRN" 256
+		"toy_rack_latestRN" 225
 		0 "|toy_rack_latest:ToyRack" "|GameStand_Latest" "-s -r "
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack" "translate" " -type \"double3\" 0 0 0"
 		
@@ -2119,190 +2188,41 @@ createNode reference -n "toy_rack_latestRN";
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack" "scale" " -type \"double3\" 1 1 1"
 		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack" "rotatePivot" " -type \"double3\" -3.47858847568790575 0 3.37916256435856788"
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack" "rotatePivot" " -type \"double3\" 0 0 0"
 		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack" "scalePivot" " -type \"double3\" -3.47858847568790575 0 3.37916256435856788"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp" 
-		"rotatePivot" " -type \"double3\" -3.49029940831037599 2.64967420995535496 3.37916256267698412"
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack" "scalePivot" " -type \"double3\" 0 0 0"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp" 
-		"scalePivot" " -type \"double3\" -3.49029940831037599 2.64967420995535496 3.37916256267698412"
+		"rotatePivot" " -type \"double3\" -3.49039697647094727 2.64967411553983956 3.37916254997253418"
+		
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp" 
+		"scalePivot" " -type \"double3\" -3.49039697647094727 2.64967411553983956 3.37916254997253418"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand" 
-		"rotatePivot" " -type \"double3\" -3.85052483690098191 2.6741442650685463 3.37916256435856788"
+		"rotatePivot" " -type \"double3\" -3.85052478313446045 2.67414426803588867 3.37916231155395508"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand" 
-		"scalePivot" " -type \"double3\" -3.85052483690098191 2.6741442650685463 3.37916256435856788"
+		"scalePivot" " -type \"double3\" -3.85052478313446045 2.67414426803588867 3.37916231155395508"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts" " -s 26"
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[0]" " -type \"float3\" -4.57539180000000023 4.0729318000000001 4.06784630000000025"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[1]" " -type \"float3\" -3.87564179999999991 4.0729318000000001 4.37916229999999995"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[2]" " -type \"float3\" -3.16117859999999995 4.0729318000000001 4.104692"
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[3]" " -type \"float3\" -2.85052489999999992 4.0729318000000001 3.40521619999999992"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[4]" " -type \"float3\" -3.12565759999999981 4.0729318000000001 2.69047860000000005"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[5]" " -type \"float3\" -3.82540769999999997 4.0729318000000001 2.37916280000000002"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[6]" " -type \"float3\" -4.53987120000000033 4.0729318000000001 2.6536325999999999"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[7]" " -type \"float3\" -4.85052489999999992 4.0729318000000001 3.35310839999999999"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[8]" " -type \"float3\" -4.57539180000000023 2.67414379999999996 4.06784630000000025"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[9]" " -type \"float3\" -3.87564179999999991 2.67414379999999996 4.37916229999999995"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[10]" " -type \"float3\" -3.16117859999999995 2.67414379999999996 4.104692"
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[11]" " -type \"float3\" -2.85052489999999992 2.67414379999999996 3.40521619999999992"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[12]" " -type \"float3\" -3.12565759999999981 2.67414379999999996 2.69047860000000005"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[13]" " -type \"float3\" -3.82540769999999997 2.67414379999999996 2.37916280000000002"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[14]" " -type \"float3\" -4.53987120000000033 2.67414379999999996 2.6536325999999999"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[15]" " -type \"float3\" -4.85052489999999992 2.67414379999999996 3.35310839999999999"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[16]" " -type \"float3\" -4.57539180000000023 1.27535679999999996 4.06784630000000025"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[17]" " -type \"float3\" -3.87564179999999991 1.27535679999999996 4.37916229999999995"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[18]" " -type \"float3\" -3.16117859999999995 1.27535679999999996 4.104692"
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[19]" " -type \"float3\" -2.85052489999999992 1.27535679999999996 3.40521619999999992"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[20]" " -type \"float3\" -3.12565759999999981 1.27535679999999996 2.69047860000000005"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[21]" " -type \"float3\" -3.82540769999999997 1.27535679999999996 2.37916280000000002"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[22]" " -type \"float3\" -4.53987120000000033 1.27535679999999996 2.6536325999999999"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[23]" " -type \"float3\" -4.85052489999999992 1.27535679999999996 3.35310839999999999"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[24]" " -type \"float3\" -3.85052489999999992 4.0729318000000001 3.37916229999999995"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand|toy_rack_latest:LeftStandShape" 
-		"pnts[25]" " -type \"float3\" -3.85052489999999992 1.27535679999999996 3.37916229999999995"
+		"pt[0:25]" (" -s 26 -type \"float3\" -4.57539180000000023 4.0729318000000001 4.06784630000000025 -3.87564179999999991 4.0729318000000001 4.37916229999999995 -3.16117859999999995 4.0729318000000001 4.104692 -2.85052489999999992 4.0729318000000001 3.40521619999999992 -3.12565759999999981 4.0729318000000001 2.69047860000000005 -3.82540769999999997 4.0729318000000001 2.37916280000000002 -4.53987120000000033 4.0729318000000001 2.6536325999999999 -4.85052489999999992 4.0729318000000001 3.35310839999999999 -4.57539180000000023 2.67414379999999996 4.06784630000000025 -3.87564179999999991 2.67414379999999996 4.37916229999999995 -3.16117859999999995 2.67414379999999996 4.104692 -2.85052489999999992 2.67414379999999996 3.40521619999999992 -3.12565759999999981 2.67414379999999996 2.69047860000000005 -3.82540769999999997 2.67414379999999996 2.37916280000000002 -4.53987120000000033 2.67414379999999996 2.6536325999999999 -4.85052489999999992 2.67414379999999996 3.35310839999999999 -4.57539180000000023 1.27535679999999996 4.067846300000000"
+		+ "25 -3.87564179999999991 1.27535679999999996 4.37916229999999995 -3.16117859999999995 1.27535679999999996 4.104692 -2.85052489999999992 1.27535679999999996 3.40521619999999992 -3.12565759999999981 1.27535679999999996 2.69047860000000005 -3.82540769999999997 1.27535679999999996 2.37916280000000002 -4.53987120000000033 1.27535679999999996 2.6536325999999999 -4.85052489999999992 1.27535679999999996 3.35310839999999999 -3.85052489999999992 4.0729318000000001 3.37916229999999995 -3.85052489999999992 1.27535679999999996 3.37916229999999995"
+		)
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1" 
+		"rotatePivot" " -type \"double3\" -3.13171160221099854 2.64539027214050293 3.37916254997253418"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1" 
-		"rotatePivot" " -type \"double3\" -3.13171156902793513 2.64539075355525499 3.37916256435856788"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1" 
-		"scalePivot" " -type \"double3\" -3.13171156902793513 2.64539075355525499 3.37916256435856788"
+		"scalePivot" " -type \"double3\" -3.13171160221099854 2.64539027214050293 3.37916254997253418"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts" " -s 26"
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[0]" " -type \"float3\" -3.85759879999999988 4.00604579999999988 4.06631989999999988"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[1]" " -type \"float3\" -3.15827109999999989 4.00604579999999988 4.37916279999999958"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[2]" " -type \"float3\" -2.44338509999999998 4.00604579999999988 4.1062183000000001"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[3]" " -type \"float3\" -2.13171169999999988 4.00604579999999988 3.40737490000000021"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[4]" " -type \"float3\" -2.40582470000000015 4.00604579999999988 2.69200490000000014"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[5]" " -type \"float3\" -3.10515210000000019 4.00604579999999988 2.37916280000000002"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[6]" " -type \"float3\" -3.8200381000000001 4.00604579999999988 2.65210679999999988"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[7]" " -type \"float3\" -4.13171149999999976 4.00604579999999988 3.35095020000000021"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[8]" " -type \"float3\" -3.85759879999999988 2.64539070000000009 4.06631989999999988"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[9]" " -type \"float3\" -3.15827109999999989 2.64539070000000009 4.37916279999999958"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[10]" " -type \"float3\" -2.44338509999999998 2.64539070000000009 4.1062183000000001"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[11]" " -type \"float3\" -2.13171169999999988 2.64539070000000009 3.40737490000000021"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[12]" " -type \"float3\" -2.40582470000000015 2.64539070000000009 2.69200490000000014"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[13]" " -type \"float3\" -3.10515210000000019 2.64539070000000009 2.37916280000000002"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[14]" " -type \"float3\" -3.8200381000000001 2.64539070000000009 2.65210679999999988"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[15]" " -type \"float3\" -4.13171149999999976 2.64539070000000009 3.35095020000000021"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[16]" " -type \"float3\" -3.85759879999999988 1.28473449999999989 4.06631989999999988"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[17]" " -type \"float3\" -3.15827109999999989 1.28473449999999989 4.37916279999999958"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[18]" " -type \"float3\" -2.44338509999999998 1.28473449999999989 4.1062183000000001"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[19]" " -type \"float3\" -2.13171169999999988 1.28473449999999989 3.40737490000000021"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[20]" " -type \"float3\" -2.40582470000000015 1.28473449999999989 2.69200490000000014"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[21]" " -type \"float3\" -3.10515210000000019 1.28473449999999989 2.37916280000000002"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[22]" " -type \"float3\" -3.8200381000000001 1.28473449999999989 2.65210679999999988"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[23]" " -type \"float3\" -4.13171149999999976 1.28473449999999989 3.35095020000000021"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[24]" " -type \"float3\" -3.1317115000000002 4.00604579999999988 3.37916250000000007"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:LeftStand1|toy_rack_latest:LeftStand1Shape" 
-		"pnts[25]" " -type \"float3\" -3.1317115000000002 1.28473449999999989 3.37916250000000007"
+		"pt[0:25]" (" -s 26 -type \"float3\" -3.85759879999999988 4.00604579999999988 4.06631989999999988 -3.15827109999999989 4.00604579999999988 4.37916279999999958 -2.44338509999999998 4.00604579999999988 4.1062183000000001 -2.13171169999999988 4.00604579999999988 3.40737490000000021 -2.40582470000000015 4.00604579999999988 2.69200490000000014 -3.10515210000000019 4.00604579999999988 2.37916280000000002 -3.8200381000000001 4.00604579999999988 2.65210679999999988 -4.13171149999999976 4.00604579999999988 3.35095020000000021 -3.85759879999999988 2.64539070000000009 4.06631989999999988 -3.15827109999999989 2.64539070000000009 4.37916279999999958 -2.44338509999999998 2.64539070000000009 4.1062183000000001 -2.13171169999999988 2.64539070000000009 3.40737490000000021 -2.40582470000000015 2.64539070000000009 2.69200490000000014 -3.10515210000000019 2.64539070000000009 2.37916280000000002 -3.8200381000000001 2.64539070000000009 2.65210679999999988 -4.13171149999999976 2.64539070000000009 3.35095020000000021 -3.85759879999999988 1.2847344"
+		+ "9999999989 4.06631989999999988 -3.15827109999999989 1.28473449999999989 4.37916279999999958 -2.44338509999999998 1.28473449999999989 4.1062183000000001 -2.13171169999999988 1.28473449999999989 3.40737490000000021 -2.40582470000000015 1.28473449999999989 2.69200490000000014 -3.10515210000000019 1.28473449999999989 2.37916280000000002 -3.8200381000000001 1.28473449999999989 2.65210679999999988 -4.13171149999999976 1.28473449999999989 3.35095020000000021 -3.1317115000000002 4.00604579999999988 3.37916250000000007 -3.1317115000000002 1.28473449999999989 3.37916250000000007"
+		)
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs" 
+		"rotatePivot" " -type \"double3\" -3.48404716275918291 2.66426582406788715 3.3791625639587739"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs" 
-		"rotatePivot" " -type \"double3\" -3.47858847568790575 1.17526755810120109 3.37916256435856788"
-		
-		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs" 
-		"scalePivot" " -type \"double3\" -3.47858847568790575 1.17526755810120109 3.37916256435856788"
+		"scalePivot" " -type \"double3\" -3.48404716275918291 2.66426582406788715 3.3791625639587739"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder17" 
 		"translate" " -type \"double3\" -3.48404716275918291 0.40491110988052631 3.37916256435856788"
@@ -2313,13 +2233,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder17" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder17" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder17" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder17" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder18" 
 		"translate" " -type \"double3\" -3.48404716275918291 1.05091974394980459 3.37916256435856788"
 		
@@ -2329,13 +2250,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder18" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder18" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder18" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder18" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder19" 
 		"translate" " -type \"double3\" -3.48404716275918291 1.69692837801908292 3.37916256435856788"
 		
@@ -2345,13 +2267,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder19" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder19" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder19" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder19" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder20" 
 		"translate" " -type \"double3\" -3.48404716275918291 2.34293701208836058 3.37916256435856788"
 		
@@ -2360,6 +2283,15 @@ createNode reference -n "toy_rack_latestRN";
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder20" 
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder20" 
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder20" 
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder20" 
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder20" 
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder21" 
 		"translate" " -type \"double3\" -3.48404716275918291 2.98894564615763914 3.37916256435856788"
 		
@@ -2369,13 +2301,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder21" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder21" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder21" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder21" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder22" 
 		"translate" " -type \"double3\" -3.48404716275918291 3.6349542802269168 3.37916256435856788"
 		
@@ -2384,6 +2317,15 @@ createNode reference -n "toy_rack_latestRN";
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder22" 
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder22" 
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder22" 
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder22" 
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder22" 
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder23" 
 		"translate" " -type \"double3\" -3.48404716275918291 4.28096291429619491 3.37916256435856788"
 		
@@ -2393,13 +2335,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder23" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder23" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder23" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder23" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder24" 
 		"translate" " -type \"double3\" -3.48404716275918291 4.92697154836547213 3.37916256435856788"
 		
@@ -2409,13 +2352,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder24" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder24" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder24" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder24" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder9" 
 		"translate" " -type \"double3\" -3.48404716275918291 0.08023128779077443 3.37916256435856788"
 		
@@ -2425,13 +2369,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder9" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder9" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder9" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder9" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder8" 
 		"translate" " -type \"double3\" -3.48404716275918291 0.72623992186005248 3.37916256435856788"
 		
@@ -2440,6 +2385,15 @@ createNode reference -n "toy_rack_latestRN";
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder8" 
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder8" 
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder8" 
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder8" 
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder8" 
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder7" 
 		"translate" " -type \"double3\" -3.48404716275918291 1.37224855592933093 3.37916256435856788"
 		
@@ -2449,13 +2403,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder7" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder7" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder7" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder7" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder6" 
 		"translate" " -type \"double3\" -3.48404716275918291 2.01825718999860904 3.37916256435856788"
 		
@@ -2465,13 +2420,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder6" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder6" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder6" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder6" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder5" 
 		"translate" " -type \"double3\" -3.48404716275918291 2.66426582406788715 3.37916256435856788"
 		
@@ -2481,13 +2437,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder5" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder5" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder5" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder5" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder4" 
 		"translate" " -type \"double3\" -3.48404716275918291 3.3102744581371657 3.37916256435856788"
 		
@@ -2497,13 +2454,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder4" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder4" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder4" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder4" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder3" 
 		"translate" " -type \"double3\" -3.48404716275918291 3.95628309220644292 3.37916256435856788"
 		
@@ -2513,13 +2471,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder3" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder3" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder3" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder3" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder2" 
 		"translate" " -type \"double3\" -3.48404716275918291 4.60229172627572147 3.37916256435856788"
 		
@@ -2528,6 +2487,15 @@ createNode reference -n "toy_rack_latestRN";
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder2" 
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder2" 
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder2" 
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder2" 
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder2" 
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder1" 
 		"translate" " -type \"double3\" -3.48404716275918291 5.24830036034499958 3.37916256435856788"
 		
@@ -2536,11 +2504,20 @@ createNode reference -n "toy_rack_latestRN";
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder1" 
 		"scale" " -type \"double3\" 0.026829704033119427 0.090687090076931945 0.046658684155789713"
 		
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder1" 
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder1" 
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder1" 
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder1" 
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs" 
-		"rotatePivot" " -type \"double3\" -3.85052483690098191 0.085580539703270314 3.37916256435856788"
+		"rotatePivot" " -type \"double3\" -3.49382758743119615 2.66902144617675496 3.37768275402258311"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs" 
-		"scalePivot" " -type \"double3\" -3.85052483690098191 0.085580539703270314 3.37916256435856788"
+		"scalePivot" " -type \"double3\" -3.49382758743119615 2.66902144617675496 3.37768275402258311"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder10" 
 		"translate" " -type \"double3\" -3.2119860957054529 2.66902144617675496 3.37768275442237664"
@@ -2551,13 +2528,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.65607024164351668 0.020356311743997262"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder10" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder10" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder10" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder10" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder11" 
 		"translate" " -type \"double3\" -3.32472269239575047 2.66902144617675496 3.37768275442237664"
 		
@@ -2567,11 +2545,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.65607024164351668 0.020356311743997262"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder11" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder11" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder11" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
+		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder11" 
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder12" 
 		"translate" " -type \"double3\" -3.43745928908604759 2.66902144617675496 3.37768275442237664"
 		
@@ -2581,13 +2562,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.65607024164351668 0.020356311743997262"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder12" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder12" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder12" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder12" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder13" 
 		"translate" " -type \"double3\" -3.55019588577634515 2.66902144617675496 3.37768275442237664"
 		
@@ -2597,13 +2579,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.65607024164351668 0.020356311743997262"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder13" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder13" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder13" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder13" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder14" 
 		"translate" " -type \"double3\" -3.66293248246664227 2.66902144617675496 3.37768275442237664"
 		
@@ -2613,13 +2596,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.65607024164351668 0.020356311743997258"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder14" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder14" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder14" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder14" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder15" 
 		"translate" " -type \"double3\" -3.77566907915693939 2.66902144617675496 3.37768275442237664"
 		
@@ -2629,13 +2613,14 @@ createNode reference -n "toy_rack_latestRN";
 		"scale" " -type \"double3\" 0.026829704033119427 0.65607024164351668 0.020356311743997248"
 		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder15" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 3.9979374458073385e-10 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder15" 
-		"rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -3.9979374458073374e-10 0 -3.9979374458073385e-10"
+		
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder15" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 1.4901161193847656e-08 0 0"
 		2 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:VerticalRungs|toy_rack_latest:pCylinder15" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivotTranslate" " -type \"double3\" -1.4501367449266922e-08 0 0"
 		3 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder17|toy_rack_latest:pCylinderShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|GameStand_Latest|toy_rack_latest:ToyRack|toy_rack_latest:ToyRackGrp|toy_rack_latest:HorizontalRungs|toy_rack_latest:pCylinder18|toy_rack_latest:pCylinderShape1.instObjGroups" 
@@ -2731,8 +2716,8 @@ createNode reference -n "toy_rack_latestRN";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "ring_toss_latestRN";
-	rename -uid "8E8CC5CA-4C69-87CB-5E46-10828F9F2E86";
-	setAttr -s 9 ".phl";
+	rename -uid "0074550F-4DAC-16A1-AACB-B98761CDF2C7";
+	setAttr -s 18 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -2742,802 +2727,297 @@ createNode reference -n "ring_toss_latestRN";
 	setAttr ".phl[7]" 0;
 	setAttr ".phl[8]" 0;
 	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"ring_toss_latestRN"
 		"ring_toss_latestRN" 0
-		"ring_toss_latestRN" 297
+		"ring_toss_latestRN" 64
 		0 "|ring_toss_latest:RingToss" "|GameStand_Latest" "-s -r "
-		2 "|GameStand_Latest|ring_toss_latest:RingToss" "translate" " -type \"double3\" 0 0 0"
+		2 "|GameStand_Latest|ring_toss_latest:RingToss" "translate" " -type \"double3\" 0.44930243191584895 1.87010632731382542 0.49276161357881731"
 		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss" "rotatePivot" " -type \"double3\" 0 2.19653483956467444 1.98538274617060062"
+		2 "|GameStand_Latest|ring_toss_latest:RingToss" "rotatePivot" " -type \"double3\" 0 0 0.87233942456863489"
 		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss" "scalePivot" " -type \"double3\" 0 2.19653483956467444 1.98538274617060062"
+		2 "|GameStand_Latest|ring_toss_latest:RingToss" "scalePivot" " -type \"double3\" 0 0 0.87233942456863489"
 		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp" 
-		"rotatePivot" " -type \"double3\" 0 1.87612992376352117 1.61914161086298636"
+		"rotatePivot" " -type \"double3\" 0.0043172894514985627 0.32040491617007544 0.75128430472236007"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp" 
-		"scalePivot" " -type \"double3\" 0 1.87612992376352117 1.61914161086298636"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3" 
-		"rotatePivot" " -type \"double3\" 0.3314759384744651 1.87612989248316153 1.5433342534292005"
+		"scalePivot" " -type \"double3\" 0.0043172894514985627 0.32040491617007544 0.75128430472236007"
 		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3" 
-		"scalePivot" " -type \"double3\" 0.3314759384744651 1.87612989248316153 1.5433342534292005"
+		"rotatePivot" " -type \"double3\" 0.33147591352462769 -2.9802322387695313e-08 0.43029093742370605"
 		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts" " -s 232"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[0]" " -type \"float3\" -0.68453841999999998 1.40352030000000005 1.8734573000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[1]" " -type \"float3\" -0.71766996000000005 1.40919050000000001 1.88422249999999991"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[2]" " -type \"float3\" -0.56098091999999999 1.40919050000000001 2.1917418999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[3]" " -type \"float3\" -0.53279752000000002 1.40352030000000005 2.17126559999999991"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[4]" " -type \"float3\" -0.73682409999999998 1.40352030000000005 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[5]" " -type \"float3\" -0.77166062999999996 1.40919050000000001 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[6]" " -type \"float3\" -0.68453841999999998 1.40352030000000005 1.8734573000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[7]" " -type \"float3\" -0.84433353 1.47892749999999995 1.92537779999999992"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[8]" " -type \"float3\" -0.66872734 1.47892749999999995 2.27002430000000022"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[9]" " -type \"float3\" -0.31693184000000002 1.40919050000000001 2.435791"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[10]" " -type \"float3\" -0.29645540999999997 1.40352030000000005 2.40760759999999996"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[11]" " -type \"float3\" -0.68453777000000005 1.40352030000000005 1.21321140000000005"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[12]" " -type \"float3\" -0.71766925000000004 1.40919050000000001 1.20244620000000002"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[13]" " -type \"float3\" -0.90484249999999999 1.47892749999999995 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[14]" " -type \"float3\" -0.39521420000000002 1.47892749999999995 2.54353760000000007"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[15]" " -type \"float3\" -0.94485443999999996 1.5875454 1.95803919999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[16]" " -type \"float3\" -0.75423556999999997 1.5875454 2.33214969999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[17]" " -type \"float3\" -0.0094121647999999992 1.40919050000000001 2.59248019999999979"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[18]" " -type \"float3\" 0.0013529256 1.40352030000000005 2.55934859999999986"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[19]" " -type \"float3\" -0.53279692000000001 1.40352030000000005 0.91540319000000003"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[20]" " -type \"float3\" -0.56098026000000001 1.40919050000000001 0.89492678999999997"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[21]" " -type \"float3\" -0.84433281000000004 1.47892749999999995 1.16129090000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[22]" " -type \"float3\" -1.01053639999999989 1.5875454 1.5433342000000001"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[23]" " -type \"float3\" -0.050567668000000003 1.47892749999999995 2.71914360000000022"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[24]" " -type \"float3\" -0.45733955999999998 1.5875454 2.62904550000000015"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[25]" " -type \"float3\" -1.00939289999999993 1.72441209999999989 1.97900889999999996"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[26]" " -type \"float3\" -0.80913520000000005 1.72441209999999989 2.37203670000000022"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[27]" " -type \"float3\" 0.33147594000000002 1.40919050000000001 2.64647150000000009"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[28]" " -type \"float3\" 0.33147594000000002 1.40352030000000005 2.6116347000000002"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[29]" " -type \"float3\" 0.0013529256 1.40352030000000005 2.55934859999999986"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[30]" " -type \"float3\" -0.29645505999999999 1.40352030000000005 0.67906129000000004"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[31]" " -type \"float3\" -0.31693146 1.40919050000000001 0.65087795000000004"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[32]" " -type \"float3\" -0.53279692000000001 1.40352030000000005 0.91540319000000003"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[33]" " -type \"float3\" -0.66872673999999999 1.47892749999999995 0.81664442999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[34]" " -type \"float3\" -0.94485359999999996 1.5875454 1.12862960000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[35]" " -type \"float3\" -1.078396 1.72441209999999989 1.5433342000000001"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[36]" " -type \"float3\" 0.33147594000000002 1.47892749999999995 2.7796533000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[37]" " -type \"float3\" -0.083228886000000002 1.5875454 2.81966450000000002"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[38]" " -type \"float3\" -0.49722648000000003 1.72441209999999989 2.68394520000000014"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[39]" " -type \"float3\" -1.03163120000000008 1.87612990000000002 1.98623470000000002"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[40]" " -type \"float3\" -0.82805227999999997 1.87612990000000002 2.38578080000000003"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[41]" " -type \"float3\" 0.67236406000000004 1.40919050000000001 2.59247989999999984"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[42]" " -type \"float3\" 0.66159897999999995 1.40352030000000005 2.55934859999999986"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[43]" " -type \"float3\" 0.0013530963999999999 1.40352030000000005 0.52732044"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[44]" " -type \"float3\" -0.0094119654999999993 1.40919050000000001 0.49418889999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[45]" " -type \"float3\" -0.39521381 1.47892749999999995 0.54313153000000003"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[46]" " -type \"float3\" -0.75423490999999998 1.5875454 0.7545191"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[47]" " -type \"float3\" -1.009392 1.72441209999999989 1.10765979999999997"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[48]" " -type \"float3\" -1.10177890000000001 1.87612990000000002 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[49]" " -type \"float3\" 0.71351956999999999 1.47892749999999995 2.7191434000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[50]" " -type \"float3\" 0.33147594000000002 1.5875454 2.88534740000000012"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[51]" " -type \"float3\" -0.10419869 1.72441209999999989 2.884203"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[52]" " -type \"float3\" -0.51097059 1.87612990000000002 2.70286250000000017"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[53]" " -type \"float3\" -1.00939289999999993 2.02784750000000003 1.97900889999999996"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[54]" " -type \"float3\" -0.80913520000000005 2.02784750000000003 2.37203670000000022"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[55]" " -type \"float3\" 0.97988361000000002 1.40919050000000001 2.43579079999999992"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[56]" " -type \"float3\" 0.95940720999999995 1.40352030000000005 2.40760759999999996"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[57]" " -type \"float3\" 0.95940720999999995 1.40352030000000005 2.40760759999999996"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[58]" " -type \"float3\" 0.33147597000000001 1.40352030000000005 0.47503412"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[59]" " -type \"float3\" 0.33147597000000001 1.40919050000000001 0.44019759000000003"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[60]" " -type \"float3\" -0.050567440999999998 1.47892749999999995 0.36752546000000003"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[61]" " -type \"float3\" -0.45733910999999999 1.5875454 0.45762342"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[62]" " -type \"float3\" -0.80913442000000002 1.72441209999999989 0.71463220999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[63]" " -type \"float3\" -1.03163040000000006 1.87612990000000002 1.10043420000000003"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[64]" " -type \"float3\" -1.078396 2.02784750000000003 1.5433342000000001"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[65]" " -type \"float3\" 1.058166 1.47892749999999995 2.5435371"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[66]" " -type \"float3\" 0.74618077000000005 1.5875454 2.81966450000000002"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[67]" " -type \"float3\" 0.33147594000000002 1.72441209999999989 2.953207"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[68]" " -type \"float3\" -0.11142438 1.87612990000000002 2.90644120000000017"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[69]" " -type \"float3\" -0.49722648000000003 2.02784750000000003 2.68394520000000014"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[70]" " -type \"float3\" -0.94485443999999996 2.16471429999999998 1.95803919999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[71]" " -type \"float3\" -0.75423556999999997 2.16471429999999998 2.33214969999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[72]" " -type \"float3\" 1.22393250000000009 1.40919050000000001 2.1917418999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[73]" " -type \"float3\" 1.195749 1.40352030000000005 2.17126559999999991"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[74]" " -type \"float3\" 0.66159886000000001 1.40352030000000005 0.52732044"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[75]" " -type \"float3\" 0.672364 1.40919050000000001 0.49418889999999999"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[76]" " -type \"float3\" 0.33147597000000001 1.47892749999999995 0.30701566000000002"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[77]" " -type \"float3\" -0.083228654999999999 1.5875454 0.26700455000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[78]" " -type \"float3\" -0.49722597000000002 1.72441209999999989 0.40272379000000003"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[79]" " -type \"float3\" -0.82805163000000004 1.87612990000000002 0.70088815999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[80]" " -type \"float3\" -1.009392 2.02784750000000003 1.10765979999999997"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[81]" " -type \"float3\" -1.01053639999999989 2.16471429999999998 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[82]" " -type \"float3\" 1.3316789 1.47892749999999995 2.27002430000000022"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[83]" " -type \"float3\" 1.12029139999999994 1.5875454 2.62904550000000015"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[84]" " -type \"float3\" 0.76715058000000003 1.72441209999999989 2.8842026999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[85]" " -type \"float3\" 0.33147594000000002 1.87612990000000002 2.97658969999999989"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[86]" " -type \"float3\" -0.10419869 2.02784750000000003 2.884203"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[87]" " -type \"float3\" -0.45733955999999998 2.16471429999999998 2.62904550000000015"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[88]" " -type \"float3\" -0.84433365000000005 2.27333210000000019 1.92537779999999992"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[89]" " -type \"float3\" -0.66872746000000005 2.27333210000000019 2.27002449999999989"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[90]" " -type \"float3\" 1.3806216 1.40919050000000001 1.88422230000000002"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[91]" " -type \"float3\" 1.34748979999999996 1.40352030000000005 1.87345720000000004"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[92]" " -type \"float3\" 1.34748979999999996 1.40352030000000005 1.87345720000000004"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[93]" " -type \"float3\" 0.95940709000000002 1.40352030000000005 0.67906116999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[94]" " -type \"float3\" 0.97988343 1.40919050000000001 0.65087782999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[95]" " -type \"float3\" 0.71351945000000006 1.47892749999999995 0.36752533999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[96]" " -type \"float3\" 0.33147597000000001 1.5875454 0.20132178000000001"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[97]" " -type \"float3\" -0.10419842999999999 1.72441209999999989 0.20246618999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[98]" " -type \"float3\" -0.51097006 1.87612990000000002 0.38380671"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[99]" " -type \"float3\" -0.80913442000000002 2.02784750000000003 0.71463220999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[100]" " -type \"float3\" -0.94485359999999996 2.16471429999999998 1.12862960000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[101]" " -type \"float3\" -0.90484262000000004 2.27333210000000019 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[102]" " -type \"float3\" 1.507285 1.47892749999999995 1.92537770000000008"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[103]" " -type \"float3\" 1.41718710000000003 1.5875454 2.33214949999999988"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[104]" " -type \"float3\" 1.16017820000000005 1.72441209999999989 2.68394520000000014"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[105]" " -type \"float3\" 0.77437626999999998 1.87612990000000002 2.90644120000000017"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[106]" " -type \"float3\" 0.33147594000000002 2.02784750000000003 2.953207"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[107]" " -type \"float3\" -0.083228886000000002 2.16471429999999998 2.81966450000000002"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[108]" " -type \"float3\" -0.39521432000000001 2.27333210000000019 2.54353760000000007"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[109]" " -type \"float3\" -0.71766996000000005 2.3430692999999998 1.88422249999999991"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[110]" " -type \"float3\" -0.56098091999999999 2.3430692999999998 2.1917418999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[111]" " -type \"float3\" 1.43461280000000002 1.40919050000000001 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[112]" " -type \"float3\" 1.39977620000000003 1.40352030000000005 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[113]" " -type \"float3\" 1.195749 1.40352030000000005 0.91540312999999995"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[114]" " -type \"float3\" 1.22393240000000003 1.40919050000000001 0.89492673"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[115]" " -type \"float3\" 1.05816580000000005 1.47892749999999995 0.54313140999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[116]" " -type \"float3\" 0.74618065 1.5875454 0.26700443000000001"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[117]" " -type \"float3\" 0.331476 1.72441209999999989 0.13346219000000001"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[118]" " -type \"float3\" -0.11142413 1.87612990000000002 0.18022788000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[119]" " -type \"float3\" -0.49722597000000002 2.02784750000000003 0.40272379000000003"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[120]" " -type \"float3\" -0.75423490999999998 2.16471429999999998 0.7545191"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[121]" " -type \"float3\" -0.84433292999999998 2.27333210000000019 1.16129079999999996"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[122]" " -type \"float3\" -0.77166062999999996 2.3430692999999998 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[123]" " -type \"float3\" 1.5677947000000001 1.47892749999999995 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[124]" " -type \"float3\" 1.60780579999999995 1.5875454 1.958039"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[125]" " -type \"float3\" 1.47208669999999997 1.72441209999999989 2.3720365000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[126]" " -type \"float3\" 1.17392230000000009 1.87612990000000002 2.70286230000000005"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[127]" " -type \"float3\" 0.76715058000000003 2.02784750000000003 2.8842026999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[128]" " -type \"float3\" 0.33147594000000002 2.16471429999999998 2.88534740000000012"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[129]" " -type \"float3\" -0.050567694000000003 2.27333210000000019 2.71914390000000017"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[130]" " -type \"float3\" -0.31693184000000002 2.3430692999999998 2.435791"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[131]" " -type \"float3\" -0.53279752000000002 2.34873960000000004 2.17126559999999991"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[132]" " -type \"float3\" -0.68453841999999998 2.34873960000000004 1.8734573000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[133]" " -type \"float3\" 1.3806216 1.40919050000000001 1.20244620000000002"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[134]" " -type \"float3\" 1.34748979999999996 1.40352030000000005 1.21321129999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[135]" " -type \"float3\" 1.34748979999999996 1.40352030000000005 1.21321129999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[136]" " -type \"float3\" 1.3316789 1.47892749999999995 0.81664437000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[137]" " -type \"float3\" 1.12029120000000004 1.5875454 0.45762330000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[138]" " -type \"float3\" 0.76715045999999998 1.72441209999999989 0.20246618999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[139]" " -type \"float3\" 0.331476 1.87612990000000002 0.11007917"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[140]" " -type \"float3\" -0.10419842999999999 2.02784750000000003 0.20246618999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[141]" " -type \"float3\" -0.45733910999999999 2.16471429999999998 0.45762342"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[142]" " -type \"float3\" -0.66872673999999999 2.27333210000000019 0.81664437000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[143]" " -type \"float3\" -0.71766925000000004 2.3430692999999998 1.20244620000000002"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[144]" " -type \"float3\" -0.73682409999999998 2.34873960000000004 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[145]" " -type \"float3\" -0.68453841999999998 2.34873960000000004 1.8734573000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[146]" " -type \"float3\" 1.507285 1.47892749999999995 1.16129079999999996"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[147]" " -type \"float3\" 1.67348859999999999 1.5875454 1.5433342000000001"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[148]" " -type \"float3\" 1.67234419999999995 1.72441209999999989 1.97900870000000006"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[149]" " -type \"float3\" 1.49100389999999994 1.87612990000000002 2.38578059999999992"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[150]" " -type \"float3\" 1.16017820000000005 2.02784750000000003 2.68394520000000014"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[151]" " -type \"float3\" 0.74618077000000005 2.16471429999999998 2.81966450000000002"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[152]" " -type \"float3\" 0.33147594000000002 2.27333210000000019 2.77965350000000022"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[153]" " -type \"float3\" -0.0094121647999999992 2.3430692999999998 2.59248019999999979"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[154]" " -type \"float3\" -0.29645540999999997 2.34873960000000004 2.40760759999999996"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[155]" " -type \"float3\" 1.417187 1.5875454 0.75451899"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[156]" " -type \"float3\" 1.16017809999999999 1.72441209999999989 0.40272366999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[157]" " -type \"float3\" 0.77437615000000004 1.87612990000000002 0.18022775999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[158]" " -type \"float3\" 0.331476 2.02784750000000003 0.13346219000000001"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[159]" " -type \"float3\" -0.083228654999999999 2.16471429999999998 0.26700455000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[160]" " -type \"float3\" -0.39521387000000002 2.27333210000000019 0.54313140999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[161]" " -type \"float3\" -0.56098026000000001 2.3430692999999998 0.89492678999999997"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[162]" " -type \"float3\" -0.68453777000000005 2.34873960000000004 1.21321140000000005"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[163]" " -type \"float3\" 1.60780579999999995 1.5875454 1.12862960000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[164]" " -type \"float3\" 1.74134830000000007 1.72441209999999989 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[165]" " -type \"float3\" 1.6945827 1.87612990000000002 1.98623440000000007"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[166]" " -type \"float3\" 1.47208669999999997 2.02784750000000003 2.3720365000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[167]" " -type \"float3\" 1.12029139999999994 2.16471429999999998 2.62904550000000015"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[168]" " -type \"float3\" 0.71351956999999999 2.27333210000000019 2.71914360000000022"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[169]" " -type \"float3\" 0.33147594000000002 2.3430692999999998 2.64647150000000009"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[170]" " -type \"float3\" 0.0013529256 2.34873960000000004 2.55934859999999986"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[171]" " -type \"float3\" 1.47208669999999997 1.72441209999999989 0.71463215000000002"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[172]" " -type \"float3\" 1.17392220000000003 1.87612990000000002 0.38380659"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[173]" " -type \"float3\" 0.76715045999999998 2.02784750000000003 0.20246618999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[174]" " -type \"float3\" 0.33147597000000001 2.16471429999999998 0.20132178000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[175]" " -type \"float3\" -0.050567466999999998 2.27333210000000019 0.36752533999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[176]" " -type \"float3\" -0.31693146 2.3430692999999998 0.65087795000000004"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[177]" " -type \"float3\" -0.53279692000000001 2.34873960000000004 0.91540319000000003"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[178]" " -type \"float3\" 1.67234419999999995 1.72441209999999989 1.10765979999999997"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[179]" " -type \"float3\" 1.764731 1.87612990000000002 1.5433342000000001"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[180]" " -type \"float3\" 1.67234419999999995 2.02784750000000003 1.97900870000000006"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[181]" " -type \"float3\" 1.41718710000000003 2.16471429999999998 2.33214949999999988"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[182]" " -type \"float3\" 1.058166 2.27333210000000019 2.54353739999999995"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[183]" " -type \"float3\" 0.67236406000000004 2.3430692999999998 2.59247989999999984"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[184]" " -type \"float3\" 0.0013529256 2.34873960000000004 2.55934859999999986"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[185]" " -type \"float3\" 0.33147594000000002 2.34873960000000004 2.6116347000000002"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[186]" " -type \"float3\" 1.4910038000000001 1.87612990000000002 0.70088804000000005"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[187]" " -type \"float3\" 1.16017809999999999 2.02784750000000003 0.40272366999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[188]" " -type \"float3\" 0.74618065 2.16471429999999998 0.26700443000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[189]" " -type \"float3\" 0.33147597000000001 2.27333210000000019 0.3070156"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[190]" " -type \"float3\" -0.0094119654999999993 2.3430692999999998 0.49418889999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[191]" " -type \"float3\" -0.29645505999999999 2.34873960000000004 0.67906129000000004"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[192]" " -type \"float3\" -0.53279692000000001 2.34873960000000004 0.91540319000000003"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[193]" " -type \"float3\" 1.6945827 1.87612990000000002 1.10043409999999997"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[194]" " -type \"float3\" 1.74134830000000007 2.02784750000000003 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[195]" " -type \"float3\" 1.60780579999999995 2.16471429999999998 1.958039"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[196]" " -type \"float3\" 1.331679 2.27333210000000019 2.27002430000000022"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[197]" " -type \"float3\" 0.97988361000000002 2.3430692999999998 2.43579079999999992"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[198]" " -type \"float3\" 0.66159897999999995 2.34873960000000004 2.55934859999999986"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[199]" " -type \"float3\" 1.47208669999999997 2.02784750000000003 0.71463215000000002"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[200]" " -type \"float3\" 1.12029120000000004 2.16471429999999998 0.45762330000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[201]" " -type \"float3\" 0.71351945000000006 2.27333210000000019 0.36752521999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[202]" " -type \"float3\" 0.33147597000000001 2.3430692999999998 0.44019759000000003"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[203]" " -type \"float3\" 0.0013530963999999999 2.34873960000000004 0.52732044"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[204]" " -type \"float3\" 1.67234419999999995 2.02784750000000003 1.10765979999999997"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[205]" " -type \"float3\" 1.67348859999999999 2.16471429999999998 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[206]" " -type \"float3\" 1.50728510000000004 2.27333210000000019 1.92537779999999992"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[207]" " -type \"float3\" 1.22393250000000009 2.3430692999999998 2.1917418999999998"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[208]" " -type \"float3\" 0.95940720999999995 2.34873960000000004 2.40760759999999996"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[209]" " -type \"float3\" 0.95940720999999995 2.34873960000000004 2.40760759999999996"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[210]" " -type \"float3\" 1.417187 2.16471429999999998 0.75451899"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[211]" " -type \"float3\" 1.0581659000000001 2.27333210000000019 0.54313135000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[212]" " -type \"float3\" 0.672364 2.3430692999999998 0.49418889999999999"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[213]" " -type \"float3\" 0.33147597000000001 2.34873960000000004 0.47503412"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[214]" " -type \"float3\" 1.60780579999999995 2.16471429999999998 1.12862960000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[215]" " -type \"float3\" 1.56779479999999993 2.27333210000000019 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[216]" " -type \"float3\" 1.3806216 2.3430692999999998 1.88422230000000002"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[217]" " -type \"float3\" 1.195749 2.34873960000000004 2.17126559999999991"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[218]" " -type \"float3\" 1.3316789 2.27333210000000019 0.81664431000000004"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[219]" " -type \"float3\" 0.97988343 2.3430692999999998 0.65087782999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[220]" " -type \"float3\" 0.66159886000000001 2.34873960000000004 0.52732044"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[221]" " -type \"float3\" 1.50728510000000004 2.27333210000000019 1.16129079999999996"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[222]" " -type \"float3\" 1.43461280000000002 2.3430692999999998 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[223]" " -type \"float3\" 1.34748979999999996 2.34873960000000004 1.87345720000000004"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[224]" " -type \"float3\" 1.34748979999999996 2.34873960000000004 1.87345720000000004"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[225]" " -type \"float3\" 1.22393240000000003 2.3430692999999998 0.89492673"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[226]" " -type \"float3\" 0.95940709000000002 2.34873960000000004 0.67906116999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[227]" " -type \"float3\" 1.3806216 2.3430692999999998 1.20244620000000002"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[228]" " -type \"float3\" 1.39977620000000003 2.34873960000000004 1.5433342000000001"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[229]" " -type \"float3\" 1.195749 2.34873960000000004 0.91540312999999995"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[230]" " -type \"float3\" 1.34748979999999996 2.34873960000000004 1.21321129999999999"
-		
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3|ring_toss_latest:pTorus3Shape" 
-		"pnts[231]" " -type \"float3\" 1.34748979999999996 2.34873960000000004 1.21321129999999999"
+		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:pTorus3" 
+		"scalePivot" " -type \"double3\" 0.33147591352462769 -2.9802322387695313e-08 0.43029093742370605"
 		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles" 
-		"rotatePivot" " -type \"double3\" 0 1.87612992376352117 1.61914161086298636"
+		"rotatePivot" " -type \"double3\" 0.0043172894514985627 0.32105372511982944 0.7738441534645355"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles" 
-		"scalePivot" " -type \"double3\" 0 1.87612992376352117 1.61914161086298636"
+		"scalePivot" " -type \"double3\" 0.0043172894514985627 0.32105372511982944 0.7738441534645355"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder5" 
-		"translate" " -type \"double3\" 0 2.18568597712366097 1.61914161086298636"
+		"rotatePivot" " -type \"double3\" 0 0.011497671759689562 -1.4339588515358945e-08"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder5" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -1.867011418358431e-09 0 1.220617559843219e-10"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder5" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 0 0.027385979890823364 -2.384185791015625e-07"
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder5" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder6" 
-		"translate" " -type \"double3\" -0.20973565955767068 2.18568597712366097 1.85980096933249861"
+		"scalePivotTranslate" " -type \"double3\" 0 -0.015888308131133802 2.2407899058620355e-07"
 		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder6" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 0 0.011497671759689562 -1.4339588515358945e-08"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder6" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -1.2359903157085756e-09 0 0"
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder6" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder7" 
-		"translate" " -type \"double3\" -0.46588024578861226 2.18568597712366097 2.13165105741158012"
+		"scalePivot" " -type \"double3\" 0 0.027385979890823364 -2.384185791015625e-07"
+		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder6" 
+		"scalePivotTranslate" " -type \"double3\" 0 -0.015888308131133802 2.2407899058620355e-07"
 		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder7" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 0 0.011497671759689562 -1.4339588515358945e-08"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder7" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -2.6188504627914867e-09 0 2.4116941805051718e-10"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder7" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder8" 
-		"translate" " -type \"double3\" 0.0001832808185007992 2.18568597712366097 1.85980096933249861"
+		"scalePivot" " -type \"double3\" 0 0.027385979890823364 -2.384185791015625e-07"
+		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder7" 
+		"scalePivotTranslate" " -type \"double3\" 0 -0.015888308131133802 2.2407899058620355e-07"
 		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder8" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 0 0.011497671759689562 -1.4339588515358945e-08"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder8" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" 3.9492364636053828e-09 0 5.5454843038480695e-10"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder8" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder9" 
-		"translate" " -type \"double3\" 0.21010222119467228 2.18568597712366097 1.85980096933249861"
+		"scalePivot" " -type \"double3\" 0 0.027385979890823364 -2.384185791015625e-07"
+		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder8" 
+		"scalePivotTranslate" " -type \"double3\" 0 -0.015888308131133802 2.2407899058620355e-07"
 		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder9" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 0 0.011497671759689562 -1.4339588515358999e-08"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder9" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" 2.7580969734988621e-09 0 2.6774784419617767e-10"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder9" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder10" 
-		"translate" " -type \"double3\" -0.23496941137482358 2.18568597712366097 2.13165105741158012"
+		"scalePivot" " -type \"double3\" 0 0.027385979890823364 -2.384185791015625e-07"
+		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder9" 
+		"scalePivotTranslate" " -type \"double3\" 0 -0.015888308131133802 2.2407899058620349e-07"
 		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder10" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 0 0.011497671759689562 -1.4339588515358945e-08"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder10" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" 1.831425047853304e-09 0 1.1743392880245913e-10"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder10" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder11" 
-		"translate" " -type \"double3\" -0.0040585769610349421 2.18568597712366097 2.13165105741158012"
+		"scalePivot" " -type \"double3\" 0 0.027385979890823364 -2.384185791015625e-07"
+		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder10" 
+		"scalePivotTranslate" " -type \"double3\" 0 -0.015888308131133802 2.2407899058620355e-07"
 		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder11" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 0 0.011497671759689562 -1.4339588515358996e-08"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder11" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -2.3000191722827554e-09 0 1.8565935780887636e-10"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder11" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder12" 
-		"translate" " -type \"double3\" 0.2268522574527537 2.18568597712366097 2.13165105741158012"
+		"scalePivot" " -type \"double3\" 0 0.027385979890823364 -2.384185791015625e-07"
+		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder11" 
+		"scalePivotTranslate" " -type \"double3\" 0 -0.015888308131133802 2.2407899058620349e-07"
 		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder12" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 0 0.011497671759689562 -1.4339588515358945e-08"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder12" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -2.1600535649872815e-10 0 0"
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder12" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder13" 
-		"translate" " -type \"double3\" 0.45776309186654246 2.18568597712366097 2.13165105741158012"
+		"scalePivot" " -type \"double3\" 0 0.027385979890823364 -2.384185791015625e-07"
+		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder12" 
+		"scalePivotTranslate" " -type \"double3\" 0 -0.015888308131133802 2.2407899058620355e-07"
 		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder13" 
-		"rotatePivot" " -type \"double3\" 0 0 0"
+		"rotatePivot" " -type \"double3\" 0 0.011497671759689562 -1.4339588515358945e-08"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder13" 
-		"scalePivot" " -type \"double3\" 0 0 0"
+		"rotatePivotTranslate" " -type \"double3\" -7.1935781037914288e-09 0 1.9349025921093525e-09"
+		
 		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder13" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		"scalePivot" " -type \"double3\" 0 0.027385979890823364 -2.384185791015625e-07"
+		2 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder13" 
+		"scalePivotTranslate" " -type \"double3\" 0 -0.015888308131133802 2.2407899058620355e-07"
+		
 		3 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder5|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder6|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder7|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder8|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder9|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder10|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder11|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder12|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder13|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		5 3 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder5|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		"ring_toss_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
-		5 3 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder6|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		"ring_toss_latestRN.placeHolderList[2]" ":initialShadingGroup.dsm"
-		5 3 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder7|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		"ring_toss_latestRN.placeHolderList[3]" ":initialShadingGroup.dsm"
-		5 3 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder8|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		"ring_toss_latestRN.placeHolderList[4]" ":initialShadingGroup.dsm"
-		5 3 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder9|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		"ring_toss_latestRN.placeHolderList[5]" ":initialShadingGroup.dsm"
-		5 3 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder10|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		"ring_toss_latestRN.placeHolderList[6]" ":initialShadingGroup.dsm"
-		5 3 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder11|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		"ring_toss_latestRN.placeHolderList[7]" ":initialShadingGroup.dsm"
-		5 3 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder12|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		"ring_toss_latestRN.placeHolderList[8]" ":initialShadingGroup.dsm"
-		5 3 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder13|ring_toss_latest:pCylinderShape5.instObjGroups" 
-		"ring_toss_latestRN.placeHolderList[9]" ":initialShadingGroup.dsm";
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "-na"
+		5 0 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder7|ring_toss_latest:pCylinderShape5.instObjGroups" 
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "ring_toss_latestRN.placeHolderList[1]" 
+		"ring_toss_latestRN.placeHolderList[2]" "ring_toss_latest:PxrSurface1SG.dsm"
+		5 0 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder10|ring_toss_latest:pCylinderShape5.instObjGroups" 
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "ring_toss_latestRN.placeHolderList[3]" 
+		"ring_toss_latestRN.placeHolderList[4]" "ring_toss_latest:PxrSurface1SG.dsm"
+		5 0 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder6|ring_toss_latest:pCylinderShape5.instObjGroups" 
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "ring_toss_latestRN.placeHolderList[5]" 
+		"ring_toss_latestRN.placeHolderList[6]" "ring_toss_latest:PxrSurface1SG.dsm"
+		5 0 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder8|ring_toss_latest:pCylinderShape5.instObjGroups" 
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "ring_toss_latestRN.placeHolderList[7]" 
+		"ring_toss_latestRN.placeHolderList[8]" "ring_toss_latest:PxrSurface1SG.dsm"
+		5 0 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder11|ring_toss_latest:pCylinderShape5.instObjGroups" 
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "ring_toss_latestRN.placeHolderList[9]" 
+		"ring_toss_latestRN.placeHolderList[10]" "ring_toss_latest:PxrSurface1SG.dsm"
+		5 0 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder13|ring_toss_latest:pCylinderShape5.instObjGroups" 
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "ring_toss_latestRN.placeHolderList[11]" 
+		"ring_toss_latestRN.placeHolderList[12]" "ring_toss_latest:PxrSurface1SG.dsm"
+		5 0 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder9|ring_toss_latest:pCylinderShape5.instObjGroups" 
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "ring_toss_latestRN.placeHolderList[13]" 
+		"ring_toss_latestRN.placeHolderList[14]" "ring_toss_latest:PxrSurface1SG.dsm"
+		5 0 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder12|ring_toss_latest:pCylinderShape5.instObjGroups" 
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "ring_toss_latestRN.placeHolderList[15]" 
+		"ring_toss_latestRN.placeHolderList[16]" "ring_toss_latest:PxrSurface1SG.dsm"
+		5 0 "ring_toss_latestRN" "|GameStand_Latest|ring_toss_latest:RingToss|ring_toss_latest:RingTossGrp|ring_toss_latest:Ring_Toss_Bottles|ring_toss_latest:pCylinder5|ring_toss_latest:pCylinderShape5.instObjGroups" 
+		"ring_toss_latest:PxrSurface1SG.dagSetMembers" "ring_toss_latestRN.placeHolderList[17]" 
+		"ring_toss_latestRN.placeHolderList[18]" "ring_toss_latest:PxrSurface1SG.dsm";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "toyfox_latestRN";
+	rename -uid "CED700C9-4728-E35B-A0F1-72820FE0E0C3";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"toyfox_latestRN"
+		"toyfox_latestRN" 0
+		"toyfox_latestRN" 22
+		0 "|toyfox_latest:fenne" "|GameStand_Latest" "-s -r "
+		2 "|GameStand_Latest|toyfox_latest:fenne" "translate" " -type \"double3\" 3.09827694867214642 1.477696123778522 3.56792789096785601"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne" "rotate" " -type \"double3\" -2.90951899046993212 -0.41202203633019058 -26.7294646709114474"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne" "scale" " -type \"double3\" 0.26521412336258504 0.26521412336258504 0.26521412336258504"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne" "rotatePivot" " -type \"double3\" 0 0.48763686164794057 -0.066352630468806503"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne" "rotatePivotTranslate" " -type \"double3\" 0.21811551602400417 -0.055972670713185249 -0.024664007253140868"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne" "scalePivot" " -type \"double3\" 0 1.83865344524383545 -0.25018513202667236"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne" "scalePivotTranslate" " -type \"double3\" 0 -1.35101658359589494 0.18383250155786585"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:ribbon" "rotatePivot" 
+		" -type \"double3\" -0.19782906770706177 1.70209294557571411 -0.032050490379333496"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:ribbon" "scalePivot" 
+		" -type \"double3\" -0.19782906770706177 1.70209294557571411 -0.032050490379333496"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:ribbon|toyfox_latest:knot" 
+		"rotatePivot" " -type \"double3\" -0.9624028205871582 1.49493229389190674 0.50481900572776794"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:ribbon|toyfox_latest:knot" 
+		"scalePivot" " -type \"double3\" -0.9624028205871582 1.49493229389190674 0.50481900572776794"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:ribbon|toyfox_latest:bow2" 
+		"rotatePivot" " -type \"double3\" -1.0704195499420166 1.74396646022796631 0.39327499270439148"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:ribbon|toyfox_latest:bow2" 
+		"scalePivot" " -type \"double3\" -1.0704195499420166 1.74396646022796631 0.39327499270439148"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:ribbon|toyfox_latest:bow" 
+		"rotatePivot" " -type \"double3\" -1.15601998567581177 1.61143612861633301 0.24268874526023865"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:ribbon|toyfox_latest:bow" 
+		"scalePivot" " -type \"double3\" -1.15601998567581177 1.61143612861633301 0.24268874526023865"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:ribbon|toyfox_latest:ribbon" 
+		"rotatePivot" " -type \"double3\" -0.02873992919921875 1.45276647806167603 -0.032050490379333496"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:ribbon|toyfox_latest:ribbon" 
+		"scalePivot" " -type \"double3\" -0.02873992919921875 1.45276647806167603 -0.032050490379333496"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:Eyes" "rotatePivot" 
+		" -type \"double3\" -0.0028378963470458984 2.44757986068725586 0.95707681775093079"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:Eyes" "scalePivot" 
+		" -type \"double3\" -0.0028378963470458984 2.44757986068725586 0.95707681775093079"
+		
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:foxbod" "rotatePivot" 
+		" -type \"double3\" 0 1.83865344524383545 -0.25018513202667236"
+		2 "|GameStand_Latest|toyfox_latest:fenne|toyfox_latest:foxbod" "scalePivot" 
+		" -type \"double3\" 0 1.83865344524383545 -0.25018513202667236";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "Bear_latestRN";
+	rename -uid "CD20B50A-47E5-6218-4864-E3BE3BFAD704";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"Bear_latestRN"
+		"Bear_latestRN" 0
+		"Bear_latestRN" 17
+		0 "|Bear_latest:Bear" "|GameStand_Latest" "-s -r "
+		2 "|GameStand_Latest|Bear_latest:Bear" "translate" " -type \"double3\" 3.36960377575594938 3.25575712810790918 3.61271066757395953"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear" "rotate" " -type \"double3\" 0 180 24.63107668506845016"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear" "scale" " -type \"double3\" 0.62980589701569301 0.62980589701569301 0.62980589701569301"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear" "rotatePivot" " -type \"double3\" 0 0 0"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear" "rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear" "scalePivot" " -type \"double3\" 0 0 0"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear" "scalePivotTranslate" " -type \"double3\" 0 0 0"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear|Bear_latest:BearGrp" "rotatePivot" 
+		" -type \"double3\" -0.0051716321735141117 0.70036140603568364 0.082640480865594362"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear|Bear_latest:BearGrp" "scalePivot" " -type \"double3\" -0.043982028961181641 5.9562077522277832 0.70281410217285156"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear|Bear_latest:BearGrp" "scalePivotTranslate" 
+		" -type \"double3\" 0.038810396787667532 -5.25584634619209989 -0.62017362130725717"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1" 
+		"rotatePivot" " -type \"double3\" -0.043982028961181641 5.9562077522277832 0.70281410217285156"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Bear_Surface1" 
+		"scalePivot" " -type \"double3\" -0.043982028961181641 5.9562077522277832 0.70281410217285156"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Right_Eye" 
+		"rotatePivot" " -type \"double3\" 0.57555502653121948 11.01099109649658203 1.17081522941589355"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Right_Eye" 
+		"scalePivot" " -type \"double3\" 0.57555502653121948 11.01099109649658203 1.17081522941589355"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye" 
+		"rotatePivot" " -type \"double3\" -0.68863159418106079 11.01099109649658203 1.17081522941589355"
+		
+		2 "|GameStand_Latest|Bear_latest:Bear|Bear_latest:BearGrp|Bear_latest:Left_Eye" 
+		"scalePivot" " -type \"double3\" -0.68863159418106079 11.01099109649658203 1.17081522941589355";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 select -ne :time1;
@@ -3558,7 +3038,7 @@ select -ne :renderPartition;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 7 ".st";
+	setAttr -s 48 ".st";
 	setAttr -cb on ".an";
 	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
@@ -3571,7 +3051,7 @@ select -ne :defaultShaderList1;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 9 ".s";
+	setAttr -s 57 ".s";
 select -ne :postProcessList1;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -3579,17 +3059,17 @@ select -ne :postProcessList1;
 	setAttr -cb on ".bnm";
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 10 ".u";
+	setAttr -s 63 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 16 ".r";
+	setAttr -s 22 ".r";
 select -ne :defaultTextureList1;
-	setAttr -s 12 ".tx";
+	setAttr -s 60 ".tx";
 select -ne :initialShadingGroup;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 61 ".dsm";
+	setAttr -s 54 ".dsm";
 	setAttr -k on ".mwc";
 	setAttr -cb on ".an";
 	setAttr -cb on ".il";
@@ -3683,15 +3163,15 @@ connectAttr "toy_rack_latestRN.phl[20]" ":initialShadingGroup.dsm" -na;
 connectAttr "toy_rack_latestRN.phl[21]" ":initialShadingGroup.dsm" -na;
 connectAttr "toy_rack_latestRN.phl[22]" ":initialShadingGroup.dsm" -na;
 connectAttr "toy_rack_latestRN.phl[23]" ":initialShadingGroup.dsm" -na;
-connectAttr "ring_toss_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
-connectAttr "ring_toss_latestRN.phl[2]" ":initialShadingGroup.dsm" -na;
-connectAttr "ring_toss_latestRN.phl[3]" ":initialShadingGroup.dsm" -na;
-connectAttr "ring_toss_latestRN.phl[4]" ":initialShadingGroup.dsm" -na;
-connectAttr "ring_toss_latestRN.phl[5]" ":initialShadingGroup.dsm" -na;
-connectAttr "ring_toss_latestRN.phl[6]" ":initialShadingGroup.dsm" -na;
-connectAttr "ring_toss_latestRN.phl[7]" ":initialShadingGroup.dsm" -na;
-connectAttr "ring_toss_latestRN.phl[8]" ":initialShadingGroup.dsm" -na;
-connectAttr "ring_toss_latestRN.phl[9]" ":initialShadingGroup.dsm" -na;
+connectAttr "ring_toss_latestRN.phl[1]" "ring_toss_latestRN.phl[2]";
+connectAttr "ring_toss_latestRN.phl[3]" "ring_toss_latestRN.phl[4]";
+connectAttr "ring_toss_latestRN.phl[5]" "ring_toss_latestRN.phl[6]";
+connectAttr "ring_toss_latestRN.phl[7]" "ring_toss_latestRN.phl[8]";
+connectAttr "ring_toss_latestRN.phl[9]" "ring_toss_latestRN.phl[10]";
+connectAttr "ring_toss_latestRN.phl[11]" "ring_toss_latestRN.phl[12]";
+connectAttr "ring_toss_latestRN.phl[13]" "ring_toss_latestRN.phl[14]";
+connectAttr "ring_toss_latestRN.phl[15]" "ring_toss_latestRN.phl[16]";
+connectAttr "ring_toss_latestRN.phl[17]" "ring_toss_latestRN.phl[18]";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
