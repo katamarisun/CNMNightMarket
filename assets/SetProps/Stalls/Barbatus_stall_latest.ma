@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Barbatus_stall_latest.ma
-//Last modified: Mon, Jan 28, 2019 08:02:08 AM
+//Last modified: Mon, Jan 28, 2019 07:41:21 PM
 //Codeset: UTF-8
 file -rdi 1 -ns "tent_Barbatus_latest" -rfn "tent_Barbatus_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Tents/tent_Barbatus_latest.ma";
@@ -98,7 +98,6 @@ requires -nodeType "PxrVisualizer" -nodeType "PxrSurface" -nodeType "PxrDefault"
 		 -nodeType "rmanDisplayChannel" -nodeType "d_openexr" -nodeType "PxrCamera" -nodeType "OmnidirectionalStereo"
 		 -nodeType "rmanGlobals" -nodeType "PxrOcclusion" -nodeType "PxrDirectLighting" -nodeType "PxrVCM"
 		 -nodeType "PxrPathTracer" -nodeType "rmanDisplay" "RenderMan_for_Maya.py" "1.0";
-requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2018";
@@ -109,17 +108,17 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "79E41AF7-4D96-DD40-7C16-6EA4641B8363";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 32.151914766830025 10.416378138284959 4.0400167822298796 ;
-	setAttr ".r" -type "double3" -6.9383527285360982 -1349.0000000001073 2.5444437451708134e-14 ;
+	setAttr ".t" -type "double3" 15.246051818432576 7.9952553527482904 4.8636869361650428 ;
+	setAttr ".r" -type "double3" -5.138352728522845 -1711.8000000000343 2.5314213781751079e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "87B3DB01-420F-E5CB-33B5-30B073AD1943";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 32.719592433816644;
+	setAttr ".coi" 15.745406491937199;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -0.32311548849701888 6.4638073592050613 4.6068705438214135 ;
+	setAttr ".tp" -type "double3" -0.42834102299767673 6.5850808719634877 4.3710992966529201 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -n "greasePlane1" -p "perspShape";
 	rename -uid "0CF50C57-4C9A-913A-8CE7-4D80130397BA";
@@ -4550,24 +4549,24 @@ createNode rmanDisplayChannel -n "a";
 	setAttr ".remapSmoothness" 0;
 	setAttr -l on ".name" -type "string" "a";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "61CF1DE3-0B48-2FA8-529D-DAA6A9898AEB";
-	setAttr -s 82 ".lnk";
-	setAttr -s 82 ".slnk";
+	rename -uid "F687926A-0F4C-4F86-668F-ECAE435A3C6D";
+	setAttr -s 110 ".lnk";
+	setAttr -s 110 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "BF2D4C55-ED4C-5CF8-F450-B3A596F2B5B7";
+	rename -uid "735D4E7F-D849-730C-D16D-FDB9A1B6F5EA";
 	setAttr -s 2 ".bsdt";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 -1 ;
 	setAttr ".bsdt[1].bscd" -type "Int32Array" 1 1 ;
 	setAttr ".bsdt[1].bsdn" -type "string" "Barbatus_stall_latest";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "C3C7653C-FC40-7D5D-E786-CC84ED03FC63";
+	rename -uid "93D42A11-7142-7DAB-461A-EB823E239526";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "345E9A53-8C44-2BC9-9FC5-16BD863213B0";
+	rename -uid "01924541-D749-B046-EF18-70AC90B43C6B";
 	setAttr -s 3 ".dli[1:2]"  1 2;
 createNode displayLayer -n "defaultLayer";
 	rename -uid "A45481F6-4C0D-B5AF-A126-7890A3B66A98";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "4DFC2CC5-3946-2688-27F4-96B5036F6893";
+	rename -uid "BE10A06F-9E43-0FBD-75AB-AFBC58FB78D6";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "968DF0DD-4434-9E07-5BE6-D3A601AFC471";
 	setAttr ".g" yes;
@@ -7465,7 +7464,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 700\n            -height 402\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 634\n            -height 402\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
 		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n"
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n"
@@ -7485,14 +7484,14 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
 		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n"
-		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
-		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
-		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n"
-		+ "                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 700\\n    -height 402\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 700\\n    -height 402\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -editorChanged \"updateModelPanelBar\" \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n"
+		+ "                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n"
+		+ "                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n"
+		+ "                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n"
+		+ "                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 634\\n    -height 402\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 634\\n    -height 402\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode file -n "file2";
@@ -8448,21 +8447,17 @@ createNode reference -n "barbatus_storage_latestRN";
 		+ "96 15.231501 -3.26999279999999981 -26.429914 15.231501 -21.180159 -11.189815 15.231501 -32.246368 7.64293960000000006 15.231501 -32.241783 22.877892 7.85161969999999965 -21.16815 28.692968 7.85161969999999965 -3.25514789999999987 22.869167 7.85161969999999965 14.655018 7.62882420000000039 7.85161969999999965 25.721228 -11.20393 7.85161969999999965 25.71664 -26.438637 7.85161969999999965 14.643009 -32.25396 7.85161969999999965 -3.26999279999999981 -26.429914 7.85161969999999965 -21.180159 -11.189815 7.85161969999999965 -32.246368 7.64293960000000006 7.85161969999999965 -32.241783 -24.846931 15.528439 13.487662 -10.596439 15.528439 23.846865 7.02199940000000034 15.528439 23.851156 21.278757 15.528439 13.498896 26.727119 15.528439 -3.25562720000000017 21.286919 15.528439 -20.012802 7.03520490000000009 15.528439 -30.372005 -10.583234 15.528439 -30.376297 -24.83877 15.528439 -20.024035 -30.287378 15.528439 -3.2695135999999998 -1.78012919999999997 15.528439 -3.26257039999999998 -10.697136 7.30516909999999964 -30.72"
 		+ "8783 -25.139429 7.30516909999999964 -20.242075 7.14952089999999973 7.30516909999999964 -30.724434 21.586704 7.30516909999999964 -20.230694 27.097639 7.30516909999999964 -3.255537 21.578438 7.30516909999999964 13.717178 -25.147696 7.30516909999999964 13.705798 -10.710512 7.30516909999999964 24.199537 7.13614459999999973 7.30516909999999964 24.203884 -30.65863 7.30516909999999964 -3.26960369999999978 -1.78049539999999995 7.30516909999999964 -3.26245239999999992"
 		)
-		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:RollyWheels|barbatus_storage_latest:RollyWheel3|barbatus_storage_latest:pCylinder4|barbatus_storage_latest:pCylinderShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:Handle3|barbatus_storage_latest:pCube3|barbatus_storage_latest:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:RollyWheels|barbatus_storage_latest:RollyWheel2|barbatus_storage_latest:pCylinder4|barbatus_storage_latest:pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:RollyWheels|barbatus_storage_latest:RollyWheel1|barbatus_storage_latest:pCylinder4|barbatus_storage_latest:pCylinderShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:RollyWheels|barbatus_storage_latest:RollyWheel|barbatus_storage_latest:pCylinder4|barbatus_storage_latest:pCylinderShape4.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:Handle3|barbatus_storage_latest:pCube4|barbatus_storage_latest:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:Handle|barbatus_storage_latest:pCube3|barbatus_storage_latest:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:Handle|barbatus_storage_latest:pCube4|barbatus_storage_latest:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:Handle3|barbatus_storage_latest:pCube3|barbatus_storage_latest:pCubeShape3.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:Handle4|barbatus_storage_latest:pCube3|barbatus_storage_latest:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:Handle3|barbatus_storage_latest:pCube4|barbatus_storage_latest:pCubeShape3.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:Handle4|barbatus_storage_latest:pCube4|barbatus_storage_latest:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:RollyWheels|barbatus_storage_latest:RollyWheel3|barbatus_storage_latest:pCylinder5|barbatus_storage_latest:pCylinder5Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -8488,9 +8483,13 @@ createNode reference -n "barbatus_storage_latestRN";
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:RollyWheels|barbatus_storage_latest:RollyWheel|barbatus_storage_latest:pCylinder5|barbatus_storage_latest:pCylinder5Shape.instObjGroups.objectGroups[3].objectGrpColor" 
 		""
-		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:Handle4|barbatus_storage_latest:pCube3|barbatus_storage_latest:pCubeShape3.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:RollyWheels|barbatus_storage_latest:RollyWheel3|barbatus_storage_latest:pCylinder4|barbatus_storage_latest:pCylinderShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:Handle4|barbatus_storage_latest:pCube4|barbatus_storage_latest:pCubeShape3.instObjGroups" 
+		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:RollyWheels|barbatus_storage_latest:RollyWheel2|barbatus_storage_latest:pCylinder4|barbatus_storage_latest:pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:RollyWheels|barbatus_storage_latest:RollyWheel1|barbatus_storage_latest:pCylinder4|barbatus_storage_latest:pCylinderShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:RollyWheels|barbatus_storage_latest:RollyWheel|barbatus_storage_latest:pCylinder4|barbatus_storage_latest:pCylinderShape4.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "barbatus_storage_latestRN" "|Barbatus_stall_latest_Barbatus|barbatus_storage_latest:StorageContoller|barbatus_storage_latest:Storage|barbatus_storage_latest:RollyWheels|barbatus_storage_latest:RollyWheel3|barbatus_storage_latest:pCylinder5|barbatus_storage_latest:pCylinder5Shape.instObjGroups.objectGroups[0]" 
 		"barbatus_storage_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
@@ -10710,6 +10709,86 @@ createNode reference -n "grill_latestRN";
 		"scalePivot" " -type \"double3\" 0 0 0"
 		2 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents1" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Master_Vent|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Vent1|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Vent2|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Left_Side_Vents|grill_latest:Vent3|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Left_Side_Vents|grill_latest:Vent4|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Left_Side_Vents|grill_latest:Vent5|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents2|grill_latest:Vent3|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents2|grill_latest:Vent4|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents2|grill_latest:Vent5|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents1|grill_latest:Vent3|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents1|grill_latest:Vent4|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents1|grill_latest:Vent5|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder9|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder10|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder11|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder12|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder13|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder14|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder15|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder16|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder17|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder18|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder19|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder20|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder21|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder22|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder23|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder24|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder25|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder26|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder27|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder28|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder8|grill_latest:pCylinderShape8.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder2|grill_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder3|grill_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder4|grill_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder5|grill_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder6|grill_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder7|grill_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder1|grill_latest:pCylinderShape1.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Master_Vent|grill_latest:pCube4|grill_latest:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Master_Vent|grill_latest:pCube3|grill_latest:pCubeShape3.instObjGroups" 
@@ -10805,86 +10884,6 @@ createNode reference -n "grill_latestRN";
 		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents1|grill_latest:Vent5|grill_latest:pCube5|grill_latest:pCubeShape3.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents1|grill_latest:Vent5|grill_latest:pCube6|grill_latest:pCubeShape3.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Master_Vent|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Vent1|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Vent2|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Left_Side_Vents|grill_latest:Vent3|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Left_Side_Vents|grill_latest:Vent4|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Left_Side_Vents|grill_latest:Vent5|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents2|grill_latest:Vent3|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents2|grill_latest:Vent4|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents2|grill_latest:Vent5|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents1|grill_latest:Vent3|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents1|grill_latest:Vent4|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Front_Vents|grill_latest:Left_Side_Vents1|grill_latest:Vent5|grill_latest:pCube7|grill_latest:pCubeShape4.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder2|grill_latest:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder3|grill_latest:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder4|grill_latest:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder5|grill_latest:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder6|grill_latest:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder7|grill_latest:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder1|grill_latest:pCylinderShape1.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder9|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder10|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder11|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder12|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder13|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder14|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder15|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder16|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder17|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder18|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder19|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder20|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder21|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder22|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder23|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder24|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder25|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder26|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder27|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder28|grill_latest:pCylinderShape8.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:group2|grill_latest:pCylinder8|grill_latest:pCylinderShape8.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "grill_latestRN" "|Barbatus_stall_latest_Barbatus|grill_latest:Grill|grill_latest:GrillGrp|grill_latest:Grill_Peices|grill_latest:pCylinder2|grill_latest:pCylinderShape1.instObjGroups" 
 		"grill_latestRN.placeHolderList[1]" ":initialShadingGroup.dsm"
@@ -11754,10 +11753,10 @@ createNode reference -n "rack_latestRN";
 		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:skewer_latestRN" 
 		0
 		"rack_latest:roll_and_sausage_platter_latestRN" 0
-		"rack_latest:tofu_fishball_platter_latest:fishball_on_a_stick_latestRN" 0
-		
 		"rack_latest:tofu_fishball_platter_latest:tofu_on_a_stick_latest:skewer_latestRN" 
 		0
+		"rack_latest:tofu_fishball_platter_latest:fishball_on_a_stick_latestRN" 0
+		
 		"rack_latest:roll_and_sausage_platter_latest:platter_latestRN" 0
 		"rack_latest:tofu_fishball_platter_latestRN" 0
 		"rack_latest:strip_on_a_stick_latest:skewer_latestRN" 0
@@ -12476,6 +12475,105 @@ createNode reference -n "rack_latestRN";
 		
 		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latestRN" 140
 		
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest1|rack_latest:meat_roll_latest_Mesh|rack_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest2|rack_latest:meat_roll_latest_Mesh|rack_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest4|rack_latest:meat_roll_latest_Mesh|rack_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest5|rack_latest:meat_roll_latest_Mesh|rack_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest|rack_latest:meat_roll_latest_Mesh|rack_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest1|rack_latest:meat_roll_latest_Mesh1|rack_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest2|rack_latest:meat_roll_latest_Mesh1|rack_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest4|rack_latest:meat_roll_latest_Mesh1|rack_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest5|rack_latest:meat_roll_latest_Mesh1|rack_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest|rack_latest:meat_roll_latest_Mesh1|rack_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest1|rack_latest:meat_roll_latest_Mesh2|rack_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest2|rack_latest:meat_roll_latest_Mesh2|rack_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest4|rack_latest:meat_roll_latest_Mesh2|rack_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest5|rack_latest:meat_roll_latest_Mesh2|rack_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest|rack_latest:meat_roll_latest_Mesh2|rack_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest4|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest5|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest4|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest5|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest4|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest5|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
+		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
+		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
+		"-na"
 		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest1|rack_latest:pCylinder1|rack_latest:pCylinderShape1.instObjGroups" 
 		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
 		"-na"
@@ -12586,105 +12684,6 @@ createNode reference -n "rack_latestRN";
 		"-na"
 		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder4|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape4.instObjGroups" 
 		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest1|rack_latest:meat_roll_latest_Mesh|rack_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest2|rack_latest:meat_roll_latest_Mesh|rack_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest4|rack_latest:meat_roll_latest_Mesh|rack_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest5|rack_latest:meat_roll_latest_Mesh|rack_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest|rack_latest:meat_roll_latest_Mesh|rack_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest1|rack_latest:meat_roll_latest_Mesh1|rack_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest2|rack_latest:meat_roll_latest_Mesh1|rack_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest4|rack_latest:meat_roll_latest_Mesh1|rack_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest5|rack_latest:meat_roll_latest_Mesh1|rack_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest|rack_latest:meat_roll_latest_Mesh1|rack_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest1|rack_latest:meat_roll_latest_Mesh2|rack_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest2|rack_latest:meat_roll_latest_Mesh2|rack_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest4|rack_latest:meat_roll_latest_Mesh2|rack_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest5|rack_latest:meat_roll_latest_Mesh2|rack_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:RollnSasuage|rack_latest:MeatRoll|rack_latest:meat_roll_latest|rack_latest:meat_roll_latest_Mesh2|rack_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest4|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest5|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_MeshShape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest4|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest5|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh1Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest4|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest5|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:meat_roll_latest_Mesh2Shape.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape1.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest1|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
-		"-na"
-		3 "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder3|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape3.instObjGroups" 
-		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface2SG.dagSetMembers" 
 		"-na"
 		5 0 "rack_latestRN" "|Barbatus_stall_latest_Barbatus|rack_latest:FoodRack|rack_latest:roll_and_sausage_platter_latest:RollnSasuage|rack_latest:roll_and_sausage_platter_latest:MeatRoll|rack_latest:roll_and_sausage_platter_latest:meat_roll_latest2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinder2|rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:pCylinderShape2.instObjGroups" 
 		"rack_latest:roll_and_sausage_platter_latest:meat_roll_on_a_stick_latest:PxrSurface1SG.dagSetMembers" 
@@ -14115,17 +14114,62 @@ createNode reference -n "rack_latestRN";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "lights_shaded_latestRN";
-	rename -uid "AC913A98-DF4B-CE57-D682-C19498E7A9AB";
+	rename -uid "EC521C17-824D-4D79-51EE-0D8928B87CE0";
+	setAttr -s 4 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"lights_shaded_latestRN"
 		"lights_shaded_latest:stringlightbulb_i1RN" 0
 		"lights_shaded_latestRN" 0
-		"lights_shaded_latestRN" 2
-		2 "|lights_shaded_latest:polySurface10" "translate" " -type \"double3\" -1.5373381888679738 4.92413960839312015 4.6681323956943368"
+		"lights_shaded_latestRN" 16
+		2 "|lights_shaded_latest:nurbsCircle1" "translate" " -type \"double3\" 0 0 0"
 		
-		2 "|lights_shaded_latest:polySurface10" "scale" " -type \"double3\" 3.65265909187860549 3.65265909187860549 3.65265909187860549";
+		2 "|lights_shaded_latest:nurbsCircle1" "scale" " -type \"double3\" 1 1 1"
+		
+		2 "|lights_shaded_latest:nurbsCircle1" "rotatePivot" " -type \"double3\" -0.39086663854330816 6.73129225575073065 4.68832366902517617"
+		
+		2 "|lights_shaded_latest:nurbsCircle1" "scalePivot" " -type \"double3\" -0.39086663854330816 6.73129225575073065 4.68832366902517617"
+		
+		2 "|lights_shaded_latest:nurbsCircle1|lights_shaded_latest:polySurface10" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|lights_shaded_latest:nurbsCircle1|lights_shaded_latest:polySurface10" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|lights_shaded_latest:nurbsCircle1|lights_shaded_latest:polySurface10" 
+		"rotatePivot" " -type \"double3\" -0.29808244681141627 6.43939420510772909 4.66726851451749702"
+		
+		2 "|lights_shaded_latest:nurbsCircle1|lights_shaded_latest:polySurface10" 
+		"scalePivot" " -type \"double3\" -0.29808244681141627 6.43939420510772909 4.66726851451749702"
+		
+		2 "|lights_shaded_latest:nurbsCircle1|lights_shaded_latest:polySurface10" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|lights_shaded_latest:nurbsCircle1|lights_shaded_latest:polySurface10|lights_shaded_latest:polySurface10Shape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		3 "lights_shaded_latest:groupParts34.outputGeometry" "|lights_shaded_latest:nurbsCircle1|lights_shaded_latest:polySurface10|lights_shaded_latest:polySurface10Shape.inMesh" 
+		""
+		3 "lights_shaded_latest:makeNurbCircle1.outputCurve" "|lights_shaded_latest:nurbsCircle1|lights_shaded_latest:nurbsCircleShape1.create" 
+		""
+		5 4 "lights_shaded_latestRN" "|lights_shaded_latest:nurbsCircle1|lights_shaded_latest:nurbsCircleShape1.create" 
+		"lights_shaded_latestRN.placeHolderList[1]" ""
+		5 4 "lights_shaded_latestRN" "|lights_shaded_latest:nurbsCircle1|lights_shaded_latest:polySurface10|lights_shaded_latest:polySurface10Shape.inMesh" 
+		"lights_shaded_latestRN.placeHolderList[2]" ""
+		5 3 "lights_shaded_latestRN" "lights_shaded_latest:groupParts34.outputGeometry" 
+		"lights_shaded_latestRN.placeHolderList[3]" "lights_shaded_latest:polySurface10Shape.i"
+		
+		5 3 "lights_shaded_latestRN" "lights_shaded_latest:makeNurbCircle1.outputCurve" 
+		"lights_shaded_latestRN.placeHolderList[4]" "lights_shaded_latest:nurbsCircleShape1.cr";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode transformGeometry -n "transformGeometry5";
+	rename -uid "6A644979-8F4A-1F6A-1254-EFA7B6A4A900";
+	setAttr ".txf" -type "matrix" 0.6074908164799252 0 0 0 0 5.1988508846595636 0 0
+		 0 0 5.1988508846595636 0 -0.39086663854330816 6.7312922557507306 4.6883236690251762 1;
+createNode transformGeometry -n "transformGeometry6";
+	rename -uid "0ABF292D-5B4D-3D1E-20D2-EDA005CA9C88";
+	setAttr ".txf" -type "matrix" 3.6729051330922364 0 0 0 0 3.6729051330922364 0 0
+		 0 0 3.6729051330922364 0 -4.8348031170328953 0.98782896636735185 4.6894895562457029 1;
 select -ne :time1;
 	setAttr -av -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -14167,7 +14211,7 @@ select -ne :postProcessList1;
 select -ne :defaultRenderUtilityList1;
 	setAttr -s 88 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 115 ".r";
+	setAttr -s 116 ".r";
 select -ne :lightList1;
 	setAttr -s 11 ".l";
 select -ne :defaultTextureList1;
@@ -14254,7 +14298,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr -k on ".hwdp";
 	setAttr -k on ".hwql";
 select -ne :ikSystem;
-	setAttr -s 2 ".sol";
+	setAttr -s 4 ".sol";
 connectAttr "barbatus_storage_latestRN.phl[1]" ":initialShadingGroup.dsm" -na;
 connectAttr "barbatus_storage_latestRN.phl[2]" "barbatus_storage_latestRN.phl[3]"
 		;
@@ -14701,6 +14745,10 @@ connectAttr "rack_latestRN.phl[657]" "rack_latestRN.phl[658]";
 connectAttr "rack_latestRN.phl[659]" "rack_latestRN.phl[660]";
 connectAttr "rack_latestRN.phl[661]" "rack_latestRN.phl[662]";
 connectAttr "rack_latestRN.phl[663]" "rack_latestRN.phl[664]";
+connectAttr "transformGeometry5.og" "lights_shaded_latestRN.phl[1]";
+connectAttr "transformGeometry6.og" "lights_shaded_latestRN.phl[2]";
+connectAttr "lights_shaded_latestRN.phl[3]" "transformGeometry6.ig";
+connectAttr "lights_shaded_latestRN.phl[4]" "transformGeometry5.ig";
 connectAttr "greasePlaneShape1.msg" ":perspShape.ip" -na;
 connectAttr "greasePencilPerspRenderPlane.msg" "greasePlaneShape1.rpl";
 connectAttr "greasePencilPerspArtDrawPlane.msg" "greasePlaneShape1.spl";
