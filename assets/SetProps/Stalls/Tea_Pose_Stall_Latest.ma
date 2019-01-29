@@ -1,6 +1,6 @@
 //Maya ASCII 2018ff09 scene
 //Name: Tea_Pose_Stall_Latest.ma
-//Last modified: Mon, Jan 28, 2019 05:46:30 PM
+//Last modified: Mon, Jan 28, 2019 05:51:35 PM
 //Codeset: 1252
 file -rdi 1 -ns "teaposeWorker_riggest_latest" -rfn "teaposeWorker_riggest_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/Characters/BG_Chars/teaposeWorker_riggest_latest.ma";
@@ -12,8 +12,6 @@ file -rdi 1 -ns "bobacup_milkTea1" -rfn "bobacup_milkTeaRN1" -typ "mayaAscii"
 		 "D:/CNMNightMarket//assets/SetProps/Stalls/TPose_Props/BobaCups/bobacup_milkTea.ma";
 file -rdi 1 -ns "bobacup_milkTea2" -rfn "bobacup_milkTea1RN" -typ "mayaAscii"
 		 "D:/CNMNightMarket//assets/SetProps/Stalls/TPose_Props/BobaCups/bobacup_milkTea.ma";
-file -rdi 1 -ns "NapkinStack_v1_latest" -rfn "NapkinStack_v1_latestRN" -op "v=0;p=17;f=0"
-		 -typ "mayaAscii" "D:/CNMNightMarket//assets/SetProps/NapkinStack_v1_latest.ma";
 file -rdi 1 -ns "table_latest" -rfn "table_latestRN" -op "v=0;p=17;f=0" -typ
 		 "mayaAscii" "D:/CNMNightMarket//assets/SetProps/night_market_SetProps/table_latest.ma";
 file -r -ns "teaposeWorker_riggest_latest" -dr 1 -rfn "teaposeWorker_riggest_latestRN"
@@ -24,8 +22,6 @@ file -r -ns "StockPot_shaded_latest" -dr 1 -rfn "StockPot_shaded_latestRN" -op "
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/TPose_Props/StockPot_shaded_latest.ma";
 file -r -ns "bobacup_milkTea1" -dr 1 -rfn "bobacup_milkTeaRN1" -typ "mayaAscii" "D:/CNMNightMarket//assets/SetProps/Stalls/TPose_Props/BobaCups/bobacup_milkTea.ma";
 file -r -ns "bobacup_milkTea2" -dr 1 -rfn "bobacup_milkTea1RN" -typ "mayaAscii" "D:/CNMNightMarket//assets/SetProps/Stalls/TPose_Props/BobaCups/bobacup_milkTea.ma";
-file -r -ns "NapkinStack_v1_latest" -dr 1 -rfn "NapkinStack_v1_latestRN" -op "v=0;p=17;f=0"
-		 -typ "mayaAscii" "D:/CNMNightMarket//assets/SetProps/NapkinStack_v1_latest.ma";
 file -r -ns "table_latest" -dr 1 -rfn "table_latestRN" -op "v=0;p=17;f=0" -typ "mayaAscii"
 		 "D:/CNMNightMarket//assets/SetProps/night_market_SetProps/table_latest.ma";
 requires maya "2018ff09";
@@ -48,13 +44,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "57166D86-40D7-0A70-FC41-958E38A2E2DF";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 14.262584000584392 10.545540237506152 20.494674699780891 ;
-	setAttr ".r" -type "double3" -12.938352729518373 36.200000000000578 0 ;
+	setAttr ".t" -type "double3" 0.70550466496465347 4.1719265150049942 15.783699378754001 ;
+	setAttr ".r" -type "double3" -9.3383527295642761 3.8000000000002423 9.9611332468638378e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "F0C99EAF-4D4C-748B-D9AA-6A972A37C071";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 25.183656139994511;
+	setAttr ".coi" 15.454445135674316;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -110,8 +106,9 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".o" yes;
 createNode transform -n "Tea_Pose";
 	rename -uid "34F7793D-4DFD-3A29-5E88-84AF56778B47";
-	setAttr ".rp" -type "double3" 6.0509080784700491e-17 -0.151885986328125 0.37478448051010949 ;
-	setAttr ".sp" -type "double3" 6.0509080784700491e-17 -0.151885986328125 0.37478448051010949 ;
+	setAttr ".t" -type "double3" 0 -1.0634534358978271 0 ;
+	setAttr ".rp" -type "double3" 6.0509080784700491e-17 1.0634534358978271 0.37478448051010949 ;
+	setAttr ".sp" -type "double3" 6.0509080784700491e-17 1.0634534358978271 0.37478448051010949 ;
 createNode nurbsCurve -n "Tea_PoseShape" -p "Tea_Pose";
 	rename -uid "F2238684-4D57-C245-8DDB-48816ECD1D3F";
 	setAttr -k off ".v";
@@ -133,9 +130,10 @@ createNode nurbsCurve -n "Tea_PoseShape" -p "Tea_Pose";
 		;
 createNode transform -n "TeaPoseSign" -p "Tea_Pose";
 	rename -uid "FA5B4075-4D96-93B2-C12A-BB96EAEFE8F8";
-	setAttr ".t" -type "double3" 0 -0.69461307652048276 -0.93082196387078309 ;
+	setAttr ".t" -type "double3" -0.078178476136395336 0.36884035937734438 -0.93028413251951214 ;
 	setAttr ".r" -type "double3" 0 0.78832389450209606 0 ;
 	setAttr ".rp" -type "double3" 3.8745998978184907e-15 8.2584142336891198 5.6822304790543434 ;
+	setAttr ".rpt" -type "double3" 0.078178476136395336 0 -0.00053783135127286248 ;
 	setAttr ".sp" -type "double3" 3.8745998978184907e-15 8.2584142336891198 5.6822304790543434 ;
 createNode mesh -n "TeaPoseSignShape" -p "TeaPoseSign";
 	rename -uid "D64E4EC1-4D70-8D8B-01AB-968356E54D3C";
@@ -1162,8 +1160,11 @@ createNode reference -n "teaposeWorker_riggest_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"teaposeWorker_riggest_latestRN"
 		"teaposeWorker_riggest_latestRN" 0
-		"teaposeWorker_riggest_latestRN" 1
-		2 "|teaposeWorker_riggest_latest:TeaPose|teaposeWorker_riggest_latest:Master|teaposeWorker_riggest_latest:ItsAMess|teaposeWorker_riggest_latest:Joints_and_Mesh|teaposeWorker_riggest_latest:Spine" 
+		"teaposeWorker_riggest_latestRN" 3
+		0 "|teaposeWorker_riggest_latest:TeaPose" "|Tea_Pose" "-s -r "
+		2 "|Tea_Pose|teaposeWorker_riggest_latest:TeaPose" "translate" " -type \"double3\" 0 1.06345343589782715 0"
+		
+		2 "|Tea_Pose|teaposeWorker_riggest_latest:TeaPose|teaposeWorker_riggest_latest:Master|teaposeWorker_riggest_latest:ItsAMess|teaposeWorker_riggest_latest:Joints_and_Mesh|teaposeWorker_riggest_latest:Spine" 
 		"translate" " -type \"double3\" -0.051890987340526024 -0.39493197004085978 -0.66091628759002519";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
@@ -1172,19 +1173,21 @@ createNode reference -n "tent_TeaPose_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"tent_TeaPose_latestRN"
 		"tent_TeaPose_latestRN" 0
-		"tent_TeaPose_latestRN" 28
+		"tent_TeaPose_latestRN" 29
 		0 "|tent_TeaPose_latest:tent_Teapose" "|Tea_Pose" "-s -r "
-		2 "|Tea_Pose|tent_TeaPose_latest:tent_Teapose" "translate" " -type \"double3\" 0 -0.59101685859122299 -0.25060410164562663"
+		2 "|Tea_Pose|tent_TeaPose_latest:tent_Teapose" "translate" " -type \"double3\" -0.0040678262981694042 1.09258073380603582 -0.20510946253960693"
 		
-		2 "|Tea_Pose|tent_TeaPose_latest:tent_Teapose" "rotate" " -type \"double3\" 0 0.64525848301171962 0"
+		2 "|Tea_Pose|tent_TeaPose_latest:tent_Teapose" "rotate" " -type \"double3\" 0 0.64525848301171973 0"
 		
 		2 "|Tea_Pose|tent_TeaPose_latest:tent_Teapose" "scale" " -type \"double3\" 0.88818857084690062 0.88818857084690062 0.88818857084690062"
 		
-		2 "|Tea_Pose|tent_TeaPose_latest:tent_Teapose" "rotatePivot" " -type \"double3\" 0 1.18069826040317949 0.4066823357169097"
+		2 "|Tea_Pose|tent_TeaPose_latest:tent_Teapose" "rotatePivot" " -type \"double3\" 0 0.56055410390374782 0.3612106025490841"
+		
+		2 "|Tea_Pose|tent_TeaPose_latest:tent_Teapose" "rotatePivotTranslate" " -type \"double3\" 0.0040678262981694059 0 -2.2905938194097005e-05"
 		
 		2 "|Tea_Pose|tent_TeaPose_latest:tent_Teapose" "scalePivot" " -type \"double3\" 0 0.63112060017756189 0.40668233571690954"
 		
-		2 "|Tea_Pose|tent_TeaPose_latest:tent_Teapose" "scalePivotTranslate" " -type \"double3\" 0 0.5495776602256166 0"
+		2 "|Tea_Pose|tent_TeaPose_latest:tent_Teapose" "scalePivotTranslate" " -type \"double3\" 0 -0.070566496273815046 -0.045471733167828238"
 		
 		2 "|Tea_Pose|tent_TeaPose_latest:tent_Teapose|tent_TeaPose_latest:tent_Teapose" 
 		"rotatePivot" " -type \"double3\" 0 1.04559239241158797 0.40668233571690954"
@@ -1269,9 +1272,11 @@ createNode reference -n "StockPot_shaded_latestRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"StockPot_shaded_latestRN"
 		"StockPot_shaded_latestRN" 0
-		"StockPot_shaded_latestRN" 23
+		"StockPot_shaded_latestRN" 24
 		0 "|StockPot_shaded_latest:Pan" "|Tea_Pose" "-s -r "
-		2 "|Tea_Pose|StockPot_shaded_latest:Pan" "translate" " -type \"double3\" 0 0 0"
+		2 "|Tea_Pose|StockPot_shaded_latest:Pan" "translate" " -type \"double3\" -0.63427635228029811 0.86489299076736437 -0.55996118822189667"
+		
+		2 "|Tea_Pose|StockPot_shaded_latest:Pan" "rotate" " -type \"double3\" 0 17.69794004916196783 0"
 		
 		2 "|Tea_Pose|StockPot_shaded_latest:Pan" "scale" " -type \"double3\" 1 1 1"
 		
@@ -2348,46 +2353,46 @@ createNode reference -n "bobacup_milkTeaRN1";
 	rename -uid "F633E92F-4B59-D76D-320C-A0A98C574890";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"bobacup_milkTeaRN1"
-		"bobacup_milkTeaRN1" 0;
+		"bobacup_milkTeaRN1" 0
+		"bobacup_milkTeaRN1" 3
+		2 "|bobacup_milkTea1:MilkTeaCont" "translate" " -type \"double3\" -2.42616731681165465 2.59889716575431962 2.89206508720856537"
+		
+		2 "|bobacup_milkTea1:MilkTeaCont" "rotate" " -type \"double3\" 0 86.46561957310017021 0"
+		
+		2 "|bobacup_milkTea1:MilkTeaCont" "scale" " -type \"double3\" 0.77869094133665484 0.77869094133665484 0.77869094133665484";
 lockNode -l 1 ;
 createNode reference -n "bobacup_milkTea1RN";
 	rename -uid "04077E87-4116-99CD-767D-6D8F5B3351A5";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"bobacup_milkTea1RN"
-		"bobacup_milkTea1RN" 0;
-lockNode -l 1 ;
-createNode reference -n "NapkinStack_v1_latestRN";
-	rename -uid "43A1CBD8-482A-BD79-2FD8-A1996EA6B207";
-	setAttr ".ed" -type "dataReferenceEdits" 
-		"NapkinStack_v1_latestRN"
-		"NapkinStack_v1_latestRN" 0
-		"NapkinStack_v1_latestRN" 2
-		2 "|NapkinStack_v1_latest:mCakeNapkinStack|NapkinStack_v1_latest:mCakeNapkinStack" 
-		"translate" " -type \"double3\" 1.59066000220088455 2.79889897306118884 3.88554956968898502"
+		"bobacup_milkTea1RN" 0
+		"bobacup_milkTea1RN" 3
+		2 "|bobacup_milkTea2:MilkTeaCont" "translate" " -type \"double3\" -2.80353839059357268 2.60342175711416912 3.17663825332444238"
 		
-		2 "|NapkinStack_v1_latest:mCakeNapkinStack|NapkinStack_v1_latest:mCakeNapkinStack" 
-		"scale" " -type \"double3\" 0.34608792512967895 0.34608792512967895 0.34608792512967895";
-	setAttr ".ptag" -type "string" "";
+		2 "|bobacup_milkTea2:MilkTeaCont" "rotate" " -type \"double3\" 0 -76.04319722790252456 0"
+		
+		2 "|bobacup_milkTea2:MilkTeaCont" "scale" " -type \"double3\" 0.75392052555513578 0.75392052555513578 0.75392052555513578";
 lockNode -l 1 ;
 createNode reference -n "table_latestRN";
 	rename -uid "2C66D440-4967-8B53-1741-5FAB235E4779";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"table_latestRN"
 		"table_latestRN" 0
-		"table_latestRN" 7
-		2 "|table_latest:Table" "translate" " -type \"double3\" 0 0.66005640446324609 2.92926767207745442"
+		"table_latestRN" 8
+		0 "|table_latest:Table" "|Tea_Pose" "-s -r "
+		2 "|Tea_Pose|table_latest:Table" "translate" " -type \"double3\" -0.025497014730806226 1.0634534233054842 2.60590771831131551"
 		
-		2 "|table_latest:Table" "rotate" " -type \"double3\" 0 -88.67514766012311611 0"
+		2 "|Tea_Pose|table_latest:Table" "rotate" " -type \"double3\" 0 -88.67514766012311611 0"
 		
-		2 "|table_latest:Table" "scale" " -type \"double3\" 2.38455745769164551 2.38455745769164551 2.38455745769164551"
+		2 "|Tea_Pose|table_latest:Table" "scale" " -type \"double3\" 2.38455745769164551 2.38455745769164551 2.38455745769164551"
 		
-		2 "|table_latest:Table" "rotatePivot" " -type \"double3\" 0 -0.66005640446324609 0"
+		2 "|Tea_Pose|table_latest:Table" "rotatePivot" " -type \"double3\" 0 1.2592342874346813e-08 0"
 		
-		2 "|table_latest:Table" "rotatePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|Tea_Pose|table_latest:Table" "rotatePivotTranslate" " -type \"double3\" 0 0 0"
 		
-		2 "|table_latest:Table" "scalePivot" " -type \"double3\" 0 5.2807823253120389e-09 0"
+		2 "|Tea_Pose|table_latest:Table" "scalePivot" " -type \"double3\" 0 5.2807823253120389e-09 0"
 		
-		2 "|table_latest:Table" "scalePivotTranslate" " -type \"double3\" 0 -0.66005640974404256 0";
+		2 "|Tea_Pose|table_latest:Table" "scalePivotTranslate" " -type \"double3\" 0 7.311546550957013e-09 0";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 select -ne :time1;
@@ -2408,7 +2413,7 @@ select -ne :renderPartition;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 47 ".st";
+	setAttr -s 42 ".st";
 	setAttr -cb on ".an";
 	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
@@ -2421,7 +2426,7 @@ select -ne :defaultShaderList1;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 17 ".s";
+	setAttr -s 16 ".s";
 select -ne :postProcessList1;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -2429,11 +2434,11 @@ select -ne :postProcessList1;
 	setAttr -cb on ".bnm";
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 29 ".u";
+	setAttr -s 23 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 23 ".r";
+	setAttr -s 21 ".r";
 select -ne :defaultTextureList1;
-	setAttr -s 45 ".tx";
+	setAttr -s 34 ".tx";
 select -ne :initialShadingGroup;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
