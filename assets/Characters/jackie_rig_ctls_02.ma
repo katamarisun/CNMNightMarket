@@ -1,6 +1,6 @@
 //Maya ASCII 2018ff09 scene
 //Name: jackie_rig_ctls_02.ma
-//Last modified: Tue, Jan 29, 2019 04:53:14 AM
+//Last modified: Tue, Jan 29, 2019 05:59:49 PM
 //Codeset: 1252
 file -rdi 1 -ns "jackie_rig" -rfn "jackie_rigRN" -op "v=0;p=17;f=0" -typ "mayaAscii"
 		 "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_rig.ma";
@@ -36,17 +36,17 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "AD6D84A1-48BE-235D-D555-A58279DBEE5B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.1361454214037385 6.1714111887799028 6.0224311956443355 ;
-	setAttr ".r" -type "double3" -15.938352729317357 -706.99999999999454 4.0802704183094768e-16 ;
+	setAttr ".t" -type "double3" -2.9052123548746791 7.1131881035303994 8.9561537158810776 ;
+	setAttr ".r" -type "double3" -18.338352729319716 -738.9999999999776 1.2614326532851676e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A67F90E6-4184-0E83-6AE3-E5A0E87E9B44";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 8.4669694476891717;
+	setAttr ".coi" 8.3881684966106036;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 0 7.0630293621986242 0 ;
+	setAttr ".tp" -type "double3" 0.037521070866175954 3.3822294995772491 2.3108333591462378 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -s -n "top";
@@ -69,16 +69,17 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "878E8F01-4091-C1C2-9C8B-9BB579510D0A";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.8248929126407998 5.5444440911726343 1000.1 ;
+	setAttr ".t" -type "double3" 0.023606725068996942 6.4337673051849791 1000.1020499896833 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "C63063D9-4DC1-F94E-935B-448C19C9F612";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
-	setAttr ".coi" 1000.1;
-	setAttr ".ow" 0.54600039302924375;
+	setAttr ".coi" 1000.0732208979907;
+	setAttr ".ow" 1.5385707691185437;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
+	setAttr ".tp" -type "double3" -4.9100949695013441e-08 6.4219639181000074 0.028829091692565895 ;
 	setAttr ".hc" -type "string" "viewSet -f %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
@@ -168,7 +169,7 @@ createNode parentConstraint -n "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1" 
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 1.1425582588869161 1.7564387810864446e-07 0.043262789695074577 ;
-	setAttr ".lr" -type "double3" -0.022941349968109769 0.37732670357400416 -0.00048392004404150269 ;
+	setAttr ".lr" -type "double3" -0.022941349968109901 0.37732670357399795 -0.00048392004404152015 ;
 	setAttr ".rst" -type "double3" 0 8.8817841970012523e-16 0 ;
 	setAttr -k on ".w0";
 createNode transform -n "jackie_lf_shoulder_fk_ctl_os_GRP" -p "lf_arm_ctl";
@@ -1072,7 +1073,6 @@ createNode pointConstraint -n "head_ctl_pointConstraint1" -p "head_ctl";
 	setAttr -k on ".w0";
 createNode transform -n "neck2_ctl";
 	rename -uid "36216131-4790-71CA-FBAF-E78D36B61397";
-	setAttr ".v" no;
 	setAttr ".rp" -type "double3" 6.8098482408629471e-09 6.044714927673339 -0.20028726756572768 ;
 	setAttr ".sp" -type "double3" 6.8098482408629471e-09 6.044714927673339 -0.20028726756572768 ;
 createNode nurbsCurve -n "neck2_ctlShape" -p "neck2_ctl";
@@ -1122,7 +1122,7 @@ createNode nurbsCurve -n "neck1_ctlShape" -p "neck1_ctl";
 		-0.2403521920931527 6.0864787794888464 -0.47178589841353302
 		;
 createNode fosterParent -n "jackie_rigRNfosterParent1";
-	rename -uid "2D720498-42FE-0506-AF49-D4BF877203CA";
+	rename -uid "A9934B2E-4C48-C29A-E435-9BB703E1C530";
 createNode orientConstraint -n "spine_1_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "0135F416-4F6C-67EA-84CF-F790BC9B6E3B";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine1_ctlW0" -dv 1 -min 0 -at "double";
@@ -1190,57 +1190,6 @@ createNode orientConstraint -n "spine_4_orientConstraint1" -p "jackie_rigRNfoste
 createNode orientConstraint -n "spine_5_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "FAE6E8D7-459A-5F0F-CF65-6A8209619C3A";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "spine5_ctlW0" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr -k on ".w0";
-createNode orientConstraint -n "high_neck_orientConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "9DC4C06D-4EF1-0680-DA83-58AC1F9321F0";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck1_ctlW0" -dv 1 -min 0 -at "double";
-	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "head_ctlW1" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr -s 2 ".tg";
-	setAttr -k on ".w0";
-	setAttr -k on ".w1";
-createNode orientConstraint -n "head_orientConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "599CD2F4-4498-B7AA-7A88-DCBAE7278C95";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "head_ctlW0" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr -k on ".w0";
-createNode orientConstraint -n "low_neck_orientConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "D39B538C-47DD-E1B5-AA46-55943B01896D";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck1_ctlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
 	setAttr -k off ".tx";
@@ -1369,23 +1318,76 @@ createNode orientConstraint -n "left_wrist_orientConstraint1" -p "jackie_rigRNfo
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
+createNode orientConstraint -n "low_neck_orientConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "D39B538C-47DD-E1B5-AA46-55943B01896D";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck1_ctlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -k on ".w0";
+createNode orientConstraint -n "high_neck_orientConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "9DC4C06D-4EF1-0680-DA83-58AC1F9321F0";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck1_ctlW0" -dv 1 -min 0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "head_ctlW1" -dv 1 -min 0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w2" -ln "neck2_ctlW2" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 3 ".tg";
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+	setAttr -k on ".w2";
+createNode orientConstraint -n "head_orientConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "599CD2F4-4498-B7AA-7A88-DCBAE7278C95";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "head_ctlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "D02DE277-4384-4C88-457C-7B83C96A585B";
+	rename -uid "044906DC-4955-9EF0-5F1C-8E9FA8647A04";
 	setAttr -s 32 ".lnk";
 	setAttr -s 32 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "1DB1FD40-4DAA-7CBC-714C-DBAF1F72FAD5";
+	rename -uid "62C98652-4F34-55C7-7C73-7CA67A671F75";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "1665430C-42F8-24DE-54E1-35B92FD5D4B2";
+	rename -uid "774A8AD4-4506-7ADD-3921-C38E0DFA4B2F";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "9B16BE3E-4381-1620-23AD-F4BB858CA36C";
+	rename -uid "C94C1202-40B6-9AAC-0D14-61B7776369FF";
 	setAttr ".cdl" 2;
-	setAttr -s 5 ".dli[1:5]"  1 2 3 0 0;
+	setAttr -s 6 ".dli[1:5]"  1 2 3 0 0;
 	setAttr -s 3 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "1472DE7A-4782-1608-BB77-88A1607C89DD";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "63CC7D1F-42EF-51AD-65F8-28949ABCAD5B";
+	rename -uid "393784FC-4E14-F1B0-643D-9CB813193E43";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "E5D42139-4EA7-5B85-657A-F1A0107DC895";
 	setAttr ".g" yes;
@@ -1538,28 +1540,28 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 327\n            -height 365\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 914\n            -height 659\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 327\n            -height 365\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 914\n            -height 659\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 327\n            -height 365\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 914\n            -height 659\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
 		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
 		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 661\n            -height 775\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n"
-		+ "            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n"
-		+ "            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n"
-		+ "            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n"
-		+ "                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -isSet 0\n                -isSetMember 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n"
-		+ "                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                -selectionOrder \"display\" \n                -expandAttribute 1\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n"
-		+ "                -autoFit 1\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -clipTime \"on\" \n                -stackedCurves 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 1\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 1\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n"
-		+ "                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n"
-		+ "                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1836\n            -height 1385\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
+		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
+		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n"
+		+ "            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
+		+ "            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n"
+		+ "                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n"
+		+ "                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -autoFitTime 0\n"
+		+ "                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 1\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 1\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n"
+		+ "                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n"
+		+ "                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n"
@@ -1571,13 +1573,15 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n"
-		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
-		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
-		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n"
-		+ "\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 661\\n    -height 775\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 661\\n    -height 775\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -editorChanged \"updateModelPanelBar\" \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n"
+		+ "                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n"
+		+ "                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n"
+		+ "                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n"
+		+ "            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n"
+		+ "            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1836\\n    -height 1385\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1836\\n    -height 1385\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -1866,21 +1870,13 @@ createNode reference -n "jackie_rigRN";
 	setAttr ".phl[277]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"jackie_rigRN"
-		"jackie_rig:Jacies_shoe_latestRN" 0
 		"jackie_rig:jackieHoodie_latestRN" 0
+		"jackie_rig:Jacies_shoe_latestRN" 0
 		"jackie_rig:Jacies_shoe_latestRN1" 0
 		"jackie_rigRN" 0
 		"jackie_rig:jackiePants_latestRN" 0
 		"jackie_rig:jackieHair_latestRN" 0
 		"jackie_rig:teeth_v1_latestRN" 0
-		"jackie_rig:jackieHoodie_latestRN" 4
-		2 "|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "visibility" " 1"
-		2 "|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
-		"dispResolution" " 3"
-		2 "|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
-		"displaySmoothMesh" " 2"
-		5 4 "jackie_rigRN" "|jackie_rig:jackieHoodie_latest1:jackieHoodie2.drawOverride" 
-		"jackie_rigRN.placeHolderList[12]" ""
 		"jackie_rig:Jacies_shoe_latestRN" 26
 		5 4 "jackie_rigRN" "|jackie_rig:Jacies_shoe_latest:Jackie_Shoe.drawOverride" 
 		"jackie_rigRN.placeHolderList[14]" ""
@@ -1934,6 +1930,14 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rigRN.placeHolderList[38]" ""
 		5 4 "jackie_rigRN" "|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Toe.drawOverride" 
 		"jackie_rigRN.placeHolderList[39]" ""
+		"jackie_rig:jackieHoodie_latestRN" 4
+		2 "|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "visibility" " 1"
+		2 "|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
+		"dispResolution" " 3"
+		2 "|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
+		"displaySmoothMesh" " 2"
+		5 4 "jackie_rigRN" "|jackie_rig:jackieHoodie_latest1:jackieHoodie2.drawOverride" 
+		"jackie_rigRN.placeHolderList[12]" ""
 		"jackie_rig:Jacies_shoe_latestRN1" 27
 		2 "|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe" "visibility" " 1"
 		5 4 "jackie_rigRN" "|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe.drawOverride" 
@@ -1989,29 +1993,29 @@ createNode reference -n "jackie_rigRN";
 		5 4 "jackie_rigRN" "|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Toe.drawOverride" 
 		"jackie_rigRN.placeHolderList[65]" ""
 		"jackie_rigRN" 196
-		0 "|jackie_rigRNfosterParent1|left_wrist_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist" 
+		0 "|jackie_rigRNfosterParent1|head_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|left_elbow_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow" 
-		"-s -r "
-		0 "|jackie_rigRNfosterParent1|effector1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow" 
-		"-s -r "
-		0 "|jackie_rigRNfosterParent1|left_shoulder_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
-		"-s -r "
-		0 "|jackie_rigRNfosterParent1|effector2" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle" 
-		"-s -r "
-		0 "|jackie_rigRNfosterParent1|right_wrist_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist" 
-		"-s -r "
-		0 "|jackie_rigRNfosterParent1|right_elbow_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow" 
-		"-s -r "
-		0 "|jackie_rigRNfosterParent1|right_shoulder_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder" 
-		"-s -r "
-		0 "|jackie_rigRNfosterParent1|effector3" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle" 
+		0 "|jackie_rigRNfosterParent1|high_neck_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|low_neck_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|head_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head" 
+		0 "|jackie_rigRNfosterParent1|left_wrist_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|high_neck_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck" 
+		0 "|jackie_rigRNfosterParent1|left_elbow_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|effector1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|left_shoulder_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|effector2" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|right_wrist_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|right_elbow_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|right_shoulder_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|effector3" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|spine_5_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5" 
 		"-s -r "
@@ -2030,81 +2034,81 @@ createNode reference -n "jackie_rigRN";
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck" 
 		"translate" " -type \"double3\" 0 0.40206242505220424 0.005679091173926335"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow" 
-		"translate" " -type \"double3\" 0.65029833624706279 -0.0068258596013627869 0.013486654108586092"
-		
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist" 
-		"translate" " -type \"double3\" 0.45601424676363217 -0.0047871657108816039 0.012260663639511062"
-		
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip" 
-		"preferredAngle" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep" 
-		"translate" " -type \"double3\" -0.62041199999999941 -0.0065200000000006546 0.012866000000000112"
-		
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep" 
-		"translateX" " -av"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep" 
-		"translateY" " -av"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep" 
-		"translateZ" " -av"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck" 
-		"translate" " -type \"double3\" 0 0.81564606332623479 0.034541222669338095"
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1" 
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck" 
+		"translate" " -type \"double3\" 0 0.20822874594947538 0.034541222669338068"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1" 
 		"translate" " -type \"double3\" -6.8098457231336459e-09 0.54704224688150038 0.024146009463360624"
 		
-		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1" 
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow" 
+		"translate" " -type \"double3\" 0.65029833624706279 -0.0068258596013627869 0.013486654108586092"
+		
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist" 
+		"translate" " -type \"double3\" 0.45601424676363217 -0.0047871657108816039 0.012260663639511062"
+		
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep" 
+		"translate" " -type \"double3\" -0.62041199999999941 -0.0065200000000006546 0.012866000000000112"
+		
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep" 
+		"translateX" " -av"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep" 
+		"translateY" " -av"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep" 
+		"translateZ" " -av"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep" 
 		"rotate" " -type \"double3\" 0 0 0"
 		5 4 "jackie_rigRN" "|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688.drawOverride" 
 		"jackie_rigRN.placeHolderList[139]" ""
@@ -2196,194 +2200,197 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rigRN.placeHolderList[182]" ""
 		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.jointOrient" 
 		"jackie_rigRN.placeHolderList[183]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle.message" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.inverseScale" 
 		"jackie_rigRN.placeHolderList[184]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder.inverseScale" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateY" 
 		"jackie_rigRN.placeHolderList[185]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateX" 
 		"jackie_rigRN.placeHolderList[186]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateZ" 
 		"jackie_rigRN.placeHolderList[187]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateOrder" 
 		"jackie_rigRN.placeHolderList[188]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[189]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.jointOrient" 
 		"jackie_rigRN.placeHolderList[190]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.inverseScale" 
 		"jackie_rigRN.placeHolderList[191]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateX" 
 		"jackie_rigRN.placeHolderList[192]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder.parentMatrix" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateY" 
 		"jackie_rigRN.placeHolderList[193]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateZ" 
 		"jackie_rigRN.placeHolderList[194]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateOrder" 
 		"jackie_rigRN.placeHolderList[195]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[196]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder.message" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.jointOrient" 
 		"jackie_rigRN.placeHolderList[197]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.translate" 
 		"jackie_rigRN.placeHolderList[198]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.rotatePivot" 
 		"jackie_rigRN.placeHolderList[199]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[200]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.parentMatrix" 
 		"jackie_rigRN.placeHolderList[201]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle.message" 
 		"jackie_rigRN.placeHolderList[202]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.inverseScale" 
 		"jackie_rigRN.placeHolderList[203]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateZ" 
 		"jackie_rigRN.placeHolderList[204]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm.translateX" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateX" 
 		"jackie_rigRN.placeHolderList[205]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm.translateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateY" 
 		"jackie_rigRN.placeHolderList[206]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translate" 
 		"jackie_rigRN.placeHolderList[207]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateX" 
 		"jackie_rigRN.placeHolderList[208]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateY" 
 		"jackie_rigRN.placeHolderList[209]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.scale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateZ" 
 		"jackie_rigRN.placeHolderList[210]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.parentMatrix" 
 		"jackie_rigRN.placeHolderList[211]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateOrder" 
 		"jackie_rigRN.placeHolderList[212]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.jointOrient" 
 		"jackie_rigRN.placeHolderList[213]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[214]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.translate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.message" 
 		"jackie_rigRN.placeHolderList[215]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.inverseScale" 
 		"jackie_rigRN.placeHolderList[216]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.rotateZ" 
 		"jackie_rigRN.placeHolderList[217]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentMatrix" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.rotateX" 
 		"jackie_rigRN.placeHolderList[218]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.rotateY" 
 		"jackie_rigRN.placeHolderList[219]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.rotateOrder" 
 		"jackie_rigRN.placeHolderList[220]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.jointOrient" 
 		"jackie_rigRN.placeHolderList[221]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[222]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm.translateX" 
 		"jackie_rigRN.placeHolderList[223]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm.translateY" 
 		"jackie_rigRN.placeHolderList[224]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle.message" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm.translateZ" 
 		"jackie_rigRN.placeHolderList[225]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.inverseScale" 
 		"jackie_rigRN.placeHolderList[226]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.inverseScale" 
 		"jackie_rigRN.placeHolderList[227]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.scale" 
 		"jackie_rigRN.placeHolderList[228]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.translate" 
 		"jackie_rigRN.placeHolderList[229]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotate" 
 		"jackie_rigRN.placeHolderList[230]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateZ" 
 		"jackie_rigRN.placeHolderList[231]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateX" 
 		"jackie_rigRN.placeHolderList[232]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateY" 
 		"jackie_rigRN.placeHolderList[233]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivot" 
 		"jackie_rigRN.placeHolderList[234]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[235]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentMatrix" 
 		"jackie_rigRN.placeHolderList[236]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateOrder" 
 		"jackie_rigRN.placeHolderList[237]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateOrder" 
 		"jackie_rigRN.placeHolderList[238]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.jointOrient" 
 		"jackie_rigRN.placeHolderList[239]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.jointOrient" 
 		"jackie_rigRN.placeHolderList[240]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[241]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[242]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle.message" 
 		"jackie_rigRN.placeHolderList[243]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.inverseScale" 
 		"jackie_rigRN.placeHolderList[244]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.scale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateX" 
 		"jackie_rigRN.placeHolderList[245]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.translate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateY" 
 		"jackie_rigRN.placeHolderList[246]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateZ" 
 		"jackie_rigRN.placeHolderList[247]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateX" 
 		"jackie_rigRN.placeHolderList[248]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.parentMatrix" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateY" 
 		"jackie_rigRN.placeHolderList[249]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotate" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateZ" 
 		"jackie_rigRN.placeHolderList[250]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateOrder" 
 		"jackie_rigRN.placeHolderList[251]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.jointOrient" 
 		"jackie_rigRN.placeHolderList[252]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[253]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.inverseScale" 
 		"jackie_rigRN.placeHolderList[254]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.rotateX" 
 		"jackie_rigRN.placeHolderList[255]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.rotateY" 
 		"jackie_rigRN.placeHolderList[256]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.rotateZ" 
 		"jackie_rigRN.placeHolderList[257]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.rotateOrder" 
 		"jackie_rigRN.placeHolderList[258]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.jointOrient" 
 		"jackie_rigRN.placeHolderList[259]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[260]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.inverseScale" 
 		"jackie_rigRN.placeHolderList[261]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.inverseScale" 
 		"jackie_rigRN.placeHolderList[262]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.scale" 
 		"jackie_rigRN.placeHolderList[263]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.translate" 
 		"jackie_rigRN.placeHolderList[264]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotatePivot" 
 		"jackie_rigRN.placeHolderList[265]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[266]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.parentMatrix" 
 		"jackie_rigRN.placeHolderList[267]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotate" 
 		"jackie_rigRN.placeHolderList[268]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateX" 
 		"jackie_rigRN.placeHolderList[269]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateY" 
 		"jackie_rigRN.placeHolderList[270]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateZ" 
 		"jackie_rigRN.placeHolderList[271]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateOrder" 
 		"jackie_rigRN.placeHolderList[272]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateOrder" 
 		"jackie_rigRN.placeHolderList[273]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.translate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.jointOrient" 
 		"jackie_rigRN.placeHolderList[274]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.jointOrient" 
 		"jackie_rigRN.placeHolderList[275]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[276]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[277]" ""
+		"jackie_rig:jackiePants_latestRN" 1
+		5 4 "jackie_rigRN" "|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1.drawOverride" 
+		"jackie_rigRN.placeHolderList[13]" ""
 		"jackie_rig:jackieHair_latestRN" 76
 		2 "|jackie_rig:jackieHair_latest:jackieHair" "visibility" " 1"
 		2 "|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHairShape" 
@@ -2536,9 +2543,6 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rigRN.placeHolderList[137]" ""
 		5 4 "jackie_rigRN" "|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface39.drawOverride" 
 		"jackie_rigRN.placeHolderList[138]" ""
-		"jackie_rig:jackiePants_latestRN" 1
-		5 4 "jackie_rigRN" "|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1.drawOverride" 
-		"jackie_rigRN.placeHolderList[13]" ""
 		"jackie_rig:teeth_v1_latestRN" 11
 		5 4 "jackie_rigRN" "|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:BottomCont|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:PearlyWhites|jackie_rig:teeth_v1_latest:pCube1.drawOverride" 
 		"jackie_rigRN.placeHolderList[1]" ""
@@ -2636,6 +2640,10 @@ createNode animCurveUU -n "rt_shoulder_fk_ctl_visibility";
 	setAttr ".tan" 18;
 	setAttr -s 2 ".ktv[0:1]"  0 0 1 1;
 select -ne :time1;
+	setAttr -av -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
 select -ne :hardwareRenderingGlobals;
@@ -2645,11 +2653,29 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 	setAttr -s 32 ".st";
+	setAttr -cb on ".an";
+	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 select -ne :defaultShaderList1;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 	setAttr -s 35 ".s";
 select -ne :postProcessList1;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
 	setAttr -s 55 ".u";
@@ -2659,21 +2685,86 @@ select -ne :lightList1;
 select -ne :defaultTextureList1;
 	setAttr -s 69 ".tx";
 select -ne :initialShadingGroup;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -av -k on ".nds";
+	setAttr -cb on ".bnm";
 	setAttr -s 34 ".dsm";
+	setAttr -k on ".mwc";
+	setAttr -cb on ".an";
+	setAttr -cb on ".il";
+	setAttr -cb on ".vo";
+	setAttr -cb on ".eo";
+	setAttr -cb on ".fo";
+	setAttr -cb on ".epo";
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
+	setAttr -k on ".mwc";
+	setAttr -cb on ".an";
+	setAttr -cb on ".il";
+	setAttr -cb on ".vo";
+	setAttr -cb on ".eo";
+	setAttr -cb on ".fo";
+	setAttr -cb on ".epo";
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
 	setAttr ".ren" -type "string" "arnold";
 select -ne :defaultResolution;
-	setAttr ".pa" 1;
+	setAttr -av -k on ".cch";
+	setAttr -k on ".ihi";
+	setAttr -av -k on ".nds";
+	setAttr -k on ".bnm";
+	setAttr -av ".w";
+	setAttr -av ".h";
+	setAttr -av ".pa" 1;
+	setAttr -av ".al";
+	setAttr -av ".dar";
+	setAttr -av -k on ".ldar";
+	setAttr -k on ".dpi";
+	setAttr -av -k on ".off";
+	setAttr -av -k on ".fld";
+	setAttr -av -k on ".zsl";
+	setAttr -k on ".isu";
+	setAttr -k on ".pdu";
 select -ne :defaultLightSet;
 select -ne :hardwareRenderGlobals;
+	setAttr -k on ".cch";
+	setAttr -cb on ".ihi";
+	setAttr -k on ".nds";
+	setAttr -cb on ".bnm";
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+	setAttr -k off ".fbfm";
+	setAttr -k off -cb on ".ehql";
+	setAttr -k off -cb on ".eams";
+	setAttr -k off ".eeaa";
+	setAttr -k off ".engm";
+	setAttr -k off ".mes";
+	setAttr -k off ".emb";
+	setAttr -av -k off ".mbbf";
+	setAttr -k off ".mbs";
+	setAttr -k off ".trm";
+	setAttr -k off -cb on ".tshc";
+	setAttr -k off ".enpt";
+	setAttr -k off ".clmt";
+	setAttr -k off -cb on ".tcov";
+	setAttr -k off -cb on ".lith";
+	setAttr -k off -cb on ".sobc";
+	setAttr -k off -cb on ".cuth";
+	setAttr -k off -cb on ".hgcd";
+	setAttr -k off -cb on ".hgci";
+	setAttr -k off -cb on ".mgcs";
+	setAttr -k off ".twa";
+	setAttr -k off ".twz";
+	setAttr -k on ".hwcc";
+	setAttr -k on ".hwdp";
+	setAttr -k on ".hwql";
 select -ne :ikSystem;
-	setAttr -s 4 ".sol";
-connectAttr "geo.di" "jackie_rigRN.phl[12]";
+	setAttr -s 2 ".sol";
 connectAttr "accessories_clothes.di" "jackie_rigRN.phl[14]";
 connectAttr "geo.di" "jackie_rigRN.phl[15]";
 connectAttr "geo.di" "jackie_rigRN.phl[16]";
@@ -2700,6 +2791,7 @@ connectAttr "geo.di" "jackie_rigRN.phl[36]";
 connectAttr "geo.di" "jackie_rigRN.phl[37]";
 connectAttr "geo.di" "jackie_rigRN.phl[38]";
 connectAttr "geo.di" "jackie_rigRN.phl[39]";
+connectAttr "geo.di" "jackie_rigRN.phl[12]";
 connectAttr "accessories_clothes.di" "jackie_rigRN.phl[40]";
 connectAttr "geo.di" "jackie_rigRN.phl[41]";
 connectAttr "geo.di" "jackie_rigRN.phl[42]";
@@ -2771,120 +2863,121 @@ connectAttr "low_neck_orientConstraint1.crz" "jackie_rigRN.phl[180]";
 connectAttr "jackie_rigRN.phl[181]" "low_neck_orientConstraint1.cro";
 connectAttr "jackie_rigRN.phl[182]" "low_neck_orientConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[183]" "low_neck_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[184]" "lf_clavicle_ikHandle.hsj";
-connectAttr "jackie_rigRN.phl[185]" "left_shoulder_orientConstraint1.is";
-connectAttr "left_shoulder_orientConstraint1.crz" "jackie_rigRN.phl[186]";
-connectAttr "left_shoulder_orientConstraint1.crx" "jackie_rigRN.phl[187]";
-connectAttr "left_shoulder_orientConstraint1.cry" "jackie_rigRN.phl[188]";
-connectAttr "jackie_rigRN.phl[189]" "lf_arm_ikHandle_poleVectorConstraint1.crp";
-connectAttr "jackie_rigRN.phl[190]" "effector2.tx";
-connectAttr "jackie_rigRN.phl[191]" "effector2.ty";
-connectAttr "jackie_rigRN.phl[192]" "effector2.tz";
-connectAttr "jackie_rigRN.phl[193]" "lf_arm_ikHandle_poleVectorConstraint1.ps";
-connectAttr "jackie_rigRN.phl[194]" "left_shoulder_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[195]" "left_shoulder_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[196]" "left_shoulder_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[197]" "lf_arm_ikHandle.hsj";
-connectAttr "jackie_rigRN.phl[198]" "left_elbow_orientConstraint1.is";
-connectAttr "left_elbow_orientConstraint1.crz" "jackie_rigRN.phl[199]";
-connectAttr "left_elbow_orientConstraint1.crx" "jackie_rigRN.phl[200]";
-connectAttr "left_elbow_orientConstraint1.cry" "jackie_rigRN.phl[201]";
-connectAttr "jackie_rigRN.phl[202]" "left_elbow_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[203]" "left_elbow_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[204]" "left_elbow_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[205]" "effector1.tx";
-connectAttr "jackie_rigRN.phl[206]" "effector1.ty";
-connectAttr "jackie_rigRN.phl[207]" "effector1.tz";
-connectAttr "jackie_rigRN.phl[208]" "left_wrist_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[209]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tis"
+connectAttr "jackie_rigRN.phl[184]" "high_neck_orientConstraint1.is";
+connectAttr "high_neck_orientConstraint1.cry" "jackie_rigRN.phl[185]";
+connectAttr "high_neck_orientConstraint1.crx" "jackie_rigRN.phl[186]";
+connectAttr "high_neck_orientConstraint1.crz" "jackie_rigRN.phl[187]";
+connectAttr "jackie_rigRN.phl[188]" "high_neck_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[189]" "high_neck_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[190]" "high_neck_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[191]" "head_orientConstraint1.is";
+connectAttr "head_orientConstraint1.crx" "jackie_rigRN.phl[192]";
+connectAttr "head_orientConstraint1.cry" "jackie_rigRN.phl[193]";
+connectAttr "head_orientConstraint1.crz" "jackie_rigRN.phl[194]";
+connectAttr "jackie_rigRN.phl[195]" "head_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[196]" "head_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[197]" "head_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[198]" "head_ctl_pointConstraint1.tg[0].tt";
+connectAttr "jackie_rigRN.phl[199]" "head_ctl_pointConstraint1.tg[0].trp";
+connectAttr "jackie_rigRN.phl[200]" "head_ctl_pointConstraint1.tg[0].trt";
+connectAttr "jackie_rigRN.phl[201]" "head_ctl_pointConstraint1.tg[0].tpm";
+connectAttr "jackie_rigRN.phl[202]" "lf_clavicle_ikHandle.hsj";
+connectAttr "jackie_rigRN.phl[203]" "left_shoulder_orientConstraint1.is";
+connectAttr "left_shoulder_orientConstraint1.crz" "jackie_rigRN.phl[204]";
+connectAttr "left_shoulder_orientConstraint1.crx" "jackie_rigRN.phl[205]";
+connectAttr "left_shoulder_orientConstraint1.cry" "jackie_rigRN.phl[206]";
+connectAttr "jackie_rigRN.phl[207]" "lf_arm_ikHandle_poleVectorConstraint1.crp";
+connectAttr "jackie_rigRN.phl[208]" "effector2.tx";
+connectAttr "jackie_rigRN.phl[209]" "effector2.ty";
+connectAttr "jackie_rigRN.phl[210]" "effector2.tz";
+connectAttr "jackie_rigRN.phl[211]" "lf_arm_ikHandle_poleVectorConstraint1.ps";
+connectAttr "jackie_rigRN.phl[212]" "left_shoulder_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[213]" "left_shoulder_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[214]" "left_shoulder_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[215]" "lf_arm_ikHandle.hsj";
+connectAttr "jackie_rigRN.phl[216]" "left_elbow_orientConstraint1.is";
+connectAttr "left_elbow_orientConstraint1.crz" "jackie_rigRN.phl[217]";
+connectAttr "left_elbow_orientConstraint1.crx" "jackie_rigRN.phl[218]";
+connectAttr "left_elbow_orientConstraint1.cry" "jackie_rigRN.phl[219]";
+connectAttr "jackie_rigRN.phl[220]" "left_elbow_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[221]" "left_elbow_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[222]" "left_elbow_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[223]" "effector1.tx";
+connectAttr "jackie_rigRN.phl[224]" "effector1.ty";
+connectAttr "jackie_rigRN.phl[225]" "effector1.tz";
+connectAttr "jackie_rigRN.phl[226]" "left_wrist_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[227]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tis"
 		;
-connectAttr "jackie_rigRN.phl[210]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].ts"
+connectAttr "jackie_rigRN.phl[228]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].ts"
 		;
-connectAttr "jackie_rigRN.phl[211]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[229]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
 		;
-connectAttr "left_wrist_orientConstraint1.crz" "jackie_rigRN.phl[212]";
-connectAttr "left_wrist_orientConstraint1.crx" "jackie_rigRN.phl[213]";
-connectAttr "left_wrist_orientConstraint1.cry" "jackie_rigRN.phl[214]";
-connectAttr "jackie_rigRN.phl[215]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
+connectAttr "jackie_rigRN.phl[230]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
 		;
-connectAttr "jackie_rigRN.phl[216]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
+connectAttr "left_wrist_orientConstraint1.crz" "jackie_rigRN.phl[231]";
+connectAttr "left_wrist_orientConstraint1.crx" "jackie_rigRN.phl[232]";
+connectAttr "left_wrist_orientConstraint1.cry" "jackie_rigRN.phl[233]";
+connectAttr "jackie_rigRN.phl[234]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[217]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[235]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
 		;
-connectAttr "jackie_rigRN.phl[218]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
+connectAttr "jackie_rigRN.phl[236]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[219]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[237]" "left_wrist_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[238]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[220]" "left_wrist_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[221]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[239]" "left_wrist_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[240]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "jackie_rigRN.phl[222]" "left_wrist_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[223]" "left_wrist_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[224]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
+connectAttr "jackie_rigRN.phl[241]" "left_wrist_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[242]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "jackie_rigRN.phl[225]" "rt_clavicle_ikHandle.hsj";
-connectAttr "jackie_rigRN.phl[226]" "right_shoulder_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[227]" "effector3.tx";
-connectAttr "jackie_rigRN.phl[228]" "effector3.ty";
-connectAttr "jackie_rigRN.phl[229]" "effector3.tz";
-connectAttr "right_shoulder_orientConstraint1.crx" "jackie_rigRN.phl[230]";
-connectAttr "right_shoulder_orientConstraint1.cry" "jackie_rigRN.phl[231]";
-connectAttr "right_shoulder_orientConstraint1.crz" "jackie_rigRN.phl[232]";
-connectAttr "jackie_rigRN.phl[233]" "right_shoulder_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[234]" "right_shoulder_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[235]" "right_shoulder_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[236]" "right_elbow_orientConstraint1.is";
-connectAttr "right_elbow_orientConstraint1.crx" "jackie_rigRN.phl[237]";
-connectAttr "right_elbow_orientConstraint1.cry" "jackie_rigRN.phl[238]";
-connectAttr "right_elbow_orientConstraint1.crz" "jackie_rigRN.phl[239]";
-connectAttr "jackie_rigRN.phl[240]" "right_elbow_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[241]" "right_elbow_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[242]" "right_elbow_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[243]" "right_wrist_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[244]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tis"
+connectAttr "jackie_rigRN.phl[243]" "rt_clavicle_ikHandle.hsj";
+connectAttr "jackie_rigRN.phl[244]" "right_shoulder_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[245]" "effector3.tx";
+connectAttr "jackie_rigRN.phl[246]" "effector3.ty";
+connectAttr "jackie_rigRN.phl[247]" "effector3.tz";
+connectAttr "right_shoulder_orientConstraint1.crx" "jackie_rigRN.phl[248]";
+connectAttr "right_shoulder_orientConstraint1.cry" "jackie_rigRN.phl[249]";
+connectAttr "right_shoulder_orientConstraint1.crz" "jackie_rigRN.phl[250]";
+connectAttr "jackie_rigRN.phl[251]" "right_shoulder_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[252]" "right_shoulder_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[253]" "right_shoulder_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[254]" "right_elbow_orientConstraint1.is";
+connectAttr "right_elbow_orientConstraint1.crx" "jackie_rigRN.phl[255]";
+connectAttr "right_elbow_orientConstraint1.cry" "jackie_rigRN.phl[256]";
+connectAttr "right_elbow_orientConstraint1.crz" "jackie_rigRN.phl[257]";
+connectAttr "jackie_rigRN.phl[258]" "right_elbow_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[259]" "right_elbow_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[260]" "right_elbow_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[261]" "right_wrist_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[262]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tis"
 		;
-connectAttr "jackie_rigRN.phl[245]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].ts"
+connectAttr "jackie_rigRN.phl[263]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].ts"
 		;
-connectAttr "jackie_rigRN.phl[246]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
+connectAttr "jackie_rigRN.phl[264]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
 		;
-connectAttr "jackie_rigRN.phl[247]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[265]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[248]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[266]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
 		;
-connectAttr "jackie_rigRN.phl[249]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
+connectAttr "jackie_rigRN.phl[267]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[250]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[268]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
 		;
-connectAttr "right_wrist_orientConstraint1.crx" "jackie_rigRN.phl[251]";
-connectAttr "right_wrist_orientConstraint1.cry" "jackie_rigRN.phl[252]";
-connectAttr "right_wrist_orientConstraint1.crz" "jackie_rigRN.phl[253]";
-connectAttr "jackie_rigRN.phl[254]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "right_wrist_orientConstraint1.crx" "jackie_rigRN.phl[269]";
+connectAttr "right_wrist_orientConstraint1.cry" "jackie_rigRN.phl[270]";
+connectAttr "right_wrist_orientConstraint1.crz" "jackie_rigRN.phl[271]";
+connectAttr "jackie_rigRN.phl[272]" "right_wrist_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[273]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[255]" "right_wrist_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[256]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[274]" "right_wrist_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[275]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "jackie_rigRN.phl[257]" "right_wrist_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[258]" "right_wrist_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[259]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
+connectAttr "jackie_rigRN.phl[276]" "right_wrist_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[277]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "jackie_rigRN.phl[260]" "high_neck_orientConstraint1.is";
-connectAttr "high_neck_orientConstraint1.cry" "jackie_rigRN.phl[261]";
-connectAttr "high_neck_orientConstraint1.crx" "jackie_rigRN.phl[262]";
-connectAttr "high_neck_orientConstraint1.crz" "jackie_rigRN.phl[263]";
-connectAttr "jackie_rigRN.phl[264]" "high_neck_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[265]" "high_neck_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[266]" "high_neck_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[267]" "head_orientConstraint1.is";
-connectAttr "head_orientConstraint1.crx" "jackie_rigRN.phl[268]";
-connectAttr "head_orientConstraint1.cry" "jackie_rigRN.phl[269]";
-connectAttr "head_orientConstraint1.crz" "jackie_rigRN.phl[270]";
-connectAttr "jackie_rigRN.phl[271]" "head_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[272]" "head_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[273]" "head_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[274]" "head_ctl_pointConstraint1.tg[0].tt";
-connectAttr "jackie_rigRN.phl[275]" "head_ctl_pointConstraint1.tg[0].trp";
-connectAttr "jackie_rigRN.phl[276]" "head_ctl_pointConstraint1.tg[0].trt";
-connectAttr "jackie_rigRN.phl[277]" "head_ctl_pointConstraint1.tg[0].tpm";
+connectAttr "geo.di" "jackie_rigRN.phl[13]";
 connectAttr "accessories_clothes.di" "jackie_rigRN.phl[66]";
 connectAttr "geo.di" "jackie_rigRN.phl[67]";
 connectAttr "geo.di" "jackie_rigRN.phl[68]";
@@ -2958,7 +3051,6 @@ connectAttr "geo.di" "jackie_rigRN.phl[135]";
 connectAttr "geo.di" "jackie_rigRN.phl[136]";
 connectAttr "geo.di" "jackie_rigRN.phl[137]";
 connectAttr "geo.di" "jackie_rigRN.phl[138]";
-connectAttr "geo.di" "jackie_rigRN.phl[13]";
 connectAttr "geo.di" "jackie_rigRN.phl[1]";
 connectAttr "geo.di" "jackie_rigRN.phl[2]";
 connectAttr "geo.di" "jackie_rigRN.phl[3]";
@@ -2982,6 +3074,8 @@ connectAttr "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.cry" "lf_arm_ikfkSwi
 		 -l on;
 connectAttr "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.crz" "lf_arm_ikfkSwitch_ctl.rz"
 		 -l on;
+connectAttr "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.w0" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tw"
+		;
 connectAttr "lf_arm_ikfkSwitch_ctl.ro" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.cro"
 		;
 connectAttr "lf_arm_ikfkSwitch_ctl.pim" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.cpim"
@@ -2989,8 +3083,6 @@ connectAttr "lf_arm_ikfkSwitch_ctl.pim" "jackie_lf_arm_ikfkSwitch_ctl_parentCons
 connectAttr "lf_arm_ikfkSwitch_ctl.rp" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.crp"
 		;
 connectAttr "lf_arm_ikfkSwitch_ctl.rpt" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.crt"
-		;
-connectAttr "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.w0" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tw"
 		;
 connectAttr "jackie_lf_shoulder_fk_ctl_visibility.o" "lf_shoulder_fk_ctl.v";
 connectAttr "jackie_lf_elbow_fk_ctl_visibility.o" "lf_elbow_fk_ctl.v";
@@ -3086,6 +3178,8 @@ connectAttr "rt_arm_ikfkSwitch_ctl_parentConstraint1.cry" "rt_arm_ikfkSwitch_ctl
 		 -l on;
 connectAttr "rt_arm_ikfkSwitch_ctl_parentConstraint1.crz" "rt_arm_ikfkSwitch_ctl.rz"
 		 -l on;
+connectAttr "rt_arm_ikfkSwitch_ctl_parentConstraint1.w0" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tw"
+		;
 connectAttr "rt_arm_ikfkSwitch_ctl.ro" "rt_arm_ikfkSwitch_ctl_parentConstraint1.cro"
 		;
 connectAttr "rt_arm_ikfkSwitch_ctl.pim" "rt_arm_ikfkSwitch_ctl_parentConstraint1.cpim"
@@ -3093,8 +3187,6 @@ connectAttr "rt_arm_ikfkSwitch_ctl.pim" "rt_arm_ikfkSwitch_ctl_parentConstraint1
 connectAttr "rt_arm_ikfkSwitch_ctl.rp" "rt_arm_ikfkSwitch_ctl_parentConstraint1.crp"
 		;
 connectAttr "rt_arm_ikfkSwitch_ctl.rpt" "rt_arm_ikfkSwitch_ctl_parentConstraint1.crt"
-		;
-connectAttr "rt_arm_ikfkSwitch_ctl_parentConstraint1.w0" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tw"
 		;
 connectAttr "rt_shoulder_fk_ctl_visibility.o" "rt_shoulder_fk_ctl.v";
 connectAttr "rt_elbow_fk_ctl_visibility.o" "rt_elbow_fk_ctl.v";
@@ -3140,10 +3232,10 @@ connectAttr "rt_clavicle_ikHandle_parentConstraint1.w0" "rt_clavicle_ikHandle_pa
 connectAttr "head_ctl_pointConstraint1.ctx" "head_ctl.tx" -l on;
 connectAttr "head_ctl_pointConstraint1.cty" "head_ctl.ty" -l on;
 connectAttr "head_ctl_pointConstraint1.ctz" "head_ctl.tz" -l on;
+connectAttr "head_ctl_pointConstraint1.w0" "head_ctl_pointConstraint1.tg[0].tw";
 connectAttr "head_ctl.pim" "head_ctl_pointConstraint1.cpim";
 connectAttr "head_ctl.rp" "head_ctl_pointConstraint1.crp";
 connectAttr "head_ctl.rpt" "head_ctl_pointConstraint1.crt";
-connectAttr "head_ctl_pointConstraint1.w0" "head_ctl_pointConstraint1.tg[0].tw";
 connectAttr "spine1_ctl.r" "spine_1_orientConstraint1.tg[0].tr";
 connectAttr "spine1_ctl.ro" "spine_1_orientConstraint1.tg[0].tro";
 connectAttr "spine1_ctl.pm" "spine_1_orientConstraint1.tg[0].tpm";
@@ -3164,25 +3256,6 @@ connectAttr "spine5_ctl.r" "spine_5_orientConstraint1.tg[0].tr";
 connectAttr "spine5_ctl.ro" "spine_5_orientConstraint1.tg[0].tro";
 connectAttr "spine5_ctl.pm" "spine_5_orientConstraint1.tg[0].tpm";
 connectAttr "spine_5_orientConstraint1.w0" "spine_5_orientConstraint1.tg[0].tw";
-connectAttr "neck1_ctl.r" "high_neck_orientConstraint1.tg[0].tr";
-connectAttr "neck1_ctl.ro" "high_neck_orientConstraint1.tg[0].tro";
-connectAttr "neck1_ctl.pm" "high_neck_orientConstraint1.tg[0].tpm";
-connectAttr "high_neck_orientConstraint1.w0" "high_neck_orientConstraint1.tg[0].tw"
-		;
-connectAttr "head_ctl.r" "high_neck_orientConstraint1.tg[1].tr";
-connectAttr "head_ctl.ro" "high_neck_orientConstraint1.tg[1].tro";
-connectAttr "head_ctl.pm" "high_neck_orientConstraint1.tg[1].tpm";
-connectAttr "high_neck_orientConstraint1.w1" "high_neck_orientConstraint1.tg[1].tw"
-		;
-connectAttr "head_ctl.r" "head_orientConstraint1.tg[0].tr";
-connectAttr "head_ctl.ro" "head_orientConstraint1.tg[0].tro";
-connectAttr "head_ctl.pm" "head_orientConstraint1.tg[0].tpm";
-connectAttr "head_orientConstraint1.w0" "head_orientConstraint1.tg[0].tw";
-connectAttr "neck1_ctl.r" "low_neck_orientConstraint1.tg[0].tr";
-connectAttr "neck1_ctl.ro" "low_neck_orientConstraint1.tg[0].tro";
-connectAttr "neck1_ctl.pm" "low_neck_orientConstraint1.tg[0].tpm";
-connectAttr "low_neck_orientConstraint1.w0" "low_neck_orientConstraint1.tg[0].tw"
-		;
 connectAttr "rt_shoulder_fk_ctl.r" "right_shoulder_orientConstraint1.tg[0].tr";
 connectAttr "rt_shoulder_fk_ctl.ro" "right_shoulder_orientConstraint1.tg[0].tro"
 		;
@@ -3227,6 +3300,30 @@ connectAttr "left_wrist_orientConstraint1.w0" "left_wrist_orientConstraint1.tg[0
 		;
 connectAttr "left_wrist_orientConstraint1_jackie_lf_wrist_fk_ctlW0.o" "left_wrist_orientConstraint1.w0"
 		;
+connectAttr "neck1_ctl.r" "low_neck_orientConstraint1.tg[0].tr";
+connectAttr "neck1_ctl.ro" "low_neck_orientConstraint1.tg[0].tro";
+connectAttr "neck1_ctl.pm" "low_neck_orientConstraint1.tg[0].tpm";
+connectAttr "low_neck_orientConstraint1.w0" "low_neck_orientConstraint1.tg[0].tw"
+		;
+connectAttr "neck1_ctl.r" "high_neck_orientConstraint1.tg[0].tr";
+connectAttr "neck1_ctl.ro" "high_neck_orientConstraint1.tg[0].tro";
+connectAttr "neck1_ctl.pm" "high_neck_orientConstraint1.tg[0].tpm";
+connectAttr "high_neck_orientConstraint1.w0" "high_neck_orientConstraint1.tg[0].tw"
+		;
+connectAttr "head_ctl.r" "high_neck_orientConstraint1.tg[1].tr";
+connectAttr "head_ctl.ro" "high_neck_orientConstraint1.tg[1].tro";
+connectAttr "head_ctl.pm" "high_neck_orientConstraint1.tg[1].tpm";
+connectAttr "high_neck_orientConstraint1.w1" "high_neck_orientConstraint1.tg[1].tw"
+		;
+connectAttr "neck2_ctl.r" "high_neck_orientConstraint1.tg[2].tr";
+connectAttr "neck2_ctl.ro" "high_neck_orientConstraint1.tg[2].tro";
+connectAttr "neck2_ctl.pm" "high_neck_orientConstraint1.tg[2].tpm";
+connectAttr "high_neck_orientConstraint1.w2" "high_neck_orientConstraint1.tg[2].tw"
+		;
+connectAttr "head_ctl.r" "head_orientConstraint1.tg[0].tr";
+connectAttr "head_ctl.ro" "head_orientConstraint1.tg[0].tro";
+connectAttr "head_ctl.pm" "head_orientConstraint1.tg[0].tpm";
+connectAttr "head_orientConstraint1.w0" "head_orientConstraint1.tg[0].tw";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
