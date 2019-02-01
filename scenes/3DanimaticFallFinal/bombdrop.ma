@@ -1,6 +1,6 @@
 //Maya ASCII 2018ff09 scene
 //Name: bombdrop.ma
-//Last modified: Fri, Feb 01, 2019 11:52:56 AM
+//Last modified: Fri, Feb 01, 2019 11:57:39 AM
 //Codeset: 1252
 file -rdi 1 -ns "garden_wall_v1_latest" -rfn "garden_wall_v1_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/garden_wall_latest.ma";
@@ -10,7 +10,6 @@ file -rdi 1 -ns "bonzai_latest" -rfn "bonzai_latestRN" -op "v=0;" -typ "mayaAsci
 		 "/media/cs198-3-tac/My Passport/CNMNightMarket//assets/SetProps/bonzai_latest.ma";
 file -rdi 1 -ns "bonzai_variation2_latest" -rfn "bonzai_variation2_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "/media/cs198-3-tac/My Passport/CNMNightMarket//assets/SetProps/bonzai_variation2_latest.ma";
-file -rdi 1 -ns "bomb" -rfn "bombRN" -op "v=0;" -typ "mayaAscii" "/media/cs198-3-tac/My Passport/CNMNightMarket//assets/SetProps/bomb.ma";
 file -rdi 1 -ns "Jackie_latest" -rfn "Jackie_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "D:/CNMNightMarket//assets/Characters/Jackie_latest.ma";
 file -rdi 2 -ns "jackie_rig" -rfn "Jackie_latest:jackie_rigRN" -op "v=0;p=17;f=0"
@@ -29,6 +28,7 @@ file -rdi 3 -ns "jackieHair_latest" -rfn "Jackie_latest:jackie_rig:jackieHair_la
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/jackieHair_latest.ma";
 file -rdi 3 -ns "JadeNecklace_v2_latest" -dr 1 -rfn "Jackie_latest:jackie_rig:JadeNecklace_v2_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/bever/OneDrive/Documents/GitHub/CNMNightMarket//assets/ClothingAccessories/JadeNecklace_v2_latest.ma";
+file -rdi 1 -ns "bomb2" -rfn "bombRN1" -op "v=0;" -typ "mayaAscii" "D:/CNMNightMarket//assets/SetProps/bomb.ma";
 file -r -ns "garden_wall_v1_latest" -dr 1 -rfn "garden_wall_v1_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/garden_wall_latest.ma";
 file -r -ns "bridge_v1_latest" -dr 1 -rfn "bridge_v1_latestRN" -op "v=0;" -typ "mayaAscii"
@@ -37,9 +37,9 @@ file -r -ns "bonzai_latest" -dr 1 -rfn "bonzai_latestRN" -op "v=0;" -typ "mayaAs
 		 "/media/cs198-3-tac/My Passport/CNMNightMarket//assets/SetProps/bonzai_latest.ma";
 file -r -ns "bonzai_variation2_latest" -dr 1 -rfn "bonzai_variation2_latestRN" -op
 		 "v=0;" -typ "mayaAscii" "/media/cs198-3-tac/My Passport/CNMNightMarket//assets/SetProps/bonzai_variation2_latest.ma";
-file -r -ns "bomb" -dr 1 -rfn "bombRN" -op "v=0;" -typ "mayaAscii" "/media/cs198-3-tac/My Passport/CNMNightMarket//assets/SetProps/bomb.ma";
 file -r -ns "Jackie_latest" -dr 1 -rfn "Jackie_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "D:/CNMNightMarket//assets/Characters/Jackie_latest.ma";
+file -r -ns "bomb2" -dr 1 -rfn "bombRN1" -op "v=0;" -typ "mayaAscii" "D:/CNMNightMarket//assets/SetProps/bomb.ma";
 requires maya "2018ff09";
 requires "stereoCamera" "10.0";
 requires -nodeType "rmanDisplayChannel" -nodeType "d_openexr" -nodeType "rmanGlobals"
@@ -56,14 +56,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "402097DB-4138-4E24-CEFC-6EB0B473E4F6";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.23273316919061715 9.7828539163940462 45.320610498664777 ;
-	setAttr ".r" -type "double3" -12.60000000000127 4.0000000000004459 0 ;
+	setAttr ".t" -type "double3" 10.723207301587893 16.829462795427254 100.01849854414016 ;
+	setAttr ".r" -type "double3" -5.4000000000022261 1.1999999999999991 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "7C75BB81-4F87-8B18-D218-E2B34ADFCB5B";
 	setAttr -k off ".v" no;
 	setAttr ".ovr" 1.3;
 	setAttr ".fl" 100;
-	setAttr ".coi" 48.914774779757806;
+	setAttr ".coi" 112.77795200852327;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -118,37 +118,7 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".man" -type "string" "side_mask";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
-createNode transform -n "bomb1";
-	rename -uid "947BC980-0000-6D32-5C11-66700000ED3A";
-	setAttr ".t" -type "double3" -10.556775968126068 0.12688172778493367 -87.250561333958814 ;
-	setAttr ".r" -type "double3" -0.2147393988541513 -0.2628555198135592 -56.923160773174288 ;
-	setAttr ".s" -type "double3" 0.47963636671409604 0.47963636671409604 0.47963636671409604 ;
-	setAttr ".rp" -type "double3" 0 2.5583622194028783 2.2204460492503131e-16 ;
-	setAttr ".sp" -type "double3" 0 2.5583622194028783 2.2204460492503131e-16 ;
-createNode nurbsCurve -n "bomb1Shape" -p "bomb1";
-	rename -uid "947BC980-0000-6D32-5C11-66700000ED39";
-	setAttr -k off ".v";
-	setAttr ".cc" -type "nurbsCurve" 
-		3 8 2 no 3
-		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
-		11
-		1.9885080062573706 2.5583622194028783 -1.9885080062573675
-		-3.2083554122409003e-16 2.5583622194028783 -2.8121749913366543
-		-1.9885080062573686 2.5583622194028783 -1.9885080062573686
-		-2.8121749913366543 2.5583622194028783 -8.1489795742601418e-16
-		-1.988508006257369 2.5583622194028783 1.9885080062573679
-		-8.4736320762967507e-16 2.5583622194028783 2.8121749913366547
-		1.9885080062573675 2.5583622194028783 1.9885080062573688
-		2.8121749913366543 2.5583622194028783 1.5104246736535972e-15
-		1.9885080062573706 2.5583622194028783 -1.9885080062573675
-		-3.2083554122409003e-16 2.5583622194028783 -2.8121749913366543
-		-1.9885080062573686 2.5583622194028783 -1.9885080062573686
-		;
-createNode transform -n "group1" -p "bomb1";
-	rename -uid "947BC980-0000-6D32-5C11-66680000ED31";
-	setAttr ".rp" -type "double3" 0 3.8341503739356995 0 ;
-	setAttr ".sp" -type "double3" 0 3.8341503739356995 0 ;
-createNode transform -n "bomb_scene";
+createNode transform -n "CAMERA3";
 	rename -uid "947BC980-0000-6D32-5C11-6C3E0000EDAF";
 	setAttr ".t" -type "double3" -1.6095980337191393 2.953299437558091 39.632608683566858 ;
 	setAttr -l on ".tx";
@@ -158,7 +128,7 @@ createNode transform -n "bomb_scene";
 	setAttr -l on ".rx";
 	setAttr -l on ".ry";
 	setAttr -l on ".rz";
-createNode camera -n "bomb_sceneShape" -p "bomb_scene";
+createNode camera -n "CAMERA3Shape" -p "CAMERA3";
 	rename -uid "947BC980-0000-6D32-5C11-6C3E0000EDB0";
 	setAttr -k off ".v";
 	setAttr ".ovr" 1.3;
@@ -493,6 +463,20 @@ createNode reference -n "bridge_v1_latestRN";
 		
 		2 "|bridge_v1_latest:bridge|bridge_v1_latest:railing1|bridge_v1_latest:railing1Shape" 
 		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		3 "bridge_v1_latest:groupId33.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank12|bridge_v1_latest:plank12Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank12|bridge_v1_latest:plank12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank12|bridge_v1_latest:plank12Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId41.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId29.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank10|bridge_v1_latest:plank10Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank10|bridge_v1_latest:plank10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank10|bridge_v1_latest:plank10Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "bridge_v1_latest:groupId35.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "bridge_v1_latest:groupId23.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank7|bridge_v1_latest:plank7Shape.instObjGroups.objectGroups[0].objectGroupId" 
@@ -500,6 +484,12 @@ createNode reference -n "bridge_v1_latestRN";
 		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank7|bridge_v1_latest:plank7Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
 		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank7|bridge_v1_latest:plank7Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId47.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank19|bridge_v1_latest:plank19Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank19|bridge_v1_latest:plank19Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank19|bridge_v1_latest:plank19Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "bridge_v1_latest:groupId29.message" ":initialShadingGroup.groupNodes" 
 		"-na"
@@ -509,6 +499,8 @@ createNode reference -n "bridge_v1_latestRN";
 		""
 		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank13|bridge_v1_latest:plank13Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId49.message" ":initialShadingGroup.groupNodes" 
+		"-na"
 		3 "bridge_v1_latest:groupId21.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank6|bridge_v1_latest:plank6Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank6|bridge_v1_latest:plank6Shape.instObjGroups.objectGroups[0].objectGrpColor" 
@@ -525,6 +517,16 @@ createNode reference -n "bridge_v1_latestRN";
 		"-na"
 		3 "bridge_v1_latest:groupId13.message" ":initialShadingGroup.groupNodes" 
 		"-na"
+		3 "bridge_v1_latest:groupId39.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId47.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId27.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank9|bridge_v1_latest:plank9Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank9|bridge_v1_latest:plank9Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank9|bridge_v1_latest:plank9Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "bridge_v1_latest:groupId39.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank15|bridge_v1_latest:plank15Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank15|bridge_v1_latest:plank15Shape.instObjGroups.objectGroups[0].objectGrpColor" 
@@ -543,13 +545,29 @@ createNode reference -n "bridge_v1_latestRN";
 		""
 		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank|bridge_v1_latest:plankShape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId17.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank4|bridge_v1_latest:plank4Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank4|bridge_v1_latest:plank4Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank4|bridge_v1_latest:plank4Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId37.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank14|bridge_v1_latest:plank14Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank14|bridge_v1_latest:plank14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank14|bridge_v1_latest:plank14Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "bridge_v1_latest:groupId41.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank16|bridge_v1_latest:plank16Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank16|bridge_v1_latest:plank16Shape.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
 		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank16|bridge_v1_latest:plank16Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId21.message" ":initialShadingGroup.groupNodes" 
+		"-na"
 		3 "bridge_v1_latest:groupId15.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId17.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "bridge_v1_latest:groupId31.message" ":initialShadingGroup.groupNodes" 
 		"-na"
@@ -565,66 +583,6 @@ createNode reference -n "bridge_v1_latestRN";
 		""
 		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank17|bridge_v1_latest:plank17Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId23.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId11.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank1|bridge_v1_latest:plank1Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank1|bridge_v1_latest:plank1Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank1|bridge_v1_latest:plank1Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId33.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId37.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId33.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank12|bridge_v1_latest:plank12Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank12|bridge_v1_latest:plank12Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank12|bridge_v1_latest:plank12Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId41.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId29.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank10|bridge_v1_latest:plank10Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank10|bridge_v1_latest:plank10Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank10|bridge_v1_latest:plank10Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId47.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank19|bridge_v1_latest:plank19Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank19|bridge_v1_latest:plank19Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank19|bridge_v1_latest:plank19Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId49.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId39.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId47.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId27.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank9|bridge_v1_latest:plank9Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank9|bridge_v1_latest:plank9Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank9|bridge_v1_latest:plank9Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId17.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank4|bridge_v1_latest:plank4Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank4|bridge_v1_latest:plank4Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank4|bridge_v1_latest:plank4Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId37.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank14|bridge_v1_latest:plank14Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank14|bridge_v1_latest:plank14Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank14|bridge_v1_latest:plank14Shape.instObjGroups.objectGroups[0]" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "bridge_v1_latest:groupId21.message" ":initialShadingGroup.groupNodes" 
-		"-na"
-		3 "bridge_v1_latest:groupId17.message" ":initialShadingGroup.groupNodes" 
-		"-na"
 		3 "bridge_v1_latest:groupId25.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank8|bridge_v1_latest:plank8Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank8|bridge_v1_latest:plank8Shape.instObjGroups.objectGroups[0].objectGrpColor" 
@@ -632,6 +590,8 @@ createNode reference -n "bridge_v1_latestRN";
 		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank8|bridge_v1_latest:plank8Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "bridge_v1_latest:groupId11.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId23.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "bridge_v1_latest:groupId31.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank11|bridge_v1_latest:plank11Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
@@ -651,6 +611,12 @@ createNode reference -n "bridge_v1_latestRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "bridge_v1_latest:groupId19.message" ":initialShadingGroup.groupNodes" 
 		"-na"
+		3 "bridge_v1_latest:groupId11.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank1|bridge_v1_latest:plank1Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 ":initialShadingGroup.memberWireframeColor" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank1|bridge_v1_latest:plank1Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank1|bridge_v1_latest:plank1Shape.instObjGroups.objectGroups[0]" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "bridge_v1_latest:groupId25.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		3 "bridge_v1_latest:groupId13.groupId" "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank2|bridge_v1_latest:plank2Shape.instObjGroups.objectGroups[0].objectGroupId" 
@@ -659,6 +625,10 @@ createNode reference -n "bridge_v1_latestRN";
 		""
 		3 "|bridge_v1_latest:bridge|bridge_v1_latest:bridge4|bridge_v1_latest:planks|bridge_v1_latest:plank2|bridge_v1_latest:plank2Shape.instObjGroups.objectGroups[0]" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "bridge_v1_latest:groupId37.message" ":initialShadingGroup.groupNodes" 
+		"-na"
+		3 "bridge_v1_latest:groupId33.message" ":initialShadingGroup.groupNodes" 
+		"-na"
 		3 "bridge_v1_latest:groupId43.message" ":initialShadingGroup.groupNodes" 
 		"-na"
 		5 4 "bridge_v1_latestRN" "|bridge_v1_latest:bottom.drawOverride" "bridge_v1_latestRN.placeHolderList[1]" 
@@ -729,7 +699,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"bombDrop2Jackie\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 0\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 0\n            -nurbsCurves 0\n            -nurbsSurfaces 0\n            -polymeshes 1\n            -subdivSurfaces 0\n            -planes 0\n            -lights 0\n            -cameras 0\n            -controlVertices 0\n"
 		+ "            -hulls 0\n            -grid 1\n            -imagePlane 0\n            -joints 0\n            -ikHandles 0\n            -deformers 0\n            -dynamics 0\n            -particleInstancers 0\n            -fluids 0\n            -hairSystems 0\n            -follicles 0\n            -nCloths 0\n            -nParticles 0\n            -nRigids 0\n            -dynamicConstraints 0\n            -locators 0\n            -manipulators 1\n            -pluginShapes 0\n            -dimensions 0\n            -handles 0\n            -pivots 0\n            -textures 0\n            -strokes 0\n            -motionTrails 0\n            -clipGhosts 0\n            -greasePencils 0\n            -shadows 1\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 0 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"bomb_scene\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
+		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"CAMERA3\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
 		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 798\n            -height 693\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"bombDrop1Ping\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 0\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n"
@@ -769,8 +739,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 0\\n    -nurbsCurves 0\\n    -nurbsSurfaces 0\\n    -polymeshes 1\\n    -subdivSurfaces 0\\n    -planes 0\\n    -lights 0\\n    -cameras 0\\n    -controlVertices 0\\n    -hulls 0\\n    -grid 1\\n    -imagePlane 0\\n    -joints 0\\n    -ikHandles 0\\n    -deformers 0\\n    -dynamics 0\\n    -particleInstancers 0\\n    -fluids 0\\n    -hairSystems 0\\n    -follicles 0\\n    -nCloths 0\\n    -nParticles 0\\n    -nRigids 0\\n    -dynamicConstraints 0\\n    -locators 0\\n    -manipulators 1\\n    -pluginShapes 0\\n    -dimensions 0\\n    -handles 0\\n    -pivots 0\\n    -textures 0\\n    -strokes 0\\n    -motionTrails 0\\n    -clipGhosts 0\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 747\\n    -height 693\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 0 \\n    $editorName\"\n"
 		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 0\\n    -nurbsCurves 0\\n    -nurbsSurfaces 0\\n    -polymeshes 1\\n    -subdivSurfaces 0\\n    -planes 0\\n    -lights 0\\n    -cameras 0\\n    -controlVertices 0\\n    -hulls 0\\n    -grid 1\\n    -imagePlane 0\\n    -joints 0\\n    -ikHandles 0\\n    -deformers 0\\n    -dynamics 0\\n    -particleInstancers 0\\n    -fluids 0\\n    -hairSystems 0\\n    -follicles 0\\n    -nCloths 0\\n    -nParticles 0\\n    -nRigids 0\\n    -dynamicConstraints 0\\n    -locators 0\\n    -manipulators 1\\n    -pluginShapes 0\\n    -dimensions 0\\n    -handles 0\\n    -pivots 0\\n    -textures 0\\n    -strokes 0\\n    -motionTrails 0\\n    -clipGhosts 0\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 747\\n    -height 693\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 0 \\n    $editorName\"\n"
 		+ "\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Side View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Side View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"bomb_scene\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 798\\n    -height 693\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Side View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"bomb_scene\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 798\\n    -height 693\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Side View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"CAMERA3\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 798\\n    -height 693\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Side View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"CAMERA3\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 798\\n    -height 693\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -874,1190 +844,6 @@ createNode reference -n "PingTeenFixedTopo_LP_v2RN";
 		"PingTeenFixedTopo_LP_v2RN.placeHolderList[1]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
-createNode reference -n "bombRN";
-	rename -uid "947BC980-0000-6D32-5C11-66600000ECAD";
-	setAttr -s 272 ".phl";
-	setAttr ".phl[1]" 0;
-	setAttr ".phl[2]" 0;
-	setAttr ".phl[3]" 0;
-	setAttr ".phl[4]" 0;
-	setAttr ".phl[5]" 0;
-	setAttr ".phl[6]" 0;
-	setAttr ".phl[7]" 0;
-	setAttr ".phl[8]" 0;
-	setAttr ".phl[9]" 0;
-	setAttr ".phl[10]" 0;
-	setAttr ".phl[11]" 0;
-	setAttr ".phl[12]" 0;
-	setAttr ".phl[13]" 0;
-	setAttr ".phl[14]" 0;
-	setAttr ".phl[15]" 0;
-	setAttr ".phl[16]" 0;
-	setAttr ".phl[17]" 0;
-	setAttr ".phl[18]" 0;
-	setAttr ".phl[19]" 0;
-	setAttr ".phl[20]" 0;
-	setAttr ".phl[21]" 0;
-	setAttr ".phl[22]" 0;
-	setAttr ".phl[23]" 0;
-	setAttr ".phl[24]" 0;
-	setAttr ".phl[25]" 0;
-	setAttr ".phl[26]" 0;
-	setAttr ".phl[27]" 0;
-	setAttr ".phl[28]" 0;
-	setAttr ".phl[29]" 0;
-	setAttr ".phl[30]" 0;
-	setAttr ".phl[31]" 0;
-	setAttr ".phl[32]" 0;
-	setAttr ".phl[33]" 0;
-	setAttr ".phl[34]" 0;
-	setAttr ".phl[35]" 0;
-	setAttr ".phl[36]" 0;
-	setAttr ".phl[37]" 0;
-	setAttr ".phl[38]" 0;
-	setAttr ".phl[39]" 0;
-	setAttr ".phl[40]" 0;
-	setAttr ".phl[41]" 0;
-	setAttr ".phl[42]" 0;
-	setAttr ".phl[43]" 0;
-	setAttr ".phl[44]" 0;
-	setAttr ".phl[45]" 0;
-	setAttr ".phl[46]" 0;
-	setAttr ".phl[47]" 0;
-	setAttr ".phl[48]" 0;
-	setAttr ".phl[49]" 0;
-	setAttr ".phl[50]" 0;
-	setAttr ".phl[51]" 0;
-	setAttr ".phl[52]" 0;
-	setAttr ".phl[53]" 0;
-	setAttr ".phl[54]" 0;
-	setAttr ".phl[55]" 0;
-	setAttr ".phl[56]" 0;
-	setAttr ".phl[57]" 0;
-	setAttr ".phl[58]" 0;
-	setAttr ".phl[59]" 0;
-	setAttr ".phl[60]" 0;
-	setAttr ".phl[61]" 0;
-	setAttr ".phl[62]" 0;
-	setAttr ".phl[63]" 0;
-	setAttr ".phl[64]" 0;
-	setAttr ".phl[65]" 0;
-	setAttr ".phl[66]" 0;
-	setAttr ".phl[67]" 0;
-	setAttr ".phl[68]" 0;
-	setAttr ".phl[69]" 0;
-	setAttr ".phl[70]" 0;
-	setAttr ".phl[71]" 0;
-	setAttr ".phl[72]" 0;
-	setAttr ".phl[73]" 0;
-	setAttr ".phl[74]" 0;
-	setAttr ".phl[75]" 0;
-	setAttr ".phl[76]" 0;
-	setAttr ".phl[77]" 0;
-	setAttr ".phl[78]" 0;
-	setAttr ".phl[79]" 0;
-	setAttr ".phl[80]" 0;
-	setAttr ".phl[81]" 0;
-	setAttr ".phl[82]" 0;
-	setAttr ".phl[83]" 0;
-	setAttr ".phl[84]" 0;
-	setAttr ".phl[85]" 0;
-	setAttr ".phl[86]" 0;
-	setAttr ".phl[87]" 0;
-	setAttr ".phl[88]" 0;
-	setAttr ".phl[89]" 0;
-	setAttr ".phl[90]" 0;
-	setAttr ".phl[91]" 0;
-	setAttr ".phl[92]" 0;
-	setAttr ".phl[93]" 0;
-	setAttr ".phl[94]" 0;
-	setAttr ".phl[95]" 0;
-	setAttr ".phl[96]" 0;
-	setAttr ".phl[97]" 0;
-	setAttr ".phl[98]" 0;
-	setAttr ".phl[99]" 0;
-	setAttr ".phl[100]" 0;
-	setAttr ".phl[101]" 0;
-	setAttr ".phl[102]" 0;
-	setAttr ".phl[103]" 0;
-	setAttr ".phl[104]" 0;
-	setAttr ".phl[105]" 0;
-	setAttr ".phl[106]" 0;
-	setAttr ".phl[107]" 0;
-	setAttr ".phl[108]" 0;
-	setAttr ".phl[109]" 0;
-	setAttr ".phl[110]" 0;
-	setAttr ".phl[111]" 0;
-	setAttr ".phl[112]" 0;
-	setAttr ".phl[113]" 0;
-	setAttr ".phl[114]" 0;
-	setAttr ".phl[115]" 0;
-	setAttr ".phl[116]" 0;
-	setAttr ".phl[117]" 0;
-	setAttr ".phl[118]" 0;
-	setAttr ".phl[119]" 0;
-	setAttr ".phl[120]" 0;
-	setAttr ".phl[121]" 0;
-	setAttr ".phl[122]" 0;
-	setAttr ".phl[123]" 0;
-	setAttr ".phl[124]" 0;
-	setAttr ".phl[125]" 0;
-	setAttr ".phl[126]" 0;
-	setAttr ".phl[127]" 0;
-	setAttr ".phl[128]" 0;
-	setAttr ".phl[129]" 0;
-	setAttr ".phl[130]" 0;
-	setAttr ".phl[131]" 0;
-	setAttr ".phl[132]" 0;
-	setAttr ".phl[133]" 0;
-	setAttr ".phl[134]" 0;
-	setAttr ".phl[135]" 0;
-	setAttr ".phl[136]" 0;
-	setAttr ".phl[137]" 0;
-	setAttr ".phl[138]" 0;
-	setAttr ".phl[139]" 0;
-	setAttr ".phl[140]" 0;
-	setAttr ".phl[141]" 0;
-	setAttr ".phl[142]" 0;
-	setAttr ".phl[143]" 0;
-	setAttr ".phl[144]" 0;
-	setAttr ".phl[145]" 0;
-	setAttr ".phl[146]" 0;
-	setAttr ".phl[147]" 0;
-	setAttr ".phl[148]" 0;
-	setAttr ".phl[149]" 0;
-	setAttr ".phl[150]" 0;
-	setAttr ".phl[151]" 0;
-	setAttr ".phl[152]" 0;
-	setAttr ".phl[153]" 0;
-	setAttr ".phl[154]" 0;
-	setAttr ".phl[155]" 0;
-	setAttr ".phl[156]" 0;
-	setAttr ".phl[157]" 0;
-	setAttr ".phl[158]" 0;
-	setAttr ".phl[159]" 0;
-	setAttr ".phl[160]" 0;
-	setAttr ".phl[161]" 0;
-	setAttr ".phl[162]" 0;
-	setAttr ".phl[163]" 0;
-	setAttr ".phl[164]" 0;
-	setAttr ".phl[165]" 0;
-	setAttr ".phl[166]" 0;
-	setAttr ".phl[167]" 0;
-	setAttr ".phl[168]" 0;
-	setAttr ".phl[169]" 0;
-	setAttr ".phl[170]" 0;
-	setAttr ".phl[171]" 0;
-	setAttr ".phl[172]" 0;
-	setAttr ".phl[173]" 0;
-	setAttr ".phl[174]" 0;
-	setAttr ".phl[175]" 0;
-	setAttr ".phl[176]" 0;
-	setAttr ".phl[177]" 0;
-	setAttr ".phl[178]" 0;
-	setAttr ".phl[179]" 0;
-	setAttr ".phl[180]" 0;
-	setAttr ".phl[181]" 0;
-	setAttr ".phl[182]" 0;
-	setAttr ".phl[183]" 0;
-	setAttr ".phl[184]" 0;
-	setAttr ".phl[185]" 0;
-	setAttr ".phl[186]" 0;
-	setAttr ".phl[187]" 0;
-	setAttr ".phl[188]" 0;
-	setAttr ".phl[189]" 0;
-	setAttr ".phl[190]" 0;
-	setAttr ".phl[191]" 0;
-	setAttr ".phl[192]" 0;
-	setAttr ".phl[193]" 0;
-	setAttr ".phl[194]" 0;
-	setAttr ".phl[195]" 0;
-	setAttr ".phl[196]" 0;
-	setAttr ".phl[197]" 0;
-	setAttr ".phl[198]" 0;
-	setAttr ".phl[199]" 0;
-	setAttr ".phl[200]" 0;
-	setAttr ".phl[201]" 0;
-	setAttr ".phl[202]" 0;
-	setAttr ".phl[203]" 0;
-	setAttr ".phl[204]" 0;
-	setAttr ".phl[205]" 0;
-	setAttr ".phl[206]" 0;
-	setAttr ".phl[207]" 0;
-	setAttr ".phl[208]" 0;
-	setAttr ".phl[209]" 0;
-	setAttr ".phl[210]" 0;
-	setAttr ".phl[211]" 0;
-	setAttr ".phl[212]" 0;
-	setAttr ".phl[213]" 0;
-	setAttr ".phl[214]" 0;
-	setAttr ".phl[215]" 0;
-	setAttr ".phl[216]" 0;
-	setAttr ".phl[217]" 0;
-	setAttr ".phl[218]" 0;
-	setAttr ".phl[219]" 0;
-	setAttr ".phl[220]" 0;
-	setAttr ".phl[221]" 0;
-	setAttr ".phl[222]" 0;
-	setAttr ".phl[223]" 0;
-	setAttr ".phl[224]" 0;
-	setAttr ".phl[225]" 0;
-	setAttr ".phl[226]" 0;
-	setAttr ".phl[227]" 0;
-	setAttr ".phl[228]" 0;
-	setAttr ".phl[229]" 0;
-	setAttr ".phl[230]" 0;
-	setAttr ".phl[231]" 0;
-	setAttr ".phl[232]" 0;
-	setAttr ".phl[233]" 0;
-	setAttr ".phl[234]" 0;
-	setAttr ".phl[235]" 0;
-	setAttr ".phl[236]" 0;
-	setAttr ".phl[237]" 0;
-	setAttr ".phl[238]" 0;
-	setAttr ".phl[239]" 0;
-	setAttr ".phl[240]" 0;
-	setAttr ".phl[241]" 0;
-	setAttr ".phl[242]" 0;
-	setAttr ".phl[243]" 0;
-	setAttr ".phl[244]" 0;
-	setAttr ".phl[245]" 0;
-	setAttr ".phl[246]" 0;
-	setAttr ".phl[247]" 0;
-	setAttr ".phl[248]" 0;
-	setAttr ".phl[249]" 0;
-	setAttr ".phl[250]" 0;
-	setAttr ".phl[251]" 0;
-	setAttr ".phl[252]" 0;
-	setAttr ".phl[253]" 0;
-	setAttr ".phl[254]" 0;
-	setAttr ".phl[255]" 0;
-	setAttr ".phl[256]" 0;
-	setAttr ".phl[257]" 0;
-	setAttr ".phl[258]" 0;
-	setAttr ".phl[259]" 0;
-	setAttr ".phl[260]" 0;
-	setAttr ".phl[261]" 0;
-	setAttr ".phl[262]" 0;
-	setAttr ".phl[263]" 0;
-	setAttr ".phl[264]" 0;
-	setAttr ".phl[265]" 0;
-	setAttr ".phl[266]" 0;
-	setAttr ".phl[267]" 0;
-	setAttr ".phl[268]" 0;
-	setAttr ".phl[269]" 0;
-	setAttr ".phl[270]" 0;
-	setAttr ".phl[271]" 0;
-	setAttr ".phl[272]" 0;
-	setAttr ".ed" -type "dataReferenceEdits" 
-		"bombRN"
-		"bombRN" 12
-		3 "bomb:set3.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "bomb:set4.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		""
-		3 "bomb:set5.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		""
-		3 "bomb:set6.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGrpColor" 
-		""
-		3 "bomb:set3.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "bomb:set4.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		""
-		3 "bomb:set5.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		""
-		3 "bomb:set6.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGrpColor" 
-		""
-		3 "bomb:set10.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[4].objectGrpColor" 
-		""
-		3 "bomb:set12.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[5].objectGrpColor" 
-		""
-		3 "bomb:set13.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[6].objectGrpColor" 
-		""
-		3 "bomb:set14.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGrpColor" 
-		""
-		"bombRN" 384
-		0 "|bomb:pCube1" "|bomb1|group1" "-s -r "
-		0 "|bomb:pPlane4" "|bomb1|group1" "-s -r "
-		0 "|bomb:pPlane3" "|bomb1|group1" "-s -r "
-		0 "|bomb:pPlane2" "|bomb1|group1" "-s -r "
-		0 "|bomb:pPlane1" "|bomb1|group1" "-s -r "
-		0 "|bomb:pSphere1" "|bomb1|group1" "-s -r "
-		2 "|bomb1|group1|bomb:pSphere1" "translate" " -type \"double3\" 0 0 0"
-		2 "|bomb1|group1|bomb:pSphere1" "rotatePivot" " -type \"double3\" 0 2.71754556894302368 0"
-		
-		2 "|bomb1|group1|bomb:pSphere1" "scalePivot" " -type \"double3\" 0 2.71754556894302368 0"
-		
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "instObjGroups.objectGroups" 
-		" -s 2"
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "instObjGroups.objectGroups[0].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[60:71]\""
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "instObjGroups.objectGroups[1].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[0:11]\""
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "overrideDisplayType" 
-		" 0"
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "overrideLevelOfDetail" 
-		" 0"
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "overrideShading" " 1"
-		
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "overrideTexturing" " 1"
-		
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "overridePlayback" " 1"
-		
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "overrideEnabled" " 0"
-		
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "overrideVisibility" " 1"
-		
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "hideOnPlayback" " 0"
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "overrideRGBColors" " 0"
-		
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "overrideColor" " 0"
-		2 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1" "overrideColorRGB" " -type \"float3\" 0 0 0"
-		
-		2 "|bomb1|group1|bomb:pPlane1" "translate" " -type \"double3\" 0.3318855878935949 6.47368897656922293 -0.47593719494478592"
-		
-		2 "|bomb1|group1|bomb:pPlane1" "rotate" " -type \"double3\" 89.99999999999998579 0 89.99999999999998579"
-		
-		2 "|bomb1|group1|bomb:pPlane1" "rotatePivot" " -type \"double3\" -0.041720451106525787 0.48696472191270462 -1.01556254782877886"
-		
-		2 "|bomb1|group1|bomb:pPlane1" "rotatePivotTranslate" " -type \"double3\" -0.97384209672225319 -0.52868517301923013 1.50252726974148332"
-		
-		2 "|bomb1|group1|bomb:pPlane1" "scalePivot" " -type \"double3\" -0.0096387565135953607 0.52751077711582184 -0.30906638503074652"
-		
-		2 "|bomb1|group1|bomb:pPlane1" "scalePivotTranslate" " -type \"double3\" -0.032081694592930428 -0.04054605520311718 -0.70649616279803229"
-		
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "instObjGroups" " -s 4"
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "instObjGroups.objectGroups" 
-		" -s 11"
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "instObjGroups.objectGroups[0].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[2]\""
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "instObjGroups.objectGroups[1].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[22]\""
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "instObjGroups.objectGroups[2].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[15]\""
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "instObjGroups.objectGroups[3].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[21]\""
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "instObjGroups.objectGroups[4].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[24:25]\""
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "instObjGroups.objectGroups[5].objectGrpCompList" 
-		" -type \"componentList\" 2 \"e[8]\" \"e[26:27]\""
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "instObjGroups.objectGroups[6].objectGrpCompList" 
-		" -type \"componentList\" 6 \"e[0]\" \"e[3]\" \"e[5]\" \"e[13]\" \"e[16]\" \"e[19]\""
-		
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "instObjGroups.objectGroups[7].objectGrpCompList" 
-		" -type \"componentList\" 2 \"e[1]\" \"e[23]\""
-		2 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1" "instObjGroups.objectGroups" 
-		" -s 11"
-		2 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1" "instObjGroups.objectGroups[0].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[2]\""
-		2 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1" "instObjGroups.objectGroups[1].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[22]\""
-		2 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1" "instObjGroups.objectGroups[2].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[15]\""
-		2 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1" "instObjGroups.objectGroups[3].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[21]\""
-		2 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1" "instObjGroups.objectGroups[4].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[24:25]\""
-		2 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1" "instObjGroups.objectGroups[5].objectGrpCompList" 
-		" -type \"componentList\" 2 \"e[8]\" \"e[26:27]\""
-		2 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1" "instObjGroups.objectGroups[6].objectGrpCompList" 
-		" -type \"componentList\" 6 \"e[0]\" \"e[3]\" \"e[5]\" \"e[13]\" \"e[16]\" \"e[19]\""
-		
-		2 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1" "instObjGroups.objectGroups[7].objectGrpCompList" 
-		" -type \"componentList\" 2 \"e[1]\" \"e[23]\""
-		2 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1" "instObjGroups.objectGroups" 
-		" -s 11"
-		2 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1" "instObjGroups.objectGroups[0].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[2]\""
-		2 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1" "instObjGroups.objectGroups[1].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[22]\""
-		2 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1" "instObjGroups.objectGroups[2].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[15]\""
-		2 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1" "instObjGroups.objectGroups[3].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[21]\""
-		2 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1" "instObjGroups.objectGroups[4].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[24:25]\""
-		2 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1" "instObjGroups.objectGroups[5].objectGrpCompList" 
-		" -type \"componentList\" 2 \"e[8]\" \"e[26:27]\""
-		2 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1" "instObjGroups.objectGroups[6].objectGrpCompList" 
-		" -type \"componentList\" 6 \"e[0]\" \"e[3]\" \"e[5]\" \"e[13]\" \"e[16]\" \"e[19]\""
-		
-		2 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1" "instObjGroups.objectGroups[7].objectGrpCompList" 
-		" -type \"componentList\" 2 \"e[1]\" \"e[23]\""
-		2 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1" "instObjGroups.objectGroups" 
-		" -s 11"
-		2 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1" "instObjGroups.objectGroups[0].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[2]\""
-		2 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1" "instObjGroups.objectGroups[1].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[22]\""
-		2 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1" "instObjGroups.objectGroups[2].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[15]\""
-		2 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1" "instObjGroups.objectGroups[3].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[21]\""
-		2 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1" "instObjGroups.objectGroups[7].objectGrpCompList" 
-		" -type \"componentList\" 1 \"e[24:25]\""
-		2 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1" "instObjGroups.objectGroups[10].objectGrpCompList" 
-		" -type \"componentList\" 2 \"e[8]\" \"e[26:27]\""
-		2 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1" "instObjGroups.objectGroups[11].objectGrpCompList" 
-		" -type \"componentList\" 6 \"e[0]\" \"e[3]\" \"e[5]\" \"e[13]\" \"e[16]\" \"e[19]\""
-		
-		2 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1" "instObjGroups.objectGroups[12].objectGrpCompList" 
-		" -type \"componentList\" 2 \"e[1]\" \"e[23]\""
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "overrideDisplayType" " 0"
-		
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "overrideLevelOfDetail" 
-		" 0"
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "overrideShading" " 1"
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "overrideTexturing" " 1"
-		
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "overridePlayback" " 1"
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "overrideEnabled" " 0"
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "overrideVisibility" " 1"
-		
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "hideOnPlayback" " 0"
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "overrideRGBColors" " 0"
-		
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "overrideColor" " 0"
-		2 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1" "overrideColorRGB" " -type \"float3\" 0 0 0"
-		
-		2 "|bomb1|group1|bomb:pPlane2" "translate" " -type \"double3\" -0.47593704965846428 6.47368897656922293 -0.33188573317991665"
-		
-		2 "|bomb1|group1|bomb:pPlane2" "rotate" " -type \"double3\" 180 0 89.99999999999998579"
-		
-		2 "|bomb1|group1|bomb:pPlane2" "rotatePivot" " -type \"double3\" -0.041720451106526737 0.48696472191270468 -1.01556254782877864"
-		
-		2 "|bomb1|group1|bomb:pPlane2" "rotatePivotTranslate" " -type \"double3\" 0.52868517301923135 -0.52868517301923157 2.03112509565755728"
-		
-		2 "|bomb1|group1|bomb:pPlane2" "scalePivot" " -type \"double3\" -0.0096387565135955828 0.52751077711582195 -0.3090663850307464"
-		
-		2 "|bomb1|group1|bomb:pPlane2" "scalePivotTranslate" " -type \"double3\" -0.032081694592931163 -0.04054605520311718 -0.70649616279803218"
-		
-		2 "|bomb1|group1|bomb:pPlane3" "translate" " -type \"double3\" -0.33188558789359457 6.47368897656922115 0.47593690437214253"
-		
-		2 "|bomb1|group1|bomb:pPlane3" "rotatePivot" " -type \"double3\" -0.041720451106526737 0.48696472191270457 -1.01556254782877864"
-		
-		2 "|bomb1|group1|bomb:pPlane3" "rotatePivotTranslate" " -type \"double3\" 1.0572829989353052 -0.52868517301923157 0.52859782591607385"
-		
-		2 "|bomb1|group1|bomb:pPlane3" "scalePivot" " -type \"double3\" -0.0096387565135955811 0.52751077711582184 -0.3090663850307464"
-		
-		2 "|bomb1|group1|bomb:pPlane3" "scalePivotTranslate" " -type \"double3\" -0.032081694592931156 -0.040546055203117277 -0.70649616279803218"
-		
-		2 "|bomb1|group1|bomb:pPlane4" "translate" " -type \"double3\" 0.47593704965846456 6.47368897656922027 0.3318854426072726"
-		
-		2 "|bomb1|group1|bomb:pPlane4" "rotatePivot" " -type \"double3\" -0.041720451106526737 0.48696472191270457 -1.01556254782877886"
-		
-		2 "|bomb1|group1|bomb:pPlane4" "rotatePivotTranslate" " -type \"double3\" -0.44524427080617784 -0.52868517301923124 0"
-		
-		2 "|bomb1|group1|bomb:pPlane4" "scalePivot" " -type \"double3\" -0.0096387565135955811 0.52751077711582184 -0.30906638503074646"
-		
-		2 "|bomb1|group1|bomb:pPlane4" "scalePivotTranslate" " -type \"double3\" -0.032081694592931156 -0.040546055203117277 -0.70649616279803207"
-		
-		2 "|bomb1|group1|bomb:pCube1" "translate" " -type \"double3\" 0 0 0"
-		2 "|bomb1|group1|bomb:pCube1" "scale" " -type \"double3\" 1 1 1"
-		2 "|bomb1|group1|bomb:pCube1" "rotatePivot" " -type \"double3\" 0 8.55690372388879439 0"
-		
-		2 "|bomb1|group1|bomb:pCube1" "scalePivot" " -type \"double3\" 0 8.55690372388879439 0"
-		
-		2 "|bomb1|group1|bomb:pCube1" "scalePivotTranslate" " -type \"double3\" 0 0 0"
-		
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "instObjGroups.objectGroups" 
-		" -s 8"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "instObjGroups.objectGroups[0].objectGrpColor" 
-		" -av"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "instObjGroups.objectGroups[1].objectGrpColor" 
-		" -av"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "instObjGroups.objectGroups[2].objectGrpColor" 
-		" -av"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "instObjGroups.objectGroups[3].objectGrpColor" 
-		" -av"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "instObjGroups.objectGroups[4].objectGrpColor" 
-		" -av"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "overrideDisplayType" " 0"
-		
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "overrideLevelOfDetail" " 0"
-		
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "overrideShading" " 1"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "overrideTexturing" " 1"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "overridePlayback" " 1"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "overrideEnabled" " 0"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "overrideVisibility" " 1"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "hideOnPlayback" " 0"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "overrideRGBColors" " 0"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "overrideColor" " 0"
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "overrideColorRGB" " -type \"float3\" 0 0 0"
-		
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "uvSet[0].uvSetName" " -type \"string\" \"map1\""
-		
-		2 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1" "pt[48:55]" " -s 8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
-		
-		3 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[1]" 
-		"bomb:set4.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[1]" 
-		"bomb:set4.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[1]" 
-		"bomb:set4.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[1]" 
-		"bomb:set4.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polyBridgeEdge7.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polySplitRing8.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "bomb:groupId59.groupId" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "bomb:set15.memberWireframeColor" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "bomb:groupId60.groupId" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		""
-		3 "bomb:set16.memberWireframeColor" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		""
-		3 "bomb:groupId61.groupId" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		""
-		3 "bomb:set17.memberWireframeColor" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		""
-		3 "bomb:groupId62.groupId" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[3].objectGroupId" 
-		""
-		3 "bomb:set18.memberWireframeColor" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[3].objectGrpColor" 
-		""
-		3 "bomb:polyBridgeEdge7.output" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.inMesh" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[0]" 
-		"bomb:set15.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[3]" 
-		"bomb:set18.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polyBridgeEdge2.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polySplitRing4.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polySplitRing9.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[7]" 
-		"bomb:set10.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[4]" 
-		"bomb:set10.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[4]" 
-		"bomb:set10.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[4]" 
-		"bomb:set10.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polySplitRing1.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polyBridgeEdge1.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polySplitRing3.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[12]" 
-		"bomb:set14.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[7]" 
-		"bomb:set14.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[7]" 
-		"bomb:set14.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[7]" 
-		"bomb:set14.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups.objectGroups[0]" 
-		"bomb:set1.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[0]" 
-		"bomb:set3.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[0]" 
-		"bomb:set3.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[0]" 
-		"bomb:set3.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[0]" 
-		"bomb:set3.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[1]" 
-		"bomb:set16.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polySplitRing11.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polySplitRing2.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polyBridgeEdge5.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polySplitRing5.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polySplitRing6.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polySplitRing7.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polyBridgeEdge4.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "bomb:groupId1.groupId" "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "bomb:set1.memberWireframeColor" "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "bomb:groupId2.groupId" "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		""
-		3 "bomb:set2.memberWireframeColor" "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[2]" 
-		"bomb:set17.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[3]" 
-		"bomb:set6.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[3]" 
-		"bomb:set6.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[3]" 
-		"bomb:set6.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[3]" 
-		"bomb:set6.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[10]" 
-		"bomb:set12.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[5]" 
-		"bomb:set12.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[5]" 
-		"bomb:set12.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[5]" 
-		"bomb:set12.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups.objectGroups[1]" 
-		"bomb:set2.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polySplitRing10.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polyBridgeEdge3.manipMatrix" 
-		""
-		3 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[11]" 
-		"bomb:set13.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[6]" 
-		"bomb:set13.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[6]" 
-		"bomb:set13.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[6]" 
-		"bomb:set13.dagSetMembers" "-na"
-		3 "bomb:set3.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "bomb:set4.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		""
-		3 "bomb:set5.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		""
-		3 "bomb:set6.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGrpColor" 
-		""
-		3 "bomb:set10.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[4].objectGrpColor" 
-		""
-		3 "bomb:set12.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[5].objectGrpColor" 
-		""
-		3 "bomb:set13.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[6].objectGrpColor" 
-		""
-		3 "bomb:set14.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGrpColor" 
-		""
-		3 "bomb:set3.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "bomb:set4.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		""
-		3 "bomb:set5.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		""
-		3 "bomb:set6.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGrpColor" 
-		""
-		3 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "bomb:groupId3.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "bomb:groupId4.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		""
-		3 "bomb:groupId5.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		""
-		3 "bomb:groupId6.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGroupId" 
-		""
-		3 "bomb:groupId7.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGroupId" 
-		""
-		3 "bomb:set10.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGrpColor" 
-		""
-		3 "bomb:groupId8.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[10].objectGroupId" 
-		""
-		3 "bomb:set12.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[10].objectGrpColor" 
-		""
-		3 "bomb:groupId9.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[11].objectGroupId" 
-		""
-		3 "bomb:set13.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[11].objectGrpColor" 
-		""
-		3 "bomb:groupId10.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[12].objectGroupId" 
-		""
-		3 "bomb:set14.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[12].objectGrpColor" 
-		""
-		3 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "bomb:groupId35.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "bomb:groupId36.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		""
-		3 "bomb:groupId37.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		""
-		3 "bomb:groupId38.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGroupId" 
-		""
-		3 "bomb:groupId39.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[4].objectGroupId" 
-		""
-		3 "bomb:groupId40.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[5].objectGroupId" 
-		""
-		3 "bomb:groupId41.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[6].objectGroupId" 
-		""
-		3 "bomb:groupId42.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGroupId" 
-		""
-		3 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "bomb:groupId43.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "bomb:groupId44.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		""
-		3 "bomb:groupId45.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		""
-		3 "bomb:groupId46.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGroupId" 
-		""
-		3 "bomb:groupId47.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[4].objectGroupId" 
-		""
-		3 "bomb:groupId48.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[5].objectGroupId" 
-		""
-		3 "bomb:groupId49.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[6].objectGroupId" 
-		""
-		3 "bomb:groupId50.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGroupId" 
-		""
-		3 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "bomb:groupId51.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "bomb:groupId52.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		""
-		3 "bomb:groupId53.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		""
-		3 "bomb:groupId54.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGroupId" 
-		""
-		3 "bomb:groupId55.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[4].objectGroupId" 
-		""
-		3 "bomb:set10.memberWireframeColor" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[4].objectGrpColor" 
-		""
-		3 "bomb:groupId56.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[5].objectGroupId" 
-		""
-		3 "bomb:set12.memberWireframeColor" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[5].objectGrpColor" 
-		""
-		3 "bomb:groupId57.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[6].objectGroupId" 
-		""
-		3 "bomb:set13.memberWireframeColor" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[6].objectGrpColor" 
-		""
-		3 "bomb:groupId58.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGroupId" 
-		""
-		3 "bomb:set14.memberWireframeColor" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGrpColor" 
-		""
-		3 "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[2]" 
-		"bomb:set5.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[2]" 
-		"bomb:set5.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[2]" 
-		"bomb:set5.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[2]" 
-		"bomb:set5.dagSetMembers" "-na"
-		3 "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" "bomb:polyBridgeEdge6.manipMatrix" 
-		""
-		5 3 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups" 
-		"bombRN.placeHolderList[1]" ":initialShadingGroup.dsm"
-		5 0 "bombRN" "bomb:groupId59.groupId" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		"bombRN.placeHolderList[2]" "bombRN.placeHolderList[3]" "bomb:pCubeShape1.iog.og[0].gid"
-		
-		5 0 "bombRN" "bomb:set15.memberWireframeColor" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		"bombRN.placeHolderList[4]" "bombRN.placeHolderList[5]" "bomb:pCubeShape1.iog.og[0].gco"
-		
-		5 0 "bombRN" "bomb:groupId60.groupId" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		"bombRN.placeHolderList[6]" "bombRN.placeHolderList[7]" "bomb:pCubeShape1.iog.og[1].gid"
-		
-		5 0 "bombRN" "bomb:set16.memberWireframeColor" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		"bombRN.placeHolderList[8]" "bombRN.placeHolderList[9]" "bomb:pCubeShape1.iog.og[1].gco"
-		
-		5 0 "bombRN" "bomb:groupId61.groupId" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		"bombRN.placeHolderList[10]" "bombRN.placeHolderList[11]" "bomb:pCubeShape1.iog.og[2].gid"
-		
-		5 0 "bombRN" "bomb:set17.memberWireframeColor" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		"bombRN.placeHolderList[12]" "bombRN.placeHolderList[13]" "bomb:pCubeShape1.iog.og[2].gco"
-		
-		5 0 "bombRN" "bomb:groupId62.groupId" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[3].objectGroupId" 
-		"bombRN.placeHolderList[14]" "bombRN.placeHolderList[15]" "bomb:pCubeShape1.iog.og[3].gid"
-		
-		5 0 "bombRN" "bomb:set18.memberWireframeColor" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[3].objectGrpColor" 
-		"bombRN.placeHolderList[16]" "bombRN.placeHolderList[17]" "bomb:pCubeShape1.iog.og[3].gco"
-		
-		5 4 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.inMesh" "bombRN.placeHolderList[18]" 
-		""
-		5 3 "bombRN" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups" 
-		"bombRN.placeHolderList[19]" ":initialShadingGroup.dsm"
-		5 0 "bombRN" "bomb:groupId51.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		"bombRN.placeHolderList[20]" "bombRN.placeHolderList[21]" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.iog.og[0].gid"
-		
-		5 0 "bombRN" "bomb:set3.memberWireframeColor" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		"bombRN.placeHolderList[22]" "bombRN.placeHolderList[23]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[0].gco"
-		
-		5 0 "bombRN" "bomb:groupId52.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		"bombRN.placeHolderList[24]" "bombRN.placeHolderList[25]" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.iog.og[1].gid"
-		
-		5 0 "bombRN" "bomb:set4.memberWireframeColor" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		"bombRN.placeHolderList[26]" "bombRN.placeHolderList[27]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[1].gco"
-		
-		5 0 "bombRN" "bomb:groupId53.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		"bombRN.placeHolderList[28]" "bombRN.placeHolderList[29]" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.iog.og[2].gid"
-		
-		5 0 "bombRN" "bomb:set5.memberWireframeColor" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		"bombRN.placeHolderList[30]" "bombRN.placeHolderList[31]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[2].gco"
-		
-		5 0 "bombRN" "bomb:groupId54.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGroupId" 
-		"bombRN.placeHolderList[32]" "bombRN.placeHolderList[33]" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.iog.og[3].gid"
-		
-		5 0 "bombRN" "bomb:set6.memberWireframeColor" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGrpColor" 
-		"bombRN.placeHolderList[34]" "bombRN.placeHolderList[35]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[3].gco"
-		
-		5 0 "bombRN" "bomb:groupId55.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[4].objectGroupId" 
-		"bombRN.placeHolderList[36]" "bombRN.placeHolderList[37]" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.iog.og[4].gid"
-		
-		5 0 "bombRN" "bomb:set10.memberWireframeColor" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[4].objectGrpColor" 
-		"bombRN.placeHolderList[38]" "bombRN.placeHolderList[39]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[4].gco"
-		
-		5 0 "bombRN" "bomb:groupId56.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[5].objectGroupId" 
-		"bombRN.placeHolderList[40]" "bombRN.placeHolderList[41]" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.iog.og[5].gid"
-		
-		5 0 "bombRN" "bomb:set12.memberWireframeColor" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[5].objectGrpColor" 
-		"bombRN.placeHolderList[42]" "bombRN.placeHolderList[43]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[5].gco"
-		
-		5 0 "bombRN" "bomb:groupId57.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[6].objectGroupId" 
-		"bombRN.placeHolderList[44]" "bombRN.placeHolderList[45]" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.iog.og[6].gid"
-		
-		5 0 "bombRN" "bomb:set13.memberWireframeColor" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[6].objectGrpColor" 
-		"bombRN.placeHolderList[46]" "bombRN.placeHolderList[47]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[6].gco"
-		
-		5 0 "bombRN" "bomb:groupId58.groupId" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGroupId" 
-		"bombRN.placeHolderList[48]" "bombRN.placeHolderList[49]" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.iog.og[7].gid"
-		
-		5 0 "bombRN" "bomb:set14.memberWireframeColor" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGrpColor" 
-		"bombRN.placeHolderList[50]" "bombRN.placeHolderList[51]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[7].gco"
-		
-		5 3 "bombRN" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups" 
-		"bombRN.placeHolderList[52]" ":initialShadingGroup.dsm"
-		5 0 "bombRN" "bomb:groupId43.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		"bombRN.placeHolderList[53]" "bombRN.placeHolderList[54]" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.iog.og[0].gid"
-		
-		5 0 "bombRN" "bomb:set3.memberWireframeColor" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		"bombRN.placeHolderList[55]" "bombRN.placeHolderList[56]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[0].gco"
-		
-		5 0 "bombRN" "bomb:groupId44.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		"bombRN.placeHolderList[57]" "bombRN.placeHolderList[58]" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.iog.og[1].gid"
-		
-		5 0 "bombRN" "bomb:set4.memberWireframeColor" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		"bombRN.placeHolderList[59]" "bombRN.placeHolderList[60]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[1].gco"
-		
-		5 0 "bombRN" "bomb:groupId45.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		"bombRN.placeHolderList[61]" "bombRN.placeHolderList[62]" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.iog.og[2].gid"
-		
-		5 0 "bombRN" "bomb:set5.memberWireframeColor" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		"bombRN.placeHolderList[63]" "bombRN.placeHolderList[64]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[2].gco"
-		
-		5 0 "bombRN" "bomb:groupId46.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGroupId" 
-		"bombRN.placeHolderList[65]" "bombRN.placeHolderList[66]" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.iog.og[3].gid"
-		
-		5 0 "bombRN" "bomb:set6.memberWireframeColor" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGrpColor" 
-		"bombRN.placeHolderList[67]" "bombRN.placeHolderList[68]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[3].gco"
-		
-		5 0 "bombRN" "bomb:groupId47.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[4].objectGroupId" 
-		"bombRN.placeHolderList[69]" "bombRN.placeHolderList[70]" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.iog.og[4].gid"
-		
-		5 0 "bombRN" "bomb:set10.memberWireframeColor" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[4].objectGrpColor" 
-		"bombRN.placeHolderList[71]" "bombRN.placeHolderList[72]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[4].gco"
-		
-		5 0 "bombRN" "bomb:groupId48.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[5].objectGroupId" 
-		"bombRN.placeHolderList[73]" "bombRN.placeHolderList[74]" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.iog.og[5].gid"
-		
-		5 0 "bombRN" "bomb:set12.memberWireframeColor" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[5].objectGrpColor" 
-		"bombRN.placeHolderList[75]" "bombRN.placeHolderList[76]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[5].gco"
-		
-		5 0 "bombRN" "bomb:groupId49.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[6].objectGroupId" 
-		"bombRN.placeHolderList[77]" "bombRN.placeHolderList[78]" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.iog.og[6].gid"
-		
-		5 0 "bombRN" "bomb:set13.memberWireframeColor" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[6].objectGrpColor" 
-		"bombRN.placeHolderList[79]" "bombRN.placeHolderList[80]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[6].gco"
-		
-		5 0 "bombRN" "bomb:groupId50.groupId" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGroupId" 
-		"bombRN.placeHolderList[81]" "bombRN.placeHolderList[82]" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.iog.og[7].gid"
-		
-		5 0 "bombRN" "bomb:set14.memberWireframeColor" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGrpColor" 
-		"bombRN.placeHolderList[83]" "bombRN.placeHolderList[84]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[7].gco"
-		
-		5 3 "bombRN" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups" 
-		"bombRN.placeHolderList[85]" ":initialShadingGroup.dsm"
-		5 0 "bombRN" "bomb:groupId35.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		"bombRN.placeHolderList[86]" "bombRN.placeHolderList[87]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[0].gid"
-		
-		5 0 "bombRN" "bomb:set3.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		"bombRN.placeHolderList[88]" "bombRN.placeHolderList[89]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[0].gco"
-		
-		5 0 "bombRN" "bomb:groupId36.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		"bombRN.placeHolderList[90]" "bombRN.placeHolderList[91]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[1].gid"
-		
-		5 0 "bombRN" "bomb:set4.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		"bombRN.placeHolderList[92]" "bombRN.placeHolderList[93]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[1].gco"
-		
-		5 0 "bombRN" "bomb:groupId37.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		"bombRN.placeHolderList[94]" "bombRN.placeHolderList[95]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[2].gid"
-		
-		5 0 "bombRN" "bomb:set5.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		"bombRN.placeHolderList[96]" "bombRN.placeHolderList[97]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[2].gco"
-		
-		5 0 "bombRN" "bomb:groupId38.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGroupId" 
-		"bombRN.placeHolderList[98]" "bombRN.placeHolderList[99]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[3].gid"
-		
-		5 0 "bombRN" "bomb:set6.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGrpColor" 
-		"bombRN.placeHolderList[100]" "bombRN.placeHolderList[101]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[3].gco"
-		
-		5 0 "bombRN" "bomb:groupId39.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[4].objectGroupId" 
-		"bombRN.placeHolderList[102]" "bombRN.placeHolderList[103]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[4].gid"
-		
-		5 0 "bombRN" "bomb:set10.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[4].objectGrpColor" 
-		"bombRN.placeHolderList[104]" "bombRN.placeHolderList[105]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[4].gco"
-		
-		5 0 "bombRN" "bomb:groupId40.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[5].objectGroupId" 
-		"bombRN.placeHolderList[106]" "bombRN.placeHolderList[107]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[5].gid"
-		
-		5 0 "bombRN" "bomb:set12.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[5].objectGrpColor" 
-		"bombRN.placeHolderList[108]" "bombRN.placeHolderList[109]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[5].gco"
-		
-		5 0 "bombRN" "bomb:groupId41.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[6].objectGroupId" 
-		"bombRN.placeHolderList[110]" "bombRN.placeHolderList[111]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[6].gid"
-		
-		5 0 "bombRN" "bomb:set13.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[6].objectGrpColor" 
-		"bombRN.placeHolderList[112]" "bombRN.placeHolderList[113]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[6].gco"
-		
-		5 0 "bombRN" "bomb:groupId42.groupId" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGroupId" 
-		"bombRN.placeHolderList[114]" "bombRN.placeHolderList[115]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[7].gid"
-		
-		5 0 "bombRN" "bomb:set14.memberWireframeColor" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGrpColor" 
-		"bombRN.placeHolderList[116]" "bombRN.placeHolderList[117]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[7].gco"
-		
-		5 3 "bombRN" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups" 
-		"bombRN.placeHolderList[118]" ":initialShadingGroup.dsm"
-		5 0 "bombRN" "bomb:groupId3.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		"bombRN.placeHolderList[119]" "bombRN.placeHolderList[120]" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.iog.og[0].gid"
-		
-		5 0 "bombRN" "bomb:set3.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		"bombRN.placeHolderList[121]" "bombRN.placeHolderList[122]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[0].gco"
-		
-		5 0 "bombRN" "bomb:groupId4.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		"bombRN.placeHolderList[123]" "bombRN.placeHolderList[124]" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.iog.og[1].gid"
-		
-		5 0 "bombRN" "bomb:set4.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		"bombRN.placeHolderList[125]" "bombRN.placeHolderList[126]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[1].gco"
-		
-		5 0 "bombRN" "bomb:groupId5.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		"bombRN.placeHolderList[127]" "bombRN.placeHolderList[128]" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.iog.og[2].gid"
-		
-		5 0 "bombRN" "bomb:set5.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		"bombRN.placeHolderList[129]" "bombRN.placeHolderList[130]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[2].gco"
-		
-		5 0 "bombRN" "bomb:groupId6.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGroupId" 
-		"bombRN.placeHolderList[131]" "bombRN.placeHolderList[132]" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.iog.og[3].gid"
-		
-		5 0 "bombRN" "bomb:set6.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[3].objectGrpColor" 
-		"bombRN.placeHolderList[133]" "bombRN.placeHolderList[134]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[3].gco"
-		
-		5 0 "bombRN" "bomb:groupId7.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGroupId" 
-		"bombRN.placeHolderList[135]" "bombRN.placeHolderList[136]" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.iog.og[7].gid"
-		
-		5 0 "bombRN" "bomb:set10.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[7].objectGrpColor" 
-		"bombRN.placeHolderList[137]" "bombRN.placeHolderList[138]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[4].gco"
-		
-		5 0 "bombRN" "bomb:groupId8.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[10].objectGroupId" 
-		"bombRN.placeHolderList[139]" "bombRN.placeHolderList[140]" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.iog.og[10].gid"
-		
-		5 0 "bombRN" "bomb:set12.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[10].objectGrpColor" 
-		"bombRN.placeHolderList[141]" "bombRN.placeHolderList[142]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[5].gco"
-		
-		5 0 "bombRN" "bomb:groupId9.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[11].objectGroupId" 
-		"bombRN.placeHolderList[143]" "bombRN.placeHolderList[144]" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.iog.og[11].gid"
-		
-		5 0 "bombRN" "bomb:set13.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[11].objectGrpColor" 
-		"bombRN.placeHolderList[145]" "bombRN.placeHolderList[146]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[6].gco"
-		
-		5 0 "bombRN" "bomb:groupId10.groupId" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[12].objectGroupId" 
-		"bombRN.placeHolderList[147]" "bombRN.placeHolderList[148]" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.iog.og[12].gid"
-		
-		5 0 "bombRN" "bomb:set14.memberWireframeColor" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[12].objectGrpColor" 
-		"bombRN.placeHolderList[149]" "bombRN.placeHolderList[150]" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.iog.og[7].gco"
-		
-		5 3 "bombRN" "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups" 
-		"bombRN.placeHolderList[151]" ":initialShadingGroup.dsm"
-		5 0 "bombRN" "bomb:groupId1.groupId" "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		"bombRN.placeHolderList[152]" "bombRN.placeHolderList[153]" "bomb:pSphereShape1.iog.og[0].gid"
-		
-		5 0 "bombRN" "bomb:set1.memberWireframeColor" "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		"bombRN.placeHolderList[154]" "bombRN.placeHolderList[155]" "bomb:pSphereShape1.iog.og[0].gco"
-		
-		5 0 "bombRN" "bomb:groupId2.groupId" "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		"bombRN.placeHolderList[156]" "bombRN.placeHolderList[157]" "bomb:pSphereShape1.iog.og[1].gid"
-		
-		5 0 "bombRN" "bomb:set2.memberWireframeColor" "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		"bombRN.placeHolderList[158]" "bombRN.placeHolderList[159]" "bomb:pSphereShape1.iog.og[1].gco"
-		
-		5 0 "bombRN" "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups.objectGroups[0]" 
-		"bomb:set1.dagSetMembers" "bombRN.placeHolderList[160]" "bombRN.placeHolderList[161]" 
-		"bomb:set1.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pSphere1|bomb:pSphereShape1.instObjGroups.objectGroups[1]" 
-		"bomb:set2.dagSetMembers" "bombRN.placeHolderList[162]" "bombRN.placeHolderList[163]" 
-		"bomb:set2.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[0]" 
-		"bomb:set3.dagSetMembers" "bombRN.placeHolderList[164]" "bombRN.placeHolderList[165]" 
-		"bomb:set3.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[0]" 
-		"bomb:set3.dagSetMembers" "bombRN.placeHolderList[166]" "bombRN.placeHolderList[167]" 
-		"bomb:set3.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[0]" 
-		"bomb:set3.dagSetMembers" "bombRN.placeHolderList[168]" "bombRN.placeHolderList[169]" 
-		"bomb:set3.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[0]" 
-		"bomb:set3.dagSetMembers" "bombRN.placeHolderList[170]" "bombRN.placeHolderList[171]" 
-		"bomb:set3.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[1]" 
-		"bomb:set4.dagSetMembers" "bombRN.placeHolderList[172]" "bombRN.placeHolderList[173]" 
-		"bomb:set4.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[1]" 
-		"bomb:set4.dagSetMembers" "bombRN.placeHolderList[174]" "bombRN.placeHolderList[175]" 
-		"bomb:set4.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[1]" 
-		"bomb:set4.dagSetMembers" "bombRN.placeHolderList[176]" "bombRN.placeHolderList[177]" 
-		"bomb:set4.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[1]" 
-		"bomb:set4.dagSetMembers" "bombRN.placeHolderList[178]" "bombRN.placeHolderList[179]" 
-		"bomb:set4.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[2]" 
-		"bomb:set5.dagSetMembers" "bombRN.placeHolderList[180]" "bombRN.placeHolderList[181]" 
-		"bomb:set5.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[2]" 
-		"bomb:set5.dagSetMembers" "bombRN.placeHolderList[182]" "bombRN.placeHolderList[183]" 
-		"bomb:set5.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[2]" 
-		"bomb:set5.dagSetMembers" "bombRN.placeHolderList[184]" "bombRN.placeHolderList[185]" 
-		"bomb:set5.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[2]" 
-		"bomb:set5.dagSetMembers" "bombRN.placeHolderList[186]" "bombRN.placeHolderList[187]" 
-		"bomb:set5.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[3]" 
-		"bomb:set6.dagSetMembers" "bombRN.placeHolderList[188]" "bombRN.placeHolderList[189]" 
-		"bomb:set6.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[3]" 
-		"bomb:set6.dagSetMembers" "bombRN.placeHolderList[190]" "bombRN.placeHolderList[191]" 
-		"bomb:set6.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[3]" 
-		"bomb:set6.dagSetMembers" "bombRN.placeHolderList[192]" "bombRN.placeHolderList[193]" 
-		"bomb:set6.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[3]" 
-		"bomb:set6.dagSetMembers" "bombRN.placeHolderList[194]" "bombRN.placeHolderList[195]" 
-		"bomb:set6.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[7]" 
-		"bomb:set10.dagSetMembers" "bombRN.placeHolderList[196]" "bombRN.placeHolderList[197]" 
-		"bomb:set10.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[4]" 
-		"bomb:set10.dagSetMembers" "bombRN.placeHolderList[198]" "bombRN.placeHolderList[199]" 
-		"bomb:set10.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[4]" 
-		"bomb:set10.dagSetMembers" "bombRN.placeHolderList[200]" "bombRN.placeHolderList[201]" 
-		"bomb:set10.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[4]" 
-		"bomb:set10.dagSetMembers" "bombRN.placeHolderList[202]" "bombRN.placeHolderList[203]" 
-		"bomb:set10.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[10]" 
-		"bomb:set12.dagSetMembers" "bombRN.placeHolderList[204]" "bombRN.placeHolderList[205]" 
-		"bomb:set12.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[5]" 
-		"bomb:set12.dagSetMembers" "bombRN.placeHolderList[206]" "bombRN.placeHolderList[207]" 
-		"bomb:set12.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[5]" 
-		"bomb:set12.dagSetMembers" "bombRN.placeHolderList[208]" "bombRN.placeHolderList[209]" 
-		"bomb:set12.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[5]" 
-		"bomb:set12.dagSetMembers" "bombRN.placeHolderList[210]" "bombRN.placeHolderList[211]" 
-		"bomb:set12.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[11]" 
-		"bomb:set13.dagSetMembers" "bombRN.placeHolderList[212]" "bombRN.placeHolderList[213]" 
-		"bomb:set13.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[6]" 
-		"bomb:set13.dagSetMembers" "bombRN.placeHolderList[214]" "bombRN.placeHolderList[215]" 
-		"bomb:set13.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[6]" 
-		"bomb:set13.dagSetMembers" "bombRN.placeHolderList[216]" "bombRN.placeHolderList[217]" 
-		"bomb:set13.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[6]" 
-		"bomb:set13.dagSetMembers" "bombRN.placeHolderList[218]" "bombRN.placeHolderList[219]" 
-		"bomb:set13.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane1|bomb:pPlaneShape1.instObjGroups.objectGroups[12]" 
-		"bomb:set14.dagSetMembers" "bombRN.placeHolderList[220]" "bombRN.placeHolderList[221]" 
-		"bomb:set14.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane2|bomb:pPlaneShape1.instObjGroups.objectGroups[7]" 
-		"bomb:set14.dagSetMembers" "bombRN.placeHolderList[222]" "bombRN.placeHolderList[223]" 
-		"bomb:set14.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane3|bomb:pPlaneShape1.instObjGroups.objectGroups[7]" 
-		"bomb:set14.dagSetMembers" "bombRN.placeHolderList[224]" "bombRN.placeHolderList[225]" 
-		"bomb:set14.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pPlane4|bomb:pPlaneShape1.instObjGroups.objectGroups[7]" 
-		"bomb:set14.dagSetMembers" "bombRN.placeHolderList[226]" "bombRN.placeHolderList[227]" 
-		"bomb:set14.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[0]" 
-		"bomb:set15.dagSetMembers" "bombRN.placeHolderList[228]" "bombRN.placeHolderList[229]" 
-		"bomb:set15.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[1]" 
-		"bomb:set16.dagSetMembers" "bombRN.placeHolderList[230]" "bombRN.placeHolderList[231]" 
-		"bomb:set16.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polyBridgeEdge1.manipMatrix" "bombRN.placeHolderList[232]" "bombRN.placeHolderList[233]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polyBridgeEdge2.manipMatrix" "bombRN.placeHolderList[234]" "bombRN.placeHolderList[235]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polyBridgeEdge3.manipMatrix" "bombRN.placeHolderList[236]" "bombRN.placeHolderList[237]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polyBridgeEdge4.manipMatrix" "bombRN.placeHolderList[238]" "bombRN.placeHolderList[239]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polySplitRing1.manipMatrix" "bombRN.placeHolderList[240]" "bombRN.placeHolderList[241]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polySplitRing2.manipMatrix" "bombRN.placeHolderList[242]" "bombRN.placeHolderList[243]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polySplitRing3.manipMatrix" "bombRN.placeHolderList[244]" "bombRN.placeHolderList[245]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polySplitRing4.manipMatrix" "bombRN.placeHolderList[246]" "bombRN.placeHolderList[247]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polySplitRing5.manipMatrix" "bombRN.placeHolderList[248]" "bombRN.placeHolderList[249]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polySplitRing6.manipMatrix" "bombRN.placeHolderList[250]" "bombRN.placeHolderList[251]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polySplitRing7.manipMatrix" "bombRN.placeHolderList[252]" "bombRN.placeHolderList[253]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polySplitRing8.manipMatrix" "bombRN.placeHolderList[254]" "bombRN.placeHolderList[255]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[2]" 
-		"bomb:set17.dagSetMembers" "bombRN.placeHolderList[256]" "bombRN.placeHolderList[257]" 
-		"bomb:set17.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polyBridgeEdge5.manipMatrix" "bombRN.placeHolderList[258]" "bombRN.placeHolderList[259]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polySplitRing9.manipMatrix" "bombRN.placeHolderList[260]" "bombRN.placeHolderList[261]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polySplitRing10.manipMatrix" "bombRN.placeHolderList[262]" "bombRN.placeHolderList[263]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polySplitRing11.manipMatrix" "bombRN.placeHolderList[264]" "bombRN.placeHolderList[265]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.instObjGroups.objectGroups[3]" 
-		"bomb:set18.dagSetMembers" "bombRN.placeHolderList[266]" "bombRN.placeHolderList[267]" 
-		"bomb:set18.dsm"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polyBridgeEdge6.manipMatrix" "bombRN.placeHolderList[268]" "bombRN.placeHolderList[269]" 
-		"bomb:polyBridgeEdge6.mp"
-		5 3 "bombRN" "bomb:polyBridgeEdge7.output" "bombRN.placeHolderList[270]" 
-		"bomb:pCubeShape1.i"
-		5 0 "bombRN" "|bomb1|group1|bomb:pCube1|bomb:pCubeShape1.worldMatrix" 
-		"bomb:polyBridgeEdge7.manipMatrix" "bombRN.placeHolderList[271]" "bombRN.placeHolderList[272]" 
-		"bomb:polyBridgeEdge6.mp";
-	setAttr ".ptag" -type "string" "";
-lockNode -l 1 ;
 createNode polyTweak -n "polyTweak1";
 	rename -uid "947BC980-0000-6D32-5C11-66860000ED47";
 	setAttr ".uopa" yes;
@@ -2085,9 +871,93 @@ createNode reference -n "Jackie_latestRN";
 		"Jackie_latest:jackie_rig:jackiePants_latestRN" 0;
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode reference -n "bombRN1";
+	rename -uid "F912183F-4437-153F-A320-C9B6BB199AE9";
+	setAttr -s 10 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"bombRN1"
+		"bombRN1" 0
+		"bombRN1" 10
+		5 4 "bombRN1" "|bomb2:bomb.rotateZ" "bombRN1.placeHolderList[1]" ""
+		5 4 "bombRN1" "|bomb2:bomb.rotateX" "bombRN1.placeHolderList[2]" ""
+		5 4 "bombRN1" "|bomb2:bomb.rotateY" "bombRN1.placeHolderList[3]" ""
+		5 4 "bombRN1" "|bomb2:bomb.scaleX" "bombRN1.placeHolderList[4]" ""
+		5 4 "bombRN1" "|bomb2:bomb.scaleY" "bombRN1.placeHolderList[5]" ""
+		5 4 "bombRN1" "|bomb2:bomb.scaleZ" "bombRN1.placeHolderList[6]" ""
+		5 4 "bombRN1" "|bomb2:bomb.translateZ" "bombRN1.placeHolderList[7]" 
+		""
+		5 4 "bombRN1" "|bomb2:bomb.translateX" "bombRN1.placeHolderList[8]" 
+		""
+		5 4 "bombRN1" "|bomb2:bomb.translateY" "bombRN1.placeHolderList[9]" 
+		""
+		5 4 "bombRN1" "|bomb2:bomb.visibility" "bombRN1.placeHolderList[10]" 
+		"";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode animCurveTL -n "bomb_translateX";
+	rename -uid "851EC0C3-4E80-8E08-4218-12A03BEAEA69";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 26.457479463028548;
+createNode animCurveTL -n "bomb_translateY";
+	rename -uid "2F5AB45A-49F6-7240-81C2-D185A40A40DB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 26.069827290851464;
+createNode animCurveTL -n "bomb_translateZ";
+	rename -uid "60394966-42EB-54C0-6ACE-12ADF7272C14";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -92.021175704662369;
+createNode animCurveTU -n "bomb_visibility";
+	rename -uid "F2D34D0F-4C96-F803-E90F-878D4AA211D5";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 1;
+	setAttr ".kot[0]"  5;
+createNode animCurveTA -n "bomb_rotateX";
+	rename -uid "1B627B37-4359-E1E7-E039-B28FE21436CF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "bomb_rotateY";
+	rename -uid "D35E489A-4569-5D0C-7813-828DAFE94316";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0;
+createNode animCurveTA -n "bomb_rotateZ";
+	rename -uid "9DE09A10-4C6B-043C-FF6A-5393AF140999";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 -55.289492637118663;
+createNode animCurveTU -n "bomb_scaleX";
+	rename -uid "794CF54F-4DD5-5AE0-AF56-BB8991C30708";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0.46370641231343251;
+createNode animCurveTU -n "bomb_scaleY";
+	rename -uid "0BDFBCF9-4DC8-F257-687A-C6AC4C7A9C3F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0.46370641231343251;
+createNode animCurveTU -n "bomb_scaleZ";
+	rename -uid "78F40A74-4B30-A77B-995B-8BAC09BA6EDF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr ".ktv[0]"  1 0.46370641231343251;
 select -ne :time1;
-	setAttr ".o" 5;
-	setAttr ".unw" 5;
+	setAttr ".o" 1;
+	setAttr ".unw" 1;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -2165,146 +1035,16 @@ connectAttr "not_bomb.di" "bonzai_latestRN.phl[1]";
 connectAttr "not_bomb.di" "bonzai_latestRN.phl[2]";
 connectAttr "not_bomb.di" "bonzai_variation2_latestRN.phl[1]";
 connectAttr "not_bomb.di" "bonzai_variation2_latestRN.phl[2]";
-connectAttr "bombRN.phl[1]" ":initialShadingGroup.dsm" -na;
-connectAttr "bombRN.phl[2]" "bombRN.phl[3]";
-connectAttr "bombRN.phl[4]" "bombRN.phl[5]";
-connectAttr "bombRN.phl[6]" "bombRN.phl[7]";
-connectAttr "bombRN.phl[8]" "bombRN.phl[9]";
-connectAttr "bombRN.phl[10]" "bombRN.phl[11]";
-connectAttr "bombRN.phl[12]" "bombRN.phl[13]";
-connectAttr "bombRN.phl[14]" "bombRN.phl[15]";
-connectAttr "bombRN.phl[16]" "bombRN.phl[17]";
-connectAttr "transformGeometry1.og" "bombRN.phl[18]";
-connectAttr "bombRN.phl[19]" ":initialShadingGroup.dsm" -na;
-connectAttr "bombRN.phl[20]" "bombRN.phl[21]";
-connectAttr "bombRN.phl[22]" "bombRN.phl[23]";
-connectAttr "bombRN.phl[24]" "bombRN.phl[25]";
-connectAttr "bombRN.phl[26]" "bombRN.phl[27]";
-connectAttr "bombRN.phl[28]" "bombRN.phl[29]";
-connectAttr "bombRN.phl[30]" "bombRN.phl[31]";
-connectAttr "bombRN.phl[32]" "bombRN.phl[33]";
-connectAttr "bombRN.phl[34]" "bombRN.phl[35]";
-connectAttr "bombRN.phl[36]" "bombRN.phl[37]";
-connectAttr "bombRN.phl[38]" "bombRN.phl[39]";
-connectAttr "bombRN.phl[40]" "bombRN.phl[41]";
-connectAttr "bombRN.phl[42]" "bombRN.phl[43]";
-connectAttr "bombRN.phl[44]" "bombRN.phl[45]";
-connectAttr "bombRN.phl[46]" "bombRN.phl[47]";
-connectAttr "bombRN.phl[48]" "bombRN.phl[49]";
-connectAttr "bombRN.phl[50]" "bombRN.phl[51]";
-connectAttr "bombRN.phl[52]" ":initialShadingGroup.dsm" -na;
-connectAttr "bombRN.phl[53]" "bombRN.phl[54]";
-connectAttr "bombRN.phl[55]" "bombRN.phl[56]";
-connectAttr "bombRN.phl[57]" "bombRN.phl[58]";
-connectAttr "bombRN.phl[59]" "bombRN.phl[60]";
-connectAttr "bombRN.phl[61]" "bombRN.phl[62]";
-connectAttr "bombRN.phl[63]" "bombRN.phl[64]";
-connectAttr "bombRN.phl[65]" "bombRN.phl[66]";
-connectAttr "bombRN.phl[67]" "bombRN.phl[68]";
-connectAttr "bombRN.phl[69]" "bombRN.phl[70]";
-connectAttr "bombRN.phl[71]" "bombRN.phl[72]";
-connectAttr "bombRN.phl[73]" "bombRN.phl[74]";
-connectAttr "bombRN.phl[75]" "bombRN.phl[76]";
-connectAttr "bombRN.phl[77]" "bombRN.phl[78]";
-connectAttr "bombRN.phl[79]" "bombRN.phl[80]";
-connectAttr "bombRN.phl[81]" "bombRN.phl[82]";
-connectAttr "bombRN.phl[83]" "bombRN.phl[84]";
-connectAttr "bombRN.phl[85]" ":initialShadingGroup.dsm" -na;
-connectAttr "bombRN.phl[86]" "bombRN.phl[87]";
-connectAttr "bombRN.phl[88]" "bombRN.phl[89]";
-connectAttr "bombRN.phl[90]" "bombRN.phl[91]";
-connectAttr "bombRN.phl[92]" "bombRN.phl[93]";
-connectAttr "bombRN.phl[94]" "bombRN.phl[95]";
-connectAttr "bombRN.phl[96]" "bombRN.phl[97]";
-connectAttr "bombRN.phl[98]" "bombRN.phl[99]";
-connectAttr "bombRN.phl[100]" "bombRN.phl[101]";
-connectAttr "bombRN.phl[102]" "bombRN.phl[103]";
-connectAttr "bombRN.phl[104]" "bombRN.phl[105]";
-connectAttr "bombRN.phl[106]" "bombRN.phl[107]";
-connectAttr "bombRN.phl[108]" "bombRN.phl[109]";
-connectAttr "bombRN.phl[110]" "bombRN.phl[111]";
-connectAttr "bombRN.phl[112]" "bombRN.phl[113]";
-connectAttr "bombRN.phl[114]" "bombRN.phl[115]";
-connectAttr "bombRN.phl[116]" "bombRN.phl[117]";
-connectAttr "bombRN.phl[118]" ":initialShadingGroup.dsm" -na;
-connectAttr "bombRN.phl[119]" "bombRN.phl[120]";
-connectAttr "bombRN.phl[121]" "bombRN.phl[122]";
-connectAttr "bombRN.phl[123]" "bombRN.phl[124]";
-connectAttr "bombRN.phl[125]" "bombRN.phl[126]";
-connectAttr "bombRN.phl[127]" "bombRN.phl[128]";
-connectAttr "bombRN.phl[129]" "bombRN.phl[130]";
-connectAttr "bombRN.phl[131]" "bombRN.phl[132]";
-connectAttr "bombRN.phl[133]" "bombRN.phl[134]";
-connectAttr "bombRN.phl[135]" "bombRN.phl[136]";
-connectAttr "bombRN.phl[137]" "bombRN.phl[138]";
-connectAttr "bombRN.phl[139]" "bombRN.phl[140]";
-connectAttr "bombRN.phl[141]" "bombRN.phl[142]";
-connectAttr "bombRN.phl[143]" "bombRN.phl[144]";
-connectAttr "bombRN.phl[145]" "bombRN.phl[146]";
-connectAttr "bombRN.phl[147]" "bombRN.phl[148]";
-connectAttr "bombRN.phl[149]" "bombRN.phl[150]";
-connectAttr "bombRN.phl[151]" ":initialShadingGroup.dsm" -na;
-connectAttr "bombRN.phl[152]" "bombRN.phl[153]";
-connectAttr "bombRN.phl[154]" "bombRN.phl[155]";
-connectAttr "bombRN.phl[156]" "bombRN.phl[157]";
-connectAttr "bombRN.phl[158]" "bombRN.phl[159]";
-connectAttr "bombRN.phl[160]" "bombRN.phl[161]";
-connectAttr "bombRN.phl[162]" "bombRN.phl[163]";
-connectAttr "bombRN.phl[164]" "bombRN.phl[165]";
-connectAttr "bombRN.phl[166]" "bombRN.phl[167]";
-connectAttr "bombRN.phl[168]" "bombRN.phl[169]";
-connectAttr "bombRN.phl[170]" "bombRN.phl[171]";
-connectAttr "bombRN.phl[172]" "bombRN.phl[173]";
-connectAttr "bombRN.phl[174]" "bombRN.phl[175]";
-connectAttr "bombRN.phl[176]" "bombRN.phl[177]";
-connectAttr "bombRN.phl[178]" "bombRN.phl[179]";
-connectAttr "bombRN.phl[180]" "bombRN.phl[181]";
-connectAttr "bombRN.phl[182]" "bombRN.phl[183]";
-connectAttr "bombRN.phl[184]" "bombRN.phl[185]";
-connectAttr "bombRN.phl[186]" "bombRN.phl[187]";
-connectAttr "bombRN.phl[188]" "bombRN.phl[189]";
-connectAttr "bombRN.phl[190]" "bombRN.phl[191]";
-connectAttr "bombRN.phl[192]" "bombRN.phl[193]";
-connectAttr "bombRN.phl[194]" "bombRN.phl[195]";
-connectAttr "bombRN.phl[196]" "bombRN.phl[197]";
-connectAttr "bombRN.phl[198]" "bombRN.phl[199]";
-connectAttr "bombRN.phl[200]" "bombRN.phl[201]";
-connectAttr "bombRN.phl[202]" "bombRN.phl[203]";
-connectAttr "bombRN.phl[204]" "bombRN.phl[205]";
-connectAttr "bombRN.phl[206]" "bombRN.phl[207]";
-connectAttr "bombRN.phl[208]" "bombRN.phl[209]";
-connectAttr "bombRN.phl[210]" "bombRN.phl[211]";
-connectAttr "bombRN.phl[212]" "bombRN.phl[213]";
-connectAttr "bombRN.phl[214]" "bombRN.phl[215]";
-connectAttr "bombRN.phl[216]" "bombRN.phl[217]";
-connectAttr "bombRN.phl[218]" "bombRN.phl[219]";
-connectAttr "bombRN.phl[220]" "bombRN.phl[221]";
-connectAttr "bombRN.phl[222]" "bombRN.phl[223]";
-connectAttr "bombRN.phl[224]" "bombRN.phl[225]";
-connectAttr "bombRN.phl[226]" "bombRN.phl[227]";
-connectAttr "bombRN.phl[228]" "bombRN.phl[229]";
-connectAttr "bombRN.phl[230]" "bombRN.phl[231]";
-connectAttr "bombRN.phl[232]" "bombRN.phl[233]";
-connectAttr "bombRN.phl[234]" "bombRN.phl[235]";
-connectAttr "bombRN.phl[236]" "bombRN.phl[237]";
-connectAttr "bombRN.phl[238]" "bombRN.phl[239]";
-connectAttr "bombRN.phl[240]" "bombRN.phl[241]";
-connectAttr "bombRN.phl[242]" "bombRN.phl[243]";
-connectAttr "bombRN.phl[244]" "bombRN.phl[245]";
-connectAttr "bombRN.phl[246]" "bombRN.phl[247]";
-connectAttr "bombRN.phl[248]" "bombRN.phl[249]";
-connectAttr "bombRN.phl[250]" "bombRN.phl[251]";
-connectAttr "bombRN.phl[252]" "bombRN.phl[253]";
-connectAttr "bombRN.phl[254]" "bombRN.phl[255]";
-connectAttr "bombRN.phl[256]" "bombRN.phl[257]";
-connectAttr "bombRN.phl[258]" "bombRN.phl[259]";
-connectAttr "bombRN.phl[260]" "bombRN.phl[261]";
-connectAttr "bombRN.phl[262]" "bombRN.phl[263]";
-connectAttr "bombRN.phl[264]" "bombRN.phl[265]";
-connectAttr "bombRN.phl[266]" "bombRN.phl[267]";
-connectAttr "bombRN.phl[268]" "bombRN.phl[269]";
-connectAttr "bombRN.phl[270]" "polyTweak1.ip";
-connectAttr "bombRN.phl[271]" "bombRN.phl[272]";
+connectAttr "bomb_rotateZ.o" "bombRN1.phl[1]";
+connectAttr "bomb_rotateX.o" "bombRN1.phl[2]";
+connectAttr "bomb_rotateY.o" "bombRN1.phl[3]";
+connectAttr "bomb_scaleX.o" "bombRN1.phl[4]";
+connectAttr "bomb_scaleY.o" "bombRN1.phl[5]";
+connectAttr "bomb_scaleZ.o" "bombRN1.phl[6]";
+connectAttr "bomb_translateZ.o" "bombRN1.phl[7]";
+connectAttr "bomb_translateX.o" "bombRN1.phl[8]";
+connectAttr "bomb_translateY.o" "bombRN1.phl[9]";
+connectAttr "bomb_visibility.o" "bombRN1.phl[10]";
 connectAttr ":rmanDefaultDisplay.msg" ":rmanGlobals.displays[0]";
 connectAttr "d_openexr.msg" ":rmanDefaultDisplay.displayType";
 connectAttr "Ci.msg" ":rmanDefaultDisplay.displayChannels[0]";
