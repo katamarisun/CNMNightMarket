@@ -1,11 +1,11 @@
 //Maya ASCII 2018ff09 scene
 //Name: Jackie_latest.ma
-//Last modified: Sat, Feb 02, 2019 05:14:59 PM
+//Last modified: Sat, Feb 02, 2019 06:04:11 PM
 //Codeset: 1252
 file -rdi 1 -ns "jackie_rig" -rfn "jackie_rigRN" -op "v=0;p=17;f=0" -typ "mayaAscii"
 		 "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_skinning.ma";
 file -rdi 2 -ns "teeth_v1_latest" -dr 1 -rfn "jackie_rig:teeth_v1_latestRN"
-		 -op "v=0;" -typ "mayaAscii" "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/ClothingAccessories/teeth_v1_old.ma";
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma";
 file -rdi 2 -ns "jackieHoodie_latest1" -rfn "jackie_rig:jackieHoodie_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/jackieHoodie_latest.ma";
 file -rdi 2 -ns "jackiePants_latest" -rfn "jackie_rig:jackiePants_latestRN"
@@ -39,14 +39,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "AD6D84A1-48BE-235D-D555-A58279DBEE5B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.5214836615687779 6.8556034349762056 11.256011343342495 ;
-	setAttr ".r" -type "double3" -15.338352731435281 -1443.3999999999489 9.9567589887147025e-17 ;
+	setAttr ".t" -type "double3" -3.8385759657459797 9.5595230233355899 19.467859804232699 ;
+	setAttr ".r" -type "double3" -16.538352731434752 -1450.1999999999236 0 ;
 	setAttr ".hio" yes;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A67F90E6-4184-0E83-6AE3-E5A0E87E9B44";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 11.214893797994417;
+	setAttr ".coi" 20.280641188150874;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -1319,7 +1319,6 @@ createNode nurbsCurve -n "curveShape12" -p "lf_clavicle_ctl";
 createNode transform -n "lf_elbow_PV_ctl" -p "lf_IKs";
 	rename -uid "42C44B0E-41F3-4A1E-4ACB-269CD92B576E";
 	setAttr -k off ".v";
-	setAttr ".t" -type "double3" 7.343292236328125e-05 0.0003414154052734375 0 ;
 	setAttr -l on -k off ".rx";
 	setAttr -l on -k off ".ry";
 	setAttr -l on -k off ".rz";
@@ -1397,27 +1396,6 @@ createNode nurbsCurve -n "curveShape3" -p "lf_wrist_ik_ctl";
 		;
 createNode transform -n "lf_wrist_ikHandleGRP" -p "lf_IKs";
 	rename -uid "9993FBE7-4640-EEF1-C400-0EA65C7C8DE6";
-createNode ikHandle -n "lf_wrist_ikHandle" -p "lf_wrist_ikHandleGRP";
-	rename -uid "E8283DCC-4182-3D48-7FA4-9BBDEAA6E492";
-	setAttr ".roc" yes;
-createNode poleVectorConstraint -n "lf_wrist_ikHandle_poleVectorConstraint1" -p "lf_wrist_ikHandle";
-	rename -uid "DF251C08-4AE1-737F-D3AE-C38CDEAFCBD9";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lf_elbow_PV_ctlW0" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr ".t" -type "double3" 0 0.0049464853588592206 -0.012858508963912052 ;
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr ".rst" -type "double3" 1.2707110352815931 -0.012999914212824315 -1.4386786923157473 ;
-	setAttr -k on ".w0";
 createNode pointConstraint -n "lf_wrist_ikHandle_pointConstraint1" -p "lf_wrist_ikHandleGRP";
 	rename -uid "4447E752-411B-BA95-A359-66BAC3610A21";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lf_wrist_ik_ctlW0" -dv 1 -min 0 -at "double";
@@ -1434,6 +1412,7 @@ createNode pointConstraint -n "lf_wrist_ikHandle_pointConstraint1" -p "lf_wrist_
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
+	setAttr ".cpim" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 0 -0 1;
 	setAttr ".rst" -type "double3" 2.7577939033508301 5.6079952867809784 -0.18503644957098297 ;
 	setAttr -k on ".w0";
 createNode transform -n "lf_clavicle_ikHandleGRP" -p "lf_IKs";
@@ -2078,8 +2057,51 @@ createNode nurbsCurve -n "curveShape18" -p "rt_foot_ik_ctl";
 		-0.45318299531936646 0.0081237875252277991 -0.98625792004390211
 		-0.05941179621510817 0.40189498662948608 -0.98625792004390211
 		;
+createNode transform -n "lf_wrist_ikHandle_GRP";
+	rename -uid "039AFB34-4DDD-32EB-39DA-9494170D1459";
+createNode ikHandle -n "lf_wrist_ikHandle" -p "lf_wrist_ikHandle_GRP";
+	rename -uid "6E30129B-467B-C6BC-78E4-15B2D73408E1";
+	setAttr ".roc" yes;
+createNode poleVectorConstraint -n "lf_wrist_ikHandle_poleVectorConstraint1" -p "lf_wrist_ikHandle";
+	rename -uid "1BB8215D-4714-633D-5E60-5DA78F135577";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lf_elbow_PV_ctlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".lo" yes;
+	setAttr ".rst" -type "double3" 1.2707110352815929 -0.012999914212824315 -1.4386786923157473 ;
+	setAttr -k on ".w0";
+createNode pointConstraint -n "lf_wrist_ikHandle_pointConstraint2" -p "lf_wrist_ikHandle_GRP";
+	rename -uid "063433B7-4150-10B6-125F-22AA445F3547";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lf_wrist_ik_ctlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr ".t" -type "double3" 2.7582099090351075 5.6033096292339621 -0.17217794060707092 ;
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".lo" yes;
+	setAttr ".o" -type "double3" 0.00041600568427746509 0.00026082781184300075 0 ;
+	setAttr ".rst" -type "double3" 2.7582099090351075 5.6033096292339621 -0.17374558285391892 ;
+	setAttr -k on ".w0";
 createNode fosterParent -n "jackie_rigRNfosterParent1";
-	rename -uid "CE3D9895-451B-0C74-B471-488016705948";
+	rename -uid "3CA87885-45B8-5DE2-36FE-A1B75375822A";
 createNode parentConstraint -n "root_parentConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "40585434-47F6-F706-354E-BF8E935448BF";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "root_ctlW0" -dv 1 -min 0 -at "double";
@@ -2116,6 +2138,10 @@ createNode orientConstraint -n "right_hip_orientConstraint1" -p "jackie_rigRNfos
 	setAttr ".o" -type "double3" 0.001088709579257234 0.036003134638131387 0.00023905963552531764 ;
 	setAttr ".rsrr" -type "double3" 0.001088709579257234 0.036003134638131387 0.00023905963552531764 ;
 	setAttr -k on ".w0";
+createNode ikEffector -n "effector2" -p "jackie_rigRNfosterParent1";
+	rename -uid "2A631B9A-42C2-C67D-D58F-71811EBEC494";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
 createNode orientConstraint -n "right_knee_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "FE30DCB6-4BEB-2E37-75AD-769DBCEE7C5E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "rt_knee_ctlW0" -dv 1 -min 0 -at "double";
@@ -2133,10 +2159,6 @@ createNode orientConstraint -n "right_knee_orientConstraint1" -p "jackie_rigRNfo
 	setAttr ".erp" yes;
 	setAttr ".lr" -type "double3" -0.0010885595754903173 -0.03600313917382688 -0.00023837556662262489 ;
 	setAttr -k on ".w0";
-createNode ikEffector -n "effector2" -p "jackie_rigRNfosterParent1";
-	rename -uid "2A631B9A-42C2-C67D-D58F-71811EBEC494";
-	setAttr ".v" no;
-	setAttr ".hd" yes;
 createNode orientConstraint -n "right_ankle_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "DB9D2AB9-4418-98A6-86C0-578B19A99745";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "rt_ankle_fk_ctl_W0" -dv 1 -min 0 
@@ -2178,6 +2200,10 @@ createNode orientConstraint -n "left_hip_orientConstraint1" -p "jackie_rigRNfost
 	setAttr ".o" -type "double3" 0.0011027190278085858 -0.036466516677197122 -0.00024213993609844121 ;
 	setAttr ".rsrr" -type "double3" 0.0011027190278085858 -0.036466516677197122 -0.00024213993609844127 ;
 	setAttr -k on ".w0";
+createNode ikEffector -n "effector3" -p "jackie_rigRNfosterParent1";
+	rename -uid "6279452B-4E80-B06E-2847-07A02D2B1AA5";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
 createNode orientConstraint -n "left_knee_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "9761804D-41B8-9E13-FF84-CF90D63DADDF";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lf_knee_ctlW0" -dv 1 -min 0 -at "double";
@@ -2195,10 +2221,6 @@ createNode orientConstraint -n "left_knee_orientConstraint1" -p "jackie_rigRNfos
 	setAttr ".erp" yes;
 	setAttr ".lr" -type "double3" -0.0011025651385507551 0.036466521330362642 0.00024143814758660395 ;
 	setAttr -k on ".w0";
-createNode ikEffector -n "effector3" -p "jackie_rigRNfosterParent1";
-	rename -uid "6279452B-4E80-B06E-2847-07A02D2B1AA5";
-	setAttr ".v" no;
-	setAttr ".hd" yes;
 createNode orientConstraint -n "left_ankle_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "09431E59-415C-78FD-3C53-31B7ED92D689";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lf_foot_ik_ctlW0" -dv 1 -min 0 -at "double";
@@ -2338,12 +2360,6 @@ createNode orientConstraint -n "right_shoulder_orientConstraint1" -p "jackie_rig
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode ikEffector -n "effector_rt_wrist" -p "jackie_rigRNfosterParent1";
-	rename -uid "1D7E577C-4765-DE81-E959-5DB1410FFE07";
-	setAttr ".v" no;
-	setAttr ".rp" -type "double3" -0.45601008865356718 -0.0047897680664101827 0.012260999788284238 ;
-	setAttr ".sp" -type "double3" -0.45601008865356718 -0.0047897680664101827 0.012260999788284238 ;
-	setAttr ".hd" yes;
 createNode orientConstraint -n "right_elbow_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "89430E27-4CF8-6FDD-D2AA-A58E88F4E24E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "rt_elbow_fk_ctlW0" -dv 1 -min 0 -at "double";
@@ -2360,6 +2376,12 @@ createNode orientConstraint -n "right_elbow_orientConstraint1" -p "jackie_rigRNf
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
+createNode ikEffector -n "effector_rt_wrist" -p "jackie_rigRNfosterParent1";
+	rename -uid "1D7E577C-4765-DE81-E959-5DB1410FFE07";
+	setAttr ".v" no;
+	setAttr ".rp" -type "double3" -0.45601008865356718 -0.0047897680664101827 0.012260999788284238 ;
+	setAttr ".sp" -type "double3" -0.45601008865356718 -0.0047897680664101827 0.012260999788284238 ;
+	setAttr ".hd" yes;
 createNode orientConstraint -n "right_wrist_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "46A9E98A-4851-B830-07D9-7085B8D5AF41";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "rt_wrist_fk_ctlW0" -dv 1 -min 0 -at "double";
@@ -2402,10 +2424,10 @@ createNode orientConstraint -n "left_shoulder_orientConstraint1" -p "jackie_rigR
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
 createNode ikEffector -n "effector_lf_wrist" -p "jackie_rigRNfosterParent1";
-	rename -uid "4E1E6934-48E7-0B6F-6376-459BB24778AB";
+	rename -uid "78DA52A0-4956-C09A-1583-F69CF1DA2239";
 	setAttr ".v" no;
-	setAttr ".rp" -type "double3" 0.45561495494842541 0 2.7755575615628914e-17 ;
-	setAttr ".sp" -type "double3" 0.45561495494842541 0 2.7755575615628914e-17 ;
+	setAttr ".rp" -type "double3" 0.45599995936097049 -0.0047873297711955587 0.012260660150867936 ;
+	setAttr ".sp" -type "double3" 0.45599995936097049 -0.0047873297711955587 0.012260660150867936 ;
 	setAttr ".hd" yes;
 createNode orientConstraint -n "left_elbow_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "875070B4-4052-7FA4-73F7-DCBB7BAE78CD";
@@ -2497,25 +2519,6 @@ createNode orientConstraint -n "head_orientConstraint1" -p "jackie_rigRNfosterPa
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode pointConstraint -n "jackierEyeRight_pointConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "FB9423AF-40ED-F79F-5B9C-D0BA30020AEF";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "right_eyeW0" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".rp" -type "double3" 2.2204460492503131e-16 0 -0.026287172300386102 ;
-	setAttr ".sp" -type "double3" 2.2204460492503131e-16 0 -0.026287172300386102 ;
-	setAttr ".erp" yes;
-	setAttr ".o" -type "double3" 0.014142233300595775 0.0013015432438603369 -0.045823186391133364 ;
-	setAttr -k on ".w0";
 createNode parentConstraint -n "jackierEyeRight_parentConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "033FBA80-470C-95DA-E165-1BBC5067DCD5";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "right_eyeW0" -dv 1 -min 0 -at "double";
@@ -2536,9 +2539,9 @@ createNode parentConstraint -n "jackierEyeRight_parentConstraint1" -p "jackie_ri
 		-0.072110358691519466 ;
 	setAttr ".rst" -type "double3" 0 -8.8817841970012523e-16 0 ;
 	setAttr -k on ".w0";
-createNode pointConstraint -n "jackieEyeLeft_pointConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "227B243D-49B7-2A62-CE07-D9BBD20D077B";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "left_eyeW0" -dv 1 -min 0 -at "double";
+createNode pointConstraint -n "jackierEyeRight_pointConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "FB9423AF-40ED-F79F-5B9C-D0BA30020AEF";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "right_eyeW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
 	setAttr -k off ".tx";
@@ -2553,7 +2556,7 @@ createNode pointConstraint -n "jackieEyeLeft_pointConstraint1" -p "jackie_rigRNf
 	setAttr ".rp" -type "double3" 2.2204460492503131e-16 0 -0.026287172300386102 ;
 	setAttr ".sp" -type "double3" 2.2204460492503131e-16 0 -0.026287172300386102 ;
 	setAttr ".erp" yes;
-	setAttr ".o" -type "double3" -0.013224275385901207 0.0013057999397823039 -0.045822911042628811 ;
+	setAttr ".o" -type "double3" 0.014142233300595775 0.0013015432438603369 -0.045823186391133364 ;
 	setAttr -k on ".w0";
 createNode parentConstraint -n "jackieEyeLeft_parentConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "302FCB5E-488A-C7E1-3189-249DCDF42F85";
@@ -2575,8 +2578,27 @@ createNode parentConstraint -n "jackieEyeLeft_parentConstraint1" -p "jackie_rigR
 		-0.072110083343014914 ;
 	setAttr ".rst" -type "double3" 2.7755575615628914e-17 -8.8817841970012523e-16 0 ;
 	setAttr -k on ".w0";
+createNode pointConstraint -n "jackieEyeLeft_pointConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "227B243D-49B7-2A62-CE07-D9BBD20D077B";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "left_eyeW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".rp" -type "double3" 2.2204460492503131e-16 0 -0.026287172300386102 ;
+	setAttr ".sp" -type "double3" 2.2204460492503131e-16 0 -0.026287172300386102 ;
+	setAttr ".erp" yes;
+	setAttr ".o" -type "double3" -0.013224275385901207 0.0013057999397823039 -0.045822911042628811 ;
+	setAttr -k on ".w0";
 createNode fosterParent -n "teeth_v1_latestRN1fosterParent1";
-	rename -uid "0DFB2BB2-47C2-F7B6-E6B6-08B49BC4BA1B";
+	rename -uid "60981A45-47CF-1F8A-DCB7-AEB2C47D50D0";
 createNode parentConstraint -n "Teeth_parentConstraint1" -p "teeth_v1_latestRN1fosterParent1";
 	rename -uid "C9CD1B87-45C5-099F-1AED-C599AA05B492";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "jaw_1W0" -dv 1 -min 0 -at "double";
@@ -2598,22 +2620,22 @@ createNode parentConstraint -n "Teeth_parentConstraint1" -p "teeth_v1_latestRN1f
 	setAttr ".rst" -type "double3" 0 8.8817841970012523e-16 2.7755575615628914e-17 ;
 	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "FA26A05A-4CAE-E5F5-780E-B29E2DE28395";
+	rename -uid "9523F8FA-4E80-8E72-4986-EB9B3453C872";
 	setAttr -s 32 ".lnk";
 	setAttr -s 32 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "A53502F4-4E84-EFCB-F1FB-F8BEBD2555B3";
+	rename -uid "414881D9-4FAB-998B-860C-3DAF0261E83B";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "83DD14B3-4F22-6749-0C6E-409C9C7082F4";
+	rename -uid "47A859DC-40D2-CC37-EAAF-6F94218FE804";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "2B2655F2-4AF9-F0FC-9402-EB9D91773FF8";
+	rename -uid "CD27847B-4D18-853D-8568-3E9655571EBE";
 	setAttr ".cdl" 2;
 	setAttr -s 6 ".dli[1:5]"  1 2 4 0 0;
 	setAttr -s 3 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "1472DE7A-4782-1608-BB77-88A1607C89DD";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "E007456F-4866-9780-F592-5E98DE60A577";
+	rename -uid "D823986C-4C73-F705-7DBB-EC9AE97CAA69";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "E5D42139-4EA7-5B85-657A-F1A0107DC895";
 	setAttr ".g" yes;
@@ -2766,48 +2788,48 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 654\n            -height 370\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 1\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 653\n            -height 369\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"wireframe\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 654\n            -height 369\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
 		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
 		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1314\n            -height 784\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1558\n            -height 784\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
 		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
 		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n"
 		+ "            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n"
-		+ "                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n"
-		+ "                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n"
-		+ "                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 1\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 1\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n"
-		+ "                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n"
-		+ "                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n"
-		+ "                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
-		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n"
-		+ "                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -editorChanged \"updateModelPanelBar\" \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n"
-		+ "                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n"
-		+ "                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n"
-		+ "                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n"
-		+ "            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n"
-		+ "            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1314\\n    -height 784\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1314\\n    -height 784\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -isSet 0\n                -isSetMember 0\n"
+		+ "                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                -selectionOrder \"display\" \n                -expandAttribute 1\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n"
+		+ "                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -clipTime \"on\" \n                -stackedCurves 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 1\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 1\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n"
+		+ "                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n"
+		+ "                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n"
+		+ "                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n"
+		+ "                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n"
+		+ "                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n"
+		+ "                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n"
+		+ "\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -editorChanged \"updateModelPanelBar\" \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n"
+		+ "                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n"
+		+ "                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n"
+		+ "                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n"
+		+ "            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n"
+		+ "            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n"
+		+ "            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1558\\n    -height 784\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1558\\n    -height 784\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -2889,14 +2911,6 @@ createNode animCurveUU -n "left_wrist_orientConstraint1_jackie_lf_wrist_fk_ctlW0
 	rename -uid "8ED38CCB-4309-C16F-DC47-F9B1A8670751";
 	setAttr ".tan" 18;
 	setAttr -s 2 ".ktv[0:1]"  0 0 1 1;
-createNode animCurveUU -n "lf_wrist_ikHandle_visibility";
-	rename -uid "C941C594-49E3-47B2-6E6B-5E8C18BA9638";
-	setAttr ".tan" 18;
-	setAttr -s 2 ".ktv[0:1]"  0 1 1 0;
-createNode animCurveUU -n "lf_wrist_ikHandle_ikBlend";
-	rename -uid "AE075A55-438B-0847-19CD-2F970DF20F2F";
-	setAttr ".tan" 18;
-	setAttr -s 2 ".ktv[0:1]"  0 1 1 0;
 createNode animCurveUU -n "left_wrist_orientConstraint1_lf_wrist_ik_ctlW1";
 	rename -uid "FC8884E7-4795-21B7-0893-6B9D4D45170B";
 	setAttr ".tan" 18;
@@ -2963,41 +2977,7 @@ createNode animCurveUU -n "rt_leg_ikHandle_ikBlend";
 createNode reference -n "jackie_rigRN";
 	rename -uid "2B550EE9-474B-A497-7FD9-C589D7FDB57F";
 	setAttr ".fn[0]" -type "string" "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_rig.ma";
-	setAttr -s 473 ".phl";
-	setAttr ".phl[2]" -type "TdataCompound" ;
-	setAttr ".phl[3]" -type "TdataCompound" ;
-	setAttr ".phl[4]" -type "TdataCompound" ;
-	setAttr ".phl[5]" -type "TdataCompound" ;
-	setAttr ".phl[8]" -type "TdataCompound" ;
-	setAttr ".phl[9]" -type "TdataCompound" ;
-	setAttr ".phl[10]" -type "TdataCompound" ;
-	setAttr ".phl[11]" -type "TdataCompound" ;
-	setAttr ".phl[14]" -type "TdataCompound" ;
-	setAttr ".phl[15]" -type "TdataCompound" ;
-	setAttr ".phl[16]" -type "TdataCompound" ;
-	setAttr ".phl[17]" -type "TdataCompound" ;
-	setAttr ".phl[18]" -type "TdataCompound" ;
-	setAttr ".phl[19]" -type "TdataCompound" ;
-	setAttr ".phl[20]" -type "TdataCompound" ;
-	setAttr ".phl[21]" -type "TdataCompound" ;
-	setAttr ".phl[22]" -type "TdataCompound" ;
-	setAttr ".phl[23]" -type "TdataCompound" ;
-	setAttr ".phl[24]" -type "TdataCompound" ;
-	setAttr ".phl[25]" -type "TdataCompound" ;
-	setAttr ".phl[26]" -type "TdataCompound" ;
-	setAttr ".phl[27]" -type "TdataCompound" ;
-	setAttr ".phl[28]" -type "TdataCompound" ;
-	setAttr ".phl[29]" -type "TdataCompound" ;
-	setAttr ".phl[30]" -type "TdataCompound" ;
-	setAttr ".phl[31]" -type "TdataCompound" ;
-	setAttr ".phl[32]" -type "TdataCompound" ;
-	setAttr ".phl[33]" -type "TdataCompound" ;
-	setAttr ".phl[34]" -type "TdataCompound" ;
-	setAttr ".phl[35]" -type "TdataCompound" ;
-	setAttr ".phl[36]" -type "TdataCompound" ;
-	setAttr ".phl[37]" -type "TdataCompound" ;
-	setAttr ".phl[44]" -type "TdataCompound" ;
-	setAttr ".phl[45]" -type "TdataCompound" ;
+	setAttr -s 487 ".phl";
 	setAttr ".phl[46]" 0;
 	setAttr ".phl[47]" 0;
 	setAttr ".phl[48]" 0;
@@ -3426,10 +3406,24 @@ createNode reference -n "jackie_rigRN";
 	setAttr ".phl[471]" 0;
 	setAttr ".phl[472]" 0;
 	setAttr ".phl[473]" 0;
+	setAttr ".phl[474]" 0;
+	setAttr ".phl[475]" 0;
+	setAttr ".phl[476]" 0;
+	setAttr ".phl[477]" 0;
+	setAttr ".phl[478]" 0;
+	setAttr ".phl[479]" 0;
+	setAttr ".phl[480]" 0;
+	setAttr ".phl[481]" 0;
+	setAttr ".phl[482]" 0;
+	setAttr ".phl[483]" 0;
+	setAttr ".phl[484]" 0;
+	setAttr ".phl[485]" 0;
+	setAttr ".phl[486]" 0;
+	setAttr ".phl[487]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"jackie_rigRN"
-		"jackie_rig:Jacies_shoe_latestRN" 0
 		"jackie_rig:jackieHoodie_latestRN" 0
+		"jackie_rig:Jacies_shoe_latestRN" 0
 		"jackie_rig:Jacies_shoe_latestRN1" 0
 		"jackie_rigRN" 0
 		"jackie_rig:jackiePants_latestRN" 0
@@ -3769,14 +3763,14 @@ createNode reference -n "jackie_rigRN";
 		7 "fcurve" "jackie_rig:Jacies_shoe_latest1:pCube2_scaleZ" 1 "add 1 0.176033 18 18 1 0 0" 
 		0
 		8 "|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe" "translateX"
-		"jackie_rigRN" 1228
-		0 "|jackie_rigRNfosterParent1|jackieEyeLeft_parentConstraint1" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" 
-		"-s -r "
+		"jackie_rigRN" 500
 		0 "|jackie_rigRNfosterParent1|jackieEyeLeft_pointConstraint1" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|jackierEyeRight_parentConstraint1" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight" 
+		0 "|jackie_rigRNfosterParent1|jackieEyeLeft_parentConstraint1" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|jackierEyeRight_pointConstraint1" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|jackierEyeRight_parentConstraint1" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|head_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head" 
 		"-s -r "
@@ -3796,9 +3790,9 @@ createNode reference -n "jackie_rigRN";
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|right_wrist_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|right_elbow_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow" 
-		"-s -r "
 		0 "|jackie_rigRNfosterParent1|effector_rt_wrist" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|right_elbow_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|right_shoulder_orientConstraint1" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder" 
 		"-s -r "
@@ -3818,17 +3812,17 @@ createNode reference -n "jackie_rigRN";
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|left_ankle_orientConstraint1" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|effector3" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee" 
-		"-s -r "
 		0 "|jackie_rigRNfosterParent1|left_knee_orientConstraint1" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|effector3" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|left_hip_orientConstraint1" "|jackie_rig:root|jackie_rig:left_hip" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|right_ankle_orientConstraint1" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|effector2" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee" 
-		"-s -r "
 		0 "|jackie_rigRNfosterParent1|right_knee_orientConstraint1" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|effector2" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|right_hip_orientConstraint1" "|jackie_rig:root|jackie_rig:right_hip" 
 		"-s -r "
@@ -3863,1109 +3857,33 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
 		"pnts" " -s 382"
 		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[0]" " -type \"float3\" 0.0082257548000000003 7.56103090000000044 0.083040490999999994"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[1]" " -type \"float3\" 0.028557241000000001 7.56407119999999988 0.12986347000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[2]" " -type \"float3\" 0.060014892 7.5664201000000002 0.16724564"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[3]" " -type \"float3\" 0.099519423999999995 7.56784730000000039 0.19152775"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[4]" " -type \"float3\" 0.14320384 7.56821389999999994 0.20033313"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[5]" " -type \"float3\" 0.18679206000000001 7.56748340000000042 0.19279957"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[6]" " -type \"float3\" 0.22601726999999999 7.56572770000000006 0.16966455999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[7]" " -type \"float3\" 0.25703989999999999 7.56311849999999986 0.13319292999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[8]" " -type \"float3\" 0.27682325000000002 7.55991129999999956 0.086954847000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[9]" " -type \"float3\" 0.28343077999999999 7.55641979999999958 0.035475912999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[10]" " -type \"float3\" 0.27621567000000002 7.55298610000000004 -0.016204275000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[11]" " -type \"float3\" 0.25588420000000001 7.54994579999999971 -0.063027247999999994"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[12]" " -type \"float3\" 0.22442655 7.54759690000000028 -0.1004094"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[13]" " -type \"float3\" 0.18492204000000001 7.54616980000000037 -0.1246915"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[14]" " -type \"float3\" 0.14123762000000001 7.54580309999999965 -0.13349686999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[15]" " -type \"float3\" 0.097649454999999996 7.54653360000000006 -0.12596331999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[16]" " -type \"float3\" 0.058424238000000003 7.54828930000000042 -0.10282835"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[17]" " -type \"float3\" 0.027401596 7.55089860000000002 -0.066356726000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[18]" " -type \"float3\" 0.0076182652 7.55410619999999966 -0.020118317"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[19]" " -type \"float3\" 0.0010107406 7.55759720000000002 0.031360269000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[20]" " -type \"float3\" -0.12202455 7.5258617000000001 0.13403103"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[21]" " -type \"float3\" -0.081862241000000002 7.531867 0.22652385"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[22]" " -type \"float3\" -0.019721514999999998 7.53650670000000034 0.30036764999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[23]" " -type \"float3\" 0.058314803999999998 7.53932619999999964 0.34833404000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[24]" " -type \"float3\" 0.14460798 7.54005 0.36572771999999998"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[25]" " -type \"float3\" 0.2307111 7.53860710000000012 0.35084629000000001"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[26]" " -type \"float3\" 0.30819568000000003 7.53513910000000031 0.30514616"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[27]" " -type \"float3\" 0.36947709000000001 7.5299845000000003 0.23310089000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[28]" " -type \"float3\" 0.40855664000000003 7.52364920000000037 0.14176293000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[29]" " -type \"float3\" 0.42160892 7.51675179999999976 0.040072600999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[30]" " -type \"float3\" 0.40735638000000002 7.50996880000000022 -0.062015325000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[31]" " -type \"float3\" 0.36719408999999997 7.50396350000000023 -0.15450812999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[32]" " -type \"float3\" 0.30505337999999999 7.49932379999999998 -0.22835189"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[33]" " -type \"float3\" 0.22701711999999999 7.49650429999999979 -0.27631824999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[34]" " -type \"float3\" 0.14072393999999999 7.4957805000000004 -0.29371195999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[35]" " -type \"float3\" 0.054620891999999997 7.4972234000000002 -0.27883053000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[36]" " -type \"float3\" -0.022863694 7.50069140000000001 -0.23313046000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[37]" " -type \"float3\" -0.084145076999999999 7.505846 -0.16108517"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[38]" " -type \"float3\" -0.12322465000000001 7.51218129999999995 -0.069747239000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[39]" " -type \"float3\" -0.13627692999999999 7.51907869999999967 0.031943064"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[40]" " -type \"float3\" -0.24547273999999999 7.46550509999999967 0.18426301"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[41]" " -type \"float3\" -0.18646852999999999 7.474328 0.32014838000000001"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[42]" " -type \"float3\" -0.095174849000000006 7.481144 0.42863562999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[43]" " -type \"float3\" 0.019471749999999999 7.4852862 0.49910494999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[44]" " -type \"float3\" 0.14624888 7.48635010000000012 0.52465885999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[45]" " -type \"float3\" 0.27274673999999999 7.48423 0.50279563999999999"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[46]" " -type \"float3\" 0.38658279000000001 7.479135 0.43565583000000002"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[47]" " -type \"float3\" 0.476614 7.47156239999999983 0.32981080000000002"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[48]" " -type \"float3\" 0.53402751999999998 7.46225450000000023 0.19562213000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[49]" " -type \"float3\" 0.55320323000000005 7.45212170000000018 0.046224612999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[50]" " -type \"float3\" 0.53226417000000004 7.44215629999999972 -0.10375713"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[51]" " -type \"float3\" 0.47325995999999998 7.43333390000000005 -0.23964242999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[52]" " -type \"float3\" 0.38196632000000003 7.4265175000000001 -0.34812966000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[53]" " -type \"float3\" 0.26731973999999997 7.42237469999999977 -0.41859931"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[54]" " -type \"float3\" 0.14054266000000001 7.42131139999999956 -0.44415325"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[55]" " -type \"float3\" 0.014044878 7.42343140000000012 -0.42229009000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[56]" " -type \"float3\" -0.099791132000000005 7.4285268999999996 -0.35514992000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[57]" " -type \"float3\" -0.18982236 7.43609909999999985 -0.24930522999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[58]" " -type \"float3\" -0.24723582 7.44540739999999968 -0.1151163"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[59]" " -type \"float3\" -0.26641154 7.4555397000000001 0.034280866"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[60]" " -type \"float3\" -0.35907908999999999 7.38144829999999974 0.23249945"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[61]" " -type \"float3\" -0.28268581999999998 7.39287139999999976 0.40843156000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[62]" " -type \"float3\" -0.16448716999999999 7.40169619999999995 0.54889071"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[63]" " -type \"float3\" -0.016053259 7.40705969999999958 0.64012824999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[64]" " -type \"float3\" 0.14808613000000001 7.4084367999999996 0.67321312"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[65]" " -type \"float3\" 0.31186396 7.40569210000000044 0.64490676000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[66]" " -type \"float3\" 0.45924841999999999 7.39909459999999974 0.55797964"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[67]" " -type \"float3\" 0.57581252000000005 7.38929080000000038 0.42094162000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[68]" " -type \"float3\" 0.65014625000000004 7.37723969999999962 0.24720633"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[69]" " -type \"float3\" 0.67497319 7.36412050000000029 0.053780142000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[70]" " -type \"float3\" 0.64786326999999999 7.35121870000000044 -0.14040264"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[71]" " -type \"float3\" 0.57147002000000002 7.33979610000000005 -0.31633431000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[72]" " -type \"float3\" 0.45327141999999998 7.33097080000000023 -0.45679345999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[73]" " -type \"float3\" 0.30483760999999998 7.32560729999999971 -0.54803091000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[74]" " -type \"float3\" 0.14069825 7.3242307000000002 -0.58111584000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[75]" " -type \"float3\" -0.023079473999999999 7.32697489999999974 -0.55280954000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[76]" " -type \"float3\" -0.17046391999999999 7.33357189999999992 -0.46588278"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[77]" " -type \"float3\" -0.28702807000000002 7.3433761999999998 -0.32884481999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[78]" " -type \"float3\" -0.36136173999999999 7.3554276999999999 -0.15510921"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[79]" " -type \"float3\" -0.38618871999999999 7.368546 0.038316603999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[80]" " -type \"float3\" -0.46004608000000002 7.27575869999999991 0.27755405999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[81]" " -type \"float3\" -0.36814483999999997 7.28950069999999961 0.48920044000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[82]" " -type \"float3\" -0.22595161 7.300117 0.65817331999999995"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[83]" " -type \"float3\" -0.047385367999999997 7.30656909999999993 0.76793206000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[84]" " -type \"float3\" 0.15007462999999999 7.3082256000000001 0.80773311999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[85]" " -type \"float3\" 0.34709969000000002 7.304924 0.77368081"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[86]" " -type \"float3\" 0.52440344999999999 7.29698750000000018 0.66910756000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[87]" " -type \"float3\" 0.66463035000000004 7.28519339999999982 0.50425034999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[88]" " -type \"float3\" 0.75405401000000005 7.27069570000000009 0.29524654"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[89]" " -type \"float3\" 0.78392081999999996 7.25491379999999975 0.062554419"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[90]" " -type \"float3\" 0.75130755000000005 7.23939229999999956 -0.17104786999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[91]" " -type \"float3\" 0.6594063 7.22565080000000037 -0.38269417999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[92]" " -type \"float3\" 0.51721311000000003 7.2150344999999998 -0.55166662"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[93]" " -type \"float3\" 0.33864695 7.20858190000000043 -0.66142570999999994"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[94]" " -type \"float3\" 0.14118702999999999 7.20692589999999988 -0.70122677"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[95]" " -type \"float3\" -0.055837884999999997 7.21022750000000023 -0.66717409999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[96]" " -type \"float3\" -0.23314166 7.21816350000000018 -0.56260133000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[97]" " -type \"float3\" -0.37336856000000002 7.22995759999999965 -0.39774415000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[98]" " -type \"float3\" -0.46279216000000001 7.24445579999999989 -0.18874003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[99]" " -type \"float3\" -0.49265903 7.26023770000000024 0.043951701000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[100]" " -type \"float3\" -0.54588782999999996 7.151042 0.31831607000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[101]" " -type \"float3\" -0.44074148000000002 7.16676380000000002 0.56046527999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[102]" " -type \"float3\" -0.27805500999999999 7.17891030000000008 0.75379079999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[103]" " -type \"float3\" -0.073753237999999999 7.18629259999999981 0.87936848000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[104]" " -type \"float3\" 0.15216525 7.18818760000000001 0.92490583999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[105]" " -type \"float3\" 0.37758609999999998 7.18441010000000002 0.88594543999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[106]" " -type \"float3\" 0.58044337999999995 7.17533020000000032 0.76630116000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[107]" " -type \"float3\" 0.74088012999999997 7.16183610000000037 0.57768403999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[108]" " -type \"float3\" 0.84319180000000005 7.14524890000000035 0.33855811000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[109]" " -type \"float3\" 0.87736314999999998 7.1271924999999996 0.072330042999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[110]" " -type \"float3\" 0.84004951000000005 7.10943409999999965 -0.19493993000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[111]" " -type \"float3\" 0.73490316 7.09371229999999997 -0.43708909000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[112]" " -type \"float3\" 0.57221675000000005 7.08156539999999968 -0.63041477999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[113]" " -type \"float3\" 0.36791515000000002 7.07418350000000018 -0.75599216999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[114]" " -type \"float3\" 0.14199672999999999 7.07228849999999998 -0.80152964999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[115]" " -type \"float3\" -0.083423987000000005 7.07606550000000034 -0.76256930999999994"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[116]" " -type \"float3\" -0.28628132000000001 7.085146 -0.64292490000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[117]" " -type \"float3\" -0.44671807000000002 7.09863949999999999 -0.45430823999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[118]" " -type \"float3\" -0.54902965000000004 7.11522670000000002 -0.21518201000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[119]" " -type \"float3\" -0.58320099000000003 7.13328360000000039 0.051046031999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[120]" " -type \"float3\" -0.61449045000000002 7.01036690000000018 0.35378194000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[121]" " -type \"float3\" -0.49868813000000001 7.02768230000000038 0.62047178000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[122]" " -type \"float3\" -0.31951418999999998 7.04105950000000025 0.83338970000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[123]" " -type \"float3\" -0.094507552999999994 7.04918960000000006 0.97169399000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[124]" " -type \"float3\" 0.15430656000000001 7.05127720000000036 1.02184640000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[125]" " -type \"float3\" 0.4025726 7.04711719999999975 0.97893786000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[126]" " -type \"float3\" 0.62598836000000002 7.03711649999999977 0.84716767000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[127]" " -type \"float3\" 0.80268455000000005 7.02225490000000008 0.63943565000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[128]" " -type \"float3\" 0.91536492000000003 7.00398679999999985 0.37607532999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[129]" " -type \"float3\" 0.95299940999999999 6.98410029999999971 0.082866444999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[130]" " -type \"float3\" 0.91190422000000004 6.9645419000000004 -0.21148992"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[131]" " -type \"float3\" 0.79610181000000002 6.94722650000000019 -0.47817975000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[132]" " -type \"float3\" 0.61692804000000001 6.93384930000000033 -0.69109756"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[133]" " -type \"float3\" 0.39192155000000001 6.92571880000000029 -0.82940179000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[134]" " -type \"float3\" 0.14310749 6.92363169999999961 -0.87955426999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[135]" " -type \"float3\" -0.10515838 6.92779209999999956 -0.83664530999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[136]" " -type \"float3\" -0.32857417999999999 6.93779229999999991 -0.70487571000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[137]" " -type \"float3\" -0.50527036000000003 6.95265389999999961 -0.49714375"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[138]" " -type \"float3\" -0.61795062000000001 6.970922 -0.23378341999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[139]" " -type \"float3\" -0.65558510999999997 6.99080849999999998 0.059425432"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[140]" " -type \"float3\" -0.66416478000000001 6.85719730000000016 0.38307855000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[141]" " -type \"float3\" -0.54055779999999998 6.87568 0.66774230999999995"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[142]" " -type \"float3\" -0.34930836999999998 6.88995889999999989 0.89501010999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[143]" " -type \"float3\" -0.10913723 6.89863729999999986 1.04263560000000011"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[144]" " -type \"float3\" 0.15644589 6.90086509999999986 1.09616789999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[145]" " -type \"float3\" 0.42144397 6.89642480000000013 1.05036740000000006"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[146]" " -type \"float3\" 0.65991717999999999 6.88575029999999977 0.90971690000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[147]" " -type \"float3\" 0.84852183000000003 6.86988690000000002 0.68798429000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[148]" " -type \"float3\" 0.96879630999999999 6.85038760000000035 0.40687477999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[149]" " -type \"float3\" 1.00896720000000006 6.82916070000000008 0.093904704000000006"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[150]" " -type \"float3\" 0.96510231000000002 6.80828480000000003 -0.22028974000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[151]" " -type \"float3\" 0.84149545000000003 6.78980210000000017 -0.50495343999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[152]" " -type \"float3\" 0.65024614000000003 6.7755232000000003 -0.73222113"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[153]" " -type \"float3\" 0.41007510000000003 6.76684519999999967 -0.87984644999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[154]" " -type \"float3\" 0.14449206000000001 6.764617 -0.93337893000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[155]" " -type \"float3\" -0.12050590999999999 6.76905779999999968 -0.88757830999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[156]" " -type \"float3\" -0.35897889999999999 6.77973219999999976 -0.74692767999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[157]" " -type \"float3\" -0.54758364000000004 6.79559520000000017 -0.52519548000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[158]" " -type \"float3\" -0.66785812 6.81509490000000007 -0.24408563999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[159]" " -type \"float3\" -0.70802909000000003 6.8363214000000001 0.068883984999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[160]" " -type \"float3\" -0.69368744000000004 6.69530579999999986 0.40548494000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[161]" " -type \"float3\" -0.56531966 6.7145 0.70111321999999998"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[162]" " -type \"float3\" -0.36670384 6.72932910000000017 0.93713455999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[163]" " -type \"float3\" -0.11728205999999999 6.73834179999999971 1.09044610000000008"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[164]" " -type \"float3\" 0.15853053 6.74065539999999963 1.14604020000000006"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[165]" " -type \"float3\" 0.43373555000000003 6.73604390000000031 1.09847570000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[166]" " -type \"float3\" 0.68139386000000002 6.72495789999999971 0.95240760000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[167]" " -type \"float3\" 0.87726307000000003 6.70848370000000038 0.72213477000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[168]" " -type \"float3\" 1.00217010000000006 6.68823339999999966 0.43019765999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[169]" " -type \"float3\" 1.0438883000000001 6.66618919999999981 0.10517306999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[170]" " -type \"float3\" 0.99833393000000004 6.64450879999999966 -0.22112335"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[171]" " -type \"float3\" 0.86996609000000003 6.62531469999999967 -0.51675123000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[172]" " -type \"float3\" 0.67135036000000003 6.61048559999999963 -0.75277280999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[173]" " -type \"float3\" 0.42192876000000001 6.60147290000000009 -0.90608436000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[174]" " -type \"float3\" 0.14611626999999999 6.59915919999999989 -0.96167855999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[175]" " -type \"float3\" -0.12908858000000001 6.60377119999999973 -0.91411363999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[176]" " -type \"float3\" -0.37674689 6.61485620000000019 -0.76804589999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[177]" " -type \"float3\" -0.57261616000000004 6.63133049999999979 -0.53777319000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[178]" " -type \"float3\" -0.69752318000000002 6.65158130000000014 -0.24583578"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[179]" " -type \"float3\" -0.73924135999999996 6.67362549999999999 0.079188749000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[180]" " -type \"float3\" -0.70233195999999998 6.52867789999999992 0.42044883999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[181]" " -type \"float3\" -0.57236397000000006 6.5481113999999998 0.71976196999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[182]" " -type \"float3\" -0.37127236000000002 6.56312560000000023 0.95872563"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[183]" " -type \"float3\" -0.11874148 6.57225039999999971 1.1139481"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[184]" " -type \"float3\" 0.16050912000000001 6.57459310000000041 1.17023549999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[185]" " -type \"float3\" 0.43914458000000001 6.56992340000000041 1.1220775999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[186]" " -type \"float3\" 0.68988996999999996 6.55870010000000025 0.97418892000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[187]" " -type \"float3\" 0.88820076000000003 6.5420202999999999 0.74104570999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[188]" " -type \"float3\" 1.01466490000000009 6.52151730000000018 0.44546943999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[189]" " -type \"float3\" 1.056903 6.49919840000000004 0.11639326999999999"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[190]" " -type \"float3\" 1.01078090000000009 6.47724770000000039 -0.21397015"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[191]" " -type \"float3\" 0.88081282000000005 6.45781470000000013 -0.51328319"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[192]" " -type \"float3\" 0.67972136000000005 6.44280049999999971 -0.75224679999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[193]" " -type \"float3\" 0.42719063000000002 6.43367579999999961 -0.90746921000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[194]" " -type \"float3\" 0.14794009999999999 6.4313330999999998 -0.96375655999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[195]" " -type \"float3\" -0.13069518999999999 6.43600230000000018 -0.91559862999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[196]" " -type \"float3\" -0.38144061000000001 6.447226 -0.76771027000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[197]" " -type \"float3\" -0.57975136999999999 6.46390530000000041 -0.53456711999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[198]" " -type \"float3\" -0.70621544000000003 6.48440840000000041 -0.23899081"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[199]" " -type \"float3\" -0.74845362000000004 6.50672720000000027 0.090085"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[200]" " -type \"float3\" -0.68988495999999999 6.36141679999999976 0.42760240999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[201]" " -type \"float3\" -0.56151711999999998 6.38061089999999975 0.72323035999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[202]" " -type \"float3\" -0.36290138999999999 6.39543959999999956 0.95925170000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[203]" " -type \"float3\" -0.1134796 6.40445229999999999 1.11256329999999992"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[204]" " -type \"float3\" 0.16233301 6.40676640000000042 1.16815770000000008"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[205]" " -type \"float3\" 0.437538 6.40215439999999969 1.12059280000000006"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[206]" " -type \"float3\" 0.68519640000000004 6.39106940000000012 0.97452508999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[207]" " -type \"float3\" 0.88106554999999998 6.37459470000000028 0.74425191000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[208]" " -type \"float3\" 1.00597259999999999 6.35434439999999956 0.45231475999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[209]" " -type \"float3\" 1.04769069999999997 6.33230019999999971 0.12729019"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[210]" " -type \"float3\" 1.00213630000000009 6.31061940000000021 -0.19900620999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[211]" " -type \"float3\" 0.87376856999999997 6.29142569999999957 -0.49463405999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[212]" " -type \"float3\" 0.67515289999999994 6.27659650000000013 -0.73065537000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[213]" " -type \"float3\" 0.42573124000000001 6.26758379999999971 -0.88396686000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[214]" " -type \"float3\" 0.14991876000000001 6.26527019999999979 -0.93956107"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[215]" " -type \"float3\" -0.12528612 6.2698817 -0.89199656000000005"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[216]" " -type \"float3\" -0.37294441 6.28096720000000008 -0.74592853000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[217]" " -type \"float3\" -0.56881362000000002 6.29744149999999969 -0.51565576000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[218]" " -type \"float3\" -0.69372076000000005 6.31769180000000041 -0.22371864"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[219]" " -type \"float3\" -0.73543882000000005 6.33973649999999989 0.10130587000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[220]" " -type \"float3\" -0.65665333999999997 6.19764089999999968 0.42676874999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[221]" " -type \"float3\" -0.53304647999999999 6.2161230999999999 0.71143252000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[222]" " -type \"float3\" -0.34179702000000001 6.23040250000000029 0.93870032000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[223]" " -type \"float3\" -0.10162588 6.23908039999999975 1.08632580000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[224]" " -type \"float3\" 0.16395721999999999 6.24130819999999975 1.1398581000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[225]" " -type \"float3\" 0.42895528999999999 6.23686740000000039 1.09405719999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[226]" " -type \"float3\" 0.66742842999999996 6.22619339999999966 0.95340681000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[227]" " -type \"float3\" 0.85603315000000002 6.21033050000000042 0.73167448999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[228]" " -type \"float3\" 0.97630762999999998 6.19083070000000024 0.45056465000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[229]" " -type \"float3\" 1.01647850000000006 6.1696042999999996 0.13759494"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[230]" " -type \"float3\" 0.97261363000000001 6.14872789999999991 -0.17659986"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[231]" " -type \"float3\" 0.84900682999999999 6.13024569999999969 -0.46126317999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[232]" " -type \"float3\" 0.65775746000000002 6.11596630000000019 -0.68853092000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[233]" " -type \"float3\" 0.41758642000000001 6.10728790000000021 -0.83615655"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[234]" " -type \"float3\" 0.15200336 6.10506010000000021 -0.88968902999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[235]" " -type \"float3\" -0.11299457 6.10950089999999957 -0.84388810000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[236]" " -type \"float3\" -0.35146760999999999 6.12017539999999993 -0.70323782999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[237]" " -type \"float3\" -0.54007232000000005 6.13603879999999968 -0.48150526999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[238]" " -type \"float3\" -0.66034674999999998 6.15553810000000023 -0.20039576000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[239]" " -type \"float3\" -0.70051770999999996 6.17676449999999999 0.11257422"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[240]" " -type \"float3\" -0.60345525 6.04138369999999991 0.41796830000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[241]" " -type \"float3\" -0.48765296000000002 6.05869910000000012 0.68465810999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[242]" " -type \"float3\" -0.30847903999999998 6.07207679999999961 0.89757639"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[243]" " -type \"float3\" -0.083472393000000006 6.0802069000000003 1.0358807000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[244]" " -type \"float3\" 0.16534172 6.082294 1.08603310000000008"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[245]" " -type \"float3\" 0.41360775 6.07813360000000014 1.04312420000000006"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[246]" " -type \"float3\" 0.63702356999999998 6.06813339999999979 0.91135442"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[247]" " -type \"float3\" 0.81371969 6.05327180000000009 0.70362203999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[248]" " -type \"float3\" 0.92640007000000002 6.03500369999999986 0.44026168999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[249]" " -type \"float3\" 0.96403455999999998 6.01511719999999972 0.14705281000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[250]" " -type \"float3\" 0.92293935999999999 5.99555919999999976 -0.14730322000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[251]" " -type \"float3\" 0.80713701000000004 5.97824380000000044 -0.41399302999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[252]" " -type \"float3\" 0.62796324000000003 5.96486659999999969 -0.62691092000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[253]" " -type \"float3\" 0.40295666000000002 5.95673560000000002 -0.76521539999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[254]" " -type \"float3\" 0.15414265999999999 5.954649 -0.81536752000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[255]" " -type \"float3\" -0.094123243999999995 5.95880890000000019 -0.77245891"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[256]" " -type \"float3\" -0.31753903999999999 5.96880909999999965 -0.64068930999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[257]" " -type \"float3\" -0.49423518999999999 5.98367119999999986 -0.43295702000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[258]" " -type \"float3\" -0.60691541000000004 6.00193930000000009 -0.16959672000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[259]" " -type \"float3\" -0.64454990999999995 6.02182580000000023 0.12361215"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[260]" " -type \"float3\" -0.53160052999999996 5.89649149999999977 0.40141892000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[261]" " -type \"float3\" -0.42645419000000001 5.91221330000000034 0.64356815999999994"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[262]" " -type \"float3\" -0.26376769 5.9243598000000004 0.83689362"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[263]" " -type \"float3\" -0.05946593 5.93174220000000041 0.96247137000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[264]" " -type \"float3\" 0.16645256 5.93363710000000033 1.00800869999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[265]" " -type \"float3\" 0.39187338999999999 5.92985960000000034 0.96904838000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[266]" " -type \"float3\" 0.59473067999999996 5.92077969999999976 0.84940404000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[267]" " -type \"float3\" 0.75516742000000003 5.90728570000000008 0.66078687000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[268]" " -type \"float3\" 0.85747910000000005 5.89069839999999978 0.42166099000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[269]" " -type \"float3\" 0.89165050000000001 5.872642 0.15543288"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[270]" " -type \"float3\" 0.85433685999999998 5.85488370000000025 -0.11183706"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[271]" " -type \"float3\" 0.74919044999999995 5.83916189999999968 -0.35398623000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[272]" " -type \"float3\" 0.58650404 5.8270149 -0.54731196000000004"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[273]" " -type \"float3\" 0.38220248000000001 5.819633 -0.67288928999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[274]" " -type \"float3\" 0.15628402999999999 5.81773809999999969 -0.71842669999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[275]" " -type \"float3\" -0.069136679000000006 5.82151510000000005 -0.67946642999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[276]" " -type \"float3\" -0.27199395999999998 5.83059550000000026 -0.55982208"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[277]" " -type \"float3\" -0.43243077000000002 5.844089 -0.37120539000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[278]" " -type \"float3\" -0.53474235999999997 5.86067629999999973 -0.13207914000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[279]" " -type \"float3\" -0.56891369999999997 5.8787332000000001 0.13414889999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[280]" " -type \"float3\" -0.44285846000000001 5.76653340000000014 0.37752685000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[281]" " -type \"float3\" -0.35095721000000002 5.78027490000000022 0.58917326000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[282]" " -type \"float3\" -0.20876401999999999 5.79089119999999991 0.75814574999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[283]" " -type \"float3\" -0.030197740000000001 5.79734329999999964 0.86790484000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[284]" " -type \"float3\" 0.16726226 5.79899979999999982 0.90770596000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[285]" " -type \"float3\" 0.36428728999999999 5.79569820000000036 0.87365322999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[286]" " -type \"float3\" 0.54159104999999996 5.7877616999999999 0.76907998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[287]" " -type \"float3\" 0.68181795000000001 5.77596760000000042 0.60422282999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[288]" " -type \"float3\" 0.77124161000000002 5.76146980000000042 0.395219"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[289]" " -type \"float3\" 0.80110842000000004 5.745688 0.16252722999999999"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[290]" " -type \"float3\" 0.76849513999999997 5.73016639999999988 -0.071075067000000006"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[291]" " -type \"float3\" 0.67659389999999997 5.71642489999999981 -0.28272140000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[292]" " -type \"float3\" 0.53440069999999995 5.70580860000000012 -0.45169416000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[293]" " -type \"float3\" 0.35583457000000002 5.69935659999999977 -0.56145292999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[294]" " -type \"float3\" 0.15837461 5.69769949999999969 -0.60125434"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[295]" " -type \"float3\" -0.038650293000000002 5.70100120000000032 -0.56720166999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[296]" " -type \"float3\" -0.21595404000000001 5.70893759999999961 -0.46262845000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[297]" " -type \"float3\" -0.35618094 5.7207321999999996 -0.29777133"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[298]" " -type \"float3\" -0.44560455999999998 5.73522949999999998 -0.088767573000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[299]" " -type \"float3\" -0.47547140999999998 5.75101179999999967 0.14392450000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[300]" " -type \"float3\" -0.33941427000000002 5.65470740000000038 0.3468813"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[301]" " -type \"float3\" -0.26302099000000001 5.66613010000000017 0.52281301999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[302]" " -type \"float3\" -0.14482233999999999 5.67495490000000036 0.66327219999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[303]" " -type \"float3\" 0.0036115702000000002 5.68031839999999999 0.75450969000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[304]" " -type \"float3\" 0.16775097 5.68169550000000001 0.78759462000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[305]" " -type \"float3\" 0.33152881000000001 5.67895079999999997 0.75928830999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[306]" " -type \"float3\" 0.47891325000000001 5.67235370000000039 0.67236149000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[307]" " -type \"float3\" 0.59547733999999997 5.6625494999999999 0.53532307999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[308]" " -type \"float3\" 0.66981106999999995 5.65049840000000003 0.36158779000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[309]" " -type \"float3\" 0.69463807 5.63737960000000005 0.16816196999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[310]" " -type \"float3\" 0.66752809000000002 5.62447739999999996 -0.026021147000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[311]" " -type \"float3\" 0.59113484999999999 5.61305479999999957 -0.20195282000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[312]" " -type \"float3\" 0.47293624000000001 5.60422949999999975 -0.34241199"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[313]" " -type \"float3\" 0.32450244 5.59886649999999975 -0.43364942000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[314]" " -type \"float3\" 0.16036309000000001 5.59748939999999973 -0.46673435000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[315]" " -type \"float3\" -0.0034146457999999998 5.60023360000000014 -0.43842804000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[316]" " -type \"float3\" -0.15079909999999999 5.60683060000000033 -0.35150132000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[317]" " -type \"float3\" -0.26736322000000001 5.61663479999999993 -0.21446297"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[318]" " -type \"float3\" -0.34169692000000002 5.62868640000000031 -0.040727723"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[319]" " -type \"float3\" -0.36652392 5.64180469999999978 0.1526981"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[320]" " -type \"float3\" -0.22381504999999999 5.56376890000000035 0.31023613"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[321]" " -type \"float3\" -0.16481082 5.57259179999999965 0.44612144999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[322]" " -type \"float3\" -0.073517158999999999 5.57940769999999997 0.55460869999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[323]" " -type \"float3\" 0.041129440000000003 5.58355050000000031 0.62507802000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[324]" " -type \"float3\" 0.16790658 5.58461379999999963 0.65063196000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[325]" " -type \"float3\" 0.29440444999999998 5.58249379999999995 0.62876880000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[326]" " -type \"float3\" 0.40824050000000001 5.5773988000000001 0.56162888"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[327]" " -type \"float3\" 0.49827169999999998 5.56982610000000022 0.45578390000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[328]" " -type \"float3\" 0.55568521999999998 5.56051830000000002 0.32159525"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[329]" " -type \"float3\" 0.57486093000000005 5.55038549999999997 0.17219772999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[330]" " -type \"float3\" 0.55392193999999995 5.54042049999999975 0.022215966"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[331]" " -type \"float3\" 0.49491763 5.53159759999999956 -0.11366933999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[332]" " -type \"float3\" 0.40362403000000002 5.52478119999999961 -0.22215655000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[333]" " -type \"float3\" 0.28897743999999997 5.52063889999999979 -0.2926262"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[334]" " -type \"float3\" 0.16220035999999999 5.51957509999999996 -0.31818011000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[335]" " -type \"float3\" 0.035702567999999997 5.52169509999999963 -0.29631698000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[336]" " -type \"float3\" -0.078133441999999997 5.5267906 -0.22917682"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[337]" " -type \"float3\" -0.16816466999999999 5.53436280000000025 -0.12333214000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[338]" " -type \"float3\" -0.22557812999999999 5.54367110000000007 0.010856796"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[339]" " -type \"float3\" -0.24475385 5.55380339999999961 0.16025397"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[340]" " -type \"float3\" -0.098907217000000006 5.49595690000000037 0.26849427999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[341]" " -type \"float3\" -0.058744904000000001 5.50196220000000036 0.36098712999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[342]" " -type \"float3\" 0.0033958199999999999 5.50660129999999981 0.43483090000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[343]" " -type \"float3\" 0.081432148999999995 5.50942129999999963 0.48279735000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[344]" " -type \"float3\" 0.16772532000000001 5.51014520000000019 0.50019097000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[345]" " -type \"float3\" 0.25382843999999999 5.50870230000000038 0.48530957000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[346]" " -type \"float3\" 0.33131301000000002 5.50523380000000007 0.43960914000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[347]" " -type \"float3\" 0.39259445999999998 5.50007960000000029 0.36756413999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[348]" " -type \"float3\" 0.43167393999999998 5.49374390000000012 0.27622584"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[349]" " -type \"float3\" 0.44472623 5.48684689999999975 0.17453585999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[350]" " -type \"float3\" 0.43047372 5.48006390000000021 0.072447941000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[351]" " -type \"float3\" 0.39031142000000002 5.47405860000000022 -0.020044882"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[352]" " -type \"float3\" 0.32817072000000003 5.469419 -0.093888639999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[353]" " -type \"float3\" 0.25013444000000001 5.46659950000000006 -0.14185498999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[354]" " -type \"float3\" 0.16384129 5.46587560000000039 -0.15924868"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[355]" " -type \"float3\" 0.07773824 5.46731809999999996 -0.14436725"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[356]" " -type \"float3\" 0.00025364337 5.47078660000000028 -0.098667189000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[357]" " -type \"float3\" -0.061027738999999998 5.47594069999999977 -0.026621916999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[358]" " -type \"float3\" -0.1001073 5.48227639999999994 0.064716011000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[359]" " -type \"float3\" -0.11315959 5.48917389999999994 0.16640632"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[360]" " -type \"float3\" 0.032233554999999997 5.45293950000000027 0.22268320999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[361]" " -type \"float3\" 0.052565045999999997 5.45597979999999971 0.26950622000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[362]" " -type \"float3\" 0.084022692999999996 5.45832870000000003 0.30688837000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[363]" " -type \"float3\" 0.12352723 5.45975590000000022 0.33117046999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[364]" " -type \"float3\" 0.16721164999999999 5.46012260000000005 0.33997586000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[365]" " -type \"float3\" 0.21079983999999999 5.45939209999999964 0.33244231000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[366]" " -type \"float3\" 0.25002506000000002 5.45763640000000017 0.30930731"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[367]" " -type \"float3\" 0.28104770000000001 5.45502709999999968 0.27283566999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[368]" " -type \"float3\" 0.30083104999999999 5.45181939999999976 0.22659725"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[369]" " -type \"float3\" 0.30743851999999999 5.448328 0.17511831"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[370]" " -type \"float3\" 0.30022344000000001 5.44489429999999963 0.12343812999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[371]" " -type \"float3\" 0.279892 5.44185449999999982 0.076615497000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[372]" " -type \"float3\" 0.24843435 5.43950560000000038 0.039233338"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[373]" " -type \"float3\" 0.20892984000000001 5.43807789999999969 0.014951236999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[374]" " -type \"float3\" 0.16524543 5.43771170000000037 0.0061458572999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[375]" " -type \"float3\" 0.12165724999999999 5.43844219999999989 0.013679411000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[376]" " -type \"float3\" 0.082432009000000001 5.44019750000000002 0.036814052999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[377]" " -type \"float3\" 0.051409371000000002 5.44280670000000022 0.073285668999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[378]" " -type \"float3\" 0.031626038000000002 5.44601440000000014 0.11952408"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[379]" " -type \"float3\" 0.025018543000000001 5.44950579999999984 0.17100301000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[380]" " -type \"float3\" 0.14207106999999999 7.570147 0.032547514999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
-		"pnts[381]" " -type \"float3\" 0.16637811 5.4357785999999999 0.17393075"
+		"pt[0:165]" (" -type \"float3\" 0.0082257548000000003 7.56103090000000044 0.083040490999999994 0.028557241000000001 7.56407119999999988 0.12986347000000001 0.060014892 7.5664201000000002 0.16724564 0.099519423999999995 7.56784730000000039 0.19152775 0.14320384 7.56821389999999994 0.20033313 0.18679206000000001 7.56748340000000042 0.19279957 0.22601726999999999 7.56572770000000006 0.16966455999999999 0.25703989999999999 7.56311849999999986 0.13319292999999999 0.27682325000000002 7.55991129999999956 0.086954847000000002 0.28343077999999999 7.55641979999999958 0.035475912999999998 0.27621567000000002 7.55298610000000004 -0.016204275000000001 0.25588420000000001 7.54994579999999971 -0.063027247999999994 0.22442655 7.54759690000000028 -0.1004094 0.18492204000000001 7.54616980000000037 -0.1246915 0.14123762000000001 7.54580309999999965 -0.13349686999999999 0.097649454999999996 7.54653360000000006 -0.12596331999999999 0.058424238000000003 7.54828930000000042 -0.10282835 0.027401596 7.55089860000000002 -0.066356726000000005 0.007618"
+		+ "2652 7.55410619999999966 -0.020118317 0.0010107406 7.55759720000000002 0.031360269000000003 -0.12202455 7.5258617000000001 0.13403103 -0.081862241000000002 7.531867 0.22652385 -0.019721514999999998 7.53650670000000034 0.30036764999999999 0.058314803999999998 7.53932619999999964 0.34833404000000001 0.14460798 7.54005 0.36572771999999998 0.2307111 7.53860710000000012 0.35084629000000001 0.30819568000000003 7.53513910000000031 0.30514616 0.36947709000000001 7.5299845000000003 0.23310089000000001 0.40855664000000003 7.52364920000000037 0.14176293000000001 0.42160892 7.51675179999999976 0.040072600999999999 0.40735638000000002 7.50996880000000022 -0.062015325000000003 0.36719408999999997 7.50396350000000023 -0.15450812999999999 0.30505337999999999 7.49932379999999998 -0.22835189 0.22701711999999999 7.49650429999999979 -0.27631824999999999 0.14072393999999999 7.4957805000000004 -0.29371195999999999 0.054620891999999997 7.4972234000000002 -0.27883053000000002 -0.022863694 7.50069140000000001 -0.23313046000000001 -0."
+		+ "084145076999999999 7.505846 -0.16108517 -0.12322465000000001 7.51218129999999995 -0.069747239000000003 -0.13627692999999999 7.51907869999999967 0.031943064 -0.24547273999999999 7.46550509999999967 0.18426301 -0.18646852999999999 7.474328 0.32014838000000001 -0.095174849000000006 7.481144 0.42863562999999999 0.019471749999999999 7.4852862 0.49910494999999999 0.14624888 7.48635010000000012 0.52465885999999995 0.27274673999999999 7.48423 0.50279563999999999 0.38658279000000001 7.479135 0.43565583000000002 0.476614 7.47156239999999983 0.32981080000000002 0.53402751999999998 7.46225450000000023 0.19562213000000001 0.55320323000000005 7.45212170000000018 0.046224612999999998 0.53226417000000004 7.44215629999999972 -0.10375713 0.47325995999999998 7.43333390000000005 -0.23964242999999999 0.38196632000000003 7.4265175000000001 -0.34812966000000001 0.26731973999999997 7.42237469999999977 -0.41859931 0.14054266000000001 7.42131139999999956 -0.44415325 0.014044878 7.42343140000000012 -0.42229009000000001 -0.0997911320000"
+		+ "00005 7.4285268999999996 -0.35514992000000001 -0.18982236 7.43609909999999985 -0.24930522999999999 -0.24723582 7.44540739999999968 -0.1151163 -0.26641154 7.4555397000000001 0.034280866 -0.35907908999999999 7.38144829999999974 0.23249945 -0.28268581999999998 7.39287139999999976 0.40843156000000003 -0.16448716999999999 7.40169619999999995 0.54889071 -0.016053259 7.40705969999999958 0.64012824999999995 0.14808613000000001 7.4084367999999996 0.67321312 0.31186396 7.40569210000000044 0.64490676000000002 0.45924841999999999 7.39909459999999974 0.55797964 0.57581252000000005 7.38929080000000038 0.42094162000000002 0.65014625000000004 7.37723969999999962 0.24720633 0.67497319 7.36412050000000029 0.053780142000000003 0.64786326999999999 7.35121870000000044 -0.14040264 0.57147002000000002 7.33979610000000005 -0.31633431000000001 0.45327141999999998 7.33097080000000023 -0.45679345999999998 0.30483760999999998 7.32560729999999971 -0.54803091000000004 0.14069825 7.3242307000000002 -0.58111584000000005 -0.02307947399999999"
+		+ "9 7.32697489999999974 -0.55280954000000004 -0.17046391999999999 7.33357189999999992 -0.46588278 -0.28702807000000002 7.3433761999999998 -0.32884481999999998 -0.36136173999999999 7.3554276999999999 -0.15510921 -0.38618871999999999 7.368546 0.038316603999999997 -0.46004608000000002 7.27575869999999991 0.27755405999999999 -0.36814483999999997 7.28950069999999961 0.48920044000000001 -0.22595161 7.300117 0.65817331999999995 -0.047385367999999997 7.30656909999999993 0.76793206000000003 0.15007462999999999 7.3082256000000001 0.80773311999999997 0.34709969000000002 7.304924 0.77368081 0.52440344999999999 7.29698750000000018 0.66910756000000005 0.66463035000000004 7.28519339999999982 0.50425034999999996 0.75405401000000005 7.27069570000000009 0.29524654 0.78392081999999996 7.25491379999999975 0.062554419 0.75130755000000005 7.23939229999999956 -0.17104786999999999 0.6594063 7.22565080000000037 -0.38269417999999999 0.51721311000000003 7.2150344999999998 -0.55166662 0.33864695 7.20858190000000043 -0.66142570999999994 0."
+		+ "14118702999999999 7.20692589999999988 -0.70122677 -0.055837884999999997 7.21022750000000023 -0.66717409999999999 -0.23314166 7.21816350000000018 -0.56260133000000001 -0.37336856000000002 7.22995759999999965 -0.39774415000000002 -0.46279216000000001 7.24445579999999989 -0.18874003 -0.49265903 7.26023770000000024 0.043951701000000003 -0.54588782999999996 7.151042 0.31831607000000001 -0.44074148000000002 7.16676380000000002 0.56046527999999995 -0.27805500999999999 7.17891030000000008 0.75379079999999998 -0.073753237999999999 7.18629259999999981 0.87936848000000001 0.15216525 7.18818760000000001 0.92490583999999998 0.37758609999999998 7.18441010000000002 0.88594543999999997 0.58044337999999995 7.17533020000000032 0.76630116000000004 0.74088012999999997 7.16183610000000037 0.57768403999999995 0.84319180000000005 7.14524890000000035 0.33855811000000002 0.87736314999999998 7.1271924999999996 0.072330042999999997 0.84004951000000005 7.10943409999999965 -0.19493993000000001 0.73490316 7.09371229999999997 -0.4370890900"
+		+ "0000001 0.57221675000000005 7.08156539999999968 -0.63041477999999995 0.36791515000000002 7.07418350000000018 -0.75599216999999996 0.14199672999999999 7.07228849999999998 -0.80152964999999998 -0.083423987000000005 7.07606550000000034 -0.76256930999999994 -0.28628132000000001 7.085146 -0.64292490000000002 -0.44671807000000002 7.09863949999999999 -0.45430823999999997 -0.54902965000000004 7.11522670000000002 -0.21518201000000001 -0.58320099000000003 7.13328360000000039 0.051046031999999998 -0.61449045000000002 7.01036690000000018 0.35378194000000002 -0.49868813000000001 7.02768230000000038 0.62047178000000003 -0.31951418999999998 7.04105950000000025 0.83338970000000001 -0.094507552999999994 7.04918960000000006 0.97169399000000001 0.15430656000000001 7.05127720000000036 1.02184640000000004 0.4025726 7.04711719999999975 0.97893786000000005 0.62598836000000002 7.03711649999999977 0.84716767000000004 0.80268455000000005 7.02225490000000008 0.63943565000000002 0.91536492000000003 7.00398679999999985 0.3760753299999999"
+		+ "9 0.95299940999999999 6.98410029999999971 0.082866444999999997 0.91190422000000004 6.9645419000000004 -0.21148992 0.79610181000000002 6.94722650000000019 -0.47817975000000001 0.61692804000000001 6.93384930000000033 -0.69109756 0.39192155000000001 6.92571880000000029 -0.82940179000000003 0.14310749 6.92363169999999961 -0.87955426999999997 -0.10515838 6.92779209999999956 -0.83664530999999998 -0.32857417999999999 6.93779229999999991 -0.70487571000000004 -0.50527036000000003 6.95265389999999961 -0.49714375 -0.61795062000000001 6.970922 -0.23378341999999999 -0.65558510999999997 6.99080849999999998 0.059425432 -0.66416478000000001 6.85719730000000016 0.38307855000000002 -0.54055779999999998 6.87568 0.66774230999999995 -0.34930836999999998 6.88995889999999989 0.89501010999999997 -0.10913723 6.89863729999999986 1.04263560000000011 0.15644589 6.90086509999999986 1.09616789999999997 0.42144397 6.89642480000000013 1.05036740000000006 0.65991717999999999 6.88575029999999977 0.90971690000000005 0.84852183000000003 6.86988"
+		+ "690000000002 0.68798429000000005 0.96879630999999999 6.85038760000000035 0.40687477999999999 1.00896720000000006 6.82916070000000008 0.093904704000000006 0.96510231000000002 6.80828480000000003 -0.22028974000000001 0.84149545000000003 6.78980210000000017 -0.50495343999999998 0.65024614000000003 6.7755232000000003 -0.73222113 0.41007510000000003 6.76684519999999967 -0.87984644999999995 0.14449206000000001 6.764617 -0.93337893000000005 -0.12050590999999999 6.76905779999999968 -0.88757830999999998 -0.35897889999999999 6.77973219999999976 -0.74692767999999998 -0.54758364000000004 6.79559520000000017 -0.52519548000000005 -0.66785812 6.81509490000000007 -0.24408563999999999 -0.70802909000000003 6.8363214000000001 0.068883984999999995 -0.69368744000000004 6.69530579999999986 0.40548494000000002 -0.56531966 6.7145 0.70111321999999998 -0.36670384 6.72932910000000017 0.93713455999999995 -0.11728205999999999 6.73834179999999971 1.09044610000000008 0.15853053 6.74065539999999963 1.14604020000000006 0.43373555000000003 6."
+		+ "73604390000000031 1.09847570000000005")
+		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
+		"pt[166:331]" (" 0.68139386000000002 6.72495789999999971 0.95240760000000002 0.87726307000000003 6.70848370000000038 0.72213477000000004 1.00217010000000006 6.68823339999999966 0.43019765999999998 1.0438883000000001 6.66618919999999981 0.10517306999999999 0.99833393000000004 6.64450879999999966 -0.22112335 0.86996609000000003 6.62531469999999967 -0.51675123000000001 0.67135036000000003 6.61048559999999963 -0.75277280999999996 0.42192876000000001 6.60147290000000009 -0.90608436000000003 0.14611626999999999 6.59915919999999989 -0.96167855999999996 -0.12908858000000001 6.60377119999999973 -0.91411363999999995 -0.37674689 6.61485620000000019 -0.76804589999999995 -0.57261616000000004 6.63133049999999979 -0.53777319000000001 -0.69752318000000002 6.65158130000000014 -0.24583578 -0.73924135999999996 6.67362549999999999 0.079188749000000003 -0.70233195999999998 6.52867789999999992 0.42044883999999999 -0.57236397000000006 6.5481113999999998 0.71976196999999997 -0.37127236000000002 6.56312560000000023 0.95872563 -0.11874148 6.572250399"
+		+ "99999971 1.1139481 0.16050912000000001 6.57459310000000041 1.17023549999999998 0.43914458000000001 6.56992340000000041 1.1220775999999999 0.68988996999999996 6.55870010000000025 0.97418892000000001 0.88820076000000003 6.5420202999999999 0.74104570999999997 1.01466490000000009 6.52151730000000018 0.44546943999999999 1.056903 6.49919840000000004 0.11639326999999999 1.01078090000000009 6.47724770000000039 -0.21397015 0.88081282000000005 6.45781470000000013 -0.51328319 0.67972136000000005 6.44280049999999971 -0.75224679999999999 0.42719063000000002 6.43367579999999961 -0.90746921000000003 0.14794009999999999 6.4313330999999998 -0.96375655999999998 -0.13069518999999999 6.43600230000000018 -0.91559862999999997 -0.38144061000000001 6.447226 -0.76771027000000003 -0.57975136999999999 6.46390530000000041 -0.53456711999999995 -0.70621544000000003 6.48440840000000041 -0.23899081 -0.74845362000000004 6.50672720000000027 0.090085 -0.68988495999999999 6.36141679999999976 0.42760240999999999 -0.56151711999999998 6.3806108999"
+		+ "9999975 0.72323035999999996 -0.36290138999999999 6.39543959999999956 0.95925170000000004 -0.1134796 6.40445229999999999 1.11256329999999992 0.16233301 6.40676640000000042 1.16815770000000008 0.437538 6.40215439999999969 1.12059280000000006 0.68519640000000004 6.39106940000000012 0.97452508999999998 0.88106554999999998 6.37459470000000028 0.74425191000000002 1.00597259999999999 6.35434439999999956 0.45231475999999998 1.04769069999999997 6.33230019999999971 0.12729019 1.00213630000000009 6.31061940000000021 -0.19900620999999999 0.87376856999999997 6.29142569999999957 -0.49463405999999999 0.67515289999999994 6.27659650000000013 -0.73065537000000003 0.42573124000000001 6.26758379999999971 -0.88396686000000002 0.14991876000000001 6.26527019999999979 -0.93956107 -0.12528612 6.2698817 -0.89199656000000005 -0.37294441 6.28096720000000008 -0.74592853000000003 -0.56881362000000002 6.29744149999999969 -0.51565576000000002 -0.69372076000000005 6.31769180000000041 -0.22371864 -0.73543882000000005 6.33973649999999989 0.101"
+		+ "30587000000001 -0.65665333999999997 6.19764089999999968 0.42676874999999997 -0.53304647999999999 6.2161230999999999 0.71143252000000001 -0.34179702000000001 6.23040250000000029 0.93870032000000003 -0.10162588 6.23908039999999975 1.08632580000000001 0.16395721999999999 6.24130819999999975 1.1398581000000001 0.42895528999999999 6.23686740000000039 1.09405719999999995 0.66742842999999996 6.22619339999999966 0.95340681000000005 0.85603315000000002 6.21033050000000042 0.73167448999999996 0.97630762999999998 6.19083070000000024 0.45056465000000001 1.01647850000000006 6.1696042999999996 0.13759494 0.97261363000000001 6.14872789999999991 -0.17659986 0.84900682999999999 6.13024569999999969 -0.46126317999999999 0.65775746000000002 6.11596630000000019 -0.68853092000000005 0.41758642000000001 6.10728790000000021 -0.83615655 0.15200336 6.10506010000000021 -0.88968902999999999 -0.11299457 6.10950089999999957 -0.84388810000000003 -0.35146760999999999 6.12017539999999993 -0.70323782999999995 -0.54007232000000005 6.1360387999"
+		+ "9999968 -0.48150526999999999 -0.66034674999999998 6.15553810000000023 -0.20039576000000001 -0.70051770999999996 6.17676449999999999 0.11257422 -0.60345525 6.04138369999999991 0.41796830000000001 -0.48765296000000002 6.05869910000000012 0.68465810999999999 -0.30847903999999998 6.07207679999999961 0.89757639 -0.083472393000000006 6.0802069000000003 1.0358807000000001 0.16534172 6.082294 1.08603310000000008 0.41360775 6.07813360000000014 1.04312420000000006 0.63702356999999998 6.06813339999999979 0.91135442 0.81371969 6.05327180000000009 0.70362203999999995 0.92640007000000002 6.03500369999999986 0.44026168999999998 0.96403455999999998 6.01511719999999972 0.14705281000000001 0.92293935999999999 5.99555919999999976 -0.14730322000000001 0.80713701000000004 5.97824380000000044 -0.41399302999999998 0.62796324000000003 5.96486659999999969 -0.62691092000000004 0.40295666000000002 5.95673560000000002 -0.76521539999999999 0.15414265999999999 5.954649 -0.81536752000000001 -0.094123243999999995 5.95880890000000019 -0.7724"
+		+ "5891 -0.31753903999999999 5.96880909999999965 -0.64068930999999996 -0.49423518999999999 5.98367119999999986 -0.43295702000000003 -0.60691541000000004 6.00193930000000009 -0.16959672000000001 -0.64454990999999995 6.02182580000000023 0.12361215 -0.53160052999999996 5.89649149999999977 0.40141892000000001 -0.42645419000000001 5.91221330000000034 0.64356815999999994 -0.26376769 5.9243598000000004 0.83689362 -0.05946593 5.93174220000000041 0.96247137000000005 0.16645256 5.93363710000000033 1.00800869999999998 0.39187338999999999 5.92985960000000034 0.96904838000000004 0.59473067999999996 5.92077969999999976 0.84940404000000003 0.75516742000000003 5.90728570000000008 0.66078687000000003 0.85747910000000005 5.89069839999999978 0.42166099000000001 0.89165050000000001 5.872642 0.15543288 0.85433685999999998 5.85488370000000025 -0.11183706 0.74919044999999995 5.83916189999999968 -0.35398623000000001 0.58650404 5.8270149 -0.54731196000000004 0.38220248000000001 5.819633 -0.67288928999999997 0.15628402999999999 5.8177380"
+		+ "9999999969 -0.71842669999999997 -0.069136679000000006 5.82151510000000005 -0.67946642999999995 -0.27199395999999998 5.83059550000000026 -0.55982208 -0.43243077000000002 5.844089 -0.37120539000000002 -0.53474235999999997 5.86067629999999973 -0.13207914000000001 -0.56891369999999997 5.8787332000000001 0.13414889999999999 -0.44285846000000001 5.76653340000000014 0.37752685000000002 -0.35095721000000002 5.78027490000000022 0.58917326000000003 -0.20876401999999999 5.79089119999999991 0.75814574999999995 -0.030197740000000001 5.79734329999999964 0.86790484000000001 0.16726226 5.79899979999999982 0.90770596000000003 0.36428728999999999 5.79569820000000036 0.87365322999999995 0.54159104999999996 5.7877616999999999 0.76907998 0.68181795000000001 5.77596760000000042 0.60422282999999999 0.77124161000000002 5.76146980000000042 0.395219 0.80110842000000004 5.745688 0.16252722999999999 0.76849513999999997 5.73016639999999988 -0.071075067000000006 0.67659389999999997 5.71642489999999981 -0.28272140000000001 0.53440069999999"
+		+ "995 5.70580860000000012 -0.45169416000000001 0.35583457000000002 5.69935659999999977 -0.56145292999999996 0.15837461 5.69769949999999969 -0.60125434 -0.038650293000000002 5.70100120000000032 -0.56720166999999999 -0.21595404000000001 5.70893759999999961 -0.46262845000000002 -0.35618094 5.7207321999999996 -0.29777133 -0.44560455999999998 5.73522949999999998 -0.088767573000000002 -0.47547140999999998 5.75101179999999967 0.14392450000000001 -0.33941427000000002 5.65470740000000038 0.3468813 -0.26302099000000001 5.66613010000000017 0.52281301999999996 -0.14482233999999999 5.67495490000000036 0.66327219999999998 0.0036115702000000002 5.68031839999999999 0.75450969000000001 0.16775097 5.68169550000000001 0.78759462000000002 0.33152881000000001 5.67895079999999997 0.75928830999999997 0.47891325000000001 5.67235370000000039 0.67236149000000001 0.59547733999999997 5.6625494999999999 0.53532307999999995 0.66981106999999995 5.65049840000000003 0.36158779000000002 0.69463807 5.63737960000000005 0.16816196999999999 0.66752"
+		+ "809000000002 5.62447739999999996 -0.026021147000000001 0.59113484999999999 5.61305479999999957 -0.20195282000000001 0.47293624000000001 5.60422949999999975 -0.34241199 0.32450244 5.59886649999999975 -0.43364942000000001 0.16036309000000001 5.59748939999999973 -0.46673435000000002 -0.0034146457999999998 5.60023360000000014 -0.43842804000000002 -0.15079909999999999 5.60683060000000033 -0.35150132000000001 -0.26736322000000001 5.61663479999999993 -0.21446297 -0.34169692000000002 5.62868640000000031 -0.040727723 -0.36652392 5.64180469999999978 0.1526981 -0.22381504999999999 5.56376890000000035 0.31023613 -0.16481082 5.57259179999999965 0.44612144999999997 -0.073517158999999999 5.57940769999999997 0.55460869999999995 0.041129440000000003 5.58355050000000031 0.62507802000000001 0.16790658 5.58461379999999963 0.65063196000000001 0.29440444999999998 5.58249379999999995 0.62876880000000002 0.40824050000000001 5.5773988000000001 0.56162888 0.49827169999999998 5.56982610000000022 0.45578390000000002 0.55568521999999998 "
+		+ "5.56051830000000002 0.32159525 0.57486093000000005 5.55038549999999997 0.17219772999999999 0.55392193999999995 5.54042049999999975 0.022215966 0.49491763 5.53159759999999956 -0.11366933999999999"
+		)
+		2 "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft|jackie_rig:jackieEyeLeftShape" 
+		"pt[332:381]" (" 0.40362403000000002 5.52478119999999961 -0.22215655000000001 0.28897743999999997 5.52063889999999979 -0.2926262 0.16220035999999999 5.51957509999999996 -0.31818011000000002 0.035702567999999997 5.52169509999999963 -0.29631698000000001 -0.078133441999999997 5.5267906 -0.22917682 -0.16816466999999999 5.53436280000000025 -0.12333214000000001 -0.22557812999999999 5.54367110000000007 0.010856796 -0.24475385 5.55380339999999961 0.16025397 -0.098907217000000006 5.49595690000000037 0.26849427999999997 -0.058744904000000001 5.50196220000000036 0.36098712999999999 0.0033958199999999999 5.50660129999999981 0.43483090000000002 0.081432148999999995 5.50942129999999963 0.48279735000000001 0.16772532000000001 5.51014520000000019 0.50019097000000001 0.25382843999999999 5.50870230000000038 0.48530957000000002 0.33131301000000002 5.50523380000000007 0.43960914000000001 0.39259445999999998 5.50007960000000029 0.36756413999999998 0.43167393999999998 5.49374390000000012 0.27622584 0.44472623 5.48684689999999975 0.174535859999999"
+		+ "99 0.43047372 5.48006390000000021 0.072447941000000002 0.39031142000000002 5.47405860000000022 -0.020044882 0.32817072000000003 5.469419 -0.093888639999999995 0.25013444000000001 5.46659950000000006 -0.14185498999999999 0.16384129 5.46587560000000039 -0.15924868 0.07773824 5.46731809999999996 -0.14436725 0.00025364337 5.47078660000000028 -0.098667189000000002 -0.061027738999999998 5.47594069999999977 -0.026621916999999998 -0.1001073 5.48227639999999994 0.064716011000000004 -0.11315959 5.48917389999999994 0.16640632 0.032233554999999997 5.45293950000000027 0.22268320999999999 0.052565045999999997 5.45597979999999971 0.26950622000000002 0.084022692999999996 5.45832870000000003 0.30688837000000002 0.12352723 5.45975590000000022 0.33117046999999999 0.16721164999999999 5.46012260000000005 0.33997586000000002 0.21079983999999999 5.45939209999999964 0.33244231000000002 0.25002506000000002 5.45763640000000017 0.30930731 0.28104770000000001 5.45502709999999968 0.27283566999999997 0.30083104999999999 5.4518193999999997"
+		+ "6 0.22659725 0.30743851999999999 5.448328 0.17511831 0.30022344000000001 5.44489429999999963 0.12343812999999999 0.279892 5.44185449999999982 0.076615497000000005 0.24843435 5.43950560000000038 0.039233338 0.20892984000000001 5.43807789999999969 0.014951236999999999 0.16524543 5.43771170000000037 0.0061458572999999999 0.12165724999999999 5.43844219999999989 0.013679411000000001 0.082432009000000001 5.44019750000000002 0.036814052999999999 0.051409371000000002 5.44280670000000022 0.073285668999999998 0.031626038000000002 5.44601440000000014 0.11952408 0.025018543000000001 5.44950579999999984 0.17100301000000001 0.14207106999999999 7.570147 0.032547514999999999 0.16637811 5.4357785999999999 0.17393075"
+		)
 		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight" "translateZ" " -av 0"
 		
 		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight" "rotatePivot" " -type \"double3\" -0.1533067666994023 6.50296276367618198 0.10323936876984455"
@@ -4975,1115 +3893,34 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
 		"pnts" " -s 382"
 		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[0]" " -type \"float3\" -0.28129612999999998 7.56161689999999975 0.085037887000000006"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[1]" " -type \"float3\" -0.26131948999999999 7.56482360000000043 0.13154398"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[2]" " -type \"float3\" -0.23017676000000001 7.56743 0.16836609999999999"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[3]" " -type \"float3\" -0.19091646000000001 7.56918139999999973 0.19190049000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[4]" " -type \"float3\" -0.14738166 7.56990620000000014 0.19984302000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[5]" " -type \"float3\" -0.10383381999999999 7.5695332999999998 0.19141605"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[6]" " -type \"float3\" -0.064535722000000004 7.56809949999999976 0.16744492999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[7]" " -type \"float3\" -0.033334150999999999 7.56574539999999995 0.13027599000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[8]" " -type \"float3\" -0.013283306999999999 7.56270030000000038 0.083547458000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[9]" " -type \"float3\" -0.0063459132999999996 7.55926369999999981 0.031833819999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[10]" " -type \"float3\" -0.013201057 7.55577140000000025 -0.019803535000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[11]" " -type \"float3\" -0.033177696 7.55256460000000018 -0.066309600999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[12]" " -type \"float3\" -0.064320407999999996 7.54995819999999984 -0.10313173"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[13]" " -type \"float3\" -0.10358067999999999 7.54820679999999999 -0.1266661"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[14]" " -type \"float3\" -0.14711547999999999 7.547482 -0.13460829999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[15]" " -type \"float3\" -0.19066331 7.54785489999999992 -0.12618165000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[16]" " -type \"float3\" -0.22996137999999999 7.54928869999999996 -0.10221055"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[17]" " -type \"float3\" -0.26116296999999999 7.55164290000000005 -0.065041631000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[18]" " -type \"float3\" -0.28121379000000002 7.5546875 -0.01831311"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[19]" " -type \"float3\" -0.28815117000000001 7.55812409999999968 0.033400516999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[20]" " -type \"float3\" -0.41226771000000001 7.52531190000000016 0.1387872"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[21]" " -type \"float3\" -0.37280630999999997 7.53164630000000024 0.23065388000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[22]" " -type \"float3\" -0.31128767000000002 7.53679509999999997 0.30339192999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[23]" " -type \"float3\" -0.23373382000000001 7.54025459999999992 0.34988087000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[24]" " -type \"float3\" -0.14773617999999999 7.54168649999999996 0.36557040000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[25]" " -type \"float3\" -0.061712789999999997 7.54095030000000044 0.34892436999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[26]" " -type \"float3\" 0.015915746000000001 7.53811789999999959 0.30157229000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[27]" " -type \"float3\" 0.077550612000000005 7.53346680000000024 0.22814967999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[28]" " -type \"float3\" 0.11715857 7.52745290000000011 0.13584352999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[29]" " -type \"float3\" 0.13086252000000001 7.52066370000000006 0.033688847000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[30]" " -type \"float3\" 0.11732105 7.51376440000000034 -0.068314112999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[31]" " -type \"float3\" 0.077859648000000004 7.50743060000000018 -0.16018075000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[32]" " -type \"float3\" 0.016341092000000002 7.50228170000000016 -0.23291849000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[33]" " -type \"float3\" -0.061212747999999997 7.4988216999999997 -0.27940767999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[34]" " -type \"float3\" -0.14721037000000001 7.49739030000000017 -0.29509687000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[35]" " -type \"float3\" -0.23323371000000001 7.49812649999999969 -0.27845122999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[36]" " -type \"float3\" -0.31086224000000001 7.50095840000000003 -0.23109919000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[37]" " -type \"float3\" -0.37249707999999998 7.50560950000000027 -0.15767659000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[38]" " -type \"float3\" -0.41210508000000001 7.51162390000000002 -0.065370128"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[39]" " -type \"float3\" -0.42580902999999998 7.51841310000000007 0.036784197999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[40]" " -type \"float3\" -0.53686279000000003 7.46383379999999974 0.19166101999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[41]" " -type \"float3\" -0.47888827 7.47313929999999971 0.32662662999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[42]" " -type \"float3\" -0.38850862000000003 7.48070379999999968 0.43348920000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[43]" " -type \"float3\" -0.27457076000000002 7.48578689999999991 0.50178820000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[44]" " -type \"float3\" -0.14822784 7.48789019999999983 0.52483815"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[45]" " -type \"float3\" -0.021847088000000001 7.48680829999999986 0.50038296000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[46]" " -type \"float3\" 0.092200412999999995 7.48264789999999991 0.43081626000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[47]" " -type \"float3\" 0.18275093000000001 7.4758148000000002 0.32294768000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[48]" " -type \"float3\" 0.24094075000000001 7.466979 0.18733622"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[49]" " -type \"float3\" 0.26107380000000002 7.457005 0.037256721"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[50]" " -type \"float3\" 0.24117944999999999 7.44686890000000012 -0.11260033"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[51]" " -type \"float3\" 0.18320492999999999 7.43756340000000016 -0.24756586999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[52]" " -type \"float3\" 0.092825307999999995 7.42999890000000018 -0.35442841000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[53]" " -type \"float3\" -0.021112466 7.42491629999999958 -0.42272746999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[54]" " -type \"float3\" -0.14745536000000001 7.42281250000000004 -0.44577739"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[55]" " -type \"float3\" -0.27383605 7.4238944 -0.42132219999999998"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[56]" " -type \"float3\" -0.38788350999999999 7.42805529999999958 -0.35175552999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[57]" " -type \"float3\" -0.47843403000000001 7.43488789999999966 -0.24388698"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[58]" " -type \"float3\" -0.53662383999999996 7.44372369999999961 -0.10827559"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[59]" " -type \"float3\" -0.55675691000000005 7.4536977000000002 0.041803908000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[60]" " -type \"float3\" -0.65201335999999999 7.37869639999999993 0.2423574"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[61]" " -type \"float3\" -0.57695335000000003 7.39074469999999994 0.41709848999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[62]" " -type \"float3\" -0.45993802 7.40053840000000029 0.55545401999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[63]" " -type \"float3\" -0.31242176999999999 7.40711880000000011 0.64388131999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[64]" " -type \"float3\" -0.14884454 7.40984249999999989 0.67372452999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[65]" " -type \"float3\" 0.014781666000000001 7.408442 0.64206200999999996"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[66]" " -type \"float3\" 0.16243990999999999 7.40305470000000021 0.55199330999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[67]" " -type \"float3\" 0.27967638 7.39420840000000013 0.41233510000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[68]" " -type \"float3\" 0.35501518999999998 7.38276820000000011 0.23675781000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[69]" " -type \"float3\" 0.38108164 7.36985449999999975 0.042448382999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[70]" " -type \"float3\" 0.35532424000000001 7.35673189999999977 -0.15157256999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[71]" " -type \"float3\" 0.28026420000000002 7.34468359999999976 -0.32631358999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[72]" " -type \"float3\" 0.16324894000000001 7.3348899000000003 -0.46466908000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[73]" " -type \"float3\" 0.015732777999999999 7.32830949999999959 -0.55309635000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[74]" " -type \"float3\" -0.14784439999999999 7.32558579999999981 -0.58293961999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[75]" " -type \"float3\" -0.31147050999999998 7.32698629999999973 -0.55127716000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[76]" " -type \"float3\" -0.45912871 7.33237360000000038 -0.46120849000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[77]" " -type \"float3\" -0.57636522999999995 7.34121989999999958 -0.32155033999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[78]" " -type \"float3\" -0.65170401 7.35266019999999987 -0.14597305999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[79]" " -type \"float3\" -0.67777050000000005 7.36557390000000023 0.048336338"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[80]" " -type \"float3\" -0.75488423999999998 7.27199409999999968 0.28962889000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[81]" " -type \"float3\" -0.66458684000000001 7.28648809999999969 0.49984248999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[82]" " -type \"float3\" -0.52381717999999999 7.29827020000000015 0.66628498000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[83]" " -type \"float3\" -0.34635493000000001 7.30618619999999996 0.77266312000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[84]" " -type \"float3\" -0.14957117 7.30946250000000042 0.80856441999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[85]" " -type \"float3\" 0.047271460000000001 7.3077778999999996 0.77047431"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[86]" " -type \"float3\" 0.22490457999999999 7.3012971999999996 0.66212159000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[87]" " -type \"float3\" 0.36594027000000001 7.29065470000000015 0.49411240000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[88]" " -type \"float3\" 0.45657307000000003 7.27689270000000032 0.28289284999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[89]" " -type \"float3\" 0.48793107000000002 7.26135779999999986 0.049138348999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[90]" " -type \"float3\" 0.45694485000000001 7.2455702000000004 -0.18426967"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[91]" " -type \"float3\" 0.36664748000000003 7.23107670000000002 -0.39448317999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[92]" " -type \"float3\" 0.22587787000000001 7.219295 -0.56092529999999996"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[93]" " -type \"float3\" 0.048415646 7.21137859999999975 -0.66730343999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[94]" " -type \"float3\" -0.14836801999999999 7.2081021999999999 -0.70320468999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[95]" " -type \"float3\" -0.34521055 7.20978690000000011 -0.66511469999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[96]" " -type \"float3\" -0.52284359999999996 7.21626760000000012 -0.55676192000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[97]" " -type \"float3\" -0.66387938999999996 7.22691009999999956 -0.38875284999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[98]" " -type \"float3\" -0.75451212999999995 7.24067210000000028 -0.17753334000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[99]" " -type \"float3\" -0.78587008000000003 7.25620750000000037 0.056221108999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[100]" " -type \"float3\" -0.84294230000000003 7.14635710000000035 0.33231043999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[101]" " -type \"float3\" -0.739631 7.16294 0.57282071999999995"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[102]" " -type \"float3\" -0.57857316999999997 7.17641970000000029 0.76325100999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[103]" " -type \"float3\" -0.37553449999999999 7.18547729999999962 0.88496089"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[104]" " -type \"float3\" -0.15038974999999999 7.18922520000000009 0.92603606000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[105]" " -type \"float3\" 0.074822395999999999 7.18729779999999963 0.88245660000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[106]" " -type \"float3\" 0.27805653000000002 7.179883 0.75848764000000002"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[107]" " -type \"float3\" 0.4394187 7.167707 0.56626456999999997"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[108]" " -type \"float3\" 0.54311370999999997 7.15196129999999997 0.32460347000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[109]" " -type \"float3\" 0.57899111999999997 7.1341872000000004 0.057159561999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[110]" " -type \"float3\" 0.54353905000000002 7.11612509999999965 -0.20988759000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[111]" " -type \"float3\" 0.44022774999999997 7.09954209999999986 -0.45039782"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[112]" " -type \"float3\" 0.27917009999999998 7.08606240000000032 -0.64082795000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[113]" " -type \"float3\" 0.076131508000000001 7.07700490000000038 -0.76253789999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[114]" " -type \"float3\" -0.14901318999999999 7.07325650000000028 -0.80361342000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[115]" " -type \"float3\" -0.37422519999999998 7.07518389999999986 -0.76003372999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[116]" " -type \"float3\" -0.57745933999999999 7.08259919999999976 -0.63606476999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[117]" " -type \"float3\" -0.73882144999999999 7.09477519999999995 -0.44384179000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[118]" " -type \"float3\" -0.84251648000000001 7.11052079999999975 -0.20218067000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[119]" " -type \"float3\" -0.87839389000000001 7.12829490000000021 0.065263182000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[120]" " -type \"float3\" -0.91401916999999999 7.00487709999999986 0.36935127000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[121]" " -type \"float3\" -0.80023783000000004 7.02314039999999995 0.63423598000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[122]" " -type \"float3\" -0.62285769000000002 7.03798630000000003 0.84396547"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[123]" " -type \"float3\" -0.39924212999999997 7.04796170000000011 0.97800982000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[124]" " -type \"float3\" -0.15128013000000001 7.05208969999999979 1.023248"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[125]" " -type \"float3\" 0.096756041000000001 7.0499672999999996 0.97525178999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[126]" " -type \"float3\" 0.32058685999999997 7.041801 0.83871943000000004"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[127]" " -type \"float3\" 0.49830218999999998 7.02839089999999977 0.62701534999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[128]" " -type \"float3\" 0.61250614999999997 7.01104929999999982 0.36086318000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[129]" " -type \"float3\" 0.65201956000000005 6.99147419999999986 0.066315456999999994"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[130]" " -type \"float3\" 0.61297458000000005 6.9715815000000001 -0.22779551000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[131]" " -type \"float3\" 0.49919331 6.95331809999999972 -0.49268015999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[132]" " -type \"float3\" 0.32181332000000001 6.9384718000000003 -0.70240957000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[133]" " -type \"float3\" 0.098197803 6.92849679999999957 -0.83645391000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[134]" " -type \"float3\" -0.14976406 6.92436839999999965 -0.88169204999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[135]" " -type \"float3\" -0.39780015000000002 6.92649130000000035 -0.83369583000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[136]" " -type \"float3\" -0.62163091000000004 6.93465760000000042 -0.69716363999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[137]" " -type \"float3\" -0.79934627000000003 6.94806770000000018 -0.48545969"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[138]" " -type \"float3\" -0.91355019999999998 6.96540930000000014 -0.21930747"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[139]" " -type \"float3\" -0.95306360999999995 6.98498440000000009 0.075240194999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[140]" " -type \"float3\" -0.96636485999999999 6.85103849999999959 0.39983982000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[141]" " -type \"float3\" -0.84491508999999998 6.87053250000000038 0.68257659999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[142]" " -type \"float3\" -0.65558033999999998 6.88637880000000013 0.90644084999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[143]" " -type \"float3\" -0.41689396000000001 6.89702649999999995 1.0495194000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[144]" " -type \"float3\" -0.15222046 6.901433 1.09780630000000001"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[145]" " -type \"float3\" 0.1125323 6.89916709999999966 1.04657540000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[146]" " -type \"float3\" 0.35144839 6.89045050000000003 0.90084123999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[147]" " -type \"float3\" 0.54114097000000005 6.87613680000000027 0.67486953999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[148]" " -type \"float3\" 0.66304176999999997 6.85762640000000001 0.39077963999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[149]" " -type \"float3\" 0.70521820000000002 6.83673239999999982 0.076380759000000006"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[150]" " -type \"float3\" 0.66354179000000002 6.81549840000000007 -0.2375524"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[151]" " -type \"float3\" 0.54209207999999998 6.79600429999999989 -0.52028883000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[152]" " -type \"float3\" 0.35275744999999997 6.780158 -0.74415295999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[153]" " -type \"float3\" 0.11407125999999999 6.76951030000000031 -0.88723147000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[154]" " -type \"float3\" -0.15060220999999999 6.76510380000000033 -0.93551837999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[155]" " -type \"float3\" -0.41535485 6.76736969999999971 -0.88428742000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[156]" " -type \"float3\" -0.65427082999999997 6.77608630000000023 -0.73855340000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[157]" " -type \"float3\" -0.84396349999999998 6.7904 -0.51258183000000002"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[158]" " -type \"float3\" -0.96586417999999996 6.80891040000000025 -0.22849195"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[159]" " -type \"float3\" -1.00804070000000001 6.82980490000000007 0.085906892999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[160]" " -type \"float3\" -0.99869019000000003 6.68862869999999976 0.42302537000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[161]" " -type \"float3\" -0.87256265 6.70887369999999983 0.71665204000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[162]" " -type \"float3\" -0.67593526999999998 6.72533039999999982 0.94913893999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[163]" " -type \"float3\" -0.42805549999999998 6.73638820000000038 1.09772840000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[164]" " -type \"float3\" -0.15318751 6.74096440000000019 1.14787529999999993"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[165]" " -type \"float3\" 0.12176271 6.73861120000000025 1.09467120000000007"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[166]" " -type \"float3\" 0.36988109000000002 6.72955889999999979 0.94332366999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[167]" " -type \"float3\" 0.56688011000000005 6.71469350000000009 0.70864797000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[168]" " -type \"float3\" 0.69347608000000005 6.69547079999999983 0.41361608999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[169]" " -type \"float3\" 0.73727708999999997 6.67377139999999969 0.087107359999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[170]" " -type \"float3\" 0.69399542000000003 6.65172 -0.23891728000000001"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[171]" " -type \"float3\" 0.56786787999999999 6.631475 -0.53254420000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[172]" " -type \"float3\" 0.37124056 6.61501789999999978 -0.76503098000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[173]" " -type \"float3\" 0.12336092999999999 6.60396050000000034 -0.91362010999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[174]" " -type \"float3\" -0.15150693000000001 6.59938429999999965 -0.96376704999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[175]" " -type \"float3\" -0.42645702000000002 6.601737 -0.91056292999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[176]" " -type \"float3\" -0.67457533000000003 6.61078930000000042 -0.75921576999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[177]" " -type \"float3\" -0.87157434 6.62565470000000012 -0.52454018999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[178]" " -type \"float3\" -0.99817043999999999 6.6448779 -0.22950806000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[179]" " -type \"float3\" -1.04197129999999993 6.66657730000000015 0.097000629000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[180]" " -type \"float3\" -1.01019949999999992 6.52164750000000026 0.43833624999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[181]" " -type \"float3\" -0.88249968999999995 6.54214479999999998 0.73562311999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[182]" " -type \"float3\" -0.68342137000000003 6.55880639999999993 0.97100794000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[183]" " -type \"float3\" -0.43245172999999998 6.57000209999999996 1.12144949999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[184]" " -type \"float3\" -0.1541575 6.5746355000000003 1.17222139999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[185]" " -type \"float3\" 0.12422001000000001 6.57225280000000023 1.11835409999999991"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[186]" " -type \"float3\" 0.37543121000000002 6.5630879000000002 0.96512014000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[187]" " -type \"float3\" 0.57488578999999995 6.5480375000000004 0.72751933000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[188]" " -type \"float3\" 0.70305991000000001 6.52857450000000039 0.42880966999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[189]" " -type \"float3\" 0.74740684000000002 6.50660469999999957 0.098230854000000006"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[190]" " -type \"float3\" 0.70358573999999996 6.48427820000000033 -0.23185755"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[191]" " -type \"float3\" 0.57588583000000004 6.46378140000000023 -0.52914435000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[192]" " -type \"float3\" 0.37680763 6.44711880000000015 -0.76452935"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[193]" " -type \"float3\" 0.12583815000000001 6.43592359999999974 -0.91497063999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[194]" " -type \"float3\" -0.15245597 6.43129059999999964 -0.96574258999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[195]" " -type \"float3\" -0.43083336999999999 6.43367290000000036 -0.91187518999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[196]" " -type \"float3\" -0.68204445000000002 6.44283770000000011 -0.75864166"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[197]" " -type \"float3\" -0.88149911000000003 6.45788860000000042 -0.52104068000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[198]" " -type \"float3\" -1.0096731000000001 6.4773512000000002 -0.22233103000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[199]" " -type \"float3\" -1.05402020000000007 6.49932149999999975 0.10824773"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[200]" " -type \"float3\" -1.00060930000000003 6.35420560000000023 0.44539630000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[201]" " -type \"float3\" -0.87448168000000004 6.37445069999999969 0.73902332999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[202]" " -type \"float3\" -0.67785435999999999 6.39090730000000029 0.97150992999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[203]" " -type \"float3\" -0.42997456000000001 6.40196509999999996 1.12009929999999991"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[204]" " -type \"float3\" -0.15510657 6.40654129999999977 1.17024620000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[205]" " -type \"float3\" 0.11984365 6.40418820000000011 1.11704219999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[206]" " -type \"float3\" 0.36796203 6.39513589999999965 0.96569455000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[207]" " -type \"float3\" 0.56496102000000004 6.380271 0.73101919999999998"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[208]" " -type \"float3\" 0.69155705000000001 6.3610477000000003 0.43598703"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[209]" " -type \"float3\" 0.735358 6.33934830000000016 0.10947829000000001"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[210]" " -type \"float3\" 0.69207633000000002 6.31729650000000031 -0.21654633000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[211]" " -type \"float3\" 0.56594878000000004 6.29705189999999959 -0.51017325999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[212]" " -type \"float3\" 0.36932150000000002 6.28059529999999988 -0.74265974999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[213]" " -type \"float3\" 0.12144189 6.26953739999999993 -0.89124912000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[214]" " -type \"float3\" -0.15342599000000001 6.26496120000000012 -0.94139605999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[215]" " -type \"float3\" -0.42837607999999999 6.267314 -0.88819205999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[216]" " -type \"float3\" -0.67649442000000004 6.27636669999999963 -0.73684459999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[217]" " -type \"float3\" -0.87349337000000005 6.2912315999999997 -0.50216925000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[218]" " -type \"float3\" -1.00008950000000008 6.31045479999999959 -0.20713712000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[219]" " -type \"float3\" -1.04389050000000005 6.33215430000000001 0.11937156"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[220]" " -type \"float3\" -0.97015572000000005 6.19042680000000001 0.44403109000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[221]" " -type \"float3\" -0.84870595000000004 6.20992090000000019 0.72676790000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[222]" " -type \"float3\" -0.65937113999999997 6.22576760000000018 0.95063209999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[223]" " -type \"float3\" -0.42068484 6.23641540000000028 1.09371079999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[224]" " -type \"float3\" -0.15601130999999999 6.24082139999999974 1.14199760000000006"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[225]" " -type \"float3\" 0.10874145 6.23855589999999971 1.09076670000000009"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[226]" " -type \"float3\" 0.34765750000000001 6.22983930000000008 0.94503254000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[227]" " -type \"float3\" 0.53735012000000004 6.21552520000000008 0.71906048"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[228]" " -type \"float3\" 0.65925091999999996 6.19701479999999982 0.43497095000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[229]" " -type \"float3\" 0.70142733999999995 6.17612030000000001 0.12057169"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[230]" " -type \"float3\" 0.659751 6.1548866999999996 -0.19336112999999999"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[231]" " -type \"float3\" 0.53830122999999996 6.13539309999999993 -0.47609745999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[232]" " -type \"float3\" 0.34896656999999998 6.11954639999999994 -0.69996201999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[233]" " -type \"float3\" 0.11028041 6.10889859999999985 -0.84304016999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[234]" " -type \"float3\" -0.15439306 6.10449220000000015 -0.89132743999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[235]" " -type \"float3\" -0.41914570000000001 6.10675810000000041 -0.84009646999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[236]" " -type \"float3\" -0.65806167999999998 6.11547470000000004 -0.69436215999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[237]" " -type \"float3\" -0.84775436000000004 6.12978890000000032 -0.46839055000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[238]" " -type \"float3\" -0.96965509999999999 6.1482992000000003 -0.18430066000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[239]" " -type \"float3\" -1.01183149999999999 6.16919329999999988 0.13009815999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[240]" " -type \"float3\" -0.91958839000000003 6.03434470000000012 0.43427422999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[241]" " -type \"float3\" -0.80580711000000005 6.052608 0.69915885"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[242]" " -type \"float3\" -0.62842703 6.06745390000000029 0.90888840000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[243]" " -type \"float3\" -0.40481138 6.07742930000000037 1.04293269999999993"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[244]" " -type \"float3\" -0.15684943000000001 6.08155730000000005 1.0881708000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[245]" " -type \"float3\" 0.091186753999999995 6.07943440000000024 1.04017460000000006"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[246]" " -type \"float3\" 0.31501754999999998 6.07126859999999979 0.90364235999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[247]" " -type \"float3\" 0.49273291000000002 6.057858 0.69193833999999999"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[248]" " -type \"float3\" 0.60693686999999996 6.04051690000000008 0.42578608000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[249]" " -type \"float3\" 0.64645028000000004 6.02094129999999961 0.13123805999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[250]" " -type \"float3\" 0.60740536000000001 6.00104859999999984 -0.16287293"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[251]" " -type \"float3\" 0.493624 5.98278569999999998 -0.42775725999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[252]" " -type \"float3\" 0.31624401000000002 5.96793939999999967 -0.63748669999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[253]" " -type \"float3\" 0.092628515999999994 5.95796439999999983 -0.77153105"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[254]" " -type \"float3\" -0.15533336 5.95383550000000028 -0.81676948000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[255]" " -type \"float3\" -0.40336942999999997 5.95595880000000033 -0.76877289999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[256]" " -type \"float3\" -0.62720019000000005 5.96412470000000017 -0.63224077000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[257]" " -type \"float3\" -0.80491555000000004 5.97753520000000016 -0.42053678999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[258]" " -type \"float3\" -0.91911947999999999 5.99487639999999988 -0.15438455000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[259]" " -type \"float3\" -0.95863288999999996 6.01445149999999984 0.14016311000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[260]" " -type \"float3\" -0.85015291000000004 5.88980049999999977 0.41636661000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[261]" " -type \"float3\" -0.74684161000000004 5.906383 0.65687686000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[262]" " -type \"float3\" -0.58578377999999998 5.91986270000000037 0.84730715000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[263]" " -type \"float3\" -0.38274509000000001 5.9289202999999997 0.96901702999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[264]" " -type \"float3\" -0.15760034000000001 5.9326686999999998 1.01009229999999994"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[265]" " -type \"float3\" 0.067611783999999994 5.93074130000000022 0.96651286000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[266]" " -type \"float3\" 0.27084592000000002 5.92332649999999994 0.84254390000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[267]" " -type \"float3\" 0.43220811999999997 5.91115049999999975 0.65032082999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[268]" " -type \"float3\" 0.53590304 5.89540479999999967 0.40865966999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[269]" " -type \"float3\" 0.57178050000000002 5.8776307000000001 0.14121576"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[270]" " -type \"float3\" 0.53632842999999997 5.85956860000000024 -0.12583142999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[271]" " -type \"float3\" 0.43301716000000001 5.84298559999999956 -0.36634161999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[272]" " -type \"float3\" 0.27195947999999998 5.82950590000000002 -0.55677180999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[273]" " -type \"float3\" 0.068920903000000006 5.82044840000000008 -0.67848169999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[274]" " -type \"float3\" -0.15622379 5.8167 -0.71955729000000002"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[275]" " -type \"float3\" -0.38143580999999999 5.81862739999999956 -0.67597753000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[276]" " -type \"float3\" -0.58466989000000003 5.82604219999999984 -0.55200850999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[277]" " -type \"float3\" -0.74603206 5.83821869999999965 -0.35978565000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[278]" " -type \"float3\" -0.84972714999999999 5.85396430000000034 -0.11812449999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[279]" " -type \"float3\" -0.88560450000000002 5.871738 0.14931937000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[280]" " -type \"float3\" -0.76355863000000002 5.760355 0.39074831999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[281]" " -type \"float3\" -0.67326123000000004 5.77484890000000028 0.60096227999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[282]" " -type \"float3\" -0.53249150999999995 5.78663059999999962 0.76740438"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[283]" " -type \"float3\" -0.35502926000000001 5.79454709999999995 0.87378257999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[284]" " -type \"float3\" -0.15824550000000001 5.7978234000000004 0.90968388"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[285]" " -type \"float3\" 0.038597118 5.79613829999999997 0.87159377000000005"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[286]" " -type \"float3\" 0.21623023999999999 5.78965809999999959 0.76324099000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[287]" " -type \"float3\" 0.35726595 5.77901549999999986 0.59523188999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[288]" " -type \"float3\" 0.44789871999999997 5.7652530999999998 0.38401227999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[289]" " -type \"float3\" 0.47925672000000002 5.74971820000000022 0.15025780999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[290]" " -type \"float3\" 0.44827053 5.73393110000000039 -0.083150201000000007"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[291]" " -type \"float3\" 0.35797312999999997 5.71943710000000038 -0.29336371999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[292]" " -type \"float3\" 0.21720353000000001 5.70765540000000016 -0.45980585000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[293]" " -type \"float3\" 0.0397413 5.699739 -0.56618398000000003"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[294]" " -type \"float3\" -0.15704235 5.69646260000000026 -0.60208529"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[295]" " -type \"float3\" -0.35388488000000001 5.6981478000000001 -0.56399524000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[296]" " -type \"float3\" -0.53151791999999998 5.7046285000000001 -0.45564249000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[297]" " -type \"float3\" -0.67255372000000002 5.71527049999999992 -0.28763338999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[298]" " -type \"float3\" -0.76318644999999996 5.729033 -0.076413885000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[299]" " -type \"float3\" -0.79454440000000004 5.74456789999999984 0.15734057000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[300]" " -type \"float3\" -0.66193800999999997 5.64919420000000017 0.35805123999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[301]" " -type \"float3\" -0.58687787999999996 5.661242 0.53279197"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[302]" " -type \"float3\" -0.46986257999999997 5.67103580000000029 0.67114788000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[303]" " -type \"float3\" -0.32234636 5.67761660000000035 0.75957512999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[304]" " -type \"float3\" -0.1587691 5.68033979999999961 0.78941797999999996"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[305]" " -type \"float3\" 0.0048570959000000004 5.67893929999999969 0.75775581999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[306]" " -type \"float3\" 0.15251534999999999 5.673552 0.66768682000000001"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[307]" " -type \"float3\" 0.26975178999999999 5.66470580000000012 0.52802855000000004"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[308]" " -type \"float3\" 0.34509063000000001 5.653266 0.35245165000000001"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[309]" " -type \"float3\" 0.37115707999999997 5.6403521999999997 0.15814223999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[310]" " -type \"float3\" 0.34539967999999999 5.62722920000000038 -0.035878717999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[311]" " -type \"float3\" 0.27033961000000001 5.615181 -0.21061973"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[312]" " -type \"float3\" 0.15332438000000001 5.60538769999999964 -0.34897527"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[313]" " -type \"float3\" 0.0058082118999999996 5.59880689999999959 -0.43740287"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[314]" " -type \"float3\" -0.15776896000000001 5.59608360000000005 -0.46724573000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[315]" " -type \"float3\" -0.32139509999999999 5.59748409999999996 -0.43558326000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[316]" " -type \"float3\" -0.46905330000000001 5.6028709000000001 -0.34551462999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[317]" " -type \"float3\" -0.58628975999999999 5.61171769999999981 -0.20585647000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[318]" " -type \"float3\" -0.66162865999999998 5.62315749999999959 -0.030279213999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[319]" " -type \"float3\" -0.68769502999999998 5.63607119999999995 0.16402985"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[320]" " -type \"float3\" -0.54779308999999998 5.55905679999999958 0.31907931"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[321]" " -type \"float3\" -0.48981862999999998 5.56836220000000015 0.45404487999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[322]" " -type \"float3\" -0.39943895000000001 5.57592680000000041 0.56090748000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[323]" " -type \"float3\" -0.28550112 5.58100940000000012 0.62920648000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[324]" " -type \"float3\" -0.15915816999999999 5.58311270000000004 0.65225643"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[325]" " -type \"float3\" -0.032777417000000003 5.58203080000000007 0.62780088000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[326]" " -type \"float3\" 0.081270091000000003 5.57787040000000012 0.55823420999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[327]" " -type \"float3\" 0.17182058 5.57103730000000041 0.45036563000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[328]" " -type \"float3\" 0.23001041 5.56220149999999958 0.31475455000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[329]" " -type \"float3\" 0.25014350000000002 5.55222749999999987 0.16467467"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[330]" " -type \"float3\" 0.23024912 5.54209140000000033 0.014817629000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[331]" " -type \"float3\" 0.1722746 5.53278590000000037 -0.12014759"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[332]" " -type \"float3\" 0.081894970999999997 5.52522130000000011 -0.22701014999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[333]" " -type \"float3\" -0.032042797999999997 5.5201387000000004 -0.29530916000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[334]" " -type \"float3\" -0.15838569 5.51803539999999959 -0.31835908000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[335]" " -type \"float3\" -0.28476641000000003 5.51911690000000021 -0.29390389"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[336]" " -type \"float3\" -0.39881383999999998 5.52327779999999979 -0.22433723999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[337]" " -type \"float3\" -0.48936438999999998 5.5301108000000001 -0.11646869999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[338]" " -type \"float3\" -0.54755419000000005 5.53894660000000005 0.019142698"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[339]" " -type \"float3\" -0.56768721 5.54892059999999976 0.16922221000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[340]" " -type \"float3\" -0.4239347 5.49216130000000025 0.27479309000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[341]" " -type \"float3\" -0.38447329000000002 5.49849510000000041 0.36665973000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[342]" " -type \"float3\" -0.32295467999999999 5.503644 0.43939748000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[343]" " -type \"float3\" -0.2454008 5.50710340000000009 0.48588641999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[344]" " -type \"float3\" -0.15940315999999999 5.50853540000000041 0.50157594999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[345]" " -type \"float3\" -0.073379776999999993 5.50779870000000038 0.48492995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[346]" " -type \"float3\" 0.0042487541 5.50496669999999977 0.43757816999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[347]" " -type \"float3\" 0.065883622000000003 5.50031610000000004 0.36415553000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[348]" " -type \"float3\" 0.10549159 5.49430179999999968 0.27184910000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[349]" " -type \"float3\" 0.11919552 5.48751259999999963 0.16969474000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[350]" " -type \"float3\" 0.10565407 5.48061319999999963 0.067691772999999997"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[351]" " -type \"float3\" 0.066192649000000006 5.47427940000000035 -0.024175208"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[352]" " -type \"float3\" 0.0046741012 5.46913050000000034 -0.096912935000000006"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[353]" " -type \"float3\" -0.072879738999999999 5.46567109999999978 -0.14340182000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[354]" " -type \"float3\" -0.15887734000000001 5.46423910000000035 -0.15909134999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[355]" " -type \"float3\" -0.2449007 5.46497540000000015 -0.14244534"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[356]" " -type \"float3\" -0.32252923 5.46780729999999959 -0.095093653"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[357]" " -type \"float3\" -0.38416407000000002 5.47245839999999983 -0.021671049000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[358]" " -type \"float3\" -0.42377207 5.4784727000000002 0.070635423000000003"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[359]" " -type \"float3\" -0.43747601000000003 5.48526139999999973 0.17278974999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[360]" " -type \"float3\" -0.29341254 5.45015430000000034 0.22628248000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[361]" " -type \"float3\" -0.27343589000000001 5.45336059999999989 0.27278823000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[362]" " -type \"float3\" -0.24229316000000001 5.45596739999999958 0.30961069000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[363]" " -type \"float3\" -0.20303287 5.45771840000000008 0.33314474999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[364]" " -type \"float3\" -0.15949805 5.45844319999999961 0.34108727999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[365]" " -type \"float3\" -0.11595021 5.45807079999999978 0.33266065"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[366]" " -type \"float3\" -0.076652117000000006 5.45663690000000035 0.30868950000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[367]" " -type \"float3\" -0.045450549999999999 5.45428279999999965 0.27152058000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[368]" " -type \"float3\" -0.025399703999999999 5.45123770000000007 0.22479205999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[369]" " -type \"float3\" -0.018462303999999999 5.4478011000000004 0.17307808"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[370]" " -type \"float3\" -0.025317453 5.44430879999999995 0.12144104999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[371]" " -type \"float3\" -0.045294094999999999 5.441102 0.074935004"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[372]" " -type \"float3\" -0.076436802999999998 5.43849560000000043 0.038112868000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[373]" " -type \"float3\" -0.11569709 5.43674419999999969 0.014578488000000001"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[374]" " -type \"float3\" -0.15923188999999999 5.43601940000000017 0.0066359564999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[375]" " -type \"float3\" -0.20277971 5.4363918 0.015062608"
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[376]" " -type \"float3\" -0.24207777999999999 5.43782570000000032 0.039033692000000002"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[377]" " -type \"float3\" -0.27327937000000002 5.44017980000000012 0.076202600999999995"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[378]" " -type \"float3\" -0.29333018999999999 5.4432248999999997 0.12293113999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[379]" " -type \"float3\" -0.30026757999999998 5.44666150000000027 0.17464510999999999"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[380]" " -type \"float3\" -0.14717305 7.57185410000000036 0.031736887999999998"
-		
-		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
-		"pnts[381]" " -type \"float3\" -0.15944047 5.434072 0.1747417"
+		"pt[0:165]" (" -type \"float3\" -0.28129612999999998 7.56161689999999975 0.085037887000000006 -0.26131948999999999 7.56482360000000043 0.13154398 -0.23017676000000001 7.56743 0.16836609999999999 -0.19091646000000001 7.56918139999999973 0.19190049000000001 -0.14738166 7.56990620000000014 0.19984302000000001 -0.10383381999999999 7.5695332999999998 0.19141605 -0.064535722000000004 7.56809949999999976 0.16744492999999999 -0.033334150999999999 7.56574539999999995 0.13027599000000001 -0.013283306999999999 7.56270030000000038 0.083547458000000005 -0.0063459132999999996 7.55926369999999981 0.031833819999999999 -0.013201057 7.55577140000000025 -0.019803535000000001 -0.033177696 7.55256460000000018 -0.066309600999999996 -0.064320407999999996 7.54995819999999984 -0.10313173 -0.10358067999999999 7.54820679999999999 -0.1266661 -0.14711547999999999 7.547482 -0.13460829999999999 -0.19066331 7.54785489999999992 -0.12618165000000001 -0.22996137999999999 7.54928869999999996 -0.10221055 -0.26116296999999999 7.55164290000000005 -0.0650416310000"
+		+ "00003 -0.28121379000000002 7.5546875 -0.01831311 -0.28815117000000001 7.55812409999999968 0.033400516999999998 -0.41226771000000001 7.52531190000000016 0.1387872 -0.37280630999999997 7.53164630000000024 0.23065388000000001 -0.31128767000000002 7.53679509999999997 0.30339192999999998 -0.23373382000000001 7.54025459999999992 0.34988087000000001 -0.14773617999999999 7.54168649999999996 0.36557040000000002 -0.061712789999999997 7.54095030000000044 0.34892436999999998 0.015915746000000001 7.53811789999999959 0.30157229000000002 0.077550612000000005 7.53346680000000024 0.22814967999999999 0.11715857 7.52745290000000011 0.13584352999999999 0.13086252000000001 7.52066370000000006 0.033688847000000001 0.11732105 7.51376440000000034 -0.068314112999999996 0.077859648000000004 7.50743060000000018 -0.16018075000000001 0.016341092000000002 7.50228170000000016 -0.23291849000000001 -0.061212747999999997 7.4988216999999997 -0.27940767999999999 -0.14721037000000001 7.49739030000000017 -0.29509687000000001 -0.23323371000000001 "
+		+ "7.49812649999999969 -0.27845122999999999 -0.31086224000000001 7.50095840000000003 -0.23109919000000001 -0.37249707999999998 7.50560950000000027 -0.15767659000000001 -0.41210508000000001 7.51162390000000002 -0.065370128 -0.42580902999999998 7.51841310000000007 0.036784197999999997 -0.53686279000000003 7.46383379999999974 0.19166101999999999 -0.47888827 7.47313929999999971 0.32662662999999997 -0.38850862000000003 7.48070379999999968 0.43348920000000002 -0.27457076000000002 7.48578689999999991 0.50178820000000002 -0.14822784 7.48789019999999983 0.52483815 -0.021847088000000001 7.48680829999999986 0.50038296000000004 0.092200412999999995 7.48264789999999991 0.43081626000000001 0.18275093000000001 7.4758148000000002 0.32294768000000001 0.24094075000000001 7.466979 0.18733622 0.26107380000000002 7.457005 0.037256721 0.24117944999999999 7.44686890000000012 -0.11260033 0.18320492999999999 7.43756340000000016 -0.24756586999999999 0.092825307999999995 7.42999890000000018 -0.35442841000000003 -0.021112466 7.424916299999"
+		+ "99958 -0.42272746999999999 -0.14745536000000001 7.42281250000000004 -0.44577739 -0.27383605 7.4238944 -0.42132219999999998 -0.38788350999999999 7.42805529999999958 -0.35175552999999998 -0.47843403000000001 7.43488789999999966 -0.24388698 -0.53662383999999996 7.44372369999999961 -0.10827559 -0.55675691000000005 7.4536977000000002 0.041803908000000001 -0.65201335999999999 7.37869639999999993 0.2423574 -0.57695335000000003 7.39074469999999994 0.41709848999999999 -0.45993802 7.40053840000000029 0.55545401999999999 -0.31242176999999999 7.40711880000000011 0.64388131999999998 -0.14884454 7.40984249999999989 0.67372452999999999 0.014781666000000001 7.408442 0.64206200999999996 0.16243990999999999 7.40305470000000021 0.55199330999999996 0.27967638 7.39420840000000013 0.41233510000000001 0.35501518999999998 7.38276820000000011 0.23675781000000001 0.38108164 7.36985449999999975 0.042448382999999999 0.35532424000000001 7.35673189999999977 -0.15157256999999999 0.28026420000000002 7.34468359999999976 -0.32631358999999999 "
+		+ "0.16324894000000001 7.3348899000000003 -0.46466908000000001 0.015732777999999999 7.32830949999999959 -0.55309635000000001 -0.14784439999999999 7.32558579999999981 -0.58293961999999999 -0.31147050999999998 7.32698629999999973 -0.55127716000000004 -0.45912871 7.33237360000000038 -0.46120849000000003 -0.57636522999999995 7.34121989999999958 -0.32155033999999999 -0.65170401 7.35266019999999987 -0.14597305999999999 -0.67777050000000005 7.36557390000000023 0.048336338 -0.75488423999999998 7.27199409999999968 0.28962889000000003 -0.66458684000000001 7.28648809999999969 0.49984248999999997 -0.52381717999999999 7.29827020000000015 0.66628498000000003 -0.34635493000000001 7.30618619999999996 0.77266312000000004 -0.14957117 7.30946250000000042 0.80856441999999995 0.047271460000000001 7.3077778999999996 0.77047431 0.22490457999999999 7.3012971999999996 0.66212159000000004 0.36594027000000001 7.29065470000000015 0.49411240000000001 0.45657307000000003 7.27689270000000032 0.28289284999999997 0.48793107000000002 7.261357799"
+		+ "99999986 0.049138348999999998 0.45694485000000001 7.2455702000000004 -0.18426967 0.36664748000000003 7.23107670000000002 -0.39448317999999999 0.22587787000000001 7.219295 -0.56092529999999996 0.048415646 7.21137859999999975 -0.66730343999999997 -0.14836801999999999 7.2081021999999999 -0.70320468999999997 -0.34521055 7.20978690000000011 -0.66511469999999995 -0.52284359999999996 7.21626760000000012 -0.55676192000000002 -0.66387938999999996 7.22691009999999956 -0.38875284999999998 -0.75451212999999995 7.24067210000000028 -0.17753334000000001 -0.78587008000000003 7.25620750000000037 0.056221108999999998 -0.84294230000000003 7.14635710000000035 0.33231043999999998 -0.739631 7.16294 0.57282071999999995 -0.57857316999999997 7.17641970000000029 0.76325100999999995 -0.37553449999999999 7.18547729999999962 0.88496089 -0.15038974999999999 7.18922520000000009 0.92603606000000005 0.074822395999999999 7.18729779999999963 0.88245660000000004 0.27805653000000002 7.179883 0.75848764000000002 0.4394187 7.167707 0.5662645699999"
+		+ "9997 0.54311370999999997 7.15196129999999997 0.32460347000000001 0.57899111999999997 7.1341872000000004 0.057159561999999997 0.54353905000000002 7.11612509999999965 -0.20988759000000001 0.44022774999999997 7.09954209999999986 -0.45039782 0.27917009999999998 7.08606240000000032 -0.64082795000000004 0.076131508000000001 7.07700490000000038 -0.76253789999999999 -0.14901318999999999 7.07325650000000028 -0.80361342000000002 -0.37422519999999998 7.07518389999999986 -0.76003372999999996 -0.57745933999999999 7.08259919999999976 -0.63606476999999995 -0.73882144999999999 7.09477519999999995 -0.44384179000000001 -0.84251648000000001 7.11052079999999975 -0.20218067000000001 -0.87839389000000001 7.12829490000000021 0.065263182000000003 -0.91401916999999999 7.00487709999999986 0.36935127000000001 -0.80023783000000004 7.02314039999999995 0.63423598000000003 -0.62285769000000002 7.03798630000000003 0.84396547 -0.39924212999999997 7.04796170000000011 0.97800982000000003 -0.15128013000000001 7.05208969999999979 1.023248 0.0967"
+		+ "56041000000001 7.0499672999999996 0.97525178999999995 0.32058685999999997 7.041801 0.83871943000000004 0.49830218999999998 7.02839089999999977 0.62701534999999997 0.61250614999999997 7.01104929999999982 0.36086318000000001 0.65201956000000005 6.99147419999999986 0.066315456999999994 0.61297458000000005 6.9715815000000001 -0.22779551000000001 0.49919331 6.95331809999999972 -0.49268015999999998 0.32181332000000001 6.9384718000000003 -0.70240957000000004 0.098197803 6.92849679999999957 -0.83645391000000002 -0.14976406 6.92436839999999965 -0.88169204999999995 -0.39780015000000002 6.92649130000000035 -0.83369583000000003 -0.62163091000000004 6.93465760000000042 -0.69716363999999997 -0.79934627000000003 6.94806770000000018 -0.48545969 -0.91355019999999998 6.96540930000000014 -0.21930747 -0.95306360999999995 6.98498440000000009 0.075240194999999996 -0.96636485999999999 6.85103849999999959 0.39983982000000001 -0.84491508999999998 6.87053250000000038 0.68257659999999998 -0.65558033999999998 6.88637880000000013 0.90644"
+		+ "084999999996 -0.41689396000000001 6.89702649999999995 1.0495194000000001 -0.15222046 6.901433 1.09780630000000001 0.1125323 6.89916709999999966 1.04657540000000004 0.35144839 6.89045050000000003 0.90084123999999999 0.54114097000000005 6.87613680000000027 0.67486953999999999 0.66304176999999997 6.85762640000000001 0.39077963999999998 0.70521820000000002 6.83673239999999982 0.076380759000000006 0.66354179000000002 6.81549840000000007 -0.2375524 0.54209207999999998 6.79600429999999989 -0.52028883000000004 0.35275744999999997 6.780158 -0.74415295999999997 0.11407125999999999 6.76951030000000031 -0.88723147000000002 -0.15060220999999999 6.76510380000000033 -0.93551837999999998 -0.41535485 6.76736969999999971 -0.88428742000000005 -0.65427082999999997 6.77608630000000023 -0.73855340000000003 -0.84396349999999998 6.7904 -0.51258183000000002 -0.96586417999999996 6.80891040000000025 -0.22849195 -1.00804070000000001 6.82980490000000007 0.085906892999999998 -0.99869019000000003 6.68862869999999976 0.42302537000000001 -0."
+		+ "87256265 6.70887369999999983 0.71665204000000005 -0.67593526999999998 6.72533039999999982 0.94913893999999999 -0.42805549999999998 6.73638820000000038 1.09772840000000005 -0.15318751 6.74096440000000019 1.14787529999999993 0.12176271 6.73861120000000025 1.09467120000000007"
+		)
+		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
+		"pt[166:331]" (" 0.36988109000000002 6.72955889999999979 0.94332366999999995 0.56688011000000005 6.71469350000000009 0.70864797000000002 0.69347608000000005 6.69547079999999983 0.41361608999999999 0.73727708999999997 6.67377139999999969 0.087107359999999995 0.69399542000000003 6.65172 -0.23891728000000001 0.56786787999999999 6.631475 -0.53254420000000002 0.37124056 6.61501789999999978 -0.76503098000000003 0.12336092999999999 6.60396050000000034 -0.91362010999999999 -0.15150693000000001 6.59938429999999965 -0.96376704999999996 -0.42645702000000002 6.601737 -0.91056292999999999 -0.67457533000000003 6.61078930000000042 -0.75921576999999996 -0.87157434 6.62565470000000012 -0.52454018999999996 -0.99817043999999999 6.6448779 -0.22950806000000001 -1.04197129999999993 6.66657730000000015 0.097000629000000005 -1.01019949999999992 6.52164750000000026 0.43833624999999998 -0.88249968999999995 6.54214479999999998 0.73562311999999996 -0.68342137000000003 6.55880639999999993 0.97100794000000001 -0.43245172999999998 6.57000209999999996 1.12"
+		+ "144949999999999 -0.1541575 6.5746355000000003 1.17222139999999997 0.12422001000000001 6.57225280000000023 1.11835409999999991 0.37543121000000002 6.5630879000000002 0.96512014000000002 0.57488578999999995 6.5480375000000004 0.72751933000000002 0.70305991000000001 6.52857450000000039 0.42880966999999998 0.74740684000000002 6.50660469999999957 0.098230854000000006 0.70358573999999996 6.48427820000000033 -0.23185755 0.57588583000000004 6.46378140000000023 -0.52914435000000004 0.37680763 6.44711880000000015 -0.76452935 0.12583815000000001 6.43592359999999974 -0.91497063999999995 -0.15245597 6.43129059999999964 -0.96574258999999996 -0.43083336999999999 6.43367290000000036 -0.91187518999999995 -0.68204445000000002 6.44283770000000011 -0.75864166 -0.88149911000000003 6.45788860000000042 -0.52104068000000003 -1.0096731000000001 6.4773512000000002 -0.22233103000000001 -1.05402020000000007 6.49932149999999975 0.10824773 -1.00060930000000003 6.35420560000000023 0.44539630000000002 -0.87448168000000004 6.3744506999999996"
+		+ "9 0.73902332999999998 -0.67785435999999999 6.39090730000000029 0.97150992999999997 -0.42997456000000001 6.40196509999999996 1.12009929999999991 -0.15510657 6.40654129999999977 1.17024620000000001 0.11984365 6.40418820000000011 1.11704219999999999 0.36796203 6.39513589999999965 0.96569455000000004 0.56496102000000004 6.380271 0.73101919999999998 0.69155705000000001 6.3610477000000003 0.43598703 0.735358 6.33934830000000016 0.10947829000000001 0.69207633000000002 6.31729650000000031 -0.21654633000000001 0.56594878000000004 6.29705189999999959 -0.51017325999999996 0.36932150000000002 6.28059529999999988 -0.74265974999999995 0.12144189 6.26953739999999993 -0.89124912000000001 -0.15342599000000001 6.26496120000000012 -0.94139605999999998 -0.42837607999999999 6.267314 -0.88819205999999995 -0.67649442000000004 6.27636669999999963 -0.73684459999999996 -0.87349337000000005 6.2912315999999997 -0.50216925000000001 -1.00008950000000008 6.31045479999999959 -0.20713712000000001 -1.04389050000000005 6.33215430000000001 0.11"
+		+ "937156 -0.97015572000000005 6.19042680000000001 0.44403109000000002 -0.84870595000000004 6.20992090000000019 0.72676790000000002 -0.65937113999999997 6.22576760000000018 0.95063209999999998 -0.42068484 6.23641540000000028 1.09371079999999998 -0.15601130999999999 6.24082139999999974 1.14199760000000006 0.10874145 6.23855589999999971 1.09076670000000009 0.34765750000000001 6.22983930000000008 0.94503254000000003 0.53735012000000004 6.21552520000000008 0.71906048 0.65925091999999996 6.19701479999999982 0.43497095000000002 0.70142733999999995 6.17612030000000001 0.12057169 0.659751 6.1548866999999996 -0.19336112999999999 0.53830122999999996 6.13539309999999993 -0.47609745999999997 0.34896656999999998 6.11954639999999994 -0.69996201999999996 0.11028041 6.10889859999999985 -0.84304016999999998 -0.15439306 6.10449220000000015 -0.89132743999999997 -0.41914570000000001 6.10675810000000041 -0.84009646999999998 -0.65806167999999998 6.11547470000000004 -0.69436215999999995 -0.84775436000000004 6.12978890000000032 -0.4683"
+		+ "9055000000002 -0.96965509999999999 6.1482992000000003 -0.18430066000000001 -1.01183149999999999 6.16919329999999988 0.13009815999999999 -0.91958839000000003 6.03434470000000012 0.43427422999999998 -0.80580711000000005 6.052608 0.69915885 -0.62842703 6.06745390000000029 0.90888840000000004 -0.40481138 6.07742930000000037 1.04293269999999993 -0.15684943000000001 6.08155730000000005 1.0881708000000001 0.091186753999999995 6.07943440000000024 1.04017460000000006 0.31501754999999998 6.07126859999999979 0.90364235999999998 0.49273291000000002 6.057858 0.69193833999999999 0.60693686999999996 6.04051690000000008 0.42578608000000001 0.64645028000000004 6.02094129999999961 0.13123805999999999 0.60740536000000001 6.00104859999999984 -0.16287293 0.493624 5.98278569999999998 -0.42775725999999997 0.31624401000000002 5.96793939999999967 -0.63748669999999996 0.092628515999999994 5.95796439999999983 -0.77153105 -0.15533336 5.95383550000000028 -0.81676948000000005 -0.40336942999999997 5.95595880000000033 -0.76877289999999998 -"
+		+ "0.62720019000000005 5.96412470000000017 -0.63224077000000001 -0.80491555000000004 5.97753520000000016 -0.42053678999999999 -0.91911947999999999 5.99487639999999988 -0.15438455000000001 -0.95863288999999996 6.01445149999999984 0.14016311000000001 -0.85015291000000004 5.88980049999999977 0.41636661000000003 -0.74684161000000004 5.906383 0.65687686000000001 -0.58578377999999998 5.91986270000000037 0.84730715000000001 -0.38274509000000001 5.9289202999999997 0.96901702999999995 -0.15760034000000001 5.9326686999999998 1.01009229999999994 0.067611783999999994 5.93074130000000022 0.96651286000000003 0.27084592000000002 5.92332649999999994 0.84254390000000001 0.43220811999999997 5.91115049999999975 0.65032082999999996 0.53590304 5.89540479999999967 0.40865966999999997 0.57178050000000002 5.8776307000000001 0.14121576 0.53632842999999997 5.85956860000000024 -0.12583142999999999 0.43301716000000001 5.84298559999999956 -0.36634161999999998 0.27195947999999998 5.82950590000000002 -0.55677180999999998 0.068920903000000006 "
+		+ "5.82044840000000008 -0.67848169999999997 -0.15622379 5.8167 -0.71955729000000002 -0.38143580999999999 5.81862739999999956 -0.67597753000000005 -0.58466989000000003 5.82604219999999984 -0.55200850999999995 -0.74603206 5.83821869999999965 -0.35978565000000001 -0.84972714999999999 5.85396430000000034 -0.11812449999999999 -0.88560450000000002 5.871738 0.14931937000000001 -0.76355863000000002 5.760355 0.39074831999999998 -0.67326123000000004 5.77484890000000028 0.60096227999999996 -0.53249150999999995 5.78663059999999962 0.76740438 -0.35502926000000001 5.79454709999999995 0.87378257999999998 -0.15824550000000001 5.7978234000000004 0.90968388 0.038597118 5.79613829999999997 0.87159377000000005 0.21623023999999999 5.78965809999999959 0.76324099000000001 0.35726595 5.77901549999999986 0.59523188999999999 0.44789871999999997 5.7652530999999998 0.38401227999999998 0.47925672000000002 5.74971820000000022 0.15025780999999999 0.44827053 5.73393110000000039 -0.083150201000000007 0.35797312999999997 5.71943710000000038 -0.2"
+		+ "9336371999999999 0.21720353000000001 5.70765540000000016 -0.45980585000000002 0.0397413 5.699739 -0.56618398000000003 -0.15704235 5.69646260000000026 -0.60208529 -0.35388488000000001 5.6981478000000001 -0.56399524000000001 -0.53151791999999998 5.7046285000000001 -0.45564249000000001 -0.67255372000000002 5.71527049999999992 -0.28763338999999999 -0.76318644999999996 5.729033 -0.076413885000000001 -0.79454440000000004 5.74456789999999984 0.15734057000000001 -0.66193800999999997 5.64919420000000017 0.35805123999999999 -0.58687787999999996 5.661242 0.53279197 -0.46986257999999997 5.67103580000000029 0.67114788000000003 -0.32234636 5.67761660000000035 0.75957512999999999 -0.1587691 5.68033979999999961 0.78941797999999996 0.0048570959000000004 5.67893929999999969 0.75775581999999997 0.15251534999999999 5.673552 0.66768682000000001 0.26975178999999999 5.66470580000000012 0.52802855000000004 0.34509063000000001 5.653266 0.35245165000000001 0.37115707999999997 5.6403521999999997 0.15814223999999999 0.34539967999999999 "
+		+ "5.62722920000000038 -0.035878717999999997 0.27033961000000001 5.615181 -0.21061973 0.15332438000000001 5.60538769999999964 -0.34897527 0.0058082118999999996 5.59880689999999959 -0.43740287 -0.15776896000000001 5.59608360000000005 -0.46724573000000003 -0.32139509999999999 5.59748409999999996 -0.43558326000000003 -0.46905330000000001 5.6028709000000001 -0.34551462999999999 -0.58628975999999999 5.61171769999999981 -0.20585647000000001 -0.66162865999999998 5.62315749999999959 -0.030279213999999999 -0.68769502999999998 5.63607119999999995 0.16402985 -0.54779308999999998 5.55905679999999958 0.31907931 -0.48981862999999998 5.56836220000000015 0.45404487999999998 -0.39943895000000001 5.57592680000000041 0.56090748000000001 -0.28550112 5.58100940000000012 0.62920648000000001 -0.15915816999999999 5.58311270000000004 0.65225643 -0.032777417000000003 5.58203080000000007 0.62780088000000001 0.081270091000000003 5.57787040000000012 0.55823420999999995 0.17182058 5.57103730000000041 0.45036563000000002 0.23001041 5.56220149"
+		+ "999999958 0.31475455000000002 0.25014350000000002 5.55222749999999987 0.16467467 0.23024912 5.54209140000000033 0.014817629000000001 0.1722746 5.53278590000000037 -0.12014759"
+		)
+		2 "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight|jackie_rig:jackierEyeRightShape" 
+		"pt[332:381]" (" 0.081894970999999997 5.52522130000000011 -0.22701014999999999 -0.032042797999999997 5.5201387000000004 -0.29530916000000001 -0.15838569 5.51803539999999959 -0.31835908000000002 -0.28476641000000003 5.51911690000000021 -0.29390389 -0.39881383999999998 5.52327779999999979 -0.22433723999999999 -0.48936438999999998 5.5301108000000001 -0.11646869999999999 -0.54755419000000005 5.53894660000000005 0.019142698 -0.56768721 5.54892059999999976 0.16922221000000001 -0.4239347 5.49216130000000025 0.27479309000000002 -0.38447329000000002 5.49849510000000041 0.36665973000000002 -0.32295467999999999 5.503644 0.43939748000000001 -0.2454008 5.50710340000000009 0.48588641999999999 -0.15940315999999999 5.50853540000000041 0.50157594999999999 -0.073379776999999993 5.50779870000000038 0.48492995 0.0042487541 5.50496669999999977 0.43757816999999999 0.065883622000000003 5.50031610000000004 0.36415553000000001 0.10549159 5.49430179999999968 0.27184910000000001 0.11919552 5.48751259999999963 0.16969474000000001 0.10565407 5.480613199"
+		+ "99999963 0.067691772999999997 0.066192649000000006 5.47427940000000035 -0.024175208 0.0046741012 5.46913050000000034 -0.096912935000000006 -0.072879738999999999 5.46567109999999978 -0.14340182000000001 -0.15887734000000001 5.46423910000000035 -0.15909134999999999 -0.2449007 5.46497540000000015 -0.14244534 -0.32252923 5.46780729999999959 -0.095093653 -0.38416407000000002 5.47245839999999983 -0.021671049000000001 -0.42377207 5.4784727000000002 0.070635423000000003 -0.43747601000000003 5.48526139999999973 0.17278974999999999 -0.29341254 5.45015430000000034 0.22628248000000001 -0.27343589000000001 5.45336059999999989 0.27278823000000002 -0.24229316000000001 5.45596739999999958 0.30961069000000002 -0.20303287 5.45771840000000008 0.33314474999999999 -0.15949805 5.45844319999999961 0.34108727999999999 -0.11595021 5.45807079999999978 0.33266065 -0.076652117000000006 5.45663690000000035 0.30868950000000001 -0.045450549999999999 5.45428279999999965 0.27152058000000001 -0.025399703999999999 5.45123770000000007 0.2247920"
+		+ "5999999999 -0.018462303999999999 5.4478011000000004 0.17307808 -0.025317453 5.44430879999999995 0.12144104999999999 -0.045294094999999999 5.441102 0.074935004 -0.076436802999999998 5.43849560000000043 0.038112868000000001 -0.11569709 5.43674419999999969 0.014578488000000001 -0.15923188999999999 5.43601940000000017 0.0066359564999999999 -0.20277971 5.4363918 0.015062608 -0.24207777999999999 5.43782570000000032 0.039033692000000002 -0.27327937000000002 5.44017980000000012 0.076202600999999995 -0.29333018999999999 5.4432248999999997 0.12293113999999999 -0.30026757999999998 5.44666150000000027 0.17464510999999999 -0.14717305 7.57185410000000036 0.031736887999999998 -0.15944047 5.434072 0.1747417"
+		)
 		2 "|jackie_rig:bottom" "hiddenInOutliner" " 1"
 		2 "|jackie_rig:bottom|jackie_rig:bottomShape" "hiddenInOutliner" " 1"
 		2 "|jackie_rig:left" "hiddenInOutliner" " 1"
@@ -6126,6 +3963,25 @@ createNode reference -n "jackie_rigRN";
 		
 		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1" 
 		"rotate" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle" 
+		"preferredAngle" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
+		"visibility" " 1"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
+		"translate" " -type \"double3\" 0.25258997008187034 -0.0026513118308784758 0.0052385088011325841"
+		
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
+		"rotateX" " -av"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
+		"rotateY" " -av"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
+		"rotateZ" " -av"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
+		"inverseScale" " -type \"double3\" 1 1 1"
 		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep" 
@@ -6272,613 +4128,657 @@ createNode reference -n "jackie_rigRN";
 		
 		2 "jackie_rig:teeth_v1_latestRN" "fileNames[2]" " -type \"string\" \"C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma\""
 		
+		3 "jackie_rig:left_shoulder_visibility.output" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.visibility" 
+		""
+		3 "jackie_rig:left_shoulder_scaleZ.output" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.scaleZ" 
+		""
+		3 "jackie_rig:left_shoulder_scaleY.output" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.scaleY" 
+		""
+		3 "jackie_rig:left_shoulder_translateY.output" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateY" 
+		""
+		3 "jackie_rig:left_shoulder_translateZ.output" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateZ" 
+		""
+		3 "jackie_rig:left_shoulder_translateX.output" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateX" 
+		""
+		3 "jackie_rig:left_shoulder_scaleX.output" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.scaleX" 
+		""
+		3 "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle.scale" 
+		"|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.inverseScale" 
+		""
 		5 4 "jackie_rigRN" "|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688.drawOverride" 
 		"jackie_rigRN.placeHolderList[173]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.drawOverride" 
+		5 3 "jackie_rigRN" "|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.message" 
 		"jackie_rigRN.placeHolderList[174]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateX" 
-		"jackie_rigRN.placeHolderList[175]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateY" 
-		"jackie_rigRN.placeHolderList[176]" ""
 		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateZ" 
+		"jackie_rigRN.placeHolderList[175]" ""
+		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateX" 
+		"jackie_rigRN.placeHolderList[176]" ""
+		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateY" 
 		"jackie_rigRN.placeHolderList[177]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivot" 
 		"jackie_rigRN.placeHolderList[178]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivot" 
 		"jackie_rigRN.placeHolderList[179]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.drawOverride" 
 		"jackie_rigRN.placeHolderList[180]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[181]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[182]" ""
 		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[183]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[184]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateX" 
 		"jackie_rigRN.placeHolderList[185]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateY" 
 		"jackie_rigRN.placeHolderList[186]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateZ" 
 		"jackie_rigRN.placeHolderList[187]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.drawOverride" 
+		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
 		"jackie_rigRN.placeHolderList[188]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateX" 
-		"jackie_rigRN.placeHolderList[189]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateY" 
-		"jackie_rigRN.placeHolderList[190]" ""
 		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateZ" 
+		"jackie_rigRN.placeHolderList[189]" ""
+		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateX" 
+		"jackie_rigRN.placeHolderList[190]" ""
+		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateY" 
 		"jackie_rigRN.placeHolderList[191]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivot" 
 		"jackie_rigRN.placeHolderList[192]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivot" 
 		"jackie_rigRN.placeHolderList[193]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.drawOverride" 
 		"jackie_rigRN.placeHolderList[194]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[195]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[196]" ""
 		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[197]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[198]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateX" 
 		"jackie_rigRN.placeHolderList[199]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateY" 
 		"jackie_rigRN.placeHolderList[200]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateZ" 
 		"jackie_rigRN.placeHolderList[201]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root.rotateX" "jackie_rigRN.placeHolderList[202]" 
+		5 3 "jackie_rigRN" "|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateOrder" 
+		"jackie_rigRN.placeHolderList[202]" ""
+		5 4 "jackie_rigRN" "|jackie_rig:root.rotateX" "jackie_rigRN.placeHolderList[203]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_rig:root.rotateY" "jackie_rigRN.placeHolderList[203]" 
+		5 4 "jackie_rigRN" "|jackie_rig:root.rotateY" "jackie_rigRN.placeHolderList[204]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_rig:root.rotateZ" "jackie_rigRN.placeHolderList[204]" 
+		5 4 "jackie_rigRN" "|jackie_rig:root.rotateZ" "jackie_rigRN.placeHolderList[205]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_rig:root.translateX" "jackie_rigRN.placeHolderList[205]" 
+		5 4 "jackie_rigRN" "|jackie_rig:root.translateX" "jackie_rigRN.placeHolderList[206]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_rig:root.translateY" "jackie_rigRN.placeHolderList[206]" 
+		5 4 "jackie_rigRN" "|jackie_rig:root.translateY" "jackie_rigRN.placeHolderList[207]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_rig:root.translateZ" "jackie_rigRN.placeHolderList[207]" 
+		5 4 "jackie_rigRN" "|jackie_rig:root.translateZ" "jackie_rigRN.placeHolderList[208]" 
 		""
-		5 3 "jackie_rigRN" "|jackie_rig:root.rotatePivot" "jackie_rigRN.placeHolderList[208]" 
+		5 3 "jackie_rigRN" "|jackie_rig:root.rotatePivot" "jackie_rigRN.placeHolderList[209]" 
 		""
-		5 3 "jackie_rigRN" "|jackie_rig:root.rotatePivotTranslate" "jackie_rigRN.placeHolderList[209]" 
+		5 3 "jackie_rigRN" "|jackie_rig:root.rotatePivotTranslate" "jackie_rigRN.placeHolderList[210]" 
 		""
-		5 3 "jackie_rigRN" "|jackie_rig:root.rotateOrder" "jackie_rigRN.placeHolderList[210]" 
+		5 3 "jackie_rigRN" "|jackie_rig:root.rotateOrder" "jackie_rigRN.placeHolderList[211]" 
 		""
-		5 3 "jackie_rigRN" "|jackie_rig:root.jointOrient" "jackie_rigRN.placeHolderList[211]" 
+		5 3 "jackie_rigRN" "|jackie_rig:root.jointOrient" "jackie_rigRN.placeHolderList[212]" 
 		""
-		5 3 "jackie_rigRN" "|jackie_rig:root.parentInverseMatrix" "jackie_rigRN.placeHolderList[212]" 
+		5 3 "jackie_rigRN" "|jackie_rig:root.parentInverseMatrix" "jackie_rigRN.placeHolderList[213]" 
 		""
 		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1.inverseScale" 
-		"jackie_rigRN.placeHolderList[213]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1.rotateX" "jackie_rigRN.placeHolderList[214]" 
+		"jackie_rigRN.placeHolderList[214]" ""
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1.rotateX" "jackie_rigRN.placeHolderList[215]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1.rotateY" "jackie_rigRN.placeHolderList[215]" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1.rotateY" "jackie_rigRN.placeHolderList[216]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1.rotateZ" "jackie_rigRN.placeHolderList[216]" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1.rotateZ" "jackie_rigRN.placeHolderList[217]" 
 		""
 		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1.rotateOrder" 
-		"jackie_rigRN.placeHolderList[217]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1.jointOrient" 
 		"jackie_rigRN.placeHolderList[218]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1.jointOrient" 
 		"jackie_rigRN.placeHolderList[219]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[220]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.inverseScale" 
 		"jackie_rigRN.placeHolderList[221]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateX" 
 		"jackie_rigRN.placeHolderList[222]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateY" 
 		"jackie_rigRN.placeHolderList[223]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateZ" 
 		"jackie_rigRN.placeHolderList[224]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateOrder" 
 		"jackie_rigRN.placeHolderList[225]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.jointOrient" 
 		"jackie_rigRN.placeHolderList[226]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[227]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.inverseScale" 
 		"jackie_rigRN.placeHolderList[228]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateX" 
 		"jackie_rigRN.placeHolderList[229]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateY" 
 		"jackie_rigRN.placeHolderList[230]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateZ" 
 		"jackie_rigRN.placeHolderList[231]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateOrder" 
 		"jackie_rigRN.placeHolderList[232]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.jointOrient" 
 		"jackie_rigRN.placeHolderList[233]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[234]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.inverseScale" 
 		"jackie_rigRN.placeHolderList[235]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateX" 
 		"jackie_rigRN.placeHolderList[236]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateY" 
 		"jackie_rigRN.placeHolderList[237]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateZ" 
 		"jackie_rigRN.placeHolderList[238]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateOrder" 
 		"jackie_rigRN.placeHolderList[239]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.jointOrient" 
 		"jackie_rigRN.placeHolderList[240]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[241]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.inverseScale" 
 		"jackie_rigRN.placeHolderList[242]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateX" 
 		"jackie_rigRN.placeHolderList[243]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateY" 
 		"jackie_rigRN.placeHolderList[244]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateZ" 
 		"jackie_rigRN.placeHolderList[245]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateOrder" 
 		"jackie_rigRN.placeHolderList[246]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.jointOrient" 
 		"jackie_rigRN.placeHolderList[247]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[248]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.inverseScale" 
 		"jackie_rigRN.placeHolderList[249]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateX" 
 		"jackie_rigRN.placeHolderList[250]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateY" 
 		"jackie_rigRN.placeHolderList[251]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateZ" 
 		"jackie_rigRN.placeHolderList[252]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateOrder" 
 		"jackie_rigRN.placeHolderList[253]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.jointOrient" 
 		"jackie_rigRN.placeHolderList[254]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[255]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.inverseScale" 
 		"jackie_rigRN.placeHolderList[256]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateY" 
 		"jackie_rigRN.placeHolderList[257]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateX" 
 		"jackie_rigRN.placeHolderList[258]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateZ" 
 		"jackie_rigRN.placeHolderList[259]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateOrder" 
 		"jackie_rigRN.placeHolderList[260]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[261]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.jointOrient" 
 		"jackie_rigRN.placeHolderList[262]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.inverseScale" 
 		"jackie_rigRN.placeHolderList[263]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateX" 
 		"jackie_rigRN.placeHolderList[264]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateY" 
 		"jackie_rigRN.placeHolderList[265]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateZ" 
 		"jackie_rigRN.placeHolderList[266]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateOrder" 
 		"jackie_rigRN.placeHolderList[267]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[268]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.jointOrient" 
 		"jackie_rigRN.placeHolderList[269]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.inverseScale" 
 		"jackie_rigRN.placeHolderList[270]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateX" 
 		"jackie_rigRN.placeHolderList[271]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateY" 
 		"jackie_rigRN.placeHolderList[272]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateZ" 
 		"jackie_rigRN.placeHolderList[273]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateOrder" 
 		"jackie_rigRN.placeHolderList[274]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[275]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.jointOrient" 
 		"jackie_rigRN.placeHolderList[276]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.scale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.inverseScale" 
 		"jackie_rigRN.placeHolderList[277]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.translate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.scale" 
 		"jackie_rigRN.placeHolderList[278]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.translate" 
 		"jackie_rigRN.placeHolderList[279]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotatePivot" 
 		"jackie_rigRN.placeHolderList[280]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[281]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotate" 
 		"jackie_rigRN.placeHolderList[282]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotateOrder" 
 		"jackie_rigRN.placeHolderList[283]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.parentMatrix" 
 		"jackie_rigRN.placeHolderList[284]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.jointOrient" 
 		"jackie_rigRN.placeHolderList[285]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[286]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.translate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.inverseScale" 
 		"jackie_rigRN.placeHolderList[287]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.translate" 
-		"jackie_rigRN.placeHolderList[288]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivot" 
-		"jackie_rigRN.placeHolderList[289]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivot" 
-		"jackie_rigRN.placeHolderList[290]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivotTranslate" 
-		"jackie_rigRN.placeHolderList[291]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivotTranslate" 
-		"jackie_rigRN.placeHolderList[292]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.parentMatrix" 
-		"jackie_rigRN.placeHolderList[293]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.parentMatrix" 
-		"jackie_rigRN.placeHolderList[294]" ""
 		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotate" 
+		"jackie_rigRN.placeHolderList[288]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.translate" 
+		"jackie_rigRN.placeHolderList[289]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.translate" 
+		"jackie_rigRN.placeHolderList[290]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivot" 
+		"jackie_rigRN.placeHolderList[291]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivot" 
+		"jackie_rigRN.placeHolderList[292]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivotTranslate" 
+		"jackie_rigRN.placeHolderList[293]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivotTranslate" 
+		"jackie_rigRN.placeHolderList[294]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.parentMatrix" 
 		"jackie_rigRN.placeHolderList[295]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.parentMatrix" 
 		"jackie_rigRN.placeHolderList[296]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.scale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotateOrder" 
 		"jackie_rigRN.placeHolderList[297]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.scale" 
 		"jackie_rigRN.placeHolderList[298]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.jointOrient" 
 		"jackie_rigRN.placeHolderList[299]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[300]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.translate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.inverseScale" 
 		"jackie_rigRN.placeHolderList[301]" ""
 		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.translate" 
 		"jackie_rigRN.placeHolderList[302]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.translate" 
 		"jackie_rigRN.placeHolderList[303]" ""
 		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivot" 
 		"jackie_rigRN.placeHolderList[304]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivot" 
 		"jackie_rigRN.placeHolderList[305]" ""
 		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[306]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[307]" ""
 		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.parentMatrix" 
 		"jackie_rigRN.placeHolderList[308]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.parentMatrix" 
 		"jackie_rigRN.placeHolderList[309]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotate" 
 		"jackie_rigRN.placeHolderList[310]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.scale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotateOrder" 
 		"jackie_rigRN.placeHolderList[311]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.scale" 
 		"jackie_rigRN.placeHolderList[312]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.jointOrient" 
 		"jackie_rigRN.placeHolderList[313]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.translate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[314]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.translate" 
 		"jackie_rigRN.placeHolderList[315]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.rotatePivot" 
 		"jackie_rigRN.placeHolderList[316]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[317]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle.message" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.parentMatrix" 
 		"jackie_rigRN.placeHolderList[318]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle.message" 
 		"jackie_rigRN.placeHolderList[319]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle.message" 
 		"jackie_rigRN.placeHolderList[320]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.inverseScale" 
 		"jackie_rigRN.placeHolderList[321]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateX" 
 		"jackie_rigRN.placeHolderList[322]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translate" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateY" 
 		"jackie_rigRN.placeHolderList[323]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateX" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateZ" 
 		"jackie_rigRN.placeHolderList[324]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translate" 
 		"jackie_rigRN.placeHolderList[325]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateX" 
 		"jackie_rigRN.placeHolderList[326]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.message" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateY" 
 		"jackie_rigRN.placeHolderList[327]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateZ" 
 		"jackie_rigRN.placeHolderList[328]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.message" 
 		"jackie_rigRN.placeHolderList[329]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.message" 
 		"jackie_rigRN.placeHolderList[330]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateOrder" 
 		"jackie_rigRN.placeHolderList[331]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.jointOrient" 
 		"jackie_rigRN.placeHolderList[332]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[333]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.parentMatrix" 
 		"jackie_rigRN.placeHolderList[334]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep.message" 
 		"jackie_rigRN.placeHolderList[335]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.inverseScale" 
 		"jackie_rigRN.placeHolderList[336]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.rotateX" 
 		"jackie_rigRN.placeHolderList[337]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.rotateY" 
 		"jackie_rigRN.placeHolderList[338]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.translateX" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.rotateZ" 
 		"jackie_rigRN.placeHolderList[339]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.translateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.message" 
 		"jackie_rigRN.placeHolderList[340]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.rotateOrder" 
 		"jackie_rigRN.placeHolderList[341]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.jointOrient" 
 		"jackie_rigRN.placeHolderList[342]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[343]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.scale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.translateX" 
 		"jackie_rigRN.placeHolderList[344]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.translate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.translateY" 
 		"jackie_rigRN.placeHolderList[345]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.translateZ" 
 		"jackie_rigRN.placeHolderList[346]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.inverseScale" 
 		"jackie_rigRN.placeHolderList[347]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.inverseScale" 
 		"jackie_rigRN.placeHolderList[348]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.scale" 
 		"jackie_rigRN.placeHolderList[349]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.translate" 
 		"jackie_rigRN.placeHolderList[350]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotate" 
 		"jackie_rigRN.placeHolderList[351]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentMatrix" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateZ" 
 		"jackie_rigRN.placeHolderList[352]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateX" 
 		"jackie_rigRN.placeHolderList[353]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateY" 
 		"jackie_rigRN.placeHolderList[354]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivot" 
 		"jackie_rigRN.placeHolderList[355]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[356]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentMatrix" 
 		"jackie_rigRN.placeHolderList[357]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateOrder" 
 		"jackie_rigRN.placeHolderList[358]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle.message" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateOrder" 
 		"jackie_rigRN.placeHolderList[359]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.jointOrient" 
 		"jackie_rigRN.placeHolderList[360]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.message" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.jointOrient" 
 		"jackie_rigRN.placeHolderList[361]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[362]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[363]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle.message" 
 		"jackie_rigRN.placeHolderList[364]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.inverseScale" 
 		"jackie_rigRN.placeHolderList[365]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.message" 
 		"jackie_rigRN.placeHolderList[366]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateX" 
 		"jackie_rigRN.placeHolderList[367]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateY" 
 		"jackie_rigRN.placeHolderList[368]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateZ" 
 		"jackie_rigRN.placeHolderList[369]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translate" 
 		"jackie_rigRN.placeHolderList[370]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateX" 
 		"jackie_rigRN.placeHolderList[371]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateY" 
 		"jackie_rigRN.placeHolderList[372]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateZ" 
 		"jackie_rigRN.placeHolderList[373]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateOrder" 
 		"jackie_rigRN.placeHolderList[374]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.jointOrient" 
 		"jackie_rigRN.placeHolderList[375]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[376]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.parentMatrix" 
 		"jackie_rigRN.placeHolderList[377]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.inverseScale" 
 		"jackie_rigRN.placeHolderList[378]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateX" 
 		"jackie_rigRN.placeHolderList[379]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.translateX" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateY" 
 		"jackie_rigRN.placeHolderList[380]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.translateY" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateZ" 
 		"jackie_rigRN.placeHolderList[381]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateOrder" 
 		"jackie_rigRN.placeHolderList[382]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.jointOrient" 
 		"jackie_rigRN.placeHolderList[383]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[384]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.scale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.translateX" 
 		"jackie_rigRN.placeHolderList[385]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.translate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.translateY" 
 		"jackie_rigRN.placeHolderList[386]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.translateZ" 
 		"jackie_rigRN.placeHolderList[387]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.inverseScale" 
 		"jackie_rigRN.placeHolderList[388]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.inverseScale" 
 		"jackie_rigRN.placeHolderList[389]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.scale" 
 		"jackie_rigRN.placeHolderList[390]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.translate" 
 		"jackie_rigRN.placeHolderList[391]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotatePivot" 
 		"jackie_rigRN.placeHolderList[392]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[393]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.parentMatrix" 
 		"jackie_rigRN.placeHolderList[394]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotate" 
 		"jackie_rigRN.placeHolderList[395]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateX" 
 		"jackie_rigRN.placeHolderList[396]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateY" 
 		"jackie_rigRN.placeHolderList[397]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateZ" 
 		"jackie_rigRN.placeHolderList[398]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateOrder" 
 		"jackie_rigRN.placeHolderList[399]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateOrder" 
 		"jackie_rigRN.placeHolderList[400]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.message" "jackie_rigRN.placeHolderList[401]" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.jointOrient" 
+		"jackie_rigRN.placeHolderList[401]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.jointOrient" 
+		"jackie_rigRN.placeHolderList[402]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.parentInverseMatrix" 
+		"jackie_rigRN.placeHolderList[403]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.segmentScaleCompensate" 
+		"jackie_rigRN.placeHolderList[404]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.inverseScale" 
+		"jackie_rigRN.placeHolderList[405]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.message" "jackie_rigRN.placeHolderList[406]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.rotateX" "jackie_rigRN.placeHolderList[402]" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.rotateX" "jackie_rigRN.placeHolderList[407]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.rotateY" "jackie_rigRN.placeHolderList[403]" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.rotateY" "jackie_rigRN.placeHolderList[408]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.rotateZ" "jackie_rigRN.placeHolderList[404]" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.rotateZ" "jackie_rigRN.placeHolderList[409]" 
 		""
 		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.rotateOrder" 
-		"jackie_rigRN.placeHolderList[405]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.parentInverseMatrix" 
-		"jackie_rigRN.placeHolderList[406]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.jointOrient" 
-		"jackie_rigRN.placeHolderList[407]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.parentMatrix" 
-		"jackie_rigRN.placeHolderList[408]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.translate" 
-		"jackie_rigRN.placeHolderList[409]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.inverseScale" 
 		"jackie_rigRN.placeHolderList[410]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[411]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.jointOrient" 
 		"jackie_rigRN.placeHolderList[412]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.parentMatrix" 
 		"jackie_rigRN.placeHolderList[413]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip.translate" 
 		"jackie_rigRN.placeHolderList[414]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.inverseScale" 
 		"jackie_rigRN.placeHolderList[415]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateX" 
 		"jackie_rigRN.placeHolderList[416]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.inverseScale" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateY" 
 		"jackie_rigRN.placeHolderList[417]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.inverseScale" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateZ" 
 		"jackie_rigRN.placeHolderList[418]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.scale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateOrder" 
 		"jackie_rigRN.placeHolderList[419]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.jointOrient" 
 		"jackie_rigRN.placeHolderList[420]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[421]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.inverseScale" 
 		"jackie_rigRN.placeHolderList[422]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.inverseScale" 
 		"jackie_rigRN.placeHolderList[423]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.scale" 
 		"jackie_rigRN.placeHolderList[424]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translate" 
 		"jackie_rigRN.placeHolderList[425]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translateX" 
 		"jackie_rigRN.placeHolderList[426]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translateY" 
 		"jackie_rigRN.placeHolderList[427]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translateZ" 
 		"jackie_rigRN.placeHolderList[428]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotate" 
 		"jackie_rigRN.placeHolderList[429]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.parentMatrix" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateX" 
 		"jackie_rigRN.placeHolderList[430]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateY" 
 		"jackie_rigRN.placeHolderList[431]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateZ" 
 		"jackie_rigRN.placeHolderList[432]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotatePivot" 
 		"jackie_rigRN.placeHolderList[433]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[434]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.parentMatrix" 
 		"jackie_rigRN.placeHolderList[435]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateOrder" 
 		"jackie_rigRN.placeHolderList[436]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateOrder" 
 		"jackie_rigRN.placeHolderList[437]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.message" "jackie_rigRN.placeHolderList[438]" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.jointOrient" 
+		"jackie_rigRN.placeHolderList[438]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.jointOrient" 
+		"jackie_rigRN.placeHolderList[439]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.parentInverseMatrix" 
+		"jackie_rigRN.placeHolderList[440]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.segmentScaleCompensate" 
+		"jackie_rigRN.placeHolderList[441]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.inverseScale" 
+		"jackie_rigRN.placeHolderList[442]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.message" "jackie_rigRN.placeHolderList[443]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.rotateX" "jackie_rigRN.placeHolderList[439]" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.rotateX" "jackie_rigRN.placeHolderList[444]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.rotateY" "jackie_rigRN.placeHolderList[440]" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.rotateY" "jackie_rigRN.placeHolderList[445]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.rotateZ" "jackie_rigRN.placeHolderList[441]" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.rotateZ" "jackie_rigRN.placeHolderList[446]" 
 		""
 		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.translate" 
-		"jackie_rigRN.placeHolderList[442]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.parentMatrix" 
-		"jackie_rigRN.placeHolderList[443]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.rotateOrder" 
-		"jackie_rigRN.placeHolderList[444]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.parentInverseMatrix" 
-		"jackie_rigRN.placeHolderList[445]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.jointOrient" 
-		"jackie_rigRN.placeHolderList[446]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.inverseScale" 
 		"jackie_rigRN.placeHolderList[447]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.parentMatrix" 
 		"jackie_rigRN.placeHolderList[448]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.rotateOrder" 
 		"jackie_rigRN.placeHolderList[449]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[450]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip.jointOrient" 
 		"jackie_rigRN.placeHolderList[451]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.inverseScale" 
 		"jackie_rigRN.placeHolderList[452]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateX" 
 		"jackie_rigRN.placeHolderList[453]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.inverseScale" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateY" 
 		"jackie_rigRN.placeHolderList[454]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.inverseScale" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateZ" 
 		"jackie_rigRN.placeHolderList[455]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.scale" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateOrder" 
 		"jackie_rigRN.placeHolderList[456]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.jointOrient" 
 		"jackie_rigRN.placeHolderList[457]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[458]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.inverseScale" 
 		"jackie_rigRN.placeHolderList[459]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.inverseScale" 
 		"jackie_rigRN.placeHolderList[460]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.scale" 
 		"jackie_rigRN.placeHolderList[461]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translate" 
 		"jackie_rigRN.placeHolderList[462]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translateX" 
 		"jackie_rigRN.placeHolderList[463]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translateY" 
 		"jackie_rigRN.placeHolderList[464]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translateZ" 
 		"jackie_rigRN.placeHolderList[465]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotatePivot" 
 		"jackie_rigRN.placeHolderList[466]" ""
-		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[467]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.parentMatrix" 
 		"jackie_rigRN.placeHolderList[468]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotate" 
 		"jackie_rigRN.placeHolderList[469]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateX" 
 		"jackie_rigRN.placeHolderList[470]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateY" 
 		"jackie_rigRN.placeHolderList[471]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateZ" 
 		"jackie_rigRN.placeHolderList[472]" ""
-		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateOrder" 
 		"jackie_rigRN.placeHolderList[473]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateOrder" 
+		"jackie_rigRN.placeHolderList[474]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.jointOrient" 
+		"jackie_rigRN.placeHolderList[475]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.jointOrient" 
+		"jackie_rigRN.placeHolderList[476]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.parentInverseMatrix" 
+		"jackie_rigRN.placeHolderList[477]" ""
+		5 3 "jackie_rigRN" "|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.segmentScaleCompensate" 
+		"jackie_rigRN.placeHolderList[478]" ""
+		5 3 "jackie_rigRN" "jackie_rig:skinCluster1.message" "jackie_rigRN.placeHolderList[479]" 
+		""
+		5 3 "jackie_rigRN" "jackie_rig:bindPose1.message" "jackie_rigRN.placeHolderList[480]" 
+		""
+		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_visibility.message" "jackie_rigRN.placeHolderList[481]" 
+		""
+		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_translateX.message" "jackie_rigRN.placeHolderList[482]" 
+		""
+		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_translateY.message" "jackie_rigRN.placeHolderList[483]" 
+		""
+		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_translateZ.message" "jackie_rigRN.placeHolderList[484]" 
+		""
+		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_scaleX.message" "jackie_rigRN.placeHolderList[485]" 
+		""
+		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_scaleY.message" "jackie_rigRN.placeHolderList[486]" 
+		""
+		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_scaleZ.message" "jackie_rigRN.placeHolderList[487]" 
+		""
 		7 "fcurve" "jackie_rig:high_neck_translateY" 1 "add 1 0.208229 18 18 1 0 0" 
 		0
 		7 "fcurve" "jackie_rig:high_neck_translateZ" 1 "add 1 0.0345412 18 18 1 0 0" 
 		0
-		7 "fcurve" "jackie_rig:Group9688_visibility" 0 0
 		7 "fcurve" "jackie_rig:left_elbow_rotateX" 1 "add 1 2.48009e-05 18 18 1 0 0" 
 		0
 		7 "fcurve" "jackie_rig:left_elbow_rotateY" 1 "add 1 -0.00675429 18 18 1 0 0" 
@@ -7253,77 +5153,77 @@ createNode reference -n "teeth_v1_latestRN1";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube21|teeth_v1_latest1:pCubeShape21.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube22|teeth_v1_latest1:pCubeShape22.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube24|teeth_v1_latest1:pCubeShape24.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube22|teeth_v1_latest1:pCubeShape22.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube26|teeth_v1_latest1:pCubeShape26.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube26|teeth_v1_latest1:pCubeShape26.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube17|teeth_v1_latest1:pCubeShape17.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube17|teeth_v1_latest1:pCubeShape17.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube20|teeth_v1_latest1:pCubeShape20.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube20|teeth_v1_latest1:pCubeShape20.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube24|teeth_v1_latest1:pCubeShape24.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube14|teeth_v1_latest1:pCubeShape14.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube14|teeth_v1_latest1:pCubeShape14.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube19|teeth_v1_latest1:pCubeShape19.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube20|teeth_v1_latest1:pCubeShape20.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube19|teeth_v1_latest1:pCubeShape19.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube25|teeth_v1_latest1:pCubeShape25.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube25|teeth_v1_latest1:pCubeShape25.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube13|teeth_v1_latest1:pCubeShape13.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube13|teeth_v1_latest1:pCubeShape13.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube15|teeth_v1_latest1:pCubeShape15.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube15|teeth_v1_latest1:pCubeShape15.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube20|teeth_v1_latest1:pCubeShape20.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube27|teeth_v1_latest1:pCubeShape27.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube27|teeth_v1_latest1:pCubeShape27.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube17|teeth_v1_latest1:pCubeShape17.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube17|teeth_v1_latest1:pCubeShape17.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube19|teeth_v1_latest1:pCubeShape19.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube19|teeth_v1_latest1:pCubeShape19.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube26|teeth_v1_latest1:pCubeShape26.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube26|teeth_v1_latest1:pCubeShape26.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube15|teeth_v1_latest1:pCubeShape15.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube15|teeth_v1_latest1:pCubeShape15.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube13|teeth_v1_latest1:pCubeShape13.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube13|teeth_v1_latest1:pCubeShape13.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube16|teeth_v1_latest1:pCubeShape16.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube16|teeth_v1_latest1:pCubeShape16.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube24|teeth_v1_latest1:pCubeShape24.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube24|teeth_v1_latest1:pCubeShape24.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube23|teeth_v1_latest1:pCubeShape23.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube23|teeth_v1_latest1:pCubeShape23.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube18|teeth_v1_latest1:pCubeShape18.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube18|teeth_v1_latest1:pCubeShape18.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube12|teeth_v1_latest1:pCubeShape12.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube12|teeth_v1_latest1:pCubeShape12.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube25|teeth_v1_latest1:pCubeShape25.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube25|teeth_v1_latest1:pCubeShape25.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube23|teeth_v1_latest1:pCubeShape23.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube23|teeth_v1_latest1:pCubeShape23.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:Gums|teeth_v1_latest1:GumsShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:Gums|teeth_v1_latest1:GumsShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		5 4 "teeth_v1_latestRN1" "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth.translateX" 
-		"teeth_v1_latestRN1.placeHolderList[1]" ""
-		5 4 "teeth_v1_latestRN1" "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth.translateZ" 
-		"teeth_v1_latestRN1.placeHolderList[2]" ""
-		5 4 "teeth_v1_latestRN1" "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth.translateY" 
-		"teeth_v1_latestRN1.placeHolderList[3]" ""
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube18|teeth_v1_latest1:pCubeShape18.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube18|teeth_v1_latest1:pCubeShape18.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube22|teeth_v1_latest1:pCubeShape22.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube22|teeth_v1_latest1:pCubeShape22.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "teeth_v1_latestRN1" "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth.rotatePivot" 
+		"teeth_v1_latestRN1.placeHolderList[1]" ""
+		5 4 "teeth_v1_latestRN1" "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth.translateX" 
+		"teeth_v1_latestRN1.placeHolderList[2]" ""
+		5 4 "teeth_v1_latestRN1" "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth.translateZ" 
+		"teeth_v1_latestRN1.placeHolderList[3]" ""
+		5 4 "teeth_v1_latestRN1" "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth.translateY" 
 		"teeth_v1_latestRN1.placeHolderList[4]" ""
 		5 4 "teeth_v1_latestRN1" "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth.rotateX" 
 		"teeth_v1_latestRN1.placeHolderList[5]" ""
@@ -7407,6 +5307,94 @@ createNode reference -n "teeth_v1_latestRN1";
 		"teeth_v1_latestRN1.placeHolderList[44]" ":initialShadingGroup.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode animCurveUU -n "lf_wrist_ikHandle_ikBlend";
+	rename -uid "E45FEDD2-4BEF-1EC2-9090-4C80FD36225F";
+	setAttr ".tan" 18;
+	setAttr -s 2 ".ktv[0:1]"  0 1 1 0;
+createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
+	rename -uid "A2D1E254-4F86-08A6-8E00-16AEFF557380";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -996.72442387351259 -508.3333131339823 ;
+	setAttr ".tgi[0].vh" -type "double2" 983.62918629863236 555.95235886081912 ;
+	setAttr -s 26 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -17.142856597900391;
+	setAttr ".tgi[0].ni[0].y" -107.14286041259766;
+	setAttr ".tgi[0].ni[0].nvs" 18304;
+	setAttr ".tgi[0].ni[1].x" 290;
+	setAttr ".tgi[0].ni[1].y" 58.571430206298828;
+	setAttr ".tgi[0].ni[1].nvs" 18304;
+	setAttr ".tgi[0].ni[2].x" 597.14288330078125;
+	setAttr ".tgi[0].ni[2].y" -287.14285278320313;
+	setAttr ".tgi[0].ni[2].nvs" 18304;
+	setAttr ".tgi[0].ni[3].x" 252.85714721679688;
+	setAttr ".tgi[0].ni[3].y" 275.71429443359375;
+	setAttr ".tgi[0].ni[3].nvs" 18304;
+	setAttr ".tgi[0].ni[4].x" -17.142856597900391;
+	setAttr ".tgi[0].ni[4].y" -5.7142858505249023;
+	setAttr ".tgi[0].ni[4].nvs" 18304;
+	setAttr ".tgi[0].ni[5].x" -851.4285888671875;
+	setAttr ".tgi[0].ni[5].y" 7.1428570747375488;
+	setAttr ".tgi[0].ni[5].nvs" 18304;
+	setAttr ".tgi[0].ni[6].x" -837.14288330078125;
+	setAttr ".tgi[0].ni[6].y" 287.14285278320313;
+	setAttr ".tgi[0].ni[6].nvs" 18304;
+	setAttr ".tgi[0].ni[7].x" -837.14288330078125;
+	setAttr ".tgi[0].ni[7].y" 388.57144165039063;
+	setAttr ".tgi[0].ni[7].nvs" 18304;
+	setAttr ".tgi[0].ni[8].x" 597.14288330078125;
+	setAttr ".tgi[0].ni[8].y" -50;
+	setAttr ".tgi[0].ni[8].nvs" 18304;
+	setAttr ".tgi[0].ni[9].x" -851.4285888671875;
+	setAttr ".tgi[0].ni[9].y" -361.42855834960938;
+	setAttr ".tgi[0].ni[9].nvs" 18304;
+	setAttr ".tgi[0].ni[10].x" 948.5714111328125;
+	setAttr ".tgi[0].ni[10].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[10].nvs" 18304;
+	setAttr ".tgi[0].ni[11].x" 948.5714111328125;
+	setAttr ".tgi[0].ni[11].y" -328.57144165039063;
+	setAttr ".tgi[0].ni[11].nvs" 18304;
+	setAttr ".tgi[0].ni[12].x" -851.4285888671875;
+	setAttr ".tgi[0].ni[12].y" -115.71428680419922;
+	setAttr ".tgi[0].ni[12].nvs" 18304;
+	setAttr ".tgi[0].ni[13].x" 290;
+	setAttr ".tgi[0].ni[13].y" -285.71429443359375;
+	setAttr ".tgi[0].ni[13].nvs" 18304;
+	setAttr ".tgi[0].ni[14].x" -17.142856597900391;
+	setAttr ".tgi[0].ni[14].y" 621.4285888671875;
+	setAttr ".tgi[0].ni[14].nvs" 18306;
+	setAttr ".tgi[0].ni[15].x" -1144.2857666015625;
+	setAttr ".tgi[0].ni[15].y" 264.28570556640625;
+	setAttr ".tgi[0].ni[15].nvs" 18304;
+	setAttr ".tgi[0].ni[16].x" -851.4285888671875;
+	setAttr ".tgi[0].ni[16].y" 375.71429443359375;
+	setAttr ".tgi[0].ni[16].nvs" 18304;
+	setAttr ".tgi[0].ni[17].x" -347.14285278320313;
+	setAttr ".tgi[0].ni[17].y" 400;
+	setAttr ".tgi[0].ni[17].nvs" 18304;
+	setAttr ".tgi[0].ni[18].x" -851.4285888671875;
+	setAttr ".tgi[0].ni[18].y" 252.85714721679688;
+	setAttr ".tgi[0].ni[18].nvs" 18304;
+	setAttr ".tgi[0].ni[19].x" 597.14288330078125;
+	setAttr ".tgi[0].ni[19].y" -511.42855834960938;
+	setAttr ".tgi[0].ni[19].nvs" 18304;
+	setAttr ".tgi[0].ni[20].x" 597.14288330078125;
+	setAttr ".tgi[0].ni[20].y" -388.57144165039063;
+	setAttr ".tgi[0].ni[20].nvs" 18304;
+	setAttr ".tgi[0].ni[21].x" -851.4285888671875;
+	setAttr ".tgi[0].ni[21].y" 130;
+	setAttr ".tgi[0].ni[21].nvs" 18304;
+	setAttr ".tgi[0].ni[22].x" 948.5714111328125;
+	setAttr ".tgi[0].ni[22].y" -451.42855834960938;
+	setAttr ".tgi[0].ni[22].nvs" 18304;
+	setAttr ".tgi[0].ni[23].x" -851.4285888671875;
+	setAttr ".tgi[0].ni[23].y" -238.57142639160156;
+	setAttr ".tgi[0].ni[23].nvs" 18304;
+	setAttr ".tgi[0].ni[24].x" -851.4285888671875;
+	setAttr ".tgi[0].ni[24].y" 498.57144165039063;
+	setAttr ".tgi[0].ni[24].nvs" 18304;
+	setAttr ".tgi[0].ni[25].x" -425.71429443359375;
+	setAttr ".tgi[0].ni[25].y" -64.285713195800781;
+	setAttr ".tgi[0].ni[25].nvs" 18304;
 select -ne :time1;
 	setAttr -av -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -7651,7 +5639,7 @@ select -ne :ikSystem;
 	setAttr -k on ".bnm";
 	setAttr -av -k on ".gsn";
 	setAttr -k on ".gsv";
-	setAttr -s 2 ".sol";
+	setAttr -s 4 ".sol";
 connectAttr "accessories_clothes.di" "jackie_rigRN.phl[46]";
 connectAttr "accessories_clothes.di" "jackie_rigRN.phl[48]";
 connectAttr "geo.di" "jackie_rigRN.phl[49]";
@@ -7706,363 +5694,391 @@ connectAttr "geo.di" "jackie_rigRN.phl[97]";
 connectAttr "geo.di" "jackie_rigRN.phl[98]";
 connectAttr "geo.di" "jackie_rigRN.phl[99]";
 connectAttr "geo.di" "jackie_rigRN.phl[173]";
-connectAttr "geo.di" "jackie_rigRN.phl[174]";
-connectAttr "jackieEyeLeft_parentConstraint1.ctx" "jackie_rigRN.phl[175]";
-connectAttr "jackieEyeLeft_parentConstraint1.cty" "jackie_rigRN.phl[176]";
-connectAttr "jackieEyeLeft_parentConstraint1.ctz" "jackie_rigRN.phl[177]";
-connectAttr "jackie_rigRN.phl[178]" "jackieEyeLeft_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[179]" "jackieEyeLeft_pointConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[180]" "jackieEyeLeft_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[181]" "jackieEyeLeft_pointConstraint1.crp";
-connectAttr "jackie_rigRN.phl[182]" "jackieEyeLeft_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[183]" "jackieEyeLeft_pointConstraint1.crt";
-connectAttr "jackieEyeLeft_parentConstraint1.crx" "jackie_rigRN.phl[184]";
-connectAttr "jackieEyeLeft_parentConstraint1.cry" "jackie_rigRN.phl[185]";
-connectAttr "jackieEyeLeft_parentConstraint1.crz" "jackie_rigRN.phl[186]";
-connectAttr "jackie_rigRN.phl[187]" "jackieEyeLeft_parentConstraint1.cro";
-connectAttr "geo.di" "jackie_rigRN.phl[188]";
-connectAttr "jackierEyeRight_parentConstraint1.ctx" "jackie_rigRN.phl[189]";
-connectAttr "jackierEyeRight_parentConstraint1.cty" "jackie_rigRN.phl[190]";
-connectAttr "jackierEyeRight_parentConstraint1.ctz" "jackie_rigRN.phl[191]";
-connectAttr "jackie_rigRN.phl[192]" "jackierEyeRight_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[193]" "jackierEyeRight_pointConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[194]" "jackierEyeRight_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[195]" "jackierEyeRight_pointConstraint1.crp";
-connectAttr "jackie_rigRN.phl[196]" "jackierEyeRight_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[197]" "jackierEyeRight_pointConstraint1.crt";
-connectAttr "jackierEyeRight_parentConstraint1.crx" "jackie_rigRN.phl[198]";
-connectAttr "jackierEyeRight_parentConstraint1.cry" "jackie_rigRN.phl[199]";
-connectAttr "jackierEyeRight_parentConstraint1.crz" "jackie_rigRN.phl[200]";
-connectAttr "jackie_rigRN.phl[201]" "jackierEyeRight_parentConstraint1.cro";
-connectAttr "root_parentConstraint1.crx" "jackie_rigRN.phl[202]";
-connectAttr "root_parentConstraint1.cry" "jackie_rigRN.phl[203]";
-connectAttr "root_parentConstraint1.crz" "jackie_rigRN.phl[204]";
-connectAttr "root_parentConstraint1.ctx" "jackie_rigRN.phl[205]";
-connectAttr "root_parentConstraint1.cty" "jackie_rigRN.phl[206]";
-connectAttr "root_parentConstraint1.ctz" "jackie_rigRN.phl[207]";
-connectAttr "jackie_rigRN.phl[208]" "root_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[209]" "root_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[210]" "root_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[211]" "root_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[212]" "root_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[213]" "spine_1_orientConstraint1.is";
-connectAttr "spine_1_orientConstraint1.crx" "jackie_rigRN.phl[214]";
-connectAttr "spine_1_orientConstraint1.cry" "jackie_rigRN.phl[215]";
-connectAttr "spine_1_orientConstraint1.crz" "jackie_rigRN.phl[216]";
-connectAttr "jackie_rigRN.phl[217]" "spine_1_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[218]" "spine_1_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[219]" "spine_1_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[220]" "spine_2_orientConstraint1.is";
-connectAttr "spine_2_orientConstraint1.crx" "jackie_rigRN.phl[221]";
-connectAttr "spine_2_orientConstraint1.cry" "jackie_rigRN.phl[222]";
-connectAttr "spine_2_orientConstraint1.crz" "jackie_rigRN.phl[223]";
-connectAttr "jackie_rigRN.phl[224]" "spine_2_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[225]" "spine_2_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[226]" "spine_2_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[227]" "spine_3_orientConstraint1.is";
-connectAttr "spine_3_orientConstraint1.crx" "jackie_rigRN.phl[228]";
-connectAttr "spine_3_orientConstraint1.cry" "jackie_rigRN.phl[229]";
-connectAttr "spine_3_orientConstraint1.crz" "jackie_rigRN.phl[230]";
-connectAttr "jackie_rigRN.phl[231]" "spine_3_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[232]" "spine_3_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[233]" "spine_3_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[234]" "spine_4_orientConstraint1.is";
-connectAttr "spine_4_orientConstraint1.crx" "jackie_rigRN.phl[235]";
-connectAttr "spine_4_orientConstraint1.cry" "jackie_rigRN.phl[236]";
-connectAttr "spine_4_orientConstraint1.crz" "jackie_rigRN.phl[237]";
-connectAttr "jackie_rigRN.phl[238]" "spine_4_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[239]" "spine_4_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[240]" "spine_4_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[241]" "spine_5_orientConstraint1.is";
-connectAttr "spine_5_orientConstraint1.crx" "jackie_rigRN.phl[242]";
-connectAttr "spine_5_orientConstraint1.cry" "jackie_rigRN.phl[243]";
-connectAttr "spine_5_orientConstraint1.crz" "jackie_rigRN.phl[244]";
-connectAttr "jackie_rigRN.phl[245]" "spine_5_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[246]" "spine_5_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[247]" "spine_5_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[248]" "chest_orientConstraint1.is";
-connectAttr "chest_orientConstraint1.crx" "jackie_rigRN.phl[249]";
-connectAttr "chest_orientConstraint1.cry" "jackie_rigRN.phl[250]";
-connectAttr "chest_orientConstraint1.crz" "jackie_rigRN.phl[251]";
-connectAttr "jackie_rigRN.phl[252]" "chest_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[253]" "chest_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[254]" "chest_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[255]" "low_neck_orientConstraint1.is";
-connectAttr "low_neck_orientConstraint1.cry" "jackie_rigRN.phl[256]";
-connectAttr "low_neck_orientConstraint1.crx" "jackie_rigRN.phl[257]";
-connectAttr "low_neck_orientConstraint1.crz" "jackie_rigRN.phl[258]";
-connectAttr "jackie_rigRN.phl[259]" "low_neck_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[260]" "low_neck_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[261]" "low_neck_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[262]" "high_neck_orientConstraint1.is";
-connectAttr "high_neck_orientConstraint1.crx" "jackie_rigRN.phl[263]";
-connectAttr "high_neck_orientConstraint1.cry" "jackie_rigRN.phl[264]";
-connectAttr "high_neck_orientConstraint1.crz" "jackie_rigRN.phl[265]";
-connectAttr "jackie_rigRN.phl[266]" "high_neck_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[267]" "high_neck_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[268]" "high_neck_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[269]" "head_orientConstraint1.is";
-connectAttr "head_orientConstraint1.crx" "jackie_rigRN.phl[270]";
-connectAttr "head_orientConstraint1.cry" "jackie_rigRN.phl[271]";
-connectAttr "head_orientConstraint1.crz" "jackie_rigRN.phl[272]";
-connectAttr "jackie_rigRN.phl[273]" "head_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[274]" "head_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[275]" "head_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[276]" "Teeth_parentConstraint1.tg[0].tis";
-connectAttr "jackie_rigRN.phl[277]" "Teeth_parentConstraint1.tg[0].ts";
-connectAttr "jackie_rigRN.phl[278]" "Teeth_parentConstraint1.tg[0].tt";
-connectAttr "jackie_rigRN.phl[279]" "Teeth_parentConstraint1.tg[0].trp";
-connectAttr "jackie_rigRN.phl[280]" "Teeth_parentConstraint1.tg[0].trt";
-connectAttr "jackie_rigRN.phl[281]" "Teeth_parentConstraint1.tg[0].tr";
-connectAttr "jackie_rigRN.phl[282]" "Teeth_parentConstraint1.tg[0].tro";
-connectAttr "jackie_rigRN.phl[283]" "Teeth_parentConstraint1.tg[0].tpm";
-connectAttr "jackie_rigRN.phl[284]" "Teeth_parentConstraint1.tg[0].tjo";
-connectAttr "jackie_rigRN.phl[285]" "Teeth_parentConstraint1.tg[0].tsc";
-connectAttr "jackie_rigRN.phl[286]" "jackieEyeLeft_parentConstraint1.tg[0].tis";
-connectAttr "jackie_rigRN.phl[287]" "jackieEyeLeft_parentConstraint1.tg[0].tt";
-connectAttr "jackie_rigRN.phl[288]" "jackieEyeLeft_pointConstraint1.tg[0].tt";
-connectAttr "jackie_rigRN.phl[289]" "jackieEyeLeft_parentConstraint1.tg[0].trp";
-connectAttr "jackie_rigRN.phl[290]" "jackieEyeLeft_pointConstraint1.tg[0].trp";
-connectAttr "jackie_rigRN.phl[291]" "jackieEyeLeft_parentConstraint1.tg[0].trt";
-connectAttr "jackie_rigRN.phl[292]" "jackieEyeLeft_pointConstraint1.tg[0].trt";
-connectAttr "jackie_rigRN.phl[293]" "jackieEyeLeft_parentConstraint1.tg[0].tpm";
-connectAttr "jackie_rigRN.phl[294]" "jackieEyeLeft_pointConstraint1.tg[0].tpm";
-connectAttr "jackie_rigRN.phl[295]" "jackieEyeLeft_parentConstraint1.tg[0].tr";
-connectAttr "jackie_rigRN.phl[296]" "jackieEyeLeft_parentConstraint1.tg[0].tro";
-connectAttr "jackie_rigRN.phl[297]" "jackieEyeLeft_parentConstraint1.tg[0].ts";
-connectAttr "jackie_rigRN.phl[298]" "jackieEyeLeft_parentConstraint1.tg[0].tjo";
-connectAttr "jackie_rigRN.phl[299]" "jackieEyeLeft_parentConstraint1.tg[0].tsc";
-connectAttr "jackie_rigRN.phl[300]" "jackierEyeRight_parentConstraint1.tg[0].tis"
+connectAttr "jackie_rigRN.phl[174]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
 		;
-connectAttr "jackie_rigRN.phl[301]" "jackierEyeRight_parentConstraint1.tg[0].tt"
+connectAttr "jackieEyeLeft_parentConstraint1.ctz" "jackie_rigRN.phl[175]";
+connectAttr "jackieEyeLeft_parentConstraint1.ctx" "jackie_rigRN.phl[176]";
+connectAttr "jackieEyeLeft_parentConstraint1.cty" "jackie_rigRN.phl[177]";
+connectAttr "jackie_rigRN.phl[178]" "jackieEyeLeft_pointConstraint1.crp";
+connectAttr "jackie_rigRN.phl[179]" "jackieEyeLeft_parentConstraint1.crp";
+connectAttr "geo.di" "jackie_rigRN.phl[180]";
+connectAttr "jackie_rigRN.phl[181]" "jackieEyeLeft_pointConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[182]" "jackieEyeLeft_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[183]" "jackieEyeLeft_pointConstraint1.crt";
+connectAttr "jackie_rigRN.phl[184]" "jackieEyeLeft_parentConstraint1.crt";
+connectAttr "jackieEyeLeft_parentConstraint1.crx" "jackie_rigRN.phl[185]";
+connectAttr "jackieEyeLeft_parentConstraint1.cry" "jackie_rigRN.phl[186]";
+connectAttr "jackieEyeLeft_parentConstraint1.crz" "jackie_rigRN.phl[187]";
+connectAttr "jackie_rigRN.phl[188]" "jackieEyeLeft_parentConstraint1.cro";
+connectAttr "jackierEyeRight_parentConstraint1.ctz" "jackie_rigRN.phl[189]";
+connectAttr "jackierEyeRight_parentConstraint1.ctx" "jackie_rigRN.phl[190]";
+connectAttr "jackierEyeRight_parentConstraint1.cty" "jackie_rigRN.phl[191]";
+connectAttr "jackie_rigRN.phl[192]" "jackierEyeRight_pointConstraint1.crp";
+connectAttr "jackie_rigRN.phl[193]" "jackierEyeRight_parentConstraint1.crp";
+connectAttr "geo.di" "jackie_rigRN.phl[194]";
+connectAttr "jackie_rigRN.phl[195]" "jackierEyeRight_pointConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[196]" "jackierEyeRight_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[197]" "jackierEyeRight_pointConstraint1.crt";
+connectAttr "jackie_rigRN.phl[198]" "jackierEyeRight_parentConstraint1.crt";
+connectAttr "jackierEyeRight_parentConstraint1.crx" "jackie_rigRN.phl[199]";
+connectAttr "jackierEyeRight_parentConstraint1.cry" "jackie_rigRN.phl[200]";
+connectAttr "jackierEyeRight_parentConstraint1.crz" "jackie_rigRN.phl[201]";
+connectAttr "jackie_rigRN.phl[202]" "jackierEyeRight_parentConstraint1.cro";
+connectAttr "root_parentConstraint1.crx" "jackie_rigRN.phl[203]";
+connectAttr "root_parentConstraint1.cry" "jackie_rigRN.phl[204]";
+connectAttr "root_parentConstraint1.crz" "jackie_rigRN.phl[205]";
+connectAttr "root_parentConstraint1.ctx" "jackie_rigRN.phl[206]";
+connectAttr "root_parentConstraint1.cty" "jackie_rigRN.phl[207]";
+connectAttr "root_parentConstraint1.ctz" "jackie_rigRN.phl[208]";
+connectAttr "jackie_rigRN.phl[209]" "root_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[210]" "root_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[211]" "root_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[212]" "root_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[213]" "root_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[214]" "spine_1_orientConstraint1.is";
+connectAttr "spine_1_orientConstraint1.crx" "jackie_rigRN.phl[215]";
+connectAttr "spine_1_orientConstraint1.cry" "jackie_rigRN.phl[216]";
+connectAttr "spine_1_orientConstraint1.crz" "jackie_rigRN.phl[217]";
+connectAttr "jackie_rigRN.phl[218]" "spine_1_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[219]" "spine_1_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[220]" "spine_1_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[221]" "spine_2_orientConstraint1.is";
+connectAttr "spine_2_orientConstraint1.crx" "jackie_rigRN.phl[222]";
+connectAttr "spine_2_orientConstraint1.cry" "jackie_rigRN.phl[223]";
+connectAttr "spine_2_orientConstraint1.crz" "jackie_rigRN.phl[224]";
+connectAttr "jackie_rigRN.phl[225]" "spine_2_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[226]" "spine_2_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[227]" "spine_2_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[228]" "spine_3_orientConstraint1.is";
+connectAttr "spine_3_orientConstraint1.crx" "jackie_rigRN.phl[229]";
+connectAttr "spine_3_orientConstraint1.cry" "jackie_rigRN.phl[230]";
+connectAttr "spine_3_orientConstraint1.crz" "jackie_rigRN.phl[231]";
+connectAttr "jackie_rigRN.phl[232]" "spine_3_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[233]" "spine_3_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[234]" "spine_3_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[235]" "spine_4_orientConstraint1.is";
+connectAttr "spine_4_orientConstraint1.crx" "jackie_rigRN.phl[236]";
+connectAttr "spine_4_orientConstraint1.cry" "jackie_rigRN.phl[237]";
+connectAttr "spine_4_orientConstraint1.crz" "jackie_rigRN.phl[238]";
+connectAttr "jackie_rigRN.phl[239]" "spine_4_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[240]" "spine_4_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[241]" "spine_4_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[242]" "spine_5_orientConstraint1.is";
+connectAttr "spine_5_orientConstraint1.crx" "jackie_rigRN.phl[243]";
+connectAttr "spine_5_orientConstraint1.cry" "jackie_rigRN.phl[244]";
+connectAttr "spine_5_orientConstraint1.crz" "jackie_rigRN.phl[245]";
+connectAttr "jackie_rigRN.phl[246]" "spine_5_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[247]" "spine_5_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[248]" "spine_5_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[249]" "chest_orientConstraint1.is";
+connectAttr "chest_orientConstraint1.crx" "jackie_rigRN.phl[250]";
+connectAttr "chest_orientConstraint1.cry" "jackie_rigRN.phl[251]";
+connectAttr "chest_orientConstraint1.crz" "jackie_rigRN.phl[252]";
+connectAttr "jackie_rigRN.phl[253]" "chest_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[254]" "chest_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[255]" "chest_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[256]" "low_neck_orientConstraint1.is";
+connectAttr "low_neck_orientConstraint1.cry" "jackie_rigRN.phl[257]";
+connectAttr "low_neck_orientConstraint1.crx" "jackie_rigRN.phl[258]";
+connectAttr "low_neck_orientConstraint1.crz" "jackie_rigRN.phl[259]";
+connectAttr "jackie_rigRN.phl[260]" "low_neck_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[261]" "low_neck_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[262]" "low_neck_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[263]" "high_neck_orientConstraint1.is";
+connectAttr "high_neck_orientConstraint1.crx" "jackie_rigRN.phl[264]";
+connectAttr "high_neck_orientConstraint1.cry" "jackie_rigRN.phl[265]";
+connectAttr "high_neck_orientConstraint1.crz" "jackie_rigRN.phl[266]";
+connectAttr "jackie_rigRN.phl[267]" "high_neck_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[268]" "high_neck_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[269]" "high_neck_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[270]" "head_orientConstraint1.is";
+connectAttr "head_orientConstraint1.crx" "jackie_rigRN.phl[271]";
+connectAttr "head_orientConstraint1.cry" "jackie_rigRN.phl[272]";
+connectAttr "head_orientConstraint1.crz" "jackie_rigRN.phl[273]";
+connectAttr "jackie_rigRN.phl[274]" "head_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[275]" "head_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[276]" "head_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[277]" "Teeth_parentConstraint1.tg[0].tis";
+connectAttr "jackie_rigRN.phl[278]" "Teeth_parentConstraint1.tg[0].ts";
+connectAttr "jackie_rigRN.phl[279]" "Teeth_parentConstraint1.tg[0].tt";
+connectAttr "jackie_rigRN.phl[280]" "Teeth_parentConstraint1.tg[0].trp";
+connectAttr "jackie_rigRN.phl[281]" "Teeth_parentConstraint1.tg[0].trt";
+connectAttr "jackie_rigRN.phl[282]" "Teeth_parentConstraint1.tg[0].tr";
+connectAttr "jackie_rigRN.phl[283]" "Teeth_parentConstraint1.tg[0].tro";
+connectAttr "jackie_rigRN.phl[284]" "Teeth_parentConstraint1.tg[0].tpm";
+connectAttr "jackie_rigRN.phl[285]" "Teeth_parentConstraint1.tg[0].tjo";
+connectAttr "jackie_rigRN.phl[286]" "Teeth_parentConstraint1.tg[0].tsc";
+connectAttr "jackie_rigRN.phl[287]" "jackieEyeLeft_parentConstraint1.tg[0].tis";
+connectAttr "jackie_rigRN.phl[288]" "jackieEyeLeft_parentConstraint1.tg[0].tr";
+connectAttr "jackie_rigRN.phl[289]" "jackieEyeLeft_pointConstraint1.tg[0].tt";
+connectAttr "jackie_rigRN.phl[290]" "jackieEyeLeft_parentConstraint1.tg[0].tt";
+connectAttr "jackie_rigRN.phl[291]" "jackieEyeLeft_pointConstraint1.tg[0].trp";
+connectAttr "jackie_rigRN.phl[292]" "jackieEyeLeft_parentConstraint1.tg[0].trp";
+connectAttr "jackie_rigRN.phl[293]" "jackieEyeLeft_pointConstraint1.tg[0].trt";
+connectAttr "jackie_rigRN.phl[294]" "jackieEyeLeft_parentConstraint1.tg[0].trt";
+connectAttr "jackie_rigRN.phl[295]" "jackieEyeLeft_pointConstraint1.tg[0].tpm";
+connectAttr "jackie_rigRN.phl[296]" "jackieEyeLeft_parentConstraint1.tg[0].tpm";
+connectAttr "jackie_rigRN.phl[297]" "jackieEyeLeft_parentConstraint1.tg[0].tro";
+connectAttr "jackie_rigRN.phl[298]" "jackieEyeLeft_parentConstraint1.tg[0].ts";
+connectAttr "jackie_rigRN.phl[299]" "jackieEyeLeft_parentConstraint1.tg[0].tjo";
+connectAttr "jackie_rigRN.phl[300]" "jackieEyeLeft_parentConstraint1.tg[0].tsc";
+connectAttr "jackie_rigRN.phl[301]" "jackierEyeRight_parentConstraint1.tg[0].tis"
 		;
 connectAttr "jackie_rigRN.phl[302]" "jackierEyeRight_pointConstraint1.tg[0].tt";
-connectAttr "jackie_rigRN.phl[303]" "jackierEyeRight_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[303]" "jackierEyeRight_parentConstraint1.tg[0].tt"
 		;
 connectAttr "jackie_rigRN.phl[304]" "jackierEyeRight_pointConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[305]" "jackierEyeRight_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[305]" "jackierEyeRight_parentConstraint1.tg[0].trp"
 		;
 connectAttr "jackie_rigRN.phl[306]" "jackierEyeRight_pointConstraint1.tg[0].trt"
 		;
-connectAttr "jackie_rigRN.phl[307]" "jackierEyeRight_parentConstraint1.tg[0].tpm"
+connectAttr "jackie_rigRN.phl[307]" "jackierEyeRight_parentConstraint1.tg[0].trt"
 		;
 connectAttr "jackie_rigRN.phl[308]" "jackierEyeRight_pointConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[309]" "jackierEyeRight_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[309]" "jackierEyeRight_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[310]" "jackierEyeRight_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[310]" "jackierEyeRight_parentConstraint1.tg[0].tr"
 		;
-connectAttr "jackie_rigRN.phl[311]" "jackierEyeRight_parentConstraint1.tg[0].ts"
+connectAttr "jackie_rigRN.phl[311]" "jackierEyeRight_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[312]" "jackierEyeRight_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[312]" "jackierEyeRight_parentConstraint1.tg[0].ts"
 		;
-connectAttr "jackie_rigRN.phl[313]" "jackierEyeRight_parentConstraint1.tg[0].tsc"
+connectAttr "jackie_rigRN.phl[313]" "jackierEyeRight_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "jackie_rigRN.phl[314]" "head_ctl_pointConstraint1.tg[0].tt";
-connectAttr "jackie_rigRN.phl[315]" "head_ctl_pointConstraint1.tg[0].trp";
-connectAttr "jackie_rigRN.phl[316]" "head_ctl_pointConstraint1.tg[0].trt";
-connectAttr "jackie_rigRN.phl[317]" "head_ctl_pointConstraint1.tg[0].tpm";
-connectAttr "jackie_rigRN.phl[318]" "lf_clavicle_ikHandle.hsj";
-connectAttr "jackie_rigRN.phl[319]" "left_shoulder_orientConstraint1.is";
-connectAttr "left_shoulder_orientConstraint1.crx" "jackie_rigRN.phl[320]";
-connectAttr "left_shoulder_orientConstraint1.cry" "jackie_rigRN.phl[321]";
-connectAttr "left_shoulder_orientConstraint1.crz" "jackie_rigRN.phl[322]";
-connectAttr "jackie_rigRN.phl[323]" "lf_wrist_ikHandle_poleVectorConstraint1.crp"
+connectAttr "jackie_rigRN.phl[314]" "jackierEyeRight_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "jackie_rigRN.phl[324]" "effector_lf_clavicle.tx";
-connectAttr "jackie_rigRN.phl[325]" "effector_lf_clavicle.ty";
-connectAttr "jackie_rigRN.phl[326]" "effector_lf_clavicle.tz";
-connectAttr "jackie_rigRN.phl[327]" "lf_wrist_ikHandle.hsj";
-connectAttr "jackie_rigRN.phl[328]" "left_shoulder_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[329]" "left_shoulder_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[330]" "left_shoulder_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[331]" "lf_wrist_ikHandle_poleVectorConstraint1.ps"
+connectAttr "jackie_rigRN.phl[315]" "head_ctl_pointConstraint1.tg[0].tt";
+connectAttr "jackie_rigRN.phl[316]" "head_ctl_pointConstraint1.tg[0].trp";
+connectAttr "jackie_rigRN.phl[317]" "head_ctl_pointConstraint1.tg[0].trt";
+connectAttr "jackie_rigRN.phl[318]" "head_ctl_pointConstraint1.tg[0].tpm";
+connectAttr "jackie_rigRN.phl[319]" "lf_clavicle_ikHandle.hsj";
+connectAttr "jackie_rigRN.phl[320]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[21].dn"
 		;
-connectAttr "jackie_rigRN.phl[332]" "left_elbow_orientConstraint1.is";
-connectAttr "left_elbow_orientConstraint1.crx" "jackie_rigRN.phl[333]";
-connectAttr "left_elbow_orientConstraint1.cry" "jackie_rigRN.phl[334]";
-connectAttr "left_elbow_orientConstraint1.crz" "jackie_rigRN.phl[335]";
-connectAttr "jackie_rigRN.phl[336]" "left_elbow_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[337]" "left_elbow_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[338]" "left_elbow_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[339]" "effector_lf_wrist.tx";
-connectAttr "jackie_rigRN.phl[340]" "effector_lf_wrist.ty";
-connectAttr "jackie_rigRN.phl[341]" "effector_lf_wrist.tz";
-connectAttr "jackie_rigRN.phl[342]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tis"
+connectAttr "jackie_rigRN.phl[321]" "left_shoulder_orientConstraint1.is";
+connectAttr "left_shoulder_orientConstraint1.crx" "jackie_rigRN.phl[322]";
+connectAttr "left_shoulder_orientConstraint1.cry" "jackie_rigRN.phl[323]";
+connectAttr "left_shoulder_orientConstraint1.crz" "jackie_rigRN.phl[324]";
+connectAttr "jackie_rigRN.phl[325]" "lf_wrist_ikHandle_poleVectorConstraint1.crp"
 		;
-connectAttr "jackie_rigRN.phl[343]" "left_wrist_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[344]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].ts"
+connectAttr "jackie_rigRN.phl[326]" "effector_lf_clavicle.tx";
+connectAttr "jackie_rigRN.phl[327]" "effector_lf_clavicle.ty";
+connectAttr "jackie_rigRN.phl[328]" "effector_lf_clavicle.tz";
+connectAttr "jackie_rigRN.phl[329]" "lf_wrist_ikHandle.hsj";
+connectAttr "jackie_rigRN.phl[330]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
 		;
-connectAttr "jackie_rigRN.phl[345]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
+connectAttr "jackie_rigRN.phl[331]" "left_shoulder_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[332]" "left_shoulder_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[333]" "left_shoulder_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[334]" "lf_wrist_ikHandle_poleVectorConstraint1.ps"
 		;
-connectAttr "jackie_rigRN.phl[346]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[335]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
 		;
-connectAttr "left_wrist_orientConstraint1.crz" "jackie_rigRN.phl[347]";
-connectAttr "left_wrist_orientConstraint1.crx" "jackie_rigRN.phl[348]";
-connectAttr "left_wrist_orientConstraint1.cry" "jackie_rigRN.phl[349]";
-connectAttr "jackie_rigRN.phl[350]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[336]" "left_elbow_orientConstraint1.is";
+connectAttr "left_elbow_orientConstraint1.crx" "jackie_rigRN.phl[337]";
+connectAttr "left_elbow_orientConstraint1.cry" "jackie_rigRN.phl[338]";
+connectAttr "left_elbow_orientConstraint1.crz" "jackie_rigRN.phl[339]";
+connectAttr "jackie_rigRN.phl[340]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
 		;
-connectAttr "jackie_rigRN.phl[351]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[341]" "left_elbow_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[342]" "left_elbow_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[343]" "left_elbow_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[344]" "effector_lf_wrist.tx";
+connectAttr "jackie_rigRN.phl[345]" "effector_lf_wrist.ty";
+connectAttr "jackie_rigRN.phl[346]" "effector_lf_wrist.tz";
+connectAttr "jackie_rigRN.phl[347]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tis"
 		;
-connectAttr "jackie_rigRN.phl[352]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
+connectAttr "jackie_rigRN.phl[348]" "left_wrist_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[349]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].ts"
 		;
-connectAttr "jackie_rigRN.phl[353]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[350]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
 		;
-connectAttr "jackie_rigRN.phl[354]" "left_wrist_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[355]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[351]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
 		;
-connectAttr "jackie_rigRN.phl[356]" "left_wrist_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[357]" "left_wrist_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[358]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
+connectAttr "left_wrist_orientConstraint1.crz" "jackie_rigRN.phl[352]";
+connectAttr "left_wrist_orientConstraint1.crx" "jackie_rigRN.phl[353]";
+connectAttr "left_wrist_orientConstraint1.cry" "jackie_rigRN.phl[354]";
+connectAttr "jackie_rigRN.phl[355]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[359]" "rt_clavicle_ikHandle.hsj";
-connectAttr "jackie_rigRN.phl[360]" "right_shoulder_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[361]" "rt_wrist_ikHandle.hsj";
-connectAttr "right_shoulder_orientConstraint1.crx" "jackie_rigRN.phl[362]";
-connectAttr "right_shoulder_orientConstraint1.cry" "jackie_rigRN.phl[363]";
-connectAttr "right_shoulder_orientConstraint1.crz" "jackie_rigRN.phl[364]";
-connectAttr "jackie_rigRN.phl[365]" "rt_wrist_ikHandle_poleVectorConstraint1.crp"
+connectAttr "jackie_rigRN.phl[356]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
 		;
-connectAttr "jackie_rigRN.phl[366]" "effector_rt_clavicle.tx";
-connectAttr "jackie_rigRN.phl[367]" "effector_rt_clavicle.ty";
-connectAttr "jackie_rigRN.phl[368]" "effector_rt_clavicle.tz";
-connectAttr "jackie_rigRN.phl[369]" "right_shoulder_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[370]" "right_shoulder_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[371]" "right_shoulder_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[372]" "rt_wrist_ikHandle_poleVectorConstraint1.ps"
+connectAttr "jackie_rigRN.phl[357]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[373]" "right_elbow_orientConstraint1.is";
-connectAttr "right_elbow_orientConstraint1.crx" "jackie_rigRN.phl[374]";
-connectAttr "right_elbow_orientConstraint1.cry" "jackie_rigRN.phl[375]";
-connectAttr "right_elbow_orientConstraint1.crz" "jackie_rigRN.phl[376]";
-connectAttr "jackie_rigRN.phl[377]" "right_elbow_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[378]" "right_elbow_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[379]" "right_elbow_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[380]" "effector_rt_wrist.tx";
-connectAttr "jackie_rigRN.phl[381]" "effector_rt_wrist.ty";
-connectAttr "jackie_rigRN.phl[382]" "effector_rt_wrist.tz";
-connectAttr "jackie_rigRN.phl[383]" "right_wrist_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[384]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tis"
+connectAttr "jackie_rigRN.phl[358]" "left_wrist_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[359]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[385]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].ts"
+connectAttr "jackie_rigRN.phl[360]" "left_wrist_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[361]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "jackie_rigRN.phl[386]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
+connectAttr "jackie_rigRN.phl[362]" "left_wrist_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[363]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "jackie_rigRN.phl[387]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[364]" "rt_clavicle_ikHandle.hsj";
+connectAttr "jackie_rigRN.phl[365]" "right_shoulder_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[366]" "rt_wrist_ikHandle.hsj";
+connectAttr "right_shoulder_orientConstraint1.crx" "jackie_rigRN.phl[367]";
+connectAttr "right_shoulder_orientConstraint1.cry" "jackie_rigRN.phl[368]";
+connectAttr "right_shoulder_orientConstraint1.crz" "jackie_rigRN.phl[369]";
+connectAttr "jackie_rigRN.phl[370]" "rt_wrist_ikHandle_poleVectorConstraint1.crp"
 		;
-connectAttr "jackie_rigRN.phl[388]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[371]" "effector_rt_clavicle.tx";
+connectAttr "jackie_rigRN.phl[372]" "effector_rt_clavicle.ty";
+connectAttr "jackie_rigRN.phl[373]" "effector_rt_clavicle.tz";
+connectAttr "jackie_rigRN.phl[374]" "right_shoulder_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[375]" "right_shoulder_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[376]" "right_shoulder_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[377]" "rt_wrist_ikHandle_poleVectorConstraint1.ps"
 		;
-connectAttr "jackie_rigRN.phl[389]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
+connectAttr "jackie_rigRN.phl[378]" "right_elbow_orientConstraint1.is";
+connectAttr "right_elbow_orientConstraint1.crx" "jackie_rigRN.phl[379]";
+connectAttr "right_elbow_orientConstraint1.cry" "jackie_rigRN.phl[380]";
+connectAttr "right_elbow_orientConstraint1.crz" "jackie_rigRN.phl[381]";
+connectAttr "jackie_rigRN.phl[382]" "right_elbow_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[383]" "right_elbow_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[384]" "right_elbow_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[385]" "effector_rt_wrist.tx";
+connectAttr "jackie_rigRN.phl[386]" "effector_rt_wrist.ty";
+connectAttr "jackie_rigRN.phl[387]" "effector_rt_wrist.tz";
+connectAttr "jackie_rigRN.phl[388]" "right_wrist_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[389]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tis"
 		;
-connectAttr "jackie_rigRN.phl[390]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[390]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].ts"
 		;
-connectAttr "right_wrist_orientConstraint1.crx" "jackie_rigRN.phl[391]";
-connectAttr "right_wrist_orientConstraint1.cry" "jackie_rigRN.phl[392]";
-connectAttr "right_wrist_orientConstraint1.crz" "jackie_rigRN.phl[393]";
-connectAttr "jackie_rigRN.phl[394]" "right_wrist_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[395]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[391]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
 		;
-connectAttr "jackie_rigRN.phl[396]" "right_wrist_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[397]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[392]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[398]" "right_wrist_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[399]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
+connectAttr "jackie_rigRN.phl[393]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
 		;
-connectAttr "jackie_rigRN.phl[400]" "left_hip_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[401]" "lf_foot_ikHandle.hsj";
-connectAttr "left_hip_orientConstraint1.crx" "jackie_rigRN.phl[402]";
-connectAttr "left_hip_orientConstraint1.cry" "jackie_rigRN.phl[403]";
-connectAttr "left_hip_orientConstraint1.crz" "jackie_rigRN.phl[404]";
-connectAttr "jackie_rigRN.phl[405]" "left_hip_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[406]" "left_hip_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[407]" "left_hip_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[408]" "lf_foot_ikHandle_poleVectorConstraint1.ps";
-connectAttr "jackie_rigRN.phl[409]" "lf_foot_ikHandle_poleVectorConstraint1.crp"
+connectAttr "jackie_rigRN.phl[394]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[410]" "left_knee_orientConstraint1.is";
-connectAttr "left_knee_orientConstraint1.crx" "jackie_rigRN.phl[411]";
-connectAttr "left_knee_orientConstraint1.cry" "jackie_rigRN.phl[412]";
-connectAttr "left_knee_orientConstraint1.crz" "jackie_rigRN.phl[413]";
-connectAttr "jackie_rigRN.phl[414]" "left_knee_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[415]" "left_knee_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[416]" "left_knee_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[417]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tis"
+connectAttr "jackie_rigRN.phl[395]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
 		;
-connectAttr "jackie_rigRN.phl[418]" "left_ankle_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[419]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].ts"
+connectAttr "right_wrist_orientConstraint1.crx" "jackie_rigRN.phl[396]";
+connectAttr "right_wrist_orientConstraint1.cry" "jackie_rigRN.phl[397]";
+connectAttr "right_wrist_orientConstraint1.crz" "jackie_rigRN.phl[398]";
+connectAttr "jackie_rigRN.phl[399]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[420]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tt"
+connectAttr "jackie_rigRN.phl[400]" "right_wrist_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[401]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "jackie_rigRN.phl[421]" "effector3.tx";
-connectAttr "jackie_rigRN.phl[422]" "effector3.ty";
-connectAttr "jackie_rigRN.phl[423]" "effector3.tz";
-connectAttr "jackie_rigRN.phl[424]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[402]" "right_wrist_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[403]" "right_wrist_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[404]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "left_ankle_orientConstraint1.crx" "jackie_rigRN.phl[425]";
-connectAttr "left_ankle_orientConstraint1.cry" "jackie_rigRN.phl[426]";
-connectAttr "left_ankle_orientConstraint1.crz" "jackie_rigRN.phl[427]";
-connectAttr "jackie_rigRN.phl[428]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[405]" "left_hip_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[406]" "lf_foot_ikHandle.hsj";
+connectAttr "left_hip_orientConstraint1.crx" "jackie_rigRN.phl[407]";
+connectAttr "left_hip_orientConstraint1.cry" "jackie_rigRN.phl[408]";
+connectAttr "left_hip_orientConstraint1.crz" "jackie_rigRN.phl[409]";
+connectAttr "jackie_rigRN.phl[410]" "left_hip_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[411]" "left_hip_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[412]" "left_hip_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[413]" "lf_foot_ikHandle_poleVectorConstraint1.ps";
+connectAttr "jackie_rigRN.phl[414]" "lf_foot_ikHandle_poleVectorConstraint1.crp"
 		;
-connectAttr "jackie_rigRN.phl[429]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[415]" "left_knee_orientConstraint1.is";
+connectAttr "left_knee_orientConstraint1.crx" "jackie_rigRN.phl[416]";
+connectAttr "left_knee_orientConstraint1.cry" "jackie_rigRN.phl[417]";
+connectAttr "left_knee_orientConstraint1.crz" "jackie_rigRN.phl[418]";
+connectAttr "jackie_rigRN.phl[419]" "left_knee_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[420]" "left_knee_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[421]" "left_knee_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[422]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tis"
 		;
-connectAttr "jackie_rigRN.phl[430]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tpm"
+connectAttr "jackie_rigRN.phl[423]" "left_ankle_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[424]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].ts"
 		;
-connectAttr "jackie_rigRN.phl[431]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[425]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tt"
 		;
-connectAttr "jackie_rigRN.phl[432]" "left_ankle_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[433]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[426]" "effector3.tx";
+connectAttr "jackie_rigRN.phl[427]" "effector3.ty";
+connectAttr "jackie_rigRN.phl[428]" "effector3.tz";
+connectAttr "jackie_rigRN.phl[429]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tr"
 		;
-connectAttr "jackie_rigRN.phl[434]" "left_ankle_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[435]" "left_ankle_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[436]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tsc"
+connectAttr "left_ankle_orientConstraint1.crx" "jackie_rigRN.phl[430]";
+connectAttr "left_ankle_orientConstraint1.cry" "jackie_rigRN.phl[431]";
+connectAttr "left_ankle_orientConstraint1.crz" "jackie_rigRN.phl[432]";
+connectAttr "jackie_rigRN.phl[433]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[437]" "right_hip_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[438]" "rt_leg_ikHandle.hsj";
-connectAttr "right_hip_orientConstraint1.crx" "jackie_rigRN.phl[439]";
-connectAttr "right_hip_orientConstraint1.cry" "jackie_rigRN.phl[440]";
-connectAttr "right_hip_orientConstraint1.crz" "jackie_rigRN.phl[441]";
-connectAttr "jackie_rigRN.phl[442]" "rt_leg_ikHandle_poleVectorConstraint1.crp";
-connectAttr "jackie_rigRN.phl[443]" "rt_leg_ikHandle_poleVectorConstraint1.ps";
-connectAttr "jackie_rigRN.phl[444]" "right_hip_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[445]" "right_hip_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[446]" "right_hip_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[447]" "right_knee_orientConstraint1.is";
-connectAttr "right_knee_orientConstraint1.crx" "jackie_rigRN.phl[448]";
-connectAttr "right_knee_orientConstraint1.cry" "jackie_rigRN.phl[449]";
-connectAttr "right_knee_orientConstraint1.crz" "jackie_rigRN.phl[450]";
-connectAttr "jackie_rigRN.phl[451]" "right_knee_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[452]" "right_knee_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[453]" "right_knee_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[454]" "right_ankle_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[455]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tis"
+connectAttr "jackie_rigRN.phl[434]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trt"
 		;
-connectAttr "jackie_rigRN.phl[456]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].ts"
+connectAttr "jackie_rigRN.phl[435]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[457]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tt"
+connectAttr "jackie_rigRN.phl[436]" "left_ankle_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[437]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[458]" "effector2.tx";
-connectAttr "jackie_rigRN.phl[459]" "effector2.ty";
-connectAttr "jackie_rigRN.phl[460]" "effector2.tz";
-connectAttr "jackie_rigRN.phl[461]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[438]" "left_ankle_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[439]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "jackie_rigRN.phl[462]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[440]" "left_ankle_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[441]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "jackie_rigRN.phl[463]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tpm"
+connectAttr "jackie_rigRN.phl[442]" "right_hip_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[443]" "rt_leg_ikHandle.hsj";
+connectAttr "right_hip_orientConstraint1.crx" "jackie_rigRN.phl[444]";
+connectAttr "right_hip_orientConstraint1.cry" "jackie_rigRN.phl[445]";
+connectAttr "right_hip_orientConstraint1.crz" "jackie_rigRN.phl[446]";
+connectAttr "jackie_rigRN.phl[447]" "rt_leg_ikHandle_poleVectorConstraint1.crp";
+connectAttr "jackie_rigRN.phl[448]" "rt_leg_ikHandle_poleVectorConstraint1.ps";
+connectAttr "jackie_rigRN.phl[449]" "right_hip_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[450]" "right_hip_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[451]" "right_hip_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[452]" "right_knee_orientConstraint1.is";
+connectAttr "right_knee_orientConstraint1.crx" "jackie_rigRN.phl[453]";
+connectAttr "right_knee_orientConstraint1.cry" "jackie_rigRN.phl[454]";
+connectAttr "right_knee_orientConstraint1.crz" "jackie_rigRN.phl[455]";
+connectAttr "jackie_rigRN.phl[456]" "right_knee_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[457]" "right_knee_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[458]" "right_knee_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[459]" "right_ankle_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[460]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tis"
 		;
-connectAttr "jackie_rigRN.phl[464]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[461]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].ts"
 		;
-connectAttr "right_ankle_orientConstraint1.crx" "jackie_rigRN.phl[465]";
-connectAttr "right_ankle_orientConstraint1.cry" "jackie_rigRN.phl[466]";
-connectAttr "right_ankle_orientConstraint1.crz" "jackie_rigRN.phl[467]";
-connectAttr "jackie_rigRN.phl[468]" "right_ankle_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[469]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[462]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tt"
 		;
-connectAttr "jackie_rigRN.phl[470]" "right_ankle_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[471]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[463]" "effector2.tx";
+connectAttr "jackie_rigRN.phl[464]" "effector2.ty";
+connectAttr "jackie_rigRN.phl[465]" "effector2.tz";
+connectAttr "jackie_rigRN.phl[466]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[472]" "right_ankle_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[473]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tsc"
+connectAttr "jackie_rigRN.phl[467]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trt"
+		;
+connectAttr "jackie_rigRN.phl[468]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "jackie_rigRN.phl[469]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tr"
+		;
+connectAttr "right_ankle_orientConstraint1.crx" "jackie_rigRN.phl[470]";
+connectAttr "right_ankle_orientConstraint1.cry" "jackie_rigRN.phl[471]";
+connectAttr "right_ankle_orientConstraint1.crz" "jackie_rigRN.phl[472]";
+connectAttr "jackie_rigRN.phl[473]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tro"
+		;
+connectAttr "jackie_rigRN.phl[474]" "right_ankle_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[475]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "jackie_rigRN.phl[476]" "right_ankle_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[477]" "right_ankle_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[478]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "jackie_rigRN.phl[479]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "jackie_rigRN.phl[480]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[20].dn"
+		;
+connectAttr "jackie_rigRN.phl[481]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[23].dn"
+		;
+connectAttr "jackie_rigRN.phl[482]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[24].dn"
+		;
+connectAttr "jackie_rigRN.phl[483]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "jackie_rigRN.phl[484]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
+		;
+connectAttr "jackie_rigRN.phl[485]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "jackie_rigRN.phl[486]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+		;
+connectAttr "jackie_rigRN.phl[487]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
 		;
 connectAttr "accessories_clothes.di" "jackie_rigRN.phl[100]";
 connectAttr "geo.di" "jackie_rigRN.phl[101]";
@@ -8138,10 +6154,10 @@ connectAttr "geo.di" "jackie_rigRN.phl[170]";
 connectAttr "geo.di" "jackie_rigRN.phl[171]";
 connectAttr "geo.di" "jackie_rigRN.phl[172]";
 connectAttr "accessories_clothes.di" "jackie_rigRN.phl[47]";
-connectAttr "Teeth_parentConstraint1.ctx" "teeth_v1_latestRN1.phl[1]";
-connectAttr "Teeth_parentConstraint1.ctz" "teeth_v1_latestRN1.phl[2]";
-connectAttr "Teeth_parentConstraint1.cty" "teeth_v1_latestRN1.phl[3]";
-connectAttr "teeth_v1_latestRN1.phl[4]" "Teeth_parentConstraint1.crp";
+connectAttr "teeth_v1_latestRN1.phl[1]" "Teeth_parentConstraint1.crp";
+connectAttr "Teeth_parentConstraint1.ctx" "teeth_v1_latestRN1.phl[2]";
+connectAttr "Teeth_parentConstraint1.ctz" "teeth_v1_latestRN1.phl[3]";
+connectAttr "Teeth_parentConstraint1.cty" "teeth_v1_latestRN1.phl[4]";
 connectAttr "Teeth_parentConstraint1.crx" "teeth_v1_latestRN1.phl[5]";
 connectAttr "Teeth_parentConstraint1.cry" "teeth_v1_latestRN1.phl[6]";
 connectAttr "Teeth_parentConstraint1.crz" "teeth_v1_latestRN1.phl[7]";
@@ -8323,34 +6339,6 @@ connectAttr "jackie_lf_shoulder_fk_ctl_visibility.o" "lf_shoulder_fk_ctl.v";
 connectAttr "jackie_lf_elbow_fk_ctl_visibility.o" "lf_elbow_fk_ctl.v";
 connectAttr "jackie_lf_wrist_fk_ctl_visibility.o" "lf_wrist_fk_ctl.v";
 connectAttr "lf_wrist_ik_ctl_visibility.o" "lf_wrist_ik_ctl.v";
-connectAttr "effector_lf_wrist.hp" "lf_wrist_ikHandle.hee";
-connectAttr "ikRPsolver.msg" "lf_wrist_ikHandle.hsv";
-connectAttr "lf_wrist_ikHandle_pointConstraint1.ctx" "lf_wrist_ikHandle.tx";
-connectAttr "lf_wrist_ikHandle_pointConstraint1.cty" "lf_wrist_ikHandle.ty";
-connectAttr "lf_wrist_ikHandle_pointConstraint1.ctz" "lf_wrist_ikHandle.tz";
-connectAttr "lf_wrist_ikHandle_visibility.o" "lf_wrist_ikHandle.v";
-connectAttr "lf_wrist_ikHandle_ikBlend.o" "lf_wrist_ikHandle.ikb";
-connectAttr "lf_wrist_ikHandle_poleVectorConstraint1.ctx" "lf_wrist_ikHandle.pvx"
-		;
-connectAttr "lf_wrist_ikHandle_poleVectorConstraint1.cty" "lf_wrist_ikHandle.pvy"
-		;
-connectAttr "lf_wrist_ikHandle_poleVectorConstraint1.ctz" "lf_wrist_ikHandle.pvz"
-		;
-connectAttr "lf_wrist_ikHandle.pim" "lf_wrist_ikHandle_poleVectorConstraint1.cpim"
-		;
-connectAttr "lf_elbow_PV_ctl.t" "lf_wrist_ikHandle_poleVectorConstraint1.tg[0].tt"
-		;
-connectAttr "lf_elbow_PV_ctl.rp" "lf_wrist_ikHandle_poleVectorConstraint1.tg[0].trp"
-		;
-connectAttr "lf_elbow_PV_ctl.rpt" "lf_wrist_ikHandle_poleVectorConstraint1.tg[0].trt"
-		;
-connectAttr "lf_elbow_PV_ctl.pm" "lf_wrist_ikHandle_poleVectorConstraint1.tg[0].tpm"
-		;
-connectAttr "lf_wrist_ikHandle_poleVectorConstraint1.w0" "lf_wrist_ikHandle_poleVectorConstraint1.tg[0].tw"
-		;
-connectAttr "lf_wrist_ikHandle.pim" "lf_wrist_ikHandle_pointConstraint1.cpim";
-connectAttr "lf_wrist_ikHandle.rp" "lf_wrist_ikHandle_pointConstraint1.crp";
-connectAttr "lf_wrist_ikHandle.rpt" "lf_wrist_ikHandle_pointConstraint1.crt";
 connectAttr "lf_wrist_ik_ctl.t" "lf_wrist_ikHandle_pointConstraint1.tg[0].tt";
 connectAttr "lf_wrist_ik_ctl.rp" "lf_wrist_ikHandle_pointConstraint1.tg[0].trp";
 connectAttr "lf_wrist_ik_ctl.rpt" "lf_wrist_ikHandle_pointConstraint1.tg[0].trt"
@@ -8519,6 +6507,40 @@ connectAttr "rt_foot_ikHandleGRP_pointConstraint1.w0" "rt_foot_ikHandleGRP_point
 		;
 connectAttr "lf_foot_ik_ctl_visibility.o" "lf_foot_ik_ctl.v";
 connectAttr "rt_foot_ik_ctl_visibility.o" "rt_foot_ik_ctl.v";
+connectAttr "effector_lf_wrist.hp" "lf_wrist_ikHandle.hee";
+connectAttr "ikRPsolver.msg" "lf_wrist_ikHandle.hsv";
+connectAttr "lf_wrist_ikHandle_pointConstraint2.ctx" "lf_wrist_ikHandle.tx";
+connectAttr "lf_wrist_ikHandle_pointConstraint2.cty" "lf_wrist_ikHandle.ty";
+connectAttr "lf_wrist_ikHandle_pointConstraint2.ctz" "lf_wrist_ikHandle.tz";
+connectAttr "lf_wrist_ikHandle_ikBlend.o" "lf_wrist_ikHandle.ikb";
+connectAttr "lf_wrist_ikHandle_poleVectorConstraint1.ctx" "lf_wrist_ikHandle.pvx"
+		;
+connectAttr "lf_wrist_ikHandle_poleVectorConstraint1.cty" "lf_wrist_ikHandle.pvy"
+		;
+connectAttr "lf_wrist_ikHandle_poleVectorConstraint1.ctz" "lf_wrist_ikHandle.pvz"
+		;
+connectAttr "lf_wrist_ikHandle.pim" "lf_wrist_ikHandle_poleVectorConstraint1.cpim"
+		;
+connectAttr "lf_elbow_PV_ctl.t" "lf_wrist_ikHandle_poleVectorConstraint1.tg[0].tt"
+		;
+connectAttr "lf_elbow_PV_ctl.rp" "lf_wrist_ikHandle_poleVectorConstraint1.tg[0].trp"
+		;
+connectAttr "lf_elbow_PV_ctl.rpt" "lf_wrist_ikHandle_poleVectorConstraint1.tg[0].trt"
+		;
+connectAttr "lf_elbow_PV_ctl.pm" "lf_wrist_ikHandle_poleVectorConstraint1.tg[0].tpm"
+		;
+connectAttr "lf_wrist_ikHandle_poleVectorConstraint1.w0" "lf_wrist_ikHandle_poleVectorConstraint1.tg[0].tw"
+		;
+connectAttr "lf_wrist_ikHandle.pim" "lf_wrist_ikHandle_pointConstraint2.cpim";
+connectAttr "lf_wrist_ikHandle.rp" "lf_wrist_ikHandle_pointConstraint2.crp";
+connectAttr "lf_wrist_ikHandle.rpt" "lf_wrist_ikHandle_pointConstraint2.crt";
+connectAttr "lf_wrist_ik_ctl.t" "lf_wrist_ikHandle_pointConstraint2.tg[0].tt";
+connectAttr "lf_wrist_ik_ctl.rp" "lf_wrist_ikHandle_pointConstraint2.tg[0].trp";
+connectAttr "lf_wrist_ik_ctl.rpt" "lf_wrist_ikHandle_pointConstraint2.tg[0].trt"
+		;
+connectAttr "lf_wrist_ik_ctl.pm" "lf_wrist_ikHandle_pointConstraint2.tg[0].tpm";
+connectAttr "lf_wrist_ikHandle_pointConstraint2.w0" "lf_wrist_ikHandle_pointConstraint2.tg[0].tw"
+		;
 connectAttr "root_ctl.t" "root_parentConstraint1.tg[0].tt";
 connectAttr "root_ctl.rp" "root_parentConstraint1.tg[0].trp";
 connectAttr "root_ctl.rpt" "root_parentConstraint1.tg[0].trt";
@@ -8683,13 +6705,13 @@ connectAttr "head_ctl.r" "head_orientConstraint1.tg[0].tr";
 connectAttr "head_ctl.ro" "head_orientConstraint1.tg[0].tro";
 connectAttr "head_ctl.pm" "head_orientConstraint1.tg[0].tpm";
 connectAttr "head_orientConstraint1.w0" "head_orientConstraint1.tg[0].tw";
-connectAttr "jackierEyeRight_pointConstraint1.w0" "jackierEyeRight_pointConstraint1.tg[0].tw"
-		;
 connectAttr "jackierEyeRight_parentConstraint1.w0" "jackierEyeRight_parentConstraint1.tg[0].tw"
 		;
-connectAttr "jackieEyeLeft_pointConstraint1.w0" "jackieEyeLeft_pointConstraint1.tg[0].tw"
+connectAttr "jackierEyeRight_pointConstraint1.w0" "jackierEyeRight_pointConstraint1.tg[0].tw"
 		;
 connectAttr "jackieEyeLeft_parentConstraint1.w0" "jackieEyeLeft_parentConstraint1.tg[0].tw"
+		;
+connectAttr "jackieEyeLeft_pointConstraint1.w0" "jackieEyeLeft_pointConstraint1.tg[0].tw"
 		;
 connectAttr "Teeth_parentConstraint1.w0" "Teeth_parentConstraint1.tg[0].tw";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -8727,9 +6749,6 @@ connectAttr "rt_arm_ikfkSwitch_ctl.IKFK_Switch" "rt_wrist_ikHandle_visibility.i"
 		;
 connectAttr "lf_arm_ikfkSwitch_ctl.IKFK_Switch" "left_wrist_orientConstraint1_jackie_lf_wrist_fk_ctlW0.i"
 		;
-connectAttr "lf_arm_ikfkSwitch_ctl.IKFK_Switch" "lf_wrist_ikHandle_visibility.i"
-		;
-connectAttr "lf_arm_ikfkSwitch_ctl.IKFK_Switch" "lf_wrist_ikHandle_ikBlend.i";
 connectAttr "lf_arm_ikfkSwitch_ctl.IKFK_Switch" "left_wrist_orientConstraint1_lf_wrist_ik_ctlW1.i"
 		;
 connectAttr "rt_arm_ikfkSwitch_ctl.IKFK_Switch" "right_wrist_orientConstraint1_rt_wrist_ik_ctlW1.i"
@@ -8785,6 +6804,31 @@ connectAttr "rt_leg_ikfk_switch_ctl.IKFK_Switch" "rt_foot_ik_ctl_visibility.i";
 connectAttr "rt_leg_ikfk_switch_ctl.IKFK_Switch" "rt_leg_ik_PV_ctl_visibility.i"
 		;
 connectAttr "teeth_v1_latestRN1fosterParent1.msg" "teeth_v1_latestRN1.fp";
+connectAttr "lf_arm_ikfkSwitch_ctl.IKFK_Switch" "lf_wrist_ikHandle_ikBlend.i";
+connectAttr "lf_wrist_ikHandle_ikBlend.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "lf_wrist_ikHandle.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "lf_wrist_ikHandle_pointConstraint2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "lf_wrist_ikHandle_poleVectorConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "effector_lf_wrist.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "lf_shoulder_fk_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "left_shoulder_orientConstraint1_jackie_lf_shoulder_fk_ctlW0.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "lf_arm_ikfkSwitch_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
+		;
+connectAttr "left_shoulder_orientConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
+		;
+connectAttr "left_elbow_orientConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[19].dn"
+		;
+connectAttr "effector_lf_clavicle.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[22].dn"
+		;
+connectAttr "lf_wrist_ikHandle_GRP.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[25].dn"
+		;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "jackie_rigRN.phl[2]" ":initialShadingGroup.dsm" -na;
 connectAttr "jackie_rigRN.phl[3]" ":initialShadingGroup.dsm" -na;
