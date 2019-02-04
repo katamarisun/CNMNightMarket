@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Jackie_blendshapes.ma
-//Last modified: Mon, Feb 04, 2019 12:04:24 AM
+//Last modified: Mon, Feb 04, 2019 08:31:11 AM
 //Codeset: UTF-8
 file -rdi 1 -ns "teeth_v1_latest" -rfn "teeth_v1_latestRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma";
@@ -47,13 +47,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "BA3FAA52-4FDA-0ED2-0460-EBACF1374B49";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.004964376787011132 6.2870809653210111 0.8315936141520186 ;
-	setAttr ".r" -type "double3" -4.5383527307471683 -2159.4000000031124 4.3486530429664415e-17 ;
+	setAttr ".t" -type "double3" 0.011817316324554659 6.481070937225935 0.93091224857326604 ;
+	setAttr ".r" -type "double3" 0.86164726924336987 -2163.8000000000238 -6.2257082792900681e-18 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "899F93F5-4660-0706-8C2E-1286961DC47A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 0.5373701423455497;
+	setAttr ".coi" 0.65674078388886714;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -23320,12 +23320,12 @@ createNode blendShape -n "Eyebrows";
 	setAttr ".w[0]" 1;
 	setAttr ".w[1]" 0;
 	setAttr ".w[2]" 0.022346369922161102;
-	setAttr ".w[3]" 1;
+	setAttr ".w[3]" 0;
 	setAttr ".w[5]" 0;
 	setAttr ".w[6]" 0;
 	setAttr ".w[7]" 0.46927374601364136;
 	setAttr ".w[8]" 0.43016758561134338;
-	setAttr ".w[9]" 0.89385473728179932;
+	setAttr ".w[9]" 0;
 	setAttr -s 9 ".it[0].itg";
 	setAttr ".it[0].itg[0].iti[6000].ipt" -type "pointArray" 40 0 0 0 1 0 0 0 1 0
 		 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 1 0 9.276845958083868e-11
