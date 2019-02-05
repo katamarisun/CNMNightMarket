@@ -1,6 +1,6 @@
 //Maya ASCII 2018ff09 scene
 //Name: Ann_Latest.ma
-//Last modified: Mon, Feb 04, 2019 06:01:58 PM
+//Last modified: Mon, Feb 04, 2019 06:32:00 PM
 //Codeset: 1252
 requires maya "2018ff09";
 requires "stereoCamera" "10.0";
@@ -17,8 +17,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "55064EA9-7842-C7DD-3AF7-6FA52D8A2370";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.9107434784573858 1.0774717020575633 -0.15001580635288869 ;
-	setAttr ".r" -type "double3" -10.538352694762709 -264.99999999986994 0 ;
+	setAttr ".t" -type "double3" 2.794652376174025 1.1971699410788883 0.85552234850923048 ;
+	setAttr ".r" -type "double3" -12.938352694763278 -285.3999999998648 0 ;
 	setAttr ".rp" -type "double3" -8.4376949871511897e-15 -1.3322676295501878e-14 0 ;
 	setAttr ".rpt" -type "double3" 4.8614301549397892e-15 1.1271872496457586e-15 9.33642207450024e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -78,36 +78,6 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".den" -type "string" "side_depth";
 	setAttr ".man" -type "string" "side_mask";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
-	setAttr ".o" yes;
-createNode transform -n "back";
-	rename -uid "3ABE641C-4558-80E4-7FAD-14B556911AB4";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.39174458295543335 2.6569526552691012 -0.30002245767045754 ;
-	setAttr ".r" -type "double3" -80.400000000026495 497.99999999966411 0 ;
-createNode camera -n "backShape" -p "back";
-	rename -uid "2A5981AC-4429-EF2D-8F6E-AA83C4D48636";
-	setAttr -k off ".v";
-	setAttr ".rnd" no;
-	setAttr ".coi" 2.2932533703756635;
-	setAttr ".imn" -type "string" "back1";
-	setAttr ".den" -type "string" "back1_depth";
-	setAttr ".man" -type "string" "back1_mask";
-	setAttr ".hc" -type "string" "viewSet -b %camera";
-createNode transform -n "left";
-	rename -uid "83B9A119-4D29-0D64-637F-EA80137F530E";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" -1000.1 -0.21720044328107729 6.802032647256854 ;
-	setAttr ".r" -type "double3" 0 -89.999999999999986 0 ;
-createNode camera -n "leftShape" -p "left";
-	rename -uid "8F8BC603-4881-16F5-479D-E58387D0D0B3";
-	setAttr -k off ".v";
-	setAttr ".rnd" no;
-	setAttr ".coi" 1000.1;
-	setAttr ".ow" 2.9841196318153624;
-	setAttr ".imn" -type "string" "left1";
-	setAttr ".den" -type "string" "left1_depth";
-	setAttr ".man" -type "string" "left1_mask";
-	setAttr ".hc" -type "string" "viewSet -ls %camera";
 	setAttr ".o" yes;
 createNode transform -n "Ann_leapfrog";
 	rename -uid "E6DE0C4C-47AA-F831-2DE3-3ABC04F2DC1D";
