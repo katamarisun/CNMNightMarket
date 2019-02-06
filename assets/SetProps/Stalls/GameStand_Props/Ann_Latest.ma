@@ -1,6 +1,6 @@
 //Maya ASCII 2018ff09 scene
 //Name: Ann_Latest.ma
-//Last modified: Mon, Feb 04, 2019 06:32:00 PM
+//Last modified: Mon, Feb 04, 2019 07:53:02 PM
 //Codeset: 1252
 requires maya "2018ff09";
 requires "stereoCamera" "10.0";
@@ -17,7 +17,7 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "55064EA9-7842-C7DD-3AF7-6FA52D8A2370";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.794652376174025 1.1971699410788883 0.85552234850923048 ;
+	setAttr ".t" -type "double3" 1.6949221816984987 1.2892871899214646 0.75124880811743688 ;
 	setAttr ".r" -type "double3" -12.938352694763278 -285.3999999998648 0 ;
 	setAttr ".rp" -type "double3" -8.4376949871511897e-15 -1.3322676295501878e-14 0 ;
 	setAttr ".rpt" -type "double3" 4.8614301549397892e-15 1.1271872496457586e-15 9.33642207450024e-15 ;
@@ -25,7 +25,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A914C23A-7844-0245-6A68-BA8519DDB2FD";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 2.918835942320019;
+	setAttr ".coi" 1.8791469322694134;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
