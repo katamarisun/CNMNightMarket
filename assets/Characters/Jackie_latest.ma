@@ -1,11 +1,11 @@
 //Maya ASCII 2018ff09 scene
 //Name: Jackie_latest.ma
-//Last modified: Tue, Feb 05, 2019 08:54:01 PM
+//Last modified: Thu, Feb 07, 2019 12:10:12 AM
 //Codeset: 1252
 file -rdi 1 -ns "jackie_rig" -rfn "jackie_rigRN" -op "v=0;p=17;f=0" -typ "mayaAscii"
-		 "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_skinning.ma";
-file -rdi 2 -ns "teeth_v1_latest" -dr 1 -rfn "jackie_rig:teeth_v1_latestRN"
-		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma";
+		 "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_rig.ma";
+file -rdi 2 -ns "teeth_v1_latest" -rfn "jackie_rig:teeth_v1_latestRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma";
 file -rdi 2 -ns "jackieHoodie_latest1" -rfn "jackie_rig:jackieHoodie_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/ClothingAccessories/jackieHoodie_latest.ma";
 file -rdi 2 -ns "jackiePants_latest" -rfn "jackie_rig:jackiePants_latestRN"
@@ -21,7 +21,7 @@ file -rdi 2 -ns "JadeNecklace_v2_latest" -dr 1 -rfn "jackie_rig:JadeNecklace_v2_
 file -rdi 1 -ns "teeth_v1_latest1" -rfn "teeth_v1_latestRN1" -typ "mayaAscii"
 		 "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma";
 file -r -ns "jackie_rig" -dr 1 -rfn "jackie_rigRN" -op "v=0;p=17;f=0" -typ "mayaAscii"
-		 "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_skinning.ma";
+		 "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_rig.ma";
 file -r -ns "teeth_v1_latest1" -dr 1 -rfn "teeth_v1_latestRN1" -typ "mayaAscii" "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma";
 requires maya "2018ff09";
 requires "stereoCamera" "10.0";
@@ -39,18 +39,18 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "AD6D84A1-48BE-235D-D555-A58279DBEE5B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -2.7083235655730413 6.641443929487771 11.598455846091255 ;
-	setAttr ".r" -type "double3" -14.138352730935917 -1454.9999999996082 -8.2318812555123186e-16 ;
+	setAttr ".t" -type "double3" -0.58772457576398596 7.4397203424235672 7.2931191433420492 ;
+	setAttr ".r" -type "double3" -18.338352730984855 -1441.7999999992217 -3.4804490743675819e-16 ;
 	setAttr ".hio" yes;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A67F90E6-4184-0E83-6AE3-E5A0E87E9B44";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 12.284524613609861;
+	setAttr ".coi" 8.8676312540627187;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 0.035361643997316783 3.2513455569130025 -0.042583930440017514 ;
+	setAttr ".tp" -type "double3" 2.7577939033508301 5.6030488014221191 -0.17217794060707092 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".hio" yes;
 	setAttr ".ai_translator" -type "string" "perspective";
@@ -827,7 +827,7 @@ createNode transform -n "rt_arm_ikfkSwitch_ctl" -p "rt_arm_ctl";
 	setAttr -l on -k off ".sz";
 	setAttr ".rp" -type "double3" -3.8283305640234055 5.6030502319335938 -0.1721780002117157 ;
 	setAttr ".sp" -type "double3" -3.8283305640234055 5.6030502319335938 -0.1721780002117157 ;
-	setAttr -k on ".IKFK_Switch";
+	setAttr -k on ".IKFK_Switch" 1;
 createNode nurbsCurve -n "curveShape9" -p "rt_arm_ikfkSwitch_ctl";
 	rename -uid "633C5771-4DD9-28ED-33CA-F794834263DD";
 	setAttr -k off ".v";
@@ -877,7 +877,6 @@ createNode parentConstraint -n "rt_arm_ikfkSwitch_ctl_parentConstraint1" -p "rt_
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -1.0705405640234078 2.319335923317567e-07 -2.1171581154888486e-10 ;
-	setAttr ".lr" -type "double3" 4.658968252717079e-18 1.4810611873229575e-23 5.3081232953654806e-20 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 0 -5.5511151231257827e-17 ;
 	setAttr -k on ".w0";
 createNode transform -n "rt_shoulder_fk_ctl_os_GRP" -p "rt_arm_ctl";
@@ -1266,7 +1265,7 @@ createNode parentConstraint -n "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1" 
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 1.1425582588869161 1.7564387810864446e-07 0.043262789695074577 ;
-	setAttr ".lr" -type "double3" 1.5902530750252648e-15 4.7366659074529904e-17 -4.1931140820075653e-17 ;
+	setAttr ".lr" -type "double3" -7.9515686964574905e-16 -2.4751020622961327e-17 -3.8825130388958945e-18 ;
 	setAttr ".rst" -type "double3" 0 8.8817841970012523e-16 0 ;
 	setAttr -k on ".w0";
 createNode transform -n "lf_palm_ctl_os_GRP" -p "lf_arm_ctl";
@@ -1844,7 +1843,7 @@ createNode parentConstraint -n "lf_palm_ctl_parentConstraint1" -p "lf_palm_ctl";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.25636419823783019 -0.043140131336401488 -0.0035092842132838364 ;
-	setAttr ".lr" -type "double3" 1.5902530750252648e-15 4.7366659074529904e-17 -4.1931140820075653e-17 ;
+	setAttr ".lr" -type "double3" -7.9515686964574905e-16 -2.4751020622961327e-17 -3.8825130388958945e-18 ;
 	setAttr ".rst" -type "double3" -4.4408920985006262e-16 8.8817841970012523e-16 -2.7755575615628914e-17 ;
 	setAttr -k on ".w0";
 createNode transform -n "jackie_lf_shoulder_fk_ctl_os_GRP" -p "lf_arm_ctl";
@@ -3401,7 +3400,7 @@ createNode nurbsCurve -n "eye_lf_ctlShape" -p "eye_lf_ctl";
 createNode transform -n "jackie_GEO";
 	rename -uid "6CA10606-4AF3-4FF2-3947-6BB689CFD008";
 createNode fosterParent -n "jackie_rigRNfosterParent1";
-	rename -uid "A594864D-4B3A-EE2B-673A-6E8E41AB58D7";
+	rename -uid "4B5BE435-49EB-4521-9912-11B5F0556B2A";
 createNode parentConstraint -n "root_parentConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "40585434-47F6-F706-354E-BF8E935448BF";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "root_ctlW0" -dv 1 -min 0 -at "double";
@@ -3703,7 +3702,6 @@ createNode orientConstraint -n "right_wrist_orientConstraint1" -p "jackie_rigRNf
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" 0.01080921024196246 0.10088616032958306 -0.00025865597674916088 ;
 	setAttr -k on ".w0";
 	setAttr -k on ".w1";
 createNode ikEffector -n "effector_lf_clavicle" -p "jackie_rigRNfosterParent1";
@@ -3768,7 +3766,7 @@ createNode orientConstraint -n "left_wrist_orientConstraint1" -p "jackie_rigRNfo
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -s 2 ".tg";
-	setAttr ".lr" -type "double3" 4.1966768234892804 -0.23351151236070994 0.078988534826011397 ;
+	setAttr ".lr" -type "double3" 1.8100054291408212 -0.20585681525864125 0.024603264517102055 ;
 	setAttr -k on ".w0";
 	setAttr -k on ".w1";
 createNode parentConstraint -n "left_palm_parentConstraint1" -p "jackie_rigRNfosterParent1";
@@ -4879,7 +4877,7 @@ createNode parentConstraint -n "jackierEyeRight_parentConstraint1" -p "jackie_ri
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0 0 -1.3877787807814457e-17 ;
-	setAttr ".lr" -type "double3" 180.0000000001441 179.99999999999997 -180 ;
+	setAttr ".lr" -type "double3" 179.94756584946109 180.02038164395094 -180.00082690959189 ;
 	setAttr ".rst" -type "double3" 0 0 1.3877787807814457e-17 ;
 	setAttr -k on ".w0";
 createNode parentConstraint -n "jackieEyeLeft_parentConstraint1" -p "jackie_rigRNfosterParent1";
@@ -4901,7 +4899,7 @@ createNode parentConstraint -n "jackieEyeLeft_parentConstraint1" -p "jackie_rigR
 		2.9797337175285765e-05 ;
 	setAttr ".tg[0].tor" -type "double3" -0.082657425991396249 -0.97909253164245813 
 		0.0014124144327864136 ;
-	setAttr ".lr" -type "double3" 1.2424800027794772e-17 1.9878457280355381e-16 2.1553582014979177e-35 ;
+	setAttr ".lr" -type "double3" -0.052443399250907886 0.022086901125320624 0.00089626719352975859 ;
 	setAttr ".rst" -type "double3" 0 -8.8817841970012523e-16 0 ;
 	setAttr ".rsrr" -type "double3" 1.2424800027794772e-17 1.9878457280355381e-16 2.1553582014979177e-35 ;
 	setAttr -k on ".w0";
@@ -4924,7 +4922,7 @@ createNode aimConstraint -n "jackieEyeLeft_aimConstraint1" -p "jackie_rigRNfoste
 	setAttr ".rsrr" -type "double3" -2.9810926551172283e-10 3.2010167384623357e-15 -5.7150591933380296e-16 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "teeth_v1_latestRN1fosterParent1";
-	rename -uid "29F2094C-4202-1F34-8A33-86986E52B301";
+	rename -uid "59E6ED50-4A38-3C2A-1E23-5983672AB1AA";
 createNode parentConstraint -n "Teeth_parentConstraint1" -p "teeth_v1_latestRN1fosterParent1";
 	rename -uid "C9CD1B87-45C5-099F-1AED-C599AA05B492";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "jaw_1W0" -dv 1 -min 0 -at "double";
@@ -4946,21 +4944,21 @@ createNode parentConstraint -n "Teeth_parentConstraint1" -p "teeth_v1_latestRN1f
 	setAttr ".rst" -type "double3" 0 8.8817841970012523e-16 2.7755575615628914e-17 ;
 	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "5A3F2306-4A83-1668-4739-7C991C18E1B2";
+	rename -uid "912F4D5E-48BE-90C7-DD3A-F68569350F4C";
 	setAttr -s 32 ".lnk";
 	setAttr -s 32 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "48B6A10D-4EDA-5653-188F-C983754DB119";
+	rename -uid "0D083E89-4B64-1C09-ADA2-548196AB902C";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "4CE0BD2B-43DB-7774-5F39-858425A8B27D";
+	rename -uid "86EC765F-4FFF-D596-4673-288CA877EDC0";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "436BD976-4630-5E0C-DA52-20BA3A8385AA";
-	setAttr ".cdl" 2;
+	rename -uid "0597A6AD-460C-70F0-F165-459B37332AD2";
+	setAttr ".cdl" 1;
 	setAttr -s 6 ".dli[1:5]"  1 2 3 0 0;
 createNode displayLayer -n "defaultLayer";
 	rename -uid "1472DE7A-4782-1608-BB77-88A1607C89DD";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "15993A51-4DC8-A5C3-AE0B-2D978B95A384";
+	rename -uid "05CC0FF8-49FB-CCEE-5A4E-FB9044E11071";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "E5D42139-4EA7-5B85-657A-F1A0107DC895";
 	setAttr ".g" yes;
@@ -5113,17 +5111,17 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 586\n            -height 362\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 1\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 585\n            -height 362\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 586\n            -height 362\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
-		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
+		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
 		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1024\n            -height 771\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1549\n            -height 782\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
 		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
 		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n"
@@ -5150,11 +5148,11 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n"
 		+ "                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n"
 		+ "                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n"
-		+ "            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n"
+		+ "            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n"
 		+ "            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n"
-		+ "            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 0\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1024\\n    -height 771\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1024\\n    -height 771\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1549\\n    -height 782\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1549\\n    -height 782\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -5352,94 +5350,12 @@ createNode animCurveUU -n "lf_wrist_ikHandle_ikBlend";
 	rename -uid "E45FEDD2-4BEF-1EC2-9090-4C80FD36225F";
 	setAttr ".tan" 18;
 	setAttr -s 2 ".ktv[0:1]"  0 1 1 0;
-createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "A2D1E254-4F86-08A6-8E00-16AEFF557380";
-	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -996.72442387351259 -508.3333131339823 ;
-	setAttr ".tgi[0].vh" -type "double2" 983.62918629863236 555.95235886081912 ;
-	setAttr -s 26 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" -17.142856597900391;
-	setAttr ".tgi[0].ni[0].y" -107.14286041259766;
-	setAttr ".tgi[0].ni[0].nvs" 18304;
-	setAttr ".tgi[0].ni[1].x" 290;
-	setAttr ".tgi[0].ni[1].y" 58.571430206298828;
-	setAttr ".tgi[0].ni[1].nvs" 18304;
-	setAttr ".tgi[0].ni[2].x" 597.14288330078125;
-	setAttr ".tgi[0].ni[2].y" -287.14285278320313;
-	setAttr ".tgi[0].ni[2].nvs" 18304;
-	setAttr ".tgi[0].ni[3].x" 252.85714721679688;
-	setAttr ".tgi[0].ni[3].y" 275.71429443359375;
-	setAttr ".tgi[0].ni[3].nvs" 18304;
-	setAttr ".tgi[0].ni[4].x" -17.142856597900391;
-	setAttr ".tgi[0].ni[4].y" -5.7142858505249023;
-	setAttr ".tgi[0].ni[4].nvs" 18304;
-	setAttr ".tgi[0].ni[5].x" -851.4285888671875;
-	setAttr ".tgi[0].ni[5].y" 7.1428570747375488;
-	setAttr ".tgi[0].ni[5].nvs" 18304;
-	setAttr ".tgi[0].ni[6].x" -837.14288330078125;
-	setAttr ".tgi[0].ni[6].y" 287.14285278320313;
-	setAttr ".tgi[0].ni[6].nvs" 18304;
-	setAttr ".tgi[0].ni[7].x" -837.14288330078125;
-	setAttr ".tgi[0].ni[7].y" 388.57144165039063;
-	setAttr ".tgi[0].ni[7].nvs" 18304;
-	setAttr ".tgi[0].ni[8].x" 597.14288330078125;
-	setAttr ".tgi[0].ni[8].y" -50;
-	setAttr ".tgi[0].ni[8].nvs" 18304;
-	setAttr ".tgi[0].ni[9].x" -851.4285888671875;
-	setAttr ".tgi[0].ni[9].y" -361.42855834960938;
-	setAttr ".tgi[0].ni[9].nvs" 18304;
-	setAttr ".tgi[0].ni[10].x" 948.5714111328125;
-	setAttr ".tgi[0].ni[10].y" -164.28572082519531;
-	setAttr ".tgi[0].ni[10].nvs" 18304;
-	setAttr ".tgi[0].ni[11].x" 948.5714111328125;
-	setAttr ".tgi[0].ni[11].y" -328.57144165039063;
-	setAttr ".tgi[0].ni[11].nvs" 18304;
-	setAttr ".tgi[0].ni[12].x" -851.4285888671875;
-	setAttr ".tgi[0].ni[12].y" -115.71428680419922;
-	setAttr ".tgi[0].ni[12].nvs" 18304;
-	setAttr ".tgi[0].ni[13].x" 290;
-	setAttr ".tgi[0].ni[13].y" -285.71429443359375;
-	setAttr ".tgi[0].ni[13].nvs" 18304;
-	setAttr ".tgi[0].ni[14].x" -17.142856597900391;
-	setAttr ".tgi[0].ni[14].y" 621.4285888671875;
-	setAttr ".tgi[0].ni[14].nvs" 18306;
-	setAttr ".tgi[0].ni[15].x" -1144.2857666015625;
-	setAttr ".tgi[0].ni[15].y" 264.28570556640625;
-	setAttr ".tgi[0].ni[15].nvs" 18304;
-	setAttr ".tgi[0].ni[16].x" -851.4285888671875;
-	setAttr ".tgi[0].ni[16].y" 375.71429443359375;
-	setAttr ".tgi[0].ni[16].nvs" 18304;
-	setAttr ".tgi[0].ni[17].x" -347.14285278320313;
-	setAttr ".tgi[0].ni[17].y" 400;
-	setAttr ".tgi[0].ni[17].nvs" 18304;
-	setAttr ".tgi[0].ni[18].x" -851.4285888671875;
-	setAttr ".tgi[0].ni[18].y" 252.85714721679688;
-	setAttr ".tgi[0].ni[18].nvs" 18304;
-	setAttr ".tgi[0].ni[19].x" 597.14288330078125;
-	setAttr ".tgi[0].ni[19].y" -511.42855834960938;
-	setAttr ".tgi[0].ni[19].nvs" 18304;
-	setAttr ".tgi[0].ni[20].x" 597.14288330078125;
-	setAttr ".tgi[0].ni[20].y" -388.57144165039063;
-	setAttr ".tgi[0].ni[20].nvs" 18304;
-	setAttr ".tgi[0].ni[21].x" -851.4285888671875;
-	setAttr ".tgi[0].ni[21].y" 130;
-	setAttr ".tgi[0].ni[21].nvs" 18304;
-	setAttr ".tgi[0].ni[22].x" 948.5714111328125;
-	setAttr ".tgi[0].ni[22].y" -451.42855834960938;
-	setAttr ".tgi[0].ni[22].nvs" 18304;
-	setAttr ".tgi[0].ni[23].x" -851.4285888671875;
-	setAttr ".tgi[0].ni[23].y" -238.57142639160156;
-	setAttr ".tgi[0].ni[23].nvs" 18304;
-	setAttr ".tgi[0].ni[24].x" -851.4285888671875;
-	setAttr ".tgi[0].ni[24].y" 498.57144165039063;
-	setAttr ".tgi[0].ni[24].nvs" 18304;
-	setAttr ".tgi[0].ni[25].x" -425.71429443359375;
-	setAttr ".tgi[0].ni[25].y" -64.285713195800781;
-	setAttr ".tgi[0].ni[25].nvs" 18304;
 createNode reference -n "jackie_rigRN";
 	rename -uid "2B550EE9-474B-A497-7FD9-C589D7FDB57F";
-	setAttr ".fn[0]" -type "string" "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_rig.ma";
-	setAttr -s 1110 ".phl";
+	setAttr -s 2 ".fn";
+	setAttr ".fn[0]" -type "string" "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_skinning.ma";
+	setAttr ".fn[1]" -type "string" "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_rig.ma";
+	setAttr -s 1101 ".phl";
 	setAttr ".phl[1]" -type "TdataCompound" ;
 	setAttr ".phl[6]" -type "TdataCompound" ;
 	setAttr ".phl[7]" -type "TdataCompound" ;
@@ -5450,8 +5366,6 @@ createNode reference -n "jackie_rigRN";
 	setAttr ".phl[40]" -type "TdataCompound" ;
 	setAttr ".phl[41]" -type "TdataCompound" ;
 	setAttr ".phl[42]" -type "TdataCompound" ;
-	setAttr ".phl[43]" -type "TdataCompound" ;
-	setAttr ".phl[46]" 0;
 	setAttr ".phl[47]" 0;
 	setAttr ".phl[48]" 0;
 	setAttr ".phl[49]" 0;
@@ -6511,11 +6425,6 @@ createNode reference -n "jackie_rigRN";
 	setAttr ".phl[1103]" 0;
 	setAttr ".phl[1104]" 0;
 	setAttr ".phl[1105]" 0;
-	setAttr ".phl[1106]" 0;
-	setAttr ".phl[1107]" 0;
-	setAttr ".phl[1108]" 0;
-	setAttr ".phl[1109]" 0;
-	setAttr ".phl[1110]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"jackie_rigRN"
 		"jackie_rig:Jacies_shoe_latestRN" 0
@@ -6524,24 +6433,7 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rigRN" 0
 		"jackie_rig:jackiePants_latestRN" 0
 		"jackie_rig:jackieHair_latestRN" 0
-		"jackie_rig:teeth_v1_latestRN" 87
-		0 "|jackie_rig:teeth_v1_latest:Teeth" "|jackie_MASTER_ctl" "-s -r "
-		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth" "visibility" " 1"
-		
-		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth" "translate" " -type \"double3\" 0 0 0"
-		
-		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth" "scale" " -type \"double3\" 1 1 1"
-		
-		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth" "rotatePivot" " -type \"double3\" 6.4510008087381721e-05 6.20467233657836914 0.048010902453545334"
-		
-		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth" "scalePivot" " -type \"double3\" 6.4510008087381721e-05 6.20467233657836914 0.048010902453545334"
-		
-		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth" "scalePivotTranslate" 
-		" -type \"double3\" 0 0 0"
-		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:BottomCont|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums" 
-		"translate" " -type \"double3\" 0 0 0"
-		3 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:BottomCont|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums|jackie_rig:teeth_v1_latest:GumsShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
+		"jackie_rig:teeth_v1_latestRN" 76
 		3 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:BottomCont|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:PearlyWhites|jackie_rig:teeth_v1_latest:pCube1|jackie_rig:teeth_v1_latest:pCubeShape1.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:BottomCont|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:PearlyWhites|jackie_rig:teeth_v1_latest:pCube2|jackie_rig:teeth_v1_latest:pCubeShape1.instObjGroups" 
@@ -6606,7 +6498,7 @@ createNode reference -n "jackie_rigRN";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:PearlyWhites|jackie_rig:teeth_v1_latest:Molars1|jackie_rig:teeth_v1_latest:pCube6|jackie_rig:teeth_v1_latest:pCubeShape5.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:BottomCont|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums|jackie_rig:teeth_v1_latest:GumsShape.instObjGroups" 
+		3 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums|jackie_rig:teeth_v1_latest:GumsShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:BottomCont|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:PearlyWhites|jackie_rig:teeth_v1_latest:pCube1.drawOverride" 
 		"jackie_rigRN.placeHolderList[1]" ""
@@ -6692,57 +6584,8 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rigRN.placeHolderList[41]" ""
 		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:BottomCont|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:PearlyWhites|jackie_rig:teeth_v1_latest:Molars|jackie_rig:teeth_v1_latest:pCube6.drawOverride" 
 		"jackie_rigRN.placeHolderList[42]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:BottomCont|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums.drawOverride" 
-		"jackie_rigRN.placeHolderList[43]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:BottomCont|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums|jackie_rig:teeth_v1_latest:GumsShape.instObjGroups" 
-		"jackie_rigRN.placeHolderList[44]" ":initialShadingGroup.dsm"
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums|jackie_rig:teeth_v1_latest:GumsShape.instObjGroups" 
-		"jackie_rigRN.placeHolderList[45]" ""
-		"jackie_rig:jackieHoodie_latestRN" 21
-		0 "|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "|jackie_GEO" "-s -r "
-		
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "visibility" 
-		" 1"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideDisplayType" 
-		" 0"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideLevelOfDetail" 
-		" 0"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideShading" 
-		" 1"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideTexturing" 
-		" 1"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overridePlayback" 
-		" 1"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideEnabled" 
-		" 0"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideVisibility" 
-		" 1"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "hideOnPlayback" 
-		" 0"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideRGBColors" 
-		" 0"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideColor" 
-		" 0"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideColorRGB" 
-		" -type \"float3\" 0 0 0"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scale" " -type \"double3\" 1 1 1"
-		
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "rotatePivot" 
-		" -type \"double3\" 0 -0.10299999999999976 -0.025"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scalePivot" 
-		" -type \"double3\" 0 -0.10299999999999976 -0.025"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scalePivotTranslate" 
-		" -type \"double3\" 0 0 0"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
-		"dispResolution" " 3"
-		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
-		"displaySmoothMesh" " 2"
-		3 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape.instObjGroups" 
-		"jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" "-na"
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape.instObjGroups" 
-		"jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[46]" 
-		"jackie_rigRN.placeHolderList[47]" "jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dsm"
-		
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums|jackie_rig:teeth_v1_latest:GumsShape.instObjGroups" 
+		"jackie_rigRN.placeHolderList[47]" ":initialShadingGroup.dsm"
 		"jackie_rig:Jacies_shoe_latestRN" 344
 		0 "|jackie_rig:Jacies_shoe_latest:Jackie_Shoe" "|jackie_GEO" "-s -r "
 		2 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe" "visibility" " 1"
@@ -7330,12 +7173,6 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Toe" 
 		"overrideColorRGB" " -type \"float3\" 0 0 0"
 		2 "|jackie_rig:Jacies_shoe_latest:transform1" "hiddenInOutliner" " 1"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Back|jackie_rig:Jacies_shoe_latest:BackShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Sole|jackie_rig:Jacies_shoe_latest:SoleShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Toe|jackie_rig:Jacies_shoe_latest:ToeShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus2|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus1|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
@@ -7356,6 +7193,20 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus10|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Back|jackie_rig:Jacies_shoe_latest:BackShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Sole|jackie_rig:Jacies_shoe_latest:SoleShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Toe|jackie_rig:Jacies_shoe_latest:ToeShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Left_Side|jackie_rig:Jacies_shoe_latest:Left_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Right_Side|jackie_rig:Jacies_shoe_latest:Right_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Base|jackie_rig:Jacies_shoe_latest:BaseShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Tongue|jackie_rig:Jacies_shoe_latest:TongueShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube15|jackie_rig:Jacies_shoe_latest:pCubeShape15.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube14|jackie_rig:Jacies_shoe_latest:pCubeShape14.instObjGroups" 
@@ -7372,113 +7223,150 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube2|jackie_rig:Jacies_shoe_latest:pCubeShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Left_Side|jackie_rig:Jacies_shoe_latest:Left_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Right_Side|jackie_rig:Jacies_shoe_latest:Right_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Base|jackie_rig:Jacies_shoe_latest:BaseShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Tongue|jackie_rig:Jacies_shoe_latest:TongueShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Toe|jackie_rig:Jacies_shoe_latest:ToeShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[68]" 
-		"jackie_rigRN.placeHolderList[69]" "jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[71]" 
+		"jackie_rigRN.placeHolderList[72]" "jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Sole|jackie_rig:Jacies_shoe_latest:SoleShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[70]" 
-		"jackie_rigRN.placeHolderList[71]" "jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[73]" 
+		"jackie_rigRN.placeHolderList[74]" "jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Back|jackie_rig:Jacies_shoe_latest:BackShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[72]" 
-		"jackie_rigRN.placeHolderList[73]" "jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[75]" 
+		"jackie_rigRN.placeHolderList[76]" "jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Tongue|jackie_rig:Jacies_shoe_latest:TongueShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[74]" 
-		"jackie_rigRN.placeHolderList[75]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[77]" 
+		"jackie_rigRN.placeHolderList[78]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Base|jackie_rig:Jacies_shoe_latest:BaseShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[76]" 
-		"jackie_rigRN.placeHolderList[77]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[79]" 
+		"jackie_rigRN.placeHolderList[80]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Right_Side|jackie_rig:Jacies_shoe_latest:Right_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[78]" 
-		"jackie_rigRN.placeHolderList[79]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[81]" 
+		"jackie_rigRN.placeHolderList[82]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Left_Side|jackie_rig:Jacies_shoe_latest:Left_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[80]" 
-		"jackie_rigRN.placeHolderList[81]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[83]" 
+		"jackie_rigRN.placeHolderList[84]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube2|jackie_rig:Jacies_shoe_latest:pCubeShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[82]" 
-		"jackie_rigRN.placeHolderList[83]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[85]" 
+		"jackie_rigRN.placeHolderList[86]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube9|jackie_rig:Jacies_shoe_latest:pCubeShape9.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[84]" 
-		"jackie_rigRN.placeHolderList[85]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[87]" 
+		"jackie_rigRN.placeHolderList[88]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube10|jackie_rig:Jacies_shoe_latest:pCubeShape10.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[86]" 
-		"jackie_rigRN.placeHolderList[87]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[89]" 
+		"jackie_rigRN.placeHolderList[90]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube11|jackie_rig:Jacies_shoe_latest:pCubeShape11.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[88]" 
-		"jackie_rigRN.placeHolderList[89]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[91]" 
+		"jackie_rigRN.placeHolderList[92]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube12|jackie_rig:Jacies_shoe_latest:pCubeShape12.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[90]" 
-		"jackie_rigRN.placeHolderList[91]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[93]" 
+		"jackie_rigRN.placeHolderList[94]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube13|jackie_rig:Jacies_shoe_latest:pCubeShape13.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[92]" 
-		"jackie_rigRN.placeHolderList[93]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[95]" 
+		"jackie_rigRN.placeHolderList[96]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube14|jackie_rig:Jacies_shoe_latest:pCubeShape14.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[94]" 
-		"jackie_rigRN.placeHolderList[95]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[97]" 
+		"jackie_rigRN.placeHolderList[98]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube15|jackie_rig:Jacies_shoe_latest:pCubeShape15.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[96]" 
-		"jackie_rigRN.placeHolderList[97]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[99]" 
+		"jackie_rigRN.placeHolderList[100]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus10|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[98]" 
-		"jackie_rigRN.placeHolderList[99]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[101]" 
+		"jackie_rigRN.placeHolderList[102]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus5|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[100]" 
-		"jackie_rigRN.placeHolderList[101]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[103]" 
+		"jackie_rigRN.placeHolderList[104]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus6|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[102]" 
-		"jackie_rigRN.placeHolderList[103]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[105]" 
+		"jackie_rigRN.placeHolderList[106]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus7|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[104]" 
-		"jackie_rigRN.placeHolderList[105]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[107]" 
+		"jackie_rigRN.placeHolderList[108]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus8|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[106]" 
-		"jackie_rigRN.placeHolderList[107]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[109]" 
+		"jackie_rigRN.placeHolderList[110]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus9|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[108]" 
-		"jackie_rigRN.placeHolderList[109]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[111]" 
+		"jackie_rigRN.placeHolderList[112]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus4|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[110]" 
-		"jackie_rigRN.placeHolderList[111]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[113]" 
+		"jackie_rigRN.placeHolderList[114]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus3|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[112]" 
-		"jackie_rigRN.placeHolderList[113]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[115]" 
+		"jackie_rigRN.placeHolderList[116]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus1|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[114]" 
-		"jackie_rigRN.placeHolderList[115]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[117]" 
+		"jackie_rigRN.placeHolderList[118]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus2|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[116]" 
-		"jackie_rigRN.placeHolderList[117]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[119]" 
+		"jackie_rigRN.placeHolderList[120]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
+		
+		"jackie_rig:jackieHoodie_latestRN" 21
+		0 "|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "|jackie_GEO" "-s -r "
+		
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "visibility" 
+		" 1"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideDisplayType" 
+		" 0"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideLevelOfDetail" 
+		" 0"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideShading" 
+		" 1"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideTexturing" 
+		" 1"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overridePlayback" 
+		" 1"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideEnabled" 
+		" 0"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideVisibility" 
+		" 1"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "hideOnPlayback" 
+		" 0"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideRGBColors" 
+		" 0"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideColor" 
+		" 0"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "overrideColorRGB" 
+		" -type \"float3\" 0 0 0"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scale" " -type \"double3\" 1 1 1"
+		
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "rotatePivot" 
+		" -type \"double3\" 0 -0.10299999999999976 -0.025"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scalePivot" 
+		" -type \"double3\" 0 -0.10299999999999976 -0.025"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scalePivotTranslate" 
+		" -type \"double3\" 0 0 0"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
+		"dispResolution" " 3"
+		2 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
+		"displaySmoothMesh" " 2"
+		3 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape.instObjGroups" 
+		"jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" "-na"
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape.instObjGroups" 
+		"jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[49]" 
+		"jackie_rigRN.placeHolderList[50]" "jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dsm"
 		
 		"jackie_rig:Jacies_shoe_latestRN1" 349
 		0 "|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe" "|jackie_GEO" "-s -r "
@@ -8075,6 +7963,12 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Toe" 
 		"overrideColorRGB" " -type \"float3\" 0 0 0"
 		2 "|jackie_rig:Jacies_shoe_latest1:transform1" "hiddenInOutliner" " 1"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Back|jackie_rig:Jacies_shoe_latest1:BackShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Sole|jackie_rig:Jacies_shoe_latest1:SoleShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Toe|jackie_rig:Jacies_shoe_latest1:ToeShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube15|jackie_rig:Jacies_shoe_latest1:pCubeShape15.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube14|jackie_rig:Jacies_shoe_latest1:pCubeShape14.instObjGroups" 
@@ -8091,14 +7985,6 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube2|jackie_rig:Jacies_shoe_latest1:pCubeShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Left_Side|jackie_rig:Jacies_shoe_latest1:Left_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Right_Side|jackie_rig:Jacies_shoe_latest1:Right_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Base|jackie_rig:Jacies_shoe_latest1:BaseShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Tongue|jackie_rig:Jacies_shoe_latest1:TongueShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus2|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus1|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
@@ -8119,114 +8005,116 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus10|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Back|jackie_rig:Jacies_shoe_latest1:BackShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Sole|jackie_rig:Jacies_shoe_latest1:SoleShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Toe|jackie_rig:Jacies_shoe_latest1:ToeShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Left_Side|jackie_rig:Jacies_shoe_latest1:Left_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Right_Side|jackie_rig:Jacies_shoe_latest1:Right_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Base|jackie_rig:Jacies_shoe_latest1:BaseShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Tongue|jackie_rig:Jacies_shoe_latest1:TongueShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Toe|jackie_rig:Jacies_shoe_latest1:ToeShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[118]" 
-		"jackie_rigRN.placeHolderList[119]" "jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[121]" 
+		"jackie_rigRN.placeHolderList[122]" "jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Sole|jackie_rig:Jacies_shoe_latest1:SoleShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[120]" 
-		"jackie_rigRN.placeHolderList[121]" "jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[123]" 
+		"jackie_rigRN.placeHolderList[124]" "jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Back|jackie_rig:Jacies_shoe_latest1:BackShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[122]" 
-		"jackie_rigRN.placeHolderList[123]" "jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[125]" 
+		"jackie_rigRN.placeHolderList[126]" "jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Tongue|jackie_rig:Jacies_shoe_latest1:TongueShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[124]" 
-		"jackie_rigRN.placeHolderList[125]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[127]" 
+		"jackie_rigRN.placeHolderList[128]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Base|jackie_rig:Jacies_shoe_latest1:BaseShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[126]" 
-		"jackie_rigRN.placeHolderList[127]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[129]" 
+		"jackie_rigRN.placeHolderList[130]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Right_Side|jackie_rig:Jacies_shoe_latest1:Right_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[128]" 
-		"jackie_rigRN.placeHolderList[129]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[131]" 
+		"jackie_rigRN.placeHolderList[132]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Left_Side|jackie_rig:Jacies_shoe_latest1:Left_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[130]" 
-		"jackie_rigRN.placeHolderList[131]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[133]" 
+		"jackie_rigRN.placeHolderList[134]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube2|jackie_rig:Jacies_shoe_latest1:pCubeShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[132]" 
-		"jackie_rigRN.placeHolderList[133]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[135]" 
+		"jackie_rigRN.placeHolderList[136]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube9|jackie_rig:Jacies_shoe_latest1:pCubeShape9.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[134]" 
-		"jackie_rigRN.placeHolderList[135]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[137]" 
+		"jackie_rigRN.placeHolderList[138]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube10|jackie_rig:Jacies_shoe_latest1:pCubeShape10.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[136]" 
-		"jackie_rigRN.placeHolderList[137]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[139]" 
+		"jackie_rigRN.placeHolderList[140]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube11|jackie_rig:Jacies_shoe_latest1:pCubeShape11.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[138]" 
-		"jackie_rigRN.placeHolderList[139]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[141]" 
+		"jackie_rigRN.placeHolderList[142]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube12|jackie_rig:Jacies_shoe_latest1:pCubeShape12.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[140]" 
-		"jackie_rigRN.placeHolderList[141]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[143]" 
+		"jackie_rigRN.placeHolderList[144]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube13|jackie_rig:Jacies_shoe_latest1:pCubeShape13.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[142]" 
-		"jackie_rigRN.placeHolderList[143]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[145]" 
+		"jackie_rigRN.placeHolderList[146]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube14|jackie_rig:Jacies_shoe_latest1:pCubeShape14.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[144]" 
-		"jackie_rigRN.placeHolderList[145]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[147]" 
+		"jackie_rigRN.placeHolderList[148]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube15|jackie_rig:Jacies_shoe_latest1:pCubeShape15.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[146]" 
-		"jackie_rigRN.placeHolderList[147]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[149]" 
+		"jackie_rigRN.placeHolderList[150]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus10|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[148]" 
-		"jackie_rigRN.placeHolderList[149]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[151]" 
+		"jackie_rigRN.placeHolderList[152]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus8|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[150]" 
-		"jackie_rigRN.placeHolderList[151]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[153]" 
+		"jackie_rigRN.placeHolderList[154]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus7|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[152]" 
-		"jackie_rigRN.placeHolderList[153]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[155]" 
+		"jackie_rigRN.placeHolderList[156]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus6|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[154]" 
-		"jackie_rigRN.placeHolderList[155]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[157]" 
+		"jackie_rigRN.placeHolderList[158]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus5|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[156]" 
-		"jackie_rigRN.placeHolderList[157]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[159]" 
+		"jackie_rigRN.placeHolderList[160]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus9|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[158]" 
-		"jackie_rigRN.placeHolderList[159]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[161]" 
+		"jackie_rigRN.placeHolderList[162]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus4|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[160]" 
-		"jackie_rigRN.placeHolderList[161]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[163]" 
+		"jackie_rigRN.placeHolderList[164]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus3|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[162]" 
-		"jackie_rigRN.placeHolderList[163]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[165]" 
+		"jackie_rigRN.placeHolderList[166]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus1|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[164]" 
-		"jackie_rigRN.placeHolderList[165]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[167]" 
+		"jackie_rigRN.placeHolderList[168]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus2|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[166]" 
-		"jackie_rigRN.placeHolderList[167]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[169]" 
+		"jackie_rigRN.placeHolderList[170]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
 		8 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe" "translateX"
-		"jackie_rigRN" 1102
+		"jackie_rigRN" 1096
 		0 "|jackie_rig:jackieEyes" "|jackie_MASTER_ctl" "-s -r "
 		0 "|jackie_rig:root" "|jackie_MASTER_ctl" "-s -r "
 		0 "|jackie_rig:jackieBody" "|jackie_GEO" "-s -r "
@@ -8479,7 +8367,8 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" "overrideColorRGB" 
 		" -type \"float3\" 0 0 0"
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" "translate" 
-		" -type \"double3\" 0 0 0"
+		" -type \"double3\" -2.7046485884252291e-09 -0.00083145253048044765 0.019785472888954284"
+		
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" "translateX" 
 		" -av"
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" "translateY" 
@@ -8487,7 +8376,8 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" "translateZ" 
 		" -av"
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" "rotate" 
-		" -type \"double3\" 0 0 0"
+		" -type \"double3\" -0.052443399250907886 0.022086901125320624 0.00089626719352975859"
+		
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" "rotateX" 
 		" -av"
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" "rotateY" 
@@ -8554,7 +8444,7 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight" "overrideColorRGB" 
 		" -type \"float3\" 0 0 0"
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight" "translate" 
-		" -type \"double3\" 0 0 0"
+		" -type \"double3\" 0 -0.00083147981960784989 0.019786294361540821"
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight" "translateZ" 
 		" -av"
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight" "rotatePivot" 
@@ -8621,7 +8511,7 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck" 
 		"translate" " -type \"double3\" 0 0.40206242505220424 0.005679091173926335"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck" 
-		"translate" " -type \"double3\" 0 0.20822900533676147 0.03454120084643364"
+		"translate" " -type \"double3\" 0 0.20739752551715362 0.054327495207974447"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck" 
 		"translateX" " -av"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck" 
@@ -8636,7 +8526,7 @@ createNode reference -n "jackie_rigRN";
 		"translate" " -type \"double3\" 0.1521229758840652 0.13266259629421384 0.33002213224139904"
 		
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye" 
-		"rotate" " -type \"double3\" 0.082645357754545123 0.97909355029965528 -3.0340472739635764e-08"
+		"rotate" " -type \"double3\" 0.030193954930886262 1.00118004124382054 -1.1089918734053592e-08"
 		
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye" 
 		"rotateX" " -av"
@@ -8660,7 +8550,7 @@ createNode reference -n "jackie_rigRN";
 		"translate" " -type \"double3\" 0.25258997008187034 -0.0026513118308784758 0.0052385088011325841"
 		
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
-		"rotate" " -type \"double3\" -4.20002589722456321 -0.12636193936601611 -0.095822027111277158"
+		"rotate" " -type \"double3\" -1.81338693437743692 -0.13178063197565171 -0.031050603221547346"
 		
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
 		"rotateX" " -av"
@@ -8679,7 +8569,7 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow" 
-		"translate" " -type \"double3\" 1.27071094512939453 -0.013000000268220901 0.026000000536441803"
+		"translate" " -type \"double3\" 1.2707110727244868 -0.013338024861590192 0.02635350539060044"
 		
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow" 
 		"translateX" " -av"
@@ -8688,7 +8578,7 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow" 
 		"translateZ" " -av"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow" 
-		"rotate" " -type \"double3\" 0.0030776627427588558 0.35252061185009609 0.025843982930130564"
+		"rotate" " -type \"double3\" 0.0033128922862516435 0.33659030770471726 0.010613978456354374"
 		
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow" 
 		"rotateX" " -av"
@@ -8701,9 +8591,11 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm" 
 		"translate" " -type \"double3\" 0.493 -0.005349773611045272 0.013"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotateX" " -av 0"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm" 
-		"rotateX" " -av"
+		"rotateY" " 0"
+		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm" 
+		"rotateZ" " 0"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist" 
@@ -8760,7 +8652,7 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip" 
-		"translate" " -type \"double3\" 0.055568657040058866 -0.017214261238184925 -0.0048119377320891138"
+		"translate" " -type \"double3\" 0.055568657040058866 -0.017214261238184925 -0.0048119377320890999"
 		
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip" 
 		"translateX" " -av"
@@ -8785,8 +8677,7 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip" 
 		"preferredAngle" " -type \"double3\" 0 0 0"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder" 
-		"rotate" " -type \"double3\" -0.012656436685416595 0.075106696114707369 0.00027580502691602286"
-		
+		"rotate" " -type \"double3\" 0 0 0"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder" 
 		"rotateX" " -av"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder" 
@@ -8805,9 +8696,11 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_bicep" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotateX" " -av 0"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm" 
-		"rotateX" " -av"
+		"rotateY" " 0"
+		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm" 
+		"rotateZ" " 0"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip" "rotate" " -type \"double3\" 0.00081317089582102727 -0.026873919128317509 -0.00094863734032872983"
 		
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip" "rotateX" " -av"
@@ -8862,6 +8755,18 @@ createNode reference -n "jackie_rigRN";
 		
 		2 "jackie_rig:teeth_v1_latestRN" "fileNames[2]" " -type \"string\" \"C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma\""
 		
+		3 "jackie_rig:skinCluster1GroupId.groupId" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 "jackie_rig:skinCluster1Set.memberWireframeColor" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "jackie_rig:groupId2.groupId" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1].objectGroupId" 
+		""
+		3 "jackie_rig:tweakSet1.memberWireframeColor" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1].objectGrpColor" 
+		""
+		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups" 
+		"jackie_rig:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Group9688ShapeOrig.worldMesh" 
+		"jackie_rig:groupParts2.inputGeometry" ""
 		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0]" 
 		"jackie_rig:skinCluster1Set.dagSetMembers" "-na"
 		3 "jackie_rig:left_shoulder_visibility.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.visibility" 
@@ -8881,1611 +8786,1696 @@ createNode reference -n "jackie_rigRN";
 		3 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle.scale" 
 		"|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.inverseScale" 
 		""
-		3 "jackie_rig:skinCluster1GroupId.groupId" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "jackie_rig:skinCluster1Set.memberWireframeColor" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "jackie_rig:groupId2.groupId" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1].objectGroupId" 
-		""
-		3 "jackie_rig:tweakSet1.memberWireframeColor" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1].objectGrpColor" 
-		""
-		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Group9688ShapeOrig.worldMesh" 
-		"jackie_rig:groupParts2.inputGeometry" ""
 		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1]" 
 		"jackie_rig:tweakSet1.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups" 
-		"jackie_rig:PxrSurface1SG.dagSetMembers" "-na"
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translate" 
-		"jackie_rigRN.placeHolderList[312]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateX" 
-		"jackie_rigRN.placeHolderList[313]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateY" 
-		"jackie_rigRN.placeHolderList[314]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateZ" 
-		"jackie_rigRN.placeHolderList[315]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateX" 
-		"jackie_rigRN.placeHolderList[316]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateY" 
-		"jackie_rigRN.placeHolderList[317]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateZ" 
-		"jackie_rigRN.placeHolderList[318]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivot" 
-		"jackie_rigRN.placeHolderList[319]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivot" 
-		"jackie_rigRN.placeHolderList[320]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.parentInverseMatrix" 
-		"jackie_rigRN.placeHolderList[321]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.parentInverseMatrix" 
-		"jackie_rigRN.placeHolderList[322]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivotTranslate" 
-		"jackie_rigRN.placeHolderList[323]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivotTranslate" 
-		"jackie_rigRN.placeHolderList[324]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
-		"jackie_rigRN.placeHolderList[325]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
-		"jackie_rigRN.placeHolderList[326]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
-		"jackie_rigRN.placeHolderList[327]" ""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.blendParent1" 
+		"jackie_rigRN.placeHolderList[315]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translate" 
+		"jackie_rigRN.placeHolderList[316]" ""
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateX" 
+		"jackie_rigRN.placeHolderList[317]" ""
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateY" 
+		"jackie_rigRN.placeHolderList[318]" ""
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateZ" 
+		"jackie_rigRN.placeHolderList[319]" ""
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateX" 
+		"jackie_rigRN.placeHolderList[320]" ""
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateY" 
+		"jackie_rigRN.placeHolderList[321]" ""
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateZ" 
+		"jackie_rigRN.placeHolderList[322]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivot" 
+		"jackie_rigRN.placeHolderList[323]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivot" 
+		"jackie_rigRN.placeHolderList[324]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.parentInverseMatrix" 
+		"jackie_rigRN.placeHolderList[325]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.parentInverseMatrix" 
+		"jackie_rigRN.placeHolderList[326]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivotTranslate" 
+		"jackie_rigRN.placeHolderList[327]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[328]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
 		"jackie_rigRN.placeHolderList[329]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
 		"jackie_rigRN.placeHolderList[330]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
 		"jackie_rigRN.placeHolderList[331]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateX" 
 		"jackie_rigRN.placeHolderList[332]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateY" 
 		"jackie_rigRN.placeHolderList[333]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateZ" 
 		"jackie_rigRN.placeHolderList[334]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivot" 
 		"jackie_rigRN.placeHolderList[335]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[336]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[337]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateX" 
 		"jackie_rigRN.placeHolderList[338]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateX" "jackie_rigRN.placeHolderList[339]" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateY" 
+		"jackie_rigRN.placeHolderList[339]" ""
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateZ" 
+		"jackie_rigRN.placeHolderList[340]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateOrder" 
+		"jackie_rigRN.placeHolderList[341]" ""
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateX" "jackie_rigRN.placeHolderList[342]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateY" "jackie_rigRN.placeHolderList[340]" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateY" "jackie_rigRN.placeHolderList[343]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateZ" "jackie_rigRN.placeHolderList[341]" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateZ" "jackie_rigRN.placeHolderList[344]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.translateX" "jackie_rigRN.placeHolderList[342]" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.translateX" "jackie_rigRN.placeHolderList[345]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.translateY" "jackie_rigRN.placeHolderList[343]" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.translateY" "jackie_rigRN.placeHolderList[346]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.translateZ" "jackie_rigRN.placeHolderList[344]" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.translateZ" "jackie_rigRN.placeHolderList[347]" 
 		""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotatePivot" 
-		"jackie_rigRN.placeHolderList[345]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotatePivotTranslate" 
-		"jackie_rigRN.placeHolderList[346]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateOrder" 
-		"jackie_rigRN.placeHolderList[347]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.jointOrient" 
 		"jackie_rigRN.placeHolderList[348]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[349]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateOrder" 
 		"jackie_rigRN.placeHolderList[350]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.jointOrient" 
 		"jackie_rigRN.placeHolderList[351]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[352]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.inverseScale" 
 		"jackie_rigRN.placeHolderList[353]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateX" 
 		"jackie_rigRN.placeHolderList[354]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateY" 
 		"jackie_rigRN.placeHolderList[355]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateZ" 
 		"jackie_rigRN.placeHolderList[356]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateOrder" 
 		"jackie_rigRN.placeHolderList[357]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.jointOrient" 
 		"jackie_rigRN.placeHolderList[358]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[359]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.inverseScale" 
 		"jackie_rigRN.placeHolderList[360]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateX" 
 		"jackie_rigRN.placeHolderList[361]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateY" 
 		"jackie_rigRN.placeHolderList[362]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateZ" 
 		"jackie_rigRN.placeHolderList[363]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateOrder" 
 		"jackie_rigRN.placeHolderList[364]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.jointOrient" 
 		"jackie_rigRN.placeHolderList[365]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[366]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.inverseScale" 
 		"jackie_rigRN.placeHolderList[367]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateX" 
 		"jackie_rigRN.placeHolderList[368]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateY" 
 		"jackie_rigRN.placeHolderList[369]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateZ" 
 		"jackie_rigRN.placeHolderList[370]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateOrder" 
 		"jackie_rigRN.placeHolderList[371]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.jointOrient" 
 		"jackie_rigRN.placeHolderList[372]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[373]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.inverseScale" 
 		"jackie_rigRN.placeHolderList[374]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateX" 
 		"jackie_rigRN.placeHolderList[375]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateY" 
 		"jackie_rigRN.placeHolderList[376]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateZ" 
 		"jackie_rigRN.placeHolderList[377]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateOrder" 
 		"jackie_rigRN.placeHolderList[378]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.jointOrient" 
 		"jackie_rigRN.placeHolderList[379]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[380]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.inverseScale" 
 		"jackie_rigRN.placeHolderList[381]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateX" 
 		"jackie_rigRN.placeHolderList[382]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateY" 
 		"jackie_rigRN.placeHolderList[383]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateZ" 
 		"jackie_rigRN.placeHolderList[384]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateOrder" 
 		"jackie_rigRN.placeHolderList[385]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.jointOrient" 
 		"jackie_rigRN.placeHolderList[386]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[387]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.inverseScale" 
 		"jackie_rigRN.placeHolderList[388]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateX" 
 		"jackie_rigRN.placeHolderList[389]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateY" 
 		"jackie_rigRN.placeHolderList[390]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateZ" 
 		"jackie_rigRN.placeHolderList[391]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateOrder" 
 		"jackie_rigRN.placeHolderList[392]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.jointOrient" 
 		"jackie_rigRN.placeHolderList[393]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[394]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.inverseScale" 
 		"jackie_rigRN.placeHolderList[395]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateY" 
 		"jackie_rigRN.placeHolderList[396]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateX" 
 		"jackie_rigRN.placeHolderList[397]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateZ" 
 		"jackie_rigRN.placeHolderList[398]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateOrder" 
 		"jackie_rigRN.placeHolderList[399]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[400]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.jointOrient" 
 		"jackie_rigRN.placeHolderList[401]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.inverseScale" 
 		"jackie_rigRN.placeHolderList[402]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateX" 
 		"jackie_rigRN.placeHolderList[403]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateY" 
 		"jackie_rigRN.placeHolderList[404]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateZ" 
 		"jackie_rigRN.placeHolderList[405]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateOrder" 
 		"jackie_rigRN.placeHolderList[406]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[407]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.jointOrient" 
 		"jackie_rigRN.placeHolderList[408]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.inverseScale" 
 		"jackie_rigRN.placeHolderList[409]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateX" 
 		"jackie_rigRN.placeHolderList[410]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateY" 
 		"jackie_rigRN.placeHolderList[411]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateZ" 
 		"jackie_rigRN.placeHolderList[412]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.rotateOrder" 
 		"jackie_rigRN.placeHolderList[413]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.scale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[414]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.translate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.jointOrient" 
 		"jackie_rigRN.placeHolderList[415]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.inverseScale" 
 		"jackie_rigRN.placeHolderList[416]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.scale" 
 		"jackie_rigRN.placeHolderList[417]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.translate" 
 		"jackie_rigRN.placeHolderList[418]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotatePivot" 
 		"jackie_rigRN.placeHolderList[419]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[420]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotate" 
 		"jackie_rigRN.placeHolderList[421]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.rotateOrder" 
 		"jackie_rigRN.placeHolderList[422]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.parentMatrix" 
 		"jackie_rigRN.placeHolderList[423]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.jointOrient" 
 		"jackie_rigRN.placeHolderList[424]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[425]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.scaleX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.translateX" 
 		"jackie_rigRN.placeHolderList[426]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.scaleY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.translateY" 
 		"jackie_rigRN.placeHolderList[427]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.translateZ" 
 		"jackie_rigRN.placeHolderList[428]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.scaleX" 
 		"jackie_rigRN.placeHolderList[429]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.scaleY" 
 		"jackie_rigRN.placeHolderList[430]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.scaleZ" 
 		"jackie_rigRN.placeHolderList[431]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.rotateX" 
 		"jackie_rigRN.placeHolderList[432]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.rotateY" 
 		"jackie_rigRN.placeHolderList[433]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.rotateZ" 
 		"jackie_rigRN.placeHolderList[434]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.rotateOrder" 
 		"jackie_rigRN.placeHolderList[435]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[436]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[437]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.rotatePivot" 
 		"jackie_rigRN.placeHolderList[438]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[439]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.jointOrient" 
 		"jackie_rigRN.placeHolderList[440]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[441]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.scaleX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.translateX" 
 		"jackie_rigRN.placeHolderList[442]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.scaleY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.translateY" 
 		"jackie_rigRN.placeHolderList[443]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.translateZ" 
 		"jackie_rigRN.placeHolderList[444]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.scaleX" 
 		"jackie_rigRN.placeHolderList[445]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.scaleY" 
 		"jackie_rigRN.placeHolderList[446]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.scaleZ" 
 		"jackie_rigRN.placeHolderList[447]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.rotateY" 
 		"jackie_rigRN.placeHolderList[448]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.rotateX" 
 		"jackie_rigRN.placeHolderList[449]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.rotateZ" 
 		"jackie_rigRN.placeHolderList[450]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.rotateOrder" 
 		"jackie_rigRN.placeHolderList[451]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[452]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[453]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.rotatePivot" 
 		"jackie_rigRN.placeHolderList[454]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[455]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.jointOrient" 
 		"jackie_rigRN.placeHolderList[456]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[457]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.translateX" 
 		"jackie_rigRN.placeHolderList[458]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.translateY" 
 		"jackie_rigRN.placeHolderList[459]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.translateZ" 
 		"jackie_rigRN.placeHolderList[460]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.rotateZ" 
 		"jackie_rigRN.placeHolderList[461]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.rotateX" 
 		"jackie_rigRN.placeHolderList[462]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.rotateY" 
 		"jackie_rigRN.placeHolderList[463]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.rotateOrder" 
 		"jackie_rigRN.placeHolderList[464]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[465]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[466]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.rotatePivot" 
 		"jackie_rigRN.placeHolderList[467]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[468]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.scaleZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.jointOrient" 
 		"jackie_rigRN.placeHolderList[469]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.segmentScaleCompensate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.scaleX" 
 		"jackie_rigRN.placeHolderList[470]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.scaleY" 
 		"jackie_rigRN.placeHolderList[471]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.scaleZ" 
 		"jackie_rigRN.placeHolderList[472]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[473]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.scaleX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.translateX" 
 		"jackie_rigRN.placeHolderList[474]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.scaleY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.translateY" 
 		"jackie_rigRN.placeHolderList[475]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.translateZ" 
 		"jackie_rigRN.placeHolderList[476]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.scaleX" 
 		"jackie_rigRN.placeHolderList[477]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.scaleY" 
 		"jackie_rigRN.placeHolderList[478]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.scaleZ" 
 		"jackie_rigRN.placeHolderList[479]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.rotateX" 
 		"jackie_rigRN.placeHolderList[480]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.rotateY" 
 		"jackie_rigRN.placeHolderList[481]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.rotateZ" 
 		"jackie_rigRN.placeHolderList[482]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.rotateOrder" 
 		"jackie_rigRN.placeHolderList[483]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[484]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[485]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.rotatePivot" 
 		"jackie_rigRN.placeHolderList[486]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[487]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.jointOrient" 
 		"jackie_rigRN.placeHolderList[488]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[489]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.translateX" 
 		"jackie_rigRN.placeHolderList[490]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.translateY" 
 		"jackie_rigRN.placeHolderList[491]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.translateZ" 
 		"jackie_rigRN.placeHolderList[492]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.rotateX" 
 		"jackie_rigRN.placeHolderList[493]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.rotateY" 
 		"jackie_rigRN.placeHolderList[494]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.rotateZ" 
 		"jackie_rigRN.placeHolderList[495]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.rotateOrder" 
 		"jackie_rigRN.placeHolderList[496]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[497]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[498]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.rotatePivot" 
 		"jackie_rigRN.placeHolderList[499]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[500]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.scaleZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.jointOrient" 
 		"jackie_rigRN.placeHolderList[501]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.segmentScaleCompensate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.scaleX" 
 		"jackie_rigRN.placeHolderList[502]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.scaleY" 
 		"jackie_rigRN.placeHolderList[503]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.scaleZ" 
 		"jackie_rigRN.placeHolderList[504]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[505]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.translateX" 
 		"jackie_rigRN.placeHolderList[506]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.translateY" 
 		"jackie_rigRN.placeHolderList[507]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.translateZ" 
 		"jackie_rigRN.placeHolderList[508]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.rotateX" 
 		"jackie_rigRN.placeHolderList[509]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.rotateY" 
 		"jackie_rigRN.placeHolderList[510]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.rotateZ" 
 		"jackie_rigRN.placeHolderList[511]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.rotateOrder" 
 		"jackie_rigRN.placeHolderList[512]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[513]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[514]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.rotatePivot" 
 		"jackie_rigRN.placeHolderList[515]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[516]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.scaleZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.jointOrient" 
 		"jackie_rigRN.placeHolderList[517]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.segmentScaleCompensate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.scaleX" 
 		"jackie_rigRN.placeHolderList[518]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.scaleY" 
 		"jackie_rigRN.placeHolderList[519]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.scaleZ" 
 		"jackie_rigRN.placeHolderList[520]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[521]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.translateX" 
 		"jackie_rigRN.placeHolderList[522]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.translateY" 
 		"jackie_rigRN.placeHolderList[523]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.translateZ" 
 		"jackie_rigRN.placeHolderList[524]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.rotateX" 
 		"jackie_rigRN.placeHolderList[525]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.rotateY" 
 		"jackie_rigRN.placeHolderList[526]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.rotateZ" 
 		"jackie_rigRN.placeHolderList[527]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.rotateOrder" 
 		"jackie_rigRN.placeHolderList[528]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[529]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[530]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.rotatePivot" 
 		"jackie_rigRN.placeHolderList[531]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[532]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.scaleZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.jointOrient" 
 		"jackie_rigRN.placeHolderList[533]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.segmentScaleCompensate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.scaleX" 
 		"jackie_rigRN.placeHolderList[534]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.scaleY" 
 		"jackie_rigRN.placeHolderList[535]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.scaleZ" 
 		"jackie_rigRN.placeHolderList[536]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[537]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.translateX" 
 		"jackie_rigRN.placeHolderList[538]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.translateY" 
 		"jackie_rigRN.placeHolderList[539]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.translateZ" 
 		"jackie_rigRN.placeHolderList[540]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.rotateX" 
 		"jackie_rigRN.placeHolderList[541]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.rotateY" 
 		"jackie_rigRN.placeHolderList[542]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.rotateZ" 
 		"jackie_rigRN.placeHolderList[543]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.rotateOrder" 
 		"jackie_rigRN.placeHolderList[544]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[545]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[546]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.rotatePivot" 
 		"jackie_rigRN.placeHolderList[547]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[548]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.scaleZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.jointOrient" 
 		"jackie_rigRN.placeHolderList[549]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.segmentScaleCompensate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.scaleX" 
 		"jackie_rigRN.placeHolderList[550]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.inverseScale" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.scaleY" 
 		"jackie_rigRN.placeHolderList[551]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.inverseScale" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.scaleZ" 
 		"jackie_rigRN.placeHolderList[552]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.translate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[553]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.translate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.inverseScale" 
 		"jackie_rigRN.placeHolderList[554]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.inverseScale" 
 		"jackie_rigRN.placeHolderList[555]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.translate" 
 		"jackie_rigRN.placeHolderList[556]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.translate" 
 		"jackie_rigRN.placeHolderList[557]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotate" 
 		"jackie_rigRN.placeHolderList[558]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotateX" 
 		"jackie_rigRN.placeHolderList[559]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotateY" 
 		"jackie_rigRN.placeHolderList[560]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotateZ" 
 		"jackie_rigRN.placeHolderList[561]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivot" 
 		"jackie_rigRN.placeHolderList[562]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivot" 
 		"jackie_rigRN.placeHolderList[563]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[564]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[565]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.parentMatrix" 
 		"jackie_rigRN.placeHolderList[566]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotateOrder" 
 		"jackie_rigRN.placeHolderList[567]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.rotateOrder" 
 		"jackie_rigRN.placeHolderList[568]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.scale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.jointOrient" 
 		"jackie_rigRN.placeHolderList[569]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.jointOrient" 
 		"jackie_rigRN.placeHolderList[570]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[571]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.scale" 
 		"jackie_rigRN.placeHolderList[572]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.translate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[573]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.translate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.inverseScale" 
 		"jackie_rigRN.placeHolderList[574]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.inverseScale" 
 		"jackie_rigRN.placeHolderList[575]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.translate" 
 		"jackie_rigRN.placeHolderList[576]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.translate" 
 		"jackie_rigRN.placeHolderList[577]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivot" 
 		"jackie_rigRN.placeHolderList[578]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivot" 
 		"jackie_rigRN.placeHolderList[579]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[580]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[581]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.parentMatrix" 
 		"jackie_rigRN.placeHolderList[582]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotate" 
 		"jackie_rigRN.placeHolderList[583]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotateX" 
 		"jackie_rigRN.placeHolderList[584]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotateY" 
 		"jackie_rigRN.placeHolderList[585]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.scale" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotateZ" 
 		"jackie_rigRN.placeHolderList[586]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotateOrder" 
 		"jackie_rigRN.placeHolderList[587]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.rotateOrder" 
 		"jackie_rigRN.placeHolderList[588]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.scale" 
 		"jackie_rigRN.placeHolderList[589]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.jointOrient" 
 		"jackie_rigRN.placeHolderList[590]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.translate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.jointOrient" 
 		"jackie_rigRN.placeHolderList[591]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[592]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:right_eye.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[593]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.translate" 
 		"jackie_rigRN.placeHolderList[594]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle.message" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.rotatePivot" 
 		"jackie_rigRN.placeHolderList[595]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle.message" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[596]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:joint1.parentMatrix" 
 		"jackie_rigRN.placeHolderList[597]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle.message" 
 		"jackie_rigRN.placeHolderList[598]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.inverseScale" 
 		"jackie_rigRN.placeHolderList[599]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateX" 
 		"jackie_rigRN.placeHolderList[600]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateY" 
 		"jackie_rigRN.placeHolderList[601]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateZ" 
 		"jackie_rigRN.placeHolderList[602]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translate" 
 		"jackie_rigRN.placeHolderList[603]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateX" 
 		"jackie_rigRN.placeHolderList[604]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.message" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateY" 
 		"jackie_rigRN.placeHolderList[605]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.message" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.translateZ" 
 		"jackie_rigRN.placeHolderList[606]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.message" 
 		"jackie_rigRN.placeHolderList[607]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.rotateOrder" 
 		"jackie_rigRN.placeHolderList[608]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.jointOrient" 
 		"jackie_rigRN.placeHolderList[609]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[610]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep.message" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.parentMatrix" 
 		"jackie_rigRN.placeHolderList[611]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.inverseScale" 
-		"jackie_rigRN.placeHolderList[612]" ""
 		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.rotateX" 
-		"jackie_rigRN.placeHolderList[613]" ""
+		"jackie_rigRN.placeHolderList[612]" ""
 		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.rotateY" 
-		"jackie_rigRN.placeHolderList[614]" ""
+		"jackie_rigRN.placeHolderList[613]" ""
 		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.rotateZ" 
+		"jackie_rigRN.placeHolderList[614]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.inverseScale" 
 		"jackie_rigRN.placeHolderList[615]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.message" 
-		"jackie_rigRN.placeHolderList[616]" ""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.rotateOrder" 
-		"jackie_rigRN.placeHolderList[617]" ""
+		"jackie_rigRN.placeHolderList[616]" ""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.jointOrient" 
-		"jackie_rigRN.placeHolderList[618]" ""
+		"jackie_rigRN.placeHolderList[617]" ""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.parentInverseMatrix" 
+		"jackie_rigRN.placeHolderList[618]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.message" 
 		"jackie_rigRN.placeHolderList[619]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.message" 
 		"jackie_rigRN.placeHolderList[620]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.translateX" 
 		"jackie_rigRN.placeHolderList[621]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.translateY" 
 		"jackie_rigRN.placeHolderList[622]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.translateZ" 
 		"jackie_rigRN.placeHolderList[623]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.inverseScale" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm.rotateX" 
 		"jackie_rigRN.placeHolderList[624]" ""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.inverseScale" 
 		"jackie_rigRN.placeHolderList[625]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.scale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.inverseScale" 
 		"jackie_rigRN.placeHolderList[626]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.scale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.inverseScale" 
 		"jackie_rigRN.placeHolderList[627]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.translate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.scale" 
 		"jackie_rigRN.placeHolderList[628]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.translate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.scale" 
 		"jackie_rigRN.placeHolderList[629]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.translate" 
 		"jackie_rigRN.placeHolderList[630]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.translate" 
 		"jackie_rigRN.placeHolderList[631]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotate" 
 		"jackie_rigRN.placeHolderList[632]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotate" 
 		"jackie_rigRN.placeHolderList[633]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateZ" 
 		"jackie_rigRN.placeHolderList[634]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateX" 
 		"jackie_rigRN.placeHolderList[635]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateY" 
 		"jackie_rigRN.placeHolderList[636]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivot" 
 		"jackie_rigRN.placeHolderList[637]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivot" 
 		"jackie_rigRN.placeHolderList[638]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[639]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[640]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentMatrix" 
 		"jackie_rigRN.placeHolderList[641]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentMatrix" 
 		"jackie_rigRN.placeHolderList[642]" ""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateOrder" 
 		"jackie_rigRN.placeHolderList[643]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateOrder" 
 		"jackie_rigRN.placeHolderList[644]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.rotateOrder" 
 		"jackie_rigRN.placeHolderList[645]" ""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.jointOrient" 
 		"jackie_rigRN.placeHolderList[646]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.jointOrient" 
 		"jackie_rigRN.placeHolderList[647]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.jointOrient" 
 		"jackie_rigRN.placeHolderList[648]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[649]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[650]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[651]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.scaleX" 
 		"jackie_rigRN.placeHolderList[652]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.scaleY" 
 		"jackie_rigRN.placeHolderList[653]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.scaleZ" 
 		"jackie_rigRN.placeHolderList[654]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.translateX" 
 		"jackie_rigRN.placeHolderList[655]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.translateY" 
 		"jackie_rigRN.placeHolderList[656]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.translateZ" 
 		"jackie_rigRN.placeHolderList[657]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.rotateX" 
 		"jackie_rigRN.placeHolderList[658]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.rotateY" 
 		"jackie_rigRN.placeHolderList[659]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.rotateZ" 
 		"jackie_rigRN.placeHolderList[660]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.rotatePivot" 
 		"jackie_rigRN.placeHolderList[661]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[662]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.rotateOrder" 
 		"jackie_rigRN.placeHolderList[663]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.jointOrient" 
 		"jackie_rigRN.placeHolderList[664]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[665]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[666]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[667]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.scaleX" 
 		"jackie_rigRN.placeHolderList[668]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.scaleY" 
 		"jackie_rigRN.placeHolderList[669]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.scaleZ" 
 		"jackie_rigRN.placeHolderList[670]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.translateX" 
 		"jackie_rigRN.placeHolderList[671]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.translateY" 
 		"jackie_rigRN.placeHolderList[672]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.translateZ" 
 		"jackie_rigRN.placeHolderList[673]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.rotatePivot" 
 		"jackie_rigRN.placeHolderList[674]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[675]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.rotateX" 
 		"jackie_rigRN.placeHolderList[676]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.rotateY" 
 		"jackie_rigRN.placeHolderList[677]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.rotateZ" 
 		"jackie_rigRN.placeHolderList[678]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.rotateOrder" 
 		"jackie_rigRN.placeHolderList[679]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.jointOrient" 
 		"jackie_rigRN.placeHolderList[680]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[681]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[682]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[683]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.scaleX" 
 		"jackie_rigRN.placeHolderList[684]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.scaleY" 
 		"jackie_rigRN.placeHolderList[685]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.scaleZ" 
 		"jackie_rigRN.placeHolderList[686]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.translateX" 
 		"jackie_rigRN.placeHolderList[687]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.translateY" 
 		"jackie_rigRN.placeHolderList[688]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.translateZ" 
 		"jackie_rigRN.placeHolderList[689]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.rotatePivot" 
 		"jackie_rigRN.placeHolderList[690]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[691]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.rotateX" 
 		"jackie_rigRN.placeHolderList[692]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.rotateY" 
 		"jackie_rigRN.placeHolderList[693]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.rotateZ" 
 		"jackie_rigRN.placeHolderList[694]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.rotateOrder" 
 		"jackie_rigRN.placeHolderList[695]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.jointOrient" 
 		"jackie_rigRN.placeHolderList[696]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[697]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[698]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[699]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.scaleX" 
 		"jackie_rigRN.placeHolderList[700]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.scaleY" 
 		"jackie_rigRN.placeHolderList[701]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.scaleZ" 
 		"jackie_rigRN.placeHolderList[702]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.translateX" 
 		"jackie_rigRN.placeHolderList[703]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.translateY" 
 		"jackie_rigRN.placeHolderList[704]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.translateZ" 
 		"jackie_rigRN.placeHolderList[705]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.rotatePivot" 
 		"jackie_rigRN.placeHolderList[706]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[707]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.rotateX" 
 		"jackie_rigRN.placeHolderList[708]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.rotateY" 
 		"jackie_rigRN.placeHolderList[709]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.rotateZ" 
 		"jackie_rigRN.placeHolderList[710]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.rotateOrder" 
 		"jackie_rigRN.placeHolderList[711]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.jointOrient" 
 		"jackie_rigRN.placeHolderList[712]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[713]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[714]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[715]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.translateX" 
 		"jackie_rigRN.placeHolderList[716]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.translateY" 
 		"jackie_rigRN.placeHolderList[717]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.translateZ" 
 		"jackie_rigRN.placeHolderList[718]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.rotatePivot" 
 		"jackie_rigRN.placeHolderList[719]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[720]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.rotateX" 
 		"jackie_rigRN.placeHolderList[721]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.rotateY" 
 		"jackie_rigRN.placeHolderList[722]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.rotateZ" 
 		"jackie_rigRN.placeHolderList[723]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.rotateOrder" 
 		"jackie_rigRN.placeHolderList[724]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.jointOrient" 
 		"jackie_rigRN.placeHolderList[725]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[726]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[727]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.scaleX" 
 		"jackie_rigRN.placeHolderList[728]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.segmentScaleCompensate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.scaleY" 
 		"jackie_rigRN.placeHolderList[729]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.scaleX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.scaleZ" 
 		"jackie_rigRN.placeHolderList[730]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_middle_finger|jackie_rig:middle_2|jackie_rig:middle_3|jackie_rig:middle_tip.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[731]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.scaleX" 
 		"jackie_rigRN.placeHolderList[732]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.scaleY" 
 		"jackie_rigRN.placeHolderList[733]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.scaleZ" 
 		"jackie_rigRN.placeHolderList[734]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.translateX" 
 		"jackie_rigRN.placeHolderList[735]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.translateY" 
 		"jackie_rigRN.placeHolderList[736]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.translateZ" 
 		"jackie_rigRN.placeHolderList[737]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.rotatePivot" 
 		"jackie_rigRN.placeHolderList[738]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[739]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.rotateX" 
 		"jackie_rigRN.placeHolderList[740]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.rotateY" 
 		"jackie_rigRN.placeHolderList[741]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.rotateZ" 
 		"jackie_rigRN.placeHolderList[742]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.rotateOrder" 
 		"jackie_rigRN.placeHolderList[743]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.jointOrient" 
 		"jackie_rigRN.placeHolderList[744]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[745]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[746]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[747]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.scaleX" 
 		"jackie_rigRN.placeHolderList[748]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.scaleY" 
 		"jackie_rigRN.placeHolderList[749]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.scaleZ" 
 		"jackie_rigRN.placeHolderList[750]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.translateX" 
 		"jackie_rigRN.placeHolderList[751]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.translateY" 
 		"jackie_rigRN.placeHolderList[752]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.translateZ" 
 		"jackie_rigRN.placeHolderList[753]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.rotateX" 
 		"jackie_rigRN.placeHolderList[754]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.rotateY" 
 		"jackie_rigRN.placeHolderList[755]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.rotateZ" 
 		"jackie_rigRN.placeHolderList[756]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.rotateOrder" 
 		"jackie_rigRN.placeHolderList[757]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[758]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[759]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.rotatePivot" 
 		"jackie_rigRN.placeHolderList[760]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[761]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.jointOrient" 
 		"jackie_rigRN.placeHolderList[762]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[763]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.scaleX" 
 		"jackie_rigRN.placeHolderList[764]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.scaleY" 
 		"jackie_rigRN.placeHolderList[765]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.scaleZ" 
 		"jackie_rigRN.placeHolderList[766]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.translateX" 
 		"jackie_rigRN.placeHolderList[767]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.translateY" 
 		"jackie_rigRN.placeHolderList[768]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.translateZ" 
 		"jackie_rigRN.placeHolderList[769]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.rotatePivot" 
 		"jackie_rigRN.placeHolderList[770]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[771]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.rotateX" 
 		"jackie_rigRN.placeHolderList[772]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.rotateY" 
 		"jackie_rigRN.placeHolderList[773]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.rotateZ" 
 		"jackie_rigRN.placeHolderList[774]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.rotateOrder" 
 		"jackie_rigRN.placeHolderList[775]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.jointOrient" 
 		"jackie_rigRN.placeHolderList[776]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[777]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[778]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[779]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.translateX" 
 		"jackie_rigRN.placeHolderList[780]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.translateY" 
 		"jackie_rigRN.placeHolderList[781]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.translateZ" 
 		"jackie_rigRN.placeHolderList[782]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.rotatePivot" 
 		"jackie_rigRN.placeHolderList[783]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[784]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.rotateX" 
 		"jackie_rigRN.placeHolderList[785]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.rotateY" 
 		"jackie_rigRN.placeHolderList[786]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.rotateZ" 
 		"jackie_rigRN.placeHolderList[787]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.rotateOrder" 
 		"jackie_rigRN.placeHolderList[788]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.jointOrient" 
 		"jackie_rigRN.placeHolderList[789]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[790]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[791]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.scaleX" 
 		"jackie_rigRN.placeHolderList[792]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.segmentScaleCompensate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.scaleY" 
 		"jackie_rigRN.placeHolderList[793]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.scaleX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.scaleZ" 
 		"jackie_rigRN.placeHolderList[794]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_ring_finger|jackie_rig:ring_2|jackie_rig:ring_3|jackie_rig:ring_tip.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[795]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.scaleX" 
 		"jackie_rigRN.placeHolderList[796]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.scaleY" 
 		"jackie_rigRN.placeHolderList[797]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.scaleZ" 
 		"jackie_rigRN.placeHolderList[798]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.translateX" 
 		"jackie_rigRN.placeHolderList[799]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.translateY" 
 		"jackie_rigRN.placeHolderList[800]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.translateZ" 
 		"jackie_rigRN.placeHolderList[801]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.rotatePivot" 
 		"jackie_rigRN.placeHolderList[802]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[803]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.rotateX" 
 		"jackie_rigRN.placeHolderList[804]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.rotateY" 
 		"jackie_rigRN.placeHolderList[805]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.rotateZ" 
 		"jackie_rigRN.placeHolderList[806]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.rotateOrder" 
 		"jackie_rigRN.placeHolderList[807]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.jointOrient" 
 		"jackie_rigRN.placeHolderList[808]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[809]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[810]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[811]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.scaleX" 
 		"jackie_rigRN.placeHolderList[812]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.scaleY" 
 		"jackie_rigRN.placeHolderList[813]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.scaleZ" 
 		"jackie_rigRN.placeHolderList[814]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.translateX" 
 		"jackie_rigRN.placeHolderList[815]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.translateY" 
 		"jackie_rigRN.placeHolderList[816]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.translateZ" 
 		"jackie_rigRN.placeHolderList[817]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.rotatePivot" 
 		"jackie_rigRN.placeHolderList[818]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[819]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.rotateX" 
 		"jackie_rigRN.placeHolderList[820]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.rotateY" 
 		"jackie_rigRN.placeHolderList[821]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.rotateZ" 
 		"jackie_rigRN.placeHolderList[822]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.rotateOrder" 
 		"jackie_rigRN.placeHolderList[823]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.jointOrient" 
 		"jackie_rigRN.placeHolderList[824]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[825]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[826]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[827]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.scaleX" 
 		"jackie_rigRN.placeHolderList[828]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.scaleY" 
 		"jackie_rigRN.placeHolderList[829]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.scaleZ" 
 		"jackie_rigRN.placeHolderList[830]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.translateX" 
 		"jackie_rigRN.placeHolderList[831]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.translateY" 
 		"jackie_rigRN.placeHolderList[832]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.translateZ" 
 		"jackie_rigRN.placeHolderList[833]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.rotatePivot" 
 		"jackie_rigRN.placeHolderList[834]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[835]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.rotateX" 
 		"jackie_rigRN.placeHolderList[836]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.rotateY" 
 		"jackie_rigRN.placeHolderList[837]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.rotateZ" 
 		"jackie_rigRN.placeHolderList[838]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.rotateOrder" 
 		"jackie_rigRN.placeHolderList[839]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.jointOrient" 
 		"jackie_rigRN.placeHolderList[840]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[841]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[842]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[843]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.translateX" 
 		"jackie_rigRN.placeHolderList[844]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.translateY" 
 		"jackie_rigRN.placeHolderList[845]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.translateZ" 
 		"jackie_rigRN.placeHolderList[846]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.rotatePivot" 
 		"jackie_rigRN.placeHolderList[847]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[848]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.rotateX" 
 		"jackie_rigRN.placeHolderList[849]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.rotateY" 
 		"jackie_rigRN.placeHolderList[850]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.rotateZ" 
 		"jackie_rigRN.placeHolderList[851]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.rotateOrder" 
 		"jackie_rigRN.placeHolderList[852]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.jointOrient" 
 		"jackie_rigRN.placeHolderList[853]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[854]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[855]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.scaleX" 
 		"jackie_rigRN.placeHolderList[856]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.segmentScaleCompensate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.scaleY" 
 		"jackie_rigRN.placeHolderList[857]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.scaleX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.scaleZ" 
 		"jackie_rigRN.placeHolderList[858]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:pinky|jackie_rig:pinky_2|jackie_rig:pinky_3|jackie_rig:pinky_tip.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[859]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.scaleX" 
 		"jackie_rigRN.placeHolderList[860]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.scaleY" 
 		"jackie_rigRN.placeHolderList[861]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.scaleZ" 
 		"jackie_rigRN.placeHolderList[862]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.rotateX" 
 		"jackie_rigRN.placeHolderList[863]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.rotateY" 
 		"jackie_rigRN.placeHolderList[864]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.rotateZ" 
 		"jackie_rigRN.placeHolderList[865]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.translateX" 
 		"jackie_rigRN.placeHolderList[866]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.translateY" 
 		"jackie_rigRN.placeHolderList[867]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.translateZ" 
 		"jackie_rigRN.placeHolderList[868]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.rotatePivot" 
 		"jackie_rigRN.placeHolderList[869]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[870]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.rotateOrder" 
 		"jackie_rigRN.placeHolderList[871]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.jointOrient" 
 		"jackie_rigRN.placeHolderList[872]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[873]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[874]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[875]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.scaleX" 
 		"jackie_rigRN.placeHolderList[876]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.scaleY" 
 		"jackie_rigRN.placeHolderList[877]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.scaleZ" 
 		"jackie_rigRN.placeHolderList[878]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.translateX" 
 		"jackie_rigRN.placeHolderList[879]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.translateY" 
 		"jackie_rigRN.placeHolderList[880]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.translateZ" 
 		"jackie_rigRN.placeHolderList[881]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.rotateX" 
 		"jackie_rigRN.placeHolderList[882]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.rotateY" 
 		"jackie_rigRN.placeHolderList[883]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.rotateZ" 
 		"jackie_rigRN.placeHolderList[884]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.rotatePivot" 
 		"jackie_rigRN.placeHolderList[885]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[886]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.rotateOrder" 
 		"jackie_rigRN.placeHolderList[887]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.jointOrient" 
 		"jackie_rigRN.placeHolderList[888]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[889]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[890]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[891]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.scaleX" 
 		"jackie_rigRN.placeHolderList[892]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.scaleY" 
 		"jackie_rigRN.placeHolderList[893]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.scaleZ" 
 		"jackie_rigRN.placeHolderList[894]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.rotateX" 
 		"jackie_rigRN.placeHolderList[895]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.rotateY" 
 		"jackie_rigRN.placeHolderList[896]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.rotateZ" 
 		"jackie_rigRN.placeHolderList[897]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.translateX" 
 		"jackie_rigRN.placeHolderList[898]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.translateY" 
 		"jackie_rigRN.placeHolderList[899]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.translateZ" 
 		"jackie_rigRN.placeHolderList[900]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.rotatePivot" 
 		"jackie_rigRN.placeHolderList[901]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[902]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.rotateOrder" 
 		"jackie_rigRN.placeHolderList[903]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.jointOrient" 
 		"jackie_rigRN.placeHolderList[904]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[905]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[906]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[907]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.translateX" 
 		"jackie_rigRN.placeHolderList[908]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.scaleX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.translateY" 
 		"jackie_rigRN.placeHolderList[909]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.scaleY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.translateZ" 
 		"jackie_rigRN.placeHolderList[910]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.scaleX" 
 		"jackie_rigRN.placeHolderList[911]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.scaleY" 
 		"jackie_rigRN.placeHolderList[912]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.scaleZ" 
 		"jackie_rigRN.placeHolderList[913]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.rotatePivot" 
 		"jackie_rigRN.placeHolderList[914]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[915]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.rotateX" 
 		"jackie_rigRN.placeHolderList[916]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.rotateY" 
 		"jackie_rigRN.placeHolderList[917]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.rotateZ" 
 		"jackie_rigRN.placeHolderList[918]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.rotateOrder" 
 		"jackie_rigRN.placeHolderList[919]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.jointOrient" 
 		"jackie_rigRN.placeHolderList[920]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[921]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[922]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_index_finger|jackie_rig:index_2|jackie_rig:index_3|jackie_rig:index_tip.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[923]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.scaleX" 
 		"jackie_rigRN.placeHolderList[924]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.scaleY" 
 		"jackie_rigRN.placeHolderList[925]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.scaleZ" 
 		"jackie_rigRN.placeHolderList[926]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.translateX" 
 		"jackie_rigRN.placeHolderList[927]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.translateY" 
 		"jackie_rigRN.placeHolderList[928]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.translateZ" 
 		"jackie_rigRN.placeHolderList[929]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.rotatePivot" 
 		"jackie_rigRN.placeHolderList[930]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[931]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.rotateX" 
 		"jackie_rigRN.placeHolderList[932]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.rotateY" 
 		"jackie_rigRN.placeHolderList[933]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.rotateZ" 
 		"jackie_rigRN.placeHolderList[934]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.rotateOrder" 
 		"jackie_rigRN.placeHolderList[935]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.jointOrient" 
 		"jackie_rigRN.placeHolderList[936]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[937]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[938]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[939]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.scaleX" 
 		"jackie_rigRN.placeHolderList[940]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.scaleY" 
 		"jackie_rigRN.placeHolderList[941]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.scaleZ" 
 		"jackie_rigRN.placeHolderList[942]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.rotateX" 
 		"jackie_rigRN.placeHolderList[943]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.rotateY" 
 		"jackie_rigRN.placeHolderList[944]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.rotateZ" 
 		"jackie_rigRN.placeHolderList[945]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.translateX" 
 		"jackie_rigRN.placeHolderList[946]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.translateY" 
 		"jackie_rigRN.placeHolderList[947]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.translateZ" 
 		"jackie_rigRN.placeHolderList[948]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.rotatePivot" 
 		"jackie_rigRN.placeHolderList[949]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[950]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.rotateOrder" 
 		"jackie_rigRN.placeHolderList[951]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.jointOrient" 
 		"jackie_rigRN.placeHolderList[952]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[953]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[954]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[955]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.translateX" 
 		"jackie_rigRN.placeHolderList[956]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.translateY" 
 		"jackie_rigRN.placeHolderList[957]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.translateZ" 
 		"jackie_rigRN.placeHolderList[958]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.rotatePivot" 
 		"jackie_rigRN.placeHolderList[959]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[960]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.rotateX" 
 		"jackie_rigRN.placeHolderList[961]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.rotateY" 
 		"jackie_rigRN.placeHolderList[962]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.rotateZ" 
 		"jackie_rigRN.placeHolderList[963]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.rotateOrder" 
 		"jackie_rigRN.placeHolderList[964]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.jointOrient" 
 		"jackie_rigRN.placeHolderList[965]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.scaleX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[966]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.scaleY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[967]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.scaleZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.scaleX" 
 		"jackie_rigRN.placeHolderList[968]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.segmentScaleCompensate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.scaleY" 
 		"jackie_rigRN.placeHolderList[969]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle.message" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.scaleZ" 
 		"jackie_rigRN.placeHolderList[970]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist|jackie_rig:left_palm|jackie_rig:left_thumb|jackie_rig:thumb_2|jackie_rig:thumb_tip.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[971]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.message" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle.message" 
 		"jackie_rigRN.placeHolderList[972]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.inverseScale" 
 		"jackie_rigRN.placeHolderList[973]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.message" 
 		"jackie_rigRN.placeHolderList[974]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateX" 
 		"jackie_rigRN.placeHolderList[975]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateY" 
 		"jackie_rigRN.placeHolderList[976]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateZ" 
 		"jackie_rigRN.placeHolderList[977]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translate" 
 		"jackie_rigRN.placeHolderList[978]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateX" 
 		"jackie_rigRN.placeHolderList[979]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateY" 
 		"jackie_rigRN.placeHolderList[980]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.translateZ" 
 		"jackie_rigRN.placeHolderList[981]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.rotateOrder" 
 		"jackie_rigRN.placeHolderList[982]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.jointOrient" 
 		"jackie_rigRN.placeHolderList[983]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[984]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder.parentMatrix" 
 		"jackie_rigRN.placeHolderList[985]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.inverseScale" 
 		"jackie_rigRN.placeHolderList[986]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateX" 
 		"jackie_rigRN.placeHolderList[987]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateY" 
 		"jackie_rigRN.placeHolderList[988]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateZ" 
 		"jackie_rigRN.placeHolderList[989]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.rotateOrder" 
 		"jackie_rigRN.placeHolderList[990]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.jointOrient" 
 		"jackie_rigRN.placeHolderList[991]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[992]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.message" 
 		"jackie_rigRN.placeHolderList[993]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.message" 
 		"jackie_rigRN.placeHolderList[994]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.inverseScale" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.rotateX" 
 		"jackie_rigRN.placeHolderList[995]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.scale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.translateX" 
 		"jackie_rigRN.placeHolderList[996]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.translate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.translateY" 
 		"jackie_rigRN.placeHolderList[997]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm.translateZ" 
 		"jackie_rigRN.placeHolderList[998]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.inverseScale" 
 		"jackie_rigRN.placeHolderList[999]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.inverseScale" 
 		"jackie_rigRN.placeHolderList[1000]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.scale" 
 		"jackie_rigRN.placeHolderList[1001]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.translate" 
 		"jackie_rigRN.placeHolderList[1002]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotatePivot" 
 		"jackie_rigRN.placeHolderList[1003]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[1004]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.parentMatrix" 
 		"jackie_rigRN.placeHolderList[1005]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotate" 
 		"jackie_rigRN.placeHolderList[1006]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateX" 
 		"jackie_rigRN.placeHolderList[1007]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateY" 
 		"jackie_rigRN.placeHolderList[1008]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateZ" 
 		"jackie_rigRN.placeHolderList[1009]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateOrder" 
 		"jackie_rigRN.placeHolderList[1010]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.rotateOrder" 
 		"jackie_rigRN.placeHolderList[1011]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.message" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.jointOrient" 
 		"jackie_rigRN.placeHolderList[1012]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.jointOrient" 
 		"jackie_rigRN.placeHolderList[1013]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[1014]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[1015]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.inverseScale" 
 		"jackie_rigRN.placeHolderList[1016]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.message" 
 		"jackie_rigRN.placeHolderList[1017]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.rotateX" 
 		"jackie_rigRN.placeHolderList[1018]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.parentMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.rotateY" 
 		"jackie_rigRN.placeHolderList[1019]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.translate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.rotateZ" 
 		"jackie_rigRN.placeHolderList[1020]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.rotateOrder" 
 		"jackie_rigRN.placeHolderList[1021]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[1022]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.jointOrient" 
 		"jackie_rigRN.placeHolderList[1023]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.parentMatrix" 
 		"jackie_rigRN.placeHolderList[1024]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip.translate" 
 		"jackie_rigRN.placeHolderList[1025]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.inverseScale" 
 		"jackie_rigRN.placeHolderList[1026]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateX" 
 		"jackie_rigRN.placeHolderList[1027]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.inverseScale" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateY" 
 		"jackie_rigRN.placeHolderList[1028]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.inverseScale" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateZ" 
 		"jackie_rigRN.placeHolderList[1029]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.scale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.rotateOrder" 
 		"jackie_rigRN.placeHolderList[1030]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.jointOrient" 
 		"jackie_rigRN.placeHolderList[1031]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[1032]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.inverseScale" 
 		"jackie_rigRN.placeHolderList[1033]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.inverseScale" 
 		"jackie_rigRN.placeHolderList[1034]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.scale" 
 		"jackie_rigRN.placeHolderList[1035]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translate" 
 		"jackie_rigRN.placeHolderList[1036]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translateX" 
 		"jackie_rigRN.placeHolderList[1037]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translateY" 
 		"jackie_rigRN.placeHolderList[1038]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.translateZ" 
 		"jackie_rigRN.placeHolderList[1039]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotate" 
 		"jackie_rigRN.placeHolderList[1040]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.parentMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateX" 
 		"jackie_rigRN.placeHolderList[1041]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateY" 
 		"jackie_rigRN.placeHolderList[1042]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateZ" 
 		"jackie_rigRN.placeHolderList[1043]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotatePivot" 
 		"jackie_rigRN.placeHolderList[1044]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[1045]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.parentMatrix" 
 		"jackie_rigRN.placeHolderList[1046]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateOrder" 
 		"jackie_rigRN.placeHolderList[1047]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.rotateOrder" 
 		"jackie_rigRN.placeHolderList[1048]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.message" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.jointOrient" 
 		"jackie_rigRN.placeHolderList[1049]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.jointOrient" 
 		"jackie_rigRN.placeHolderList[1050]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[1051]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle.segmentScaleCompensate" 
 		"jackie_rigRN.placeHolderList[1052]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.translate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.inverseScale" 
 		"jackie_rigRN.placeHolderList[1053]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.message" 
 		"jackie_rigRN.placeHolderList[1054]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.rotateX" 
 		"jackie_rigRN.placeHolderList[1055]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.rotateY" 
 		"jackie_rigRN.placeHolderList[1056]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.rotateZ" 
 		"jackie_rigRN.placeHolderList[1057]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.inverseScale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.translate" 
 		"jackie_rigRN.placeHolderList[1058]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.parentMatrix" 
 		"jackie_rigRN.placeHolderList[1059]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.rotateOrder" 
 		"jackie_rigRN.placeHolderList[1060]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[1061]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip.jointOrient" 
 		"jackie_rigRN.placeHolderList[1062]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.inverseScale" 
 		"jackie_rigRN.placeHolderList[1063]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateX" 
 		"jackie_rigRN.placeHolderList[1064]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.inverseScale" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateY" 
 		"jackie_rigRN.placeHolderList[1065]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.inverseScale" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateZ" 
 		"jackie_rigRN.placeHolderList[1066]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.scale" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.rotateOrder" 
 		"jackie_rigRN.placeHolderList[1067]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.jointOrient" 
 		"jackie_rigRN.placeHolderList[1068]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[1069]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.inverseScale" 
 		"jackie_rigRN.placeHolderList[1070]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.inverseScale" 
 		"jackie_rigRN.placeHolderList[1071]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.scale" 
 		"jackie_rigRN.placeHolderList[1072]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translate" 
 		"jackie_rigRN.placeHolderList[1073]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.parentMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translateX" 
 		"jackie_rigRN.placeHolderList[1074]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translateY" 
 		"jackie_rigRN.placeHolderList[1075]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.translateZ" 
 		"jackie_rigRN.placeHolderList[1076]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotatePivot" 
 		"jackie_rigRN.placeHolderList[1077]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[1078]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.parentMatrix" 
 		"jackie_rigRN.placeHolderList[1079]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotate" 
 		"jackie_rigRN.placeHolderList[1080]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateX" 
 		"jackie_rigRN.placeHolderList[1081]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateY" 
 		"jackie_rigRN.placeHolderList[1082]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateZ" 
 		"jackie_rigRN.placeHolderList[1083]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.segmentScaleCompensate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateOrder" 
 		"jackie_rigRN.placeHolderList[1084]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.rotateOrder" 
+		"jackie_rigRN.placeHolderList[1085]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.jointOrient" 
+		"jackie_rigRN.placeHolderList[1086]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.jointOrient" 
+		"jackie_rigRN.placeHolderList[1087]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.parentInverseMatrix" 
+		"jackie_rigRN.placeHolderList[1088]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle.segmentScaleCompensate" 
+		"jackie_rigRN.placeHolderList[1089]" ""
 		5 0 "jackie_rigRN" "jackie_rig:skinCluster1GroupId.groupId" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		"jackie_rigRN.placeHolderList[1085]" "jackie_rigRN.placeHolderList[1086]" "jackie_rig:Jackie_latest:Group9688Shape.iog.og[0].gid"
+		"jackie_rigRN.placeHolderList[1090]" "jackie_rigRN.placeHolderList[1091]" "jackie_rig:Jackie_latest:Group9688Shape.iog.og[0].gid"
 		
 		5 0 "jackie_rigRN" "jackie_rig:skinCluster1Set.memberWireframeColor" 
 		"|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		"jackie_rigRN.placeHolderList[1087]" "jackie_rigRN.placeHolderList[1088]" "jackie_rig:Jackie_latest:Group9688Shape.iog.og[0].gco"
+		"jackie_rigRN.placeHolderList[1092]" "jackie_rigRN.placeHolderList[1093]" "jackie_rig:Jackie_latest:Group9688Shape.iog.og[0].gco"
 		
 		5 0 "jackie_rigRN" "jackie_rig:groupId2.groupId" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1].objectGroupId" 
-		"jackie_rigRN.placeHolderList[1089]" "jackie_rigRN.placeHolderList[1090]" "jackie_rig:Jackie_latest:Group9688Shape.iog.og[1].gid"
+		"jackie_rigRN.placeHolderList[1094]" "jackie_rigRN.placeHolderList[1095]" "jackie_rig:Jackie_latest:Group9688Shape.iog.og[1].gid"
 		
 		5 0 "jackie_rigRN" "jackie_rig:tweakSet1.memberWireframeColor" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1].objectGrpColor" 
-		"jackie_rigRN.placeHolderList[1091]" "jackie_rigRN.placeHolderList[1092]" "jackie_rig:Jackie_latest:Group9688Shape.iog.og[1].gco"
+		"jackie_rigRN.placeHolderList[1096]" "jackie_rigRN.placeHolderList[1097]" "jackie_rig:Jackie_latest:Group9688Shape.iog.og[1].gco"
 		
-		5 3 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.message" 
-		"jackie_rigRN.placeHolderList[1093]" ""
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups" 
-		"jackie_rig:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[1094]" "jackie_rigRN.placeHolderList[1095]" 
+		"jackie_rig:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[1098]" "jackie_rigRN.placeHolderList[1099]" 
 		"jackie_rig:PxrSurface1SG.dsm"
-		5 3 "jackie_rigRN" "jackie_rig:skinCluster1.message" "jackie_rigRN.placeHolderList[1096]" 
-		""
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0]" 
-		"jackie_rig:skinCluster1Set.dagSetMembers" "jackie_rigRN.placeHolderList[1097]" "jackie_rigRN.placeHolderList[1098]" 
+		"jackie_rig:skinCluster1Set.dagSetMembers" "jackie_rigRN.placeHolderList[1100]" "jackie_rigRN.placeHolderList[1101]" 
 		"jackie_rig:skinCluster1Set.dsm"
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1]" 
-		"jackie_rig:tweakSet1.dagSetMembers" "jackie_rigRN.placeHolderList[1099]" "jackie_rigRN.placeHolderList[1100]" 
+		"jackie_rig:tweakSet1.dagSetMembers" "jackie_rigRN.placeHolderList[1102]" "jackie_rigRN.placeHolderList[1103]" 
 		"jackie_rig:tweakSet1.dsm"
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Group9688ShapeOrig.worldMesh" 
-		"jackie_rig:groupParts2.inputGeometry" "jackie_rigRN.placeHolderList[1101]" "jackie_rigRN.placeHolderList[1102]" 
+		"jackie_rig:groupParts2.inputGeometry" "jackie_rigRN.placeHolderList[1104]" "jackie_rigRN.placeHolderList[1105]" 
 		"jackie_rig:groupParts2.ig"
-		5 3 "jackie_rigRN" "jackie_rig:bindPose1.message" "jackie_rigRN.placeHolderList[1103]" 
+		"jackie_rig:jackiePants_latestRN" 41
+		0 "|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" "|jackie_GEO" 
+		"-s -r "
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"visibility" " 1"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"overrideDisplayType" " 0"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"overrideLevelOfDetail" " 0"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"overrideShading" " 1"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"overrideTexturing" " 1"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"overridePlayback" " 1"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"overrideEnabled" " 0"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"overrideVisibility" " 1"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"hideOnPlayback" " 0"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"overrideRGBColors" " 0"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"overrideColor" " 0"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"overrideColorRGB" " -type \"float3\" 0 0 0"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"rotatePivot" " -type \"double3\" -0.006 -0.063658494966674528 0.011519840177370455"
+		
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"scalePivot" " -type \"double3\" -0.006 -0.063658494966674528 0.011519840177370455"
+		
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
+		"instObjGroups.objectGroups" " -s 3"
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:16643]\""
+		
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
+		"instObjGroups.objectGroups[1].objectGrpCompList" " -type \"componentList\" 1 \"f[0:16643]\""
+		
+		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
+		"instObjGroups.objectGroups[2].objectGrpCompList" " -type \"componentList\" 1 \"vtx[0:16641]\""
+		
+		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dagSetMembers" "-na"
+		
+		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" "-na"
+		
+		3 "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.groupId" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
 		""
-		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_visibility.message" "jackie_rigRN.placeHolderList[1104]" 
+		3 "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.memberWireframeColor" 
+		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGrpColor" 
 		""
-		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_translateX.message" "jackie_rigRN.placeHolderList[1105]" 
+		3 "jackie_rig:jackiePants_latest:jackiePants_latest:groupId2.groupId" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGroupId" 
 		""
-		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_translateY.message" "jackie_rigRN.placeHolderList[1106]" 
+		3 "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.memberWireframeColor" 
+		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGrpColor" 
 		""
-		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_translateZ.message" "jackie_rigRN.placeHolderList[1107]" 
+		3 "jackie_rig:jackiePants_latest:jackiePants_latest:groupId3.groupId" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGroupId" 
 		""
-		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_scaleX.message" "jackie_rigRN.placeHolderList[1108]" 
+		3 "jackie_rig:jackiePants_latest:jackiePants_latest:default1.memberWireframeColor" 
+		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGrpColor" 
 		""
-		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_scaleY.message" "jackie_rigRN.placeHolderList[1109]" 
-		""
-		5 3 "jackie_rigRN" "jackie_rig:left_shoulder_scaleZ.message" "jackie_rigRN.placeHolderList[1110]" 
-		""
+		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
+		"jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" "-na"
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.groupId" 
+		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		"jackie_rigRN.placeHolderList[51]" "jackie_rigRN.placeHolderList[52]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gid"
+		
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.memberWireframeColor" 
+		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		"jackie_rigRN.placeHolderList[53]" "jackie_rigRN.placeHolderList[54]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gco"
+		
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId2.groupId" 
+		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGroupId" 
+		"jackie_rigRN.placeHolderList[55]" "jackie_rigRN.placeHolderList[56]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gid"
+		
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.memberWireframeColor" 
+		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGrpColor" 
+		"jackie_rigRN.placeHolderList[57]" "jackie_rigRN.placeHolderList[58]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gco"
+		
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId3.groupId" 
+		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGroupId" 
+		"jackie_rigRN.placeHolderList[59]" "jackie_rigRN.placeHolderList[60]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gid"
+		
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.memberWireframeColor" 
+		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGrpColor" 
+		"jackie_rigRN.placeHolderList[61]" "jackie_rigRN.placeHolderList[62]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gco"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
+		"jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[63]" 
+		"jackie_rigRN.placeHolderList[64]" "jackie_rig:jackiePants_latest:PxrSurface1SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dagSetMembers" "jackie_rigRN.placeHolderList[65]" 
+		"jackie_rigRN.placeHolderList[66]" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" "jackie_rigRN.placeHolderList[67]" 
+		"jackie_rigRN.placeHolderList[68]" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" "jackie_rigRN.placeHolderList[69]" 
+		"jackie_rigRN.placeHolderList[70]" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.dsm"
+		
 		"jackie_rig:jackieHair_latestRN" 965
 		0 "|jackie_rig:jackieHair_latest:jackieHair" "|jackie_GEO" "-s -r "
 		2 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair" "visibility" " 1"
@@ -12128,20 +12118,6 @@ createNode reference -n "jackie_rigRN";
 		"overrideColor" " 0"
 		2 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface39" 
 		"overrideColorRGB" " -type \"float3\" 0 0 0"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface22|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface23|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface24|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface25|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface26|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface27|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface28|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface6|jackie_rig:jackieHair_latest:polySurfaceShape17.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface8|jackie_rig:jackieHair_latest:polySurfaceShape19.instObjGroups" 
@@ -12160,6 +12136,28 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface46|jackie_rig:jackieHair_latest:polySurfaceShape46.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface1|jackie_rig:jackieHair_latest:polySurfaceShape12.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface2|jackie_rig:jackieHair_latest:polySurfaceShape13.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface3|jackie_rig:jackieHair_latest:polySurfaceShape14.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface4|jackie_rig:jackieHair_latest:polySurfaceShape15.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface7|jackie_rig:jackieHair_latest:polySurfaceShape18.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface40|jackie_rig:jackieHair_latest:polySurfaceShape40.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface41|jackie_rig:jackieHair_latest:polySurfaceShape41.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface42|jackie_rig:jackieHair_latest:polySurfaceShape42.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface43|jackie_rig:jackieHair_latest:polySurfaceShape43.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface44|jackie_rig:jackieHair_latest:polySurfaceShape44.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface45|jackie_rig:jackieHair_latest:polySurfaceShape45.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface29|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface31|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
@@ -12210,28 +12208,20 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface39|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface1|jackie_rig:jackieHair_latest:polySurfaceShape12.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface2|jackie_rig:jackieHair_latest:polySurfaceShape13.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface3|jackie_rig:jackieHair_latest:polySurfaceShape14.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface4|jackie_rig:jackieHair_latest:polySurfaceShape15.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface7|jackie_rig:jackieHair_latest:polySurfaceShape18.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface40|jackie_rig:jackieHair_latest:polySurfaceShape40.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface41|jackie_rig:jackieHair_latest:polySurfaceShape41.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface42|jackie_rig:jackieHair_latest:polySurfaceShape42.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface43|jackie_rig:jackieHair_latest:polySurfaceShape43.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface44|jackie_rig:jackieHair_latest:polySurfaceShape44.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface45|jackie_rig:jackieHair_latest:polySurfaceShape45.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface22|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface23|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface24|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface25|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface26|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface27|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface28|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface1|jackie_rig:jackieHair_latest:polySurfaceShape1.instObjGroups" 
 		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface2|jackie_rig:jackieHair_latest:polySurfaceShape2.instObjGroups" 
@@ -12273,405 +12263,335 @@ createNode reference -n "jackie_rigRN";
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface39|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface7|jackie_rig:jackieHair_latest:polySurfaceShape18.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[168]" 
-		"jackie_rigRN.placeHolderList[169]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[171]" 
+		"jackie_rigRN.placeHolderList[172]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface4|jackie_rig:jackieHair_latest:polySurfaceShape15.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[170]" 
-		"jackie_rigRN.placeHolderList[171]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[173]" 
+		"jackie_rigRN.placeHolderList[174]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface3|jackie_rig:jackieHair_latest:polySurfaceShape14.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[172]" 
-		"jackie_rigRN.placeHolderList[173]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[175]" 
+		"jackie_rigRN.placeHolderList[176]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface2|jackie_rig:jackieHair_latest:polySurfaceShape13.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[174]" 
-		"jackie_rigRN.placeHolderList[175]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[177]" 
+		"jackie_rigRN.placeHolderList[178]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface1|jackie_rig:jackieHair_latest:polySurfaceShape12.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[176]" 
-		"jackie_rigRN.placeHolderList[177]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[179]" 
+		"jackie_rigRN.placeHolderList[180]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface40|jackie_rig:jackieHair_latest:polySurfaceShape40.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[178]" 
-		"jackie_rigRN.placeHolderList[179]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[181]" 
+		"jackie_rigRN.placeHolderList[182]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface41|jackie_rig:jackieHair_latest:polySurfaceShape41.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[180]" 
-		"jackie_rigRN.placeHolderList[181]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[183]" 
+		"jackie_rigRN.placeHolderList[184]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface42|jackie_rig:jackieHair_latest:polySurfaceShape42.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[182]" 
-		"jackie_rigRN.placeHolderList[183]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[185]" 
+		"jackie_rigRN.placeHolderList[186]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface43|jackie_rig:jackieHair_latest:polySurfaceShape43.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[184]" 
-		"jackie_rigRN.placeHolderList[185]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[187]" 
+		"jackie_rigRN.placeHolderList[188]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface44|jackie_rig:jackieHair_latest:polySurfaceShape44.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[186]" 
-		"jackie_rigRN.placeHolderList[187]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[189]" 
+		"jackie_rigRN.placeHolderList[190]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface45|jackie_rig:jackieHair_latest:polySurfaceShape45.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[188]" 
-		"jackie_rigRN.placeHolderList[189]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[191]" 
+		"jackie_rigRN.placeHolderList[192]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface13|jackie_rig:jackieHair_latest:polySurfaceShape24.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[190]" 
-		"jackie_rigRN.placeHolderList[191]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[193]" 
+		"jackie_rigRN.placeHolderList[194]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface12|jackie_rig:jackieHair_latest:polySurfaceShape23.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[192]" 
-		"jackie_rigRN.placeHolderList[193]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[195]" 
+		"jackie_rigRN.placeHolderList[196]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface11|jackie_rig:jackieHair_latest:polySurfaceShape22.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[194]" 
-		"jackie_rigRN.placeHolderList[195]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[197]" 
+		"jackie_rigRN.placeHolderList[198]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface10|jackie_rig:jackieHair_latest:polySurfaceShape21.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[196]" 
-		"jackie_rigRN.placeHolderList[197]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[199]" 
+		"jackie_rigRN.placeHolderList[200]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface9|jackie_rig:jackieHair_latest:polySurfaceShape20.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[198]" 
-		"jackie_rigRN.placeHolderList[199]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[201]" 
+		"jackie_rigRN.placeHolderList[202]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface8|jackie_rig:jackieHair_latest:polySurfaceShape19.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[200]" 
-		"jackie_rigRN.placeHolderList[201]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[203]" 
+		"jackie_rigRN.placeHolderList[204]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface6|jackie_rig:jackieHair_latest:polySurfaceShape17.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[202]" 
-		"jackie_rigRN.placeHolderList[203]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[205]" 
+		"jackie_rigRN.placeHolderList[206]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface46|jackie_rig:jackieHair_latest:polySurfaceShape46.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[204]" 
-		"jackie_rigRN.placeHolderList[205]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[207]" 
+		"jackie_rigRN.placeHolderList[208]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface47|jackie_rig:jackieHair_latest:polySurfaceShape47.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[206]" 
-		"jackie_rigRN.placeHolderList[207]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[209]" 
+		"jackie_rigRN.placeHolderList[210]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface14|jackie_rig:jackieHair_latest:polySurfaceShape14.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[208]" 
-		"jackie_rigRN.placeHolderList[209]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[211]" 
+		"jackie_rigRN.placeHolderList[212]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface16|jackie_rig:jackieHair_latest:polySurfaceShape16.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[210]" 
-		"jackie_rigRN.placeHolderList[211]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[213]" 
+		"jackie_rigRN.placeHolderList[214]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface17|jackie_rig:jackieHair_latest:polySurfaceShape17.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[212]" 
-		"jackie_rigRN.placeHolderList[213]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[215]" 
+		"jackie_rigRN.placeHolderList[216]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface18|jackie_rig:jackieHair_latest:polySurfaceShape18.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[214]" 
-		"jackie_rigRN.placeHolderList[215]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[217]" 
+		"jackie_rigRN.placeHolderList[218]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface19|jackie_rig:jackieHair_latest:polySurfaceShape19.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[216]" 
-		"jackie_rigRN.placeHolderList[217]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[219]" 
+		"jackie_rigRN.placeHolderList[220]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface20|jackie_rig:jackieHair_latest:polySurfaceShape20.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[218]" 
-		"jackie_rigRN.placeHolderList[219]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[221]" 
+		"jackie_rigRN.placeHolderList[222]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface21|jackie_rig:jackieHair_latest:polySurfaceShape21.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[220]" 
-		"jackie_rigRN.placeHolderList[221]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[223]" 
+		"jackie_rigRN.placeHolderList[224]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface38|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[222]" 
-		"jackie_rigRN.placeHolderList[223]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[225]" 
+		"jackie_rigRN.placeHolderList[226]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface39|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[224]" 
-		"jackie_rigRN.placeHolderList[225]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[227]" 
+		"jackie_rigRN.placeHolderList[228]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface28|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[226]" 
-		"jackie_rigRN.placeHolderList[227]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[229]" 
+		"jackie_rigRN.placeHolderList[230]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface27|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[228]" 
-		"jackie_rigRN.placeHolderList[229]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[231]" 
+		"jackie_rigRN.placeHolderList[232]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface26|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[230]" 
-		"jackie_rigRN.placeHolderList[231]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[233]" 
+		"jackie_rigRN.placeHolderList[234]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface25|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[232]" 
-		"jackie_rigRN.placeHolderList[233]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[235]" 
+		"jackie_rigRN.placeHolderList[236]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface24|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[234]" 
-		"jackie_rigRN.placeHolderList[235]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[237]" 
+		"jackie_rigRN.placeHolderList[238]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface23|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[236]" 
-		"jackie_rigRN.placeHolderList[237]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[239]" 
+		"jackie_rigRN.placeHolderList[240]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface22|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[238]" 
-		"jackie_rigRN.placeHolderList[239]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[241]" 
+		"jackie_rigRN.placeHolderList[242]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface39|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[240]" 
-		"jackie_rigRN.placeHolderList[241]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[243]" 
+		"jackie_rigRN.placeHolderList[244]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface38|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[242]" 
-		"jackie_rigRN.placeHolderList[243]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[245]" 
+		"jackie_rigRN.placeHolderList[246]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface21|jackie_rig:jackieHair_latest:polySurfaceShape32.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[244]" 
-		"jackie_rigRN.placeHolderList[245]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[247]" 
+		"jackie_rigRN.placeHolderList[248]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface20|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[246]" 
-		"jackie_rigRN.placeHolderList[247]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[249]" 
+		"jackie_rigRN.placeHolderList[250]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface19|jackie_rig:jackieHair_latest:polySurfaceShape30.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[248]" 
-		"jackie_rigRN.placeHolderList[249]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[251]" 
+		"jackie_rigRN.placeHolderList[252]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface18|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[250]" 
-		"jackie_rigRN.placeHolderList[251]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[253]" 
+		"jackie_rigRN.placeHolderList[254]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface17|jackie_rig:jackieHair_latest:polySurfaceShape28.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[252]" 
-		"jackie_rigRN.placeHolderList[253]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[255]" 
+		"jackie_rigRN.placeHolderList[256]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface16|jackie_rig:jackieHair_latest:polySurfaceShape27.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[254]" 
-		"jackie_rigRN.placeHolderList[255]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[257]" 
+		"jackie_rigRN.placeHolderList[258]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface14|jackie_rig:jackieHair_latest:polySurfaceShape25.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[256]" 
-		"jackie_rigRN.placeHolderList[257]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[259]" 
+		"jackie_rigRN.placeHolderList[260]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface45|jackie_rig:jackieHair_latest:polySurfaceShape45.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[258]" 
-		"jackie_rigRN.placeHolderList[259]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[261]" 
+		"jackie_rigRN.placeHolderList[262]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface44|jackie_rig:jackieHair_latest:polySurfaceShape44.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[260]" 
-		"jackie_rigRN.placeHolderList[261]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[263]" 
+		"jackie_rigRN.placeHolderList[264]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface43|jackie_rig:jackieHair_latest:polySurfaceShape43.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[262]" 
-		"jackie_rigRN.placeHolderList[263]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[265]" 
+		"jackie_rigRN.placeHolderList[266]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface42|jackie_rig:jackieHair_latest:polySurfaceShape42.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[264]" 
-		"jackie_rigRN.placeHolderList[265]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[267]" 
+		"jackie_rigRN.placeHolderList[268]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface41|jackie_rig:jackieHair_latest:polySurfaceShape41.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[266]" 
-		"jackie_rigRN.placeHolderList[267]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[269]" 
+		"jackie_rigRN.placeHolderList[270]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface40|jackie_rig:jackieHair_latest:polySurfaceShape40.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[268]" 
-		"jackie_rigRN.placeHolderList[269]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[271]" 
+		"jackie_rigRN.placeHolderList[272]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface7|jackie_rig:jackieHair_latest:polySurfaceShape7.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[270]" 
-		"jackie_rigRN.placeHolderList[271]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[273]" 
+		"jackie_rigRN.placeHolderList[274]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface4|jackie_rig:jackieHair_latest:polySurfaceShape4.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[272]" 
-		"jackie_rigRN.placeHolderList[273]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[275]" 
+		"jackie_rigRN.placeHolderList[276]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface3|jackie_rig:jackieHair_latest:polySurfaceShape3.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[274]" 
-		"jackie_rigRN.placeHolderList[275]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[277]" 
+		"jackie_rigRN.placeHolderList[278]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface2|jackie_rig:jackieHair_latest:polySurfaceShape2.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[276]" 
-		"jackie_rigRN.placeHolderList[277]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[279]" 
+		"jackie_rigRN.placeHolderList[280]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface1|jackie_rig:jackieHair_latest:polySurfaceShape1.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[278]" 
-		"jackie_rigRN.placeHolderList[279]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[281]" 
+		"jackie_rigRN.placeHolderList[282]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface37|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[280]" 
-		"jackie_rigRN.placeHolderList[281]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[283]" 
+		"jackie_rigRN.placeHolderList[284]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface36|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[282]" 
-		"jackie_rigRN.placeHolderList[283]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[285]" 
+		"jackie_rigRN.placeHolderList[286]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface35|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[284]" 
-		"jackie_rigRN.placeHolderList[285]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[287]" 
+		"jackie_rigRN.placeHolderList[288]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface34|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[286]" 
-		"jackie_rigRN.placeHolderList[287]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[289]" 
+		"jackie_rigRN.placeHolderList[290]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface33|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[288]" 
-		"jackie_rigRN.placeHolderList[289]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[291]" 
+		"jackie_rigRN.placeHolderList[292]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface32|jackie_rig:jackieHair_latest:polySurfaceShape32.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[290]" 
-		"jackie_rigRN.placeHolderList[291]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[293]" 
+		"jackie_rigRN.placeHolderList[294]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface31|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[292]" 
-		"jackie_rigRN.placeHolderList[293]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[295]" 
+		"jackie_rigRN.placeHolderList[296]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface29|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[294]" 
-		"jackie_rigRN.placeHolderList[295]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[297]" 
+		"jackie_rigRN.placeHolderList[298]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface29|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[296]" 
-		"jackie_rigRN.placeHolderList[297]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[299]" 
+		"jackie_rigRN.placeHolderList[300]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface31|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[298]" 
-		"jackie_rigRN.placeHolderList[299]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[301]" 
+		"jackie_rigRN.placeHolderList[302]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface32|jackie_rig:jackieHair_latest:polySurfaceShape32.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[300]" 
-		"jackie_rigRN.placeHolderList[301]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[303]" 
+		"jackie_rigRN.placeHolderList[304]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface33|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[302]" 
-		"jackie_rigRN.placeHolderList[303]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[305]" 
+		"jackie_rigRN.placeHolderList[306]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface34|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[304]" 
-		"jackie_rigRN.placeHolderList[305]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[307]" 
+		"jackie_rigRN.placeHolderList[308]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface35|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[306]" 
-		"jackie_rigRN.placeHolderList[307]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[309]" 
+		"jackie_rigRN.placeHolderList[310]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface36|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[308]" 
-		"jackie_rigRN.placeHolderList[309]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[311]" 
+		"jackie_rigRN.placeHolderList[312]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface37|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[310]" 
-		"jackie_rigRN.placeHolderList[311]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[313]" 
+		"jackie_rigRN.placeHolderList[314]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		"jackie_rig:jackiePants_latestRN" 41
-		0 "|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" "|jackie_GEO" 
-		"-s -r "
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"visibility" " 1"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"jackie_rig:teeth_v1_latestRN" 21
+		0 "|jackie_rig:teeth_v1_latest:Teeth" "|jackie_MASTER_ctl" "-s -r "
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth" "visibility" " 1"
+		
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth" "translate" " -type \"double3\" 0 0 0"
+		
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth" "scale" " -type \"double3\" 1 1 1"
+		
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth" "rotatePivot" " -type \"double3\" 6.4510008087381721e-05 6.20467233657836914 0.048010902453545334"
+		
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth" "scalePivot" " -type \"double3\" 6.4510008087381721e-05 6.20467233657836914 0.048010902453545334"
+		
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth" "scalePivotTranslate" 
+		" -type \"double3\" 0 0 0"
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums" 
 		"overrideDisplayType" " 0"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums" 
 		"overrideLevelOfDetail" " 0"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums" 
 		"overrideShading" " 1"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums" 
 		"overrideTexturing" " 1"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums" 
 		"overridePlayback" " 1"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums" 
 		"overrideEnabled" " 0"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums" 
 		"overrideVisibility" " 1"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums" 
 		"hideOnPlayback" " 0"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums" 
 		"overrideRGBColors" " 0"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums" 
 		"overrideColor" " 0"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums" 
 		"overrideColorRGB" " -type \"float3\" 0 0 0"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"scale" " -type \"double3\" 1 1 1"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"rotatePivot" " -type \"double3\" -0.006 -0.063658494966674528 0.011519840177370455"
-		
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"scalePivot" " -type \"double3\" -0.006 -0.063658494966674528 0.011519840177370455"
-		
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
-		"instObjGroups.objectGroups" " -s 3"
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:16643]\""
-		
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
-		"instObjGroups.objectGroups[1].objectGrpCompList" " -type \"componentList\" 1 \"f[0:16643]\""
-		
-		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
-		"instObjGroups.objectGroups[2].objectGrpCompList" " -type \"componentList\" 1 \"vtx[0:16641]\""
-		
-		3 "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.groupId" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.memberWireframeColor" 
-		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "jackie_rig:jackiePants_latest:jackiePants_latest:groupId2.groupId" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		""
-		3 "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.memberWireframeColor" 
-		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		""
-		3 "jackie_rig:jackiePants_latest:jackiePants_latest:groupId3.groupId" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		""
-		3 "jackie_rig:jackiePants_latest:jackiePants_latest:default1.memberWireframeColor" 
-		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		""
-		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" "-na"
-		
-		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dagSetMembers" "-na"
-		
-		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
-		"jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" "-na"
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.groupId" 
-		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		"jackie_rigRN.placeHolderList[48]" "jackie_rigRN.placeHolderList[49]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gid"
-		
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.memberWireframeColor" 
-		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		"jackie_rigRN.placeHolderList[50]" "jackie_rigRN.placeHolderList[51]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gco"
-		
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId2.groupId" 
-		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		"jackie_rigRN.placeHolderList[52]" "jackie_rigRN.placeHolderList[53]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gid"
-		
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.memberWireframeColor" 
-		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		"jackie_rigRN.placeHolderList[54]" "jackie_rigRN.placeHolderList[55]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gco"
-		
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId3.groupId" 
-		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		"jackie_rigRN.placeHolderList[56]" "jackie_rigRN.placeHolderList[57]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gid"
-		
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.memberWireframeColor" 
-		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		"jackie_rigRN.placeHolderList[58]" "jackie_rigRN.placeHolderList[59]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gco"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
-		"jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[60]" 
-		"jackie_rigRN.placeHolderList[61]" "jackie_rig:jackiePants_latest:PxrSurface1SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dagSetMembers" "jackie_rigRN.placeHolderList[62]" 
-		"jackie_rigRN.placeHolderList[63]" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" "jackie_rigRN.placeHolderList[64]" 
-		"jackie_rigRN.placeHolderList[65]" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" "jackie_rigRN.placeHolderList[66]" 
-		"jackie_rigRN.placeHolderList[67]" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.dsm";
+		2 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums" 
+		"translate" " -type \"double3\" 0 0 0"
+		3 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums|jackie_rig:teeth_v1_latest:GumsShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums|jackie_rig:teeth_v1_latest:GumsShape.instObjGroups" 
+		"jackie_rigRN.placeHolderList[48]" ":initialShadingGroup.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "teeth_v1_latestRN1";
@@ -12770,8 +12690,6 @@ createNode reference -n "teeth_v1_latestRN1";
 		"scalePivot" " -type \"double3\" 0 0 0"
 		2 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1" 
-		"visibility" " 1"
 		2 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1" 
@@ -12798,6 +12716,52 @@ createNode reference -n "teeth_v1_latestRN1";
 		"scalePivot" " -type \"double3\" 0 0 0"
 		2 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom" 
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1" 
+		"visibility" " 1"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube16|teeth_v1_latest1:pCubeShape16.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube16|teeth_v1_latest1:pCubeShape16.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube15|teeth_v1_latest1:pCubeShape15.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube15|teeth_v1_latest1:pCubeShape15.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube26|teeth_v1_latest1:pCubeShape26.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube26|teeth_v1_latest1:pCubeShape26.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:Gums|teeth_v1_latest1:GumsShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:Gums|teeth_v1_latest1:GumsShape.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube24|teeth_v1_latest1:pCubeShape24.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube24|teeth_v1_latest1:pCubeShape24.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube12|teeth_v1_latest1:pCubeShape12.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube12|teeth_v1_latest1:pCubeShape12.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube23|teeth_v1_latest1:pCubeShape23.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube23|teeth_v1_latest1:pCubeShape23.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube25|teeth_v1_latest1:pCubeShape25.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube25|teeth_v1_latest1:pCubeShape25.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube13|teeth_v1_latest1:pCubeShape13.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube13|teeth_v1_latest1:pCubeShape13.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube21|teeth_v1_latest1:pCubeShape21.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube21|teeth_v1_latest1:pCubeShape21.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube27|teeth_v1_latest1:pCubeShape27.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube27|teeth_v1_latest1:pCubeShape27.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube14|teeth_v1_latest1:pCubeShape14.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube14|teeth_v1_latest1:pCubeShape14.instObjGroups" 
@@ -12806,65 +12770,21 @@ createNode reference -n "teeth_v1_latestRN1";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube19|teeth_v1_latest1:pCubeShape19.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube16|teeth_v1_latest1:pCubeShape16.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube22|teeth_v1_latest1:pCubeShape22.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube16|teeth_v1_latest1:pCubeShape16.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube25|teeth_v1_latest1:pCubeShape25.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube25|teeth_v1_latest1:pCubeShape25.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube24|teeth_v1_latest1:pCubeShape24.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube24|teeth_v1_latest1:pCubeShape24.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube20|teeth_v1_latest1:pCubeShape20.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube20|teeth_v1_latest1:pCubeShape20.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube21|teeth_v1_latest1:pCubeShape21.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube21|teeth_v1_latest1:pCubeShape21.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube17|teeth_v1_latest1:pCubeShape17.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube17|teeth_v1_latest1:pCubeShape17.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube22|teeth_v1_latest1:pCubeShape22.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube18|teeth_v1_latest1:pCubeShape18.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube18|teeth_v1_latest1:pCubeShape18.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube23|teeth_v1_latest1:pCubeShape23.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube20|teeth_v1_latest1:pCubeShape20.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube23|teeth_v1_latest1:pCubeShape23.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube20|teeth_v1_latest1:pCubeShape20.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube26|teeth_v1_latest1:pCubeShape26.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube17|teeth_v1_latest1:pCubeShape17.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube26|teeth_v1_latest1:pCubeShape26.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube27|teeth_v1_latest1:pCubeShape27.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube27|teeth_v1_latest1:pCubeShape27.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube12|teeth_v1_latest1:pCubeShape12.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube12|teeth_v1_latest1:pCubeShape12.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube15|teeth_v1_latest1:pCubeShape15.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube15|teeth_v1_latest1:pCubeShape15.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube22|teeth_v1_latest1:pCubeShape22.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube22|teeth_v1_latest1:pCubeShape22.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:Gums|teeth_v1_latest1:GumsShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:Gums|teeth_v1_latest1:GumsShape.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube13|teeth_v1_latest1:pCubeShape13.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube13|teeth_v1_latest1:pCubeShape13.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube17|teeth_v1_latest1:pCubeShape17.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "teeth_v1_latestRN1" "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth.rotatePivot" 
 		"teeth_v1_latestRN1.placeHolderList[1]" ""
@@ -12961,13 +12881,270 @@ createNode pairBlend -n "pairBlend1";
 	setAttr ".txm" 2;
 	setAttr ".tym" 2;
 	setAttr ".tzm" 2;
+createNode animCurveUA -n "left_forearm_rotateX2";
+	rename -uid "5BB8A9DD-4F2D-FE51-A130-718E1E612848";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  -196.087646484375 0.23046637985149493 0 
+		0;
+createNode unitConversion -n "unitConversion7";
+	rename -uid "7321DCE4-4992-612E-B161-1582110535ED";
+	setAttr ".cf" 57.295779513082323;
+createNode animCurveUA -n "left_forearm_rotateX3";
+	rename -uid "176EB544-47C4-6A89-379F-6B880B6FE255";
+	setAttr ".tan" 2;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  -180 -180 0 0 70 70;
+	setAttr ".pre" 4;
+	setAttr ".pst" 4;
+createNode unitConversion -n "unitConversion8";
+	rename -uid "2A15FDF7-4F82-2730-3A16-00AB5D54BB7C";
+	setAttr ".cf" 57.295779513082323;
+createNode animCurveUA -n "animCurveUA2";
+	rename -uid "97BB0432-4FDF-07F0-779A-E48EFA0011EE";
+	setAttr ".tan" 2;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  -180 -180 0 0 70 70;
+createNode unitConversion -n "unitConversion12";
+	rename -uid "F214DC28-4792-7845-F5AE-DDA7C7A37610";
+	setAttr ".cf" 57.295779513082323;
+createNode animCurveUA -n "right_forearm_rotateX";
+	rename -uid "7A97A133-45F2-7BAC-249A-15A45FD75F65";
+	setAttr ".tan" 2;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  -180 -180 0 0 70 70;
+createNode unitConversion -n "unitConversion13";
+	rename -uid "A2D43183-4004-82A7-0F2A-12887E259CA9";
+	setAttr ".cf" 57.295779513082323;
+createNode animCurveUA -n "animCurveUA3";
+	rename -uid "735E0D0B-40A1-B128-F22B-ECAC771C515D";
+	setAttr ".tan" 2;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  -180 -180 0 0 70 70;
+createNode unitConversion -n "unitConversion17";
+	rename -uid "1650075C-4C45-4F8F-931C-5986D5949BEA";
+	setAttr ".cf" 57.295779513082323;
+createNode blendColors -n "blendColors1";
+	rename -uid "534AA18A-4CF4-191B-57C1-3EA6E1BCFF0B";
+createNode unitConversion -n "unitConversion18";
+	rename -uid "EA3B61A2-486E-E006-2F3E-8680E713D55B";
+	setAttr ".cf" 57.295779513082323;
+createNode unitConversion -n "unitConversion19";
+	rename -uid "88440FA2-4EAC-D4AF-9302-83BB4697D9BB";
+	setAttr ".cf" 57.295779513082323;
+createNode unitConversion -n "unitConversion20";
+	rename -uid "4E6CA641-406D-131E-D1AF-D188594D1F89";
+	setAttr ".cf" 0.017453292519943295;
+createNode animCurveUU -n "blendColors1_blender";
+	rename -uid "459203A4-43F3-5CFE-089B-61B58DD74AEA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  0 1 1 0;
+createNode nodeGraphEditorBookmarks -n "MayaNodeEditorBookmarks";
+	rename -uid "A4852530-47E3-2961-B191-DBA8AAACCA40";
+	setAttr -s 2 ".b";
+createNode nodeGraphEditorBookmarkInfo -n "nodeView1";
+	rename -uid "82E5CF42-4D9A-CD7B-AEF6-E4AA5103B569";
+	setAttr ".nm" -type "string" "Lf_wristTwistBlend";
+	setAttr ".vl" -type "double2" -2578.5509043411048 -484.60587556510194 ;
+	setAttr ".vh" -type "double2" -357.55769211049778 597.89501779099226 ;
+	setAttr -s 13 ".ni";
+	setAttr ".ni[0].x" -1894.2840576171875;
+	setAttr ".ni[0].y" 30.577816009521484;
+	setAttr ".ni[0].nvs" 18312;
+	setAttr ".ni[1].x" -1892.4378662109375;
+	setAttr ".ni[1].y" 327.93923950195313;
+	setAttr ".ni[1].nvs" 18314;
+	setAttr ".ni[2].x" -1231.995849609375;
+	setAttr ".ni[2].y" 225.25567626953125;
+	setAttr ".ni[2].nvs" 18314;
+	setAttr ".ni[3].x" -1951.94775390625;
+	setAttr ".ni[3].y" -68.792755126953125;
+	setAttr ".ni[3].nvs" 18314;
+	setAttr ".ni[4].x" -1636.8958740234375;
+	setAttr ".ni[4].y" 18.721658706665039;
+	setAttr ".ni[4].nvs" 18312;
+	setAttr ".ni[5].x" -1628.727783203125;
+	setAttr ".ni[5].y" 145.90927124023438;
+	setAttr ".ni[5].nvs" 18312;
+	setAttr ".ni[6].x" -2139.81201171875;
+	setAttr ".ni[6].y" 250.92655944824219;
+	setAttr ".ni[6].nvs" 18312;
+	setAttr ".ni[7].x" -981.12115478515625;
+	setAttr ".ni[7].y" 238.09112548828125;
+	setAttr ".ni[7].nvs" 18312;
+	setAttr ".ni[8].x" -1633.395263671875;
+	setAttr ".ni[8].y" -165.64202880859375;
+	setAttr ".ni[8].nvs" 18312;
+	setAttr ".ni[9].x" -666.06927490234375;
+	setAttr ".ni[9].y" 400.28448486328125;
+	setAttr ".ni[9].nvs" 18314;
+	setAttr ".ni[10].x" -2464.19873046875;
+	setAttr ".ni[10].y" -130.63627624511719;
+	setAttr ".ni[10].nvs" 18312;
+	setAttr ".ni[11].x" -2175.984619140625;
+	setAttr ".ni[11].y" -138.80427551269531;
+	setAttr ".ni[11].nvs" 18312;
+	setAttr ".ni[12].x" -2445.529052734375;
+	setAttr ".ni[12].y" 263.76202392578125;
+	setAttr ".ni[12].nvs" 18312;
+createNode blendColors -n "blendColors2";
+	rename -uid "D1D697B3-4A10-D7DA-708B-1B9C365EF800";
+createNode unitConversion -n "unitConversion21";
+	rename -uid "63A87D57-4CB4-4215-2429-C98E7FD3DA05";
+	setAttr ".cf" 57.295779513082323;
+createNode unitConversion -n "unitConversion22";
+	rename -uid "DE13325D-4A42-DE94-0EFA-6FA719F3B1D3";
+	setAttr ".cf" 57.295779513082323;
+createNode unitConversion -n "unitConversion23";
+	rename -uid "60A161C1-431F-0BB8-338F-AD9BD0ED4BD8";
+	setAttr ".cf" 0.017453292519943295;
+createNode animCurveUU -n "blendColors2_blender";
+	rename -uid "7B6830F5-4A3A-E653-9277-7FAA021AD499";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  0 1 1 0;
+createNode nodeGraphEditorBookmarkInfo -n "nodeView2";
+	rename -uid "7F2CFCD7-44AD-B2CD-9FD3-60AAD804D836";
+	setAttr ".nm" -type "string" "Rt_wristTwistBlend";
+	setAttr ".vl" -type "double2" -1673.3479482251171 -703.65341026460317 ;
+	setAttr ".vh" -type "double2" 1072.6242759914037 634.71960658042383 ;
+	setAttr -s 13 ".ni";
+	setAttr ".ni[0].x" -938.6396484375;
+	setAttr ".ni[0].y" 308.77963256835938;
+	setAttr ".ni[0].nvs" 18312;
+	setAttr ".ni[1].x" -914.40106201171875;
+	setAttr ".ni[1].y" 121.39881134033203;
+	setAttr ".ni[1].nvs" 18312;
+	setAttr ".ni[2].x" -1558.5498046875;
+	setAttr ".ni[2].y" -132.04534912109375;
+	setAttr ".ni[2].nvs" 18312;
+	setAttr ".ni[3].x" -650.5245361328125;
+	setAttr ".ni[3].y" 135.50718688964844;
+	setAttr ".ni[3].nvs" 18312;
+	setAttr ".ni[4].x" -943.2315673828125;
+	setAttr ".ni[4].y" -132.04534912109375;
+	setAttr ".ni[4].nvs" 18313;
+	setAttr ".ni[5].x" -1553.9578857421875;
+	setAttr ".ni[5].y" 308.77963256835938;
+	setAttr ".ni[5].nvs" 18312;
+	setAttr ".ni[6].x" -1246.2987060546875;
+	setAttr ".ni[6].y" 308.77963256835938;
+	setAttr ".ni[6].nvs" 18312;
+	setAttr ".ni[7].x" -715.93121337890625;
+	setAttr ".ni[7].y" 311.07559204101563;
+	setAttr ".ni[7].nvs" 18312;
+	setAttr ".ni[8].x" 202.45414733886719;
+	setAttr ".ni[8].y" 313.37155151367188;
+	setAttr ".ni[8].nvs" 18313;
+	setAttr ".ni[9].x" -378.42459106445313;
+	setAttr ".ni[9].y" 283.52401733398438;
+	setAttr ".ni[9].nvs" 18314;
+	setAttr ".ni[10].x" -1250.890625;
+	setAttr ".ni[10].y" -132.04534912109375;
+	setAttr ".ni[10].nvs" 18312;
+	setAttr ".ni[11].x" -84.541275024414063;
+	setAttr ".ni[11].y" 200.86933898925781;
+	setAttr ".ni[11].nvs" 18312;
+	setAttr ".ni[12].x" -667.71600341796875;
+	setAttr ".ni[12].y" -171.07672119140625;
+	setAttr ".ni[12].nvs" 18312;
+createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
+	rename -uid "B255C839-428A-8965-F9AF-0F9AC562167E";
+	setAttr -s 2 ".tgi";
+	setAttr ".tgi[0].tn" -type "string" "lf_wristTwistBlend";
+	setAttr ".tgi[0].vl" -type "double2" -2578.5509043411048 -484.60587556510194 ;
+	setAttr ".tgi[0].vh" -type "double2" -357.55769211049778 597.89501779099226 ;
+	setAttr -s 13 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -1894.2840576171875;
+	setAttr ".tgi[0].ni[0].y" 30.577816009521484;
+	setAttr ".tgi[0].ni[0].nvs" 18312;
+	setAttr ".tgi[0].ni[1].x" -1892.4378662109375;
+	setAttr ".tgi[0].ni[1].y" 327.93923950195313;
+	setAttr ".tgi[0].ni[1].nvs" 18314;
+	setAttr ".tgi[0].ni[2].x" -1249.4931640625;
+	setAttr ".tgi[0].ni[2].y" 246.25245666503906;
+	setAttr ".tgi[0].ni[2].nvs" 18314;
+	setAttr ".tgi[0].ni[3].x" -1951.94775390625;
+	setAttr ".tgi[0].ni[3].y" -68.792755126953125;
+	setAttr ".tgi[0].ni[3].nvs" 18314;
+	setAttr ".tgi[0].ni[4].x" -1636.8958740234375;
+	setAttr ".tgi[0].ni[4].y" 18.721658706665039;
+	setAttr ".tgi[0].ni[4].nvs" 18312;
+	setAttr ".tgi[0].ni[5].x" -1628.727783203125;
+	setAttr ".tgi[0].ni[5].y" 145.90927124023438;
+	setAttr ".tgi[0].ni[5].nvs" 18312;
+	setAttr ".tgi[0].ni[6].x" -2139.81201171875;
+	setAttr ".tgi[0].ni[6].y" 250.92655944824219;
+	setAttr ".tgi[0].ni[6].nvs" 18312;
+	setAttr ".tgi[0].ni[7].x" -981.12115478515625;
+	setAttr ".tgi[0].ni[7].y" 238.09112548828125;
+	setAttr ".tgi[0].ni[7].nvs" 18312;
+	setAttr ".tgi[0].ni[8].x" -1633.395263671875;
+	setAttr ".tgi[0].ni[8].y" -165.64202880859375;
+	setAttr ".tgi[0].ni[8].nvs" 18312;
+	setAttr ".tgi[0].ni[9].x" -666.06927490234375;
+	setAttr ".tgi[0].ni[9].y" 400.28448486328125;
+	setAttr ".tgi[0].ni[9].nvs" 18314;
+	setAttr ".tgi[0].ni[10].x" -2464.19873046875;
+	setAttr ".tgi[0].ni[10].y" -130.63627624511719;
+	setAttr ".tgi[0].ni[10].nvs" 18312;
+	setAttr ".tgi[0].ni[11].x" -2175.984619140625;
+	setAttr ".tgi[0].ni[11].y" -138.80427551269531;
+	setAttr ".tgi[0].ni[11].nvs" 18312;
+	setAttr ".tgi[0].ni[12].x" -2445.529052734375;
+	setAttr ".tgi[0].ni[12].y" 263.76202392578125;
+	setAttr ".tgi[0].ni[12].nvs" 18312;
+	setAttr ".tgi[1].tn" -type "string" "Rt_wristTwistBlend";
+	setAttr ".tgi[1].vl" -type "double2" -1641.2747243940648 -479.16720066878815 ;
+	setAttr ".tgi[1].vh" -type "double2" 453.6513205143404 541.88919096724135 ;
+	setAttr -s 13 ".tgi[1].ni";
+	setAttr ".tgi[1].ni[0].x" -650.5245361328125;
+	setAttr ".tgi[1].ni[0].y" 135.50718688964844;
+	setAttr ".tgi[1].ni[0].nvs" 18312;
+	setAttr ".tgi[1].ni[1].x" -1558.5498046875;
+	setAttr ".tgi[1].ni[1].y" -132.04534912109375;
+	setAttr ".tgi[1].ni[1].nvs" 18312;
+	setAttr ".tgi[1].ni[2].x" -1246.2987060546875;
+	setAttr ".tgi[1].ni[2].y" 308.77963256835938;
+	setAttr ".tgi[1].ni[2].nvs" 18312;
+	setAttr ".tgi[1].ni[3].x" -914.40106201171875;
+	setAttr ".tgi[1].ni[3].y" 121.39881134033203;
+	setAttr ".tgi[1].ni[3].nvs" 18312;
+	setAttr ".tgi[1].ni[4].x" -369.76382446289063;
+	setAttr ".tgi[1].ni[4].y" 269.08941650390625;
+	setAttr ".tgi[1].ni[4].nvs" 18314;
+	setAttr ".tgi[1].ni[5].x" -715.93121337890625;
+	setAttr ".tgi[1].ni[5].y" 311.07559204101563;
+	setAttr ".tgi[1].ni[5].nvs" 18312;
+	setAttr ".tgi[1].ni[6].x" -938.6396484375;
+	setAttr ".tgi[1].ni[6].y" 308.77963256835938;
+	setAttr ".tgi[1].ni[6].nvs" 18312;
+	setAttr ".tgi[1].ni[7].x" -1553.9578857421875;
+	setAttr ".tgi[1].ni[7].y" 308.77963256835938;
+	setAttr ".tgi[1].ni[7].nvs" 18312;
+	setAttr ".tgi[1].ni[8].x" -667.71600341796875;
+	setAttr ".tgi[1].ni[8].y" -171.07672119140625;
+	setAttr ".tgi[1].ni[8].nvs" 18312;
+	setAttr ".tgi[1].ni[9].x" -1250.890625;
+	setAttr ".tgi[1].ni[9].y" -132.04534912109375;
+	setAttr ".tgi[1].ni[9].nvs" 18312;
+	setAttr ".tgi[1].ni[10].x" -84.541275024414063;
+	setAttr ".tgi[1].ni[10].y" 200.86933898925781;
+	setAttr ".tgi[1].ni[10].nvs" 18312;
+	setAttr ".tgi[1].ni[11].x" 202.45414733886719;
+	setAttr ".tgi[1].ni[11].y" 313.37155151367188;
+	setAttr ".tgi[1].ni[11].nvs" 18313;
+	setAttr ".tgi[1].ni[12].x" -943.2315673828125;
+	setAttr ".tgi[1].ni[12].y" -132.04534912109375;
+	setAttr ".tgi[1].ni[12].nvs" 18313;
 select -ne :time1;
 	setAttr -av -k on ".cch";
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr ".o" 60;
-	setAttr -av ".unw" 60;
+	setAttr ".o" 1;
+	setAttr -av ".unw" 1;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -13004,9 +13181,9 @@ select -ne :defaultRenderUtilityList1;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 55 ".u";
+	setAttr -s 57 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 19 ".r";
+	setAttr -s 20 ".r";
 select -ne :lightList1;
 select -ne :defaultTextureList1;
 	setAttr -k on ".cch";
@@ -13019,7 +13196,7 @@ select -ne :initialShadingGroup;
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 68 ".dsm";
+	setAttr -s 101 ".dsm";
 	setAttr -k on ".mwc";
 	setAttr -cb on ".an";
 	setAttr -cb on ".il";
@@ -13206,1001 +13383,982 @@ select -ne :ikSystem;
 	setAttr -av -k on ".gsn";
 	setAttr -k on ".gsv";
 	setAttr -s 2 ".sol";
-connectAttr "jackie_rigRN.phl[46]" "jackie_rigRN.phl[47]";
-connectAttr "jackie_rigRN.phl[68]" "jackie_rigRN.phl[69]";
-connectAttr "jackie_rigRN.phl[70]" "jackie_rigRN.phl[71]";
-connectAttr "jackie_rigRN.phl[72]" "jackie_rigRN.phl[73]";
-connectAttr "jackie_rigRN.phl[74]" "jackie_rigRN.phl[75]";
-connectAttr "jackie_rigRN.phl[76]" "jackie_rigRN.phl[77]";
-connectAttr "jackie_rigRN.phl[78]" "jackie_rigRN.phl[79]";
-connectAttr "jackie_rigRN.phl[80]" "jackie_rigRN.phl[81]";
-connectAttr "jackie_rigRN.phl[82]" "jackie_rigRN.phl[83]";
-connectAttr "jackie_rigRN.phl[84]" "jackie_rigRN.phl[85]";
-connectAttr "jackie_rigRN.phl[86]" "jackie_rigRN.phl[87]";
-connectAttr "jackie_rigRN.phl[88]" "jackie_rigRN.phl[89]";
-connectAttr "jackie_rigRN.phl[90]" "jackie_rigRN.phl[91]";
-connectAttr "jackie_rigRN.phl[92]" "jackie_rigRN.phl[93]";
-connectAttr "jackie_rigRN.phl[94]" "jackie_rigRN.phl[95]";
-connectAttr "jackie_rigRN.phl[96]" "jackie_rigRN.phl[97]";
-connectAttr "jackie_rigRN.phl[98]" "jackie_rigRN.phl[99]";
-connectAttr "jackie_rigRN.phl[100]" "jackie_rigRN.phl[101]";
-connectAttr "jackie_rigRN.phl[102]" "jackie_rigRN.phl[103]";
-connectAttr "jackie_rigRN.phl[104]" "jackie_rigRN.phl[105]";
-connectAttr "jackie_rigRN.phl[106]" "jackie_rigRN.phl[107]";
-connectAttr "jackie_rigRN.phl[108]" "jackie_rigRN.phl[109]";
-connectAttr "jackie_rigRN.phl[110]" "jackie_rigRN.phl[111]";
-connectAttr "jackie_rigRN.phl[112]" "jackie_rigRN.phl[113]";
-connectAttr "jackie_rigRN.phl[114]" "jackie_rigRN.phl[115]";
-connectAttr "jackie_rigRN.phl[116]" "jackie_rigRN.phl[117]";
-connectAttr "jackie_rigRN.phl[118]" "jackie_rigRN.phl[119]";
-connectAttr "jackie_rigRN.phl[120]" "jackie_rigRN.phl[121]";
-connectAttr "jackie_rigRN.phl[122]" "jackie_rigRN.phl[123]";
-connectAttr "jackie_rigRN.phl[124]" "jackie_rigRN.phl[125]";
-connectAttr "jackie_rigRN.phl[126]" "jackie_rigRN.phl[127]";
-connectAttr "jackie_rigRN.phl[128]" "jackie_rigRN.phl[129]";
-connectAttr "jackie_rigRN.phl[130]" "jackie_rigRN.phl[131]";
-connectAttr "jackie_rigRN.phl[132]" "jackie_rigRN.phl[133]";
-connectAttr "jackie_rigRN.phl[134]" "jackie_rigRN.phl[135]";
-connectAttr "jackie_rigRN.phl[136]" "jackie_rigRN.phl[137]";
-connectAttr "jackie_rigRN.phl[138]" "jackie_rigRN.phl[139]";
-connectAttr "jackie_rigRN.phl[140]" "jackie_rigRN.phl[141]";
-connectAttr "jackie_rigRN.phl[142]" "jackie_rigRN.phl[143]";
-connectAttr "jackie_rigRN.phl[144]" "jackie_rigRN.phl[145]";
-connectAttr "jackie_rigRN.phl[146]" "jackie_rigRN.phl[147]";
-connectAttr "jackie_rigRN.phl[148]" "jackie_rigRN.phl[149]";
-connectAttr "jackie_rigRN.phl[150]" "jackie_rigRN.phl[151]";
-connectAttr "jackie_rigRN.phl[152]" "jackie_rigRN.phl[153]";
-connectAttr "jackie_rigRN.phl[154]" "jackie_rigRN.phl[155]";
-connectAttr "jackie_rigRN.phl[156]" "jackie_rigRN.phl[157]";
-connectAttr "jackie_rigRN.phl[158]" "jackie_rigRN.phl[159]";
-connectAttr "jackie_rigRN.phl[160]" "jackie_rigRN.phl[161]";
-connectAttr "jackie_rigRN.phl[162]" "jackie_rigRN.phl[163]";
-connectAttr "jackie_rigRN.phl[164]" "jackie_rigRN.phl[165]";
-connectAttr "jackie_rigRN.phl[166]" "jackie_rigRN.phl[167]";
-connectAttr "jackie_rigRN.phl[312]" "jackieEyeLeft_aimConstraint1.ct";
-connectAttr "pairBlend1.otx" "jackie_rigRN.phl[313]";
-connectAttr "pairBlend1.oty" "jackie_rigRN.phl[314]";
-connectAttr "pairBlend1.otz" "jackie_rigRN.phl[315]";
-connectAttr "pairBlend1.orx" "jackie_rigRN.phl[316]";
-connectAttr "pairBlend1.ory" "jackie_rigRN.phl[317]";
-connectAttr "pairBlend1.orz" "jackie_rigRN.phl[318]";
-connectAttr "jackie_rigRN.phl[319]" "jackieEyeLeft_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[320]" "jackieEyeLeft_aimConstraint1.crp";
-connectAttr "jackie_rigRN.phl[321]" "jackieEyeLeft_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[322]" "jackieEyeLeft_aimConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[323]" "jackieEyeLeft_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[324]" "jackieEyeLeft_aimConstraint1.crt";
-connectAttr "jackie_rigRN.phl[325]" "pairBlend1.ro";
-connectAttr "jackie_rigRN.phl[326]" "jackieEyeLeft_aimConstraint1.cro";
-connectAttr "jackie_rigRN.phl[327]" "jackieEyeLeft_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[328]" "pairBlend1.w";
-connectAttr "jackierEyeRight_parentConstraint1.ctz" "jackie_rigRN.phl[329]";
-connectAttr "jackierEyeRight_parentConstraint1.ctx" "jackie_rigRN.phl[330]";
-connectAttr "jackierEyeRight_parentConstraint1.cty" "jackie_rigRN.phl[331]";
-connectAttr "jackie_rigRN.phl[332]" "jackierEyeRight_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[333]" "jackierEyeRight_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[334]" "jackierEyeRight_parentConstraint1.crt";
-connectAttr "jackierEyeRight_parentConstraint1.crx" "jackie_rigRN.phl[335]";
-connectAttr "jackierEyeRight_parentConstraint1.cry" "jackie_rigRN.phl[336]";
-connectAttr "jackierEyeRight_parentConstraint1.crz" "jackie_rigRN.phl[337]";
-connectAttr "jackie_rigRN.phl[338]" "jackierEyeRight_parentConstraint1.cro";
-connectAttr "root_parentConstraint1.crx" "jackie_rigRN.phl[339]";
-connectAttr "root_parentConstraint1.cry" "jackie_rigRN.phl[340]";
-connectAttr "root_parentConstraint1.crz" "jackie_rigRN.phl[341]";
-connectAttr "root_parentConstraint1.ctx" "jackie_rigRN.phl[342]";
-connectAttr "root_parentConstraint1.cty" "jackie_rigRN.phl[343]";
-connectAttr "root_parentConstraint1.ctz" "jackie_rigRN.phl[344]";
-connectAttr "jackie_rigRN.phl[345]" "root_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[346]" "root_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[347]" "root_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[348]" "root_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[349]" "root_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[350]" "spine_1_orientConstraint1.is";
-connectAttr "spine_1_orientConstraint1.crx" "jackie_rigRN.phl[351]";
-connectAttr "spine_1_orientConstraint1.cry" "jackie_rigRN.phl[352]";
-connectAttr "spine_1_orientConstraint1.crz" "jackie_rigRN.phl[353]";
-connectAttr "jackie_rigRN.phl[354]" "spine_1_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[355]" "spine_1_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[356]" "spine_1_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[357]" "spine_2_orientConstraint1.is";
-connectAttr "spine_2_orientConstraint1.crx" "jackie_rigRN.phl[358]";
-connectAttr "spine_2_orientConstraint1.cry" "jackie_rigRN.phl[359]";
-connectAttr "spine_2_orientConstraint1.crz" "jackie_rigRN.phl[360]";
-connectAttr "jackie_rigRN.phl[361]" "spine_2_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[362]" "spine_2_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[363]" "spine_2_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[364]" "spine_3_orientConstraint1.is";
-connectAttr "spine_3_orientConstraint1.crx" "jackie_rigRN.phl[365]";
-connectAttr "spine_3_orientConstraint1.cry" "jackie_rigRN.phl[366]";
-connectAttr "spine_3_orientConstraint1.crz" "jackie_rigRN.phl[367]";
-connectAttr "jackie_rigRN.phl[368]" "spine_3_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[369]" "spine_3_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[370]" "spine_3_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[371]" "spine_4_orientConstraint1.is";
-connectAttr "spine_4_orientConstraint1.crx" "jackie_rigRN.phl[372]";
-connectAttr "spine_4_orientConstraint1.cry" "jackie_rigRN.phl[373]";
-connectAttr "spine_4_orientConstraint1.crz" "jackie_rigRN.phl[374]";
-connectAttr "jackie_rigRN.phl[375]" "spine_4_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[376]" "spine_4_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[377]" "spine_4_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[378]" "spine_5_orientConstraint1.is";
-connectAttr "spine_5_orientConstraint1.crx" "jackie_rigRN.phl[379]";
-connectAttr "spine_5_orientConstraint1.cry" "jackie_rigRN.phl[380]";
-connectAttr "spine_5_orientConstraint1.crz" "jackie_rigRN.phl[381]";
-connectAttr "jackie_rigRN.phl[382]" "spine_5_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[383]" "spine_5_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[384]" "spine_5_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[385]" "chest_orientConstraint1.is";
-connectAttr "chest_orientConstraint1.crx" "jackie_rigRN.phl[386]";
-connectAttr "chest_orientConstraint1.cry" "jackie_rigRN.phl[387]";
-connectAttr "chest_orientConstraint1.crz" "jackie_rigRN.phl[388]";
-connectAttr "jackie_rigRN.phl[389]" "chest_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[390]" "chest_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[391]" "chest_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[392]" "low_neck_orientConstraint1.is";
-connectAttr "low_neck_orientConstraint1.cry" "jackie_rigRN.phl[393]";
-connectAttr "low_neck_orientConstraint1.crx" "jackie_rigRN.phl[394]";
-connectAttr "low_neck_orientConstraint1.crz" "jackie_rigRN.phl[395]";
-connectAttr "jackie_rigRN.phl[396]" "low_neck_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[397]" "low_neck_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[398]" "low_neck_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[399]" "high_neck_orientConstraint1.is";
-connectAttr "high_neck_orientConstraint1.crx" "jackie_rigRN.phl[400]";
-connectAttr "high_neck_orientConstraint1.cry" "jackie_rigRN.phl[401]";
-connectAttr "high_neck_orientConstraint1.crz" "jackie_rigRN.phl[402]";
-connectAttr "jackie_rigRN.phl[403]" "high_neck_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[404]" "high_neck_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[405]" "high_neck_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[406]" "head_orientConstraint1.is";
-connectAttr "head_orientConstraint1.crx" "jackie_rigRN.phl[407]";
-connectAttr "head_orientConstraint1.cry" "jackie_rigRN.phl[408]";
-connectAttr "head_orientConstraint1.crz" "jackie_rigRN.phl[409]";
-connectAttr "jackie_rigRN.phl[410]" "head_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[411]" "head_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[412]" "head_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[413]" "Teeth_parentConstraint1.tg[0].tis";
-connectAttr "jackie_rigRN.phl[414]" "Teeth_parentConstraint1.tg[0].ts";
-connectAttr "jackie_rigRN.phl[415]" "Teeth_parentConstraint1.tg[0].tt";
-connectAttr "jackie_rigRN.phl[416]" "Teeth_parentConstraint1.tg[0].trp";
-connectAttr "jackie_rigRN.phl[417]" "Teeth_parentConstraint1.tg[0].trt";
-connectAttr "jackie_rigRN.phl[418]" "Teeth_parentConstraint1.tg[0].tr";
-connectAttr "jackie_rigRN.phl[419]" "Teeth_parentConstraint1.tg[0].tro";
-connectAttr "jackie_rigRN.phl[420]" "Teeth_parentConstraint1.tg[0].tpm";
-connectAttr "jackie_rigRN.phl[421]" "Teeth_parentConstraint1.tg[0].tjo";
-connectAttr "jackie_rigRN.phl[422]" "Teeth_parentConstraint1.tg[0].tsc";
-connectAttr "lip_center_top_parentConstraint1.ctx" "jackie_rigRN.phl[423]";
-connectAttr "lip_center_top_parentConstraint1.cty" "jackie_rigRN.phl[424]";
-connectAttr "lip_center_top_parentConstraint1.ctz" "jackie_rigRN.phl[425]";
-connectAttr "lip_center_top_scaleConstraint1.csx" "jackie_rigRN.phl[426]";
-connectAttr "lip_center_top_scaleConstraint1.csy" "jackie_rigRN.phl[427]";
-connectAttr "lip_center_top_scaleConstraint1.csz" "jackie_rigRN.phl[428]";
-connectAttr "lip_center_top_parentConstraint1.crx" "jackie_rigRN.phl[429]";
-connectAttr "lip_center_top_parentConstraint1.cry" "jackie_rigRN.phl[430]";
-connectAttr "lip_center_top_parentConstraint1.crz" "jackie_rigRN.phl[431]";
-connectAttr "jackie_rigRN.phl[432]" "lip_center_top_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[433]" "lip_center_top_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[434]" "lip_center_top_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[435]" "lip_center_top_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[436]" "lip_center_top_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[437]" "lip_center_top_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[438]" "lip_center_top_scaleConstraint1.tsc";
-connectAttr "lip_left_end_parentConstraint1.ctx" "jackie_rigRN.phl[439]";
-connectAttr "lip_left_end_parentConstraint1.cty" "jackie_rigRN.phl[440]";
-connectAttr "lip_left_end_parentConstraint1.ctz" "jackie_rigRN.phl[441]";
-connectAttr "lip_left_end_scaleConstraint1.csx" "jackie_rigRN.phl[442]";
-connectAttr "lip_left_end_scaleConstraint1.csy" "jackie_rigRN.phl[443]";
-connectAttr "lip_left_end_scaleConstraint1.csz" "jackie_rigRN.phl[444]";
-connectAttr "lip_left_end_parentConstraint1.cry" "jackie_rigRN.phl[445]";
-connectAttr "lip_left_end_parentConstraint1.crx" "jackie_rigRN.phl[446]";
-connectAttr "lip_left_end_parentConstraint1.crz" "jackie_rigRN.phl[447]";
-connectAttr "jackie_rigRN.phl[448]" "lip_left_end_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[449]" "lip_left_end_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[450]" "lip_left_end_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[451]" "lip_left_end_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[452]" "lip_left_end_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[453]" "lip_left_end_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[454]" "lip_left_end_scaleConstraint1.tsc";
-connectAttr "lip_center_bottom_parentConstraint1.ctx" "jackie_rigRN.phl[455]";
-connectAttr "lip_center_bottom_parentConstraint1.cty" "jackie_rigRN.phl[456]";
-connectAttr "lip_center_bottom_parentConstraint1.ctz" "jackie_rigRN.phl[457]";
-connectAttr "lip_center_bottom_parentConstraint1.crz" "jackie_rigRN.phl[458]";
-connectAttr "lip_center_bottom_parentConstraint1.crx" "jackie_rigRN.phl[459]";
-connectAttr "lip_center_bottom_parentConstraint1.cry" "jackie_rigRN.phl[460]";
-connectAttr "jackie_rigRN.phl[461]" "lip_center_bottom_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[462]" "lip_center_bottom_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[463]" "lip_center_bottom_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[464]" "lip_center_bottom_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[465]" "lip_center_bottom_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[466]" "lip_center_bottom_parentConstraint1.cjo";
-connectAttr "lip_center_bottom_scaleConstraint1.csx" "jackie_rigRN.phl[467]";
-connectAttr "lip_center_bottom_scaleConstraint1.csy" "jackie_rigRN.phl[468]";
-connectAttr "lip_center_bottom_scaleConstraint1.csz" "jackie_rigRN.phl[469]";
-connectAttr "jackie_rigRN.phl[470]" "lip_center_bottom_scaleConstraint1.tsc";
-connectAttr "lip_left_top_parentConstraint1.ctx" "jackie_rigRN.phl[471]";
-connectAttr "lip_left_top_parentConstraint1.cty" "jackie_rigRN.phl[472]";
-connectAttr "lip_left_top_parentConstraint1.ctz" "jackie_rigRN.phl[473]";
-connectAttr "lip_left_top_scaleConstraint1.csx" "jackie_rigRN.phl[474]";
-connectAttr "lip_left_top_scaleConstraint1.csy" "jackie_rigRN.phl[475]";
-connectAttr "lip_left_top_scaleConstraint1.csz" "jackie_rigRN.phl[476]";
-connectAttr "lip_left_top_parentConstraint1.crx" "jackie_rigRN.phl[477]";
-connectAttr "lip_left_top_parentConstraint1.cry" "jackie_rigRN.phl[478]";
-connectAttr "lip_left_top_parentConstraint1.crz" "jackie_rigRN.phl[479]";
-connectAttr "jackie_rigRN.phl[480]" "lip_left_top_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[481]" "lip_left_top_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[482]" "lip_left_top_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[483]" "lip_left_top_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[484]" "lip_left_top_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[485]" "lip_left_top_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[486]" "lip_left_top_scaleConstraint1.tsc";
-connectAttr "lip_left_bottom_parentConstraint1.ctx" "jackie_rigRN.phl[487]";
-connectAttr "lip_left_bottom_parentConstraint1.cty" "jackie_rigRN.phl[488]";
-connectAttr "lip_left_bottom_parentConstraint1.ctz" "jackie_rigRN.phl[489]";
-connectAttr "lip_left_bottom_parentConstraint1.crx" "jackie_rigRN.phl[490]";
-connectAttr "lip_left_bottom_parentConstraint1.cry" "jackie_rigRN.phl[491]";
-connectAttr "lip_left_bottom_parentConstraint1.crz" "jackie_rigRN.phl[492]";
-connectAttr "jackie_rigRN.phl[493]" "lip_left_bottom_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[494]" "lip_left_bottom_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[495]" "lip_left_bottom_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[496]" "lip_left_bottom_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[497]" "lip_left_bottom_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[498]" "lip_left_bottom_parentConstraint1.cjo";
-connectAttr "lip_left_bottom_scaleConstraint1.csx" "jackie_rigRN.phl[499]";
-connectAttr "lip_left_bottom_scaleConstraint1.csy" "jackie_rigRN.phl[500]";
-connectAttr "lip_left_bottom_scaleConstraint1.csz" "jackie_rigRN.phl[501]";
-connectAttr "jackie_rigRN.phl[502]" "lip_left_bottom_scaleConstraint1.tsc";
-connectAttr "lip_right_top_parentConstraint1.ctx" "jackie_rigRN.phl[503]";
-connectAttr "lip_right_top_parentConstraint1.cty" "jackie_rigRN.phl[504]";
-connectAttr "lip_right_top_parentConstraint1.ctz" "jackie_rigRN.phl[505]";
-connectAttr "lip_right_top_parentConstraint1.crx" "jackie_rigRN.phl[506]";
-connectAttr "lip_right_top_parentConstraint1.cry" "jackie_rigRN.phl[507]";
-connectAttr "lip_right_top_parentConstraint1.crz" "jackie_rigRN.phl[508]";
-connectAttr "jackie_rigRN.phl[509]" "lip_right_top_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[510]" "lip_right_top_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[511]" "lip_right_top_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[512]" "lip_right_top_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[513]" "lip_right_top_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[514]" "lip_right_top_parentConstraint1.cjo";
-connectAttr "lip_right_top_scaleConstraint1.csx" "jackie_rigRN.phl[515]";
-connectAttr "lip_right_top_scaleConstraint1.csy" "jackie_rigRN.phl[516]";
-connectAttr "lip_right_top_scaleConstraint1.csz" "jackie_rigRN.phl[517]";
-connectAttr "jackie_rigRN.phl[518]" "lip_right_top_scaleConstraint1.tsc";
-connectAttr "lip_right_end_parentConstraint1.ctx" "jackie_rigRN.phl[519]";
-connectAttr "lip_right_end_parentConstraint1.cty" "jackie_rigRN.phl[520]";
-connectAttr "lip_right_end_parentConstraint1.ctz" "jackie_rigRN.phl[521]";
-connectAttr "lip_right_end_parentConstraint1.crx" "jackie_rigRN.phl[522]";
-connectAttr "lip_right_end_parentConstraint1.cry" "jackie_rigRN.phl[523]";
-connectAttr "lip_right_end_parentConstraint1.crz" "jackie_rigRN.phl[524]";
-connectAttr "jackie_rigRN.phl[525]" "lip_right_end_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[526]" "lip_right_end_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[527]" "lip_right_end_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[528]" "lip_right_end_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[529]" "lip_right_end_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[530]" "lip_right_end_parentConstraint1.cjo";
-connectAttr "lip_right_end_scaleConstraint1.csx" "jackie_rigRN.phl[531]";
-connectAttr "lip_right_end_scaleConstraint1.csy" "jackie_rigRN.phl[532]";
-connectAttr "lip_right_end_scaleConstraint1.csz" "jackie_rigRN.phl[533]";
-connectAttr "jackie_rigRN.phl[534]" "lip_right_end_scaleConstraint1.tsc";
-connectAttr "lip_right_bottom_parentConstraint1.ctx" "jackie_rigRN.phl[535]";
-connectAttr "lip_right_bottom_parentConstraint1.cty" "jackie_rigRN.phl[536]";
-connectAttr "lip_right_bottom_parentConstraint1.ctz" "jackie_rigRN.phl[537]";
-connectAttr "lip_right_bottom_parentConstraint1.crx" "jackie_rigRN.phl[538]";
-connectAttr "lip_right_bottom_parentConstraint1.cry" "jackie_rigRN.phl[539]";
-connectAttr "lip_right_bottom_parentConstraint1.crz" "jackie_rigRN.phl[540]";
-connectAttr "jackie_rigRN.phl[541]" "lip_right_bottom_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[542]" "lip_right_bottom_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[543]" "lip_right_bottom_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[544]" "lip_right_bottom_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[545]" "lip_right_bottom_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[546]" "lip_right_bottom_parentConstraint1.cjo";
-connectAttr "lip_right_bottom_scaleConstraint1.csx" "jackie_rigRN.phl[547]";
-connectAttr "lip_right_bottom_scaleConstraint1.csy" "jackie_rigRN.phl[548]";
-connectAttr "lip_right_bottom_scaleConstraint1.csz" "jackie_rigRN.phl[549]";
-connectAttr "jackie_rigRN.phl[550]" "lip_right_bottom_scaleConstraint1.tsc";
-connectAttr "jackie_rigRN.phl[551]" "left_eye_aimConstraint1.is";
-connectAttr "jackie_rigRN.phl[552]" "jackieEyeLeft_parentConstraint1.tg[0].tis";
-connectAttr "jackie_rigRN.phl[553]" "jackieEyeLeft_parentConstraint1.tg[0].tt";
-connectAttr "jackie_rigRN.phl[554]" "left_eye_aimConstraint1.ct";
-connectAttr "jackie_rigRN.phl[555]" "jackieEyeLeft_parentConstraint1.tg[0].tr";
-connectAttr "left_eye_aimConstraint1.crx" "jackie_rigRN.phl[556]";
-connectAttr "left_eye_aimConstraint1.cry" "jackie_rigRN.phl[557]";
-connectAttr "left_eye_aimConstraint1.crz" "jackie_rigRN.phl[558]";
-connectAttr "jackie_rigRN.phl[559]" "jackieEyeLeft_parentConstraint1.tg[0].trp";
-connectAttr "jackie_rigRN.phl[560]" "left_eye_aimConstraint1.crp";
-connectAttr "jackie_rigRN.phl[561]" "jackieEyeLeft_parentConstraint1.tg[0].trt";
-connectAttr "jackie_rigRN.phl[562]" "left_eye_aimConstraint1.crt";
-connectAttr "jackie_rigRN.phl[563]" "jackieEyeLeft_parentConstraint1.tg[0].tpm";
-connectAttr "jackie_rigRN.phl[564]" "jackieEyeLeft_parentConstraint1.tg[0].tro";
-connectAttr "jackie_rigRN.phl[565]" "left_eye_aimConstraint1.cro";
-connectAttr "jackie_rigRN.phl[566]" "jackieEyeLeft_parentConstraint1.tg[0].tjo";
-connectAttr "jackie_rigRN.phl[567]" "left_eye_aimConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[568]" "left_eye_aimConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[569]" "jackieEyeLeft_parentConstraint1.tg[0].ts";
-connectAttr "jackie_rigRN.phl[570]" "jackieEyeLeft_parentConstraint1.tg[0].tsc";
-connectAttr "jackie_rigRN.phl[571]" "jackierEyeRight_parentConstraint1.tg[0].tis"
+connectAttr "jackie_rigRN.phl[71]" "jackie_rigRN.phl[72]";
+connectAttr "jackie_rigRN.phl[73]" "jackie_rigRN.phl[74]";
+connectAttr "jackie_rigRN.phl[75]" "jackie_rigRN.phl[76]";
+connectAttr "jackie_rigRN.phl[77]" "jackie_rigRN.phl[78]";
+connectAttr "jackie_rigRN.phl[79]" "jackie_rigRN.phl[80]";
+connectAttr "jackie_rigRN.phl[81]" "jackie_rigRN.phl[82]";
+connectAttr "jackie_rigRN.phl[83]" "jackie_rigRN.phl[84]";
+connectAttr "jackie_rigRN.phl[85]" "jackie_rigRN.phl[86]";
+connectAttr "jackie_rigRN.phl[87]" "jackie_rigRN.phl[88]";
+connectAttr "jackie_rigRN.phl[89]" "jackie_rigRN.phl[90]";
+connectAttr "jackie_rigRN.phl[91]" "jackie_rigRN.phl[92]";
+connectAttr "jackie_rigRN.phl[93]" "jackie_rigRN.phl[94]";
+connectAttr "jackie_rigRN.phl[95]" "jackie_rigRN.phl[96]";
+connectAttr "jackie_rigRN.phl[97]" "jackie_rigRN.phl[98]";
+connectAttr "jackie_rigRN.phl[99]" "jackie_rigRN.phl[100]";
+connectAttr "jackie_rigRN.phl[101]" "jackie_rigRN.phl[102]";
+connectAttr "jackie_rigRN.phl[103]" "jackie_rigRN.phl[104]";
+connectAttr "jackie_rigRN.phl[105]" "jackie_rigRN.phl[106]";
+connectAttr "jackie_rigRN.phl[107]" "jackie_rigRN.phl[108]";
+connectAttr "jackie_rigRN.phl[109]" "jackie_rigRN.phl[110]";
+connectAttr "jackie_rigRN.phl[111]" "jackie_rigRN.phl[112]";
+connectAttr "jackie_rigRN.phl[113]" "jackie_rigRN.phl[114]";
+connectAttr "jackie_rigRN.phl[115]" "jackie_rigRN.phl[116]";
+connectAttr "jackie_rigRN.phl[117]" "jackie_rigRN.phl[118]";
+connectAttr "jackie_rigRN.phl[119]" "jackie_rigRN.phl[120]";
+connectAttr "jackie_rigRN.phl[49]" "jackie_rigRN.phl[50]";
+connectAttr "jackie_rigRN.phl[121]" "jackie_rigRN.phl[122]";
+connectAttr "jackie_rigRN.phl[123]" "jackie_rigRN.phl[124]";
+connectAttr "jackie_rigRN.phl[125]" "jackie_rigRN.phl[126]";
+connectAttr "jackie_rigRN.phl[127]" "jackie_rigRN.phl[128]";
+connectAttr "jackie_rigRN.phl[129]" "jackie_rigRN.phl[130]";
+connectAttr "jackie_rigRN.phl[131]" "jackie_rigRN.phl[132]";
+connectAttr "jackie_rigRN.phl[133]" "jackie_rigRN.phl[134]";
+connectAttr "jackie_rigRN.phl[135]" "jackie_rigRN.phl[136]";
+connectAttr "jackie_rigRN.phl[137]" "jackie_rigRN.phl[138]";
+connectAttr "jackie_rigRN.phl[139]" "jackie_rigRN.phl[140]";
+connectAttr "jackie_rigRN.phl[141]" "jackie_rigRN.phl[142]";
+connectAttr "jackie_rigRN.phl[143]" "jackie_rigRN.phl[144]";
+connectAttr "jackie_rigRN.phl[145]" "jackie_rigRN.phl[146]";
+connectAttr "jackie_rigRN.phl[147]" "jackie_rigRN.phl[148]";
+connectAttr "jackie_rigRN.phl[149]" "jackie_rigRN.phl[150]";
+connectAttr "jackie_rigRN.phl[151]" "jackie_rigRN.phl[152]";
+connectAttr "jackie_rigRN.phl[153]" "jackie_rigRN.phl[154]";
+connectAttr "jackie_rigRN.phl[155]" "jackie_rigRN.phl[156]";
+connectAttr "jackie_rigRN.phl[157]" "jackie_rigRN.phl[158]";
+connectAttr "jackie_rigRN.phl[159]" "jackie_rigRN.phl[160]";
+connectAttr "jackie_rigRN.phl[161]" "jackie_rigRN.phl[162]";
+connectAttr "jackie_rigRN.phl[163]" "jackie_rigRN.phl[164]";
+connectAttr "jackie_rigRN.phl[165]" "jackie_rigRN.phl[166]";
+connectAttr "jackie_rigRN.phl[167]" "jackie_rigRN.phl[168]";
+connectAttr "jackie_rigRN.phl[169]" "jackie_rigRN.phl[170]";
+connectAttr "jackie_rigRN.phl[315]" "pairBlend1.w";
+connectAttr "jackie_rigRN.phl[316]" "jackieEyeLeft_aimConstraint1.ct";
+connectAttr "pairBlend1.otx" "jackie_rigRN.phl[317]";
+connectAttr "pairBlend1.oty" "jackie_rigRN.phl[318]";
+connectAttr "pairBlend1.otz" "jackie_rigRN.phl[319]";
+connectAttr "pairBlend1.orx" "jackie_rigRN.phl[320]";
+connectAttr "pairBlend1.ory" "jackie_rigRN.phl[321]";
+connectAttr "pairBlend1.orz" "jackie_rigRN.phl[322]";
+connectAttr "jackie_rigRN.phl[323]" "jackieEyeLeft_aimConstraint1.crp";
+connectAttr "jackie_rigRN.phl[324]" "jackieEyeLeft_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[325]" "jackieEyeLeft_aimConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[326]" "jackieEyeLeft_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[327]" "jackieEyeLeft_aimConstraint1.crt";
+connectAttr "jackie_rigRN.phl[328]" "jackieEyeLeft_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[329]" "jackieEyeLeft_aimConstraint1.cro";
+connectAttr "jackie_rigRN.phl[330]" "pairBlend1.ro";
+connectAttr "jackie_rigRN.phl[331]" "jackieEyeLeft_parentConstraint1.cro";
+connectAttr "jackierEyeRight_parentConstraint1.ctx" "jackie_rigRN.phl[332]";
+connectAttr "jackierEyeRight_parentConstraint1.cty" "jackie_rigRN.phl[333]";
+connectAttr "jackierEyeRight_parentConstraint1.ctz" "jackie_rigRN.phl[334]";
+connectAttr "jackie_rigRN.phl[335]" "jackierEyeRight_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[336]" "jackierEyeRight_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[337]" "jackierEyeRight_parentConstraint1.crt";
+connectAttr "jackierEyeRight_parentConstraint1.crx" "jackie_rigRN.phl[338]";
+connectAttr "jackierEyeRight_parentConstraint1.cry" "jackie_rigRN.phl[339]";
+connectAttr "jackierEyeRight_parentConstraint1.crz" "jackie_rigRN.phl[340]";
+connectAttr "jackie_rigRN.phl[341]" "jackierEyeRight_parentConstraint1.cro";
+connectAttr "root_parentConstraint1.crx" "jackie_rigRN.phl[342]";
+connectAttr "root_parentConstraint1.cry" "jackie_rigRN.phl[343]";
+connectAttr "root_parentConstraint1.crz" "jackie_rigRN.phl[344]";
+connectAttr "root_parentConstraint1.ctx" "jackie_rigRN.phl[345]";
+connectAttr "root_parentConstraint1.cty" "jackie_rigRN.phl[346]";
+connectAttr "root_parentConstraint1.ctz" "jackie_rigRN.phl[347]";
+connectAttr "jackie_rigRN.phl[348]" "root_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[349]" "root_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[350]" "root_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[351]" "root_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[352]" "root_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[353]" "spine_1_orientConstraint1.is";
+connectAttr "spine_1_orientConstraint1.crx" "jackie_rigRN.phl[354]";
+connectAttr "spine_1_orientConstraint1.cry" "jackie_rigRN.phl[355]";
+connectAttr "spine_1_orientConstraint1.crz" "jackie_rigRN.phl[356]";
+connectAttr "jackie_rigRN.phl[357]" "spine_1_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[358]" "spine_1_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[359]" "spine_1_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[360]" "spine_2_orientConstraint1.is";
+connectAttr "spine_2_orientConstraint1.crx" "jackie_rigRN.phl[361]";
+connectAttr "spine_2_orientConstraint1.cry" "jackie_rigRN.phl[362]";
+connectAttr "spine_2_orientConstraint1.crz" "jackie_rigRN.phl[363]";
+connectAttr "jackie_rigRN.phl[364]" "spine_2_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[365]" "spine_2_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[366]" "spine_2_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[367]" "spine_3_orientConstraint1.is";
+connectAttr "spine_3_orientConstraint1.crx" "jackie_rigRN.phl[368]";
+connectAttr "spine_3_orientConstraint1.cry" "jackie_rigRN.phl[369]";
+connectAttr "spine_3_orientConstraint1.crz" "jackie_rigRN.phl[370]";
+connectAttr "jackie_rigRN.phl[371]" "spine_3_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[372]" "spine_3_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[373]" "spine_3_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[374]" "spine_4_orientConstraint1.is";
+connectAttr "spine_4_orientConstraint1.crx" "jackie_rigRN.phl[375]";
+connectAttr "spine_4_orientConstraint1.cry" "jackie_rigRN.phl[376]";
+connectAttr "spine_4_orientConstraint1.crz" "jackie_rigRN.phl[377]";
+connectAttr "jackie_rigRN.phl[378]" "spine_4_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[379]" "spine_4_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[380]" "spine_4_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[381]" "spine_5_orientConstraint1.is";
+connectAttr "spine_5_orientConstraint1.crx" "jackie_rigRN.phl[382]";
+connectAttr "spine_5_orientConstraint1.cry" "jackie_rigRN.phl[383]";
+connectAttr "spine_5_orientConstraint1.crz" "jackie_rigRN.phl[384]";
+connectAttr "jackie_rigRN.phl[385]" "spine_5_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[386]" "spine_5_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[387]" "spine_5_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[388]" "chest_orientConstraint1.is";
+connectAttr "chest_orientConstraint1.crx" "jackie_rigRN.phl[389]";
+connectAttr "chest_orientConstraint1.cry" "jackie_rigRN.phl[390]";
+connectAttr "chest_orientConstraint1.crz" "jackie_rigRN.phl[391]";
+connectAttr "jackie_rigRN.phl[392]" "chest_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[393]" "chest_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[394]" "chest_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[395]" "low_neck_orientConstraint1.is";
+connectAttr "low_neck_orientConstraint1.cry" "jackie_rigRN.phl[396]";
+connectAttr "low_neck_orientConstraint1.crx" "jackie_rigRN.phl[397]";
+connectAttr "low_neck_orientConstraint1.crz" "jackie_rigRN.phl[398]";
+connectAttr "jackie_rigRN.phl[399]" "low_neck_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[400]" "low_neck_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[401]" "low_neck_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[402]" "high_neck_orientConstraint1.is";
+connectAttr "high_neck_orientConstraint1.crx" "jackie_rigRN.phl[403]";
+connectAttr "high_neck_orientConstraint1.cry" "jackie_rigRN.phl[404]";
+connectAttr "high_neck_orientConstraint1.crz" "jackie_rigRN.phl[405]";
+connectAttr "jackie_rigRN.phl[406]" "high_neck_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[407]" "high_neck_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[408]" "high_neck_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[409]" "head_orientConstraint1.is";
+connectAttr "head_orientConstraint1.crx" "jackie_rigRN.phl[410]";
+connectAttr "head_orientConstraint1.cry" "jackie_rigRN.phl[411]";
+connectAttr "head_orientConstraint1.crz" "jackie_rigRN.phl[412]";
+connectAttr "jackie_rigRN.phl[413]" "head_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[414]" "head_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[415]" "head_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[416]" "Teeth_parentConstraint1.tg[0].tis";
+connectAttr "jackie_rigRN.phl[417]" "Teeth_parentConstraint1.tg[0].ts";
+connectAttr "jackie_rigRN.phl[418]" "Teeth_parentConstraint1.tg[0].tt";
+connectAttr "jackie_rigRN.phl[419]" "Teeth_parentConstraint1.tg[0].trp";
+connectAttr "jackie_rigRN.phl[420]" "Teeth_parentConstraint1.tg[0].trt";
+connectAttr "jackie_rigRN.phl[421]" "Teeth_parentConstraint1.tg[0].tr";
+connectAttr "jackie_rigRN.phl[422]" "Teeth_parentConstraint1.tg[0].tro";
+connectAttr "jackie_rigRN.phl[423]" "Teeth_parentConstraint1.tg[0].tpm";
+connectAttr "jackie_rigRN.phl[424]" "Teeth_parentConstraint1.tg[0].tjo";
+connectAttr "jackie_rigRN.phl[425]" "Teeth_parentConstraint1.tg[0].tsc";
+connectAttr "lip_center_top_parentConstraint1.ctx" "jackie_rigRN.phl[426]";
+connectAttr "lip_center_top_parentConstraint1.cty" "jackie_rigRN.phl[427]";
+connectAttr "lip_center_top_parentConstraint1.ctz" "jackie_rigRN.phl[428]";
+connectAttr "lip_center_top_scaleConstraint1.csx" "jackie_rigRN.phl[429]";
+connectAttr "lip_center_top_scaleConstraint1.csy" "jackie_rigRN.phl[430]";
+connectAttr "lip_center_top_scaleConstraint1.csz" "jackie_rigRN.phl[431]";
+connectAttr "lip_center_top_parentConstraint1.crx" "jackie_rigRN.phl[432]";
+connectAttr "lip_center_top_parentConstraint1.cry" "jackie_rigRN.phl[433]";
+connectAttr "lip_center_top_parentConstraint1.crz" "jackie_rigRN.phl[434]";
+connectAttr "jackie_rigRN.phl[435]" "lip_center_top_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[436]" "lip_center_top_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[437]" "lip_center_top_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[438]" "lip_center_top_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[439]" "lip_center_top_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[440]" "lip_center_top_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[441]" "lip_center_top_scaleConstraint1.tsc";
+connectAttr "lip_left_end_parentConstraint1.ctx" "jackie_rigRN.phl[442]";
+connectAttr "lip_left_end_parentConstraint1.cty" "jackie_rigRN.phl[443]";
+connectAttr "lip_left_end_parentConstraint1.ctz" "jackie_rigRN.phl[444]";
+connectAttr "lip_left_end_scaleConstraint1.csx" "jackie_rigRN.phl[445]";
+connectAttr "lip_left_end_scaleConstraint1.csy" "jackie_rigRN.phl[446]";
+connectAttr "lip_left_end_scaleConstraint1.csz" "jackie_rigRN.phl[447]";
+connectAttr "lip_left_end_parentConstraint1.cry" "jackie_rigRN.phl[448]";
+connectAttr "lip_left_end_parentConstraint1.crx" "jackie_rigRN.phl[449]";
+connectAttr "lip_left_end_parentConstraint1.crz" "jackie_rigRN.phl[450]";
+connectAttr "jackie_rigRN.phl[451]" "lip_left_end_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[452]" "lip_left_end_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[453]" "lip_left_end_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[454]" "lip_left_end_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[455]" "lip_left_end_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[456]" "lip_left_end_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[457]" "lip_left_end_scaleConstraint1.tsc";
+connectAttr "lip_center_bottom_parentConstraint1.ctx" "jackie_rigRN.phl[458]";
+connectAttr "lip_center_bottom_parentConstraint1.cty" "jackie_rigRN.phl[459]";
+connectAttr "lip_center_bottom_parentConstraint1.ctz" "jackie_rigRN.phl[460]";
+connectAttr "lip_center_bottom_parentConstraint1.crz" "jackie_rigRN.phl[461]";
+connectAttr "lip_center_bottom_parentConstraint1.crx" "jackie_rigRN.phl[462]";
+connectAttr "lip_center_bottom_parentConstraint1.cry" "jackie_rigRN.phl[463]";
+connectAttr "jackie_rigRN.phl[464]" "lip_center_bottom_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[465]" "lip_center_bottom_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[466]" "lip_center_bottom_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[467]" "lip_center_bottom_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[468]" "lip_center_bottom_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[469]" "lip_center_bottom_parentConstraint1.cjo";
+connectAttr "lip_center_bottom_scaleConstraint1.csx" "jackie_rigRN.phl[470]";
+connectAttr "lip_center_bottom_scaleConstraint1.csy" "jackie_rigRN.phl[471]";
+connectAttr "lip_center_bottom_scaleConstraint1.csz" "jackie_rigRN.phl[472]";
+connectAttr "jackie_rigRN.phl[473]" "lip_center_bottom_scaleConstraint1.tsc";
+connectAttr "lip_left_top_parentConstraint1.ctx" "jackie_rigRN.phl[474]";
+connectAttr "lip_left_top_parentConstraint1.cty" "jackie_rigRN.phl[475]";
+connectAttr "lip_left_top_parentConstraint1.ctz" "jackie_rigRN.phl[476]";
+connectAttr "lip_left_top_scaleConstraint1.csx" "jackie_rigRN.phl[477]";
+connectAttr "lip_left_top_scaleConstraint1.csy" "jackie_rigRN.phl[478]";
+connectAttr "lip_left_top_scaleConstraint1.csz" "jackie_rigRN.phl[479]";
+connectAttr "lip_left_top_parentConstraint1.crx" "jackie_rigRN.phl[480]";
+connectAttr "lip_left_top_parentConstraint1.cry" "jackie_rigRN.phl[481]";
+connectAttr "lip_left_top_parentConstraint1.crz" "jackie_rigRN.phl[482]";
+connectAttr "jackie_rigRN.phl[483]" "lip_left_top_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[484]" "lip_left_top_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[485]" "lip_left_top_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[486]" "lip_left_top_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[487]" "lip_left_top_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[488]" "lip_left_top_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[489]" "lip_left_top_scaleConstraint1.tsc";
+connectAttr "lip_left_bottom_parentConstraint1.ctx" "jackie_rigRN.phl[490]";
+connectAttr "lip_left_bottom_parentConstraint1.cty" "jackie_rigRN.phl[491]";
+connectAttr "lip_left_bottom_parentConstraint1.ctz" "jackie_rigRN.phl[492]";
+connectAttr "lip_left_bottom_parentConstraint1.crx" "jackie_rigRN.phl[493]";
+connectAttr "lip_left_bottom_parentConstraint1.cry" "jackie_rigRN.phl[494]";
+connectAttr "lip_left_bottom_parentConstraint1.crz" "jackie_rigRN.phl[495]";
+connectAttr "jackie_rigRN.phl[496]" "lip_left_bottom_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[497]" "lip_left_bottom_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[498]" "lip_left_bottom_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[499]" "lip_left_bottom_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[500]" "lip_left_bottom_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[501]" "lip_left_bottom_parentConstraint1.cjo";
+connectAttr "lip_left_bottom_scaleConstraint1.csx" "jackie_rigRN.phl[502]";
+connectAttr "lip_left_bottom_scaleConstraint1.csy" "jackie_rigRN.phl[503]";
+connectAttr "lip_left_bottom_scaleConstraint1.csz" "jackie_rigRN.phl[504]";
+connectAttr "jackie_rigRN.phl[505]" "lip_left_bottom_scaleConstraint1.tsc";
+connectAttr "lip_right_top_parentConstraint1.ctx" "jackie_rigRN.phl[506]";
+connectAttr "lip_right_top_parentConstraint1.cty" "jackie_rigRN.phl[507]";
+connectAttr "lip_right_top_parentConstraint1.ctz" "jackie_rigRN.phl[508]";
+connectAttr "lip_right_top_parentConstraint1.crx" "jackie_rigRN.phl[509]";
+connectAttr "lip_right_top_parentConstraint1.cry" "jackie_rigRN.phl[510]";
+connectAttr "lip_right_top_parentConstraint1.crz" "jackie_rigRN.phl[511]";
+connectAttr "jackie_rigRN.phl[512]" "lip_right_top_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[513]" "lip_right_top_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[514]" "lip_right_top_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[515]" "lip_right_top_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[516]" "lip_right_top_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[517]" "lip_right_top_parentConstraint1.cjo";
+connectAttr "lip_right_top_scaleConstraint1.csx" "jackie_rigRN.phl[518]";
+connectAttr "lip_right_top_scaleConstraint1.csy" "jackie_rigRN.phl[519]";
+connectAttr "lip_right_top_scaleConstraint1.csz" "jackie_rigRN.phl[520]";
+connectAttr "jackie_rigRN.phl[521]" "lip_right_top_scaleConstraint1.tsc";
+connectAttr "lip_right_end_parentConstraint1.ctx" "jackie_rigRN.phl[522]";
+connectAttr "lip_right_end_parentConstraint1.cty" "jackie_rigRN.phl[523]";
+connectAttr "lip_right_end_parentConstraint1.ctz" "jackie_rigRN.phl[524]";
+connectAttr "lip_right_end_parentConstraint1.crx" "jackie_rigRN.phl[525]";
+connectAttr "lip_right_end_parentConstraint1.cry" "jackie_rigRN.phl[526]";
+connectAttr "lip_right_end_parentConstraint1.crz" "jackie_rigRN.phl[527]";
+connectAttr "jackie_rigRN.phl[528]" "lip_right_end_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[529]" "lip_right_end_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[530]" "lip_right_end_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[531]" "lip_right_end_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[532]" "lip_right_end_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[533]" "lip_right_end_parentConstraint1.cjo";
+connectAttr "lip_right_end_scaleConstraint1.csx" "jackie_rigRN.phl[534]";
+connectAttr "lip_right_end_scaleConstraint1.csy" "jackie_rigRN.phl[535]";
+connectAttr "lip_right_end_scaleConstraint1.csz" "jackie_rigRN.phl[536]";
+connectAttr "jackie_rigRN.phl[537]" "lip_right_end_scaleConstraint1.tsc";
+connectAttr "lip_right_bottom_parentConstraint1.ctx" "jackie_rigRN.phl[538]";
+connectAttr "lip_right_bottom_parentConstraint1.cty" "jackie_rigRN.phl[539]";
+connectAttr "lip_right_bottom_parentConstraint1.ctz" "jackie_rigRN.phl[540]";
+connectAttr "lip_right_bottom_parentConstraint1.crx" "jackie_rigRN.phl[541]";
+connectAttr "lip_right_bottom_parentConstraint1.cry" "jackie_rigRN.phl[542]";
+connectAttr "lip_right_bottom_parentConstraint1.crz" "jackie_rigRN.phl[543]";
+connectAttr "jackie_rigRN.phl[544]" "lip_right_bottom_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[545]" "lip_right_bottom_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[546]" "lip_right_bottom_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[547]" "lip_right_bottom_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[548]" "lip_right_bottom_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[549]" "lip_right_bottom_parentConstraint1.cjo";
+connectAttr "lip_right_bottom_scaleConstraint1.csx" "jackie_rigRN.phl[550]";
+connectAttr "lip_right_bottom_scaleConstraint1.csy" "jackie_rigRN.phl[551]";
+connectAttr "lip_right_bottom_scaleConstraint1.csz" "jackie_rigRN.phl[552]";
+connectAttr "jackie_rigRN.phl[553]" "lip_right_bottom_scaleConstraint1.tsc";
+connectAttr "jackie_rigRN.phl[554]" "left_eye_aimConstraint1.is";
+connectAttr "jackie_rigRN.phl[555]" "jackieEyeLeft_parentConstraint1.tg[0].tis";
+connectAttr "jackie_rigRN.phl[556]" "left_eye_aimConstraint1.ct";
+connectAttr "jackie_rigRN.phl[557]" "jackieEyeLeft_parentConstraint1.tg[0].tt";
+connectAttr "jackie_rigRN.phl[558]" "jackieEyeLeft_parentConstraint1.tg[0].tr";
+connectAttr "left_eye_aimConstraint1.crx" "jackie_rigRN.phl[559]";
+connectAttr "left_eye_aimConstraint1.cry" "jackie_rigRN.phl[560]";
+connectAttr "left_eye_aimConstraint1.crz" "jackie_rigRN.phl[561]";
+connectAttr "jackie_rigRN.phl[562]" "left_eye_aimConstraint1.crp";
+connectAttr "jackie_rigRN.phl[563]" "jackieEyeLeft_parentConstraint1.tg[0].trp";
+connectAttr "jackie_rigRN.phl[564]" "left_eye_aimConstraint1.crt";
+connectAttr "jackie_rigRN.phl[565]" "jackieEyeLeft_parentConstraint1.tg[0].trt";
+connectAttr "jackie_rigRN.phl[566]" "jackieEyeLeft_parentConstraint1.tg[0].tpm";
+connectAttr "jackie_rigRN.phl[567]" "left_eye_aimConstraint1.cro";
+connectAttr "jackie_rigRN.phl[568]" "jackieEyeLeft_parentConstraint1.tg[0].tro";
+connectAttr "jackie_rigRN.phl[569]" "left_eye_aimConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[570]" "jackieEyeLeft_parentConstraint1.tg[0].tjo";
+connectAttr "jackie_rigRN.phl[571]" "left_eye_aimConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[572]" "jackieEyeLeft_parentConstraint1.tg[0].ts";
+connectAttr "jackie_rigRN.phl[573]" "jackieEyeLeft_parentConstraint1.tg[0].tsc";
+connectAttr "jackie_rigRN.phl[574]" "jackierEyeRight_parentConstraint1.tg[0].tis"
 		;
-connectAttr "jackie_rigRN.phl[572]" "right_eye_aimConstraint1.is";
-connectAttr "jackie_rigRN.phl[573]" "right_eye_aimConstraint1.ct";
-connectAttr "jackie_rigRN.phl[574]" "jackierEyeRight_parentConstraint1.tg[0].tt"
+connectAttr "jackie_rigRN.phl[575]" "right_eye_aimConstraint1.is";
+connectAttr "jackie_rigRN.phl[576]" "jackierEyeRight_parentConstraint1.tg[0].tt"
 		;
-connectAttr "jackie_rigRN.phl[575]" "right_eye_aimConstraint1.crp";
-connectAttr "jackie_rigRN.phl[576]" "jackierEyeRight_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[577]" "right_eye_aimConstraint1.ct";
+connectAttr "jackie_rigRN.phl[578]" "jackierEyeRight_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[577]" "right_eye_aimConstraint1.crt";
-connectAttr "jackie_rigRN.phl[578]" "jackierEyeRight_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[579]" "right_eye_aimConstraint1.crp";
+connectAttr "jackie_rigRN.phl[580]" "jackierEyeRight_parentConstraint1.tg[0].trt"
 		;
-connectAttr "jackie_rigRN.phl[579]" "jackierEyeRight_parentConstraint1.tg[0].tpm"
+connectAttr "jackie_rigRN.phl[581]" "right_eye_aimConstraint1.crt";
+connectAttr "jackie_rigRN.phl[582]" "jackierEyeRight_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[580]" "jackierEyeRight_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[583]" "jackierEyeRight_parentConstraint1.tg[0].tr"
 		;
-connectAttr "right_eye_aimConstraint1.crx" "jackie_rigRN.phl[581]";
-connectAttr "right_eye_aimConstraint1.cry" "jackie_rigRN.phl[582]";
-connectAttr "right_eye_aimConstraint1.crz" "jackie_rigRN.phl[583]";
-connectAttr "jackie_rigRN.phl[584]" "right_eye_aimConstraint1.cro";
-connectAttr "jackie_rigRN.phl[585]" "jackierEyeRight_parentConstraint1.tg[0].tro"
+connectAttr "right_eye_aimConstraint1.crx" "jackie_rigRN.phl[584]";
+connectAttr "right_eye_aimConstraint1.cry" "jackie_rigRN.phl[585]";
+connectAttr "right_eye_aimConstraint1.crz" "jackie_rigRN.phl[586]";
+connectAttr "jackie_rigRN.phl[587]" "jackierEyeRight_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[586]" "jackierEyeRight_parentConstraint1.tg[0].ts"
+connectAttr "jackie_rigRN.phl[588]" "right_eye_aimConstraint1.cro";
+connectAttr "jackie_rigRN.phl[589]" "jackierEyeRight_parentConstraint1.tg[0].ts"
 		;
-connectAttr "jackie_rigRN.phl[587]" "right_eye_aimConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[588]" "jackierEyeRight_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[590]" "jackierEyeRight_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "jackie_rigRN.phl[589]" "jackierEyeRight_parentConstraint1.tg[0].tsc"
+connectAttr "jackie_rigRN.phl[591]" "right_eye_aimConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[592]" "jackierEyeRight_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "jackie_rigRN.phl[590]" "right_eye_aimConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[591]" "head_ctl_pointConstraint1.tg[0].tt";
-connectAttr "jackie_rigRN.phl[592]" "head_ctl_pointConstraint1.tg[0].trp";
-connectAttr "jackie_rigRN.phl[593]" "head_ctl_pointConstraint1.tg[0].trt";
-connectAttr "jackie_rigRN.phl[594]" "head_ctl_pointConstraint1.tg[0].tpm";
-connectAttr "jackie_rigRN.phl[595]" "lf_clavicle_ikHandle.hsj";
-connectAttr "jackie_rigRN.phl[596]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[21].dn"
+connectAttr "jackie_rigRN.phl[593]" "right_eye_aimConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[594]" "head_ctl_pointConstraint1.tg[0].tt";
+connectAttr "jackie_rigRN.phl[595]" "head_ctl_pointConstraint1.tg[0].trp";
+connectAttr "jackie_rigRN.phl[596]" "head_ctl_pointConstraint1.tg[0].trt";
+connectAttr "jackie_rigRN.phl[597]" "head_ctl_pointConstraint1.tg[0].tpm";
+connectAttr "jackie_rigRN.phl[598]" "lf_clavicle_ikHandle.hsj";
+connectAttr "jackie_rigRN.phl[599]" "left_shoulder_orientConstraint1.is";
+connectAttr "left_shoulder_orientConstraint1.crx" "jackie_rigRN.phl[600]";
+connectAttr "left_shoulder_orientConstraint1.cry" "jackie_rigRN.phl[601]";
+connectAttr "left_shoulder_orientConstraint1.crz" "jackie_rigRN.phl[602]";
+connectAttr "jackie_rigRN.phl[603]" "lf_wrist_ikHandle_poleVectorConstraint1.crp"
 		;
-connectAttr "jackie_rigRN.phl[597]" "left_shoulder_orientConstraint1.is";
-connectAttr "left_shoulder_orientConstraint1.crx" "jackie_rigRN.phl[598]";
-connectAttr "left_shoulder_orientConstraint1.cry" "jackie_rigRN.phl[599]";
-connectAttr "left_shoulder_orientConstraint1.crz" "jackie_rigRN.phl[600]";
-connectAttr "jackie_rigRN.phl[601]" "lf_wrist_ikHandle_poleVectorConstraint1.crp"
+connectAttr "jackie_rigRN.phl[604]" "effector_lf_clavicle.tx";
+connectAttr "jackie_rigRN.phl[605]" "effector_lf_clavicle.ty";
+connectAttr "jackie_rigRN.phl[606]" "effector_lf_clavicle.tz";
+connectAttr "jackie_rigRN.phl[607]" "lf_wrist_ikHandle.hsj";
+connectAttr "jackie_rigRN.phl[608]" "left_shoulder_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[609]" "left_shoulder_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[610]" "left_shoulder_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[611]" "lf_wrist_ikHandle_poleVectorConstraint1.ps"
 		;
-connectAttr "jackie_rigRN.phl[602]" "effector_lf_clavicle.tx";
-connectAttr "jackie_rigRN.phl[603]" "effector_lf_clavicle.ty";
-connectAttr "jackie_rigRN.phl[604]" "effector_lf_clavicle.tz";
-connectAttr "jackie_rigRN.phl[605]" "lf_wrist_ikHandle.hsj";
-connectAttr "jackie_rigRN.phl[606]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+connectAttr "left_elbow_orientConstraint1.crx" "jackie_rigRN.phl[612]";
+connectAttr "left_elbow_orientConstraint1.cry" "jackie_rigRN.phl[613]";
+connectAttr "left_elbow_orientConstraint1.crz" "jackie_rigRN.phl[614]";
+connectAttr "jackie_rigRN.phl[615]" "left_elbow_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[616]" "left_elbow_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[617]" "left_elbow_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[618]" "left_elbow_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[619]" "nodeView1.ni[9].dn";
+connectAttr "jackie_rigRN.phl[620]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
 		;
-connectAttr "jackie_rigRN.phl[607]" "left_shoulder_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[608]" "left_shoulder_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[609]" "left_shoulder_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[610]" "lf_wrist_ikHandle_poleVectorConstraint1.ps"
+connectAttr "jackie_rigRN.phl[621]" "effector_lf_wrist.tx";
+connectAttr "jackie_rigRN.phl[622]" "effector_lf_wrist.ty";
+connectAttr "jackie_rigRN.phl[623]" "effector_lf_wrist.tz";
+connectAttr "unitConversion20.o" "jackie_rigRN.phl[624]";
+connectAttr "jackie_rigRN.phl[625]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tis"
 		;
-connectAttr "jackie_rigRN.phl[611]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+connectAttr "jackie_rigRN.phl[626]" "left_wrist_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[627]" "lf_palm_ctl_parentConstraint1.tg[0].tis";
+connectAttr "jackie_rigRN.phl[628]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].ts"
 		;
-connectAttr "jackie_rigRN.phl[612]" "left_elbow_orientConstraint1.is";
-connectAttr "left_elbow_orientConstraint1.crx" "jackie_rigRN.phl[613]";
-connectAttr "left_elbow_orientConstraint1.cry" "jackie_rigRN.phl[614]";
-connectAttr "left_elbow_orientConstraint1.crz" "jackie_rigRN.phl[615]";
-connectAttr "jackie_rigRN.phl[616]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+connectAttr "jackie_rigRN.phl[629]" "lf_palm_ctl_parentConstraint1.tg[0].ts";
+connectAttr "jackie_rigRN.phl[630]" "lf_palm_ctl_parentConstraint1.tg[0].tt";
+connectAttr "jackie_rigRN.phl[631]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
 		;
-connectAttr "jackie_rigRN.phl[617]" "left_elbow_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[618]" "left_elbow_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[619]" "left_elbow_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[620]" "effector_lf_wrist.tx";
-connectAttr "jackie_rigRN.phl[621]" "effector_lf_wrist.ty";
-connectAttr "jackie_rigRN.phl[622]" "effector_lf_wrist.tz";
-connectAttr "jackie_rigRN.phl[623]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tis"
+connectAttr "jackie_rigRN.phl[632]" "lf_palm_ctl_parentConstraint1.tg[0].tr";
+connectAttr "jackie_rigRN.phl[633]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
 		;
-connectAttr "jackie_rigRN.phl[624]" "left_wrist_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[625]" "lf_palm_ctl_parentConstraint1.tg[0].tis";
-connectAttr "jackie_rigRN.phl[626]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].ts"
+connectAttr "left_wrist_orientConstraint1.crz" "jackie_rigRN.phl[634]";
+connectAttr "left_wrist_orientConstraint1.crx" "jackie_rigRN.phl[635]";
+connectAttr "left_wrist_orientConstraint1.cry" "jackie_rigRN.phl[636]";
+connectAttr "jackie_rigRN.phl[637]" "lf_palm_ctl_parentConstraint1.tg[0].trp";
+connectAttr "jackie_rigRN.phl[638]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[627]" "lf_palm_ctl_parentConstraint1.tg[0].ts";
-connectAttr "jackie_rigRN.phl[628]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
+connectAttr "jackie_rigRN.phl[639]" "lf_palm_ctl_parentConstraint1.tg[0].trt";
+connectAttr "jackie_rigRN.phl[640]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
 		;
-connectAttr "jackie_rigRN.phl[629]" "lf_palm_ctl_parentConstraint1.tg[0].tt";
-connectAttr "jackie_rigRN.phl[630]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[641]" "lf_palm_ctl_parentConstraint1.tg[0].tpm";
+connectAttr "jackie_rigRN.phl[642]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[631]" "lf_palm_ctl_parentConstraint1.tg[0].tr";
-connectAttr "left_wrist_orientConstraint1.crz" "jackie_rigRN.phl[632]";
-connectAttr "left_wrist_orientConstraint1.crx" "jackie_rigRN.phl[633]";
-connectAttr "left_wrist_orientConstraint1.cry" "jackie_rigRN.phl[634]";
-connectAttr "jackie_rigRN.phl[635]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[643]" "left_wrist_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[644]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[636]" "lf_palm_ctl_parentConstraint1.tg[0].trp";
-connectAttr "jackie_rigRN.phl[637]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[645]" "lf_palm_ctl_parentConstraint1.tg[0].tro";
+connectAttr "jackie_rigRN.phl[646]" "left_wrist_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[647]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "jackie_rigRN.phl[638]" "lf_palm_ctl_parentConstraint1.tg[0].trt";
-connectAttr "jackie_rigRN.phl[639]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
+connectAttr "jackie_rigRN.phl[648]" "lf_palm_ctl_parentConstraint1.tg[0].tjo";
+connectAttr "jackie_rigRN.phl[649]" "left_wrist_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[650]" "lf_palm_ctl_parentConstraint1.tg[0].tsc";
+connectAttr "jackie_rigRN.phl[651]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "jackie_rigRN.phl[640]" "lf_palm_ctl_parentConstraint1.tg[0].tpm";
-connectAttr "jackie_rigRN.phl[641]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "left_palm_scaleConstraint1.csx" "jackie_rigRN.phl[652]";
+connectAttr "left_palm_scaleConstraint1.csy" "jackie_rigRN.phl[653]";
+connectAttr "left_palm_scaleConstraint1.csz" "jackie_rigRN.phl[654]";
+connectAttr "left_palm_parentConstraint1.ctx" "jackie_rigRN.phl[655]";
+connectAttr "left_palm_parentConstraint1.cty" "jackie_rigRN.phl[656]";
+connectAttr "left_palm_parentConstraint1.ctz" "jackie_rigRN.phl[657]";
+connectAttr "left_palm_parentConstraint1.crx" "jackie_rigRN.phl[658]";
+connectAttr "left_palm_parentConstraint1.cry" "jackie_rigRN.phl[659]";
+connectAttr "left_palm_parentConstraint1.crz" "jackie_rigRN.phl[660]";
+connectAttr "jackie_rigRN.phl[661]" "left_palm_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[662]" "left_palm_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[663]" "left_palm_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[664]" "left_palm_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[665]" "left_palm_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[666]" "left_palm_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[667]" "left_palm_scaleConstraint1.tsc";
+connectAttr "left_middle_finger_scaleConstraint1.csx" "jackie_rigRN.phl[668]";
+connectAttr "left_middle_finger_scaleConstraint1.csy" "jackie_rigRN.phl[669]";
+connectAttr "left_middle_finger_scaleConstraint1.csz" "jackie_rigRN.phl[670]";
+connectAttr "left_middle_finger_parentConstraint1.ctx" "jackie_rigRN.phl[671]";
+connectAttr "left_middle_finger_parentConstraint1.cty" "jackie_rigRN.phl[672]";
+connectAttr "left_middle_finger_parentConstraint1.ctz" "jackie_rigRN.phl[673]";
+connectAttr "jackie_rigRN.phl[674]" "left_middle_finger_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[675]" "left_middle_finger_parentConstraint1.crt";
+connectAttr "left_middle_finger_parentConstraint1.crx" "jackie_rigRN.phl[676]";
+connectAttr "left_middle_finger_parentConstraint1.cry" "jackie_rigRN.phl[677]";
+connectAttr "left_middle_finger_parentConstraint1.crz" "jackie_rigRN.phl[678]";
+connectAttr "jackie_rigRN.phl[679]" "left_middle_finger_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[680]" "left_middle_finger_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[681]" "left_middle_finger_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[682]" "left_middle_finger_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[683]" "left_middle_finger_scaleConstraint1.tsc";
+connectAttr "middle_2_scaleConstraint1.csx" "jackie_rigRN.phl[684]";
+connectAttr "middle_2_scaleConstraint1.csy" "jackie_rigRN.phl[685]";
+connectAttr "middle_2_scaleConstraint1.csz" "jackie_rigRN.phl[686]";
+connectAttr "middle_2_parentConstraint1.ctx" "jackie_rigRN.phl[687]";
+connectAttr "middle_2_parentConstraint1.cty" "jackie_rigRN.phl[688]";
+connectAttr "middle_2_parentConstraint1.ctz" "jackie_rigRN.phl[689]";
+connectAttr "jackie_rigRN.phl[690]" "middle_2_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[691]" "middle_2_parentConstraint1.crt";
+connectAttr "middle_2_parentConstraint1.crx" "jackie_rigRN.phl[692]";
+connectAttr "middle_2_parentConstraint1.cry" "jackie_rigRN.phl[693]";
+connectAttr "middle_2_parentConstraint1.crz" "jackie_rigRN.phl[694]";
+connectAttr "jackie_rigRN.phl[695]" "middle_2_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[696]" "middle_2_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[697]" "middle_2_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[698]" "middle_2_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[699]" "middle_2_scaleConstraint1.tsc";
+connectAttr "middle_3_scaleConstraint1.csx" "jackie_rigRN.phl[700]";
+connectAttr "middle_3_scaleConstraint1.csy" "jackie_rigRN.phl[701]";
+connectAttr "middle_3_scaleConstraint1.csz" "jackie_rigRN.phl[702]";
+connectAttr "middle_3_parentConstraint1.ctx" "jackie_rigRN.phl[703]";
+connectAttr "middle_3_parentConstraint1.cty" "jackie_rigRN.phl[704]";
+connectAttr "middle_3_parentConstraint1.ctz" "jackie_rigRN.phl[705]";
+connectAttr "jackie_rigRN.phl[706]" "middle_3_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[707]" "middle_3_parentConstraint1.crt";
+connectAttr "middle_3_parentConstraint1.crx" "jackie_rigRN.phl[708]";
+connectAttr "middle_3_parentConstraint1.cry" "jackie_rigRN.phl[709]";
+connectAttr "middle_3_parentConstraint1.crz" "jackie_rigRN.phl[710]";
+connectAttr "jackie_rigRN.phl[711]" "middle_3_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[712]" "middle_3_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[713]" "middle_3_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[714]" "middle_3_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[715]" "middle_3_scaleConstraint1.tsc";
+connectAttr "middle_tip_parentConstraint1.ctx" "jackie_rigRN.phl[716]";
+connectAttr "middle_tip_parentConstraint1.cty" "jackie_rigRN.phl[717]";
+connectAttr "middle_tip_parentConstraint1.ctz" "jackie_rigRN.phl[718]";
+connectAttr "jackie_rigRN.phl[719]" "middle_tip_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[720]" "middle_tip_parentConstraint1.crt";
+connectAttr "middle_tip_parentConstraint1.crx" "jackie_rigRN.phl[721]";
+connectAttr "middle_tip_parentConstraint1.cry" "jackie_rigRN.phl[722]";
+connectAttr "middle_tip_parentConstraint1.crz" "jackie_rigRN.phl[723]";
+connectAttr "jackie_rigRN.phl[724]" "middle_tip_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[725]" "middle_tip_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[726]" "middle_tip_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[727]" "middle_tip_scaleConstraint1.cpim";
+connectAttr "middle_tip_scaleConstraint1.csx" "jackie_rigRN.phl[728]";
+connectAttr "middle_tip_scaleConstraint1.csy" "jackie_rigRN.phl[729]";
+connectAttr "middle_tip_scaleConstraint1.csz" "jackie_rigRN.phl[730]";
+connectAttr "jackie_rigRN.phl[731]" "middle_tip_scaleConstraint1.tsc";
+connectAttr "left_ring_finger_scaleConstraint1.csx" "jackie_rigRN.phl[732]";
+connectAttr "left_ring_finger_scaleConstraint1.csy" "jackie_rigRN.phl[733]";
+connectAttr "left_ring_finger_scaleConstraint1.csz" "jackie_rigRN.phl[734]";
+connectAttr "left_ring_finger_parentConstraint1.ctx" "jackie_rigRN.phl[735]";
+connectAttr "left_ring_finger_parentConstraint1.cty" "jackie_rigRN.phl[736]";
+connectAttr "left_ring_finger_parentConstraint1.ctz" "jackie_rigRN.phl[737]";
+connectAttr "jackie_rigRN.phl[738]" "left_ring_finger_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[739]" "left_ring_finger_parentConstraint1.crt";
+connectAttr "left_ring_finger_parentConstraint1.crx" "jackie_rigRN.phl[740]";
+connectAttr "left_ring_finger_parentConstraint1.cry" "jackie_rigRN.phl[741]";
+connectAttr "left_ring_finger_parentConstraint1.crz" "jackie_rigRN.phl[742]";
+connectAttr "jackie_rigRN.phl[743]" "left_ring_finger_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[744]" "left_ring_finger_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[745]" "left_ring_finger_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[746]" "left_ring_finger_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[747]" "left_ring_finger_scaleConstraint1.tsc";
+connectAttr "ring_2_scaleConstraint1.csx" "jackie_rigRN.phl[748]";
+connectAttr "ring_2_scaleConstraint1.csy" "jackie_rigRN.phl[749]";
+connectAttr "ring_2_scaleConstraint1.csz" "jackie_rigRN.phl[750]";
+connectAttr "ring_2_parentConstraint1.ctx" "jackie_rigRN.phl[751]";
+connectAttr "ring_2_parentConstraint1.cty" "jackie_rigRN.phl[752]";
+connectAttr "ring_2_parentConstraint1.ctz" "jackie_rigRN.phl[753]";
+connectAttr "ring_2_parentConstraint1.crx" "jackie_rigRN.phl[754]";
+connectAttr "ring_2_parentConstraint1.cry" "jackie_rigRN.phl[755]";
+connectAttr "ring_2_parentConstraint1.crz" "jackie_rigRN.phl[756]";
+connectAttr "jackie_rigRN.phl[757]" "ring_2_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[758]" "ring_2_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[759]" "ring_2_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[760]" "ring_2_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[761]" "ring_2_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[762]" "ring_2_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[763]" "ring_2_scaleConstraint1.tsc";
+connectAttr "ring_3_scaleConstraint1.csx" "jackie_rigRN.phl[764]";
+connectAttr "ring_3_scaleConstraint1.csy" "jackie_rigRN.phl[765]";
+connectAttr "ring_3_scaleConstraint1.csz" "jackie_rigRN.phl[766]";
+connectAttr "ring_3_parentConstraint1.ctx" "jackie_rigRN.phl[767]";
+connectAttr "ring_3_parentConstraint1.cty" "jackie_rigRN.phl[768]";
+connectAttr "ring_3_parentConstraint1.ctz" "jackie_rigRN.phl[769]";
+connectAttr "jackie_rigRN.phl[770]" "ring_3_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[771]" "ring_3_parentConstraint1.crt";
+connectAttr "ring_3_parentConstraint1.crx" "jackie_rigRN.phl[772]";
+connectAttr "ring_3_parentConstraint1.cry" "jackie_rigRN.phl[773]";
+connectAttr "ring_3_parentConstraint1.crz" "jackie_rigRN.phl[774]";
+connectAttr "jackie_rigRN.phl[775]" "ring_3_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[776]" "ring_3_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[777]" "ring_3_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[778]" "ring_3_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[779]" "ring_3_scaleConstraint1.tsc";
+connectAttr "ring_tip_parentConstraint1.ctx" "jackie_rigRN.phl[780]";
+connectAttr "ring_tip_parentConstraint1.cty" "jackie_rigRN.phl[781]";
+connectAttr "ring_tip_parentConstraint1.ctz" "jackie_rigRN.phl[782]";
+connectAttr "jackie_rigRN.phl[783]" "ring_tip_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[784]" "ring_tip_parentConstraint1.crt";
+connectAttr "ring_tip_parentConstraint1.crx" "jackie_rigRN.phl[785]";
+connectAttr "ring_tip_parentConstraint1.cry" "jackie_rigRN.phl[786]";
+connectAttr "ring_tip_parentConstraint1.crz" "jackie_rigRN.phl[787]";
+connectAttr "jackie_rigRN.phl[788]" "ring_tip_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[789]" "ring_tip_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[790]" "ring_tip_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[791]" "ring_tip_scaleConstraint1.cpim";
+connectAttr "ring_tip_scaleConstraint1.csx" "jackie_rigRN.phl[792]";
+connectAttr "ring_tip_scaleConstraint1.csy" "jackie_rigRN.phl[793]";
+connectAttr "ring_tip_scaleConstraint1.csz" "jackie_rigRN.phl[794]";
+connectAttr "jackie_rigRN.phl[795]" "ring_tip_scaleConstraint1.tsc";
+connectAttr "pinky_scaleConstraint1.csx" "jackie_rigRN.phl[796]";
+connectAttr "pinky_scaleConstraint1.csy" "jackie_rigRN.phl[797]";
+connectAttr "pinky_scaleConstraint1.csz" "jackie_rigRN.phl[798]";
+connectAttr "pinky_parentConstraint1.ctx" "jackie_rigRN.phl[799]";
+connectAttr "pinky_parentConstraint1.cty" "jackie_rigRN.phl[800]";
+connectAttr "pinky_parentConstraint1.ctz" "jackie_rigRN.phl[801]";
+connectAttr "jackie_rigRN.phl[802]" "pinky_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[803]" "pinky_parentConstraint1.crt";
+connectAttr "pinky_parentConstraint1.crx" "jackie_rigRN.phl[804]";
+connectAttr "pinky_parentConstraint1.cry" "jackie_rigRN.phl[805]";
+connectAttr "pinky_parentConstraint1.crz" "jackie_rigRN.phl[806]";
+connectAttr "jackie_rigRN.phl[807]" "pinky_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[808]" "pinky_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[809]" "pinky_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[810]" "pinky_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[811]" "pinky_scaleConstraint1.tsc";
+connectAttr "pinky_2_scaleConstraint1.csx" "jackie_rigRN.phl[812]";
+connectAttr "pinky_2_scaleConstraint1.csy" "jackie_rigRN.phl[813]";
+connectAttr "pinky_2_scaleConstraint1.csz" "jackie_rigRN.phl[814]";
+connectAttr "pinky_2_parentConstraint1.ctx" "jackie_rigRN.phl[815]";
+connectAttr "pinky_2_parentConstraint1.cty" "jackie_rigRN.phl[816]";
+connectAttr "pinky_2_parentConstraint1.ctz" "jackie_rigRN.phl[817]";
+connectAttr "jackie_rigRN.phl[818]" "pinky_2_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[819]" "pinky_2_parentConstraint1.crt";
+connectAttr "pinky_2_parentConstraint1.crx" "jackie_rigRN.phl[820]";
+connectAttr "pinky_2_parentConstraint1.cry" "jackie_rigRN.phl[821]";
+connectAttr "pinky_2_parentConstraint1.crz" "jackie_rigRN.phl[822]";
+connectAttr "jackie_rigRN.phl[823]" "pinky_2_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[824]" "pinky_2_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[825]" "pinky_2_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[826]" "pinky_2_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[827]" "pinky_2_scaleConstraint1.tsc";
+connectAttr "pinky_3_scaleConstraint1.csx" "jackie_rigRN.phl[828]";
+connectAttr "pinky_3_scaleConstraint1.csy" "jackie_rigRN.phl[829]";
+connectAttr "pinky_3_scaleConstraint1.csz" "jackie_rigRN.phl[830]";
+connectAttr "pinky_3_parentConstraint1.ctx" "jackie_rigRN.phl[831]";
+connectAttr "pinky_3_parentConstraint1.cty" "jackie_rigRN.phl[832]";
+connectAttr "pinky_3_parentConstraint1.ctz" "jackie_rigRN.phl[833]";
+connectAttr "jackie_rigRN.phl[834]" "pinky_3_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[835]" "pinky_3_parentConstraint1.crt";
+connectAttr "pinky_3_parentConstraint1.crx" "jackie_rigRN.phl[836]";
+connectAttr "pinky_3_parentConstraint1.cry" "jackie_rigRN.phl[837]";
+connectAttr "pinky_3_parentConstraint1.crz" "jackie_rigRN.phl[838]";
+connectAttr "jackie_rigRN.phl[839]" "pinky_3_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[840]" "pinky_3_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[841]" "pinky_3_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[842]" "pinky_3_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[843]" "pinky_3_scaleConstraint1.tsc";
+connectAttr "pinky_tip_parentConstraint1.ctx" "jackie_rigRN.phl[844]";
+connectAttr "pinky_tip_parentConstraint1.cty" "jackie_rigRN.phl[845]";
+connectAttr "pinky_tip_parentConstraint1.ctz" "jackie_rigRN.phl[846]";
+connectAttr "jackie_rigRN.phl[847]" "pinky_tip_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[848]" "pinky_tip_parentConstraint1.crt";
+connectAttr "pinky_tip_parentConstraint1.crx" "jackie_rigRN.phl[849]";
+connectAttr "pinky_tip_parentConstraint1.cry" "jackie_rigRN.phl[850]";
+connectAttr "pinky_tip_parentConstraint1.crz" "jackie_rigRN.phl[851]";
+connectAttr "jackie_rigRN.phl[852]" "pinky_tip_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[853]" "pinky_tip_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[854]" "pinky_tip_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[855]" "pinky_tip_scaleConstraint1.cpim";
+connectAttr "pinky_tip_scaleConstraint1.csx" "jackie_rigRN.phl[856]";
+connectAttr "pinky_tip_scaleConstraint1.csy" "jackie_rigRN.phl[857]";
+connectAttr "pinky_tip_scaleConstraint1.csz" "jackie_rigRN.phl[858]";
+connectAttr "jackie_rigRN.phl[859]" "pinky_tip_scaleConstraint1.tsc";
+connectAttr "left_index_finger_scaleConstraint1.csx" "jackie_rigRN.phl[860]";
+connectAttr "left_index_finger_scaleConstraint1.csy" "jackie_rigRN.phl[861]";
+connectAttr "left_index_finger_scaleConstraint1.csz" "jackie_rigRN.phl[862]";
+connectAttr "left_index_finger_parentConstraint1.crx" "jackie_rigRN.phl[863]";
+connectAttr "left_index_finger_parentConstraint1.cry" "jackie_rigRN.phl[864]";
+connectAttr "left_index_finger_parentConstraint1.crz" "jackie_rigRN.phl[865]";
+connectAttr "left_index_finger_parentConstraint1.ctx" "jackie_rigRN.phl[866]";
+connectAttr "left_index_finger_parentConstraint1.cty" "jackie_rigRN.phl[867]";
+connectAttr "left_index_finger_parentConstraint1.ctz" "jackie_rigRN.phl[868]";
+connectAttr "jackie_rigRN.phl[869]" "left_index_finger_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[870]" "left_index_finger_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[871]" "left_index_finger_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[872]" "left_index_finger_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[873]" "left_index_finger_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[874]" "left_index_finger_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[875]" "left_index_finger_scaleConstraint1.tsc";
+connectAttr "index_2_scaleConstraint1.csx" "jackie_rigRN.phl[876]";
+connectAttr "index_2_scaleConstraint1.csy" "jackie_rigRN.phl[877]";
+connectAttr "index_2_scaleConstraint1.csz" "jackie_rigRN.phl[878]";
+connectAttr "index_2_parentConstraint1.ctx" "jackie_rigRN.phl[879]";
+connectAttr "index_2_parentConstraint1.cty" "jackie_rigRN.phl[880]";
+connectAttr "index_2_parentConstraint1.ctz" "jackie_rigRN.phl[881]";
+connectAttr "index_2_parentConstraint1.crx" "jackie_rigRN.phl[882]";
+connectAttr "index_2_parentConstraint1.cry" "jackie_rigRN.phl[883]";
+connectAttr "index_2_parentConstraint1.crz" "jackie_rigRN.phl[884]";
+connectAttr "jackie_rigRN.phl[885]" "index_2_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[886]" "index_2_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[887]" "index_2_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[888]" "index_2_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[889]" "index_2_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[890]" "index_2_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[891]" "index_2_scaleConstraint1.tsc";
+connectAttr "index_3_scaleConstraint1.csx" "jackie_rigRN.phl[892]";
+connectAttr "index_3_scaleConstraint1.csy" "jackie_rigRN.phl[893]";
+connectAttr "index_3_scaleConstraint1.csz" "jackie_rigRN.phl[894]";
+connectAttr "index_3_parentConstraint1.crx" "jackie_rigRN.phl[895]";
+connectAttr "index_3_parentConstraint1.cry" "jackie_rigRN.phl[896]";
+connectAttr "index_3_parentConstraint1.crz" "jackie_rigRN.phl[897]";
+connectAttr "index_3_parentConstraint1.ctx" "jackie_rigRN.phl[898]";
+connectAttr "index_3_parentConstraint1.cty" "jackie_rigRN.phl[899]";
+connectAttr "index_3_parentConstraint1.ctz" "jackie_rigRN.phl[900]";
+connectAttr "jackie_rigRN.phl[901]" "index_3_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[902]" "index_3_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[903]" "index_3_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[904]" "index_3_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[905]" "index_3_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[906]" "index_3_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[907]" "index_3_scaleConstraint1.tsc";
+connectAttr "index_tip_parentConstraint1.ctx" "jackie_rigRN.phl[908]";
+connectAttr "index_tip_parentConstraint1.cty" "jackie_rigRN.phl[909]";
+connectAttr "index_tip_parentConstraint1.ctz" "jackie_rigRN.phl[910]";
+connectAttr "index_tip_scaleConstraint1.csx" "jackie_rigRN.phl[911]";
+connectAttr "index_tip_scaleConstraint1.csy" "jackie_rigRN.phl[912]";
+connectAttr "index_tip_scaleConstraint1.csz" "jackie_rigRN.phl[913]";
+connectAttr "jackie_rigRN.phl[914]" "index_tip_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[915]" "index_tip_parentConstraint1.crt";
+connectAttr "index_tip_parentConstraint1.crx" "jackie_rigRN.phl[916]";
+connectAttr "index_tip_parentConstraint1.cry" "jackie_rigRN.phl[917]";
+connectAttr "index_tip_parentConstraint1.crz" "jackie_rigRN.phl[918]";
+connectAttr "jackie_rigRN.phl[919]" "index_tip_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[920]" "index_tip_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[921]" "index_tip_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[922]" "index_tip_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[923]" "index_tip_scaleConstraint1.tsc";
+connectAttr "left_thumb_scaleConstraint1.csx" "jackie_rigRN.phl[924]";
+connectAttr "left_thumb_scaleConstraint1.csy" "jackie_rigRN.phl[925]";
+connectAttr "left_thumb_scaleConstraint1.csz" "jackie_rigRN.phl[926]";
+connectAttr "left_thumb_parentConstraint1.ctx" "jackie_rigRN.phl[927]";
+connectAttr "left_thumb_parentConstraint1.cty" "jackie_rigRN.phl[928]";
+connectAttr "left_thumb_parentConstraint1.ctz" "jackie_rigRN.phl[929]";
+connectAttr "jackie_rigRN.phl[930]" "left_thumb_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[931]" "left_thumb_parentConstraint1.crt";
+connectAttr "left_thumb_parentConstraint1.crx" "jackie_rigRN.phl[932]";
+connectAttr "left_thumb_parentConstraint1.cry" "jackie_rigRN.phl[933]";
+connectAttr "left_thumb_parentConstraint1.crz" "jackie_rigRN.phl[934]";
+connectAttr "jackie_rigRN.phl[935]" "left_thumb_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[936]" "left_thumb_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[937]" "left_thumb_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[938]" "left_thumb_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[939]" "left_thumb_scaleConstraint1.tsc";
+connectAttr "thumb_2_scaleConstraint1.csx" "jackie_rigRN.phl[940]";
+connectAttr "thumb_2_scaleConstraint1.csy" "jackie_rigRN.phl[941]";
+connectAttr "thumb_2_scaleConstraint1.csz" "jackie_rigRN.phl[942]";
+connectAttr "thumb_2_parentConstraint1.crx" "jackie_rigRN.phl[943]";
+connectAttr "thumb_2_parentConstraint1.cry" "jackie_rigRN.phl[944]";
+connectAttr "thumb_2_parentConstraint1.crz" "jackie_rigRN.phl[945]";
+connectAttr "thumb_2_parentConstraint1.ctx" "jackie_rigRN.phl[946]";
+connectAttr "thumb_2_parentConstraint1.cty" "jackie_rigRN.phl[947]";
+connectAttr "thumb_2_parentConstraint1.ctz" "jackie_rigRN.phl[948]";
+connectAttr "jackie_rigRN.phl[949]" "thumb_2_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[950]" "thumb_2_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[951]" "thumb_2_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[952]" "thumb_2_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[953]" "thumb_2_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[954]" "thumb_2_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[955]" "thumb_2_scaleConstraint1.tsc";
+connectAttr "thumb_tip_parentConstraint1.ctx" "jackie_rigRN.phl[956]";
+connectAttr "thumb_tip_parentConstraint1.cty" "jackie_rigRN.phl[957]";
+connectAttr "thumb_tip_parentConstraint1.ctz" "jackie_rigRN.phl[958]";
+connectAttr "jackie_rigRN.phl[959]" "thumb_tip_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[960]" "thumb_tip_parentConstraint1.crt";
+connectAttr "thumb_tip_parentConstraint1.crx" "jackie_rigRN.phl[961]";
+connectAttr "thumb_tip_parentConstraint1.cry" "jackie_rigRN.phl[962]";
+connectAttr "thumb_tip_parentConstraint1.crz" "jackie_rigRN.phl[963]";
+connectAttr "jackie_rigRN.phl[964]" "thumb_tip_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[965]" "thumb_tip_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[966]" "thumb_tip_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[967]" "thumb_tip_scaleConstraint1.cpim";
+connectAttr "thumb_tip_scaleConstraint1.csx" "jackie_rigRN.phl[968]";
+connectAttr "thumb_tip_scaleConstraint1.csy" "jackie_rigRN.phl[969]";
+connectAttr "thumb_tip_scaleConstraint1.csz" "jackie_rigRN.phl[970]";
+connectAttr "jackie_rigRN.phl[971]" "thumb_tip_scaleConstraint1.tsc";
+connectAttr "jackie_rigRN.phl[972]" "rt_clavicle_ikHandle.hsj";
+connectAttr "jackie_rigRN.phl[973]" "right_shoulder_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[974]" "rt_wrist_ikHandle.hsj";
+connectAttr "right_shoulder_orientConstraint1.crx" "jackie_rigRN.phl[975]";
+connectAttr "right_shoulder_orientConstraint1.cry" "jackie_rigRN.phl[976]";
+connectAttr "right_shoulder_orientConstraint1.crz" "jackie_rigRN.phl[977]";
+connectAttr "jackie_rigRN.phl[978]" "rt_wrist_ikHandle_poleVectorConstraint1.crp"
 		;
-connectAttr "jackie_rigRN.phl[642]" "left_wrist_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[643]" "lf_palm_ctl_parentConstraint1.tg[0].tro";
-connectAttr "jackie_rigRN.phl[644]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[979]" "effector_rt_clavicle.tx";
+connectAttr "jackie_rigRN.phl[980]" "effector_rt_clavicle.ty";
+connectAttr "jackie_rigRN.phl[981]" "effector_rt_clavicle.tz";
+connectAttr "jackie_rigRN.phl[982]" "right_shoulder_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[983]" "right_shoulder_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[984]" "right_shoulder_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[985]" "rt_wrist_ikHandle_poleVectorConstraint1.ps"
 		;
-connectAttr "jackie_rigRN.phl[645]" "left_wrist_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[646]" "lf_palm_ctl_parentConstraint1.tg[0].tjo";
-connectAttr "jackie_rigRN.phl[647]" "left_wrist_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[648]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
+connectAttr "jackie_rigRN.phl[986]" "right_elbow_orientConstraint1.is";
+connectAttr "right_elbow_orientConstraint1.crx" "jackie_rigRN.phl[987]";
+connectAttr "right_elbow_orientConstraint1.cry" "jackie_rigRN.phl[988]";
+connectAttr "right_elbow_orientConstraint1.crz" "jackie_rigRN.phl[989]";
+connectAttr "jackie_rigRN.phl[990]" "right_elbow_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[991]" "right_elbow_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[992]" "right_elbow_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[993]" "nodeView2.ni[8].dn";
+connectAttr "jackie_rigRN.phl[994]" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[11].dn"
 		;
-connectAttr "jackie_rigRN.phl[649]" "lf_palm_ctl_parentConstraint1.tg[0].tsc";
-connectAttr "left_palm_scaleConstraint1.csx" "jackie_rigRN.phl[650]";
-connectAttr "left_palm_scaleConstraint1.csy" "jackie_rigRN.phl[651]";
-connectAttr "left_palm_scaleConstraint1.csz" "jackie_rigRN.phl[652]";
-connectAttr "left_palm_parentConstraint1.ctx" "jackie_rigRN.phl[653]";
-connectAttr "left_palm_parentConstraint1.cty" "jackie_rigRN.phl[654]";
-connectAttr "left_palm_parentConstraint1.ctz" "jackie_rigRN.phl[655]";
-connectAttr "left_palm_parentConstraint1.crx" "jackie_rigRN.phl[656]";
-connectAttr "left_palm_parentConstraint1.cry" "jackie_rigRN.phl[657]";
-connectAttr "left_palm_parentConstraint1.crz" "jackie_rigRN.phl[658]";
-connectAttr "jackie_rigRN.phl[659]" "left_palm_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[660]" "left_palm_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[661]" "left_palm_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[662]" "left_palm_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[663]" "left_palm_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[664]" "left_palm_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[665]" "left_palm_scaleConstraint1.tsc";
-connectAttr "left_middle_finger_scaleConstraint1.csx" "jackie_rigRN.phl[666]";
-connectAttr "left_middle_finger_scaleConstraint1.csy" "jackie_rigRN.phl[667]";
-connectAttr "left_middle_finger_scaleConstraint1.csz" "jackie_rigRN.phl[668]";
-connectAttr "left_middle_finger_parentConstraint1.ctx" "jackie_rigRN.phl[669]";
-connectAttr "left_middle_finger_parentConstraint1.cty" "jackie_rigRN.phl[670]";
-connectAttr "left_middle_finger_parentConstraint1.ctz" "jackie_rigRN.phl[671]";
-connectAttr "jackie_rigRN.phl[672]" "left_middle_finger_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[673]" "left_middle_finger_parentConstraint1.crt";
-connectAttr "left_middle_finger_parentConstraint1.crx" "jackie_rigRN.phl[674]";
-connectAttr "left_middle_finger_parentConstraint1.cry" "jackie_rigRN.phl[675]";
-connectAttr "left_middle_finger_parentConstraint1.crz" "jackie_rigRN.phl[676]";
-connectAttr "jackie_rigRN.phl[677]" "left_middle_finger_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[678]" "left_middle_finger_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[679]" "left_middle_finger_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[680]" "left_middle_finger_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[681]" "left_middle_finger_scaleConstraint1.tsc";
-connectAttr "middle_2_scaleConstraint1.csx" "jackie_rigRN.phl[682]";
-connectAttr "middle_2_scaleConstraint1.csy" "jackie_rigRN.phl[683]";
-connectAttr "middle_2_scaleConstraint1.csz" "jackie_rigRN.phl[684]";
-connectAttr "middle_2_parentConstraint1.ctx" "jackie_rigRN.phl[685]";
-connectAttr "middle_2_parentConstraint1.cty" "jackie_rigRN.phl[686]";
-connectAttr "middle_2_parentConstraint1.ctz" "jackie_rigRN.phl[687]";
-connectAttr "jackie_rigRN.phl[688]" "middle_2_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[689]" "middle_2_parentConstraint1.crt";
-connectAttr "middle_2_parentConstraint1.crx" "jackie_rigRN.phl[690]";
-connectAttr "middle_2_parentConstraint1.cry" "jackie_rigRN.phl[691]";
-connectAttr "middle_2_parentConstraint1.crz" "jackie_rigRN.phl[692]";
-connectAttr "jackie_rigRN.phl[693]" "middle_2_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[694]" "middle_2_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[695]" "middle_2_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[696]" "middle_2_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[697]" "middle_2_scaleConstraint1.tsc";
-connectAttr "middle_3_scaleConstraint1.csx" "jackie_rigRN.phl[698]";
-connectAttr "middle_3_scaleConstraint1.csy" "jackie_rigRN.phl[699]";
-connectAttr "middle_3_scaleConstraint1.csz" "jackie_rigRN.phl[700]";
-connectAttr "middle_3_parentConstraint1.ctx" "jackie_rigRN.phl[701]";
-connectAttr "middle_3_parentConstraint1.cty" "jackie_rigRN.phl[702]";
-connectAttr "middle_3_parentConstraint1.ctz" "jackie_rigRN.phl[703]";
-connectAttr "jackie_rigRN.phl[704]" "middle_3_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[705]" "middle_3_parentConstraint1.crt";
-connectAttr "middle_3_parentConstraint1.crx" "jackie_rigRN.phl[706]";
-connectAttr "middle_3_parentConstraint1.cry" "jackie_rigRN.phl[707]";
-connectAttr "middle_3_parentConstraint1.crz" "jackie_rigRN.phl[708]";
-connectAttr "jackie_rigRN.phl[709]" "middle_3_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[710]" "middle_3_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[711]" "middle_3_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[712]" "middle_3_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[713]" "middle_3_scaleConstraint1.tsc";
-connectAttr "middle_tip_parentConstraint1.ctx" "jackie_rigRN.phl[714]";
-connectAttr "middle_tip_parentConstraint1.cty" "jackie_rigRN.phl[715]";
-connectAttr "middle_tip_parentConstraint1.ctz" "jackie_rigRN.phl[716]";
-connectAttr "jackie_rigRN.phl[717]" "middle_tip_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[718]" "middle_tip_parentConstraint1.crt";
-connectAttr "middle_tip_parentConstraint1.crx" "jackie_rigRN.phl[719]";
-connectAttr "middle_tip_parentConstraint1.cry" "jackie_rigRN.phl[720]";
-connectAttr "middle_tip_parentConstraint1.crz" "jackie_rigRN.phl[721]";
-connectAttr "jackie_rigRN.phl[722]" "middle_tip_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[723]" "middle_tip_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[724]" "middle_tip_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[725]" "middle_tip_parentConstraint1.cpim";
-connectAttr "middle_tip_scaleConstraint1.csx" "jackie_rigRN.phl[726]";
-connectAttr "middle_tip_scaleConstraint1.csy" "jackie_rigRN.phl[727]";
-connectAttr "middle_tip_scaleConstraint1.csz" "jackie_rigRN.phl[728]";
-connectAttr "jackie_rigRN.phl[729]" "middle_tip_scaleConstraint1.tsc";
-connectAttr "left_ring_finger_scaleConstraint1.csx" "jackie_rigRN.phl[730]";
-connectAttr "left_ring_finger_scaleConstraint1.csy" "jackie_rigRN.phl[731]";
-connectAttr "left_ring_finger_scaleConstraint1.csz" "jackie_rigRN.phl[732]";
-connectAttr "left_ring_finger_parentConstraint1.ctx" "jackie_rigRN.phl[733]";
-connectAttr "left_ring_finger_parentConstraint1.cty" "jackie_rigRN.phl[734]";
-connectAttr "left_ring_finger_parentConstraint1.ctz" "jackie_rigRN.phl[735]";
-connectAttr "jackie_rigRN.phl[736]" "left_ring_finger_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[737]" "left_ring_finger_parentConstraint1.crt";
-connectAttr "left_ring_finger_parentConstraint1.crx" "jackie_rigRN.phl[738]";
-connectAttr "left_ring_finger_parentConstraint1.cry" "jackie_rigRN.phl[739]";
-connectAttr "left_ring_finger_parentConstraint1.crz" "jackie_rigRN.phl[740]";
-connectAttr "jackie_rigRN.phl[741]" "left_ring_finger_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[742]" "left_ring_finger_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[743]" "left_ring_finger_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[744]" "left_ring_finger_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[745]" "left_ring_finger_scaleConstraint1.tsc";
-connectAttr "ring_2_scaleConstraint1.csx" "jackie_rigRN.phl[746]";
-connectAttr "ring_2_scaleConstraint1.csy" "jackie_rigRN.phl[747]";
-connectAttr "ring_2_scaleConstraint1.csz" "jackie_rigRN.phl[748]";
-connectAttr "ring_2_parentConstraint1.ctx" "jackie_rigRN.phl[749]";
-connectAttr "ring_2_parentConstraint1.cty" "jackie_rigRN.phl[750]";
-connectAttr "ring_2_parentConstraint1.ctz" "jackie_rigRN.phl[751]";
-connectAttr "ring_2_parentConstraint1.crx" "jackie_rigRN.phl[752]";
-connectAttr "ring_2_parentConstraint1.cry" "jackie_rigRN.phl[753]";
-connectAttr "ring_2_parentConstraint1.crz" "jackie_rigRN.phl[754]";
-connectAttr "jackie_rigRN.phl[755]" "ring_2_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[756]" "ring_2_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[757]" "ring_2_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[758]" "ring_2_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[759]" "ring_2_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[760]" "ring_2_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[761]" "ring_2_scaleConstraint1.tsc";
-connectAttr "ring_3_scaleConstraint1.csx" "jackie_rigRN.phl[762]";
-connectAttr "ring_3_scaleConstraint1.csy" "jackie_rigRN.phl[763]";
-connectAttr "ring_3_scaleConstraint1.csz" "jackie_rigRN.phl[764]";
-connectAttr "ring_3_parentConstraint1.ctx" "jackie_rigRN.phl[765]";
-connectAttr "ring_3_parentConstraint1.cty" "jackie_rigRN.phl[766]";
-connectAttr "ring_3_parentConstraint1.ctz" "jackie_rigRN.phl[767]";
-connectAttr "jackie_rigRN.phl[768]" "ring_3_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[769]" "ring_3_parentConstraint1.crt";
-connectAttr "ring_3_parentConstraint1.crx" "jackie_rigRN.phl[770]";
-connectAttr "ring_3_parentConstraint1.cry" "jackie_rigRN.phl[771]";
-connectAttr "ring_3_parentConstraint1.crz" "jackie_rigRN.phl[772]";
-connectAttr "jackie_rigRN.phl[773]" "ring_3_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[774]" "ring_3_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[775]" "ring_3_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[776]" "ring_3_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[777]" "ring_3_scaleConstraint1.tsc";
-connectAttr "ring_tip_parentConstraint1.ctx" "jackie_rigRN.phl[778]";
-connectAttr "ring_tip_parentConstraint1.cty" "jackie_rigRN.phl[779]";
-connectAttr "ring_tip_parentConstraint1.ctz" "jackie_rigRN.phl[780]";
-connectAttr "jackie_rigRN.phl[781]" "ring_tip_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[782]" "ring_tip_parentConstraint1.crt";
-connectAttr "ring_tip_parentConstraint1.crx" "jackie_rigRN.phl[783]";
-connectAttr "ring_tip_parentConstraint1.cry" "jackie_rigRN.phl[784]";
-connectAttr "ring_tip_parentConstraint1.crz" "jackie_rigRN.phl[785]";
-connectAttr "jackie_rigRN.phl[786]" "ring_tip_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[787]" "ring_tip_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[788]" "ring_tip_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[789]" "ring_tip_parentConstraint1.cpim";
-connectAttr "ring_tip_scaleConstraint1.csx" "jackie_rigRN.phl[790]";
-connectAttr "ring_tip_scaleConstraint1.csy" "jackie_rigRN.phl[791]";
-connectAttr "ring_tip_scaleConstraint1.csz" "jackie_rigRN.phl[792]";
-connectAttr "jackie_rigRN.phl[793]" "ring_tip_scaleConstraint1.tsc";
-connectAttr "pinky_scaleConstraint1.csx" "jackie_rigRN.phl[794]";
-connectAttr "pinky_scaleConstraint1.csy" "jackie_rigRN.phl[795]";
-connectAttr "pinky_scaleConstraint1.csz" "jackie_rigRN.phl[796]";
-connectAttr "pinky_parentConstraint1.ctx" "jackie_rigRN.phl[797]";
-connectAttr "pinky_parentConstraint1.cty" "jackie_rigRN.phl[798]";
-connectAttr "pinky_parentConstraint1.ctz" "jackie_rigRN.phl[799]";
-connectAttr "jackie_rigRN.phl[800]" "pinky_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[801]" "pinky_parentConstraint1.crt";
-connectAttr "pinky_parentConstraint1.crx" "jackie_rigRN.phl[802]";
-connectAttr "pinky_parentConstraint1.cry" "jackie_rigRN.phl[803]";
-connectAttr "pinky_parentConstraint1.crz" "jackie_rigRN.phl[804]";
-connectAttr "jackie_rigRN.phl[805]" "pinky_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[806]" "pinky_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[807]" "pinky_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[808]" "pinky_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[809]" "pinky_scaleConstraint1.tsc";
-connectAttr "pinky_2_scaleConstraint1.csx" "jackie_rigRN.phl[810]";
-connectAttr "pinky_2_scaleConstraint1.csy" "jackie_rigRN.phl[811]";
-connectAttr "pinky_2_scaleConstraint1.csz" "jackie_rigRN.phl[812]";
-connectAttr "pinky_2_parentConstraint1.ctx" "jackie_rigRN.phl[813]";
-connectAttr "pinky_2_parentConstraint1.cty" "jackie_rigRN.phl[814]";
-connectAttr "pinky_2_parentConstraint1.ctz" "jackie_rigRN.phl[815]";
-connectAttr "jackie_rigRN.phl[816]" "pinky_2_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[817]" "pinky_2_parentConstraint1.crt";
-connectAttr "pinky_2_parentConstraint1.crx" "jackie_rigRN.phl[818]";
-connectAttr "pinky_2_parentConstraint1.cry" "jackie_rigRN.phl[819]";
-connectAttr "pinky_2_parentConstraint1.crz" "jackie_rigRN.phl[820]";
-connectAttr "jackie_rigRN.phl[821]" "pinky_2_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[822]" "pinky_2_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[823]" "pinky_2_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[824]" "pinky_2_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[825]" "pinky_2_scaleConstraint1.tsc";
-connectAttr "pinky_3_scaleConstraint1.csx" "jackie_rigRN.phl[826]";
-connectAttr "pinky_3_scaleConstraint1.csy" "jackie_rigRN.phl[827]";
-connectAttr "pinky_3_scaleConstraint1.csz" "jackie_rigRN.phl[828]";
-connectAttr "pinky_3_parentConstraint1.ctx" "jackie_rigRN.phl[829]";
-connectAttr "pinky_3_parentConstraint1.cty" "jackie_rigRN.phl[830]";
-connectAttr "pinky_3_parentConstraint1.ctz" "jackie_rigRN.phl[831]";
-connectAttr "jackie_rigRN.phl[832]" "pinky_3_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[833]" "pinky_3_parentConstraint1.crt";
-connectAttr "pinky_3_parentConstraint1.crx" "jackie_rigRN.phl[834]";
-connectAttr "pinky_3_parentConstraint1.cry" "jackie_rigRN.phl[835]";
-connectAttr "pinky_3_parentConstraint1.crz" "jackie_rigRN.phl[836]";
-connectAttr "jackie_rigRN.phl[837]" "pinky_3_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[838]" "pinky_3_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[839]" "pinky_3_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[840]" "pinky_3_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[841]" "pinky_3_scaleConstraint1.tsc";
-connectAttr "pinky_tip_parentConstraint1.ctx" "jackie_rigRN.phl[842]";
-connectAttr "pinky_tip_parentConstraint1.cty" "jackie_rigRN.phl[843]";
-connectAttr "pinky_tip_parentConstraint1.ctz" "jackie_rigRN.phl[844]";
-connectAttr "jackie_rigRN.phl[845]" "pinky_tip_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[846]" "pinky_tip_parentConstraint1.crt";
-connectAttr "pinky_tip_parentConstraint1.crx" "jackie_rigRN.phl[847]";
-connectAttr "pinky_tip_parentConstraint1.cry" "jackie_rigRN.phl[848]";
-connectAttr "pinky_tip_parentConstraint1.crz" "jackie_rigRN.phl[849]";
-connectAttr "jackie_rigRN.phl[850]" "pinky_tip_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[851]" "pinky_tip_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[852]" "pinky_tip_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[853]" "pinky_tip_parentConstraint1.cpim";
-connectAttr "pinky_tip_scaleConstraint1.csx" "jackie_rigRN.phl[854]";
-connectAttr "pinky_tip_scaleConstraint1.csy" "jackie_rigRN.phl[855]";
-connectAttr "pinky_tip_scaleConstraint1.csz" "jackie_rigRN.phl[856]";
-connectAttr "jackie_rigRN.phl[857]" "pinky_tip_scaleConstraint1.tsc";
-connectAttr "left_index_finger_scaleConstraint1.csx" "jackie_rigRN.phl[858]";
-connectAttr "left_index_finger_scaleConstraint1.csy" "jackie_rigRN.phl[859]";
-connectAttr "left_index_finger_scaleConstraint1.csz" "jackie_rigRN.phl[860]";
-connectAttr "left_index_finger_parentConstraint1.crx" "jackie_rigRN.phl[861]";
-connectAttr "left_index_finger_parentConstraint1.cry" "jackie_rigRN.phl[862]";
-connectAttr "left_index_finger_parentConstraint1.crz" "jackie_rigRN.phl[863]";
-connectAttr "left_index_finger_parentConstraint1.ctx" "jackie_rigRN.phl[864]";
-connectAttr "left_index_finger_parentConstraint1.cty" "jackie_rigRN.phl[865]";
-connectAttr "left_index_finger_parentConstraint1.ctz" "jackie_rigRN.phl[866]";
-connectAttr "jackie_rigRN.phl[867]" "left_index_finger_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[868]" "left_index_finger_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[869]" "left_index_finger_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[870]" "left_index_finger_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[871]" "left_index_finger_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[872]" "left_index_finger_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[873]" "left_index_finger_scaleConstraint1.tsc";
-connectAttr "index_2_scaleConstraint1.csx" "jackie_rigRN.phl[874]";
-connectAttr "index_2_scaleConstraint1.csy" "jackie_rigRN.phl[875]";
-connectAttr "index_2_scaleConstraint1.csz" "jackie_rigRN.phl[876]";
-connectAttr "index_2_parentConstraint1.ctx" "jackie_rigRN.phl[877]";
-connectAttr "index_2_parentConstraint1.cty" "jackie_rigRN.phl[878]";
-connectAttr "index_2_parentConstraint1.ctz" "jackie_rigRN.phl[879]";
-connectAttr "index_2_parentConstraint1.crx" "jackie_rigRN.phl[880]";
-connectAttr "index_2_parentConstraint1.cry" "jackie_rigRN.phl[881]";
-connectAttr "index_2_parentConstraint1.crz" "jackie_rigRN.phl[882]";
-connectAttr "jackie_rigRN.phl[883]" "index_2_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[884]" "index_2_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[885]" "index_2_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[886]" "index_2_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[887]" "index_2_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[888]" "index_2_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[889]" "index_2_scaleConstraint1.tsc";
-connectAttr "index_3_scaleConstraint1.csx" "jackie_rigRN.phl[890]";
-connectAttr "index_3_scaleConstraint1.csy" "jackie_rigRN.phl[891]";
-connectAttr "index_3_scaleConstraint1.csz" "jackie_rigRN.phl[892]";
-connectAttr "index_3_parentConstraint1.crx" "jackie_rigRN.phl[893]";
-connectAttr "index_3_parentConstraint1.cry" "jackie_rigRN.phl[894]";
-connectAttr "index_3_parentConstraint1.crz" "jackie_rigRN.phl[895]";
-connectAttr "index_3_parentConstraint1.ctx" "jackie_rigRN.phl[896]";
-connectAttr "index_3_parentConstraint1.cty" "jackie_rigRN.phl[897]";
-connectAttr "index_3_parentConstraint1.ctz" "jackie_rigRN.phl[898]";
-connectAttr "jackie_rigRN.phl[899]" "index_3_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[900]" "index_3_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[901]" "index_3_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[902]" "index_3_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[903]" "index_3_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[904]" "index_3_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[905]" "index_3_scaleConstraint1.tsc";
-connectAttr "index_tip_parentConstraint1.ctx" "jackie_rigRN.phl[906]";
-connectAttr "index_tip_parentConstraint1.cty" "jackie_rigRN.phl[907]";
-connectAttr "index_tip_parentConstraint1.ctz" "jackie_rigRN.phl[908]";
-connectAttr "index_tip_scaleConstraint1.csx" "jackie_rigRN.phl[909]";
-connectAttr "index_tip_scaleConstraint1.csy" "jackie_rigRN.phl[910]";
-connectAttr "index_tip_scaleConstraint1.csz" "jackie_rigRN.phl[911]";
-connectAttr "jackie_rigRN.phl[912]" "index_tip_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[913]" "index_tip_parentConstraint1.crt";
-connectAttr "index_tip_parentConstraint1.crx" "jackie_rigRN.phl[914]";
-connectAttr "index_tip_parentConstraint1.cry" "jackie_rigRN.phl[915]";
-connectAttr "index_tip_parentConstraint1.crz" "jackie_rigRN.phl[916]";
-connectAttr "jackie_rigRN.phl[917]" "index_tip_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[918]" "index_tip_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[919]" "index_tip_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[920]" "index_tip_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[921]" "index_tip_scaleConstraint1.tsc";
-connectAttr "left_thumb_scaleConstraint1.csx" "jackie_rigRN.phl[922]";
-connectAttr "left_thumb_scaleConstraint1.csy" "jackie_rigRN.phl[923]";
-connectAttr "left_thumb_scaleConstraint1.csz" "jackie_rigRN.phl[924]";
-connectAttr "left_thumb_parentConstraint1.ctx" "jackie_rigRN.phl[925]";
-connectAttr "left_thumb_parentConstraint1.cty" "jackie_rigRN.phl[926]";
-connectAttr "left_thumb_parentConstraint1.ctz" "jackie_rigRN.phl[927]";
-connectAttr "jackie_rigRN.phl[928]" "left_thumb_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[929]" "left_thumb_parentConstraint1.crt";
-connectAttr "left_thumb_parentConstraint1.crx" "jackie_rigRN.phl[930]";
-connectAttr "left_thumb_parentConstraint1.cry" "jackie_rigRN.phl[931]";
-connectAttr "left_thumb_parentConstraint1.crz" "jackie_rigRN.phl[932]";
-connectAttr "jackie_rigRN.phl[933]" "left_thumb_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[934]" "left_thumb_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[935]" "left_thumb_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[936]" "left_thumb_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[937]" "left_thumb_scaleConstraint1.tsc";
-connectAttr "thumb_2_scaleConstraint1.csx" "jackie_rigRN.phl[938]";
-connectAttr "thumb_2_scaleConstraint1.csy" "jackie_rigRN.phl[939]";
-connectAttr "thumb_2_scaleConstraint1.csz" "jackie_rigRN.phl[940]";
-connectAttr "thumb_2_parentConstraint1.crx" "jackie_rigRN.phl[941]";
-connectAttr "thumb_2_parentConstraint1.cry" "jackie_rigRN.phl[942]";
-connectAttr "thumb_2_parentConstraint1.crz" "jackie_rigRN.phl[943]";
-connectAttr "thumb_2_parentConstraint1.ctx" "jackie_rigRN.phl[944]";
-connectAttr "thumb_2_parentConstraint1.cty" "jackie_rigRN.phl[945]";
-connectAttr "thumb_2_parentConstraint1.ctz" "jackie_rigRN.phl[946]";
-connectAttr "jackie_rigRN.phl[947]" "thumb_2_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[948]" "thumb_2_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[949]" "thumb_2_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[950]" "thumb_2_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[951]" "thumb_2_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[952]" "thumb_2_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[953]" "thumb_2_scaleConstraint1.tsc";
-connectAttr "thumb_tip_parentConstraint1.ctx" "jackie_rigRN.phl[954]";
-connectAttr "thumb_tip_parentConstraint1.cty" "jackie_rigRN.phl[955]";
-connectAttr "thumb_tip_parentConstraint1.ctz" "jackie_rigRN.phl[956]";
-connectAttr "jackie_rigRN.phl[957]" "thumb_tip_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[958]" "thumb_tip_parentConstraint1.crt";
-connectAttr "thumb_tip_parentConstraint1.crx" "jackie_rigRN.phl[959]";
-connectAttr "thumb_tip_parentConstraint1.cry" "jackie_rigRN.phl[960]";
-connectAttr "thumb_tip_parentConstraint1.crz" "jackie_rigRN.phl[961]";
-connectAttr "jackie_rigRN.phl[962]" "thumb_tip_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[963]" "thumb_tip_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[964]" "thumb_tip_scaleConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[965]" "thumb_tip_parentConstraint1.cpim";
-connectAttr "thumb_tip_scaleConstraint1.csx" "jackie_rigRN.phl[966]";
-connectAttr "thumb_tip_scaleConstraint1.csy" "jackie_rigRN.phl[967]";
-connectAttr "thumb_tip_scaleConstraint1.csz" "jackie_rigRN.phl[968]";
-connectAttr "jackie_rigRN.phl[969]" "thumb_tip_scaleConstraint1.tsc";
-connectAttr "jackie_rigRN.phl[970]" "rt_clavicle_ikHandle.hsj";
-connectAttr "jackie_rigRN.phl[971]" "right_shoulder_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[972]" "rt_wrist_ikHandle.hsj";
-connectAttr "right_shoulder_orientConstraint1.crx" "jackie_rigRN.phl[973]";
-connectAttr "right_shoulder_orientConstraint1.cry" "jackie_rigRN.phl[974]";
-connectAttr "right_shoulder_orientConstraint1.crz" "jackie_rigRN.phl[975]";
-connectAttr "jackie_rigRN.phl[976]" "rt_wrist_ikHandle_poleVectorConstraint1.crp"
+connectAttr "unitConversion23.o" "jackie_rigRN.phl[995]";
+connectAttr "jackie_rigRN.phl[996]" "effector_rt_wrist.tx";
+connectAttr "jackie_rigRN.phl[997]" "effector_rt_wrist.ty";
+connectAttr "jackie_rigRN.phl[998]" "effector_rt_wrist.tz";
+connectAttr "jackie_rigRN.phl[999]" "right_wrist_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[1000]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tis"
 		;
-connectAttr "jackie_rigRN.phl[977]" "effector_rt_clavicle.tx";
-connectAttr "jackie_rigRN.phl[978]" "effector_rt_clavicle.ty";
-connectAttr "jackie_rigRN.phl[979]" "effector_rt_clavicle.tz";
-connectAttr "jackie_rigRN.phl[980]" "right_shoulder_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[981]" "right_shoulder_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[982]" "right_shoulder_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[983]" "rt_wrist_ikHandle_poleVectorConstraint1.ps"
+connectAttr "jackie_rigRN.phl[1001]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].ts"
 		;
-connectAttr "jackie_rigRN.phl[984]" "right_elbow_orientConstraint1.is";
-connectAttr "right_elbow_orientConstraint1.crx" "jackie_rigRN.phl[985]";
-connectAttr "right_elbow_orientConstraint1.cry" "jackie_rigRN.phl[986]";
-connectAttr "right_elbow_orientConstraint1.crz" "jackie_rigRN.phl[987]";
-connectAttr "jackie_rigRN.phl[988]" "right_elbow_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[989]" "right_elbow_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[990]" "right_elbow_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[991]" "effector_rt_wrist.tx";
-connectAttr "jackie_rigRN.phl[992]" "effector_rt_wrist.ty";
-connectAttr "jackie_rigRN.phl[993]" "effector_rt_wrist.tz";
-connectAttr "jackie_rigRN.phl[994]" "right_wrist_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[995]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tis"
+connectAttr "jackie_rigRN.phl[1002]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
 		;
-connectAttr "jackie_rigRN.phl[996]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].ts"
+connectAttr "jackie_rigRN.phl[1003]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[997]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
+connectAttr "jackie_rigRN.phl[1004]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
 		;
-connectAttr "jackie_rigRN.phl[998]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[1005]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[999]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[1006]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
 		;
-connectAttr "jackie_rigRN.phl[1000]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
+connectAttr "right_wrist_orientConstraint1.crx" "jackie_rigRN.phl[1007]";
+connectAttr "right_wrist_orientConstraint1.cry" "jackie_rigRN.phl[1008]";
+connectAttr "right_wrist_orientConstraint1.crz" "jackie_rigRN.phl[1009]";
+connectAttr "jackie_rigRN.phl[1010]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[1001]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[1011]" "right_wrist_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[1012]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "right_wrist_orientConstraint1.crx" "jackie_rigRN.phl[1002]";
-connectAttr "right_wrist_orientConstraint1.cry" "jackie_rigRN.phl[1003]";
-connectAttr "right_wrist_orientConstraint1.crz" "jackie_rigRN.phl[1004]";
-connectAttr "jackie_rigRN.phl[1005]" "right_wrist_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[1006]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[1013]" "right_wrist_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[1014]" "right_wrist_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[1015]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "jackie_rigRN.phl[1007]" "right_wrist_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[1008]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[1016]" "left_hip_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[1017]" "lf_foot_ikHandle.hsj";
+connectAttr "left_hip_orientConstraint1.crx" "jackie_rigRN.phl[1018]";
+connectAttr "left_hip_orientConstraint1.cry" "jackie_rigRN.phl[1019]";
+connectAttr "left_hip_orientConstraint1.crz" "jackie_rigRN.phl[1020]";
+connectAttr "jackie_rigRN.phl[1021]" "left_hip_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[1022]" "left_hip_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[1023]" "left_hip_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[1024]" "lf_foot_ikHandle_poleVectorConstraint1.ps"
 		;
-connectAttr "jackie_rigRN.phl[1009]" "right_wrist_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[1010]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
+connectAttr "jackie_rigRN.phl[1025]" "lf_foot_ikHandle_poleVectorConstraint1.crp"
 		;
-connectAttr "jackie_rigRN.phl[1011]" "left_hip_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[1012]" "lf_foot_ikHandle.hsj";
-connectAttr "left_hip_orientConstraint1.crx" "jackie_rigRN.phl[1013]";
-connectAttr "left_hip_orientConstraint1.cry" "jackie_rigRN.phl[1014]";
-connectAttr "left_hip_orientConstraint1.crz" "jackie_rigRN.phl[1015]";
-connectAttr "jackie_rigRN.phl[1016]" "left_hip_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[1017]" "left_hip_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[1018]" "left_hip_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[1019]" "lf_foot_ikHandle_poleVectorConstraint1.ps"
+connectAttr "jackie_rigRN.phl[1026]" "left_knee_orientConstraint1.is";
+connectAttr "left_knee_orientConstraint1.crx" "jackie_rigRN.phl[1027]";
+connectAttr "left_knee_orientConstraint1.cry" "jackie_rigRN.phl[1028]";
+connectAttr "left_knee_orientConstraint1.crz" "jackie_rigRN.phl[1029]";
+connectAttr "jackie_rigRN.phl[1030]" "left_knee_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[1031]" "left_knee_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[1032]" "left_knee_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[1033]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tis"
 		;
-connectAttr "jackie_rigRN.phl[1020]" "lf_foot_ikHandle_poleVectorConstraint1.crp"
+connectAttr "jackie_rigRN.phl[1034]" "left_ankle_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[1035]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].ts"
 		;
-connectAttr "jackie_rigRN.phl[1021]" "left_knee_orientConstraint1.is";
-connectAttr "left_knee_orientConstraint1.crx" "jackie_rigRN.phl[1022]";
-connectAttr "left_knee_orientConstraint1.cry" "jackie_rigRN.phl[1023]";
-connectAttr "left_knee_orientConstraint1.crz" "jackie_rigRN.phl[1024]";
-connectAttr "jackie_rigRN.phl[1025]" "left_knee_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[1026]" "left_knee_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[1027]" "left_knee_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[1028]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tis"
+connectAttr "jackie_rigRN.phl[1036]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tt"
 		;
-connectAttr "jackie_rigRN.phl[1029]" "left_ankle_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[1030]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].ts"
+connectAttr "jackie_rigRN.phl[1037]" "effector3.tx";
+connectAttr "jackie_rigRN.phl[1038]" "effector3.ty";
+connectAttr "jackie_rigRN.phl[1039]" "effector3.tz";
+connectAttr "jackie_rigRN.phl[1040]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tr"
 		;
-connectAttr "jackie_rigRN.phl[1031]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tt"
+connectAttr "left_ankle_orientConstraint1.crx" "jackie_rigRN.phl[1041]";
+connectAttr "left_ankle_orientConstraint1.cry" "jackie_rigRN.phl[1042]";
+connectAttr "left_ankle_orientConstraint1.crz" "jackie_rigRN.phl[1043]";
+connectAttr "jackie_rigRN.phl[1044]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[1032]" "effector3.tx";
-connectAttr "jackie_rigRN.phl[1033]" "effector3.ty";
-connectAttr "jackie_rigRN.phl[1034]" "effector3.tz";
-connectAttr "jackie_rigRN.phl[1035]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[1045]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trt"
 		;
-connectAttr "left_ankle_orientConstraint1.crx" "jackie_rigRN.phl[1036]";
-connectAttr "left_ankle_orientConstraint1.cry" "jackie_rigRN.phl[1037]";
-connectAttr "left_ankle_orientConstraint1.crz" "jackie_rigRN.phl[1038]";
-connectAttr "jackie_rigRN.phl[1039]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[1046]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[1040]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[1047]" "left_ankle_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[1048]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[1041]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tpm"
+connectAttr "jackie_rigRN.phl[1049]" "left_ankle_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[1050]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "jackie_rigRN.phl[1042]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[1051]" "left_ankle_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[1052]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "jackie_rigRN.phl[1043]" "left_ankle_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[1044]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[1053]" "right_hip_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[1054]" "rt_leg_ikHandle.hsj";
+connectAttr "right_hip_orientConstraint1.crx" "jackie_rigRN.phl[1055]";
+connectAttr "right_hip_orientConstraint1.cry" "jackie_rigRN.phl[1056]";
+connectAttr "right_hip_orientConstraint1.crz" "jackie_rigRN.phl[1057]";
+connectAttr "jackie_rigRN.phl[1058]" "rt_leg_ikHandle_poleVectorConstraint1.crp"
 		;
-connectAttr "jackie_rigRN.phl[1045]" "left_ankle_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[1046]" "left_ankle_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[1047]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tsc"
+connectAttr "jackie_rigRN.phl[1059]" "rt_leg_ikHandle_poleVectorConstraint1.ps";
+connectAttr "jackie_rigRN.phl[1060]" "right_hip_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[1061]" "right_hip_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[1062]" "right_hip_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[1063]" "right_knee_orientConstraint1.is";
+connectAttr "right_knee_orientConstraint1.crx" "jackie_rigRN.phl[1064]";
+connectAttr "right_knee_orientConstraint1.cry" "jackie_rigRN.phl[1065]";
+connectAttr "right_knee_orientConstraint1.crz" "jackie_rigRN.phl[1066]";
+connectAttr "jackie_rigRN.phl[1067]" "right_knee_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[1068]" "right_knee_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[1069]" "right_knee_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[1070]" "right_ankle_orientConstraint1.is";
+connectAttr "jackie_rigRN.phl[1071]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tis"
 		;
-connectAttr "jackie_rigRN.phl[1048]" "right_hip_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[1049]" "rt_leg_ikHandle.hsj";
-connectAttr "right_hip_orientConstraint1.crx" "jackie_rigRN.phl[1050]";
-connectAttr "right_hip_orientConstraint1.cry" "jackie_rigRN.phl[1051]";
-connectAttr "right_hip_orientConstraint1.crz" "jackie_rigRN.phl[1052]";
-connectAttr "jackie_rigRN.phl[1053]" "rt_leg_ikHandle_poleVectorConstraint1.crp"
+connectAttr "jackie_rigRN.phl[1072]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].ts"
 		;
-connectAttr "jackie_rigRN.phl[1054]" "rt_leg_ikHandle_poleVectorConstraint1.ps";
-connectAttr "jackie_rigRN.phl[1055]" "right_hip_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[1056]" "right_hip_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[1057]" "right_hip_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[1058]" "right_knee_orientConstraint1.is";
-connectAttr "right_knee_orientConstraint1.crx" "jackie_rigRN.phl[1059]";
-connectAttr "right_knee_orientConstraint1.cry" "jackie_rigRN.phl[1060]";
-connectAttr "right_knee_orientConstraint1.crz" "jackie_rigRN.phl[1061]";
-connectAttr "jackie_rigRN.phl[1062]" "right_knee_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[1063]" "right_knee_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[1064]" "right_knee_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[1065]" "right_ankle_orientConstraint1.is";
-connectAttr "jackie_rigRN.phl[1066]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tis"
+connectAttr "jackie_rigRN.phl[1073]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tt"
 		;
-connectAttr "jackie_rigRN.phl[1067]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].ts"
+connectAttr "jackie_rigRN.phl[1074]" "effector2.tx";
+connectAttr "jackie_rigRN.phl[1075]" "effector2.ty";
+connectAttr "jackie_rigRN.phl[1076]" "effector2.tz";
+connectAttr "jackie_rigRN.phl[1077]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[1068]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tt"
+connectAttr "jackie_rigRN.phl[1078]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trt"
 		;
-connectAttr "jackie_rigRN.phl[1069]" "effector2.tx";
-connectAttr "jackie_rigRN.phl[1070]" "effector2.ty";
-connectAttr "jackie_rigRN.phl[1071]" "effector2.tz";
-connectAttr "jackie_rigRN.phl[1072]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[1079]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[1073]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[1080]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tr"
 		;
-connectAttr "jackie_rigRN.phl[1074]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tpm"
+connectAttr "right_ankle_orientConstraint1.crx" "jackie_rigRN.phl[1081]";
+connectAttr "right_ankle_orientConstraint1.cry" "jackie_rigRN.phl[1082]";
+connectAttr "right_ankle_orientConstraint1.crz" "jackie_rigRN.phl[1083]";
+connectAttr "jackie_rigRN.phl[1084]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[1075]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[1085]" "right_ankle_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[1086]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "right_ankle_orientConstraint1.crx" "jackie_rigRN.phl[1076]";
-connectAttr "right_ankle_orientConstraint1.cry" "jackie_rigRN.phl[1077]";
-connectAttr "right_ankle_orientConstraint1.crz" "jackie_rigRN.phl[1078]";
-connectAttr "jackie_rigRN.phl[1079]" "right_ankle_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[1080]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[1087]" "right_ankle_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[1088]" "right_ankle_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[1089]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "jackie_rigRN.phl[1081]" "right_ankle_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[1082]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tjo"
-		;
-connectAttr "jackie_rigRN.phl[1083]" "right_ankle_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[1084]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tsc"
-		;
-connectAttr "jackie_rigRN.phl[1085]" "jackie_rigRN.phl[1086]";
-connectAttr "jackie_rigRN.phl[1087]" "jackie_rigRN.phl[1088]";
-connectAttr "jackie_rigRN.phl[1089]" "jackie_rigRN.phl[1090]";
-connectAttr "jackie_rigRN.phl[1091]" "jackie_rigRN.phl[1092]";
-connectAttr "jackie_rigRN.phl[1093]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
-		;
+connectAttr "jackie_rigRN.phl[1090]" "jackie_rigRN.phl[1091]";
+connectAttr "jackie_rigRN.phl[1092]" "jackie_rigRN.phl[1093]";
 connectAttr "jackie_rigRN.phl[1094]" "jackie_rigRN.phl[1095]";
-connectAttr "jackie_rigRN.phl[1096]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
-		;
-connectAttr "jackie_rigRN.phl[1097]" "jackie_rigRN.phl[1098]";
-connectAttr "jackie_rigRN.phl[1099]" "jackie_rigRN.phl[1100]";
-connectAttr "jackie_rigRN.phl[1101]" "jackie_rigRN.phl[1102]";
-connectAttr "jackie_rigRN.phl[1103]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[20].dn"
-		;
-connectAttr "jackie_rigRN.phl[1104]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[23].dn"
-		;
-connectAttr "jackie_rigRN.phl[1105]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[24].dn"
-		;
-connectAttr "jackie_rigRN.phl[1106]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
-		;
-connectAttr "jackie_rigRN.phl[1107]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
-		;
-connectAttr "jackie_rigRN.phl[1108]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
-		;
-connectAttr "jackie_rigRN.phl[1109]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
-		;
-connectAttr "jackie_rigRN.phl[1110]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
-		;
-connectAttr "jackie_rigRN.phl[168]" "jackie_rigRN.phl[169]";
-connectAttr "jackie_rigRN.phl[170]" "jackie_rigRN.phl[171]";
-connectAttr "jackie_rigRN.phl[172]" "jackie_rigRN.phl[173]";
-connectAttr "jackie_rigRN.phl[174]" "jackie_rigRN.phl[175]";
-connectAttr "jackie_rigRN.phl[176]" "jackie_rigRN.phl[177]";
-connectAttr "jackie_rigRN.phl[178]" "jackie_rigRN.phl[179]";
-connectAttr "jackie_rigRN.phl[180]" "jackie_rigRN.phl[181]";
-connectAttr "jackie_rigRN.phl[182]" "jackie_rigRN.phl[183]";
-connectAttr "jackie_rigRN.phl[184]" "jackie_rigRN.phl[185]";
-connectAttr "jackie_rigRN.phl[186]" "jackie_rigRN.phl[187]";
-connectAttr "jackie_rigRN.phl[188]" "jackie_rigRN.phl[189]";
-connectAttr "jackie_rigRN.phl[190]" "jackie_rigRN.phl[191]";
-connectAttr "jackie_rigRN.phl[192]" "jackie_rigRN.phl[193]";
-connectAttr "jackie_rigRN.phl[194]" "jackie_rigRN.phl[195]";
-connectAttr "jackie_rigRN.phl[196]" "jackie_rigRN.phl[197]";
-connectAttr "jackie_rigRN.phl[198]" "jackie_rigRN.phl[199]";
-connectAttr "jackie_rigRN.phl[200]" "jackie_rigRN.phl[201]";
-connectAttr "jackie_rigRN.phl[202]" "jackie_rigRN.phl[203]";
-connectAttr "jackie_rigRN.phl[204]" "jackie_rigRN.phl[205]";
-connectAttr "jackie_rigRN.phl[206]" "jackie_rigRN.phl[207]";
-connectAttr "jackie_rigRN.phl[208]" "jackie_rigRN.phl[209]";
-connectAttr "jackie_rigRN.phl[210]" "jackie_rigRN.phl[211]";
-connectAttr "jackie_rigRN.phl[212]" "jackie_rigRN.phl[213]";
-connectAttr "jackie_rigRN.phl[214]" "jackie_rigRN.phl[215]";
-connectAttr "jackie_rigRN.phl[216]" "jackie_rigRN.phl[217]";
-connectAttr "jackie_rigRN.phl[218]" "jackie_rigRN.phl[219]";
-connectAttr "jackie_rigRN.phl[220]" "jackie_rigRN.phl[221]";
-connectAttr "jackie_rigRN.phl[222]" "jackie_rigRN.phl[223]";
-connectAttr "jackie_rigRN.phl[224]" "jackie_rigRN.phl[225]";
-connectAttr "jackie_rigRN.phl[226]" "jackie_rigRN.phl[227]";
-connectAttr "jackie_rigRN.phl[228]" "jackie_rigRN.phl[229]";
-connectAttr "jackie_rigRN.phl[230]" "jackie_rigRN.phl[231]";
-connectAttr "jackie_rigRN.phl[232]" "jackie_rigRN.phl[233]";
-connectAttr "jackie_rigRN.phl[234]" "jackie_rigRN.phl[235]";
-connectAttr "jackie_rigRN.phl[236]" "jackie_rigRN.phl[237]";
-connectAttr "jackie_rigRN.phl[238]" "jackie_rigRN.phl[239]";
-connectAttr "jackie_rigRN.phl[240]" "jackie_rigRN.phl[241]";
-connectAttr "jackie_rigRN.phl[242]" "jackie_rigRN.phl[243]";
-connectAttr "jackie_rigRN.phl[244]" "jackie_rigRN.phl[245]";
-connectAttr "jackie_rigRN.phl[246]" "jackie_rigRN.phl[247]";
-connectAttr "jackie_rigRN.phl[248]" "jackie_rigRN.phl[249]";
-connectAttr "jackie_rigRN.phl[250]" "jackie_rigRN.phl[251]";
-connectAttr "jackie_rigRN.phl[252]" "jackie_rigRN.phl[253]";
-connectAttr "jackie_rigRN.phl[254]" "jackie_rigRN.phl[255]";
-connectAttr "jackie_rigRN.phl[256]" "jackie_rigRN.phl[257]";
-connectAttr "jackie_rigRN.phl[258]" "jackie_rigRN.phl[259]";
-connectAttr "jackie_rigRN.phl[260]" "jackie_rigRN.phl[261]";
-connectAttr "jackie_rigRN.phl[262]" "jackie_rigRN.phl[263]";
-connectAttr "jackie_rigRN.phl[264]" "jackie_rigRN.phl[265]";
-connectAttr "jackie_rigRN.phl[266]" "jackie_rigRN.phl[267]";
-connectAttr "jackie_rigRN.phl[268]" "jackie_rigRN.phl[269]";
-connectAttr "jackie_rigRN.phl[270]" "jackie_rigRN.phl[271]";
-connectAttr "jackie_rigRN.phl[272]" "jackie_rigRN.phl[273]";
-connectAttr "jackie_rigRN.phl[274]" "jackie_rigRN.phl[275]";
-connectAttr "jackie_rigRN.phl[276]" "jackie_rigRN.phl[277]";
-connectAttr "jackie_rigRN.phl[278]" "jackie_rigRN.phl[279]";
-connectAttr "jackie_rigRN.phl[280]" "jackie_rigRN.phl[281]";
-connectAttr "jackie_rigRN.phl[282]" "jackie_rigRN.phl[283]";
-connectAttr "jackie_rigRN.phl[284]" "jackie_rigRN.phl[285]";
-connectAttr "jackie_rigRN.phl[286]" "jackie_rigRN.phl[287]";
-connectAttr "jackie_rigRN.phl[288]" "jackie_rigRN.phl[289]";
-connectAttr "jackie_rigRN.phl[290]" "jackie_rigRN.phl[291]";
-connectAttr "jackie_rigRN.phl[292]" "jackie_rigRN.phl[293]";
-connectAttr "jackie_rigRN.phl[294]" "jackie_rigRN.phl[295]";
-connectAttr "jackie_rigRN.phl[296]" "jackie_rigRN.phl[297]";
-connectAttr "jackie_rigRN.phl[298]" "jackie_rigRN.phl[299]";
-connectAttr "jackie_rigRN.phl[300]" "jackie_rigRN.phl[301]";
-connectAttr "jackie_rigRN.phl[302]" "jackie_rigRN.phl[303]";
-connectAttr "jackie_rigRN.phl[304]" "jackie_rigRN.phl[305]";
-connectAttr "jackie_rigRN.phl[306]" "jackie_rigRN.phl[307]";
-connectAttr "jackie_rigRN.phl[308]" "jackie_rigRN.phl[309]";
-connectAttr "jackie_rigRN.phl[310]" "jackie_rigRN.phl[311]";
-connectAttr "jackie_rigRN.phl[48]" "jackie_rigRN.phl[49]";
-connectAttr "jackie_rigRN.phl[50]" "jackie_rigRN.phl[51]";
-connectAttr "jackie_rigRN.phl[52]" "jackie_rigRN.phl[53]";
-connectAttr "jackie_rigRN.phl[54]" "jackie_rigRN.phl[55]";
-connectAttr "jackie_rigRN.phl[56]" "jackie_rigRN.phl[57]";
-connectAttr "jackie_rigRN.phl[58]" "jackie_rigRN.phl[59]";
-connectAttr "jackie_rigRN.phl[60]" "jackie_rigRN.phl[61]";
-connectAttr "jackie_rigRN.phl[62]" "jackie_rigRN.phl[63]";
-connectAttr "jackie_rigRN.phl[64]" "jackie_rigRN.phl[65]";
-connectAttr "jackie_rigRN.phl[66]" "jackie_rigRN.phl[67]";
+connectAttr "jackie_rigRN.phl[1096]" "jackie_rigRN.phl[1097]";
+connectAttr "jackie_rigRN.phl[1098]" "jackie_rigRN.phl[1099]";
+connectAttr "jackie_rigRN.phl[1100]" "jackie_rigRN.phl[1101]";
+connectAttr "jackie_rigRN.phl[1102]" "jackie_rigRN.phl[1103]";
+connectAttr "jackie_rigRN.phl[1104]" "jackie_rigRN.phl[1105]";
+connectAttr "jackie_rigRN.phl[51]" "jackie_rigRN.phl[52]";
+connectAttr "jackie_rigRN.phl[53]" "jackie_rigRN.phl[54]";
+connectAttr "jackie_rigRN.phl[55]" "jackie_rigRN.phl[56]";
+connectAttr "jackie_rigRN.phl[57]" "jackie_rigRN.phl[58]";
+connectAttr "jackie_rigRN.phl[59]" "jackie_rigRN.phl[60]";
+connectAttr "jackie_rigRN.phl[61]" "jackie_rigRN.phl[62]";
+connectAttr "jackie_rigRN.phl[63]" "jackie_rigRN.phl[64]";
+connectAttr "jackie_rigRN.phl[65]" "jackie_rigRN.phl[66]";
+connectAttr "jackie_rigRN.phl[67]" "jackie_rigRN.phl[68]";
+connectAttr "jackie_rigRN.phl[69]" "jackie_rigRN.phl[70]";
+connectAttr "jackie_rigRN.phl[171]" "jackie_rigRN.phl[172]";
+connectAttr "jackie_rigRN.phl[173]" "jackie_rigRN.phl[174]";
+connectAttr "jackie_rigRN.phl[175]" "jackie_rigRN.phl[176]";
+connectAttr "jackie_rigRN.phl[177]" "jackie_rigRN.phl[178]";
+connectAttr "jackie_rigRN.phl[179]" "jackie_rigRN.phl[180]";
+connectAttr "jackie_rigRN.phl[181]" "jackie_rigRN.phl[182]";
+connectAttr "jackie_rigRN.phl[183]" "jackie_rigRN.phl[184]";
+connectAttr "jackie_rigRN.phl[185]" "jackie_rigRN.phl[186]";
+connectAttr "jackie_rigRN.phl[187]" "jackie_rigRN.phl[188]";
+connectAttr "jackie_rigRN.phl[189]" "jackie_rigRN.phl[190]";
+connectAttr "jackie_rigRN.phl[191]" "jackie_rigRN.phl[192]";
+connectAttr "jackie_rigRN.phl[193]" "jackie_rigRN.phl[194]";
+connectAttr "jackie_rigRN.phl[195]" "jackie_rigRN.phl[196]";
+connectAttr "jackie_rigRN.phl[197]" "jackie_rigRN.phl[198]";
+connectAttr "jackie_rigRN.phl[199]" "jackie_rigRN.phl[200]";
+connectAttr "jackie_rigRN.phl[201]" "jackie_rigRN.phl[202]";
+connectAttr "jackie_rigRN.phl[203]" "jackie_rigRN.phl[204]";
+connectAttr "jackie_rigRN.phl[205]" "jackie_rigRN.phl[206]";
+connectAttr "jackie_rigRN.phl[207]" "jackie_rigRN.phl[208]";
+connectAttr "jackie_rigRN.phl[209]" "jackie_rigRN.phl[210]";
+connectAttr "jackie_rigRN.phl[211]" "jackie_rigRN.phl[212]";
+connectAttr "jackie_rigRN.phl[213]" "jackie_rigRN.phl[214]";
+connectAttr "jackie_rigRN.phl[215]" "jackie_rigRN.phl[216]";
+connectAttr "jackie_rigRN.phl[217]" "jackie_rigRN.phl[218]";
+connectAttr "jackie_rigRN.phl[219]" "jackie_rigRN.phl[220]";
+connectAttr "jackie_rigRN.phl[221]" "jackie_rigRN.phl[222]";
+connectAttr "jackie_rigRN.phl[223]" "jackie_rigRN.phl[224]";
+connectAttr "jackie_rigRN.phl[225]" "jackie_rigRN.phl[226]";
+connectAttr "jackie_rigRN.phl[227]" "jackie_rigRN.phl[228]";
+connectAttr "jackie_rigRN.phl[229]" "jackie_rigRN.phl[230]";
+connectAttr "jackie_rigRN.phl[231]" "jackie_rigRN.phl[232]";
+connectAttr "jackie_rigRN.phl[233]" "jackie_rigRN.phl[234]";
+connectAttr "jackie_rigRN.phl[235]" "jackie_rigRN.phl[236]";
+connectAttr "jackie_rigRN.phl[237]" "jackie_rigRN.phl[238]";
+connectAttr "jackie_rigRN.phl[239]" "jackie_rigRN.phl[240]";
+connectAttr "jackie_rigRN.phl[241]" "jackie_rigRN.phl[242]";
+connectAttr "jackie_rigRN.phl[243]" "jackie_rigRN.phl[244]";
+connectAttr "jackie_rigRN.phl[245]" "jackie_rigRN.phl[246]";
+connectAttr "jackie_rigRN.phl[247]" "jackie_rigRN.phl[248]";
+connectAttr "jackie_rigRN.phl[249]" "jackie_rigRN.phl[250]";
+connectAttr "jackie_rigRN.phl[251]" "jackie_rigRN.phl[252]";
+connectAttr "jackie_rigRN.phl[253]" "jackie_rigRN.phl[254]";
+connectAttr "jackie_rigRN.phl[255]" "jackie_rigRN.phl[256]";
+connectAttr "jackie_rigRN.phl[257]" "jackie_rigRN.phl[258]";
+connectAttr "jackie_rigRN.phl[259]" "jackie_rigRN.phl[260]";
+connectAttr "jackie_rigRN.phl[261]" "jackie_rigRN.phl[262]";
+connectAttr "jackie_rigRN.phl[263]" "jackie_rigRN.phl[264]";
+connectAttr "jackie_rigRN.phl[265]" "jackie_rigRN.phl[266]";
+connectAttr "jackie_rigRN.phl[267]" "jackie_rigRN.phl[268]";
+connectAttr "jackie_rigRN.phl[269]" "jackie_rigRN.phl[270]";
+connectAttr "jackie_rigRN.phl[271]" "jackie_rigRN.phl[272]";
+connectAttr "jackie_rigRN.phl[273]" "jackie_rigRN.phl[274]";
+connectAttr "jackie_rigRN.phl[275]" "jackie_rigRN.phl[276]";
+connectAttr "jackie_rigRN.phl[277]" "jackie_rigRN.phl[278]";
+connectAttr "jackie_rigRN.phl[279]" "jackie_rigRN.phl[280]";
+connectAttr "jackie_rigRN.phl[281]" "jackie_rigRN.phl[282]";
+connectAttr "jackie_rigRN.phl[283]" "jackie_rigRN.phl[284]";
+connectAttr "jackie_rigRN.phl[285]" "jackie_rigRN.phl[286]";
+connectAttr "jackie_rigRN.phl[287]" "jackie_rigRN.phl[288]";
+connectAttr "jackie_rigRN.phl[289]" "jackie_rigRN.phl[290]";
+connectAttr "jackie_rigRN.phl[291]" "jackie_rigRN.phl[292]";
+connectAttr "jackie_rigRN.phl[293]" "jackie_rigRN.phl[294]";
+connectAttr "jackie_rigRN.phl[295]" "jackie_rigRN.phl[296]";
+connectAttr "jackie_rigRN.phl[297]" "jackie_rigRN.phl[298]";
+connectAttr "jackie_rigRN.phl[299]" "jackie_rigRN.phl[300]";
+connectAttr "jackie_rigRN.phl[301]" "jackie_rigRN.phl[302]";
+connectAttr "jackie_rigRN.phl[303]" "jackie_rigRN.phl[304]";
+connectAttr "jackie_rigRN.phl[305]" "jackie_rigRN.phl[306]";
+connectAttr "jackie_rigRN.phl[307]" "jackie_rigRN.phl[308]";
+connectAttr "jackie_rigRN.phl[309]" "jackie_rigRN.phl[310]";
+connectAttr "jackie_rigRN.phl[311]" "jackie_rigRN.phl[312]";
+connectAttr "jackie_rigRN.phl[313]" "jackie_rigRN.phl[314]";
+connectAttr "jackie_rigRN.phl[48]" ":initialShadingGroup.dsm" -na;
 connectAttr "teeth_v1_latestRN1.phl[1]" "Teeth_parentConstraint1.crp";
 connectAttr "Teeth_parentConstraint1.ctx" "teeth_v1_latestRN1.phl[2]";
 connectAttr "Teeth_parentConstraint1.ctz" "teeth_v1_latestRN1.phl[3]";
@@ -15231,30 +15389,6 @@ connectAttr "rt_leg_ikfk_switch_ctl.IKFK_Switch" "rt_foot_ik_ctl_visibility.i";
 connectAttr "rt_leg_ikfk_switch_ctl.IKFK_Switch" "rt_leg_ik_PV_ctl_visibility.i"
 		;
 connectAttr "lf_arm_ikfkSwitch_ctl.IKFK_Switch" "lf_wrist_ikHandle_ikBlend.i";
-connectAttr "lf_wrist_ikHandle_ikBlend.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
-		;
-connectAttr "lf_wrist_ikHandle.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
-		;
-connectAttr "lf_wrist_ikHandle_pointConstraint2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
-		;
-connectAttr "lf_wrist_ikHandle_poleVectorConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
-		;
-connectAttr "effector_lf_wrist.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
-		;
-connectAttr "lf_shoulder_fk_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
-		;
-connectAttr "left_shoulder_orientConstraint1_jackie_lf_shoulder_fk_ctlW0.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
-		;
-connectAttr "lf_arm_ikfkSwitch_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
-		;
-connectAttr "left_shoulder_orientConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
-		;
-connectAttr "left_elbow_orientConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[19].dn"
-		;
-connectAttr "effector_lf_clavicle.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[22].dn"
-		;
-connectAttr "lf_wrist_ikHandle_GRP.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[25].dn"
-		;
 connectAttr "jackie_rigRNfosterParent1.msg" "jackie_rigRN.fp";
 connectAttr "sharedReferenceNode.sr" "jackie_rigRN.sr";
 connectAttr "teeth_v1_latestRN1fosterParent1.msg" "teeth_v1_latestRN1.fp";
@@ -15267,7 +15401,102 @@ connectAttr "jackieEyeLeft_parentConstraint1.ctz" "pairBlend1.itz2";
 connectAttr "jackieEyeLeft_parentConstraint1.crx" "pairBlend1.irx2";
 connectAttr "jackieEyeLeft_parentConstraint1.cry" "pairBlend1.iry2";
 connectAttr "jackieEyeLeft_parentConstraint1.crz" "pairBlend1.irz2";
+connectAttr "unitConversion7.o" "left_forearm_rotateX2.i";
+connectAttr "lf_wrist_ik_ctl.rx" "unitConversion7.i";
+connectAttr "unitConversion8.o" "left_forearm_rotateX3.i";
+connectAttr "lf_wrist_ik_ctl.rx" "unitConversion8.i";
+connectAttr "unitConversion12.o" "animCurveUA2.i";
+connectAttr "lf_wrist_fk_ctl.rx" "unitConversion12.i";
+connectAttr "unitConversion13.o" "right_forearm_rotateX.i";
+connectAttr "rt_wrist_ik_ctl.rx" "unitConversion13.i";
+connectAttr "unitConversion17.o" "animCurveUA3.i";
+connectAttr "rt_wrist_fk_ctl.rx" "unitConversion17.i";
+connectAttr "unitConversion18.o" "blendColors1.c1r";
+connectAttr "unitConversion19.o" "blendColors1.c2r";
+connectAttr "blendColors1_blender.o" "blendColors1.b";
+connectAttr "animCurveUA2.o" "unitConversion18.i";
+connectAttr "left_forearm_rotateX3.o" "unitConversion19.i";
+connectAttr "blendColors1.opr" "unitConversion20.i";
+connectAttr "lf_arm_ikfkSwitch_ctl.IKFK_Switch" "blendColors1_blender.i";
+connectAttr "nodeView1.msg" "MayaNodeEditorBookmarks.b[0]";
+connectAttr "nodeView2.msg" "MayaNodeEditorBookmarks.b[1]";
+connectAttr "lf_arm_ikfkSwitch_ctl.msg" "nodeView1.ni[0].dn";
+connectAttr "animCurveUA2.msg" "nodeView1.ni[1].dn";
+connectAttr "blendColors1.msg" "nodeView1.ni[2].dn";
+connectAttr "left_forearm_rotateX3.msg" "nodeView1.ni[3].dn";
+connectAttr "blendColors1_blender.msg" "nodeView1.ni[4].dn";
+connectAttr "unitConversion18.msg" "nodeView1.ni[5].dn";
+connectAttr "unitConversion12.msg" "nodeView1.ni[6].dn";
+connectAttr "unitConversion20.msg" "nodeView1.ni[7].dn";
+connectAttr "unitConversion19.msg" "nodeView1.ni[8].dn";
+connectAttr "lf_wrist_ik_ctl.msg" "nodeView1.ni[10].dn";
+connectAttr "unitConversion8.msg" "nodeView1.ni[11].dn";
+connectAttr "lf_wrist_fk_ctl.msg" "nodeView1.ni[12].dn";
+connectAttr "unitConversion21.o" "blendColors2.c1r";
+connectAttr "unitConversion22.o" "blendColors2.c2r";
+connectAttr "blendColors2_blender.o" "blendColors2.b";
+connectAttr "animCurveUA3.o" "unitConversion21.i";
+connectAttr "right_forearm_rotateX.o" "unitConversion22.i";
+connectAttr "blendColors2.opr" "unitConversion23.i";
+connectAttr "rt_arm_ikfkSwitch_ctl.IKFK_Switch" "blendColors2_blender.i";
+connectAttr "animCurveUA3.msg" "nodeView2.ni[0].dn";
+connectAttr "rt_arm_ikfkSwitch_ctl.msg" "nodeView2.ni[1].dn";
+connectAttr "rt_wrist_ik_ctl.msg" "nodeView2.ni[2].dn";
+connectAttr "blendColors2_blender.msg" "nodeView2.ni[3].dn";
+connectAttr "right_forearm_rotateX.msg" "nodeView2.ni[4].dn";
+connectAttr "rt_wrist_fk_ctl.msg" "nodeView2.ni[5].dn";
+connectAttr "unitConversion17.msg" "nodeView2.ni[6].dn";
+connectAttr "unitConversion21.msg" "nodeView2.ni[7].dn";
+connectAttr "blendColors2.msg" "nodeView2.ni[9].dn";
+connectAttr "unitConversion13.msg" "nodeView2.ni[10].dn";
+connectAttr "unitConversion23.msg" "nodeView2.ni[11].dn";
+connectAttr "unitConversion22.msg" "nodeView2.ni[12].dn";
+connectAttr "lf_arm_ikfkSwitch_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "animCurveUA2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn";
+connectAttr "blendColors1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn";
+connectAttr "left_forearm_rotateX3.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "blendColors1_blender.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "unitConversion18.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "unitConversion12.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "unitConversion20.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "unitConversion19.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "lf_wrist_ik_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
+connectAttr "unitConversion8.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
+connectAttr "lf_wrist_fk_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+		;
+connectAttr "blendColors2_blender.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[0].dn"
+		;
+connectAttr "rt_wrist_ik_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[1].dn";
+connectAttr "unitConversion17.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[2].dn"
+		;
+connectAttr "rt_arm_ikfkSwitch_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[3].dn"
+		;
+connectAttr "blendColors2.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[4].dn";
+connectAttr "unitConversion21.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[5].dn"
+		;
+connectAttr "animCurveUA3.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[6].dn";
+connectAttr "rt_wrist_fk_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[7].dn";
+connectAttr "unitConversion22.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[8].dn"
+		;
+connectAttr "unitConversion13.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[9].dn"
+		;
+connectAttr "unitConversion23.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[10].dn"
+		;
+connectAttr "right_forearm_rotateX.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[12].dn"
+		;
+connectAttr "blendColors1.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "blendColors2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "jackie_rigRN.phl[47]" ":initialShadingGroup.dsm" -na;
 connectAttr "jackie_rigRN.phl[2]" ":initialShadingGroup.dsm" -na;
 connectAttr "jackie_rigRN.phl[3]" ":initialShadingGroup.dsm" -na;
 connectAttr "jackie_rigRN.phl[4]" ":initialShadingGroup.dsm" -na;
@@ -15300,8 +15529,6 @@ connectAttr "jackie_rigRN.phl[34]" ":initialShadingGroup.dsm" -na;
 connectAttr "jackie_rigRN.phl[35]" ":initialShadingGroup.dsm" -na;
 connectAttr "jackie_rigRN.phl[36]" ":initialShadingGroup.dsm" -na;
 connectAttr "jackie_rigRN.phl[37]" ":initialShadingGroup.dsm" -na;
-connectAttr "jackie_rigRN.phl[44]" ":initialShadingGroup.dsm" -na;
-connectAttr "jackie_rigRN.phl[45]" ":initialShadingGroup.dsm" -na;
 connectAttr "ikSCsolver.msg" ":ikSystem.sol" -na;
 connectAttr "ikRPsolver.msg" ":ikSystem.sol" -na;
 // End of Jackie_latest.ma
