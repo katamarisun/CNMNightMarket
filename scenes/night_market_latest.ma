@@ -1,15 +1,15 @@
 //Maya ASCII 2018 scene
 //Name: night_market_latest.ma
-//Last modified: Tue, Feb 05, 2019 06:10:45 PM
+//Last modified: Wed, Feb 06, 2019 08:26:25 AM
 //Codeset: 1252
 file -rdi 1 -ns "nm_building2_latest" -rfn "nm_building2_latestRN1" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/nm_building2_latest.ma";
 file -rdi 2 -ns "balcony_latest" -dr 1 -rfn "nm_building2_latest:balcony_latestRN"
-		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/Left_Building/balcony_latest.ma";
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/balcony_latest.ma";
 file -rdi 1 -ns "nm_building3_latest" -rfn "nm_building3_latestRN1" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/nm_building3_latest.ma";
 file -rdi 2 -ns "balcony_latest" -dr 1 -rfn "nm_building3_latest:balcony_latestRN"
-		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/Left_Building/balcony_latest.ma";
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/balcony_latest.ma";
 file -rdi 1 -ns "Jackies_stall_latest" -rfn "Jackies_stall_latestRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Stalls/Jackies_stall_latest.ma";
 file -rdi 2 -ns "table_cloth_v1_latest" -rfn "Jackies_stall_latest:table_cloth_v1_latestRN"
@@ -90,7 +90,7 @@ file -rdi 2 -ns "fire_escape_latest" -rfn "nm_building_right_latest:fire_escape_
 file -rdi 2 -ns "garagedoor_v1_latest" -rfn "nm_building_right_latest:garagedoor_v1_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/garagedoor_v1_latest.ma";
 file -rdi 2 -ns "balcony_latest" -rfn "nm_building_right_latest:balcony_latestRN"
-		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/Left_Building/balcony_latest.ma";
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/balcony_latest.ma";
 file -rdi 2 -ns "fire_escape_latest3" -rfn "nm_building_right_latest:fire_escape_latestRN3"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/fire_escape_latest.ma";
 file -rdi 2 -ns "fire_escape_upper_latest" -rfn "nm_building_right_latest:fire_escape_upper_latestRN"
@@ -102,7 +102,7 @@ file -rdi 2 -ns "fire_escape_latest" -rfn "nm_building_left_latest:fire_escape_l
 file -rdi 2 -ns "garagedoor_v1_latest" -rfn "nm_building_left_latest:garagedoor_v1_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/garagedoor_v1_latest.ma";
 file -rdi 2 -ns "balcony_latest" -rfn "nm_building_left_latest:balcony_latestRN"
-		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/building4/balcony_latest.ma";
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/balcony_latest.ma";
 file -rdi 2 -ns "fire_escape_latest2" -rfn "nm_building_left_latest:fire_escape_latestRN2"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/fire_escape_latest.ma";
 file -rdi 2 -ns "fire_escape_latest3" -rfn "nm_building_left_latest:fire_escape_latestRN3"
@@ -111,6 +111,24 @@ file -rdi 2 -ns "sign_latest" -rfn "nm_building_left_latest:sign_latestRN"
 		-op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/building4/sign_latest.ma";
 file -rdi 2 -ns "fire_escape_upper_latest" -rfn "nm_building_left_latest:fire_escape_upper_latestRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/fire_escape_upper_latest.ma";
+file -rdi 1 -ns "lantern_zig_zag_latest" -rfn "lantern_zig_zag_latestRN" -op
+		 "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/lantern_zig_zag_latest.ma";
+file -rdi 2 -ns "LanternBarrelWithTail_latest1" -rfn "lantern_zig_zag_latest:LanternBarrelWithTail_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/LanternBarrelWithTail_latest.ma";
+file -rdi 2 -ns "LANTERN_SPHERE_LATEST" -rfn "lantern_zig_zag_latest:LANTERN_SPHERE_LATESTRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/LANTERN_SPHERE_LATEST.ma";
+file -rdi 1 -ns "building_lanterns_latest1" -rfn "building_lanterns_latestRN1"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/building_lanterns_latest.ma";
+file -rdi 2 -ns "LanternBarrelWithTail_latest1" -rfn "building_lanterns_latest1:LanternBarrelWithTail_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/LanternBarrelWithTail_latest.ma";
+file -rdi 2 -ns "LANTERN_SPHERE_LATEST" -rfn "building_lanterns_latest1:LANTERN_SPHERE_LATESTRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/LANTERN_SPHERE_LATEST.ma";
+file -rdi 1 -ns "lantern_zig_zag_latest1" -rfn "lantern_zig_zag_latestRN1" 
+		-op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/lantern_zig_zag_latest.ma";
+file -rdi 2 -ns "LanternBarrelWithTail_latest1" -rfn "lantern_zig_zag_latest1:LanternBarrelWithTail_latestRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/LanternBarrelWithTail_latest.ma";
+file -rdi 2 -ns "LANTERN_SPHERE_LATEST" -rfn "lantern_zig_zag_latest1:LANTERN_SPHERE_LATESTRN"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/LANTERN_SPHERE_LATEST.ma";
 file -r -ns "nm_building2_latest" -dr 1 -rfn "nm_building2_latestRN1" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/nm_building2_latest.ma";
 file -r -ns "nm_building3_latest" -dr 1 -rfn "nm_building3_latestRN1" -op "v=0;"
@@ -136,6 +154,12 @@ file -r -ns "nm_building_right_latest" -dr 1 -rfn "nm_building_right_latestRN" -
 		 "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/Right Building/nm_building_right_latest.ma";
 file -r -ns "nm_building_left_latest" -dr 1 -rfn "nm_building_left_latestRN" -op
 		 "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/night_market_SetProps/Night_Market_Buildings/Left_Building/nm_building_left_latest.ma";
+file -r -ns "lantern_zig_zag_latest" -dr 1 -rfn "lantern_zig_zag_latestRN" -op "v=0;"
+		 -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/lantern_zig_zag_latest.ma";
+file -r -ns "building_lanterns_latest1" -dr 1 -rfn "building_lanterns_latestRN1"
+		 -op "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/building_lanterns_latest.ma";
+file -r -ns "lantern_zig_zag_latest1" -dr 1 -rfn "lantern_zig_zag_latestRN1" -op
+		 "v=0;" -typ "mayaAscii" "C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket//assets/SetProps/Lanterns/lantern_zig_zag_latest.ma";
 requires maya "2018";
 requires "stereoCamera" "10.0";
 requires -nodeType "PxrVisualizer" -nodeType "PxrNormalMap" -nodeType "PxrSurface"
@@ -155,14 +179,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "063184F2-4E0A-3314-C033-DC9849465121";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -130.13070561524813 125.09572262473526 -11.39073436006499 ;
-	setAttr ".r" -type "double3" 322.46164727119623 984.19999999998049 -5.0888874903416268e-14 ;
+	setAttr ".t" -type "double3" -48.237809456392839 124.0037357661551 -21.410510483786474 ;
+	setAttr ".r" -type "double3" 294.26164727119675 975.39999999997701 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "26D23A1E-4DE9-BF48-04F8-BE8D98718524";
 	setAttr -k off ".v" no;
 	setAttr ".ovr" 1.3;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 210.05161144138054;
+	setAttr ".coi" 169.88573254799962;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -224,15 +248,15 @@ createNode camera -s -n "sideShape" -p "side";
 createNode transform -n "persp1";
 	rename -uid "EB40876E-164D-4961-4B68-39B489B69E7F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -99.638196376238227 221.95333572344668 -58.84226633315356 ;
-	setAttr ".r" -type "double3" 1389.261647176467 -5152.9999999994207 0 ;
+	setAttr ".t" -type "double3" 0.050386242631849321 4.8772251754027618 10.815580342425523 ;
+	setAttr ".r" -type "double3" 1423.4616471764787 -5040.1999999994832 -6.8332645790427827e-17 ;
 	setAttr ".hio" yes;
 createNode camera -n "persp1Shape" -p "persp1";
 	rename -uid "EE6E5782-7E41-5CAF-9545-BAB66A7B596C";
 	setAttr -k off ".v";
 	setAttr ".ovr" 1.3;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 256.9905148743668;
+	setAttr ".coi" 10.846275897413557;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -244,14 +268,21 @@ createNode camera -n "persp1Shape" -p "persp1";
 	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -n "Jackies_Veiw";
 	rename -uid "7AF8BEC7-44D8-5AC4-05D6-EC9D91CE008F";
-	setAttr ".t" -type "double3" -16.465286995971681 3.5316582667826433 -22.232929701909246 ;
-	setAttr ".r" -type "double3" -0.93835272961307636 268.59999999999462 0 ;
+	setAttr ".t" -type "double3" -17.622168871106521 3.5706741296449134 -22.58045014963788 ;
+	setAttr -l on ".tx";
+	setAttr -l on ".ty";
+	setAttr -l on ".tz";
+	setAttr ".r" -type "double3" -0.93835272961297456 266.99999999999449 0 ;
+	setAttr -l on ".rx";
+	setAttr -l on ".ry";
+	setAttr -l on ".rz";
 createNode camera -n "Jackies_VeiwShape" -p "Jackies_Veiw";
 	rename -uid "87ABD031-4A11-0C27-1299-AE92A468C415";
 	setAttr -k off ".v";
 	setAttr ".ovr" 1.3;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 6.8268491191284069;
+	setAttr -l on ".coi" 7.9981537236492626;
+	setAttr -l on ".ow";
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -11583,7 +11614,7 @@ createNode mesh -n "polySurfaceShape1" -p "Left_Sidewalk2";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "Left_Sidewalk4" -p "|Street";
 	rename -uid "F7DFECA1-4FBD-FAE4-D6CD-1C8D162323BC";
-	setAttr ".t" -type "double3" 8.0078712565878618e-05 0 -0.00013456776014209026 ;
+	setAttr ".t" -type "double3" 8.0078712565878618e-05 0 -244.49179850178282 ;
 	setAttr ".rp" -type "double3" 1210.3446319380398 -4.8586173105816126 613.08367065135076 ;
 	setAttr ".sp" -type "double3" 1210.3446319380398 -4.8586173105816126 613.08367065135076 ;
 createNode mesh -n "Left_Sidewalk4Shape" -p "Left_Sidewalk4";
@@ -15358,7 +15389,7 @@ createNode mesh -n "polySurfaceShape1" -p "Left_Sidewalk4";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "Left_Sidewalk5" -p "|Street";
 	rename -uid "9ADC6BA5-42B9-9E80-8DA5-0C90480E3279";
-	setAttr ".t" -type "double3" -1304.360966749799 0 -4735.6707088234853 ;
+	setAttr ".t" -type "double3" -1230 0 -4735.6707088234853 ;
 	setAttr ".s" -type "double3" 1.7300620870403698 1 2.8015527786863643 ;
 	setAttr ".rp" -type "double3" 2093.9713599688334 -4.8586173105816126 1717.5862610805277 ;
 	setAttr ".sp" -type "double3" 1210.3446319380398 -4.8586173105816126 613.08367065135076 ;
@@ -19140,7 +19171,7 @@ createNode transform -n "RightBuildings";
 	setAttr ".sp" -type "double3" 34.797603607177734 10.262290000915527 -22.973854064941406 ;
 createNode transform -n "pCubebldg4" -p "RightBuildings";
 	rename -uid "C879FD96-45B8-9573-63E3-E69F1761C828";
-	setAttr ".t" -type "double3" 283.90012181853541 24.268582239002164 -64.41082021562417 ;
+	setAttr ".t" -type "double3" 283.90012181853541 24.268582239002164 -45.536376361901787 ;
 	setAttr ".s" -type "double3" 70.533614961430175 56.568827077426036 24.924290779354862 ;
 createNode mesh -n "pCubebldg4Shape" -p "pCubebldg4";
 	rename -uid "D9E97E9A-4B3A-444E-7761-9C8C58A806DB";
@@ -19178,7 +19209,7 @@ createNode mesh -n "pCubebldg4Shape" -p "pCubebldg4";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pCubebldg3" -p "RightBuildings";
 	rename -uid "09368D59-49CA-DD3F-7F79-31BCAB34B933";
-	setAttr ".t" -type "double3" 200.48376733951 24.268582239002164 -68.4191804920587 ;
+	setAttr ".t" -type "double3" 200.48376733951 24.268582239002164 -49.544736638336317 ;
 	setAttr ".s" -type "double3" 70.53361496143016 56.568827077426043 33.790405097417924 ;
 createNode mesh -n "pCubebldg3Shape" -p "pCubebldg3";
 	rename -uid "CB6D78B9-465D-6C43-F300-1B9B9116E9A9";
@@ -19216,7 +19247,7 @@ createNode mesh -n "pCubebldg3Shape" -p "pCubebldg3";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "pcubebldg" -p "RightBuildings";
 	rename -uid "50E965AD-48A1-5213-C49B-088E26C3EFC6";
-	setAttr ".t" -type "double3" 126.13619617522824 24.268582239002164 -64.820246145509998 ;
+	setAttr ".t" -type "double3" 126.13619617522824 24.268582239002164 -45.945802291787615 ;
 	setAttr ".s" -type "double3" 70.53361496143016 56.568827077426043 24.924290779354866 ;
 createNode mesh -n "pcubebldgShape" -p "pcubebldg";
 	rename -uid "0C907E1D-4188-9D25-F8FC-2795AB9279EC";
@@ -22981,7 +23012,7 @@ createNode transform -n "LEftBuildings";
 	setAttr ".sp" -type "double3" 33.501808166503906 9.8027420043945313 -24.58869743347168 ;
 createNode transform -n "Left_Sidewalk3" -p "LEftBuildings";
 	rename -uid "1D35067C-4FF9-2CB0-A36F-B290DD016EC3";
-	setAttr ".t" -type "double3" 101.78843853127249 0 9.9786631471629335 ;
+	setAttr ".t" -type "double3" 101.78843853127249 0 2.8874510497094814 ;
 	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 	setAttr ".s" -type "double3" 0.023862781325799186 0.047636845404349294 0.017003729419899066 ;
 	setAttr ".rp" -type "double3" 12.887515088264619 -0.1444627791643143 -51.50345137539761 ;
@@ -25227,8 +25258,7 @@ createNode mesh -n "Left_Sidewalk3Shape" -p "Left_Sidewalk3";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-	setAttr ".dr" 3;
-	setAttr ".dsm" 2;
+	setAttr ".dr" 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode mesh -n "polySurfaceShape1" -p "Left_Sidewalk3";
 	rename -uid "30B549DB-4D6C-F5B8-8510-03B56F3EA9DF";
@@ -27033,22 +27063,22 @@ createNode rmanDisplayChannel -n "a2";
 	setAttr ".remapSmoothness" 0;
 	setAttr -l on ".name" -type "string" "a";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "6C0A6114-47FF-203B-4050-56B2D3ADD55D";
-	setAttr -s 411 ".lnk";
-	setAttr -s 411 ".slnk";
+	rename -uid "69A0C6D2-48E8-4655-41A4-95B7EA1537D8";
+	setAttr -s 460 ".lnk";
+	setAttr -s 460 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "2722F204-4E92-3769-97F4-BF9DCEE110BE";
+	rename -uid "31D167AC-4542-3CA3-DFD7-6E9C4F002D65";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 5 1 2 3 4 0 ;
 	setAttr -s 3 ".bspr";
 	setAttr -s 3 ".obsv";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "CE254BB5-40C1-11F3-569B-42BFF8C289AA";
+	rename -uid "333373E9-4CC0-EBB3-CDED-D0812F8AB0D7";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "317BE7D6-47D2-09F0-CC5C-52B41405294C";
+	rename -uid "847D8A9F-4EBF-060B-16B7-71BBBB6C6C47";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "31836786-4502-1CAF-2ACD-419EE6A08BA0";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "0BEC66D1-497D-7758-4F98-CFB31922E044";
+	rename -uid "FC014560-493F-3F2C-50BE-178EFBBCAF38";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "3E3016C2-4491-1F40-5266-FEA6B90F7C2F";
 	setAttr ".g" yes;
@@ -27150,10 +27180,10 @@ lockNode -l 1 ;
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "EFF5A44F-48F6-64FF-5778-F2AB5D86C30C";
 	setAttr ".b" -type "string" (
-		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top1\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n"
-		+ "            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n"
-		+ "            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n"
-		+ "            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
+		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"Jackies_Veiw\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n"
+		+ "            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n"
+		+ "            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n"
+		+ "            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side1\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
 		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
@@ -27187,8 +27217,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
 		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
 		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
-		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n"
-		+ "                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n"
+		+ "                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
 		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"Jackies_Veiw\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 0\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1380\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"Jackies_Veiw\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 0\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1380\\n    -height 874\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
@@ -32110,16 +32140,173 @@ createNode reference -n "night_market_lampost_latestRN1";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"night_market_lampost_latestRN1"
 		"night_market_lampost_latestRN1" 0
-		"night_market_lampost_latestRN1" 5
-		2 "|night_market_lampost_latest:Lampost" "translate" " -type \"double3\" 46.49066465959508321 -1.08789130568256986 -36.26320451309288018"
+		"night_market_lampost_latestRN1" 83
+		2 "|night_market_lampost_latest:Lampost" "translate" " -type \"double3\" 46.49066465959508321 -1.08789130568256986 -38.69342957089042301"
 		
-		2 "|night_market_lampost_latest:Lampost" "scale" " -type \"double3\" 1.36477656799634284 1.36477656799634284 1.36477656799634284"
+		2 "|night_market_lampost_latest:Lampost" "scale" " -type \"double3\" 1.34159818250629104 1.34159818250629104 1.34159818250629104"
 		
 		2 "|night_market_lampost_latest:Lampost" "rotatePivot" " -type \"double3\" 0.99999999999999978 1.10746618164884825 0"
 		
 		2 "|night_market_lampost_latest:Lampost" "scalePivot" " -type \"double3\" 1 0 0"
 		
-		2 "|night_market_lampost_latest:Lampost" "scalePivotTranslate" " -type \"double3\" 0 1.10746618164883581 0";
+		2 "|night_market_lampost_latest:Lampost" "scalePivotTranslate" " -type \"double3\" 0 1.10746618164883581 0"
+		
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Bell|night_market_lampost_latest:BellShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Bell|night_market_lampost_latest:BellShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Hook|night_market_lampost_latest:HookShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Hook|night_market_lampost_latest:HookShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Hook1|night_market_lampost_latest:Hook1Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Hook1|night_market_lampost_latest:Hook1Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Hook2|night_market_lampost_latest:Hook2Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Hook2|night_market_lampost_latest:Hook2Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Hook3|night_market_lampost_latest:Hook3Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Hook3|night_market_lampost_latest:Hook3Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Hook4|night_market_lampost_latest:Hook4Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Hook4|night_market_lampost_latest:Hook4Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Hook5|night_market_lampost_latest:Hook5Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy|night_market_lampost_latest:Hook5|night_market_lampost_latest:Hook5Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy1|night_market_lampost_latest:Bell|night_market_lampost_latest:BellShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy1|night_market_lampost_latest:Bell|night_market_lampost_latest:BellShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy2|night_market_lampost_latest:Bell|night_market_lampost_latest:BellShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy2|night_market_lampost_latest:Bell|night_market_lampost_latest:BellShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy3|night_market_lampost_latest:Bell|night_market_lampost_latest:BellShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy3|night_market_lampost_latest:Bell|night_market_lampost_latest:BellShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy4|night_market_lampost_latest:Bell|night_market_lampost_latest:BellShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy4|night_market_lampost_latest:Bell|night_market_lampost_latest:BellShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy5|night_market_lampost_latest:Bell|night_market_lampost_latest:BellShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Bells|night_market_lampost_latest:BellTHingy5|night_market_lampost_latest:Bell|night_market_lampost_latest:BellShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:FoggyGlass|night_market_lampost_latest:FoggyGlassShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:FoggyGlass|night_market_lampost_latest:FoggyGlassShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Light|night_market_lampost_latest:LightShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Light|night_market_lampost_latest:LightShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:TopCase|night_market_lampost_latest:TopCaseShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:TopCase|night_market_lampost_latest:TopCaseShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:Top|night_market_lampost_latest:TopShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:Top|night_market_lampost_latest:TopShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:CurlyGuy4|night_market_lampost_latest:CurlyGuy4Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:CurlyGuy4|night_market_lampost_latest:CurlyGuy4Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:RedTop|night_market_lampost_latest:RedTopShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:RedTop|night_market_lampost_latest:RedTopShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:CurlyGuy5|night_market_lampost_latest:CurlyGuy5Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:CurlyGuy5|night_market_lampost_latest:CurlyGuy5Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:CurlyGuy6|night_market_lampost_latest:CurlyGuy6Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:CurlyGuy6|night_market_lampost_latest:CurlyGuy6Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:CurlyGuy7|night_market_lampost_latest:CurlyGuy7Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:CurlyGuy7|night_market_lampost_latest:CurlyGuy7Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:CurlyGuy2|night_market_lampost_latest:CurlyGuy2Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:CurlyGuy2|night_market_lampost_latest:CurlyGuy2Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:CurlyGuy3|night_market_lampost_latest:CurlyGuy3Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Red|night_market_lampost_latest:CurlyGuy3|night_market_lampost_latest:CurlyGuy3Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:GoldDetails|night_market_lampost_latest:pPlane10|night_market_lampost_latest:pPlane10Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:GoldDetails|night_market_lampost_latest:pPlane10|night_market_lampost_latest:pPlane10Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:GoldDetails|night_market_lampost_latest:pPlane9|night_market_lampost_latest:pPlane9Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:GoldDetails|night_market_lampost_latest:pPlane9|night_market_lampost_latest:pPlane9Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:GoldDetails|night_market_lampost_latest:pPlane8|night_market_lampost_latest:pPlane8Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:GoldDetails|night_market_lampost_latest:pPlane8|night_market_lampost_latest:pPlane8Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:GoldDetails|night_market_lampost_latest:pPlane7|night_market_lampost_latest:pPlane7Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:GoldDetails|night_market_lampost_latest:pPlane7|night_market_lampost_latest:pPlane7Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:GoldDetails|night_market_lampost_latest:pPlane6|night_market_lampost_latest:pPlane6Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:GoldDetails|night_market_lampost_latest:pPlane6|night_market_lampost_latest:pPlane6Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:GoldDetails|night_market_lampost_latest:pPlane4|night_market_lampost_latest:pPlane4Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:GoldDetails|night_market_lampost_latest:pPlane4|night_market_lampost_latest:pPlane4Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:UpperGoldDetails|night_market_lampost_latest:pPlane10|night_market_lampost_latest:pPlane10Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:UpperGoldDetails|night_market_lampost_latest:pPlane10|night_market_lampost_latest:pPlane10Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:UpperGoldDetails|night_market_lampost_latest:pPlane9|night_market_lampost_latest:pPlane9Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:UpperGoldDetails|night_market_lampost_latest:pPlane9|night_market_lampost_latest:pPlane9Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:UpperGoldDetails|night_market_lampost_latest:pPlane8|night_market_lampost_latest:pPlane8Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:UpperGoldDetails|night_market_lampost_latest:pPlane8|night_market_lampost_latest:pPlane8Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:UpperGoldDetails|night_market_lampost_latest:pPlane7|night_market_lampost_latest:pPlane7Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:UpperGoldDetails|night_market_lampost_latest:pPlane7|night_market_lampost_latest:pPlane7Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:UpperGoldDetails|night_market_lampost_latest:pPlane6|night_market_lampost_latest:pPlane6Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:UpperGoldDetails|night_market_lampost_latest:pPlane6|night_market_lampost_latest:pPlane6Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:UpperGoldDetails|night_market_lampost_latest:pPlane4|night_market_lampost_latest:pPlane4Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:UpperGoldDetails|night_market_lampost_latest:pPlane4|night_market_lampost_latest:pPlane4Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:Tip|night_market_lampost_latest:GoldTop|night_market_lampost_latest:GoldTopShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Gold|night_market_lampost_latest:Tip|night_market_lampost_latest:GoldTop|night_market_lampost_latest:GoldTopShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Green|night_market_lampost_latest:Base|night_market_lampost_latest:BaseShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Green|night_market_lampost_latest:Base|night_market_lampost_latest:BaseShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Green|night_market_lampost_latest:Base1|night_market_lampost_latest:Base1Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Green|night_market_lampost_latest:Base1|night_market_lampost_latest:Base1Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Green|night_market_lampost_latest:Pole|night_market_lampost_latest:PoleShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest:Lampost|night_market_lampost_latest:Green|night_market_lampost_latest:Pole|night_market_lampost_latest:PoleShape" 
+		"displaySmoothMesh" " 1";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "night_market_lampost_latestRN2";
@@ -32127,8 +32314,8 @@ createNode reference -n "night_market_lampost_latestRN2";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"night_market_lampost_latestRN2"
 		"night_market_lampost_latestRN2" 0
-		"night_market_lampost_latestRN2" 5
-		2 "|night_market_lampost_latest1:Lampost" "translate" " -type \"double3\" 46.74397869120294047 -0.89454923814073695 -3.70082567770229076"
+		"night_market_lampost_latestRN2" 83
+		2 "|night_market_lampost_latest1:Lampost" "translate" " -type \"double3\" 46.74397869120294047 -0.740068612342208 -11.77370489484626859"
 		
 		2 "|night_market_lampost_latest1:Lampost" "scale" " -type \"double3\" 1.31502059259849324 1.31502059259849324 1.31502059259849324"
 		
@@ -32136,7 +32323,164 @@ createNode reference -n "night_market_lampost_latestRN2";
 		
 		2 "|night_market_lampost_latest1:Lampost" "scalePivot" " -type \"double3\" 1 0.58397483825683771 0"
 		
-		2 "|night_market_lampost_latest1:Lampost" "scalePivotTranslate" " -type \"double3\" 0 0.90117333927909804 0";
+		2 "|night_market_lampost_latest1:Lampost" "scalePivotTranslate" " -type \"double3\" 0 0.90117333927909804 0"
+		
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Bell|night_market_lampost_latest1:BellShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Bell|night_market_lampost_latest1:BellShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Hook|night_market_lampost_latest1:HookShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Hook|night_market_lampost_latest1:HookShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Hook1|night_market_lampost_latest1:Hook1Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Hook1|night_market_lampost_latest1:Hook1Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Hook2|night_market_lampost_latest1:Hook2Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Hook2|night_market_lampost_latest1:Hook2Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Hook3|night_market_lampost_latest1:Hook3Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Hook3|night_market_lampost_latest1:Hook3Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Hook4|night_market_lampost_latest1:Hook4Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Hook4|night_market_lampost_latest1:Hook4Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Hook5|night_market_lampost_latest1:Hook5Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy|night_market_lampost_latest1:Hook5|night_market_lampost_latest1:Hook5Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy1|night_market_lampost_latest1:Bell|night_market_lampost_latest1:BellShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy1|night_market_lampost_latest1:Bell|night_market_lampost_latest1:BellShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy2|night_market_lampost_latest1:Bell|night_market_lampost_latest1:BellShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy2|night_market_lampost_latest1:Bell|night_market_lampost_latest1:BellShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy3|night_market_lampost_latest1:Bell|night_market_lampost_latest1:BellShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy3|night_market_lampost_latest1:Bell|night_market_lampost_latest1:BellShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy4|night_market_lampost_latest1:Bell|night_market_lampost_latest1:BellShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy4|night_market_lampost_latest1:Bell|night_market_lampost_latest1:BellShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy5|night_market_lampost_latest1:Bell|night_market_lampost_latest1:BellShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Bells|night_market_lampost_latest1:BellTHingy5|night_market_lampost_latest1:Bell|night_market_lampost_latest1:BellShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:FoggyGlass|night_market_lampost_latest1:FoggyGlassShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:FoggyGlass|night_market_lampost_latest1:FoggyGlassShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Light|night_market_lampost_latest1:LightShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Light|night_market_lampost_latest1:LightShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:TopCase|night_market_lampost_latest1:TopCaseShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:TopCase|night_market_lampost_latest1:TopCaseShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:Top|night_market_lampost_latest1:TopShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:Top|night_market_lampost_latest1:TopShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:CurlyGuy4|night_market_lampost_latest1:CurlyGuy4Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:CurlyGuy4|night_market_lampost_latest1:CurlyGuy4Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:RedTop|night_market_lampost_latest1:RedTopShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:RedTop|night_market_lampost_latest1:RedTopShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:CurlyGuy5|night_market_lampost_latest1:CurlyGuy5Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:CurlyGuy5|night_market_lampost_latest1:CurlyGuy5Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:CurlyGuy6|night_market_lampost_latest1:CurlyGuy6Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:CurlyGuy6|night_market_lampost_latest1:CurlyGuy6Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:CurlyGuy7|night_market_lampost_latest1:CurlyGuy7Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:CurlyGuy7|night_market_lampost_latest1:CurlyGuy7Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:CurlyGuy2|night_market_lampost_latest1:CurlyGuy2Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:CurlyGuy2|night_market_lampost_latest1:CurlyGuy2Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:CurlyGuy3|night_market_lampost_latest1:CurlyGuy3Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Red|night_market_lampost_latest1:CurlyGuy3|night_market_lampost_latest1:CurlyGuy3Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:GoldDetails|night_market_lampost_latest1:pPlane10|night_market_lampost_latest1:pPlane10Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:GoldDetails|night_market_lampost_latest1:pPlane10|night_market_lampost_latest1:pPlane10Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:GoldDetails|night_market_lampost_latest1:pPlane9|night_market_lampost_latest1:pPlane9Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:GoldDetails|night_market_lampost_latest1:pPlane9|night_market_lampost_latest1:pPlane9Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:GoldDetails|night_market_lampost_latest1:pPlane8|night_market_lampost_latest1:pPlane8Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:GoldDetails|night_market_lampost_latest1:pPlane8|night_market_lampost_latest1:pPlane8Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:GoldDetails|night_market_lampost_latest1:pPlane7|night_market_lampost_latest1:pPlane7Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:GoldDetails|night_market_lampost_latest1:pPlane7|night_market_lampost_latest1:pPlane7Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:GoldDetails|night_market_lampost_latest1:pPlane6|night_market_lampost_latest1:pPlane6Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:GoldDetails|night_market_lampost_latest1:pPlane6|night_market_lampost_latest1:pPlane6Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:GoldDetails|night_market_lampost_latest1:pPlane4|night_market_lampost_latest1:pPlane4Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:GoldDetails|night_market_lampost_latest1:pPlane4|night_market_lampost_latest1:pPlane4Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:UpperGoldDetails|night_market_lampost_latest1:pPlane10|night_market_lampost_latest1:pPlane10Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:UpperGoldDetails|night_market_lampost_latest1:pPlane10|night_market_lampost_latest1:pPlane10Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:UpperGoldDetails|night_market_lampost_latest1:pPlane9|night_market_lampost_latest1:pPlane9Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:UpperGoldDetails|night_market_lampost_latest1:pPlane9|night_market_lampost_latest1:pPlane9Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:UpperGoldDetails|night_market_lampost_latest1:pPlane8|night_market_lampost_latest1:pPlane8Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:UpperGoldDetails|night_market_lampost_latest1:pPlane8|night_market_lampost_latest1:pPlane8Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:UpperGoldDetails|night_market_lampost_latest1:pPlane7|night_market_lampost_latest1:pPlane7Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:UpperGoldDetails|night_market_lampost_latest1:pPlane7|night_market_lampost_latest1:pPlane7Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:UpperGoldDetails|night_market_lampost_latest1:pPlane6|night_market_lampost_latest1:pPlane6Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:UpperGoldDetails|night_market_lampost_latest1:pPlane6|night_market_lampost_latest1:pPlane6Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:UpperGoldDetails|night_market_lampost_latest1:pPlane4|night_market_lampost_latest1:pPlane4Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:UpperGoldDetails|night_market_lampost_latest1:pPlane4|night_market_lampost_latest1:pPlane4Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:Tip|night_market_lampost_latest1:GoldTop|night_market_lampost_latest1:GoldTopShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Gold|night_market_lampost_latest1:Tip|night_market_lampost_latest1:GoldTop|night_market_lampost_latest1:GoldTopShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Green|night_market_lampost_latest1:Base|night_market_lampost_latest1:BaseShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Green|night_market_lampost_latest1:Base|night_market_lampost_latest1:BaseShape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Green|night_market_lampost_latest1:Base1|night_market_lampost_latest1:Base1Shape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Green|night_market_lampost_latest1:Base1|night_market_lampost_latest1:Base1Shape" 
+		"displaySmoothMesh" " 1"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Green|night_market_lampost_latest1:Pole|night_market_lampost_latest1:PoleShape" 
+		"dispResolution" " 2"
+		2 "|night_market_lampost_latest1:Lampost|night_market_lampost_latest1:Green|night_market_lampost_latest1:Pole|night_market_lampost_latest1:PoleShape" 
+		"displaySmoothMesh" " 1";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
@@ -32195,7 +32539,7 @@ createNode reference -n "nm_building_right_latestRN";
 		"nm_building_right_latest:fire_escape_latestRN" 0
 		"nm_building_right_latest:balcony_latestRN" 0
 		"nm_building_right_latestRN" 2
-		2 "|nm_building_right_latest:Right_Building" "translate" " -type \"double3\" 64.51447618230197634 0 10.08045279000895"
+		2 "|nm_building_right_latest:Right_Building" "translate" " -type \"double3\" 64.51447618230197634 -0.76019257896384929 10.08045279000895"
 		
 		2 "|nm_building_right_latest:Right_Building" "rotate" " -type \"double3\" 0 180 0";
 	setAttr ".ptag" -type "string" "";
@@ -32218,6 +32562,236 @@ createNode reference -n "nm_building_left_latestRN";
 		2 "|nm_building_left_latest:Grouping4_Group" "rotate" " -type \"double3\" 0 180 0";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
+createNode reference -n "lantern_zig_zag_latestRN";
+	rename -uid "47D0934F-4AD4-E482-8319-DDB33FA8BAF8";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"lantern_zig_zag_latestRN"
+		"lantern_zig_zag_latest:LanternBarrelWithTail_latestRN" 0
+		"lantern_zig_zag_latestRN" 0
+		"lantern_zig_zag_latest:LANTERN_SPHERE_LATESTRN" 0
+		"lantern_zig_zag_latest:LanternBarrelWithTail_latestRN" 12
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinder1|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinderShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinder1|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinderShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinder2|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinderShape2" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinder2|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinderShape2" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinder3|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinderShape3" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinder3|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinderShape3" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pTorus1|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pTorusShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pTorus1|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pTorusShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinder4|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinderShape4" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinder4|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinderShape4" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinder5|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinderShape5" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinder5|lantern_zig_zag_latest:LanternBarrelWithTail_latest1:LanternBarrelWithTail_0001_pCylinderShape5" 
+		"displaySmoothMesh" " 0"
+		"lantern_zig_zag_latestRN" 69
+		2 "|lantern_zig_zag_latest:Lanterns" "translate" " -type \"double3\" 18 -5.22161488314308908 -24.31636724142033756"
+		
+		2 "|lantern_zig_zag_latest:Lanterns" "scale" " -type \"double3\" 0.906 0.90555137984807532 0.90555137984807532"
+		
+		2 "|lantern_zig_zag_latest:Lanterns" "rotatePivot" " -type \"double3\" 23.8207530851519671 14.11150182167493661 -20.55238852957591433"
+		
+		2 "|lantern_zig_zag_latest:Lanterns" "scalePivot" " -type \"double3\" 26.30524740534146844 15.58332540340497374 -22.69599382977473567"
+		
+		2 "|lantern_zig_zag_latest:Lanterns" "scalePivotTranslate" " -type \"double3\" -2.48449432018950045 -1.47182358173003713 2.14360530019881956"
+		
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:Posts|lantern_zig_zag_latest:polySurface1|lantern_zig_zag_latest:polySurfaceShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:Posts|lantern_zig_zag_latest:polySurface1|lantern_zig_zag_latest:polySurfaceShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:Posts|lantern_zig_zag_latest:polySurface2|lantern_zig_zag_latest:polySurfaceShape2" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:Posts|lantern_zig_zag_latest:polySurface2|lantern_zig_zag_latest:polySurfaceShape2" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:Posts|lantern_zig_zag_latest:polySurface3|lantern_zig_zag_latest:polySurfaceShape3" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:Posts|lantern_zig_zag_latest:polySurface3|lantern_zig_zag_latest:polySurfaceShape3" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:Posts|lantern_zig_zag_latest:polySurface4|lantern_zig_zag_latest:polySurfaceShape4" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:Posts|lantern_zig_zag_latest:polySurface4|lantern_zig_zag_latest:polySurfaceShape4" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:Posts|lantern_zig_zag_latest:polySurface5|lantern_zig_zag_latest:polySurfaceShape5" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:Posts|lantern_zig_zag_latest:polySurface5|lantern_zig_zag_latest:polySurfaceShape5" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:Posts|lantern_zig_zag_latest:polySurface6|lantern_zig_zag_latest:polySurfaceShape6" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:Posts|lantern_zig_zag_latest:polySurface6|lantern_zig_zag_latest:polySurfaceShape6" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:pCylinder2|lantern_zig_zag_latest:pCylinderShape2" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:pCylinder2|lantern_zig_zag_latest:pCylinderShape2" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail9|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder1|lantern_zig_zag_latest:pCylinderShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail9|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder1|lantern_zig_zag_latest:pCylinderShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail9|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder2|lantern_zig_zag_latest:pCylinderShape2" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail9|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder2|lantern_zig_zag_latest:pCylinderShape2" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail9|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pTorus1|lantern_zig_zag_latest:pTorusShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail9|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pTorus1|lantern_zig_zag_latest:pTorusShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail9|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder3|lantern_zig_zag_latest:pCylinderShape3" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail9|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder3|lantern_zig_zag_latest:pCylinderShape3" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail9|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder4|lantern_zig_zag_latest:pCylinderShape4" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail9|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder4|lantern_zig_zag_latest:pCylinderShape4" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail9|lantern_zig_zag_latest:pSphere1|lantern_zig_zag_latest:pSphereShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail9|lantern_zig_zag_latest:pSphere1|lantern_zig_zag_latest:pSphereShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail9|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder1|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail9|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder1|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail9|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder2|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape2" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail9|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder2|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape2" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail9|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder3|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape3" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail9|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder3|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape3" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail9|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pTorus1|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pTorusShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail9|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pTorus1|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pTorusShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail9|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder4|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape4" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail9|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder4|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape4" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail9|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder5|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape5" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:LanternBarrelWithTail9|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder5|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape5" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:pCylinder2|lantern_zig_zag_latest:pCylinderShape2" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:pCylinder2|lantern_zig_zag_latest:pCylinderShape2" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:Lantern_Bulbw_Tail|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder1|lantern_zig_zag_latest:pCylinderShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:Lantern_Bulbw_Tail|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder1|lantern_zig_zag_latest:pCylinderShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:Lantern_Bulbw_Tail|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder2|lantern_zig_zag_latest:pCylinderShape2" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:Lantern_Bulbw_Tail|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder2|lantern_zig_zag_latest:pCylinderShape2" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:Lantern_Bulbw_Tail|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pTorus1|lantern_zig_zag_latest:pTorusShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:Lantern_Bulbw_Tail|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pTorus1|lantern_zig_zag_latest:pTorusShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:Lantern_Bulbw_Tail|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder3|lantern_zig_zag_latest:pCylinderShape3" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:Lantern_Bulbw_Tail|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder3|lantern_zig_zag_latest:pCylinderShape3" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:Lantern_Bulbw_Tail|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder4|lantern_zig_zag_latest:pCylinderShape4" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:Lantern_Bulbw_Tail|lantern_zig_zag_latest:Bulbw_TailGrp|lantern_zig_zag_latest:pCylinder4|lantern_zig_zag_latest:pCylinderShape4" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:Lantern_Bulbw_Tail|lantern_zig_zag_latest:pSphere1|lantern_zig_zag_latest:pSphereShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:Lantern_Bulbw_Tail|lantern_zig_zag_latest:pSphere1|lantern_zig_zag_latest:pSphereShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder1|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder1|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder2|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape2" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder2|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape2" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder3|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape3" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder3|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape3" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pTorus1|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pTorusShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pTorus1|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pTorusShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder4|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape4" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder4|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape4" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder5|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape5" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString1|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinder5|lantern_zig_zag_latest:LanternBarrelWithTail_0001_pCylinderShape5" 
+		"displaySmoothMesh" " 0"
+		"lantern_zig_zag_latest:LANTERN_SPHERE_LATESTRN" 12
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail11|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:Bulbw_TailGrp|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinder1|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinderShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail11|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:Bulbw_TailGrp|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinder1|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinderShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail11|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:Bulbw_TailGrp|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinder2|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinderShape2" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail11|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:Bulbw_TailGrp|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinder2|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinderShape2" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail11|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:Bulbw_TailGrp|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pTorus1|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pTorusShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail11|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:Bulbw_TailGrp|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pTorus1|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pTorusShape1" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail11|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:Bulbw_TailGrp|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinder3|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinderShape3" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail11|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:Bulbw_TailGrp|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinder3|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinderShape3" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail11|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:Bulbw_TailGrp|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinder4|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinderShape4" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail11|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:Bulbw_TailGrp|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinder4|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:LanternBulbWithTail_v2_latest:pCylinderShape4" 
+		"displaySmoothMesh" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail11|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:pSphere1|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:pSphereShape1" 
+		"dispResolution" " 0"
+		2 "|lantern_zig_zag_latest:Lanterns|lantern_zig_zag_latest:LanternString|lantern_zig_zag_latest:Lantern_Bulbw_Tail11|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:pSphere1|lantern_zig_zag_latest:LANTERN_SPHERE_LATEST:pSphereShape1" 
+		"displaySmoothMesh" " 0";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "building_lanterns_latestRN1";
+	rename -uid "E5344286-4412-EB19-27E0-35941EA9CEE8";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"building_lanterns_latestRN1"
+		"building_lanterns_latest1:LANTERN_SPHERE_LATESTRN" 0
+		"building_lanterns_latestRN1" 0
+		"building_lanterns_latest1:LanternBarrelWithTail_latestRN" 0
+		"building_lanterns_latestRN1" 2
+		2 "|building_lanterns_latest1:Lanterns" "translate" " -type \"double3\" 125 0.65920315112619843 0"
+		
+		2 "|building_lanterns_latest1:Lanterns" "rotate" " -type \"double3\" 0 90 0";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode reference -n "lantern_zig_zag_latestRN1";
+	rename -uid "0487C7E8-4583-5429-53B2-12AACEB27CAD";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"lantern_zig_zag_latestRN1"
+		"lantern_zig_zag_latestRN1" 0
+		"lantern_zig_zag_latest1:LANTERN_SPHERE_LATESTRN" 0
+		"lantern_zig_zag_latest1:LanternBarrelWithTail_latestRN" 0
+		"lantern_zig_zag_latestRN1" 5
+		2 "|lantern_zig_zag_latest1:Lanterns" "translate" " -type \"double3\" 8.9877290998609709 -6.36479208361498383 -26.65157763212510034"
+		
+		2 "|lantern_zig_zag_latest1:Lanterns" "scale" " -type \"double3\" 1 1 -1"
+		
+		2 "|lantern_zig_zag_latest1:Lanterns" "rotatePivot" " -type \"double3\" 45.95668240822647022 0 0"
+		
+		2 "|lantern_zig_zag_latest1:Lanterns" "scalePivot" " -type \"double3\" 45.95668240822647022 0 0"
+		
+		2 "|lantern_zig_zag_latest1:Lanterns" "scalePivotTranslate" " -type \"double3\" 0 0 0";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr -av -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -32236,7 +32810,7 @@ select -ne :renderPartition;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 411 ".st";
+	setAttr -s 448 ".st";
 	setAttr -cb on ".an";
 	setAttr -cb on ".pt";
 select -ne :renderGlobalsList1;
@@ -32249,7 +32823,7 @@ select -ne :defaultShaderList1;
 	setAttr -cb on ".ihi";
 	setAttr -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 332 ".s";
+	setAttr -s 366 ".s";
 select -ne :postProcessList1;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -32257,19 +32831,19 @@ select -ne :postProcessList1;
 	setAttr -cb on ".bnm";
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 219 ".u";
+	setAttr -s 246 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 296 ".r";
+	setAttr -s 329 ".r";
 select -ne :lightList1;
 	setAttr -s 54 ".l";
 select -ne :defaultTextureList1;
-	setAttr -s 258 ".tx";
+	setAttr -s 294 ".tx";
 select -ne :initialShadingGroup;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
 	setAttr -av -k on ".nds";
 	setAttr -cb on ".bnm";
-	setAttr -s 264 ".dsm";
+	setAttr -s 291 ".dsm";
 	setAttr -k on ".mwc";
 	setAttr -cb on ".an";
 	setAttr -cb on ".il";
@@ -32278,7 +32852,7 @@ select -ne :initialShadingGroup;
 	setAttr -cb on ".fo";
 	setAttr -cb on ".epo";
 	setAttr ".ro" yes;
-	setAttr -s 411 ".gn";
+	setAttr -s 423 ".gn";
 select -ne :initialParticleSE;
 	setAttr -k on ".cch";
 	setAttr -cb on ".ihi";
