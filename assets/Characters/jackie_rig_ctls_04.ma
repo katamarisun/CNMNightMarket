@@ -1,6 +1,6 @@
 //Maya ASCII 2018ff09 scene
 //Name: jackie_rig_ctls_04.ma
-//Last modified: Sun, Feb 10, 2019 12:37:50 AM
+//Last modified: Sun, Feb 10, 2019 11:43:45 PM
 //Codeset: 1252
 file -rdi 1 -ns "jackie_rig" -rfn "jackie_rigRN" -op "v=0;p=17;f=0" -typ "mayaAscii"
 		 "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_rig.ma";
@@ -28,6 +28,7 @@ requires "stereoCamera" "10.0";
 requires -nodeType "rmanGlobals" -nodeType "PxrPathTracer" -nodeType "rmanDisplay"
 		 "RenderMan_for_Maya.py" "22.3 @ 1923583";
 requires "mtoa" "3.1.1.1";
+requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "exportedFrom" "C:/Users/yacob/Documents/maya/projects/CNMNightMarket/assets/Characters/jackie_rig_ctls_03.ma";
 fileInfo "application" "maya";
@@ -39,18 +40,18 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "AD6D84A1-48BE-235D-D555-A58279DBEE5B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -3.2706948951885786 7.67412240118919 6.2988625888710654 ;
-	setAttr ".r" -type "double3" -21.938352731426061 -1450.9999999999477 -4.0501051915303397e-16 ;
+	setAttr ".t" -type "double3" 2.8870786395772772 7.2620079519795615 2.3589024618403807 ;
+	setAttr ".r" -type "double3" -18.938352731192996 -2833.7999999994126 -1.1488066348007559e-15 ;
 	setAttr ".hio" yes;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A67F90E6-4184-0E83-6AE3-E5A0E87E9B44";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 9.214428361730274;
+	setAttr ".coi" 5.0319978964348504;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 0.035362937777523529 3.2505140770933947 -0.042583930440017514 ;
+	setAttr ".tp" -type "double3" 0.035367097157945393 3.5049005474202475 -0.042583930440017514 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".hio" yes;
 	setAttr ".ai_translator" -type "string" "perspective";
@@ -308,6 +309,8 @@ createNode transform -n "root_ctl" -p "jackie_MASTER_ctl";
 createNode nurbsCurve -n "root_ctlShape" -p "root_ctl";
 	rename -uid "00FD0871-439A-ECF9-5BA7-4DA4E8F194F1";
 	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 17;
 	setAttr ".cc" -type "nurbsCurve" 
 		3 8 2 no 3
 		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
@@ -856,7 +859,6 @@ createNode parentConstraint -n "rt_clavicle_ikHandle_parentConstraint1" -p "rt_c
 	setAttr -k on ".w0";
 createNode transform -n "rt_elbow_PV_ctl" -p "rt_arm_IKs";
 	rename -uid "DE0402F6-4830-F408-18E8-FFAB0EE9A2F7";
-	setAttr -k off ".v";
 	setAttr -l on -k off ".rx";
 	setAttr -l on -k off ".ry";
 	setAttr -l on -k off ".rz";
@@ -2316,7 +2318,6 @@ createNode nurbsCurve -n "curveShape12" -p "lf_clavicle_ctl";
 		;
 createNode transform -n "lf_elbow_PV_ctl" -p "lf_IKs";
 	rename -uid "42C44B0E-41F3-4A1E-4ACB-269CD92B576E";
-	setAttr -k off ".v";
 	setAttr -l on -k off ".rx";
 	setAttr -l on -k off ".ry";
 	setAttr -l on -k off ".rz";
@@ -2371,7 +2372,7 @@ createNode nurbsCurve -n "curveShape13" -p "lf_elbow_PV_ctl";
 		;
 createNode transform -n "lf_wrist_ik_ctl" -p "lf_IKs";
 	rename -uid "11BE856A-453B-BB9B-83A3-0CA01693B779";
-	setAttr -av -k off ".v" yes;
+	setAttr -k off ".v";
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
 	setAttr -l on -k off ".sz";
@@ -2540,6 +2541,7 @@ createNode nurbsCurve -n "neck1_ctlShape" -p "neck1_ctl";
 		;
 createNode transform -n "neck2_ctl" -p "neck1_ctl";
 	rename -uid "36216131-4790-71CA-FBAF-E78D36B61397";
+	setAttr ".v" no;
 	setAttr ".rp" -type "double3" 6.8098482408629471e-09 6.044714927673339 -0.20028726756572768 ;
 	setAttr ".sp" -type "double3" 6.8098482408629471e-09 6.044714927673339 -0.20028726756572768 ;
 createNode nurbsCurve -n "neck2_ctlShape" -p "neck2_ctl";
@@ -2620,7 +2622,7 @@ createNode nurbsCurve -n "curveShape14" -p "head_ctl";
 		;
 createNode pointConstraint -n "head_ctl_pointConstraint1" -p "head_ctl";
 	rename -uid "68000849-4BBF-9A3B-DC50-419633E123E8";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "joint1W0" -dv 1 -min 0 -at "double";
+	addAttr -dcb 0 -ci true -sn "w0" -ln "joint1W0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
 	setAttr -k off ".tx";
@@ -2634,7 +2636,10 @@ createNode pointConstraint -n "head_ctl_pointConstraint1" -p "head_ctl";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 3.7223127564886245e-23 -2.1740984301743538e-07 2.5194232811109885e-09 ;
-	setAttr -k on ".w0";
+	setAttr -l on -k off ".ox";
+	setAttr -l on -k off ".oy";
+	setAttr -l on -k off ".oz";
+	setAttr -l on ".w0";
 createNode transform -n "lip_ctls" -p "head_ctl";
 	rename -uid "9C60F92D-4B60-5A13-DA02-9586939DE80C";
 	setAttr ".t" -type "double3" 4.5168339623523435e-17 -0.00083147981960784989 0.019786294361540807 ;
@@ -4097,7 +4102,7 @@ createNode nurbsCurve -n "eye_lf_ctlShape" -p "eye_lf_ctl";
 createNode transform -n "jackie_GEO";
 	rename -uid "6CA10606-4AF3-4FF2-3947-6BB689CFD008";
 createNode fosterParent -n "jackie_rigRNfosterParent1";
-	rename -uid "6FC3A1FC-4FE3-1DF7-FAFF-13A3F115A682";
+	rename -uid "E933F429-4F35-EBC8-62B1-20994AAE782E";
 createNode parentConstraint -n "root_parentConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "40585434-47F6-F706-354E-BF8E935448BF";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "root_ctlW0" -dv 1 -min 0 -at "double";
@@ -4149,7 +4154,7 @@ createNode orientConstraint -n "right_knee_orientConstraint1" -p "jackie_rigRNfo
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -0.0010885595754903173 -0.03600313917382688 -0.00023837556662262489 ;
+	setAttr ".lr" -type "double3" -0.0010885595754903175 -0.03600313917382688 -0.00023837556662262489 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "effector2" -p "jackie_rigRNfosterParent1";
 	rename -uid "2A631B9A-42C2-C67D-D58F-71811EBEC494";
@@ -4211,7 +4216,7 @@ createNode orientConstraint -n "left_knee_orientConstraint1" -p "jackie_rigRNfos
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -0.0011025651385507551 0.036466521330362642 0.00024143814758660395 ;
+	setAttr ".lr" -type "double3" -0.0011025651385507551 0.036466521330362649 0.00024143814758660395 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "effector3" -p "jackie_rigRNfosterParent1";
 	rename -uid "6279452B-4E80-B06E-2847-07A02D2B1AA5";
@@ -5954,8 +5959,8 @@ createNode orientConstraint -n "left_bicep_orientConstraint1" -p "jackie_rigRNfo
 	setAttr ".erp" yes;
 	setAttr ".lr" -type "double3" 1.8134628066820864 0.13073203920604842 0.035205245349300036 ;
 	setAttr -k on ".w0";
-createNode parentConstraint -n "low_neck_parentConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "96A241A8-4EF7-0E35-8BEE-5EB45BD61932";
+createNode orientConstraint -n "low_neck_orientConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "D2B9E237-45F9-47AD-0A21-6FA5A8DECF59";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck1_ctlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
@@ -5969,13 +5974,10 @@ createNode parentConstraint -n "low_neck_parentConstraint1" -p "jackie_rigRNfost
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".tg[0].tot" -type "double3" -1.4912030670125535e-16 -1.075762616764564e-07 
-		3.6221395882662932e-09 ;
-	setAttr ".rst" -type "double3" 0 0.40206242505220402 0.0056790911739263428 ;
 	setAttr -k on ".w0";
-createNode parentConstraint -n "high_neck_parentConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "E0BD9B6C-49E9-6F61-645A-53B7D3D3C28C";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "neck2_ctlW0" -dv 1 -min 0 -at "double";
+createNode orientConstraint -n "high_neck_orientConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "06B94759-496B-B11A-7C62-6BB61F25F505";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "head_ctlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
 	setAttr -k off ".tx";
@@ -5988,9 +5990,6 @@ createNode parentConstraint -n "high_neck_parentConstraint1" -p "jackie_rigRNfos
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".tg[0].tot" -type "double3" -1.4912030504689412e-16 -4.2996609828094279e-08 
-		-4.0166046877398998e-09 ;
-	setAttr ".rst" -type "double3" 0 0.20739752551715362 0.054327495207974447 ;
 	setAttr -k on ".w0";
 createNode orientConstraint -n "head_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "599CD2F4-4498-B7AA-7A88-DCBAE7278C95";
@@ -6345,7 +6344,7 @@ createNode parentConstraint -n "jackierEyeRight_parentConstraint1" -p "jackie_ri
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0 0 -1.3877787807814457e-17 ;
-	setAttr ".lr" -type "double3" 179.94756584946109 180.02038164395094 -180.00082690959189 ;
+	setAttr ".lr" -type "double3" 179.94756584946091 180.02038164395088 -180.00082690958018 ;
 	setAttr ".rst" -type "double3" 0 0 1.3877787807814457e-17 ;
 	setAttr -k on ".w0";
 createNode parentConstraint -n "jackieEyeLeft_parentConstraint1" -p "jackie_rigRNfosterParent1";
@@ -6390,7 +6389,7 @@ createNode aimConstraint -n "jackieEyeLeft_aimConstraint1" -p "jackie_rigRNfoste
 	setAttr ".rsrr" -type "double3" -2.9810926551172283e-10 3.2010167384623357e-15 -5.7150591933380296e-16 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "teeth_v1_latestRN1fosterParent1";
-	rename -uid "8B7CDDD9-4AE9-57D9-4203-3C958CAB3307";
+	rename -uid "3D5BE202-4E2F-1199-A548-BF99F3211E6B";
 createNode parentConstraint -n "Teeth_parentConstraint1" -p "teeth_v1_latestRN1fosterParent1";
 	rename -uid "C9CD1B87-45C5-099F-1AED-C599AA05B492";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "jaw_1W0" -dv 1 -min 0 -at "double";
@@ -6409,25 +6408,26 @@ createNode parentConstraint -n "Teeth_parentConstraint1" -p "teeth_v1_latestRN1f
 	setAttr ".lo" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.012306415633926692 0.0092043376442525471 
 		0.19655339359068541 ;
+	setAttr ".lr" -type "double3" 29.294512343969419 0 0 ;
 	setAttr ".rst" -type "double3" 0 8.8817841970012523e-16 2.7755575615628914e-17 ;
 	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "E14F290F-462B-99C9-3585-E9B71609F6B3";
+	rename -uid "ED903352-419D-374A-D537-4BA299268B22";
 	setAttr -s 32 ".lnk";
 	setAttr -s 32 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "188C9EC8-4CA0-C3BD-206F-A8B9F28D3FAA";
+	rename -uid "F1B715D5-4631-C728-EDDD-519A2721BC1E";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "88D799E7-4EC4-4995-E469-038CE7F3C4CE";
+	rename -uid "6CFF1BAD-4213-2964-0502-4FA6B5B2F973";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "FED70D6B-4E91-DD72-089F-63999F5DB8D1";
+	rename -uid "EE49DD48-4B5F-6F03-3AD0-39B5802EF6C5";
 	setAttr ".cdl" 4;
 	setAttr -s 6 ".dli[1:5]"  1 2 3 4 0;
 	setAttr -s 5 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "1472DE7A-4782-1608-BB77-88A1607C89DD";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "8E753F13-425F-B53B-8147-87828E71E711";
+	rename -uid "308CE058-4075-A2B6-D248-63B85488EBA7";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "E5D42139-4EA7-5B85-657A-F1A0107DC895";
 	setAttr ".g" yes;
@@ -6580,38 +6580,38 @@ createNode script -n "uiConfigurationScriptNode";
 		"// Maya Mel UI Configuration File.\n//\n//  This script is machine generated.  Edit at your own risk.\n//\n//\n\nglobal string $gMainPane;\nif (`paneLayout -exists $gMainPane`) {\n\n\tglobal int $gUseScenePanelConfig;\n\tint    $useSceneConfig = $gUseScenePanelConfig;\n\tint    $nodeEditorPanelVisible = stringArrayContains(\"nodeEditorPanel1\", `getPanel -vis`);\n\tint    $nodeEditorWorkspaceControlOpen = (`workspaceControl -exists nodeEditorPanel1Window` && `workspaceControl -q -visible nodeEditorPanel1Window`);\n\tint    $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tint    $nVisPanes = `paneLayout -q -nvp $gMainPane`;\n\tint    $nPanes = 0;\n\tstring $editorName;\n\tstring $panelName;\n\tstring $itemFilterName;\n\tstring $panelConfig;\n\n\t//\n\t//  get current state of the UI\n\t//\n\tsceneUIReplacement -update $gMainPane;\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Top View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Top View\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"top\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 910\n            -height 368\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Side View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Side View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"side\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 1\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n"
 		+ "            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n"
-		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 909\n            -height 367\n"
+		+ "            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n"
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"front\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 910\n            -height 367\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
 		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
-		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 0\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1296\n            -height 782\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1546\n            -height 782\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
 		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
 		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n"
 		+ "            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n"
 		+ "            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"graphEditor\" (localizedPanelLabel(\"Graph Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Graph Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n"
-		+ "                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -isSet 0\n                -isSetMember 0\n"
-		+ "                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                -selectionOrder \"display\" \n                -expandAttribute 1\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n"
-		+ "                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -clipTime \"on\" \n                -stackedCurves 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 1\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 1\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n"
-		+ "                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n"
-		+ "                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n"
-		+ "                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n"
-		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n"
-		+ "                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n"
-		+ "                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n"
-		+ "                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n"
+		+ "                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 1\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 1\n                -showCompounds 0\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 1\n                -doNotSelectNewObjects 0\n                -dropIsParent 1\n                -transmitFilters 1\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n"
+		+ "                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 1\n                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"GraphEd\");\n            animCurveEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 1\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 1\n                -autoFitTime 0\n"
+		+ "                -snapTime \"integer\" \n                -snapValue \"none\" \n                -showResults \"off\" \n                -showBufferCurves \"off\" \n                -smoothness \"fine\" \n                -resultSamples 1\n                -resultScreenSamples 0\n                -resultUpdate \"delayed\" \n                -showUpstreamCurves 1\n                -showCurveNames 0\n                -showActiveCurveNames 0\n                -stackedCurves 1\n                -stackedCurvesMin -1\n                -stackedCurvesMax 1\n                -stackedCurvesSpace 0.2\n                -displayNormalized 1\n                -preSelectionHighlight 0\n                -constrainDrag 0\n                -classicMode 1\n                -valueLinesToggle 1\n                -outliner \"graphEditor1OutlineEd\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dopeSheetPanel\" (localizedPanelLabel(\"Dope Sheet\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dope Sheet\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"OutlineEd\");\n            outlinerEditor -e \n                -showShapes 1\n                -showAssignedMaterials 0\n                -showTimeEditor 1\n                -showReferenceNodes 0\n                -showReferenceMembers 0\n                -showAttributes 1\n                -showConnected 1\n                -showAnimCurvesOnly 1\n                -showMuteInfo 0\n                -organizeByLayer 1\n                -organizeByClip 1\n                -showAnimLayerWeight 1\n                -autoExpandLayers 1\n                -autoExpand 0\n                -showDagOnly 0\n                -showAssets 1\n                -showContainedOnly 0\n                -showPublishedAsConnected 0\n                -showParentContainers 1\n                -showContainerContents 0\n                -ignoreDagHierarchy 0\n                -expandConnections 1\n                -showUpstreamCurves 1\n                -showUnitlessCurves 0\n"
+		+ "                -showCompounds 1\n                -showLeafs 1\n                -showNumericAttrsOnly 1\n                -highlightActive 0\n                -autoSelectNewObjects 0\n                -doNotSelectNewObjects 1\n                -dropIsParent 1\n                -transmitFilters 0\n                -setFilter \"0\" \n                -showSetMembers 0\n                -allowMultiSelection 1\n                -alwaysToggleSelect 0\n                -directSelect 0\n                -displayMode \"DAG\" \n                -expandObjects 0\n                -setsIgnoreFilters 1\n                -containersIgnoreFilters 0\n                -editAttrName 0\n                -showAttrValues 0\n                -highlightSecondary 0\n                -showUVAttrsOnly 0\n                -showTextureNodesOnly 0\n                -attrAlphaOrder \"default\" \n                -animLayerFilterOptions \"allAffecting\" \n                -sortOrder \"none\" \n                -longNames 0\n                -niceNames 1\n                -showNamespace 1\n                -showPinIcons 0\n"
+		+ "                -mapMotionTrails 1\n                -ignoreHiddenAttribute 0\n                -ignoreOutlinerColor 0\n                -renderFilterVisible 0\n                $editorName;\n\n\t\t\t$editorName = ($panelName+\"DopeSheetEd\");\n            dopeSheetEditor -e \n                -displayKeys 1\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"integer\" \n                -snapValue \"none\" \n                -outliner \"dopeSheetPanel1OutlineEd\" \n                -showSummary 1\n                -showScene 0\n                -hierarchyBelow 0\n                -showTicks 1\n                -selectionWindow 0 0 0 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"timeEditorPanel\" (localizedPanelLabel(\"Time Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Time Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"clipEditorPanel\" (localizedPanelLabel(\"Trax Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Trax Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = clipEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n"
+		+ "                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
+		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
+		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n"
+		+ "                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
+		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -editorChanged \"updateModelPanelBar\" \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n"
 		+ "                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n"
@@ -6620,8 +6620,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n"
 		+ "            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n"
 		+ "            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 0\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1296\\n    -height 782\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 0\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1296\\n    -height 782\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1546\\n    -height 782\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1546\\n    -height 782\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -6630,6 +6630,7 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".st" 6;
 createNode displayLayer -n "accessories_clothes";
 	rename -uid "69E03DA2-4BE5-AC91-4AD6-B28F179108B4";
+	setAttr ".v" no;
 	setAttr ".do" 1;
 createNode displayLayer -n "geo";
 	rename -uid "56164880-4EDB-FFC7-0594-00BFDB3B3F09";
@@ -6909,11 +6910,7 @@ createNode reference -n "jackie_rigRN";
 	setAttr -s 2 ".fn";
 	setAttr ".fn[0]" -type "string" "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_skinning.ma";
 	setAttr ".fn[1]" -type "string" "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_rig.ma";
-	setAttr -s 1623 ".phl";
-	setAttr ".phl[59]" 0;
-	setAttr ".phl[60]" 0;
-	setAttr ".phl[61]" 0;
-	setAttr ".phl[62]" 0;
+	setAttr -s 1616 ".phl";
 	setAttr ".phl[63]" 0;
 	setAttr ".phl[64]" 0;
 	setAttr ".phl[65]" 0;
@@ -8488,9 +8485,6 @@ createNode reference -n "jackie_rigRN";
 	setAttr ".phl[1634]" 0;
 	setAttr ".phl[1635]" 0;
 	setAttr ".phl[1636]" 0;
-	setAttr ".phl[1637]" 0;
-	setAttr ".phl[1638]" 0;
-	setAttr ".phl[1639]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"jackie_rigRN"
 		"jackie_rig:Jacies_shoe_latestRN" 0
@@ -8651,7 +8645,7 @@ createNode reference -n "jackie_rigRN";
 		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:BottomCont|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:PearlyWhites|jackie_rig:teeth_v1_latest:Molars|jackie_rig:teeth_v1_latest:pCube6.drawOverride" 
 		"jackie_rigRN.placeHolderList[42]" ""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums|jackie_rig:teeth_v1_latest:GumsShape.instObjGroups" 
-		"jackie_rigRN.placeHolderList[59]" ":initialShadingGroup.dsm"
+		"jackie_rigRN.placeHolderList[63]" ":initialShadingGroup.dsm"
 		"jackie_rig:Jacies_shoe_latestRN" 84
 		0 "|jackie_rig:Jacies_shoe_latest:Jackie_Shoe" "|jackie_GEO" "-s -r "
 		2 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe" "visibility" " 1"
@@ -8673,6 +8667,14 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Toe|jackie_rig:Jacies_shoe_latest:ToeShape.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Left_Side|jackie_rig:Jacies_shoe_latest:Left_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Right_Side|jackie_rig:Jacies_shoe_latest:Right_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Base|jackie_rig:Jacies_shoe_latest:BaseShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Tongue|jackie_rig:Jacies_shoe_latest:TongueShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus2|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus1|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
@@ -8709,165 +8711,157 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube2|jackie_rig:Jacies_shoe_latest:pCubeShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Left_Side|jackie_rig:Jacies_shoe_latest:Left_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Right_Side|jackie_rig:Jacies_shoe_latest:Right_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Base|jackie_rig:Jacies_shoe_latest:BaseShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Tongue|jackie_rig:Jacies_shoe_latest:TongueShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
 		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe.drawOverride" 
-		"jackie_rigRN.placeHolderList[86]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube15.drawOverride" 
-		"jackie_rigRN.placeHolderList[87]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube14.drawOverride" 
-		"jackie_rigRN.placeHolderList[88]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube13.drawOverride" 
-		"jackie_rigRN.placeHolderList[89]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube12.drawOverride" 
 		"jackie_rigRN.placeHolderList[90]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube11.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube15.drawOverride" 
 		"jackie_rigRN.placeHolderList[91]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube10.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube14.drawOverride" 
 		"jackie_rigRN.placeHolderList[92]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube9.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube13.drawOverride" 
 		"jackie_rigRN.placeHolderList[93]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube2.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube12.drawOverride" 
 		"jackie_rigRN.placeHolderList[94]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Left_Side.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube11.drawOverride" 
 		"jackie_rigRN.placeHolderList[95]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Right_Side.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube10.drawOverride" 
 		"jackie_rigRN.placeHolderList[96]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Base.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube9.drawOverride" 
 		"jackie_rigRN.placeHolderList[97]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Tongue.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube2.drawOverride" 
 		"jackie_rigRN.placeHolderList[98]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus2.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Left_Side.drawOverride" 
 		"jackie_rigRN.placeHolderList[99]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus1.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Right_Side.drawOverride" 
 		"jackie_rigRN.placeHolderList[100]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus3.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Base.drawOverride" 
 		"jackie_rigRN.placeHolderList[101]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus4.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Tongue.drawOverride" 
 		"jackie_rigRN.placeHolderList[102]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus9.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus2.drawOverride" 
 		"jackie_rigRN.placeHolderList[103]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus8.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus1.drawOverride" 
 		"jackie_rigRN.placeHolderList[104]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus7.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus3.drawOverride" 
 		"jackie_rigRN.placeHolderList[105]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus6.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus4.drawOverride" 
 		"jackie_rigRN.placeHolderList[106]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus5.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus9.drawOverride" 
 		"jackie_rigRN.placeHolderList[107]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus10.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus8.drawOverride" 
 		"jackie_rigRN.placeHolderList[108]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Back.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus7.drawOverride" 
 		"jackie_rigRN.placeHolderList[109]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Sole.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus6.drawOverride" 
 		"jackie_rigRN.placeHolderList[110]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Toe.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus5.drawOverride" 
 		"jackie_rigRN.placeHolderList[111]" ""
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus10.drawOverride" 
+		"jackie_rigRN.placeHolderList[112]" ""
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Back.drawOverride" 
+		"jackie_rigRN.placeHolderList[113]" ""
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Sole.drawOverride" 
+		"jackie_rigRN.placeHolderList[114]" ""
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Toe.drawOverride" 
+		"jackie_rigRN.placeHolderList[115]" ""
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Toe|jackie_rig:Jacies_shoe_latest:ToeShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[112]" 
-		"jackie_rigRN.placeHolderList[113]" "jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Sole|jackie_rig:Jacies_shoe_latest:SoleShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[114]" 
-		"jackie_rigRN.placeHolderList[115]" "jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Back|jackie_rig:Jacies_shoe_latest:BackShape.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[116]" 
 		"jackie_rigRN.placeHolderList[117]" "jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dsm"
 		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Sole|jackie_rig:Jacies_shoe_latest:SoleShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[118]" 
+		"jackie_rigRN.placeHolderList[119]" "jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Back|jackie_rig:Jacies_shoe_latest:BackShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[120]" 
+		"jackie_rigRN.placeHolderList[121]" "jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dsm"
+		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Tongue|jackie_rig:Jacies_shoe_latest:TongueShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[118]" 
-		"jackie_rigRN.placeHolderList[119]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Base|jackie_rig:Jacies_shoe_latest:BaseShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[120]" 
-		"jackie_rigRN.placeHolderList[121]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Right_Side|jackie_rig:Jacies_shoe_latest:Right_SideShape.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[122]" 
 		"jackie_rigRN.placeHolderList[123]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Left_Side|jackie_rig:Jacies_shoe_latest:Left_SideShape.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Base|jackie_rig:Jacies_shoe_latest:BaseShape.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[124]" 
 		"jackie_rigRN.placeHolderList[125]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
 		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Right_Side|jackie_rig:Jacies_shoe_latest:Right_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[126]" 
+		"jackie_rigRN.placeHolderList[127]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Left_Side|jackie_rig:Jacies_shoe_latest:Left_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[128]" 
+		"jackie_rigRN.placeHolderList[129]" "jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dsm"
+		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube2|jackie_rig:Jacies_shoe_latest:pCubeShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[126]" 
-		"jackie_rigRN.placeHolderList[127]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube9|jackie_rig:Jacies_shoe_latest:pCubeShape9.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[128]" 
-		"jackie_rigRN.placeHolderList[129]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube10|jackie_rig:Jacies_shoe_latest:pCubeShape10.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[130]" 
 		"jackie_rigRN.placeHolderList[131]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube11|jackie_rig:Jacies_shoe_latest:pCubeShape11.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube9|jackie_rig:Jacies_shoe_latest:pCubeShape9.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[132]" 
 		"jackie_rigRN.placeHolderList[133]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube12|jackie_rig:Jacies_shoe_latest:pCubeShape12.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube10|jackie_rig:Jacies_shoe_latest:pCubeShape10.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[134]" 
 		"jackie_rigRN.placeHolderList[135]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube13|jackie_rig:Jacies_shoe_latest:pCubeShape13.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube11|jackie_rig:Jacies_shoe_latest:pCubeShape11.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[136]" 
 		"jackie_rigRN.placeHolderList[137]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube14|jackie_rig:Jacies_shoe_latest:pCubeShape14.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube12|jackie_rig:Jacies_shoe_latest:pCubeShape12.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[138]" 
 		"jackie_rigRN.placeHolderList[139]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube15|jackie_rig:Jacies_shoe_latest:pCubeShape15.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube13|jackie_rig:Jacies_shoe_latest:pCubeShape13.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[140]" 
 		"jackie_rigRN.placeHolderList[141]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
 		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube14|jackie_rig:Jacies_shoe_latest:pCubeShape14.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[142]" 
+		"jackie_rigRN.placeHolderList[143]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube15|jackie_rig:Jacies_shoe_latest:pCubeShape15.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[144]" 
+		"jackie_rigRN.placeHolderList[145]" "jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dsm"
+		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus10|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[142]" 
-		"jackie_rigRN.placeHolderList[143]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus5|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[144]" 
-		"jackie_rigRN.placeHolderList[145]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus6|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[146]" 
 		"jackie_rigRN.placeHolderList[147]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus7|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus5|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[148]" 
 		"jackie_rigRN.placeHolderList[149]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus8|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus6|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[150]" 
 		"jackie_rigRN.placeHolderList[151]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus9|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus7|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[152]" 
 		"jackie_rigRN.placeHolderList[153]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus4|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus8|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[154]" 
 		"jackie_rigRN.placeHolderList[155]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus3|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus9|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[156]" 
 		"jackie_rigRN.placeHolderList[157]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus1|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus4|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[158]" 
 		"jackie_rigRN.placeHolderList[159]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus2|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus3|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[160]" 
 		"jackie_rigRN.placeHolderList[161]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus1|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[162]" 
+		"jackie_rigRN.placeHolderList[163]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus2|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[164]" 
+		"jackie_rigRN.placeHolderList[165]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
 		"jackie_rig:jackieHoodie_latestRN" 11
 		0 "|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "|jackie_GEO" "-s -r "
@@ -8889,10 +8883,10 @@ createNode reference -n "jackie_rigRN";
 		3 "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape.instObjGroups" 
 		"jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" "-na"
 		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2.drawOverride" 
-		"jackie_rigRN.placeHolderList[62]" ""
+		"jackie_rigRN.placeHolderList[66]" ""
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape.instObjGroups" 
-		"jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[63]" 
-		"jackie_rigRN.placeHolderList[64]" "jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dsm"
+		"jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[67]" 
+		"jackie_rigRN.placeHolderList[68]" "jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dsm"
 		
 		"jackie_rig:Jacies_shoe_latestRN1" 89
 		0 "|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe" "|jackie_GEO" "-s -r "
@@ -8917,20 +8911,6 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe" "scalePivotTranslate" 
 		" -type \"double3\" 0 0 0"
 		2 "|jackie_rig:Jacies_shoe_latest1:transform1" "hiddenInOutliner" " 1"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Back|jackie_rig:Jacies_shoe_latest1:BackShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Sole|jackie_rig:Jacies_shoe_latest1:SoleShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Toe|jackie_rig:Jacies_shoe_latest1:ToeShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Left_Side|jackie_rig:Jacies_shoe_latest1:Left_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Right_Side|jackie_rig:Jacies_shoe_latest1:Right_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Base|jackie_rig:Jacies_shoe_latest1:BaseShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Tongue|jackie_rig:Jacies_shoe_latest1:TongueShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus2|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus1|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
@@ -8967,160 +8947,174 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube2|jackie_rig:Jacies_shoe_latest1:pCubeShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Left_Side|jackie_rig:Jacies_shoe_latest1:Left_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Right_Side|jackie_rig:Jacies_shoe_latest1:Right_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Base|jackie_rig:Jacies_shoe_latest1:BaseShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Tongue|jackie_rig:Jacies_shoe_latest1:TongueShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Back|jackie_rig:Jacies_shoe_latest1:BackShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Sole|jackie_rig:Jacies_shoe_latest1:SoleShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Toe|jackie_rig:Jacies_shoe_latest1:ToeShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "-na"
 		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe.drawOverride" 
-		"jackie_rigRN.placeHolderList[162]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube15.drawOverride" 
-		"jackie_rigRN.placeHolderList[163]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube14.drawOverride" 
-		"jackie_rigRN.placeHolderList[164]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube13.drawOverride" 
-		"jackie_rigRN.placeHolderList[165]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube12.drawOverride" 
 		"jackie_rigRN.placeHolderList[166]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube11.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube15.drawOverride" 
 		"jackie_rigRN.placeHolderList[167]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube10.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube14.drawOverride" 
 		"jackie_rigRN.placeHolderList[168]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube9.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube13.drawOverride" 
 		"jackie_rigRN.placeHolderList[169]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube2.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube12.drawOverride" 
 		"jackie_rigRN.placeHolderList[170]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Left_Side.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube11.drawOverride" 
 		"jackie_rigRN.placeHolderList[171]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Right_Side.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube10.drawOverride" 
 		"jackie_rigRN.placeHolderList[172]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Base.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube9.drawOverride" 
 		"jackie_rigRN.placeHolderList[173]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Tongue.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube2.drawOverride" 
 		"jackie_rigRN.placeHolderList[174]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus2.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Left_Side.drawOverride" 
 		"jackie_rigRN.placeHolderList[175]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus1.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Right_Side.drawOverride" 
 		"jackie_rigRN.placeHolderList[176]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus3.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Base.drawOverride" 
 		"jackie_rigRN.placeHolderList[177]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus4.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Tongue.drawOverride" 
 		"jackie_rigRN.placeHolderList[178]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus9.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus2.drawOverride" 
 		"jackie_rigRN.placeHolderList[179]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus5.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus1.drawOverride" 
 		"jackie_rigRN.placeHolderList[180]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus6.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus3.drawOverride" 
 		"jackie_rigRN.placeHolderList[181]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus7.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus4.drawOverride" 
 		"jackie_rigRN.placeHolderList[182]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus8.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus9.drawOverride" 
 		"jackie_rigRN.placeHolderList[183]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus10.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus5.drawOverride" 
 		"jackie_rigRN.placeHolderList[184]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Back.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus6.drawOverride" 
 		"jackie_rigRN.placeHolderList[185]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Sole.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus7.drawOverride" 
 		"jackie_rigRN.placeHolderList[186]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Toe.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus8.drawOverride" 
 		"jackie_rigRN.placeHolderList[187]" ""
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus10.drawOverride" 
+		"jackie_rigRN.placeHolderList[188]" ""
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Back.drawOverride" 
+		"jackie_rigRN.placeHolderList[189]" ""
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Sole.drawOverride" 
+		"jackie_rigRN.placeHolderList[190]" ""
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Toe.drawOverride" 
+		"jackie_rigRN.placeHolderList[191]" ""
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Toe|jackie_rig:Jacies_shoe_latest1:ToeShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[188]" 
-		"jackie_rigRN.placeHolderList[189]" "jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Sole|jackie_rig:Jacies_shoe_latest1:SoleShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[190]" 
-		"jackie_rigRN.placeHolderList[191]" "jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Back|jackie_rig:Jacies_shoe_latest1:BackShape.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[192]" 
 		"jackie_rigRN.placeHolderList[193]" "jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dsm"
 		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Sole|jackie_rig:Jacies_shoe_latest1:SoleShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[194]" 
+		"jackie_rigRN.placeHolderList[195]" "jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Back|jackie_rig:Jacies_shoe_latest1:BackShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[196]" 
+		"jackie_rigRN.placeHolderList[197]" "jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dsm"
+		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Tongue|jackie_rig:Jacies_shoe_latest1:TongueShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[194]" 
-		"jackie_rigRN.placeHolderList[195]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Base|jackie_rig:Jacies_shoe_latest1:BaseShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[196]" 
-		"jackie_rigRN.placeHolderList[197]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Right_Side|jackie_rig:Jacies_shoe_latest1:Right_SideShape.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[198]" 
 		"jackie_rigRN.placeHolderList[199]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Left_Side|jackie_rig:Jacies_shoe_latest1:Left_SideShape.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Base|jackie_rig:Jacies_shoe_latest1:BaseShape.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[200]" 
 		"jackie_rigRN.placeHolderList[201]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
 		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Right_Side|jackie_rig:Jacies_shoe_latest1:Right_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[202]" 
+		"jackie_rigRN.placeHolderList[203]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Left_Side|jackie_rig:Jacies_shoe_latest1:Left_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[204]" 
+		"jackie_rigRN.placeHolderList[205]" "jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dsm"
+		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube2|jackie_rig:Jacies_shoe_latest1:pCubeShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[202]" 
-		"jackie_rigRN.placeHolderList[203]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube9|jackie_rig:Jacies_shoe_latest1:pCubeShape9.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[204]" 
-		"jackie_rigRN.placeHolderList[205]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube10|jackie_rig:Jacies_shoe_latest1:pCubeShape10.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[206]" 
 		"jackie_rigRN.placeHolderList[207]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube11|jackie_rig:Jacies_shoe_latest1:pCubeShape11.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube9|jackie_rig:Jacies_shoe_latest1:pCubeShape9.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[208]" 
 		"jackie_rigRN.placeHolderList[209]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube12|jackie_rig:Jacies_shoe_latest1:pCubeShape12.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube10|jackie_rig:Jacies_shoe_latest1:pCubeShape10.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[210]" 
 		"jackie_rigRN.placeHolderList[211]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube13|jackie_rig:Jacies_shoe_latest1:pCubeShape13.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube11|jackie_rig:Jacies_shoe_latest1:pCubeShape11.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[212]" 
 		"jackie_rigRN.placeHolderList[213]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube14|jackie_rig:Jacies_shoe_latest1:pCubeShape14.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube12|jackie_rig:Jacies_shoe_latest1:pCubeShape12.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[214]" 
 		"jackie_rigRN.placeHolderList[215]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube15|jackie_rig:Jacies_shoe_latest1:pCubeShape15.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube13|jackie_rig:Jacies_shoe_latest1:pCubeShape13.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[216]" 
 		"jackie_rigRN.placeHolderList[217]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
 		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube14|jackie_rig:Jacies_shoe_latest1:pCubeShape14.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[218]" 
+		"jackie_rigRN.placeHolderList[219]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube15|jackie_rig:Jacies_shoe_latest1:pCubeShape15.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[220]" 
+		"jackie_rigRN.placeHolderList[221]" "jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dsm"
+		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus10|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[218]" 
-		"jackie_rigRN.placeHolderList[219]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus8|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[220]" 
-		"jackie_rigRN.placeHolderList[221]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus7|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[222]" 
 		"jackie_rigRN.placeHolderList[223]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus6|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus8|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[224]" 
 		"jackie_rigRN.placeHolderList[225]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus5|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus7|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[226]" 
 		"jackie_rigRN.placeHolderList[227]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus9|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus6|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[228]" 
 		"jackie_rigRN.placeHolderList[229]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus4|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus5|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[230]" 
 		"jackie_rigRN.placeHolderList[231]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus3|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus9|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[232]" 
 		"jackie_rigRN.placeHolderList[233]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus1|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus4|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[234]" 
 		"jackie_rigRN.placeHolderList[235]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus2|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus3|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[236]" 
 		"jackie_rigRN.placeHolderList[237]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
 		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus1|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[238]" 
+		"jackie_rigRN.placeHolderList[239]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest1:pTorus2|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[240]" 
+		"jackie_rigRN.placeHolderList[241]" "jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dsm"
+		
 		8 "|jackie_GEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe" "translateX"
-		"jackie_rigRN" 1520
+		"jackie_rigRN" 1509
 		0 "|jackie_rig:jackieEyes" "|jackie_MASTER_ctl" "-s -r "
 		0 "|jackie_rig:root" "|jackie_MASTER_ctl" "-s -r "
 		0 "|jackie_rig:jackieBody" "|jackie_GEO" "-s -r "
@@ -9168,9 +9162,9 @@ createNode reference -n "jackie_rigRN";
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|head_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|high_neck_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck" 
+		0 "|jackie_rigRNfosterParent1|high_neck_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|low_neck_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck" 
+		0 "|jackie_rigRNfosterParent1|low_neck_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|left_bicep_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_bicep" 
 		"-s -r "
@@ -9388,8 +9382,6 @@ createNode reference -n "jackie_rigRN";
 		"-s -r "
 		1 |jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft "blendParent1" 
 		"blendParent1" " -ci 1 -k 1 -dv 1 -smn 0 -smx 1 -at \"double\""
-		1 |jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck 
-		"blendParent1" "blendParent1" " -ci 1 -k 1 -dv 1 -smn 0 -smx 1 -at \"double\""
 		2 "|jackie_rig:PxrEnvDayLight" "hiddenInOutliner" " 1"
 		2 "|jackie_rig:PxrEnvDayLight|jackie_rig:PxrEnvDayLightShape" "hiddenInOutliner" 
 		" 1"
@@ -9415,7 +9407,7 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes" "scale" " -type \"double3\" 1 1 1"
 		
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" "translate" 
-		" -type \"double3\" -2.7046485884252291e-09 -0.00083145253048044765 0.019785472888954228"
+		" -type \"double3\" -2.7046486439363804e-09 -0.00083145253048044765 0.019785472888954228"
 		
 		2 "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" "translateX" 
 		" -av"
@@ -9548,6 +9540,8 @@ createNode reference -n "jackie_rigRN";
 		"translateY" " -av"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest" 
 		"translateZ" " -av"
+		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck" 
+		"translate" " -type \"double3\" 0 0.40206242505220402 0.0056790911739263428"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck" 
 		"translate" " -type \"double3\" 0 0.20739752551715362 0.054327495207974447"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck" 
@@ -9556,8 +9550,6 @@ createNode reference -n "jackie_rigRN";
 		"translateY" " -av"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck" 
 		"translateZ" " -av"
-		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck" 
-		"blendParent1" " -k 1 1"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1|jackie_rig:jaw_2" 
 		"translate" " -type \"double3\" 0 -0.12683212678650482 0.34010935676529624"
 		2 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:jaw_1|jackie_rig:jaw_2" 
@@ -9817,6 +9809,10 @@ createNode reference -n "jackie_rigRN";
 		
 		2 "jackie_rig:teeth_v1_latestRN" "fileNames[2]" " -type \"string\" \"C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma\""
 		
+		3 "jackie_rig:left_elbow_scaleX.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.scaleX" 
+		""
+		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0]" 
+		"jackie_rig:skinCluster1Set.dagSetMembers" "-na"
 		3 "jackie_rig:skinCluster1GroupId.groupId" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 "jackie_rig:skinCluster1Set.memberWireframeColor" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0].objectGrpColor" 
@@ -9825,16 +9821,8 @@ createNode reference -n "jackie_rigRN";
 		""
 		3 "jackie_rig:tweakSet1.memberWireframeColor" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1].objectGrpColor" 
 		""
-		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Group9688ShapeOrig.worldMesh" 
-		"jackie_rig:groupParts2.inputGeometry" ""
-		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups" 
-		"jackie_rig:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1]" 
 		"jackie_rig:tweakSet1.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0]" 
-		"jackie_rig:skinCluster1Set.dagSetMembers" "-na"
-		3 "jackie_rig:left_elbow_scaleX.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.scaleX" 
-		""
 		3 "jackie_rig:high_neck_translateX.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.translateX" 
 		""
 		3 "jackie_rig:high_neck_translateY.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.translateY" 
@@ -9858,265 +9846,258 @@ createNode reference -n "jackie_rigRN";
 		3 "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle.scale" 
 		"|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.inverseScale" 
 		""
+		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Group9688ShapeOrig.worldMesh" 
+		"jackie_rig:groupParts2.inputGeometry" ""
+		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups" 
+		"jackie_rig:PxrSurface1SG.dagSetMembers" "-na"
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.blendParent1" 
-		"jackie_rigRN.placeHolderList[455]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translate" 
-		"jackie_rigRN.placeHolderList[456]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateX" 
-		"jackie_rigRN.placeHolderList[457]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateY" 
-		"jackie_rigRN.placeHolderList[458]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateZ" 
 		"jackie_rigRN.placeHolderList[459]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translate" 
 		"jackie_rigRN.placeHolderList[460]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateX" 
 		"jackie_rigRN.placeHolderList[461]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateY" 
 		"jackie_rigRN.placeHolderList[462]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translateZ" 
 		"jackie_rigRN.placeHolderList[463]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateX" 
 		"jackie_rigRN.placeHolderList[464]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateY" 
 		"jackie_rigRN.placeHolderList[465]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateZ" 
 		"jackie_rigRN.placeHolderList[466]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.parentInverseMatrix" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivot" 
 		"jackie_rigRN.placeHolderList[467]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivot" 
 		"jackie_rigRN.placeHolderList[468]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.drawOverride" 
 		"jackie_rigRN.placeHolderList[469]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[470]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[471]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[472]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[473]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
 		"jackie_rigRN.placeHolderList[474]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
 		"jackie_rigRN.placeHolderList[475]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.rotateOrder" 
 		"jackie_rigRN.placeHolderList[476]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateX" 
 		"jackie_rigRN.placeHolderList[477]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateY" 
 		"jackie_rigRN.placeHolderList[478]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.translateZ" 
 		"jackie_rigRN.placeHolderList[479]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivot" 
 		"jackie_rigRN.placeHolderList[480]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.drawOverride" 
 		"jackie_rigRN.placeHolderList[481]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[482]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[483]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateX" "jackie_rigRN.placeHolderList[484]" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateX" 
+		"jackie_rigRN.placeHolderList[484]" ""
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateY" 
+		"jackie_rigRN.placeHolderList[485]" ""
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateZ" 
+		"jackie_rigRN.placeHolderList[486]" ""
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight.rotateOrder" 
+		"jackie_rigRN.placeHolderList[487]" ""
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateX" "jackie_rigRN.placeHolderList[488]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateY" "jackie_rigRN.placeHolderList[485]" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateY" "jackie_rigRN.placeHolderList[489]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateZ" "jackie_rigRN.placeHolderList[486]" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateZ" "jackie_rigRN.placeHolderList[490]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.translateX" "jackie_rigRN.placeHolderList[487]" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.translateX" "jackie_rigRN.placeHolderList[491]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.translateY" "jackie_rigRN.placeHolderList[488]" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.translateY" "jackie_rigRN.placeHolderList[492]" 
 		""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.translateZ" "jackie_rigRN.placeHolderList[489]" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.translateZ" "jackie_rigRN.placeHolderList[493]" 
 		""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotatePivot" 
-		"jackie_rigRN.placeHolderList[490]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotatePivotTranslate" 
-		"jackie_rigRN.placeHolderList[491]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateOrder" 
-		"jackie_rigRN.placeHolderList[492]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.jointOrient" 
-		"jackie_rigRN.placeHolderList[493]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[494]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[495]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.rotateOrder" 
 		"jackie_rigRN.placeHolderList[496]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.jointOrient" 
 		"jackie_rigRN.placeHolderList[497]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[498]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateX" 
 		"jackie_rigRN.placeHolderList[499]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.translateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateY" 
 		"jackie_rigRN.placeHolderList[500]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateZ" 
 		"jackie_rigRN.placeHolderList[501]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.translateX" 
 		"jackie_rigRN.placeHolderList[502]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.translateY" 
 		"jackie_rigRN.placeHolderList[503]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.translateZ" 
 		"jackie_rigRN.placeHolderList[504]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotateOrder" 
 		"jackie_rigRN.placeHolderList[505]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.jointOrient" 
 		"jackie_rigRN.placeHolderList[506]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[507]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotatePivot" 
 		"jackie_rigRN.placeHolderList[508]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[509]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateX" 
 		"jackie_rigRN.placeHolderList[510]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateY" 
 		"jackie_rigRN.placeHolderList[511]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateZ" 
 		"jackie_rigRN.placeHolderList[512]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotateOrder" 
 		"jackie_rigRN.placeHolderList[513]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.jointOrient" 
 		"jackie_rigRN.placeHolderList[514]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[515]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.translateX" 
 		"jackie_rigRN.placeHolderList[516]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.translateY" 
 		"jackie_rigRN.placeHolderList[517]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.translateZ" 
 		"jackie_rigRN.placeHolderList[518]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotatePivot" 
 		"jackie_rigRN.placeHolderList[519]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[520]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateX" 
 		"jackie_rigRN.placeHolderList[521]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateY" 
 		"jackie_rigRN.placeHolderList[522]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateZ" 
 		"jackie_rigRN.placeHolderList[523]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotateOrder" 
 		"jackie_rigRN.placeHolderList[524]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.jointOrient" 
 		"jackie_rigRN.placeHolderList[525]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[526]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.translateX" 
 		"jackie_rigRN.placeHolderList[527]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.translateY" 
 		"jackie_rigRN.placeHolderList[528]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.translateZ" 
 		"jackie_rigRN.placeHolderList[529]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotatePivot" 
 		"jackie_rigRN.placeHolderList[530]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[531]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateX" 
 		"jackie_rigRN.placeHolderList[532]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateY" 
 		"jackie_rigRN.placeHolderList[533]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateZ" 
 		"jackie_rigRN.placeHolderList[534]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotateOrder" 
 		"jackie_rigRN.placeHolderList[535]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.jointOrient" 
 		"jackie_rigRN.placeHolderList[536]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[537]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.translateX" 
 		"jackie_rigRN.placeHolderList[538]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.translateY" 
 		"jackie_rigRN.placeHolderList[539]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.translateZ" 
 		"jackie_rigRN.placeHolderList[540]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotatePivot" 
 		"jackie_rigRN.placeHolderList[541]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateOrder" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[542]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateX" 
 		"jackie_rigRN.placeHolderList[543]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateY" 
 		"jackie_rigRN.placeHolderList[544]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateZ" 
 		"jackie_rigRN.placeHolderList[545]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotateOrder" 
 		"jackie_rigRN.placeHolderList[546]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.jointOrient" 
 		"jackie_rigRN.placeHolderList[547]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[548]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotatePivotTranslate" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.translateX" 
 		"jackie_rigRN.placeHolderList[549]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.translateY" 
 		"jackie_rigRN.placeHolderList[550]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.translateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.translateZ" 
 		"jackie_rigRN.placeHolderList[551]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotatePivot" 
 		"jackie_rigRN.placeHolderList[552]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[553]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.translateX" 
 		"jackie_rigRN.placeHolderList[554]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.translateY" 
 		"jackie_rigRN.placeHolderList[555]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.translateZ" 
 		"jackie_rigRN.placeHolderList[556]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.jointOrient" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateX" 
 		"jackie_rigRN.placeHolderList[557]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateY" 
 		"jackie_rigRN.placeHolderList[558]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotatePivot" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateZ" 
 		"jackie_rigRN.placeHolderList[559]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotateOrder" 
 		"jackie_rigRN.placeHolderList[560]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.translateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.jointOrient" 
 		"jackie_rigRN.placeHolderList[561]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.translateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[562]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.translateZ" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotatePivot" 
 		"jackie_rigRN.placeHolderList[563]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateY" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest.rotatePivotTranslate" 
 		"jackie_rigRN.placeHolderList[564]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.inverseScale" 
 		"jackie_rigRN.placeHolderList[565]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateY" 
 		"jackie_rigRN.placeHolderList[566]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateOrder" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateX" 
 		"jackie_rigRN.placeHolderList[567]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.parentInverseMatrix" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateZ" 
 		"jackie_rigRN.placeHolderList[568]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.jointOrient" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotateOrder" 
 		"jackie_rigRN.placeHolderList[569]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[570]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck.jointOrient" 
 		"jackie_rigRN.placeHolderList[571]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateX" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.inverseScale" 
 		"jackie_rigRN.placeHolderList[572]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateY" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateX" 
 		"jackie_rigRN.placeHolderList[573]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateZ" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateY" 
 		"jackie_rigRN.placeHolderList[574]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.translateX" 
+		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateZ" 
 		"jackie_rigRN.placeHolderList[575]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.translateY" 
-		"jackie_rigRN.placeHolderList[576]" ""
-		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.translateZ" 
-		"jackie_rigRN.placeHolderList[577]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.blendParent1" 
-		"jackie_rigRN.placeHolderList[578]" ""
+		5 0 "jackie_rigRN" "jackie_rig:high_neck_translateX.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.translateX" 
+		"jackie_rigRN.placeHolderList[576]" "jackie_rigRN.placeHolderList[577]" "jackie_rig:high_neck.tx"
+		
+		5 0 "jackie_rigRN" "jackie_rig:high_neck_translateY.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.translateY" 
+		"jackie_rigRN.placeHolderList[578]" "jackie_rigRN.placeHolderList[579]" "jackie_rig:high_neck.ty"
+		
+		5 0 "jackie_rigRN" "jackie_rig:high_neck_translateZ.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.translateZ" 
+		"jackie_rigRN.placeHolderList[580]" "jackie_rigRN.placeHolderList[581]" "jackie_rig:high_neck.tz"
+		
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateOrder" 
-		"jackie_rigRN.placeHolderList[579]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotateOrder" 
-		"jackie_rigRN.placeHolderList[580]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.parentInverseMatrix" 
-		"jackie_rigRN.placeHolderList[581]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.jointOrient" 
 		"jackie_rigRN.placeHolderList[582]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotatePivot" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.parentInverseMatrix" 
 		"jackie_rigRN.placeHolderList[583]" ""
-		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.rotatePivotTranslate" 
+		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.jointOrient" 
 		"jackie_rigRN.placeHolderList[584]" ""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head.inverseScale" 
 		"jackie_rigRN.placeHolderList[585]" ""
@@ -12215,12 +12196,6 @@ createNode reference -n "jackie_rigRN";
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Group9688ShapeOrig.worldMesh" 
 		"jackie_rig:groupParts2.inputGeometry" "jackie_rigRN.placeHolderList[1635]" "jackie_rigRN.placeHolderList[1636]" 
 		"jackie_rig:groupParts2.ig"
-		5 3 "jackie_rigRN" "jackie_rig:high_neck_translateX.output" "jackie_rigRN.placeHolderList[1637]" 
-		"jackie_rig:high_neck.tx"
-		5 3 "jackie_rigRN" "jackie_rig:high_neck_translateY.output" "jackie_rigRN.placeHolderList[1638]" 
-		"jackie_rig:high_neck.ty"
-		5 3 "jackie_rigRN" "jackie_rig:high_neck_translateZ.output" "jackie_rigRN.placeHolderList[1639]" 
-		"jackie_rig:high_neck.tz"
 		"jackie_rig:jackiePants_latestRN" 33
 		0 "|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" "|jackie_GEO" 
 		"-s -r "
@@ -12251,11 +12226,14 @@ createNode reference -n "jackie_rigRN";
 		"dispResolution" " 3"
 		2 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
 		"displaySmoothMesh" " 2"
+		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0]" 
 		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dagSetMembers" "-na"
 		
-		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
-		"jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" "-na"
+		
 		3 "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.groupId" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
 		""
 		3 "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.memberWireframeColor" 
@@ -12271,52 +12249,49 @@ createNode reference -n "jackie_rigRN";
 		3 "jackie_rig:jackiePants_latest:jackiePants_latest:default1.memberWireframeColor" 
 		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGrpColor" 
 		""
-		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" "-na"
-		
+		3 "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
+		"jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" "-na"
 		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1.drawOverride" 
-		"jackie_rigRN.placeHolderList[65]" ""
+		"jackie_rigRN.placeHolderList[69]" ""
 		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.groupId" 
 		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		"jackie_rigRN.placeHolderList[66]" "jackie_rigRN.placeHolderList[67]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gid"
+		"jackie_rigRN.placeHolderList[70]" "jackie_rigRN.placeHolderList[71]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gid"
 		
 		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.memberWireframeColor" 
 		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		"jackie_rigRN.placeHolderList[68]" "jackie_rigRN.placeHolderList[69]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gco"
+		"jackie_rigRN.placeHolderList[72]" "jackie_rigRN.placeHolderList[73]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gco"
 		
 		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId2.groupId" 
 		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		"jackie_rigRN.placeHolderList[70]" "jackie_rigRN.placeHolderList[71]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gid"
+		"jackie_rigRN.placeHolderList[74]" "jackie_rigRN.placeHolderList[75]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gid"
 		
 		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.memberWireframeColor" 
 		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		"jackie_rigRN.placeHolderList[72]" "jackie_rigRN.placeHolderList[73]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gco"
+		"jackie_rigRN.placeHolderList[76]" "jackie_rigRN.placeHolderList[77]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gco"
 		
 		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId3.groupId" 
 		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		"jackie_rigRN.placeHolderList[74]" "jackie_rigRN.placeHolderList[75]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gid"
+		"jackie_rigRN.placeHolderList[78]" "jackie_rigRN.placeHolderList[79]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gid"
 		
 		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.memberWireframeColor" 
 		"|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		"jackie_rigRN.placeHolderList[76]" "jackie_rigRN.placeHolderList[77]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gco"
+		"jackie_rigRN.placeHolderList[80]" "jackie_rigRN.placeHolderList[81]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gco"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
-		"jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[78]" 
-		"jackie_rigRN.placeHolderList[79]" "jackie_rig:jackiePants_latest:PxrSurface1SG.dsm"
+		"jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[82]" 
+		"jackie_rigRN.placeHolderList[83]" "jackie_rig:jackiePants_latest:PxrSurface1SG.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dagSetMembers" "jackie_rigRN.placeHolderList[80]" 
-		"jackie_rigRN.placeHolderList[81]" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dsm"
+		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dagSetMembers" "jackie_rigRN.placeHolderList[84]" 
+		"jackie_rigRN.placeHolderList[85]" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" "jackie_rigRN.placeHolderList[82]" 
-		"jackie_rigRN.placeHolderList[83]" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dsm"
+		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" "jackie_rigRN.placeHolderList[86]" 
+		"jackie_rigRN.placeHolderList[87]" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dsm"
 		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" "jackie_rigRN.placeHolderList[84]" 
-		"jackie_rigRN.placeHolderList[85]" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.dsm"
+		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" "jackie_rigRN.placeHolderList[88]" 
+		"jackie_rigRN.placeHolderList[89]" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.dsm"
 		
 		"jackie_rig:jackieHair_latestRN" 235
 		0 "|jackie_rig:jackieHair_latest:jackieHair" "|jackie_GEO" "-s -r "
@@ -12354,24 +12329,38 @@ createNode reference -n "jackie_rigRN";
 		"overrideColor" " 30"
 		2 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHairShape" 
 		"overrideColorRGB" " -type \"float3\" 0 0 0"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface6|jackie_rig:jackieHair_latest:polySurfaceShape17.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface8|jackie_rig:jackieHair_latest:polySurfaceShape19.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface9|jackie_rig:jackieHair_latest:polySurfaceShape20.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface10|jackie_rig:jackieHair_latest:polySurfaceShape21.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface11|jackie_rig:jackieHair_latest:polySurfaceShape22.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface12|jackie_rig:jackieHair_latest:polySurfaceShape23.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface13|jackie_rig:jackieHair_latest:polySurfaceShape24.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface47|jackie_rig:jackieHair_latest:polySurfaceShape47.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface46|jackie_rig:jackieHair_latest:polySurfaceShape46.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface29|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface31|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface32|jackie_rig:jackieHair_latest:polySurfaceShape32.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface33|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface34|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface35|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface36|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface37|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface29|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface31|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface32|jackie_rig:jackieHair_latest:polySurfaceShape32.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface33|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface34|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface35|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface36|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface37|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface14|jackie_rig:jackieHair_latest:polySurfaceShape25.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface16|jackie_rig:jackieHair_latest:polySurfaceShape27.instObjGroups" 
@@ -12390,6 +12379,60 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface39|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface22|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface23|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface24|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface25|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface26|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface27|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface28|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface6|jackie_rig:jackieHair_latest:polySurfaceShape17.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface8|jackie_rig:jackieHair_latest:polySurfaceShape19.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface9|jackie_rig:jackieHair_latest:polySurfaceShape20.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface10|jackie_rig:jackieHair_latest:polySurfaceShape21.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface11|jackie_rig:jackieHair_latest:polySurfaceShape22.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface12|jackie_rig:jackieHair_latest:polySurfaceShape23.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface13|jackie_rig:jackieHair_latest:polySurfaceShape24.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface47|jackie_rig:jackieHair_latest:polySurfaceShape47.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface46|jackie_rig:jackieHair_latest:polySurfaceShape46.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface1|jackie_rig:jackieHair_latest:polySurfaceShape1.instObjGroups" 
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface2|jackie_rig:jackieHair_latest:polySurfaceShape2.instObjGroups" 
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface3|jackie_rig:jackieHair_latest:polySurfaceShape3.instObjGroups" 
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface4|jackie_rig:jackieHair_latest:polySurfaceShape4.instObjGroups" 
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface7|jackie_rig:jackieHair_latest:polySurfaceShape7.instObjGroups" 
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface40|jackie_rig:jackieHair_latest:polySurfaceShape40.instObjGroups" 
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface41|jackie_rig:jackieHair_latest:polySurfaceShape41.instObjGroups" 
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface42|jackie_rig:jackieHair_latest:polySurfaceShape42.instObjGroups" 
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface43|jackie_rig:jackieHair_latest:polySurfaceShape43.instObjGroups" 
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface44|jackie_rig:jackieHair_latest:polySurfaceShape44.instObjGroups" 
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface45|jackie_rig:jackieHair_latest:polySurfaceShape45.instObjGroups" 
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface14|jackie_rig:jackieHair_latest:polySurfaceShape14.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface16|jackie_rig:jackieHair_latest:polySurfaceShape16.instObjGroups" 
@@ -12430,507 +12473,439 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface45|jackie_rig:jackieHair_latest:polySurfaceShape45.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface29|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface31|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface32|jackie_rig:jackieHair_latest:polySurfaceShape32.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface33|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface34|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface35|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface36|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface37|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface29|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface31|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface32|jackie_rig:jackieHair_latest:polySurfaceShape32.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface33|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface34|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface35|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface36|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface37|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface22|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface23|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface24|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface25|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface26|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface27|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface28|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface1|jackie_rig:jackieHair_latest:polySurfaceShape1.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface2|jackie_rig:jackieHair_latest:polySurfaceShape2.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface3|jackie_rig:jackieHair_latest:polySurfaceShape3.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface4|jackie_rig:jackieHair_latest:polySurfaceShape4.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface7|jackie_rig:jackieHair_latest:polySurfaceShape7.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface40|jackie_rig:jackieHair_latest:polySurfaceShape40.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface41|jackie_rig:jackieHair_latest:polySurfaceShape41.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface42|jackie_rig:jackieHair_latest:polySurfaceShape42.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface43|jackie_rig:jackieHair_latest:polySurfaceShape43.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface44|jackie_rig:jackieHair_latest:polySurfaceShape44.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface45|jackie_rig:jackieHair_latest:polySurfaceShape45.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
 		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair.drawOverride" 
-		"jackie_rigRN.placeHolderList[238]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface22.drawOverride" 
-		"jackie_rigRN.placeHolderList[239]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface23.drawOverride" 
-		"jackie_rigRN.placeHolderList[240]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface24.drawOverride" 
-		"jackie_rigRN.placeHolderList[241]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface25.drawOverride" 
 		"jackie_rigRN.placeHolderList[242]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface26.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface22.drawOverride" 
 		"jackie_rigRN.placeHolderList[243]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface27.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface23.drawOverride" 
 		"jackie_rigRN.placeHolderList[244]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface28.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface24.drawOverride" 
 		"jackie_rigRN.placeHolderList[245]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface29.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface25.drawOverride" 
 		"jackie_rigRN.placeHolderList[246]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface31.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface26.drawOverride" 
 		"jackie_rigRN.placeHolderList[247]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface32.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface27.drawOverride" 
 		"jackie_rigRN.placeHolderList[248]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface33.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface28.drawOverride" 
 		"jackie_rigRN.placeHolderList[249]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface34.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface29.drawOverride" 
 		"jackie_rigRN.placeHolderList[250]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface35.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface31.drawOverride" 
 		"jackie_rigRN.placeHolderList[251]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface36.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface32.drawOverride" 
 		"jackie_rigRN.placeHolderList[252]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface37.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface33.drawOverride" 
 		"jackie_rigRN.placeHolderList[253]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface29.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface34.drawOverride" 
 		"jackie_rigRN.placeHolderList[254]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface31.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface35.drawOverride" 
 		"jackie_rigRN.placeHolderList[255]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface32.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface36.drawOverride" 
 		"jackie_rigRN.placeHolderList[256]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface33.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface37.drawOverride" 
 		"jackie_rigRN.placeHolderList[257]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface34.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface29.drawOverride" 
 		"jackie_rigRN.placeHolderList[258]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface35.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface31.drawOverride" 
 		"jackie_rigRN.placeHolderList[259]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface36.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface32.drawOverride" 
 		"jackie_rigRN.placeHolderList[260]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface37.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface33.drawOverride" 
 		"jackie_rigRN.placeHolderList[261]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface1.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface34.drawOverride" 
 		"jackie_rigRN.placeHolderList[262]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface2.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface35.drawOverride" 
 		"jackie_rigRN.placeHolderList[263]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface3.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface36.drawOverride" 
 		"jackie_rigRN.placeHolderList[264]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface4.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface37.drawOverride" 
 		"jackie_rigRN.placeHolderList[265]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface7.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface1.drawOverride" 
 		"jackie_rigRN.placeHolderList[266]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface40.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface2.drawOverride" 
 		"jackie_rigRN.placeHolderList[267]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface41.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface3.drawOverride" 
 		"jackie_rigRN.placeHolderList[268]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface42.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface4.drawOverride" 
 		"jackie_rigRN.placeHolderList[269]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface43.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface7.drawOverride" 
 		"jackie_rigRN.placeHolderList[270]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface44.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface40.drawOverride" 
 		"jackie_rigRN.placeHolderList[271]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface45.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface41.drawOverride" 
 		"jackie_rigRN.placeHolderList[272]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface1.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface42.drawOverride" 
 		"jackie_rigRN.placeHolderList[273]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface2.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface43.drawOverride" 
 		"jackie_rigRN.placeHolderList[274]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface3.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface44.drawOverride" 
 		"jackie_rigRN.placeHolderList[275]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface4.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface45.drawOverride" 
 		"jackie_rigRN.placeHolderList[276]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface7.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface1.drawOverride" 
 		"jackie_rigRN.placeHolderList[277]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface40.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface2.drawOverride" 
 		"jackie_rigRN.placeHolderList[278]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface41.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface3.drawOverride" 
 		"jackie_rigRN.placeHolderList[279]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface42.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface4.drawOverride" 
 		"jackie_rigRN.placeHolderList[280]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface43.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface7.drawOverride" 
 		"jackie_rigRN.placeHolderList[281]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface44.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface40.drawOverride" 
 		"jackie_rigRN.placeHolderList[282]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface45.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface41.drawOverride" 
 		"jackie_rigRN.placeHolderList[283]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface14.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface42.drawOverride" 
 		"jackie_rigRN.placeHolderList[284]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface16.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface43.drawOverride" 
 		"jackie_rigRN.placeHolderList[285]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface17.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface44.drawOverride" 
 		"jackie_rigRN.placeHolderList[286]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface18.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface45.drawOverride" 
 		"jackie_rigRN.placeHolderList[287]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface19.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface14.drawOverride" 
 		"jackie_rigRN.placeHolderList[288]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface20.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface16.drawOverride" 
 		"jackie_rigRN.placeHolderList[289]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface21.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface17.drawOverride" 
 		"jackie_rigRN.placeHolderList[290]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface38.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface18.drawOverride" 
 		"jackie_rigRN.placeHolderList[291]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface39.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface19.drawOverride" 
 		"jackie_rigRN.placeHolderList[292]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface6.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface20.drawOverride" 
 		"jackie_rigRN.placeHolderList[293]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface8.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface21.drawOverride" 
 		"jackie_rigRN.placeHolderList[294]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface9.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface38.drawOverride" 
 		"jackie_rigRN.placeHolderList[295]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface10.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface39.drawOverride" 
 		"jackie_rigRN.placeHolderList[296]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface11.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface6.drawOverride" 
 		"jackie_rigRN.placeHolderList[297]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface12.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface8.drawOverride" 
 		"jackie_rigRN.placeHolderList[298]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface13.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface9.drawOverride" 
 		"jackie_rigRN.placeHolderList[299]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface47.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface10.drawOverride" 
 		"jackie_rigRN.placeHolderList[300]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface46.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface11.drawOverride" 
 		"jackie_rigRN.placeHolderList[301]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface14.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface12.drawOverride" 
 		"jackie_rigRN.placeHolderList[302]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface16.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface13.drawOverride" 
 		"jackie_rigRN.placeHolderList[303]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface17.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface47.drawOverride" 
 		"jackie_rigRN.placeHolderList[304]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface18.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface46.drawOverride" 
 		"jackie_rigRN.placeHolderList[305]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface19.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface14.drawOverride" 
 		"jackie_rigRN.placeHolderList[306]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface20.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface16.drawOverride" 
 		"jackie_rigRN.placeHolderList[307]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface21.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface17.drawOverride" 
 		"jackie_rigRN.placeHolderList[308]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface38.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface18.drawOverride" 
 		"jackie_rigRN.placeHolderList[309]" ""
-		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface39.drawOverride" 
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface19.drawOverride" 
 		"jackie_rigRN.placeHolderList[310]" ""
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface20.drawOverride" 
+		"jackie_rigRN.placeHolderList[311]" ""
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface21.drawOverride" 
+		"jackie_rigRN.placeHolderList[312]" ""
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface38.drawOverride" 
+		"jackie_rigRN.placeHolderList[313]" ""
+		5 4 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface39.drawOverride" 
+		"jackie_rigRN.placeHolderList[314]" ""
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface7|jackie_rig:jackieHair_latest:polySurfaceShape18.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[311]" 
-		"jackie_rigRN.placeHolderList[312]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface4|jackie_rig:jackieHair_latest:polySurfaceShape15.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[313]" 
-		"jackie_rigRN.placeHolderList[314]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface3|jackie_rig:jackieHair_latest:polySurfaceShape14.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[315]" 
 		"jackie_rigRN.placeHolderList[316]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface2|jackie_rig:jackieHair_latest:polySurfaceShape13.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface4|jackie_rig:jackieHair_latest:polySurfaceShape15.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[317]" 
 		"jackie_rigRN.placeHolderList[318]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface1|jackie_rig:jackieHair_latest:polySurfaceShape12.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface3|jackie_rig:jackieHair_latest:polySurfaceShape14.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[319]" 
 		"jackie_rigRN.placeHolderList[320]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface40|jackie_rig:jackieHair_latest:polySurfaceShape40.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface2|jackie_rig:jackieHair_latest:polySurfaceShape13.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[321]" 
 		"jackie_rigRN.placeHolderList[322]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface41|jackie_rig:jackieHair_latest:polySurfaceShape41.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface1|jackie_rig:jackieHair_latest:polySurfaceShape12.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[323]" 
 		"jackie_rigRN.placeHolderList[324]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface42|jackie_rig:jackieHair_latest:polySurfaceShape42.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface40|jackie_rig:jackieHair_latest:polySurfaceShape40.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[325]" 
 		"jackie_rigRN.placeHolderList[326]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface43|jackie_rig:jackieHair_latest:polySurfaceShape43.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface41|jackie_rig:jackieHair_latest:polySurfaceShape41.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[327]" 
 		"jackie_rigRN.placeHolderList[328]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface44|jackie_rig:jackieHair_latest:polySurfaceShape44.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface42|jackie_rig:jackieHair_latest:polySurfaceShape42.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[329]" 
 		"jackie_rigRN.placeHolderList[330]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface45|jackie_rig:jackieHair_latest:polySurfaceShape45.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface43|jackie_rig:jackieHair_latest:polySurfaceShape43.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[331]" 
 		"jackie_rigRN.placeHolderList[332]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
 		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface44|jackie_rig:jackieHair_latest:polySurfaceShape44.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[333]" 
+		"jackie_rigRN.placeHolderList[334]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface45|jackie_rig:jackieHair_latest:polySurfaceShape45.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[335]" 
+		"jackie_rigRN.placeHolderList[336]" "jackie_rig:jackieHair_latest:PxrSurface1SG.dsm"
+		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface13|jackie_rig:jackieHair_latest:polySurfaceShape24.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[333]" 
-		"jackie_rigRN.placeHolderList[334]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface12|jackie_rig:jackieHair_latest:polySurfaceShape23.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[335]" 
-		"jackie_rigRN.placeHolderList[336]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface11|jackie_rig:jackieHair_latest:polySurfaceShape22.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[337]" 
 		"jackie_rigRN.placeHolderList[338]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface10|jackie_rig:jackieHair_latest:polySurfaceShape21.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface12|jackie_rig:jackieHair_latest:polySurfaceShape23.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[339]" 
 		"jackie_rigRN.placeHolderList[340]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface9|jackie_rig:jackieHair_latest:polySurfaceShape20.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface11|jackie_rig:jackieHair_latest:polySurfaceShape22.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[341]" 
 		"jackie_rigRN.placeHolderList[342]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface8|jackie_rig:jackieHair_latest:polySurfaceShape19.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface10|jackie_rig:jackieHair_latest:polySurfaceShape21.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[343]" 
 		"jackie_rigRN.placeHolderList[344]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface6|jackie_rig:jackieHair_latest:polySurfaceShape17.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface9|jackie_rig:jackieHair_latest:polySurfaceShape20.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[345]" 
 		"jackie_rigRN.placeHolderList[346]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface46|jackie_rig:jackieHair_latest:polySurfaceShape46.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface8|jackie_rig:jackieHair_latest:polySurfaceShape19.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[347]" 
 		"jackie_rigRN.placeHolderList[348]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface47|jackie_rig:jackieHair_latest:polySurfaceShape47.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface6|jackie_rig:jackieHair_latest:polySurfaceShape17.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[349]" 
 		"jackie_rigRN.placeHolderList[350]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
 		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface46|jackie_rig:jackieHair_latest:polySurfaceShape46.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[351]" 
+		"jackie_rigRN.placeHolderList[352]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface47|jackie_rig:jackieHair_latest:polySurfaceShape47.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "jackie_rigRN.placeHolderList[353]" 
+		"jackie_rigRN.placeHolderList[354]" "jackie_rig:jackieHair_latest:PxrSurface2SG.dsm"
+		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface14|jackie_rig:jackieHair_latest:polySurfaceShape14.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[351]" 
-		"jackie_rigRN.placeHolderList[352]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface16|jackie_rig:jackieHair_latest:polySurfaceShape16.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[353]" 
-		"jackie_rigRN.placeHolderList[354]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface17|jackie_rig:jackieHair_latest:polySurfaceShape17.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[355]" 
 		"jackie_rigRN.placeHolderList[356]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface18|jackie_rig:jackieHair_latest:polySurfaceShape18.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface16|jackie_rig:jackieHair_latest:polySurfaceShape16.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[357]" 
 		"jackie_rigRN.placeHolderList[358]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface19|jackie_rig:jackieHair_latest:polySurfaceShape19.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface17|jackie_rig:jackieHair_latest:polySurfaceShape17.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[359]" 
 		"jackie_rigRN.placeHolderList[360]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface20|jackie_rig:jackieHair_latest:polySurfaceShape20.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface18|jackie_rig:jackieHair_latest:polySurfaceShape18.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[361]" 
 		"jackie_rigRN.placeHolderList[362]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface21|jackie_rig:jackieHair_latest:polySurfaceShape21.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface19|jackie_rig:jackieHair_latest:polySurfaceShape19.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[363]" 
 		"jackie_rigRN.placeHolderList[364]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface38|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface20|jackie_rig:jackieHair_latest:polySurfaceShape20.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[365]" 
 		"jackie_rigRN.placeHolderList[366]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface39|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface21|jackie_rig:jackieHair_latest:polySurfaceShape21.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[367]" 
 		"jackie_rigRN.placeHolderList[368]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
 		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface38|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[369]" 
+		"jackie_rigRN.placeHolderList[370]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface39|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "jackie_rigRN.placeHolderList[371]" 
+		"jackie_rigRN.placeHolderList[372]" "jackie_rig:jackieHair_latest:PxrSurface3SG.dsm"
+		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface28|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[369]" 
-		"jackie_rigRN.placeHolderList[370]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface27|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[371]" 
-		"jackie_rigRN.placeHolderList[372]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface26|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[373]" 
 		"jackie_rigRN.placeHolderList[374]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface25|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface27|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[375]" 
 		"jackie_rigRN.placeHolderList[376]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface24|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface26|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[377]" 
 		"jackie_rigRN.placeHolderList[378]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface23|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface25|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[379]" 
 		"jackie_rigRN.placeHolderList[380]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface22|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface24|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[381]" 
 		"jackie_rigRN.placeHolderList[382]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
 		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface23|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[383]" 
+		"jackie_rigRN.placeHolderList[384]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface22|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[385]" 
+		"jackie_rigRN.placeHolderList[386]" "jackie_rig:jackieHair_latest:PxrSurface4SG.dsm"
+		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface39|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[383]" 
-		"jackie_rigRN.placeHolderList[384]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface38|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[385]" 
-		"jackie_rigRN.placeHolderList[386]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface21|jackie_rig:jackieHair_latest:polySurfaceShape32.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[387]" 
 		"jackie_rigRN.placeHolderList[388]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface20|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface38|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[389]" 
 		"jackie_rigRN.placeHolderList[390]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface19|jackie_rig:jackieHair_latest:polySurfaceShape30.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface21|jackie_rig:jackieHair_latest:polySurfaceShape32.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[391]" 
 		"jackie_rigRN.placeHolderList[392]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface18|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface20|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[393]" 
 		"jackie_rigRN.placeHolderList[394]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface17|jackie_rig:jackieHair_latest:polySurfaceShape28.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface19|jackie_rig:jackieHair_latest:polySurfaceShape30.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[395]" 
 		"jackie_rigRN.placeHolderList[396]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface16|jackie_rig:jackieHair_latest:polySurfaceShape27.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface18|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[397]" 
 		"jackie_rigRN.placeHolderList[398]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface14|jackie_rig:jackieHair_latest:polySurfaceShape25.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface17|jackie_rig:jackieHair_latest:polySurfaceShape28.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[399]" 
 		"jackie_rigRN.placeHolderList[400]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
 		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface16|jackie_rig:jackieHair_latest:polySurfaceShape27.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[401]" 
+		"jackie_rigRN.placeHolderList[402]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface14|jackie_rig:jackieHair_latest:polySurfaceShape25.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "jackie_rigRN.placeHolderList[403]" 
+		"jackie_rigRN.placeHolderList[404]" "jackie_rig:jackieHair_latest:PxrSurface6SG.dsm"
+		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface45|jackie_rig:jackieHair_latest:polySurfaceShape45.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[401]" 
-		"jackie_rigRN.placeHolderList[402]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface44|jackie_rig:jackieHair_latest:polySurfaceShape44.instObjGroups" 
-		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[403]" 
-		"jackie_rigRN.placeHolderList[404]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface43|jackie_rig:jackieHair_latest:polySurfaceShape43.instObjGroups" 
 		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[405]" 
 		"jackie_rigRN.placeHolderList[406]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface42|jackie_rig:jackieHair_latest:polySurfaceShape42.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface44|jackie_rig:jackieHair_latest:polySurfaceShape44.instObjGroups" 
 		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[407]" 
 		"jackie_rigRN.placeHolderList[408]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface41|jackie_rig:jackieHair_latest:polySurfaceShape41.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface43|jackie_rig:jackieHair_latest:polySurfaceShape43.instObjGroups" 
 		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[409]" 
 		"jackie_rigRN.placeHolderList[410]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface40|jackie_rig:jackieHair_latest:polySurfaceShape40.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface42|jackie_rig:jackieHair_latest:polySurfaceShape42.instObjGroups" 
 		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[411]" 
 		"jackie_rigRN.placeHolderList[412]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface7|jackie_rig:jackieHair_latest:polySurfaceShape7.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface41|jackie_rig:jackieHair_latest:polySurfaceShape41.instObjGroups" 
 		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[413]" 
 		"jackie_rigRN.placeHolderList[414]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface4|jackie_rig:jackieHair_latest:polySurfaceShape4.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface40|jackie_rig:jackieHair_latest:polySurfaceShape40.instObjGroups" 
 		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[415]" 
 		"jackie_rigRN.placeHolderList[416]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface3|jackie_rig:jackieHair_latest:polySurfaceShape3.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface7|jackie_rig:jackieHair_latest:polySurfaceShape7.instObjGroups" 
 		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[417]" 
 		"jackie_rigRN.placeHolderList[418]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface2|jackie_rig:jackieHair_latest:polySurfaceShape2.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface4|jackie_rig:jackieHair_latest:polySurfaceShape4.instObjGroups" 
 		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[419]" 
 		"jackie_rigRN.placeHolderList[420]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface1|jackie_rig:jackieHair_latest:polySurfaceShape1.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface3|jackie_rig:jackieHair_latest:polySurfaceShape3.instObjGroups" 
 		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[421]" 
 		"jackie_rigRN.placeHolderList[422]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
 		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface2|jackie_rig:jackieHair_latest:polySurfaceShape2.instObjGroups" 
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[423]" 
+		"jackie_rigRN.placeHolderList[424]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface1|jackie_rig:jackieHair_latest:polySurfaceShape1.instObjGroups" 
+		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "jackie_rigRN.placeHolderList[425]" 
+		"jackie_rigRN.placeHolderList[426]" "jackie_rig:jackieHair_latest:hairbottom3SG.dsm"
+		
 		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface37|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[423]" 
-		"jackie_rigRN.placeHolderList[424]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface36|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[425]" 
-		"jackie_rigRN.placeHolderList[426]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
-		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface35|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[427]" 
 		"jackie_rigRN.placeHolderList[428]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface34|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface36|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[429]" 
 		"jackie_rigRN.placeHolderList[430]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface33|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface35|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[431]" 
 		"jackie_rigRN.placeHolderList[432]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface32|jackie_rig:jackieHair_latest:polySurfaceShape32.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface34|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[433]" 
 		"jackie_rigRN.placeHolderList[434]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface31|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface33|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[435]" 
 		"jackie_rigRN.placeHolderList[436]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface29|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface32|jackie_rig:jackieHair_latest:polySurfaceShape32.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[437]" 
 		"jackie_rigRN.placeHolderList[438]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface29|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface31|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[439]" 
 		"jackie_rigRN.placeHolderList[440]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface31|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface29|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[441]" 
 		"jackie_rigRN.placeHolderList[442]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface32|jackie_rig:jackieHair_latest:polySurfaceShape32.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface29|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[443]" 
 		"jackie_rigRN.placeHolderList[444]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface33|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface31|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[445]" 
 		"jackie_rigRN.placeHolderList[446]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface34|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface32|jackie_rig:jackieHair_latest:polySurfaceShape32.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[447]" 
 		"jackie_rigRN.placeHolderList[448]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface35|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface33|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[449]" 
 		"jackie_rigRN.placeHolderList[450]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface36|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface34|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[451]" 
 		"jackie_rigRN.placeHolderList[452]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface37|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface35|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[453]" 
 		"jackie_rigRN.placeHolderList[454]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface36|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[455]" 
+		"jackie_rigRN.placeHolderList[456]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
+		
+		5 0 "jackie_rigRN" "|jackie_GEO|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsmiddle|jackie_rig:jackieHair_latest:polySurface37|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[457]" 
+		"jackie_rigRN.placeHolderList[458]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
 		"jackie_rig:teeth_v1_latestRN" 11
 		0 "|jackie_rig:teeth_v1_latest:Teeth" "|jackie_MASTER_ctl" "-s -r "
@@ -12951,9 +12926,9 @@ createNode reference -n "jackie_rigRN";
 		3 "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums|jackie_rig:teeth_v1_latest:GumsShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 4 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums.drawOverride" 
-		"jackie_rigRN.placeHolderList[60]" ""
+		"jackie_rigRN.placeHolderList[64]" ""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums|jackie_rig:teeth_v1_latest:GumsShape.instObjGroups" 
-		"jackie_rigRN.placeHolderList[61]" ":initialShadingGroup.dsm";
+		"jackie_rigRN.placeHolderList[65]" ":initialShadingGroup.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "teeth_v1_latestRN1";
@@ -13068,17 +13043,21 @@ createNode reference -n "teeth_v1_latestRN1";
 		"scalePivotTranslate" " -type \"double3\" 0 0 0"
 		2 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1" 
 		"visibility" " 1"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube18|teeth_v1_latest1:pCubeShape18.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube20|teeth_v1_latest1:pCubeShape20.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube18|teeth_v1_latest1:pCubeShape18.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube20|teeth_v1_latest1:pCubeShape20.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube24|teeth_v1_latest1:pCubeShape24.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube26|teeth_v1_latest1:pCubeShape26.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube24|teeth_v1_latest1:pCubeShape24.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube26|teeth_v1_latest1:pCubeShape26.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube14|teeth_v1_latest1:pCubeShape14.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube14|teeth_v1_latest1:pCubeShape14.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube17|teeth_v1_latest1:pCubeShape17.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube17|teeth_v1_latest1:pCubeShape17.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube23|teeth_v1_latest1:pCubeShape23.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -13088,33 +13067,37 @@ createNode reference -n "teeth_v1_latestRN1";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube19|teeth_v1_latest1:pCubeShape19.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube27|teeth_v1_latest1:pCubeShape27.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube27|teeth_v1_latest1:pCubeShape27.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube25|teeth_v1_latest1:pCubeShape25.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube25|teeth_v1_latest1:pCubeShape25.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube20|teeth_v1_latest1:pCubeShape20.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube20|teeth_v1_latest1:pCubeShape20.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube13|teeth_v1_latest1:pCubeShape13.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube13|teeth_v1_latest1:pCubeShape13.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube26|teeth_v1_latest1:pCubeShape26.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube22|teeth_v1_latest1:pCubeShape22.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube26|teeth_v1_latest1:pCubeShape26.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube22|teeth_v1_latest1:pCubeShape22.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube15|teeth_v1_latest1:pCubeShape15.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube15|teeth_v1_latest1:pCubeShape15.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube17|teeth_v1_latest1:pCubeShape17.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube24|teeth_v1_latest1:pCubeShape24.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube17|teeth_v1_latest1:pCubeShape17.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube24|teeth_v1_latest1:pCubeShape24.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube25|teeth_v1_latest1:pCubeShape25.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube25|teeth_v1_latest1:pCubeShape25.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube12|teeth_v1_latest1:pCubeShape12.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube12|teeth_v1_latest1:pCubeShape12.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube27|teeth_v1_latest1:pCubeShape27.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube27|teeth_v1_latest1:pCubeShape27.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube21|teeth_v1_latest1:pCubeShape21.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube21|teeth_v1_latest1:pCubeShape21.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:Gums|teeth_v1_latest1:GumsShape.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
@@ -13124,17 +13107,9 @@ createNode reference -n "teeth_v1_latestRN1";
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube16|teeth_v1_latest1:pCubeShape16.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube12|teeth_v1_latest1:pCubeShape12.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube18|teeth_v1_latest1:pCubeShape18.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:pCube12|teeth_v1_latest1:pCubeShape12.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube22|teeth_v1_latest1:pCubeShape22.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars1|teeth_v1_latest1:pCube22|teeth_v1_latest1:pCubeShape22.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube21|teeth_v1_latest1:pCubeShape21.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube21|teeth_v1_latest1:pCubeShape21.instObjGroups" 
+		3 "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:PearlyWhites|teeth_v1_latest1:Molars|teeth_v1_latest1:pCube18|teeth_v1_latest1:pCubeShape18.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		5 3 "teeth_v1_latestRN1" "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth.rotatePivot" 
 		"teeth_v1_latestRN1.placeHolderList[1]" ""
@@ -13611,13 +13586,20 @@ createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
 	setAttr ".tgi[3].ni[9].x" 581.3720703125;
 	setAttr ".tgi[3].ni[9].y" 287.98184204101563;
 	setAttr ".tgi[3].ni[9].nvs" 18304;
-createNode pairBlend -n "pairBlend2";
-	rename -uid "F7DADB3F-402D-1652-02BD-0DA059D2D1DC";
-	setAttr ".rm" 2;
 createNode displayLayer -n "shoes";
 	rename -uid "7A0C5061-4EB0-EA8A-8920-7E938AFFA83A";
 	setAttr ".v" no;
 	setAttr ".do" 4;
+createNode animCurveUU -n "rt_elbow_PV_ctl_visibility";
+	rename -uid "EDC80828-4C25-B109-0B0E-D4AB74971554";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  0 1 1 0;
+createNode animCurveUU -n "lf_elbow_PV_ctl_visibility";
+	rename -uid "21AC94FF-46CC-3250-8CB9-2FBA7A3FEABA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  0 1 1 0;
 select -ne :time1;
 	setAttr -av -k on ".cch";
 	setAttr -cb on ".ihi";
@@ -13863,11 +13845,7 @@ select -ne :ikSystem;
 	setAttr -av -k on ".gsn";
 	setAttr -k on ".gsv";
 	setAttr -s 2 ".sol";
-connectAttr "shoes.di" "jackie_rigRN.phl[86]";
-connectAttr "geo.di" "jackie_rigRN.phl[87]";
-connectAttr "geo.di" "jackie_rigRN.phl[88]";
-connectAttr "geo.di" "jackie_rigRN.phl[89]";
-connectAttr "geo.di" "jackie_rigRN.phl[90]";
+connectAttr "shoes.di" "jackie_rigRN.phl[90]";
 connectAttr "geo.di" "jackie_rigRN.phl[91]";
 connectAttr "geo.di" "jackie_rigRN.phl[92]";
 connectAttr "geo.di" "jackie_rigRN.phl[93]";
@@ -13889,8 +13867,10 @@ connectAttr "geo.di" "jackie_rigRN.phl[108]";
 connectAttr "geo.di" "jackie_rigRN.phl[109]";
 connectAttr "geo.di" "jackie_rigRN.phl[110]";
 connectAttr "geo.di" "jackie_rigRN.phl[111]";
-connectAttr "jackie_rigRN.phl[112]" "jackie_rigRN.phl[113]";
-connectAttr "jackie_rigRN.phl[114]" "jackie_rigRN.phl[115]";
+connectAttr "geo.di" "jackie_rigRN.phl[112]";
+connectAttr "geo.di" "jackie_rigRN.phl[113]";
+connectAttr "geo.di" "jackie_rigRN.phl[114]";
+connectAttr "geo.di" "jackie_rigRN.phl[115]";
 connectAttr "jackie_rigRN.phl[116]" "jackie_rigRN.phl[117]";
 connectAttr "jackie_rigRN.phl[118]" "jackie_rigRN.phl[119]";
 connectAttr "jackie_rigRN.phl[120]" "jackie_rigRN.phl[121]";
@@ -13914,13 +13894,11 @@ connectAttr "jackie_rigRN.phl[154]" "jackie_rigRN.phl[155]";
 connectAttr "jackie_rigRN.phl[156]" "jackie_rigRN.phl[157]";
 connectAttr "jackie_rigRN.phl[158]" "jackie_rigRN.phl[159]";
 connectAttr "jackie_rigRN.phl[160]" "jackie_rigRN.phl[161]";
-connectAttr "accessories_clothes.di" "jackie_rigRN.phl[62]";
-connectAttr "jackie_rigRN.phl[63]" "jackie_rigRN.phl[64]";
-connectAttr "shoes.di" "jackie_rigRN.phl[162]";
-connectAttr "geo.di" "jackie_rigRN.phl[163]";
-connectAttr "geo.di" "jackie_rigRN.phl[164]";
-connectAttr "geo.di" "jackie_rigRN.phl[165]";
-connectAttr "geo.di" "jackie_rigRN.phl[166]";
+connectAttr "jackie_rigRN.phl[162]" "jackie_rigRN.phl[163]";
+connectAttr "jackie_rigRN.phl[164]" "jackie_rigRN.phl[165]";
+connectAttr "accessories_clothes.di" "jackie_rigRN.phl[66]";
+connectAttr "jackie_rigRN.phl[67]" "jackie_rigRN.phl[68]";
+connectAttr "shoes.di" "jackie_rigRN.phl[166]";
 connectAttr "geo.di" "jackie_rigRN.phl[167]";
 connectAttr "geo.di" "jackie_rigRN.phl[168]";
 connectAttr "geo.di" "jackie_rigRN.phl[169]";
@@ -13942,8 +13920,10 @@ connectAttr "geo.di" "jackie_rigRN.phl[184]";
 connectAttr "geo.di" "jackie_rigRN.phl[185]";
 connectAttr "geo.di" "jackie_rigRN.phl[186]";
 connectAttr "geo.di" "jackie_rigRN.phl[187]";
-connectAttr "jackie_rigRN.phl[188]" "jackie_rigRN.phl[189]";
-connectAttr "jackie_rigRN.phl[190]" "jackie_rigRN.phl[191]";
+connectAttr "geo.di" "jackie_rigRN.phl[188]";
+connectAttr "geo.di" "jackie_rigRN.phl[189]";
+connectAttr "geo.di" "jackie_rigRN.phl[190]";
+connectAttr "geo.di" "jackie_rigRN.phl[191]";
 connectAttr "jackie_rigRN.phl[192]" "jackie_rigRN.phl[193]";
 connectAttr "jackie_rigRN.phl[194]" "jackie_rigRN.phl[195]";
 connectAttr "jackie_rigRN.phl[196]" "jackie_rigRN.phl[197]";
@@ -13967,136 +13947,131 @@ connectAttr "jackie_rigRN.phl[230]" "jackie_rigRN.phl[231]";
 connectAttr "jackie_rigRN.phl[232]" "jackie_rigRN.phl[233]";
 connectAttr "jackie_rigRN.phl[234]" "jackie_rigRN.phl[235]";
 connectAttr "jackie_rigRN.phl[236]" "jackie_rigRN.phl[237]";
-connectAttr "jackie_rigRN.phl[455]" "pairBlend1.w";
-connectAttr "jackie_rigRN.phl[456]" "jackieEyeLeft_aimConstraint1.ct";
-connectAttr "pairBlend1.otx" "jackie_rigRN.phl[457]";
-connectAttr "pairBlend1.oty" "jackie_rigRN.phl[458]";
-connectAttr "pairBlend1.otz" "jackie_rigRN.phl[459]";
-connectAttr "pairBlend1.orx" "jackie_rigRN.phl[460]";
-connectAttr "pairBlend1.ory" "jackie_rigRN.phl[461]";
-connectAttr "pairBlend1.orz" "jackie_rigRN.phl[462]";
-connectAttr "jackie_rigRN.phl[463]" "jackieEyeLeft_aimConstraint1.crp";
-connectAttr "jackie_rigRN.phl[464]" "jackieEyeLeft_parentConstraint1.crp";
-connectAttr "eye.di" "jackie_rigRN.phl[465]";
-connectAttr "jackie_rigRN.phl[466]" "jackieEyeLeft_aimConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[467]" "jackieEyeLeft_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[468]" "jackieEyeLeft_aimConstraint1.crt";
-connectAttr "jackie_rigRN.phl[469]" "jackieEyeLeft_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[470]" "jackieEyeLeft_aimConstraint1.cro";
-connectAttr "jackie_rigRN.phl[471]" "pairBlend1.ro";
-connectAttr "jackie_rigRN.phl[472]" "jackieEyeLeft_parentConstraint1.cro";
-connectAttr "jackierEyeRight_parentConstraint1.ctx" "jackie_rigRN.phl[473]";
-connectAttr "jackierEyeRight_parentConstraint1.cty" "jackie_rigRN.phl[474]";
-connectAttr "jackierEyeRight_parentConstraint1.ctz" "jackie_rigRN.phl[475]";
-connectAttr "jackie_rigRN.phl[476]" "jackierEyeRight_parentConstraint1.crp";
-connectAttr "eye.di" "jackie_rigRN.phl[477]";
-connectAttr "jackie_rigRN.phl[478]" "jackierEyeRight_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[479]" "jackierEyeRight_parentConstraint1.crt";
-connectAttr "jackierEyeRight_parentConstraint1.crx" "jackie_rigRN.phl[480]";
-connectAttr "jackierEyeRight_parentConstraint1.cry" "jackie_rigRN.phl[481]";
-connectAttr "jackierEyeRight_parentConstraint1.crz" "jackie_rigRN.phl[482]";
-connectAttr "jackie_rigRN.phl[483]" "jackierEyeRight_parentConstraint1.cro";
-connectAttr "root_parentConstraint1.crx" "jackie_rigRN.phl[484]";
-connectAttr "root_parentConstraint1.cry" "jackie_rigRN.phl[485]";
-connectAttr "root_parentConstraint1.crz" "jackie_rigRN.phl[486]";
-connectAttr "root_parentConstraint1.ctx" "jackie_rigRN.phl[487]";
-connectAttr "root_parentConstraint1.cty" "jackie_rigRN.phl[488]";
-connectAttr "root_parentConstraint1.ctz" "jackie_rigRN.phl[489]";
-connectAttr "jackie_rigRN.phl[490]" "root_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[491]" "root_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[492]" "root_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[493]" "root_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[494]" "root_parentConstraint1.cpim";
-connectAttr "spine_1_parentConstraint1.crx" "jackie_rigRN.phl[495]";
-connectAttr "spine_1_parentConstraint1.cry" "jackie_rigRN.phl[496]";
-connectAttr "spine_1_parentConstraint1.crz" "jackie_rigRN.phl[497]";
-connectAttr "spine_1_parentConstraint1.ctx" "jackie_rigRN.phl[498]";
-connectAttr "spine_1_parentConstraint1.cty" "jackie_rigRN.phl[499]";
-connectAttr "spine_1_parentConstraint1.ctz" "jackie_rigRN.phl[500]";
-connectAttr "jackie_rigRN.phl[501]" "spine_1_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[502]" "spine_1_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[503]" "spine_1_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[504]" "spine_1_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[505]" "spine_1_parentConstraint1.crt";
-connectAttr "spine_2_parentConstraint1.crx" "jackie_rigRN.phl[506]";
-connectAttr "spine_2_parentConstraint1.cry" "jackie_rigRN.phl[507]";
-connectAttr "spine_2_parentConstraint1.crz" "jackie_rigRN.phl[508]";
-connectAttr "jackie_rigRN.phl[509]" "spine_2_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[510]" "spine_2_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[511]" "spine_2_parentConstraint1.cpim";
-connectAttr "spine_2_parentConstraint1.ctx" "jackie_rigRN.phl[512]";
-connectAttr "spine_2_parentConstraint1.cty" "jackie_rigRN.phl[513]";
-connectAttr "spine_2_parentConstraint1.ctz" "jackie_rigRN.phl[514]";
-connectAttr "jackie_rigRN.phl[515]" "spine_2_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[516]" "spine_2_parentConstraint1.crt";
-connectAttr "spine_3_parentConstraint1.crx" "jackie_rigRN.phl[517]";
-connectAttr "spine_3_parentConstraint1.cry" "jackie_rigRN.phl[518]";
-connectAttr "spine_3_parentConstraint1.crz" "jackie_rigRN.phl[519]";
-connectAttr "jackie_rigRN.phl[520]" "spine_3_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[521]" "spine_3_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[522]" "spine_3_parentConstraint1.cpim";
-connectAttr "spine_3_parentConstraint1.ctx" "jackie_rigRN.phl[523]";
-connectAttr "spine_3_parentConstraint1.cty" "jackie_rigRN.phl[524]";
-connectAttr "spine_3_parentConstraint1.ctz" "jackie_rigRN.phl[525]";
-connectAttr "jackie_rigRN.phl[526]" "spine_3_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[527]" "spine_3_parentConstraint1.crt";
-connectAttr "spine_4_parentConstraint1.crx" "jackie_rigRN.phl[528]";
-connectAttr "spine_4_parentConstraint1.cry" "jackie_rigRN.phl[529]";
-connectAttr "spine_4_parentConstraint1.crz" "jackie_rigRN.phl[530]";
-connectAttr "jackie_rigRN.phl[531]" "spine_4_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[532]" "spine_4_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[533]" "spine_4_parentConstraint1.cpim";
-connectAttr "spine_4_parentConstraint1.ctx" "jackie_rigRN.phl[534]";
-connectAttr "spine_4_parentConstraint1.cty" "jackie_rigRN.phl[535]";
-connectAttr "spine_4_parentConstraint1.ctz" "jackie_rigRN.phl[536]";
-connectAttr "jackie_rigRN.phl[537]" "spine_4_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[538]" "spine_4_parentConstraint1.crt";
-connectAttr "spine_5_parentConstraint1.crx" "jackie_rigRN.phl[539]";
-connectAttr "spine_5_parentConstraint1.cry" "jackie_rigRN.phl[540]";
-connectAttr "spine_5_parentConstraint1.crz" "jackie_rigRN.phl[541]";
-connectAttr "jackie_rigRN.phl[542]" "spine_5_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[543]" "spine_5_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[544]" "spine_5_parentConstraint1.cpim";
-connectAttr "spine_5_parentConstraint1.ctx" "jackie_rigRN.phl[545]";
-connectAttr "spine_5_parentConstraint1.cty" "jackie_rigRN.phl[546]";
-connectAttr "spine_5_parentConstraint1.ctz" "jackie_rigRN.phl[547]";
-connectAttr "jackie_rigRN.phl[548]" "spine_5_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[549]" "spine_5_parentConstraint1.crt";
-connectAttr "chest_parentConstraint1.ctx" "jackie_rigRN.phl[550]";
-connectAttr "chest_parentConstraint1.cty" "jackie_rigRN.phl[551]";
-connectAttr "chest_parentConstraint1.ctz" "jackie_rigRN.phl[552]";
-connectAttr "chest_parentConstraint1.crx" "jackie_rigRN.phl[553]";
-connectAttr "chest_parentConstraint1.cry" "jackie_rigRN.phl[554]";
-connectAttr "chest_parentConstraint1.crz" "jackie_rigRN.phl[555]";
-connectAttr "jackie_rigRN.phl[556]" "chest_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[557]" "chest_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[558]" "chest_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[559]" "chest_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[560]" "chest_parentConstraint1.crt";
-connectAttr "low_neck_parentConstraint1.ctx" "jackie_rigRN.phl[561]";
-connectAttr "low_neck_parentConstraint1.cty" "jackie_rigRN.phl[562]";
-connectAttr "low_neck_parentConstraint1.ctz" "jackie_rigRN.phl[563]";
-connectAttr "low_neck_parentConstraint1.cry" "jackie_rigRN.phl[564]";
-connectAttr "low_neck_parentConstraint1.crx" "jackie_rigRN.phl[565]";
-connectAttr "low_neck_parentConstraint1.crz" "jackie_rigRN.phl[566]";
-connectAttr "jackie_rigRN.phl[567]" "low_neck_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[568]" "low_neck_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[569]" "low_neck_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[570]" "low_neck_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[571]" "low_neck_parentConstraint1.crt";
-connectAttr "pairBlend2.orx" "jackie_rigRN.phl[572]";
-connectAttr "pairBlend2.ory" "jackie_rigRN.phl[573]";
-connectAttr "pairBlend2.orz" "jackie_rigRN.phl[574]";
-connectAttr "pairBlend2.otx" "jackie_rigRN.phl[575]";
-connectAttr "pairBlend2.oty" "jackie_rigRN.phl[576]";
-connectAttr "pairBlend2.otz" "jackie_rigRN.phl[577]";
-connectAttr "jackie_rigRN.phl[578]" "pairBlend2.w";
-connectAttr "jackie_rigRN.phl[579]" "pairBlend2.ro";
-connectAttr "jackie_rigRN.phl[580]" "high_neck_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[581]" "high_neck_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[582]" "high_neck_parentConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[583]" "high_neck_parentConstraint1.crp";
-connectAttr "jackie_rigRN.phl[584]" "high_neck_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[238]" "jackie_rigRN.phl[239]";
+connectAttr "jackie_rigRN.phl[240]" "jackie_rigRN.phl[241]";
+connectAttr "jackie_rigRN.phl[459]" "pairBlend1.w";
+connectAttr "jackie_rigRN.phl[460]" "jackieEyeLeft_aimConstraint1.ct";
+connectAttr "pairBlend1.otx" "jackie_rigRN.phl[461]";
+connectAttr "pairBlend1.oty" "jackie_rigRN.phl[462]";
+connectAttr "pairBlend1.otz" "jackie_rigRN.phl[463]";
+connectAttr "pairBlend1.orx" "jackie_rigRN.phl[464]";
+connectAttr "pairBlend1.ory" "jackie_rigRN.phl[465]";
+connectAttr "pairBlend1.orz" "jackie_rigRN.phl[466]";
+connectAttr "jackie_rigRN.phl[467]" "jackieEyeLeft_aimConstraint1.crp";
+connectAttr "jackie_rigRN.phl[468]" "jackieEyeLeft_parentConstraint1.crp";
+connectAttr "eye.di" "jackie_rigRN.phl[469]";
+connectAttr "jackie_rigRN.phl[470]" "jackieEyeLeft_aimConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[471]" "jackieEyeLeft_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[472]" "jackieEyeLeft_aimConstraint1.crt";
+connectAttr "jackie_rigRN.phl[473]" "jackieEyeLeft_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[474]" "jackieEyeLeft_aimConstraint1.cro";
+connectAttr "jackie_rigRN.phl[475]" "pairBlend1.ro";
+connectAttr "jackie_rigRN.phl[476]" "jackieEyeLeft_parentConstraint1.cro";
+connectAttr "jackierEyeRight_parentConstraint1.ctx" "jackie_rigRN.phl[477]";
+connectAttr "jackierEyeRight_parentConstraint1.cty" "jackie_rigRN.phl[478]";
+connectAttr "jackierEyeRight_parentConstraint1.ctz" "jackie_rigRN.phl[479]";
+connectAttr "jackie_rigRN.phl[480]" "jackierEyeRight_parentConstraint1.crp";
+connectAttr "eye.di" "jackie_rigRN.phl[481]";
+connectAttr "jackie_rigRN.phl[482]" "jackierEyeRight_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[483]" "jackierEyeRight_parentConstraint1.crt";
+connectAttr "jackierEyeRight_parentConstraint1.crx" "jackie_rigRN.phl[484]";
+connectAttr "jackierEyeRight_parentConstraint1.cry" "jackie_rigRN.phl[485]";
+connectAttr "jackierEyeRight_parentConstraint1.crz" "jackie_rigRN.phl[486]";
+connectAttr "jackie_rigRN.phl[487]" "jackierEyeRight_parentConstraint1.cro";
+connectAttr "root_parentConstraint1.crx" "jackie_rigRN.phl[488]";
+connectAttr "root_parentConstraint1.cry" "jackie_rigRN.phl[489]";
+connectAttr "root_parentConstraint1.crz" "jackie_rigRN.phl[490]";
+connectAttr "root_parentConstraint1.ctx" "jackie_rigRN.phl[491]";
+connectAttr "root_parentConstraint1.cty" "jackie_rigRN.phl[492]";
+connectAttr "root_parentConstraint1.ctz" "jackie_rigRN.phl[493]";
+connectAttr "jackie_rigRN.phl[494]" "root_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[495]" "root_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[496]" "root_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[497]" "root_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[498]" "root_parentConstraint1.cpim";
+connectAttr "spine_1_parentConstraint1.crx" "jackie_rigRN.phl[499]";
+connectAttr "spine_1_parentConstraint1.cry" "jackie_rigRN.phl[500]";
+connectAttr "spine_1_parentConstraint1.crz" "jackie_rigRN.phl[501]";
+connectAttr "spine_1_parentConstraint1.ctx" "jackie_rigRN.phl[502]";
+connectAttr "spine_1_parentConstraint1.cty" "jackie_rigRN.phl[503]";
+connectAttr "spine_1_parentConstraint1.ctz" "jackie_rigRN.phl[504]";
+connectAttr "jackie_rigRN.phl[505]" "spine_1_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[506]" "spine_1_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[507]" "spine_1_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[508]" "spine_1_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[509]" "spine_1_parentConstraint1.crt";
+connectAttr "spine_2_parentConstraint1.crx" "jackie_rigRN.phl[510]";
+connectAttr "spine_2_parentConstraint1.cry" "jackie_rigRN.phl[511]";
+connectAttr "spine_2_parentConstraint1.crz" "jackie_rigRN.phl[512]";
+connectAttr "jackie_rigRN.phl[513]" "spine_2_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[514]" "spine_2_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[515]" "spine_2_parentConstraint1.cpim";
+connectAttr "spine_2_parentConstraint1.ctx" "jackie_rigRN.phl[516]";
+connectAttr "spine_2_parentConstraint1.cty" "jackie_rigRN.phl[517]";
+connectAttr "spine_2_parentConstraint1.ctz" "jackie_rigRN.phl[518]";
+connectAttr "jackie_rigRN.phl[519]" "spine_2_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[520]" "spine_2_parentConstraint1.crt";
+connectAttr "spine_3_parentConstraint1.crx" "jackie_rigRN.phl[521]";
+connectAttr "spine_3_parentConstraint1.cry" "jackie_rigRN.phl[522]";
+connectAttr "spine_3_parentConstraint1.crz" "jackie_rigRN.phl[523]";
+connectAttr "jackie_rigRN.phl[524]" "spine_3_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[525]" "spine_3_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[526]" "spine_3_parentConstraint1.cpim";
+connectAttr "spine_3_parentConstraint1.ctx" "jackie_rigRN.phl[527]";
+connectAttr "spine_3_parentConstraint1.cty" "jackie_rigRN.phl[528]";
+connectAttr "spine_3_parentConstraint1.ctz" "jackie_rigRN.phl[529]";
+connectAttr "jackie_rigRN.phl[530]" "spine_3_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[531]" "spine_3_parentConstraint1.crt";
+connectAttr "spine_4_parentConstraint1.crx" "jackie_rigRN.phl[532]";
+connectAttr "spine_4_parentConstraint1.cry" "jackie_rigRN.phl[533]";
+connectAttr "spine_4_parentConstraint1.crz" "jackie_rigRN.phl[534]";
+connectAttr "jackie_rigRN.phl[535]" "spine_4_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[536]" "spine_4_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[537]" "spine_4_parentConstraint1.cpim";
+connectAttr "spine_4_parentConstraint1.ctx" "jackie_rigRN.phl[538]";
+connectAttr "spine_4_parentConstraint1.cty" "jackie_rigRN.phl[539]";
+connectAttr "spine_4_parentConstraint1.ctz" "jackie_rigRN.phl[540]";
+connectAttr "jackie_rigRN.phl[541]" "spine_4_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[542]" "spine_4_parentConstraint1.crt";
+connectAttr "spine_5_parentConstraint1.crx" "jackie_rigRN.phl[543]";
+connectAttr "spine_5_parentConstraint1.cry" "jackie_rigRN.phl[544]";
+connectAttr "spine_5_parentConstraint1.crz" "jackie_rigRN.phl[545]";
+connectAttr "jackie_rigRN.phl[546]" "spine_5_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[547]" "spine_5_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[548]" "spine_5_parentConstraint1.cpim";
+connectAttr "spine_5_parentConstraint1.ctx" "jackie_rigRN.phl[549]";
+connectAttr "spine_5_parentConstraint1.cty" "jackie_rigRN.phl[550]";
+connectAttr "spine_5_parentConstraint1.ctz" "jackie_rigRN.phl[551]";
+connectAttr "jackie_rigRN.phl[552]" "spine_5_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[553]" "spine_5_parentConstraint1.crt";
+connectAttr "chest_parentConstraint1.ctx" "jackie_rigRN.phl[554]";
+connectAttr "chest_parentConstraint1.cty" "jackie_rigRN.phl[555]";
+connectAttr "chest_parentConstraint1.ctz" "jackie_rigRN.phl[556]";
+connectAttr "chest_parentConstraint1.crx" "jackie_rigRN.phl[557]";
+connectAttr "chest_parentConstraint1.cry" "jackie_rigRN.phl[558]";
+connectAttr "chest_parentConstraint1.crz" "jackie_rigRN.phl[559]";
+connectAttr "jackie_rigRN.phl[560]" "chest_parentConstraint1.cro";
+connectAttr "jackie_rigRN.phl[561]" "chest_parentConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[562]" "chest_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[563]" "chest_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[564]" "chest_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[565]" "low_neck_orientConstraint1.is";
+connectAttr "low_neck_orientConstraint1.cry" "jackie_rigRN.phl[566]";
+connectAttr "low_neck_orientConstraint1.crx" "jackie_rigRN.phl[567]";
+connectAttr "low_neck_orientConstraint1.crz" "jackie_rigRN.phl[568]";
+connectAttr "jackie_rigRN.phl[569]" "low_neck_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[570]" "low_neck_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[571]" "low_neck_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[572]" "high_neck_orientConstraint1.is";
+connectAttr "high_neck_orientConstraint1.crx" "jackie_rigRN.phl[573]";
+connectAttr "high_neck_orientConstraint1.cry" "jackie_rigRN.phl[574]";
+connectAttr "high_neck_orientConstraint1.crz" "jackie_rigRN.phl[575]";
+connectAttr "jackie_rigRN.phl[576]" "jackie_rigRN.phl[577]";
+connectAttr "jackie_rigRN.phl[578]" "jackie_rigRN.phl[579]";
+connectAttr "jackie_rigRN.phl[580]" "jackie_rigRN.phl[581]";
+connectAttr "jackie_rigRN.phl[582]" "high_neck_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[583]" "high_neck_orientConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[584]" "high_neck_orientConstraint1.cjo";
 connectAttr "jackie_rigRN.phl[585]" "head_orientConstraint1.is";
 connectAttr "head_orientConstraint1.crx" "jackie_rigRN.phl[586]";
 connectAttr "head_orientConstraint1.cry" "jackie_rigRN.phl[587]";
@@ -15217,12 +15192,7 @@ connectAttr "jackie_rigRN.phl[1629]" "jackie_rigRN.phl[1630]";
 connectAttr "jackie_rigRN.phl[1631]" "jackie_rigRN.phl[1632]";
 connectAttr "jackie_rigRN.phl[1633]" "jackie_rigRN.phl[1634]";
 connectAttr "jackie_rigRN.phl[1635]" "jackie_rigRN.phl[1636]";
-connectAttr "jackie_rigRN.phl[1637]" "pairBlend2.itx1";
-connectAttr "jackie_rigRN.phl[1638]" "pairBlend2.ity1";
-connectAttr "jackie_rigRN.phl[1639]" "pairBlend2.itz1";
-connectAttr "accessories_clothes.di" "jackie_rigRN.phl[65]";
-connectAttr "jackie_rigRN.phl[66]" "jackie_rigRN.phl[67]";
-connectAttr "jackie_rigRN.phl[68]" "jackie_rigRN.phl[69]";
+connectAttr "accessories_clothes.di" "jackie_rigRN.phl[69]";
 connectAttr "jackie_rigRN.phl[70]" "jackie_rigRN.phl[71]";
 connectAttr "jackie_rigRN.phl[72]" "jackie_rigRN.phl[73]";
 connectAttr "jackie_rigRN.phl[74]" "jackie_rigRN.phl[75]";
@@ -15231,11 +15201,9 @@ connectAttr "jackie_rigRN.phl[78]" "jackie_rigRN.phl[79]";
 connectAttr "jackie_rigRN.phl[80]" "jackie_rigRN.phl[81]";
 connectAttr "jackie_rigRN.phl[82]" "jackie_rigRN.phl[83]";
 connectAttr "jackie_rigRN.phl[84]" "jackie_rigRN.phl[85]";
-connectAttr "accessories_clothes.di" "jackie_rigRN.phl[238]";
-connectAttr "geo.di" "jackie_rigRN.phl[239]";
-connectAttr "geo.di" "jackie_rigRN.phl[240]";
-connectAttr "geo.di" "jackie_rigRN.phl[241]";
-connectAttr "geo.di" "jackie_rigRN.phl[242]";
+connectAttr "jackie_rigRN.phl[86]" "jackie_rigRN.phl[87]";
+connectAttr "jackie_rigRN.phl[88]" "jackie_rigRN.phl[89]";
+connectAttr "accessories_clothes.di" "jackie_rigRN.phl[242]";
 connectAttr "geo.di" "jackie_rigRN.phl[243]";
 connectAttr "geo.di" "jackie_rigRN.phl[244]";
 connectAttr "geo.di" "jackie_rigRN.phl[245]";
@@ -15304,8 +15272,10 @@ connectAttr "geo.di" "jackie_rigRN.phl[307]";
 connectAttr "geo.di" "jackie_rigRN.phl[308]";
 connectAttr "geo.di" "jackie_rigRN.phl[309]";
 connectAttr "geo.di" "jackie_rigRN.phl[310]";
-connectAttr "jackie_rigRN.phl[311]" "jackie_rigRN.phl[312]";
-connectAttr "jackie_rigRN.phl[313]" "jackie_rigRN.phl[314]";
+connectAttr "geo.di" "jackie_rigRN.phl[311]";
+connectAttr "geo.di" "jackie_rigRN.phl[312]";
+connectAttr "geo.di" "jackie_rigRN.phl[313]";
+connectAttr "geo.di" "jackie_rigRN.phl[314]";
 connectAttr "jackie_rigRN.phl[315]" "jackie_rigRN.phl[316]";
 connectAttr "jackie_rigRN.phl[317]" "jackie_rigRN.phl[318]";
 connectAttr "jackie_rigRN.phl[319]" "jackie_rigRN.phl[320]";
@@ -15376,8 +15346,10 @@ connectAttr "jackie_rigRN.phl[447]" "jackie_rigRN.phl[448]";
 connectAttr "jackie_rigRN.phl[449]" "jackie_rigRN.phl[450]";
 connectAttr "jackie_rigRN.phl[451]" "jackie_rigRN.phl[452]";
 connectAttr "jackie_rigRN.phl[453]" "jackie_rigRN.phl[454]";
-connectAttr "geo.di" "jackie_rigRN.phl[60]";
-connectAttr "jackie_rigRN.phl[61]" ":initialShadingGroup.dsm" -na;
+connectAttr "jackie_rigRN.phl[455]" "jackie_rigRN.phl[456]";
+connectAttr "jackie_rigRN.phl[457]" "jackie_rigRN.phl[458]";
+connectAttr "geo.di" "jackie_rigRN.phl[64]";
+connectAttr "jackie_rigRN.phl[65]" ":initialShadingGroup.dsm" -na;
 connectAttr "teeth_v1_latestRN1.phl[1]" "Teeth_parentConstraint1.crp";
 connectAttr "Teeth_parentConstraint1.ctx" "teeth_v1_latestRN1.phl[2]";
 connectAttr "Teeth_parentConstraint1.ctz" "teeth_v1_latestRN1.phl[3]";
@@ -15531,6 +15503,7 @@ connectAttr "rt_clavicle_ctl.pm" "rt_clavicle_ikHandle_parentConstraint1.tg[0].t
 		;
 connectAttr "rt_clavicle_ikHandle_parentConstraint1.w0" "rt_clavicle_ikHandle_parentConstraint1.tg[0].tw"
 		;
+connectAttr "rt_elbow_PV_ctl_visibility.o" "rt_elbow_PV_ctl.v";
 connectAttr "rt_shoulder_locatorShape.wp" "rt_arm_distanceDimensionShape.sp";
 connectAttr "rt_wrist_locatorShape.wp" "rt_arm_distanceDimensionShape.ep";
 connectAttr "rt_palm_ctl_parentConstraint1.ctx" "rt_palm_ctl.tx";
@@ -15539,12 +15512,12 @@ connectAttr "rt_palm_ctl_parentConstraint1.ctz" "rt_palm_ctl.tz";
 connectAttr "rt_palm_ctl_parentConstraint1.crx" "rt_palm_ctl.rx";
 connectAttr "rt_palm_ctl_parentConstraint1.cry" "rt_palm_ctl.ry";
 connectAttr "rt_palm_ctl_parentConstraint1.crz" "rt_palm_ctl.rz";
+connectAttr "rt_palm_ctl_parentConstraint1.w0" "rt_palm_ctl_parentConstraint1.tg[0].tw"
+		;
 connectAttr "rt_palm_ctl.ro" "rt_palm_ctl_parentConstraint1.cro";
 connectAttr "rt_palm_ctl.pim" "rt_palm_ctl_parentConstraint1.cpim";
 connectAttr "rt_palm_ctl.rp" "rt_palm_ctl_parentConstraint1.crp";
 connectAttr "rt_palm_ctl.rpt" "rt_palm_ctl_parentConstraint1.crt";
-connectAttr "rt_palm_ctl_parentConstraint1.w0" "rt_palm_ctl_parentConstraint1.tg[0].tw"
-		;
 connectAttr "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.ctx" "lf_arm_ikfkSwitch_ctl.tx"
 		 -l on;
 connectAttr "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.cty" "lf_arm_ikfkSwitch_ctl.ty"
@@ -15582,6 +15555,7 @@ connectAttr "lf_palm_ctl.rpt" "lf_palm_ctl_parentConstraint1.crt";
 connectAttr "jackie_lf_shoulder_fk_ctl_visibility.o" "lf_shoulder_fk_ctl.v";
 connectAttr "jackie_lf_elbow_fk_ctl_visibility.o" "lf_elbow_fk_ctl.v";
 connectAttr "jackie_lf_wrist_fk_ctl_visibility.o" "lf_wrist_fk_ctl.v";
+connectAttr "lf_elbow_PV_ctl_visibility.o" "lf_elbow_PV_ctl.v";
 connectAttr "lf_wrist_ik_ctl_visibility.o" "lf_wrist_ik_ctl.v";
 connectAttr "lf_wrist_ik_ctl.t" "lf_wrist_ikHandle_pointConstraint1.tg[0].tt";
 connectAttr "lf_wrist_ik_ctl.rp" "lf_wrist_ikHandle_pointConstraint1.tg[0].trp";
@@ -16489,23 +16463,15 @@ connectAttr "lf_elbow_twist_ctl.ro" "left_bicep_orientConstraint1.tg[0].tro";
 connectAttr "lf_elbow_twist_ctl.pm" "left_bicep_orientConstraint1.tg[0].tpm";
 connectAttr "left_bicep_orientConstraint1.w0" "left_bicep_orientConstraint1.tg[0].tw"
 		;
-connectAttr "neck1_ctl.t" "low_neck_parentConstraint1.tg[0].tt";
-connectAttr "neck1_ctl.rp" "low_neck_parentConstraint1.tg[0].trp";
-connectAttr "neck1_ctl.rpt" "low_neck_parentConstraint1.tg[0].trt";
-connectAttr "neck1_ctl.r" "low_neck_parentConstraint1.tg[0].tr";
-connectAttr "neck1_ctl.ro" "low_neck_parentConstraint1.tg[0].tro";
-connectAttr "neck1_ctl.s" "low_neck_parentConstraint1.tg[0].ts";
-connectAttr "neck1_ctl.pm" "low_neck_parentConstraint1.tg[0].tpm";
-connectAttr "low_neck_parentConstraint1.w0" "low_neck_parentConstraint1.tg[0].tw"
+connectAttr "neck1_ctl.r" "low_neck_orientConstraint1.tg[0].tr";
+connectAttr "neck1_ctl.ro" "low_neck_orientConstraint1.tg[0].tro";
+connectAttr "neck1_ctl.pm" "low_neck_orientConstraint1.tg[0].tpm";
+connectAttr "low_neck_orientConstraint1.w0" "low_neck_orientConstraint1.tg[0].tw"
 		;
-connectAttr "neck2_ctl.t" "high_neck_parentConstraint1.tg[0].tt";
-connectAttr "neck2_ctl.rp" "high_neck_parentConstraint1.tg[0].trp";
-connectAttr "neck2_ctl.rpt" "high_neck_parentConstraint1.tg[0].trt";
-connectAttr "neck2_ctl.r" "high_neck_parentConstraint1.tg[0].tr";
-connectAttr "neck2_ctl.ro" "high_neck_parentConstraint1.tg[0].tro";
-connectAttr "neck2_ctl.s" "high_neck_parentConstraint1.tg[0].ts";
-connectAttr "neck2_ctl.pm" "high_neck_parentConstraint1.tg[0].tpm";
-connectAttr "high_neck_parentConstraint1.w0" "high_neck_parentConstraint1.tg[0].tw"
+connectAttr "head_ctl.r" "high_neck_orientConstraint1.tg[0].tr";
+connectAttr "head_ctl.ro" "high_neck_orientConstraint1.tg[0].tro";
+connectAttr "head_ctl.pm" "high_neck_orientConstraint1.tg[0].tpm";
+connectAttr "high_neck_orientConstraint1.w0" "high_neck_orientConstraint1.tg[0].tw"
 		;
 connectAttr "head_ctl.r" "head_orientConstraint1.tg[0].tr";
 connectAttr "head_ctl.ro" "head_orientConstraint1.tg[0].tro";
@@ -16912,13 +16878,9 @@ connectAttr "rt_shoulder_locatorShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].n
 connectAttr "rt_arm_distanceDimension.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[8].dn"
 		;
 connectAttr "multiplyDivide2.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[9].dn";
-connectAttr "high_neck_parentConstraint1.ctx" "pairBlend2.itx2";
-connectAttr "high_neck_parentConstraint1.cty" "pairBlend2.ity2";
-connectAttr "high_neck_parentConstraint1.ctz" "pairBlend2.itz2";
-connectAttr "high_neck_parentConstraint1.crx" "pairBlend2.irx2";
-connectAttr "high_neck_parentConstraint1.cry" "pairBlend2.iry2";
-connectAttr "high_neck_parentConstraint1.crz" "pairBlend2.irz2";
 connectAttr "layerManager.dli[4]" "shoes.id";
+connectAttr "rt_arm_ikfkSwitch_ctl.IKFK_Switch" "rt_elbow_PV_ctl_visibility.i";
+connectAttr "lf_arm_ikfkSwitch_ctl.IKFK_Switch" "lf_elbow_PV_ctl_visibility.i";
 connectAttr "blendColors1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "blendColors2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "multiplyDivide1.msg" ":defaultRenderUtilityList1.u" -na;
@@ -16926,7 +16888,7 @@ connectAttr "condition1.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "multiplyDivide2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "condition2.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "jackie_rigRN.phl[59]" ":initialShadingGroup.dsm" -na;
+connectAttr "jackie_rigRN.phl[63]" ":initialShadingGroup.dsm" -na;
 connectAttr "jackie_rigRN.phl[2]" ":initialShadingGroup.dsm" -na;
 connectAttr "jackie_rigRN.phl[3]" ":initialShadingGroup.dsm" -na;
 connectAttr "jackie_rigRN.phl[4]" ":initialShadingGroup.dsm" -na;
