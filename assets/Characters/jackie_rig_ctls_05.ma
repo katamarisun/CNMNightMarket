@@ -1,6 +1,6 @@
 //Maya ASCII 2018ff09 scene
 //Name: jackie_rig_ctls_05.ma
-//Last modified: Mon, Feb 11, 2019 07:33:50 PM
+//Last modified: Mon, Feb 11, 2019 08:44:48 PM
 //Codeset: 1252
 file -rdi 1 -ns "jackie_rig" -rfn "jackie_rigRN" -op "v=0;p=17;f=0" -typ "mayaAscii"
 		 "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_skinning.ma";
@@ -29,7 +29,6 @@ requires -nodeType "PxrNormalMap" -nodeType "PxrSurface" -nodeType "rmanDisplayC
 		 -nodeType "d_openexr" -nodeType "rmanGlobals" -nodeType "PxrPathTracer" -nodeType "rmanDisplay"
 		 "RenderMan_for_Maya.py" "22.3 @ 1923583";
 requires "mtoa" "3.1.1.1";
-requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "exportedFrom" "C:/Users/yacob/Documents/maya/projects/CNMNightMarket/assets/Characters/jackie_rig_ctls_03.ma";
 fileInfo "application" "maya";
@@ -41,14 +40,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "AD6D84A1-48BE-235D-D555-A58279DBEE5B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.36284749763569413 7.3070793525309385 13.661623415277361 ;
-	setAttr ".r" -type "double3" -17.13835272618007 -2520.1999999998293 1.8636176124662523e-17 ;
+	setAttr ".t" -type "double3" -6.9667508503815352 11.032710001556337 23.580145674413458 ;
+	setAttr ".r" -type "double3" -17.138352726180166 -2534.5999999998062 -4.1083555608404378e-16 ;
 	setAttr ".hio" yes;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A67F90E6-4184-0E83-6AE3-E5A0E87E9B44";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 14.910906594378265;
+	setAttr ".coi" 26.417731495546931;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -763,75 +762,6 @@ createNode nurbsCurve -n "curveShape12" -p "rt_clavicle_ctl";
 		-0.5383164859883478 6.0238760254584207 -0.2292750030755959
 		-0.66453572282412754 6.2213139447273855 -0.22927500307560006
 		;
-createNode transform -n "rt_wrist_ik_ctl" -p "rt_arm_IKs";
-	rename -uid "8B975BA2-40ED-9F63-F085-F0AA65462B2C";
-	setAttr -l on -k off ".sx";
-	setAttr -l on -k off ".sy";
-	setAttr -l on -k off ".sz";
-	setAttr ".rp" -type "double3" -2.7577900886535645 5.6030502319335938 -0.1721780002117157 ;
-	setAttr ".sp" -type "double3" -2.7577900886535645 5.6030502319335938 -0.1721780002117157 ;
-createNode nurbsCurve -n "curveShape15" -p "rt_wrist_ik_ctl";
-	rename -uid "F4139DDC-4036-5F19-22BE-57A278C8E4C2";
-	setAttr -k off ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 13;
-	setAttr ".cc" -type "nurbsCurve" 
-		1 4 0 no 3
-		5 0 1 2 3 4
-		5
-		-2.7577900886535645 6.0028642633332847 -0.57199203161140688
-		-2.7577900886535645 5.2032362005339028 -0.57199203161140688
-		-2.7577900886535645 5.2032362005339028 0.22763603118797548
-		-2.7577900886535645 6.0028642633332847 0.22763603118797548
-		-2.7577900886535645 6.0028642633332847 -0.57199203161140688
-		;
-createNode transform -n "rt_wrist_locator" -p "rt_wrist_ik_ctl";
-	rename -uid "4221C013-422E-480B-D937-7FBCBA6C76C8";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" -2.7650978565216064 5.6830854415893555 -0.16821126639842987 ;
-createNode locator -n "rt_wrist_locatorShape" -p "rt_wrist_locator";
-	rename -uid "0C9AF238-468A-9A68-32D3-9A83CC7BEFBD";
-	setAttr -k off ".v";
-createNode transform -n "rt_wrist_ikHandleGRP" -p "rt_arm_IKs";
-	rename -uid "6C702E36-4873-0340-7D66-948A28A5CA22";
-createNode ikHandle -n "rt_wrist_ikHandle" -p "rt_wrist_ikHandleGRP";
-	rename -uid "0CE8F960-4280-007B-0A39-C6835684F11B";
-	setAttr ".t" -type "double3" -2.7577900886535645 5.6030502319335938 -0.1721780002117157 ;
-	setAttr ".roc" yes;
-createNode poleVectorConstraint -n "rt_wrist_ikHandle_poleVectorConstraint1" -p "rt_wrist_ikHandle";
-	rename -uid "60CF5F33-4569-8EE7-4E3F-B1A9E22F5EDC";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "rt_elbow_PV_ctlW0" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr ".rst" -type "double3" -1.2707120212860121 -0.013340070343016208 -1.4386791418867304 ;
-	setAttr -k on ".w0";
-createNode pointConstraint -n "rt_wrist_ikHandleGRP_pointConstraint1" -p "rt_wrist_ikHandleGRP";
-	rename -uid "AEAF2613-4712-4128-ADD3-82A7A7B4C370";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "rt_wrist_ik_ctlW0" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr ".o" -type "double3" 2.7577900886535645 -5.6030502319335938 0.1721780002117157 ;
-	setAttr -k on ".w0";
 createNode transform -n "rt_clavicle_ikHandleGRP" -p "rt_arm_IKs";
 	rename -uid "77DD24AA-477D-4DA9-5771-18B4D9B469E0";
 createNode ikHandle -n "rt_clavicle_ikHandle" -p "rt_clavicle_ikHandleGRP";
@@ -2363,57 +2293,6 @@ createNode nurbsCurve -n "curveShape13" -p "lf_elbow_PV_ctl";
 		1.7398361658211883 5.6130037307739258 -1.5934457922278771
 		1.8091055154800415 5.6130037307739258 -1.5647535184565378
 		;
-createNode transform -n "lf_wrist_ik_ctl" -p "lf_IKs";
-	rename -uid "11BE856A-453B-BB9B-83A3-0CA01693B779";
-	setAttr -k off ".v";
-	setAttr -l on -k off ".sx";
-	setAttr -l on -k off ".sy";
-	setAttr -l on -k off ".sz";
-	setAttr ".rp" -type "double3" 2.7577939033508301 5.6030488014221191 -0.17217794060707092 ;
-	setAttr ".sp" -type "double3" 2.7577939033508301 5.6030488014221191 -0.17217794060707092 ;
-createNode nurbsCurve -n "curveShape3" -p "lf_wrist_ik_ctl";
-	rename -uid "B81CD97A-4A7E-50B2-39F1-E49A4EC36FA0";
-	setAttr -k off ".v";
-	setAttr ".ove" yes;
-	setAttr ".ovc" 6;
-	setAttr ".cc" -type "nurbsCurve" 
-		1 4 0 no 3
-		5 0 1 2 3 4
-		5
-		2.7577939033508301 6.0019036082537482 -0.57103274743870003
-		2.7577939033508301 5.20419399459049 -0.57103274743870003
-		2.7577939033508301 5.20419399459049 0.22667686622455815
-		2.7577939033508301 6.0019036082537482 0.22667686622455815
-		2.7577939033508301 6.0019036082537482 -0.57103274743870003
-		;
-createNode transform -n "lf_locator_distance_wrist" -p "lf_wrist_ik_ctl";
-	rename -uid "7BC1419B-47D0-23F8-5FA0-309CE7396B0A";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.7581872940063477 5.6033101081848145 -0.1721784770488739 ;
-createNode locator -n "lf_locator_distance_wristShape" -p "lf_locator_distance_wrist";
-	rename -uid "65C07752-45F3-3C83-24DF-6DA4667A7926";
-	setAttr -k off ".v";
-createNode transform -n "lf_wrist_ikHandleGRP" -p "lf_IKs";
-	rename -uid "9993FBE7-4640-EEF1-C400-0EA65C7C8DE6";
-createNode pointConstraint -n "lf_wrist_ikHandle_pointConstraint1" -p "lf_wrist_ikHandleGRP";
-	rename -uid "4447E752-411B-BA95-A359-66BAC3610A21";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lf_wrist_ik_ctlW0" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr ".t" -type "double3" 2.7577939033508301 5.6079952867809784 -0.18503644957098297 ;
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr ".cpim" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
-	setAttr ".rst" -type "double3" 2.7577939033508301 5.6079952867809784 -0.18503644957098297 ;
-	setAttr -k on ".w0";
 createNode transform -n "lf_clavicle_ikHandleGRP" -p "lf_IKs";
 	rename -uid "107182E6-46D1-9BC6-8715-8C93059C1A5C";
 createNode ikHandle -n "lf_clavicle_ikHandle" -p "lf_clavicle_ikHandleGRP";
@@ -3558,6 +3437,128 @@ createNode nurbsCurve -n "eye_lf_ctlShape" -p "eye_lf_ctl";
 		0.16744890809059143 6.4505186503532066 1
 		0.13128862782447825 6.4654967288586427 1
 		;
+createNode transform -n "rt_wrist_ik_ctl" -p "jackie_MASTER_ctl";
+	rename -uid "8B975BA2-40ED-9F63-F085-F0AA65462B2C";
+	setAttr -l on -k off ".sx";
+	setAttr -l on -k off ".sy";
+	setAttr -l on -k off ".sz";
+	setAttr ".rp" -type "double3" -2.7577900886535645 5.6030502319335938 -0.1721780002117157 ;
+	setAttr ".sp" -type "double3" -2.7577900886535645 5.6030502319335938 -0.1721780002117157 ;
+createNode nurbsCurve -n "curveShape15" -p "rt_wrist_ik_ctl";
+	rename -uid "F4139DDC-4036-5F19-22BE-57A278C8E4C2";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".cc" -type "nurbsCurve" 
+		1 4 0 no 3
+		5 0 1 2 3 4
+		5
+		-2.7577900886535645 6.0028642633332847 -0.57199203161140688
+		-2.7577900886535645 5.2032362005339028 -0.57199203161140688
+		-2.7577900886535645 5.2032362005339028 0.22763603118797548
+		-2.7577900886535645 6.0028642633332847 0.22763603118797548
+		-2.7577900886535645 6.0028642633332847 -0.57199203161140688
+		;
+createNode transform -n "rt_wrist_locator" -p "rt_wrist_ik_ctl";
+	rename -uid "4221C013-422E-480B-D937-7FBCBA6C76C8";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" -2.7650978565216064 5.6830854415893555 -0.16821126639842987 ;
+createNode locator -n "rt_wrist_locatorShape" -p "rt_wrist_locator";
+	rename -uid "0C9AF238-468A-9A68-32D3-9A83CC7BEFBD";
+	setAttr -k off ".v";
+createNode transform -n "rt_wrist_ikHandleGRP" -p "jackie_MASTER_ctl";
+	rename -uid "6C702E36-4873-0340-7D66-948A28A5CA22";
+createNode ikHandle -n "rt_wrist_ikHandle" -p "rt_wrist_ikHandleGRP";
+	rename -uid "0CE8F960-4280-007B-0A39-C6835684F11B";
+	setAttr ".t" -type "double3" -2.7577900886535645 5.6030502319335938 -0.1721780002117157 ;
+	setAttr ".roc" yes;
+createNode poleVectorConstraint -n "rt_wrist_ikHandle_poleVectorConstraint1" -p "rt_wrist_ikHandle";
+	rename -uid "60CF5F33-4569-8EE7-4E3F-B1A9E22F5EDC";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "rt_elbow_PV_ctlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".rst" -type "double3" -1.2707120212860121 -0.013340070343016208 -1.4386791418867304 ;
+	setAttr -k on ".w0";
+createNode pointConstraint -n "rt_wrist_ikHandleGRP_pointConstraint1" -p "rt_wrist_ikHandleGRP";
+	rename -uid "AEAF2613-4712-4128-ADD3-82A7A7B4C370";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "rt_wrist_ik_ctlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".o" -type "double3" 2.7577900886535645 -5.6030502319335938 0.1721780002117157 ;
+	setAttr -k on ".w0";
+createNode transform -n "lf_wrist_ik_ctl" -p "jackie_MASTER_ctl";
+	rename -uid "11BE856A-453B-BB9B-83A3-0CA01693B779";
+	addAttr -ci true -sn "Stretchy_IK" -ln "Stretchy_IK" -dv 1 -min 0 -max 1 -at "double";
+	setAttr -k off ".v";
+	setAttr -l on -k off ".sx";
+	setAttr -l on -k off ".sy";
+	setAttr -l on -k off ".sz";
+	setAttr ".rp" -type "double3" 2.7577939033508301 5.6030488014221191 -0.17217794060707092 ;
+	setAttr ".sp" -type "double3" 2.7577939033508301 5.6030488014221191 -0.17217794060707092 ;
+	setAttr -k on ".Stretchy_IK";
+createNode nurbsCurve -n "curveShape3" -p "lf_wrist_ik_ctl";
+	rename -uid "B81CD97A-4A7E-50B2-39F1-E49A4EC36FA0";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		1 4 0 no 3
+		5 0 1 2 3 4
+		5
+		2.7577939033508301 6.0019036082537482 -0.57103274743870003
+		2.7577939033508301 5.20419399459049 -0.57103274743870003
+		2.7577939033508301 5.20419399459049 0.22667686622455815
+		2.7577939033508301 6.0019036082537482 0.22667686622455815
+		2.7577939033508301 6.0019036082537482 -0.57103274743870003
+		;
+createNode transform -n "lf_locator_distance_wrist" -p "lf_wrist_ik_ctl";
+	rename -uid "7BC1419B-47D0-23F8-5FA0-309CE7396B0A";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 2.7581872940063477 5.6033101081848145 -0.1721784770488739 ;
+createNode locator -n "lf_locator_distance_wristShape" -p "lf_locator_distance_wrist";
+	rename -uid "65C07752-45F3-3C83-24DF-6DA4667A7926";
+	setAttr -k off ".v";
+createNode transform -n "lf_wrist_ikHandleGRP" -p "jackie_MASTER_ctl";
+	rename -uid "9993FBE7-4640-EEF1-C400-0EA65C7C8DE6";
+createNode pointConstraint -n "lf_wrist_ikHandle_pointConstraint1" -p "lf_wrist_ikHandleGRP";
+	rename -uid "4447E752-411B-BA95-A359-66BAC3610A21";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lf_wrist_ik_ctlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr ".t" -type "double3" 2.7577939033508301 5.6079952867809784 -0.18503644957098297 ;
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".cpim" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr ".rst" -type "double3" 2.7577939033508301 5.6079952867809784 -0.18503644957098297 ;
+	setAttr -k on ".w0";
 createNode transform -n "jackie_GEO";
 	rename -uid "6CA10606-4AF3-4FF2-3947-6BB689CFD008";
 createNode transform -n "moreGEO" -p "jackie_GEO";
@@ -18371,7 +18372,7 @@ createNode parentConstraint -n "Teeth_parentConstraint1" -p "teeth_v1_latestRN1f
 	setAttr ".rst" -type "double3" 0 8.8817841970012523e-16 2.7755575615628914e-17 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "jackie_rigRNfosterParent1";
-	rename -uid "ADC08516-462C-F488-DC23-848BCAA7B8E6";
+	rename -uid "F4D04AAB-47E3-7137-9419-8897074C237B";
 createNode mesh -n "jackieHoodie2ShapeDeformed" -p "jackie_rigRNfosterParent1";
 	rename -uid "B40953AA-46CD-44D7-9DAD-FD9D7528673D";
 	setAttr -k off ".v";
@@ -18467,10 +18468,6 @@ createNode orientConstraint -n "right_hip_orientConstraint1" -p "jackie_rigRNfos
 	setAttr ".o" -type "double3" 0.001088709579257234 0.036003134638131387 0.00023905963552531764 ;
 	setAttr ".rsrr" -type "double3" 0.001088709579257234 0.036003134638131387 0.00023905963552531764 ;
 	setAttr -k on ".w0";
-createNode ikEffector -n "effector2" -p "jackie_rigRNfosterParent1";
-	rename -uid "2A631B9A-42C2-C67D-D58F-71811EBEC494";
-	setAttr ".v" no;
-	setAttr ".hd" yes;
 createNode orientConstraint -n "right_knee_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "FE30DCB6-4BEB-2E37-75AD-769DBCEE7C5E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "rt_knee_ctlW0" -dv 1 -min 0 -at "double";
@@ -18488,6 +18485,10 @@ createNode orientConstraint -n "right_knee_orientConstraint1" -p "jackie_rigRNfo
 	setAttr ".erp" yes;
 	setAttr ".lr" -type "double3" -0.0010885595754903175 -0.03600313917382688 -0.00023837556662262489 ;
 	setAttr -k on ".w0";
+createNode ikEffector -n "effector2" -p "jackie_rigRNfosterParent1";
+	rename -uid "2A631B9A-42C2-C67D-D58F-71811EBEC494";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
 createNode orientConstraint -n "right_ankle_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "DB9D2AB9-4418-98A6-86C0-578B19A99745";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "rt_ankle_fk_ctl_W0" -dv 1 -min 0 
@@ -18529,10 +18530,6 @@ createNode orientConstraint -n "left_hip_orientConstraint1" -p "jackie_rigRNfost
 	setAttr ".o" -type "double3" 0.0011027190278085858 -0.036466516677197122 -0.00024213993609844121 ;
 	setAttr ".rsrr" -type "double3" 0.0011027190278085858 -0.036466516677197122 -0.00024213993609844127 ;
 	setAttr -k on ".w0";
-createNode ikEffector -n "effector3" -p "jackie_rigRNfosterParent1";
-	rename -uid "6279452B-4E80-B06E-2847-07A02D2B1AA5";
-	setAttr ".v" no;
-	setAttr ".hd" yes;
 createNode orientConstraint -n "left_knee_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "9761804D-41B8-9E13-FF84-CF90D63DADDF";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lf_knee_ctlW0" -dv 1 -min 0 -at "double";
@@ -18550,6 +18547,10 @@ createNode orientConstraint -n "left_knee_orientConstraint1" -p "jackie_rigRNfos
 	setAttr ".erp" yes;
 	setAttr ".lr" -type "double3" -0.0011025651385507551 0.036466521330362649 0.00024143814758660395 ;
 	setAttr -k on ".w0";
+createNode ikEffector -n "effector3" -p "jackie_rigRNfosterParent1";
+	rename -uid "6279452B-4E80-B06E-2847-07A02D2B1AA5";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
 createNode orientConstraint -n "left_ankle_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "09431E59-415C-78FD-3C53-31B7ED92D689";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lf_foot_ik_ctlW0" -dv 1 -min 0 -at "double";
@@ -18707,6 +18708,12 @@ createNode orientConstraint -n "right_shoulder_orientConstraint1" -p "jackie_rig
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
+createNode ikEffector -n "effector_rt_wrist" -p "jackie_rigRNfosterParent1";
+	rename -uid "1D7E577C-4765-DE81-E959-5DB1410FFE07";
+	setAttr ".v" no;
+	setAttr ".rp" -type "double3" -0.45601008865356718 -0.0047897680664101827 0.012260999788284238 ;
+	setAttr ".sp" -type "double3" -0.45601008865356718 -0.0047897680664101827 0.012260999788284238 ;
+	setAttr ".hd" yes;
 createNode orientConstraint -n "right_elbow_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "89430E27-4CF8-6FDD-D2AA-A58E88F4E24E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "rt_elbow_fk_ctlW0" -dv 1 -min 0 -at "double";
@@ -18723,12 +18730,6 @@ createNode orientConstraint -n "right_elbow_orientConstraint1" -p "jackie_rigRNf
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode ikEffector -n "effector_rt_wrist" -p "jackie_rigRNfosterParent1";
-	rename -uid "1D7E577C-4765-DE81-E959-5DB1410FFE07";
-	setAttr ".v" no;
-	setAttr ".rp" -type "double3" -0.45601008865356718 -0.0047897680664101827 0.012260999788284238 ;
-	setAttr ".sp" -type "double3" -0.45601008865356718 -0.0047897680664101827 0.012260999788284238 ;
-	setAttr ".hd" yes;
 createNode orientConstraint -n "right_wrist_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "46A9E98A-4851-B830-07D9-7085B8D5AF41";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "rt_wrist_fk_ctlW0" -dv 1 -min 0 -at "double";
@@ -19178,12 +19179,6 @@ createNode orientConstraint -n "left_shoulder_orientConstraint1" -p "jackie_rigR
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode ikEffector -n "effector_lf_wrist" -p "jackie_rigRNfosterParent1";
-	rename -uid "78DA52A0-4956-C09A-1583-F69CF1DA2239";
-	setAttr ".v" no;
-	setAttr ".rp" -type "double3" 0.45599995936097049 -0.0047873297711955587 0.012260660150867936 ;
-	setAttr ".sp" -type "double3" 0.45599995936097049 -0.0047873297711955587 0.012260660150867936 ;
-	setAttr ".hd" yes;
 createNode orientConstraint -n "left_elbow_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "875070B4-4052-7FA4-73F7-DCBB7BAE78CD";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "jackie_lf_elbow_fk_ctlW0" -dv 1 -min 
@@ -19201,6 +19196,12 @@ createNode orientConstraint -n "left_elbow_orientConstraint1" -p "jackie_rigRNfo
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
+createNode ikEffector -n "effector_lf_wrist" -p "jackie_rigRNfosterParent1";
+	rename -uid "78DA52A0-4956-C09A-1583-F69CF1DA2239";
+	setAttr ".v" no;
+	setAttr ".rp" -type "double3" 0.45599995936097049 -0.0047873297711955587 0.012260660150867936 ;
+	setAttr ".sp" -type "double3" 0.45599995936097049 -0.0047873297711955587 0.012260660150867936 ;
+	setAttr ".hd" yes;
 createNode orientConstraint -n "left_wrist_orientConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "9CF92F32-4E94-8FE3-26A4-A3938C82DBF2";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "jackie_lf_wrist_fk_ctlW0" -dv 1 -min 
@@ -19714,22 +19715,6 @@ createNode aimConstraint -n "left_eye_aimConstraint1" -p "jackie_rigRNfosterPare
 	setAttr ".rsrr" -type "double3" -3.8600556727712312e-12 -6.1568115536568181e-06 
 		-1.486840098409589e-05 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "lip_right_bottom_scaleConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "5C54F953-4B34-EE9A-5CC5-02B87F7FC24E";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_bot_rt_ctlW0" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr -k on ".w0";
 createNode parentConstraint -n "lip_right_bottom_parentConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "622A4EF1-4327-B245-615E-6189E36A332C";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_bot_rt_ctlW0" -dv 1 -min 0 -at "double";
@@ -19749,10 +19734,9 @@ createNode parentConstraint -n "lip_right_bottom_parentConstraint1" -p "jackie_r
 		-8.896300307537075e-09 ;
 	setAttr ".rst" -type "double3" -0.085540106809846736 -0.18795663156960263 0.51670829317937805 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "lip_right_end_scaleConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "176F48D3-440F-3372-FB7D-518B15E7AAAF";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_rt_corner_ctlW0" -dv 1 -min 0 
-		-at "double";
+createNode scaleConstraint -n "lip_right_bottom_scaleConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "5C54F953-4B34-EE9A-5CC5-02B87F7FC24E";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_bot_rt_ctlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
 	setAttr -k off ".tx";
@@ -19786,9 +19770,10 @@ createNode parentConstraint -n "lip_right_end_parentConstraint1" -p "jackie_rigR
 		-2.3314072894464744e-11 ;
 	setAttr ".rst" -type "double3" -0.12534400680984675 -0.16891663156960224 0.48796229317937856 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "lip_right_top_scaleConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "24C91F2F-4873-5936-C714-2F83982CC661";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_top_rt_ctlW0" -dv 1 -min 0 -at "double";
+createNode scaleConstraint -n "lip_right_end_scaleConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "176F48D3-440F-3372-FB7D-518B15E7AAAF";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_rt_corner_ctlW0" -dv 1 -min 0 
+		-at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
 	setAttr -k off ".tx";
@@ -19821,9 +19806,9 @@ createNode parentConstraint -n "lip_right_top_parentConstraint1" -p "jackie_rigR
 		-0.013808213172943784 ;
 	setAttr ".rst" -type "double3" -0.08541190680984663 -0.11689663156960339 0.53398129317937859 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "lip_left_bottom_scaleConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "DBA97D83-4B3E-A480-A8EE-E6B6E8126302";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_bot_lf_ctlW0" -dv 1 -min 0 -at "double";
+createNode scaleConstraint -n "lip_right_top_scaleConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "24C91F2F-4873-5936-C714-2F83982CC661";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_top_rt_ctlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
 	setAttr -k off ".tx";
@@ -19856,9 +19841,9 @@ createNode parentConstraint -n "lip_left_bottom_parentConstraint1" -p "jackie_ri
 		3.913454116322157e-09 ;
 	setAttr ".rst" -type "double3" 0.085540153726919255 -0.18795190515969029 0.51670848480306686 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "lip_left_top_scaleConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "9DB7FFB4-4D3D-FF5F-F08C-CE8ED46D1919";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_top_lf_ctlW0" -dv 1 -min 0 -at "double";
+createNode scaleConstraint -n "lip_left_bottom_scaleConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "DBA97D83-4B3E-A480-A8EE-E6B6E8126302";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_bot_lf_ctlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
 	setAttr -k off ".tx";
@@ -19891,9 +19876,9 @@ createNode parentConstraint -n "lip_left_top_parentConstraint1" -p "jackie_rigRN
 		3.9134532281437373e-09 ;
 	setAttr ".rst" -type "double3" 0.085411884531362725 -0.11689840021584263 0.53398083797536833 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "lip_center_bottom_scaleConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "58C2442F-4BEA-32BC-10FE-12BB6D2407C1";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_bot_mid_ctlW0" -dv 1 -min 0 -at "double";
+createNode scaleConstraint -n "lip_left_top_scaleConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "9DB7FFB4-4D3D-FF5F-F08C-CE8ED46D1919";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_top_lf_ctlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
 	setAttr -k off ".tx";
@@ -19926,10 +19911,9 @@ createNode parentConstraint -n "lip_center_bottom_parentConstraint1" -p "jackie_
 		3.9134528395656787e-09 ;
 	setAttr ".rst" -type "double3" 1.5748837990247677e-05 -0.22064147654030641 0.54190104356847701 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "lip_left_end_scaleConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "870864FA-406B-FDF2-2A48-C4AE0BD537D2";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_lf_corner_ctlW0" -dv 1 -min 0 
-		-at "double";
+createNode scaleConstraint -n "lip_center_bottom_scaleConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "58C2442F-4BEA-32BC-10FE-12BB6D2407C1";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_bot_mid_ctlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
 	setAttr -k off ".tx";
@@ -19963,9 +19947,10 @@ createNode parentConstraint -n "lip_left_end_parentConstraint1" -p "jackie_rigRN
 		3.9134534501883422e-09 ;
 	setAttr ".rst" -type "double3" 0.12534389708934596 -0.16891561212990602 0.4879621183022117 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "lip_center_top_scaleConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "1747B5E1-455A-6A10-BE69-39BEF5A9D470";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_top_mid_ctlW0" -dv 1 -min 0 -at "double";
+createNode scaleConstraint -n "lip_left_end_scaleConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "870864FA-406B-FDF2-2A48-C4AE0BD537D2";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_lf_corner_ctlW0" -dv 1 -min 0 
+		-at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
 	setAttr -k off ".tx";
@@ -19998,6 +19983,22 @@ createNode parentConstraint -n "lip_center_top_parentConstraint1" -p "jackie_rig
 		3.9134540608110058e-09 ;
 	setAttr ".rst" -type "double3" 3.3821129262272006e-08 -0.10319123926613649 0.55634530535780014 ;
 	setAttr -k on ".w0";
+createNode scaleConstraint -n "lip_center_top_scaleConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "1747B5E1-455A-6A10-BE69-39BEF5A9D470";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "lip_top_mid_ctlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -k on ".w0";
 createNode parentConstraint -n "jackierEyeRight_parentConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "520342E9-47E8-1662-1A97-AA8D7E6BE694";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "right_eyeW0" -dv 1 -min 0 -at "double";
@@ -20016,24 +20017,6 @@ createNode parentConstraint -n "jackierEyeRight_parentConstraint1" -p "jackie_ri
 	setAttr ".tg[0].tot" -type "double3" 0 0 -1.3877787807814457e-17 ;
 	setAttr ".lr" -type "double3" 179.94756584946091 180.02038164395088 -180.00082690958018 ;
 	setAttr ".rst" -type "double3" 0 0 1.3877787807814457e-17 ;
-	setAttr -k on ".w0";
-createNode aimConstraint -n "jackieEyeLeft_aimConstraint1" -p "jackie_rigRNfosterParent1";
-	rename -uid "FC9299A0-41D0-0BCF-8E9C-A7A437002FAF";
-	addAttr -dcb 0 -ci true -sn "w0" -ln "eye_lf_ctlW0" -dv 1 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr ".o" -type "double3" -4.212935230033928e-16 89.155136604690256 0.083437395123684185 ;
-	setAttr ".rsrr" -type "double3" -2.9810926551172283e-10 3.2010167384623357e-15 -5.7150591933380296e-16 ;
 	setAttr -k on ".w0";
 createNode parentConstraint -n "jackieEyeLeft_parentConstraint1" -p "jackie_rigRNfosterParent1";
 	rename -uid "182F267E-4704-5915-AA3A-02916E84A7BB";
@@ -20058,24 +20041,42 @@ createNode parentConstraint -n "jackieEyeLeft_parentConstraint1" -p "jackie_rigR
 	setAttr ".rst" -type "double3" 0 -8.8817841970012523e-16 0 ;
 	setAttr ".rsrr" -type "double3" 1.2424800027794772e-17 1.9878457280355381e-16 2.1553582014979177e-35 ;
 	setAttr -k on ".w0";
+createNode aimConstraint -n "jackieEyeLeft_aimConstraint1" -p "jackie_rigRNfosterParent1";
+	rename -uid "FC9299A0-41D0-0BCF-8E9C-A7A437002FAF";
+	addAttr -dcb 0 -ci true -sn "w0" -ln "eye_lf_ctlW0" -dv 1 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".o" -type "double3" -4.212935230033928e-16 89.155136604690256 0.083437395123684185 ;
+	setAttr ".rsrr" -type "double3" -2.9810926551172283e-10 3.2010167384623357e-15 -5.7150591933380296e-16 ;
+	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "C6A76239-494F-DC24-66E5-9E867C5AF864";
+	rename -uid "E9902CF2-4059-D86B-23BB-31883C58ECEB";
 	setAttr -s 36 ".lnk";
 	setAttr -s 36 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "42A5CC68-463F-62A3-EC01-6999F4970A3E";
+	rename -uid "0A3B83A9-40D4-2D9C-0C63-B5AF5D08A368";
 	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 3 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "CACF0A33-4CE0-1055-FF20-A89922975808";
+	rename -uid "8C7AA518-4F1F-F263-0A51-D7B440BA113E";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "C47B0C16-4236-B035-AA8C-C7A15F48BF08";
+	rename -uid "868820E7-4A9A-E141-298A-78B1E88CA08D";
 	setAttr ".cdl" 4;
 	setAttr -s 6 ".dli[1:5]"  1 2 3 4 0;
 	setAttr -s 5 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "1472DE7A-4782-1608-BB77-88A1607C89DD";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "53657FE0-41C4-09A1-13FA-0DB5966B00AF";
+	rename -uid "D9317B5F-46FA-020C-DE91-78BCD1FF202E";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "E5D42139-4EA7-5B85-657A-F1A0107DC895";
 	setAttr ".g" yes;
@@ -20238,7 +20239,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
 		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
 		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1998\n            -height 1282\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1182\n            -height 558\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
 		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
 		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n"
@@ -20254,22 +20255,23 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 0 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n"
 		+ "                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n"
-		+ "                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n"
-		+ "                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -editorChanged \"updateModelPanelBar\" \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n"
-		+ "                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n"
-		+ "                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n"
-		+ "                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n"
-		+ "            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n"
-		+ "            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1998\\n    -height 1282\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1998\\n    -height 1282\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -connectionMinSegment 0.03\n"
+		+ "                -connectionOffset 0.03\n                -connectionRoundness 0.8\n                -connectionTension -100\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n"
+		+ "            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -connectionMinSegment 0.03\n                -connectionOffset 0.03\n                -connectionRoundness 0.8\n                -connectionTension -100\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n"
+		+ "                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n"
+		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -editorChanged \"updateModelPanelBar\" \n                -camera \"persp\" \n                -useInteractiveMode 0\n"
+		+ "                -displayLights \"default\" \n                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 16384\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n"
+		+ "                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n"
+		+ "                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n"
+		+ "                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n"
+		+ "            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n"
+		+ "            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n"
+		+ "\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1182\\n    -height 558\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1182\\n    -height 558\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -20558,8 +20560,6 @@ createNode reference -n "jackie_rigRN";
 	setAttr ".fn[0]" -type "string" "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_rig.ma";
 	setAttr ".fn[1]" -type "string" "C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/Characters/jackie_skinning.ma";
 	setAttr -s 1792 ".phl";
-	setAttr ".phl[77]" -type "TdataCompound" ;
-	setAttr ".phl[79]" -type "TdataCompound" ;
 	setAttr ".phl[80]" 0;
 	setAttr ".phl[81]" 0;
 	setAttr ".phl[82]" 0;
@@ -22309,8 +22309,8 @@ createNode reference -n "jackie_rigRN";
 	setAttr ".phl[1826]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"jackie_rigRN"
-		"jackie_rig:jackieHoodie_latestRN" 0
 		"jackie_rig:Jacies_shoe_latestRN" 0
+		"jackie_rig:jackieHoodie_latestRN" 0
 		"jackie_rig:Jacies_shoe_latestRN1" 0
 		"jackie_rigRN" 0
 		"jackie_rig:jackiePants_latestRN" 0
@@ -22489,6 +22489,63 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rigRN.placeHolderList[78]" ""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:teeth_v1_latest:Teeth|jackie_rig:teeth_v1_latest:TopCont1|jackie_rig:teeth_v1_latest:top1|jackie_rig:teeth_v1_latest:Bottom|jackie_rig:teeth_v1_latest:Gums|jackie_rig:teeth_v1_latest:GumsShape.instObjGroups" 
 		"jackie_rigRN.placeHolderList[79]" ":initialShadingGroup.dsm"
+		"jackie_rig:jackieHoodie_latestRN" 27
+		0 "|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "|jackie_GEO|moreGEO" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|jackieHoodie2ShapeDeformed" "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" 
+		"-s -r "
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "visibility" 
+		" 1"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scaleX" 
+		" 1"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scaleY" 
+		" 1"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scaleZ" 
+		" 1"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "rotatePivot" 
+		" -type \"double3\" 0 -0.10299999999999976 -0.025"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scalePivot" 
+		" -type \"double3\" 0 -0.10299999999999976 -0.025"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scalePivotTranslate" 
+		" -type \"double3\" 0 0 0"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
+		"intermediateObject" " 1"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
+		"dispResolution" " 3"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
+		"displaySmoothMesh" " 2"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
+		"vertexColorSource" " 2"
+		3 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape.instObjGroups" 
+		"jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" "-na"
+		5 4 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2.drawOverride" 
+		"jackie_rigRN.placeHolderList[80]" ""
+		5 3 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape.worldMesh" 
+		"jackie_rigRN.placeHolderList[81]" ""
+		5 0 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape.instObjGroups" 
+		"jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[82]" 
+		"jackie_rigRN.placeHolderList[83]" "jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dsm"
+		
+		5 4 "jackie_rigRN" "jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" 
+		"jackie_rigRN.placeHolderList[84]" ""
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scaleX"
+		
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scaleY"
+		
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scaleZ"
+		
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "translateX"
+		
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "translateY"
+		
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "translateZ"
+		
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "rotateX"
+		
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "rotateY"
+		
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "rotateZ"
+		
 		"jackie_rig:Jacies_shoe_latestRN" 84
 		0 "|jackie_rig:Jacies_shoe_latest:Jackie_Shoe" "|jackie_GEO|moreGEO" "-s -r "
 		
@@ -22506,12 +22563,22 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe" "scalePivotTranslate" 
 		" -type \"double3\" 0 0 0"
 		2 "|jackie_rig:Jacies_shoe_latest:transform1" "hiddenInOutliner" " 1"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Back|jackie_rig:Jacies_shoe_latest:BackShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Sole|jackie_rig:Jacies_shoe_latest:SoleShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Toe|jackie_rig:Jacies_shoe_latest:ToeShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube15|jackie_rig:Jacies_shoe_latest:pCubeShape15.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube14|jackie_rig:Jacies_shoe_latest:pCubeShape14.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube13|jackie_rig:Jacies_shoe_latest:pCubeShape13.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube12|jackie_rig:Jacies_shoe_latest:pCubeShape12.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube11|jackie_rig:Jacies_shoe_latest:pCubeShape11.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube10|jackie_rig:Jacies_shoe_latest:pCubeShape10.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube9|jackie_rig:Jacies_shoe_latest:pCubeShape9.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube2|jackie_rig:Jacies_shoe_latest:pCubeShape1.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus2|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Right_Lace_Holes|jackie_rig:Jacies_shoe_latest:pTorus1|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
@@ -22532,6 +22599,12 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:LaceHoles|jackie_rig:Jacies_shoe_latest:Left_Lace_holes|jackie_rig:Jacies_shoe_latest:pTorus10|jackie_rig:Jacies_shoe_latest:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Back|jackie_rig:Jacies_shoe_latest:BackShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Sole|jackie_rig:Jacies_shoe_latest:SoleShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:RubberParts|jackie_rig:Jacies_shoe_latest:Toe|jackie_rig:Jacies_shoe_latest:ToeShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Left_Side|jackie_rig:Jacies_shoe_latest:Left_SideShape.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Right_Side|jackie_rig:Jacies_shoe_latest:Right_SideShape.instObjGroups" 
@@ -22540,22 +22613,6 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:ClothParts|jackie_rig:Jacies_shoe_latest:Tongue|jackie_rig:Jacies_shoe_latest:TongueShape.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube15|jackie_rig:Jacies_shoe_latest:pCubeShape15.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube14|jackie_rig:Jacies_shoe_latest:pCubeShape14.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube13|jackie_rig:Jacies_shoe_latest:pCubeShape13.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube12|jackie_rig:Jacies_shoe_latest:pCubeShape12.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube11|jackie_rig:Jacies_shoe_latest:pCubeShape11.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube10|jackie_rig:Jacies_shoe_latest:pCubeShape10.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube9|jackie_rig:Jacies_shoe_latest:pCubeShape9.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube2|jackie_rig:Jacies_shoe_latest:pCubeShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest:PxrSurface3SG.dagSetMembers" "-na"
 		5 4 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe.drawOverride" 
 		"jackie_rigRN.placeHolderList[124]" ""
 		5 4 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Jackie_Shoe|jackie_rig:Jacies_shoe_latest:Laces|jackie_rig:Jacies_shoe_latest:pCube15.drawOverride" 
@@ -22708,63 +22765,6 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dagSetMembers" "jackie_rigRN.placeHolderList[198]" 
 		"jackie_rigRN.placeHolderList[199]" "jackie_rig:Jacies_shoe_latest:PxrSurface4SG.dsm"
 		
-		"jackie_rig:jackieHoodie_latestRN" 27
-		0 "|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "|jackie_GEO|moreGEO" 
-		"-s -r "
-		0 "|jackie_rigRNfosterParent1|jackieHoodie2ShapeDeformed" "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" 
-		"-s -r "
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "visibility" 
-		" 1"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scaleX" 
-		" 1"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scaleY" 
-		" 1"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scaleZ" 
-		" 1"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "rotatePivot" 
-		" -type \"double3\" 0 -0.10299999999999976 -0.025"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scalePivot" 
-		" -type \"double3\" 0 -0.10299999999999976 -0.025"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scalePivotTranslate" 
-		" -type \"double3\" 0 0 0"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
-		"intermediateObject" " 1"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
-		"dispResolution" " 3"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
-		"displaySmoothMesh" " 2"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape" 
-		"vertexColorSource" " 2"
-		3 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape.instObjGroups" 
-		"jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" "-na"
-		5 4 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2.drawOverride" 
-		"jackie_rigRN.placeHolderList[80]" ""
-		5 3 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape.worldMesh" 
-		"jackie_rigRN.placeHolderList[81]" ""
-		5 0 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2|jackie_rig:jackieHoodie_latest1:jackieHoodie2Shape.instObjGroups" 
-		"jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[82]" 
-		"jackie_rigRN.placeHolderList[83]" "jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dsm"
-		
-		5 4 "jackie_rigRN" "jackie_rig:jackieHoodie_latest1:PxrSurface1SG.dagSetMembers" 
-		"jackie_rigRN.placeHolderList[84]" ""
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scaleX"
-		
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scaleY"
-		
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "scaleZ"
-		
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "translateX"
-		
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "translateY"
-		
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "translateZ"
-		
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "rotateX"
-		
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "rotateY"
-		
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackieHoodie_latest1:jackieHoodie2" "rotateZ"
-		
 		"jackie_rig:Jacies_shoe_latestRN1" 89
 		0 "|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe" "|jackie_GEO|moreGEO" "-s -r "
 		
@@ -22789,22 +22789,14 @@ createNode reference -n "jackie_rigRN";
 		2 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe" "scalePivotTranslate" 
 		" -type \"double3\" 0 0 0"
 		2 "|jackie_rig:Jacies_shoe_latest1:transform1" "hiddenInOutliner" " 1"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube15|jackie_rig:Jacies_shoe_latest1:pCubeShape15.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube14|jackie_rig:Jacies_shoe_latest1:pCubeShape14.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube13|jackie_rig:Jacies_shoe_latest1:pCubeShape13.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube12|jackie_rig:Jacies_shoe_latest1:pCubeShape12.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube11|jackie_rig:Jacies_shoe_latest1:pCubeShape11.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube10|jackie_rig:Jacies_shoe_latest1:pCubeShape10.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube9|jackie_rig:Jacies_shoe_latest1:pCubeShape9.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube2|jackie_rig:Jacies_shoe_latest1:pCubeShape1.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Left_Side|jackie_rig:Jacies_shoe_latest1:Left_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Right_Side|jackie_rig:Jacies_shoe_latest1:Right_SideShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Base|jackie_rig:Jacies_shoe_latest1:BaseShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Tongue|jackie_rig:Jacies_shoe_latest1:TongueShape.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Back|jackie_rig:Jacies_shoe_latest1:BackShape.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:RubberParts|jackie_rig:Jacies_shoe_latest1:Sole|jackie_rig:Jacies_shoe_latest1:SoleShape.instObjGroups" 
@@ -22831,14 +22823,22 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
 		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:LaceHoles|jackie_rig:Jacies_shoe_latest1:Left_Lace_holes|jackie_rig:Jacies_shoe_latest1:pTorus10|jackie_rig:Jacies_shoe_latest1:pTorusShape1.instObjGroups" 
 		"jackie_rig:Jacies_shoe_latest1:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Left_Side|jackie_rig:Jacies_shoe_latest1:Left_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Right_Side|jackie_rig:Jacies_shoe_latest1:Right_SideShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Base|jackie_rig:Jacies_shoe_latest1:BaseShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:ClothParts|jackie_rig:Jacies_shoe_latest1:Tongue|jackie_rig:Jacies_shoe_latest1:TongueShape.instObjGroups" 
-		"jackie_rig:Jacies_shoe_latest1:PxrSurface2SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube15|jackie_rig:Jacies_shoe_latest1:pCubeShape15.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube14|jackie_rig:Jacies_shoe_latest1:pCubeShape14.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube13|jackie_rig:Jacies_shoe_latest1:pCubeShape13.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube12|jackie_rig:Jacies_shoe_latest1:pCubeShape12.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube11|jackie_rig:Jacies_shoe_latest1:pCubeShape11.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube10|jackie_rig:Jacies_shoe_latest1:pCubeShape10.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube9|jackie_rig:Jacies_shoe_latest1:pCubeShape9.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube2|jackie_rig:Jacies_shoe_latest1:pCubeShape1.instObjGroups" 
+		"jackie_rig:Jacies_shoe_latest1:PxrSurface3SG.dagSetMembers" "-na"
 		5 4 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe.drawOverride" 
 		"jackie_rigRN.placeHolderList[200]" ""
 		5 4 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Jackie_Shoe|jackie_rig:Jacies_shoe_latest1:Laces|jackie_rig:Jacies_shoe_latest1:pCube15.drawOverride" 
@@ -22997,43 +22997,43 @@ createNode reference -n "jackie_rigRN";
 		0 "|jackie_rig:jackieEyes" "|jackie_MASTER_ctl" "-s -r "
 		0 "|jackie_rig:root" "|jackie_MASTER_ctl" "-s -r "
 		0 "|jackie_rig:jackieBody" "|jackie_GEO" "-s -r "
-		0 "|jackie_rigRNfosterParent1|jackieEyeLeft_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" 
-		"-s -r "
 		0 "|jackie_rigRNfosterParent1|jackieEyeLeft_aimConstraint1" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|jackieEyeLeft_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|jackierEyeRight_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackierEyeRight" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|lip_center_top_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top" 
-		"-s -r "
 		0 "|jackie_rigRNfosterParent1|lip_center_top_scaleConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|lip_left_end_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end" 
+		0 "|jackie_rigRNfosterParent1|lip_center_top_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_top" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|lip_left_end_scaleConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|lip_center_bottom_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom" 
+		0 "|jackie_rigRNfosterParent1|lip_left_end_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_end" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|lip_center_bottom_scaleConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|lip_left_top_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top" 
+		0 "|jackie_rigRNfosterParent1|lip_center_bottom_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_center_bottom" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|lip_left_top_scaleConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|lip_left_bottom_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom" 
+		0 "|jackie_rigRNfosterParent1|lip_left_top_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_top" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|lip_left_bottom_scaleConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|lip_right_top_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top" 
+		0 "|jackie_rigRNfosterParent1|lip_left_bottom_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_left_bottom" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|lip_right_top_scaleConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|lip_right_end_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end" 
+		0 "|jackie_rigRNfosterParent1|lip_right_top_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_top" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|lip_right_end_scaleConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|lip_right_bottom_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom" 
+		0 "|jackie_rigRNfosterParent1|lip_right_end_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_end" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|lip_right_bottom_scaleConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|lip_right_bottom_parentConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:lip_right_bottom" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|left_eye_aimConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck|jackie_rig:head|jackie_rig:left_eye" 
 		"-s -r "
@@ -23089,9 +23089,9 @@ createNode reference -n "jackie_rigRN";
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|left_wrist_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow|jackie_rig:left_forearm|jackie_rig:left_wrist" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|left_elbow_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow" 
-		"-s -r "
 		0 "|jackie_rigRNfosterParent1|effector_lf_wrist" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|left_elbow_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|left_shoulder_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder" 
 		"-s -r "
@@ -23141,9 +23141,9 @@ createNode reference -n "jackie_rigRN";
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|right_wrist_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow|jackie_rig:right_forearm|jackie_rig:right_wrist" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|effector_rt_wrist" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow" 
-		"-s -r "
 		0 "|jackie_rigRNfosterParent1|right_elbow_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|effector_rt_wrist" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder|jackie_rig:right_elbow" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|right_shoulder_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:right_clavicle|jackie_rig:right_shoulder" 
 		"-s -r "
@@ -23163,17 +23163,17 @@ createNode reference -n "jackie_rigRN";
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|left_ankle_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee|jackie_rig:left_ankle" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|left_knee_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee" 
-		"-s -r "
 		0 "|jackie_rigRNfosterParent1|effector3" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|left_knee_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip|jackie_rig:left_knee" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|left_hip_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:left_hip" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|right_ankle_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee|jackie_rig:right_ankle" 
 		"-s -r "
-		0 "|jackie_rigRNfosterParent1|right_knee_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee" 
-		"-s -r "
 		0 "|jackie_rigRNfosterParent1|effector2" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|right_knee_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip|jackie_rig:right_knee" 
 		"-s -r "
 		0 "|jackie_rigRNfosterParent1|right_hip_orientConstraint1" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:right_hip" 
 		"-s -r "
@@ -24475,28 +24475,18 @@ createNode reference -n "jackie_rigRN";
 		
 		2 "jackie_rig:teeth_v1_latestRN" "fileNames[2]" " -type \"string\" \"C:/Users/yacob/Documents/maya/projects/CNMNightMarket//assets/ClothingAccessories/teeth_v1_latest.ma\""
 		
-		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups" 
-		"jackie_rig:PxrSurface1SG.dagSetMembers" "-na"
 		3 "jackie_rig:high_neck_translateX.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.translateX" 
 		""
 		3 "jackie_rig:high_neck_translateY.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.translateY" 
 		""
 		3 "jackie_rig:high_neck_translateZ.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:low_neck|jackie_rig:high_neck.translateZ" 
 		""
-		3 "jackie_rig:skinCluster1GroupId.groupId" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "jackie_rig:skinCluster1Set.memberWireframeColor" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "jackie_rig:groupId2.groupId" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1].objectGroupId" 
-		""
-		3 "jackie_rig:tweakSet1.memberWireframeColor" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1].objectGrpColor" 
-		""
-		3 "jackie_rig:skinCluster1.outputGeometry[0]" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.inMesh" 
-		""
-		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0]" 
-		"jackie_rig:skinCluster1Set.dagSetMembers" "-na"
 		3 "jackie_rig:left_elbow_scaleX.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder|jackie_rig:left_elbow.scaleX" 
 		""
+		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Group9688ShapeOrig.worldMesh" 
+		"jackie_rig:groupParts2.inputGeometry" ""
+		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups" 
+		"jackie_rig:PxrSurface1SG.dagSetMembers" "-na"
 		3 "jackie_rig:left_shoulder_visibility.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.visibility" 
 		""
 		3 "jackie_rig:left_shoulder_scaleZ.output" "|jackie_MASTER_ctl|jackie_rig:root|jackie_rig:spine_1|jackie_rig:spine_2|jackie_rig:spine_3|jackie_rig:spine_4|jackie_rig:spine_5|jackie_rig:chest|jackie_rig:left_clavicle|jackie_rig:left_shoulder.scaleZ" 
@@ -24516,8 +24506,18 @@ createNode reference -n "jackie_rigRN";
 		""
 		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1]" 
 		"jackie_rig:tweakSet1.dagSetMembers" "-na"
-		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Group9688ShapeOrig.worldMesh" 
-		"jackie_rig:groupParts2.inputGeometry" ""
+		3 "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0]" 
+		"jackie_rig:skinCluster1Set.dagSetMembers" "-na"
+		3 "jackie_rig:skinCluster1GroupId.groupId" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 "jackie_rig:skinCluster1Set.memberWireframeColor" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "jackie_rig:groupId2.groupId" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1].objectGroupId" 
+		""
+		3 "jackie_rig:tweakSet1.memberWireframeColor" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.instObjGroups.objectGroups[1].objectGrpColor" 
+		""
+		3 "jackie_rig:skinCluster1.outputGeometry[0]" "|jackie_GEO|jackie_rig:jackieBody|jackie_rig:Jackie_latest:Group9688|jackie_rig:Jackie_latest:Group9688Shape.inMesh" 
+		""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.blendParent1" 
 		"jackie_rigRN.placeHolderList[503]" ""
 		5 3 "jackie_rigRN" "|jackie_MASTER_ctl|jackie_rig:jackieEyes|jackie_rig:jackieEyeLeft.translate" 
@@ -27153,173 +27153,6 @@ createNode reference -n "jackie_rigRN";
 		""
 		5 3 "jackie_rigRN" "jackie_rig:skinCluster1GroupId.groupId" "jackie_rigRN.placeHolderList[1826]" 
 		"jackie_rig:Jackie_latest:Group9688Shape.iog.og[0].gid"
-		"jackie_rig:jackiePants_latestRN" 63
-		0 "|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" "|jackie_GEO|moreGEO" 
-		"-s -r "
-		0 "|jackie_rigRNfosterParent1|polySurfaceShape1Deformed" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"-s -r "
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"visibility" " 1"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"scaleX" " 1"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"scaleY" " 1"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"scaleZ" " 1"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"rotatePivot" " -type \"double3\" -0.006 -0.063658494966674528 0.011519840177370455"
-		
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"scalePivot" " -type \"double3\" -0.006 -0.063658494966674528 0.011519840177370455"
-		
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"scalePivotTranslate" " -type \"double3\" 0 0 0"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
-		"intermediateObject" " 1"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
-		"instObjGroups.objectGroups" " -s 4"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
-		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:16643]\""
-		
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
-		"instObjGroups.objectGroups[1].objectGrpCompList" " -type \"componentList\" 1 \"f[0:16643]\""
-		
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
-		"instObjGroups.objectGroups[2].objectGrpCompList" " -type \"componentList\" 1 \"vtx[0:16641]\""
-		
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
-		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:16643]\""
-		
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
-		"dispResolution" " 3"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
-		"displaySmoothMesh" " 2"
-		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
-		"vertexColorSource" " 2"
-		3 "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.groupId" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		""
-		3 "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.memberWireframeColor" 
-		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		""
-		3 "jackie_rig:jackiePants_latest:jackiePants_latest:groupId2.groupId" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		""
-		3 "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.memberWireframeColor" 
-		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		""
-		3 "jackie_rig:jackiePants_latest:jackiePants_latest:groupId3.groupId" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		""
-		3 "jackie_rig:jackiePants_latest:jackiePants_latest:default1.memberWireframeColor" 
-		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		""
-		3 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
-		"jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" "-na"
-		3 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" "-na"
-		
-		3 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dagSetMembers" "-na"
-		
-		5 4 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1.drawOverride" 
-		"jackie_rigRN.placeHolderList[85]" ""
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.groupId" 
-		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
-		"jackie_rigRN.placeHolderList[86]" "jackie_rigRN.placeHolderList[87]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gid"
-		
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.memberWireframeColor" 
-		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGrpColor" 
-		"jackie_rigRN.placeHolderList[88]" "jackie_rigRN.placeHolderList[89]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gco"
-		
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId2.groupId" 
-		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGroupId" 
-		"jackie_rigRN.placeHolderList[90]" "jackie_rigRN.placeHolderList[91]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gid"
-		
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.memberWireframeColor" 
-		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGrpColor" 
-		"jackie_rigRN.placeHolderList[92]" "jackie_rigRN.placeHolderList[93]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gco"
-		
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId3.groupId" 
-		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGroupId" 
-		"jackie_rigRN.placeHolderList[94]" "jackie_rigRN.placeHolderList[95]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gid"
-		
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.memberWireframeColor" 
-		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGrpColor" 
-		"jackie_rigRN.placeHolderList[96]" "jackie_rigRN.placeHolderList[97]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gco"
-		
-		5 4 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[3].objectGroupId" 
-		"jackie_rigRN.placeHolderList[98]" ""
-		5 3 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.worldMesh" 
-		"jackie_rigRN.placeHolderList[99]" ""
-		5 0 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
-		"jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[100]" 
-		"jackie_rigRN.placeHolderList[101]" "jackie_rig:jackiePants_latest:PxrSurface1SG.dsm"
-		
-		5 4 "jackie_rigRN" "jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" 
-		"jackie_rigRN.placeHolderList[102]" ""
-		5 3 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.memberWireframeColor" 
-		"jackie_rigRN.placeHolderList[103]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gco"
-		
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.message" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.groupNodes" "jackie_rigRN.placeHolderList[104]" 
-		"jackie_rigRN.placeHolderList[105]" ""
-		5 0 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dagSetMembers" "jackie_rigRN.placeHolderList[106]" 
-		"jackie_rigRN.placeHolderList[107]" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dsm"
-		
-		5 4 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dagSetMembers" 
-		"jackie_rigRN.placeHolderList[108]" ""
-		5 3 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.groupId" 
-		"jackie_rigRN.placeHolderList[109]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gid"
-		
-		5 3 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.memberWireframeColor" 
-		"jackie_rigRN.placeHolderList[110]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gco"
-		
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId2.message" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.groupNodes" "jackie_rigRN.placeHolderList[111]" 
-		"jackie_rigRN.placeHolderList[112]" ""
-		5 0 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" "jackie_rigRN.placeHolderList[113]" 
-		"jackie_rigRN.placeHolderList[114]" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dsm"
-		
-		5 4 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" 
-		"jackie_rigRN.placeHolderList[115]" ""
-		5 3 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId2.groupId" 
-		"jackie_rigRN.placeHolderList[116]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gid"
-		
-		5 3 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.memberWireframeColor" 
-		"jackie_rigRN.placeHolderList[117]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gco"
-		
-		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId3.message" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.groupNodes" "jackie_rigRN.placeHolderList[118]" 
-		"jackie_rigRN.placeHolderList[119]" ""
-		5 0 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2]" 
-		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" "jackie_rigRN.placeHolderList[120]" 
-		"jackie_rigRN.placeHolderList[121]" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.dsm"
-		
-		5 4 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" 
-		"jackie_rigRN.placeHolderList[122]" ""
-		5 3 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId3.groupId" 
-		"jackie_rigRN.placeHolderList[123]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gid"
-		
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"scaleX"
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"scaleY"
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"scaleZ"
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"translateX"
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"translateY"
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"translateZ"
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"rotateX"
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"rotateY"
-		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
-		"rotateZ"
 		"jackie_rig:jackieHair_latestRN" 246
 		0 "|jackie_rig:jackieHair_latest:jackieHair" "|jackie_MASTER_ctl" "-s -r "
 		
@@ -27377,20 +27210,46 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtop|jackie_rig:jackieHair_latest:polySurface39|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface6SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface22|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface23|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface24|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface25|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface26|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface27|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface28|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface14|jackie_rig:jackieHair_latest:polySurfaceShape14.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface16|jackie_rig:jackieHair_latest:polySurfaceShape16.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface17|jackie_rig:jackieHair_latest:polySurfaceShape17.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface18|jackie_rig:jackieHair_latest:polySurfaceShape18.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface19|jackie_rig:jackieHair_latest:polySurfaceShape19.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface20|jackie_rig:jackieHair_latest:polySurfaceShape20.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface21|jackie_rig:jackieHair_latest:polySurfaceShape21.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface38|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface39|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface1|jackie_rig:jackieHair_latest:polySurfaceShape12.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface2|jackie_rig:jackieHair_latest:polySurfaceShape13.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface3|jackie_rig:jackieHair_latest:polySurfaceShape14.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface4|jackie_rig:jackieHair_latest:polySurfaceShape15.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface7|jackie_rig:jackieHair_latest:polySurfaceShape18.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface40|jackie_rig:jackieHair_latest:polySurfaceShape40.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface41|jackie_rig:jackieHair_latest:polySurfaceShape41.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface42|jackie_rig:jackieHair_latest:polySurfaceShape42.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface43|jackie_rig:jackieHair_latest:polySurfaceShape43.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface44|jackie_rig:jackieHair_latest:polySurfaceShape44.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface45|jackie_rig:jackieHair_latest:polySurfaceShape45.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface29|jackie_rig:jackieHair_latest:polySurfaceShape29.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangsbottom|jackie_rig:jackieHair_latest:polySurface31|jackie_rig:jackieHair_latest:polySurfaceShape31.instObjGroups" 
@@ -27445,46 +27304,20 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom2|jackie_rig:jackieHair_latest:polySurface45|jackie_rig:jackieHair_latest:polySurfaceShape45.instObjGroups" 
 		"jackie_rig:jackieHair_latest:hairbottom3SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface1|jackie_rig:jackieHair_latest:polySurfaceShape12.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface2|jackie_rig:jackieHair_latest:polySurfaceShape13.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface3|jackie_rig:jackieHair_latest:polySurfaceShape14.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface4|jackie_rig:jackieHair_latest:polySurfaceShape15.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface7|jackie_rig:jackieHair_latest:polySurfaceShape18.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface40|jackie_rig:jackieHair_latest:polySurfaceShape40.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface41|jackie_rig:jackieHair_latest:polySurfaceShape41.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface42|jackie_rig:jackieHair_latest:polySurfaceShape42.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface43|jackie_rig:jackieHair_latest:polySurfaceShape43.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface44|jackie_rig:jackieHair_latest:polySurfaceShape44.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairbottom|jackie_rig:jackieHair_latest:polySurface45|jackie_rig:jackieHair_latest:polySurfaceShape45.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface1SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface14|jackie_rig:jackieHair_latest:polySurfaceShape14.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface16|jackie_rig:jackieHair_latest:polySurfaceShape16.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface17|jackie_rig:jackieHair_latest:polySurfaceShape17.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface18|jackie_rig:jackieHair_latest:polySurfaceShape18.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface19|jackie_rig:jackieHair_latest:polySurfaceShape19.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface20|jackie_rig:jackieHair_latest:polySurfaceShape20.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface21|jackie_rig:jackieHair_latest:polySurfaceShape21.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface38|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
-		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairtoptop|jackie_rig:jackieHair_latest:polySurface39|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
-		"jackie_rig:jackieHair_latest:PxrSurface3SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface22|jackie_rig:jackieHair_latest:polySurfaceShape33.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface23|jackie_rig:jackieHair_latest:polySurfaceShape34.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface24|jackie_rig:jackieHair_latest:polySurfaceShape35.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface25|jackie_rig:jackieHair_latest:polySurfaceShape36.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface26|jackie_rig:jackieHair_latest:polySurfaceShape37.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface27|jackie_rig:jackieHair_latest:polySurfaceShape38.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
+		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:bangs|jackie_rig:jackieHair_latest:bangstop|jackie_rig:jackieHair_latest:polySurface28|jackie_rig:jackieHair_latest:polySurfaceShape39.instObjGroups" 
+		"jackie_rig:jackieHair_latest:PxrSurface4SG.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface6|jackie_rig:jackieHair_latest:polySurfaceShape17.instObjGroups" 
 		"jackie_rig:jackieHair_latest:PxrSurface2SG.dagSetMembers" "-na"
 		3 "|jackie_MASTER_ctl|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:jackieHair|jackie_rig:jackieHair_latest:hairmid|jackie_rig:jackieHair_latest:polySurface8|jackie_rig:jackieHair_latest:polySurfaceShape19.instObjGroups" 
@@ -27957,7 +27790,173 @@ createNode reference -n "jackie_rigRN";
 		"jackie_rig:jackieHair_latest:PxrSurface7SG.dagSetMembers" "jackie_rigRN.placeHolderList[501]" 
 		"jackie_rigRN.placeHolderList[502]" "jackie_rig:jackieHair_latest:PxrSurface7SG.dsm"
 		
-		"jackie_rig:teeth_v1_latestRN" 0;
+		"jackie_rig:jackiePants_latestRN" 63
+		0 "|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" "|jackie_GEO|moreGEO" 
+		"-s -r "
+		0 "|jackie_rigRNfosterParent1|polySurfaceShape1Deformed" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"-s -r "
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"visibility" " 1"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"scaleX" " 1"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"scaleY" " 1"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"scaleZ" " 1"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"rotatePivot" " -type \"double3\" -0.006 -0.063658494966674528 0.011519840177370455"
+		
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"scalePivot" " -type \"double3\" -0.006 -0.063658494966674528 0.011519840177370455"
+		
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"scalePivotTranslate" " -type \"double3\" 0 0 0"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
+		"intermediateObject" " 1"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
+		"instObjGroups.objectGroups" " -s 4"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
+		"instObjGroups.objectGroups[0].objectGrpCompList" " -type \"componentList\" 1 \"f[0:16643]\""
+		
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
+		"instObjGroups.objectGroups[1].objectGrpCompList" " -type \"componentList\" 1 \"f[0:16643]\""
+		
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
+		"instObjGroups.objectGroups[2].objectGrpCompList" " -type \"componentList\" 1 \"vtx[0:16641]\""
+		
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
+		"instObjGroups.objectGroups[3].objectGrpCompList" " -type \"componentList\" 1 \"f[0:16643]\""
+		
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
+		"dispResolution" " 3"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
+		"displaySmoothMesh" " 2"
+		2 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1" 
+		"vertexColorSource" " 2"
+		3 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
+		"jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" "-na"
+		3 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" "-na"
+		
+		3 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dagSetMembers" "-na"
+		
+		3 "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.groupId" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		""
+		3 "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.memberWireframeColor" 
+		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		""
+		3 "jackie_rig:jackiePants_latest:jackiePants_latest:groupId2.groupId" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGroupId" 
+		""
+		3 "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.memberWireframeColor" 
+		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGrpColor" 
+		""
+		3 "jackie_rig:jackiePants_latest:jackiePants_latest:groupId3.groupId" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGroupId" 
+		""
+		3 "jackie_rig:jackiePants_latest:jackiePants_latest:default1.memberWireframeColor" 
+		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGrpColor" 
+		""
+		5 4 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1.drawOverride" 
+		"jackie_rigRN.placeHolderList[85]" ""
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.groupId" 
+		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGroupId" 
+		"jackie_rigRN.placeHolderList[86]" "jackie_rigRN.placeHolderList[87]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gid"
+		
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.memberWireframeColor" 
+		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0].objectGrpColor" 
+		"jackie_rigRN.placeHolderList[88]" "jackie_rigRN.placeHolderList[89]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gco"
+		
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId2.groupId" 
+		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGroupId" 
+		"jackie_rigRN.placeHolderList[90]" "jackie_rigRN.placeHolderList[91]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gid"
+		
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.memberWireframeColor" 
+		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1].objectGrpColor" 
+		"jackie_rigRN.placeHolderList[92]" "jackie_rigRN.placeHolderList[93]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gco"
+		
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId3.groupId" 
+		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGroupId" 
+		"jackie_rigRN.placeHolderList[94]" "jackie_rigRN.placeHolderList[95]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gid"
+		
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.memberWireframeColor" 
+		"|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2].objectGrpColor" 
+		"jackie_rigRN.placeHolderList[96]" "jackie_rigRN.placeHolderList[97]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gco"
+		
+		5 4 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[3].objectGroupId" 
+		"jackie_rigRN.placeHolderList[98]" ""
+		5 3 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.worldMesh" 
+		"jackie_rigRN.placeHolderList[99]" ""
+		5 0 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups" 
+		"jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" "jackie_rigRN.placeHolderList[100]" 
+		"jackie_rigRN.placeHolderList[101]" "jackie_rig:jackiePants_latest:PxrSurface1SG.dsm"
+		
+		5 4 "jackie_rigRN" "jackie_rig:jackiePants_latest:PxrSurface1SG.dagSetMembers" 
+		"jackie_rigRN.placeHolderList[102]" ""
+		5 3 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.memberWireframeColor" 
+		"jackie_rigRN.placeHolderList[103]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gco"
+		
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.message" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.groupNodes" "jackie_rigRN.placeHolderList[104]" 
+		"jackie_rigRN.placeHolderList[105]" ""
+		5 0 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[0]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dagSetMembers" "jackie_rigRN.placeHolderList[106]" 
+		"jackie_rigRN.placeHolderList[107]" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dsm"
+		
+		5 4 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePants.dagSetMembers" 
+		"jackie_rigRN.placeHolderList[108]" ""
+		5 3 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId1.groupId" 
+		"jackie_rigRN.placeHolderList[109]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[0].gid"
+		
+		5 3 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.memberWireframeColor" 
+		"jackie_rigRN.placeHolderList[110]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gco"
+		
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId2.message" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.groupNodes" "jackie_rigRN.placeHolderList[111]" 
+		"jackie_rigRN.placeHolderList[112]" ""
+		5 0 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[1]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" "jackie_rigRN.placeHolderList[113]" 
+		"jackie_rigRN.placeHolderList[114]" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dsm"
+		
+		5 4 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:jackiePant.dagSetMembers" 
+		"jackie_rigRN.placeHolderList[115]" ""
+		5 3 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId2.groupId" 
+		"jackie_rigRN.placeHolderList[116]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[1].gid"
+		
+		5 3 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.memberWireframeColor" 
+		"jackie_rigRN.placeHolderList[117]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gco"
+		
+		5 0 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId3.message" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.groupNodes" "jackie_rigRN.placeHolderList[118]" 
+		"jackie_rigRN.placeHolderList[119]" ""
+		5 0 "jackie_rigRN" "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1|jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.instObjGroups.objectGroups[2]" 
+		"jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" "jackie_rigRN.placeHolderList[120]" 
+		"jackie_rigRN.placeHolderList[121]" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.dsm"
+		
+		5 4 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:default1.dagSetMembers" 
+		"jackie_rigRN.placeHolderList[122]" ""
+		5 3 "jackie_rigRN" "jackie_rig:jackiePants_latest:jackiePants_latest:groupId3.groupId" 
+		"jackie_rigRN.placeHolderList[123]" "jackie_rig:jackiePants_latest:jackiePants_latest:polySurfaceShape1.iog.og[2].gid"
+		
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"scaleX"
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"scaleY"
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"scaleZ"
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"translateX"
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"translateY"
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"translateZ"
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"rotateX"
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"rotateY"
+		8 "|jackie_GEO|moreGEO|jackie_rig:jackiePants_latest:jackiePants_latest:polySurface1" 
+		"rotateZ";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode reference -n "teeth_v1_latestRN1";
@@ -27965,42 +27964,8 @@ createNode reference -n "teeth_v1_latestRN1";
 	setAttr -s 45 ".phl";
 	setAttr ".phl[1]" -type "double3" 0.012306415633928152 6.18804518952519 0.05982256923337792 ;
 	setAttr ".phl[8]" 0;
-	setAttr ".phl[9]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 -0 0 -0 1;
+	setAttr ".phl[9]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
 	setAttr ".phl[10]" -type "double3" 0 0 0 ;
-	setAttr ".phl[12]" -type "TdataCompound" ;
-	setAttr ".phl[13]" -type "TdataCompound" ;
-	setAttr ".phl[14]" -type "TdataCompound" ;
-	setAttr ".phl[15]" -type "TdataCompound" ;
-	setAttr ".phl[16]" -type "TdataCompound" ;
-	setAttr ".phl[17]" -type "TdataCompound" ;
-	setAttr ".phl[18]" -type "TdataCompound" ;
-	setAttr ".phl[19]" -type "TdataCompound" ;
-	setAttr ".phl[20]" -type "TdataCompound" ;
-	setAttr ".phl[21]" -type "TdataCompound" ;
-	setAttr ".phl[22]" -type "TdataCompound" ;
-	setAttr ".phl[23]" -type "TdataCompound" ;
-	setAttr ".phl[24]" -type "TdataCompound" ;
-	setAttr ".phl[25]" -type "TdataCompound" ;
-	setAttr ".phl[26]" -type "TdataCompound" ;
-	setAttr ".phl[27]" -type "TdataCompound" ;
-	setAttr ".phl[28]" -type "TdataCompound" ;
-	setAttr ".phl[29]" -type "TdataCompound" ;
-	setAttr ".phl[30]" -type "TdataCompound" ;
-	setAttr ".phl[31]" -type "TdataCompound" ;
-	setAttr ".phl[32]" -type "TdataCompound" ;
-	setAttr ".phl[33]" -type "TdataCompound" ;
-	setAttr ".phl[34]" -type "TdataCompound" ;
-	setAttr ".phl[35]" -type "TdataCompound" ;
-	setAttr ".phl[36]" -type "TdataCompound" ;
-	setAttr ".phl[37]" -type "TdataCompound" ;
-	setAttr ".phl[38]" -type "TdataCompound" ;
-	setAttr ".phl[39]" -type "TdataCompound" ;
-	setAttr ".phl[40]" -type "TdataCompound" ;
-	setAttr ".phl[41]" -type "TdataCompound" ;
-	setAttr ".phl[42]" -type "TdataCompound" ;
-	setAttr ".phl[43]" -type "TdataCompound" ;
-	setAttr ".phl[44]" -type "TdataCompound" ;
-	setAttr ".phl[45]" -type "TdataCompound" ;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"teeth_v1_latestRN1"
 		"teeth_v1_latestRN1" 106
@@ -28221,8 +28186,7 @@ createNode reference -n "teeth_v1_latestRN1";
 		5 3 "teeth_v1_latestRN1" "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:TopCont1|teeth_v1_latest1:top1|teeth_v1_latest1:Bottom|teeth_v1_latest1:Gums|teeth_v1_latest1:GumsShape.instObjGroups" 
 		"teeth_v1_latestRN1.placeHolderList[44]" ":initialShadingGroup.dsm"
 		5 3 "teeth_v1_latestRN1" "|jackie_MASTER_ctl|teeth_v1_latest1:Teeth|teeth_v1_latest1:BottomCont1|teeth_v1_latest1:bottom|teeth_v1_latest1:Bottom|teeth_v1_latest1:Gums|teeth_v1_latest1:GumsShape.instObjGroups" 
-		"teeth_v1_latestRN1.placeHolderList[45]" ":initialShadingGroup.dsm"
-		"teeth_v1_latestRN1" 0;
+		"teeth_v1_latestRN1.placeHolderList[45]" ":initialShadingGroup.dsm";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode blendColors -n "blendColors1";
@@ -56720,507 +56684,507 @@ createNode nodeGraphEditorBookmarkInfo -n "nodeView4";
 	setAttr ".ni[12].y" 657.14288330078125;
 	setAttr ".ni[12].nvs" 18305;
 createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "4CD27E61-4A36-BBC5-4126-E5B48B90AB77";
+	rename -uid "24C09D9A-4735-5690-A0D6-8D95A153A21C";
 	setAttr -s 6 ".tgi";
 	setAttr ".tgi[0].tn" -type "string" "lf_wrist_twist_blend";
-	setAttr ".tgi[0].vl" -type "double2" 80.402658256455524 -735.9625823493277 ;
-	setAttr ".tgi[0].vh" -type "double2" 1451.1796612138053 59.532546485538134 ;
+	setAttr ".tgi[0].vl" -type "double2" -897.94368726265486 -736.30949455121322 ;
+	setAttr ".tgi[0].vh" -type "double2" 2430.0864835236112 59.523807158545964 ;
 	setAttr -s 16 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" 638.5714111328125;
-	setAttr ".tgi[0].ni[0].y" -474.28570556640625;
+	setAttr ".tgi[0].ni[0].x" 945.71429443359375;
+	setAttr ".tgi[0].ni[0].y" -105.71428680419922;
 	setAttr ".tgi[0].ni[0].nvs" 18312;
-	setAttr ".tgi[0].ni[1].x" 945.71429443359375;
-	setAttr ".tgi[0].ni[1].y" -105.71428680419922;
+	setAttr ".tgi[0].ni[1].x" 638.5714111328125;
+	setAttr ".tgi[0].ni[1].y" -271.42855834960938;
 	setAttr ".tgi[0].ni[1].nvs" 18312;
-	setAttr ".tgi[0].ni[2].x" -282.85714721679688;
-	setAttr ".tgi[0].ni[2].y" -388.57144165039063;
+	setAttr ".tgi[0].ni[2].x" 638.5714111328125;
+	setAttr ".tgi[0].ni[2].y" -372.85714721679688;
 	setAttr ".tgi[0].ni[2].nvs" 18312;
-	setAttr ".tgi[0].ni[3].x" 945.71429443359375;
-	setAttr ".tgi[0].ni[3].y" -312.85714721679688;
-	setAttr ".tgi[0].ni[3].nvs" 18314;
-	setAttr ".tgi[0].ni[4].x" 24.285715103149414;
-	setAttr ".tgi[0].ni[4].y" -388.57144165039063;
+	setAttr ".tgi[0].ni[3].x" 1252.857177734375;
+	setAttr ".tgi[0].ni[3].y" -148.57142639160156;
+	setAttr ".tgi[0].ni[3].nvs" 18312;
+	setAttr ".tgi[0].ni[4].x" 638.5714111328125;
+	setAttr ".tgi[0].ni[4].y" -474.28570556640625;
 	setAttr ".tgi[0].ni[4].nvs" 18312;
-	setAttr ".tgi[0].ni[5].x" 1560;
-	setAttr ".tgi[0].ni[5].y" -137.14285278320313;
-	setAttr ".tgi[0].ni[5].nvs" 18312;
-	setAttr ".tgi[0].ni[6].x" 1252.857177734375;
-	setAttr ".tgi[0].ni[6].y" -384.37237548828125;
-	setAttr ".tgi[0].ni[6].nvs" 18312;
-	setAttr ".tgi[0].ni[7].x" 1560;
-	setAttr ".tgi[0].ni[7].y" -270;
-	setAttr ".tgi[0].ni[7].nvs" 18313;
-	setAttr ".tgi[0].ni[8].x" 331.42855834960938;
-	setAttr ".tgi[0].ni[8].y" -24.285715103149414;
+	setAttr ".tgi[0].ni[5].x" 331.42855834960938;
+	setAttr ".tgi[0].ni[5].y" -24.285715103149414;
+	setAttr ".tgi[0].ni[5].nvs" 18313;
+	setAttr ".tgi[0].ni[6].x" 331.42855834960938;
+	setAttr ".tgi[0].ni[6].y" -224.28572082519531;
+	setAttr ".tgi[0].ni[6].nvs" 18314;
+	setAttr ".tgi[0].ni[7].x" -282.85714721679688;
+	setAttr ".tgi[0].ni[7].y" -120;
+	setAttr ".tgi[0].ni[7].nvs" 18312;
+	setAttr ".tgi[0].ni[8].x" 1560;
+	setAttr ".tgi[0].ni[8].y" -270;
 	setAttr ".tgi[0].ni[8].nvs" 18313;
-	setAttr ".tgi[0].ni[9].x" 1252.857177734375;
-	setAttr ".tgi[0].ni[9].y" -148.57142639160156;
+	setAttr ".tgi[0].ni[9].x" -282.85714721679688;
+	setAttr ".tgi[0].ni[9].y" -388.57144165039063;
 	setAttr ".tgi[0].ni[9].nvs" 18312;
-	setAttr ".tgi[0].ni[10].x" 24.285715103149414;
-	setAttr ".tgi[0].ni[10].y" -120;
+	setAttr ".tgi[0].ni[10].x" 1560;
+	setAttr ".tgi[0].ni[10].y" -137.14285278320313;
 	setAttr ".tgi[0].ni[10].nvs" 18312;
-	setAttr ".tgi[0].ni[11].x" -282.85714721679688;
-	setAttr ".tgi[0].ni[11].y" -120;
+	setAttr ".tgi[0].ni[11].x" 945.71429443359375;
+	setAttr ".tgi[0].ni[11].y" -211.42857360839844;
 	setAttr ".tgi[0].ni[11].nvs" 18312;
-	setAttr ".tgi[0].ni[12].x" 638.5714111328125;
-	setAttr ".tgi[0].ni[12].y" -372.85714721679688;
+	setAttr ".tgi[0].ni[12].x" 1252.857177734375;
+	setAttr ".tgi[0].ni[12].y" -384.37237548828125;
 	setAttr ".tgi[0].ni[12].nvs" 18312;
-	setAttr ".tgi[0].ni[13].x" 331.42855834960938;
-	setAttr ".tgi[0].ni[13].y" -224.28572082519531;
-	setAttr ".tgi[0].ni[13].nvs" 18314;
-	setAttr ".tgi[0].ni[14].x" 945.71429443359375;
-	setAttr ".tgi[0].ni[14].y" -211.42857360839844;
+	setAttr ".tgi[0].ni[13].x" 24.285715103149414;
+	setAttr ".tgi[0].ni[13].y" -120;
+	setAttr ".tgi[0].ni[13].nvs" 18312;
+	setAttr ".tgi[0].ni[14].x" 24.285715103149414;
+	setAttr ".tgi[0].ni[14].y" -388.57144165039063;
 	setAttr ".tgi[0].ni[14].nvs" 18312;
-	setAttr ".tgi[0].ni[15].x" 638.5714111328125;
-	setAttr ".tgi[0].ni[15].y" -271.42855834960938;
-	setAttr ".tgi[0].ni[15].nvs" 18312;
+	setAttr ".tgi[0].ni[15].x" 945.71429443359375;
+	setAttr ".tgi[0].ni[15].y" -312.85714721679688;
+	setAttr ".tgi[0].ni[15].nvs" 18314;
 	setAttr ".tgi[1].tn" -type "string" "rt_wrist_twist_blend";
-	setAttr ".tgi[1].vl" -type "double2" -3577.2455288487049 -630.35711780900135 ;
-	setAttr ".tgi[1].vh" -type "double2" 3658.7931446559132 1099.9999562899291 ;
+	setAttr ".tgi[1].vl" -type "double2" -3578.192498508045 -630.95235588058699 ;
+	setAttr ".tgi[1].vh" -type "double2" 3660.33535238684 1099.9999562899291 ;
 	setAttr -s 16 ".tgi[1].ni";
-	setAttr ".tgi[1].ni[0].x" 569.2037353515625;
-	setAttr ".tgi[1].ni[0].y" 423.63284301757813;
+	setAttr ".tgi[1].ni[0].x" -73.000389099121094;
+	setAttr ".tgi[1].ni[0].y" 543.32684326171875;
 	setAttr ".tgi[1].ni[0].nvs" 18312;
-	setAttr ".tgi[1].ni[1].x" -400;
-	setAttr ".tgi[1].ni[1].y" 18.571428298950195;
-	setAttr ".tgi[1].ni[1].nvs" 18314;
-	setAttr ".tgi[1].ni[2].x" -399.17745971679688;
-	setAttr ".tgi[1].ni[2].y" 235.98001098632813;
-	setAttr ".tgi[1].ni[2].nvs" 18313;
-	setAttr ".tgi[1].ni[3].x" -92.857139587402344;
-	setAttr ".tgi[1].ni[3].y" 18.571428298950195;
-	setAttr ".tgi[1].ni[3].nvs" 18312;
-	setAttr ".tgi[1].ni[4].x" -92.857139587402344;
-	setAttr ".tgi[1].ni[4].y" 120;
-	setAttr ".tgi[1].ni[4].nvs" 18312;
-	setAttr ".tgi[1].ni[5].x" 251.27357482910156;
-	setAttr ".tgi[1].ni[5].y" 671.56341552734375;
-	setAttr ".tgi[1].ni[5].nvs" 18314;
-	setAttr ".tgi[1].ni[6].x" -707.14288330078125;
-	setAttr ".tgi[1].ni[6].y" 18.571428298950195;
+	setAttr ".tgi[1].ni[1].x" -1014.2857055664063;
+	setAttr ".tgi[1].ni[1].y" 120;
+	setAttr ".tgi[1].ni[1].nvs" 18312;
+	setAttr ".tgi[1].ni[2].x" -400;
+	setAttr ".tgi[1].ni[2].y" 18.571428298950195;
+	setAttr ".tgi[1].ni[2].nvs" 18314;
+	setAttr ".tgi[1].ni[3].x" -399.17745971679688;
+	setAttr ".tgi[1].ni[3].y" 235.98001098632813;
+	setAttr ".tgi[1].ni[3].nvs" 18313;
+	setAttr ".tgi[1].ni[4].x" 898.5714111328125;
+	setAttr ".tgi[1].ni[4].y" -91.428573608398438;
+	setAttr ".tgi[1].ni[4].nvs" 18304;
+	setAttr ".tgi[1].ni[5].x" 820.47174072265625;
+	setAttr ".tgi[1].ni[5].y" 250.29566955566406;
+	setAttr ".tgi[1].ni[5].nvs" 18313;
+	setAttr ".tgi[1].ni[6].x" -92.857139587402344;
+	setAttr ".tgi[1].ni[6].y" 120;
 	setAttr ".tgi[1].ni[6].nvs" 18312;
-	setAttr ".tgi[1].ni[7].x" 521.4285888671875;
-	setAttr ".tgi[1].ni[7].y" 70;
+	setAttr ".tgi[1].ni[7].x" -75.326919555664063;
+	setAttr ".tgi[1].ni[7].y" 333.71453857421875;
 	setAttr ".tgi[1].ni[7].nvs" 18312;
-	setAttr ".tgi[1].ni[8].x" -73.000389099121094;
-	setAttr ".tgi[1].ni[8].y" 543.32684326171875;
+	setAttr ".tgi[1].ni[8].x" -1014.2857055664063;
+	setAttr ".tgi[1].ni[8].y" 18.571428298950195;
 	setAttr ".tgi[1].ni[8].nvs" 18312;
-	setAttr ".tgi[1].ni[9].x" 898.5714111328125;
-	setAttr ".tgi[1].ni[9].y" -91.428573608398438;
-	setAttr ".tgi[1].ni[9].nvs" 18304;
-	setAttr ".tgi[1].ni[10].x" -1014.2857055664063;
-	setAttr ".tgi[1].ni[10].y" 18.571428298950195;
+	setAttr ".tgi[1].ni[9].x" 251.27357482910156;
+	setAttr ".tgi[1].ni[9].y" 671.56341552734375;
+	setAttr ".tgi[1].ni[9].nvs" 18314;
+	setAttr ".tgi[1].ni[10].x" 521.4285888671875;
+	setAttr ".tgi[1].ni[10].y" 70;
 	setAttr ".tgi[1].ni[10].nvs" 18312;
-	setAttr ".tgi[1].ni[11].x" -75.326919555664063;
-	setAttr ".tgi[1].ni[11].y" 333.71453857421875;
+	setAttr ".tgi[1].ni[11].x" -707.14288330078125;
+	setAttr ".tgi[1].ni[11].y" 120;
 	setAttr ".tgi[1].ni[11].nvs" 18312;
-	setAttr ".tgi[1].ni[12].x" -1014.2857055664063;
-	setAttr ".tgi[1].ni[12].y" 120;
+	setAttr ".tgi[1].ni[12].x" -92.857139587402344;
+	setAttr ".tgi[1].ni[12].y" 18.571428298950195;
 	setAttr ".tgi[1].ni[12].nvs" 18312;
-	setAttr ".tgi[1].ni[13].x" -707.14288330078125;
-	setAttr ".tgi[1].ni[13].y" 120;
+	setAttr ".tgi[1].ni[13].x" 569.2037353515625;
+	setAttr ".tgi[1].ni[13].y" 423.63284301757813;
 	setAttr ".tgi[1].ni[13].nvs" 18312;
-	setAttr ".tgi[1].ni[14].x" 214.28572082519531;
-	setAttr ".tgi[1].ni[14].y" 70;
+	setAttr ".tgi[1].ni[14].x" -707.14288330078125;
+	setAttr ".tgi[1].ni[14].y" 18.571428298950195;
 	setAttr ".tgi[1].ni[14].nvs" 18312;
-	setAttr ".tgi[1].ni[15].x" 820.47174072265625;
-	setAttr ".tgi[1].ni[15].y" 250.29566955566406;
-	setAttr ".tgi[1].ni[15].nvs" 18313;
+	setAttr ".tgi[1].ni[15].x" 214.28572082519531;
+	setAttr ".tgi[1].ni[15].y" 70;
+	setAttr ".tgi[1].ni[15].nvs" 18312;
 	setAttr ".tgi[2].tn" -type "string" "lf_arm_stretchyIK";
-	setAttr ".tgi[2].vl" -type "double2" -572.02506176799966 -865.82944691375928 ;
-	setAttr ".tgi[2].vh" -type "double2" 1555.3277319336116 368.72495621079372 ;
+	setAttr ".tgi[2].vl" -type "double2" -610.2862476549592 -835.90276523126454 ;
+	setAttr ".tgi[2].vh" -type "double2" 1837.2823179166219 584.48061383109382 ;
 	setAttr -s 19 ".tgi[2].ni";
-	setAttr ".tgi[2].ni[0].x" 134.4354248046875;
-	setAttr ".tgi[2].ni[0].y" -294.74520874023438;
+	setAttr ".tgi[2].ni[0].x" -112.89063262939453;
+	setAttr ".tgi[2].ni[0].y" -313.96310424804688;
 	setAttr ".tgi[2].ni[0].nvs" 18306;
-	setAttr ".tgi[2].ni[1].x" -112.89063262939453;
-	setAttr ".tgi[2].ni[1].y" -313.96310424804688;
-	setAttr ".tgi[2].ni[1].nvs" 18306;
-	setAttr ".tgi[2].ni[2].x" 688.5714111328125;
-	setAttr ".tgi[2].ni[2].y" -385.71429443359375;
+	setAttr ".tgi[2].ni[1].x" -282.96929931640625;
+	setAttr ".tgi[2].ni[1].y" 83.227264404296875;
+	setAttr ".tgi[2].ni[1].nvs" 18312;
+	setAttr ".tgi[2].ni[2].x" 1177.142822265625;
+	setAttr ".tgi[2].ni[2].y" -168.57142639160156;
 	setAttr ".tgi[2].ni[2].nvs" 18304;
 	setAttr ".tgi[2].ni[3].x" -281.00454711914063;
 	setAttr ".tgi[2].ni[3].y" 153.95901489257813;
 	setAttr ".tgi[2].ni[3].nvs" 18312;
-	setAttr ".tgi[2].ni[4].x" 1515.7142333984375;
-	setAttr ".tgi[2].ni[4].y" -1050;
+	setAttr ".tgi[2].ni[4].x" 1484.2857666015625;
+	setAttr ".tgi[2].ni[4].y" -218.57142639160156;
 	setAttr ".tgi[2].ni[4].nvs" 18304;
-	setAttr ".tgi[2].ni[5].x" 542.44378662109375;
-	setAttr ".tgi[2].ni[5].y" 267.09527587890625;
+	setAttr ".tgi[2].ni[5].x" 31.394008636474609;
+	setAttr ".tgi[2].ni[5].y" 393.66104125976563;
 	setAttr ".tgi[2].ni[5].nvs" 18313;
-	setAttr ".tgi[2].ni[6].x" 1515.7142333984375;
-	setAttr ".tgi[2].ni[6].y" -920;
-	setAttr ".tgi[2].ni[6].nvs" 18304;
-	setAttr ".tgi[2].ni[7].x" 1515.7142333984375;
-	setAttr ".tgi[2].ni[7].y" -790;
-	setAttr ".tgi[2].ni[7].nvs" 18304;
-	setAttr ".tgi[2].ni[8].x" 1177.142822265625;
-	setAttr ".tgi[2].ni[8].y" -168.57142639160156;
-	setAttr ".tgi[2].ni[8].nvs" 18304;
-	setAttr ".tgi[2].ni[9].x" -282.96929931640625;
-	setAttr ".tgi[2].ni[9].y" 83.227264404296875;
-	setAttr ".tgi[2].ni[9].nvs" 18312;
-	setAttr ".tgi[2].ni[10].x" -290.57696533203125;
-	setAttr ".tgi[2].ni[10].y" 420.92147827148438;
-	setAttr ".tgi[2].ni[10].nvs" 18312;
-	setAttr ".tgi[2].ni[11].x" 1484.2857666015625;
-	setAttr ".tgi[2].ni[11].y" -218.57142639160156;
-	setAttr ".tgi[2].ni[11].nvs" 18304;
-	setAttr ".tgi[2].ni[12].x" 31.394008636474609;
-	setAttr ".tgi[2].ni[12].y" 393.66104125976563;
-	setAttr ".tgi[2].ni[12].nvs" 18313;
-	setAttr ".tgi[2].ni[13].x" 217.05778503417969;
-	setAttr ".tgi[2].ni[13].y" 27.228364944458008;
-	setAttr ".tgi[2].ni[13].nvs" 18314;
-	setAttr ".tgi[2].ni[14].x" 1110.7720947265625;
-	setAttr ".tgi[2].ni[14].y" 529.60260009765625;
-	setAttr ".tgi[2].ni[14].nvs" 18305;
-	setAttr ".tgi[2].ni[15].x" -290.57696533203125;
-	setAttr ".tgi[2].ni[15].y" 289.28182983398438;
-	setAttr ".tgi[2].ni[15].nvs" 18312;
-	setAttr ".tgi[2].ni[16].x" -288.61221313476563;
-	setAttr ".tgi[2].ni[16].y" 487.72369384765625;
-	setAttr ".tgi[2].ni[16].nvs" 18312;
-	setAttr ".tgi[2].ni[17].x" 1177.142822265625;
-	setAttr ".tgi[2].ni[17].y" -270;
+	setAttr ".tgi[2].ni[6].x" 217.87763977050781;
+	setAttr ".tgi[2].ni[6].y" 37.886390686035156;
+	setAttr ".tgi[2].ni[6].nvs" 18314;
+	setAttr ".tgi[2].ni[7].x" 134.4354248046875;
+	setAttr ".tgi[2].ni[7].y" -294.74520874023438;
+	setAttr ".tgi[2].ni[7].nvs" 18306;
+	setAttr ".tgi[2].ni[8].x" -290.57696533203125;
+	setAttr ".tgi[2].ni[8].y" 420.92147827148438;
+	setAttr ".tgi[2].ni[8].nvs" 18312;
+	setAttr ".tgi[2].ni[9].x" 1110.7720947265625;
+	setAttr ".tgi[2].ni[9].y" 529.60260009765625;
+	setAttr ".tgi[2].ni[9].nvs" 18305;
+	setAttr ".tgi[2].ni[10].x" 1515.7142333984375;
+	setAttr ".tgi[2].ni[10].y" -920;
+	setAttr ".tgi[2].ni[10].nvs" 18304;
+	setAttr ".tgi[2].ni[11].x" 542.44378662109375;
+	setAttr ".tgi[2].ni[11].y" 267.09527587890625;
+	setAttr ".tgi[2].ni[11].nvs" 18313;
+	setAttr ".tgi[2].ni[12].x" 1515.7142333984375;
+	setAttr ".tgi[2].ni[12].y" -790;
+	setAttr ".tgi[2].ni[12].nvs" 18304;
+	setAttr ".tgi[2].ni[13].x" -290.57696533203125;
+	setAttr ".tgi[2].ni[13].y" 289.28182983398438;
+	setAttr ".tgi[2].ni[13].nvs" 18312;
+	setAttr ".tgi[2].ni[14].x" -288.61221313476563;
+	setAttr ".tgi[2].ni[14].y" 487.72369384765625;
+	setAttr ".tgi[2].ni[14].nvs" 18312;
+	setAttr ".tgi[2].ni[15].x" 872.93670654296875;
+	setAttr ".tgi[2].ni[15].y" 172.42172241210938;
+	setAttr ".tgi[2].ni[15].nvs" 18305;
+	setAttr ".tgi[2].ni[16].x" 1515.7142333984375;
+	setAttr ".tgi[2].ni[16].y" -1050;
+	setAttr ".tgi[2].ni[16].nvs" 18304;
+	setAttr ".tgi[2].ni[17].x" 688.5714111328125;
+	setAttr ".tgi[2].ni[17].y" -385.71429443359375;
 	setAttr ".tgi[2].ni[17].nvs" 18304;
-	setAttr ".tgi[2].ni[18].x" 872.93670654296875;
-	setAttr ".tgi[2].ni[18].y" 172.42172241210938;
-	setAttr ".tgi[2].ni[18].nvs" 18305;
+	setAttr ".tgi[2].ni[18].x" 1177.142822265625;
+	setAttr ".tgi[2].ni[18].y" -270;
+	setAttr ".tgi[2].ni[18].nvs" 18304;
 	setAttr ".tgi[3].tn" -type "string" "rt_arm_stretchyIK";
-	setAttr ".tgi[3].vl" -type "double2" -418.18231613617451 -293.24465397322638 ;
-	setAttr ".tgi[3].vh" -type "double2" 1570.7140752949967 860.96014208576207 ;
+	setAttr ".tgi[3].vl" -type "double2" -411.17491322916368 -241.55843195977192 ;
+	setAttr ".tgi[3].vh" -type "double2" 1669.1294086970886 965.69260231946441 ;
 	setAttr -s 14 ".tgi[3].ni";
-	setAttr ".tgi[3].ni[0].x" 1262.857177734375;
-	setAttr ".tgi[3].ni[0].y" -162.85714721679688;
+	setAttr ".tgi[3].ni[0].x" -304.28570556640625;
+	setAttr ".tgi[3].ni[0].y" 358.57144165039063;
 	setAttr ".tgi[3].ni[0].nvs" 18304;
-	setAttr ".tgi[3].ni[1].x" 2.8571429252624512;
-	setAttr ".tgi[3].ni[1].y" 782.85711669921875;
-	setAttr ".tgi[3].ni[1].nvs" 18305;
-	setAttr ".tgi[3].ni[2].x" -304.28570556640625;
-	setAttr ".tgi[3].ni[2].y" 620;
-	setAttr ".tgi[3].ni[2].nvs" 18304;
-	setAttr ".tgi[3].ni[3].x" -58.571430206298828;
-	setAttr ".tgi[3].ni[3].y" 532.85711669921875;
+	setAttr ".tgi[3].ni[1].x" 1262.857177734375;
+	setAttr ".tgi[3].ni[1].y" 97.142860412597656;
+	setAttr ".tgi[3].ni[1].nvs" 18304;
+	setAttr ".tgi[3].ni[2].x" 2.8571429252624512;
+	setAttr ".tgi[3].ni[2].y" 782.85711669921875;
+	setAttr ".tgi[3].ni[2].nvs" 18305;
+	setAttr ".tgi[3].ni[3].x" 1262.857177734375;
+	setAttr ".tgi[3].ni[3].y" 227.14285278320313;
 	setAttr ".tgi[3].ni[3].nvs" 18304;
-	setAttr ".tgi[3].ni[4].x" -304.28570556640625;
-	setAttr ".tgi[3].ni[4].y" 358.57144165039063;
-	setAttr ".tgi[3].ni[4].nvs" 18304;
-	setAttr ".tgi[3].ni[5].x" 341.42855834960938;
-	setAttr ".tgi[3].ni[5].y" 774.28570556640625;
-	setAttr ".tgi[3].ni[5].nvs" 18306;
-	setAttr ".tgi[3].ni[6].x" 955.71429443359375;
-	setAttr ".tgi[3].ni[6].y" 504.28570556640625;
+	setAttr ".tgi[3].ni[4].x" 648.5714111328125;
+	setAttr ".tgi[3].ni[4].y" 657.14288330078125;
+	setAttr ".tgi[3].ni[4].nvs" 18305;
+	setAttr ".tgi[3].ni[5].x" 955.71429443359375;
+	setAttr ".tgi[3].ni[5].y" 504.28570556640625;
+	setAttr ".tgi[3].ni[5].nvs" 18304;
+	setAttr ".tgi[3].ni[6].x" -58.571430206298828;
+	setAttr ".tgi[3].ni[6].y" 532.85711669921875;
 	setAttr ".tgi[3].ni[6].nvs" 18304;
-	setAttr ".tgi[3].ni[7].x" -304.28570556640625;
-	setAttr ".tgi[3].ni[7].y" 460;
+	setAttr ".tgi[3].ni[7].x" 1262.857177734375;
+	setAttr ".tgi[3].ni[7].y" -162.85714721679688;
 	setAttr ".tgi[3].ni[7].nvs" 18304;
-	setAttr ".tgi[3].ni[8].x" 1262.857177734375;
-	setAttr ".tgi[3].ni[8].y" -32.857143402099609;
+	setAttr ".tgi[3].ni[8].x" -304.28570556640625;
+	setAttr ".tgi[3].ni[8].y" 620;
 	setAttr ".tgi[3].ni[8].nvs" 18304;
-	setAttr ".tgi[3].ni[9].x" 1262.857177734375;
-	setAttr ".tgi[3].ni[9].y" 97.142860412597656;
-	setAttr ".tgi[3].ni[9].nvs" 18304;
-	setAttr ".tgi[3].ni[10].x" 1262.857177734375;
-	setAttr ".tgi[3].ni[10].y" 445.71429443359375;
+	setAttr ".tgi[3].ni[9].x" 341.42855834960938;
+	setAttr ".tgi[3].ni[9].y" 774.28570556640625;
+	setAttr ".tgi[3].ni[9].nvs" 18306;
+	setAttr ".tgi[3].ni[10].x" -304.28570556640625;
+	setAttr ".tgi[3].ni[10].y" 460;
 	setAttr ".tgi[3].ni[10].nvs" 18304;
 	setAttr ".tgi[3].ni[11].x" 2.8571429252624512;
 	setAttr ".tgi[3].ni[11].y" 515.71429443359375;
 	setAttr ".tgi[3].ni[11].nvs" 18305;
 	setAttr ".tgi[3].ni[12].x" 1262.857177734375;
-	setAttr ".tgi[3].ni[12].y" 227.14285278320313;
+	setAttr ".tgi[3].ni[12].y" -32.857143402099609;
 	setAttr ".tgi[3].ni[12].nvs" 18304;
-	setAttr ".tgi[3].ni[13].x" 648.5714111328125;
-	setAttr ".tgi[3].ni[13].y" 657.14288330078125;
-	setAttr ".tgi[3].ni[13].nvs" 18305;
+	setAttr ".tgi[3].ni[13].x" 1262.857177734375;
+	setAttr ".tgi[3].ni[13].y" 445.71429443359375;
+	setAttr ".tgi[3].ni[13].nvs" 18304;
 	setAttr ".tgi[4].tn" -type "string" "Untitled_2";
-	setAttr ".tgi[4].vl" -type "double2" -1420.6438829426236 -670.23806860522529 ;
-	setAttr ".tgi[4].vh" -type "double2" 1842.6676756967142 110.11904324331195 ;
+	setAttr ".tgi[4].vl" -type "double2" -1421.5908526019659 -670.83330667681264 ;
+	setAttr ".tgi[4].vh" -type "double2" 1844.209883427638 110.11904324330992 ;
 	setAttr -s 94 ".tgi[4].ni";
 	setAttr ".tgi[4].ni[0].x" 1250;
-	setAttr ".tgi[4].ni[0].y" -1328.5714111328125;
+	setAttr ".tgi[4].ni[0].y" -637.14288330078125;
 	setAttr ".tgi[4].ni[0].nvs" 18304;
 	setAttr ".tgi[4].ni[1].x" 1250;
-	setAttr ".tgi[4].ni[1].y" 400;
+	setAttr ".tgi[4].ni[1].y" -6341.4287109375;
 	setAttr ".tgi[4].ni[1].nvs" 18304;
-	setAttr ".tgi[4].ni[2].x" 942.85711669921875;
-	setAttr ".tgi[4].ni[2].y" -544.28570556640625;
+	setAttr ".tgi[4].ni[2].x" 904.28570556640625;
+	setAttr ".tgi[4].ni[2].y" -464.28570556640625;
 	setAttr ".tgi[4].ni[2].nvs" 18304;
-	setAttr ".tgi[4].ni[3].x" 475.71429443359375;
-	setAttr ".tgi[4].ni[3].y" -237.14285278320313;
+	setAttr ".tgi[4].ni[3].x" 1250;
+	setAttr ".tgi[4].ni[3].y" -6168.5712890625;
 	setAttr ".tgi[4].ni[3].nvs" 18304;
-	setAttr ".tgi[4].ni[4].x" 635.71429443359375;
-	setAttr ".tgi[4].ni[4].y" 3640;
+	setAttr ".tgi[4].ni[4].x" -280;
+	setAttr ".tgi[4].ni[4].y" 1.4285714626312256;
 	setAttr ".tgi[4].ni[4].nvs" 18304;
-	setAttr ".tgi[4].ni[5].x" -34.285713195800781;
-	setAttr ".tgi[4].ni[5].y" -404.28570556640625;
+	setAttr ".tgi[4].ni[5].x" 1250;
+	setAttr ".tgi[4].ni[5].y" -5131.4287109375;
 	setAttr ".tgi[4].ni[5].nvs" 18304;
 	setAttr ".tgi[4].ni[6].x" 1250;
-	setAttr ".tgi[4].ni[6].y" -4267.14306640625;
+	setAttr ".tgi[4].ni[6].y" -5477.14306640625;
 	setAttr ".tgi[4].ni[6].nvs" 18304;
-	setAttr ".tgi[4].ni[7].x" 1250;
-	setAttr ".tgi[4].ni[7].y" -2884.28564453125;
+	setAttr ".tgi[4].ni[7].x" -708.5714111328125;
+	setAttr ".tgi[4].ni[7].y" -1022.8571166992188;
 	setAttr ".tgi[4].ni[7].nvs" 18304;
-	setAttr ".tgi[4].ni[8].x" 1250;
-	setAttr ".tgi[4].ni[8].y" -464.28570556640625;
+	setAttr ".tgi[4].ni[8].x" -671.4285888671875;
+	setAttr ".tgi[4].ni[8].y" -248.57142639160156;
 	setAttr ".tgi[4].ni[8].nvs" 18304;
-	setAttr ".tgi[4].ni[9].x" 1250;
-	setAttr ".tgi[4].ni[9].y" -810;
+	setAttr ".tgi[4].ni[9].x" 942.85711669921875;
+	setAttr ".tgi[4].ni[9].y" -431.42855834960938;
 	setAttr ".tgi[4].ni[9].nvs" 18304;
 	setAttr ".tgi[4].ni[10].x" 1250;
-	setAttr ".tgi[4].ni[10].y" -1501.4285888671875;
+	setAttr ".tgi[4].ni[10].y" -4612.85693359375;
 	setAttr ".tgi[4].ni[10].nvs" 18304;
 	setAttr ".tgi[4].ni[11].x" 1250;
-	setAttr ".tgi[4].ni[11].y" 2690;
+	setAttr ".tgi[4].ni[11].y" -3921.428466796875;
 	setAttr ".tgi[4].ni[11].nvs" 18304;
-	setAttr ".tgi[4].ni[12].x" 942.85711669921875;
-	setAttr ".tgi[4].ni[12].y" 484.28570556640625;
+	setAttr ".tgi[4].ni[12].x" 1250;
+	setAttr ".tgi[4].ni[12].y" -2538.571533203125;
 	setAttr ".tgi[4].ni[12].nvs" 18304;
-	setAttr ".tgi[4].ni[13].x" 272.85714721679688;
-	setAttr ".tgi[4].ni[13].y" -165.71427917480469;
+	setAttr ".tgi[4].ni[13].x" 942.85711669921875;
+	setAttr ".tgi[4].ni[13].y" -287.14285278320313;
 	setAttr ".tgi[4].ni[13].nvs" 18304;
-	setAttr ".tgi[4].ni[14].x" 904.28570556640625;
+	setAttr ".tgi[4].ni[14].x" 1250;
+	setAttr ".tgi[4].ni[14].y" -3230;
 	setAttr ".tgi[4].ni[14].nvs" 18304;
 	setAttr ".tgi[4].ni[15].x" 1250;
-	setAttr ".tgi[4].ni[15].y" -4785.71435546875;
+	setAttr ".tgi[4].ni[15].y" -1155.7142333984375;
 	setAttr ".tgi[4].ni[15].nvs" 18304;
-	setAttr ".tgi[4].ni[16].x" 904.28570556640625;
-	setAttr ".tgi[4].ni[16].y" -464.28570556640625;
+	setAttr ".tgi[4].ni[16].x" 942.85711669921875;
+	setAttr ".tgi[4].ni[16].y" 340;
 	setAttr ".tgi[4].ni[16].nvs" 18304;
-	setAttr ".tgi[4].ni[17].x" 942.85711669921875;
-	setAttr ".tgi[4].ni[17].y" -431.42855834960938;
+	setAttr ".tgi[4].ni[17].x" 1250;
+	setAttr ".tgi[4].ni[17].y" -2711.428466796875;
 	setAttr ".tgi[4].ni[17].nvs" 18304;
 	setAttr ".tgi[4].ni[18].x" 1250;
-	setAttr ".tgi[4].ni[18].y" 4452.85693359375;
+	setAttr ".tgi[4].ni[18].y" -5304.28564453125;
 	setAttr ".tgi[4].ni[18].nvs" 18304;
-	setAttr ".tgi[4].ni[19].x" 1250;
-	setAttr ".tgi[4].ni[19].y" -1155.7142333984375;
+	setAttr ".tgi[4].ni[19].x" 272.85714721679688;
+	setAttr ".tgi[4].ni[19].y" 94.285713195800781;
 	setAttr ".tgi[4].ni[19].nvs" 18304;
-	setAttr ".tgi[4].ni[20].x" 272.85714721679688;
-	setAttr ".tgi[4].ni[20].y" -425.71429443359375;
+	setAttr ".tgi[4].ni[20].x" 212.85714721679688;
+	setAttr ".tgi[4].ni[20].y" -895.71429443359375;
 	setAttr ".tgi[4].ni[20].nvs" 18304;
-	setAttr ".tgi[4].ni[21].x" -1015.7142944335938;
-	setAttr ".tgi[4].ni[21].y" -1084.2857666015625;
+	setAttr ".tgi[4].ni[21].x" 1250;
+	setAttr ".tgi[4].ni[21].y" -464.28570556640625;
 	setAttr ".tgi[4].ni[21].nvs" 18304;
-	setAttr ".tgi[4].ni[22].x" 272.85714721679688;
-	setAttr ".tgi[4].ni[22].y" -584.28570556640625;
+	setAttr ".tgi[4].ni[22].x" 1250;
+	setAttr ".tgi[4].ni[22].y" -498.57144165039063;
 	setAttr ".tgi[4].ni[22].nvs" 18304;
-	setAttr ".tgi[4].ni[23].x" 520;
-	setAttr ".tgi[4].ni[23].y" 368.57144165039063;
+	setAttr ".tgi[4].ni[23].x" 1250;
+	setAttr ".tgi[4].ni[23].y" 412.85714721679688;
 	setAttr ".tgi[4].ni[23].nvs" 18304;
 	setAttr ".tgi[4].ni[24].x" 1250;
-	setAttr ".tgi[4].ni[24].y" -118.57142639160156;
+	setAttr ".tgi[4].ni[24].y" -3057.142822265625;
 	setAttr ".tgi[4].ni[24].nvs" 18304;
-	setAttr ".tgi[4].ni[25].x" 212.85714721679688;
-	setAttr ".tgi[4].ni[25].y" -715.71429443359375;
+	setAttr ".tgi[4].ni[25].x" -94.285713195800781;
+	setAttr ".tgi[4].ni[25].y" -897.14288330078125;
 	setAttr ".tgi[4].ni[25].nvs" 18304;
-	setAttr ".tgi[4].ni[26].x" 1250;
-	setAttr ".tgi[4].ni[26].y" -2192.857177734375;
+	setAttr ".tgi[4].ni[26].x" 942.85711669921875;
+	setAttr ".tgi[4].ni[26].y" -688.5714111328125;
 	setAttr ".tgi[4].ni[26].nvs" 18304;
-	setAttr ".tgi[4].ni[27].x" 1250;
-	setAttr ".tgi[4].ni[27].y" -5995.71435546875;
+	setAttr ".tgi[4].ni[27].x" 580;
+	setAttr ".tgi[4].ni[27].y" -501.42855834960938;
 	setAttr ".tgi[4].ni[27].nvs" 18304;
-	setAttr ".tgi[4].ni[28].x" 1250;
-	setAttr ".tgi[4].ni[28].y" -5477.14306640625;
+	setAttr ".tgi[4].ni[28].x" 212.85714721679688;
+	setAttr ".tgi[4].ni[28].y" 491.42855834960938;
 	setAttr ".tgi[4].ni[28].nvs" 18304;
-	setAttr ".tgi[4].ni[29].x" -305.71429443359375;
-	setAttr ".tgi[4].ni[29].y" -375.71429443359375;
+	setAttr ".tgi[4].ni[29].x" 272.85714721679688;
+	setAttr ".tgi[4].ni[29].y" -64.285713195800781;
 	setAttr ".tgi[4].ni[29].nvs" 18304;
-	setAttr ".tgi[4].ni[30].x" 1250;
-	setAttr ".tgi[4].ni[30].y" -3057.142822265625;
+	setAttr ".tgi[4].ni[30].x" 520;
+	setAttr ".tgi[4].ni[30].y" -571.4285888671875;
 	setAttr ".tgi[4].ni[30].nvs" 18304;
-	setAttr ".tgi[4].ni[31].x" 942.85711669921875;
-	setAttr ".tgi[4].ni[31].y" -287.14285278320313;
+	setAttr ".tgi[4].ni[31].x" 1250;
+	setAttr ".tgi[4].ni[31].y" -5822.85693359375;
 	setAttr ".tgi[4].ni[31].nvs" 18304;
-	setAttr ".tgi[4].ni[32].x" 1250;
-	setAttr ".tgi[4].ni[32].y" -4094.28564453125;
+	setAttr ".tgi[4].ni[32].x" 942.85711669921875;
+	setAttr ".tgi[4].ni[32].y" 4452.85693359375;
 	setAttr ".tgi[4].ni[32].nvs" 18304;
-	setAttr ".tgi[4].ni[33].x" 272.85714721679688;
-	setAttr ".tgi[4].ni[33].y" -64.285713195800781;
+	setAttr ".tgi[4].ni[33].x" 1250;
+	setAttr ".tgi[4].ni[33].y" -5995.71435546875;
 	setAttr ".tgi[4].ni[33].nvs" 18304;
-	setAttr ".tgi[4].ni[34].x" -671.4285888671875;
-	setAttr ".tgi[4].ni[34].y" -248.57142639160156;
+	setAttr ".tgi[4].ni[34].x" 328.57144165039063;
+	setAttr ".tgi[4].ni[34].y" 4452.85693359375;
 	setAttr ".tgi[4].ni[34].nvs" 18304;
-	setAttr ".tgi[4].ni[35].x" -34.285713195800781;
-	setAttr ".tgi[4].ni[35].y" -295.71429443359375;
+	setAttr ".tgi[4].ni[35].x" 1250;
+	setAttr ".tgi[4].ni[35].y" -3748.571533203125;
 	setAttr ".tgi[4].ni[35].nvs" 18304;
-	setAttr ".tgi[4].ni[36].x" 1250;
-	setAttr ".tgi[4].ni[36].y" -3230;
+	setAttr ".tgi[4].ni[36].x" 212.85714721679688;
+	setAttr ".tgi[4].ni[36].y" 347.14285278320313;
 	setAttr ".tgi[4].ni[36].nvs" 18304;
 	setAttr ".tgi[4].ni[37].x" 1250;
-	setAttr ".tgi[4].ni[37].y" -637.14288330078125;
+	setAttr ".tgi[4].ni[37].y" 54.285713195800781;
 	setAttr ".tgi[4].ni[37].nvs" 18304;
-	setAttr ".tgi[4].ni[38].x" 580;
-	setAttr ".tgi[4].ni[38].y" -12.857142448425293;
+	setAttr ".tgi[4].ni[38].x" 168.57142639160156;
+	setAttr ".tgi[4].ni[38].y" -360;
 	setAttr ".tgi[4].ni[38].nvs" 18304;
-	setAttr ".tgi[4].ni[39].x" 1250;
-	setAttr ".tgi[4].ni[39].y" -5650;
+	setAttr ".tgi[4].ni[39].x" 272.85714721679688;
+	setAttr ".tgi[4].ni[39].y" -165.71427917480469;
 	setAttr ".tgi[4].ni[39].nvs" 18304;
-	setAttr ".tgi[4].ni[40].x" 1250;
-	setAttr ".tgi[4].ni[40].y" 1955.7142333984375;
+	setAttr ".tgi[4].ni[40].x" 475.71429443359375;
+	setAttr ".tgi[4].ni[40].y" -338.57144165039063;
 	setAttr ".tgi[4].ni[40].nvs" 18304;
-	setAttr ".tgi[4].ni[41].x" -708.5714111328125;
-	setAttr ".tgi[4].ni[41].y" -1022.8571166992188;
-	setAttr ".tgi[4].ni[41].nvs" 18304;
-	setAttr ".tgi[4].ni[42].x" 272.85714721679688;
-	setAttr ".tgi[4].ni[42].y" 94.285713195800781;
+	setAttr ".tgi[4].ni[41].x" 665.86212158203125;
+	setAttr ".tgi[4].ni[41].y" 10.015251159667969;
+	setAttr ".tgi[4].ni[41].nvs" 18314;
+	setAttr ".tgi[4].ni[42].x" 168.57142639160156;
+	setAttr ".tgi[4].ni[42].y" -215.71427917480469;
 	setAttr ".tgi[4].ni[42].nvs" 18304;
 	setAttr ".tgi[4].ni[43].x" 1250;
-	setAttr ".tgi[4].ni[43].y" -4440;
+	setAttr ".tgi[4].ni[43].y" -2192.857177734375;
 	setAttr ".tgi[4].ni[43].nvs" 18304;
-	setAttr ".tgi[4].ni[44].x" 904.28570556640625;
-	setAttr ".tgi[4].ni[44].y" -361.42855834960938;
+	setAttr ".tgi[4].ni[44].x" 1250;
+	setAttr ".tgi[4].ni[44].y" -1847.142822265625;
 	setAttr ".tgi[4].ni[44].nvs" 18304;
 	setAttr ".tgi[4].ni[45].x" 1250;
-	setAttr ".tgi[4].ni[45].y" -6341.4287109375;
+	setAttr ".tgi[4].ni[45].y" -1674.2857666015625;
 	setAttr ".tgi[4].ni[45].nvs" 18304;
-	setAttr ".tgi[4].ni[46].x" 475.71429443359375;
-	setAttr ".tgi[4].ni[46].y" -338.57144165039063;
+	setAttr ".tgi[4].ni[46].x" 1250;
+	setAttr ".tgi[4].ni[46].y" -4785.71435546875;
 	setAttr ".tgi[4].ni[46].nvs" 18304;
-	setAttr ".tgi[4].ni[47].x" 665.86212158203125;
-	setAttr ".tgi[4].ni[47].y" 10.015251159667969;
-	setAttr ".tgi[4].ni[47].nvs" 18314;
-	setAttr ".tgi[4].ni[48].x" 1250;
-	setAttr ".tgi[4].ni[48].y" -1847.142822265625;
+	setAttr ".tgi[4].ni[47].x" -401.42855834960938;
+	setAttr ".tgi[4].ni[47].y" -1065.7142333984375;
+	setAttr ".tgi[4].ni[47].nvs" 18304;
+	setAttr ".tgi[4].ni[48].x" 942.85711669921875;
+	setAttr ".tgi[4].ni[48].y" 484.28570556640625;
 	setAttr ".tgi[4].ni[48].nvs" 18304;
-	setAttr ".tgi[4].ni[49].x" 1250;
-	setAttr ".tgi[4].ni[49].y" -2538.571533203125;
+	setAttr ".tgi[4].ni[49].x" 475.71429443359375;
+	setAttr ".tgi[4].ni[49].y" -237.14285278320313;
 	setAttr ".tgi[4].ni[49].nvs" 18304;
-	setAttr ".tgi[4].ni[50].x" -280;
-	setAttr ".tgi[4].ni[50].y" 1.4285714626312256;
+	setAttr ".tgi[4].ni[50].x" -34.285713195800781;
+	setAttr ".tgi[4].ni[50].y" -404.28570556640625;
 	setAttr ".tgi[4].ni[50].nvs" 18304;
 	setAttr ".tgi[4].ni[51].x" 1250;
-	setAttr ".tgi[4].ni[51].y" -2020;
+	setAttr ".tgi[4].ni[51].y" 4452.85693359375;
 	setAttr ".tgi[4].ni[51].nvs" 18304;
-	setAttr ".tgi[4].ni[52].x" 1250;
-	setAttr ".tgi[4].ni[52].y" -5822.85693359375;
+	setAttr ".tgi[4].ni[52].x" 580;
+	setAttr ".tgi[4].ni[52].y" -12.857142448425293;
 	setAttr ".tgi[4].ni[52].nvs" 18304;
-	setAttr ".tgi[4].ni[53].x" 520;
-	setAttr ".tgi[4].ni[53].y" 614.28570556640625;
+	setAttr ".tgi[4].ni[53].x" 1250;
+	setAttr ".tgi[4].ni[53].y" -4094.28564453125;
 	setAttr ".tgi[4].ni[53].nvs" 18304;
-	setAttr ".tgi[4].ni[54].x" 580;
-	setAttr ".tgi[4].ni[54].y" -501.42855834960938;
+	setAttr ".tgi[4].ni[54].x" 635.71429443359375;
+	setAttr ".tgi[4].ni[54].y" 3640;
 	setAttr ".tgi[4].ni[54].nvs" 18304;
 	setAttr ".tgi[4].ni[55].x" 1250;
-	setAttr ".tgi[4].ni[55].y" 2495.71435546875;
+	setAttr ".tgi[4].ni[55].y" -982.85711669921875;
 	setAttr ".tgi[4].ni[55].nvs" 18304;
-	setAttr ".tgi[4].ni[56].x" 212.85714721679688;
-	setAttr ".tgi[4].ni[56].y" 347.14285278320313;
+	setAttr ".tgi[4].ni[56].x" 1250;
+	setAttr ".tgi[4].ni[56].y" 2690;
 	setAttr ".tgi[4].ni[56].nvs" 18304;
 	setAttr ".tgi[4].ni[57].x" 1250;
-	setAttr ".tgi[4].ni[57].y" -2711.428466796875;
+	setAttr ".tgi[4].ni[57].y" -2365.71435546875;
 	setAttr ".tgi[4].ni[57].nvs" 18304;
-	setAttr ".tgi[4].ni[58].x" 1250;
-	setAttr ".tgi[4].ni[58].y" -3748.571533203125;
+	setAttr ".tgi[4].ni[58].x" 904.28570556640625;
+	setAttr ".tgi[4].ni[58].y" -361.42855834960938;
 	setAttr ".tgi[4].ni[58].nvs" 18304;
-	setAttr ".tgi[4].ni[59].x" 1250;
-	setAttr ".tgi[4].ni[59].y" -498.57144165039063;
+	setAttr ".tgi[4].ni[59].x" 520;
+	setAttr ".tgi[4].ni[59].y" 470;
 	setAttr ".tgi[4].ni[59].nvs" 18304;
-	setAttr ".tgi[4].ni[60].x" 580;
+	setAttr ".tgi[4].ni[60].x" 942.85711669921875;
 	setAttr ".tgi[4].ni[60].y" -400;
 	setAttr ".tgi[4].ni[60].nvs" 18304;
 	setAttr ".tgi[4].ni[61].x" 1250;
-	setAttr ".tgi[4].ni[61].y" 2884.28564453125;
+	setAttr ".tgi[4].ni[61].y" -2020;
 	setAttr ".tgi[4].ni[61].nvs" 18304;
-	setAttr ".tgi[4].ni[62].x" 212.85714721679688;
-	setAttr ".tgi[4].ni[62].y" -895.71429443359375;
+	setAttr ".tgi[4].ni[62].x" 1250;
+	setAttr ".tgi[4].ni[62].y" 745.71429443359375;
 	setAttr ".tgi[4].ni[62].nvs" 18304;
-	setAttr ".tgi[4].ni[63].x" 1250;
-	setAttr ".tgi[4].ni[63].y" 572.85711669921875;
+	setAttr ".tgi[4].ni[63].x" 904.28570556640625;
 	setAttr ".tgi[4].ni[63].nvs" 18304;
 	setAttr ".tgi[4].ni[64].x" 1250;
-	setAttr ".tgi[4].ni[64].y" -3921.428466796875;
+	setAttr ".tgi[4].ni[64].y" 2495.71435546875;
 	setAttr ".tgi[4].ni[64].nvs" 18304;
 	setAttr ".tgi[4].ni[65].x" 1250;
-	setAttr ".tgi[4].ni[65].y" 3640;
+	setAttr ".tgi[4].ni[65].y" -810;
 	setAttr ".tgi[4].ni[65].nvs" 18304;
-	setAttr ".tgi[4].ni[66].x" -401.42855834960938;
-	setAttr ".tgi[4].ni[66].y" -1065.7142333984375;
+	setAttr ".tgi[4].ni[66].x" -34.285713195800781;
+	setAttr ".tgi[4].ni[66].y" -295.71429443359375;
 	setAttr ".tgi[4].ni[66].nvs" 18304;
 	setAttr ".tgi[4].ni[67].x" 1250;
-	setAttr ".tgi[4].ni[67].y" -6168.5712890625;
+	setAttr ".tgi[4].ni[67].y" -1501.4285888671875;
 	setAttr ".tgi[4].ni[67].nvs" 18304;
-	setAttr ".tgi[4].ni[68].x" 1250;
-	setAttr ".tgi[4].ni[68].y" -1674.2857666015625;
+	setAttr ".tgi[4].ni[68].x" 272.85714721679688;
+	setAttr ".tgi[4].ni[68].y" -425.71429443359375;
 	setAttr ".tgi[4].ni[68].nvs" 18304;
-	setAttr ".tgi[4].ni[69].x" 635.71429443359375;
-	setAttr ".tgi[4].ni[69].y" 4452.85693359375;
+	setAttr ".tgi[4].ni[69].x" 272.85714721679688;
+	setAttr ".tgi[4].ni[69].y" -324.28570556640625;
 	setAttr ".tgi[4].ni[69].nvs" 18304;
-	setAttr ".tgi[4].ni[70].x" 942.85711669921875;
-	setAttr ".tgi[4].ni[70].y" 340;
+	setAttr ".tgi[4].ni[70].x" 635.71429443359375;
+	setAttr ".tgi[4].ni[70].y" 4452.85693359375;
 	setAttr ".tgi[4].ni[70].nvs" 18304;
 	setAttr ".tgi[4].ni[71].x" 520;
-	setAttr ".tgi[4].ni[71].y" -571.4285888671875;
+	setAttr ".tgi[4].ni[71].y" 368.57144165039063;
 	setAttr ".tgi[4].ni[71].nvs" 18304;
-	setAttr ".tgi[4].ni[72].x" 1250;
-	setAttr ".tgi[4].ni[72].y" -982.85711669921875;
+	setAttr ".tgi[4].ni[72].x" 212.85714721679688;
+	setAttr ".tgi[4].ni[72].y" -715.71429443359375;
 	setAttr ".tgi[4].ni[72].nvs" 18304;
-	setAttr ".tgi[4].ni[73].x" 942.85711669921875;
-	setAttr ".tgi[4].ni[73].y" 3640;
+	setAttr ".tgi[4].ni[73].x" 1250;
+	setAttr ".tgi[4].ni[73].y" -4267.14306640625;
 	setAttr ".tgi[4].ni[73].nvs" 18304;
-	setAttr ".tgi[4].ni[74].x" 168.57142639160156;
-	setAttr ".tgi[4].ni[74].y" -215.71427917480469;
+	setAttr ".tgi[4].ni[74].x" 1250;
+	setAttr ".tgi[4].ni[74].y" 3640;
 	setAttr ".tgi[4].ni[74].nvs" 18304;
-	setAttr ".tgi[4].ni[75].x" 212.85714721679688;
-	setAttr ".tgi[4].ni[75].y" 491.42855834960938;
+	setAttr ".tgi[4].ni[75].x" 1250;
+	setAttr ".tgi[4].ni[75].y" 572.85711669921875;
 	setAttr ".tgi[4].ni[75].nvs" 18304;
-	setAttr ".tgi[4].ni[76].x" 942.85711669921875;
-	setAttr ".tgi[4].ni[76].y" -688.5714111328125;
+	setAttr ".tgi[4].ni[76].x" 1250;
+	setAttr ".tgi[4].ni[76].y" -1328.5714111328125;
 	setAttr ".tgi[4].ni[76].nvs" 18304;
-	setAttr ".tgi[4].ni[77].x" 942.85711669921875;
-	setAttr ".tgi[4].ni[77].y" -400;
+	setAttr ".tgi[4].ni[77].x" 1250;
+	setAttr ".tgi[4].ni[77].y" -118.57142639160156;
 	setAttr ".tgi[4].ni[77].nvs" 18304;
-	setAttr ".tgi[4].ni[78].x" 168.57142639160156;
-	setAttr ".tgi[4].ni[78].y" -360;
+	setAttr ".tgi[4].ni[78].x" 942.85711669921875;
+	setAttr ".tgi[4].ni[78].y" 3640;
 	setAttr ".tgi[4].ni[78].nvs" 18304;
-	setAttr ".tgi[4].ni[79].x" 520;
-	setAttr ".tgi[4].ni[79].y" 470;
+	setAttr ".tgi[4].ni[79].x" 1250;
+	setAttr ".tgi[4].ni[79].y" -2884.28564453125;
 	setAttr ".tgi[4].ni[79].nvs" 18304;
-	setAttr ".tgi[4].ni[80].x" 1250;
-	setAttr ".tgi[4].ni[80].y" -2365.71435546875;
+	setAttr ".tgi[4].ni[80].x" -1015.7142944335938;
+	setAttr ".tgi[4].ni[80].y" -1084.2857666015625;
 	setAttr ".tgi[4].ni[80].nvs" 18304;
-	setAttr ".tgi[4].ni[81].x" -34.285713195800781;
-	setAttr ".tgi[4].ni[81].y" -101.42857360839844;
+	setAttr ".tgi[4].ni[81].x" 272.85714721679688;
+	setAttr ".tgi[4].ni[81].y" -584.28570556640625;
 	setAttr ".tgi[4].ni[81].nvs" 18304;
-	setAttr ".tgi[4].ni[82].x" 942.85711669921875;
-	setAttr ".tgi[4].ni[82].y" 4452.85693359375;
+	setAttr ".tgi[4].ni[82].x" 1250;
+	setAttr ".tgi[4].ni[82].y" 3078.571533203125;
 	setAttr ".tgi[4].ni[82].nvs" 18304;
 	setAttr ".tgi[4].ni[83].x" 1250;
-	setAttr ".tgi[4].ni[83].y" -4612.85693359375;
+	setAttr ".tgi[4].ni[83].y" 400;
 	setAttr ".tgi[4].ni[83].nvs" 18304;
 	setAttr ".tgi[4].ni[84].x" 1250;
-	setAttr ".tgi[4].ni[84].y" 412.85714721679688;
+	setAttr ".tgi[4].ni[84].y" -5650;
 	setAttr ".tgi[4].ni[84].nvs" 18304;
-	setAttr ".tgi[4].ni[85].x" 1250;
-	setAttr ".tgi[4].ni[85].y" -5304.28564453125;
+	setAttr ".tgi[4].ni[85].x" 580;
+	setAttr ".tgi[4].ni[85].y" -400;
 	setAttr ".tgi[4].ni[85].nvs" 18304;
-	setAttr ".tgi[4].ni[86].x" 1250;
-	setAttr ".tgi[4].ni[86].y" -5131.4287109375;
+	setAttr ".tgi[4].ni[86].x" 942.85711669921875;
+	setAttr ".tgi[4].ni[86].y" -832.85711669921875;
 	setAttr ".tgi[4].ni[86].nvs" 18304;
-	setAttr ".tgi[4].ni[87].x" -94.285713195800781;
-	setAttr ".tgi[4].ni[87].y" -897.14288330078125;
+	setAttr ".tgi[4].ni[87].x" 520;
+	setAttr ".tgi[4].ni[87].y" 614.28570556640625;
 	setAttr ".tgi[4].ni[87].nvs" 18304;
-	setAttr ".tgi[4].ni[88].x" 272.85714721679688;
-	setAttr ".tgi[4].ni[88].y" -324.28570556640625;
+	setAttr ".tgi[4].ni[88].x" 1250;
+	setAttr ".tgi[4].ni[88].y" 1955.7142333984375;
 	setAttr ".tgi[4].ni[88].nvs" 18304;
-	setAttr ".tgi[4].ni[89].x" 1250;
-	setAttr ".tgi[4].ni[89].y" 3078.571533203125;
+	setAttr ".tgi[4].ni[89].x" 942.85711669921875;
+	setAttr ".tgi[4].ni[89].y" -544.28570556640625;
 	setAttr ".tgi[4].ni[89].nvs" 18304;
-	setAttr ".tgi[4].ni[90].x" 1250;
-	setAttr ".tgi[4].ni[90].y" 54.285713195800781;
+	setAttr ".tgi[4].ni[90].x" -34.285713195800781;
+	setAttr ".tgi[4].ni[90].y" -101.42857360839844;
 	setAttr ".tgi[4].ni[90].nvs" 18304;
-	setAttr ".tgi[4].ni[91].x" 942.85711669921875;
-	setAttr ".tgi[4].ni[91].y" -832.85711669921875;
+	setAttr ".tgi[4].ni[91].x" -305.71429443359375;
+	setAttr ".tgi[4].ni[91].y" -375.71429443359375;
 	setAttr ".tgi[4].ni[91].nvs" 18304;
-	setAttr ".tgi[4].ni[92].x" 328.57144165039063;
-	setAttr ".tgi[4].ni[92].y" 4452.85693359375;
+	setAttr ".tgi[4].ni[92].x" 1250;
+	setAttr ".tgi[4].ni[92].y" 2884.28564453125;
 	setAttr ".tgi[4].ni[92].nvs" 18304;
 	setAttr ".tgi[4].ni[93].x" 1250;
-	setAttr ".tgi[4].ni[93].y" 745.71429443359375;
+	setAttr ".tgi[4].ni[93].y" -4440;
 	setAttr ".tgi[4].ni[93].nvs" 18304;
 	setAttr ".tgi[5].tn" -type "string" "Untitled_3";
-	setAttr ".tgi[5].vl" -type "double2" -1169.047572593842 -663.45785955436929 ;
-	setAttr ".tgi[5].vh" -type "double2" 1177.9761436676242 698.57690577791118 ;
+	setAttr ".tgi[5].vl" -type "double2" -1169.6635967568163 -664.28568788937264 ;
+	setAttr ".tgi[5].vh" -type "double2" 1179.1874059021841 698.80949604132934 ;
 	setAttr ".tgi[5].ni[0].x" 327.14285278320313;
 	setAttr ".tgi[5].ni[0].y" -462.85714721679688;
 	setAttr ".tgi[5].ni[0].nvs" 18304;
@@ -57470,6 +57434,10 @@ select -ne :ikSystem;
 	setAttr -av -k on ".gsn";
 	setAttr -k on ".gsv";
 	setAttr -s 2 ".sol";
+connectAttr "accessories_clothes.di" "jackie_rigRN.phl[80]";
+connectAttr "jackie_rigRN.phl[81]" "groupParts4.ig";
+connectAttr "jackie_rigRN.phl[82]" "jackie_rigRN.phl[83]";
+connectAttr "jackieHoodie2ShapeDeformed.iog" "jackie_rigRN.phl[84]";
 connectAttr "shoes.di" "jackie_rigRN.phl[124]";
 connectAttr "geo.di" "jackie_rigRN.phl[125]";
 connectAttr "geo.di" "jackie_rigRN.phl[126]";
@@ -57521,10 +57489,6 @@ connectAttr "jackie_rigRN.phl[192]" "jackie_rigRN.phl[193]";
 connectAttr "jackie_rigRN.phl[194]" "jackie_rigRN.phl[195]";
 connectAttr "jackie_rigRN.phl[196]" "jackie_rigRN.phl[197]";
 connectAttr "jackie_rigRN.phl[198]" "jackie_rigRN.phl[199]";
-connectAttr "accessories_clothes.di" "jackie_rigRN.phl[80]";
-connectAttr "jackie_rigRN.phl[81]" "groupParts4.ig";
-connectAttr "jackie_rigRN.phl[82]" "jackie_rigRN.phl[83]";
-connectAttr "jackieHoodie2ShapeDeformed.iog" "jackie_rigRN.phl[84]";
 connectAttr "shoes.di" "jackie_rigRN.phl[200]";
 connectAttr "geo.di" "jackie_rigRN.phl[201]";
 connectAttr "geo.di" "jackie_rigRN.phl[202]";
@@ -57584,15 +57548,15 @@ connectAttr "pairBlend1.otz" "jackie_rigRN.phl[507]";
 connectAttr "pairBlend1.orx" "jackie_rigRN.phl[508]";
 connectAttr "pairBlend1.ory" "jackie_rigRN.phl[509]";
 connectAttr "pairBlend1.orz" "jackie_rigRN.phl[510]";
-connectAttr "jackie_rigRN.phl[511]" "jackieEyeLeft_aimConstraint1.crp";
-connectAttr "jackie_rigRN.phl[512]" "jackieEyeLeft_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[511]" "jackieEyeLeft_parentConstraint1.crp";
+connectAttr "jackie_rigRN.phl[512]" "jackieEyeLeft_aimConstraint1.crp";
 connectAttr "eye.di" "jackie_rigRN.phl[513]";
-connectAttr "jackie_rigRN.phl[514]" "jackieEyeLeft_aimConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[515]" "jackieEyeLeft_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[516]" "jackieEyeLeft_aimConstraint1.crt";
-connectAttr "jackie_rigRN.phl[517]" "jackieEyeLeft_parentConstraint1.crt";
-connectAttr "jackie_rigRN.phl[518]" "jackieEyeLeft_aimConstraint1.cro";
-connectAttr "jackie_rigRN.phl[519]" "pairBlend1.ro";
+connectAttr "jackie_rigRN.phl[514]" "jackieEyeLeft_parentConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[515]" "jackieEyeLeft_aimConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[516]" "jackieEyeLeft_parentConstraint1.crt";
+connectAttr "jackie_rigRN.phl[517]" "jackieEyeLeft_aimConstraint1.crt";
+connectAttr "jackie_rigRN.phl[518]" "pairBlend1.ro";
+connectAttr "jackie_rigRN.phl[519]" "jackieEyeLeft_aimConstraint1.cro";
 connectAttr "jackie_rigRN.phl[520]" "jackieEyeLeft_parentConstraint1.cro";
 connectAttr "jackierEyeRight_parentConstraint1.ctx" "jackie_rigRN.phl[521]";
 connectAttr "jackierEyeRight_parentConstraint1.cty" "jackie_rigRN.phl[522]";
@@ -57784,8 +57748,8 @@ connectAttr "lip_center_top_parentConstraint1.crx" "jackie_rigRN.phl[710]";
 connectAttr "lip_center_top_parentConstraint1.cry" "jackie_rigRN.phl[711]";
 connectAttr "lip_center_top_parentConstraint1.crz" "jackie_rigRN.phl[712]";
 connectAttr "jackie_rigRN.phl[713]" "lip_center_top_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[714]" "lip_center_top_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[715]" "lip_center_top_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[714]" "lip_center_top_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[715]" "lip_center_top_parentConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[716]" "lip_center_top_parentConstraint1.crp";
 connectAttr "jackie_rigRN.phl[717]" "lip_center_top_parentConstraint1.crt";
 connectAttr "jackie_rigRN.phl[718]" "lip_center_top_parentConstraint1.cjo";
@@ -57801,8 +57765,8 @@ connectAttr "lip_left_end_parentConstraint1.cry" "jackie_rigRN.phl[727]";
 connectAttr "lip_left_end_parentConstraint1.crx" "jackie_rigRN.phl[728]";
 connectAttr "lip_left_end_parentConstraint1.crz" "jackie_rigRN.phl[729]";
 connectAttr "jackie_rigRN.phl[730]" "lip_left_end_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[731]" "lip_left_end_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[732]" "lip_left_end_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[731]" "lip_left_end_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[732]" "lip_left_end_parentConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[733]" "lip_left_end_parentConstraint1.crp";
 connectAttr "jackie_rigRN.phl[734]" "lip_left_end_parentConstraint1.crt";
 connectAttr "jackie_rigRN.phl[735]" "lip_left_end_parentConstraint1.cjo";
@@ -57818,8 +57782,8 @@ connectAttr "lip_center_bottom_parentConstraint1.crz" "jackie_rigRN.phl[744]";
 connectAttr "lip_center_bottom_parentConstraint1.crx" "jackie_rigRN.phl[745]";
 connectAttr "lip_center_bottom_parentConstraint1.cry" "jackie_rigRN.phl[746]";
 connectAttr "jackie_rigRN.phl[747]" "lip_center_bottom_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[748]" "lip_center_bottom_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[749]" "lip_center_bottom_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[748]" "lip_center_bottom_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[749]" "lip_center_bottom_parentConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[750]" "lip_center_bottom_parentConstraint1.crp";
 connectAttr "jackie_rigRN.phl[751]" "lip_center_bottom_parentConstraint1.crt";
 connectAttr "jackie_rigRN.phl[752]" "lip_center_bottom_parentConstraint1.cjo";
@@ -57838,8 +57802,8 @@ connectAttr "lip_left_top_parentConstraint1.crx" "jackie_rigRN.phl[764]";
 connectAttr "lip_left_top_parentConstraint1.cry" "jackie_rigRN.phl[765]";
 connectAttr "lip_left_top_parentConstraint1.crz" "jackie_rigRN.phl[766]";
 connectAttr "jackie_rigRN.phl[767]" "lip_left_top_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[768]" "lip_left_top_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[769]" "lip_left_top_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[768]" "lip_left_top_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[769]" "lip_left_top_parentConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[770]" "lip_left_top_parentConstraint1.crp";
 connectAttr "jackie_rigRN.phl[771]" "lip_left_top_parentConstraint1.crt";
 connectAttr "jackie_rigRN.phl[772]" "lip_left_top_parentConstraint1.cjo";
@@ -57855,8 +57819,8 @@ connectAttr "lip_left_bottom_parentConstraint1.crx" "jackie_rigRN.phl[781]";
 connectAttr "lip_left_bottom_parentConstraint1.cry" "jackie_rigRN.phl[782]";
 connectAttr "lip_left_bottom_parentConstraint1.crz" "jackie_rigRN.phl[783]";
 connectAttr "jackie_rigRN.phl[784]" "lip_left_bottom_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[785]" "lip_left_bottom_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[786]" "lip_left_bottom_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[785]" "lip_left_bottom_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[786]" "lip_left_bottom_parentConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[787]" "lip_left_bottom_parentConstraint1.crp";
 connectAttr "jackie_rigRN.phl[788]" "lip_left_bottom_parentConstraint1.crt";
 connectAttr "jackie_rigRN.phl[789]" "lip_left_bottom_parentConstraint1.cjo";
@@ -57872,8 +57836,8 @@ connectAttr "lip_right_top_parentConstraint1.crx" "jackie_rigRN.phl[798]";
 connectAttr "lip_right_top_parentConstraint1.cry" "jackie_rigRN.phl[799]";
 connectAttr "lip_right_top_parentConstraint1.crz" "jackie_rigRN.phl[800]";
 connectAttr "jackie_rigRN.phl[801]" "lip_right_top_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[802]" "lip_right_top_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[803]" "lip_right_top_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[802]" "lip_right_top_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[803]" "lip_right_top_parentConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[804]" "lip_right_top_parentConstraint1.crp";
 connectAttr "jackie_rigRN.phl[805]" "lip_right_top_parentConstraint1.crt";
 connectAttr "jackie_rigRN.phl[806]" "lip_right_top_parentConstraint1.cjo";
@@ -57889,8 +57853,8 @@ connectAttr "lip_right_end_parentConstraint1.crx" "jackie_rigRN.phl[815]";
 connectAttr "lip_right_end_parentConstraint1.cry" "jackie_rigRN.phl[816]";
 connectAttr "lip_right_end_parentConstraint1.crz" "jackie_rigRN.phl[817]";
 connectAttr "jackie_rigRN.phl[818]" "lip_right_end_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[819]" "lip_right_end_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[820]" "lip_right_end_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[819]" "lip_right_end_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[820]" "lip_right_end_parentConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[821]" "lip_right_end_parentConstraint1.crp";
 connectAttr "jackie_rigRN.phl[822]" "lip_right_end_parentConstraint1.crt";
 connectAttr "jackie_rigRN.phl[823]" "lip_right_end_parentConstraint1.cjo";
@@ -57909,8 +57873,8 @@ connectAttr "lip_right_bottom_parentConstraint1.crx" "jackie_rigRN.phl[835]";
 connectAttr "lip_right_bottom_parentConstraint1.cry" "jackie_rigRN.phl[836]";
 connectAttr "lip_right_bottom_parentConstraint1.crz" "jackie_rigRN.phl[837]";
 connectAttr "jackie_rigRN.phl[838]" "lip_right_bottom_parentConstraint1.cro";
-connectAttr "jackie_rigRN.phl[839]" "lip_right_bottom_parentConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[840]" "lip_right_bottom_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[839]" "lip_right_bottom_scaleConstraint1.cpim";
+connectAttr "jackie_rigRN.phl[840]" "lip_right_bottom_parentConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[841]" "lip_right_bottom_parentConstraint1.crp";
 connectAttr "jackie_rigRN.phl[842]" "lip_right_bottom_parentConstraint1.crt";
 connectAttr "jackie_rigRN.phl[843]" "lip_right_bottom_parentConstraint1.cjo";
@@ -57920,36 +57884,36 @@ connectAttr "lip_right_bottom_scaleConstraint1.csz" "jackie_rigRN.phl[846]";
 connectAttr "jackie_rigRN.phl[847]" "lip_right_bottom_scaleConstraint1.tsc";
 connectAttr "jackie_rigRN.phl[848]" "left_eye_aimConstraint1.is";
 connectAttr "jackie_rigRN.phl[849]" "jackieEyeLeft_parentConstraint1.tg[0].tis";
-connectAttr "jackie_rigRN.phl[850]" "left_eye_aimConstraint1.ct";
-connectAttr "jackie_rigRN.phl[851]" "jackieEyeLeft_parentConstraint1.tg[0].tt";
+connectAttr "jackie_rigRN.phl[850]" "jackieEyeLeft_parentConstraint1.tg[0].tt";
+connectAttr "jackie_rigRN.phl[851]" "left_eye_aimConstraint1.ct";
 connectAttr "jackie_rigRN.phl[852]" "jackieEyeLeft_parentConstraint1.tg[0].tr";
 connectAttr "left_eye_aimConstraint1.crx" "jackie_rigRN.phl[853]";
 connectAttr "left_eye_aimConstraint1.cry" "jackie_rigRN.phl[854]";
 connectAttr "left_eye_aimConstraint1.crz" "jackie_rigRN.phl[855]";
-connectAttr "jackie_rigRN.phl[856]" "left_eye_aimConstraint1.crp";
-connectAttr "jackie_rigRN.phl[857]" "jackieEyeLeft_parentConstraint1.tg[0].trp";
-connectAttr "jackie_rigRN.phl[858]" "left_eye_aimConstraint1.crt";
-connectAttr "jackie_rigRN.phl[859]" "jackieEyeLeft_parentConstraint1.tg[0].trt";
+connectAttr "jackie_rigRN.phl[856]" "jackieEyeLeft_parentConstraint1.tg[0].trp";
+connectAttr "jackie_rigRN.phl[857]" "left_eye_aimConstraint1.crp";
+connectAttr "jackie_rigRN.phl[858]" "jackieEyeLeft_parentConstraint1.tg[0].trt";
+connectAttr "jackie_rigRN.phl[859]" "left_eye_aimConstraint1.crt";
 connectAttr "jackie_rigRN.phl[860]" "jackieEyeLeft_parentConstraint1.tg[0].tpm";
-connectAttr "jackie_rigRN.phl[861]" "left_eye_aimConstraint1.cro";
-connectAttr "jackie_rigRN.phl[862]" "jackieEyeLeft_parentConstraint1.tg[0].tro";
-connectAttr "jackie_rigRN.phl[863]" "left_eye_aimConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[864]" "jackieEyeLeft_parentConstraint1.tg[0].tjo";
+connectAttr "jackie_rigRN.phl[861]" "jackieEyeLeft_parentConstraint1.tg[0].tro";
+connectAttr "jackie_rigRN.phl[862]" "left_eye_aimConstraint1.cro";
+connectAttr "jackie_rigRN.phl[863]" "jackieEyeLeft_parentConstraint1.tg[0].tjo";
+connectAttr "jackie_rigRN.phl[864]" "left_eye_aimConstraint1.cjo";
 connectAttr "jackie_rigRN.phl[865]" "left_eye_aimConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[866]" "jackieEyeLeft_parentConstraint1.tg[0].ts";
 connectAttr "jackie_rigRN.phl[867]" "jackieEyeLeft_parentConstraint1.tg[0].tsc";
 connectAttr "jackie_rigRN.phl[868]" "jackierEyeRight_parentConstraint1.tg[0].tis"
 		;
 connectAttr "jackie_rigRN.phl[869]" "right_eye_aimConstraint1.is";
-connectAttr "jackie_rigRN.phl[870]" "jackierEyeRight_parentConstraint1.tg[0].tt"
+connectAttr "jackie_rigRN.phl[870]" "right_eye_aimConstraint1.ct";
+connectAttr "jackie_rigRN.phl[871]" "jackierEyeRight_parentConstraint1.tg[0].tt"
 		;
-connectAttr "jackie_rigRN.phl[871]" "right_eye_aimConstraint1.ct";
-connectAttr "jackie_rigRN.phl[872]" "jackierEyeRight_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[872]" "right_eye_aimConstraint1.crp";
+connectAttr "jackie_rigRN.phl[873]" "jackierEyeRight_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[873]" "right_eye_aimConstraint1.crp";
-connectAttr "jackie_rigRN.phl[874]" "jackierEyeRight_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[874]" "right_eye_aimConstraint1.crt";
+connectAttr "jackie_rigRN.phl[875]" "jackierEyeRight_parentConstraint1.tg[0].trt"
 		;
-connectAttr "jackie_rigRN.phl[875]" "right_eye_aimConstraint1.crt";
 connectAttr "jackie_rigRN.phl[876]" "jackierEyeRight_parentConstraint1.tg[0].tpm"
 		;
 connectAttr "jackie_rigRN.phl[877]" "jackierEyeRight_parentConstraint1.tg[0].tr"
@@ -57957,14 +57921,14 @@ connectAttr "jackie_rigRN.phl[877]" "jackierEyeRight_parentConstraint1.tg[0].tr"
 connectAttr "right_eye_aimConstraint1.crx" "jackie_rigRN.phl[878]";
 connectAttr "right_eye_aimConstraint1.cry" "jackie_rigRN.phl[879]";
 connectAttr "right_eye_aimConstraint1.crz" "jackie_rigRN.phl[880]";
-connectAttr "jackie_rigRN.phl[881]" "jackierEyeRight_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[881]" "right_eye_aimConstraint1.cro";
+connectAttr "jackie_rigRN.phl[882]" "jackierEyeRight_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[882]" "right_eye_aimConstraint1.cro";
 connectAttr "jackie_rigRN.phl[883]" "jackierEyeRight_parentConstraint1.tg[0].ts"
 		;
-connectAttr "jackie_rigRN.phl[884]" "jackierEyeRight_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[884]" "right_eye_aimConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[885]" "jackierEyeRight_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "jackie_rigRN.phl[885]" "right_eye_aimConstraint1.cjo";
 connectAttr "jackie_rigRN.phl[886]" "jackierEyeRight_parentConstraint1.tg[0].tsc"
 		;
 connectAttr "jackie_rigRN.phl[887]" "right_eye_aimConstraint1.cpim";
@@ -57994,7 +57958,7 @@ connectAttr "jackie_rigRN.phl[909]" "effector_lf_clavicle.tz";
 connectAttr "jackie_rigRN.phl[910]" "lf_wrist_ikHandle.hsj";
 connectAttr "jackie_rigRN.phl[911]" "nodeView3.ni[9].dn";
 connectAttr "jackie_rigRN.phl[912]" "bindPose1.m[25]";
-connectAttr "jackie_rigRN.phl[913]" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[18].dn"
+connectAttr "jackie_rigRN.phl[913]" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[15].dn"
 		;
 connectAttr "jackie_rigRN.phl[914]" "skinCluster1.ma[24]";
 connectAttr "jackie_rigRN.phl[915]" "skinCluster1.lw[24]";
@@ -58019,7 +57983,7 @@ connectAttr "jackie_rigRN.phl[932]" "left_elbow_orientConstraint1.is";
 connectAttr "condition1.ocr" "jackie_rigRN.phl[933]";
 connectAttr "jackie_rigRN.phl[934]" "nodeView3.ni[8].dn";
 connectAttr "jackie_rigRN.phl[935]" "bindPose1.m[27]";
-connectAttr "jackie_rigRN.phl[936]" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[14].dn"
+connectAttr "jackie_rigRN.phl[936]" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[9].dn"
 		;
 connectAttr "jackie_rigRN.phl[937]" "skinCluster1.ma[26]";
 connectAttr "jackie_rigRN.phl[938]" "skinCluster1.lw[26]";
@@ -58029,7 +57993,7 @@ connectAttr "jackie_rigRN.phl[941]" "left_elbow_orientConstraint1.cjo";
 connectAttr "jackie_rigRN.phl[942]" "left_elbow_orientConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[943]" "nodeView1.ni[4].dn";
 connectAttr "jackie_rigRN.phl[944]" "bindPose1.m[28]";
-connectAttr "jackie_rigRN.phl[945]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+connectAttr "jackie_rigRN.phl[945]" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
 		;
 connectAttr "jackie_rigRN.phl[946]" "skinCluster1.ma[27]";
 connectAttr "jackie_rigRN.phl[947]" "skinCluster1.lw[27]";
@@ -58049,36 +58013,36 @@ connectAttr "jackie_rigRN.phl[958]" "bindPose1.m[29]";
 connectAttr "jackie_rigRN.phl[959]" "skinCluster1.ma[28]";
 connectAttr "jackie_rigRN.phl[960]" "skinCluster1.lw[28]";
 connectAttr "jackie_rigRN.phl[961]" "skinCluster1.ifcl[28]";
-connectAttr "jackie_rigRN.phl[962]" "lf_palm_ctl_parentConstraint1.tg[0].tt";
-connectAttr "jackie_rigRN.phl[963]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
+connectAttr "jackie_rigRN.phl[962]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
 		;
-connectAttr "jackie_rigRN.phl[964]" "lf_palm_ctl_parentConstraint1.tg[0].tr";
-connectAttr "jackie_rigRN.phl[965]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[963]" "lf_palm_ctl_parentConstraint1.tg[0].tt";
+connectAttr "jackie_rigRN.phl[964]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
 		;
+connectAttr "jackie_rigRN.phl[965]" "lf_palm_ctl_parentConstraint1.tg[0].tr";
 connectAttr "left_wrist_orientConstraint1.crz" "jackie_rigRN.phl[966]";
 connectAttr "left_wrist_orientConstraint1.crx" "jackie_rigRN.phl[967]";
 connectAttr "left_wrist_orientConstraint1.cry" "jackie_rigRN.phl[968]";
-connectAttr "jackie_rigRN.phl[969]" "lf_palm_ctl_parentConstraint1.tg[0].trp";
-connectAttr "jackie_rigRN.phl[970]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[969]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[971]" "lf_palm_ctl_parentConstraint1.tg[0].trt";
-connectAttr "jackie_rigRN.phl[972]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[970]" "lf_palm_ctl_parentConstraint1.tg[0].trp";
+connectAttr "jackie_rigRN.phl[971]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
 		;
-connectAttr "jackie_rigRN.phl[973]" "lf_palm_ctl_parentConstraint1.tg[0].tpm";
-connectAttr "jackie_rigRN.phl[974]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
+connectAttr "jackie_rigRN.phl[972]" "lf_palm_ctl_parentConstraint1.tg[0].trt";
+connectAttr "jackie_rigRN.phl[973]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[975]" "left_wrist_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[976]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[974]" "lf_palm_ctl_parentConstraint1.tg[0].tpm";
+connectAttr "jackie_rigRN.phl[975]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
 		;
+connectAttr "jackie_rigRN.phl[976]" "left_wrist_orientConstraint1.cro";
 connectAttr "jackie_rigRN.phl[977]" "lf_palm_ctl_parentConstraint1.tg[0].tro";
-connectAttr "jackie_rigRN.phl[978]" "left_wrist_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[979]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[978]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
 		;
+connectAttr "jackie_rigRN.phl[979]" "left_wrist_orientConstraint1.cjo";
 connectAttr "jackie_rigRN.phl[980]" "lf_palm_ctl_parentConstraint1.tg[0].tjo";
 connectAttr "jackie_rigRN.phl[981]" "left_wrist_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[982]" "lf_palm_ctl_parentConstraint1.tg[0].tsc";
-connectAttr "jackie_rigRN.phl[983]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
+connectAttr "jackie_rigRN.phl[982]" "jackie_lf_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
 		;
+connectAttr "jackie_rigRN.phl[983]" "lf_palm_ctl_parentConstraint1.tg[0].tsc";
 connectAttr "jackie_rigRN.phl[984]" "bindPose1.m[30]";
 connectAttr "jackie_rigRN.phl[985]" "skinCluster1.ma[29]";
 connectAttr "jackie_rigRN.phl[986]" "skinCluster1.lw[29]";
@@ -58387,7 +58351,7 @@ connectAttr "condition2.ocr" "jackie_rigRN.phl[1287]";
 connectAttr "jackie_rigRN.phl[1288]" "rt_wrist_ikHandle.hsj";
 connectAttr "jackie_rigRN.phl[1289]" "bindPose1.m[51]";
 connectAttr "jackie_rigRN.phl[1290]" "nodeView4.ni[5].dn";
-connectAttr "jackie_rigRN.phl[1291]" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[6].dn"
+connectAttr "jackie_rigRN.phl[1291]" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[5].dn"
 		;
 connectAttr "jackie_rigRN.phl[1292]" "skinCluster1.ma[50]";
 connectAttr "jackie_rigRN.phl[1293]" "skinCluster2.ma[50]";
@@ -58420,7 +58384,7 @@ connectAttr "jackie_rigRN.phl[1317]" "right_elbow_orientConstraint1.is";
 connectAttr "condition2.ocr" "jackie_rigRN.phl[1318]";
 connectAttr "jackie_rigRN.phl[1319]" "bindPose1.m[53]";
 connectAttr "jackie_rigRN.phl[1320]" "nodeView4.ni[9].dn";
-connectAttr "jackie_rigRN.phl[1321]" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[10].dn"
+connectAttr "jackie_rigRN.phl[1321]" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[13].dn"
 		;
 connectAttr "jackie_rigRN.phl[1322]" "skinCluster1.ma[52]";
 connectAttr "jackie_rigRN.phl[1323]" "skinCluster1.lw[52]";
@@ -58433,7 +58397,7 @@ connectAttr "jackie_rigRN.phl[1329]" "right_elbow_orientConstraint1.cjo";
 connectAttr "jackie_rigRN.phl[1330]" "right_elbow_orientConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[1331]" "nodeView2.ni[4].dn";
 connectAttr "jackie_rigRN.phl[1332]" "bindPose1.m[54]";
-connectAttr "jackie_rigRN.phl[1333]" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[15].dn"
+connectAttr "jackie_rigRN.phl[1333]" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[5].dn"
 		;
 connectAttr "jackie_rigRN.phl[1334]" "skinCluster1.ma[53]";
 connectAttr "jackie_rigRN.phl[1335]" "skinCluster1.lw[53]";
@@ -58453,36 +58417,36 @@ connectAttr "jackie_rigRN.phl[1346]" "bindPose1.m[55]";
 connectAttr "jackie_rigRN.phl[1347]" "skinCluster1.ma[54]";
 connectAttr "jackie_rigRN.phl[1348]" "skinCluster1.lw[54]";
 connectAttr "jackie_rigRN.phl[1349]" "skinCluster1.ifcl[54]";
-connectAttr "jackie_rigRN.phl[1350]" "rt_palm_ctl_parentConstraint1.tg[0].tt";
-connectAttr "jackie_rigRN.phl[1351]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
+connectAttr "jackie_rigRN.phl[1350]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tt"
 		;
-connectAttr "jackie_rigRN.phl[1352]" "rt_palm_ctl_parentConstraint1.tg[0].trp";
-connectAttr "jackie_rigRN.phl[1353]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
+connectAttr "jackie_rigRN.phl[1351]" "rt_palm_ctl_parentConstraint1.tg[0].tt";
+connectAttr "jackie_rigRN.phl[1352]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trp"
 		;
-connectAttr "jackie_rigRN.phl[1354]" "rt_palm_ctl_parentConstraint1.tg[0].trt";
-connectAttr "jackie_rigRN.phl[1355]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
+connectAttr "jackie_rigRN.phl[1353]" "rt_palm_ctl_parentConstraint1.tg[0].trp";
+connectAttr "jackie_rigRN.phl[1354]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].trt"
 		;
-connectAttr "jackie_rigRN.phl[1356]" "rt_palm_ctl_parentConstraint1.tg[0].tpm";
-connectAttr "jackie_rigRN.phl[1357]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
+connectAttr "jackie_rigRN.phl[1355]" "rt_palm_ctl_parentConstraint1.tg[0].trt";
+connectAttr "jackie_rigRN.phl[1356]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[1358]" "rt_palm_ctl_parentConstraint1.tg[0].tr";
-connectAttr "jackie_rigRN.phl[1359]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
+connectAttr "jackie_rigRN.phl[1357]" "rt_palm_ctl_parentConstraint1.tg[0].tpm";
+connectAttr "jackie_rigRN.phl[1358]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tr"
 		;
+connectAttr "jackie_rigRN.phl[1359]" "rt_palm_ctl_parentConstraint1.tg[0].tr";
 connectAttr "right_wrist_orientConstraint1.crx" "jackie_rigRN.phl[1360]";
 connectAttr "right_wrist_orientConstraint1.cry" "jackie_rigRN.phl[1361]";
 connectAttr "right_wrist_orientConstraint1.crz" "jackie_rigRN.phl[1362]";
-connectAttr "jackie_rigRN.phl[1363]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[1363]" "right_wrist_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[1364]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[1364]" "right_wrist_orientConstraint1.cro";
 connectAttr "jackie_rigRN.phl[1365]" "rt_palm_ctl_parentConstraint1.tg[0].tro";
-connectAttr "jackie_rigRN.phl[1366]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[1366]" "right_wrist_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[1367]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "jackie_rigRN.phl[1367]" "right_wrist_orientConstraint1.cjo";
 connectAttr "jackie_rigRN.phl[1368]" "rt_palm_ctl_parentConstraint1.tg[0].tjo";
 connectAttr "jackie_rigRN.phl[1369]" "right_wrist_orientConstraint1.cpim";
-connectAttr "jackie_rigRN.phl[1370]" "rt_palm_ctl_parentConstraint1.tg[0].tsc";
-connectAttr "jackie_rigRN.phl[1371]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
+connectAttr "jackie_rigRN.phl[1370]" "rt_arm_ikfkSwitch_ctl_parentConstraint1.tg[0].tsc"
 		;
+connectAttr "jackie_rigRN.phl[1371]" "rt_palm_ctl_parentConstraint1.tg[0].tsc";
 connectAttr "jackie_rigRN.phl[1372]" "bindPose1.m[56]";
 connectAttr "jackie_rigRN.phl[1373]" "skinCluster1.ma[55]";
 connectAttr "jackie_rigRN.phl[1374]" "skinCluster1.lw[55]";
@@ -58853,12 +58817,12 @@ connectAttr "jackie_rigRN.phl[1719]" "lf_leg_ikfk_switch_ctl_parentConstraint1.t
 		;
 connectAttr "jackie_rigRN.phl[1720]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "jackie_rigRN.phl[1721]" "left_ankle_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[1722]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[1721]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[1723]" "left_ankle_orientConstraint1.cjo";
-connectAttr "jackie_rigRN.phl[1724]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[1722]" "left_ankle_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[1723]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tjo"
 		;
+connectAttr "jackie_rigRN.phl[1724]" "left_ankle_orientConstraint1.cjo";
 connectAttr "jackie_rigRN.phl[1725]" "left_ankle_orientConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[1726]" "lf_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tsc"
 		;
@@ -58924,12 +58888,12 @@ connectAttr "jackie_rigRN.phl[1777]" "rt_leg_ikfk_switch_ctl_parentConstraint1.t
 connectAttr "right_ankle_orientConstraint1.crx" "jackie_rigRN.phl[1778]";
 connectAttr "right_ankle_orientConstraint1.cry" "jackie_rigRN.phl[1779]";
 connectAttr "right_ankle_orientConstraint1.crz" "jackie_rigRN.phl[1780]";
-connectAttr "jackie_rigRN.phl[1781]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tro"
+connectAttr "jackie_rigRN.phl[1781]" "right_ankle_orientConstraint1.cro";
+connectAttr "jackie_rigRN.phl[1782]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tro"
 		;
-connectAttr "jackie_rigRN.phl[1782]" "right_ankle_orientConstraint1.cro";
-connectAttr "jackie_rigRN.phl[1783]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tjo"
+connectAttr "jackie_rigRN.phl[1783]" "right_ankle_orientConstraint1.cjo";
+connectAttr "jackie_rigRN.phl[1784]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "jackie_rigRN.phl[1784]" "right_ankle_orientConstraint1.cjo";
 connectAttr "jackie_rigRN.phl[1785]" "right_ankle_orientConstraint1.cpim";
 connectAttr "jackie_rigRN.phl[1786]" "rt_leg_ikfk_switch_ctl_parentConstraint1.tg[0].tsc"
 		;
@@ -58948,7 +58912,7 @@ connectAttr "jackie_rigRN.phl[1799]" "jackie_rigRN.phl[1800]";
 connectAttr "jackie_rigRN.phl[1801]" "jackie_rigRN.phl[1802]";
 connectAttr "jackie_rigRN.phl[1803]" "jackie_rigRN.phl[1804]";
 connectAttr "Jackie_blendshapes:Eyes.og[0]" "jackie_rigRN.phl[1805]";
-connectAttr "jackie_rigRN.phl[1806]" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[47].dn"
+connectAttr "jackie_rigRN.phl[1806]" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[41].dn"
 		;
 connectAttr "jackie_rigRN.phl[1807]" "groupParts2.ig";
 connectAttr "jackie_rigRN.phl[1808]" "jackie_rigRN.phl[1809]";
@@ -58964,32 +58928,6 @@ connectAttr "jackie_rigRN.phl[1821]" "jackie_rigRN.phl[1822]";
 connectAttr "jackie_rigRN.phl[1823]" "jackie_rigRN.phl[1824]";
 connectAttr "Group9688ShapeDeformed.iog.og[3]" "jackie_rigRN.phl[1825]";
 connectAttr "jackie_rigRN.phl[1826]" "Group9688ShapeDeformed.iog.og[2].gid";
-connectAttr "accessories_clothes.di" "jackie_rigRN.phl[85]";
-connectAttr "jackie_rigRN.phl[86]" "jackie_rigRN.phl[87]";
-connectAttr "jackie_rigRN.phl[88]" "jackie_rigRN.phl[89]";
-connectAttr "jackie_rigRN.phl[90]" "jackie_rigRN.phl[91]";
-connectAttr "jackie_rigRN.phl[92]" "jackie_rigRN.phl[93]";
-connectAttr "jackie_rigRN.phl[94]" "jackie_rigRN.phl[95]";
-connectAttr "jackie_rigRN.phl[96]" "jackie_rigRN.phl[97]";
-connectAttr "groupId1.id" "jackie_rigRN.phl[98]";
-connectAttr "jackie_rigRN.phl[99]" "groupParts6.ig";
-connectAttr "jackie_rigRN.phl[100]" "jackie_rigRN.phl[101]";
-connectAttr "polySurfaceShape1Deformed.iog" "jackie_rigRN.phl[102]";
-connectAttr "jackie_rigRN.phl[103]" "polySurfaceShape1Deformed.iog.og[2].gco";
-connectAttr "jackie_rigRN.phl[104]" "jackie_rigRN.phl[105]";
-connectAttr "jackie_rigRN.phl[106]" "jackie_rigRN.phl[107]";
-connectAttr "polySurfaceShape1Deformed.iog.og[2]" "jackie_rigRN.phl[108]";
-connectAttr "jackie_rigRN.phl[109]" "polySurfaceShape1Deformed.iog.og[2].gid";
-connectAttr "jackie_rigRN.phl[110]" "polySurfaceShape1Deformed.iog.og[3].gco";
-connectAttr "jackie_rigRN.phl[111]" "jackie_rigRN.phl[112]";
-connectAttr "jackie_rigRN.phl[113]" "jackie_rigRN.phl[114]";
-connectAttr "polySurfaceShape1Deformed.iog.og[3]" "jackie_rigRN.phl[115]";
-connectAttr "jackie_rigRN.phl[116]" "polySurfaceShape1Deformed.iog.og[3].gid";
-connectAttr "jackie_rigRN.phl[117]" "polySurfaceShape1Deformed.iog.og[4].gco";
-connectAttr "jackie_rigRN.phl[118]" "jackie_rigRN.phl[119]";
-connectAttr "jackie_rigRN.phl[120]" "jackie_rigRN.phl[121]";
-connectAttr "polySurfaceShape1Deformed.iog.og[4]" "jackie_rigRN.phl[122]";
-connectAttr "jackie_rigRN.phl[123]" "polySurfaceShape1Deformed.iog.og[4].gid";
 connectAttr "jackie_rigRN.phl[276]" "jackieHair_parentConstraint1.crp";
 connectAttr "jackieHair_parentConstraint1.ctx" "jackie_rigRN.phl[277]";
 connectAttr "jackieHair_parentConstraint1.cty" "jackie_rigRN.phl[278]";
@@ -59145,6 +59083,32 @@ connectAttr "jackie_rigRN.phl[495]" "jackie_rigRN.phl[496]";
 connectAttr "jackie_rigRN.phl[497]" "jackie_rigRN.phl[498]";
 connectAttr "jackie_rigRN.phl[499]" "jackie_rigRN.phl[500]";
 connectAttr "jackie_rigRN.phl[501]" "jackie_rigRN.phl[502]";
+connectAttr "accessories_clothes.di" "jackie_rigRN.phl[85]";
+connectAttr "jackie_rigRN.phl[86]" "jackie_rigRN.phl[87]";
+connectAttr "jackie_rigRN.phl[88]" "jackie_rigRN.phl[89]";
+connectAttr "jackie_rigRN.phl[90]" "jackie_rigRN.phl[91]";
+connectAttr "jackie_rigRN.phl[92]" "jackie_rigRN.phl[93]";
+connectAttr "jackie_rigRN.phl[94]" "jackie_rigRN.phl[95]";
+connectAttr "jackie_rigRN.phl[96]" "jackie_rigRN.phl[97]";
+connectAttr "groupId1.id" "jackie_rigRN.phl[98]";
+connectAttr "jackie_rigRN.phl[99]" "groupParts6.ig";
+connectAttr "jackie_rigRN.phl[100]" "jackie_rigRN.phl[101]";
+connectAttr "polySurfaceShape1Deformed.iog" "jackie_rigRN.phl[102]";
+connectAttr "jackie_rigRN.phl[103]" "polySurfaceShape1Deformed.iog.og[2].gco";
+connectAttr "jackie_rigRN.phl[104]" "jackie_rigRN.phl[105]";
+connectAttr "jackie_rigRN.phl[106]" "jackie_rigRN.phl[107]";
+connectAttr "polySurfaceShape1Deformed.iog.og[2]" "jackie_rigRN.phl[108]";
+connectAttr "jackie_rigRN.phl[109]" "polySurfaceShape1Deformed.iog.og[2].gid";
+connectAttr "jackie_rigRN.phl[110]" "polySurfaceShape1Deformed.iog.og[3].gco";
+connectAttr "jackie_rigRN.phl[111]" "jackie_rigRN.phl[112]";
+connectAttr "jackie_rigRN.phl[113]" "jackie_rigRN.phl[114]";
+connectAttr "polySurfaceShape1Deformed.iog.og[3]" "jackie_rigRN.phl[115]";
+connectAttr "jackie_rigRN.phl[116]" "polySurfaceShape1Deformed.iog.og[3].gid";
+connectAttr "jackie_rigRN.phl[117]" "polySurfaceShape1Deformed.iog.og[4].gco";
+connectAttr "jackie_rigRN.phl[118]" "jackie_rigRN.phl[119]";
+connectAttr "jackie_rigRN.phl[120]" "jackie_rigRN.phl[121]";
+connectAttr "polySurfaceShape1Deformed.iog.og[4]" "jackie_rigRN.phl[122]";
+connectAttr "jackie_rigRN.phl[123]" "polySurfaceShape1Deformed.iog.og[4].gid";
 connectAttr "rt_arm_ikfkSwitch_ctl_parentConstraint1.ctx" "rt_arm_ikfkSwitch_ctl.tx"
 		 -l on;
 connectAttr "rt_arm_ikfkSwitch_ctl_parentConstraint1.cty" "rt_arm_ikfkSwitch_ctl.ty"
@@ -59170,51 +59134,6 @@ connectAttr "rt_arm_ikfkSwitch_ctl.rpt" "rt_arm_ikfkSwitch_ctl_parentConstraint1
 connectAttr "rt_shoulder_fk_ctl_visibility.o" "rt_shoulder_fk_ctl.v";
 connectAttr "rt_elbow_fk_ctl_visibility.o" "rt_elbow_fk_ctl.v";
 connectAttr "rt_wrist_fk_ctl_visibility.o" "rt_wrist_fk_ctl.v";
-connectAttr "rt_wrist_ik_ctl_visibility.o" "rt_wrist_ik_ctl.v";
-connectAttr "rt_wrist_ikHandleGRP_pointConstraint1.ctx" "rt_wrist_ikHandleGRP.tx"
-		;
-connectAttr "rt_wrist_ikHandleGRP_pointConstraint1.cty" "rt_wrist_ikHandleGRP.ty"
-		;
-connectAttr "rt_wrist_ikHandleGRP_pointConstraint1.ctz" "rt_wrist_ikHandleGRP.tz"
-		;
-connectAttr "effector_rt_wrist.hp" "rt_wrist_ikHandle.hee";
-connectAttr "ikRPsolver.msg" "rt_wrist_ikHandle.hsv";
-connectAttr "rt_wrist_ikHandle_ikBlend.o" "rt_wrist_ikHandle.ikb";
-connectAttr "rt_wrist_ikHandle_visibility.o" "rt_wrist_ikHandle.v";
-connectAttr "rt_wrist_ikHandle_poleVectorConstraint1.ctx" "rt_wrist_ikHandle.pvx"
-		;
-connectAttr "rt_wrist_ikHandle_poleVectorConstraint1.cty" "rt_wrist_ikHandle.pvy"
-		;
-connectAttr "rt_wrist_ikHandle_poleVectorConstraint1.ctz" "rt_wrist_ikHandle.pvz"
-		;
-connectAttr "rt_wrist_ikHandle.pim" "rt_wrist_ikHandle_poleVectorConstraint1.cpim"
-		;
-connectAttr "rt_elbow_PV_ctl.t" "rt_wrist_ikHandle_poleVectorConstraint1.tg[0].tt"
-		;
-connectAttr "rt_elbow_PV_ctl.rp" "rt_wrist_ikHandle_poleVectorConstraint1.tg[0].trp"
-		;
-connectAttr "rt_elbow_PV_ctl.rpt" "rt_wrist_ikHandle_poleVectorConstraint1.tg[0].trt"
-		;
-connectAttr "rt_elbow_PV_ctl.pm" "rt_wrist_ikHandle_poleVectorConstraint1.tg[0].tpm"
-		;
-connectAttr "rt_wrist_ikHandle_poleVectorConstraint1.w0" "rt_wrist_ikHandle_poleVectorConstraint1.tg[0].tw"
-		;
-connectAttr "rt_wrist_ikHandleGRP.pim" "rt_wrist_ikHandleGRP_pointConstraint1.cpim"
-		;
-connectAttr "rt_wrist_ikHandleGRP.rp" "rt_wrist_ikHandleGRP_pointConstraint1.crp"
-		;
-connectAttr "rt_wrist_ikHandleGRP.rpt" "rt_wrist_ikHandleGRP_pointConstraint1.crt"
-		;
-connectAttr "rt_wrist_ik_ctl.t" "rt_wrist_ikHandleGRP_pointConstraint1.tg[0].tt"
-		;
-connectAttr "rt_wrist_ik_ctl.rp" "rt_wrist_ikHandleGRP_pointConstraint1.tg[0].trp"
-		;
-connectAttr "rt_wrist_ik_ctl.rpt" "rt_wrist_ikHandleGRP_pointConstraint1.tg[0].trt"
-		;
-connectAttr "rt_wrist_ik_ctl.pm" "rt_wrist_ikHandleGRP_pointConstraint1.tg[0].tpm"
-		;
-connectAttr "rt_wrist_ikHandleGRP_pointConstraint1.w0" "rt_wrist_ikHandleGRP_pointConstraint1.tg[0].tw"
-		;
 connectAttr "effector_rt_clavicle.hp" "rt_clavicle_ikHandle.hee";
 connectAttr "ikSCsolver.msg" "rt_clavicle_ikHandle.hsv";
 connectAttr "rt_clavicle_ikHandle_parentConstraint1.ctx" "rt_clavicle_ikHandle.tx"
@@ -59306,14 +59225,6 @@ connectAttr "jackie_lf_shoulder_fk_ctl_visibility.o" "lf_shoulder_fk_ctl.v";
 connectAttr "jackie_lf_elbow_fk_ctl_visibility.o" "lf_elbow_fk_ctl.v";
 connectAttr "jackie_lf_wrist_fk_ctl_visibility.o" "lf_wrist_fk_ctl.v";
 connectAttr "lf_elbow_PV_ctl_visibility.o" "lf_elbow_PV_ctl.v";
-connectAttr "lf_wrist_ik_ctl_visibility.o" "lf_wrist_ik_ctl.v";
-connectAttr "lf_wrist_ik_ctl.t" "lf_wrist_ikHandle_pointConstraint1.tg[0].tt";
-connectAttr "lf_wrist_ik_ctl.rp" "lf_wrist_ikHandle_pointConstraint1.tg[0].trp";
-connectAttr "lf_wrist_ik_ctl.rpt" "lf_wrist_ikHandle_pointConstraint1.tg[0].trt"
-		;
-connectAttr "lf_wrist_ik_ctl.pm" "lf_wrist_ikHandle_pointConstraint1.tg[0].tpm";
-connectAttr "lf_wrist_ikHandle_pointConstraint1.w0" "lf_wrist_ikHandle_pointConstraint1.tg[0].tw"
-		;
 connectAttr "effector_lf_clavicle.hp" "lf_clavicle_ikHandle.hee";
 connectAttr "ikSCsolver.msg" "lf_clavicle_ikHandle.hsv";
 connectAttr "lf_clavicle_ikHandle_parentConstraint1.ctx" "lf_clavicle_ikHandle.tx"
@@ -59519,6 +59430,59 @@ connectAttr "lf_wrist_ik_ctl.rpt" "lf_wrist_ikHandle_pointConstraint2.tg[0].trt"
 		;
 connectAttr "lf_wrist_ik_ctl.pm" "lf_wrist_ikHandle_pointConstraint2.tg[0].tpm";
 connectAttr "lf_wrist_ikHandle_pointConstraint2.w0" "lf_wrist_ikHandle_pointConstraint2.tg[0].tw"
+		;
+connectAttr "rt_wrist_ik_ctl_visibility.o" "rt_wrist_ik_ctl.v";
+connectAttr "rt_wrist_ikHandleGRP_pointConstraint1.ctx" "rt_wrist_ikHandleGRP.tx"
+		;
+connectAttr "rt_wrist_ikHandleGRP_pointConstraint1.cty" "rt_wrist_ikHandleGRP.ty"
+		;
+connectAttr "rt_wrist_ikHandleGRP_pointConstraint1.ctz" "rt_wrist_ikHandleGRP.tz"
+		;
+connectAttr "effector_rt_wrist.hp" "rt_wrist_ikHandle.hee";
+connectAttr "ikRPsolver.msg" "rt_wrist_ikHandle.hsv";
+connectAttr "rt_wrist_ikHandle_ikBlend.o" "rt_wrist_ikHandle.ikb";
+connectAttr "rt_wrist_ikHandle_visibility.o" "rt_wrist_ikHandle.v";
+connectAttr "rt_wrist_ikHandle_poleVectorConstraint1.ctx" "rt_wrist_ikHandle.pvx"
+		;
+connectAttr "rt_wrist_ikHandle_poleVectorConstraint1.cty" "rt_wrist_ikHandle.pvy"
+		;
+connectAttr "rt_wrist_ikHandle_poleVectorConstraint1.ctz" "rt_wrist_ikHandle.pvz"
+		;
+connectAttr "rt_wrist_ikHandle.pim" "rt_wrist_ikHandle_poleVectorConstraint1.cpim"
+		;
+connectAttr "rt_elbow_PV_ctl.t" "rt_wrist_ikHandle_poleVectorConstraint1.tg[0].tt"
+		;
+connectAttr "rt_elbow_PV_ctl.rp" "rt_wrist_ikHandle_poleVectorConstraint1.tg[0].trp"
+		;
+connectAttr "rt_elbow_PV_ctl.rpt" "rt_wrist_ikHandle_poleVectorConstraint1.tg[0].trt"
+		;
+connectAttr "rt_elbow_PV_ctl.pm" "rt_wrist_ikHandle_poleVectorConstraint1.tg[0].tpm"
+		;
+connectAttr "rt_wrist_ikHandle_poleVectorConstraint1.w0" "rt_wrist_ikHandle_poleVectorConstraint1.tg[0].tw"
+		;
+connectAttr "rt_wrist_ikHandleGRP.pim" "rt_wrist_ikHandleGRP_pointConstraint1.cpim"
+		;
+connectAttr "rt_wrist_ikHandleGRP.rp" "rt_wrist_ikHandleGRP_pointConstraint1.crp"
+		;
+connectAttr "rt_wrist_ikHandleGRP.rpt" "rt_wrist_ikHandleGRP_pointConstraint1.crt"
+		;
+connectAttr "rt_wrist_ik_ctl.t" "rt_wrist_ikHandleGRP_pointConstraint1.tg[0].tt"
+		;
+connectAttr "rt_wrist_ik_ctl.rp" "rt_wrist_ikHandleGRP_pointConstraint1.tg[0].trp"
+		;
+connectAttr "rt_wrist_ik_ctl.rpt" "rt_wrist_ikHandleGRP_pointConstraint1.tg[0].trt"
+		;
+connectAttr "rt_wrist_ik_ctl.pm" "rt_wrist_ikHandleGRP_pointConstraint1.tg[0].tpm"
+		;
+connectAttr "rt_wrist_ikHandleGRP_pointConstraint1.w0" "rt_wrist_ikHandleGRP_pointConstraint1.tg[0].tw"
+		;
+connectAttr "lf_wrist_ik_ctl_visibility.o" "lf_wrist_ik_ctl.v";
+connectAttr "lf_wrist_ik_ctl.t" "lf_wrist_ikHandle_pointConstraint1.tg[0].tt";
+connectAttr "lf_wrist_ik_ctl.rp" "lf_wrist_ikHandle_pointConstraint1.tg[0].trp";
+connectAttr "lf_wrist_ik_ctl.rpt" "lf_wrist_ikHandle_pointConstraint1.tg[0].trt"
+		;
+connectAttr "lf_wrist_ik_ctl.pm" "lf_wrist_ikHandle_pointConstraint1.tg[0].tpm";
+connectAttr "lf_wrist_ikHandle_pointConstraint1.w0" "lf_wrist_ikHandle_pointConstraint1.tg[0].tw"
 		;
 connectAttr "Jackie_blendshapes:blendShape1Set.mwc" "Jackie_blendshapes:Jackie_latest:Group9688Shape.iog.og[0].gco"
 		;
@@ -60150,10 +60114,6 @@ connectAttr "eye_lf_ctl.rp" "left_eye_aimConstraint1.tg[0].trp";
 connectAttr "eye_lf_ctl.rpt" "left_eye_aimConstraint1.tg[0].trt";
 connectAttr "eye_lf_ctl.pm" "left_eye_aimConstraint1.tg[0].tpm";
 connectAttr "left_eye_aimConstraint1.w0" "left_eye_aimConstraint1.tg[0].tw";
-connectAttr "lip_bot_rt_ctl.s" "lip_right_bottom_scaleConstraint1.tg[0].ts";
-connectAttr "lip_bot_rt_ctl.pm" "lip_right_bottom_scaleConstraint1.tg[0].tpm";
-connectAttr "lip_right_bottom_scaleConstraint1.w0" "lip_right_bottom_scaleConstraint1.tg[0].tw"
-		;
 connectAttr "lip_bot_rt_ctl.t" "lip_right_bottom_parentConstraint1.tg[0].tt";
 connectAttr "lip_bot_rt_ctl.rp" "lip_right_bottom_parentConstraint1.tg[0].trp";
 connectAttr "lip_bot_rt_ctl.rpt" "lip_right_bottom_parentConstraint1.tg[0].trt";
@@ -60163,9 +60123,9 @@ connectAttr "lip_bot_rt_ctl.s" "lip_right_bottom_parentConstraint1.tg[0].ts";
 connectAttr "lip_bot_rt_ctl.pm" "lip_right_bottom_parentConstraint1.tg[0].tpm";
 connectAttr "lip_right_bottom_parentConstraint1.w0" "lip_right_bottom_parentConstraint1.tg[0].tw"
 		;
-connectAttr "lip_rt_corner_ctl.s" "lip_right_end_scaleConstraint1.tg[0].ts";
-connectAttr "lip_rt_corner_ctl.pm" "lip_right_end_scaleConstraint1.tg[0].tpm";
-connectAttr "lip_right_end_scaleConstraint1.w0" "lip_right_end_scaleConstraint1.tg[0].tw"
+connectAttr "lip_bot_rt_ctl.s" "lip_right_bottom_scaleConstraint1.tg[0].ts";
+connectAttr "lip_bot_rt_ctl.pm" "lip_right_bottom_scaleConstraint1.tg[0].tpm";
+connectAttr "lip_right_bottom_scaleConstraint1.w0" "lip_right_bottom_scaleConstraint1.tg[0].tw"
 		;
 connectAttr "lip_rt_corner_ctl.t" "lip_right_end_parentConstraint1.tg[0].tt";
 connectAttr "lip_rt_corner_ctl.rp" "lip_right_end_parentConstraint1.tg[0].trp";
@@ -60176,9 +60136,9 @@ connectAttr "lip_rt_corner_ctl.s" "lip_right_end_parentConstraint1.tg[0].ts";
 connectAttr "lip_rt_corner_ctl.pm" "lip_right_end_parentConstraint1.tg[0].tpm";
 connectAttr "lip_right_end_parentConstraint1.w0" "lip_right_end_parentConstraint1.tg[0].tw"
 		;
-connectAttr "lip_top_rt_ctl.s" "lip_right_top_scaleConstraint1.tg[0].ts";
-connectAttr "lip_top_rt_ctl.pm" "lip_right_top_scaleConstraint1.tg[0].tpm";
-connectAttr "lip_right_top_scaleConstraint1.w0" "lip_right_top_scaleConstraint1.tg[0].tw"
+connectAttr "lip_rt_corner_ctl.s" "lip_right_end_scaleConstraint1.tg[0].ts";
+connectAttr "lip_rt_corner_ctl.pm" "lip_right_end_scaleConstraint1.tg[0].tpm";
+connectAttr "lip_right_end_scaleConstraint1.w0" "lip_right_end_scaleConstraint1.tg[0].tw"
 		;
 connectAttr "lip_top_rt_ctl.t" "lip_right_top_parentConstraint1.tg[0].tt";
 connectAttr "lip_top_rt_ctl.rp" "lip_right_top_parentConstraint1.tg[0].trp";
@@ -60189,9 +60149,9 @@ connectAttr "lip_top_rt_ctl.s" "lip_right_top_parentConstraint1.tg[0].ts";
 connectAttr "lip_top_rt_ctl.pm" "lip_right_top_parentConstraint1.tg[0].tpm";
 connectAttr "lip_right_top_parentConstraint1.w0" "lip_right_top_parentConstraint1.tg[0].tw"
 		;
-connectAttr "lip_bot_lf_ctl.s" "lip_left_bottom_scaleConstraint1.tg[0].ts";
-connectAttr "lip_bot_lf_ctl.pm" "lip_left_bottom_scaleConstraint1.tg[0].tpm";
-connectAttr "lip_left_bottom_scaleConstraint1.w0" "lip_left_bottom_scaleConstraint1.tg[0].tw"
+connectAttr "lip_top_rt_ctl.s" "lip_right_top_scaleConstraint1.tg[0].ts";
+connectAttr "lip_top_rt_ctl.pm" "lip_right_top_scaleConstraint1.tg[0].tpm";
+connectAttr "lip_right_top_scaleConstraint1.w0" "lip_right_top_scaleConstraint1.tg[0].tw"
 		;
 connectAttr "lip_bot_lf_ctl.t" "lip_left_bottom_parentConstraint1.tg[0].tt";
 connectAttr "lip_bot_lf_ctl.rp" "lip_left_bottom_parentConstraint1.tg[0].trp";
@@ -60202,9 +60162,9 @@ connectAttr "lip_bot_lf_ctl.s" "lip_left_bottom_parentConstraint1.tg[0].ts";
 connectAttr "lip_bot_lf_ctl.pm" "lip_left_bottom_parentConstraint1.tg[0].tpm";
 connectAttr "lip_left_bottom_parentConstraint1.w0" "lip_left_bottom_parentConstraint1.tg[0].tw"
 		;
-connectAttr "lip_top_lf_ctl.s" "lip_left_top_scaleConstraint1.tg[0].ts";
-connectAttr "lip_top_lf_ctl.pm" "lip_left_top_scaleConstraint1.tg[0].tpm";
-connectAttr "lip_left_top_scaleConstraint1.w0" "lip_left_top_scaleConstraint1.tg[0].tw"
+connectAttr "lip_bot_lf_ctl.s" "lip_left_bottom_scaleConstraint1.tg[0].ts";
+connectAttr "lip_bot_lf_ctl.pm" "lip_left_bottom_scaleConstraint1.tg[0].tpm";
+connectAttr "lip_left_bottom_scaleConstraint1.w0" "lip_left_bottom_scaleConstraint1.tg[0].tw"
 		;
 connectAttr "lip_top_lf_ctl.t" "lip_left_top_parentConstraint1.tg[0].tt";
 connectAttr "lip_top_lf_ctl.rp" "lip_left_top_parentConstraint1.tg[0].trp";
@@ -60215,9 +60175,9 @@ connectAttr "lip_top_lf_ctl.s" "lip_left_top_parentConstraint1.tg[0].ts";
 connectAttr "lip_top_lf_ctl.pm" "lip_left_top_parentConstraint1.tg[0].tpm";
 connectAttr "lip_left_top_parentConstraint1.w0" "lip_left_top_parentConstraint1.tg[0].tw"
 		;
-connectAttr "lip_bot_mid_ctl.s" "lip_center_bottom_scaleConstraint1.tg[0].ts";
-connectAttr "lip_bot_mid_ctl.pm" "lip_center_bottom_scaleConstraint1.tg[0].tpm";
-connectAttr "lip_center_bottom_scaleConstraint1.w0" "lip_center_bottom_scaleConstraint1.tg[0].tw"
+connectAttr "lip_top_lf_ctl.s" "lip_left_top_scaleConstraint1.tg[0].ts";
+connectAttr "lip_top_lf_ctl.pm" "lip_left_top_scaleConstraint1.tg[0].tpm";
+connectAttr "lip_left_top_scaleConstraint1.w0" "lip_left_top_scaleConstraint1.tg[0].tw"
 		;
 connectAttr "lip_bot_mid_ctl.t" "lip_center_bottom_parentConstraint1.tg[0].tt";
 connectAttr "lip_bot_mid_ctl.rp" "lip_center_bottom_parentConstraint1.tg[0].trp"
@@ -60232,9 +60192,9 @@ connectAttr "lip_bot_mid_ctl.pm" "lip_center_bottom_parentConstraint1.tg[0].tpm"
 		;
 connectAttr "lip_center_bottom_parentConstraint1.w0" "lip_center_bottom_parentConstraint1.tg[0].tw"
 		;
-connectAttr "lip_lf_corner_ctl.s" "lip_left_end_scaleConstraint1.tg[0].ts";
-connectAttr "lip_lf_corner_ctl.pm" "lip_left_end_scaleConstraint1.tg[0].tpm";
-connectAttr "lip_left_end_scaleConstraint1.w0" "lip_left_end_scaleConstraint1.tg[0].tw"
+connectAttr "lip_bot_mid_ctl.s" "lip_center_bottom_scaleConstraint1.tg[0].ts";
+connectAttr "lip_bot_mid_ctl.pm" "lip_center_bottom_scaleConstraint1.tg[0].tpm";
+connectAttr "lip_center_bottom_scaleConstraint1.w0" "lip_center_bottom_scaleConstraint1.tg[0].tw"
 		;
 connectAttr "lip_lf_corner_ctl.t" "lip_left_end_parentConstraint1.tg[0].tt";
 connectAttr "lip_lf_corner_ctl.rp" "lip_left_end_parentConstraint1.tg[0].trp";
@@ -60245,9 +60205,9 @@ connectAttr "lip_lf_corner_ctl.s" "lip_left_end_parentConstraint1.tg[0].ts";
 connectAttr "lip_lf_corner_ctl.pm" "lip_left_end_parentConstraint1.tg[0].tpm";
 connectAttr "lip_left_end_parentConstraint1.w0" "lip_left_end_parentConstraint1.tg[0].tw"
 		;
-connectAttr "lip_top_mid_ctl.s" "lip_center_top_scaleConstraint1.tg[0].ts";
-connectAttr "lip_top_mid_ctl.pm" "lip_center_top_scaleConstraint1.tg[0].tpm";
-connectAttr "lip_center_top_scaleConstraint1.w0" "lip_center_top_scaleConstraint1.tg[0].tw"
+connectAttr "lip_lf_corner_ctl.s" "lip_left_end_scaleConstraint1.tg[0].ts";
+connectAttr "lip_lf_corner_ctl.pm" "lip_left_end_scaleConstraint1.tg[0].tpm";
+connectAttr "lip_left_end_scaleConstraint1.w0" "lip_left_end_scaleConstraint1.tg[0].tw"
 		;
 connectAttr "lip_top_mid_ctl.t" "lip_center_top_parentConstraint1.tg[0].tt";
 connectAttr "lip_top_mid_ctl.rp" "lip_center_top_parentConstraint1.tg[0].trp";
@@ -60258,15 +60218,19 @@ connectAttr "lip_top_mid_ctl.s" "lip_center_top_parentConstraint1.tg[0].ts";
 connectAttr "lip_top_mid_ctl.pm" "lip_center_top_parentConstraint1.tg[0].tpm";
 connectAttr "lip_center_top_parentConstraint1.w0" "lip_center_top_parentConstraint1.tg[0].tw"
 		;
+connectAttr "lip_top_mid_ctl.s" "lip_center_top_scaleConstraint1.tg[0].ts";
+connectAttr "lip_top_mid_ctl.pm" "lip_center_top_scaleConstraint1.tg[0].tpm";
+connectAttr "lip_center_top_scaleConstraint1.w0" "lip_center_top_scaleConstraint1.tg[0].tw"
+		;
 connectAttr "jackierEyeRight_parentConstraint1.w0" "jackierEyeRight_parentConstraint1.tg[0].tw"
+		;
+connectAttr "jackieEyeLeft_parentConstraint1.w0" "jackieEyeLeft_parentConstraint1.tg[0].tw"
 		;
 connectAttr "eye_lf_ctl.t" "jackieEyeLeft_aimConstraint1.tg[0].tt";
 connectAttr "eye_lf_ctl.rp" "jackieEyeLeft_aimConstraint1.tg[0].trp";
 connectAttr "eye_lf_ctl.rpt" "jackieEyeLeft_aimConstraint1.tg[0].trt";
 connectAttr "eye_lf_ctl.pm" "jackieEyeLeft_aimConstraint1.tg[0].tpm";
 connectAttr "jackieEyeLeft_aimConstraint1.w0" "jackieEyeLeft_aimConstraint1.tg[0].tw"
-		;
-connectAttr "jackieEyeLeft_parentConstraint1.w0" "jackieEyeLeft_parentConstraint1.tg[0].tw"
 		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
@@ -60956,284 +60920,282 @@ connectAttr "rt_arm_distanceDimension.msg" "nodeView4.ni[8].dn";
 connectAttr "rt_arm_distanceDimensionShape.msg" "nodeView4.ni[10].dn";
 connectAttr "rt_wrist_locator.msg" "nodeView4.ni[11].dn";
 connectAttr "condition2.msg" "nodeView4.ni[12].dn";
-connectAttr "blendColors1_blender.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+connectAttr "unitConversion11.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
-connectAttr "unitConversion11.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "unitConversion18.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
-connectAttr "lf_wrist_ik_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn";
-connectAttr "blendColors1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn";
-connectAttr "unitConversion8.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn";
-connectAttr "unitConversion9.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn";
-connectAttr "unitConversion20.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+connectAttr "unitConversion19.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "animCurveUA2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn";
-connectAttr "blendWeighted2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn";
-connectAttr "unitConversion12.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+connectAttr "blendWeighted2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn";
+connectAttr "blendColors1_blender.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
 		;
-connectAttr "lf_wrist_fk_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+connectAttr "animCurveUA2.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn";
+connectAttr "left_forearm_rotateX3.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
 		;
-connectAttr "unitConversion19.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+connectAttr "lf_wrist_fk_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn";
+connectAttr "lf_wrist_ik_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn";
+connectAttr "unitConversion9.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
 		;
-connectAttr "left_forearm_rotateX3.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+connectAttr "unitConversion10.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
 		;
-connectAttr "unitConversion10.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+connectAttr "unitConversion20.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
 		;
-connectAttr "unitConversion18.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
+connectAttr "unitConversion12.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
 		;
-connectAttr "unitConversion23.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[0].dn"
+connectAttr "unitConversion8.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
 		;
-connectAttr "right_forearm_rotateX.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[1].dn"
+connectAttr "blendColors1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[15].dn";
+connectAttr "unitConversion21.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[0].dn"
 		;
-connectAttr "animCurveUA3.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[2].dn";
-connectAttr "unitConversion15.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[3].dn"
+connectAttr "rt_wrist_fk_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[1].dn";
+connectAttr "right_forearm_rotateX.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[2].dn"
 		;
-connectAttr "unitConversion16.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[4].dn"
+connectAttr "animCurveUA3.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[3].dn";
+connectAttr "blendColors2_blender.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[4].dn"
 		;
-connectAttr "blendColors2.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[5].dn";
-connectAttr "unitConversion13.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[6].dn"
+connectAttr "unitConversion16.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[6].dn"
 		;
-connectAttr "unitConversion14.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[7].dn"
+connectAttr "unitConversion22.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[7].dn"
 		;
-connectAttr "unitConversion21.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[8].dn"
+connectAttr "rt_wrist_ik_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[8].dn";
+connectAttr "blendColors2.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[9].dn";
+connectAttr "unitConversion14.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[10].dn"
 		;
-connectAttr "blendColors2_blender.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[9].dn"
+connectAttr "unitConversion17.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[11].dn"
 		;
-connectAttr "rt_wrist_ik_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[10].dn"
+connectAttr "unitConversion15.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[12].dn"
 		;
-connectAttr "unitConversion22.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[11].dn"
+connectAttr "unitConversion23.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[13].dn"
 		;
-connectAttr "rt_wrist_fk_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[12].dn"
+connectAttr "unitConversion13.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[14].dn"
 		;
-connectAttr "unitConversion17.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[13].dn"
+connectAttr "blendWeighted3.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[15].dn";
+connectAttr "jackie_MASTER_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[0].dn"
 		;
-connectAttr "blendWeighted3.msg" "MayaNodeEditorSavedTabsInfo.tgi[1].ni[14].dn";
-connectAttr "multiplyDivide3.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[0].dn";
-connectAttr "jackie_MASTER_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[1].dn"
+connectAttr "Lf_locator_distance_shoulderShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[1].dn"
 		;
-connectAttr "jackie_MASTER_ctlShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[2].dn"
+connectAttr "rt_shoulder_locatorShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[2].dn"
 		;
 connectAttr "lf_locator_distance_wristShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[3].dn"
 		;
-connectAttr "rt_wrist_locator.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[4].dn"
+connectAttr "rt_arm_distanceDimensionShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[4].dn"
 		;
-connectAttr "condition1.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[5].dn";
-connectAttr "rt_arm_distanceDimension.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[6].dn"
+connectAttr "distanceDimension1_lf_armShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[5].dn"
 		;
-connectAttr "rt_shoulder_locator.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[7].dn"
+connectAttr "multiplyDivide1.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[6].dn";
+connectAttr "multiplyDivide3.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[7].dn";
+connectAttr "lf_locator_distance_wrist.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[8].dn"
 		;
-connectAttr "rt_shoulder_locatorShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[8].dn"
+connectAttr "rt_arm_distanceDimension.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[10].dn"
 		;
-connectAttr "Lf_locator_distance_shoulderShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[9].dn"
+connectAttr "condition1.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[11].dn";
+connectAttr "rt_shoulder_locator.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[12].dn"
 		;
-connectAttr "lf_locator_distance_wrist.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[10].dn"
+connectAttr "distanceDimension1_lf_arm.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[13].dn"
 		;
-connectAttr "rt_arm_distanceDimensionShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[11].dn"
+connectAttr "Lf_locator_distance_shoulder.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[14].dn"
 		;
-connectAttr "distanceDimension1_lf_armShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[12].dn"
+connectAttr "rt_wrist_locator.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[16].dn"
 		;
-connectAttr "multiplyDivide1.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[13].dn"
+connectAttr "jackie_MASTER_ctlShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[17].dn"
 		;
-connectAttr "distanceDimension1_lf_arm.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[15].dn"
+connectAttr "rt_wrist_locatorShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[18].dn"
 		;
-connectAttr "Lf_locator_distance_shoulder.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[16].dn"
+connectAttr "rt_wrist_locatorShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[0].dn"
 		;
-connectAttr "rt_wrist_locatorShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[2].ni[17].dn"
+connectAttr "rt_arm_distanceDimension.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[1].dn"
 		;
-connectAttr "jackie_MASTER_ctlShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[0].dn"
+connectAttr "multiplyDivide3.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[2].dn";
+connectAttr "rt_wrist_locator.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[3].dn"
 		;
-connectAttr "multiplyDivide3.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[1].dn";
-connectAttr "jackie_MASTER_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[2].dn"
+connectAttr "condition2.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[4].dn";
+connectAttr "teeth_v1_latestRN1fosterParent1.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[6].dn"
 		;
-connectAttr "teeth_v1_latestRN1fosterParent1.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[3].dn"
+connectAttr "jackie_MASTER_ctlShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[7].dn"
 		;
-connectAttr "rt_wrist_locatorShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[4].dn"
+connectAttr "jackie_MASTER_ctl.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[8].dn"
 		;
-connectAttr "multiplyDivide2.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[5].dn";
-connectAttr "rt_shoulder_locatorShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[7].dn"
-		;
-connectAttr "rt_shoulder_locator.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[8].dn"
-		;
-connectAttr "rt_arm_distanceDimension.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[9].dn"
+connectAttr "multiplyDivide2.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[9].dn";
+connectAttr "rt_shoulder_locatorShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[10].dn"
 		;
 connectAttr "rt_arm_distanceDimensionShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[11].dn"
 		;
-connectAttr "rt_wrist_locator.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[12].dn"
+connectAttr "rt_shoulder_locator.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[12].dn"
 		;
-connectAttr "condition2.msg" "MayaNodeEditorSavedTabsInfo.tgi[3].ni[13].dn";
-connectAttr "Jackie_blendshapes:Ci10.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[0].dn"
+connectAttr "Jackie_blendshapes:a6.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[0].dn"
 		;
-connectAttr "Jackie_blendshapes:a10.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[1].dn"
+connectAttr "Jackie_blendshapes:d_openexr4.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[1].dn"
 		;
-connectAttr "Jackie_blendshapes:blendShape2Set.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[2].dn"
+connectAttr "tweakSet3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[2].dn";
+connectAttr "Jackie_blendshapes:Ci11.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[3].dn"
 		;
-connectAttr "Jackie_blendshapes:jackieEyeDiffuse.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[3].dn"
+connectAttr "jackieHair_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[4].dn"
 		;
-connectAttr "Jackie_blendshapes:jackieHoodie_latest:PxrNormalMap1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[4].dn"
+connectAttr "Jackie_blendshapes:Ci1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[5].dn"
 		;
-connectAttr "skinCluster3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[5].dn";
-connectAttr "Jackie_blendshapes:Ci8.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[6].dn"
+connectAttr "Jackie_blendshapes:d_openexr.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[6].dn"
 		;
-connectAttr "Jackie_blendshapes:a3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[7].dn"
+connectAttr "Jackie_blendshapes:Mouth.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[7].dn"
 		;
-connectAttr "Jackie_blendshapes:a.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[8].dn"
+connectAttr "bindPose1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[8].dn";
+connectAttr "Jackie_blendshapes:lambert3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[9].dn"
 		;
-connectAttr "Jackie_blendshapes:poseInterpolatorManager.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[9].dn"
+connectAttr "Jackie_blendshapes:a7.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[10].dn"
 		;
-connectAttr "Jackie_blendshapes:d_openexr10.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[10].dn"
+connectAttr "Jackie_blendshapes:Ci4.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[11].dn"
 		;
-connectAttr "Jackie_blendshapes:jackieHoodie_latest:d_openexr.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[11].dn"
+connectAttr "Jackie_blendshapes:d_openexr5.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[12].dn"
 		;
-connectAttr "Jackie_blendshapes:jackieSkin.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[12].dn"
+connectAttr "Jackie_blendshapes:jackieEye.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[13].dn"
 		;
-connectAttr "tweak1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[13].dn";
-connectAttr "skinCluster2Set.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[14].dn"
+connectAttr "Jackie_blendshapes:a2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[14].dn"
 		;
-connectAttr "Jackie_blendshapes:Ci6.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[15].dn"
+connectAttr "Jackie_blendshapes:a11.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[15].dn"
 		;
-connectAttr "tweakSet3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[16].dn";
-connectAttr "Jackie_blendshapes:lambert3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[17].dn"
+connectAttr "Jackie_blendshapes:lambert2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[16].dn"
 		;
-connectAttr "Jackie_blendshapes:jackie_lowest:defaultMat.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[18].dn"
+connectAttr "Jackie_blendshapes:a4.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[17].dn"
 		;
-connectAttr "Jackie_blendshapes:a11.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[19].dn"
+connectAttr "Jackie_blendshapes:Ci.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[18].dn"
 		;
-connectAttr "skinCluster1Set.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[20].dn"
+connectAttr "skinCluster2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[19].dn";
+connectAttr "Jackie_blendshapes:tweak1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[20].dn"
 		;
-connectAttr "Jackie_blendshapes:shapeEditorManager.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[21].dn"
+connectAttr "Jackie_blendshapes:a.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[21].dn"
 		;
-connectAttr "skinCluster3Set.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[22].dn"
+connectAttr "Jackie_blendshapes:PxrSurface2SG.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[22].dn"
 		;
-connectAttr "Jackie_blendshapes:file2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[23].dn"
+connectAttr "Jackie_blendshapes:PxrSurface1SG.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[23].dn"
 		;
-connectAttr "Jackie_blendshapes:d_openexr1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[24].dn"
+connectAttr "Jackie_blendshapes:d_openexr3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[24].dn"
 		;
-connectAttr "Jackie_blendshapes:deleteComponent1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[25].dn"
+connectAttr "Jackie_blendshapes:Eyes.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[25].dn"
 		;
-connectAttr "Jackie_blendshapes:a1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[26].dn"
+connectAttr "Jackie_blendshapes:blendShape1Set.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[26].dn"
 		;
-connectAttr "Jackie_blendshapes:Ci7.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[27].dn"
+connectAttr "polySurfaceShape1Deformed.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[27].dn"
 		;
-connectAttr "Jackie_blendshapes:d_openexr.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[28].dn"
+connectAttr "Jackie_blendshapes:place2dTexture1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[28].dn"
 		;
-connectAttr "moreGEO.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[29].dn";
-connectAttr "Jackie_blendshapes:d_openexr3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[30].dn"
+connectAttr "tweakSet2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[29].dn";
+connectAttr "Jackie_blendshapes:Jackie_latest:Group9688Shape.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[30].dn"
 		;
-connectAttr "Jackie_blendshapes:jackieEye.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[31].dn"
+connectAttr "Jackie_blendshapes:d_openexr11.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[31].dn"
 		;
-connectAttr "Jackie_blendshapes:d_openexr2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[32].dn"
+connectAttr "Jackie_blendshapes:jackie_lowest:defaultMat1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[32].dn"
 		;
-connectAttr "tweakSet2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[33].dn";
-connectAttr "bindPose1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[34].dn";
-connectAttr "skinCluster1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[35].dn";
-connectAttr "Jackie_blendshapes:a2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[36].dn"
+connectAttr "Jackie_blendshapes:Ci7.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[33].dn"
 		;
-connectAttr "Jackie_blendshapes:a6.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[37].dn"
+connectAttr "Jackie_blendshapes:jackie_lowest:defaultMat1P2D.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[34].dn"
 		;
-connectAttr "jackieHoodie2ShapeDeformed.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[38].dn"
+connectAttr "Jackie_blendshapes:a5.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[35].dn"
 		;
-connectAttr "Jackie_blendshapes:Ci5.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[39].dn"
+connectAttr "Jackie_blendshapes:place2dTexture2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[36].dn"
 		;
-connectAttr "Jackie_blendshapes:Group9688ShapeOrig.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[40].dn"
+connectAttr "Jackie_blendshapes:a9.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[37].dn"
 		;
-connectAttr "Jackie_blendshapes:Mouth.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[41].dn"
+connectAttr "Jackie_blendshapes:place2dTexture4.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[38].dn"
 		;
-connectAttr "skinCluster2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[42].dn";
-connectAttr "Jackie_blendshapes:d_openexr6.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[43].dn"
+connectAttr "tweak1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[39].dn";
+connectAttr "Jackie_blendshapes:jackieEyeRefBmp.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[40].dn"
 		;
-connectAttr "tweakSet1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[44].dn";
-connectAttr "Jackie_blendshapes:d_openexr4.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[45].dn"
+connectAttr "Jackie_blendshapes:place2dTexture3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[42].dn"
 		;
-connectAttr "Jackie_blendshapes:jackieEyeRefBmp.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[46].dn"
+connectAttr "Jackie_blendshapes:a1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[43].dn"
 		;
-connectAttr "Jackie_blendshapes:Ci9.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[48].dn"
+connectAttr "Jackie_blendshapes:Ci9.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[44].dn"
 		;
-connectAttr "Jackie_blendshapes:d_openexr5.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[49].dn"
+connectAttr "Jackie_blendshapes:d_openexr8.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[45].dn"
 		;
-connectAttr "jackieHair_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[50].dn"
+connectAttr "Jackie_blendshapes:Ci6.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[46].dn"
 		;
-connectAttr "Jackie_blendshapes:a8.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[51].dn"
+connectAttr "Jackie_blendshapes:Eyebrows.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[47].dn"
 		;
-connectAttr "Jackie_blendshapes:d_openexr11.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[52].dn"
+connectAttr "Jackie_blendshapes:jackieSkin.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[48].dn"
 		;
-connectAttr "Jackie_blendshapes:jackieSkinNormal.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[53].dn"
+connectAttr "Jackie_blendshapes:jackieEyeDiffuse.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[49].dn"
 		;
-connectAttr "polySurfaceShape1Deformed.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[54].dn"
+connectAttr "skinCluster3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[50].dn";
+connectAttr "Jackie_blendshapes:jackie_lowest:defaultMat.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[51].dn"
 		;
-connectAttr "Jackie_blendshapes:jackieHoodie_latest:Ci.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[55].dn"
+connectAttr "jackieHoodie2ShapeDeformed.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[52].dn"
 		;
-connectAttr "Jackie_blendshapes:place2dTexture2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[56].dn"
+connectAttr "Jackie_blendshapes:d_openexr2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[53].dn"
 		;
-connectAttr "Jackie_blendshapes:a4.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[57].dn"
+connectAttr "Jackie_blendshapes:jackieHoodie_latest:PxrNormalMap1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[54].dn"
 		;
-connectAttr "Jackie_blendshapes:a5.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[58].dn"
+connectAttr "Jackie_blendshapes:Ci2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[55].dn"
 		;
-connectAttr "Jackie_blendshapes:PxrSurface2SG.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[59].dn"
+connectAttr "Jackie_blendshapes:jackieHoodie_latest:d_openexr.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[56].dn"
 		;
-connectAttr "Group9688ShapeDeformed.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[60].dn"
+connectAttr "Jackie_blendshapes:Ci3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[57].dn"
 		;
-connectAttr "Jackie_blendshapes:jackieHoodie_latest:a.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[61].dn"
+connectAttr "tweakSet1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[58].dn";
+connectAttr "Jackie_blendshapes:file1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[59].dn"
 		;
-connectAttr "Jackie_blendshapes:tweak1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[62].dn"
+connectAttr "Jackie_blendshapes:blendShape3Set.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[60].dn"
 		;
-connectAttr "Jackie_blendshapes:d_openexr7.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[63].dn"
+connectAttr "Jackie_blendshapes:a8.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[61].dn"
 		;
-connectAttr "Jackie_blendshapes:Ci4.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[64].dn"
+connectAttr "Jackie_blendshapes:d_openexr9.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[62].dn"
 		;
-connectAttr "Jackie_blendshapes:jackieHoodie_latest:jackieHoodie_latest:defaultMat.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[65].dn"
+connectAttr "skinCluster2Set.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[63].dn"
 		;
-connectAttr "Jackie_blendshapes:Eyebrows.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[66].dn"
+connectAttr "Jackie_blendshapes:jackieHoodie_latest:Ci.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[64].dn"
 		;
-connectAttr "Jackie_blendshapes:Ci11.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[67].dn"
+connectAttr "Jackie_blendshapes:poseInterpolatorManager.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[65].dn"
 		;
-connectAttr "Jackie_blendshapes:d_openexr8.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[68].dn"
+connectAttr "skinCluster1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[66].dn";
+connectAttr "Jackie_blendshapes:d_openexr10.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[67].dn"
 		;
-connectAttr "Jackie_blendshapes:jackie_lowest:defaultMat1F.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[69].dn"
+connectAttr "skinCluster1Set.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[68].dn"
 		;
-connectAttr "Jackie_blendshapes:lambert2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[70].dn"
+connectAttr "tweak3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[69].dn";
+connectAttr "Jackie_blendshapes:jackie_lowest:defaultMat1F.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[70].dn"
 		;
-connectAttr "Jackie_blendshapes:Jackie_latest:Group9688Shape.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[71].dn"
+connectAttr "Jackie_blendshapes:file2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[71].dn"
 		;
-connectAttr "Jackie_blendshapes:Ci2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[72].dn"
+connectAttr "Jackie_blendshapes:deleteComponent1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[72].dn"
 		;
-connectAttr "Jackie_blendshapes:jackieHoodie_latest:PxrSurface1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[73].dn"
+connectAttr "Jackie_blendshapes:Ci8.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[73].dn"
 		;
-connectAttr "Jackie_blendshapes:place2dTexture3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[74].dn"
+connectAttr "Jackie_blendshapes:jackieHoodie_latest:jackieHoodie_latest:defaultMat.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[74].dn"
 		;
-connectAttr "Jackie_blendshapes:place2dTexture1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[75].dn"
+connectAttr "Jackie_blendshapes:d_openexr7.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[75].dn"
 		;
-connectAttr "Jackie_blendshapes:blendShape1Set.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[76].dn"
+connectAttr "Jackie_blendshapes:Ci10.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[76].dn"
 		;
-connectAttr "Jackie_blendshapes:blendShape3Set.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[77].dn"
+connectAttr "Jackie_blendshapes:d_openexr1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[77].dn"
 		;
-connectAttr "Jackie_blendshapes:place2dTexture4.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[78].dn"
+connectAttr "Jackie_blendshapes:jackieHoodie_latest:PxrSurface1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[78].dn"
 		;
-connectAttr "Jackie_blendshapes:file1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[79].dn"
+connectAttr "Jackie_blendshapes:a3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[79].dn"
 		;
-connectAttr "Jackie_blendshapes:Ci3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[80].dn"
+connectAttr "Jackie_blendshapes:shapeEditorManager.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[80].dn"
 		;
-connectAttr "tweak2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[81].dn";
-connectAttr "Jackie_blendshapes:jackie_lowest:defaultMat1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[82].dn"
+connectAttr "skinCluster3Set.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[81].dn"
 		;
-connectAttr "Jackie_blendshapes:a7.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[83].dn"
+connectAttr "Jackie_blendshapes:Jackie_latest:Group9688.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[82].dn"
 		;
-connectAttr "Jackie_blendshapes:PxrSurface1SG.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[84].dn"
+connectAttr "Jackie_blendshapes:a10.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[83].dn"
 		;
-connectAttr "Jackie_blendshapes:Ci.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[85].dn"
+connectAttr "Jackie_blendshapes:Ci5.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[84].dn"
 		;
-connectAttr "Jackie_blendshapes:Ci1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[86].dn"
+connectAttr "Group9688ShapeDeformed.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[85].dn"
 		;
-connectAttr "Jackie_blendshapes:Eyes.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[87].dn"
+connectAttr "Jackie_blendshapes:tweakSet1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[86].dn"
 		;
-connectAttr "tweak3.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[88].dn";
-connectAttr "Jackie_blendshapes:Jackie_latest:Group9688.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[89].dn"
+connectAttr "Jackie_blendshapes:jackieSkinNormal.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[87].dn"
 		;
-connectAttr "Jackie_blendshapes:a9.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[90].dn"
+connectAttr "Jackie_blendshapes:Group9688ShapeOrig.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[88].dn"
 		;
-connectAttr "Jackie_blendshapes:tweakSet1.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[91].dn"
+connectAttr "Jackie_blendshapes:blendShape2Set.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[89].dn"
 		;
-connectAttr "Jackie_blendshapes:jackie_lowest:defaultMat1P2D.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[92].dn"
+connectAttr "tweak2.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[90].dn";
+connectAttr "moreGEO.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[91].dn";
+connectAttr "Jackie_blendshapes:jackieHoodie_latest:a.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[92].dn"
 		;
-connectAttr "Jackie_blendshapes:d_openexr9.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[93].dn"
+connectAttr "Jackie_blendshapes:d_openexr6.msg" "MayaNodeEditorSavedTabsInfo.tgi[4].ni[93].dn"
 		;
 connectAttr "deleteComponent1.msg" "MayaNodeEditorSavedTabsInfo.tgi[5].ni[0].dn"
 		;
