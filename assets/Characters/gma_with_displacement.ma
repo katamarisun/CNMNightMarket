@@ -15,7 +15,6 @@ fileInfo "product" "Maya 2018";
 fileInfo "version" "2018";
 fileInfo "cutIdentifier" "201706261615-f9658c4cfc";
 fileInfo "osv" "Mac OS X 10.13.6";
-fileInfo "license" "student";
 createNode transform -n "ping_lowpoly_2:ping_body_lowpoly:Group2";
 	rename -uid "AC03CDAD-B642-AA15-7C29-99B1003E8496";
 	setAttr ".rp" -type "double3" -0.012463927268981934 2.4966272860765457 -0.70449800789356232 ;

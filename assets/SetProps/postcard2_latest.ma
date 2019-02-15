@@ -12,7 +12,6 @@ fileInfo "product" "Maya 2018";
 fileInfo "version" "2018";
 fileInfo "cutIdentifier" "201706261615-f9658c4cfc";
 fileInfo "osv" "Mac OS X 10.13.6";
-fileInfo "license" "student";
 createNode transform -n "postcard:pPlane1";
 	rename -uid "A827252F-3A44-0602-C739-21BC0D8B2E23";
 	setAttr ".t" -type "double3" 0.54624300782248447 0 0 ;

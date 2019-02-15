@@ -20,7 +20,6 @@ fileInfo "product" "Maya 2018";
 fileInfo "version" "2018";
 fileInfo "cutIdentifier" "201706261615-f9658c4cfc";
 fileInfo "osv" "Mac OS X 10.13.6";
-fileInfo "license" "student";
 createNode transform -n "Lantern_StringCntrl";
 	rename -uid "C8B40196-4F45-8E9A-8079-768B5147CC3C";
 	setAttr ".t" -type "double3" 0 6.1712309654096256 0 ;
