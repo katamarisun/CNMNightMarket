@@ -13,7 +13,6 @@ fileInfo "product" "Maya 2018";
 fileInfo "version" "2018";
 fileInfo "cutIdentifier" "201711281015-8e846c9074";
 fileInfo "osv" "Linux 4.15.0-39-generic #42~16.04.1-Ubuntu SMP Wed Oct 24 17:09:54 UTC 2018 x86_64";
-fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "E91CF980-0000-248E-5C10-75EE00000D97";
 	setAttr ".v" no;

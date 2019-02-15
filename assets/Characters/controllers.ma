@@ -11,7 +11,6 @@ fileInfo "product" "Maya 2018";
 fileInfo "version" "2018";
 fileInfo "cutIdentifier" "201811122215-49253d42f6";
 fileInfo "osv" "Microsoft Windows 8 , 64-bit  (Build 9200)\n";
-fileInfo "license" "student";
 createNode transform -n "lf_ankle_fk_ctl";
 	rename -uid "8303A131-4918-D047-95E0-43BBDCEA8064";
 	setAttr ".t" -type "double3" 0.54919278629318136 0.18338037747736258 -0.25092519535939284 ;

@@ -12,7 +12,6 @@ fileInfo "product" "Maya 2018";
 fileInfo "version" "2018";
 fileInfo "cutIdentifier" "201706261615-f9658c4cfc";
 fileInfo "osv" "Mac OS X 10.13.6";
-fileInfo "license" "student";
 createNode transform -n "TrashBin_v1_TEXTURED:trashBin";
 	rename -uid "0AF9CB20-41F7-65DA-3B82-E1B96175C27E";
 	setAttr ".t" -type "double3" -9.3129664937876768 -0.1 -7.4378268912156704 ;

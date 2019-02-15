@@ -13,7 +13,6 @@ fileInfo "product" "Maya 2018";
 fileInfo "version" "2018";
 fileInfo "cutIdentifier" "201706261615-f9658c4cfc";
 fileInfo "osv" "Mac OS X 10.13.6";
-fileInfo "license" "student";
 createNode transform -n "JadeBracelet_v1_latest:pTorus1";
 	rename -uid "F2F87A61-ED43-F09C-D442-37AB2A4F6EFF";
 	setAttr ".s" -type "double3" 6.0437129683532111 11.413161124740428 6.0437129683532111 ;
