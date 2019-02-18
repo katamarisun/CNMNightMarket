@@ -1,0 +1,13 @@
+surface glass_example
+(
+	color Cs = 1.0,
+	float eta = 1.5,
+)
+{
+	if( backfacing() ) {
+		Ci = refraction(N, 1.0 / eta) + reflection(N, 1.0 / eta);
+	} else {
+		Ci = refraction(N, eta) + reflection(N, eta);
+	}
+	Ci *= Cs;
+}

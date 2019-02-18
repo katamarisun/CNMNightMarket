@@ -1,23 +1,60 @@
-shader simple_light_gradient(
-	float edge = 0.05 [[int lockgeom=0, int slider=1]],
-	float cutoff = 0.0 [[int lockgeom=0, int slider=1]],
+shader simple_light_gradient
+			[[
+				string help="Night Market Cell Shader"
+			]]
+(
+	float light_intensity = 1.0 [[ string help = "Effects the strength of the light_alpha if you are using it",
+									 int lockgeom=0, int slider=1 ]],
+	float softness = 0.05 [[ string help = "Speed of the gradient transition",
+						 int lockgeom=0, int slider=1]],
+	float gradient_cutoff = 0.0 [[ string help = "Normal cutoff",
+						  float min = -1.0, float max = 1.0, int lockgeom=0, int slider=1]],
+	int use_border_tex = 0 [[ string help = "Check this to sample a b&w texture on the gradient border",
+							  int lockgeom=0, string widget = "checkBox" ]],
+	color border_tex = color(0.33) [[int lockgeom=0]],
 	color light_color = color(1) [[int lockgeom=0]],
 	color shadow_color = color(0) [[int lockgeom=0]],
+	point gradient_direction = point(0, 1, 0) [[  string help = "Gradient Direction",
+													int lockgeom=0, int slider=1]],
+													
+	output float light_alpha = 0.0,
 	output color outputColor = color(0),
 )
 {
-	float up_amount = dot( vector(0, 1, 0), N);
-	float lower_bound = max(-1.0 , cutoff - edge);
-	float upper_bound = min(1.0 , cutoff + edge);
-	float weight = 0.0;
-	if ( up_amount < 0.0 ) {
-		outputColor = color(0.2, 0.8, 0.1);
+
+	color result_color = color(0);
+	float lower_bound = gradient_cutoff - softness;
+	float upper_bound = gradient_cutoff + softness;
+	float normal_dot = dot(N, normalize(gradient_direction));
+	if (normal_dot < lower_bound) {
+		light_alpha = 0.0;
+		result_color = shadow_color;
+	} else {
+		if (normal_dot > upper_bound) {
+			light_alpha = light_intensity * 1.0;
+			result_color = light_color;
+		} else {
+			if (use_border_tex == 1) {
+				float border_tex_alpha = (border_tex[0] + border_tex[1] + border_tex[2]) / 3.0;
+				color border_color = (1.0 - border_tex_alpha) * light_color + (border_tex_alpha) * shadow_color;
+
+				float tex_weight = 1.0 - (abs(normal_dot - gradient_cutoff)) / (softness);
+
+				float light_color_weight = ( normal_dot - lower_bound ) / (2 * softness);
+
+				color gradient_color = light_color_weight * (light_color) + (1 - light_color_weight) * (shadow_color);
+
+				result_color = (tex_weight) * (border_color) + (1.0 - tex_weight) * gradient_color;
+
+				light_alpha = light_intensity * (light_color_weight * (1.0 - tex_weight)) + (1.0 - border_tex_alpha * tex_weight);
+			} else {
+				float light_color_weight = ( normal_dot - lower_bound ) / (2 * softness);
+				result_color = light_color_weight * (light_color) + (1 - light_color_weight) * (shadow_color);
+				light_alpha = light_intensity * light_color_weight;
+			}
+		}
 	}
 
-	if ( up_amount > upper_bound ) {
-		outputColor = light_color;
-	} else {
-		weight = ( up_amount - lower_bound ) / ( upper_bound - lower_bound );
-		outputColor = weight * shadow_color + (1.0 - weight) * light_color;
-	}
+
+	outputColor = result_color;
 }
