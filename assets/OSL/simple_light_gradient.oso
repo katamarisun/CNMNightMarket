@@ -1,69 +1,167 @@
 OpenShadingLanguage 1.00
 # Compiled by oslc 1.8.2.pixar1697a56
 # options: 
-shader simple_light_gradient
-param	float	edge	0.050000001		%meta{int,lockgeom,0} %meta{int,slider,1}  %read{1,3} %write{2147483647,-1}
-param	float	cutoff	0		%meta{int,lockgeom,0} %meta{int,slider,1}  %read{1,3} %write{2147483647,-1}
-param	color	light_color	1 1 1		%meta{int,lockgeom,0}  %read{11,17} %write{2147483647,-1}
-param	color	shadow_color	0 0 0		%meta{int,lockgeom,0}  %read{15,15} %write{2147483647,-1}
-oparam	color	outputColor	0 0 0		%read{2147483647,-1} %write{8,18}
-global	normal	N	%read{0,0} %write{2147483647,-1}
-local	float	up_amount	%read{6,12} %write{0,0}
-local	float	lower_bound	%read{12,13} %write{2,2}
-local	float	upper_bound	%read{9,13} %write{4,4}
-local	float	weight	%read{15,16} %write{5,14}
-const	vector	$const1	0 1 0		%read{0,0} %write{2147483647,-1}
-const	float	$const2	-1		%read{2,2} %write{2147483647,-1}
-temp	float	$tmp2	%read{2,2} %write{1,1}
-const	float	$const3	1		%read{4,16} %write{2147483647,-1}
-temp	float	$tmp3	%read{4,4} %write{3,3}
-const	float	$const4	0		%read{5,6} %write{2147483647,-1}
-temp	int	$tmp4	%read{7,7} %write{6,6}
-const	color	$const5	0.2 0.80000001 0.1		%read{8,8} %write{2147483647,-1}
-temp	int	$tmp5	%read{10,10} %write{9,9}
-temp	float	$tmp6	%read{14,14} %write{12,12}
-temp	float	$tmp7	%read{14,14} %write{13,13}
-temp	color	$tmp8	%read{18,18} %write{15,15}
-temp	float	$tmp9	%read{17,17} %write{16,16}
-temp	color	$tmp10	%read{18,18} %write{17,17}
+shader simple_light_gradient	%meta{string,help,"Night Market Cell Shader"} 
+param	float	light_intensity	1		%meta{string,help,"Effects the strength of the light_alpha if you are using it"} %meta{int,lockgeom,0} %meta{int,slider,1}  %read{11,53} %write{2147483647,-1}
+param	float	softness	0.050000001		%meta{string,help,"Speed of the gradient transition"} %meta{int,lockgeom,0} %meta{int,slider,1}  %read{1,47} %write{2147483647,-1}
+param	float	gradient_cutoff	0		%meta{string,help,"Normal cutoff"} %meta{float,min,-1} %meta{float,max,1} %meta{int,lockgeom,0} %meta{int,slider,1}  %read{1,25} %write{2147483647,-1}
+param	int	use_border_tex	0		%meta{string,help,"Check this to sample a b&w texture on the gradient border"} %meta{int,lockgeom,0} %meta{string,widget,"checkBox"}  %read{13,13} %write{2147483647,-1}
+param	color	border_tex	0.33000001 0.33000001 0.33000001		%meta{int,lockgeom,0}  %read{15,18} %write{2147483647,-1}
+param	color	light_color	1 1 1		%meta{int,lockgeom,0}  %read{12,49} %write{2147483647,-1}
+param	color	shadow_color	0 0 0		%meta{int,lockgeom,0}  %read{8,51} %write{2147483647,-1}
+param	point	gradient_direction	0 1 0		%meta{string,help,"Gradient Direction"} %meta{int,lockgeom,0} %meta{int,slider,1}  %read{3,3} %write{2147483647,-1}
+oparam	float	light_alpha	0		%read{2147483647,-1} %write{7,53}
+oparam	color	outputColor	0 0 0		%read{2147483647,-1} %write{54,54}
+global	normal	N	%read{4,4} %write{2147483647,-1}
+local	color	result_color	%read{54,54} %write{0,52}
+local	float	lower_bound	%read{5,46} %write{1,1}
+local	float	upper_bound	%read{9,9} %write{2,2}
+local	float	normal_dot	%read{5,46} %write{4,4}
+local	float	___328_border_tex_alpha	%read{21,43} %write{20,20}
+local	color	___328_border_color	%read{36,36} %write{24,24}
+local	float	___328_tex_weight	%read{36,43} %write{28,28}
+local	float	___328_light_color_weight	%read{32,41} %write{31,31}
+local	color	___328_gradient_color	%read{38,38} %write{35,35}
+local	float	___329_light_color_weight	%read{49,53} %write{48,48}
+const	color	$const1	0 0 0		%read{0,0} %write{2147483647,-1}
+temp	vector	$tmp1	%read{4,4} %write{3,3}
+temp	int	$tmp2	%read{6,6} %write{5,5}
+const	float	$const2	0		%read{7,7} %write{2147483647,-1}
+temp	int	$tmp3	%read{10,10} %write{9,9}
+const	float	$const3	1		%read{11,50} %write{2147483647,-1}
+const	int	$const4	1		%read{13,16} %write{2147483647,-1}
+temp	int	$tmp4	%read{14,14} %write{13,13}
+const	int	$const5	0		%read{15,15} %write{2147483647,-1}
+temp	float	$tmp5	%read{17,17} %write{15,15}
+temp	float	$tmp6	%read{17,17} %write{16,16}
+temp	float	$tmp7	%read{19,19} %write{17,17}
+const	int	$const6	2		%read{18,18} %write{2147483647,-1}
+temp	float	$tmp8	%read{19,19} %write{18,18}
+temp	float	$tmp9	%read{20,20} %write{19,19}
+const	float	$const7	3		%read{20,20} %write{2147483647,-1}
+temp	float	$tmp10	%read{22,22} %write{21,21}
+temp	color	$tmp11	%read{24,24} %write{22,22}
+temp	color	$tmp12	%read{24,24} %write{23,23}
+temp	float	$tmp13	%read{27,27} %write{26,26}
+temp	float	$tmp14	%read{26,26} %write{25,25}
+temp	float	$tmp15	%read{28,28} %write{27,27}
+temp	float	$tmp16	%read{31,31} %write{29,29}
+temp	float	$tmp17	%read{31,31} %write{30,30}
+const	float	$const8	2		%read{30,47} %write{2147483647,-1}
+temp	color	$tmp18	%read{35,35} %write{32,32}
+temp	float	$tmp19	%read{34,34} %write{33,33}
+temp	color	$tmp20	%read{35,35} %write{34,34}
+temp	color	$tmp21	%read{39,39} %write{36,36}
+temp	float	$tmp22	%read{38,38} %write{37,37}
+temp	color	$tmp23	%read{39,39} %write{38,38}
+temp	float	$tmp24	%read{41,41} %write{40,40}
+temp	float	$tmp25	%read{42,42} %write{41,41}
+temp	float	$tmp26	%read{45,45} %write{42,42}
+temp	float	$tmp27	%read{44,44} %write{43,43}
+temp	float	$tmp28	%read{45,45} %write{44,44}
+temp	float	$tmp29	%read{48,48} %write{46,46}
+temp	float	$tmp30	%read{48,48} %write{47,47}
+temp	color	$tmp31	%read{52,52} %write{49,49}
+temp	float	$tmp32	%read{51,51} %write{50,50}
+temp	color	$tmp33	%read{52,52} %write{51,51}
 code ___main___
-# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:10
-# 	float lower_bound = max(-1.0 , cutoff - edge);
-	dot		up_amount $const1 N 	%filename{"C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl"} %line{10} %argrw{"wrr"}
-# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:11
-# 	float upper_bound = min(1.0 , cutoff + edge);
-	sub		$tmp2 cutoff edge 	%line{11} %argrw{"wrr"}
-	max		lower_bound $const2 $tmp2 	%argrw{"wrr"}
-# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:12
-# 	float weight = 0.0;
-	add		$tmp3 cutoff edge 	%line{12} %argrw{"wrr"}
-	min		upper_bound $const3 $tmp3 	%argrw{"wrr"}
-# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:13
-# 	if ( up_amount < 0.0 ) {
-	assign		weight $const4 	%line{13} %argrw{"wr"}
-# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:14
-# 		outputColor = color(0.2, 0.8, 0.1);
-	lt		$tmp4 up_amount $const4 	%line{14} %argrw{"wrr"}
-	if		$tmp4 9 9 	%argrw{"r"}
-# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:15
-# 	}
-	assign		outputColor $const5 	%line{15} %argrw{"wr"}
-# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:18
-# 		outputColor = light_color;
-	gt		$tmp5 up_amount upper_bound 	%line{18} %argrw{"wrr"}
-	if		$tmp5 12 19 	%argrw{"r"}
-# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:19
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:26
+# 	float lower_bound = gradient_cutoff - softness;
+	assign		result_color $const1 	%filename{"C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl"} %line{26} %argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:27
+# 	float upper_bound = gradient_cutoff + softness;
+	sub		lower_bound gradient_cutoff softness 	%line{27} %argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:28
+# 	float normal_dot = dot(N, normalize(gradient_direction));
+	add		upper_bound gradient_cutoff softness 	%line{28} %argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:29
+# 	if (normal_dot < lower_bound) {
+	normalize	$tmp1 gradient_direction 	%line{29} %argrw{"wr"}
+	dot		normal_dot N $tmp1 	%argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:30
+# 		light_alpha = 0.0;
+	lt		$tmp2 normal_dot lower_bound 	%line{30} %argrw{"wrr"}
+	if		$tmp2 9 54 	%argrw{"r"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:31
+# 		result_color = shadow_color;
+	assign		light_alpha $const2 	%line{31} %argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:32
 # 	} else {
-	assign		outputColor light_color 	%line{19} %argrw{"wr"}
-# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:21
-# 		outputColor = weight * shadow_color + (1.0 - weight) * light_color;
-	sub		$tmp6 up_amount lower_bound 	%line{21} %argrw{"wrr"}
-	sub		$tmp7 upper_bound lower_bound 	%argrw{"wrr"}
-	div		weight $tmp6 $tmp7 	%argrw{"wrr"}
-# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:22
-# 	}
-	mul		$tmp8 weight shadow_color 	%line{22} %argrw{"wrr"}
-	sub		$tmp9 $const3 weight 	%argrw{"wrr"}
-	mul		$tmp10 $tmp9 light_color 	%argrw{"wrr"}
-	add		outputColor $tmp8 $tmp10 	%argrw{"wrr"}
+	assign		result_color shadow_color 	%line{32} %argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:34
+# 			light_alpha = light_intensity * 1.0;
+	gt		$tmp3 normal_dot upper_bound 	%line{34} %argrw{"wrr"}
+	if		$tmp3 13 54 	%argrw{"r"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:35
+# 			result_color = light_color;
+	mul		light_alpha light_intensity $const3 	%line{35} %argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:36
+# 		} else {
+	assign		result_color light_color 	%line{36} %argrw{"wr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:38
+# 				float border_tex_alpha = (border_tex[0] + border_tex[1] + border_tex[2]) / 3.0;
+	eq		$tmp4 use_border_tex $const4 	%line{38} %argrw{"wrr"}
+	if		$tmp4 46 54 	%argrw{"r"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:39
+# 				color border_color = (1.0 - border_tex_alpha) * light_color + (border_tex_alpha) * shadow_color;
+	compref		$tmp5 border_tex $const5 	%line{39} %argrw{"wrr"}
+	compref		$tmp6 border_tex $const4 	%argrw{"wrr"}
+	add		$tmp7 $tmp5 $tmp6 	%argrw{"wrr"}
+	compref		$tmp8 border_tex $const6 	%argrw{"wrr"}
+	add		$tmp9 $tmp7 $tmp8 	%argrw{"wrr"}
+	div		___328_border_tex_alpha $tmp9 $const7 	%argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:40
+# 
+	sub		$tmp10 $const3 ___328_border_tex_alpha 	%line{40} %argrw{"wrr"}
+	mul		$tmp11 $tmp10 light_color 	%argrw{"wrr"}
+	mul		$tmp12 ___328_border_tex_alpha shadow_color 	%argrw{"wrr"}
+	add		___328_border_color $tmp11 $tmp12 	%argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:42
+# 
+	sub		$tmp14 normal_dot gradient_cutoff 	%line{42} %argrw{"wrr"}
+	abs		$tmp13 $tmp14 	%argrw{"wr"}
+	div		$tmp15 $tmp13 softness 	%argrw{"wrr"}
+	sub		___328_tex_weight $const3 $tmp15 	%argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:44
+# 
+	sub		$tmp16 normal_dot lower_bound 	%line{44} %argrw{"wrr"}
+	mul		$tmp17 $const8 softness 	%argrw{"wrr"}
+	div		___328_light_color_weight $tmp16 $tmp17 	%argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:46
+# 
+	mul		$tmp18 ___328_light_color_weight light_color 	%line{46} %argrw{"wrr"}
+	sub		$tmp19 $const3 ___328_light_color_weight 	%argrw{"wrr"}
+	mul		$tmp20 $tmp19 shadow_color 	%argrw{"wrr"}
+	add		___328_gradient_color $tmp18 $tmp20 	%argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:48
+# 
+	mul		$tmp21 ___328_tex_weight ___328_border_color 	%line{48} %argrw{"wrr"}
+	sub		$tmp22 $const3 ___328_tex_weight 	%argrw{"wrr"}
+	mul		$tmp23 $tmp22 ___328_gradient_color 	%argrw{"wrr"}
+	add		result_color $tmp21 $tmp23 	%argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:50
+# 			} else {
+	sub		$tmp24 $const3 ___328_tex_weight 	%line{50} %argrw{"wrr"}
+	mul		$tmp25 ___328_light_color_weight $tmp24 	%argrw{"wrr"}
+	mul		$tmp26 light_intensity $tmp25 	%argrw{"wrr"}
+	mul		$tmp27 ___328_border_tex_alpha ___328_tex_weight 	%argrw{"wrr"}
+	sub		$tmp28 $const3 $tmp27 	%argrw{"wrr"}
+	add		light_alpha $tmp26 $tmp28 	%argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:52
+# 				result_color = light_color_weight * (light_color) + (1 - light_color_weight) * (shadow_color);
+	sub		$tmp29 normal_dot lower_bound 	%line{52} %argrw{"wrr"}
+	mul		$tmp30 $const8 softness 	%argrw{"wrr"}
+	div		___329_light_color_weight $tmp29 $tmp30 	%argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:53
+# 				light_alpha = light_intensity * light_color_weight;
+	mul		$tmp31 ___329_light_color_weight light_color 	%line{53} %argrw{"wrr"}
+	sub		$tmp32 $const3 ___329_light_color_weight 	%argrw{"wrr"}
+	mul		$tmp33 $tmp32 shadow_color 	%argrw{"wrr"}
+	add		result_color $tmp31 $tmp33 	%argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:54
+# 			}
+	mul		light_alpha light_intensity ___329_light_color_weight 	%line{54} %argrw{"wrr"}
+# C:\\Users\\jakeh\\Desktop\\OSL - SymbolicLink\\simple_light_gradient.osl:60
+# }
+	assign		outputColor result_color 	%line{60} %argrw{"wr"}
 	end
