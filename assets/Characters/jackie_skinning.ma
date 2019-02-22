@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //Maya ASCII 2018 scene
 //Name: jackie_skinning.ma
 //Last modified: Thu, Feb 21, 2019 07:22:57 PM
@@ -35250,3 +35251,8 @@ connectAttr "jackieEyeDiffuse.msg" ":defaultTextureList1.tx" -na;
 connectAttr "jackieEyeRefBmp.msg" ":defaultTextureList1.tx" -na;
 connectAttr "PxrEnvDayLight.iog" ":defaultLightSet.dsm" -na;
 // End of jackie_skinning.ma
+=======
+version https://git-lfs.github.com/spec/v1
+oid sha256:17f04c79d24a77b9b4588ad083fe6ac8dacf9a62d43a02fdf7f7258d23ab39bc
+size 3264268
+>>>>>>> 380dbdee321b39d89b965096300c83d5fabbd3a5
