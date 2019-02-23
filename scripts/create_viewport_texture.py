@@ -17,12 +17,16 @@ grp_map_lamberts = dict()
 for surf in pxrSurfs:
     if ':' in surf:
         continue
+    if not cmds.listConnections(surf):
+        continue
     for con in cmds.listConnections(surf):
         if cmds.nodeType(con) == "shadingEngine":
             grp_map_pxrSurfs[con] = surf
 
 for lamb in lamberts:
     if ':' in lamb:
+        continue
+    if not cmds.listConnections(lamb):
         continue
     for con in cmds.listConnections(lamb):
         print(cmds.nodeType(con))
@@ -34,7 +38,12 @@ print(grp_map_lamberts)
 
 for grp in grp_map_pxrSurfs.keys():
     surf = grp_map_pxrSurfs[grp]
-    lamb = grp_map_lamberts[grp]
+    lamb = ""
+    if grp not in grp_map_lamberts.keys():
+        lamb = cmds.createNode( 'lambert' )
+        cmds.connectAttr(lamb + '.outColor', grp + '.surfaceShader' )
+    else:
+        lamb = grp_map_lamberts[grp]
     #get the diffuse channel of each connected PxrSurface
     diffuse_textures = cmds.listConnections ( surf + ".diffuseColor" )
     #if this PxrSurface doesn't have any diffuse textures
@@ -45,10 +54,8 @@ for grp in grp_map_pxrSurfs.keys():
     else:
         tex_orig_name = ""
         if ( cmds.nodeType ( diffuse_textures[0]) == "PxrTexture" ):
-            cmds.connectAttr ( diffuse_textures[0] + ".resultRGB", lamb + ".color" )
             tex_orig_name = cmds.getAttr ( diffuse_textures[0] + ".filename" )
         else:
-            cmds.connectAttr ( diffuse_textures[0] + ".outColor", lamb + ".color" )
             tex_orig_name = cmds.getAttr ( diffuse_textures[0] + ".fileTextureName" )
         
         tex_post = tex_orig_name[-4:]
@@ -56,6 +63,12 @@ for grp in grp_map_pxrSurfs.keys():
         if (tex_post == ".tex"):
             tex_clipped = tex_orig_name[:-4]
             if ( cmds.nodeType (diffuse_textures[0]) == "PxrTexture" ):
-                cmds.setAttr ( diffuse_textures[0] + ".filename",  tex_clipped, type="string" )     
+                new_tex = cmds.createNode( 'PxrTexture' )
+                cmds.connectAttr ( new_tex + ".resultRGB", lamb + ".color" )
+                cmds.setAttr ( new_tex + ".filename",  tex_clipped, type="string" )
             else:
-                cmds.setAttr ( diffuse_textures[0] + ".fileTextureName",  tex_clipped, type="string" )
+                new_tex = cmds.createNode( cmds.nodeType( 'file' ) )
+                cmds.connectAttr ( new_tex + ".outColor", lamb + ".color" )
+                cmds.setAttr ( new_tex + ".fileTextureName",  tex_clipped, type="string" )
+            cmds.rename ( new_tex, surf + '.viewport_tex' )
+    cmds.rename ( lamb, surf + '.viewport_lambert' )                 
