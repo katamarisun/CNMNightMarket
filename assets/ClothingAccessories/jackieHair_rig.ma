@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //Maya ASCII 2018 scene
 //Name: jackieHair_rig.ma
 //Last modified: Sat, Feb 23, 2019 12:19:49 PM
@@ -22110,3 +22111,8 @@ connectAttr "jackieHair_rig_bev:PxrSurface4SG1.msg" ":defaultShaderList1.s" -na;
 connectAttr "jackieHair_rig_bev:PxrSurface7SG1.msg" ":defaultShaderList1.s" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 // End of jackieHair_rig.ma
+=======
+version https://git-lfs.github.com/spec/v1
+oid sha256:2e98b1ff663843b6e8af1ce61618917e237e9145554b425c6d6a1e6b3f2643ef
+size 1166979
+>>>>>>> 135d37d60940753615aed997fc6ac7f7778ea62d
