@@ -34,12 +34,11 @@ for grp in grp_map_pxrSurfs.keys():
     lamb = ""
     if grp not in grp_map_lamberts.keys():
         lamb = cmds.createNode( 'lambert' )
-        old_viewport_shader = cmds.getAttr( grp + '.surfaceShader' )
-        if old_viewport_shader:
-            cmds.disconnectAttr ( old_viewport_shader, grp + '.surfaceShader' )
-        cmds.connectAttr(lamb + '.outColor', grp + '.surfaceShader' )
+        cmds.connectAttr(lamb + '.outColor', grp + '.surfaceShader', force=True )
     else:
         lamb = grp_map_lamberts[grp]
+        
+
     #get the diffuse channel of each connected PxrSurface
     diffuse_textures = cmds.listConnections ( surf + ".diffuseColor" )
     #if this PxrSurface doesn't have any diffuse textures
@@ -53,18 +52,24 @@ for grp in grp_map_pxrSurfs.keys():
             tex_orig_name = cmds.getAttr ( diffuse_textures[0] + ".filename" )
         else:
             tex_orig_name = cmds.getAttr ( diffuse_textures[0] + ".fileTextureName" )
-        
+
+        new_tex = cmds.shadingNode('file', asTexture=True )
+        cmds.connectAttr ( new_tex + ".outColor", lamb + ".color", force=True )
+
+        tex_filepath = tex_orig_name
         tex_post = tex_orig_name[-4:]
         if (tex_post == ".tex"):
-            tex_clipped = tex_orig_name[:-4]
-            if ( cmds.nodeType (diffuse_textures[0]) == "PxrTexture" ):
-                new_tex = cmds.createNode( 'PxrTexture' )
-                cmds.connectAttr ( new_tex + ".resultRGB", lamb + ".color" )
-                cmds.setAttr ( new_tex + ".filename",  tex_clipped, type="string" )
-            else:
-                new_tex = cmds.createNode( cmds.nodeType( 'file' ) )
-                cmds.connectAttr ( new_tex + ".outColor", lamb + ".color" )
-                cmds.setAttr ( new_tex + ".fileTextureName",  tex_clipped, type="string" )
-            new_tex_name = surf + "_viewport_tex"
-            cmds.rename ( new_tex, new_tex_name )
+            tex_filepath = tex_orig_name[:-4]       
+
+        cmds.setAttr ( new_tex + ".fileTextureName",  tex_filepath, type="string" )
+        
+        #rename the new texture to viewport texture
+        new_tex_name = surf + "_viewport_tex"
+        cmds.rename ( new_tex, new_tex_name )
+        
+        #rename the PxrSufrace texture to render texture
+        old_tex_rename = "renderTex_" + diffuse_textures[0]
+        cmds.rename ( diffuse_textures[0], old_tex_rename )
+    
+    #rename the lambert viewport shader
     cmds.rename ( lamb, surf + '_viewport_lambert' )                 
