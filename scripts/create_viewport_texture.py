@@ -10,10 +10,6 @@ lamberts = cmds.ls( type="lambert" )
 grp_map_pxrSurfs = dict()
 grp_map_lamberts = dict()
 
-#surfaceShader
-#displacementShader
-#volumeShader
-# 'rman__surface', u'rman__surfaceR', u'rman__surfaceG', u'rman__surfaceB', u'rman__displacement'
 for surf in pxrSurfs:
     if ':' in surf:
         continue
@@ -32,18 +28,32 @@ for lamb in lamberts:
         print(cmds.nodeType(con))
         if cmds.nodeType(con) == "shadingEngine":
             grp_map_lamberts[con] = lamb
-            
-print(grp_map_pxrSurfs)
-print(grp_map_lamberts)
 
 for grp in grp_map_pxrSurfs.keys():
     surf = grp_map_pxrSurfs[grp]
     lamb = ""
     if grp not in grp_map_lamberts.keys():
         lamb = cmds.createNode( 'lambert' )
+<<<<<<< HEAD
+<<<<<<< HEAD
+        old_viewport_shader = cmds.getAttr( grp + '.surfaceShader' )
+        if old_viewport_shader:
+            cmds.disconnectAttr ( old_viewport_shader, grp + '.surfaceShader' )
         cmds.connectAttr(lamb + '.outColor', grp + '.surfaceShader' )
     else:
         lamb = grp_map_lamberts[grp]
+=======
+=======
+>>>>>>> d13709aa93012fedb67ef77cf7dc3971407ca791
+        cmds.connectAttr(lamb + '.outColor', grp + '.surfaceShader', force=True )
+    else:
+        lamb = grp_map_lamberts[grp]
+        
+
+<<<<<<< HEAD
+>>>>>>> be801e92c0f5e5e5d0cf271141e085cd642cda48
+=======
+>>>>>>> d13709aa93012fedb67ef77cf7dc3971407ca791
     #get the diffuse channel of each connected PxrSurface
     diffuse_textures = cmds.listConnections ( surf + ".diffuseColor" )
     #if this PxrSurface doesn't have any diffuse textures
@@ -57,9 +67,10 @@ for grp in grp_map_pxrSurfs.keys():
             tex_orig_name = cmds.getAttr ( diffuse_textures[0] + ".filename" )
         else:
             tex_orig_name = cmds.getAttr ( diffuse_textures[0] + ".fileTextureName" )
+<<<<<<< HEAD
+<<<<<<< HEAD
         
         tex_post = tex_orig_name[-4:]
-        print( tex_orig_name[:-4], " name is ", tex_post, "\n")
         if (tex_post == ".tex"):
             tex_clipped = tex_orig_name[:-4]
             if ( cmds.nodeType (diffuse_textures[0]) == "PxrTexture" ):
@@ -70,5 +81,33 @@ for grp in grp_map_pxrSurfs.keys():
                 new_tex = cmds.createNode( cmds.nodeType( 'file' ) )
                 cmds.connectAttr ( new_tex + ".outColor", lamb + ".color" )
                 cmds.setAttr ( new_tex + ".fileTextureName",  tex_clipped, type="string" )
-            cmds.rename ( new_tex, surf + '.viewport_tex' )
-    cmds.rename ( lamb, surf + '.viewport_lambert' )                 
+            new_tex_name = surf + "_viewport_tex"
+            cmds.rename ( new_tex, new_tex_name )
+=======
+=======
+>>>>>>> d13709aa93012fedb67ef77cf7dc3971407ca791
+
+        new_tex = cmds.shadingNode('file', asTexture=True )
+        cmds.connectAttr ( new_tex + ".outColor", lamb + ".color", force=True )
+
+        tex_filepath = tex_orig_name
+        tex_post = tex_orig_name[-4:]
+        if (tex_post == ".tex"):
+            tex_filepath = tex_orig_name[:-4]       
+
+        cmds.setAttr ( new_tex + ".fileTextureName",  tex_filepath, type="string" )
+        
+        #rename the new texture to viewport texture
+        new_tex_name = surf + "_viewport_tex"
+        cmds.rename ( new_tex, new_tex_name )
+        
+        #rename the PxrSufrace texture to render texture
+        old_tex_rename = "renderTex_" + diffuse_textures[0]
+        cmds.rename ( diffuse_textures[0], old_tex_rename )
+    
+    #rename the lambert viewport shader
+<<<<<<< HEAD
+>>>>>>> be801e92c0f5e5e5d0cf271141e085cd642cda48
+=======
+>>>>>>> d13709aa93012fedb67ef77cf7dc3971407ca791
+    cmds.rename ( lamb, surf + '_viewport_lambert' )                 
