@@ -2,13 +2,7 @@
 import os
 maya_files = []
 
-directory = ""
-while True:
-	directory = raw_input("What dir should I clear? (relative to CNMNightMarket/scripts)")
-	if os.path.exists(dir):
-		break
-	else:
-		print("That path doesn't exist, please enter another\n")
+directory = "../assets/SetProps/night_market_SetProps"
 
 for root, dirs, files in os.walk(directory, topdown=False):
 	for name in files:
