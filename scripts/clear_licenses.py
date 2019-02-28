@@ -2,7 +2,7 @@
 import os
 maya_files = []
 
-directory = "../assets/SetProps/Stalls"
+directory = "../"
 
 for root, dirs, files in os.walk(directory, topdown=False):
 	for name in files:
