@@ -292,6 +292,29 @@ uniform vec4 diffuse_color
    = vec4(0.5, 0.5, 0.5, 1.0);
 #endif
 
+uniform float use_light_mask
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 1.0;
+    string UIName = "Use Light Mask";
+    string UIGroup = "Base Color";
+>
+#endif
+    = 0.0;
+
+#if OGSFX
+uniform texture2D light_mask <
+    string ResourceName = "paper.png";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Light Mask";
+    string UIGroup = "Base Color";
+>;
+#endif
+
 uniform sampler2D gStripeSampler
 #if OGSFX
 	= sampler_state {
@@ -299,6 +322,14 @@ uniform sampler2D gStripeSampler
 }
 #endif
 	;
+
+uniform sampler2D light_mask_sampler
+#if OGSFX
+    = sampler_state {
+    Texture = <light_mask>;
+}
+#endif
+    ;
 
 #endif
 
@@ -382,9 +413,13 @@ void main()
     float bounce_cos = dot( WorldNormal, vec3(bXPos, bYPos, bZPos));
     vec4 key_light = grad_color( kSoftness, kCutoff, key_cos, kLightColor, kShadowColor );
     vec4 bounce_light = grad_color( bSoftness, bCutoff, bounce_cos, bLightColor, bShadowColor );
-
-    colorOut = blend( surfaceColor, bounce_light, bBlend);
-    colorOut = blend( colorOut, key_light, kBlend );
+    if ( texture2D(light_mask_sampler, vec2(fUV[0], 1.0-fUV[1]))[0] >= 0.9 || use_light_mask <= 0.0 ) {
+        colorOut = blend( surfaceColor, bounce_light, bBlend);
+        colorOut = blend( colorOut, key_light, kBlend );
+    } else {
+        colorOut = blend( surfaceColor, bounce_light, bBlend);
+        colorOut = blend( colorOut, kShadowColor, kBlend);
+    }
 }
 
 vec4 blendOverlay(vec4 base, vec4 blend) {
