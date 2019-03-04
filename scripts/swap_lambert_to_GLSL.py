@@ -29,7 +29,8 @@ for old_mat in lamberts:
     if (not diffuse_textures):
         cmds.setAttr ( new_mat + ".use_tex", 0.0);
         lamb_color = cmds.getAttr (old_mat + ".color")[0]
-        cmds.setAttr ( new_mat + ".color", lamb_color[0], lamb_color[1], lamb_color[2] )
+        print(lamb_color)
+        cmds.setAttr ( new_mat + ".diffuse_color", lamb_color[0], lamb_color[1], lamb_color[2], 1.0, type="float4" )
     else:
         cmds.connectAttr ( diffuse_textures[0] + ".outColor", new_mat + ".diffuse_color_tex", force=True )        
     new_mat_name = old_mat + "_GLSL"
