@@ -55,6 +55,18 @@ To learn more about shading, shaders, and to bounce ideas off other shader
 
 #if !HIDE_OGSFX_UNIFORMS
 
+uniform float kBlend
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 7.0;
+    float UIStep = 1.0;
+    string UIName = "Blending Mode";
+    string UIGroup = "Key Light";
+>
+#endif
+    = 1.0;
 
 uniform float kSoftness
 #if OGSFX
@@ -64,6 +76,7 @@ uniform float kSoftness
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Key Softness";
+    string UIGroup = "Key Light";
 >
 #endif
     = 0.0;
@@ -76,6 +89,7 @@ uniform float kCutoff
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Key Cutoff";
+    string UIGroup = "Key Light";
 >
 #endif
     = 0.4;
@@ -88,6 +102,7 @@ uniform float kXPos
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Key X Position";
+    string UIGroup = "Key Light";
 >
 #endif
     = 0.1;
@@ -100,6 +115,7 @@ uniform float kYPos
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Key Y Position";
+    string UIGroup = "Key Light";
 >
 #endif
     = 1.0;
@@ -112,6 +128,7 @@ uniform float kZPos
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Key Z Position";
+    string UIGroup = "Key Light";
 >
 #endif
     = 0.1;
@@ -121,6 +138,8 @@ uniform vec4 kLightColor
 	<
     string UIName = "Key Light Color";
 	string UIWidget = "Color";
+    string UIGroup = "Key Light";
+
 > = {0.6, 0.6, 0.6, 1.0f};
 #else
    = vec4(0.6, 0.6, 0.6, 1.0);
@@ -131,11 +150,24 @@ uniform vec4 kShadowColor
 <
     string UIName = "Key Shadow Color";
 	string UIWidget = "Color";
+    string UIGroup = "Key Light";
 > = {0.4, 0.4, 0.4, 1.0f};
 #else
    = vec4(0.4, 0.4, 0.4, 1.0f);
 #endif
 
+uniform float bBlend
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 7.0;
+    float UIStep = 1.0;
+    string UIName = "Blending Mode";
+    string UIGroup = "Bounce Light";
+>
+#endif
+    = 0.0;
 
 uniform float bSoftness
 #if OGSFX
@@ -145,6 +177,7 @@ uniform float bSoftness
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Bounce Softness";
+    string UIGroup = "Bounce Light";
 >
 #endif
     = 0.5;
@@ -157,6 +190,7 @@ uniform float bCutoff
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Bounce Cutoff";
+    string UIGroup = "Bounce Light";
 >
 #endif
     = 0.1;
@@ -169,6 +203,7 @@ uniform float bXPos
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Bounce X Position";
+    string UIGroup = "Bounce Light";
 >
 #endif
     = -0.1;
@@ -181,6 +216,7 @@ uniform float bYPos
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Bounce Y Position";
+    string UIGroup = "Bounce Light";
 >
 #endif
     = -1.0;
@@ -193,6 +229,7 @@ uniform float bZPos
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Bounce Z Position";
+    string UIGroup = "Bounce Light";
 >
 #endif
     = -0.5;
@@ -202,6 +239,7 @@ uniform vec4 bLightColor
     <
     string UIName = "Bounce Light Color";
     string UIWidget = "Color";
+    string UIGroup = "Bounce Light";
 > = {0.5, 0.5, 0.5, 1.0f};
 #else
    = vec4(0.5, 0.5, 0.5, 1.0);
@@ -212,6 +250,7 @@ uniform vec4 bShadowColor
 <
     string UIName = "Bounce Shadow Color";
     string UIWidget = "Color";
+    string UIGroup = "Bounce Light";
 > = {0.5, 0.5, 0.5, 1.0f};
 #else
    = vec4(0.5, 0.5, 0.5, 1.0f);
@@ -225,6 +264,7 @@ uniform float use_tex
     float UIMax = 1.0;
     float UIStep = 1.0;
     string UIName = "Toggle Texture";
+    string UIGroup = "Base Color";
 >
 #endif
     = 1.0;
@@ -237,6 +277,7 @@ uniform texture2D diffuse_color_tex <
     string ResourceType = "2D";
     // string UIWidget = "None";
     string UIDesc = "Diffuse Texture";
+    string UIGroup = "Base Color";
 >;
 #endif
 
@@ -245,6 +286,7 @@ uniform vec4 diffuse_color
     <
     string UIName = "Diffuse Color";
     string UIWidget = "Color";
+    string UIGroup = "Base Color";
 > = {0.5, 0.5, 0.5, 1.0f};
 #else
    = vec4(0.5, 0.5, 0.5, 1.0);
@@ -320,6 +362,11 @@ vec4 blendSoftLight(vec4 base, vec4 blend);
 vec4 blendMultiply(vec4 base, vec4 blend);
 float blendLighten(float base, float blend);
 vec4 blendLighten(vec4 base, vec4 blend);
+float blendColorBurn(float base, float blend);
+vec4 blendColorBurn(vec4 base, vec4 blend);
+float blendNormal(float base, float blend, float opacity);
+vec4 blendNormal(vec4 base, vec4 blend);
+vec4 blend( vec4 baseColor, vec4 blendColor, float blend);
 
 vec4 grad_color( float softness, float cutoff, float cos, vec4 lightColor, vec4 shadowColor);
 
@@ -336,8 +383,8 @@ void main()
     vec4 key_light = grad_color( kSoftness, kCutoff, key_cos, kLightColor, kShadowColor );
     vec4 bounce_light = grad_color( bSoftness, bCutoff, bounce_cos, bLightColor, bShadowColor );
 
-    colorOut = blendOverlay( surfaceColor, bounce_light);
-    colorOut = blendOverlay( colorOut, key_light);
+    colorOut = blend( surfaceColor, bounce_light, bBlend);
+    colorOut = blend( colorOut, key_light, kBlend );
 }
 
 vec4 blendOverlay(vec4 base, vec4 blend) {
@@ -368,6 +415,22 @@ vec4 blendLighten(vec4 base, vec4 blend) {
     return vec4(blendLighten(base.r,blend.r),blendLighten(base.g,blend.g),blendLighten(base.b,blend.b), 1.0);
 }
 
+float blendColorBurn(float base, float blend) {
+    return (blend==0.0)?blend:max((1.0-((1.0-base)/blend)),0.0);
+}
+
+vec4 blendColorBurn(vec4 base, vec4 blend) {
+    return vec4(blendColorBurn(base.r,blend.r),blendColorBurn(base.g,blend.g),blendColorBurn(base.b,blend.b), 1.0);
+}
+
+float blendNormal(float base, float blend, float opacity) {
+    return (blend * opacity) + (base * (1.0 - opacity));
+}
+
+vec4 blendNormal(vec4 base, vec4 blend) {
+    float opacity = blend[3];
+    return vec4(blendNormal(base[0], blend[0], opacity), blendNormal(base[1], blend[1], opacity), blendNormal(base[2], blend[2], opacity), 1.0);
+}
 
 
 vec4 grad_color( float softness, float cutoff, float cos, vec4 lightColor, vec4 shadowColor )
@@ -388,4 +451,29 @@ vec4 grad_color( float softness, float cutoff, float cos, vec4 lightColor, vec4 
     return result_color;
 }
 
+vec4 blend( vec4 baseColor, vec4 blendColor, float blend )
+{
+    vec4 colorOut = vec4(0.0, 0.0, 0.0, 0.0);
+    if (blend < 1.0) {
+        colorOut = baseColor;
+    }
+    if (blend >= 1.0 && blend < 2.0) {
+        colorOut = blendOverlay( baseColor, blendColor);
+    }
+    if (blend >= 2.0 && blend < 3.0) {
+        colorOut = blendMultiply( baseColor, blendColor);
+    }
+    if (blend >= 3.0 && blend < 4.0) {
+        colorOut = blendSoftLight( baseColor, blendColor);    
+    }
+    if (blend >= 4.0 && blend < 5.0) {
+        colorOut = blendColorBurn( baseColor, blendColor);
+    }
+    if (blend >= 5.0 && blend < 6.0) {
+        colorOut = blendNormal( baseColor, blendColor);    
+    } if (blend >= 6.0) {
+        colorOut = blendColor;    
+    }
+    return colorOut;
+}
 #endif
