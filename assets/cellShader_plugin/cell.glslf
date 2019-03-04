@@ -303,7 +303,7 @@ vec4 grad_color( float softness, float cutoff, float cos, vec4 lightColor, vec4 
 
 void main()
 {
-    vec4 surfaceColor = texture2D(gStripeSampler, fUV);
+    vec4 surfaceColor = texture2D(gStripeSampler, vec2(fUV[0], 1.0-fUV[1]));
     float key_cos = dot( WorldNormal, vec3(kXPos, kYPos, kZPos));
     float bounce_cos = dot( WorldNormal, vec3(bXPos, bYPos, bZPos));
     vec4 key_light = grad_color( kSoftness, kCutoff, key_cos, kLightColor, kShadowColor );
