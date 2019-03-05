@@ -267,13 +267,13 @@ uniform float use_tex
     string UIGroup = "Base Color";
 >
 #endif
-    = 1.0;
+    = 0.0;
 
 // Defining textures is only necessary in OGSFX since it 
 // can be assigned automatically to a sampler
 #if OGSFX
 uniform texture2D diffuse_color_tex <
-    string ResourceName = "paper.png";
+    string ResourceName = "";
     string ResourceType = "2D";
     // string UIWidget = "None";
     string UIDesc = "Diffuse Texture";
@@ -307,7 +307,7 @@ uniform float use_light_mask
 
 #if OGSFX
 uniform texture2D light_mask <
-    string ResourceName = "paper.png";
+    string ResourceName = "";
     string ResourceType = "2D";
     // string UIWidget = "None";
     string UIDesc = "Light Mask";
@@ -327,6 +327,68 @@ uniform sampler2D light_mask_sampler
 #if OGSFX
     = sampler_state {
     Texture = <light_mask>;
+}
+#endif
+    ;
+
+uniform float use_opacity
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 1.0;
+    string UIName = "Use Opacity Map";
+    string UIGroup = "Opacity Map";
+>
+#endif
+    = 0.0;
+
+#if OGSFX
+uniform texture2D opacity_map <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Opacity Map";
+    string UIGroup = "Opacity Map";
+>;
+#endif
+
+uniform sampler2D opacity_sampler
+#if OGSFX
+    = sampler_state {
+    Texture = <opacity_map>;
+}
+#endif
+    ;
+
+uniform float use_ao
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 1.0;
+    string UIName = "Use Ambient Oclusion";
+    string UIGroup = "Ambient Oclusion";
+>
+#endif
+    = 0.0;
+
+#if OGSFX
+uniform texture2D ambient_oclusion <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Ambient Oclusion";
+    string UIGroup = "Ambient Oclusion";
+>;
+#endif
+
+uniform sampler2D oclusion_sampler
+#if OGSFX
+    = sampler_state {
+    Texture = <ambient_oclusion>;
 }
 #endif
     ;
@@ -419,6 +481,17 @@ void main()
     } else {
         colorOut = blend( surfaceColor, bounce_light, bBlend);
         colorOut = blend( colorOut, kShadowColor, kBlend);
+    }
+    if ( use_ao >= 1.0 ) {
+        colorOut = blendMultiply( colorOut, texture2D( oclusion_sampler, fUV ));
+    }
+    if ( use_opacity >= 1.0 ) {
+        float opacity = texture2D( opacity_sampler, vec2(fUV[0], 1.0-fUV[1]) )[0];
+        if (opacity <= 0.5) {
+            discard;
+        } else {
+            colorOut.a = 1.0;
+        }
     }
 }
 
