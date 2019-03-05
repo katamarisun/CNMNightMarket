@@ -26,9 +26,8 @@ for old_mat in lamberts:
 
     #Plug the old diffuse into the GLSL shader
     diffuse_textures = cmds.listConnections ( old_mat + ".color" )
-    if (not diffuse_textures):
-        print(lamb_color)
-    else:
+    if (diffuse_textures):
         cmds.connectAttr ( diffuse_textures[0] + ".outColor", new_mat + ".diffuse_color_tex", force=True )        
+
     new_mat_name = old_mat + "_GLSL"
     cmds.rename(new_mat, new_mat_name)
