@@ -60,7 +60,7 @@ uniform float kBlend
 <
     string UIWidget = "slider";
     float UIMin = 0.0;
-    float UIMax = 7.0;
+    float UIMax = 9.0;
     float UIStep = 1.0;
     string UIName = "Blending Mode";
     string UIGroup = "Key Light";
@@ -161,7 +161,7 @@ uniform float bBlend
 <
     string UIWidget = "slider";
     float UIMin = 0.0;
-    float UIMax = 7.0;
+    float UIMax = 9.0;
     float UIStep = 1.0;
     string UIName = "Blending Mode";
     string UIGroup = "Bounce Light";
@@ -455,6 +455,8 @@ vec4 blendSoftLight(vec4 base, vec4 blend);
 vec4 blendMultiply(vec4 base, vec4 blend);
 float blendLighten(float base, float blend);
 vec4 blendLighten(vec4 base, vec4 blend);
+float blendDarken(float base, float blend);
+vec4 blendDarken(vec4 base, vec4 blend);
 float blendColorBurn(float base, float blend);
 vec4 blendColorBurn(vec4 base, vec4 blend);
 float blendNormal(float base, float blend, float opacity);
@@ -523,6 +525,14 @@ vec4 blendLighten(vec4 base, vec4 blend) {
     return vec4(blendLighten(base.r,blend.r),blendLighten(base.g,blend.g),blendLighten(base.b,blend.b), 1.0);
 }
 
+float blendDarken(float base, float blend) {
+    return min(blend,base);
+}
+
+vec4 blendDarken(vec4 base, vec4 blend) {
+    return vec4(blendDarken(base.r,blend.r),blendDarken(base.g,blend.g),blendDarken(base.b,blend.b), 1.0);
+}
+
 float blendColorBurn(float base, float blend) {
     return (blend==0.0)?blend:max((1.0-((1.0-base)/blend)),0.0);
 }
@@ -578,8 +588,14 @@ vec4 blend( vec4 baseColor, vec4 blendColor, float blend )
         colorOut = blendColorBurn( baseColor, blendColor);
     }
     if (blend >= 5.0 && blend < 6.0) {
+        colorOut = blendLighten( baseColor, blendColor);
+    }
+    if (blend >= 6.0 && blend < 7.0) {
+        colorOut = blendDarken( baseColor, blendColor);
+    }
+    if (blend >= 7.0 && blend < 8.0) {
         colorOut = blendNormal( baseColor, blendColor);    
-    } if (blend >= 6.0) {
+    } if (blend >= 8.0) {
         colorOut = blendColor;    
     }
     return colorOut;
