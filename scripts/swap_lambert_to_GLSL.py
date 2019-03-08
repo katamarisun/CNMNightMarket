@@ -21,7 +21,7 @@ for old_mat in lamberts:
     if (len(cmds.ls(sl=True)) == 0):
         print("No objects with ", old_mat, " assigned, moving on.\n")
         continue
-    else:
+    else:wx
         cmds.hyperShade( assign=new_mat );
 
     #Plug the old diffuse into the GLSL shader
