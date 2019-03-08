@@ -509,10 +509,12 @@ vec3 blendLinearLight(vec3 base, vec3 blend);
 vec4 blendNormal(vec4 base, vec4 blend);
 vec4 blend( vec4 baseColor, vec4 blendColor, float blend);
 
-vec4 grad_color( float softness, float cutoff, float cos, vec4 lightColor, vec4 shadowColor);
+float calc_alpha( float softness, float cutoff, float cos );
 
 void main()
 {
+
+
     vec4 surfaceColor = vec4(0.0, 0.0, 0.0, 0.0);
     if (use_tex >= 1.0) {
         surfaceColor = texture2D(gStripeSampler, vec2(fUV[0], 1.0-fUV[1]));
@@ -522,16 +524,28 @@ void main()
     vec4 darken_value = vec4(1.0 - darken_base);
     darken_value[3] = 1.0;
     surfaceColor = blendMultiply(surfaceColor, darken_value);
+
     float key_cos = dot( WorldNormal, vec3(kXPos, kYPos, kZPos));
     float bounce_cos = dot( WorldNormal, vec3(bXPos, bYPos, bZPos));
-    vec4 key_light = grad_color( kSoftness, kCutoff, key_cos, kLightColor, kShadowColor );
-    vec4 bounce_light = grad_color( bSoftness, bCutoff, bounce_cos, bLightColor, bShadowColor );
+
+    float bounce_alpha = calc_alpha ( bSoftness, bCutoff, bounce_cos );
+    float key_alpha = calc_alpha ( kSoftness, kCutoff, key_cos );
+
+    vec4 key_light = key_alpha * kLightColor + ( 1 - key_alpha ) * kShadowColor;
+    vec4 bounce_light = bounce_alpha * bLightColor + ( 1 - bounce_alpha ) * bShadowColor;
+ 
+    float bounce_blend = bBlend; 
+    if ( key_alpha >= 1.0 ) {
+        bounce_blend = 0.0;
+    }
+    
     bool outside_light_mask = texture2D(light_mask_sampler, vec2(fUV[0], 1.0-fUV[1]))[0] >= 0.9 || use_light_mask <= 0.0;
+    
     if ( outside_light_mask ) {
-        colorOut = blend( surfaceColor, bounce_light, bBlend);
+        colorOut = blend( surfaceColor, bounce_light, bounce_blend);
         colorOut = blend( colorOut, key_light, kBlend );
     } else {
-        colorOut = blend( surfaceColor, bounce_light, bBlend);
+        colorOut = blend( surfaceColor, bounce_light, bounce_blend);
         colorOut = blend( colorOut, kShadowColor, kBlend);        
     }
     if ( use_ao >= 1.0 ) {
@@ -624,23 +638,21 @@ vec4 blendNormal(vec4 base, vec4 blend) {
     return vec4(blendNormal(base[0], blend[0], opacity), blendNormal(base[1], blend[1], opacity), blendNormal(base[2], blend[2], opacity), 1.0);
 }
 
-
-vec4 grad_color( float softness, float cutoff, float cos, vec4 lightColor, vec4 shadowColor )
+float calc_alpha( float softness, float cutoff, float cos )
 {
-    vec4 result_color = vec4(0.0, 0.0, 0.0, 0.0);
     float lower_bound = cutoff - softness;
     float upper_bound = cutoff + softness;
+    float result_alpha = 0;
     if (cos < lower_bound) {
-        result_color = shadowColor;
+        result_alpha = 0.0;
     } else {
         if (cos > upper_bound) {
-            result_color = lightColor;
+            result_alpha = 1.0;
         } else {
-            float light_color_weight = ( cos - lower_bound ) / (2 * softness);
-            result_color = light_color_weight * (lightColor) + (1 - light_color_weight) * (shadowColor);
+            result_alpha = ( cos - lower_bound ) / ( 2 * softness );
         }
     }
-    return result_color;
+    return result_alpha;
 }
 
 vec4 blend( vec4 baseColor, vec4 blendColor, float blend )
@@ -656,7 +668,7 @@ vec4 blend( vec4 baseColor, vec4 blendColor, float blend )
         colorOut = blendMultiply( baseColor, blendColor);
     }
     if (blend >= 3.0 && blend < 4.0) {
-        colorOut = blendSoftLight( baseColor, blendColor);    
+        colorOut = blendSoftLight( baseColor, blendColor);
     }
     if (blend >= 4.0 && blend < 5.0) {
         colorOut = blendColorBurn( baseColor, blendColor);
@@ -668,7 +680,7 @@ vec4 blend( vec4 baseColor, vec4 blendColor, float blend )
         colorOut = blendLinearLight( baseColor, blendColor);
     }
     if (blend >= 7.0 && blend < 8.0) {
-        colorOut = blendNormal( baseColor, blendColor);    
+        colorOut = blendNormal( baseColor, blendColor);
     } if (blend >= 8.0) {
         colorOut = blendColor;    
     }
