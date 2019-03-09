@@ -282,13 +282,9 @@ uniform vec4 bShadowColor
    = vec4(0.5, 0.5, 0.5, 1.0f);
 #endif
 	
-uniform float use_tex
+uniform bool use_tex
 #if OGSFX
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 1.0;
-    float UIStep = 1.0;
     string UIName = "Toggle Texture";
     string UIGroup = "Base Color";
 >
@@ -370,13 +366,9 @@ uniform sampler2D light_mask_sampler
 #endif
     ;
 
-uniform float use_opacity
+uniform bool use_opacity
 #if OGSFX
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 1.0;
-    float UIStep = 1.0;
     string UIName = "Use Opacity Map";
     string UIGroup = "Opacity Map";
 >
@@ -401,13 +393,9 @@ uniform sampler2D opacity_sampler
 #endif
     ;
 
-uniform float use_ao
+uniform bool use_ao
 #if OGSFX
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 1.0;
-    float UIStep = 1.0;
     string UIName = "Use Ambient Oclusion";
     string UIGroup = "Ambient Oclusion";
 >
@@ -516,7 +504,7 @@ void main()
 
 
     vec4 surfaceColor = vec4(0.0, 0.0, 0.0, 0.0);
-    if (use_tex >= 1.0) {
+    if (use_tex) {
         surfaceColor = texture2D(gStripeSampler, vec2(fUV[0], 1.0-fUV[1]));
     } else {
         surfaceColor = diffuse_color;
@@ -548,10 +536,10 @@ void main()
         colorOut = blend( surfaceColor, bounce_light, bounce_blend);
         colorOut = blend( colorOut, kShadowColor, kBlend);        
     }
-    if ( use_ao >= 1.0 ) {
+    if ( use_ao ) {
         colorOut = blendMultiply( colorOut, texture2D( oclusion_sampler, fUV ));
     }
-    if ( use_opacity >= 1.0 ) {
+    if ( use_opacity ) {
         float opacity = texture2D( opacity_sampler, vec2(fUV[0], 1.0-fUV[1]) )[0];
         if (opacity <= 0.5) {
             discard;
