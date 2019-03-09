@@ -73,12 +73,29 @@ uniform mat4 gViewIXf : ViewInverse < string UIWidget="None"; >;
 /*** TWEAKABLES *********************************************/
 
 // apps should expect this to be normalized
-uniform vec3 gLamp0Dir : DIRECTION <
-    string Object = "DirectionalLight0";
-    string UIName =  "Lamp 0 Direction";
+uniform vec3 kLampDir : DIRECTION <
+    string Object = "KeyLight";
+    string UIName =  "Key Light Direction";
+    string Space = "World";
+> = {0.2f,0.7f,-0.2f};
+
+uniform vec3 bLampDir : DIRECTION <
+    string Object = "BounceLight";
+    string UIName =  "Bounce Light Direction";
     string Space = "World";
 > = {0.7f,-0.7f,-0.7f};
 
+uniform bool keyShadowOn : SHADOWFLAG
+<
+    string UIName = "KeyShadow";
+    string Object = "KeyLight";
+> = true;
+
+uniform bool bounceShadowOn : SHADOWFLAG
+<
+    string UIName = "BounceShadow";
+    string Object = "BounceLight";
+> = false;
 
 #else
 
