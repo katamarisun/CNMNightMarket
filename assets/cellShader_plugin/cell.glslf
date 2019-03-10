@@ -13,7 +13,7 @@ TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
 OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY
 AND FITNESS FOR A PARTICULAR PURPOSE.  appdata NO EVENT SHALL NVIDIA OR ITS SUPPLIERS
 BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES
-WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS,
+WHATSOEVER (INCLUDING, qOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS,
 BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR ANY OTHER PECUNIARY
 LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THIS SOFTWARE, EVEN IF
 NVIDIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
@@ -60,7 +60,7 @@ uniform float kBlend
 <
     string UIWidget = "slider";
     float UIMin = 0.0;
-    float UIMax = 7.0;
+    float UIMax = 9.0;
     float UIStep = 1.0;
     string UIName = "Blending Mode";
     string UIGroup = "Key Light";
@@ -85,10 +85,10 @@ uniform float kCutoff
 #if OGSFX
 <
     string UIWidget = "slider";
-    float UIMin = 0.00;
-    float UIMax = 1.0;
+    float UIMin = -1.0;
+    float UIMax = 2.0;
     float UIStep = 0.01;
-    string UIName = "Key Cutoff";
+    string UIName = "Normal Cutoff";
     string UIGroup = "Key Light";
 >
 #endif
@@ -156,12 +156,38 @@ uniform vec4 kShadowColor
    = vec4(0.4, 0.4, 0.4, 1.0f);
 #endif
 
+uniform float cutoff_type
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 2.0;
+    float UIStep = 1.0;
+    string UIName = "Light Cutoff Type";
+    string UIGroup = "Key Light";
+>
+#endif
+    = 0.0;
+
+uniform float distance
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 2.0;
+    float UIStep = 0.1;
+    string UIName = "Cutoff Distance";
+    string UIGroup = "Key Light";
+>
+#endif
+    = 2.0;
+
 uniform float bBlend
 #if OGSFX
 <
     string UIWidget = "slider";
     float UIMin = 0.0;
-    float UIMax = 7.0;
+    float UIMax = 9.0;
     float UIStep = 1.0;
     string UIName = "Blending Mode";
     string UIGroup = "Bounce Light";
@@ -174,7 +200,7 @@ uniform float bSoftness
 <
     string UIWidget = "slider";
     float UIMin = 0.01;
-    float UIMax = 1.0;
+    float UIMax = 2.0;
     float UIStep = 0.01;
     string UIName = "Bounce Softness";
     string UIGroup = "Bounce Light";
@@ -186,8 +212,8 @@ uniform float bCutoff
 #if OGSFX
 <
     string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 1.0;
+    float UIMin = -1.0;
+    float UIMax = 2.0;
     float UIStep = 0.01;
     string UIName = "Bounce Cutoff";
     string UIGroup = "Bounce Light";
@@ -256,24 +282,20 @@ uniform vec4 bShadowColor
    = vec4(0.5, 0.5, 0.5, 1.0f);
 #endif
 	
-uniform float use_tex
+uniform bool use_tex
 #if OGSFX
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 1.0;
-    float UIStep = 1.0;
     string UIName = "Toggle Texture";
     string UIGroup = "Base Color";
 >
 #endif
-    = 1.0;
+    = 0.0;
 
 // Defining textures is only necessary in OGSFX since it 
 // can be assigned automatically to a sampler
 #if OGSFX
 uniform texture2D diffuse_color_tex <
-    string ResourceName = "paper.png";
+    string ResourceName = "";
     string ResourceType = "2D";
     // string UIWidget = "None";
     string UIDesc = "Diffuse Texture";
@@ -287,9 +309,47 @@ uniform vec4 diffuse_color
     string UIName = "Diffuse Color";
     string UIWidget = "Color";
     string UIGroup = "Base Color";
+    
 > = {0.5, 0.5, 0.5, 1.0f};
 #else
    = vec4(0.5, 0.5, 0.5, 1.0);
+#endif
+
+
+uniform float darken_base
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Darken Base";
+    string UIGroup = "Base Color";
+>
+#endif
+    = 0.0;
+
+uniform float use_light_mask
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 1.0;
+    string UIName = "Use Light Mask";
+    string UIGroup = "Base Color";
+>
+#endif
+    = 0.0;
+
+#if OGSFX
+uniform texture2D light_mask <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Light Mask";
+    string UIGroup = "Base Color";
+>;
 #endif
 
 uniform sampler2D gStripeSampler
@@ -299,6 +359,68 @@ uniform sampler2D gStripeSampler
 }
 #endif
 	;
+
+uniform sampler2D light_mask_sampler
+#if OGSFX
+    = sampler_state {
+    Texture = <light_mask>;
+}
+#endif
+    ;
+
+uniform bool use_opacity
+#if OGSFX
+<
+    string UIName = "Use Opacity Map";
+    string UIGroup = "Opacity Map";
+>
+#endif
+    = 0.0;
+
+#if OGSFX
+uniform texture2D opacity_map <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Opacity Map";
+    string UIGroup = "Opacity Map";
+>;
+#endif
+
+uniform sampler2D opacity_sampler
+#if OGSFX
+    = sampler_state {
+    Texture = <opacity_map>;
+}
+#endif
+    ;
+
+uniform bool use_ao
+#if OGSFX
+<
+    string UIName = "Use Ambient Oclusion";
+    string UIGroup = "Ambient Oclusion";
+>
+#endif
+    = 0.0;
+
+#if OGSFX
+uniform texture2D ambient_oclusion <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Ambient Oclusion";
+    string UIGroup = "Ambient Oclusion";
+>;
+#endif
+
+uniform sampler2D oclusion_sampler
+#if OGSFX
+    = sampler_state {
+    Texture = <ambient_oclusion>;
+}
+#endif
+    ;
 
 #endif
 
@@ -323,6 +445,7 @@ attribute cellPixelInput {
     vec4 ObjPos    : TEXCOORD3;
     vec4 DCol : COLOR0;
     vec2 fUV : TEXCOORD4;
+    vec3 fPos : TEXCOORD5;
 };
 
 /* data output by the fragment shader */
@@ -362,29 +485,70 @@ vec4 blendSoftLight(vec4 base, vec4 blend);
 vec4 blendMultiply(vec4 base, vec4 blend);
 float blendLighten(float base, float blend);
 vec4 blendLighten(vec4 base, vec4 blend);
+float blendDarken(float base, float blend);
+vec4 blendDarken(vec4 base, vec4 blend);
 float blendColorBurn(float base, float blend);
 vec4 blendColorBurn(vec4 base, vec4 blend);
 float blendNormal(float base, float blend, float opacity);
+float blendLinearDodge(float base, float blend);
+vec4 blendLinearDodge(vec4 base, vec4 blend);
+float blendLinearBurn(float base, float blend);
+vec4 blendLinearBurn(vec4 base, vec4 blend);
+float blendLinearLight(float base, float blend);
+vec3 blendLinearLight(vec3 base, vec3 blend);
 vec4 blendNormal(vec4 base, vec4 blend);
 vec4 blend( vec4 baseColor, vec4 blendColor, float blend);
 
-vec4 grad_color( float softness, float cutoff, float cos, vec4 lightColor, vec4 shadowColor);
+float calc_alpha( float softness, float cutoff, float cos );
 
 void main()
 {
+
+
     vec4 surfaceColor = vec4(0.0, 0.0, 0.0, 0.0);
-    if (use_tex >= 1.0) {
+    if (use_tex) {
         surfaceColor = texture2D(gStripeSampler, vec2(fUV[0], 1.0-fUV[1]));
     } else {
         surfaceColor = diffuse_color;
     }
+    vec4 darken_value = vec4(1.0 - darken_base);
+    darken_value[3] = 1.0;
+    surfaceColor = blendMultiply(surfaceColor, darken_value);
+
     float key_cos = dot( WorldNormal, vec3(kXPos, kYPos, kZPos));
     float bounce_cos = dot( WorldNormal, vec3(bXPos, bYPos, bZPos));
-    vec4 key_light = grad_color( kSoftness, kCutoff, key_cos, kLightColor, kShadowColor );
-    vec4 bounce_light = grad_color( bSoftness, bCutoff, bounce_cos, bLightColor, bShadowColor );
 
-    colorOut = blend( surfaceColor, bounce_light, bBlend);
-    colorOut = blend( colorOut, key_light, kBlend );
+    float bounce_alpha = calc_alpha ( bSoftness, bCutoff, bounce_cos );
+    float key_alpha = calc_alpha ( kSoftness, kCutoff, key_cos );
+
+    vec4 key_light = key_alpha * kLightColor + ( 1 - key_alpha ) * kShadowColor;
+    vec4 bounce_light = bounce_alpha * bLightColor + ( 1 - bounce_alpha ) * bShadowColor;
+ 
+    float bounce_blend = bBlend; 
+    if ( key_alpha >= 1.0 ) {
+        bounce_blend = 0.0;
+    }
+    
+    bool outside_light_mask = texture2D(light_mask_sampler, vec2(fUV[0], 1.0-fUV[1]))[0] >= 0.9 || use_light_mask <= 0.0;
+    
+    if ( outside_light_mask ) {
+        colorOut = blend( surfaceColor, bounce_light, bounce_blend);
+        colorOut = blend( colorOut, key_light, kBlend );
+    } else {
+        colorOut = blend( surfaceColor, bounce_light, bounce_blend);
+        colorOut = blend( colorOut, kShadowColor, kBlend);        
+    }
+    if ( use_ao ) {
+        colorOut = blendMultiply( colorOut, texture2D( oclusion_sampler, fUV ));
+    }
+    if ( use_opacity ) {
+        float opacity = texture2D( opacity_sampler, vec2(fUV[0], 1.0-fUV[1]) )[0];
+        if (opacity <= 0.5) {
+            discard;
+        } else {
+            colorOut.a = 1.0;
+        }
+    }
 }
 
 vec4 blendOverlay(vec4 base, vec4 blend) {
@@ -415,12 +579,44 @@ vec4 blendLighten(vec4 base, vec4 blend) {
     return vec4(blendLighten(base.r,blend.r),blendLighten(base.g,blend.g),blendLighten(base.b,blend.b), 1.0);
 }
 
+float blendDarken(float base, float blend) {
+    return min(blend,base);
+}
+
+vec4 blendDarken(vec4 base, vec4 blend) {
+    return vec4(blendDarken(base.r,blend.r),blendDarken(base.g,blend.g),blendDarken(base.b,blend.b), 1.0);
+}
+
 float blendColorBurn(float base, float blend) {
     return (blend==0.0)?blend:max((1.0-((1.0-base)/blend)),0.0);
 }
 
 vec4 blendColorBurn(vec4 base, vec4 blend) {
     return vec4(blendColorBurn(base.r,blend.r),blendColorBurn(base.g,blend.g),blendColorBurn(base.b,blend.b), 1.0);
+}
+
+float blendLinearDodge(float base, float blend) {
+    return min(base+blend,1.0);
+}
+
+vec4 blendLinearDodge(vec4 base, vec4 blend) {
+    return min(base+blend,vec4(1.0));
+}
+
+float blendLinearBurn(float base, float blend) {
+    return max(base+blend-1.0,0.0);
+}
+
+vec4 blendLinearBurn(vec4 base, vec4 blend) {
+    return max(base+blend-vec4(1.0),vec4(0.0));
+}
+
+float blendLinearLight(float base, float blend) {
+    return blend<0.5?blendLinearBurn(base,(2.0*blend)):blendLinearDodge(base,(2.0*(blend-0.5)));
+}
+
+vec4 blendLinearLight(vec4 base, vec4 blend) {
+    return vec4(blendLinearLight(base.r,blend.r),blendLinearLight(base.g,blend.g),blendLinearLight(base.b,blend.b), 1.0);
 }
 
 float blendNormal(float base, float blend, float opacity) {
@@ -432,23 +628,21 @@ vec4 blendNormal(vec4 base, vec4 blend) {
     return vec4(blendNormal(base[0], blend[0], opacity), blendNormal(base[1], blend[1], opacity), blendNormal(base[2], blend[2], opacity), 1.0);
 }
 
-
-vec4 grad_color( float softness, float cutoff, float cos, vec4 lightColor, vec4 shadowColor )
+float calc_alpha( float softness, float cutoff, float cos )
 {
-    vec4 result_color = vec4(0.0, 0.0, 0.0, 0.0);
     float lower_bound = cutoff - softness;
     float upper_bound = cutoff + softness;
+    float result_alpha = 0;
     if (cos < lower_bound) {
-        result_color = shadowColor;
+        result_alpha = 0.0;
     } else {
         if (cos > upper_bound) {
-            result_color = lightColor;
+            result_alpha = 1.0;
         } else {
-            float light_color_weight = ( cos - lower_bound ) / (2 * softness);
-            result_color = light_color_weight * (lightColor) + (1 - light_color_weight) * (shadowColor);
+            result_alpha = ( cos - lower_bound ) / ( 2 * softness );
         }
     }
-    return result_color;
+    return result_alpha;
 }
 
 vec4 blend( vec4 baseColor, vec4 blendColor, float blend )
@@ -464,14 +658,20 @@ vec4 blend( vec4 baseColor, vec4 blendColor, float blend )
         colorOut = blendMultiply( baseColor, blendColor);
     }
     if (blend >= 3.0 && blend < 4.0) {
-        colorOut = blendSoftLight( baseColor, blendColor);    
+        colorOut = blendSoftLight( baseColor, blendColor);
     }
     if (blend >= 4.0 && blend < 5.0) {
         colorOut = blendColorBurn( baseColor, blendColor);
     }
     if (blend >= 5.0 && blend < 6.0) {
-        colorOut = blendNormal( baseColor, blendColor);    
-    } if (blend >= 6.0) {
+        colorOut = blendDarken( baseColor, blendColor);
+    }
+    if (blend >= 6.0 && blend < 7.0) {
+        colorOut = blendLinearLight( baseColor, blendColor);
+    }
+    if (blend >= 7.0 && blend < 8.0) {
+        colorOut = blendNormal( baseColor, blendColor);
+    } if (blend >= 8.0) {
         colorOut = blendColor;    
     }
     return colorOut;

@@ -73,36 +73,29 @@ uniform mat4 gViewIXf : ViewInverse < string UIWidget="None"; >;
 /*** TWEAKABLES *********************************************/
 
 // apps should expect this to be normalized
-uniform vec3 gLamp0Dir : DIRECTION <
-    string Object = "DirectionalLight0";
-    string UIName =  "Lamp 0 Direction";
+uniform vec3 kLampDir : DIRECTION <
+    string Object = "KeyLight";
+    string UIName =  "Key Light Direction";
+    string Space = "World";
+> = {0.2f,0.7f,-0.2f};
+
+uniform vec3 bLampDir : DIRECTION <
+    string Object = "BounceLight";
+    string UIName =  "Bounce Light Direction";
     string Space = "World";
 > = {0.7f,-0.7f,-0.7f};
 
-// Ambient Light
-uniform vec3 gAmbiColor : AMBIENT <
-	string Object = "AmbientLight0";
-    string UIName =  "Ambient Light";
-    string UIWidget = "Color";
-> = {0.17f,0.17f,0.17f};
+uniform bool keyShadowOn : SHADOWFLAG
+<
+    string UIName = "KeyShadow";
+    string Object = "KeyLight";
+> = true;
 
-//uniform float gBrickWidth : UNITSSCALE <
-//    string UNITS = "inches";
-//    string UIWidget = "slider";
-//    float UIMin = 0.0;
-//    float UIMax = 0.35;
-//    float UIStep = 0.001;
-//    string UIName = "Brick Width";
-//> = 0.3;
-
-//uniform float gBrickHeight : UNITSSCALE <
-//    string UNITS = "inches";
-//    string UIWidget = "slider";
-//    float UIMin = 0.0;
-//    float UIMax = 0.35;
-//    float UIStep = 0.001;
-//   string UIName = "Brick Height";
-//> = 0.12;
+uniform bool bounceShadowOn : SHADOWFLAG
+<
+    string UIName = "BounceShadow";
+    string Object = "BounceLight";
+> = false;
 
 #else
 
@@ -122,13 +115,6 @@ uniform mat4 gViewIXf;
 
 // apps should expect this to be normalized
 uniform vec3 gLamp0Dir = vec3(0.7,-0.7,-0.7);
-
-// Ambient Light
-uniform vec3 gAmbiColor = vec3(0.17,0.17,0.17);
-
-//uniform float gBrickWidth = 0.3;
-
-//uniform float gBrickHeight = 0.12;
 
 #endif // OGSFX
 
@@ -163,6 +149,7 @@ attribute cellVertexOutput {
     vec4 ObjPos    : TEXCOORD3;
     vec4 DCol : COLOR0;
     vec2 fUV : TEXCOORD4;
+    vec3 fPos : TEXCOORD5;
 };
 
 #else
@@ -195,13 +182,12 @@ void main()
 {
     vec3 Nw = normalize((gWorldITXf * vec4(Normal,0.0)).xyz);
     WorldNormal = Nw;
-    float lamb = clamp(dot(Nw,-gLamp0Dir),0.0,1.0);
-    DCol = vec4((vec3(lamb) + gAmbiColor).rgb,1);
     vec4 Po = vec4(Position.xyz,1);
     vec3 Pw = (gWorldXf*Po).xyz;
     WorldEyeVec = normalize(gViewIXf[3].xyz - Pw);
     vec4 hpos = gWvpXf * Po;
     fUV = UV;
+    fPos = Position;
     gl_Position = hpos;
 }
 
