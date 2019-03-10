@@ -309,10 +309,12 @@ uniform vec4 diffuse_color
     string UIName = "Diffuse Color";
     string UIWidget = "Color";
     string UIGroup = "Base Color";
+    
 > = {0.5, 0.5, 0.5, 1.0f};
 #else
    = vec4(0.5, 0.5, 0.5, 1.0);
 #endif
+
 
 uniform float darken_base
 #if OGSFX
