@@ -55,6 +55,19 @@ To learn more about shading, shaders, and to bounce ideas off other shader
 
 #if !HIDE_OGSFX_UNIFORMS
 
+uniform float kCutoff
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 2.0;
+    float UIStep = 0.01;
+    string UIName = "Normal Cutoff";
+    string UIGroup = "Key Light";
+>
+#endif
+    = 0.4;
+
 uniform vec4 kLightColor
 #if OGSFX
     <
@@ -80,14 +93,14 @@ uniform float kLightBlend
 #endif
     = 1.0;
 
-uniform float kLightAlpha
+uniform float kLightOpacity
 #if OGSFX
 <
     string UIWidget = "slider";
     float UIMin = 0.0;
     float UIMax = 1.0;
     float UIStep = 0.1;
-    string UIName = "Light Effect Alpha";
+    string UIName = "Light Opacity";
     string UIGroup = "Key Light";
 >
 #endif
@@ -99,9 +112,9 @@ uniform vec4 kShadowColor
     string UIName = "Key Shadow Color";
     string UIWidget = "Color";
     string UIGroup = "Key Light";
-> = {0.4, 0.4, 0.4, 1.0f};
+> = {0.2, 0.2, 0.2, 1.0f};
 #else
-   = vec4(0.4, 0.4, 0.4, 1.0f);
+   = vec4(0.2, 0.2, 0.2, 1.0f);
 #endif
 
 uniform float kShadowBlend
@@ -117,14 +130,14 @@ uniform float kShadowBlend
 #endif
     = 1.0;
 
-uniform float bShadowAlpha
+uniform float kShadowOpacity
 #if OGSFX
 <
     string UIWidget = "slider";
     float UIMin = 0.0;
     float UIMax = 1.0;
     float UIStep = 0.1;
-    string UIName = "Light Effect Alpha";
+    string UIName = "Shadow Opacity";
     string UIGroup = "Key Light";
 >
 #endif
@@ -142,19 +155,6 @@ uniform float kSoftness
 >
 #endif
     = 0.0;
-
-uniform float kCutoff
-#if OGSFX
-<
-    string UIWidget = "slider";
-    float UIMin = -1.0;
-    float UIMax = 2.0;
-    float UIStep = 0.01;
-    string UIName = "Normal Cutoff";
-    string UIGroup = "Key Light";
->
-#endif
-    = 0.4;
 
 uniform float kXPos
 #if OGSFX
@@ -195,6 +195,19 @@ uniform float kZPos
 #endif
     = 0.1;
 
+uniform float bCutoff
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 2.0;
+    float UIStep = 0.01;
+    string UIName = "Bounce Cutoff";
+    string UIGroup = "Bounce Light";
+>
+#endif
+    = 0.1;
+
 uniform vec4 bLightColor
 #if OGSFX
     <
@@ -219,14 +232,14 @@ uniform float bLightBlend
 #endif
     = 1.0;
 
-uniform float bLightAlpha
+uniform float bLightOpacity
 #if OGSFX
 <
     string UIWidget = "slider";
     float UIMin = 0.0;
     float UIMax = 1.0;
     float UIStep = 0.1;
-    string UIName = "Light Effect Alpha";
+    string UIName = "Light Opacity";
     string UIGroup = "Bounce Light";
 >
 #endif
@@ -256,14 +269,14 @@ uniform float bShadowBlend
 #endif
     = 0.0;
 
-uniform float bShadowAlpha
+uniform float bShadowOpacity
 #if OGSFX
 <
     string UIWidget = "slider";
     float UIMin = 0.0;
     float UIMax = 1.0;
     float UIStep = 0.1;
-    string UIName = "Shadow Effect Alpha";
+    string UIName = "Shadow Opacity";
     string UIGroup = "Bounce Light";
 >
 #endif
@@ -281,19 +294,6 @@ uniform float bSoftness
 >
 #endif
     = 0.5;
-
-uniform float bCutoff
-#if OGSFX
-<
-    string UIWidget = "slider";
-    float UIMin = -1.0;
-    float UIMax = 2.0;
-    float UIStep = 0.01;
-    string UIName = "Bounce Cutoff";
-    string UIGroup = "Bounce Light";
->
-#endif
-    = 0.1;
 
 uniform float bXPos
 #if OGSFX
@@ -462,7 +462,7 @@ uniform float ao_opacity
     string UIGroup = "Ambient Oclusion";
 >
 #endif
-    = -1.0;
+    = 1.0;
 
 #if OGSFX
 uniform texture2D ambient_oclusion <
@@ -550,7 +550,7 @@ vec4 blendMultiply(vec4 base, vec4 blend);
 vec4 blendMultiply(vec4 base, vec4 blend, float opacity);
 
 float blendSubtract(float base, float blend);
-vec4 blendSubtract(vec4 base, vec34blend);
+vec4 blendSubtract(vec4 base, vec4 blend);
 vec4 blendSubtract(vec4 base, vec4 blend, float opacity);
 
 vec4 blendHardLight(vec4 base, vec4 blend);
@@ -572,8 +572,7 @@ void main()
         surfaceColor = diffuse_color;
     }
 
-    vec4 darken_value = vec4(darken_base);
-    darken_value[3] = 1.0;
+    vec4 darken_value = vec4(1.0 - darken_base);
     surfaceColor = blendSubtract(surfaceColor, darken_value);
 
     float key_cos = dot( WorldNormal, vec3(kXPos, kYPos, kZPos));
@@ -582,23 +581,19 @@ void main()
     float bounce_mask = calc_alpha ( bSoftness, bCutoff, bounce_cos );
     float key_mask = calc_alpha ( kSoftness, kCutoff, key_cos );
 
-    vec4 key_light = key_mask * kLightColor + ( 1 - key_mask ) * kShadowColor;
-    vec4 bounce_light = bounce_mask * bLightColor + ( 1 - bounce_mask ) * bShadowColor;
- 
-    float bounce_blend = bBlend; 
-    if ( key_mask >= 1.0 ) {
-        bounce_blend = 0.0;
+    if ( use_light_mask ) {
+        if ( texture2D(light_mask_sampler, vec2(fUV[0], 1.0-fUV[1]))[0] <= 0.3 ) {
+            key_mask = 0.0;
+        }
     }
-    
-    bool outside_light_mask = texture2D(light_mask_sampler, vec2(fUV[0], 1.0-fUV[1]))[0] >= 0.9 || use_light_mask <= 0.0;
-    
-    if ( outside_light_mask ) {
-        colorOut = blend( surfaceColor, bounce_light, bounce_blend);
-        colorOut = blend( colorOut, key_light, kBlend );
-    } else {
-        colorOut = blend( surfaceColor, bounce_light, bounce_blend);
-        colorOut = blend( colorOut, kShadowColor, kBlend);        
-    }
+
+    vec4 key_light = key_mask * blend( surfaceColor, kLightColor, kLightBlend, kLightOpacity);
+
+    vec4 key_shadow = (1.0 - key_mask) * blend( surfaceColor, kShadowColor, kShadowBlend, kShadowOpacity);
+    vec4 bounce_light = bounce_mask * blend( key_shadow, bLightColor, bLightBlend, bLightOpacity);
+    vec4 bounce_shadow = ( 1 - bounce_mask ) * blend( key_shadow, bShadowColor, bShadowBlend, bShadowOpacity);
+
+    colorOut = key_light + (bounce_light + bounce_shadow);
 
     if ( use_ao ) {
         colorOut = blendMultiply( colorOut, texture2D( oclusion_sampler, fUV ), ao_opacity);
@@ -678,7 +673,7 @@ float blendNormal(float base, float blend, float opacity) {
     return (blend * opacity) + (base * (1.0 - opacity));
 }
 
-vec4 blendNormal(vec4 base, vec4 blend, opacity) {
+vec4 blendNormal(vec4 base, vec4 blend, float opacity) {
     return vec4(blendNormal(base[0], blend[0], opacity), blendNormal(base[1], blend[1], opacity), blendNormal(base[2], blend[2], opacity), 1.0);
 }
 
