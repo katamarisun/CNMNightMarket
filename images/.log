@@ -1,0 +1,13 @@
+                                 process : None
+	                             description : render an image
+	                                     cmd : C:\Users\jakeh\OneDrive\Desktop\Mitsuba 0.5.0
+	                                    args : -r 15 -b 32 -o C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket\images\.exr C:/Users/jakeh/OneDrive/Desktop/CNMNightMarket\renderData\.xml
+	                                   start : 2019-03-15 00:24:08.912000
+	                                    user : jakeh
+	                                 sysname : Windows
+	                                nodename : LAPTOP-IBDTOIPE
+	                                 release : 10
+	                                 version : 10.0.17134
+	                                 machine : AMD64
+	                               processor : Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+                                 process : None
