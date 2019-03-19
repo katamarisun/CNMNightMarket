@@ -9,8 +9,6 @@ pxrSurfs = cmds.ls( type="PxrSurface" ) + cmds.ls( type="PxrMarschnerHair" )
 grp_map_pxrSurfs = dict()
 
 for surf in pxrSurfs:
-    if ':' in surf:
-        continue
     if not cmds.listConnections(surf):
         continue
     for con in cmds.listConnections(surf):
