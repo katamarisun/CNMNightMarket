@@ -23,8 +23,8 @@ for grp in grp_map_pxrSurfs.keys():
     if (surf[-4:] != '_Pxr'):
         print("Naming convention for " + surf + " is off, moving on\n")
         continue
-    GLSL = surf[:-4] + '_GLSL'
-    if (not cmds.objExists(GLSL)):
-        print("Missing GLSL shader to swap to for " + surf + " moving on\n")
+    lamb = surf[:-4] + '_lambert'
+    if (not cmds.objExists(lamb)):
+        print("Missing lambert shader to swap to for " + surf + " moving on\n")
         continue
-    cmds.connectAttr(GLSL + '.outColor', grp + '.surfaceShader', force=True )
+    cmds.connectAttr(lamb + '.outColor', grp + '.surfaceShader', force=True )
