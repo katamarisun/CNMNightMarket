@@ -1,0 +1,111 @@
+import maya.cmds as cmds
+import maya.utils
+
+#Part1: Clean up PxrSurface names to always end in _Pxr
+shadingGroups = cmds.ls( type="shadingEngine" )
+pxrSurfs = cmds.ls( type="PxrSurface" )
+lamberts = cmds.ls( type="lambert" )
+
+project_dir = mel.eval('workspace -q -rd')
+
+grp_map_pxrSurfs = dict()
+grp_map_lamberts = dict()
+
+for surf in pxrSurfs:
+    if ':' in surf:
+        continue
+    if not cmds.listConnections(surf):
+        continue
+    for con in cmds.listConnections(surf):
+        if cmds.nodeType(con) == "shadingEngine":
+            grp_map_pxrSurfs[con] = surf
+
+for lamb in lamberts:
+    if ':' in lamb:
+        continue
+    if not cmds.listConnections(lamb):
+        continue
+    for con in cmds.listConnections(lamb):
+        print(cmds.nodeType(con))
+        if cmds.nodeType(con) == "shadingEngine":
+            grp_map_lamberts[con] = lamb
+
+
+for grp in grp_map_pxrSurfs.keys():
+    surf = grp_map_pxrSurfs[grp]
+    if (":" in surf):
+        print("Skipping referenced shader")
+        continue
+    lamb = ""
+    if grp not in grp_map_lamberts.keys():
+        lamb = cmds.createNode( 'lambert' )
+        cmds.connectAttr(lamb + '.outColor', grp + '.surfaceShader', force=True )
+    else:
+        lamb = grp_map_lamberts[grp]
+
+    #Rename the PxrSurface if it doesn't match convention
+    if (len(surf) > 4):
+        if (surf[-4:] != '_Pxr'):
+            cmds.rename ( surf, surf + '_Pxr' )
+            surf = surf + '_Pxr'
+            
+    #rename the lambert viewport shader to match convention
+    cmds.rename ( lamb, surf[:-4] + '_lambert' )
+    lamb = surf[:-4] + '_lambert'
+
+    #get the diffuse channel of each connected PxrSurface
+    diffuse_textures = cmds.listConnections ( surf + ".diffuseColor" )
+    #if this PxrSurface doesn't have any diffuse textures
+    if (not diffuse_textures):
+        diffuse_color = cmds.getAttr (surf + ".diffuseColor")[0]
+        print( "Old diffuse: ", diffuse_color, "\n" )
+        cmds.setAttr ( lamb + ".color", diffuse_color[0], diffuse_color[1], diffuse_color[2] )
+    else:
+        tex_orig_name = ""
+        if ( cmds.nodeType ( diffuse_textures[0]) == "PxrTexture" ):
+            tex_orig_name = cmds.getAttr ( diffuse_textures[0] + ".filename" )
+        else:
+            tex_orig_name = cmds.getAttr ( diffuse_textures[0] + ".fileTextureName" )
+
+        viewport_tex = ""
+        if (not cmds.objExists(surf[:-4] + "_viewport_tex" )):
+            viewport_tex = cmds.shadingNode('file', asTexture=True )
+        else:
+            viewport_tex = surf[:-4] + "_viewport_tex"
+        cmds.connectAttr ( viewport_tex + ".outColor", lamb + ".color", force=True )
+
+        tex_filepath = tex_orig_name
+        tex_post = tex_orig_name[-4:]
+        if (tex_post == ".tex"):
+            tex_filepath = tex_orig_name[:-4]       
+
+        cmds.setAttr ( viewport_tex + ".fileTextureName",  tex_filepath, type="string" )
+        
+        #rename the new texture to match naming convention
+        new_tex_name = surf[:-4] + "_viewport_tex"
+        cmds.rename ( viewport_tex, new_tex_name )
+        
+        #rename the PxrSufrace texture to match naming convention
+        old_tex_rename = surf[:-4] + "_render_tex"
+        cmds.rename ( diffuse_textures[0], old_tex_rename )
+
+
+    #-----Create a _GLSL shader------------
+    #--------------------------------------
+    if (cmds.objExists(surf[:-4] + "_GLSL")):
+        continue
+    new_GLSL = cmds.createNode( 'GLSLShader' );
+    cmds.setAttr( new_GLSL + ".shader", project_dir + "/assets/cellShader_plugin/cell.ogsfx", type="string" )
+    #Plug the old diffuse into the GLSL shader
+    diffuse_textures = cmds.listConnections ( lamb + ".color" )
+    if (diffuse_textures):
+        cmds.connectAttr ( diffuse_textures[0] + ".outColor", new_GLSL + ".diffuse_color_tex", force=True )
+        cmds.setAttr ( new_GLSL + ".use_tex", 1)
+    else:
+        diffuse_color = cmds.getAttr (surf + ".diffuseColor")[0]
+        cmds.setAttr (new_GLSL + ".diffuse_colorX", diffuse_color[0])
+        cmds.setAttr (new_GLSL + ".diffuse_colorY", diffuse_color[1])
+        cmds.setAttr (new_GLSL + ".diffuse_colorZ", diffuse_color[2])
+
+    new_GLSL_name = surf[:-4] + "_GLSL"
+    cmds.rename(new_GLSL, new_GLSL_name)
