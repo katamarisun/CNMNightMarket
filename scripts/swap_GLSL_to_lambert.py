@@ -4,7 +4,7 @@ import maya.cmds as cmds
 
 #Part1: Clean up PxrSurface names to always end in _Pxr
 shadingGroups = cmds.ls( type="shadingEngine" )
-pxrSurfs = cmds.ls( type="PxrSurface" )
+pxrSurfs = cmds.ls( type="PxrSurface" ) + cmds.ls( type="PxrMarschnerHair" )
 
 grp_map_pxrSurfs = dict()
 
