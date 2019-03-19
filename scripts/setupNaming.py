@@ -36,21 +36,19 @@ for grp in grp_map_pxrSurfs.keys():
     if (":" in surf):
         print("Skipping referenced shader")
         continue
-    lamb = ""
-    if grp not in grp_map_lamberts.keys():
-        lamb = cmds.createNode( 'lambert' )
-        cmds.connectAttr(lamb + '.outColor', grp + '.surfaceShader', force=True )
-    else:
-        lamb = grp_map_lamberts[grp]
 
     #Rename the PxrSurface if it doesn't match convention
     if (len(surf) > 4):
         if (surf[-4:] != '_Pxr'):
             cmds.rename ( surf, surf + '_Pxr' )
             surf = surf + '_Pxr'
-            
-    #rename the lambert viewport shader to match convention
-    cmds.rename ( lamb, surf[:-4] + '_lambert' )
+
+    #If the lambert doesn't already exist, create it
+    if (not cmds.objExists(surf[:-4] + "_lambert")):
+        lamb = cmds.createNode( 'lambert' )
+        cmds.connectAttr(lamb + '.outColor', grp + '.surfaceShader', force=True )
+        #rename the lambert viewport shader to match convention
+        cmds.rename ( lamb, surf[:-4] + '_lambert' )
     lamb = surf[:-4] + '_lambert'
 
     #get the diffuse channel of each connected PxrSurface
@@ -92,20 +90,19 @@ for grp in grp_map_pxrSurfs.keys():
 
     #-----Create a _GLSL shader------------
     #--------------------------------------
-    if (cmds.objExists(surf[:-4] + "_GLSL")):
-        continue
-    new_GLSL = cmds.createNode( 'GLSLShader' );
-    cmds.setAttr( new_GLSL + ".shader", project_dir + "/assets/cellShader_plugin/cell.ogsfx", type="string" )
-    #Plug the old diffuse into the GLSL shader
-    diffuse_textures = cmds.listConnections ( lamb + ".color" )
-    if (diffuse_textures):
-        cmds.connectAttr ( diffuse_textures[0] + ".outColor", new_GLSL + ".diffuse_color_tex", force=True )
-        cmds.setAttr ( new_GLSL + ".use_tex", 1)
-    else:
-        diffuse_color = cmds.getAttr (surf + ".diffuseColor")[0]
-        cmds.setAttr (new_GLSL + ".diffuse_colorX", diffuse_color[0])
-        cmds.setAttr (new_GLSL + ".diffuse_colorY", diffuse_color[1])
-        cmds.setAttr (new_GLSL + ".diffuse_colorZ", diffuse_color[2])
+    if (not cmds.objExists(surf[:-4] + "_GLSL")):
+        new_GLSL = cmds.createNode( 'GLSLShader' );
+        cmds.setAttr( new_GLSL + ".shader", project_dir + "/assets/cellShader_plugin/cell.ogsfx", type="string" )
+        #Plug the old diffuse into the GLSL shader
+        diffuse_textures = cmds.listConnections ( lamb + ".color" )
+        if (diffuse_textures):
+            cmds.connectAttr ( diffuse_textures[0] + ".outColor", new_GLSL + ".diffuse_color_tex", force=True )
+            cmds.setAttr ( new_GLSL + ".use_tex", 1)
+        else:
+            diffuse_color = cmds.getAttr (surf + ".diffuseColor")[0]
+            cmds.setAttr (new_GLSL + ".diffuse_colorX", diffuse_color[0])
+            cmds.setAttr (new_GLSL + ".diffuse_colorY", diffuse_color[1])
+            cmds.setAttr (new_GLSL + ".diffuse_colorZ", diffuse_color[2])
 
-    new_GLSL_name = surf[:-4] + "_GLSL"
-    cmds.rename(new_GLSL, new_GLSL_name)
+        new_GLSL_name = surf[:-4] + "_GLSL"
+        cmds.rename(new_GLSL, new_GLSL_name)
