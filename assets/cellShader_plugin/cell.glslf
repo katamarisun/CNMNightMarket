@@ -596,7 +596,7 @@ void main()
     colorOut = key_light + (bounce_light + bounce_shadow);
 
     if ( use_ao ) {
-        colorOut = blendMultiply( colorOut, texture2D( oclusion_sampler, fUV ), ao_opacity);
+        colorOut = blendMultiply( colorOut, bShadowBlend*texture2D( oclusion_sampler, vec2(fUV[0], 1.0-fUV[1]) ), ao_opacity);
     }
 
     if ( use_opacity ) {
