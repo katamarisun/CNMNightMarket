@@ -70,33 +70,6 @@ uniform mat4 gWvpXf : WorldViewProjection < string UIWidget="None"; >;
 // provide tranform from "view" or "eye" coords back to world-space:
 uniform mat4 gViewIXf : ViewInverse < string UIWidget="None"; >;
 
-/*** TWEAKABLES *********************************************/
-
-// apps should expect this to be normalized
-uniform vec3 kLampDir : DIRECTION <
-    string Object = "KeyLight";
-    string UIName =  "Key Light Direction";
-    string Space = "World";
-> = {0.2f,0.7f,-0.2f};
-
-uniform vec3 bLampDir : DIRECTION <
-    string Object = "BounceLight";
-    string UIName =  "Bounce Light Direction";
-    string Space = "World";
-> = {0.7f,-0.7f,-0.7f};
-
-uniform bool keyShadowOn : SHADOWFLAG
-<
-    string UIName = "KeyShadow";
-    string Object = "KeyLight";
-> = true;
-
-uniform bool bounceShadowOn : SHADOWFLAG
-<
-    string UIName = "BounceShadow";
-    string Object = "BounceLight";
-> = false;
-
 #else
 
 // transform object vertices to world-space:
@@ -140,6 +113,7 @@ attribute appdata {
     vec3 Position    : POSITION;
     vec2 UV        : TEXCOORD0;
     vec3 Normal    : NORMAL;
+    vec2 inmap1 : TEXCOORD0;
 };
 
 /* data passed from vertex shader to pixel shader */
@@ -150,6 +124,9 @@ attribute cellVertexOutput {
     vec4 DCol : COLOR0;
     vec2 fUV : TEXCOORD4;
     vec3 fPos : TEXCOORD5;
+    vec4 map1 : TEXCOORD6;
+    vec4 WorldPosition : TEXCOORD7;
+
 };
 
 #else
@@ -184,10 +161,13 @@ void main()
     WorldNormal = Nw;
     vec4 Po = vec4(Position.xyz,1);
     vec3 Pw = (gWorldXf*Po).xyz;
+    WorldPosition = vec4(Pw.x, Pw.y, Pw.z, 1.0);
     WorldEyeVec = normalize(gViewIXf[3].xyz - Pw);
     vec4 hpos = gWvpXf * Po;
     fUV = UV;
     fPos = Position;
+    vec4 OutUVs = vec4(inmap1.x, inmap1.y, 0.0, 0.0);
+    map1 = OutUVs;
     gl_Position = hpos;
 }
 
