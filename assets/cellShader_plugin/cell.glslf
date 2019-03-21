@@ -60,7 +60,7 @@ uniform float kCutoff
 <
     string UIWidget = "slider";
     float UIMin = -1.0;
-    float UIMax = 2.0;
+    float UIMax = 4.0;
     float UIStep = 0.01;
     string UIName = "Normal Cutoff";
     string UIGroup = "Key Light";
