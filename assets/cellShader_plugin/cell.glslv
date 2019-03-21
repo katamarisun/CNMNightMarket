@@ -123,10 +123,8 @@ attribute cellVertexOutput {
     vec4 ObjPos    : TEXCOORD3;
     vec4 DCol : COLOR0;
     vec2 fUV : TEXCOORD4;
-    vec3 fPos : TEXCOORD5;
     vec4 map1 : TEXCOORD6;
-    vec4 WorldPosition : TEXCOORD7;
-
+    vec4 WorldPosition : TEXCOORD5;
 };
 
 #else
@@ -165,7 +163,7 @@ void main()
     WorldEyeVec = normalize(gViewIXf[3].xyz - Pw);
     vec4 hpos = gWvpXf * Po;
     fUV = UV;
-    fPos = Position;
+    ObjPos = Po;
     vec4 OutUVs = vec4(inmap1.x, inmap1.y, 0.0, 0.0);
     map1 = OutUVs;
     gl_Position = hpos;

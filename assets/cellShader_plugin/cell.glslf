@@ -505,7 +505,8 @@ attribute cellPixelInput {
     vec4 ObjPos    : TEXCOORD3;
     vec4 DCol : COLOR0;
     vec2 fUV : TEXCOORD4;
-    vec3 fPos : TEXCOORD5;
+    vec4 map1 : TEXCOORD6;
+    vec4 WorldPosition : TEXCOORD5;
 };
 
 /* data output by the fragment shader */
