@@ -503,9 +503,7 @@ attribute cellPixelInput {
     vec3 WorldNormal    : TEXCOORD1;
     vec3 WorldEyeVec    : TEXCOORD2;
     vec4 ObjPos    : TEXCOORD3;
-    vec4 DCol : COLOR0;
     vec2 fUV : TEXCOORD4;
-    vec4 map1 : TEXCOORD6;
     vec4 WorldPosition : TEXCOORD5;
 };
 
