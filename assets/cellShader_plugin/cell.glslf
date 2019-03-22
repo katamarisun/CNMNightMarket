@@ -60,7 +60,7 @@ uniform float kCutoff
 <
     string UIWidget = "slider";
     float UIMin = -1.0;
-    float UIMax = 2.0;
+    float UIMax = 4.0;
     float UIStep = 0.01;
     string UIName = "Normal Cutoff";
     string UIGroup = "Key Light";
@@ -503,9 +503,8 @@ attribute cellPixelInput {
     vec3 WorldNormal    : TEXCOORD1;
     vec3 WorldEyeVec    : TEXCOORD2;
     vec4 ObjPos    : TEXCOORD3;
-    vec4 DCol : COLOR0;
     vec2 fUV : TEXCOORD4;
-    vec3 fPos : TEXCOORD5;
+    vec4 WorldPosition : TEXCOORD5;
 };
 
 /* data output by the fragment shader */
