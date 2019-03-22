@@ -57,22 +57,466 @@ GLSLShader FS
 #include "cell.glslf"
 }
 
-//**********
-//	Effect handling:
-//
-//	Here we define a generic technique with very simple passes.
-//	The name of the io streams between shader stages must match the
-//	ones found in the shader stage files. This could be eliminated by
-//	another set of #define directives to unify the io stream names in
-//	all shader stage files.
-//
 
-// Techniques.
+uniform vec2 ShadowFilterTaps[10] < string UIWidget = "None"; > = {{-0.84052, -0.073954}, {-0.326235, -0.40583}, {-0.698464, 0.457259}, {-0.203356, 0.620585}, {0.96345, -0.194353}, {0.473434, -0.480026}, {0.519454, 0.767034}, {0.185461, -0.894523}, {0.507351, 0.064963}, {-0.321932, 0.595435}};
+
+
+// ----------------------------------- Per Frame --------------------------------------
+uniform mat4 viewI : ViewInverse < string UIWidget = "None"; >;
+
+uniform mat4 viewPrj : ViewProjection < string UIWidget = "None"; >;
+
+uniform bool MayaHwFogEnabled : HardwareFogEnabled < string UIWidget = "None"; > = false; 
+uniform int MayaHwFogMode : HardwareFogMode < string UIWidget = "None"; > = 0; 
+uniform float MayaHwFogStart : HardwareFogStart < string UIWidget = "None"; > = 0.0; 
+uniform float MayaHwFogEnd : HardwareFogEnd < string UIWidget = "None"; > = 100.0; 
+uniform float MayaHwFogDensity : HardwareFogDensity < string UIWidget = "None"; > = 0.1; 
+uniform vec4 MayaHwFogColor : HardwareFogColor < string UIWidget = "None"; > = { 0.5, 0.5, 0.5, 1.0 }; 
+uniform float DepthRange : LightRange < string UIWidget = "None"; > = 100000.0;
+
+uniform mat4 view : View < string UIWidget = "None"; >;
+
+// ---------------------------------------- Textures -----------------------------------------
+uniform texture2D SurfaceMask
+<
+	string ResourceName = "";
+	string UIName = "Surface Mask";
+	string ResourceType = "2D";
+	string UIWidget = "FilePicker";
+	string UIGroup = "Surface";
+>;
+
+uniform sampler2D SurfaceMaskSampler = sampler_state 
+{
+	Texture = <SurfaceMask>;
+	TEXTURE_MIN_FILTER = LINEAR;
+	TEXTURE_MAG_FILTER = LINEAR;
+	TEXTURE_WRAP_S = REPEAT;
+	TEXTURE_WRAP_T = REPEAT;
+	TEXTURE_WRAP_R = REPEAT;
+};
+
+
+uniform float SurfaceMaskCutoff
+<
+	float UIMin = 0.0;
+	float UISoftMin = 0.0;
+	float UIMax = 99.0;
+	float UISoftMax = 99.0;
+	float UIStep = 0.01;
+	string UIName = "Surface Mask Cutoff";
+	string UIWidget = "Slider";
+	string UIGroup = "Surface";
+> = 0.0;
+
+// --------------------------------------- Per Object -----------------------------------------
+uniform mat4 world : World < string UIWidget = "None"; >;
+
+uniform float BBoxExtraScale : BoundingBoxExtraScale
+<
+	float UISoftMin = 1.0;
+	float UISoftMax = 99.0;
+	float UIStep = 0.1;
+	string UIName = "Bounding Box Extra Scale";
+	string UIWidget = "Slider";
+	string UIGroup = "Tessellation and Displacement";
+	int UIOrder = 808;
+> = 1.0;
+
+uniform int ClampDynamicLights
+<
+	float UIMin = 0;
+	float UISoftMin = 0;
+	float UIMax = 99;
+	float UISoftMax = 99;
+	float UIStep = 1;
+	string UIName = "Clamp Dynamic Lights";
+	string UIWidget = "Slider";
+	string UIGroup = "Lighting";
+> = 99;
+
+uniform mat4 shadowViewPrj : ViewProjection < string UIWidget = "None"; >;
+
+uniform bool IsSwatchRender : MayaSwatchRender <string UIWidget = "None"; > = false;
+
+
+uniform int KeyLightType : LIGHTTYPE
+<
+	string UIName = "Key Type";
+	float UIMin = 0;
+	float UIMax = 5;
+	float UIStep = 1;
+	string UIWidget = "None";
+	string Object = "Key";
+> = 3;
+
+uniform vec3 KeyLightColor : LIGHTCOLOR
+<
+	string UIName = "Key Color";
+	string UIWidget = "ColorPicker";
+	string Object = "Key";
+> = {1.0, 1.0, 1.0};
+
+uniform float KeyLightIntensity : LIGHTINTENSITY
+<
+	string UIName = "Key Intensity";
+	float UIMin = 0;
+	float UIStep = 0.1;
+	string Object = "Key";
+> = 1.0;
+
+uniform vec3 KeyLightPos : POSITION
+<
+	string UIName = "Key Position";
+	string Space = "World";
+	string Object = "Key";
+> = {1.0, 1.0, 1.0};
+
+uniform vec3 KeyLightDir : DIRECTION
+<
+	string UIName = "Key Direction";
+	string Space = "World";
+	string Object = "Key";
+> = {0.0, -1.0, 0.0};
+
+uniform float KeyLightAttenuation : DECAYRATE
+<
+	string UIName = "Key Decay";
+	float UIMin = 0;
+	float UIStep = 1;
+	string Object = "Key";
+> = 0.0;
+
+uniform float KeyLightConeAngle : HOTSPOT
+<
+	string UIName = "Key Cone Angle";
+	float UIMin = 0;
+	float UIMax = 1.571;
+	float UIStep = 0.05;
+	string Space = "World";
+	string Object = "Key";
+> = 0.46;
+
+uniform float KeyLightFalloff : FALLOFF
+<
+	string UIName = "Key Penumbra Angle";
+	float UIMin = 0;
+	float UIMax = 1.571;
+	float UIStep = 0.05;
+	string Object = "Key";
+> = 0.7;
+
+uniform bool KeyLightShadowOn : SHADOWFLAG
+<
+	string UIName = "Key Casts Shadow";
+	string Object = "Key";
+> = true;
+
+uniform mat4 KeyLightViewPrj : SHADOWMAPMATRIX
+<
+	string Object = "Key";
+	string UIName = "Key Matrix";
+	string UIWidget = "None";
+>;
+
+uniform vec3 KeyLightShadowColor : SHADOWCOLOR
+<
+	string UIName = "Key Shadow Color";
+	string Object = "Key";
+> = {0, 0, 0};
+
+uniform texture2D KeyLightShadowMap : SHADOWMAP
+<
+	string ResourceName = "";
+	string ResourceType = "2D";
+	string UIWidget = "None";
+	string Object = "Key";
+	string UIName = "KeyLightShadowMap";
+>;
+
+uniform sampler2D KeyLightShadowMapSampler = sampler_state 
+{
+	Texture = <KeyLightShadowMap>;
+	TEXTURE_MIN_FILTER = NEAREST;
+	TEXTURE_MAG_FILTER = NEAREST;
+	TEXTURE_WRAP_S = REPEAT;
+	TEXTURE_WRAP_T = REPEAT;
+	TEXTURE_WRAP_R = REPEAT;
+};
+
+uniform textureCube PointKeyLightShadowMap : POINTLIGHTSHADOWMAP
+<
+	string ResourceName = "";
+	string ResourceType = "Cube";
+	string UIWidget = "None";
+	string Object = "Key";
+	string UIName = "PointKeyShadowMap";
+>;
+
+uniform samplerCube PointKeyLightShadowMapSampler = sampler_state 
+{
+	Texture = <PointKeyLightShadowMap>;
+	TEXTURE_MIN_FILTER = LINEAR_MIPMAP_LINEAR;
+	TEXTURE_MAG_FILTER = LINEAR;
+	TEXTURE_WRAP_S = MIRRORED_REPEAT;
+	TEXTURE_WRAP_T = MIRRORED_REPEAT;
+	TEXTURE_WRAP_R = MIRRORED_REPEAT;
+};
+
+uniform int BounceLightType : LIGHTTYPE
+<
+	string UIName = "Bounce Type";
+	float UIMin = 0;
+	float UIMax = 5;
+	float UIStep = 1;
+	string UIWidget = "None";
+	string Object = "Bounce";
+> = 3;
+
+uniform vec3 BounceLightColor : LIGHTCOLOR
+<
+	string UIName = "Bounce Color";
+	string UIWidget = "ColorPicker";
+	string Object = "Bounce";
+> = {1.0, 1.0, 1.0};
+
+uniform float BounceLightIntensity : LIGHTINTENSITY
+<
+	string UIName = "Bounce Intensity";
+	float UIMin = 0;
+	float UIStep = 0.1;
+	string Object = "Bounce";
+> = 1.0;
+
+uniform vec3 BounceLightPos : POSITION
+<
+	string UIName = "Bounce Position";
+	string Space = "World";
+	string Object = "Bounce";
+> = {1.0, 1.0, 1.0};
+
+uniform vec3 BounceLightDir : DIRECTION
+<
+	string UIName = "Bounce Direction";
+	string Space = "World";
+	string Object = "Bounce";
+> = {0.0, -1.0, 0.0};
+
+uniform float BounceLightAttenuation : DECAYRATE
+<
+	string UIName = "Bounce Decay";
+	float UIMin = 0;
+	float UIStep = 1;
+	string Object = "Bounce";
+> = 0.0;
+
+uniform float BounceLightConeAngle : HOTSPOT
+<
+	string UIName = "Bounce Cone Angle";
+	float UIMin = 0;
+	float UIMax = 1.571;
+	float UIStep = 0.05;
+	string Space = "World";
+	string Object = "Bounce";
+> = 0.46;
+
+uniform float BounceLightFalloff : FALLOFF
+<
+	string UIName = "Bounce Penumbra Angle";
+	float UIMin = 0;
+	float UIMax = 1.571;
+	float UIStep = 0.05;
+	string Object = "Bounce";
+> = 0.7;
+
+uniform bool BounceLightShadowOn : SHADOWFLAG
+<
+	string UIName = "Bounce Casts Shadow";
+	string Object = "Bounce";
+> = true;
+
+uniform mat4 BounceLightViewPrj : SHADOWMAPMATRIX
+<
+	string Object = "Bounce";
+	string UIName = "Bounce Matrix";
+	string UIWidget = "None";
+>;
+
+uniform vec3 BounceLightShadowColor : SHADOWCOLOR
+<
+	string UIName = "Light 0 Shadow Color";
+	string Object = "Light 0";
+> = {0, 0, 0};
+
+uniform texture2D BounceLightShadowMap : SHADOWMAP
+<
+	string ResourceName = "";
+	string ResourceType = "2D";
+	string UIWidget = "None";
+	string Object = "Bounce";
+	string UIName = "BounceLightShadowMap";
+>;
+
+uniform sampler2D BounceLightShadowMapSampler = sampler_state 
+{
+	Texture = <BounceLightShadowMap>;
+	TEXTURE_MIN_FILTER = NEAREST;
+	TEXTURE_MAG_FILTER = NEAREST;
+	TEXTURE_WRAP_S = REPEAT;
+	TEXTURE_WRAP_T = REPEAT;
+	TEXTURE_WRAP_R = REPEAT;
+};
+
+uniform textureCube PointBounceLightShadowMap : POINTLIGHTSHADOWMAP
+<
+	string ResourceName = "";
+	string ResourceType = "Cube";
+	string UIWidget = "None";
+	string Object = "Key";
+	string UIName = "PointBounceShadowMap";
+>;
+
+uniform samplerCube PointBounceLightShadowMapSampler = sampler_state 
+{
+	Texture = <PointBounceLightShadowMap>;
+	TEXTURE_MIN_FILTER = LINEAR_MIPMAP_LINEAR;
+	TEXTURE_MAG_FILTER = LINEAR;
+	TEXTURE_WRAP_S = MIRRORED_REPEAT;
+	TEXTURE_WRAP_T = MIRRORED_REPEAT;
+	TEXTURE_WRAP_R = MIRRORED_REPEAT;
+};
+
+uniform int RimLightType : LIGHTTYPE
+<
+	string UIName = "Rim Type";
+	float UIMin = 0;
+	float UIMax = 5;
+	float UIStep = 1;
+	string UIWidget = "None";
+	string Object = "Rim";
+> = 3;
+
+uniform vec3 RimLightColor : LIGHTCOLOR
+<
+	string UIName = "Rim Color";
+	string UIWidget = "ColorPicker";
+	string Object = "Rim";
+> = {1.0, 1.0, 1.0};
+
+uniform float RimLightIntensity : LIGHTINTENSITY
+<
+	string UIName = "Rim Intensity";
+	float UIMin = 0;
+	float UIStep = 0.1;
+	string Object = "Rim";
+> = 1.0;
+
+uniform vec3 RimLightPos : POSITION
+<
+	string UIName = "Rim Position";
+	string Space = "World";
+	string Object = "Rim";
+> = {1.0, 1.0, 1.0};
+
+uniform vec3 RimLightDir : DIRECTION
+<
+	string UIName = "Rim Direction";
+	string Space = "World";
+	string Object = "Rim";
+> = {0.0, -1.0, 0.0};
+
+uniform float RimLightAttenuation : DECAYRATE
+<
+	string UIName = "Rim Decay";
+	float UIMin = 0;
+	float UIStep = 1;
+	string Object = "Rim";
+> = 0.0;
+
+uniform float RimLightConeAngle : HOTSPOT
+<
+	string UIName = "Rim Cone Angle";
+	float UIMin = 0;
+	float UIMax = 1.571;
+	float UIStep = 0.05;
+	string Space = "World";
+	string Object = "Rim";
+> = 0.46;
+
+uniform float RimLightFalloff : FALLOFF
+<
+	string UIName = "Rim Penumbra Angle";
+	float UIMin = 0;
+	float UIMax = 1.571;
+	float UIStep = 0.05;
+	string Object = "Rim";
+> = 0.7;
+
+uniform bool RimLightShadowOn : SHADOWFLAG
+<
+	string UIName = "Rim Casts Shadow";
+	string Object = "Rim";
+> = true;
+
+uniform mat4 RimLightViewPrj : SHADOWMAPMATRIX
+<
+	string Object = "Rim";
+	string UIName = "Rim Matrix";
+	string UIWidget = "None";
+>;
+
+uniform vec3 RimLightShadowColor : SHADOWCOLOR
+<
+	string UIName = "Rim Shadow Color";
+	string Object = "Rim";
+> = {0, 0, 0};
+
+uniform texture2D RimLightShadowMap : SHADOWMAP
+<
+	string ResourceName = "";
+	string ResourceType = "2D";
+	string UIWidget = "None";
+	string Object = "Light 0";
+	string UIName = "RimLightShadowMap";
+>;
+
+uniform sampler2D RimLightShadowMapSampler = sampler_state 
+{
+	Texture = <RimLightShadowMap>;
+	TEXTURE_MIN_FILTER = NEAREST;
+	TEXTURE_MAG_FILTER = NEAREST;
+	TEXTURE_WRAP_S = REPEAT;
+	TEXTURE_WRAP_T = REPEAT;
+	TEXTURE_WRAP_R = REPEAT;
+};
+
+uniform textureCube PointRimLightShadowMap : POINTLIGHTSHADOWMAP
+<
+	string ResourceName = "";
+	string ResourceType = "Cube";
+	string UIWidget = "None";
+	string Object = "Key";
+	string UIName = "PointRimShadowMap";
+>;
+
+uniform samplerCube PointRimLightShadowMapSampler = sampler_state 
+{
+	Texture = <PointRimLightShadowMap>;
+	TEXTURE_MIN_FILTER = LINEAR_MIPMAP_LINEAR;
+	TEXTURE_MAG_FILTER = LINEAR;
+	TEXTURE_WRAP_S = MIRRORED_REPEAT;
+	TEXTURE_WRAP_T = MIRRORED_REPEAT;
+	TEXTURE_WRAP_R = MIRRORED_REPEAT;
+};
+
 technique Main
 {
-    pass p0
-    {
+	pass P0
+	<
+		string drawContext = "colorPass";
+	>
+	{
         VertexShader (in appdata, out cellVertexOutput) = VS;
         PixelShader (in cellVertexOutput, out pixelOut) = FS;
-    }
+	}
 }

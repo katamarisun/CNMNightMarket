@@ -1,28 +1,33 @@
+
+import maya.cmds as cmds
 import maya.mel as mel
 import maya.utils
-import maya.cmds as cmds
 
-#Part1: Clean up PxrSurface names to always end in _Pxr
-shadingGroups = cmds.ls( type="shadingEngine" )
-pxrSurfs = cmds.ls( type="PxrSurface" ) + cmds.ls( type="PxrMarschnerHair" )
+#PART 1: Swap Materials
+lamberts = cmds.ls( type="lambert"  )
 
-grp_map_pxrSurfs = dict()
+#Print out PxrSurfaces in the scene
+print("Replaceing ", len(lamberts), " Lamberts.\n")
+print(lamberts)
 
-for surf in pxrSurfs:
-    if not cmds.listConnections(surf):
+project_dir = mel.eval('workspace -q -rd')
+print(project_dir)
+
+for old_mat in lamberts:
+    new_mat = cmds.createNode( 'GLSLShader' );
+    cmds.setAttr( new_mat + ".shader", project_dir + "/assets/cellShader_plugin/cell.ogsfx", type="string" )
+
+    cmds.hyperShade( objects=old_mat );
+    if (len(cmds.ls(sl=True)) == 0):
+        print("No objects with ", old_mat, " assigned, moving on.\n")
         continue
-    for con in cmds.listConnections(surf):
-        if cmds.nodeType(con) == "shadingEngine":
-            grp_map_pxrSurfs[con] = surf
+    else:
+        cmds.hyperShade( assign=new_mat );
 
+    #Plug the old diffuse into the GLSL shader
+    diffuse_textures = cmds.listConnections ( old_mat + ".color" )
+    if (diffuse_textures):
+        cmds.connectAttr ( diffuse_textures[0] + ".outColor", new_mat + ".diffuse_color_tex", force=True )        
 
-for grp in grp_map_pxrSurfs.keys():
-    surf = grp_map_pxrSurfs[grp]
-    if (surf[-4:] != '_Pxr'):
-        print("Naming convention for " + surf + " is off, moving on\n")
-        continue
-    GLSL = surf[:-4] + '_GLSL'
-    if (not cmds.objExists(GLSL)):
-        print("Missing GLSL shader to swap to for " + surf + " moving on\n")
-        continue
-    cmds.connectAttr(GLSL + '.outColor', grp + '.surfaceShader', force=True )
+    new_mat_name = old_mat + "_GLSL"
+    cmds.rename(new_mat, new_mat_name)
