@@ -120,19 +120,19 @@ attribute appdata {
 /* data passed from vertex shader to pixel shader */
 attribute cellVertexOutput {
     vec3 WorldNormal    : TEXCOORD1;
-    vec2 fUV : TEXCOORD4;
     vec3 WorldEyeVec    : TEXCOORD2;
     vec4 ObjPos    : TEXCOORD3;
-    vec4 WorldPosition : TEXCOORD5;
+    vec2 fUV : TEXCOORD4;
+    vec3 fPos : TEXCOORD5;
 };
 
 /* data passed from vertex shader to pixel shader */
 attribute cellPixelInput {
     vec3 WorldNormal    : TEXCOORD1;
-    vec2 fUV : TEXCOORD4;
     vec3 WorldEyeVec    : TEXCOORD2;
     vec4 ObjPos    : TEXCOORD3;
-    vec4 WorldPosition : TEXCOORD5;
+    vec2 fUV : TEXCOORD4;
+    vec3 fPos : TEXCOORD5;
 };
 
 /* data output by the fragment shader */
@@ -145,16 +145,14 @@ GLSLShader VS
 {
 	void main(void)
 	{
-	    vec3 Nw = normalize((gWorldITXf * vec4(Normal,0.0)).xyz);
-    	WorldNormal = Nw;
-    	vec4 Po = vec4(Position.xyz,1);
-    	vec3 Pw = (gWorldXf*Po).xyz;
-    	WorldPosition = vec4(Pw.x, Pw.y, Pw.z, 1.0);
-    	WorldEyeVec = normalize(gViewIXf[3].xyz - Pw);
-    	vec4 hpos = gWvpXf * Po;
-    	fUV = vec2(UV[0], 1.0-UV[1]);
-    	ObjPos = Po;
-    	gl_Position = hpos;	
+        vec3 Nw = normalize((gWorldITXf * vec4(Normal,0.0)).xyz);
+        WorldNormal = Nw;
+        vec4 Po = vec4(Position.xyz,1);
+        vec3 Pw = (gWorldXf*Po).xyz;
+        WorldEyeVec = normalize(gViewIXf[3].xyz - Pw);
+        fUV = UV;
+        fPos = Position;
+        gl_Position = gWvpXf * Po;
 	}
 }
 
