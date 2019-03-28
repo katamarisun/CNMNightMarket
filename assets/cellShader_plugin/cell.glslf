@@ -355,7 +355,7 @@ uniform texture2D diffuse_color_tex <
 >;
 #endif
 
-uniform vec4 diffuse_color
+uniform vec4 diffuseColor
 #if OGSFX
     <
     string UIName = "Diffuse Color";
@@ -571,7 +571,7 @@ void main()
     if (use_tex) {
         surfaceColor = texture2D(gStripeSampler, fUV);
     } else {
-        surfaceColor = diffuse_color;
+        surfaceColor = diffuseColor;
     }
 
     vec4 darken_value = vec4(1.0 - darken_base);

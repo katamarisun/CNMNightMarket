@@ -1,36 +1,5 @@
 #version 410
 // ----------------------------------------- Header ------------------------------------------
-#define OGSFX 1
-
-#define HIDE_OGSFX_UNIFORMS 0
-#define HIDE_OGSFX_STREAMS 1
-#define HIDE_OGSFX_CODE 1
-
-#include "cell.glslv"
-#include "cell.glslf"
-
-#define HIDE_OGSFX_UNIFORMS 1
-#define HIDE_OGSFX_STREAMS 0
-#define HIDE_OGSFX_CODE 1
-
-#include "cell.glslv"
-#include "cell.glslf"
-
-#define HIDE_OGSFX_UNIFORMS 1
-#define HIDE_OGSFX_STREAMS 1
-#define HIDE_OGSFX_CODE 0
-
-// Vertex shader.
-GLSLShader VS
-{
-#include "cell.glslv"
-}
-
-// Fragment shader.
-GLSLShader FS
-{
-#include "cell.glslf"
-}
 
 uniform vec2 ShadowFilterTaps[10] < string UIWidget = "None"; > = {{-0.84052, -0.073954}, {-0.326235, -0.40583}, {-0.698464, 0.457259}, {-0.203356, 0.620585}, {0.96345, -0.194353}, {0.473434, -0.480026}, {0.519454, 0.767034}, {0.185461, -0.894523}, {0.507351, 0.064963}, {-0.321932, 0.595435}};
 
@@ -2606,7 +2575,7 @@ technique T0
 		TessEvaluationShader (in TCSDATA TES_IN, out SHADERDATA TES_OUT) = { Common_Funcs, TessEvaluationShader_Funcs, ShaderTessEval};
 		PixelShader (in SHADERDATA PS_IN, out PIXELDATA) = { Common_Funcs, PixelShader_Funcs, ShaderPixel};
 	}
-	
+
 	pass P1
 	<
 		string drawContext = "shadowPass";
@@ -2616,6 +2585,39 @@ technique T0
 		TessControlShader (in SHADERDATA TCS_IN, out TCSDATA TCS_OUT) = { Common_Funcs, TessControlShader_Funcs, ShaderTessControl};
 		TessEvaluationShader (in TCSDATA TES_IN, out SHADERDATA TES_OUT) = { Common_Funcs, TessEvaluationShader_Funcs, ShaderTessEval};
 		PixelShader (in SHADERDATA PS_IN, out PIXELDATAP1) = { Common_Funcs, PixelShader_Funcs, ShaderPixelP1};
+	}
+
+	pass P2
+	<
+		string drawContext = "transparentPeel";
+	>
+	{
+		VertexShader (in APPDATA, out SHADERDATA VS_OUT) = { Common_Funcs, VertexShader_Funcs, ShaderVertex};
+		TessControlShader (in SHADERDATA TCS_IN, out TCSDATA TCS_OUT) = { Common_Funcs, TessControlShader_Funcs, ShaderTessControl};
+		TessEvaluationShader (in TCSDATA TES_IN, out SHADERDATA TES_OUT) = { Common_Funcs, TessEvaluationShader_Funcs, ShaderTessEval};
+		PixelShader (in SHADERDATA PS_IN, out PIXELDATAP2) = { Common_Funcs, PixelShader_Funcs, ShaderPixelP2};
+	}
+
+	pass P3
+	<
+		string drawContext = "transparentPeelAndAvg";
+	>
+	{
+		VertexShader (in APPDATA, out SHADERDATA VS_OUT) = { Common_Funcs, VertexShader_Funcs, ShaderVertex};
+		TessControlShader (in SHADERDATA TCS_IN, out TCSDATA TCS_OUT) = { Common_Funcs, TessControlShader_Funcs, ShaderTessControl};
+		TessEvaluationShader (in TCSDATA TES_IN, out SHADERDATA TES_OUT) = { Common_Funcs, TessEvaluationShader_Funcs, ShaderTessEval};
+		PixelShader (in SHADERDATA PS_IN, out PIXELDATAP3) = { Common_Funcs, PixelShader_Funcs, ShaderPixelP3};
+	}
+
+	pass P4
+	<
+		string drawContext = "transparentWeightedAvg";
+	>
+	{
+		VertexShader (in APPDATA, out SHADERDATA VS_OUT) = { Common_Funcs, VertexShader_Funcs, ShaderVertex};
+		TessControlShader (in SHADERDATA TCS_IN, out TCSDATA TCS_OUT) = { Common_Funcs, TessControlShader_Funcs, ShaderTessControl};
+		TessEvaluationShader (in TCSDATA TES_IN, out SHADERDATA TES_OUT) = { Common_Funcs, TessEvaluationShader_Funcs, ShaderTessEval};
+		PixelShader (in SHADERDATA PS_IN, out PIXELDATAP4) = { Common_Funcs, PixelShader_Funcs, ShaderPixelP4};
 	}
 
 	pass P5
@@ -2630,20 +2632,3 @@ technique T0
 	}
 }
 
-// -------------------------------------- technique base color ---------------------------------------
-technique baseColor
-<
-	string transparency = "transparent";
-	string supportsAdvancedTransparency = "true";
-	string variableNameAsAttributeName = "false";
->
-{
-	pass P0
-	<
-		string drawContext = "colorPass";
-	>
-	{
-        VertexShader (in appdata, out cellVertexOutput) = VS;
-        PixelShader (in cellVertexOutput, out pixelOut) = FS;
-	}
-}
