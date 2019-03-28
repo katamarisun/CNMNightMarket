@@ -2,7 +2,7 @@
 import os
 maya_files = []
 
-directory = "../"
+directory = "../assets/ClothingAccessories"
 
 for root, dirs, files in os.walk(directory, topdown=False):
 	for name in files:
