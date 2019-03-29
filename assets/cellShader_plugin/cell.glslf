@@ -504,8 +504,17 @@ uniform sampler2D normalSampler
     Texture = <normalMap>;
 };
 
-#endif
 
+uniform float fudgeNormalHeight
+<
+    string UIWidget = "slider";
+    float UIMin = -3.00;
+    float UIMax = 3.0;
+    float UIStep = 0.01;
+    string UIName = "Fudge Normal Height";
+    string UIGroup = "Fudge Factors";
+> = 1.0;
+#endif
 
 //**********
 //	Input stream handling:
@@ -526,7 +535,8 @@ attribute cellPixelInput {
     vec4 WorldPosition : TEXCOORD5;
     vec3 WorldNormal    : TEXCOORD1;
     vec3 WorldEyeVec    : TEXCOORD2;
-    vec4 ObjPos    : TEXCOORD3;
+    vec3 fNormal : TEXCOORD3;
+    vec4 fTangent : TEXCOORD6;
     vec2 fUV : TEXCOORD4;
 };
 
@@ -585,19 +595,26 @@ vec4 blendNormal(vec4 base, vec4 blend, float opacity);
 vec4 blend( vec4 baseColor, vec4 blendColor, float blend, float opacity);
 
 float calc_alpha( float softness, float cutoff, float cos );
+vec3 TangentWorldConvertFunction(float TangentDirection, vec3 Normal, vec3 Tangent, vec3 Vector);
 
 void main()
 {
-    vec3 worldNormalFrag = WorldNormal;
-    if (use_normal) {
-        worldNormalFrag = normalize(texture( normalSampler, fUV ).rgb*2.0 - 1.0);
+    vec3 worldNormalFrag = normalize(WorldNormal);
+    vec3 NormOp = normalize(fNormal);
+    if (use_normal)
+    {
+        vec3 tangent = normalize(fTangent.xyz);
+        vec4 sample = texture(normalSampler, vec2(fUV[0], 1.0-fUV[1]));
+        vec3 ExpandRange = sample.xyz*2.0 - 1.0;
+        vec3 VectorConstruct = vec3(fudgeNormalHeight, fudgeNormalHeight, 1.0);
+        vec3 NormalMapH = (VectorConstruct.xyz * ExpandRange);
+        vec3 TangentWorldConvert2066 = TangentWorldConvertFunction(1.0, NormOp, tangent, NormalMapH);
+        worldNormalFrag = normalize(TangentWorldConvert2066);
     }
     
-    vec4 surfaceColor = vec4(0.0, 0.0, 0.0, 0.0);
+    vec4 surfaceColor = diffuseColor;
     if (use_tex) {
-        surfaceColor = texture2D(gStripeSampler, fUV);
-    } else {
-        surfaceColor = diffuseColor;
+        surfaceColor = texture2D(gStripeSampler, fUV);  
     }
 
     vec4 darken_value = vec4(1.0 - darken_base);
@@ -751,4 +768,12 @@ vec4 blend( vec4 baseColor, vec4 blendColor, float blend, float opacity )
     }
     return colorOut;
 }
+
+vec3 TangentWorldConvertFunction(float TangentDirection, vec3 Normal, vec3 Tangent, vec3 Vector)
+{
+        vec3 Bn = (TangentDirection * cross(Normal, Tangent));
+        mat3 toWorld = mat3(Tangent, Bn, Normal);
+        return (toWorld * Vector);
+}
+
 #endif

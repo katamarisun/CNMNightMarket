@@ -14,16 +14,33 @@ uniform mat4 gViewIXf : ViewInverse < string UIWidget="None"; >;
 
 /*** TWEAKABLES *********************************************/
 uniform mat4 world : World < string UIWidget = "None"; >;
+uniform mat4 worldI : WorldInverse < string UIWidget = "None"; >;
+uniform mat4 view : View < string UIWidget = "None"; >;
+uniform mat4 worldLocale : WorldLocaleOrigin < string UIWidget = "None"; >;
+uniform mat4 proj : Projection < string UIWidget = "None"; >;
+uniform mat4 viewI : ViewInverse < string UIWidget = "None"; >;
+uniform mat4 worldview : WorldView < string UIWidget = "None"; >;
+uniform mat4 worldviewprojI : WorldViewProjectionInverse < string UIWidget = "None"; >;
 
-uniform float cutoff
+uniform float cutoffOuter
 <
     string UIWidget = "slider";
     float UIMin = -4.0;
     float UIMax = 4.0;
     float UIStep = 0.01;
-    string UIName = "Normal Cutoff";
+    string UIName = "Outer Cutoff";
     string UIGroup = "Lantern Colors";
 > = 0.911;
+
+uniform float cutoffMiddle
+<
+    string UIWidget = "slider";
+    float UIMin = -4.0;
+    float UIMax = 4.0;
+    float UIStep = 0.01;
+    string UIName = "Middle Cutoff";
+    string UIGroup = "Lantern Colors";
+> = 0.5;
 
 uniform float softness
 <
@@ -55,6 +72,16 @@ uniform float darkenFudge
     string UIGroup = "Fudge Factors";
 > = 0.17;
 
+uniform float lightenFudge
+<
+    string UIWidget = "slider";
+    float UIMin = 0.00;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Fudge Lighten";
+    string UIGroup = "Fudge Factors";
+> = 0.17;
+
 uniform float fudgeHotSpot
 <
     string UIWidget = "slider";
@@ -74,6 +101,26 @@ uniform float fudgePosition
     string UIName = "Distance to Halfway";
     string UIGroup = "Fudge Factors";
 > = 0.1;
+
+uniform float eyeSpreadFudge
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Softness Decrease with Eye Direction";
+    string UIGroup = "Fudge Factors";
+> = 1.0;
+
+uniform float fudgeNormalHeight
+<
+    string UIWidget = "slider";
+    float UIMin = -1.00;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Distance to Halfway";
+    string UIGroup = "Fudge Factors";
+> = 1.0;
 
 uniform float brightSpot
 <
@@ -120,6 +167,18 @@ uniform sampler2D diffuseSampler
     Texture = <diffuseColorTex>;
 };
 
+uniform texture2D insideMask <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Inside Mask";
+    string UIGroup = "Base Color";
+>;
+
+uniform sampler2D insideSampler
+    = sampler_state {
+    Texture = <insideMask>;
+};
 
 uniform bool use_normal
 #if OGSFX
@@ -148,13 +207,15 @@ attribute appdata {
     vec3 Position    : POSITION;
     vec2 UV        : TEXCOORD0;
     vec3 Normal    : NORMAL;
+    vec4 Tangent : TANGENT;
 };
 
 /* data passed from vertex shader to pixel shader */
 attribute cellVertexOutput {
     vec3 WorldNormal    : TEXCOORD1;
     vec3 WorldEyeVec    : TEXCOORD2;
-    vec4 ObjPos    : TEXCOORD3;
+    vec3 fNormal : TEXCOORD3;
+    vec4 fTangent : TEXCOORD6;
     vec2 fUV : TEXCOORD4;
     vec3 fPos : TEXCOORD5;
 };
@@ -163,7 +224,8 @@ attribute cellVertexOutput {
 attribute cellPixelInput {
     vec3 WorldNormal    : TEXCOORD1;
     vec3 WorldEyeVec    : TEXCOORD2;
-    vec4 ObjPos    : TEXCOORD3;
+    vec3 fNormal : TEXCOORD3;
+    vec4 fTangent : TEXCOORD6;
     vec2 fUV : TEXCOORD4;
     vec3 fPos : TEXCOORD5;
 };
@@ -182,8 +244,10 @@ GLSLShader VS
         vec3 Pw = (gWorldXf*Po).xyz;
         WorldEyeVec = normalize(gViewIXf[3].xyz - Pw);
         fUV = vec2(UV.x, 1-UV.y);
-        WorldNormal = normalize((gWorldITXf * vec4(Normal, 1.0)).xyz);
+        WorldNormal = (gWorldITXf * vec4(Normal,1.0)).xyz;
         fPos = Position;
+        fNormal = Normal;
+        fTangent = Tangent;
         gl_Position = gWvpXf * Po;
 	}
 }
@@ -196,32 +260,40 @@ GLSLShader FS
     float blendOverlay(float base, float blend);
     vec4 blendOverlay(vec4 base, vec4 blend);
     vec4 blendOverlay(vec4 base, vec4 blend, float opacity);
+    vec3 TangentWorldConvertFunction(float TangentDirection, vec3 Normal, vec3 Tangent, vec3 Vector);
 
 	void main(void)
 	{
-        vec3 worldNormalFrag = normalize(WorldNormal);
-        if (use_normal) {
-            worldNormalFrag = normalize(texture( normalSampler, fUV ).rgb*2.0 - 1.0);
+        vec3 worldNormalFrag = WorldNormal;
+        vec3 NormOp = normalize(fNormal);
+        if (use_normal)
+        {
+            vec3 tangent = normalize(fTangent).xyz;
+            vec4 sample = texture(normalSampler, fUV);
+            vec3 ExpandRange = sample.xyz*2.0 - 1.0;
+            vec3 VectorConstruct = vec3(fudgeNormalHeight, fudgeNormalHeight, 1.0);
+            vec3 NormalMapH = (VectorConstruct.xyz * ExpandRange);
+            vec3 TangentWorldConvert2066 = TangentWorldConvertFunction(1.0, NormOp, tangent, NormalMapH);
+            worldNormalFrag = normalize(TangentWorldConvert2066);
         }
 
-        vec4 light_color = texture2D(diffuseSampler, fUV);
-        vec4 base_color = light_color - vec4(darkenFudge);
+        vec4 base_color = texture2D(diffuseSampler, fUV) - vec4(darkenFudge);
 		float cos = abs(dot( worldNormalFrag, normalize(WorldEyeVec - vec3(0.0, eyeDirFudge, 0.0)) ));
-		float alphaOuter = calc_alpha( softness, cutoff, cos );
-        float alphaMiddle = calc_alpha( softness, cutoff / 2, cos );
-		vec4 gradientOuter = alphaOuter * outerColor;
+		float alphaOuter = calc_alpha( softness + eyeSpreadFudge * cos, cutoffOuter, cos );
+        float alphaMiddle = calc_alpha( softness + eyeSpreadFudge * cos, cutoffMiddle, cos );
+		vec4 gradientOuter = outerColor * alphaOuter;
         vec4 gradientMiddle = alphaMiddle * middleColor;
 
         float dodgeLerpFactor = 1.0;
-        if (base_color.r < fudgeHotSpot) {
-            dodgeLerpFactor = base_color.r;
+        if (base_color.g < fudgeHotSpot) {
+            dodgeLerpFactor = base_color.g;
         }
         vec4 colorDodge = lerp( base_color, saturate(hotColor + base_color), dodgeLerpFactor);
 
-        vec4 colorOverlay = blendOverlay(base_color, gradientOuter, base_color.r);
-        colorOverlay = blendOverlay(colorOverlay, gradientMiddle, base_color.r);
-        if (dot(normalize(vec3(WorldEyeVec.x, 0.0, WorldEyeVec.z)) , vec3(fPos)) < fudgePosition) {
-            colorOut = base_color;
+        vec4 colorOverlay = blendOverlay(base_color, gradientOuter, base_color.g);
+        colorOverlay = blendOverlay(colorOverlay, gradientMiddle, base_color.g);
+        if (length(texture2D(insideSampler, fUV).rgb) < 0.1) {
+            colorOut = base_color + vec4(lightenFudge);
         } else {
             colorOut = lerp(colorOverlay, colorDodge, pow(cos, brightSpot));
         }
@@ -254,6 +326,13 @@ GLSLShader FS
 
     float blendOverlay(float base, float blend) {
         return base<0.5?(2.0*base*blend):(1.0-2.0*(1.0-base)*(1.0-blend));
+    }
+
+    vec3 TangentWorldConvertFunction(float TangentDirection, vec3 Normal, vec3 Tangent, vec3 Vector)
+    {
+        vec3 Bn = (TangentDirection * cross(Normal, Tangent));
+        mat3 toWorld = mat3(Tangent, Bn, Normal);
+        return (toWorld * Vector);
     }
 }
 
