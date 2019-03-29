@@ -205,7 +205,7 @@ GLSLShader FS
         }
 
         vec4 light_color = texture2D(diffuseSampler, fUV);
-        vec4 base_color = light_color  - vec4(darkenFudge);
+        vec4 base_color = light_color - vec4(darkenFudge);
 		float cos = abs(dot( worldNormalFrag, normalize(WorldEyeVec - vec3(0.0, eyeDirFudge, 0.0)) ));
 		float alphaOuter = calc_alpha( softness, cutoff, cos );
         float alphaMiddle = calc_alpha( softness, cutoff / 2, cos );
@@ -221,7 +221,7 @@ GLSLShader FS
         vec4 colorOverlay = blendOverlay(base_color, gradientOuter, base_color.r);
         colorOverlay = blendOverlay(colorOverlay, gradientMiddle, base_color.r);
         if (dot(normalize(vec3(WorldEyeVec.x, 0.0, WorldEyeVec.z)) , vec3(fPos)) < fudgePosition) {
-            colorOut = light_color;
+            colorOut = base_color;
         } else {
             colorOut = lerp(colorOverlay, colorDodge, pow(cos, brightSpot));
         }
