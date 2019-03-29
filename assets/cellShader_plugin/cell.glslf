@@ -341,7 +341,7 @@ uniform bool use_tex
     string UIGroup = "Base Color";
 >
 #endif
-    = 0.0;
+    = 0;
 
 // Defining textures is only necessary in OGSFX since it 
 // can be assigned automatically to a sampler
@@ -482,6 +482,28 @@ uniform sampler2D oclusion_sampler
 #endif
     ;
 
+uniform bool use_normal
+#if OGSFX
+<
+    string UIName = "Use Normal Map";
+    string UIGroup = "Base Color";
+>
+#endif
+    = 0;
+
+uniform texture2D normalMap <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Normal Map";
+    string UIGroup = "Base Color";
+>;
+
+uniform sampler2D normalSampler
+    = sampler_state {
+    Texture = <normalMap>;
+};
+
 #endif
 
 
@@ -566,7 +588,11 @@ float calc_alpha( float softness, float cutoff, float cos );
 
 void main()
 {
-
+    vec3 worldNormalFrag = WorldNormal;
+    if (use_normal) {
+        worldNormalFrag = normalize(texture( normalSampler, fUV ).rgb*2.0 - 1.0);
+    }
+    
     vec4 surfaceColor = vec4(0.0, 0.0, 0.0, 0.0);
     if (use_tex) {
         surfaceColor = texture2D(gStripeSampler, fUV);
@@ -577,8 +603,8 @@ void main()
     vec4 darken_value = vec4(1.0 - darken_base);
     surfaceColor = blendSubtract(surfaceColor, darken_value);
 
-    float key_cos = dot( normalize(WorldNormal), vec3(kXPos, kYPos, kZPos));
-    float bounce_cos = dot( normalize(WorldNormal), vec3(bXPos, bYPos, bZPos));
+    float key_cos = dot( normalize(worldNormalFrag), vec3(kXPos, kYPos, kZPos));
+    float bounce_cos = dot( normalize(worldNormalFrag), vec3(bXPos, bYPos, bZPos));
 
     float bounce_mask = calc_alpha ( bSoftness, bCutoff, bounce_cos );
     float key_mask = calc_alpha ( kSoftness, kCutoff, key_cos );
