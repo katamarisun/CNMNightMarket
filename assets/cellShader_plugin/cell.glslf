@@ -482,39 +482,6 @@ uniform sampler2D oclusion_sampler
 #endif
     ;
 
-uniform bool use_normal
-#if OGSFX
-<
-    string UIName = "Use Normal Map";
-    string UIGroup = "Base Color";
->
-#endif
-    = 0;
-
-uniform texture2D normalMap <
-    string ResourceName = "";
-    string ResourceType = "2D";
-    // string UIWidget = "None";
-    string UIDesc = "Normal Map";
-    string UIGroup = "Base Color";
->;
-
-uniform sampler2D normalSampler
-    = sampler_state {
-    Texture = <normalMap>;
-};
-
-
-uniform float fudgeNormalHeight
-<
-    string UIWidget = "slider";
-    float UIMin = -3.00;
-    float UIMax = 3.0;
-    float UIStep = 0.01;
-    string UIName = "Fudge Normal Height";
-    string UIGroup = "Fudge Factors";
-> = 1.0;
-
 #endif
 
 
@@ -534,10 +501,10 @@ uniform float fudgeNormalHeight
 
 /* data passed from vertex shader to pixel shader */
 attribute cellPixelInput {
-    vec4 fNormal : TEXCOORD5;
+    vec4 WorldPosition : TEXCOORD5;
     vec3 WorldNormal    : TEXCOORD1;
     vec3 WorldEyeVec    : TEXCOORD2;
-    vec4 fTangent    : TEXCOORD3;
+    vec4 ObjPos    : TEXCOORD3;
     vec2 fUV : TEXCOORD4;
 };
 
@@ -596,34 +563,22 @@ vec4 blendNormal(vec4 base, vec4 blend, float opacity);
 vec4 blend( vec4 baseColor, vec4 blendColor, float blend, float opacity);
 
 float calc_alpha( float softness, float cutoff, float cos );
-vec3 TangentWorldConvertFunction(float TangentDirection, vec3 Normal, vec3 Tangent, vec3 Vector);
 
 void main()
 {
 
-    vec3 worldNormalFrag = normalize(WorldNormal);
-    vec3 NormOp = normalize(vec3(fNormal));
-    if (use_normal)
-    {
-        vec3 tangent = normalize(fTangent.xyz);
-        vec4 sample = texture(normalSampler, fUV);
-        vec3 ExpandRange = sample.xyz*2.0 - 1.0;
-        vec3 VectorConstruct = vec3(fudgeNormalHeight, fudgeNormalHeight, 1.0);
-        vec3 NormalMapH = (VectorConstruct.xyz * ExpandRange);
-        vec3 TangentWorldConvert2066 = TangentWorldConvertFunction(1.0, NormOp, tangent, NormalMapH);
-        worldNormalFrag = normalize(TangentWorldConvert2066);
-    }
-    
-    vec4 surfaceColor = diffuseColor;
+    vec4 surfaceColor = vec4(0.0, 0.0, 0.0, 0.0);
     if (use_tex) {
-        surfaceColor = texture2D(gStripeSampler, fUV);  
+        surfaceColor = texture2D(gStripeSampler, fUV);
+    } else {
+        surfaceColor = diffuseColor;
     }
 
     vec4 darken_value = vec4(1.0 - darken_base);
     surfaceColor = blendSubtract(surfaceColor, darken_value);
 
-    float key_cos = dot( normalize(worldNormalFrag), vec3(kXPos, kYPos, kZPos));
-    float bounce_cos = dot( normalize(worldNormalFrag), vec3(bXPos, bYPos, bZPos));
+    float key_cos = dot( normalize(WorldNormal), vec3(kXPos, kYPos, kZPos));
+    float bounce_cos = dot( normalize(WorldNormal), vec3(bXPos, bYPos, bZPos));
 
     float bounce_mask = calc_alpha ( bSoftness, bCutoff, bounce_cos );
     float key_mask = calc_alpha ( kSoftness, kCutoff, key_cos );
@@ -740,13 +695,6 @@ float calc_alpha( float softness, float cutoff, float cos )
         }
     }
     return result_alpha;
-}
-
-vec3 TangentWorldConvertFunction(float TangentDirection, vec3 Normal, vec3 Tangent, vec3 Vector)
-{
-        vec3 Bn = (TangentDirection * cross(Normal, Tangent));
-        mat3 toWorld = mat3(Tangent, Bn, Normal);
-        return (toWorld * Vector);
 }
 
 vec4 blend( vec4 baseColor, vec4 blendColor, float blend, float opacity )

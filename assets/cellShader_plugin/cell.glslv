@@ -117,10 +117,10 @@ attribute appdata {
 
 /* data passed from vertex shader to pixel shader */
 attribute cellVertexOutput {
-    vec4 fNormal : TEXCOORD5;
+    vec4 WorldPosition : TEXCOORD5;
     vec3 WorldNormal    : TEXCOORD1;
     vec3 WorldEyeVec    : TEXCOORD2;
-    vec4 fTangent    : TEXCOORD3;
+    vec4 ObjPos    : TEXCOORD3;
     vec2 fUV : TEXCOORD4;
 };
 
@@ -152,14 +152,15 @@ out vec4 DCol;
 
 void main() 
 {
-    WorldNormal = (gWorldITXf * vec4(Normal, 1.0)).xyz;
+    vec3 Nw = normalize((gWorldITXf * vec4(Normal,0.0)).xyz);
+    WorldNormal = Nw;
     vec4 Po = vec4(Position.xyz,1);
     vec3 Pw = (gWorldXf*Po).xyz;
+    WorldPosition = vec4(Pw.x, Pw.y, Pw.z, 1.0);
     WorldEyeVec = normalize(gViewIXf[3].xyz - Pw);
     vec4 hpos = gWvpXf * Po;
     fUV = vec2(UV[0], 1.0-UV[1]);
-    fNormal = vec4(Normal,1.0);
-    fTangent = vec4(0.0, 0.0, 1.0, 1.0);
+    ObjPos = Po;
     gl_Position = hpos;
 }
 
