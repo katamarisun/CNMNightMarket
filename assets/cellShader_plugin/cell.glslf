@@ -341,7 +341,7 @@ uniform bool use_tex
     string UIGroup = "Base Color";
 >
 #endif
-    = 0.0;
+    = 0;
 
 // Defining textures is only necessary in OGSFX since it 
 // can be assigned automatically to a sampler
@@ -355,7 +355,7 @@ uniform texture2D diffuse_color_tex <
 >;
 #endif
 
-uniform vec4 diffuse_color
+uniform vec4 diffuseColor
 #if OGSFX
     <
     string UIName = "Diffuse Color";
@@ -482,7 +482,30 @@ uniform sampler2D oclusion_sampler
 #endif
     ;
 
+uniform bool use_normal
+#if OGSFX
+<
+    string UIName = "Use Normal Map";
+    string UIGroup = "Base Color";
+>
 #endif
+    = 0;
+
+uniform texture2D normalMap <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Normal Map";
+    string UIGroup = "Base Color";
+>;
+
+uniform sampler2D normalSampler
+    = sampler_state {
+    Texture = <normalMap>;
+};
+
+#endif
+
 
 //**********
 //	Input stream handling:
@@ -500,16 +523,17 @@ uniform sampler2D oclusion_sampler
 
 /* data passed from vertex shader to pixel shader */
 attribute cellPixelInput {
+    vec4 WorldPosition : TEXCOORD5;
     vec3 WorldNormal    : TEXCOORD1;
     vec3 WorldEyeVec    : TEXCOORD2;
     vec4 ObjPos    : TEXCOORD3;
     vec2 fUV : TEXCOORD4;
-    vec4 WorldPosition : TEXCOORD5;
 };
 
 /* data output by the fragment shader */
 attribute pixelOut 
 {
+    vec4 shadowColor:COLOR1;
     vec4 colorOut:COLOR0;
 }
 
@@ -564,42 +588,48 @@ float calc_alpha( float softness, float cutoff, float cos );
 
 void main()
 {
+    vec3 worldNormalFrag = WorldNormal;
+    if (use_normal) {
+        worldNormalFrag = normalize(texture( normalSampler, fUV ).rgb*2.0 - 1.0);
+    }
+    
     vec4 surfaceColor = vec4(0.0, 0.0, 0.0, 0.0);
     if (use_tex) {
-        surfaceColor = texture2D(gStripeSampler, vec2(fUV[0], 1.0-fUV[1]));
+        surfaceColor = texture2D(gStripeSampler, fUV);
     } else {
-        surfaceColor = diffuse_color;
+        surfaceColor = diffuseColor;
     }
 
     vec4 darken_value = vec4(1.0 - darken_base);
     surfaceColor = blendSubtract(surfaceColor, darken_value);
 
-    float key_cos = dot( WorldNormal, vec3(kXPos, kYPos, kZPos));
-    float bounce_cos = dot( WorldNormal, vec3(bXPos, bYPos, bZPos));
+    float key_cos = dot( normalize(worldNormalFrag), vec3(kXPos, kYPos, kZPos));
+    float bounce_cos = dot( normalize(worldNormalFrag), vec3(bXPos, bYPos, bZPos));
 
     float bounce_mask = calc_alpha ( bSoftness, bCutoff, bounce_cos );
     float key_mask = calc_alpha ( kSoftness, kCutoff, key_cos );
 
     if ( use_light_mask ) {
-        if ( texture2D(light_mask_sampler, vec2(fUV[0], 1.0-fUV[1]))[0] <= 0.3 ) {
+        if ( texture2D(light_mask_sampler, fUV )[0] <= 0.3 ) {
             key_mask = 0.0;
         }
     }
 
-    vec4 key_light = key_mask * blend( surfaceColor, kLightColor, kLightBlend, kLightOpacity);
+    vec4 key_light = blend( surfaceColor, kLightColor, kLightBlend, kLightOpacity);
 
-    vec4 key_shadow = (1.0 - key_mask) * blend( surfaceColor, kShadowColor, kShadowBlend, kShadowOpacity);
+    vec4 key_shadow = blend( surfaceColor, kShadowColor, kShadowBlend, kShadowOpacity);
     vec4 bounce_light = bounce_mask * blend( key_shadow, bLightColor, bLightBlend, bLightOpacity);
     vec4 bounce_shadow = ( 1 - bounce_mask ) * blend( key_shadow, bShadowColor, bShadowBlend, bShadowOpacity);
 
-    colorOut = key_light + (bounce_light + bounce_shadow);
+    colorOut = key_mask * key_light + (1.0 - key_mask) * (bounce_light + bounce_shadow);
+    //shadowColor = bounce_light + bounce_shadow;
 
     if ( use_ao ) {
-        colorOut = blendMultiply( colorOut, bShadowBlend*texture2D( oclusion_sampler, vec2(fUV[0], 1.0-fUV[1]) ), ao_opacity);
+        colorOut = blendMultiply( colorOut, bShadowBlend*texture2D( oclusion_sampler, fUV ), ao_opacity);
     }
 
     if ( use_opacity ) {
-        float opacity = texture2D( opacity_sampler, vec2(fUV[0], 1.0-fUV[1]) )[0];
+        float opacity = texture2D( opacity_sampler, fUV )[0];
         if (opacity <= 0.5) {
             discard;
         } else {
