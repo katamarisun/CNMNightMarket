@@ -207,7 +207,6 @@ attribute appdata {
     vec3 Position    : POSITION;
     vec2 UV        : TEXCOORD0;
     vec3 Normal    : NORMAL;
-    vec4 Tangent : TANGENT;
 };
 
 /* data passed from vertex shader to pixel shader */
@@ -247,7 +246,7 @@ GLSLShader VS
         WorldNormal = (gWorldITXf * vec4(Normal,1.0)).xyz;
         fPos = Position;
         fNormal = Normal;
-        fTangent = Tangent;
+        fTangent = vec4(0.0, 0.0, 1.0, 1.0);
         gl_Position = gWvpXf * Po;
 	}
 }

@@ -113,16 +113,14 @@ attribute appdata {
     vec3 Position    : POSITION;
     vec2 UV        : TEXCOORD0;
     vec3 Normal    : NORMAL;
-    vec4 Tangent    : TANGENT;
 };
 
 /* data passed from vertex shader to pixel shader */
 attribute cellVertexOutput {
-    vec4 WorldPosition : TEXCOORD5;
+    vec4 fNormal : TEXCOORD5;
     vec3 WorldNormal    : TEXCOORD1;
     vec3 WorldEyeVec    : TEXCOORD2;
-    vec3 fNormal : TEXCOORD3;
-    vec4 fTangent : TEXCOORD6;
+    vec4 fTangent    : TEXCOORD3;
     vec2 fUV : TEXCOORD4;
 };
 
@@ -157,12 +155,11 @@ void main()
     WorldNormal = (gWorldITXf * vec4(Normal, 1.0)).xyz;
     vec4 Po = vec4(Position.xyz,1);
     vec3 Pw = (gWorldXf*Po).xyz;
-    WorldPosition = vec4(Pw.x, Pw.y, Pw.z, 1.0);
     WorldEyeVec = normalize(gViewIXf[3].xyz - Pw);
     vec4 hpos = gWvpXf * Po;
     fUV = vec2(UV[0], 1.0-UV[1]);
-    fNormal = Normal;
-    fTangent = Tangent;
+    fNormal = vec4(Normal,1.0);
+    fTangent = vec4(0.0, 0.0, 1.0, 1.0);
     gl_Position = hpos;
 }
 

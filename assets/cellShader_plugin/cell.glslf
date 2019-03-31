@@ -341,7 +341,7 @@ uniform bool use_tex
     string UIGroup = "Base Color";
 >
 #endif
-    = 0;
+    = 0.0;
 
 // Defining textures is only necessary in OGSFX since it 
 // can be assigned automatically to a sampler
@@ -514,7 +514,9 @@ uniform float fudgeNormalHeight
     string UIName = "Fudge Normal Height";
     string UIGroup = "Fudge Factors";
 > = 1.0;
+
 #endif
+
 
 //**********
 //	Input stream handling:
@@ -532,11 +534,10 @@ uniform float fudgeNormalHeight
 
 /* data passed from vertex shader to pixel shader */
 attribute cellPixelInput {
-    vec4 WorldPosition : TEXCOORD5;
+    vec4 fNormal : TEXCOORD5;
     vec3 WorldNormal    : TEXCOORD1;
     vec3 WorldEyeVec    : TEXCOORD2;
-    vec3 fNormal : TEXCOORD3;
-    vec4 fTangent : TEXCOORD6;
+    vec4 fTangent    : TEXCOORD3;
     vec2 fUV : TEXCOORD4;
 };
 
@@ -599,12 +600,13 @@ vec3 TangentWorldConvertFunction(float TangentDirection, vec3 Normal, vec3 Tange
 
 void main()
 {
+
     vec3 worldNormalFrag = normalize(WorldNormal);
-    vec3 NormOp = normalize(fNormal);
+    vec3 NormOp = normalize(vec3(fNormal));
     if (use_normal)
     {
         vec3 tangent = normalize(fTangent.xyz);
-        vec4 sample = texture(normalSampler, vec2(fUV[0], 1.0-fUV[1]));
+        vec4 sample = texture(normalSampler, fUV);
         vec3 ExpandRange = sample.xyz*2.0 - 1.0;
         vec3 VectorConstruct = vec3(fudgeNormalHeight, fudgeNormalHeight, 1.0);
         vec3 NormalMapH = (VectorConstruct.xyz * ExpandRange);
@@ -740,6 +742,13 @@ float calc_alpha( float softness, float cutoff, float cos )
     return result_alpha;
 }
 
+vec3 TangentWorldConvertFunction(float TangentDirection, vec3 Normal, vec3 Tangent, vec3 Vector)
+{
+        vec3 Bn = (TangentDirection * cross(Normal, Tangent));
+        mat3 toWorld = mat3(Tangent, Bn, Normal);
+        return (toWorld * Vector);
+}
+
 vec4 blend( vec4 baseColor, vec4 blendColor, float blend, float opacity )
 {
     vec4 colorOut = vec4(0.0, 0.0, 0.0, 0.0);
@@ -768,12 +777,4 @@ vec4 blend( vec4 baseColor, vec4 blendColor, float blend, float opacity )
     }
     return colorOut;
 }
-
-vec3 TangentWorldConvertFunction(float TangentDirection, vec3 Normal, vec3 Tangent, vec3 Vector)
-{
-        vec3 Bn = (TangentDirection * cross(Normal, Tangent));
-        mat3 toWorld = mat3(Tangent, Bn, Normal);
-        return (toWorld * Vector);
-}
-
 #endif
