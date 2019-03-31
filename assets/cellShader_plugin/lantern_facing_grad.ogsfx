@@ -150,7 +150,7 @@ GLSLShader VS
         vec4 Po = vec4(Position.xyz,1);
         vec3 Pw = (gWorldXf*Po).xyz;
         WorldEyeVec = normalize(gViewIXf[3].xyz - Pw);
-        fUV = vec2(UV.x, 1-UV.y);
+        fUV = UV;
         fPos = Position;
         gl_Position = gWvpXf * Po;
 	}

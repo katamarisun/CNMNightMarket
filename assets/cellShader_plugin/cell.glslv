@@ -152,7 +152,8 @@ out vec4 DCol;
 
 void main() 
 {
-    WorldNormal = normalize((gWorldITXf * vec4(Normal, 1.0)).xyz);
+    vec3 Nw = normalize((gWorldITXf * vec4(Normal,0.0)).xyz);
+    WorldNormal = Nw;
     vec4 Po = vec4(Position.xyz,1);
     vec3 Pw = (gWorldXf*Po).xyz;
     WorldPosition = vec4(Pw.x, Pw.y, Pw.z, 1.0);
