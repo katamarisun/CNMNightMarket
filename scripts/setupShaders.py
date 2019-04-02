@@ -92,6 +92,7 @@ for grp in grp_map_pxrSurfs.keys():
     #--------------------------------------
     if (not cmds.objExists(surf[:-4] + "_GLSL")):
         new_GLSL = cmds.createNode( 'GLSLShader' );
+        cmds.setAttr ( new_GLSL + ".technique", "main", type="string" )
         cmds.setAttr( new_GLSL + ".shader", project_dir + "/assets/cellShader_plugin/cell.ogsfx", type="string" )
         #Plug the old diffuse into the GLSL shader
         diffuse_textures = cmds.listConnections ( lamb + ".color" )
@@ -99,12 +100,14 @@ for grp in grp_map_pxrSurfs.keys():
             cmds.connectAttr ( diffuse_textures[0] + ".outColor", new_GLSL + ".diffuse_color_tex", force=True )
             cmds.setAttr ( new_GLSL + ".use_tex", 1)
         else:
-            diffuse_color = cmds.getAttr (surf + ".diffuseColor")[0]
-            cmds.setAttr (new_GLSL + ".diffuseColor", diffuse_color[0], diffuse_color[1], diffuse_color[2], type="double3")
+            diffuse_color_full = cmds.getAttr (surf + ".diffuseColor")[0]
+            trip = (diffuse_color_full[0], diffuse_color_full[1], diffuse_color_full[2])
+            cmds.setAttr (new_GLSL + ".diffuseColorRGB", trip[0], trip[1], trip[2], type="double3")
 
         #Create a normal map and plug that in
         normalmap_textures = cmds.listConnections ( surf + ".bumpNormal" )
         if (normalmap_textures):
+            cmds.setAttr ( new_GLSL + ".technique", "fancier", type="string" )
             norm_orig_name = ""
             if ( cmds.nodeType ( normalmap_textures[0]) == "PxrNormalMap" ):
                 norm_orig_name = cmds.getAttr ( normalmap_textures[0] + ".filename" )
@@ -136,6 +139,24 @@ for grp in grp_map_pxrSurfs.keys():
             cmds.setAttr ( new_GLSL + ".use_normal", 1)
         else:
             cmds.setAttr ( new_GLSL + ".use_normal", 0)
-            
+
         new_GLSL_name = surf[:-4] + "_GLSL"
         cmds.rename(new_GLSL, new_GLSL_name)
+
+        surfLocName = surf[:-4] + "_Loc"
+        loc = surfLocName
+        if (not cmds.objExists( surfLocName ) ):
+            loc = cmds.spaceLocator ( name=surfLocName )[0]
+            cmds.hyperShade( objects=grp )
+            mesh = cmds.ls(sl=True)[0]
+            mesh = mesh[:mesh.find('Shape')] + mesh[mesh.find('Shape')+5:]
+            pos = cmds.xform(mesh, q=True, ws=True, rp=True)
+            cmds.move ( pos[0], pos[1], pos[2], surfLocName, absolute=True )
+            cmds.parent( surfLocName, mesh )
+            cmds.hide (loc)
+
+        cmds.connectAttr ( loc + "Shape.worldPosition.worldPositionX", new_GLSL_name + ".objWorldOffsetX" )
+        cmds.connectAttr ( loc + "Shape.worldPosition.worldPositionY", new_GLSL_name + ".objWorldOffsetY" )
+        cmds.connectAttr ( loc + "Shape.worldPosition.worldPositionZ", new_GLSL_name + ".objWorldOffsetZ" )
+
+

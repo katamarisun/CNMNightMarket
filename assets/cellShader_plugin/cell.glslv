@@ -86,9 +86,6 @@ uniform mat4 gViewIXf;
 
 /*** TWEAKABLES *********************************************/
 
-// apps should expect this to be normalized
-uniform vec3 gLamp0Dir = vec3(0.7,-0.7,-0.7);
-
 #endif // OGSFX
 
 #endif // HIDE_OGSFX_UNIFORMS

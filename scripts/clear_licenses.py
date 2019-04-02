@@ -2,7 +2,7 @@
 import os
 maya_files = []
 
-directory = "../assets/SetProps/Stalls"
+directory = "..\\assets\\Food"
 
 for root, dirs, files in os.walk(directory, topdown=False):
 	for name in files:
@@ -11,6 +11,9 @@ for root, dirs, files in os.walk(directory, topdown=False):
 
 file_count = 0
 for file in maya_files:
+	print("Looing at ", file, "\n")
+	if "gardenprops" in file:
+		continue
 	hasLicense = False
 	with open(file, "r") as f:
 		new_f = f.readlines()

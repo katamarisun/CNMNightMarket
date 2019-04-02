@@ -13,6 +13,58 @@ uniform mat4 gViewIXf : ViewInverse < string UIWidget="None"; >;
 
 
 /*** TWEAKABLES *********************************************/
+
+uniform bool use_presence
+<
+    string UIName = "Use Presence Map";
+    string UIGroup = "Appearance";
+>
+    = 0.0;
+
+
+uniform texture2D presence_map <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Presence Map";
+    string UIGroup = "Appearance";
+>;
+
+uniform sampler2D presence_sampler
+    = sampler_state {
+    Texture = <presence_map>;
+};
+
+uniform float masterOpacity
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Master Opacity";
+    string UIGroup = "Appearance";
+> = 1.0;
+
+uniform bool use_opacity
+<
+    string UIName = "Use Opacity Map";
+    string UIGroup = "Appearance";
+> = 0.0;
+
+
+uniform texture2D opacity_map <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Opacity Map";
+    string UIGroup = "Appearance";
+>;
+
+uniform sampler2D opacity_sampler
+    = sampler_state {
+    Texture = <opacity_map>;
+};
+
 uniform float cutoff
 <
     string UIWidget = "slider";
@@ -184,6 +236,7 @@ GLSLShader FS
         colorOverlay = blendOverlay(colorOverlay, gradientMiddle, base_color.r);
 
         colorOut = lerp(colorOverlay, colorDodge, pow(cos, brightSpot));
+        colorOut = vec4(vec3(colorOut), masterOpacity);
 	}
 
 	float calc_alpha( float softness, float cutoff, float cos )

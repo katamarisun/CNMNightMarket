@@ -1,40 +1,6 @@
 #if !OGSFX
 #version 330
 #endif
-/*********************************************************************NVMH3****
-*******************************************************************************
-$Revision: #1 $
-
-This GLSL sample was converted from HLSL. Here are the original comments:
-
-Copyright NVIDIA Corporation 2008
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
-*AS IS* AND NVIDIA AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES, EITHER EXPRESS
-OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS FOR A PARTICULAR PURPOSE.  appdata NO EVENT SHALL NVIDIA OR ITS SUPPLIERS
-BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES
-WHATSOEVER (INCLUDING, qOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS,
-BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR ANY OTHER PECUNIARY
-LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THIS SOFTWARE, EVEN IF
-NVIDIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
-
-% Brick pattern, with controls, using texture-based patterning.
-% The lighting here is PURELY lambert and from a directional source,
-% 	so it's done in the vertex shader.
-
-keywords: material pattern virtual_machine
-
-$Date: 2008/07/21 $
-
-keywords: OpenGL
-
-To learn more about shading, shaders, and to bounce ideas off other shader
-    authors and users, visit the NVIDIA Shader Library Forums at:
-
-    http://developer.nvidia.com/forums/
-
-*******************************************************************************
-******************************************************************************/
 
 /*****************************************************************/
 /*** EFFECT-SPECIFIC CODE BEGINS HERE ****************************/
@@ -55,18 +21,80 @@ To learn more about shading, shaders, and to bounce ideas off other shader
 
 #if !HIDE_OGSFX_UNIFORMS
 
-uniform float kCutoff
-#if OGSFX
+uniform bool use_presence
+<
+    string UIName = "Use Presence Map";
+    string UIGroup = "Appearance";
+>
+    = 0.0;
+
+
+uniform texture2D presence_map <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Presence Map";
+    string UIGroup = "Appearance";
+>;
+
+uniform sampler2D presence_sampler
+    = sampler_state {
+    Texture = <presence_map>;
+};
+
+uniform float masterOpacity
 <
     string UIWidget = "slider";
-    float UIMin = -1.0;
-    float UIMax = 4.0;
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Master Opacity";
+    string UIGroup = "Appearance";
+> = 1.0;
+
+uniform bool use_opacity
+<
+    string UIName = "Use Opacity Map";
+    string UIGroup = "Appearance";
+> = 0.0;
+
+
+uniform texture2D opacity_map <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Opacity Map";
+    string UIGroup = "Appearance";
+>;
+
+uniform sampler2D opacity_sampler
+    = sampler_state {
+    Texture = <opacity_map>;
+};
+
+
+uniform float kCutoff
+<
+    string UIWidget = "slider";
+    float UIMin = -10.0;
+    float UIMax = 10.0;
     float UIStep = 0.01;
     string UIName = "Normal Cutoff";
     string UIGroup = "Key Light";
+> = 0.4;
+
+uniform float kSoftness
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = 0.00;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Key Softness";
+    string UIGroup = "Key Light";
 >
 #endif
-    = 0.4;
+    = 0.0;
 
 uniform vec4 kLightColor
 #if OGSFX
@@ -143,19 +171,6 @@ uniform float kShadowOpacity
 #endif
     = 1.0;
 
-uniform float kSoftness
-#if OGSFX
-<
-    string UIWidget = "slider";
-    float UIMin = 0.00;
-    float UIMax = 1.0;
-    float UIStep = 0.01;
-    string UIName = "Key Softness";
-    string UIGroup = "Key Light";
->
-#endif
-    = 0.0;
-
 uniform float kXPos
 #if OGSFX
 <
@@ -195,6 +210,33 @@ uniform float kZPos
 #endif
     = 0.1;
 
+uniform bool pointGrad
+#if OGSFX
+<
+    string UIName = "Toggle Point Gradient";
+    string UIGroup = "Gradients";
+>
+#endif
+    = 0;
+
+uniform bool affectShadow
+#if OGSFX
+<
+    string UIName = "Affect Shadow Side";
+    string UIGroup = "Gradients";
+>
+#endif
+    = 1;
+
+uniform bool affectLight
+#if OGSFX
+<
+    string UIName = "Affect Light Side";
+    string UIGroup = "Gradients";
+>
+#endif
+    = 0;
+
 uniform float bCutoff
 #if OGSFX
 <
@@ -202,18 +244,70 @@ uniform float bCutoff
     float UIMin = -1.0;
     float UIMax = 2.0;
     float UIStep = 0.01;
-    string UIName = "Bounce Cutoff";
-    string UIGroup = "Bounce Light";
+    string UIName = "Gradient Cutoff";
+    string UIGroup = "Gradients";
 >
 #endif
     = 0.1;
 
+uniform float bSoftness
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = 0.01;
+    float UIMax = 2.0;
+    float UIStep = 0.01;
+    string UIName = "Gradient Softness";
+    string UIGroup = "Gradients";
+>
+#endif
+    = 0.5;
+
+uniform float bXPos
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "X Position";
+    string UIGroup = "Gradients";
+>
+#endif
+    = -0.1;
+
+uniform float bYPos
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Y Position";
+    string UIGroup = "Gradients";
+>
+#endif
+    = -1.0;
+
+uniform float bZPos
+#if OGSFX
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Z Position";
+    string UIGroup = "Gradients";
+>
+#endif
+    = -0.5;
+
 uniform vec4 bLightColor
 #if OGSFX
     <
-    string UIName = "Bounce Light Color";
+    string UIName = "Gradient Color1";
     string UIWidget = "Color";
-    string UIGroup = "Bounce Light";
+    string UIGroup = "Gradients";
 > = {0.5, 0.5, 0.5, 1.0f};
 #else
    = vec4(0.5, 0.5, 0.5, 1.0);
@@ -226,8 +320,8 @@ uniform float bLightBlend
     float UIMin = 0.0;
     float UIMax = 8.0;
     float UIStep = 1.0;
-    string UIName = "Light Blending Mode";
-    string UIGroup = "Bounce Light";
+    string UIName = "Color1 Blending Mode";
+    string UIGroup = "Gradients";
 >
 #endif
     = 1.0;
@@ -239,8 +333,8 @@ uniform float bLightOpacity
     float UIMin = 0.0;
     float UIMax = 1.0;
     float UIStep = 0.1;
-    string UIName = "Light Opacity";
-    string UIGroup = "Bounce Light";
+    string UIName = "Color1 Opacity";
+    string UIGroup = "Gradients";
 >
 #endif
     = 1.0;
@@ -248,9 +342,9 @@ uniform float bLightOpacity
 uniform vec4 bShadowColor
 #if OGSFX
 <
-    string UIName = "Bounce Shadow Color";
+    string UIName = "Gradient Color2";
     string UIWidget = "Color";
-    string UIGroup = "Bounce Light";
+    string UIGroup = "Gradients";
 > = {0.5, 0.5, 0.5, 1.0f};
 #else
    = vec4(0.5, 0.5, 0.5, 1.0f);
@@ -263,8 +357,8 @@ uniform float bShadowBlend
     float UIMin = 0.0;
     float UIMax = 8.0;
     float UIStep = 1.0;
-    string UIName = "Shadow Blending Mode";
-    string UIGroup = "Bounce Light";
+    string UIName = "Color2 Blending Mode";
+    string UIGroup = "Gradients";
 >
 #endif
     = 0.0;
@@ -276,63 +370,11 @@ uniform float bShadowOpacity
     float UIMin = 0.0;
     float UIMax = 1.0;
     float UIStep = 0.1;
-    string UIName = "Shadow Opacity";
-    string UIGroup = "Bounce Light";
+    string UIName = "Color2 Opacity";
+    string UIGroup = "Gradients";
 >
 #endif
     = 1.0;
-
-uniform float bSoftness
-#if OGSFX
-<
-    string UIWidget = "slider";
-    float UIMin = 0.01;
-    float UIMax = 2.0;
-    float UIStep = 0.01;
-    string UIName = "Bounce Softness";
-    string UIGroup = "Bounce Light";
->
-#endif
-    = 0.5;
-
-uniform float bXPos
-#if OGSFX
-<
-    string UIWidget = "slider";
-    float UIMin = -1.0;
-    float UIMax = 1.0;
-    float UIStep = 0.01;
-    string UIName = "Bounce X Position";
-    string UIGroup = "Bounce Light";
->
-#endif
-    = -0.1;
-
-uniform float bYPos
-#if OGSFX
-<
-    string UIWidget = "slider";
-    float UIMin = -1.0;
-    float UIMax = 1.0;
-    float UIStep = 0.01;
-    string UIName = "Bounce Y Position";
-    string UIGroup = "Bounce Light";
->
-#endif
-    = -1.0;
-
-uniform float bZPos
-#if OGSFX
-<
-    string UIWidget = "slider";
-    float UIMin = -1.0;
-    float UIMax = 1.0;
-    float UIStep = 0.01;
-    string UIName = "Bounce Z Position";
-    string UIGroup = "Bounce Light";
->
-#endif
-    = -0.5;
 	
 uniform bool use_tex
 #if OGSFX
@@ -411,33 +453,6 @@ uniform sampler2D light_mask_sampler
 #if OGSFX
     = sampler_state {
     Texture = <light_mask>;
-}
-#endif
-    ;
-
-uniform bool use_opacity
-#if OGSFX
-<
-    string UIName = "Use Opacity Map";
-    string UIGroup = "Opacity Map";
->
-#endif
-    = 0.0;
-
-#if OGSFX
-uniform texture2D opacity_map <
-    string ResourceName = "";
-    string ResourceType = "2D";
-    // string UIWidget = "None";
-    string UIDesc = "Opacity Map";
-    string UIGroup = "Opacity Map";
->;
-#endif
-
-uniform sampler2D opacity_sampler
-#if OGSFX
-    = sampler_state {
-    Texture = <opacity_map>;
 }
 #endif
     ;
@@ -602,13 +617,16 @@ void main()
         colorOut = blendMultiply( colorOut, bShadowBlend*texture2D( oclusion_sampler, fUV ), ao_opacity);
     }
 
-    if ( use_opacity ) {
-        float opacity = texture2D( opacity_sampler, fUV )[0];
+    if ( use_presence ) {
+        float opacity = texture2D( presence_sampler, fUV )[0];
         if (opacity <= 0.5) {
             discard;
-        } else {
-            colorOut.a = 1.0;
         }
+    }
+
+    colorOut = vec4(vec3(colorOut), masterOpacity);
+    if (use_opacity) {
+        colorOut.a = texture2D(opacity_sampler, fUV)[0];
     }
 }
 
