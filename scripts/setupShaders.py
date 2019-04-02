@@ -92,8 +92,7 @@ for grp in grp_map_pxrSurfs.keys():
     #--------------------------------------
     if (not cmds.objExists(surf[:-4] + "_GLSL")):
         new_GLSL = cmds.createNode( 'GLSLShader' );
-        cmds.setAttr ( new_GLSL + ".technique", "main", type="string" )
-        cmds.setAttr( new_GLSL + ".shader", project_dir + "/assets/cellShader_plugin/cell.ogsfx", type="string" )
+        cmds.setAttr( new_GLSL + ".shader", project_dir + "/assets/cellShader_plugin/cell_skin/skin.ogsfx", type="string" )
         #Plug the old diffuse into the GLSL shader
         diffuse_textures = cmds.listConnections ( lamb + ".color" )
         if (diffuse_textures):
@@ -107,7 +106,6 @@ for grp in grp_map_pxrSurfs.keys():
         #Create a normal map and plug that in
         normalmap_textures = cmds.listConnections ( surf + ".bumpNormal" )
         if (normalmap_textures):
-            cmds.setAttr ( new_GLSL + ".technique", "fancier", type="string" )
             norm_orig_name = ""
             if ( cmds.nodeType ( normalmap_textures[0]) == "PxrNormalMap" ):
                 norm_orig_name = cmds.getAttr ( normalmap_textures[0] + ".filename" )
@@ -148,12 +146,13 @@ for grp in grp_map_pxrSurfs.keys():
         if (not cmds.objExists( surfLocName ) ):
             loc = cmds.spaceLocator ( name=surfLocName )[0]
             cmds.hyperShade( objects=grp )
-            mesh = cmds.ls(sl=True)[0]
-            mesh = mesh[:mesh.find('Shape')] + mesh[mesh.find('Shape')+5:]
-            pos = cmds.xform(mesh, q=True, ws=True, rp=True)
-            cmds.move ( pos[0], pos[1], pos[2], surfLocName, absolute=True )
-            cmds.parent( surfLocName, mesh )
-            cmds.hide (loc)
+            if (len(cmds.ls(sl=True)) > 0):
+                mesh = cmds.ls(sl=True)[0]
+                mesh = mesh[:mesh.find('Shape')] + mesh[mesh.find('Shape')+5:]
+                pos = cmds.xform(mesh, q=True, ws=True, rp=True)
+                cmds.move ( pos[0], pos[1], pos[2], surfLocName, absolute=True )
+                cmds.parent( surfLocName, mesh )
+                cmds.hide (loc)
 
         cmds.connectAttr ( loc + "Shape.worldPosition.worldPositionX", new_GLSL_name + ".objWorldOffsetX" )
         cmds.connectAttr ( loc + "Shape.worldPosition.worldPositionY", new_GLSL_name + ".objWorldOffsetY" )

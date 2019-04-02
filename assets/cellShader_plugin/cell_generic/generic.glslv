@@ -78,7 +78,7 @@ To learn more about shading, shaders, and to bounce ideas off other shader
 /************* DATA STRUCTS **************/
 
 /* data from application vertex buffer */
-attribute normalappdata {
+attribute genericappdata {
     vec3 Position    : POSITION;
     vec2 UV        : TEXCOORD0;
     vec3 Normal    : NORMAL;
@@ -86,12 +86,12 @@ attribute normalappdata {
 };
 
 /* data passed from vertex shader to pixel shader */
-attribute normalcellVertexOutput {
+attribute genericcellVertexOutput {
     vec3 WorldNormal    : TEXCOORD1;
     vec3 WorldEyeVec    : TEXCOORD2;
     vec3 fNormal : TEXCOORD3;
     vec4 fTangent : TEXCOORD5;
-    vec4 fPosition : TEXCOORD6;
+    vec4 localPosition : TEXCOORD6;
     vec2 fUV : TEXCOORD4;
 };
 
@@ -124,17 +124,25 @@ vec3 TangentWorldConvertFunction(float TangentDirection, vec3 Normal, vec3 Tange
 
 void main() 
 {
-    vec4 Po = vec4(Position.xyz,1);
-    vec3 Pw = (gWorldXf*Po).xyz;
-    fPosition = vec4(Position, 1.0);
-    WorldEyeVec = normalize(gViewIXf[3].xyz - Pw);
-    vec4 hpos = gWvpXf * Po;
     fUV = vec2(UV[0], 1.0-UV[1]);
     fNormal = Normal;
     fTangent = Tangent;
-    WorldNormal = normalize((gWorldITXf * vec4(Normal,0.0)).xyz);
-    gl_Position = hpos;
 
+    vec3 sample = Normal;
+    if (use_normal) {
+        sample = texture2D(normalSampler, fUV).rgb;
+    }
+    float displacement = constDisplacement;
+    if ( use_disp ) {
+        displacement = (1.0 / 10 * constDisplacement) * ((texture2D(dispSampler, fUV).r * 2.0) - 1.0);
+    }
+    vec4 Po = vec4(Position.xyz + (sample * displacement), 1.0);    
+    vec3 Pw = (gWorldXf*Po).xyz;
+    localPosition = vec4(Position, 1.0)- vec4(objWorldOffsetX, objWorldOffsetY, objWorldOffsetZ, 0.0);
+    WorldEyeVec = normalize(gViewIXf[3].xyz - Pw);
+    WorldNormal = normalize((gWorldITXf * vec4(Normal,0.0)).xyz);
+
+    gl_Position = gWvpXf * Po;
 }
 
 vec3 TangentWorldConvertFunction(float TangentDirection, vec3 Normal, vec3 Tangent, vec3 Vector)

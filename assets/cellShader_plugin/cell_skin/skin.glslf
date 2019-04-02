@@ -157,6 +157,12 @@ uniform float kShadowOpacity
     string UIGroup = "Key Light";
 > = 1.0;
 
+uniform bool kplaneGrad
+<
+    string UIName = "Toggle Plane/Normal";
+    string UIGroup = "Key Light";
+> = 0.0;
+
 uniform float kXPos
 <
     string UIWidget = "slider";
@@ -187,11 +193,44 @@ uniform float kZPos
     string UIGroup = "Key Light";
 > = 0.1;
 
-uniform bool pointGrad
+uniform bool useSubsurf
 <
-    string UIName = "Toggle Point Gradient";
-    string UIGroup = "Gradients";
+    string UIName = "Use Subsurf Glow";
+    string UIGroup = "Subsurface";
 > = 1.0;
+
+uniform vec4 subColor
+    <
+    string UIName = "Band Color";
+    string UIWidget = "Color";
+    string UIGroup = "Subsurface";
+> = {0.7, 0.4, 0.4, 1.0f};
+
+uniform float subThickness
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Subsurface Thickness";
+    string UIGroup = "Subsurface";
+> = 0.5;
+
+uniform float subSoftness
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Subsurface Edge Softness";
+    string UIGroup = "Subsurface";
+> = 0.5;
+
+uniform bool bplaneGrad
+<
+    string UIName = "Toggle Plane/Normal";
+    string UIGroup = "Gradients";
+> = 0.0;
 
 uniform bool affectShadow
 <
@@ -283,8 +322,8 @@ uniform float bShadowOpacity
 uniform float bXPos
 <
     string UIWidget = "slider";
-    float UIMin = -1.0;
-    float UIMax = 1.0;
+    float UIMin = -2.0;
+    float UIMax = 2.0;
     float UIStep = 0.01;
     string UIName = "X Position";
     string UIGroup = "Gradients";
@@ -293,8 +332,8 @@ uniform float bXPos
 uniform float bYPos
 <
     string UIWidget = "slider";
-    float UIMin = -1.0;
-    float UIMax = 1.0;
+    float UIMin = -2.0;
+    float UIMax = 2.0;
     float UIStep = 0.01;
     string UIName = "Y Position";
     string UIGroup = "Gradients";
@@ -303,8 +342,8 @@ uniform float bYPos
 uniform float bZPos
 <
     string UIWidget = "slider";
-    float UIMin = -1.0;
-    float UIMax = 1.0;
+    float UIMin = -2.0;
+    float UIMax = 2.0;
     float UIStep = 0.01;
     string UIName = "Z Position";
     string UIGroup = "Gradients";
@@ -399,8 +438,6 @@ uniform sampler2D opacity_sampler
     = sampler_state {
     Texture = <opacity_map>;
 };
-
-
 
 uniform bool use_normal
 #if OGSFX
@@ -578,6 +615,7 @@ vec4 blendNormal(vec4 base, vec4 blend, float opacity);
 vec4 blend( vec4 baseColor, vec4 blendColor, float blend, float opacity);
 
 float calc_alpha( float softness, float cutoff, float cos );
+float calc_alpha_sub( float softness, float cutoff, float thickness, float cos );
 vec3 TangentWorldConvertFunction(float TangentDirection, vec3 Normal, vec3 Tangent, vec3 Vector);
 
 void main()
@@ -603,11 +641,20 @@ void main()
     vec4 darken_value = vec4(1.0 - darken_base);
     surfaceColor = blendSubtract(surfaceColor, darken_value);
 
-    float key_cos = dot( normalize(WorldNormal), vec3(kXPos, kYPos, kZPos));
-    float bounce_cos = dot( normalize(worldNormalGrad), vec3(bXPos, bYPos, bZPos));
+    float key_intensity = dot( normalize(WorldNormal), vec3(kXPos, kYPos, kZPos));
+    float bounce_intensity = dot( normalize(worldNormalGrad), vec3(bXPos, bYPos, bZPos));
 
-    float bounce_mask = calc_alpha ( bSoftness, bCutoff, bounce_cos );
-    float key_mask = calc_alpha ( kSoftness, kCutoff, key_cos );
+    if (bplaneGrad) {
+        vec3 distances = (vec3(localPosition) + vec3(bXPos, bYPos, bZPos) + 1.0) / 2.0;
+        bounce_intensity = max(max(distances.x, distances.y), distances.z);
+    }
+    if (kplaneGrad) {
+        vec3 distances = (vec3(localPosition) + vec3(kXPos, kYPos, kZPos) + 1.0) / 2.0;
+        key_intensity = max(max(distances.x, distances.y), distances.z);
+    }
+
+    float bounce_mask = calc_alpha ( bSoftness, bCutoff, bounce_intensity );
+    float key_mask = calc_alpha ( kSoftness, kCutoff, key_intensity );
 
     vec4 k_e_ShadowColor = kShadowColor;
     if ( use_light_mask ) {
@@ -616,6 +663,11 @@ void main()
             key_mask = lightMask;
             k_e_ShadowColor = eyeBrowColor;
         }
+    }
+    float sub_alpha = 0.0;
+    if (useSubsurf) {
+        sub_alpha = calc_alpha_sub( subSoftness, kCutoff, subThickness, cos );
+        surfaceColor = lerp( surfaceColor, saturate(subColor + surfaceColor), sub_alpha);
     }
 
     vec4 key_light = blend( surfaceColor, kLightColor, kLightBlend, kLightOpacity);
@@ -732,6 +784,35 @@ float calc_alpha( float softness, float cutoff, float cos )
             result_alpha = 1.0;
         } else {
             result_alpha = ( cos - lower_bound ) / ( 2 * softness );
+        }
+    }
+    return result_alpha;
+}
+
+float calc_alpha_sub( float softness, float cutoff, float thickness, float cos )
+{
+    float lower_bound = cutoff - thickness - softness;
+    float upper_bound = cutoff + thickness + softness;
+    float result_alpha = 0;
+    if (cos < cutoff) {
+        if (cos >= cutoff - thickness) {
+            result_alpha = 1.0;
+        } else {
+            if (cos < lower_bound) {
+                result_alpha = 0.0;
+            } else {
+                result_alpha = (cutoff - thickness - cos) / softness;
+            }
+        }
+    } else {
+        if (cos <= cutoff + thickness) {
+            result_alpha = 1.0;
+        } else {
+            if (cos > upper_bound) {
+                result_alpha = 0.0;
+            } else {
+                result_alpha = (cos - cutoff + thickness) / softness;
+            }
         }
     }
     return result_alpha;

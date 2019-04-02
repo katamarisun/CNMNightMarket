@@ -17,8 +17,8 @@
 #define HIDE_OGSFX_STREAMS 1
 #define HIDE_OGSFX_CODE 1
 
-#include "cell.glslv"
-#include "cell.glslf"
+#include "generic.glslv"
+#include "generic.glslf"
 
 //**********
 //	Input stream handling:
@@ -30,8 +30,8 @@
 #define HIDE_OGSFX_STREAMS 0
 #define HIDE_OGSFX_CODE 1
 
-#include "cell.glslv"
-#include "cell.glslf"
+#include "generic.glslv"
+#include "generic.glslf"
 
 //**********
 //	Code handling:
@@ -46,26 +46,26 @@
 #define HIDE_OGSFX_CODE 0
 
 // Vertex shader.
-GLSLShader VS
+GLSLShader genericVS
 {
-#include "cell.glslv"
+#include "generic.glslv"
 }
 
-// Fragment shader.
-GLSLShader FS
+// Vertex shader.
+GLSLShader genericFS
 {
-#include "cell.glslf"
+#include "generic.glslf"
 }
 
-technique Main
+technique generic
 {
 	pass P1
 	<
 		string drawContext = "colorPass";
 	>
 	{
-        VertexShader (in appdata, out cellVertexOutput) = VS;
-        PixelShader (in cellVertexOutput, out pixelOut) = FS;
+        VertexShader (in genericappdata, out genericcellVertexOutput) = genericVS;
+        PixelShader (in genericcellVertexOutput, out pixelOut) = genericFS;
 	}
 
 }
