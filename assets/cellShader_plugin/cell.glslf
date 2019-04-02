@@ -355,7 +355,7 @@ uniform texture2D diffuse_color_tex <
 >;
 #endif
 
-uniform vec4 diffuse_color
+uniform vec4 diffuseColor
 #if OGSFX
     <
     string UIName = "Diffuse Color";
@@ -501,11 +501,11 @@ uniform sampler2D oclusion_sampler
 
 /* data passed from vertex shader to pixel shader */
 attribute cellPixelInput {
-    vec3 WorldNormal    : TEXCOORD4;
-    vec2 fUV : TEXCOORD1;
+    vec4 WorldPosition : TEXCOORD5;
+    vec3 WorldNormal    : TEXCOORD1;
     vec3 WorldEyeVec    : TEXCOORD2;
     vec4 ObjPos    : TEXCOORD3;
-    vec4 WorldPosition : TEXCOORD0;
+    vec2 fUV : TEXCOORD4;
 };
 
 /* data output by the fragment shader */
@@ -571,7 +571,7 @@ void main()
     if (use_tex) {
         surfaceColor = texture2D(gStripeSampler, fUV);
     } else {
-        surfaceColor = diffuse_color;
+        surfaceColor = diffuseColor;
     }
 
     vec4 darken_value = vec4(1.0 - darken_base);

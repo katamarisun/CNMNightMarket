@@ -100,9 +100,42 @@ for grp in grp_map_pxrSurfs.keys():
             cmds.setAttr ( new_GLSL + ".use_tex", 1)
         else:
             diffuse_color = cmds.getAttr (surf + ".diffuseColor")[0]
-            cmds.setAttr (new_GLSL + ".diffuse_colorX", diffuse_color[0])
-            cmds.setAttr (new_GLSL + ".diffuse_colorY", diffuse_color[1])
-            cmds.setAttr (new_GLSL + ".diffuse_colorZ", diffuse_color[2])
+            cmds.setAttr (new_GLSL + ".diffuseColor", diffuse_color[0], diffuse_color[1], diffuse_color[2], type="double3")
 
+        #Create a normal map and plug that in
+        normalmap_textures = cmds.listConnections ( surf + ".bumpNormal" )
+        if (normalmap_textures):
+            norm_orig_name = ""
+            if ( cmds.nodeType ( normalmap_textures[0]) == "PxrNormalMap" ):
+                norm_orig_name = cmds.getAttr ( normalmap_textures[0] + ".filename" )
+            else:
+                norm_orig_name = cmds.getAttr ( normalmap_textures[0] + ".fileTextureName" )
+            
+            viewport_norm = ""
+            if (not cmds.objExists(surf[:-4] + "_view_norm" )):
+                viewport_norm = cmds.shadingNode('file', asTexture=True )
+            else:
+                viewport_norm = surf[:-4] + "_view_norm"
+            cmds.connectAttr ( viewport_norm + ".outColor", new_GLSL + ".normalMap", force=True )
+
+            norm_filepath = norm_orig_name
+            norm_post = norm_orig_name[-4:]
+            if (norm_post == ".tex"):
+                norm_filepath = norm_orig_name[:-4]       
+
+            cmds.setAttr ( viewport_norm + ".fileTextureName",  norm_filepath, type="string" )
+        
+            #rename the new texture to match naming convention
+            new_norm_name = surf[:-4] + "_view_norm"
+            cmds.rename ( viewport_norm, new_norm_name )
+        
+            #rename the PxrSufrace texture to match naming convention
+            old_norm_rename = surf[:-4] + "_render_norm"
+            cmds.rename ( normalmap_textures[0], old_norm_rename )
+            cmds.connectAttr ( new_norm_name + ".outColor", new_GLSL + ".normalMap", force=True )
+            cmds.setAttr ( new_GLSL + ".use_normal", 1)
+        else:
+            cmds.setAttr ( new_GLSL + ".use_normal", 0)
+            
         new_GLSL_name = surf[:-4] + "_GLSL"
         cmds.rename(new_GLSL, new_GLSL_name)

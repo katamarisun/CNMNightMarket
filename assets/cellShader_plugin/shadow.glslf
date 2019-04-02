@@ -97,7 +97,7 @@ void main()
     if (use_tex) {
         surfaceColor = texture2D(gStripeSampler, fUV);
     } else {
-        surfaceColor = diffuse_color;
+        surfaceColor = diffuseColor;
     }
 
     vec4 darken_value = vec4(1.0 - darken_base);
