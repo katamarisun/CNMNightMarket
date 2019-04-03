@@ -108,12 +108,30 @@ uniform float3 KeyLightShadowColor : SHADOWCOLOR
 	string Object =  "Light 0";
 > = {0, 0, 0};
 
+uniform bool useGrad1
+<
+    string UIName = "Use Grad 1";
+    string UIGroup = "Light 1";
+> = 1.0;
+
 uniform float3 BounceLightColor : LIGHTCOLOR
 <
 	string UIName =  "Light 1 Color";
 	string UIWidget = "ColorPicker";
 	string Object =  "Light 1";
 > = {1.0, 1.0, 1.0};
+
+uniform bool useGrad2
+<
+    string UIName = "Use Grad 2";
+    string UIGroup = "Light 2";
+> = 0.0;
+
+uniform bool grad2OnTop
+<
+    string UIName = "Gradient Bellow Key";
+    string UIGroup = "Light 2";
+> = 0.0;
 
 uniform float3 GradientLightColor : LIGHTCOLOR
 <
@@ -279,11 +297,11 @@ uniform bool KeyLightShadowOn : SHADOWFLAG
 
 uniform float keyShadowCuttoff
 <
-	string UIName =  "Key Light Shadow Cuttoff";
+	string UIName =  "Cast Shadow Threshold";
 	float UIMin = 0;
 	float UIMax = 1.0;
 	float UIStep = 0.01;
-	string UIGroup =  "Fudge";
+	string Object = "Light 0";
 > = 0.3;
 
 uniform bool BounceLightShadowOn : SHADOWFLAG
@@ -405,8 +423,8 @@ uniform float kCutoff
     float UIMin = -10.0;
     float UIMax = 10.0;
     float UIStep = 0.01;
-    string UIName = "Normal Cutoff";
-    string UIGroup = "Key Light";
+    string UIName = "Key Cutoff";
+    string Object = "Light 0";
 > = 0.4;
 
 uniform float kSoftness
@@ -416,14 +434,14 @@ uniform float kSoftness
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Key Softness";
-    string UIGroup = "Key Light";
+    string Object = "Light 0";
 > = 0.0;
 
 uniform vec4 kLightColor
 <
     string UIName = "Key Light Color";
     string UIWidget = "Color";
-    string UIGroup = "Key Light";
+    string Object = "Light 0";
 
 > = {0.6, 0.6, 0.6, 1.0f};
 
@@ -434,7 +452,7 @@ uniform float kLightBlend
     float UIMax = 8.0;
     float UIStep = 1.0;
     string UIName = "Light Blending Mode";
-    string UIGroup = "Key Light";
+    string Object = "Light 0";
 > = 1.0;
 
 uniform float kLightOpacity
@@ -444,14 +462,14 @@ uniform float kLightOpacity
     float UIMax = 1.0;
     float UIStep = 0.1;
     string UIName = "Light Opacity";
-    string UIGroup = "Key Light";
+    string Object = "Light 0";
 > = 1.0;
 
 uniform vec4 kShadowColor
 <
     string UIName = "Key Shadow Color";
     string UIWidget = "Color";
-    string UIGroup = "Key Light";
+    string Object = "Light 0";
 > = {0.2, 0.2, 0.2, 1.0f};
 
 uniform float kShadowBlend
@@ -461,7 +479,7 @@ uniform float kShadowBlend
     float UIMax = 8.0;
     float UIStep = 1.0;
     string UIName = "Shadow Blending Mode";
-    string UIGroup = "Key Light";
+    string Object = "Light 0";
 > = 1.0;
 
 uniform float kShadowOpacity
@@ -471,13 +489,66 @@ uniform float kShadowOpacity
     float UIMax = 1.0;
     float UIStep = 0.1;
     string UIName = "Shadow Opacity";
-    string UIGroup = "Key Light";
+    string Object = "Light 0";
+> = 1.0;
+
+uniform bool useKeySpec
+<
+    string UIName = "Use Specular Highlight";
+    string UIGroup = "Light 0";
+> = 0;
+
+uniform float kSpecPower
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 300.0;
+    float UIStep = 0.1;
+    string UIName = "Specular Power";
+    string Object = "Light 0";
+> = 1.0;
+
+uniform float kSpecCuttoff
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Specular Cutoff";
+    string Object = "Light 0";
+> = 1.0;
+
+uniform vec4 kSpecularColor
+<
+    string UIName = "Specular Color";
+    string UIWidget = "Color";
+    string Object = "Light 0";
+> = {0.9, 0.9, 0.9, 1.0f};
+
+uniform float kSpecSoftness
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Specular Softness";
+    string Object = "Light 0";
+> = 0.0;
+
+uniform float kSpecBlend
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 8.0;
+    float UIStep = 1.0;
+    string UIName = "Specular Blend";
+    string Object = "Light 0";
 > = 1.0;
 
 uniform bool kplaneGrad
 <
     string UIName = "Toggle Plane/Normal";
-    string UIGroup = "Key Light";
+    string Object = "Light 0";
 > = 0.0;
 
 uniform float kXPos
@@ -487,7 +558,7 @@ uniform float kXPos
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Key X Position";
-    string UIGroup = "Key Light";
+    string Object = "Light 0";
 > = 0.1;
 
 uniform float kYPos
@@ -497,7 +568,7 @@ uniform float kYPos
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Key Y Position";
-    string UIGroup = "Key Light";
+    string Object = "Light 0";
 > = 1.0;
 
 uniform float kZPos
@@ -507,26 +578,38 @@ uniform float kZPos
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Key Z Position";
-    string UIGroup = "Key Light";
+    string Object = "Light 0";
 > = 0.1;
 
-uniform bool bplaneGrad
+uniform float bShadowCuttoff
 <
-    string UIName = "Toggle Plane/Normal";
-    string UIGroup = "Gradients";
-> = 1.0;
+	string UIName =  "Cast Shadow Threshold";
+	float UIMin = 0;
+	float UIMax = 1.0;
+	float UIStep = 0.01;
+	string Object = "Light 1";
+> = 0.3;
 
-uniform bool affectShadow
+uniform float cShadowCuttoff
+<
+	string UIName =  "Grad2 Light Shadow Cuttoff";
+	float UIMin = 0;
+	float UIMax = 1.0;
+	float UIStep = 0.01;
+	string Object = "Light 2";
+> = 0.3;
+
+uniform bool baffectShadow
 <
     string UIName = "Affect Shadow Side";
-    string UIGroup = "Gradients";
+    string Object = "Light 1";
 > = 1;
 
-uniform bool affectLight
+uniform bool baffectLight
 <
     string UIName = "Affect Light Side";
-    string UIGroup = "Gradients";
-> = 0;
+    string Object = "Light 1";
+> = 1;
 
 uniform float bCutoff
 <
@@ -535,7 +618,7 @@ uniform float bCutoff
     float UIMax = 2.0;
     float UIStep = 0.01;
     string UIName = "Gradient Cutoff";
-    string UIGroup = "Gradients";
+    string Object = "Light 1";
 > = 0.1;
 
 uniform float bSoftness
@@ -545,14 +628,14 @@ uniform float bSoftness
     float UIMax = 2.0;
     float UIStep = 0.01;
     string UIName = "Gradient Softness";
-    string UIGroup = "Gradients";
+    string Object = "Light 1";
 > = 0.5;
 
 uniform vec4 bLightColor
     <
     string UIName = "Gradient Color1";
     string UIWidget = "Color";
-    string UIGroup = "Gradients";
+    string Object = "Light 1";
 > = {0.5, 0.5, 0.5, 1.0f};
 
 uniform float bLightBlend
@@ -562,7 +645,7 @@ uniform float bLightBlend
     float UIMax = 8.0;
     float UIStep = 1.0;
     string UIName = "Color1 Blending Mode";
-    string UIGroup = "Gradients";
+    string Object = "Light 1";
 > = 1.0;
 
 uniform float bLightOpacity
@@ -572,15 +655,15 @@ uniform float bLightOpacity
     float UIMax = 1.0;
     float UIStep = 0.1;
     string UIName = "Color1 Opacity";
-    string UIGroup = "Gradients";
+    string Object = "Light 1";
 > = 1.0;
 
 uniform vec4 bShadowColor
 <
     string UIName = "Gradient Color2";
     string UIWidget = "Color";
-    string UIGroup = "Gradients";
-> = {0.5, 0.5, 0.5, 1.0f};
+    string Object = "Light 1";
+> = {0.3, 0.3, 0.3, 1.0f};
 
 uniform float bShadowBlend
 <
@@ -589,7 +672,7 @@ uniform float bShadowBlend
     float UIMax = 8.0;
     float UIStep = 1.0;
     string UIName = "Color2 Blending Mode";
-    string UIGroup = "Gradients";
+    string Object = "Light 1";
 > = 1.1;
 
 uniform float bShadowOpacity
@@ -599,7 +682,7 @@ uniform float bShadowOpacity
     float UIMax = 1.0;
     float UIStep = 0.1;
     string UIName = "Color2 Opacity";
-    string UIGroup = "Gradients";
+    string Object = "Light 1";
 > = 1.0;
 
 
@@ -610,7 +693,7 @@ uniform float bXPos
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "X Position";
-    string UIGroup = "Gradients";
+    string Object = "Light 1";
 > = -0.1;
 
 uniform float bYPos
@@ -620,7 +703,7 @@ uniform float bYPos
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Y Position";
-    string UIGroup = "Gradients";
+    string Object = "Light 1";
 > = 0.0;
 
 uniform float bZPos
@@ -630,8 +713,124 @@ uniform float bZPos
     float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Z Position";
-    string UIGroup = "Gradients";
+    string Object = "Light 1";
 > = -0.5;
+
+uniform float cCutoff
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 2.0;
+    float UIStep = 0.01;
+    string UIName = "Gradient Cutoff";
+    string Object = "Light 2";
+> = 0.1;
+
+uniform float cSoftness
+<
+    string UIWidget = "slider";
+    float UIMin = 0.01;
+    float UIMax = 2.0;
+    float UIStep = 0.01;
+    string UIName = "Gradient Softness";
+    string Object = "Light 2";
+> = 0.0;
+
+uniform bool cplaneGrad
+<
+    string UIName = "Toggle Max Dim";
+    string Object = "Light 2";
+> = 0.0;
+
+uniform bool cDotGrad
+<
+    string UIName = "Toggle Plane";
+    string Object = "Light 2";
+> = 1.0;
+
+uniform vec4 cLightColor
+    <
+    string UIName = "Gradient Color1";
+    string UIWidget = "Color";
+    string Object = "Light 2";
+> = {0.6, 0.6, 0.6, 1.0f};
+
+uniform float cLightBlend
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 8.0;
+    float UIStep = 1.0;
+    string UIName = "Color1 Blending Mode";
+    string Object = "Light 2";
+> = 1.0;
+
+uniform float cLightOpacity
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Color1 Opacity";
+    string Object = "Light 2";
+> = 1.0;
+
+uniform vec4 cShadowColor
+<
+    string UIName = "Gradient Color2";
+    string UIWidget = "Color";
+    string Object = "Light 2";
+> = {0.3, 0.3, 0.3, 1.0f};
+
+uniform float cShadowBlend
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 8.0;
+    float UIStep = 1.0;
+    string UIName = "Color2 Blending Mode";
+    string Object = "Light 2";
+> = 1.1;
+
+uniform float cShadowOpacity
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Color2 Opacity";
+    string Object = "Light 2";
+> = 1.0;
+
+uniform float cXPos
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "X Position";
+    string Object = "Light 2";
+> = 0.0;
+
+uniform float cYPos
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Y Position";
+    string Object = "Light 2";
+> = 1.0;
+
+uniform float cZPos
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Z Position";
+    string Object = "Light 2";
+> = 0.0;
 
 uniform sampler2D gStripeSampler
     = sampler_state {
@@ -643,33 +842,53 @@ uniform sampler2D light_mask_sampler
     Texture = <light_mask>;
 } ;
 
-uniform bool use_ao
-<
-    string UIName = "Use Ambient Oclusion";
-    string UIGroup = "Ambient Oclusion";
-> = 0.0;
 
-uniform float ao_opacity
+uniform bool use_disp
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 1.0;
-    float UIStep = 0.01;
-    string UIName = "AO Opacity";
-    string UIGroup = "Ambient Oclusion";
-> = 1.0;
+    string UIName = "Use Displacement Map";
+    string UIGroup = "Normals and Displacement";
+> = 0;
 
-uniform texture2D ambient_oclusion <
+uniform bool useNormal
+<
+    string UIName = "Use Normal Map";
+    string UIGroup = "Normals and Displacement";
+> = 0;
+
+uniform texture2D normalMap <
     string ResourceName = "";
     string ResourceType = "2D";
     // string UIWidget = "None";
-    string UIDesc = "Ambient Oclusion";
-    string UIGroup = "Ambient Oclusion";
+    string UIDesc = "Normal Map";
+    string UIGroup = "Normals and Displacement";
 >;
 
-uniform sampler2D oclusion_sampler
+uniform sampler2D normalSampler
     = sampler_state {
-    Texture = <ambient_oclusion>;
+    Texture = <normalMap>;
+};
+
+uniform float constDisplacement
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Constant Displacement";
+    string UIGroup = "Normals and Displacement";
+> = 0.0;
+
+uniform texture2D dispMap <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Displacement Map";
+    string UIGroup = "Normals and Displacement";
+>;
+
+uniform sampler2D dispSampler
+    = sampler_state {
+    Texture = <dispMap>;
 };
 
 
@@ -723,53 +942,35 @@ uniform sampler2D opacity_sampler
     Texture = <opacity_map>;
 };
 
-uniform bool use_disp
+uniform bool use_ao
 <
-    string UIName = "Use Displacement Map";
-    string UIGroup = "Normals and Displacement";
-> = 0;
-
-uniform bool useNormal
-<
-    string UIName = "Use Normal Map";
-    string UIGroup = "Normals and Displacement";
-> = 0;
-
-uniform texture2D normalMap <
-    string ResourceName = "";
-    string ResourceType = "2D";
-    // string UIWidget = "None";
-    string UIDesc = "Normal Map";
-    string UIGroup = "Normals and Displacement";
->;
-
-uniform sampler2D normalSampler
-    = sampler_state {
-    Texture = <normalMap>;
-};
-
-uniform float constDisplacement
-<
-    string UIWidget = "slider";
-    float UIMin = -1.0;
-    float UIMax = 1.0;
-    float UIStep = 0.01;
-    string UIName = "Constant Displacement";
-    string UIGroup = "Normals and Displacement";
+    string UIName = "Use Ambient Oclusion";
+    string UIGroup = "Ambient Oclusion";
 > = 0.0;
 
-uniform texture2D dispMap <
+uniform float ao_opacity
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "AO Opacity";
+    string UIGroup = "Ambient Oclusion";
+> = 1.0;
+
+uniform texture2D ambient_oclusion <
     string ResourceName = "";
     string ResourceType = "2D";
     // string UIWidget = "None";
-    string UIDesc = "Displacement Map";
-    string UIGroup = "Normals and Displacement";
+    string UIDesc = "Ambient Oclusion";
+    string UIGroup = "Ambient Oclusion";
 >;
 
-uniform sampler2D dispSampler
+uniform sampler2D oclusion_sampler
     = sampler_state {
-    Texture = <dispMap>;
+    Texture = <ambient_oclusion>;
 };
+
 
 uniform float objWorldOffsetX
 <
@@ -1542,6 +1743,7 @@ attribute SHADERDATA
 	float4 WorldPosition : TEXCOORD0;
 	half3 FogFactor : TEXCOORD1;
 	vec2 fUV : TEXCOORD2;
+	float3 LocalPosition : TEXCOORD3;
 };
 
 GLSLShader ShaderVertex
@@ -1570,6 +1772,7 @@ void main(void)
 	} 
 	VS_OUT.FogFactor = float3(fogFactor, fogFactor, fogFactor); 
 	VS_OUT.fUV = vec2(UV[0], 1.0-UV[1]);
+	VS_OUT.LocalPosition = inPosition - vec3(objWorldOffsetX, objWorldOffsetY, objWorldOffsetZ );
 	float4 WVSpace = (wvp * gl_Position);
 	gl_Position = WVSpace;
 }
@@ -1589,7 +1792,7 @@ void main(void)
 	float InvertSatMask = (1.000000 - clamp(0.000000, 0.0, 1.0));
 	vec4 surfaceColor = diffuseColor;
     if (use_tex) {
-        surfaceColor = texture2D(gStripeSampler, PS_IN.fUV);  
+        surfaceColor = texture2D(gStripeSampler, PS_IN.fUV) - vec4(vec3(darken_base), 1.0);
     }
     float3 Color = float3(surfaceColor[0], surfaceColor[1], surfaceColor[2] );
 	float3 ReplaceDiffuseWithReflection = (Color.xyz * InvertSatMask);
@@ -1606,7 +1809,7 @@ void main(void)
         NormOp = normalize(TangentWorldConvert2066);
     }
 
-	float3 FlippedNormals = mix(-(NormOp), NormOp, float(gl_FrontFacing));
+	float3 FlippedNormals = normalize(mix(-(NormOp), NormOp, float(gl_FrontFacing)));
 
 	float ClampOpacity = clamp(1.000000, 0.0, 1.0);
 	float3 CameraPosition = viewI[3].xyz;
@@ -1614,15 +1817,13 @@ void main(void)
 	float3 CamVecNorm = normalize(CamVec);
 	float4 LightLoopTotal11 = float4(0,0,0,0);
 
-    vec4 key_light = blend( surfaceColor, kLightColor, kLightBlend, kLightOpacity);
-    vec4 key_shadow = blend( surfaceColor, kShadowColor, kShadowBlend, kShadowOpacity);
-
-
-    //--------------------------------------------- Key Light Calculations
+    //--------------------------------------------- Light Calculations
     int KeyLightIndex = 0;
     int Grad1LightIndex = 1;
+    int Grad2LightIndex = 2;
 	int KeyLightType = GetLightType(KeyLightIndex);
 	int Grad1LightType = GetLightType(Grad1LightIndex);
+	int Grad2LightType = GetLightType(Grad2LightIndex);
 
 	float3 NoTranslucency = float3(0.000000,0.000000,0.000000);
 
@@ -1630,93 +1831,118 @@ void main(void)
 	float3 KeyLightDir = GetLightDir(KeyLightIndex);
 	float3 Grad1LightPos = GetLightPos(Grad1LightIndex);
 	float3 Grad1LightDir = GetLightDir(Grad1LightIndex);
+	float3 Grad2LightPos = GetLightPos(Grad2LightIndex);
+	float3 Grad2LightDir = GetLightDir(Grad2LightIndex);
 
 	float3 KeyLightVector = normalize(GetLightVectorFunction(KeyLightIndex, KeyLightPos, PS_IN.WorldPosition.xyz, KeyLightType, KeyLightDir));
 	float3 Grad1LightVector = normalize(GetLightVectorFunction(Grad1LightIndex, Grad1LightPos, PS_IN.WorldPosition.xyz, Grad1LightType, Grad1LightDir));
+	float3 Grad2LightVector = normalize(GetLightVectorFunction(Grad2LightIndex, Grad2LightPos, PS_IN.WorldPosition.xyz, Grad2LightType, Grad2LightDir));
 
 	float key_cos = dot(normalize(FlippedNormals), KeyLightVector);
 	float grad1_cos = dot(normalize(FlippedNormals), Grad1LightVector);
+	float grad2_cos = dot(normalize(FlippedNormals), Grad2LightVector);
+
 	float key_surf_intensity = key_cos;
-	float grad1_surf_intensity = key_cos;
+
+	float grad1_surf_intensity = grad1_cos;
+	float grad2_surf_intensity = grad2_cos;
+	if (cplaneGrad) {
+		vec3 distances = (vec3(PS_IN.LocalPosition) + vec3(cXPos, cYPos, cZPos) + 1.0) / 2.0;
+		grad2_surf_intensity = max(max(distances.x, distances.y), distances.z);
+    }
+    if (cDotGrad) {
+		grad2_surf_intensity = dot(PS_IN.LocalPosition, vec3(cXPos, cYPos, cZPos));
+    }
 
 	float key_light_intensity = LightContributionFunction(KeyLightIndex, PS_IN.WorldPosition.xyz, KeyLightVector);
 	float grad1_light_intensity = LightContributionFunction(Grad1LightIndex, PS_IN.WorldPosition.xyz, Grad1LightVector);
+	float grad2_light_intensity = LightContributionFunction(Grad2LightIndex, PS_IN.WorldPosition.xyz, Grad2LightVector);
 
 	float grad1_mask = calc_alpha ( bSoftness, bCutoff, grad1_surf_intensity );
+	float grad2_mask = calc_alpha ( cSoftness, cCutoff, grad2_surf_intensity );
 	float key_mask = calc_alpha( kSoftness, kCutoff, key_surf_intensity );
 
-	if (key_light_intensity < keyShadowCuttoff) {
+    vec4 kShadowColorMasked = kShadowColor;
+    if ( use_light_mask ) {
+        float lightMask = texture2D(light_mask_sampler, PS_IN.fUV )[0];
+        if (lightMask <= lightMaskFudge) {
+            key_mask = lightMask;
+            kShadowColorMasked = eyeBrowColor;
+        }
+    }
+
+    if (key_light_intensity < keyShadowCuttoff) {
 		key_mask = 0.0;
 	}
 
+	vec4 key_light = blend( surfaceColor, kLightColor, kLightBlend, kLightOpacity);
+    vec4 key_shadow = blend( surfaceColor, kShadowColorMasked, kShadowBlend, kShadowOpacity);
+
     vec4 final_key_shadow = key_shadow;
     vec4 final_key_light = key_light;
-	if (affectShadow) {
-        vec4 shadow_color2 = ( 1 - grad1_mask ) * blend( key_shadow, bShadowColor, bShadowBlend, bShadowOpacity);
-        vec4 shadow_color1 = grad1_mask * blend( key_shadow, bLightColor, bLightBlend, bLightOpacity);
-        final_key_shadow = shadow_color2 + shadow_color1;
-    }
-    if (affectLight) {
-        vec4 light_color2 = ( 1 - grad1_mask ) * blend( key_light, bShadowColor, bShadowBlend, bShadowOpacity);
-        vec4 light_color1 = grad1_mask * blend( key_light, bLightColor, bLightBlend, bLightOpacity);
-        final_key_light = light_color2 + light_color1;
-    }
 
-	float3 Col = float3(1.000000,1.000000,1.000000);
-
-	float3 keyBlinnSpec = BlinnSpecularFunction(KeyLightIndex, KeyLightVector, FlippedNormals, CamVecNorm, 20.000000, Col.xyz);
+    if (useGrad1)
+    {
+		if (baffectShadow) {
+	        vec4 shadow_color2 = ( 1 - grad1_mask ) * blend( key_shadow, bShadowColor, bShadowBlend, bShadowOpacity);
+	        vec4 shadow_color1 = grad1_mask * blend( key_shadow, bLightColor, bLightBlend, bLightOpacity);
+	        final_key_shadow = shadow_color2 + shadow_color1;
+	    }
+	    if (baffectLight) {
+	        vec4 light_color2 = ( 1 - grad1_mask ) * blend( key_light, bShadowColor, bShadowBlend, bShadowOpacity);
+	        vec4 light_color1 = grad1_mask * blend( key_light, bLightColor, bLightBlend, bLightOpacity);
+	        final_key_light = light_color2 + light_color1;
+	    }
+    }
 
 	//---------------------------------------------
 
-	float3 SpecLightIntensity = (keyBlinnSpec * key_light_intensity);
-
 	outColor = key_mask * final_key_light + (1.0 - key_mask) * (final_key_shadow);
-    /*---------------------------------------------
 
-	for (int ActiveLightIndex = 0; ActiveLightIndex < 3; ++ActiveLightIndex)
-	{
-		if (ActiveLightIndex >= ClampDynamicLights) {continue;}
-		int _LightType = GetLightType(ActiveLightIndex);
-		bool IsAmbientLight = (_LightType == 5);
-		float4 IfAmbientLight384 = float4(0, 0, 0, 0);
-		if (IsAmbientLight)
-		{
-			float3 _LightColor = GetLightColor(ActiveLightIndex);
-			float _LightIntensity = GetLightIntensity(ActiveLightIndex);
-			AmbientLightOutput AmbientLight389 = AmbientLightFunction(ActiveLightIndex, ReplaceDiffuseWithReflection, _LightColor, _LightIntensity);
-			float3 PreMulAlphaAmbient = (ClampOpacity * (AmbientLight389.LightColor * 1.000000));
-			float4 VectorConstruct = float4(PreMulAlphaAmbient.x, PreMulAlphaAmbient.y, PreMulAlphaAmbient.z, 0.000000);
-			IfAmbientLight384 = VectorConstruct;
+	if (useGrad2) {
+		if (grad2OnTop) {
+			outColor = grad2_mask * blend( outColor, cLightColor, cLightBlend, cLightOpacity) 
+				+ (1- grad2_mask) * blend( outColor, cShadowColor, cShadowBlend, cShadowOpacity) ;
+		} else {
+			outColor = grad2_mask * blend( cLightColor, outColor, cLightBlend, 1.0 - cLightOpacity) 
+				+ (1- grad2_mask) * blend( cShadowColor, outColor, cShadowBlend, 1.0 - cShadowOpacity) ;
 		}
-		else
-		{
-			float3 NoTranslucency = float3(0.000000,0.000000,0.000000);
-			float3 _LightPos = GetLightPos(ActiveLightIndex);
-			float3 _LightDir = GetLightDir(ActiveLightIndex);
-			float3 GetLightVector848 = GetLightVectorFunction(ActiveLightIndex, _LightPos, PS_IN.WorldPosition.xyz, _LightType, _LightDir);
-			float3 LightVecNorm = normalize(GetLightVector848);
-			vec3 LambertDiffuse823 = LambertDiffuseFunction(ActiveLightIndex, ReplaceDiffuseWithReflection, FlippedNormals, LightVecNorm);
-			float LightContribution397 = LightContributionFunction(ActiveLightIndex, PS_IN.WorldPosition.xyz, GetLightVector848);
-			float3 AddTranslucency = (NoTranslucency.xyz + (LightContribution397 * LambertDiffuse823));
-			float3 Col = float3(1.000000,1.000000,1.000000);
-			float3 BlinnSpecular966 = BlinnSpecularFunction(ActiveLightIndex, LightVecNorm, FlippedNormals, CamVecNorm, 20.000000, Col.xyz);
-			float3 SpecLightIntensity = (BlinnSpecular966 * LightContribution397);
-			float3 Diffuse_Spec = ((ClampOpacity * AddTranslucency) + SpecLightIntensity);
-			DesaturateColorOutput DesaturateColor664 = DesaturateColorFunction(ActiveLightIndex, SpecLightIntensity);
-			float4 Color_Alpha = float4(Diffuse_Spec.x, Diffuse_Spec.y, Diffuse_Spec.z, DesaturateColor664.DesaturateColor);
-			IfAmbientLight384 = Color_Alpha;
-		}
-		float4 ApplyWeight395 = IfAmbientLight384;
-		LightLoopTotal11 += ApplyWeight395;
 	}
-
-
 
 	if (MayaHwFogEnabled) { 
 		float fogFactor = (1.0 - PS_IN.FogFactor.x) * MayaHwFogColor.a; 
-		VectorConstruct.rgb	= lerp(VectorConstruct.rgb, MayaHwFogColor.rgb, fogFactor); 
+		outColor.rgb = lerp(outColor.rgb, MayaHwFogColor.rgb, fogFactor); 
 	}
-	*/
+
+    if ( use_ao ) {
+        outColor = blendMultiply( outColor, bShadowBlend*texture2D( oclusion_sampler, PS_IN.fUV ), ao_opacity);
+    }
+
+    // --------------------------------------------- Key Spec Calculation
+    if (useKeySpec) {
+	    float3 CameraPosition = viewI[3].xyz;
+		float3 CamVec = (CameraPosition - PS_IN.WorldPosition.xyz);
+		float3 CamVecNorm = normalize(CamVec);
+
+		float3 keyHalf = normalize((KeyLightVector + CamVecNorm));
+		float keySpecCos = dot(FlippedNormals, keyHalf);
+		if (keySpecCos < 0.0) {
+			keySpecCos = 0.0;
+		}
+		float keySpecIntensity = pow(keySpecCos, kSpecPower);
+		float keySpecMask = calc_alpha( kSpecSoftness, kSpecCuttoff, keySpecIntensity );
+
+		outColor = blend(outColor, kSpecularColor, kSpecBlend, keySpecMask);
+	}
+	// ---------------------------------------------
+
+	if ( use_presence ) {
+        float opacity = texture2D( presence_sampler, PS_IN.fUV )[0];
+        if (opacity <= 0.5) {
+            discard;
+        }
+    }
+    outColor = vec4(vec3(outColor), masterOpacity);
 
 }
 

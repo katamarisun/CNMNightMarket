@@ -92,7 +92,7 @@ for grp in grp_map_pxrSurfs.keys():
     #--------------------------------------
     if (not cmds.objExists(surf[:-4] + "_GLSL")):
         new_GLSL = cmds.createNode( 'GLSLShader' );
-        cmds.setAttr( new_GLSL + ".shader", project_dir + "/assets/cellShader_plugin/cell_skin/skin.ogsfx", type="string" )
+        cmds.setAttr( new_GLSL + ".shader", "assets\cellShader_plugin\generic_shadows\shadows.ogsfx", type="string" )
         #Plug the old diffuse into the GLSL shader
         diffuse_textures = cmds.listConnections ( lamb + ".color" )
         if (diffuse_textures):
@@ -134,9 +134,9 @@ for grp in grp_map_pxrSurfs.keys():
             old_norm_rename = surf[:-4] + "_render_norm"
             cmds.rename ( normalmap_textures[0], old_norm_rename )
             cmds.connectAttr ( new_norm_name + ".outColor", new_GLSL + ".normalMap", force=True )
-            cmds.setAttr ( new_GLSL + ".use_normal", 1)
+            cmds.setAttr ( new_GLSL + ".useNormal", 1)
         else:
-            cmds.setAttr ( new_GLSL + ".use_normal", 0)
+            cmds.setAttr ( new_GLSL + ".useNormal", 0)
 
         new_GLSL_name = surf[:-4] + "_GLSL"
         cmds.rename(new_GLSL, new_GLSL_name)
