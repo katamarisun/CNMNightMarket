@@ -516,7 +516,7 @@ uniform float kSpecCuttoff
     float UIStep = 0.1;
     string UIName = "Specular Cutoff";
     string Object = "Light 0";
-> = 1.0;
+> = 0.1;
 
 uniform vec4 kSpecularColor
 <
@@ -663,7 +663,7 @@ uniform vec4 bShadowColor
     string UIName = "Gradient Color2";
     string UIWidget = "Color";
     string Object = "Light 1";
-> = {0.3, 0.3, 0.3, 1.0f};
+> = {0.2, 0.2, 0.2, 1.0f};
 
 uniform float bShadowBlend
 <

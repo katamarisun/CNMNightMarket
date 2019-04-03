@@ -122,7 +122,7 @@ for grp in grp_map_pxrSurfs.keys():
             norm_filepath = norm_orig_name
             norm_post = norm_orig_name[-4:]
             if (norm_post == ".tex"):
-                norm_filepath = norm_orig_name[:-4]       
+                norm_filepath = norm_orig_name[:-4]
 
             cmds.setAttr ( viewport_norm + ".fileTextureName",  norm_filepath, type="string" )
         
@@ -137,6 +137,35 @@ for grp in grp_map_pxrSurfs.keys():
             cmds.setAttr ( new_GLSL + ".useNormal", 1)
         else:
             cmds.setAttr ( new_GLSL + ".useNormal", 0)
+
+        #Create a presence map and plug that in
+        presence_textures = cmds.listConnections ( surf + ".presence" )
+        if (presence_textures):
+            presence_orig_name = cmds.getAttr ( presence_textures[0] + ".fileTextureName" )
+            
+            viewport_presence = ""
+            if (not cmds.objExists(surf[:-4] + "_view_presence" )):
+                viewport_presence = cmds.shadingNode('file', asTexture=True )
+            else:
+                viewport_presence = surf[:-4] + "_view_presence"
+            cmds.connectAttr ( viewport_presence + ".outColor", new_GLSL + ".presence_map", force=True )
+
+            presence_filepath = presence_orig_name
+            presence_post = presence_orig_name[-4:]
+            if (presence_post == ".tex"):
+                presence_filepath = presence_orig_name[:-4]
+
+            cmds.setAttr ( viewport_presence + ".fileTextureName",  presence_filepath, type="string" )
+        
+            #rename the new texture to match naming convention
+            new_presence_name = surf[:-4] + "_view_presence"
+            cmds.rename ( viewport_presence, new_presence_name )
+        
+            #rename the PxrSufrace texture to match naming convention
+            old_presence_rename = surf[:-4] + "_render_presence"
+            cmds.rename ( presence_textures[0], old_presence_rename )
+            
+            cmds.setAttr ( new_GLSL + ".use_presence", 1)
 
         new_GLSL_name = surf[:-4] + "_GLSL"
         cmds.rename(new_GLSL, new_GLSL_name)
