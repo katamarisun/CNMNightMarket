@@ -108,7 +108,7 @@ uniform int RimLightType : LIGHTTYPE
 uniform float4x4 KeyLightViewPrj : SHADOWMAPMATRIX
 <
 	string Object =  "Key Light";
-	string UIName =  "Light 0 Matrix";
+	string UIName =  "Key Matrix";
 	string UIWidget = "None";
 	int LightRef = 1;
 >;
@@ -116,7 +116,7 @@ uniform float4x4 KeyLightViewPrj : SHADOWMAPMATRIX
 uniform float4x4 BounceLightViewPrj : SHADOWMAPMATRIX
 <
 	string Object = "Fill/Bounce Light";
-	string UIName =  "Light 1 Matrix";
+	string UIName =  "Fill Matrix";
 	string UIWidget = "None";
 	int LightRef = 2;
 >;
@@ -124,10 +124,24 @@ uniform float4x4 BounceLightViewPrj : SHADOWMAPMATRIX
 uniform float4x4 Grad1LightViewPrj : SHADOWMAPMATRIX
 <
 	string Object =  "Gradient 1 Light";
-	string UIName =  "Light 2 Matrix";
+	string UIName =  "Grad 1 Matrix";
 	string UIWidget = "None";
 	int LightRef = 3;
 >;
+
+uniform float4x4 RimLightViewPrj : SHADOWMAPMATRIX
+<
+	string Object =  "Rim Light";
+	string UIName =  "Rim Matrix";
+	string UIWidget = "None";
+	int LightRef = 3;
+>;
+
+uniform bool useKey
+<
+    string UIName = "Use Key";
+    string UIGroup = "Key Light";
+> = 0;
 
 uniform float kCutoff
 <
@@ -699,7 +713,7 @@ uniform float grad1LightBlend
     float UIMin = 0.0;
     float UIMax = 8.0;
     float UIStep = 1.0;
-    string UIName = "Bright Blending Mode";
+    string UIName = "Bright Blend Mode";
     string Object = "Gradient 1 Light";
 > = 1.0;
 
@@ -709,7 +723,7 @@ uniform float grad1ShadowBlend
     float UIMin = 0.0;
     float UIMax = 8.0;
     float UIStep = 1.0;
-    string UIName = "Dark Blending Mode";
+    string UIName = "Dark Blend Mode";
     string Object = "Gradient 1 Light";
 > = 1.1;
 
@@ -719,7 +733,7 @@ uniform float grad1LightOpacity
     float UIMin = 0.0;
     float UIMax = 1.0;
     float UIStep = 0.1;
-    string UIName = "Color1 Opacity";
+    string UIName = "Bright Opacity";
     string Object = "Gradient 1 Light";
 > = 1.0;
 
@@ -729,7 +743,7 @@ uniform float grad1ShadowOpacity
     float UIMin = 0.0;
     float UIMax = 1.0;
     float UIStep = 0.1;
-    string UIName = "Color2 Opacity";
+    string UIName = "Dark Opacity";
     string Object = "Gradient 1 Light";
 > = 1.0;
 
@@ -867,7 +881,6 @@ uniform float grad1ZPos
 > = 0.0;
 
 // ---------------------------------------------------- Rim
-
 uniform bool useRim
 <
     string UIName = "Use Rim";
@@ -883,12 +896,12 @@ uniform bool rOnTop
 uniform float rCutoff
 <
     string UIWidget = "slider";
-    float UIMin = -1.0;
+    float UIMin = -2.0;
     float UIMax = 2.0;
     float UIStep = 0.01;
     string UIName = "Cutoff";
     string Object = "Rim Light";
-> = 0.1;
+> = 0.547;
 
 uniform float rSoftness
 <
@@ -904,14 +917,14 @@ uniform bool rToggleLightLight
 <
     string UIName = "Use Scene Light's Light Color";
     string UIGroup = "Rim Light";
-> = 0.0;
+> = 0;
 
 uniform vec4 rLightColor
     <
     string UIName = "Shader Light Color";
     string UIWidget = "Color";
     string Object = "Rim Light";
-> = {0.6, 0.6, 0.6, 1.0f};
+> = {0.9, 0.87, 0.6, 1.0f};
 
 uniform float rLightBlend
 <
@@ -919,9 +932,9 @@ uniform float rLightBlend
     float UIMin = 0.0;
     float UIMax = 8.0;
     float UIStep = 1.0;
-    string UIName = "Bright Mode";
+    string UIName = "Blend Mode";
     string Object = "Rim Light";
-> = 1.0;
+> = 3.5;
 
 uniform float rLightOpacity
 <
@@ -929,7 +942,7 @@ uniform float rLightOpacity
     float UIMin = 0.0;
     float UIMax = 1.0;
     float UIStep = 0.1;
-    string UIName = "Bright Opacity";
+    string UIName = "Opacity";
     string Object = "Rim Light";
 > = 1.0;
 
@@ -996,21 +1009,42 @@ uniform float3 RimLightShadowColor : LIGHTCOLOR
 	string Object =  "Rim Light";
 > = {1.0, 1.0, 1.0};
 
+uniform bool RimLightShadowOn : SHADOWFLAG
+<
+	string UIName =  "Enable Cast Shadows";
+	string Object =  "Rim Light";
+> = true;
+
+uniform float RimLightShadowBias : SHADOWBIAS
+<
+	string UIName =  "Shadow Bias (for artifacts)";
+	string Object =  "Rim Light";
+> = 0.01;
+
+uniform float rShadowCutoff
+<
+	string UIName =  "Cast Shadow Threshold";
+	float UIMin = 0;
+	float UIMax = 1.0;
+	float UIStep = 0.01;
+	string Object = "Rim Light";
+> = 0.3;
+
 uniform bool rPlaneDot
 <
     string UIName = "(X,Y,Z) Cutoff Plane";
     string Object = "Rim Light";
-> = 1.0;
+> = 1;
 
 uniform float rPlaneCutoff
 <
     string UIWidget = "slider";
     float UIMin = -1.0;
-    float UIMax = 2.0;
+    float UIMax = 1.0;
     float UIStep = 0.01;
     string UIName = "Rim Plane Cutoff Threshold";
     string Object = "Rim Light";
-> = 0.1;
+> = -0.063;
 
 uniform float rXPos
 <
@@ -1020,7 +1054,7 @@ uniform float rXPos
     float UIStep = 0.01;
     string UIName = "Plane Normal X";
     string Object = "Rim Light";
-> = 1.0;
+> = 0.0;
 
 uniform float rYPos
 <
@@ -1030,7 +1064,7 @@ uniform float rYPos
     float UIStep = 0.01;
     string UIName = "Plane Normal Y";
     string Object = "Rim Light";
-> = 1.0;
+> = 0.06;
 
 uniform float rZPos
 <
@@ -1040,7 +1074,7 @@ uniform float rZPos
     float UIStep = 0.01;
     string UIName = "Plane Normal Z";
     string Object = "Rim Light";
-> = 0.0;
+> = -0.807;
 
 // -------------------------------------------- Base Color
 
@@ -1151,7 +1185,7 @@ uniform bool useWorldDepth
 <
     string UIName = "Use World Depth Fog";
     string UIGroup = "World Depth Fog";
-> = 0;
+> = 1;
 
 uniform vec4 worldDepthColor
     <
@@ -1462,8 +1496,10 @@ float3 GetLightDir(int ActiveLightIndex)
 		return KeyLightDir; 
 	else if (ActiveLightIndex == 1) 
 		return BounceLightDir; 
-	else 
+	else if (ActiveLightIndex == 2) 
 		return Grad1LightDir; 
+	else 
+		return RimLightDir; 
 }
 
 float GetLightAttenuation(int ActiveLightIndex) 
@@ -1508,8 +1544,10 @@ bool GetLightShadowOn(int ActiveLightIndex)
 		return KeyLightShadowOn; 
 	else if (ActiveLightIndex == 1) 
 		return BounceLightShadowOn;
+	else if (ActiveLightIndex == 2) 
+		return Grad1LightShadowOn;
 	else
-		return Grad1LightShadowOn; 
+		return RimLightShadowOn; 
 }
 
 float4x4 GetLightViewPrj(int ActiveLightIndex) 
@@ -1517,9 +1555,11 @@ float4x4 GetLightViewPrj(int ActiveLightIndex)
 	if (ActiveLightIndex == 0) 
 		return KeyLightViewPrj; 
 	else if (ActiveLightIndex == 1) 
-		return BounceLightViewPrj; 
+		return BounceLightViewPrj;
+	else if (ActiveLightIndex == 2) 
+		return Grad1LightViewPrj; 
 	else
-		return Grad1LightViewPrj;
+		return RimLightViewPrj;
 }
 
 float GetLightShadowBias(int ActiveLightIndex) 
@@ -1527,9 +1567,11 @@ float GetLightShadowBias(int ActiveLightIndex)
 	if (ActiveLightIndex == 0) 
 		return KeyLightShadowBias; 
 	else if (ActiveLightIndex == 1) 
-		return BounceLightShadowBias; 
-	else
+		return BounceLightShadowBias;
+	else if (ActiveLightIndex == 2) 
 		return Grad1LightShadowBias;
+	else
+		return RimLightShadowBias;
 }
 
 float4 SampleFromShadowMap( int ActiveLightIndex, float2 UVs) 
@@ -1538,8 +1580,10 @@ float4 SampleFromShadowMap( int ActiveLightIndex, float2 UVs)
 		return textureLod(KeyLightShadowMapSampler, UVs, 0); 
 	else if (ActiveLightIndex == 1) 
 		return textureLod(BounceLightShadowMapSampler, UVs, 0);
-	else
+	else if (ActiveLightIndex == 2) 
 		return textureLod(Grad1LightShadowMapSampler, UVs, 0);
+	else
+		return textureLod(RimLightShadowMapSampler, UVs, 0);
 }
 
 float3 GetLightShadowColor(int ActiveLightIndex) 
@@ -2183,6 +2227,13 @@ void main(void)
 	float Grad1_surf_intensity = Grad1_cos;
 	float Rim_surf_intensity = Rim_cos;
 
+	float kLightBlendCalc = kLightBlend;
+	float kShadowBlendCalc = kShadowBlend;
+	if (!useKey) {
+		kLightBlendCalc = 0.0;
+		kShadowBlendCalc = 0.0;
+	}
+
 	if (kShaderPos) {
 		key_surf_intensity = dot(FlippedNormals, normalize(vec3(kXPos, kYPos, kZPos)));
 	}
@@ -2204,6 +2255,7 @@ void main(void)
 	float key_light_intensity = LightContributionFunction(KeyLightIndex, PS_IN.WorldPosition.xyz, KeyLightVector);
 	float Bounce_light_intensity = LightContributionFunction(BounceLightIndex, PS_IN.WorldPosition.xyz, BounceLightVector);
 	float Grad1_light_intensity = LightContributionFunction(Grad1LightIndex, PS_IN.WorldPosition.xyz, Grad1LightVector);
+	float Rim_light_intensity = LightContributionFunction(RimLightIndex, PS_IN.WorldPosition.xyz, RimLightVector);
 
 	float bSoftCalc = bSoftness;
 	float bCutoffCalc = bCutoff;
@@ -2229,8 +2281,8 @@ void main(void)
         }
     }
 
-	vec4 key_light = blend( surfaceColor, kLightColorCalc, kLightBlend, kLightOpacity);
-    vec4 key_shadow = blend( surfaceColor, kShadowColorCalc, kShadowBlend, kShadowOpacity);
+	vec4 key_light = blend( surfaceColor, kLightColorCalc, kLightBlendCalc, kLightOpacity);
+    vec4 key_shadow = blend( surfaceColor, kShadowColorCalc, kShadowBlendCalc, kShadowOpacity);
 
     vec4 final_key_shadow = key_shadow;
     vec4 final_key_light = key_light;
@@ -2280,24 +2332,23 @@ void main(void)
 	}
 
 	if (useRim) {
-		float facing_ratio = abs(dot(FlippedNormals, CamVecNorm));
-		float rimMask = calc_alpha ( rSoftness, rCutoff, facing_ratio);
-
 		if (rPlaneDot) {
-			float plane_dot = dot(PS_IN.LocalPosition, vec3(rXPos, rYPos, rZPos));
+			float plane_dot = dot(PS_IN.LocalPosition, normalize(vec3(rXPos, rYPos, rZPos)));
 			if (plane_dot <= rPlaneCutoff) {
-				rimMask = 0.0;
+				Rim_mask = 0.0;
 			}
     	}
+
+    	if (Rim_light_intensity < rShadowCutoff) {
+    		Rim_mask = 0.0;
+    	}
+
     	vec4 rLightColorCalc = rLightColor;
     	if ( rToggleLightLight ) {
     		rLightColorCalc = vec4(GetLightColor(RimLightIndex), 1.0);
     	}
-		outColor = blend( outColor, rLightColorCalc, rLightBlend, rimMask);
-		if (!rOnTop) {
-			rimMask = 1.0 - rimMask;
-			outColor = blend( rLightColorCalc, outColor, rLightBlend, rimMask);
-		}
+
+		outColor = blend( outColor, rLightColorCalc, rLightBlend, Rim_mask);
 	}
 	// ---------------------------------------------
 
