@@ -2348,7 +2348,8 @@ void main(void)
     		rLightColorCalc = vec4(GetLightColor(RimLightIndex), 1.0);
     	}
 
-		outColor = blend( outColor, rLightColorCalc, rLightBlend, Rim_mask);
+		vec4 rimColor = blend( outColor, rLightColorCalc, rLightBlend, Rim_mask);
+		outColor = lerp( outColor, rimColor, rLightOpacity);
 	}
 	// ---------------------------------------------
 
