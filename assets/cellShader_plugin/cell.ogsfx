@@ -18,10 +18,7 @@
 #define HIDE_OGSFX_CODE 1
 
 #include "cell.glslv"
-#include "normal_cell_pass\cell.glslv"
 #include "cell.glslf"
-#include "shadow.glslf"
-#include "normal_cell_pass\cell.glslf"
 
 //**********
 //	Input stream handling:
@@ -34,10 +31,7 @@
 #define HIDE_OGSFX_CODE 1
 
 #include "cell.glslv"
-#include "normal_cell_pass\cell.glslv"
 #include "cell.glslf"
-#include "shadow.glslf"
-#include "normal_cell_pass\cell.glslf"
 
 //**********
 //	Code handling:
@@ -56,29 +50,10 @@ GLSLShader VS
 {
 #include "cell.glslv"
 }
-
-// Vertex shader.
-GLSLShader NORMALVS
-{
-#include "normal_cell_pass\cell.glslv"
-}
-
 // Fragment shader.
 GLSLShader FS
 {
 #include "cell.glslf"
-}
-
-// Vertex shader.
-GLSLShader NORMALFS
-{
-#include "normal_cell_pass\cell.glslf"
-}
-
-// Fragment shader.
-GLSLShader SHADOW_FS
-{
-#include "shadow.glslf"
 }
 
 technique Main
@@ -90,32 +65,6 @@ technique Main
 	{
         VertexShader (in appdata, out cellVertexOutput) = VS;
         PixelShader (in cellVertexOutput, out pixelOut) = FS;
-	}
-
-}
-
-technique fancier
-{
-	pass P1
-	<
-		string drawContext = "colorPass";
-	>
-	{
-        VertexShader (in normalappdata, out normalcellVertexOutput) = NORMALVS;
-        PixelShader (in normalcellVertexOutput, out pixelOut) = NORMALFS;
-	}
-
-}
-
-technique onlyShadow
-{
-	pass P1
-	<
-		string drawContext = "colorPass";
-	>
-	{
-        VertexShader (in appdata, out cellVertexOutput) = VS;
-        PixelShader (in cellVertexOutput, out pixelOut) = SHADOW_FS;
 	}
 
 }

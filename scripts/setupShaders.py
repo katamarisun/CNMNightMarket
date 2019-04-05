@@ -12,6 +12,8 @@ grp_map_pxrSurfs = dict()
 grp_map_lamberts = dict()
 
 for surf in pxrSurfs:
+    if ':' in surf:
+        continue
     if not cmds.listConnections(surf):
         continue
     for con in cmds.listConnections(surf):
@@ -19,6 +21,8 @@ for surf in pxrSurfs:
             grp_map_pxrSurfs[con] = surf
 
 for lamb in lamberts:
+    if ':' in surf:
+        continue
     if not cmds.listConnections(lamb):
         continue
     for con in cmds.listConnections(lamb):
