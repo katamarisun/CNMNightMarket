@@ -1117,19 +1117,39 @@ uniform vec4 diffuseColor
     string UIGroup = "Base Color";
 > = {0.5, 0.5, 0.5, 1.0f};
 
-uniform float darken_base
+uniform float hueTweak
 <
     string UIWidget = "slider";
-    float UIMin = 0.0;
+    float UIMin = -1.0;
     float UIMax = 1.0;
     float UIStep = 0.01;
-    string UIName = "Darken Base";
+    string UIName = "Hue Tweak";
+    string UIGroup = "Base Color";
+> = 0.0;
+
+uniform float satTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Saturation Tweak";
+    string UIGroup = "Base Color";
+> = 0.0;
+
+uniform float valueTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Value Tweak";
     string UIGroup = "Base Color";
 > = 0.0;
 
 uniform bool use_light_mask
 <
-    string UIName = "Use Light Mask";
+    string UIName = "Use Light Mask (block key,bounce,etc... from dark parts of texture)";
     string UIGroup = "Base Color";
 > = 0.0;
 
@@ -1140,6 +1160,17 @@ uniform texture2D light_mask <
     string UIDesc = "Light Mask";
     string UIGroup = "Base Color";
 >;
+
+uniform float lightMaskFudge
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 0.5;
+    float UIStep = 0.01;
+    string UIName = "Cutoff To Mask from Light";
+    string UIGroup = "Base Color";
+> = 0.5;
+
 uniform sampler2D gStripeSampler
     = sampler_state {
     Texture = <diffuse_color_tex>;
@@ -1156,6 +1187,24 @@ uniform bool use_disp
     string UIName = "Use Displacement Map";
     string UIGroup = "Normals and Displacement";
 > = 0;
+
+uniform float constDisplacement
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Constant Displacement";
+    string UIGroup = "Normals and Displacement";
+> = 0.0;
+
+uniform texture2D dispMap <
+    string ResourceName = "";
+    string ResourceType = "2D";
+    // string UIWidget = "None";
+    string UIDesc = "Displacement Map";
+    string UIGroup = "Normals and Displacement";
+>;
 
 uniform bool useNormal
 <
@@ -1175,24 +1224,6 @@ uniform sampler2D normalSampler
     = sampler_state {
     Texture = <normalMap>;
 };
-
-uniform float constDisplacement
-<
-    string UIWidget = "slider";
-    float UIMin = -1.0;
-    float UIMax = 1.0;
-    float UIStep = 0.01;
-    string UIName = "Constant Displacement";
-    string UIGroup = "Normals and Displacement";
-> = 0.0;
-
-uniform texture2D dispMap <
-    string ResourceName = "";
-    string ResourceType = "2D";
-    // string UIWidget = "None";
-    string UIDesc = "Displacement Map";
-    string UIGroup = "Normals and Displacement";
->;
 
 uniform sampler2D dispSampler
     = sampler_state {
@@ -1318,23 +1349,6 @@ uniform float fudgeNormalHeight
     string UIName = "Normal Height Fudge";
     string UIGroup = "Fudge";
 > = 1.0;
-
-uniform float lightMaskFudge
-<
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 0.5;
-    float UIStep = 0.01;
-    string UIName = "Light Mask Fudge";
-    string UIGroup = "Fudge";
-> = 0.5;
-
-uniform vec4 eyeBrowColor
-<
-    string UIName = "Eyebrow Color";
-    string UIWidget = "Color";
-    string UIGroup = "Fudge";
-> = {0.2, 0.2, 0.2, 1.0f};
 
 // ---------------------------------------- Textures -----------------------------------------
 uniform texture2D KeyLightShadowMap : SHADOWMAP
@@ -1883,6 +1897,34 @@ vec4 blend( vec4 baseColor, vec4 blendColor, float blend, float opacity )
     return colorOut;
 }
 
+// ------------------------------------------------- HSV adjustment functions -------------------------------
+
+// All components are in the range [0…1], including hue.
+vec3 rgb2hsv(vec3 c)
+{
+    vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
+    vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
+    vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
+
+    float d = q.x - min(q.w, q.y);
+    float e = 1.0e-10;
+    return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
+}
+
+// All components are in the range [0…1], including hue.
+vec3 hsv2rgb(vec3 c)
+{
+    vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+    vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+    return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+}
+
+vec4 hsvadjust ( vec4 inColor, float hue_tweak, float sat_tweak, float value_tweak ) {
+    vec3 hsv = rgb2hsv(inColor.rgb);
+    hsv = hsv + vec3(hue_tweak, sat_tweak, value_tweak);
+    return vec4(hsv2rgb(hsv), inColor.a);
+}
+
 // --------------------------------------
 
 // -------------------------------------- GetLightVectorFunction --------------------------------------
@@ -2153,8 +2195,9 @@ GLSLShader ShaderPixel
 void main(void)
 {
 	vec4 surfaceColor = diffuseColor;
+    vec4 sampledColor = texture2D(gStripeSampler, PS_IN.fUV);
     if (use_tex) {
-        surfaceColor = texture2D(gStripeSampler, PS_IN.fUV) - vec4(vec3(darken_base), 1.0);
+        surfaceColor = hsvadjust ( sampledColor, hueTweak, satTweak, valueTweak );
     }
     float3 Color = float3(surfaceColor[0], surfaceColor[1], surfaceColor[2]);
 
@@ -2308,7 +2351,7 @@ void main(void)
         float lightMask = texture2D(light_mask_sampler, PS_IN.fUV )[0];
         if (lightMask <= lightMaskFudge) {
             key_mask = lightMask;
-            kShadowColorCalc = eyeBrowColor;
+            kShadowColorCalc = sampledColor;
         }
     }
 
