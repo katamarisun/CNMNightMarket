@@ -141,7 +141,7 @@ uniform bool useKey
 <
     string UIName = "Use Key";
     string UIGroup = "Key Light";
-> = 0;
+> = 1;
 
 uniform float kCutoff
 <
@@ -415,6 +415,12 @@ uniform float kZPos
     string Object = "Key Light";
 > = 0.1;
 
+uniform bool kUseNormal
+<
+    string UIName = "Use Normal Map";
+    string UIGroup = "Key Light";
+> = 0;
+
 // ------------------------------------------------------------ Fill/Bounce Light
 
 uniform bool useBounce
@@ -646,6 +652,12 @@ uniform float bZPos
     string UIName = "Z Position";
     string Object = "Fill/Bounce Light";
 > = -0.5;
+
+uniform bool bUseNormal
+<
+    string UIName = "Use Normal Map";
+    string UIGroup = "Fill/Bounce Light";
+> = 0;
 
 // ------------------------------------------------------- Gradient 1
 
@@ -879,6 +891,12 @@ uniform float grad1ZPos
     string UIName = "Z Position";
     string Object = "Gradient 1 Light";
 > = 0.0;
+
+uniform bool grad1UseNormal
+<
+    string UIName = "Use Normal Map";
+    string UIGroup = "Gradient 1 Light";
+> = 0;
 
 // ---------------------------------------------------- Rim
 uniform bool useRim
@@ -2141,6 +2159,7 @@ void main(void)
     float3 Color = float3(surfaceColor[0], surfaceColor[1], surfaceColor[2]);
 
 	float3 NormOp = normalize(PS_IN.Normal.xyz);
+	float3 FlippedNormals = normalize(mix(-(NormOp), NormOp, float(gl_FrontFacing)));
     if (useNormal)
     {
         vec3 tangent = normalize(PS_IN.Tangent.xyz);
@@ -2152,7 +2171,19 @@ void main(void)
         NormOp = normalize(TangentWorldConvert2066);
     }
 
-	float3 FlippedNormals = normalize(mix(-(NormOp), NormOp, float(gl_FrontFacing)));
+	float3 altered_FlippedNormals = normalize(mix(-(NormOp), NormOp, float(gl_FrontFacing)));
+	float3 kFlippedNormals = FlippedNormals;
+	float3 bFlippedNormals = FlippedNormals;
+	float3 grad1FlippedNormals = FlippedNormals;
+	if (kUseNormal) {
+		kFlippedNormals = altered_FlippedNormals;
+	}
+	if (bUseNormal) {
+		bFlippedNormals = altered_FlippedNormals;
+	}
+	if (grad1UseNormal) {
+		grad1FlippedNormals = altered_FlippedNormals;
+	}
 
 	float ClampOpacity = clamp(1.000000, 0.0, 1.0);
 	float3 CameraPosition = viewI[3].xyz;
@@ -2217,9 +2248,9 @@ void main(void)
 	float3 Grad1LightVector = normalize(GetLightVectorFunction(Grad1LightIndex, Grad1LightPos, PS_IN.WorldPosition.xyz, Grad1LightType, Grad1LightDir));
 	float3 RimLightVector = normalize(GetLightVectorFunction(RimLightIndex, RimLightPos, PS_IN.WorldPosition.xyz, RimLightType, RimLightDir));
 
-	float key_cos = dot(normalize(FlippedNormals), KeyLightVector);
-	float Bounce_cos = dot(normalize(FlippedNormals), BounceLightVector);
-	float Grad1_cos = dot(normalize(FlippedNormals), Grad1LightVector);
+	float key_cos = dot(normalize(kFlippedNormals), KeyLightVector);
+	float Bounce_cos = dot(normalize(bFlippedNormals), BounceLightVector);
+	float Grad1_cos = dot(normalize(grad1FlippedNormals), Grad1LightVector);
 	float Rim_cos = dot(normalize(FlippedNormals), RimLightVector);
 
 	float key_surf_intensity = key_cos;
@@ -2235,13 +2266,13 @@ void main(void)
 	}
 
 	if (kShaderPos) {
-		key_surf_intensity = dot(FlippedNormals, normalize(vec3(kXPos, kYPos, kZPos)));
+		key_surf_intensity = dot(kFlippedNormals, normalize(vec3(kXPos, kYPos, kZPos)));
 	}
 	if (bShaderPos) {
-		Bounce_surf_intensity = dot(FlippedNormals, normalize(vec3(bXPos, bYPos, bZPos)));
+		Bounce_surf_intensity = dot(bFlippedNormals, normalize(vec3(bXPos, bYPos, bZPos)));
 	}
 	if (grad1ShaderPos) {
-		Grad1_surf_intensity = dot(FlippedNormals, normalize(vec3(grad1XPos, grad1YPos, grad1ZPos)));
+		Grad1_surf_intensity = dot(grad1FlippedNormals, normalize(vec3(grad1XPos, grad1YPos, grad1ZPos)));
 	}
 
 	if (grad1planeGrad) {
