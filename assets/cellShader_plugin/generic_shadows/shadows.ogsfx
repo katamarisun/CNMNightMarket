@@ -445,7 +445,7 @@ uniform bool btoggleFalloff
 <
     string UIName = "Use Lambertian (This disables cutoff and softness)";
     string UIGroup = "Fill/Bounce Light";
-> = 1.0;
+> = 0.0;
 
 uniform float bCutoff
 <
@@ -657,7 +657,7 @@ uniform bool bUseNormal
 <
     string UIName = "Use Normal Map";
     string UIGroup = "Fill/Bounce Light";
-> = 0;
+> = 1;
 
 // ------------------------------------------------------- Gradient 1
 
