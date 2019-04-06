@@ -885,13 +885,19 @@ uniform bool useRim
 <
     string UIName = "Use Rim";
     string UIGroup = "Rim Light";
-> = 0;
+> = 1;
 
 uniform bool rOnTop
 <
     string UIName = "Rim Above Key";
     string UIGroup = "Rim Light";
-> = 0;
+> = 1;
+
+uniform bool rUseCam
+<
+    string UIName = "Use Viewing Direction";
+    string UIGroup = "Rim Light";
+> = 1;
 
 uniform float rCutoff
 <
@@ -919,12 +925,25 @@ uniform bool rToggleLightLight
     string UIGroup = "Rim Light";
 > = 0;
 
+uniform bool rToggleLightShadow
+<
+    string UIName = "Use Scene Light's Shadow Color";
+    string UIGroup = "Rim Light";
+> = 0;
+
 uniform vec4 rLightColor
     <
     string UIName = "Shader Light Color";
     string UIWidget = "Color";
     string Object = "Rim Light";
-> = {0.9, 0.87, 0.6, 1.0f};
+> = {0.5, 0.4, 0.3, 1.0f};
+
+uniform vec4 rShadowColor
+    <
+    string UIName = "Shader Dark Color";
+    string UIWidget = "Color";
+    string Object = "Rim Light";
+> = {0.05, 0.05, 0.05, 1.0f};
 
 uniform float rLightBlend
 <
@@ -932,9 +951,19 @@ uniform float rLightBlend
     float UIMin = 0.0;
     float UIMax = 8.0;
     float UIStep = 1.0;
-    string UIName = "Blend Mode";
+    string UIName = "Light Blend Mode";
     string Object = "Rim Light";
-> = 3.5;
+> = 1.0;
+
+uniform float rShadowBlend
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 8.0;
+    float UIStep = 1.0;
+    string UIName = "Shadow Blend Mode";
+    string Object = "Rim Light";
+> = 2.7;
 
 uniform float rLightOpacity
 <
@@ -942,7 +971,33 @@ uniform float rLightOpacity
     float UIMin = 0.0;
     float UIMax = 1.0;
     float UIStep = 0.1;
-    string UIName = "Opacity";
+    string UIName = "Light Opacity";
+    string Object = "Rim Light";
+> = 1.0;
+
+uniform float rShadowOpacity
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Shadow Opacity";
+    string Object = "Rim Light";
+> = 1.0;
+
+uniform bool rTweakViewDir
+<
+    string UIName = "Enable the slider below to tweak the cam dir";
+    string UIGroup = "Rim Light";
+> = 1;
+
+uniform float rUpDown
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Shift Up/Down";
     string Object = "Rim Light";
 > = 1.0;
 
@@ -1127,7 +1182,7 @@ uniform float valueTweak
     float UIStep = 0.01;
     string UIName = "Value Tweak";
     string UIGroup = "Base Color";
-> = 0.0;
+> = -0.05;
 
 uniform bool use_light_mask
 <
@@ -2242,6 +2297,10 @@ void main(void)
 	float3 BounceLightVector = normalize(GetLightVectorFunction(BounceLightIndex, BounceLightPos, PS_IN.WorldPosition.xyz, BounceLightType, BounceLightDir));
 	float3 Grad1LightVector = normalize(GetLightVectorFunction(Grad1LightIndex, Grad1LightPos, PS_IN.WorldPosition.xyz, Grad1LightType, Grad1LightDir));
 	float3 RimLightVector = normalize(GetLightVectorFunction(RimLightIndex, RimLightPos, PS_IN.WorldPosition.xyz, RimLightType, RimLightDir));
+    if (rUseCam) {
+        vec3 tweakedCamVec = normalize(CamVecNorm + vec3(0.0, rUpDown, 0.0));
+        RimLightVector = tweakedCamVec;
+    }
 
 	float key_cos = dot(normalize(kFlippedNormals), KeyLightVector);
 	float Bounce_cos = dot(normalize(bFlippedNormals), BounceLightVector);
@@ -2358,24 +2417,19 @@ void main(void)
 	}
 
 	if (useRim) {
-		if (rPlaneDot) {
-			float plane_dot = dot(PS_IN.LocalPosition, normalize(vec3(rXPos, rYPos, rZPos)));
-			if (plane_dot <= rPlaneCutoff) {
-				Rim_mask = 0.0;
-			}
-    	}
-
-    	if (Rim_light_intensity < rShadowCutoff) {
-    		Rim_mask = 0.0;
-    	}
 
     	vec4 rLightColorCalc = rLightColor;
     	if ( rToggleLightLight ) {
     		rLightColorCalc = vec4(GetLightColor(RimLightIndex), 1.0);
     	}
+        vec4 rShadowColorCalc = rShadowColor;
+        if ( rToggleLightShadow ) {
+            rShadowColorCalc = vec4(GetLightShadowColor(RimLightIndex), 1.0);
+        }
 
-		vec4 rimColor = blend( outColor, rLightColorCalc, rLightBlend, Rim_mask);
-		outColor = lerp( outColor, rimColor, rLightOpacity);
+		vec4 rimLight = blend( outColor, rLightColorCalc, rLightBlend, rLightOpacity);
+        vec4 rimShadow = blend( outColor, rShadowColorCalc, rShadowBlend, rShadowOpacity);
+		outColor = lerp( rimShadow, rimLight, Rim_mask);
 	}
 	// ---------------------------------------------
 
