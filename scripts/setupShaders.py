@@ -89,7 +89,7 @@ for grp in grp_map_pxrSurfs.keys():
     #--------------------------------------
     if (not cmds.objExists(surf[:-4] + "_GLSL")):
         new_GLSL = cmds.createNode( 'GLSLShader' );
-        cmds.setAttr( new_GLSL + ".shader", "assets\cellShader_plugin\generic_shadows\shadows.ogsfx", type="string" )
+        cmds.setAttr( new_GLSL + ".shader", "assets\cellShader_plugin\cell.ogsfx", type="string" )
         #Plug the old diffuse into the GLSL shader
         diffuse_textures = cmds.listConnections ( lamb + ".color" )
         if (diffuse_textures):
@@ -100,6 +100,7 @@ for grp in grp_map_pxrSurfs.keys():
             trip = (diffuse_color_full[0], diffuse_color_full[1], diffuse_color_full[2])
             cmds.setAttr (new_GLSL + ".diffuseColorRGB", trip[0], trip[1], trip[2], type="double3")
 
+        """
         #Create a normal map and plug that in
         normalmap_textures = cmds.listConnections ( surf + ".bumpNormal" )
         if (normalmap_textures):
@@ -134,7 +135,7 @@ for grp in grp_map_pxrSurfs.keys():
             cmds.setAttr ( new_GLSL + ".useNormal", 1)
         else:
             cmds.setAttr ( new_GLSL + ".useNormal", 0)
-
+        """
         #Create a presence map and plug that in
         presence_textures = cmds.listConnections ( surf + ".presence" )
         if (presence_textures):
