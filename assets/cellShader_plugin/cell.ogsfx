@@ -141,7 +141,7 @@ uniform bool useKey
 <
     string UIName = "Use Key";
     string UIGroup = "Key Light";
-> = 1;
+> = 0;
 
 uniform float kCutoff
 <
@@ -421,7 +421,7 @@ uniform bool useBounce
 <
     string UIName = "Use Fill/Bounce";
     string UIGroup = "Fill/Bounce Light";
-> = 1.0;
+> = 0;
 
 uniform bool baffectShadow
 <
