@@ -1234,7 +1234,7 @@ uniform bool useWorldDepth
 <
     string UIName = "Use World Depth Fog";
     string UIGroup = "World Depth Fog";
-> = 1;
+> = 0;
 
 uniform vec4 worldDepthColor
     <
@@ -2433,11 +2433,6 @@ void main(void)
             discard;
         }
     }
-
-    if ( useWorldDepth ) { 
-		float fogFactor = (1.0 - PS_IN.FogFactor.x); 
-		outColor.rgb = lerp(outColor.rgb, worldDepthColor.rgb, fogFactor); 
-	}
 
     outColor = vec4(vec3(outColor), masterOpacity);
 

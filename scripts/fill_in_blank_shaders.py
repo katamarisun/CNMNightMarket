@@ -1,4 +1,4 @@
-qimport maya.mel as mel
+import maya.mel as mel
 import maya.utils
 import maya.cmds as cmds
 
@@ -8,7 +8,7 @@ glsls = cmds.ls( type="GLSLShader" )
 for glsl in glsls:
     glslfile = cmds.getAttr ( glsl + ".shader" )
     if glslfile == "":
-        cmds.setAttr(glsl + ".shader", "assets/cellShader_plugin/cell.ogsfx", type="string" )
+        cmds.setAttr(glsl + ".shader", "assets/cellShader_plugin/generic_shadows/shadows.ogsfx", type="string" )
     else:
         if "/assets" in glslfile:
             while glslfile[0:6] != "assets":
