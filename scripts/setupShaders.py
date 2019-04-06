@@ -21,7 +21,7 @@ for surf in pxrSurfs:
             grp_map_pxrSurfs[con] = surf
 
 for lamb in lamberts:
-    if ':' in lamb:
+    if ':' in surf:
         continue
     if not cmds.listConnections(lamb):
         continue
@@ -33,9 +33,6 @@ for lamb in lamberts:
 
 for grp in grp_map_pxrSurfs.keys():
     surf = grp_map_pxrSurfs[grp]
-    if (":" in surf):
-        print("Skipping referenced shader")
-        continue
 
     #Rename the PxrSurface if it doesn't match convention
     if (len(surf) > 4):
@@ -92,15 +89,16 @@ for grp in grp_map_pxrSurfs.keys():
     #--------------------------------------
     if (not cmds.objExists(surf[:-4] + "_GLSL")):
         new_GLSL = cmds.createNode( 'GLSLShader' );
-        cmds.setAttr( new_GLSL + ".shader", project_dir + "/assets/cellShader_plugin/cell.ogsfx", type="string" )
+        cmds.setAttr( new_GLSL + ".shader", "assets\cellShader_plugin\generic_shadows\shadows.ogsfx", type="string" )
         #Plug the old diffuse into the GLSL shader
         diffuse_textures = cmds.listConnections ( lamb + ".color" )
         if (diffuse_textures):
             cmds.connectAttr ( diffuse_textures[0] + ".outColor", new_GLSL + ".diffuse_color_tex", force=True )
             cmds.setAttr ( new_GLSL + ".use_tex", 1)
         else:
-            diffuse_color = cmds.getAttr (surf + ".diffuseColor")[0]
-            cmds.setAttr (new_GLSL + ".diffuseColor", diffuse_color[0], diffuse_color[1], diffuse_color[2], type="double3")
+            diffuse_color_full = cmds.getAttr (surf + ".diffuseColor")[0]
+            trip = (diffuse_color_full[0], diffuse_color_full[1], diffuse_color_full[2])
+            cmds.setAttr (new_GLSL + ".diffuseColorRGB", trip[0], trip[1], trip[2], type="double3")
 
         #Create a normal map and plug that in
         normalmap_textures = cmds.listConnections ( surf + ".bumpNormal" )
@@ -121,7 +119,7 @@ for grp in grp_map_pxrSurfs.keys():
             norm_filepath = norm_orig_name
             norm_post = norm_orig_name[-4:]
             if (norm_post == ".tex"):
-                norm_filepath = norm_orig_name[:-4]       
+                norm_filepath = norm_orig_name[:-4]
 
             cmds.setAttr ( viewport_norm + ".fileTextureName",  norm_filepath, type="string" )
         
@@ -133,9 +131,57 @@ for grp in grp_map_pxrSurfs.keys():
             old_norm_rename = surf[:-4] + "_render_norm"
             cmds.rename ( normalmap_textures[0], old_norm_rename )
             cmds.connectAttr ( new_norm_name + ".outColor", new_GLSL + ".normalMap", force=True )
-            cmds.setAttr ( new_GLSL + ".use_normal", 1)
+            cmds.setAttr ( new_GLSL + ".useNormal", 1)
         else:
-            cmds.setAttr ( new_GLSL + ".use_normal", 0)
+            cmds.setAttr ( new_GLSL + ".useNormal", 0)
+
+        #Create a presence map and plug that in
+        presence_textures = cmds.listConnections ( surf + ".presence" )
+        if (presence_textures):
+            presence_orig_name = cmds.getAttr ( presence_textures[0] + ".fileTextureName" )
             
+            viewport_presence = ""
+            if (not cmds.objExists(surf[:-4] + "_view_presence" )):
+                viewport_presence = cmds.shadingNode('file', asTexture=True )
+            else:
+                viewport_presence = surf[:-4] + "_view_presence"
+            cmds.connectAttr ( viewport_presence + ".outColor", new_GLSL + ".presence_map", force=True )
+
+            presence_filepath = presence_orig_name
+            presence_post = presence_orig_name[-4:]
+            if (presence_post == ".tex"):
+                presence_filepath = presence_orig_name[:-4]
+
+            cmds.setAttr ( viewport_presence + ".fileTextureName",  presence_filepath, type="string" )
+        
+            #rename the new texture to match naming convention
+            new_presence_name = surf[:-4] + "_view_presence"
+            cmds.rename ( viewport_presence, new_presence_name )
+        
+            #rename the PxrSufrace texture to match naming convention
+            old_presence_rename = surf[:-4] + "_render_presence"
+            cmds.rename ( presence_textures[0], old_presence_rename )
+            
+            cmds.setAttr ( new_GLSL + ".use_presence", 1)
+
         new_GLSL_name = surf[:-4] + "_GLSL"
         cmds.rename(new_GLSL, new_GLSL_name)
+
+        surfLocName = surf[:-4] + "_Loc"
+        loc = surfLocName
+        if (not cmds.objExists( surfLocName ) ):
+            loc = cmds.spaceLocator ( name=surfLocName )[0]
+            cmds.hyperShade( objects=grp )
+            if (len(cmds.ls(sl=True)) > 0):
+                mesh = cmds.ls(sl=True)[0]
+                mesh = mesh[:mesh.find('Shape')] + mesh[mesh.find('Shape')+5:]
+                pos = cmds.xform(mesh, q=True, ws=True, rp=True)
+                cmds.move ( pos[0], pos[1], pos[2], surfLocName, absolute=True )
+                cmds.parent( surfLocName, mesh )
+                cmds.hide (loc)
+
+        cmds.connectAttr ( loc + "Shape.worldPosition.worldPositionX", new_GLSL_name + ".objWorldOffsetX" )
+        cmds.connectAttr ( loc + "Shape.worldPosition.worldPositionY", new_GLSL_name + ".objWorldOffsetY" )
+        cmds.connectAttr ( loc + "Shape.worldPosition.worldPositionZ", new_GLSL_name + ".objWorldOffsetZ" )
+
+
