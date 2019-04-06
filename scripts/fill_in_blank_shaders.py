@@ -1,4 +1,4 @@
-import maya.mel as mel
+qimport maya.mel as mel
 import maya.utils
 import maya.cmds as cmds
 
