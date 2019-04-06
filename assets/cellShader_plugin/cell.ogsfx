@@ -885,7 +885,7 @@ uniform bool useRim
 <
     string UIName = "Use Rim";
     string UIGroup = "Rim Light";
-> = 1;
+> = 0;
 
 uniform bool rOnTop
 <
@@ -989,7 +989,7 @@ uniform bool rTweakViewDir
 <
     string UIName = "Enable the slider below to tweak the cam dir";
     string UIGroup = "Rim Light";
-> = 1;
+> = 0;
 
 uniform float rUpDown
 <
@@ -999,7 +999,7 @@ uniform float rUpDown
     float UIStep = 0.1;
     string UIName = "Shift Up/Down";
     string Object = "Rim Light";
-> = 1.0;
+> = 0.1;
 
 uniform float3 RimLightPos : POSITION
 <
