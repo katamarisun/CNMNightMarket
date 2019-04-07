@@ -925,11 +925,31 @@ uniform bool rToggleLightLight
     string UIGroup = "Rim Light";
 > = 0;
 
+uniform float rLightColorProportion
+<
+    string UIWidget = "slider";
+    float UIMin = 0.01;
+    float UIMax = 2.0;
+    float UIStep = 0.01;
+    string UIName = "Percentage from Scene Light";
+    string Object = "Rim Light";
+> = 0.0;
+
 uniform bool rToggleLightShadow
 <
     string UIName = "Use Scene Light's Shadow Color";
     string UIGroup = "Rim Light";
 > = 0;
+
+uniform float rShadowColorProportion
+<
+    string UIWidget = "slider";
+    float UIMin = 0.01;
+    float UIMax = 2.0;
+    float UIStep = 0.01;
+    string UIName = "Percentage from Scene Light";
+    string Object = "Rim Light";
+> = 0.0;
 
 uniform vec4 rLightColor
     <
