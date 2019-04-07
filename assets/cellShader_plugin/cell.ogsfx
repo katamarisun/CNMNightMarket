@@ -1204,6 +1204,32 @@ uniform float valueTweak
     string UIGroup = "Base Color";
 > = -0.05;
 
+uniform bool adjContrast
+<
+    string UIName = "Use the two sliders below to adjust contrast and brightness";
+    string UIGroup = "Base Color";
+> = 0.0;
+
+uniform float brightness
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Brightness Tweak";
+    string UIGroup = "Base Color";
+> = 0.0;
+
+uniform float contrast
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Contrast Tweak";
+    string UIGroup = "Base Color";
+> = 0.0;
+
 uniform bool use_light_mask
 <
     string UIName = "Use Light Mask (block key,bounce,etc... from dark parts of texture)";
@@ -1943,9 +1969,15 @@ vec4 blend( vec4 baseColor, vec4 blendColor, float blend, float opacity )
     if (blend >= 6.0 && blend < 7.0) {
         colorOut = blendSubtract( baseColor, blendColor, opacity);
     } if (blend >= 7.0) {
-        colorOut = blendColor;
+        colorOut = lerp(baseColor, blendColor, opacity);
     }
     return colorOut;
+}
+
+// ------------------------------------------------- Brightness Contrast Adjustment -------------------------
+vec4 brightnessContrast(vec4 value, float brightness, float contrast)
+{
+    return vec4((value.rgb - 0.5) * contrast + 0.5 + brightness, 1.0);
 }
 
 // ------------------------------------------------- HSV adjustment functions -------------------------------
@@ -2246,6 +2278,9 @@ void main(void)
     vec4 sampledColor = texture2D(gStripeSampler, PS_IN.fUV);
     if (use_tex) {
         surfaceColor = hsvadjust ( sampledColor, hueTweak, satTweak, valueTweak );
+        if (adjContrast) {
+            surfaceColor = brightnessContrast ( surfaceColor, brightness, 1.0 + contrast);
+        }
     }
     float3 Color = float3(surfaceColor[0], surfaceColor[1], surfaceColor[2]);
 
@@ -2449,7 +2484,7 @@ void main(void)
 
 		vec4 rimLight = blend( outColor, rLightColorCalc, rLightBlend, rLightOpacity);
         vec4 rimShadow = blend( outColor, rShadowColorCalc, rShadowBlend, rShadowOpacity);
-		outColor = lerp( rimShadow, rimLight, Rim_mask);
+		outColor = lerp( rimLight, rimShadow, Rim_mask);
 	}
 	// ---------------------------------------------
 
