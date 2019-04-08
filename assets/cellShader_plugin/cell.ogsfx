@@ -167,13 +167,13 @@ uniform bool kToggleLightLight
 <
     string UIName = "Use Scene Light's Light Color";
     string UIGroup = "Key Light";
-> = 0.0;
+> = 1.0;
 
 uniform bool kToggleLightShadow
 <
     string UIName = "Use Scene Light's Shadow Color";
     string UIGroup = "Key Light";
-> = 0.0;
+> = 1.0;
 
 uniform vec4 kLightColor
 <
@@ -465,13 +465,13 @@ uniform bool bToggleLightLight
 <
     string UIName = "Toggle Light/Shader Light Color";
     string UIGroup = "Fill/Bounce Light";
-> = 0.0;
+> = 1.0;
 
 uniform bool bToggleLightShadow
 <
     string UIName = "Toggle Light/Shader Shadow Color";
     string UIGroup = "Fill/Bounce Light";
-> = 0.0;
+> = 1.0;
 
 uniform vec4 bLightColor
     <
@@ -2778,4 +2778,3 @@ technique T0
 	}
 
 }
-
