@@ -2,7 +2,7 @@
 import os
 maya_files = []
 
-directory = "../assets/ClothingAccessories"
+directory = "..\\assets\\SetProps"
 
 for root, dirs, files in os.walk(directory, topdown=False):
 	for name in files:
@@ -11,14 +11,15 @@ for root, dirs, files in os.walk(directory, topdown=False):
 
 file_count = 0
 for file in maya_files:
+	print("Looing at ", file, "\n")
+	if "gardenprops" in file:
+		continue
 	hasLicense = False
 	with open(file, "r") as f:
 		new_f = f.readlines()
 		f.seek(0)
 		for line in new_f:
-			if "lecense" in line:
-				hasLicense = True
-			if "mtoa" in line:
+			if "license" in line:
 				hasLicense = True
 	if hasLicense:
 		with open(file,"r+") as f:
@@ -26,9 +27,7 @@ for file in maya_files:
 			f.seek(0)
 			for line in new_f:
 				if "license" not in line:
-					#added to purge arnold :)
-					if "mtoa" not in line:
-						f.write(line)
+					f.write(line)
 			f.truncate()
 		print("Cleared a license from: ", file, "\n")
 		file_count += 1
