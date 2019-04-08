@@ -1,0 +1,48 @@
+global proc msAttrUnlockUnhide_all()
+{
+string $selectedObj[] = ls -sl;
+for($obj in $selectedObj)
+{
+string $attrList[] = listAttr -v -l;                // Get attributes that are visibily locked
+for($attribute in $attrList)
+{
+setAttr -k 1 -l 0 ($obj + "." + $attribute);    // Unhide and unlock attribute
+}
+/*
+Set Default trans, rot, and scale attribute to unhidden and unlocked
+*/
+setAttr -k 1 ($obj + ".tx");
+setAttr -l 0 ($obj + ".tx");
+setAttr -k 1 ($obj + ".ty");
+setAttr -l 0 ($obj + ".ty");
+setAttr -k 1 ($obj + ".tz");
+setAttr -l 0 ($obj + ".tz");
+
+setAttr -k 1 ($obj + ".sx");
+setAttr -l 0 ($obj + ".sx");
+setAttr -k 1 ($obj + ".sy");
+setAttr -l 0 ($obj + ".sy");
+setAttr -k 1 ($obj + ".sz");
+setAttr -l 0 ($obj + ".sz");
+
+setAttr -k 1 ($obj + ".rx");
+setAttr -l 0 ($obj + ".rx");
+setAttr -k 1 ($obj + ".ry");
+setAttr -l 0 ($obj + ".ry");
+setAttr -k 1 ($obj + ".rz");
+setAttr -l 0 ($obj + ".rz");
+
+clear $attrList;
+
+$attrList = listAttr -ud;                // Get attributes that are userdefined, hidden or not
+for($attribute in $attrList)
+{
+setAttr -k 1 -l 0 ($obj + "." + $attribute);    // Unhide and unlock attribute
+}
+clear $attrList;
+}    
+
+clear  $selectedObj;
+}
+
+msAttrUnlockUnhide_all;
