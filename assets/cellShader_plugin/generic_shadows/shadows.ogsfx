@@ -167,13 +167,13 @@ uniform bool kToggleLightLight
 <
     string UIName = "Use Scene Light's Light Color";
     string UIGroup = "Key Light";
-> = 0.0;
+> = 1.0;
 
 uniform bool kToggleLightShadow
 <
     string UIName = "Use Scene Light's Shadow Color";
     string UIGroup = "Key Light";
-> = 0.0;
+> = 1.0;
 
 uniform vec4 kLightColor
 <
@@ -471,13 +471,13 @@ uniform bool bToggleLightLight
 <
     string UIName = "Toggle Light/Shader Light Color";
     string UIGroup = "Fill/Bounce Light";
-> = 0.0;
+> = 1.0;
 
 uniform bool bToggleLightShadow
 <
     string UIName = "Toggle Light/Shader Shadow Color";
     string UIGroup = "Fill/Bounce Light";
-> = 0.0;
+> = 1.0;
 
 uniform vec4 bLightColor
     <
@@ -2282,7 +2282,7 @@ void main(void)
     if (use_tex) {
         surfaceColor = hsvadjust ( sampledColor, hueTweak, satTweak, valueTweak );
         if (adjContrast) {
-            surfaceColor = brightnessContrast ( surfaceColor, brightness, 1.0 + contrast);
+            surfaceColor = brightnessContrast ( surfaceColor, brightness, 1.0 +contrast);
         }
     }
     float3 Color = float3(surfaceColor[0], surfaceColor[1], surfaceColor[2]);
