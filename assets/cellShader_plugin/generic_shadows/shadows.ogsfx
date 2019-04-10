@@ -169,10 +169,30 @@ uniform bool kToggleLightLight
     string UIGroup = "Key Light";
 > = 1.0;
 
+uniform float kLightProp
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Blend between scene/shader";
+    string Object = "Key Light";
+> = 1.0;
+
 uniform bool kToggleLightShadow
 <
     string UIName = "Use Scene Light's Shadow Color";
     string UIGroup = "Key Light";
+> = 1.0;
+
+uniform float kShadowProp
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Blend between scene/shader";
+    string Object = "Key Light";
 > = 1.0;
 
 uniform vec4 kLightColor
@@ -473,10 +493,30 @@ uniform bool bToggleLightLight
     string UIGroup = "Fill/Bounce Light";
 > = 1.0;
 
+uniform float bLightProp
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Blend between scene/shader";
+    string Object = "Fill/Bounce Light";
+> = 1.0;
+
 uniform bool bToggleLightShadow
 <
     string UIName = "Toggle Light/Shader Shadow Color";
     string UIGroup = "Fill/Bounce Light";
+> = 1.0;
+
+uniform float bShadowProp
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Blend between scene/shader";
+    string Object = "Fill/Bounce Light";
 > = 1.0;
 
 uniform vec4 bLightColor
@@ -699,11 +739,31 @@ uniform bool grad1ToggleLightLight
     string UIGroup = "Gradient 1 Light";
 > = 0.0;
 
+uniform float grad1LightProp
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Blend between scene/shader";
+    string Object = "Gradient 1 Light";
+> = 1.0;
+
 uniform bool grad1ToggleLightShadow
 <
     string UIName = "Use Light's Dark Color";
     string UIGroup = "Gradient 1 Light";
 > = 0.0;
+
+uniform float grad1ShadowProp
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Blend between scene/shader";
+    string Object = "Gradient 1 Light";
+> = 1.0;
 
 uniform vec4 grad1LightColor
     <
@@ -943,6 +1003,32 @@ uniform bool rToggleLightLight
     string UIGroup = "Rim Light";
 > = 0;
 
+uniform float rLightProp
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Blend between scene/shader";
+    string Object = "Rim Light";
+> = 1.0;
+
+uniform bool rToggleLightShadow
+<
+    string UIName = "Use Scene Light's Shadow Color";
+    string UIGroup = "Rim Light";
+> = 0;
+
+uniform float rShadowProp
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.1;
+    string UIName = "Blend between scene/shader";
+    string Object = "Rim Light";
+> = 1.0;
+
 uniform vec4 rLightColor
     <
     string UIName = "Shader Light Color";
@@ -969,12 +1055,6 @@ uniform float rLightOpacity
     string UIName = "Light Opacity";
     string Object = "Rim Light";
 > = 1.0;
-
-uniform bool rToggleLightShadow
-<
-    string UIName = "Use Scene Light's Light Color";
-    string UIGroup = "Rim Light";
-> = 0;
 
 uniform vec4 rShadowColor
     <
@@ -1112,6 +1192,15 @@ uniform float rPlaneCutoff
     string UIName = "Rim Plane Cutoff Threshold";
     string Object = "Rim Light";
 > = -0.063;
+
+uniform float RimShadowCuttoff
+<
+    string UIName =  "Cast Shadow Threshold";
+    float UIMin = 0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string Object = "Rim Light";
+> = 0.3;
 
 uniform float rXPos
 <
@@ -2332,33 +2421,37 @@ void main(void)
 
 	vec4 kLightColorCalc = kLightColor;
     if (kToggleLightLight) {
-    	kLightColorCalc = vec4(GetLightColor(KeyLightIndex), 1.0);
+    	kLightColorCalc = lerp( kLightColor, vec4(GetLightColor(KeyLightIndex), 1.0), kLightProp);
     }
     vec4 kShadowColorCalc = kShadowColor;
     if (kToggleLightShadow) {
-    	kShadowColorCalc = vec4(GetLightShadowColor(KeyLightIndex), 1.0);
+    	kShadowColorCalc = lerp( kShadowColor, vec4(GetLightShadowColor(KeyLightIndex), 1.0), kShadowProp);
     }
 
 	vec4 bLightColorCalc = bLightColor;
     if (bToggleLightLight) {
-    	bLightColorCalc = vec4(GetLightColor(BounceLightIndex), 1.0);
+    	bLightColorCalc = lerp( bLightColor, vec4(GetLightColor(BounceLightIndex), 1.0), bLightProp);
     }
     vec4 bShadowColorCalc = bShadowColor;
     if (bToggleLightShadow) {
-    	bShadowColorCalc = vec4(GetLightShadowColor(BounceLightIndex), 1.0);
+    	bShadowColorCalc = lerp( bShadowColor, vec4(GetLightShadowColor(BounceLightIndex), 1.0), bShadowProp);
     }
 
 	vec4 grad1LightColorCalc = grad1LightColor;
     if (grad1ToggleLightLight) {
-    	grad1LightColorCalc = vec4(GetLightColor(Grad1LightIndex), 1.0);
+    	grad1LightColorCalc = lerp( grad1LightColor, vec4(GetLightColor(Grad1LightIndex), 1.0), grad1LightProp);
     }
     vec4 grad1ShadowColorCalc = grad1ShadowColor;
     if (grad1ToggleLightShadow) {
-    	grad1ShadowColorCalc = vec4(GetLightShadowColor(Grad1LightIndex), 1.0);
+    	grad1ShadowColorCalc = lerp( grad1ShadowColor, vec4(GetLightShadowColor(Grad1LightIndex), 1.0), grad1ShadowProp);
     }
 	vec4 RimLightColorCalc = rLightColor;
     if (rToggleLightLight) {
-    	RimLightColorCalc = vec4(GetLightColor(RimLightIndex), 1.0);
+    	RimLightColorCalc = lerp( rLightColor, vec4(GetLightColor(RimLightIndex), 1.0), rLightProp);
+    }
+    vec4 RimShadowColorCalc = rShadowColor;
+    if (rToggleLightLight) {
+        RimShadowColorCalc = lerp( rShadowColor, vec4(GetLightShadowColor(RimLightIndex), 1.0), rShadowProp);
     }
 
 	float3 NoTranslucency = float3(0.000000,0.000000,0.000000);
@@ -2436,6 +2529,9 @@ void main(void)
     if (key_light_intensity < keyShadowCuttoff) {
 		key_mask = 0.0;
 	}
+    if (Rim_light_intensity < RimShadowCuttoff) {
+        Rim_mask = 0.0;
+    }
 
     if ( use_light_mask ) {
         float lightMask = texture2D(light_mask_sampler, PS_IN.fUV )[0];
@@ -2496,18 +2592,9 @@ void main(void)
 	}
 
 	if (useRim) {
-        vec4 rLightColorCalc = rLightColor;
-        if ( rToggleLightLight ) {
-            rLightColorCalc = vec4(GetLightColor(RimLightIndex), 1.0);
-        }
-        vec4 rShadowColorCalc = rShadowColor;
-        if ( rToggleLightShadow ) {
-            rShadowColorCalc = vec4(GetLightShadowColor(RimLightIndex), 1.0);
-        }
-
-        vec4 rimLight = blend( outColor, rLightColorCalc, rLightBlend, rLightOpacity);
-        vec4 rimShadow = blend( outColor, rShadowColorCalc, rShadowBlend, rShadowOpacity);
-        outColor = lerp( rimLight, rimShadow, Rim_mask);
+        vec4 rimLight = blend( outColor, RimLightColorCalc, rLightBlend, rLightOpacity);
+        vec4 rimShadow = blend( outColor, RimShadowColorCalc, rShadowBlend, rShadowOpacity);
+        outColor = lerp( rimShadow, rimLight, Rim_mask);
 	}
 	// ---------------------------------------------
 
