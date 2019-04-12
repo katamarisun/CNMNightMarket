@@ -230,25 +230,19 @@ uniform float kShadowOpacity
     string Object = "Key Light";
 > = 1.0;
 
-uniform float kLightBlend
+uniform int kLightBlend
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 8.0;
-    float UIStep = 1.0;
-    string UIName = "Light Blend Mode";
-    string Object = "Key Light";
-> = 1.0;
+    string UIName = "Light Blend";
+    string UIGroup = "Key Light";
+    string UIFieldNames = "No Effect:Overlay:Soft Light:Hard Light:Normal:Multiply:Subtract:Gradient Color";
+> = 1;
 
-uniform float kShadowBlend
+uniform int kShadowBlend
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 8.0;
-    float UIStep = 1.0;
-    string UIName = "Shadow Blend Mode";
-    string Object = "Key Light";
-> = 1.0;
+    string UIName = "Shadow Blend";
+    string UIGroup = "Key Light";
+    string UIFieldNames = "No Effect:Overlay:Soft Light:Hard Light:Normal:Multiply:Subtract:Gradient Color";
+> = 1;
 
 uniform bool useKeySpec
 <
@@ -293,15 +287,12 @@ uniform float kSpecSoftness
     string Object = "Key Light";
 > = 0.0;
 
-uniform float kSpecBlend
+uniform int kSpecBlend
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 8.0;
-    float UIStep = 1.0;
-    string UIName = "Specular Blend";
-    string Object = "Key Light";
-> = 1.0;
+    string UIName = "Specular Light Blend";
+    string UIGroup = "Key Light";
+    string UIFieldNames = "No Effect:Overlay:Soft Light:Hard Light:Normal:Multiply:Subtract:Gradient Color";
+> = 1;
 
 uniform float kSpecOpacity
 <
@@ -533,25 +524,19 @@ uniform vec4 bShadowColor
     string Object = "Fill/Bounce Light";
 > = {0.2, 0.2, 0.2, 1.0f};
 
-uniform float bLightBlend
+uniform int bLightBlend
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 8.0;
-    float UIStep = 1.0;
     string UIName = "Bright Blend Mode";
-    string Object = "Fill/Bounce Light";
-> = 1.0;
+    string UIGroup = "Fill/Bounce Light";
+    string UIFieldNames = "No Effect:Overlay:Soft Light:Hard Light:Normal:Multiply:Subtract:Gradient Color";
+> = 1;
 
-uniform float bShadowBlend
+uniform int bShadowBlend
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 8.0;
-    float UIStep = 1.0;
     string UIName = "Dark Blend Mode";
-    string Object = "Fill/Bounce Light";
-> = 1.0;
+    string UIGroup = "Fill/Bounce Light";
+    string UIFieldNames = "No Effect:Overlay:Soft Light:Hard Light:Normal:Multiply:Subtract:Gradient Color";
+> = 1;
 
 uniform float bLightOpacity
 <
@@ -779,25 +764,19 @@ uniform vec4 grad1ShadowColor
     string Object = "Gradient 1 Light";
 > = {0.3, 0.3, 0.3, 1.0f};
 
-uniform float grad1LightBlend
+uniform int grad1LightBlend
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 8.0;
-    float UIStep = 1.0;
     string UIName = "Bright Blend Mode";
-    string Object = "Gradient 1 Light";
-> = 1.0;
+    string UIGroup = "Gradient 1 Light";
+    string UIFieldNames = "No Effect:Overlay:Soft Light:Hard Light:Normal:Multiply:Subtract:Gradient Color";
+> = 1;
 
-uniform float grad1ShadowBlend
+uniform int grad1ShadowBlend
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 8.0;
-    float UIStep = 1.0;
     string UIName = "Dark Blend Mode";
-    string Object = "Gradient 1 Light";
-> = 1.1;
+    string UIGroup = "Gradient 1 Light";
+    string UIFieldNames = "No Effect:Overlay:Soft Light:Hard Light:Normal:Multiply:Subtract:Gradient Color";
+> = 1;
 
 uniform float grad1LightOpacity
 <
@@ -1036,15 +1015,12 @@ uniform vec4 rLightColor
     string Object = "Rim Light";
 > = {0.9, 0.87, 0.6, 1.0f};
 
-uniform float rLightBlend
+uniform int rLightBlend
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 8.0;
-    float UIStep = 1.0;
-    string UIName = "Light Blend Mode";
-    string Object = "Rim Light";
-> = 3.5;
+    string UIName = "Bright Blend Mode";
+    string UIGroup = "Rim Light";
+    string UIFieldNames = "No Effect:Overlay:Soft Light:Hard Light:Normal:Multiply:Subtract:Gradient Color";
+> = 1;
 
 uniform float rLightOpacity
 <
@@ -1063,15 +1039,12 @@ uniform vec4 rShadowColor
     string Object = "Rim Light";
 > = {0.9, 0.87, 0.6, 1.0f};
 
-uniform float rShadowBlend
+uniform int rShadowBlend
 <
-    string UIWidget = "slider";
-    float UIMin = 0.0;
-    float UIMax = 8.0;
-    float UIStep = 1.0;
-    string UIName = "Shadow Blend Mode";
-    string Object = "Rim Light";
-> = 3.5;
+    string UIName = "Dark Blend Mode";
+    string UIGroup = "Rim Light";
+    string UIFieldNames = "No Effect:Overlay:Soft Light:Hard Light:Normal:Multiply:Subtract:Gradient Color";
+> = 1;
 
 uniform float rShadowOpacity
 <
@@ -1486,6 +1459,62 @@ uniform sampler2D oclusion_sampler
     Texture = <ambient_oclusion>;
 };
 
+uniform int compMode
+<
+    string UIName = "Compositing Mode";
+    string UIGroup = "Compositing Controls";
+    string UIFieldNames = "Normal Pass:Key Mask:Fill Mask:Gradient 1 Mask:Rim Mask:Normals:Depth";
+> = 0;
+
+uniform float globalValueTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Value Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalHueTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Hue Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalSaturationTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Saturation Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalBrightness
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Brightness Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalContrast
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Contrast Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
 
 uniform float objWorldOffsetX
 <
@@ -1962,7 +1991,7 @@ vec4 blendHardLight(vec4 base, vec4 blend, float opacity);
 float blendNormal(float base, float blend, float opacity);
 vec4 blendNormal(vec4 base, vec4 blend, float opacity);
 
-vec4 blend( vec4 baseColor, vec4 blendColor, float blend, float opacity);
+vec4 blend( vec4 baseColor, vec4 blendColor, int blend, float opacity);
 
 float blendOverlay(float base, float blend) {
     return base<0.5?(2.0*base*blend):(1.0-2.0*(1.0-base)*(1.0-blend));
@@ -2033,30 +2062,30 @@ vec4 blendNormal(vec4 base, vec4 blend, float opacity) {
 }
 
 
-vec4 blend( vec4 baseColor, vec4 blendColor, float blend, float opacity )
+vec4 blend( vec4 baseColor, vec4 blendColor, int blend, float opacity )
 {
     vec4 colorOut = vec4(0.0, 0.0, 0.0, 0.0);
-    if (blend < 1.0) {
+    if (blend < 1) {
         colorOut = baseColor;
     }
-    if (blend >= 1.0 && blend < 2.0) {
+    if (blend >= 1 && blend < 2) {
         colorOut = blendOverlay( baseColor, blendColor, opacity);
     }
-    if (blend >= 2.0 && blend < 3.0) {
+    if (blend >= 2 && blend < 3) {
         colorOut = blendSoftLight( baseColor, blendColor, opacity);
     }
-    if (blend >= 3.0 && blend < 4.0) {
+    if (blend >= 3.0 && blend < 4) {
         colorOut = blendHardLight( baseColor, blendColor, opacity);
     }
-    if (blend >= 4.0 && blend < 5.0) {
+    if (blend >= 4 && blend < 5) {
         colorOut = blendNormal( baseColor, blendColor, opacity);    
     }
-    if (blend >= 5.0 && blend < 6.0) {
+    if (blend >= 5 && blend < 6) {
         colorOut = blendMultiply( baseColor, blendColor, opacity);
     }
-    if (blend >= 6.0 && blend < 7.0) {
+    if (blend >= 6 && blend < 7) {
         colorOut = blendSubtract( baseColor, blendColor, opacity);
-    } if (blend >= 7.0) {
+    } if (blend >= 7) {
         colorOut = blendColor;
     }
     return colorOut;
@@ -2369,9 +2398,11 @@ void main(void)
 	vec4 surfaceColor = diffuseColor;
     vec4 sampledColor = texture2D(gStripeSampler, PS_IN.fUV);
     if (use_tex) {
+        surfaceColor = hsvadjust ( sampledColor, globalHueTweak, globalSaturationTweak, globalValueTweak );
         surfaceColor = hsvadjust ( sampledColor, hueTweak, satTweak, valueTweak );
         if (adjContrast) {
             surfaceColor = brightnessContrast ( surfaceColor, brightness, 1.0 +contrast);
+            surfaceColor = brightnessContrast ( surfaceColor, globalBrightness, 1.0 + globalContrast);
         }
     }
     float3 Color = float3(surfaceColor[0], surfaceColor[1], surfaceColor[2]);
@@ -2484,11 +2515,11 @@ void main(void)
 	float Grad1_surf_intensity = Grad1_cos;
 	float Rim_surf_intensity = Rim_cos;
 
-	float kLightBlendCalc = kLightBlend;
-	float kShadowBlendCalc = kShadowBlend;
+	int kLightBlendCalc = kLightBlend;
+	int kShadowBlendCalc = kShadowBlend;
 	if (!useKey) {
-		kLightBlendCalc = 0.0;
-		kShadowBlendCalc = 0.0;
+		kLightBlendCalc = 0;
+		kShadowBlendCalc = 0;
 	}
 
 	if (kShaderPos) {
@@ -2604,8 +2635,28 @@ void main(void)
             discard;
         }
     }
-
     outColor = vec4(vec3(outColor), masterOpacity);
+
+    if (compMode >= 1) {
+        if (compMode == 1) {
+            outColor = vec4(vec3(key_mask), 1.0);
+        }
+        if (compMode == 2) {
+            outColor = vec4(vec3(Bounce_mask), 1.0);
+        }
+        if (compMode == 3) {
+            outColor = vec4(vec3(Grad1_mask), 1.0);
+        }
+        if (compMode == 4) {
+            outColor = vec4(vec3(Rim_mask), 1.0);
+        }
+        if (compMode == 5) {
+            outColor = vec4(altered_FlippedNormals, 1.0);
+        }
+        if (compMode == 6) {
+            outColor = vec4(vec3(FogFactor), 1.0);
+        }
+    }
 
 }
 
