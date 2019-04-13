@@ -1399,6 +1399,63 @@ uniform sampler2D oclusion_sampler
 };
 
 
+uniform int compMode
+<
+    string UIName = "Compositing Mode";
+    string UIGroup = "Compositing Controls";
+    string UIFieldNames = "Normal Pass:Key Mask:Fill Mask:Gradient 1 Mask:Rim Mask:Specular:Normals:Depth";
+> = 0;
+
+uniform float globalValueTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Value Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalHueTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Hue Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalSaturationTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Saturation Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalBrightness
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Brightness Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalContrast
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Contrast Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
 uniform float objWorldOffsetX
 <
     string UIName = "Object World Position X";
@@ -2282,6 +2339,8 @@ void main(void)
             surfaceColor = brightnessContrast ( surfaceColor, brightness, 1.0 + contrast);
         }
     }
+    surfaceColor = hsvadjust ( surfaceColor, globalHueTweak, globalSaturationTweak, globalValueTweak );
+
     float3 Color = float3(surfaceColor[0], surfaceColor[1], surfaceColor[2]);
 
 	float3 NormOp = normalize(PS_IN.Normal.xyz);
@@ -2496,6 +2555,30 @@ void main(void)
     }
 
     outColor = vec4(vec3(outColor), masterOpacity);
+
+    if (compMode >= 1) {
+        if (compMode == 1) {
+            outColor = vec4(vec3(key_mask), 1.0);
+        }
+        if (compMode == 2) {
+            outColor = vec4(vec3(Bounce_mask), 1.0);
+        }
+        if (compMode == 3) {
+            outColor = vec4(vec3(Grad1_mask), 1.0);
+        }
+        if (compMode == 4) {
+            outColor = vec4(vec3(Rim_mask), 1.0);
+        }
+        if (compMode == 5) {
+            outColor = vec4(altered_FlippedNormals, 1.0);
+        }
+        if (compMode == 6) {
+            outColor = vec4(vec3(keySpecMask),)
+        }
+        if (compMode == 7) {
+            outColor = vec4(vec3(PS_IN.FogFactor), 1.0);
+        }
+    }
 
 }
 

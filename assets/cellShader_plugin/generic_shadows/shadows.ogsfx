@@ -1463,7 +1463,7 @@ uniform int compMode
 <
     string UIName = "Compositing Mode";
     string UIGroup = "Compositing Controls";
-    string UIFieldNames = "Normal Pass:Key Mask:Fill Mask:Gradient 1 Mask:Rim Mask:Normals:Depth";
+    string UIFieldNames = "Normal Pass:Key Mask:Fill Mask:Gradient 1 Mask:Rim Mask:Specular:Normals:Depth";
 > = 0;
 
 uniform float globalValueTweak
@@ -2488,13 +2488,14 @@ void main(void)
 	vec4 surfaceColor = diffuseColor;
     vec4 sampledColor = texture2D(gStripeSampler, PS_IN.fUV);
     if (use_tex) {
-        surfaceColor = hsvadjust ( sampledColor, globalHueTweak, globalSaturationTweak, globalValueTweak );
         surfaceColor = hsvadjust ( sampledColor, hueTweak, satTweak, valueTweak );
         if (adjContrast) {
             surfaceColor = brightnessContrast ( surfaceColor, brightness, 1.0 +contrast);
-            surfaceColor = brightnessContrast ( surfaceColor, globalBrightness, 1.0 + globalContrast);
         }
     }
+    surfaceColor = brightnessContrast ( surfaceColor, globalBrightness, 1.0 + globalContrast);
+    surfaceColor = hsvadjust ( sampledColor, globalHueTweak, globalSaturationTweak, globalValueTweak );
+
     float3 Color = float3(surfaceColor[0], surfaceColor[1], surfaceColor[2]);
 
 	float3 NormOp = normalize(PS_IN.Normal.xyz);
@@ -2744,6 +2745,9 @@ void main(void)
             outColor = vec4(altered_FlippedNormals, 1.0);
         }
         if (compMode == 6) {
+            outColor = vec4(vec3(keySpecMask),1.0);
+        }
+        if (compMode == 7) {
             outColor = vec4(vec3(PS_IN.FogFactor), 1.0);
         }
     }
