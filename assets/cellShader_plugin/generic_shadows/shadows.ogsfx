@@ -32,19 +32,7 @@ uniform float2 ShadowFilterTaps[10] = {{-0.840520, -0.073954}, {-0.326235, -0.40
 
 
 // ----------------------------------- Per Frame --------------------------------------
-uniform float4x4 viewI : ViewInverse < string UIWidget = "None"; >;
 
-uniform 	bool MayaHwFogEnabled : HardwareFogEnabled < string UIWidget = "None"; > = false; 
-uniform 	int MayaHwFogMode : HardwareFogMode < string UIWidget = "None"; > = 0; 
-uniform 	float MayaHwFogStart : HardwareFogStart < string UIWidget = "None"; > = 0.0; 
-uniform 	float MayaHwFogEnd : HardwareFogEnd < string UIWidget = "None"; > = 100.0; 
-uniform 	float MayaHwFogDensity : HardwareFogDensity < string UIWidget = "None"; > = 0.1; 
-uniform 	float4 MayaHwFogColor : HardwareFogColor < string UIWidget = "None"; > = { 0.5, 0.5, 0.5, 1.0 }; 
-
-
-uniform float4x4 viewPrj : ViewProjection < string UIWidget = "None"; >;
-
-uniform float4x4 view : View < string UIWidget = "None"; >;
 
 
 // --------------------------------------- Per Object -----------------------------------------
@@ -59,7 +47,19 @@ uniform int ClampDynamicLights
 	float UIStep = 1;
 	string UIName = "ClampDynamicLights";
 	string UIWidget = "Slider";
-> = 99;
+> = 99;uniform float4x4 viewI : ViewInverse < string UIWidget = "None"; >;
+
+uniform     bool MayaHwFogEnabled : HardwareFogEnabled < string UIWidget = "None"; > = false; 
+uniform     int MayaHwFogMode : HardwareFogMode < string UIWidget = "None"; > = 0; 
+uniform     float MayaHwFogStart : HardwareFogStart < string UIWidget = "None"; > = 0.0; 
+uniform     float MayaHwFogEnd : HardwareFogEnd < string UIWidget = "None"; > = 100.0; 
+uniform     float MayaHwFogDensity : HardwareFogDensity < string UIWidget = "None"; > = 0.1; 
+uniform     float4 MayaHwFogColor : HardwareFogColor < string UIWidget = "None"; > = { 0.5, 0.5, 0.5, 1.0 }; 
+
+
+uniform float4x4 viewPrj : ViewProjection < string UIWidget = "None"; >;
+
+uniform float4x4 view : View < string UIWidget = "None"; >;
 
 uniform float4x4 wvp : WorldViewProjection < string UIWidget = "None"; >;
 
