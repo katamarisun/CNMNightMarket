@@ -2046,8 +2046,8 @@ GLSLShader ShaderPixel
 void main(void)
 {
 	vec4 surfaceColor = fdiffuseColor;
-    vec4 sampledColor = texture2D(frontSampler, PS_IN.fUV);
     if (fuse_tex) {
+        vec4 sampledColor = texture2D(frontSampler, PS_IN.fUV);
         surfaceColor = hsvadjust ( sampledColor, fhueTweak, fsatTweak, fvalueTweak );
     }
     if (!gl_FrontFacing) {
@@ -2058,7 +2058,7 @@ void main(void)
         }
     }
     surfaceColor = brightnessContrast ( surfaceColor, globalBrightness, 1.0 + globalContrast);
-    surfaceColor = hsvadjust ( sampledColor, globalHueTweak, globalSaturationTweak, globalValueTweak );
+    surfaceColor = hsvadjust ( surfaceColor, globalHueTweak, globalSaturationTweak, globalValueTweak );
 
     float3 Color = float3(surfaceColor[0], surfaceColor[1], surfaceColor[2]);
 

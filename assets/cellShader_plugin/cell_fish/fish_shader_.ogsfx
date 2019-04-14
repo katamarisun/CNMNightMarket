@@ -471,15 +471,15 @@ GLSLShader FS
         }
 
         vec4 surfaceColor = diffuseColor;
-        vec4 sampledColor = texture2D(diffuseSampler, fUV);
         if (use_tex) {
+            vec4 sampledColor = texture2D(diffuseSampler, fUV);
             surfaceColor = hsvadjust ( sampledColor, hueTweak, satTweak, valueTweak );
             if (adjContrast) {
                 surfaceColor = brightnessContrast ( surfaceColor, brightness, 1.0 +contrast);
             }
         }
         surfaceColor = brightnessContrast ( surfaceColor, globalBrightness, 1.0 + globalContrast);
-        vec4 base_color = hsvadjust ( sampledColor, globalHueTweak, globalSaturationTweak, globalValueTweak );
+        vec4 base_color = hsvadjust ( surfaceColor, globalHueTweak, globalSaturationTweak, globalValueTweak );
 
 		float cos = abs(dot( worldNormalFrag, normalize(WorldEyeVec - vec3(0.0, eyeDirFudge, 0.0)) ));
 		float alphaOuter = calc_alpha( softness + eyeSpreadFudge * cos, cutoffOuter, cos );

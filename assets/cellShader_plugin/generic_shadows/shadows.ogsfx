@@ -707,7 +707,7 @@ uniform float grad1Softness
 <
     string UIWidget = "slider";
     float UIMin = 0.01;
-    float UIMax = 2.0;
+    float UIMax = 100.0;
     float UIStep = 0.01;
     string UIName = "Softness";
     string Object = "Gradient 1 Light";
@@ -2525,15 +2525,17 @@ GLSLShader ShaderPixel
 void main(void)
 {
 	vec4 surfaceColor = diffuseColor;
-    vec4 sampledColor = texture2D(gStripeSampler, PS_IN.fUV);
+    vec4 sampledColor = surfaceColor;
     if (use_tex) {
+        sampledColor = texture2D(gStripeSampler, PS_IN.fUV);
         surfaceColor = hsvadjust ( sampledColor, hueTweak, satTweak, valueTweak );
         if (adjContrast) {
-            surfaceColor = brightnessContrast ( surfaceColor, brightness, 1.0 +contrast);
+            surfaceColor = brightnessContrast ( surfaceColor, brightness, 1.0 + contrast);
         }
     }
+    /*
     surfaceColor = brightnessContrast ( surfaceColor, globalBrightness, 1.0 + globalContrast);
-    surfaceColor = hsvadjust ( sampledColor, globalHueTweak, globalSaturationTweak, globalValueTweak );
+    surfaceColor = hsvadjust ( surfaceColor, globalHueTweak, globalSaturationTweak, globalValueTweak ); */
 
     float3 Color = float3(surfaceColor[0], surfaceColor[1], surfaceColor[2]);
 

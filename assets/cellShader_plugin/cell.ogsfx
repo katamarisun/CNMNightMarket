@@ -2372,8 +2372,9 @@ GLSLShader ShaderPixel
 void main(void)
 {
 	vec4 surfaceColor = diffuseColor;
-    vec4 sampledColor = texture2D(gStripeSampler, PS_IN.fUV);
+    vec4 sampledColor = surfaceColor;
     if (use_tex) {
+        sampledColor = texture2D(gStripeSampler, PS_IN.fUV);
         surfaceColor = hsvadjust ( sampledColor, hueTweak, satTweak, valueTweak );
         if (adjContrast) {
             surfaceColor = brightnessContrast ( surfaceColor, brightness, 1.0 + contrast);
