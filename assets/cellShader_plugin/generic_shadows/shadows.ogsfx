@@ -693,11 +693,17 @@ uniform bool Grad1OnTop
     string UIGroup = "Gradient 1 Light";
 > = 0;
 
+uniform bool toggleBounds
+<
+    string UIName = "Switch Cutoff/Softness to Upper/Lower Bound";
+    string UIGroup = "Gradient 1 Light";
+> = 0;
+
 uniform float grad1Cutoff
 <
     string UIWidget = "slider";
-    float UIMin = -1.0;
-    float UIMax = 2.0;
+    float UIMin = -30.0;
+    float UIMax = 30.0;
     float UIStep = 0.01;
     string UIName = "Cutoff";
     string Object = "Gradient 1 Light";
@@ -706,8 +712,8 @@ uniform float grad1Cutoff
 uniform float grad1Softness
 <
     string UIWidget = "slider";
-    float UIMin = 0.01;
-    float UIMax = 100.0;
+    float UIMin = -30.01;
+    float UIMax = 30.0;
     float UIStep = 0.01;
     string UIName = "Softness";
     string Object = "Gradient 1 Light";
@@ -2686,6 +2692,10 @@ void main(void)
 
 	float Bounce_mask = calc_alpha ( bSoftCalc, bCutoffCalc, Bounce_surf_intensity );
 	float Grad1_mask = calc_alpha ( grad1Softness, grad1Cutoff, Grad1_surf_intensity );
+    if (toggleBounds) {
+        Grad1_mask = ( (PS_IN.LocalPosition.y - grad1Softness) / (grad1Cutoff - grad1Softness));
+    }
+
 	float Rim_mask = calc_alpha ( rSoftness, rCutoff, Rim_surf_intensity );
 	float key_mask = calc_alpha( kSoftness, kCutoff, key_surf_intensity );
 
