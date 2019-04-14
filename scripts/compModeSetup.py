@@ -13,4 +13,4 @@ for glsl in glsls:
         cmds.setAttr (glsl + ".compMode", mode)
     attrExist = maya.cmds.attributeQuery("MayaHwFogEnd", node=glsl, exists=True)
     if (attrExist):
-        cmds.setAttr (glsl + ".MayaHwFogEnd", 30.0)
+        cmds.setAttr (glsl + ".MayaHwFogEnd", 40.0)
