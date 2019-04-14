@@ -2046,8 +2046,9 @@ GLSLShader ShaderPixel
 void main(void)
 {
 	vec4 surfaceColor = fdiffuseColor;
+    vec4 sampledColor = surfaceColor;
     if (fuse_tex) {
-        vec4 sampledColor = texture2D(frontSampler, PS_IN.fUV);
+        sampledColor = texture2D(frontSampler, PS_IN.fUV);
         surfaceColor = hsvadjust ( sampledColor, fhueTweak, fsatTweak, fvalueTweak );
     }
     if (!gl_FrontFacing) {
