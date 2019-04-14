@@ -6,6 +6,9 @@ import maya.cmds as cmds
 glsls = cmds.ls( type="GLSLShader" )
 
 for glsl in glsls:
+    attrExist = maya.cmds.attributeQuery("useGrad1", node=glsl, exists=True)
+    if (attrExist):
+        cmds.setAttr (glsl + ".useGrad1", 0)
     glslfile = cmds.getAttr ( glsl + ".shader" )
     if glslfile == "":
         cmds.setAttr(glsl + ".shader", "assets/cellShader_plugin/generic_shadows/shadows.ogsfx", type="string" )

@@ -340,6 +340,13 @@ uniform float globalContrast
     string UIGroup = "Compositing Controls";
 > = 0.0;
 
+uniform vec4 matID
+<
+    string UIName = "matID";
+    string UIWidget = "Color";
+    string UIGroup = "Compositing Controls";
+> = {0.0, 0.0, 0.0, 1.0f};
+
 attribute appdata {
     vec3 Position    : POSITION;
     vec2 UV        : TEXCOORD0;
@@ -473,13 +480,22 @@ GLSLShader FS
                 colorOut = vec4(vec3(0.0), 1.0);
             }
             if (compMode == 5) {
-                colorOut = vec4(worldNormalFrag, 1.0);
+                colorOut = vec4(vec3(0.0), 1.0);
             }
             if (compMode == 6) {
-                colorOut = vec4(vec3(0.0),1.0);
+                colorOut = vec4(vec3(0.0), 1.0);
             }
             if (compMode == 7) {
+                colorOut = vec4(matID, 1.0);
+            }
+            if (compMode == 8) {
+                colorOut = vec4(worldNormalFrag, 1.0);
+            }
+            if (compMode == 9) {
                 colorOut = vec4(vec3(FogFactor), 1.0);
+            }
+            else {
+                colorOut = vec4(vec3(0.0), 1.0);
             }
         }
 	}
