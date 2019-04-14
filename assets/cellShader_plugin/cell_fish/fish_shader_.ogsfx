@@ -24,11 +24,7 @@ uniform mat4 worldviewprojI : WorldViewProjectionInverse < string UIWidget = "No
 
 
 uniform     bool MayaHwFogEnabled : HardwareFogEnabled < string UIWidget = "None"; > = false; 
-uniform     int MayaHwFogMode : HardwareFogMode < string UIWidget = "None"; > = 0; 
-uniform     float MayaHwFogStart : HardwareFogStart < string UIWidget = "None"; > = 0.0; 
-uniform     float MayaHwFogEnd : HardwareFogEnd < string UIWidget = "None"; > = 100.0; 
-uniform     float MayaHwFogDensity : HardwareFogDensity < string UIWidget = "None"; > = 0.1; 
-uniform     float4 MayaHwFogColor : HardwareFogColor < string UIWidget = "None"; > = { 0.5, 0.5, 0.5, 1.0 }; 
+uniform     int MayaHwFogMode : HardwareFogMode < string UIWidget = "None"; > = 0;  
 
 
 uniform float4x4 viewPrj : ViewProjection < string UIWidget = "None"; >;
@@ -287,7 +283,7 @@ uniform int compMode
 <
     string UIName = "Compositing Mode";
     string UIGroup = "Compositing Controls";
-    string UIFieldNames = "Normal Pass:Key Mask:Fill Mask:Gradient 1 Mask:Rim Mask:Specular:Normals:Depth";
+    string UIFieldNames = "Normal Pass:Key Mask:Fill Mask:Gradient 1 Mask:Rim Mask:Specular:Key Shadows:Mat ID:Normals:Depth";
 > = 0;
 
 uniform float globalValueTweak
@@ -346,6 +342,44 @@ uniform vec4 matID
     string UIWidget = "Color";
     string UIGroup = "Compositing Controls";
 > = {0.0, 0.0, 0.0, 1.0f};
+
+
+uniform float MayaHwFogStart
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 500.0;
+    float UIStep = 0.01;
+    string UIName = "Fog Start";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float MayaHwFogEnd
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 500.0;
+    float UIStep = 0.01;
+    string UIName = "Fog End";
+    string UIGroup = "Compositing Controls";
+> = 30.0;
+
+uniform float MayaHwFogDensity
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Fog Density";
+    string UIGroup = "Compositing Controls";
+> = 0.1;
+
+uniform vec4 HardwareFogColor
+<
+    string UIName = "Fog Color";
+    string UIWidget = "Color";
+    string UIGroup = "Compositing Controls";
+> = {0.1, 0.1, 0.1, 1.0f};
 
 attribute appdata {
     vec3 Position    : POSITION;
@@ -486,7 +520,7 @@ GLSLShader FS
                 colorOut = vec4(vec3(0.0), 1.0);
             }
             if (compMode == 7) {
-                colorOut = vec4(matID, 1.0);
+                colorOut = vec4(matID.xyz, 1.0);
             }
             if (compMode == 8) {
                 colorOut = vec4(worldNormalFrag, 1.0);
@@ -494,7 +528,7 @@ GLSLShader FS
             if (compMode == 9) {
                 colorOut = vec4(vec3(FogFactor), 1.0);
             }
-            else {
+            if (compMode >= 10) {
                 colorOut = vec4(vec3(0.0), 1.0);
             }
         }
