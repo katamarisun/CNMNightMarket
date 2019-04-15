@@ -22,6 +22,14 @@ uniform mat4 viewI : ViewInverse < string UIWidget = "None"; >;
 uniform mat4 worldview : WorldView < string UIWidget = "None"; >;
 uniform mat4 worldviewprojI : WorldViewProjectionInverse < string UIWidget = "None"; >;
 
+
+uniform     bool MayaHwFogEnabled : HardwareFogEnabled < string UIWidget = "None"; > = false; 
+uniform     int MayaHwFogMode : HardwareFogMode < string UIWidget = "None"; > = 0;  
+
+
+uniform float4x4 viewPrj : ViewProjection < string UIWidget = "None"; >;
+
+
 uniform float cutoffOuter
 <
     string UIWidget = "slider";
@@ -153,6 +161,11 @@ uniform vec4 outerColor
     string UIGroup = "Lantern Colors";
 > = {0.58, 0.0, 0.0, 1.0f};
 
+uniform bool use_tex
+<
+    string UIName = "Toggle Texture";
+    string UIGroup = "Base Color";
+> = 0.0;
 
 uniform texture2D diffuseColorTex <
     string ResourceName = "";
@@ -161,6 +174,69 @@ uniform texture2D diffuseColorTex <
     string UIDesc = "Diffuse Texture";
     string UIGroup = "Base Color";
 >;
+
+uniform vec4 diffuseColor
+    <
+    string UIName = "Diffuse Color";
+    string UIWidget = "Color";
+    string UIGroup = "Base Color";
+> = {0.5, 0.5, 0.5, 1.0f};
+
+uniform float hueTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Hue Tweak";
+    string UIGroup = "Base Color";
+> = 0.0;
+
+uniform float satTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Saturation Tweak";
+    string UIGroup = "Base Color";
+> = 0.0;
+
+uniform float valueTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Value Tweak";
+    string UIGroup = "Base Color";
+> = -0.05;
+
+uniform bool adjContrast
+<
+    string UIName = "Use the two sliders below to adjust contrast and brightness";
+    string UIGroup = "Base Color";
+> = 0.0;
+
+uniform float brightness
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Brightness Tweak";
+    string UIGroup = "Base Color";
+> = 0.0;
+
+uniform float contrast
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Contrast Tweak";
+    string UIGroup = "Base Color";
+> = 0.0;
 
 uniform sampler2D diffuseSampler
     = sampler_state {
@@ -203,6 +279,108 @@ uniform sampler2D normalSampler
 };
 
 
+uniform int compMode
+<
+    string UIName = "Compositing Mode";
+    string UIGroup = "Compositing Controls";
+    string UIFieldNames = "Normal Pass:Key Mask:Fill Mask:Gradient 1 Mask:Rim Mask:Specular:Key Shadows:Mat ID:Normals:Depth";
+> = 0;
+
+uniform float globalValueTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Value Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalHueTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Hue Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalSaturationTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Saturation Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalBrightness
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Brightness Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalContrast
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Contrast Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform vec4 matID
+<
+    string UIName = "matID";
+    string UIWidget = "Color";
+    string UIGroup = "Compositing Controls";
+> = {0.0, 0.0, 0.0, 1.0f};
+
+
+uniform float MayaHwFogStart
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 500.0;
+    float UIStep = 0.01;
+    string UIName = "Fog Start";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float MayaHwFogEnd
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 500.0;
+    float UIStep = 0.01;
+    string UIName = "Fog End";
+    string UIGroup = "Compositing Controls";
+> = 30.0;
+
+uniform float MayaHwFogDensity
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Fog Density";
+    string UIGroup = "Compositing Controls";
+> = 0.1;
+
+uniform vec4 HardwareFogColor
+<
+    string UIName = "Fog Color";
+    string UIWidget = "Color";
+    string UIGroup = "Compositing Controls";
+> = {0.1, 0.1, 0.1, 1.0f};
+
 attribute appdata {
     vec3 Position    : POSITION;
     vec2 UV        : TEXCOORD0;
@@ -217,6 +395,7 @@ attribute cellVertexOutput {
     vec4 fTangent : TEXCOORD6;
     vec2 fUV : TEXCOORD4;
     vec3 fPos : TEXCOORD5;
+    vec3 FogFactor : TEXCOORD7;
 };
 
 /* data passed from vertex shader to pixel shader */
@@ -227,6 +406,7 @@ attribute cellPixelInput {
     vec4 fTangent : TEXCOORD6;
     vec2 fUV : TEXCOORD4;
     vec3 fPos : TEXCOORD5;
+    vec3 FogFactor : TEXCOORD7;
 };
 
 /* data output by the fragment shader */
@@ -241,6 +421,18 @@ GLSLShader VS
 	{
         vec4 Po = vec4(Position.xyz,1);
         vec3 Pw = (gWorldXf*Po).xyz;
+        vec4 _HPosition = mul( viewPrj, vec4(Pw.xyz, 1) ); 
+        float fogFactor = 0.0; 
+        if (MayaHwFogMode == 0) { 
+                    fogFactor = saturate((MayaHwFogEnd - _HPosition.z) / (MayaHwFogEnd - MayaHwFogStart)); 
+        } 
+        else if (MayaHwFogMode == 1) { 
+                    fogFactor = 1.0 / (exp(_HPosition.z * MayaHwFogDensity)); 
+        } 
+        else if (MayaHwFogMode == 2) { 
+                    fogFactor = 1.0 / (exp(pow(_HPosition.z * MayaHwFogDensity, 2))); 
+        } 
+        FogFactor = vec3(fogFactor, fogFactor, fogFactor); 
         WorldEyeVec = normalize(gViewIXf[3].xyz - Pw);
         fUV = vec2(UV.x, 1-UV.y);
         WorldNormal = (gWorldITXf * vec4(Normal,1.0)).xyz;
@@ -260,6 +452,8 @@ GLSLShader FS
     vec4 blendOverlay(vec4 base, vec4 blend);
     vec4 blendOverlay(vec4 base, vec4 blend, float opacity);
     vec3 TangentWorldConvertFunction(float TangentDirection, vec3 Normal, vec3 Tangent, vec3 Vector);
+    vec4 brightnessContrast(vec4 value, float brightness, float contrast);
+    vec4 hsvadjust ( vec4 inColor, float hue_tweak, float sat_tweak, float value_tweak );
 
 	void main(void)
 	{
@@ -276,7 +470,17 @@ GLSLShader FS
             worldNormalFrag = normalize(TangentWorldConvert2066);
         }
 
-        vec4 base_color = texture2D(diffuseSampler, fUV) - vec4(darkenFudge);
+        vec4 surfaceColor = diffuseColor;
+        if (use_tex) {
+            vec4 sampledColor = texture2D(diffuseSampler, fUV);
+            surfaceColor = hsvadjust ( sampledColor, hueTweak, satTweak, valueTweak );
+            if (adjContrast) {
+                surfaceColor = brightnessContrast ( surfaceColor, brightness, 1.0 +contrast);
+            }
+        }
+        surfaceColor = brightnessContrast ( surfaceColor, globalBrightness, 1.0 + globalContrast);
+        vec4 base_color = hsvadjust ( surfaceColor, globalHueTweak, globalSaturationTweak, globalValueTweak );
+
 		float cos = abs(dot( worldNormalFrag, normalize(WorldEyeVec - vec3(0.0, eyeDirFudge, 0.0)) ));
 		float alphaOuter = calc_alpha( softness + eyeSpreadFudge * cos, cutoffOuter, cos );
         float alphaMiddle = calc_alpha( softness + eyeSpreadFudge * cos, cutoffMiddle, cos );
@@ -295,6 +499,38 @@ GLSLShader FS
             colorOut = base_color + vec4(lightenFudge);
         } else {
             colorOut = lerp(colorOverlay, colorDodge, pow(cos, brightSpot));
+        }
+        if (compMode >= 1) {
+            if (compMode == 1) {
+                colorOut = vec4(vec3(0.0), 1.0);
+            }
+            if (compMode == 2) {
+                colorOut = vec4(vec3(0.0), 1.0);
+            }
+            if (compMode == 3) {
+                colorOut = vec4(vec3(0.0), 1.0);
+            }
+            if (compMode == 4) {
+                colorOut = vec4(vec3(0.0), 1.0);
+            }
+            if (compMode == 5) {
+                colorOut = vec4(vec3(0.0), 1.0);
+            }
+            if (compMode == 6) {
+                colorOut = vec4(vec3(0.0), 1.0);
+            }
+            if (compMode == 7) {
+                colorOut = vec4(matID.xyz, 1.0);
+            }
+            if (compMode == 8) {
+                colorOut = vec4(worldNormalFrag, 1.0);
+            }
+            if (compMode == 9) {
+                colorOut = vec4(vec3(FogFactor), 1.0);
+            }
+            if (compMode >= 10) {
+                colorOut = vec4(vec3(0.0), 1.0);
+            }
         }
 	}
 
@@ -333,6 +569,42 @@ GLSLShader FS
         mat3 toWorld = mat3(Tangent, Bn, Normal);
         return (toWorld * Vector);
     }
+
+
+    // ------------------------------------------------- Brightness Contrast Adjustment -------------------------
+    vec4 brightnessContrast(vec4 value, float brightness, float contrast)
+    {
+        return vec4((value.rgb - 0.5) * contrast + 0.5 + brightness, 1.0);
+    }
+
+    // ------------------------------------------------- HSV adjustment functions -------------------------------
+
+    // All components are in the range [0…1], including hue.
+    vec3 rgb2hsv(vec3 c)
+    {
+        vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
+        vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
+        vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
+
+        float d = q.x - min(q.w, q.y);
+        float e = 1.0e-10;
+        return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
+    }
+
+    // All components are in the range [0…1], including hue.
+    vec3 hsv2rgb(vec3 c)
+    {
+        vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+        vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+        return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+    }
+
+    vec4 hsvadjust ( vec4 inColor, float hue_tweak, float sat_tweak, float value_tweak ) {
+        vec3 hsv = rgb2hsv(inColor.rgb);
+        hsv = hsv + vec3(hue_tweak, sat_tweak, value_tweak);
+        return vec4(hsv2rgb(hsv), inColor.a);
+    }
+
 }
 
 technique main

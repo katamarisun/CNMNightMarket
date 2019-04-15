@@ -36,10 +36,6 @@ uniform float4x4 viewI : ViewInverse < string UIWidget = "None"; >;
 
 uniform 	bool MayaHwFogEnabled : HardwareFogEnabled < string UIWidget = "None"; > = false; 
 uniform 	int MayaHwFogMode : HardwareFogMode < string UIWidget = "None"; > = 0; 
-uniform 	float MayaHwFogStart : HardwareFogStart < string UIWidget = "None"; > = 0.0; 
-uniform 	float MayaHwFogEnd : HardwareFogEnd < string UIWidget = "None"; > = 100.0; 
-uniform 	float MayaHwFogDensity : HardwareFogDensity < string UIWidget = "None"; > = 0.1; 
-uniform 	float4 MayaHwFogColor : HardwareFogColor < string UIWidget = "None"; > = { 0.5, 0.5, 0.5, 1.0 }; 
 
 
 uniform float4x4 viewPrj : ViewProjection < string UIWidget = "None"; >;
@@ -1398,6 +1394,107 @@ uniform sampler2D oclusion_sampler
     Texture = <ambient_oclusion>;
 };
 
+uniform int compMode
+<
+    string UIName = "Compositing Mode";
+    string UIGroup = "Compositing Controls";
+    string UIFieldNames = "Normal Pass:Key Mask:Fill Mask:Gradient 1 Mask:Rim Mask:Specular:Key Shadows:Mat ID:Normals:Depth";
+> = 0;
+
+uniform float globalValueTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Value Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalHueTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Hue Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalSaturationTweak
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Saturation Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalBrightness
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Brightness Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float globalContrast
+<
+    string UIWidget = "slider";
+    float UIMin = -1.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Global Contrast Tweak";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform vec4 matID
+<
+    string UIName = "matID";
+    string UIWidget = "Color";
+    string UIGroup = "Compositing Controls";
+> = {0.0, 0.0, 0.0, 1.0f};
+
+
+uniform float MayaHwFogStart
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 500.0;
+    float UIStep = 0.01;
+    string UIName = "Fog Start";
+    string UIGroup = "Compositing Controls";
+> = 0.0;
+
+uniform float MayaHwFogEnd
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 500.0;
+    float UIStep = 0.01;
+    string UIName = "Fog End";
+    string UIGroup = "Compositing Controls";
+> = 30.0;
+
+uniform float MayaHwFogDensity
+<
+    string UIWidget = "slider";
+    float UIMin = 0.0;
+    float UIMax = 1.0;
+    float UIStep = 0.01;
+    string UIName = "Fog Density";
+    string UIGroup = "Compositing Controls";
+> = 0.1;
+
+uniform vec4 HardwareFogColor
+<
+    string UIName = "Fog Color";
+    string UIWidget = "Color";
+    string UIGroup = "Compositing Controls";
+> = {0.1, 0.1, 0.1, 1.0f};
 
 uniform float objWorldOffsetX
 <
@@ -2275,13 +2372,17 @@ GLSLShader ShaderPixel
 void main(void)
 {
 	vec4 surfaceColor = diffuseColor;
-    vec4 sampledColor = texture2D(gStripeSampler, PS_IN.fUV);
+    vec4 sampledColor = surfaceColor;
     if (use_tex) {
+        sampledColor = texture2D(gStripeSampler, PS_IN.fUV);
         surfaceColor = hsvadjust ( sampledColor, hueTweak, satTweak, valueTweak );
         if (adjContrast) {
             surfaceColor = brightnessContrast ( surfaceColor, brightness, 1.0 + contrast);
         }
     }
+    surfaceColor = brightnessContrast ( surfaceColor, globalBrightness, 1.0 + globalContrast);
+    surfaceColor = hsvadjust ( surfaceColor, globalHueTweak, globalSaturationTweak, globalValueTweak );
+
     float3 Color = float3(surfaceColor[0], surfaceColor[1], surfaceColor[2]);
 
 	float3 NormOp = normalize(PS_IN.Normal.xyz);
@@ -2409,7 +2510,9 @@ void main(void)
 	float Rim_mask = calc_alpha ( rSoftness, rCutoff, Rim_surf_intensity );
 	float key_mask = calc_alpha( kSoftness, kCutoff, key_surf_intensity );
 
+    float keyShadow = 1.0;
     if (key_light_intensity < keyShadowCuttoff) {
+        keyShadow = 0.0;
 		key_mask = 0.0;
 	}
 
@@ -2458,6 +2561,7 @@ void main(void)
     }
 
     // --------------------------------------------- Key Spec Calculation
+    float keySpecMask = 0.0;
     if (useKeySpec) {
 		float3 keyHalf = normalize((KeyLightVector + CamVecNorm));
 		float key_spec_cos = dot(FlippedNormals, keyHalf);
@@ -2465,7 +2569,7 @@ void main(void)
 			key_spec_cos = 0.0;
 		}
 		float keySpecIntensity = pow(key_spec_cos, kSpecPower);
-		float keySpecMask = calc_alpha( kSpecSoftness, kSpecCuttoff, keySpecIntensity );
+		keySpecMask = calc_alpha( kSpecSoftness, kSpecCuttoff, keySpecIntensity );
 
 		vec4 specColor = blend(outColor, kSpecularColor, kSpecBlend, keySpecMask);
 		outColor = lerp(outColor, specColor, kSpecOpacity);
@@ -2496,6 +2600,39 @@ void main(void)
     }
 
     outColor = vec4(vec3(outColor), masterOpacity);
+
+    if (compMode >= 1) {
+        if (compMode == 1) {
+            outColor = vec4(vec3(key_mask), 1.0);
+        }
+        if (compMode == 2) {
+            outColor = vec4(vec3(Bounce_mask), 1.0);
+        }
+        if (compMode == 3) {
+            outColor = vec4(vec3(Grad1_mask), 1.0);
+        }
+        if (compMode == 4) {
+            outColor = vec4(vec3(Rim_mask), 1.0);
+        }
+        if (compMode == 5) {
+            outColor = vec4(vec3(keySpecMask), 1.0);
+        }
+        if (compMode == 6) {
+            outColor = vec4(vec3(keyShadow), 1.0);
+        }
+        if (compMode == 7) {
+            outColor = vec4(matID.xyz, 1.0);
+        }
+        if (compMode == 8) {
+            outColor = vec4(FlippedNormals, 1.0);
+        }
+        if (compMode == 9) {
+            outColor = vec4(vec3(PS_IN.FogFactor), 1.0);
+        }
+        if (compMode >= 10) {
+            outColor = vec4(vec3(0.0), 1.0);
+        }
+    }
 
 }
 
