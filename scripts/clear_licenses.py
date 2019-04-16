@@ -10,7 +10,9 @@ for root, dirs, files in os.walk(directory, topdown=False):
 			maya_files.append(os.path.join(root, name))
 
 file_count = 0
+total_count = 0
 for file in maya_files:
+	total_count += 1
 	print("Looing at ", file, "\n")
 	if "gardenprops" in file:
 		continue
@@ -32,3 +34,4 @@ for file in maya_files:
 		print("Cleared a license from: ", file, "\n")
 		file_count += 1
 print("Cleared from ", file_count, " files.\n")
+print(str(total_count), " total files in ", directory + "\n")
