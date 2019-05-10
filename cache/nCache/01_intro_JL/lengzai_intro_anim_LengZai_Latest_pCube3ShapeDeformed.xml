@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Autodesk_Cache_File>
+  <cacheType Type="OneFilePerFrame" Format="mcx"/>
+  <time Range="250-57000"/>
+  <cacheTimePerFrame TimePerFrame="250"/>
+  <cacheVersion Version="2.0"/>
+  <extra>/Users/abbyrcohn/Desktop/CNMNightMarket/scenes/01_intro_JL.ma</extra>
+  <extra>maya 2018</extra>
+  <extra>abbyrcohn</extra>
+  <Channels>
+    <channel0 ChannelName="lengzai_intro_anim:LengZai_Latest:pCube3ShapeDeformed" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="250" EndTime="57000"/>
+  </Channels>
+</Autodesk_Cache_File>
