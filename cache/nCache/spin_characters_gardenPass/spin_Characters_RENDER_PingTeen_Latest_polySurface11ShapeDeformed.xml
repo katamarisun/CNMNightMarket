@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Autodesk_Cache_File>
+  <cacheType Type="OneFilePerFrame" Format="mcx"/>
+  <time Range="-25000-90000"/>
+  <cacheTimePerFrame TimePerFrame="250"/>
+  <cacheVersion Version="2.0"/>
+  <extra>/Users/akshatanagendra/Desktop/CNMNightMarket/scenes/spin_characters_gardenPass.ma</extra>
+  <extra>maya 2018</extra>
+  <extra>akshatanagendra</extra>
+  <Channels>
+    <channel0 ChannelName="spin_Characters_RENDER:PingTeen_Latest:polySurface11ShapeDeformed" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="-25000" EndTime="90000"/>
+  </Channels>
+</Autodesk_Cache_File>
