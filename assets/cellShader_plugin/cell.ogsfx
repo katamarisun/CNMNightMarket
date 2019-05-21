@@ -2886,32 +2886,4 @@ technique T0
 		VertexShader (in APPDATASHADOW, out SHADERDATA VS_OUT) = { Common_Funcs, VertexShader_Funcs, ShaderVertex};
 		PixelShader (in SHADERDATA PS_IN, out PIXELDATA) = { Common_Funcs, PixelShader_Funcs, ShaderPixel};
 	}
-
-	pass P1
-	<
-		string drawContext = "transparentPeel";
-	>
-	{
-		VertexShader (in APPDATASHADOW, out SHADERDATA VS_OUT) = { Common_Funcs, VertexShader_Funcs, ShaderVertex};
-		PixelShader (in SHADERDATA PS_IN, out PIXELDATAP1) = { Common_Funcs, PixelShader_Funcs, ShaderPixelP1};
-	}
-
-	pass P2
-	<
-		string drawContext = "transparentPeelAndAvg";
-	>
-	{
-		VertexShader (in APPDATASHADOW, out SHADERDATA VS_OUT) = { Common_Funcs, VertexShader_Funcs, ShaderVertex};
-		PixelShader (in SHADERDATA PS_IN, out PIXELDATAP2) = { Common_Funcs, PixelShader_Funcs, ShaderPixelP2};
-	}
-
-	pass P3
-	<
-		string drawContext = "transparentWeightedAvg";
-	>
-	{
-		VertexShader (in APPDATASHADOW, out SHADERDATA VS_OUT) = { Common_Funcs, VertexShader_Funcs, ShaderVertex};
-		PixelShader (in SHADERDATA PS_IN, out PIXELDATAP3) = { Common_Funcs, PixelShader_Funcs, ShaderPixelP3};
-	}
-
 }
