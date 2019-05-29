@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Autodesk_Cache_File>
+  <cacheType Type="OneFilePerFrame" Format="mcx"/>
+  <time Range="60000-90000"/>
+  <cacheTimePerFrame TimePerFrame="250"/>
+  <cacheVersion Version="2.0"/>
+  <extra>C:/CNM190/CNMNightMarket/scenes/Spin/spin_characters_render_garden.ma</extra>
+  <extra>maya 2018</extra>
+  <extra>ooiwe</extra>
+  <Channels>
+    <channel0 ChannelName="spin_Characters_RENDER:PingTeen_Latest:polySurface11ShapeDeformed" ChannelType="FloatVectorArray" ChannelInterpretation="positions" SamplingType="Regular" SamplingRate="250" StartTime="60000" EndTime="90000"/>
+  </Channels>
+</Autodesk_Cache_File>
